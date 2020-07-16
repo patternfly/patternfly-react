@@ -1,8 +1,7 @@
 ---
-title: 'Accordion'
+id: Accordion
 section: components
-cssPrefix: 'pf-c-accordion'
-typescript: true
+cssPrefix: pf-c-accordion
 propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle']
 ---
 

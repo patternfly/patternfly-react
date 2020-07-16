@@ -1,6 +1,6 @@
 ---
-title: 'Page layout'
-section: 'demos'
+id: Page layout
+section: demos
 ---
 
 import React from 'react';

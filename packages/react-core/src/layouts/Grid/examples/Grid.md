@@ -1,9 +1,8 @@
 ---
-title: 'Grid'
-cssPrefix: 'pf-l-grid'
-section: 'layouts'
+id: Grid
+cssPrefix: pf-l-grid
+section: layouts
 propComponents: ['Grid', 'GridItem']
-typescript: true
 ---
 import { Grid, GridItem } from '@patternfly/react-core';
 import './grid.css';

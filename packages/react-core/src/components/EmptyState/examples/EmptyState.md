@@ -1,8 +1,7 @@
 ---
-title: 'Empty state'
+id: Empty state
 section: components
-cssPrefix: 'pf-c-empty-state'
-typescript: true
+cssPrefix: pf-c-empty-state
 propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateIcon', 'EmptyStateSecondaryActions']
 ---
 import {

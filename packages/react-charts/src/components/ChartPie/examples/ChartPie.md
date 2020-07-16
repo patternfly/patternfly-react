@@ -1,7 +1,6 @@
 ---
-title: 'Pie chart'
-section: 'charts'
-typescript: true
+id: Pie chart
+section: charts
 propComponents: ['ChartPie']
 hideDarkMode: true
 ---

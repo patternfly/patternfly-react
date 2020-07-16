@@ -1,8 +1,7 @@
 ---
-title: 'Wizard'
+id: Wizard
 section: components
-cssPrefix: 'pf-c-wizard'
-typescript: true
+cssPrefix: pf-c-wizard
 propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle']
 ---
 

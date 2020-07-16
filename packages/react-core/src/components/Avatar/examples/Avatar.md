@@ -1,8 +1,7 @@
 ---
-title: 'Avatar'
+id: Avatar
 section: components
-cssPrefix: 'pf-c-avatar'
-typescript: true
+cssPrefix: pf-c-avatar
 propComponents: ['Avatar']
 ---
 

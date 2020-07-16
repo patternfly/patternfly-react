@@ -1,8 +1,7 @@
 ---
-title: 'Table'
-cssPrefix: 'pf-c-table'
-section: 'components'
-typescript: true
+id: Table
+cssPrefix: pf-c-table
+section: components
 propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell', 'RowErrors', 'IHeaderRow', 'IRowData', 'IColumn', 'IExtraRowData', 'IExtraColumnData', 'ISortBy', 'IAction', 'ISeparator', 'ICell', 'IRowCell', 'IValidatorDef', 'IRow']
 ouia: true
 ---

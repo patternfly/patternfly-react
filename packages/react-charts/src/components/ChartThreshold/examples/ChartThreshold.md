@@ -1,7 +1,6 @@
 ---
-title: 'Threshold chart'
-section: 'charts'
-typescript: true
+id: Threshold chart
+section: charts
 propComponents: [
   'Chart',
   'ChartAxis',

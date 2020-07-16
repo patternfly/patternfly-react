@@ -1,7 +1,6 @@
 ---
-title: 'Themed charts'
-section: 'charts'
-typescript: true
+id: Themed charts
+section: charts
 propComponents: [
   'ChartThemeVariant'
 ]

@@ -1,9 +1,8 @@
 ---
-title: 'Switch'
+id: Switch
 section: components
-cssPrefix: 'pf-c-switch'
+cssPrefix: pf-c-switch
 propComponents: ['Switch']
-typescript: true
 ouia: true
 ---
 

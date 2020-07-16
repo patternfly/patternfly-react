@@ -1,8 +1,7 @@
 ---
-title: 'Banner'
+id: Banner
 section: components
-cssPrefix: 'pf-c-banner'
-typescript: true
+cssPrefix: pf-c-banner
 propComponents: ['Banner']
 beta: true
 ---

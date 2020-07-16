@@ -1,6 +1,6 @@
 ---
-title: 'Sticky header table'
-section: 'demos'
+id: Sticky header table
+section: demos
 ---
 
 ```js title=Basic isFullscreen

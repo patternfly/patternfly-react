@@ -1,7 +1,7 @@
 ---
-title: 'Data list'
+id: Data list
 section: components
-cssPrefix: 'pf-c-data-list'
+cssPrefix: pf-c-data-list
 propComponents:
   [
     'DataList',
@@ -14,7 +14,6 @@ propComponents:
     'DataListToggle',
     'DataListContent',
   ]
-typescript: true
 ---
 
 import {

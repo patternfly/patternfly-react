@@ -1,7 +1,6 @@
 ---
-title: 'Scatter chart'
-section: 'charts'
-typescript: true
+id: Scatter chart
+section: charts
 propComponents: [
   'Chart',
   'ChartArea',

@@ -1,6 +1,6 @@
 ---
-title: Table column management
-section: 'demos'
+id: Table column management
+section: demos
 ---
 
 ## Examples

@@ -1,9 +1,8 @@
 ---
-title: 'Input group'
+id: Input group
 section: components
 cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
-typescript: true
 ---
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {

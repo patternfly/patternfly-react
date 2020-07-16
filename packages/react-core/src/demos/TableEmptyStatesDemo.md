@@ -1,6 +1,6 @@
 ---
-title: Table empty states
-section: 'demos'
+id: Table empty states
+section: demos
 ---
 
 ## Examples

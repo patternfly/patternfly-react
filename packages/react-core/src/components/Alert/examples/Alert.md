@@ -1,8 +1,7 @@
 ---
-title: 'Alert'
+id: Alert
 section: components
-cssPrefix: 'pf-c-alert'
-typescript: true
+cssPrefix: pf-c-alert
 propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 ouia: true
 ---

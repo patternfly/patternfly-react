@@ -1,7 +1,6 @@
 ---
-title: 'Bullet chart'
-section: 'charts'
-typescript: true
+id: Bullet chart
+section: charts
 propComponents: [
   'ChartAxis',
   'ChartBullet',

@@ -1,9 +1,8 @@
 ---
-title: 'Gallery'
-cssPrefix: 'pf-l-gallery'
-section: 'layouts'
+id: Gallery
+cssPrefix: pf-l-gallery
+section: layouts
 propComponents: ['Gallery', 'GalleryItem']
-typescript: true
 ---
 
 import { Gallery, GalleryItem } from '@patternfly/react-core';

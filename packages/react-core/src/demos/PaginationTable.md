@@ -1,6 +1,6 @@
 ---
-title: 'Pagination table'
-section: 'demos'
+id: Pagination table
+section: demos
 ---
 
 ## Examples

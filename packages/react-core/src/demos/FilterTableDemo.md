@@ -1,6 +1,6 @@
 ---
-title: 'Filterable table'
-section: 'demos'
+id: Filterable table
+section: demos
 ---
 
 ## Examples

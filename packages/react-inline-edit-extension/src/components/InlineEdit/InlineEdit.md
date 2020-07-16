@@ -1,6 +1,6 @@
 ---
-title: 'Inline table edit'
-section: 'extensions'
+id: Inline table edit
+section: extensions
 propComponents: ['TableTextInput']
 ---
 

@@ -1,8 +1,7 @@
 ---
-title: 'Page'
+id: Page
 section: components
-cssPrefix: 'pf-c-page'
-typescript: true
+cssPrefix: pf-c-page
 propComponents:
   ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---

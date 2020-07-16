@@ -1,7 +1,6 @@
 ---
-title: 'Stack chart'
-section: 'charts'
-typescript: true
+id: Stack chart
+section: charts
 propComponents: [
   'Chart',
   'ChartArea',

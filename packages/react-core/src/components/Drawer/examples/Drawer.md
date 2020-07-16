@@ -1,7 +1,6 @@
 ---
-title: 'Drawer'
-cssPrefix: 'pf-c-drawer'
-typescript: true
+id: Drawer
+cssPrefix: pf-c-drawer
 propComponents:
   [
     Drawer,
@@ -14,7 +13,7 @@ propComponents:
     DrawerActions,
     DrawerCloseButton
   ]
-section: 'components'
+section: components
 beta: true
 ---
 

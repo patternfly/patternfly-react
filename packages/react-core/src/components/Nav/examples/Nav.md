@@ -1,8 +1,7 @@
 ---
-title: 'Navigation'
+id: Navigation
 section: components
-cssPrefix: 'pf-c-nav'
-typescript: true
+cssPrefix: pf-c-nav
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 ouia: true
 ---

@@ -1,7 +1,6 @@
 ---
-title: 'Legend chart'
-section: 'charts'
-typescript: true
+id: Legend chart
+section: charts
 propComponents: [
   'ChartLegend'
 ]

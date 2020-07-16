@@ -1,8 +1,7 @@
 ---
-title: 'Form'
+id: Form
 section: components
-cssPrefix: 'pf-c-form'
-typescript: true
+cssPrefix: pf-c-form
 propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText', 'Button', 'Popover']
 ---
 

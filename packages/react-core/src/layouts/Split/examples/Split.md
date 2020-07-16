@@ -1,9 +1,8 @@
 ---
-title: 'Split'
-cssPrefix: 'pf-l-split'
-section: 'layouts'
+id: Split
+cssPrefix: pf-l-split
+section: layouts
 propComponents: ['Split', 'SplitItem']
-typescript: true
 ---
 
 import { Split, SplitItem } from '@patternfly/react-core';

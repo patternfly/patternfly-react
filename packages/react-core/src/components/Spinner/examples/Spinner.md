@@ -1,8 +1,7 @@
 ---
-title: 'Spinner'
+id: Spinner
 section: components
-cssPrefix: 'pf-c-spinner'
-typescript: true
+cssPrefix: pf-c-spinner
 propComponents: ['Spinner']
 ---
 

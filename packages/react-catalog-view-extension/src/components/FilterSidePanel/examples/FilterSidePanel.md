@@ -1,7 +1,6 @@
 ---
-title: 'Catalog view filter side panel'
-section: 'extensions'
-typescript: true
+id: Catalog view filter side panel
+section: extensions
 propComponents: ['FilterSidePanel', 'FilterSidePanelCategory', 'FilterSidePanelCategoryItem']
 ---
 

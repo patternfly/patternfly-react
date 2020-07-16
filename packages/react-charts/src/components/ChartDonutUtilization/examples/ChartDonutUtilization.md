@@ -1,7 +1,6 @@
 ---
-title: 'Donut utilization chart'
-section: 'charts'
-typescript: true
+id: Donut utilization chart
+section: charts
 propComponents: [
   'ChartDonutThreshold',
   'ChartDonutUtilization'

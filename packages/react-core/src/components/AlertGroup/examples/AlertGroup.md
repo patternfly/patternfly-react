@@ -1,8 +1,7 @@
 ---
-title: Alert group
+id: Alert group
 section: components
-cssPrefix: "pf-c-alert-group"
-typescript: true
+cssPrefix: pf-c-alert-group
 propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLink']
 ---
 

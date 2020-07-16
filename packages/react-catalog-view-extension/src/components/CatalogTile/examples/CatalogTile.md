@@ -1,8 +1,7 @@
 ---
-title: 'Catalog view tile'
-section: 'extensions'
+id: Catalog view tile
+section: extensions
 propComponents: ['CatalogTile']
-typescript: true
 ---
 
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';

@@ -1,7 +1,6 @@
 ---
-title: 'Donut chart'
-section: 'charts'
-typescript: true
+id: Donut chart
+section: charts
 propComponents: [
   'ChartDonut'
 ]

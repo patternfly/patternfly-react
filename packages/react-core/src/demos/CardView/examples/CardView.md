@@ -1,7 +1,7 @@
 ---
-title: 'Card view'
-section: 'demos'
-experimentalStage: 'early'
+id: Card view
+section: demos
+experimentalStage: early
 ---
 
 import React from 'react';

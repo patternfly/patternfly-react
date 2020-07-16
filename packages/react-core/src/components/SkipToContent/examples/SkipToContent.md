@@ -1,8 +1,7 @@
 ---
-title: 'Skip to content'
-section: 'components'
-cssPrefix: 'pf-c-skip-to-content'
-typescript: true
+id: Skip to content
+section: components
+cssPrefix: pf-c-skip-to-content
 propComponents: ['SkipToContent']
 ---
 import { SkipToContent } from '@patternfly/react-core';

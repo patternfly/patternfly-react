@@ -1,7 +1,6 @@
 ---
-title: 'Bar chart'
-section: 'charts'
-typescript: true
+id: Bar chart
+section: charts
 propComponents: [
   'Chart',
   'ChartAxis',

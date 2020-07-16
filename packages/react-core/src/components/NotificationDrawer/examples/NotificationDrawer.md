@@ -1,9 +1,8 @@
 ---
-title: 'Notification drawer'
+id: Notification drawer
 section: components
-cssPrefix: 'pf-c-notification-drawer'
+cssPrefix: pf-c-notification-drawer
 propComponents: ['NotificationDrawer', 'NotificationDrawerBody', 'NotificationDrawerHeader', 'NotificationDrawerGroup', 'NotificationDrawerGroupList', 'NotificationDrawerList', 'NotificationDrawerListItem', 'NotificationDrawerListItemBody', 'NotificationDrawerListItemHeader']
-typescript: true
 beta: true
 ---
 

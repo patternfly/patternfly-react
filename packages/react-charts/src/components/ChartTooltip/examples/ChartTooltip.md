@@ -1,7 +1,6 @@
 ---
-title: 'Tooltip chart'
-section: 'charts'
-typescript: true
+id: Tooltip chart
+section: charts
 propComponents: ['ChartTooltip']
 hideDarkMode: true
 ---

@@ -1,6 +1,6 @@
 ---
-title: 'Master detail'
-section: 'demos'
+id: Master detail
+section: demos
 ---
 
 ## Examples

@@ -1,8 +1,7 @@
 ---
-title: 'Catalog view item header'
-section: 'extensions'
+id: Catalog view item header
+section: extensions
 propComponents: ['CatalogItemHeader']
-typescript: true
 ---
 
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';

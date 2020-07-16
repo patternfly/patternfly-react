@@ -1,6 +1,6 @@
 ---
-title: 'Banner'
-section: 'demos'
+id: Banner
+section: demos
 ---
 
 import React from 'react';

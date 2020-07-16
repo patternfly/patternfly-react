@@ -1,9 +1,8 @@
 ---
-title: 'Toolbar'
-cssPrefix: 'pf-c-toolbar'
-typescript: true
+id: Toolbar
+cssPrefix: pf-c-toolbar
 propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarToggleGroup', 'ToolbarFilter']
-section: 'components'
+section: components
 ---
 
 import { OverflowMenu, OverflowMenuContent, OverflowMenuItem, Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent, ToolbarToggleGroup, ToolbarFilter } from '@patternfly/react-core';

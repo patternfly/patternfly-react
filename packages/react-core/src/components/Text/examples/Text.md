@@ -1,8 +1,7 @@
 ---
-title: 'Text'
+id: Text
 section: components
-cssPrefix: 'pf-c-content'
-typescript: true
+cssPrefix: pf-c-content
 propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
 ---
 

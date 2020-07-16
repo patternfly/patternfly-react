@@ -1,8 +1,7 @@
 ---
-title: 'Card'
+id: Card
 section: components
-cssPrefix: 'pf-c-card'
-typescript: true
+cssPrefix: pf-c-card
 propComponents: ['Card', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter']
 ouia: true
 ---

@@ -1,8 +1,7 @@
 ---
-title: 'Context selector'
+id: Context selector
 section: components
 propComponents: ['ContextSelector', 'ContextSelectorItem']
-typescript: true
 ouia: true
 ---
 

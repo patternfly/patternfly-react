@@ -1,7 +1,6 @@
 ---
-title: 'Catalog view properties side panel'
-section: 'extensions'
-typescript: true
+id: Catalog view properties side panel
+section: extensions
 propComponents: ['PropertiesSidePanel', 'PropertyItem']
 ---
 

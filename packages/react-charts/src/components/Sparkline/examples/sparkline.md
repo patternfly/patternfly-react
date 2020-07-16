@@ -1,7 +1,6 @@
 ---
-title: 'Sparkline chart'
-section: 'charts'
-typescript: true
+id: Sparkline chart
+section: charts
 propComponents: [
   'ChartArea',
   'ChartContainer',
