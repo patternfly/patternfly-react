@@ -27,8 +27,6 @@ export interface NavExpandableProps
   id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally */
   onExpand?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => void;
-  /** Callback function to toggle the expandable content */
-  onClick?: () => void;
 }
 
 interface NavExpandableState {
@@ -44,8 +42,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     className: '',
     groupId: null as string,
     isActive: false,
-    id: '',
-    onClick: (): any => undefined
+    id: ''
   };
 
   expandableRef = React.createRef<HTMLAnchorElement>();

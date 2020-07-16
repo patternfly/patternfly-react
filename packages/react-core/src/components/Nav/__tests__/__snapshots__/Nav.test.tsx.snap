@@ -328,7 +328,6 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
           id="grp-1"
           isActive={false}
           isExpanded={true}
-          onClick={[Function]}
           srText=""
           title="Section 1"
         >
@@ -493,7 +492,6 @@ exports[`Expandable Nav List 1`] = `
           id="grp-1"
           isActive={false}
           isExpanded={false}
-          onClick={[Function]}
           srText=""
           title="Section 1"
         >
@@ -659,7 +657,6 @@ exports[`Expandable Nav List with aria label 1`] = `
           id="grp-1"
           isActive={false}
           isExpanded={false}
-          onClick={[Function]}
           srText="Section 1 - Example sub-navigation"
           title="Section 1"
         >
