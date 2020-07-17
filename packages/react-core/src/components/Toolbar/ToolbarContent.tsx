@@ -9,6 +9,14 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** Visibility at various breakpoints. */
+  visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Deprecated: prop misspelled */
   visiblity?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
@@ -55,6 +63,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
       children,
       isExpanded,
       toolbarId,
+      visibility,
       visiblity,
       alignment,
       clearAllFilters,
@@ -63,11 +72,19 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
       ...props
     } = this.props;
 
+    if (visiblity !== undefined) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'The ToolbarContent visiblity prop has been deprecated. ' +
+          'Please use the correctly spelled visibility prop instead.'
+      );
+    }
+
     return (
       <div
         className={css(
           styles.toolbarContent,
-          formatBreakpointMods(visiblity, styles),
+          formatBreakpointMods(visibility || visiblity, styles),
           formatBreakpointMods(alignment, styles),
           className
         )}
