@@ -45,7 +45,7 @@ releaseNoteTOC: true
   - Updated to make page header tools item visibility props optional ([#4486](https://github.com/patternfly/patternfly-react/pull/4486))
 - **Popover:**
   - Rewrote tooltip/popover to use popper ([#4491](https://github.com/patternfly/patternfly-react/pull/4491))
-  - Added tippyProps back so as not to cause breaking changes ([#4543]
+  - Added tippyProps back so as not to cause breaking changes ([#4543](https://github.com/patternfly/patternfly-react/pull/4543))
   - Updates to house popper dependencies, added tippy back as a dependency ([#4565](https://github.com/patternfly/patternfly-react/pull/4565))
 - **Select:** 
   - Added logic to handle SelectOptionObject in comparisons ([#4469](https://github.com/patternfly/patternfly-react/pull/4469))
@@ -62,7 +62,7 @@ releaseNoteTOC: true
   - Updated docs to use overflow menu components ([#4459](https://github.com/patternfly/patternfly-react/pull/4459))
 - **Tooltip:**
   - Rewrote tooltip/popover to use popper ([#4491](https://github.com/patternfly/patternfly-react/pull/4491))
-  - Added tippyProps back so as not to cause breaking changes ([#4543]
+  - Added tippyProps back so as not to cause breaking changes ([#4543](https://github.com/patternfly/patternfly-react/pull/4543))
   - Updates to house popper dependencies, added tippy back as a dependency. Fixed pressing the enter key opens all tooltips on the page ([#4565](https://github.com/patternfly/patternfly-react/pull/4565))
 
 ### Table
