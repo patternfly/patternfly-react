@@ -37,7 +37,7 @@ releaseNoteTOC: true
   - Update to pass expandable value to onToggle ([#4427](https://github.com/patternfly/patternfly-react/pull/4427))
 - **Form:**    
   - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
-- **FormSelect:** 
+- **Form select:** 
   - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
 - **Options menu:** 
   - Fixed accessibility bug in plain with text disabled part ([#4424](https://github.com/patternfly/patternfly-react/pull/4424))
@@ -53,11 +53,11 @@ releaseNoteTOC: true
   - Fixed typeahead button toggle propagation ([#4472](https://github.com/patternfly/patternfly-react/pull/4472))
   - Updated to handle missing select group label ([#4464](https://github.com/patternfly/patternfly-react/pull/4464))
   - Fixed option with description on active display only value ([#4503](https://github.com/patternfly/patternfly-react/pull/4503))
-- **TextArea:** 
+- **Text area:** 
   - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
-- **TextInput:** 
+- **Text input:** 
   - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
-- **ToolBar:** 
+- **Toolbar:** 
   - Used alignment prop instead of align in ToolbarItem ([#4481](https://github.com/patternfly/patternfly-react/pull/4481))
   - Updated docs to use overflow menu components ([#4459](https://github.com/patternfly/patternfly-react/pull/4459))
 - **Tooltip:**
