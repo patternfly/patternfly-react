@@ -14,7 +14,7 @@ export const DescriptionListTerm: React.FunctionComponent<DescriptionListTermPro
   className,
   ...props
 }: DescriptionListTermProps) => (
-  <dt className={css(styles.descriptionList, className)} {...props}>
+  <dt className={css(styles.descriptionListTerm, className)} {...props}>
     {children}
   </dt>
 );

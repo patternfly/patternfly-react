@@ -12,5 +12,5 @@ export interface DescriptionListGroupProps extends React.HTMLProps<HTMLDivElemen
 export const DescriptionListGroup: React.FC<DescriptionListGroupProps> = ({
   className,
   children
-}: DescriptionListGroupProps) => <div className={css(styles.descriptionList, className)}>{children}</div>;
+}: DescriptionListGroupProps) => <div className={css(styles.descriptionListGroup, className)}>{children}</div>;
 DescriptionListGroup.displayName = 'DescriptionListGroup';
