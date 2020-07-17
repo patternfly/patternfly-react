@@ -34,6 +34,24 @@ export default ${tokenName};
   );
 
 const index = [];
+const componentIndex = [];
+
+const outputIndex = (index, indexFile) => {
+  const esmIndexString = index.map(file => `export * from './${file}';`).join('\n');
+  outputFileSync(join(outDir, 'esm', indexFile), esmIndexString);
+  outputFileSync(join(outDir, 'js', indexFile.replace('.js', 'd.ts')), esmIndexString);
+  outputFileSync(
+    join(outDir, 'js', 'index.js'),
+    `
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+exports.__esModule = true;
+${index.map(file => `__export(require('./${file}'));`).join('\n')}
+`.trim()
+  );
+}
 
 /**
  * Writes CJS and ESM tokens to `dist` directory
@@ -48,6 +66,7 @@ function writeTokens(tokens) {
     writeCJSExport(tokenName, tokenString);
     writeDTSExport(tokenName, tokenString);
     index.push(tokenName);
+    componentIndex.push(tokenName);
 
     // Legacy token support -- values may be incorrect.
     Object.values(tokenValue)
@@ -68,20 +87,8 @@ function writeTokens(tokens) {
   });
 
   // Index files including legacy tokens
-  const esmIndexString = index.map(file => `export * from './${file}';`).join('\n');
-  outputFileSync(join(outDir, 'esm', 'index.js'), esmIndexString);
-  outputFileSync(join(outDir, 'js', 'index.d.ts'), esmIndexString);
-  outputFileSync(
-    join(outDir, 'js', 'index.js'),
-    `
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-exports.__esModule = true;
-${index.map(file => `__export(require('./${file}'));`).join('\n')}
-`.trim()
-  );
+  outputIndex(index, 'index.js');
+  outputIndex(componentIndex, 'componentIndex.js');
 
   // eslint-disable-next-line no-console
   console.log('Wrote', index.length * 3 + 3, 'token files');
