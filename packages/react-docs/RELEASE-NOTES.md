@@ -6,7 +6,7 @@ releaseNoteTOC: true
 
 ## 2020.09 release notes (2020-07-17)
 - [@patternfly/react-catalog-view-extension@4.5.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.5.1)
-- [@patternfly/react-charts@6.6.6](https://www.npmjs.com/package/@patternfly/react-charts/v/6.6.0)
+- [@patternfly/react-charts@6.6.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.6.0)
 - [@patternfly/react-core@4.32.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.32.1)
 - [@patternfly/react-icons@4.5.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.5.0)
 - [@patternfly/react-inline-edit-extension@4.5.28](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.28)
@@ -81,6 +81,7 @@ releaseNoteTOC: true
   - Added card OUIA attributes ([#4479](https://github.com/patternfly/patternfly-react/pull/4479))
   - Added radio OUIA attributes ([#4482](https://github.com/patternfly/patternfly-react/pull/4482))
   - Fixed build on windows ([#4475](https://github.com/patternfly/patternfly-react/pull/4475))
+  - Updated tag from prerelease-v4 to prerelease ([#4539](https://github.com/patternfly/patternfly-react/pull/4539))
 - **Demos:**
   - Updated docs to use overflow menu components in bulk select table, card view, master detail, pagination and table column management demos ([#4459](https://github.com/patternfly/patternfly-react/pull/4459))
 - **Docs:** 
@@ -184,7 +185,6 @@ releaseNoteTOC: true
 - Removed call for yarn clean:pf3 fro package.json ([#4356](https://github.com/patternfly/patternfly-react/pull/4356))
 - Fixed no anonymous functions ([#4391](https://github.com/patternfly/patternfly-react/pull/4391))
 - Updates from OUIA audit ([#4401](https://github.com/patternfly/patternfly-react/pull/4401))
-- Updated tag from prerelease-v4 to prerelease ([#4539](https://github.com/patternfly/patternfly-react/pull/4539))
 - **Docs:**
   - Updated the git workflow in CONTRIBUTING.md ([#4319](https://github.com/patternfly/patternfly-react/pull/4319))
   - Added upgrade guide ([#4298](https://github.com/patternfly/patternfly-react/pull/4298))
