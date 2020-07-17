@@ -173,7 +173,6 @@ releaseNoteTOC: true
 - Made APIs more react friendly with hooks ([#4342](https://github.com/patternfly/patternfly-react/pull/4342))
 - Allowed a promise to be returned by the create connector callback ([#4390](https://github.com/patternfly/patternfly-react/pull/4390))
 - Updated to sync with OpenShift Console ([#4317](https://github.com/patternfly/patternfly-react/pull/4317))
-- Created connector drag spec configuration ([#4529](https://github.com/patternfly/patternfly-react/pull/4529))
 
 ### Virtualized extension
 - Add filterable demo, fix for filtering+scrolling ([#4389](https://github.com/patternfly/patternfly-react/pull/4389))
