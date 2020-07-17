@@ -1,5 +1,5 @@
 ---
-title: Release notes
+id: Release notes
 section: overview
 releaseNoteTOC: true
 ---
