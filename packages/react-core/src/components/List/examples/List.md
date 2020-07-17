@@ -1,15 +1,13 @@
 ---
-title: 'List'
+id: List
 section: components
-cssPrefix: 'pf-c-list'
-typescript: true
+cssPrefix: pf-c-list
 propComponents: ['List', 'ListItem']
 ---
 
-import { List, ListItem, ListVariant, ListComponent, OrderType } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
@@ -22,7 +20,8 @@ SimpleList = (
 );
 ```
 
-```js title=Inline
+### Inline
+```js
 import React from 'react';
 import { List, ListItem, ListVariant } from '@patternfly/react-core';
 
@@ -35,7 +34,8 @@ InlineList = (
 );
 ```
 
-```js title=Ordered
+### Ordered
+```js
 import React from 'react';
 import { List, ListItem, ListComponent, OrderType } from '@patternfly/react-core';
 

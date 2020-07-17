@@ -33,13 +33,13 @@ Before you begin, check out this [overview of PatternFly](http://patternfly.org/
 #### Project configuration
 Each PatternFly component already contains the CSS related to the component.  In order to have consistent styles throughout the application, PatternFly Base CSS should be used in the project, or some components may diverge in appearance.  This import statement should be placed before your main application component is imported.
 
-```javascript
+```js
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
 #### Example component usage
 
-```javascript
+```js
 import { Button } from '@patternfly/react-core';
 
 export default <Button variant="primary">Button</Button>;

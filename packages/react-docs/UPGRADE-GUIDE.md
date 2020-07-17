@@ -1,5 +1,5 @@
 ---
-title: Upgrade guide
+id: Upgrade guide
 section: overview
 ---
 

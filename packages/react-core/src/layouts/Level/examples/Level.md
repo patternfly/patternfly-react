@@ -1,16 +1,15 @@
 ---
-title: 'Level'
-cssPrefix: 'pf-l-level'
-section: 'layouts'
+id: Level
+cssPrefix: pf-l-level
+section: layouts
 propComponents: ['Level', 'LevelItem']
-typescript: true
 ---
 
-import { Level, LevelItem } from '@patternfly/react-core';
 import './level.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
@@ -23,7 +22,8 @@ LevelBasicExample = () => (
 );
 ```
 
-```js title=With-gutters
+### With gutters
+```js
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 

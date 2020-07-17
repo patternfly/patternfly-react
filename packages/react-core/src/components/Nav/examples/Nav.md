@@ -1,27 +1,17 @@
 ---
-title: 'Navigation'
+id: Navigation
 section: components
-cssPrefix: 'pf-c-nav'
-typescript: true
+cssPrefix: pf-c-nav
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 ouia: true
 ---
 
-import {
-Nav,
-NavExpandable,
-NavItem,
-NavItemSeparator,
-NavList,
-NavGroup,
-PageHeader,
-PageSection
-} from '@patternfly/react-core';
 import './nav.css';
 
 ## Examples
 
-```js title=Default
+### Default
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
@@ -62,7 +52,8 @@ class NavDefaultList extends React.Component {
 }
 ```
 
-```js title=Grouped
+### Grouped
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
@@ -111,7 +102,8 @@ class NavGroupedList extends React.Component {
 }
 ```
 
-```js title=Expandable
+### Expandable
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
@@ -206,7 +198,8 @@ class NavExpandableList extends React.Component {
 }
 ```
 
-```js title=Expandable-(w/subnavigation-titles)
+### Expandable (w/subnavigation titles)
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
@@ -295,7 +288,8 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
-```js title=Mixed
+### Mixed
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
@@ -387,7 +381,8 @@ class NavMixedList extends React.Component {
 }
 ```
 
-```js title=Horizontal-(only-in-PageHeader)
+### Horizontal (only in PageHeader)
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageHeader } from '@patternfly/react-core';
 
@@ -425,7 +420,8 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-```js title=Tertiary
+### Tertiary
+```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageSection } from '@patternfly/react-core';
 

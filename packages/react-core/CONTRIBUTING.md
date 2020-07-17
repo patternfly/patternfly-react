@@ -1,5 +1,5 @@
 ---
-title: Contributing
+id: Contributing
 section: root
 hideTOC: true
 ---
