@@ -98,7 +98,7 @@ BottomAlignedLegend = (
 )
 ```
 
-### Responsive bottom  left aligned legend
+### Responsive bottom-left aligned legend
 ```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';

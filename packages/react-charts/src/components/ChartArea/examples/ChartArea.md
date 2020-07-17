@@ -174,7 +174,7 @@ class BottomAlignedLegend extends React.Component {
 }
 ```
 
-### Multi-color (unordered) bottom  left aligned legend and responsive container
+### Multi-color (unordered) bottom-left aligned legend and responsive container
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';

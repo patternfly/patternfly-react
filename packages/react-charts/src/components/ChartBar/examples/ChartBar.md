@@ -99,7 +99,7 @@ PurpleBottomLegend = (
 )
 ```
 
-### Multi-color (ordered) with bottom  left aligned legend
+### Multi-color (ordered) with bottom-left aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
