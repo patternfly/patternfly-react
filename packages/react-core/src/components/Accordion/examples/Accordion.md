@@ -8,6 +8,7 @@ propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionTog
 ## Examples
 ### Definition list
 ```js
+import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
 class SimpleAccordion extends React.Component {
@@ -130,6 +131,7 @@ class SimpleAccordion extends React.Component {
 
 ### Single expand behavior
 ```js
+import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
 class SimpleAccordion extends React.Component {
@@ -252,6 +254,7 @@ class SimpleAccordion extends React.Component {
 
 ### Fixed with multiple expand behavior
 ```js
+import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
 class FixedAccordion extends React.Component {

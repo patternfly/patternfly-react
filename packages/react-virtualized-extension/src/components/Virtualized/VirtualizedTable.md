@@ -43,6 +43,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 ### Basic
 ```js
+import React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -169,6 +170,7 @@ class VirtualizedExample extends React.Component {
 
 ### Sortable
 ```js
+import React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -320,6 +322,7 @@ class SortableExample extends React.Component {
 
 ### Selectable
 ```js
+import React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -476,6 +479,7 @@ class SelectableExample extends React.Component {
 
 ### Actions
 ```js
+import React from 'react';
 import { debounce } from 'lodash';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -627,6 +631,7 @@ class ActionsExample extends React.Component {
 
 ### Filterable with WindowScroller
 ```js
+import React from 'react';
 import {
   Button,
   ButtonVariant,

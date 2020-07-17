@@ -51,6 +51,7 @@ import imgAvatar from './imgAvatar.svg';
 
 ### Default nav
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -276,6 +277,7 @@ class PageLayoutDefaultNav extends React.Component {
 
 ### Expandable nav
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -525,6 +527,7 @@ class PageLayoutExpandableNav extends React.Component {
 
 ### Grouped nav
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -740,6 +743,7 @@ class PageLayoutGroupsNav extends React.Component {
 
 ### Horizontal nav
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -957,6 +961,7 @@ class PageLayoutHorizontalNav extends React.Component {
 
 ### Manual nav
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -1204,6 +1209,7 @@ class PageLayoutManualNav extends React.Component {
 
 ### Legacy/Light Nav
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,

@@ -10,6 +10,7 @@ import './split.css';
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
 SplitBasicExample = () => (
@@ -23,6 +24,7 @@ SplitBasicExample = () => (
 
 ### With gutter
 ```js
+import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
 SplitWithGutterExample = () => (

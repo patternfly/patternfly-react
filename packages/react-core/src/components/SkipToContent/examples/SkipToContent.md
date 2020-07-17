@@ -8,6 +8,7 @@ propComponents: ['SkipToContent']
 ## Examples
 ### Basic
 ```js isFullscreen
+import React from 'react';
 import { SkipToContent } from '@patternfly/react-core';
 
 class SimpleSkipToContent extends React.Component {

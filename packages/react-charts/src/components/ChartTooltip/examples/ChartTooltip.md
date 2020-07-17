@@ -16,6 +16,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Voronoi container
 ```js
+import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
@@ -81,6 +82,7 @@ VononoiContainer = (
 
 ### Combined cursor and voronoi containers
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
 class CombinedCursorVoronoiContainer extends React.Component {
@@ -169,6 +171,7 @@ class CombinedCursorVoronoiContainer extends React.Component {
 
 ### Embedded legend
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
 import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/js/chart_voronoi_labels_Fill';
@@ -265,6 +268,7 @@ class EmbeddedLegend extends React.Component {
 
 ### Embedded HTML
 ```js
+import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
@@ -396,6 +400,7 @@ class EmbeddedHtml extends React.Component {
 
 ### Data label
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 DataLabel = (
@@ -466,6 +471,7 @@ DataLabel = (
 
 ### Legend
 ```js
+import React from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -525,6 +531,7 @@ class TooltipPieChart extends React.Component {
 
 ### Left aligned
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 
 class TooltipThemeChart extends React.Component {
@@ -625,6 +632,7 @@ class TooltipThemeChart extends React.Component {
 
 ### CSS overflow
 ```js
+import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 CSSOverflow = (
@@ -662,6 +670,7 @@ CSSOverflow = (
 
 ### Wrapped chart
 ```js
+import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 import { Button, Tooltip, TooltipPosition } from '@patternfly/react-core';
 

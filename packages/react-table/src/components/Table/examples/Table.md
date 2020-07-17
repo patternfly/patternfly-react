@@ -51,6 +51,7 @@ import DemoSortableTable from './DemoSortableTable';
 
 ### Basic
 ```js
+import React from 'react';
 
 import {
   Table,
@@ -121,6 +122,7 @@ class SimpleTable extends React.Component {
 
 ### Row click handler
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -169,6 +171,7 @@ class RowClickTable extends React.Component {
 
 ### Custom row wrapper
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -244,6 +247,7 @@ class RowWrapperTable extends React.Component {
 
 ### Sortable
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -295,6 +299,7 @@ class SortableTable extends React.Component {
 
 ### Sortable with wrapping headers
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -362,6 +367,7 @@ class SortableWrappingHeaders extends React.Component {
 
 ### Selectable
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -459,6 +465,7 @@ class SelectableTable extends React.Component {
 
 ### Simple actions
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -522,6 +529,7 @@ class SimpleActionsTable extends React.Component {
 
 ### Actions
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -617,6 +625,7 @@ class ActionsTable extends React.Component {
 
 ### First cell as header
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -654,6 +663,7 @@ class CellHeader extends React.Component {
 
 ### Compact
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -690,6 +700,7 @@ class CompactTable extends React.Component {
 
 ### Compact borderless rows
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -732,6 +743,7 @@ class CompactTableBorderlessRows extends React.Component {
 
 ### Compact expandable
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -822,6 +834,7 @@ class CompactExpandableTable extends React.Component {
 
 ### With width modifiers
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -862,6 +875,7 @@ class WidthTable extends React.Component {
 
 ### Breakpoint modifiers
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -915,6 +929,7 @@ class HiddenVisibleBreakpointTable extends React.Component {
 
 ### Collapsible
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -1001,6 +1016,7 @@ class CollapsibleTable extends React.Component {
 
 ### Compound expandable
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -1201,6 +1217,7 @@ class CompoundExpandableTable extends React.Component {
 
 ### Controlling text
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -1256,6 +1273,7 @@ class ControllingText extends React.Component {
 
 ### Modifiers with table text
 ```js
+import React from 'react';
 import {
   Table,
   TableHeader,
@@ -1301,6 +1319,7 @@ class ModifiersWithTableText extends React.Component {
 
 ### Empty state
 ```js
+import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title } from '@patternfly/react-core';
 import { EmptyStateIcon } from '@patternfly/react-icons';
@@ -1331,6 +1350,7 @@ EmptyStateTable = () => {
 
 ### Editable rows
 ```js isBeta
+import React from 'react';
 import { TextInput, SelectOption } from '@patternfly/react-core';
 import {
   Table,

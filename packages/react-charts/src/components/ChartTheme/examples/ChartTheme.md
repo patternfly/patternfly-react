@@ -24,6 +24,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Green
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
   Green = (
@@ -97,6 +98,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
 
 ### Multi-color (ordered)
 ```js
+import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
   MultiColor = (
@@ -130,6 +132,7 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
 
 ### Multi color (unordered)
 ```js
+import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
@@ -196,6 +199,7 @@ MultiColorUnordered = (
 
 ### Custom colors
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 CustomColors = (
@@ -295,6 +299,7 @@ CustomColors = (
 
 ### Custom theme
 ```js
+import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import {
   chart_color_blue_300,

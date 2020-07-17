@@ -13,6 +13,7 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 
 ### Items
 ```js
+import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons';
@@ -54,6 +55,7 @@ class ToolbarItems extends React.Component {
 
 ### Adjusting item spacers
 ```js
+import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
@@ -131,6 +133,7 @@ Often, it makes sense to group sets of like items to create desired associations
 
 ### Groups
 ```js
+import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
@@ -327,6 +330,7 @@ The Toggle group can either have the toggle state managed by the consumer, or th
 
 ### Component managed toggle groups
 ```js
+import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
@@ -481,6 +485,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 
 ### Consumer managed toggle groups
 ```js
+import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons';
@@ -643,6 +648,7 @@ When filters are applied, the toolbar will expand in height to make space for a 
 
 ### Data toolbar with filters
 ```js
+import React from 'react';
 import {
   Toolbar,
   ToolbarItem,
@@ -909,6 +915,7 @@ There may be situations where all of the required elements simply cannot fit in 
 
 ### Stacked example
 ```js
+import React from 'react';
 import {
   Button,
   KebabToggle,

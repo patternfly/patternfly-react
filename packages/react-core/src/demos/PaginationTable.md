@@ -10,6 +10,7 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ### Basic
 ```js
+import React from 'react';
 import {
   Checkbox,
   Pagination,
@@ -175,6 +176,7 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 
 ### Automated pagination table demo
 ```js
+import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 

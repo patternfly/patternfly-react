@@ -6,6 +6,7 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ### Simple
 ```js
+import React from 'react';
 import { Dropdown, DropdownItem, DropdownPosition, DropdownToggle, DropdownToggleCheckbox, Pagination, Title, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 

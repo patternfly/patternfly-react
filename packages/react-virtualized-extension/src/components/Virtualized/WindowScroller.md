@@ -18,6 +18,7 @@ import windowScrollerStyles from './WindowScroller.example.css';
 ## Examples
 ### Window scroller
 ```js
+import React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';

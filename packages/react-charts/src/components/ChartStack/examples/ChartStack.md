@@ -25,6 +25,7 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 ## Examples
 ### Basic with right aligned legend
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 BasicRightAlignedLegend = (
@@ -61,6 +62,7 @@ BasicRightAlignedLegend = (
 
 ### Horizontal with bottom aligned legend
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 Horizontal = (
@@ -97,6 +99,7 @@ Horizontal = (
 
 ### Multi-color (ordered) horizontal with bottom aligned legend
 ```js
+import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 MultiColorHorizontal = (
@@ -167,6 +170,7 @@ MultiColorHorizontal = (
 
 ### Monthly data with responsive container
 ```js
+import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
 class MonthlyResponsiveStack extends React.Component {
@@ -283,6 +287,7 @@ class MonthlyResponsiveStack extends React.Component {
 
 ### Multi-color (unordered) responsive container
 ```js
+import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
 class MultiColorChart extends React.Component {

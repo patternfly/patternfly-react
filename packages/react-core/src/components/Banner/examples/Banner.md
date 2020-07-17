@@ -10,6 +10,7 @@ beta: true
 
 ### Basic
 ```js
+import React from 'react';
 import { Banner } from '@patternfly/react-core';
 
 BannerVariants = () => (

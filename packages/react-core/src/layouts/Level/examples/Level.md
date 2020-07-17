@@ -10,6 +10,7 @@ import './level.css';
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
 LevelBasicExample = () => (
@@ -23,6 +24,7 @@ LevelBasicExample = () => (
 
 ### With gutters
 ```js
+import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
 LevelWithGuttersExample = () => (

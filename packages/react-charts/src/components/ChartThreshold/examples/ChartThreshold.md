@@ -26,6 +26,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Multi-color (unordered) with responsive container
 ```js
+import React from 'react';
 import {
   Chart,
   ChartArea,

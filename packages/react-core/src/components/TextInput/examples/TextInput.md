@@ -8,6 +8,7 @@ propComponents: ['TextInput']
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 class SimpleTextInput extends React.Component {
@@ -33,6 +34,7 @@ class SimpleTextInput extends React.Component {
 
 ### Disabled
 ```js
+import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 <TextInput type="text" value="disabled text input example" aria-label="disabled text input example" isDisabled />
@@ -40,6 +42,7 @@ import { TextInput } from '@patternfly/react-core';
 
 ### Read only
 ```js
+import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 <TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />
@@ -47,6 +50,7 @@ import { TextInput } from '@patternfly/react-core';
 
 ### Invalid
 ```js
+import React from 'react';
 import { TextInput, ValidatedOptions } from '@patternfly/react-core';
 
 class InvalidTextInput extends React.Component {
@@ -79,6 +83,7 @@ class InvalidTextInput extends React.Component {
 
 ### Select text using ref
 ```js
+import React from 'react';
 import { TextInput, Button } from '@patternfly/react-core';
 
 TextInputSelectAll = () => {

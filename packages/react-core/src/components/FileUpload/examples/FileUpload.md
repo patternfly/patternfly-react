@@ -18,6 +18,7 @@ If `type="text"` is passed (and `hideDefaultPreview` is not), a `TextArea` previ
 
 ### Simple text file
 ```js
+import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
 class SimpleTextFileUpload extends React.Component {
@@ -51,6 +52,7 @@ A user can always type instead of selecting a file, but by default, once a user 
 
 ### Text file with edits allowed
 ```js
+import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
 class TextFileWithEditsAllowed extends React.Component {
@@ -91,6 +93,7 @@ Restricting file sizes and types in this way is for user convenience only, and i
 
 ### Text file with restrictions
 ```js
+import React from 'react';
 import { FileUpload, Form, FormGroup } from '@patternfly/react-core';
 
 class TextFileUploadWithRestrictions extends React.Component {
@@ -144,6 +147,7 @@ If no `type` prop is specified, the component will not read files directly. When
 
 ### Simple file of any format
 ```js
+import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
 class SimpleFileUpload extends React.Component {
@@ -166,6 +170,7 @@ Regardless of `type`, the preview area (the TextArea, or any future implementati
 
 ### Custom file preview
 ```js
+import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 import FileUploadIcon from '@patternfly/react-icons/dist/js/icons/file-upload-icon';
 
@@ -205,6 +210,7 @@ Note that the `isLoading` prop is styled to position the spinner dead center abo
 
 ### Custom file upload
 ```js
+import React from 'react';
 import { FileUploadField, Checkbox } from '@patternfly/react-core';
 
 class CustomFileUpload extends React.Component {

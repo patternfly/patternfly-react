@@ -22,6 +22,7 @@ import {
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { AtIcon, SearchIcon } from '@patternfly/react-icons';
 import {
   Button,
@@ -65,6 +66,7 @@ class SimpleInputGroups extends React.Component {
 
 ### With textarea
 ```js
+import React from 'react';
 import {
   Button,
   TextArea,
@@ -93,6 +95,7 @@ class SimpleInputGroups extends React.Component {
 
 ### With dropdown
 ```js
+import React from 'react';
 import {
   Button,
   InputGroup,
@@ -157,6 +160,7 @@ class SimpleInputGroups extends React.Component {
 
 ### With datepicker
 ```js
+import React from 'react';
 import { CalendarAltIcon } from '@patternfly/react-icons';
 import {
   InputGroup,
@@ -186,6 +190,7 @@ class SimpleInputGroups extends React.Component {
 
 ### With popover
 ```js
+import React from 'react';
 import { QuestionCircleIcon } from '@patternfly/react-icons';
 import {
   Button,
@@ -237,6 +242,7 @@ class SimpleInputGroups extends React.Component {
 
 ### With multiple group siblings
 ```js
+import React from 'react';
 import { DollarSignIcon } from '@patternfly/react-icons';
 import {
   Button,

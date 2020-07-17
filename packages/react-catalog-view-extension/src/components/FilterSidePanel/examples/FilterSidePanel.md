@@ -21,6 +21,7 @@ This package is currently an extension. Extension components do not undergo the 
 
 ### Basic
 ```js
+import React from 'react';
 import { FilterSidePanel, FilterSidePanelCategory, FilterSidePanelCategoryItem } from '@patternfly/react-catalog-view-extension';
 import { StarIcon, CcPaypalIcon, CcAmexIcon, CcDiscoverIcon, CcVisaIcon, CcMastercardIcon, CcDinersClubIcon } from '@patternfly/react-icons';
 import { TextInput } from '@patternfly/react-core';

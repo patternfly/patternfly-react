@@ -23,6 +23,7 @@ Learn to build a bullet chart using a Katacoda tutorial starting with a simple c
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 Basic = (
@@ -45,6 +46,7 @@ Basic = (
 
 ### Segmented primary measure
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 SegmentedPrimaryMeasure = (
@@ -78,6 +80,7 @@ SegmentedPrimaryMeasure = (
 
 ### Responsive container with bottom aligned legend
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 class BulletChart extends React.Component {
@@ -144,6 +147,7 @@ class BulletChart extends React.Component {
 
 ### Bullet chart with primary measure dot
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 PrimaryMeasureDot = (
@@ -177,6 +181,7 @@ PrimaryMeasureDot = (
 
 ### Error measure and custom axis ticks
 ```js
+import React from 'react';
 import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
 ErrorMeasureCustomAxis = (
@@ -217,6 +222,7 @@ ErrorMeasureCustomAxis = (
 
 ### Primary measure outside range
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 PrimaryMeasureOutsideRange = (
@@ -255,6 +261,7 @@ PrimaryMeasureOutsideRange = (
 
 ### Negative primary measure
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 NegativePrimaryMeasure = (
@@ -292,6 +299,7 @@ NegativePrimaryMeasure = (
 
 ### Reversed with right aligned legend
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 ReversedRightLegend = (
@@ -332,6 +340,7 @@ ReversedRightLegend = (
 
 ### Negative and positive primary measures
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 PrimaryMeasures = (
@@ -370,6 +379,7 @@ PrimaryMeasures = (
 
 ### Vertical with segmented primary measure
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 Vertical = (
@@ -404,6 +414,7 @@ Vertical = (
 
 ### Vertical primary measure outside max range
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 VerticalOutsideRange = (
@@ -440,6 +451,7 @@ VerticalOutsideRange = (
 
 ### Custom size
 ```js
+import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
 CustomSize = (
@@ -473,6 +485,7 @@ CustomSize = (
 
 ### Horizontal group
 ```js
+import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 HorizontalGroup = (
@@ -569,6 +582,7 @@ HorizontalGroup = (
 
 ### Vertical group
 ```js
+import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 VerticalGroup = (
@@ -669,6 +683,7 @@ VerticalGroup = (
 
 ### Horizontal group with title
 ```js
+import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 HorizontalGroupWithTitle = (
@@ -767,6 +782,7 @@ HorizontalGroupWithTitle = (
 
 ### Vertical group with title
 ```js
+import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 VerticalGroupWithTitle = (

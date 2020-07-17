@@ -12,6 +12,7 @@ import { WarningTriangleIcon, ThIcon, CaretDownIcon } from '@patternfly/react-ic
 
 ### Basic
 ```js
+import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
 class SimpleModal extends React.Component {
@@ -62,6 +63,7 @@ class SimpleModal extends React.Component {
 
 ### With description
 ```js
+import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
 class SimpleModal extends React.Component {
@@ -114,6 +116,7 @@ class SimpleModal extends React.Component {
 
 ### Small
 ```js
+import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class SmallModal extends React.Component {
@@ -165,6 +168,7 @@ class SmallModal extends React.Component {
 
 ### Large
 ```js
+import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class LargeModal extends React.Component {
@@ -216,6 +220,7 @@ class LargeModal extends React.Component {
 
 ### Width
 ```js
+import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
 class WidthModal extends React.Component {
@@ -267,6 +272,7 @@ class WidthModal extends React.Component {
 
 ### Custom header and footer
 ```js
+import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
@@ -335,6 +341,7 @@ class CustomHeaderFooter extends React.Component {
 
 ### No header
 ```js
+import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class NoHeader extends React.Component {
@@ -386,6 +393,7 @@ class NoHeader extends React.Component {
 
 ### With wizard
 ```js
+import React from 'react';
 import { Modal, Button, Wizard } from '@patternfly/react-core';
 
 class WithWizard extends React.Component {
@@ -444,6 +452,7 @@ class WithWizard extends React.Component {
 
 ### With dropdown
 ```js
+import React from 'react';
 import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
 
 class WithDropdown extends React.Component {

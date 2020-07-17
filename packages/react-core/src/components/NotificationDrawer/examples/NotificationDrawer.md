@@ -11,6 +11,7 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 
 class BasicNotificationDrawer extends React.Component {
@@ -152,6 +153,7 @@ constructor(props) {
 
 ### Groups
 ```js
+import React from 'react';
 import { Button, Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStatePrimary, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerGroup, NotificationDrawerGroupList, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
@@ -403,6 +405,7 @@ render() {
 
 ### Lightweight
 ```js
+import React from 'react';
 import {
   Button,
   EmptyState,

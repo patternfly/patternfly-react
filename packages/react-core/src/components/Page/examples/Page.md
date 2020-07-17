@@ -10,6 +10,7 @@ propComponents:
 
 ### Vertical nav
 ```js
+import React from 'react';
 import {
   Page,
   PageHeader,
@@ -65,6 +66,7 @@ class VerticalPage extends React.Component {
 
 ### Horizontal nav
 ```js
+import React from 'react';
 import {
   Page,
   PageHeader,
@@ -101,6 +103,7 @@ HorizontalPage = () => {
 
 ### Main Section Padding
 ```js
+import React from 'react';
 import {
   Page,
   PageHeader,
@@ -163,6 +166,7 @@ class VerticalPage extends React.Component {
 
 ### With or without fill
 ```js
+import React from 'react';
 import {
   Page,
   PageHeader,

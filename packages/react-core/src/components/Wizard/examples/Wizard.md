@@ -11,6 +11,7 @@ import SampleForm from './SampleForm';
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
 class SimpleWizard extends React.Component {
@@ -39,6 +40,7 @@ class SimpleWizard extends React.Component {
 
 ### Incrementally enabled steps
 ```js
+import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
 class DisabledStepsWizard extends React.Component {
@@ -82,6 +84,7 @@ class DisabledStepsWizard extends React.Component {
 
 ### Finished
 ```js
+import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 import FinishedStep from './examples/FinishedStep';
 
@@ -118,6 +121,7 @@ class FinishedStepWizard extends React.Component {
 
 ### Enabled on form validation
 ```js
+import React from 'react';
 import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
 
@@ -217,6 +221,7 @@ class ValidationWizard extends React.Component {
 
 ### Validate on button press
 ```js
+import React from 'react';
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
 import FinishedStep from './examples/FinishedStep';
@@ -306,6 +311,7 @@ class ValidateButtonPressWizard extends React.Component {
 
 ### Progressive steps
 ```js
+import React from 'react';
 import { Button, Radio, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
 import FinishedStep from './examples/FinishedStep';
@@ -570,6 +576,7 @@ class ProgressiveWizard extends React.Component {
 
 ### Remember last step
 ```js
+import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
 class SimpleWizard extends React.Component {
@@ -621,6 +628,7 @@ class SimpleWizard extends React.Component {
 ```
 ### Wizard in modal
 ```js
+import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
 class WizardInModal extends React.Component {

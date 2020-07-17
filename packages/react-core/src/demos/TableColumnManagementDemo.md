@@ -43,6 +43,7 @@ import {
 
 ### Column management action
 ```js
+import React from 'react';
 import {
   Button,
   Checkbox,

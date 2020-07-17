@@ -9,6 +9,7 @@ ouia: true
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 class SimpleSwitch extends React.Component {
@@ -39,6 +40,7 @@ class SimpleSwitch extends React.Component {
 
 ### Without label
 ```js
+import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 class NoLabelSwitch extends React.Component {
@@ -63,6 +65,7 @@ class NoLabelSwitch extends React.Component {
 
 ### Disabled
 ```js
+import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 DisabledSwitch = () => (
@@ -87,6 +90,7 @@ DisabledSwitch = () => (
 
 ### Uncontrolled
 ```js
+import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 UncontrolledSwitch = () => (

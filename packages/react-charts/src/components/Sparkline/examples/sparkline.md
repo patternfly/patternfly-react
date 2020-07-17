@@ -26,6 +26,7 @@ Learn to build a sparkline chart using a Katacoda tutorial starting with a simpl
 ## Examples
 ### Basic
 ```js
+import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 Basic = (
@@ -59,6 +60,7 @@ Basic = (
 
 ### Green
 ```js
+import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 Green = (

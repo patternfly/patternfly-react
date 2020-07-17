@@ -21,6 +21,7 @@ beta: true
 
 ### Basic
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -94,6 +95,7 @@ class SimpleDrawer extends React.Component {
 
 ### Panel on right
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -166,6 +168,7 @@ class SimpleDrawerPanelRight extends React.Component {
 
 ### Panel on left
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -238,6 +241,7 @@ class SimpleDrawerPanelLeft extends React.Component {
 
 ### Basic inline
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -310,6 +314,7 @@ class SimpleDrawerInlineContent extends React.Component {
 
 ### Inline panel on right
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -382,6 +387,7 @@ class DrawerInlineContentPanelRight extends React.Component {
 
 ### Inline panel on left
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -454,6 +460,7 @@ class DrawerInlineContentPanelLeft extends React.Component {
 
 ### Stacked content body elements
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -528,6 +535,7 @@ class DrawerStackedContentBodyElements extends React.Component {
 
 ### Stacked content body elements
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -602,6 +610,7 @@ class DrawerStackedContentBodyElements extends React.Component {
 
 ### Modified content padding
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -676,6 +685,7 @@ class DrawerModifiedContentPadding extends React.Component {
 
 ### Modified panel padding
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -748,6 +758,7 @@ class DrawerModifiedPanelPadding extends React.Component {
 
 ### Additional section above drawer content
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -822,6 +833,7 @@ class DrawerWithSection extends React.Component {
 
 ### Static drawer
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -860,6 +872,7 @@ StaticDrawer = () => {
 
 ### Breakpoint
 ```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,

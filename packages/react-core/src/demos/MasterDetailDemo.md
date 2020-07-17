@@ -22,6 +22,7 @@ import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgA
 
 ### Master detail full page
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -607,6 +608,7 @@ class MasterDetailFullPage extends React.Component {
 
 ### Master detail content padding
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -1193,6 +1195,7 @@ class MasterDetailContentPadding extends React.Component {
 
 ### Master detail card view
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -1680,6 +1683,7 @@ class MasterDetailCardView extends React.Component {
 
 ### Master detail simple list in card
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -1905,6 +1909,7 @@ class MasterDetailSimpleListInCard extends React.Component {
 
 ### Master detail data list in card
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
@@ -2214,6 +2219,7 @@ class MasterDetailDataListInCard extends React.Component {
 
 ### Master detail inline modifier
 ```js isFullscreen
+import React from 'react';
 import {
   Avatar,
   Brand,
