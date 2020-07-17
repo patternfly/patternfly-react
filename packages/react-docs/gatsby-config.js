@@ -91,7 +91,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md'],
-        rehypePlugins: [require('gatsby-theme-patternfly-org/helpers/codeTitleTransformer')],
+        rehypePlugins: [require('gatsby-theme-patternfly-org/helpers/codeTitleTransformer')]
       }
     },
     // The plugin for package.json files (to get version numbers)
