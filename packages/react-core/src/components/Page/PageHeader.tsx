@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Button, ButtonVariant } from '../../components/Button';
-import { PageContextConsumer } from './Page';
+import { PageContextConsumer, PageContextProps } from './Page';
 
 export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page header */
@@ -22,10 +23,7 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   showNavToggle?: boolean;
   /** True if the side nav is shown  */
   isNavOpen?: boolean;
-  /**
-   * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
-   * the sidebar component or add a callback onNavToggle function into the PageHeader component
-   */
+  /** This prop is no longer managed through PageHeader but in the Page component. */
   isManagedSidebar?: boolean;
   /** Sets the value for role on the <main> element */
   role?: string;
@@ -43,6 +41,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   headerTools = null as React.ReactNode,
   topNav = null as React.ReactNode,
   isNavOpen = true,
+  isManagedSidebar: deprecatedIsManagedSidebar = undefined,
   role = undefined as string,
   showNavToggle = false,
   onNavToggle = () => undefined as any,
@@ -50,9 +49,14 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   ...props
 }: PageHeaderProps) => {
   const LogoComponent = logoComponent as any;
+  if ([false, true].includes(deprecatedIsManagedSidebar)) {
+    console.warn(
+      'isManagedSidebar is deprecated in the PageHeader component. To make the sidebar toggle uncontrolled, pass this prop in the Page component'
+    );
+  }
   return (
     <PageContextConsumer>
-      {({ isManagedSidebar, onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }: PageHeaderProps) => {
+      {({ isManagedSidebar, onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }: PageContextProps) => {
         const navToggle = isManagedSidebar ? managedOnNavToggle : onNavToggle;
         const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 

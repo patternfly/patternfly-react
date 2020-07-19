@@ -224,3 +224,42 @@ class FillPage extends React.Component {
   }
 }
 ```
+### Uncontrolled nav
+```js
+import React from 'react';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
+
+class UncontrolledNavPage extends React.Component {
+  render() {
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
+    const Header = (
+      <PageHeader
+        logo="Logo"
+        logoProps={logoProps}
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
+        showNavToggle
+      />
+    );
+    const Sidebar = <PageSidebar nav="Navigation" />;
+
+    return (
+      <Page isManagedSidebar header={Header} sidebar={Sidebar}>
+        <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
+        <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
+        <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      </Page>
+    );
+  }
+}
+```

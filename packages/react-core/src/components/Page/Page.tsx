@@ -9,7 +9,18 @@ export enum PageLayouts {
   horizontal = 'horizontal'
 }
 
-const PageContext = React.createContext({});
+export interface PageContextProps {
+  isManagedSidebar: boolean;
+  onNavToggle: () => void;
+  isNavOpen: boolean;
+}
+
+const PageContext = React.createContext<PageContextProps>({
+  isManagedSidebar: false,
+  isNavOpen: false,
+  onNavToggle: () => null
+});
+
 export const PageContextProvider = PageContext.Provider;
 export const PageContextConsumer = PageContext.Consumer;
 
