@@ -20,7 +20,7 @@ export interface ModalContentProps extends OUIAProps {
   /** Additional classes added to the button */
   className?: string;
   /** Variant of the modal */
-  variant?: 'small' | 'large' | 'default';
+  variant?: 'small' | 'medium' | 'large' | 'default';
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
