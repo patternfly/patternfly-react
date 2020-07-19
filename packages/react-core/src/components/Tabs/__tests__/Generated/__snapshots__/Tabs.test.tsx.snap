@@ -30,7 +30,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
       onScroll={[Function]}
     >
       <li
-        className="pf-c-tabs__item ''"
+        className="pf-c-tabs__item"
         key="0"
       >
         <TabButton
