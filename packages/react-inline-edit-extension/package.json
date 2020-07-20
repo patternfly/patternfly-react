@@ -34,7 +34,6 @@
     "@patternfly/react-icons": "^4.5.1",
     "@patternfly/react-styles": "^4.5.0",
     "@patternfly/react-table": "^4.12.2",
-    "classnames": "^2.2.5",
     "reactabular-table": "^8.14.0"
   },
   "peerDependencies": {
