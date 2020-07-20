@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description List Auto Column Widths Description List 1`] = `
+<div
+  className="pf-c-description-list pf-m-auto-column-widths"
+/>
+`;
+
+exports[`Description List Description 1`] = `
+<dd
+  aria-labelledby="description-1"
+  className="pf-c-description-list__description custom-description-list-description"
+>
+  test
+</dd>
+`;
+
+exports[`Description List Description List default 1`] = `
+<div
+  className="pf-c-description-list"
+/>
+`;
+
+exports[`Description List Group 1`] = `
+<div
+  className="pf-c-description-list__group custom-description-list-group"
+>
+  test
+</div>
+`;
+
+exports[`Description List Horizontal Description List 1`] = `
+<div
+  className="pf-c-description-list pf-m-horizontal"
+/>
+`;
+
+exports[`Description List Inline Grid Description List 1`] = `
+<div
+  className="pf-c-description-list pf-m-inline-grid"
+/>
+`;
+
+exports[`Description List Term default 1`] = `
+<dt
+  aria-labelledby="term-1"
+  className="pf-c-description-list__term"
+>
+  test
+</dt>
+`;
+
+exports[`Description List Text 1`] = `
+<div
+  aria-labelledby="text-1"
+  className="custom-description-list-text"
+>
+  test
+</div>
+`;

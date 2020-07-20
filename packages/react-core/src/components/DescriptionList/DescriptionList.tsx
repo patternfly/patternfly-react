@@ -12,7 +12,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDivElemen
   /** Sets the description list to format automatically. */
   hasAutoColumnWidths?: boolean;
   /** Modifies the description list display to inline-grid. */
-  hasInlineGrid: boolean;
+  hasInlineGrid?: boolean;
   /** Sets the number of columns on the description list */
   variant?: '1Col' | '2Col' | '3Col';
   variantOnMd?: '1ColOnMd' | '2ColOnMd' | '3ColOnMd';

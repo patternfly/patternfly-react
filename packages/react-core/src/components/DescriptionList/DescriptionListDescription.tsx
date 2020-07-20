@@ -3,9 +3,9 @@ import styles from '@patternfly/react-styles/css/components/DescriptionList/desc
 import { css } from '@patternfly/react-styles';
 
 export interface DescriptionListDescriptionProps extends React.HTMLProps<HTMLDivElement> {
-  /** Anything that can be rendered inside of list text */
+  /** Anything that can be rendered inside of list description */
   children: React.ReactNode;
-  /** Additional classes added to the DescriptionListText */
+  /** Additional classes added to the DescriptionListDescription */
   className?: string;
 }
 

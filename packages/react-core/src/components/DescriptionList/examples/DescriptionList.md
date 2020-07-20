@@ -6,13 +6,14 @@ typescript: true
 propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionListGroup', 'DescriptionListTerm', 'DescriptionListText']
 ---
 
-import { DescriptionList, DescriptionListTerm, DescriptionListText, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListText, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
 
 ## Examples
 
 ```js title=Default
 import React from 'react';
 import {
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -74,6 +75,7 @@ SimpleDescriptionList = (
 ```js title=Default-2-col
 import React from 'react';
 import {
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -135,6 +137,7 @@ TwoColDescriptionList = (
 ```js title=Default-3-col-on-lg
 import React from 'react';
 import {
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -196,6 +199,7 @@ ThreeColOnLgDescriptionList = (
 ```js title=Horizontal
 import React from 'react';
 import {
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -257,6 +261,7 @@ HorizontalDescriptionList = (
 ```js title=Horizontal-2-col
 import React from 'react';
 import {
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -318,6 +323,7 @@ Horizontal2ColDescriptionList = (
 ```js title=Horizontal-3-col-on-lg
 import React from 'react';
 import {
+  Button,  
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -381,6 +387,7 @@ Horizontal3ColOnLgDescriptionList = (
 ```js title=Default-responsive-columns
 import React from 'react';
 import {
+  Button,  
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -442,6 +449,7 @@ ResponsiveDescriptionList = (
 ```js title=Horizontal-responsive-columns
 import React from 'react';
 import {
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -505,6 +513,7 @@ HorizontalResponsiveDescriptionList = (
 ```js title=Default-auto-column-width
 import React from 'react';
 import {
+  Button,  
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -566,6 +575,7 @@ AutoColumnsDescriptionList = (
 ```js title=Horizontal-auto-column-width
 import React from 'react';
 import {
+  Button,  
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -629,6 +639,7 @@ HorizontalAutoColumnsDescriptionList = (
 ```js title=Default-inline-grid
 import React from 'react';
 import {
+  Button,  
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
