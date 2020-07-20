@@ -77,7 +77,7 @@ export interface PopperProps {
   /** Callback function when popper is clicked */
   onPopperClick?: (event?: MouseEvent) => void;
   /** Callback function when document is clicked */
-  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement) => void;
+  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement, popperElement?: HTMLElement) => void;
   /** Callback function when keydown event occurs on document */
   onDocumentKeyDown?: (event?: KeyboardEvent) => void;
   /** Enable to flip the popper when it reaches the boundary */
@@ -113,9 +113,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
-  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, triggerElement), [
+  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, triggerElement, popperElement), [
     isVisible,
     triggerElement,
+    popperElement,
     onDocumentClick
   ]);
   React.useEffect(() => {

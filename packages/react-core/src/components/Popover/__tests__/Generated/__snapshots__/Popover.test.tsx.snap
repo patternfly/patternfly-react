@@ -19,7 +19,6 @@ exports[`Popover should match snapshot (auto-generated) 1`] = `
   isVisible={false}
   onDocumentClick={[Function]}
   onDocumentKeyDown={[Function]}
-  onPopperClick={[Function]}
   onTriggerClick={[Function]}
   onTriggerEnter={[Function]}
   placement="top"
