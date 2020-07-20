@@ -33,7 +33,7 @@ export default ${tokenName};
 `.trim()
   );
 
-const index = [];
+const allIndex = [];
 const componentIndex = [];
 
 const outputIndex = (index, indexFile) => {
@@ -51,7 +51,7 @@ exports.__esModule = true;
 ${index.map(file => `__export(require('./${file}'));`).join('\n')}
 `.trim()
   );
-}
+};
 
 /**
  * Writes CJS and ESM tokens to `dist` directory
@@ -65,7 +65,7 @@ function writeTokens(tokens) {
     writeESMExport(tokenName, tokenString);
     writeCJSExport(tokenName, tokenString);
     writeDTSExport(tokenName, tokenString);
-    index.push(tokenName);
+    allIndex.push(tokenName);
     componentIndex.push(tokenName);
 
     // Legacy token support -- values may be incorrect.
@@ -82,16 +82,16 @@ function writeTokens(tokens) {
         writeESMExport(oldTokenName, oldTokenString);
         writeCJSExport(oldTokenName, oldTokenString);
         writeDTSExport(oldTokenName, oldTokenString);
-        index.push(oldTokenName);
+        allIndex.push(oldTokenName);
       });
   });
 
   // Index files including legacy tokens
-  outputIndex(index, 'index.js');
+  outputIndex(allIndex, 'index.js');
   outputIndex(componentIndex, 'componentIndex.js');
 
   // eslint-disable-next-line no-console
-  console.log('Wrote', index.length * 3 + 3, 'token files');
+  console.log('Wrote', allIndex.length * 3 + 3, 'token files');
 }
 
 writeTokens(generateTokens());
