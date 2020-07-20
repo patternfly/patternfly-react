@@ -23,8 +23,6 @@
     "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts|virtualizedtable/selectable\""
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.1.5",
-    "@mdx-js/react": "^1.1.5",
     "@patternfly/patternfly": "4.23.3",
     "@patternfly/react-catalog-view-extension": "^4.5.3",
     "@patternfly/react-charts": "^6.6.2",
@@ -35,19 +33,21 @@
     "@patternfly/react-table": "^4.12.3",
     "@patternfly/react-tokens": "^4.7.0",
     "@patternfly/react-topology": "^4.4.32",
-    "@patternfly/react-virtualized-extension": "^4.5.22",
+    "@patternfly/react-virtualized-extension": "^4.5.22"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^1.1.5",
+    "@mdx-js/react": "^1.1.5",
+    "@patternfly/patternfly-a11y": "^0.0.17",
+    "@types/react": "^16.8.0",
+    "@types/react-dom": "^16.8.0",
     "gatsby": "2.21.0",
     "gatsby-theme-patternfly-org": "^4.2.6",
     "gatsby-transformer-react-docgen-typescript": "^4.0.5",
     "null-loader": "^3.0.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "react-helmet": "^5.2.1"
-  },
-  "devDependencies": {
-    "@patternfly/patternfly-a11y": "^0.0.17",
-    "@types/react": "^16.8.0",
-    "@types/react-dom": "^16.8.0",
+    "react-helmet": "^5.2.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"
   },
