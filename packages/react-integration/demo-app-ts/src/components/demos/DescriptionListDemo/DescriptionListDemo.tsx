@@ -6,8 +6,9 @@ import {
   DescriptionListTerm,
   DescriptionListText
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import React, { Component } from 'react';
+
 export class DescriptionListDemo extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);

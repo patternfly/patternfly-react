@@ -3,7 +3,15 @@ title: 'Description List'
 section: components
 cssPrefix: 'pf-c-description-list'
 typescript: true
-propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionListGroup', 'DescriptionListTerm', 'DescriptionListText']
+beta: true
+propComponents:
+  [
+    'DescriptionList',
+    'DescriptionListDescription',
+    'DescriptionListGroup',
+    'DescriptionListTerm',
+    'DescriptionListText',
+  ]
 ---
 
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListText, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
@@ -20,7 +28,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 SimpleDescriptionList = (
   <DescriptionList>
@@ -82,7 +90,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 TwoColDescriptionList = (
   <DescriptionList variant="2Col">
@@ -206,7 +214,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 HorizontalDescriptionList = (
   <DescriptionList isHorizontal>
@@ -268,7 +276,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 Horizontal2ColDescriptionList = (
   <DescriptionList isHorizontal variant="2Col">
@@ -323,7 +331,7 @@ Horizontal2ColDescriptionList = (
 ```js title=Horizontal-3-col-on-lg
 import React from 'react';
 import {
-  Button,  
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
@@ -387,14 +395,14 @@ Horizontal3ColOnLgDescriptionList = (
 ```js title=Default-responsive-columns
 import React from 'react';
 import {
-  Button,  
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 ResponsiveDescriptionList = (
   <DescriptionList variantOnLg="2ColOnLg" variantOnXl="3ColOnXl">
@@ -456,7 +464,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 HorizontalResponsiveDescriptionList = (
   <DescriptionList isHorizontal variantOnLg="2ColOnLg" variantOnXl="3ColOnXl">
@@ -513,14 +521,14 @@ HorizontalResponsiveDescriptionList = (
 ```js title=Default-auto-column-width
 import React from 'react';
 import {
-  Button,  
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 AutoColumnsDescriptionList = (
   <DescriptionList hasAutoColumnWidths variant="3Col">
@@ -575,14 +583,14 @@ AutoColumnsDescriptionList = (
 ```js title=Horizontal-auto-column-width
 import React from 'react';
 import {
-  Button,  
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 HorizontalAutoColumnsDescriptionList = (
   <DescriptionList isHorizontal hasAutoColumnWidths variantOnLg="2ColOnLg">
@@ -639,14 +647,14 @@ HorizontalAutoColumnsDescriptionList = (
 ```js title=Default-inline-grid
 import React from 'react';
 import {
-  Button,  
+  Button,
   DescriptionList,
   DescriptionListTerm,
   DescriptionListText,
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 InlineGridDescriptionList = (
   <DescriptionList variant="3Col" hasInlineGrid>
