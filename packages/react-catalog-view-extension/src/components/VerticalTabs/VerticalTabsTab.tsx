@@ -31,11 +31,7 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   onActivate = null,
   ...props
 }: VerticalTabsTabProps) => {
-  const classes = css(
-    'vertical-tabs-pf-tab',
-    { active, 'active-descendant': hasActiveDescendant, shown },
-    className
-  );
+  const classes = css('vertical-tabs-pf-tab', { active, 'active-descendant': hasActiveDescendant, shown }, className);
 
   const linkClasses = css({
     'no-wrap': wrapStyle === 'nowrap',
