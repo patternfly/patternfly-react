@@ -33,7 +33,7 @@
     "@patternfly/react-styles": "^4.5.0",
     "@patternfly/react-tokens": "^4.6.0",
     "hoist-non-react-statics": "^3.3.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "tslib": "^1.11.1",
     "victory": "^34.3.12",
     "victory-area": "^34.3.12",
@@ -60,7 +60,7 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.138",
+    "@types/lodash": "^4.14.157",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

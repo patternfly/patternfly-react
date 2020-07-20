@@ -33,7 +33,7 @@
     "@patternfly/react-styles": "^4.5.0",
     "d3": "^5.16.0",
     "dagre": "0.8.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.0",
     "point-in-svg-path": "^1.0.1",
