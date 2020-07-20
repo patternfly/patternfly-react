@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.6.4...@patternfly/react-docs@5.6.5) (2020-07-20)
+
+
+### Bug Fixes
+
+* **react-docs:** move non-patternfly deps to devDeps ([#4584](https://github.com/patternfly/patternfly-react/issues/4584)) ([912a4a7](https://github.com/patternfly/patternfly-react/commit/912a4a78716e053419e669ee67644c5d846d507a))
+
+
+
+
+
 ## [5.6.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.6.3...@patternfly/react-docs@5.6.4) (2020-07-20)
 
 **Note:** Version bump only for package @patternfly/react-docs
