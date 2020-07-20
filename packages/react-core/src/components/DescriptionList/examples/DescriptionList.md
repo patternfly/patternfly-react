@@ -64,11 +64,14 @@ SimpleDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -126,11 +129,14 @@ TwoColDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -250,11 +256,14 @@ HorizontalDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -312,11 +321,14 @@ Horizontal2ColDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -438,11 +450,14 @@ ResponsiveDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -500,11 +515,14 @@ HorizontalResponsiveDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -564,11 +582,14 @@ AutoColumnsDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -626,11 +647,14 @@ HorizontalAutoColumnsDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
@@ -690,11 +714,14 @@ InlineGridDescriptionList = (
       </DescriptionListTerm>
       <DescriptionListDescription>
         <DescriptionListText>
-          <Button variant="link" isInline icon={<PlusCircleIcon />}> app=MyApp </Button>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            {' '}
+            app=MyApp{' '}
+          </Button>
         </DescriptionListText>
       </DescriptionListDescription>
     </DescriptionListGroup>
-        <DescriptionListGroup>
+    <DescriptionListGroup>
       <DescriptionListTerm>
         <DescriptionListText>Annotation</DescriptionListText>
       </DescriptionListTerm>
