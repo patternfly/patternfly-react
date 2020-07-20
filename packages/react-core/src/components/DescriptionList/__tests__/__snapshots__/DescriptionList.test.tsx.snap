@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Description List Auto Column Widths Description List 1`] = `
-<div
+<dl
   className="pf-c-description-list pf-m-auto-column-widths"
 />
 `;
@@ -16,7 +16,7 @@ exports[`Description List Description 1`] = `
 `;
 
 exports[`Description List Description List default 1`] = `
-<div
+<dl
   className="pf-c-description-list"
 />
 `;
@@ -30,13 +30,13 @@ exports[`Description List Group 1`] = `
 `;
 
 exports[`Description List Horizontal Description List 1`] = `
-<div
+<dl
   className="pf-c-description-list pf-m-horizontal"
 />
 `;
 
 exports[`Description List Inline Grid Description List 1`] = `
-<div
+<dl
   className="pf-c-description-list pf-m-inline-grid"
 />
 `;

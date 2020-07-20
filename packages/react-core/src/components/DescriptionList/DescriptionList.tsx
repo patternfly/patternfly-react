@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 
-export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDivElement>, 'type'> {
+export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElement>, 'type'> {
   /** Anything that can be rendered inside of the list */
   children?: React.ReactNode;
   /** Additional classes added to the list */
@@ -64,7 +64,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   variantOn2xl,
   ...props
 }: DescriptionListProps) => (
-  <div
+  <dl
     {...props}
     className={css(
       styles.descriptionList,
@@ -80,6 +80,6 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
     )}
   >
     {children}
-  </div>
+  </dl>
 );
 DescriptionList.displayName = 'DescriptionList';
