@@ -158,7 +158,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 ThreeColOnLgDescriptionList = (
   <DescriptionList variantOnLg="3ColOnLg">
@@ -350,7 +350,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import plusCircleIcon as {PlusCircleIcon} from '@patternfly/react-icons';
+import { PlusCircleIcon } from '@patternfly/react-icons';
 
 Horizontal3ColOnLgDescriptionList = (
   <DescriptionList isHorizontal variantOnLg="3ColOnLg">
