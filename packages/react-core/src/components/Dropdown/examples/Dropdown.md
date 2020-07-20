@@ -1179,13 +1179,14 @@ class RouterDropdown extends React.Component {
 ```js
 import React from 'react';
 import {
+  Avatar,
   Dropdown,
   DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator
 } from '@patternfly/react-core';
-import { UserIcon } from '@patternfly/react-icons';
+import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
 class ImageTextDropdown extends React.Component {
   constructor(props) {
@@ -1234,7 +1235,7 @@ class ImageTextDropdown extends React.Component {
             id="toggle-id-9"
             onToggle={this.onToggle}
             toggleIndicator={CaretDownIcon}
-            icon={<UserIcon />}
+            icon={<Avatar src={avatarImg} alt="avatar"></Avatar>}
           >
             Ned Username
           </DropdownToggle>
