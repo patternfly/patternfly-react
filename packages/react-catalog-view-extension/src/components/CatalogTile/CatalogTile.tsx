@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, CardActions, CardHeader, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
@@ -102,7 +102,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         component={href || onClick ? 'a' : 'div'}
         id={id}
         href={href || '#'}
-        className={classNames('catalog-tile-pf', { featured }, className)}
+        className={css('catalog-tile-pf', { featured }, className)}
         onClick={e => this.handleClick(e)}
         isHoverable
         {...props}
@@ -121,7 +121,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         {description && (
           <CardBody className="catalog-tile-pf-body">
             <div className="catalog-tile-pf-description">
-              <span className={classNames({ 'has-footer': footer })}>{description}</span>
+              <span className={css({ 'has-footer': footer })}>{description}</span>
             </div>
           </CardBody>
         )}

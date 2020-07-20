@@ -165,16 +165,12 @@ Example bad:
 ```
 import { bindMethods } from  '../../../common/helpers';
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 ```
 
 Example good:
 
 ```
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { bindMethods } from  '../../../common/helpers';
 ```
 

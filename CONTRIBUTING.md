@@ -186,7 +186,6 @@ Please ensure that all React UI components contributed meet the following guidel
   the `index.js` file should be in a subfolder named `InnerComponents`
 - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
   See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
-- When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
 
   **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**

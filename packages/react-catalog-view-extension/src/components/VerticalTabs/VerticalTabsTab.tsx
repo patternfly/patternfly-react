@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement>, 'title'> {
   /** Child tab nodes (VerticalTabsTab's) */
@@ -31,13 +31,13 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   onActivate = null,
   ...props
 }: VerticalTabsTabProps) => {
-  const classes = classNames(
+  const classes = css(
     'vertical-tabs-pf-tab',
     { active, 'active-descendant': hasActiveDescendant, shown },
     className
   );
 
-  const linkClasses = classNames({
+  const linkClasses = css({
     'no-wrap': wrapStyle === 'nowrap',
     truncate: wrapStyle === 'truncate'
   });
