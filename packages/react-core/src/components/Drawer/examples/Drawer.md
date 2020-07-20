@@ -11,7 +11,7 @@ propComponents:
     DrawerSection,
     DrawerHead,
     DrawerActions,
-    DrawerCloseButton
+    DrawerCloseButton,
   ]
 section: components
 beta: true
@@ -20,6 +20,7 @@ beta: true
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import {
@@ -42,12 +43,18 @@ class SimpleDrawer extends React.Component {
       isExpanded: false
     };
     this.drawerRef = React.createRef();
+    this.panelRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
+      if (!this.state.isExpanded) {
+        document.addEventListener('click', this.onClickOutside);
+      } else {
+        document.removeEventListener('click', this.onClickOutside);
+      }
       const isExpanded = !this.state.isExpanded;
       this.setState({
         isExpanded
@@ -55,18 +62,28 @@ class SimpleDrawer extends React.Component {
     };
 
     this.onCloseClick = () => {
+      document.removeEventListener('click', this.onClickOutside);
       this.setState({
         isExpanded: false
       });
+    };
+
+    this.onClickOutside = event => {
+      if (this.panelRef.current.contains(event.target)) {
+        return;
+      }
+      this.onClick();
     };
   }
 
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent>
+      <DrawerPanelContent ref={this.panelRef}>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -94,6 +111,7 @@ class SimpleDrawer extends React.Component {
 ```
 
 ### Panel on right
+
 ```js
 import React from 'react';
 import {
@@ -117,7 +135,7 @@ class SimpleDrawerPanelRight extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -139,7 +157,9 @@ class SimpleDrawerPanelRight extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -167,6 +187,7 @@ class SimpleDrawerPanelRight extends React.Component {
 ```
 
 ### Panel on left
+
 ```js
 import React from 'react';
 import {
@@ -190,7 +211,7 @@ class SimpleDrawerPanelLeft extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -212,7 +233,9 @@ class SimpleDrawerPanelLeft extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -240,6 +263,7 @@ class SimpleDrawerPanelLeft extends React.Component {
 ```
 
 ### Basic inline
+
 ```js
 import React from 'react';
 import {
@@ -263,7 +287,7 @@ class SimpleDrawerInlineContent extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -285,7 +309,9 @@ class SimpleDrawerInlineContent extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -313,6 +339,7 @@ class SimpleDrawerInlineContent extends React.Component {
 ```
 
 ### Inline panel on right
+
 ```js
 import React from 'react';
 import {
@@ -336,7 +363,7 @@ class DrawerInlineContentPanelRight extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -358,7 +385,9 @@ class DrawerInlineContentPanelRight extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -386,6 +415,7 @@ class DrawerInlineContentPanelRight extends React.Component {
 ```
 
 ### Inline panel on left
+
 ```js
 import React from 'react';
 import {
@@ -409,7 +439,7 @@ class DrawerInlineContentPanelLeft extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -431,7 +461,9 @@ class DrawerInlineContentPanelLeft extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -459,6 +491,7 @@ class DrawerInlineContentPanelLeft extends React.Component {
 ```
 
 ### Stacked content body elements
+
 ```js
 import React from 'react';
 import {
@@ -482,7 +515,7 @@ class DrawerStackedContentBodyElements extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -504,7 +537,9 @@ class DrawerStackedContentBodyElements extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <h3 className= "pf-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer title </h3>
+          <h3 className="pf-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer title{' '}
+          </h3>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -534,6 +569,7 @@ class DrawerStackedContentBodyElements extends React.Component {
 ```
 
 ### Stacked content body elements
+
 ```js
 import React from 'react';
 import {
@@ -557,7 +593,7 @@ class DrawerStackedContentBodyElements extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -579,7 +615,9 @@ class DrawerStackedContentBodyElements extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <h3 className= "pf-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer title </h3>
+          <h3 className="pf-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer title{' '}
+          </h3>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -592,7 +630,7 @@ class DrawerStackedContentBodyElements extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick} >
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
@@ -609,6 +647,7 @@ class DrawerStackedContentBodyElements extends React.Component {
 ```
 
 ### Modified content padding
+
 ```js
 import React from 'react';
 import {
@@ -632,7 +671,7 @@ class DrawerModifiedContentPadding extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -654,7 +693,9 @@ class DrawerModifiedContentPadding extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -684,6 +725,7 @@ class DrawerModifiedContentPadding extends React.Component {
 ```
 
 ### Modified panel padding
+
 ```js
 import React from 'react';
 import {
@@ -707,7 +749,7 @@ class DrawerModifiedPanelPadding extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -729,7 +771,9 @@ class DrawerModifiedPanelPadding extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead hasNoPadding>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -757,6 +801,7 @@ class DrawerModifiedPanelPadding extends React.Component {
 ```
 
 ### Additional section above drawer content
+
 ```js
 import React from 'react';
 import {
@@ -781,7 +826,7 @@ class DrawerWithSection extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -803,7 +848,9 @@ class DrawerWithSection extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -832,6 +879,7 @@ class DrawerWithSection extends React.Component {
 ```
 
 ### Static drawer
+
 ```js
 import React from 'react';
 import {
@@ -871,6 +919,7 @@ StaticDrawer = () => {
 ```
 
 ### Breakpoint
+
 ```js
 import React from 'react';
 import {
@@ -894,7 +943,7 @@ class SimpleDrawer extends React.Component {
     this.drawerRef = React.createRef();
 
     this.onExpand = () => {
-      this.drawerRef.current && this.drawerRef.current.focus()
+      this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
@@ -916,7 +965,9 @@ class SimpleDrawer extends React.Component {
     const panelContent = (
       <DrawerPanelContent widths={{ default: 'width_33' }}>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>

@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<DrawerPanelContent
+  className="''"
+  hasNoPadding={false}
+  innerRef={null}
+>
+  <div>
+    ReactNode
+  </div>
+</DrawerPanelContent>
 `;

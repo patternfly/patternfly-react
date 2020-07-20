@@ -18,13 +18,16 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
     xl?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
+  /** Forward the ref outside the component */
+  innerRef?: React.Ref<HTMLDivElement>;
 }
 
-export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
+const DrawerPanelContentWithRef: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
   hasNoBorder = false,
   widths,
+  innerRef,
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
@@ -44,6 +47,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
               onExpand();
             }
           }}
+          ref={innerRef}
           hidden={hidden}
           {...props}
         >
@@ -53,4 +57,10 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
     }}
   </DrawerContext.Consumer>
 );
-DrawerPanelContent.displayName = 'DrawerPanelContent';
+DrawerPanelContentWithRef.displayName = 'DrawerPanelContent';
+
+export const DrawerPanelContent = React.forwardRef((props: DrawerPanelContentProps, ref: React.Ref<HTMLDivElement>) => (
+  <DrawerPanelContentWithRef innerRef={ref} {...props}>
+    {props.children}
+  </DrawerPanelContentWithRef>
+));
