@@ -62,7 +62,6 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   variantOnLg,
   variantOnXl,
   variantOn2xl,
-  // ref = null,
   ...props
 }: DescriptionListProps) => (
   <div
