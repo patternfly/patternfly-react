@@ -43,18 +43,12 @@ class SimpleDrawer extends React.Component {
       isExpanded: false
     };
     this.drawerRef = React.createRef();
-    this.panelRef = React.createRef();
 
     this.onExpand = () => {
       this.drawerRef.current && this.drawerRef.current.focus();
     };
 
     this.onClick = () => {
-      if (!this.state.isExpanded) {
-        document.addEventListener('click', this.onClickOutside);
-      } else {
-        document.removeEventListener('click', this.onClickOutside);
-      }
       const isExpanded = !this.state.isExpanded;
       this.setState({
         isExpanded
@@ -62,24 +56,16 @@ class SimpleDrawer extends React.Component {
     };
 
     this.onCloseClick = () => {
-      document.removeEventListener('click', this.onClickOutside);
       this.setState({
         isExpanded: false
       });
-    };
-
-    this.onClickOutside = event => {
-      if (this.panelRef.current.contains(event.target)) {
-        return;
-      }
-      this.onClick();
     };
   }
 
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent ref={this.panelRef}>
+      <DrawerPanelContent>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -964,6 +950,97 @@ class SimpleDrawer extends React.Component {
     const { isExpanded } = this.state;
     const panelContent = (
       <DrawerPanelContent widths={{ default: 'width_33' }}>
+        <DrawerHead>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel
+          </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const drawerContent =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
+
+    return (
+      <React.Fragment>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
+          <DrawerContent panelContent={panelContent}>
+            <DrawerContentBody>{drawerContent}</DrawerContentBody>
+          </DrawerContent>
+        </Drawer>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Click outside to close
+
+```js
+import React from 'react';
+import {
+  Drawer,
+  DrawerPanelContent,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelBody,
+  DrawerHead,
+  DrawerActions,
+  DrawerCloseButton,
+  Button,
+  Title
+} from '@patternfly/react-core';
+
+class SimpleDrawer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    };
+    this.drawerRef = React.createRef();
+    this.panelRef = React.createRef();
+
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus();
+    };
+
+    this.onClick = () => {
+      if (!this.state.isExpanded) {
+        document.addEventListener('click', this.onClickOutside);
+      } else {
+        document.removeEventListener('click', this.onClickOutside);
+      }
+      const isExpanded = !this.state.isExpanded;
+      this.setState({
+        isExpanded
+      });
+    };
+
+    this.onCloseClick = () => {
+      document.removeEventListener('click', this.onClickOutside);
+      this.setState({
+        isExpanded: false
+      });
+    };
+
+    this.onClickOutside = event => {
+      if (this.panelRef.current.contains(event.target)) {
+        return;
+      }
+      this.onClick();
+    };
+  }
+
+  render() {
+    const { isExpanded } = this.state;
+    const panelContent = (
+      <DrawerPanelContent ref={this.panelRef}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
