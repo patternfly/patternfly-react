@@ -120,13 +120,17 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   reference
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
-  const [refElement, setRefElement] = React.useState<HTMLElement>();
+  const [refElement, setRefElement] = React.useState<HTMLElement>(null);
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
-  const onDocumentClickCallback = React.useCallback(
-    event => onDocumentClick(event, refElement || triggerElement, popperElement),
-    [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
-  );
+  const refOrTrigger = refElement || triggerElement;
+  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refOrTrigger, popperElement), [
+    isVisible,
+    triggerElement,
+    refElement,
+    popperElement,
+    onDocumentClick
+  ]);
   React.useEffect(() => {
     setReady(true);
   }, []);
@@ -136,11 +140,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         setRefElement((reference as React.RefObject<any>).current);
       } else if (typeof reference === 'function') {
         setRefElement(reference());
-      } else {
-        setRefElement(null);
       }
-    } else {
-      setRefElement(null);
     }
   }, [reference]);
   const addEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
@@ -154,22 +154,22 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   };
   React.useEffect(() => {
-    addEventListener(onMouseEnter, refElement || triggerElement, 'mouseenter');
-    addEventListener(onMouseLeave, refElement || triggerElement, 'mouseleave');
-    addEventListener(onFocus, refElement || triggerElement, 'focus');
-    addEventListener(onBlur, refElement || triggerElement, 'blur');
-    addEventListener(onTriggerClick, refElement || triggerElement, 'click');
-    addEventListener(onTriggerEnter, refElement || triggerElement, 'keydown');
+    addEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
+    addEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
+    addEventListener(onFocus, refOrTrigger, 'focus');
+    addEventListener(onBlur, refOrTrigger, 'blur');
+    addEventListener(onTriggerClick, refOrTrigger, 'click');
+    addEventListener(onTriggerEnter, refOrTrigger, 'keydown');
     addEventListener(onPopperClick, popperElement, 'click');
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
     addEventListener(onDocumentKeyDown, document, 'keydown');
     return () => {
-      removeEventListener(onMouseEnter, refElement || triggerElement, 'mouseenter');
-      removeEventListener(onMouseLeave, refElement || triggerElement, 'mouseleave');
-      removeEventListener(onFocus, refElement || triggerElement, 'focus');
-      removeEventListener(onBlur, refElement || triggerElement, 'blur');
-      removeEventListener(onTriggerClick, refElement || triggerElement, 'click');
-      removeEventListener(onTriggerEnter, refElement || triggerElement, 'keydown');
+      removeEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
+      removeEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
+      removeEventListener(onFocus, refOrTrigger, 'focus');
+      removeEventListener(onBlur, refOrTrigger, 'blur');
+      removeEventListener(onTriggerClick, refOrTrigger, 'click');
+      removeEventListener(onTriggerEnter, refOrTrigger, 'keydown');
       removeEventListener(onPopperClick, popperElement, 'click');
       onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
       removeEventListener(onDocumentKeyDown, document, 'keydown');
@@ -221,7 +221,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes } = usePopper(refElement || triggerElement, popperElement, {
+  const { styles: popperStyles, attributes } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
