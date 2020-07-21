@@ -9,7 +9,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
     aria-disabled={true}
     aria-label={null}
     className="pf-c-button pf-m-primary pf-m-disabled"
-    data-ouia-component-id={17}
+    data-ouia-component-id={18}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={null}
@@ -163,6 +163,25 @@ exports[`isInline 1`] = `
     type="button"
   >
     Hovered Button
+  </button>
+</Button>
+`;
+
+exports[`isLarge 1`] = `
+<Button
+  isLarge={true}
+>
+  <button
+    aria-disabled={false}
+    aria-label={null}
+    className="pf-c-button pf-m-primary pf-m-display-lg"
+    data-ouia-component-id={15}
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={false}
+    type="button"
+  >
+    Large Button
   </button>
 </Button>
 `;
