@@ -1,6 +1,6 @@
 ---
-title: 'Virtual scroll table'
-section: 'extensions'
+id: Virtual scroll table
+section: extensions
 ---
 
 Note: React Virtualized Extension lives in its own package at [`@patternfly/react-virtualized-extension`](https://www.npmjs.com/package/@patternfly/react-virtualized-extension)!
@@ -41,8 +41,9 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 ## Examples
 
-```js title=Basic
-import * as React from 'react';
+### Basic
+```js
+import React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -167,8 +168,9 @@ class VirtualizedExample extends React.Component {
 }
 ```
 
-```js title=Sortable
-import * as React from 'react';
+### Sortable
+```js
+import React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -318,8 +320,9 @@ class SortableExample extends React.Component {
 }
 ```
 
-```js title=Selectable
-import * as React from 'react';
+### Selectable
+```js
+import React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -474,8 +477,9 @@ class SelectableExample extends React.Component {
 }
 ```
 
-```js title=Actions
-import * as React from 'react';
+### Actions
+```js
+import React from 'react';
 import { debounce } from 'lodash';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
@@ -625,8 +629,9 @@ class ActionsExample extends React.Component {
 }
 ```
 
-```js title=Filterable-with-WindowScroller
-import * as React from 'react';
+### Filterable with WindowScroller
+```js
+import React from 'react';
 import {
   Button,
   ButtonVariant,

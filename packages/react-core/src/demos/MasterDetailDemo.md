@@ -1,91 +1,27 @@
 ---
-title: 'Master detail'
-section: 'demos'
+id: Master detail
+section: demos
 ---
 
 ## Examples
 
-import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  ButtonVariant,
-  Dropdown,
-  Card,
-  CardActions,
-  CardBody,
-  CardHeader,
-  DataList,
-  DataListAction,
-  DataListItem,
-  DataListItemCells,
-  DataListItemRow,
-  Toolbar,
-  ToolbarItem,
-  ToolbarContent,
-  ToolbarFilter,
-  ToolbarToggleGroup,
-  ToolbarGroup,
-  Divider,
-  Drawer,
-  DrawerActions,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerContentBody,
-  DrawerHead,
-  DrawerPanelContent,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  Flex,
-  FlexItem,
-  Gallery,
-  GalleryItem,
-  InputGroup,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
-  PageSection,
-  PageSectionVariants,
-  PageSidebar,
-  Select,
-  SelectOption,
-  SimpleList,
-  SimpleListItem,
-  SkipToContent,
-  Stack,
-  StackItem,
-  Text,
-  TextContent,
-  TextInput,
-  Title
-} from '@patternfly/react-core';
-
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
-import { 
-  BellIcon,
-  CodeBranchIcon,
-  CodeIcon,
-  CogIcon,
-  CubeIcon,
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
-  FilterIcon,
-  SearchIcon,
-  TimesCircleIcon 
+BellIcon,
+CodeBranchIcon,
+CodeIcon,
+CogIcon,
+CubeIcon,
+CheckCircleIcon,
+ExclamationTriangleIcon,
+FilterIcon,
+SearchIcon,
+TimesCircleIcon
 } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 
-```js title=Master-detail-full-page isFullscreen
+### Master detail full page
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -146,10 +82,7 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
-import { 
+import {
   BellIcon,
   CodeBranchIcon,
   CodeIcon,
@@ -159,7 +92,7 @@ import {
   ExclamationTriangleIcon,
   FilterIcon,
   SearchIcon,
-  TimesCircleIcon 
+  TimesCircleIcon
 } from '@patternfly/react-icons';
 
 class MasterDetailFullPage extends React.Component {
@@ -167,18 +100,18 @@ class MasterDetailFullPage extends React.Component {
     super(props);
     this.state = {
       isDrawerExpanded: false,
-      drawerPanelBodyContent: "",
+      drawerPanelBodyContent: '',
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       activeItem: 0,
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       statusSelected: null,
       riskIsExpanded: false,
       riskSelected: null,
       selectedDataListItemId: ''
     };
-    
+
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
         isDropdownOpen
@@ -208,25 +141,25 @@ class MasterDetailFullPage extends React.Component {
         activeItem: result.itemId
       });
     };
-    
+
     this.statusOptions = [
       { value: 'Status', disabled: false, isPlaceholder: true },
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
       { value: 'Running', disabled: false },
-      { value: 'Cancelled', disabled: false },
+      { value: 'Cancelled', disabled: false }
     ];
 
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
-      { value: 'High', disabled: false },
+      { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
-         this.setState({inputValue: newValue});
-        };
+    this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
+    };
 
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -269,15 +202,15 @@ class MasterDetailFullPage extends React.Component {
         riskIsExpanded: false
       });
     };
-    
+
     this.onSelectDataListItem = id => {
-      this.setState({ 
+      this.setState({
         selectedDataListItemId: id,
         isDrawerExpanded: true,
-        drawerPanelBodyContent: id.charAt(id.length-1)
+        drawerPanelBodyContent: id.charAt(id.length - 1)
       });
     };
-    
+
     this.onCloseDrawerClick = () => {
       this.setState({
         isDrawerExpanded: false,
@@ -287,10 +220,22 @@ class MasterDetailFullPage extends React.Component {
   }
 
   render() {
-    const { isDrawerExpanded, drawerPanelBodyContent, isDropdownOpen, isKebabDropdownOpen, activeItem, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected, selectedDataListItemId } = this.state;
+    const {
+      isDrawerExpanded,
+      drawerPanelBodyContent,
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      activeItem,
+      inputValue,
+      statusIsExpanded,
+      statusSelected,
+      riskIsExpanded,
+      riskSelected,
+      selectedDataListItemId
+    } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -329,11 +274,7 @@ class MasterDetailFullPage extends React.Component {
       <DropdownItem>Separated link</DropdownItem>,
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
-    const PageToolbar = (
-      <div>
-        need to implement new toolbar
-      </div>
-    );
+    const PageToolbar = <div>need to implement new toolbar</div>;
 
     const Header = (
       <PageHeader
@@ -343,7 +284,7 @@ class MasterDetailFullPage extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -357,17 +298,25 @@ class MasterDetailFullPage extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="full-page-data-toolbar-input1" id="full-page-data-toolbar-input1" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
+
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput
+              name="full-page-data-toolbar-input1"
+              id="full-page-data-toolbar-input1"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarGroup variant="filter-group">
           <ToolbarItem>
             <Select
               variant={SelectVariant.single}
@@ -378,11 +327,7 @@ class MasterDetailFullPage extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-               <SelectOption
-                 isDisabled={option.disabled}
-                 key={index}
-                 value={option.value}
-               />
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
               ))}
             </Select>
           </ToolbarItem>
@@ -396,37 +341,44 @@ class MasterDetailFullPage extends React.Component {
               isExpanded={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption
-                   isDisabled={option.disabled}
-                   key={index}
-                   value={option.value}
-                 />
-               ))}
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              ))}
             </Select>
           </ToolbarItem>
-       </ToolbarGroup>
-    </React.Fragment>;
+        </ToolbarGroup>
+      </React.Fragment>
+    );
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
-    
+    const ToolbarItems = (
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        {toggleGroupItems}
+      </ToolbarToggleGroup>
+    );
+
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title headingLevel="h2" size="xl">node-{drawerPanelBodyContent}</Title>
+          <Title headingLevel="h2" size="xl">
+            node-{drawerPanelBodyContent}
+          </Title>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
+            <DrawerCloseButton onClick={this.onCloseDrawerClick} />
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
-              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+              <p>
+                The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                and can also make the drawer scrollable.
+              </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*10} title="Title" />
+              <Progress value={drawerPanelBodyContent * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*5} title="Title" />
+              <Progress value={drawerPanelBodyContent * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
@@ -434,12 +386,14 @@ class MasterDetailFullPage extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="full-page-data-toolbar" className='pf-m-toggle-group-container'>
-          <ToolbarContent>
-            {ToolbarItems}
-          </ToolbarContent>
+        <Toolbar id="full-page-data-toolbar" className="pf-m-toggle-group-container">
+          <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
-        <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
+        <DataList
+          aria-label="data list"
+          selectedDataListItemId={selectedDataListItemId}
+          onSelectDataListItem={this.onSelectDataListItem}
+        >
           <DataListItem aria-labelledby="selectable-action-item1" id="full-page-item1">
             <DataListItemRow>
               <DataListItemCells
@@ -448,12 +402,20 @@ class MasterDetailFullPage extends React.Component {
                     <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
-                        <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
+                        <small>
+                          Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a>
+                        </small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -483,12 +445,24 @@ class MasterDetailFullPage extends React.Component {
                         <small>PatternFly elements</small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
-                        <FlexItem><CheckCircleIcon /> 7</FlexItem>
-                        <FlexItem><ExclamationTriangleIcon /> 5</FlexItem>
-                        <FlexItem><TimesCircleIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <CheckCircleIcon /> 7
+                        </FlexItem>
+                        <FlexItem>
+                          <ExclamationTriangleIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <TimesCircleIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -515,12 +489,20 @@ class MasterDetailFullPage extends React.Component {
                     <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
-                        <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
+                        <small>
+                          Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a>
+                        </small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -550,12 +532,24 @@ class MasterDetailFullPage extends React.Component {
                         <small>PatternFly elements</small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
-                        <FlexItem><CheckCircleIcon /> 7</FlexItem>
-                        <FlexItem><ExclamationTriangleIcon /> 5</FlexItem>
-                        <FlexItem><TimesCircleIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <CheckCircleIcon /> 7
+                        </FlexItem>
+                        <FlexItem>
+                          <ExclamationTriangleIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <TimesCircleIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -575,8 +569,8 @@ class MasterDetailFullPage extends React.Component {
             </DataListItemRow>
           </DataListItem>
         </DataList>
-      </React.Fragment> 
-    )
+      </React.Fragment>
+    );
 
     return (
       <React.Fragment>
@@ -597,7 +591,7 @@ class MasterDetailFullPage extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <Divider component="div"/>
+          <Divider component="div" />
           <PageSection variant={PageSectionVariants.light} noPadding={true}>
             <Drawer isExpanded={isDrawerExpanded}>
               <DrawerContent panelContent={panelContent}>
@@ -610,10 +604,10 @@ class MasterDetailFullPage extends React.Component {
     );
   }
 }
-
 ```
 
-```js title=Master-detail-content-padding isFullscreen
+### Master detail content padding
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -674,10 +668,7 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
-import { 
+import {
   BellIcon,
   CodeBranchIcon,
   CodeIcon,
@@ -687,7 +678,7 @@ import {
   ExclamationTriangleIcon,
   FilterIcon,
   SearchIcon,
-  TimesCircleIcon 
+  TimesCircleIcon
 } from '@patternfly/react-icons';
 
 class MasterDetailContentPadding extends React.Component {
@@ -695,18 +686,18 @@ class MasterDetailContentPadding extends React.Component {
     super(props);
     this.state = {
       isDrawerExpanded: false,
-      drawerPanelBodyContent: "",
+      drawerPanelBodyContent: '',
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       activeItem: 0,
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       statusSelected: null,
       riskIsExpanded: false,
       riskSelected: null,
       selectedDataListItemId: ''
     };
-    
+
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
         isDropdownOpen
@@ -736,25 +727,25 @@ class MasterDetailContentPadding extends React.Component {
         activeItem: result.itemId
       });
     };
-    
+
     this.statusOptions = [
       { value: 'Status', disabled: false, isPlaceholder: true },
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
       { value: 'Running', disabled: false },
-      { value: 'Cancelled', disabled: false },
+      { value: 'Cancelled', disabled: false }
     ];
 
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
-      { value: 'High', disabled: false },
+      { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
-         this.setState({inputValue: newValue});
-        };
+    this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
+    };
 
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -797,15 +788,15 @@ class MasterDetailContentPadding extends React.Component {
         riskIsExpanded: false
       });
     };
-    
+
     this.onSelectDataListItem = id => {
-      this.setState({ 
+      this.setState({
         selectedDataListItemId: id,
         isDrawerExpanded: true,
-        drawerPanelBodyContent: id.charAt(id.length-1)
+        drawerPanelBodyContent: id.charAt(id.length - 1)
       });
     };
-    
+
     this.onCloseDrawerClick = () => {
       this.setState({
         isDrawerExpanded: false,
@@ -815,10 +806,22 @@ class MasterDetailContentPadding extends React.Component {
   }
 
   render() {
-    const { isDrawerExpanded, drawerPanelBodyContent, isDropdownOpen, isKebabDropdownOpen, activeItem, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected, selectedDataListItemId } = this.state;
+    const {
+      isDrawerExpanded,
+      drawerPanelBodyContent,
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      activeItem,
+      inputValue,
+      statusIsExpanded,
+      statusSelected,
+      riskIsExpanded,
+      riskSelected,
+      selectedDataListItemId
+    } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -857,11 +860,7 @@ class MasterDetailContentPadding extends React.Component {
       <DropdownItem>Separated link</DropdownItem>,
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
-    const PageToolbar = (
-      <div>
-        need to implement new toolbar
-      </div>
-    );
+    const PageToolbar = <div>need to implement new toolbar</div>;
 
     const Header = (
       <PageHeader
@@ -871,7 +870,7 @@ class MasterDetailContentPadding extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -885,90 +884,103 @@ class MasterDetailContentPadding extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="content-padding-data-toolbar-input1" id="content-padding-data-toolbar-input1" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
-        <ToolbarItem>
-          <Select
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            onToggle={this.onStatusToggle}
-            onSelect={this.onStatusSelect}
-            selections={statusSelected}
-            isExpanded={statusIsExpanded}
-          >
-            {this.statusOptions.map((option, index) => (
-             <SelectOption
-               isDisabled={option.disabled}
-               key={index}
-               value={option.value}
-             />
-            ))}
-          </Select>
-        </ToolbarItem>
-        <ToolbarItem>
-          <Select
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            onToggle={this.onRiskToggle}
-            onSelect={this.onRiskSelect}
-            selections={riskSelected}
-            isExpanded={riskIsExpanded}
-          >
-            {this.riskOptions.map((option, index) => (
-              <SelectOption
-                 isDisabled={option.disabled}
-                 key={index}
-                 value={option.value}
-               />
-             ))}
-          </Select>
-        </ToolbarItem>
-      </ToolbarGroup>
-    </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
-    
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput
+              name="content-padding-data-toolbar-input1"
+              id="content-padding-data-toolbar-input1"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarGroup variant="filter-group">
+          <ToolbarItem>
+            <Select
+              variant={SelectVariant.single}
+              aria-label="Select Input"
+              onToggle={this.onStatusToggle}
+              onSelect={this.onStatusSelect}
+              selections={statusSelected}
+              isExpanded={statusIsExpanded}
+            >
+              {this.statusOptions.map((option, index) => (
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              ))}
+            </Select>
+          </ToolbarItem>
+          <ToolbarItem>
+            <Select
+              variant={SelectVariant.single}
+              aria-label="Select Input"
+              onToggle={this.onRiskToggle}
+              onSelect={this.onRiskSelect}
+              selections={riskSelected}
+              isExpanded={riskIsExpanded}
+            >
+              {this.riskOptions.map((option, index) => (
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              ))}
+            </Select>
+          </ToolbarItem>
+        </ToolbarGroup>
+      </React.Fragment>
+    );
+
+    const ToolbarItems = (
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        {toggleGroupItems}
+      </ToolbarToggleGroup>
+    );
+
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title headingLevel="h2" size="xl">node-{drawerPanelBodyContent}</Title>
+          <Title headingLevel="h2" size="xl">
+            node-{drawerPanelBodyContent}
+          </Title>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
+            <DrawerCloseButton onClick={this.onCloseDrawerClick} />
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
-              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+              <p>
+                The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                and can also make the drawer scrollable.
+              </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*10} title="Title" />
+              <Progress value={drawerPanelBodyContent * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*5} title="Title" />
+              <Progress value={drawerPanelBodyContent * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
       </DrawerPanelContent>
     );
-    
+
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="content-padding-data-toolbar" className='pf-m-toggle-group-container'>
-          <ToolbarContent>
-            {ToolbarItems}
-          </ToolbarContent>
+        <Toolbar id="content-padding-data-toolbar" className="pf-m-toggle-group-container">
+          <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
-        <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
+        <DataList
+          aria-label="data list"
+          selectedDataListItemId={selectedDataListItemId}
+          onSelectDataListItem={this.onSelectDataListItem}
+        >
           <DataListItem aria-labelledby="selectable-action-item1" id="content-padding-item1">
             <DataListItemRow>
               <DataListItemCells
@@ -977,12 +989,20 @@ class MasterDetailContentPadding extends React.Component {
                     <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
-                        <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
+                        <small>
+                          Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a>
+                        </small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -1012,12 +1032,24 @@ class MasterDetailContentPadding extends React.Component {
                         <small>PatternFly elements</small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
-                        <FlexItem><CheckCircleIcon /> 7</FlexItem>
-                        <FlexItem><ExclamationTriangleIcon /> 5</FlexItem>
-                        <FlexItem><TimesCircleIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <CheckCircleIcon /> 7
+                        </FlexItem>
+                        <FlexItem>
+                          <ExclamationTriangleIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <TimesCircleIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -1044,12 +1076,20 @@ class MasterDetailContentPadding extends React.Component {
                     <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
-                        <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
+                        <small>
+                          Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a>
+                        </small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -1079,12 +1119,24 @@ class MasterDetailContentPadding extends React.Component {
                         <small>PatternFly elements</small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
-                        <FlexItem><CheckCircleIcon /> 7</FlexItem>
-                        <FlexItem><ExclamationTriangleIcon /> 5</FlexItem>
-                        <FlexItem><TimesCircleIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <CheckCircleIcon /> 7
+                        </FlexItem>
+                        <FlexItem>
+                          <ExclamationTriangleIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <TimesCircleIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -1104,8 +1156,8 @@ class MasterDetailContentPadding extends React.Component {
             </DataListItemRow>
           </DataListItem>
         </DataList>
-      </React.Fragment> 
-    )
+      </React.Fragment>
+    );
 
     return (
       <React.Fragment>
@@ -1126,7 +1178,7 @@ class MasterDetailContentPadding extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <Divider component="div"/>
+          <Divider component="div" />
           <PageSection noPadding={true}>
             <Drawer isExpanded={isDrawerExpanded}>
               <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
@@ -1139,10 +1191,10 @@ class MasterDetailContentPadding extends React.Component {
     );
   }
 }
-
 ```
 
-```js title=Master-detail-card-view isFullscreen
+### Master detail card view
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1181,6 +1233,10 @@ import {
   NavItem,
   NavList,
   NavVariants,
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   Page,
   PageHeader,
   PageSection,
@@ -1197,12 +1253,9 @@ import {
   ToolbarItem,
   ToolbarContent,
   ToolbarFilter,
-  ToolbarToggleGroup,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
@@ -1233,7 +1286,7 @@ class MasterDetailCardView extends React.Component {
       isLowerToolbarDropdownOpen: false,
       isLowerToolbarKebabDropdownOpen: false,
       isCardKebabDropdownOpen: false,
-      activeItem: 0,
+      activeItem: 0
     };
 
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
@@ -1327,39 +1380,39 @@ class MasterDetailCardView extends React.Component {
         });
       }
     };
-    
+
     this.onCloseDrawerClick = () => {
       this.setState({
         activeCard: null,
         isDrawerExpanded: false
       });
     };
-    
+
     this.onKeyDown = event => {
       if (event.target !== event.currentTarget || event.currentTarget.id === this.state.activeCard) {
         return;
       }
       if ([13, 32].includes(event.keyCode)) {
-        const newSelected = event.currentTarget.id
+        const newSelected = event.currentTarget.id;
         this.setState({
           activeCard: newSelected,
           isDrawerExpanded: true
-        })
+        });
       }
-    }
-    
+    };
+
     this.onCardClick = event => {
       if (event.currentTarget.id === this.state.activeCard) {
         return;
       }
-      
-      const newSelected = event.currentTarget.id
-      
+
+      const newSelected = event.currentTarget.id;
+
       this.setState({
         activeCard: newSelected,
         isDrawerExpanded: true
-      })
-    }; 
+      });
+    };
   }
 
   getAllItems() {
@@ -1428,7 +1481,7 @@ class MasterDetailCardView extends React.Component {
       isCardKebabDropdownOpen,
       activeItem,
       filters,
-      res,
+      res
     } = this.state;
 
     const toolbarKebabDropdownItems = [
@@ -1451,24 +1504,28 @@ class MasterDetailCardView extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
-        <ToolbarItem>
-          <Button variant="primary">Create a Project</Button>
-        </ToolbarItem>
-        <ToolbarItem>
-          <Dropdown
-            onSelect={this.onToolbarKebabDropdownSelect}
-            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
-            isOpen={isLowerToolbarKebabDropdownOpen}
-            isPlain
-            dropdownItems={toolbarKebabDropdownItems}
-          />
+        <ToolbarItem variant="overflow-menu">
+          <OverflowMenu breakpoint="xl">
+            <OverflowMenuItem isPersistent>{this.buildFilterDropdown()}</OverflowMenuItem>
+            <OverflowMenuItem isPersistent>
+              <Button variant="primary">Create a Project</Button>
+            </OverflowMenuItem>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={this.onToolbarKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
+                isOpen={isLowerToolbarKebabDropdownOpen}
+                isPlain
+                dropdownItems={toolbarKebabDropdownItems}
+              />
+            </OverflowMenuControl>
+          </OverflowMenu>
         </ToolbarItem>
       </React.Fragment>
     );
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -1501,11 +1558,7 @@ class MasterDetailCardView extends React.Component {
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
 
-    const PageToolbar = (
-      <div>
-        need to implement new toolbar
-      </div>
-    );
+    const PageToolbar = <div>need to implement new toolbar</div>;
 
     const Header = (
       <PageHeader
@@ -1515,7 +1568,7 @@ class MasterDetailCardView extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-card-view-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
@@ -1538,12 +1591,20 @@ class MasterDetailCardView extends React.Component {
       restIcon,
       swaggerIcon
     };
-    
+
     const drawerContent = (
       <Gallery gutter="md">
         {filtered.map((product, key) => (
           <React.Fragment>
-            <Card isHoverable key={key} id={'card-view-' + key} onKeyDown={this.onKeyDown} onClick={this.onCardClick} isSelectable isSelected={activeCard === key}>
+            <Card
+              isHoverable
+              key={key}
+              id={'card-view-' + key}
+              onKeyDown={this.onKeyDown}
+              onClick={this.onCardClick}
+              isSelectable
+              isSelected={activeCard === key}
+            >
               <CardHeader>
                 <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
               </CardHeader>
@@ -1554,25 +1615,31 @@ class MasterDetailCardView extends React.Component {
         ))}
       </Gallery>
     );
-    
+
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title headingLevel="h2" size="xl">node-{activeCard && activeCard.charAt(activeCard.length-1)}</Title>
+          <Title headingLevel="h2" size="xl">
+            node-{activeCard && activeCard.charAt(activeCard.length - 1)}
+          </Title>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
+            <DrawerCloseButton onClick={this.onCloseDrawerClick} />
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
-              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+              <p>
+                The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                and can also make the drawer scrollable.
+              </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard*10} title="Title" />
+              <Progress value={activeCard * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard*5} title="Title" />
+              <Progress value={activeCard * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
@@ -1614,7 +1681,8 @@ class MasterDetailCardView extends React.Component {
 }
 ```
 
-```js title=Master-detail-simple-list-in-card isFullscreen
+### Master detail simple list in card
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1668,15 +1736,7 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
-import { 
-  BellIcon,
-  CogIcon,
-  FilterIcon,
-  SearchIcon,
-} from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
 class MasterDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -1687,21 +1747,20 @@ class MasterDetailSimpleListInCard extends React.Component {
       isKebabDropdownOpen: false,
       isDropdownOpen: false
     };
-    
+
     this.onSelectListItem = (listItem, listItemProps) => {
       const id = listItemProps.id;
       this.setState({
-        drawerPanelBodyContent: id.charAt(id.length-1)
+        drawerPanelBodyContent: id.charAt(id.length - 1)
       });
     };
-
   }
 
   render() {
     const { drawerPanelBodyContent, selectedListItemId, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -1721,12 +1780,8 @@ class MasterDetailSimpleListInCard extends React.Component {
         </NavList>
       </Nav>
     );
-    
-    const PageToolbar = (
-      <div>
-        need to implement new toolbar
-      </div>
-    );
+
+    const PageToolbar = <div>need to implement new toolbar</div>;
 
     const Header = (
       <PageHeader
@@ -1736,7 +1791,7 @@ class MasterDetailSimpleListInCard extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -1750,47 +1805,71 @@ class MasterDetailSimpleListInCard extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
+
     const panelContent = (
       <DrawerPanelContent widthOnXl={75}>
         <DrawerHead>
-          <Title headingLevel="h2" size="xl">List item {drawerPanelBodyContent} details</Title>
+          <Title headingLevel="h2" size="xl">
+            List item {drawerPanelBodyContent} details
+          </Title>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
-              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+              <p>
+                The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                and can also make the drawer scrollable.
+              </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*10} title="Title" />
+              <Progress value={drawerPanelBodyContent * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*5} title="Title" />
+              <Progress value={drawerPanelBodyContent * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
       </DrawerPanelContent>
     );
-    
+
     const drawerContent = (
       <React.Fragment>
         <SimpleList onSelect={this.onSelectListItem}>
           <SimpleListGroup title="Section 1" id="simple-list-section-1">
-            <SimpleListItem key="item1" id="simple-list-item1" isCurrent>List item 1</SimpleListItem>
-            <SimpleListItem key="item2" id="simple-list-item2">List item 2</SimpleListItem>
-            <SimpleListItem key="item3" id="simple-list-item3">List item 3</SimpleListItem>
-            <SimpleListItem key="item4" id="simple-list-item4">List item 4</SimpleListItem>
+            <SimpleListItem key="item1" id="simple-list-item1" isCurrent>
+              List item 1
+            </SimpleListItem>
+            <SimpleListItem key="item2" id="simple-list-item2">
+              List item 2
+            </SimpleListItem>
+            <SimpleListItem key="item3" id="simple-list-item3">
+              List item 3
+            </SimpleListItem>
+            <SimpleListItem key="item4" id="simple-list-item4">
+              List item 4
+            </SimpleListItem>
           </SimpleListGroup>
           <SimpleListGroup title="Section 2" id="section-2">
-            <SimpleListItem key="item5" id="simple-list-item5">List item 5</SimpleListItem>
-            <SimpleListItem key="item6" id="simple-list-item6">List item 6</SimpleListItem>
-            <SimpleListItem key="item7" id="simple-list-item7">List item 7</SimpleListItem>
-            <SimpleListItem key="item8" id="simple-list-item8">List item 8</SimpleListItem>
-            <SimpleListItem key="item9" id="simple-list-item9">List item 9</SimpleListItem>
+            <SimpleListItem key="item5" id="simple-list-item5">
+              List item 5
+            </SimpleListItem>
+            <SimpleListItem key="item6" id="simple-list-item6">
+              List item 6
+            </SimpleListItem>
+            <SimpleListItem key="item7" id="simple-list-item7">
+              List item 7
+            </SimpleListItem>
+            <SimpleListItem key="item8" id="simple-list-item8">
+              List item 8
+            </SimpleListItem>
+            <SimpleListItem key="item9" id="simple-list-item9">
+              List item 9
+            </SimpleListItem>
           </SimpleListGroup>
         </SimpleList>
-      </React.Fragment> 
-    )
+      </React.Fragment>
+    );
 
     return (
       <React.Fragment>
@@ -1811,7 +1890,7 @@ class MasterDetailSimpleListInCard extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <Divider component="div"/>
+          <Divider component="div" />
           <PageSection>
             <Card>
               <Drawer isStatic>
@@ -1826,10 +1905,10 @@ class MasterDetailSimpleListInCard extends React.Component {
     );
   }
 }
-
 ```
 
-```js title=Master-detail-data-list-in-card isFullscreen
+### Master detail data list in card
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1886,14 +1965,7 @@ import {
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
-import { 
-  BellIcon,
-  CogIcon,
-  FilterIcon,
-  SearchIcon,
-} from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
 class MasterDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -1905,7 +1977,7 @@ class MasterDetailDataListInCard extends React.Component {
       isDropdownOpen: false,
       selectedDataListItemId: 'dataListItem1'
     };
-    
+
     this.onDropdownToggle = isOpen => {
       this.setState({
         isDropdownOpen: isOpen
@@ -1921,20 +1993,26 @@ class MasterDetailDataListInCard extends React.Component {
       const element = document.getElementById('toggle-id');
       element.focus();
     };
-    
+
     this.onSelectDataListItem = id => {
-      this.setState({ 
+      this.setState({
         selectedDataListItemId: id,
-        drawerPanelBodyContent: id.charAt(id.length-1)
+        drawerPanelBodyContent: id.charAt(id.length - 1)
       });
     };
   }
 
   render() {
-    const { drawerPanelBodyContent, selectedListItemId, activeItem, isDropdownOpen, selectedDataListItemId } = this.state;
+    const {
+      drawerPanelBodyContent,
+      selectedListItemId,
+      activeItem,
+      isDropdownOpen,
+      selectedDataListItemId
+    } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -1954,12 +2032,8 @@ class MasterDetailDataListInCard extends React.Component {
         </NavList>
       </Nav>
     );
-    
-    const PageToolbar = (
-      <div>
-        need to implement new toolbar
-      </div>
-    );
+
+    const PageToolbar = <div>need to implement new toolbar</div>;
 
     const Header = (
       <PageHeader
@@ -1969,7 +2043,7 @@ class MasterDetailDataListInCard extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -1983,33 +2057,39 @@ class MasterDetailDataListInCard extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
+
     const panelContent = (
       <DrawerPanelContent widthOn2Xl={75}>
         <DrawerHead>
-          <Title size="lg" headingLevel='h2'>Patternfly-elements</Title>
+          <Title size="lg" headingLevel="h2">
+            Patternfly-elements
+          </Title>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
-              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+              <p>
+                The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                and can also make the drawer scrollable.
+              </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*10} title="Title" />
+              <Progress value={drawerPanelBodyContent * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*5} title="Title" />
+              <Progress value={drawerPanelBodyContent * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
       </DrawerPanelContent>
     );
-    
+
     const dropdownItems = [
       <DropdownItem key="option1">Option 1</DropdownItem>,
       <DropdownItem key="option2">Option 2</DropdownItem>
     ];
-    
+
     const drawerContent = (
       <React.Fragment>
         <Toolbar id="data-list-data-toolbar">
@@ -2018,7 +2098,11 @@ class MasterDetailDataListInCard extends React.Component {
               <Dropdown
                 onSelect={this.onDropdownSelect}
                 toggle={
-                  <DropdownToggle id="data-list-toggle-id" onToggle={this.onDropdownToggle} iconComponent={CaretDownIcon}>
+                  <DropdownToggle
+                    id="data-list-toggle-id"
+                    onToggle={this.onDropdownToggle}
+                    iconComponent={CaretDownIcon}
+                  >
                     Dropdown
                   </DropdownToggle>
                 }
@@ -2028,8 +2112,12 @@ class MasterDetailDataListInCard extends React.Component {
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
-        <DataList aria-label="selectable data list example" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
-          <DataListItem aria-labelledby='data-list-item1-in-card' id='data-list-item1'>
+        <DataList
+          aria-label="selectable data list example"
+          selectedDataListItemId={selectedDataListItemId}
+          onSelectDataListItem={this.onSelectDataListItem}
+        >
+          <DataListItem aria-labelledby="data-list-item1-in-card" id="data-list-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2037,10 +2125,11 @@ class MasterDetailDataListInCard extends React.Component {
                     <div>Node 1</div>
                     <Link to="#">siemur/test-space</Link>
                   </DataListCell>
-                ]} />
+                ]}
+              />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby='data-list-item2-in-card' id='data-list-item2'>
+          <DataListItem aria-labelledby="data-list-item2-in-card" id="data-list-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2048,10 +2137,11 @@ class MasterDetailDataListInCard extends React.Component {
                     <div>Node 2</div>
                     <Link to="#">siemur/test-space</Link>
                   </DataListCell>
-                ]} />
+                ]}
+              />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby='data-list-item3-in-card' id='data-list-item3'>
+          <DataListItem aria-labelledby="data-list-item3-in-card" id="data-list-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2059,10 +2149,11 @@ class MasterDetailDataListInCard extends React.Component {
                     <div>Node 3</div>
                     <Link to="#">siemur/test-space</Link>
                   </DataListCell>
-                ]} />
+                ]}
+              />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby='data-list-item4-in-card' id='data-list-item4'>
+          <DataListItem aria-labelledby="data-list-item4-in-card" id="data-list-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2070,10 +2161,11 @@ class MasterDetailDataListInCard extends React.Component {
                     <div>Node 4</div>
                     <Link to="#">siemur/test-space</Link>
                   </DataListCell>
-                ]} />
+                ]}
+              />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby='data-list-item5-in-card' id='data-list-item5'>
+          <DataListItem aria-labelledby="data-list-item5-in-card" id="data-list-item5">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2081,12 +2173,13 @@ class MasterDetailDataListInCard extends React.Component {
                     <div>Node 5</div>
                     <Link to="#">siemur/test-space</Link>
                   </DataListCell>
-                ]} />
+                ]}
+              />
             </DataListItemRow>
           </DataListItem>
         </DataList>
-      </React.Fragment> 
-    )
+      </React.Fragment>
+    );
 
     return (
       <React.Fragment>
@@ -2107,7 +2200,7 @@ class MasterDetailDataListInCard extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <Divider component="div"/>
+          <Divider component="div" />
           <PageSection>
             <Card>
               <Drawer isStatic>
@@ -2122,10 +2215,10 @@ class MasterDetailDataListInCard extends React.Component {
     );
   }
 }
-
 ```
 
-```js title=Master-detail-inline-modifier isFullscreen
+### Master detail inline modifier
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -2186,10 +2279,7 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
-import { 
+import {
   BellIcon,
   CodeBranchIcon,
   CodeIcon,
@@ -2199,7 +2289,7 @@ import {
   ExclamationTriangleIcon,
   FilterIcon,
   SearchIcon,
-  TimesCircleIcon 
+  TimesCircleIcon
 } from '@patternfly/react-icons';
 
 class MasterDetailInlineModifier extends React.Component {
@@ -2207,18 +2297,18 @@ class MasterDetailInlineModifier extends React.Component {
     super(props);
     this.state = {
       isDrawerExpanded: false,
-      drawerPanelBodyContent: "",
+      drawerPanelBodyContent: '',
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       activeItem: 0,
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       statusSelected: null,
       riskIsExpanded: false,
       riskSelected: null,
       selectedDataListItemId: ''
     };
-    
+
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
         isDropdownOpen
@@ -2248,25 +2338,25 @@ class MasterDetailInlineModifier extends React.Component {
         activeItem: result.itemId
       });
     };
-    
+
     this.statusOptions = [
       { value: 'Status', disabled: false, isPlaceholder: true },
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
       { value: 'Running', disabled: false },
-      { value: 'Cancelled', disabled: false },
+      { value: 'Cancelled', disabled: false }
     ];
 
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
-      { value: 'High', disabled: false },
+      { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
-         this.setState({inputValue: newValue});
-        };
+    this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
+    };
 
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -2309,15 +2399,15 @@ class MasterDetailInlineModifier extends React.Component {
         riskIsExpanded: false
       });
     };
-    
+
     this.onSelectDataListItem = id => {
-      this.setState({ 
+      this.setState({
         selectedDataListItemId: id,
         isDrawerExpanded: true,
-        drawerPanelBodyContent: id.charAt(id.length-1)
+        drawerPanelBodyContent: id.charAt(id.length - 1)
       });
     };
-    
+
     this.onCloseDrawerClick = () => {
       this.setState({
         isDrawerExpanded: false,
@@ -2327,10 +2417,22 @@ class MasterDetailInlineModifier extends React.Component {
   }
 
   render() {
-    const { isDrawerExpanded, drawerPanelBodyContent, isDropdownOpen, isKebabDropdownOpen, activeItem, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected, selectedDataListItemId } = this.state;
+    const {
+      isDrawerExpanded,
+      drawerPanelBodyContent,
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      activeItem,
+      inputValue,
+      statusIsExpanded,
+      statusSelected,
+      riskIsExpanded,
+      riskSelected,
+      selectedDataListItemId
+    } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -2369,11 +2471,7 @@ class MasterDetailInlineModifier extends React.Component {
       <DropdownItem>Separated link</DropdownItem>,
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
-    const PageToolbar = (
-      <div>
-        need to implement new toolbar
-      </div>
-    );
+    const PageToolbar = <div>need to implement new toolbar</div>;
 
     const Header = (
       <PageHeader
@@ -2383,7 +2481,7 @@ class MasterDetailInlineModifier extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -2397,17 +2495,25 @@ class MasterDetailInlineModifier extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="inline-modifier-input" id="inline-modifier-input" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
+
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput
+              name="inline-modifier-input"
+              id="inline-modifier-input"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarGroup variant="filter-group">
           <ToolbarItem>
             <Select
               variant={SelectVariant.single}
@@ -2418,11 +2524,7 @@ class MasterDetailInlineModifier extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-               <SelectOption
-                 isDisabled={option.disabled}
-                 key={index}
-                 value={option.value}
-               />
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
               ))}
             </Select>
           </ToolbarItem>
@@ -2436,37 +2538,44 @@ class MasterDetailInlineModifier extends React.Component {
               isExpanded={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption
-                   isDisabled={option.disabled}
-                   key={index}
-                   value={option.value}
-                 />
-               ))}
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              ))}
             </Select>
           </ToolbarItem>
-       </ToolbarGroup>
-    </React.Fragment>;
+        </ToolbarGroup>
+      </React.Fragment>
+    );
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
-    
+    const ToolbarItems = (
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        {toggleGroupItems}
+      </ToolbarToggleGroup>
+    );
+
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title headingLevel="h2" size="xl">node-{drawerPanelBodyContent}</Title>
+          <Title headingLevel="h2" size="xl">
+            node-{drawerPanelBodyContent}
+          </Title>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
+            <DrawerCloseButton onClick={this.onCloseDrawerClick} />
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
-              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+              <p>
+                The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                and can also make the drawer scrollable.
+              </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*10} title="Title" />
+              <Progress value={drawerPanelBodyContent * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={drawerPanelBodyContent*5} title="Title" />
+              <Progress value={drawerPanelBodyContent * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
@@ -2474,12 +2583,14 @@ class MasterDetailInlineModifier extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="inline-modifier-data-toolbar" className='pf-m-toggle-group-container'>
-          <ToolbarContent>
-            {ToolbarItems}
-          </ToolbarContent>
+        <Toolbar id="inline-modifier-data-toolbar" className="pf-m-toggle-group-container">
+          <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
-        <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
+        <DataList
+          aria-label="data list"
+          selectedDataListItemId={selectedDataListItemId}
+          onSelectDataListItem={this.onSelectDataListItem}
+        >
           <DataListItem aria-labelledby="selectable-action-item1" id="inline-modifier-item1">
             <DataListItemRow>
               <DataListItemCells
@@ -2488,12 +2599,20 @@ class MasterDetailInlineModifier extends React.Component {
                     <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
-                        <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
+                        <small>
+                          Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a>
+                        </small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -2523,12 +2642,24 @@ class MasterDetailInlineModifier extends React.Component {
                         <small>PatternFly elements</small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
-                        <FlexItem><CheckCircleIcon /> 7</FlexItem>
-                        <FlexItem><ExclamationTriangleIcon /> 5</FlexItem>
-                        <FlexItem><TimesCircleIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <CheckCircleIcon /> 7
+                        </FlexItem>
+                        <FlexItem>
+                          <ExclamationTriangleIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <TimesCircleIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -2555,12 +2686,20 @@ class MasterDetailInlineModifier extends React.Component {
                     <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
-                        <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
+                        <small>
+                          Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a>
+                        </small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -2590,12 +2729,24 @@ class MasterDetailInlineModifier extends React.Component {
                         <small>PatternFly elements</small>
                       </FlexItem>
                       <Flex>
-                        <FlexItem><CodeBranchIcon /> 10</FlexItem>
-                        <FlexItem><CodeIcon /> 4</FlexItem>
-                        <FlexItem><CubeIcon /> 5</FlexItem>
-                        <FlexItem><CheckCircleIcon /> 7</FlexItem>
-                        <FlexItem><ExclamationTriangleIcon /> 5</FlexItem>
-                        <FlexItem><TimesCircleIcon /> 5</FlexItem>
+                        <FlexItem>
+                          <CodeBranchIcon /> 10
+                        </FlexItem>
+                        <FlexItem>
+                          <CodeIcon /> 4
+                        </FlexItem>
+                        <FlexItem>
+                          <CubeIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <CheckCircleIcon /> 7
+                        </FlexItem>
+                        <FlexItem>
+                          <ExclamationTriangleIcon /> 5
+                        </FlexItem>
+                        <FlexItem>
+                          <TimesCircleIcon /> 5
+                        </FlexItem>
                         <FlexItem>Updated 2 days ago</FlexItem>
                       </Flex>
                     </Flex>
@@ -2615,8 +2766,8 @@ class MasterDetailInlineModifier extends React.Component {
             </DataListItemRow>
           </DataListItem>
         </DataList>
-      </React.Fragment> 
-    )
+      </React.Fragment>
+    );
 
     return (
       <React.Fragment>
@@ -2637,7 +2788,7 @@ class MasterDetailInlineModifier extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <Divider component="div"/>
+          <Divider component="div" />
           <PageSection variant={PageSectionVariants.light} noPadding={true}>
             <Drawer isExpanded={isDrawerExpanded} isInline>
               <DrawerContent panelContent={panelContent}>
@@ -2650,5 +2801,4 @@ class MasterDetailInlineModifier extends React.Component {
     );
   }
 }
-
 ```

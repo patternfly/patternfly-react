@@ -5,6 +5,7 @@ import { Popover, PopoverPosition } from '../Popover';
 test('popover renders close-button, header and body', () => {
   const view = shallow(
     <Popover
+      id="test"
       position="top"
       isVisible
       hideOnOutsideClick
@@ -24,6 +25,7 @@ test('popover renders close-button, header and body', () => {
 test('popover can have a custom minimum width', () => {
   const view = shallow(
     <Popover
+      id="test"
       position="top"
       isVisible
       minWidth="600px"
@@ -44,6 +46,7 @@ test('popover can have a custom minimum width', () => {
 test('popover can specify position as object value', () => {
   const view = shallow(
     <Popover
+      id="test"
       position={PopoverPosition.right}
       isVisible
       hideOnOutsideClick
@@ -55,29 +58,6 @@ test('popover can specify position as object value', () => {
       }
     >
       <div>Toggle Popover</div>
-    </Popover>
-  );
-  expect(view).toMatchSnapshot();
-});
-
-test('popover passes along values to tippy.js', () => {
-  const view = shallow(
-    <Popover
-      position={PopoverPosition.right}
-      isVisible
-      hideOnOutsideClick
-      headerContent={<div>Popover Header</div>}
-      bodyContent={
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-        </div>
-      }
-      tippyProps={{
-        duration: [200, 200],
-        offset: 20
-      }}
-    >
-      <div>Tippy Props Test</div>
     </Popover>
   );
   expect(view).toMatchSnapshot();

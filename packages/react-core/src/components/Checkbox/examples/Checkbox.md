@@ -1,16 +1,15 @@
 ---
-title: 'Checkbox'
+id: Checkbox
 section: components
-cssPrefix: 'pf-c-check'
-typescript: true
+cssPrefix: pf-c-check
 propComponents: ['Checkbox']
 ---
 
-import { Checkbox } from '@patternfly/react-core';
 import './checkbox.css';
 
 ## Examples
-```js title=Controlled
+### Controlled
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -89,7 +88,8 @@ class ControlledCheckbox extends React.Component {
 }
 ```
 
-```js title=Uncontrolled
+### Uncontrolled
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -101,7 +101,8 @@ UncontrolledCheckbox = () => (
 );
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -119,7 +120,8 @@ DisabledCheckbox = () => (
 );
 ```
 
-```js title=Checkbox-with-description
+### Checkbox with description
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 

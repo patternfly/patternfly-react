@@ -1,15 +1,14 @@
 ---
-title: 'Background image'
+id: Background image
 section: components
-cssPrefix: 'pf-c-background-image'
-typescript: true
+cssPrefix: pf-c-background-image
 propComponents: ['BackgroundImage']
 ---
 
-import { BackgroundImage } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
+import React from 'react';
 import { BackgroundImage } from '@patternfly/react-core';
 
 class SimpleBackgroundImage extends React.Component {

@@ -254,12 +254,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   extendTypeaheadChildren(typeaheadActiveChild: HTMLElement) {
+    let activeElement = null as HTMLElement;
+    if (Boolean(typeaheadActiveChild) && typeaheadActiveChild.classList.contains('pf-m-description')) {
+      activeElement = typeaheadActiveChild.firstElementChild as HTMLElement;
+    } else if (typeaheadActiveChild) {
+      activeElement = typeaheadActiveChild;
+    }
     return this.state.typeaheadFilteredChildren.map((child: React.ReactNode) =>
       React.cloneElement(child as React.ReactElement, {
         isFocused:
-          typeaheadActiveChild &&
-          (typeaheadActiveChild.innerText ===
-            this.getDisplay((child as React.ReactElement).props.value.toString(), 'text') ||
+          activeElement &&
+          (activeElement.innerText === this.getDisplay((child as React.ReactElement).props.value.toString(), 'text') ||
             (this.props.isCreatable &&
               typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
       })
@@ -303,13 +308,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         } else {
           nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
         }
+        const hasDescriptionElm = Boolean(this.refCollection[nextIndex].classList.contains('pf-m-description'));
+        const optionTextElm = hasDescriptionElm
+          ? (this.refCollection[nextIndex].firstElementChild as HTMLElement)
+          : this.refCollection[nextIndex];
         this.setState({
           typeaheadCurrIndex: nextIndex,
           typeaheadActiveChild: this.refCollection[nextIndex],
           typeaheadInputValue:
-            isCreatable && this.refCollection[nextIndex].innerText.includes(createText)
+            isCreatable && optionTextElm.innerText.includes(createText)
               ? this.state.creatableValue
-              : this.refCollection[nextIndex].innerText
+              : optionTextElm.innerText
         });
       }
     }
@@ -410,7 +419,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
-    const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
+    const selectToggleId = toggleId || `pf-select-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     let childPlaceholderText = null as string;

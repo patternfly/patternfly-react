@@ -16,6 +16,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   children?: React.ReactNode;
   /** Additional classes added to the Select Option */
   className?: string;
+  /** Description of the item for single and both typeahead select variants */
+  description?: React.ReactNode;
   /** Internal index of the option */
   index?: number;
   /** Indicates which component will be used as select item */
@@ -93,6 +95,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     const {
       children,
       className,
+      description,
       value,
       onClick,
       isDisabled,
@@ -123,6 +126,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
                     isFocused && styles.modifiers.focus,
+                    description && styles.modifiers.description,
                     className
                   )}
                   onClick={(event: any) => {
@@ -138,11 +142,28 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   onKeyDown={this.onKeyDown}
                   type="button"
                 >
-                  {children || value.toString()}
-                  {isSelected && (
-                    <span className={css(styles.selectMenuItemIcon)}>
-                      <CheckIcon aria-hidden />
-                    </span>
+                  {description && (
+                    <React.Fragment>
+                      <div className={css(styles.selectMenuItemMain)}>
+                        {children || value.toString()}
+                        {isSelected && (
+                          <span className={css(styles.selectMenuItemIcon)}>
+                            <CheckIcon aria-hidden />
+                          </span>
+                        )}
+                      </div>
+                      <div className={css(styles.selectMenuItemDescription)}>{description}</div>
+                    </React.Fragment>
+                  )}
+                  {!description && (
+                    <React.Fragment>
+                      {children || value.toString()}
+                      {isSelected && (
+                        <span className={css(styles.selectMenuItemIcon)}>
+                          <CheckIcon aria-hidden />
+                        </span>
+                      )}
+                    </React.Fragment>
                   )}
                 </Component>
               </li>
@@ -155,6 +176,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
                   isFocused && styles.modifiers.focus,
+                  description && styles.modifiers.description,
                   className
                 )}
                 onKeyDown={this.onKeyDown}
@@ -176,6 +198,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
                   {children || value.toString()}
                 </span>
+                {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
               </label>
             )}
             {variant === SelectVariant.checkbox && isNoResultsOption && (

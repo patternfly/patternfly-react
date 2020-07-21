@@ -5,11 +5,17 @@ import {
   DataListItem,
   DataListItemRow,
   DataListItemCells,
-  DataListCell
+  DataListCell,
+  DataListAction,
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  KebabToggle
 } from '@patternfly/react-core';
 
 interface DataListState {
   selectedDataListItemId: string;
+  isOpen: boolean;
 }
 
 export class DataListDemo extends React.Component<DataListProps, DataListState> {
@@ -17,12 +23,23 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
   constructor(props: DataListProps) {
     super(props);
     this.state = {
-      selectedDataListItemId: ''
+      selectedDataListItemId: '',
+      isOpen: false
     };
   }
 
   onSelectDataListItem = (id: string) => {
     this.setState({ selectedDataListItemId: id });
+  };
+
+  onToggle = (isOpen: boolean) => {
+    this.setState({ isOpen });
+  };
+
+  onSelect = () => {
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
+    }));
   };
 
   render() {
@@ -44,6 +61,30 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
                 </DataListCell>
               ]}
             />
+            <DataListAction
+              aria-labelledby="selectable-action-item1 selectable-action-action1"
+              id="selectable-action-action1"
+              aria-label="Actions"
+              isPlainButtonAction
+            >
+              <Dropdown
+                isPlain
+                position={DropdownPosition.right}
+                isOpen={this.state.isOpen}
+                onSelect={this.onSelect}
+                toggle={<KebabToggle id="toggle-id" onToggle={this.onToggle} />}
+                dropdownItems={[
+                  <DropdownItem key="link">Link</DropdownItem>,
+                  <DropdownItem key="action" component="button">
+                    Action
+                  </DropdownItem>,
+                  <DropdownItem key="disabled link" isDisabled>
+                    Disabled Link
+                  </DropdownItem>
+                ]}
+                id="dropdown"
+              />
+            </DataListAction>
           </DataListItemRow>
         </DataListItem>
         <DataListItem aria-labelledby="simple-item2" id="row2">

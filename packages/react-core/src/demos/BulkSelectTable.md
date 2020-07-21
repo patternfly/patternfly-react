@@ -1,11 +1,11 @@
 ---
-title: 'Bulk select table'
-section: 'demos'
+id: Bulk select table
+section: demos
 ---
-import { Pagination, Title, Checkbox, Toolbar, ToolbarGroup, ToolbarItem, DropdownItem, Dropdown, DropdownToggleCheckbox, DropdownToggle } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
-```js title=Simple
+### Simple
+```js
 import React from 'react';
 import { Dropdown, DropdownItem, DropdownPosition, DropdownToggle, DropdownToggleCheckbox, Pagination, Title, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -118,6 +118,7 @@ class BulkSelectTableDemo extends React.Component {
     const { page, perPage } = this.state;
     return (
       <Pagination
+        isCompact
         itemCount={100}
         page={page}
         perPage={perPage}
@@ -183,12 +184,12 @@ class BulkSelectTableDemo extends React.Component {
   renderToolbar() {
     return (
       <React.Fragment>
-        <Toolbar className="pf-l-toolbar pf-u-justify-content-space-between pf-u-mx-xl pf-u-my-md">
+        <Toolbar>
           <ToolbarGroup>
-            <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
+            <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
+            <ToolbarItem variant="pagination">{this.renderPagination('top')}</ToolbarItem>
           </ToolbarGroup>
         </Toolbar>
-        {this.renderPagination('top')}
       </React.Fragment>
     );
   }

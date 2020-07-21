@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-topology",
-  "version": "4.4.9",
+  "version": "4.4.34",
   "description": "This library provides a set of React topology view components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -28,16 +28,16 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.24.0",
-    "@patternfly/react-icons": "^4.4.2",
-    "@patternfly/react-styles": "^4.4.2",
+    "@patternfly/react-core": "^4.32.5",
+    "@patternfly/react-icons": "^4.5.1",
+    "@patternfly/react-styles": "^4.5.0",
     "d3": "^5.16.0",
     "dagre": "0.8.2",
-    "lodash": "^4.17.15",
-    "mobx": "^5.14.2",
+    "lodash": "^4.17.19",
+    "mobx": "^5.15.4",
     "mobx-react": "^6.2.0",
-    "mobx-react-lite": "2.0.5",
     "point-in-svg-path": "^1.0.1",
+    "popper.js": "^1.16.1",
     "react-measure": "^2.3.0",
     "tslib": "^1.11.1",
     "webcola": "3.4.0"

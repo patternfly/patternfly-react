@@ -1,18 +1,17 @@
 ---
-title: 'Alert'
+id: Alert
 section: components
-cssPrefix: 'pf-c-alert'
-typescript: true
+cssPrefix: pf-c-alert
 propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 ouia: true
 ---
 
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 import './alert.css';
 
 ## Examples
 
-```js title=Types
+### Types
+```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -31,7 +30,8 @@ class AlertTypes extends React.Component {
 }
 ```
 
-```js title=Variations
+### Variations
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
@@ -77,7 +77,8 @@ class AlertVariations extends React.Component {
 }
 ```
 
-```js title=Inline-types
+### Inline types
+```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -96,7 +97,8 @@ class InlineAlert extends React.Component {
 }
 ```
 
-```js title=Inline-variations
+### Inline variations
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
@@ -149,7 +151,8 @@ class InlineAlertVariations extends React.Component {
 }
 ```
 
-```js title=Static-live-region-alert
+### Static live region alert
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -183,7 +186,8 @@ class StaticLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Dynamic-live-region-alert
+### Dynamic live region alert
+```js
 import React from 'react';
 import { Alert, InputGroup } from '@patternfly/react-core';
 
@@ -259,7 +263,8 @@ class DynamicLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Async-live-region-alert
+### Async live region alert
+```js
 import React from 'react';
 import { Alert, InputGroup } from '@patternfly/react-core';
 
@@ -307,6 +312,40 @@ class AsyncLiveRegionAlert extends React.Component {
         {this.state.alerts.map(({ title, variant, isLiveRegion, key }) => (
           <Alert variant={variant} title={title} isLiveRegion={isLiveRegion} key={key} />
         ))}
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Alert timeout
+```js
+import React from 'react';
+import { Alert, Button } from '@patternfly/react-core';
+
+class AlertTimeout extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false
+    };
+    this.onClick = () => {
+      this.setState({isOpen:true})
+    };
+  } 
+
+  render() {
+    const { isOpen } = this.state;
+    const buttonText = !isOpen ? "Show 2 alerts" : "0 alerts to show";
+    return (
+      <React.Fragment>
+        <Button variant="secondary" onClick={this.onClick} isDisabled={isOpen} >{buttonText} </Button>
+        {this.state.isOpen &&
+        <React.Fragment>
+          <Alert title="Default timeout Alert" timeout={true}>This alert will dismiss after 8 seconds </Alert>
+          <Alert title="Custom timeout Alert" timeout={16000}>This alert will dismiss after 16 seconds </Alert>
+        </React.Fragment>
+        }
       </React.Fragment>
     );
   }

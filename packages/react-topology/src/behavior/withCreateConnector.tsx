@@ -26,6 +26,8 @@ export interface ConnectorChoice {
 export interface CreateConnectorOptions {
   handleAngle?: number;
   handleLength?: number;
+  dragItem?: DragObjectWithType;
+  dragOperation?: DragOperationWithType;
 }
 
 interface ConnectorComponentProps {
@@ -37,7 +39,7 @@ interface ConnectorComponentProps {
 
 type CreateConnectorRenderer = React.ComponentType<ConnectorComponentProps>;
 
-type OnCreateResult = ConnectorChoice[] | void | undefined | null;
+type OnCreateResult = ConnectorChoice[] | void | undefined | null | React.ReactElement[];
 
 type CreateConnectorWidgetProps = {
   element: Node;
@@ -63,8 +65,11 @@ interface PromptData {
   element: Node;
   target: Node | Graph;
   event: DragEvent;
-  choices: ConnectorChoice[];
+  choices: ConnectorChoice[] | React.ReactElement[];
 }
+
+const isReactElementArray = (choices: ConnectorChoice[] | React.ReactElement[]): choices is React.ReactElement[] =>
+  React.isValidElement(choices[0]);
 
 const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
 const DEFAULT_HANDLE_LENGTH = 32;
@@ -77,7 +82,9 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     ConnectorComponent,
     handleAngle = DEFAULT_HANDLE_ANGLE,
     handleLength = DEFAULT_HANDLE_LENGTH,
-    contextMenuClass
+    contextMenuClass,
+    dragItem,
+    dragOperation
   } = props;
   const [prompt, setPrompt] = React.useState<PromptData | null>(null);
   const [active, setActive] = React.useState(false);
@@ -91,8 +98,8 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
       CollectProps,
       CreateConnectorWidgetProps
     > = {
-      item: { type: CREATE_CONNECTOR_DROP_TYPE },
-      operation: { type: CREATE_CONNECTOR_OPERATION },
+      item: dragItem || { type: CREATE_CONNECTOR_DROP_TYPE },
+      operation: dragOperation || { type: CREATE_CONNECTOR_OPERATION },
       begin: (monitor: DragSourceMonitor, dragProps: any) => {
         setActive(true);
         return dragProps.element;
@@ -119,7 +126,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
       })
     };
     return dragSourceSpec;
-  }, [setActive]);
+  }, [setActive, dragItem, dragOperation]);
   const [{ dragging, event, hints }, dragRef] = useDndDrag(spec, props);
 
   if (!active && dragging && !event) {
@@ -187,16 +194,18 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
             onKeepAlive(false);
           }}
         >
-          {prompt.choices.map((c: ConnectorChoice) => (
-            <ContextMenuItem
-              key={c.label}
-              onClick={() => {
-                onCreate(prompt.element, prompt.target, prompt.event, hintsRef.current, c);
-              }}
-            >
-              {c.label}
-            </ContextMenuItem>
-          ))}
+          {isReactElementArray(prompt.choices)
+            ? prompt.choices
+            : prompt.choices.map((c: ConnectorChoice) => (
+                <ContextMenuItem
+                  key={c.label}
+                  onClick={() => {
+                    onCreate(prompt.element, prompt.target, prompt.event, hintsRef.current, c);
+                  }}
+                >
+                  {c.label}
+                </ContextMenuItem>
+              ))}
         </ContextMenu>
       )}
     </>

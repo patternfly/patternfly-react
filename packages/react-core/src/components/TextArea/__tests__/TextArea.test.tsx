@@ -36,6 +36,14 @@ test('validated text area success', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('validated text area warning', () => {
+  const view = shallow(
+    <TextArea {...props} required validated={ValidatedOptions.warning} aria-label="validated textarea" />
+  );
+  expect(view.find('.pf-c-form-control.pf-m-warning').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
 test('validated text area error', () => {
   const view = shallow(
     <TextArea {...props} required validated={ValidatedOptions.error} aria-label="validated textarea" />

@@ -1,52 +1,9 @@
 ---
-title: 'Card view'
-section: 'demos'
-experimentalStage: 'early'
+id: Card view
+section: demos
+experimentalStage: early
 ---
 
-import React from 'react';
-import {
-  Avatar,
-  Brand,
-  Button,
-  ButtonVariant,
-  Card,
-  CardHeader,
-  CardActions,
-  CardTitle,
-  CardBody,
-  Checkbox,
-  Dropdown,
-  DropdownGroup,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  Gallery,
-  GalleryItem,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem,
-  PageSection,
-  PageSectionVariants,
-  PageSidebar,
-  SkipToContent,
-  TextContent,
-  Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarFilter,
-  ToolbarContent
-} from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
@@ -65,7 +22,8 @@ This is a demo that showcases Patternfly cards.
 
 ## Examples
 
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -92,6 +50,10 @@ import {
   Nav,
   NavItem,
   NavList,
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuDropdownItem,
+  OverflowMenuItem,
   Page,
   PageHeader,
   PageHeaderTools,
@@ -110,9 +72,9 @@ import {
   ToolbarGroup,
   ToolbarItem,
   ToolbarFilter,
-  ToolbarContent
+  ToolbarContent,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
@@ -448,6 +410,7 @@ class CardViewBasic extends React.Component {
           this.fetch(1, value);
         }}
         variant="top"
+        isCompact
       />
     );
   }
@@ -549,47 +512,51 @@ class CardViewBasic extends React.Component {
     } = this.state;
 
     const toolbarKebabDropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <OverflowMenuDropdownItem key="link">Link</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="disabled action" isDisabled component="button">
         Disabled Action
-      </DropdownItem>,
+      </OverflowMenuDropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      <OverflowMenuDropdownItem key="separated link">Separated Link</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="separated action" component="button">
         Separated Action
-      </DropdownItem>
+      </OverflowMenuDropdownItem>
     ];
 
     const toolbarItems = (
       <React.Fragment>
         <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
-        <ToolbarItem>
-          <Button variant="primary">Create a Project</Button>
+        <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem variant="overflow-menu">
+          <OverflowMenu breakpoint="md">
+            <OverflowMenuItem>
+              <Button variant="primary">Create a Project</Button>
+            </OverflowMenuItem>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={this.onToolbarKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
+                isOpen={isLowerToolbarKebabDropdownOpen}
+                isPlain
+                dropdownItems={toolbarKebabDropdownItems}
+              />
+            </OverflowMenuControl>
+          </OverflowMenu>
         </ToolbarItem>
-        <ToolbarItem>
-          <Dropdown
-            onSelect={this.onToolbarKebabDropdownSelect}
-            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
-            isOpen={isLowerToolbarKebabDropdownOpen}
-            isPlain
-            dropdownItems={toolbarKebabDropdownItems}
-          />
-        </ToolbarItem>
-        <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+        <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
           {this.renderPagination()}
         </ToolbarItem>
       </React.Fragment>
     );
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -629,7 +596,12 @@ class CardViewBasic extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibility={{ default: 'hidden', lg: 'visible' }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup
+          visibility={{
+            default: 'hidden',
+            lg: 'visible'
+          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+        >
           <PageHeaderToolsItem>
             <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
@@ -642,7 +614,11 @@ class CardViewBasic extends React.Component {
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem visibility={{ lg: 'hidden' }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem
+            visibility={{
+              lg: 'hidden'
+            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
+          >
             <Dropdown
               isPlain
               position="right"
@@ -652,19 +628,15 @@ class CardViewBasic extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem
+            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
+          >
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onPageDropdownSelect}
               isOpen={isUpperToolbarDropdownOpen}
-              toggle={
-                <DropdownToggle 
-                  onToggle={this.onPageDropdownToggle} 
-                >
-                  John Smith
-                </DropdownToggle>
-              }
+              toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
@@ -674,13 +646,9 @@ class CardViewBasic extends React.Component {
     );
 
     const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        headerTools={headerTools}
-        showNavToggle
-      />
+      <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-card-view-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 

@@ -1,9 +1,8 @@
 ---
-title: 'Banner'
-section: 'demos'
+id: Banner
+section: demos
 ---
 
-import React from 'react';
 import {
 Avatar,
 Brand,
@@ -44,7 +43,8 @@ import imgAvatar from './imgAvatar.svg';
 
 ## Examples
 
-```js title=Basic-sticky-banner isFullscreen
+### Basic sticky banner
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -128,7 +128,7 @@ class BannerDemo extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -219,7 +219,7 @@ class BannerDemo extends React.Component {
     const Header = (
       <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
@@ -272,7 +272,8 @@ class BannerDemo extends React.Component {
 }
 ```
 
-```js title=Top-and-bottom-banner isFullscreen
+### Top and bottom banner
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -357,7 +358,7 @@ class BannerDemo extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -448,7 +449,7 @@ class BannerDemo extends React.Component {
     const Header = (
       <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 

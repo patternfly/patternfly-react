@@ -30,6 +30,15 @@ describe('Data List Demo Test', () => {
     cy.get('#row1.pf-m-selected').should('not.be.visible');
     cy.get('#row2.pf-m-selected').should('be.visible');
   });
+
+  it('Verify actions ', () => {
+    cy.get('#dropdown button')
+      .last()
+      .click();
+    cy.get('#dropdown').should('have.class', 'pf-m-expanded');
+    cy.get('#toggle-id').click();
+    cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
+  });
 });
 
 describe('Data List Compact Demo Test', () => {

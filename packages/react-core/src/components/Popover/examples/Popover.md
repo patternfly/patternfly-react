@@ -1,32 +1,34 @@
 ---
-title: 'Popover'
+id: Popover
 section: components
-cssPrefix: 'pf-c-popover'
-typescript: true
+cssPrefix: pf-c-popover
 propComponents: ['Popover']
 ---
 
-import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 SimplePopover = () => (
-  <Popover
-    headerContent={<div>Popover Header</div>}
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
+  <div style={{ margin: '100px' }}>
+    <Popover
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        <Button onClick={() => console.log('click')}>click</Button></div>
+      }
+      footerContent="Popover Footer"
+    >
+      <Button>Toggle Popover</Button>
+    </Popover>
+  </div>
 );
 ```
 
-```js title=Advanced
+### Advanced
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
@@ -34,14 +36,9 @@ class AdvancedPopover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      position: PopoverPosition.top,
+      position: 'auto',
       show: false,
       keepInViewChecked: true
-    };
-    this.handleClick = () => {
-      this.setState({
-        show: !this.state.show
-      });
     };
     this.handleKeepInViewChange = checked => {
       this.setState({ keepInViewChecked: checked });
@@ -51,8 +48,13 @@ class AdvancedPopover extends React.Component {
         show: checked
       });
     };
-    this.shouldClose = tip => {
+    this.shouldClose = () => {
+      console.log('shouldClose');
       this.setState({ show: false });
+    };
+    this.shouldOpen = () => {
+      console.log('shouldOpen');
+      this.setState({ show: true });
     };
   }
 
@@ -89,11 +91,13 @@ class AdvancedPopover extends React.Component {
           />
         </div>
 
-        <div style={{ margin: '50px' }}>
+        <div style={{ margin: '100px' }}>
           <Popover
             position={this.state.position}
+            hideOnOutsideClick={false}
             isVisible={this.state.show}
             shouldClose={this.shouldClose}
+            shouldOpen={this.shouldOpen}
             enableFlip={this.state.keepInViewChecked}
             appendTo={() => document.getElementById('___gatsby')}
             headerContent={<div>Popover Header</div>}
@@ -113,38 +117,44 @@ class AdvancedPopover extends React.Component {
 }
 ```
 
-```js title=Headless
+### Headless
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 HeadlessPopover = () => (
-  <Popover
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-    aria-label="Headless Popover"
-    closeBtnAriaLabel="Close Headless Popover"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
+  <div style={{ margin: '100px' }}>
+    <Popover
+      bodyContent={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      aria-label="Headless Popover"
+      closeBtnAriaLabel="Close Headless Popover"
+      footerContent="Popover Footer"
+    >
+      <Button>Toggle Popover</Button>
+    </Popover>
+  </div>
 );
 ```
 
-```js title=With-Link
+### With Link
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 HeadlessPopover = () => (
-  <Popover
-    bodyContent={
-      <div><a href="https://www.patternfly.org/" target="_blank">PatternFly</a> is a community project that promotes design commonality and improved user experience. Its offerings include open source code, patterns, style guides, and an active community that helps support it all.</div>
-    }
-    aria-label="Popover with Link"
-    closeBtnAriaLabel="Close Popover with Link"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
+  <div style={{ margin: '100px' }}>
+    <Popover
+      bodyContent={
+        <div><a href="https://www.patternfly.org/" target="_blank">PatternFly</a> is a community project that promotes design commonality and improved user experience. Its offerings include open source code, patterns, style guides, and an active community that helps support it all.</div>
+      }
+      aria-label="Popover with Link"
+      closeBtnAriaLabel="Close Popover with Link"
+      footerContent="Popover Footer"
+    >
+      <Button>Toggle Popover</Button>
+    </Popover>
+  </div>
 );
 ```

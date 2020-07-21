@@ -1,56 +1,43 @@
 ---
-title: 'Tooltip'
+id: Tooltip
 section: components
-cssPrefix: 'pf-c-tooltip'
-typescript: true
+cssPrefix: pf-c-tooltip
 propComponents: ['Tooltip']
 ---
 
-import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
+import './TooltipExamples.css';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
-import { Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { Tooltip } from '@patternfly/react-core';
 
 BasicTooltip = () => (
-  <Tooltip
-    content={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-  >
-    <span tabIndex="0">I have a tooltip!</span>
-  </Tooltip>
+  <div style={{ margin: '100px' }}>
+    <Tooltip
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+    >
+      <span tabIndex="0" style={{ border: '1px dashed' }}>I have a tooltip!</span>
+    </Tooltip>
+  </div>
 )
 ```
 
-```js title=With-left-aligned-text
+### On icon
+```js
 import React from 'react';
-import { Tooltip, TooltipPosition } from '@patternfly/react-core';
-
-LeftAlignedTooltip = () => (
-  <Tooltip
-    isContentLeftAligned
-    content={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-  >
-    <span tabIndex="0">I have a tooltip!</span>
-  </Tooltip>
-)
-```
-
-```js title=On-icon
-import React from 'react';
-import { Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { Tooltip } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 OnIconTooltip = () => (
-  <div style={{ margin: '50px' }}>
+  <div style={{ margin: '100px' }}>
     <Tooltip
-      position={TooltipPosition.top}
+      position="top"
       content={
         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
       }
@@ -61,63 +48,160 @@ OnIconTooltip = () => (
 )
 ```
 
-```js title=Positions
+### Options
+```js
 import React from 'react';
-import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 
-class TooltipPositions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      position: TooltipPosition.top,
-      keepInViewChecked: true
-    };
-    this.handleKeepInViewChange = checked => {
-      this.setState({ keepInViewChecked: checked });
-    };
-  }
-
-  render() {
-    return (
+OptionsTooltip = () => {
+  const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
+  const [isVisible, setIsVisible] = React.useState(true);
+  const [contentLeftAligned, setContentLeftAligned] = React.useState(false);
+  const [enableFlip, setEnableFlip] = React.useState(true);
+  const [position, setPosition] = React.useState('top');
+  const [positionSelectOpen, setPositionSelectOpen] = React.useState(false);
+  const [flipSelectOpen, setFlipSelectOpen] = React.useState(false);
+  const [flipBehavior, setFlipBehavior] = React.useState('flip');
+  const [entryDelayInput, setEntryDelayInput] = React.useState(0);
+  const [exitDelayInput, setExitDelayInput] = React.useState(0);
+  const [animationDuration, setAnimationDuration] = React.useState(300);
+  const tipBoxRef = React.useRef(null);
+  const scrollToRef = ref => ref && ref.current && (ref.current.scrollTop = 400);
+  React.useEffect(() => {
+    scrollToRef(tipBoxRef);
+  }, []);
+  return (
+    <>
       <div>
-        <div>
-          <span style={{ paddingRight: '10px' }}>Tooltip Position</span>
-          <select
-            aria-label="Tooltip position"
-            onChange={event => {
-              this.setState({ position: event.target.value });
-            }}
-          >
-            {Object.keys(TooltipPosition).map(key => (
-              <option key={key} value={TooltipPosition[key]}>
-                {TooltipPosition[key]}
-              </option>
-            ))}
-          </select>
+        <div style={{ border: '1px solid'}}>
           <Checkbox
-            label="Flip tooltip if the position falls outside the view"
-            isChecked={this.state.keepInViewChecked}
-            onChange={this.handleKeepInViewChange}
-            aria-label="Keep in view"
-            id="check-3"
+            label="trigger: mouseenter"
+            isChecked={trigger.includes('mouseenter')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('mouseenter'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'mouseenter'));
+              setIsVisible(false);
+              setTrigger(updatedTrigger);
+            }}
+          />
+          <Checkbox
+            label="trigger: focus"
+            isChecked={trigger.includes('focus')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('focus'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'focus'));
+              setIsVisible(false);
+              setTrigger(updatedTrigger);
+            }}
+          />
+          <Checkbox
+            label="trigger: click"
+            isChecked={trigger.includes('click')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('click'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'click'));
+              setIsVisible(false);
+              setTimeout(() => setTrigger(updatedTrigger));
+            }}
+          />
+          <Checkbox
+            label="trigger: manual"
+            isChecked={trigger.includes('manual')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('manual'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'manual'));
+              setIsVisible(false);
+              setTrigger(updatedTrigger);
+            }}
           />
         </div>
-
-        <div style={{ margin: '50px' }}>
-          <Tooltip
-            position={this.state.position}
-            enableFlip={this.state.keepInViewChecked}
-            content={
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-              </div>
-            }
+        <div style={{ border: '1px solid'}}>
+          <Checkbox
+            label="content left-aligned"
+            isChecked={contentLeftAligned}
+            onChange={(checked) => setContentLeftAligned(checked)}
+          />
+        </div>
+        <div style={{ border: '1px solid'}}>
+          <Checkbox
+            label="enableFlip"
+            isChecked={enableFlip}
+            onChange={(checked) => setEnableFlip(checked)}
+          />
+        </div>
+        <div style={{ border: '1px solid'}}>
+          position (will flip if enableFlip is true). The 'auto' position requires enableFlip to be set to true.
+          <Select
+            onToggle={() => setPositionSelectOpen(!positionSelectOpen)}
+            onSelect={(event, selection) => {
+              setPosition(selection);
+              setPositionSelectOpen(false);
+            }}
+            isOpen={positionSelectOpen}
+            selections={position}
+            menuAppendTo={() => document.body}
           >
-            <Button>I have a tooltip!</Button>
-          </Tooltip>
+            <SelectOption value="auto" />
+            <SelectOption value="top" />
+            <SelectOption value="bottom" />
+            <SelectOption value="left" />
+            <SelectOption value="right" />
+          </Select>
+        </div>
+        <div style={{ border: '1px solid'}}>
+          <Checkbox
+            label="isVisible (also set trigger to only manual to programmatically control it)"
+            isChecked={isVisible}
+            onChange={(checked) => setIsVisible(checked)}
+          />
+        </div>
+        <div style={{ border: '1px solid'}}>
+          Entry delay <TextInput value={entryDelayInput} type="number" onChange={val => setEntryDelayInput(val)} aria-label="entry delay" />
+          Exit delay <TextInput value={exitDelayInput} type="number" onChange={val => setExitDelayInput(val)} aria-label="exit delay" />
+          Animation duration <TextInput value={animationDuration} type="number" onChange={val => setAnimationDuration(val)} aria-label="animation duration" />
+        </div>
+        <div style={{ border: '1px solid'}}>
+          flip behavior examples (enableFlip has to be true). "flip" will try to flip the tooltip to the opposite of the starting position. The second option ensures that there are 3 escape positions for every possible starting position (default). This setting is ignored if position prop is set to 'auto'.
+          <Select
+            onToggle={() => setFlipSelectOpen(!flipSelectOpen)}
+            onSelect={(event, selection) => {
+              console.log(selection);
+              setFlipBehavior(selection);
+              setFlipSelectOpen(false);
+            }}
+            isOpen={flipSelectOpen}
+            selections={flipBehavior}
+            menuAppendTo={() => document.body}
+          >
+            <SelectOption value="flip" />
+            <SelectOption value="clockwise">['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']</SelectOption>
+          </Select>
         </div>
       </div>
-    );
-  }
+      <div id="tooltip-boundary" className="tooltip-box" ref={tipBoxRef}>
+        <Tooltip
+          content={
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+          }
+          trigger={trigger.join(' ')}
+          enableFlip={enableFlip}
+          flipBehavior={flipBehavior === 'flip' ? 'flip' : ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']}
+          position={position}
+          isVisible={isVisible}
+          entryDelay={entryDelayInput}
+          exitDelay={exitDelayInput}
+          animationDuration={animationDuration}
+          isContentLeftAligned={contentLeftAligned}
+          appendTo={() => document.getElementById('tooltip-boundary')}
+        >
+          <Button className="tooltip-button">Tooltip</Button>
+        </Tooltip>
+      </div>
+    </>
+  );
 }
 ```

@@ -1,15 +1,13 @@
 ---
-title: 'Text input'
+id: Text input
 section: components
-cssPrefix: 'pf-c-form-control'
+cssPrefix: pf-c-form-control
 propComponents: ['TextInput']
-typescript: true
 ---
 
-import { TextInput, Button, ValidatedOptions } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
@@ -34,21 +32,24 @@ class SimpleTextInput extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 <TextInput type="text" value="disabled text input example" aria-label="disabled text input example" isDisabled />
 ```
 
-```js title=Read-only
+### Read only
+```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 <TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />
 ```
 
-```js title=Invalid
+### Invalid
+```js
 import React from 'react';
 import { TextInput, ValidatedOptions } from '@patternfly/react-core';
 
@@ -80,7 +81,8 @@ class InvalidTextInput extends React.Component {
 }
 ```
 
-```js title=Select-text-using-ref
+### Select text using ref
+```js
 import React from 'react';
 import { TextInput, Button } from '@patternfly/react-core';
 

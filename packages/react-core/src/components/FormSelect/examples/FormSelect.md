@@ -1,17 +1,15 @@
 ---
-title: 'Form select'
+id: Form select
 section: components
-cssPrefix: 'pf-c-form-control'
-typescript: true
+cssPrefix: pf-c-form-control
 propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 ouia: true
 ---
 
-import { FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';
-
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
@@ -47,7 +45,8 @@ class FormSelectInput extends React.Component {
 }
 ```
 
-```js title=Invalid
+### Invalid
+```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';
 
@@ -90,7 +89,8 @@ class FormSelectInputInvalid extends React.Component {
 }
 ```
 
-```js title=Validated
+### Validated
+```js
 import React from 'react';
 import { Form, FormGroup, FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';
 
@@ -114,6 +114,8 @@ class FormSelectInputInvalid extends React.Component {
         this.simulateNetworkCall(() => {
           if (value === '3') {
             this.setState({ validated: ValidatedOptions.success, helperText: 'You chose wisely' });
+          } else if (value === '') {
+              this.setState({ validated: ValidatedOptions.warning, helperText: 'You must select a value' });
           } else {
             this.setState({ validated: ValidatedOptions.error, invalidText: 'You must chose Three (thought that was obvious)' });
           }
@@ -159,7 +161,8 @@ class FormSelectInputInvalid extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
@@ -195,7 +198,8 @@ class FormSelectInputDisabled extends React.Component {
 }
 ```
 
-```js title=Grouped
+### Grouped
+```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 

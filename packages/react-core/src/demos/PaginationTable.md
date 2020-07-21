@@ -1,30 +1,23 @@
 ---
-title: 'Pagination table'
-section: 'demos'
+id: Pagination table
+section: demos
 ---
 
 ## Examples
-import { 
-  Pagination, 
-  PaginationVariant, 
-  Title, 
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions,
-  Bullseye 
-} from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core';
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Checkbox,
-  Pagination, 
-  Title, 
+  Pagination,
+  Title,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -66,24 +59,12 @@ class ComplexPaginationTableDemo extends React.Component {
   componentDidMount() {
     this.fetch(this.state.page || 1, this.state.perPage || 20);
   }
-  
-  renderLoadingStateCheckbox() {
-    return (
-      <Checkbox
-        label="View loading state"
-        isChecked={this.state.forceLoadingState}
-        onChange={this.handleCheckboxChange}
-        aria-label="view loading state checkbox"
-        id="check"
-        name="check"
-      />
-    )
-  }
 
   renderPagination(variant = 'top') {
     const { page, perPage, total } = this.state;
     return (
       <Pagination
+        isCompact
         itemCount={total}
         page={page}
         perPage={perPage}
@@ -95,7 +76,29 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
+
     const { loading, res, error, forceLoadingState } = this.state;
+
+    const toolbarItems = (
+    <React.Fragment>
+      <ToolbarContent>
+        <ToolbarItem>
+          <Checkbox
+            label="View loading state"
+            isChecked={this.state.forceLoadingState}
+            onChange={this.handleCheckboxChange}
+            aria-label="view loading state checkbox"
+            id="check"
+            name="check"
+          />
+        </ToolbarItem>
+        <ToolbarItem variant="pagination">
+          {this.renderPagination()}
+        </ToolbarItem>
+      </ToolbarContent>
+    </React.Fragment>
+  );
+
     if (error) {
       const noResultsRows = [{
         heightAuto: true,
@@ -145,8 +148,7 @@ class ComplexPaginationTableDemo extends React.Component {
     
     return (
       <React.Fragment>
-        {this.renderLoadingStateCheckbox()}
-        {this.renderPagination()}
+      <Toolbar>{toolbarItems}</Toolbar>
         {!(loading || forceLoadingState) && (
           <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
             <TableHeader />
@@ -172,7 +174,8 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
   - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
   - The `defaultToFullPage` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
-```js title=Automated-pagination-table-demo
+### Automated pagination table demo
+```js
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
@@ -276,6 +279,7 @@ class ComplexPaginationTableDemo extends React.Component {
     const { page, perPage } = this.state;
     return (
       <Pagination
+        isCompact
         itemCount={this.defaultRows.length}
         page={page}
         perPage={perPage}

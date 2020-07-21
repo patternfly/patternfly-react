@@ -1,15 +1,14 @@
 ---
-title: 'Notification badge'
+id: Notification badge
 section: components
-cssPrefix: 'pf-c-notification-badge'
-typescript: true
+cssPrefix: pf-c-notification-badge
 propComponents: ['NotificationBadge']
 ---
-import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';

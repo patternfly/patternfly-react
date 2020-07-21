@@ -1,16 +1,15 @@
 ---
-title: 'Page'
+id: Page
 section: components
-cssPrefix: 'pf-c-page'
-typescript: true
-propComponents: ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
+cssPrefix: pf-c-page
+propComponents:
+  ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---
-
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
 ## Examples
 
-```js title=Vertical-nav
+### Vertical nav
+```js
 import React from 'react';
 import {
   Page,
@@ -52,7 +51,7 @@ class VerticalPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -65,7 +64,8 @@ class VerticalPage extends React.Component {
 }
 ```
 
-```js title=Horizontal-nav
+### Horizontal nav
+```js
 import React from 'react';
 import {
   Page,
@@ -101,7 +101,8 @@ HorizontalPage = () => {
 };
 ```
 
-```js title=Main-Section-Padding
+### Main Section Padding
+```js
 import React from 'react';
 import {
   Page,
@@ -143,7 +144,7 @@ class VerticalPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -151,15 +152,10 @@ class VerticalPage extends React.Component {
         <PageSection variant={PageSectionVariants.light} hasNoPadding>
           Section with no padding
         </PageSection>
-        <PageSection
-          padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}
-        >
+        <PageSection padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}>
           Section with padding only on medium/large
         </PageSection>
-        <PageSection
-          variant={PageSectionVariants.light}
-          padding={{ md: 'noPadding' }}
-        >
+        <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
           Section with no padding on medium
         </PageSection>
       </Page>
@@ -168,7 +164,8 @@ class VerticalPage extends React.Component {
 }
 ```
 
-```js title=With-or-without-fill
+### With or without fill
+```js
 import React from 'react';
 import {
   Page,
@@ -210,7 +207,7 @@ class FillPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>

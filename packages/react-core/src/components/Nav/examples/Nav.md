@@ -1,35 +1,19 @@
 ---
-title: 'Navigation'
+id: Navigation
 section: components
-cssPrefix: 'pf-c-nav'
-typescript: true
+cssPrefix: pf-c-nav
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 ouia: true
 ---
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup,
-  PageHeader,
-  PageSection
-} from '@patternfly/react-core';
+
 import './nav.css';
 
 ## Examples
 
-```js title=Default
+### Default
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavDefaultList extends React.Component {
   constructor(props) {
@@ -47,7 +31,7 @@ class NavDefaultList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} theme="dark">
+      <Nav onSelect={this.onSelect}>
         <NavList>
           <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
@@ -68,16 +52,10 @@ class NavDefaultList extends React.Component {
 }
 ```
 
-```js title=Grouped
+### Grouped
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavGroupedList extends React.Component {
   constructor(props) {
@@ -95,7 +73,7 @@ class NavGroupedList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} theme="dark">
+      <Nav onSelect={this.onSelect}>
         <NavGroup title="Section title 1">
           <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Link 1
@@ -124,16 +102,10 @@ class NavGroupedList extends React.Component {
 }
 ```
 
-```js title=Expandable
+### Expandable
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavExpandableList extends React.Component {
   constructor(props) {
@@ -161,7 +133,7 @@ class NavExpandableList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} onToggle={this.onToggle} theme="dark">
+      <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
         <NavList>
           <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
@@ -226,16 +198,10 @@ class NavExpandableList extends React.Component {
 }
 ```
 
-```js title=Expandable-(w/subnavigation-titles)
+### Expandable (w/subnavigation titles)
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavExpandableTitlesList extends React.Component {
   constructor(props) {
@@ -255,7 +221,7 @@ class NavExpandableTitlesList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} theme="dark">
+      <Nav onSelect={this.onSelect}>
         <NavList>
           <NavExpandable title="Link 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
@@ -322,16 +288,10 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
-```js title=Mixed
+### Mixed
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavMixedList extends React.Component {
   constructor(props) {
@@ -351,7 +311,7 @@ class NavMixedList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} theme="dark">
+      <Nav onSelect={this.onSelect}>
         <NavList>
           <NavItem preventDefault to="#mixed-1" itemId="itm-1" isActive={activeItem === 'itm-1'}>
             Link 1 (not expandable)
@@ -421,17 +381,10 @@ class NavMixedList extends React.Component {
 }
 ```
 
-```js title=Horizontal-(only-in-PageHeader)
+### Horizontal (only in PageHeader)
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup,
-  PageHeader
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageHeader } from '@patternfly/react-core';
 
 class NavHorizontalList extends React.Component {
   constructor(props) {
@@ -451,11 +404,13 @@ class NavHorizontalList extends React.Component {
     const nav = (
       <Nav onSelect={this.onSelect} variant="horizontal">
         <NavList>
-          {Array.apply(0, Array(10)).map(function (x, i) {
+          {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
-            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
-              Horizontal nav item {num}
-            </NavItem>;
+            return (
+              <NavItem key={num} itemId={num} isActive={activeItem === num}>
+                Horizontal nav item {num}
+              </NavItem>
+            );
           })}
         </NavList>
       </Nav>
@@ -465,17 +420,10 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-```js title=Tertiary
+### Tertiary
+```js
 import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup,
-  PageSection
-} from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageSection } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {
   constructor(props) {
@@ -495,11 +443,13 @@ class NavTertiaryList extends React.Component {
     return (
       <Nav onSelect={this.onSelect} variant="tertiary">
         <NavList>
-          {Array.apply(0, Array(10)).map(function (x, i) {
+          {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
-            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
-              Tertiary nav item {num}
-            </NavItem>;
+            return (
+              <NavItem key={num} itemId={num} isActive={activeItem === num}>
+                Tertiary nav item {num}
+              </NavItem>
+            );
           })}
         </NavList>
       </Nav>

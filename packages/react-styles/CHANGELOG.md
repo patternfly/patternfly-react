@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.6...@patternfly/react-styles@4.5.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
+## [4.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.5...@patternfly/react-styles@4.4.6) (2020-07-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.4...@patternfly/react-styles@4.4.5) (2020-07-13)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.3...@patternfly/react-styles@4.4.4) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.2...@patternfly/react-styles@4.4.3) (2020-07-08)
+
+
+### Bug Fixes
+
+* **windows:** fix build on windows ([#4475](https://github.com/patternfly/patternfly-react/issues/4475)) ([fdde7aa](https://github.com/patternfly/patternfly-react/commit/fdde7aa9aa7d0bff79b02d1605bfa95d46997a45))
+
+
+
+
+
 ## [4.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.1...@patternfly/react-styles@4.4.2) (2020-06-24)
 
 **Note:** Version bump only for package @patternfly/react-styles

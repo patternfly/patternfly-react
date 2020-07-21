@@ -18,7 +18,7 @@ export interface FormSelectProps
    * If set to success, select will be modified to indicate valid state.
    * If set to error, select will be modified to indicate error state.
    */
-  validated?: 'success' | 'error' | 'default';
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;
   /** Sets the FormSelectrequired. */
@@ -67,7 +67,8 @@ export class FormSelect extends React.Component<FormSelectProps> {
         className={css(
           styles.formControl,
           className,
-          validated === ValidatedOptions.success && styles.modifiers.success
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning
         )}
         aria-invalid={validated === ValidatedOptions.error}
         {...getOUIAProps(FormSelect.displayName, ouiaId, ouiaSafe)}

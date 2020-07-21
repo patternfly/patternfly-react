@@ -26,8 +26,8 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   }
   drawerRef = React.createRef<HTMLButtonElement>();
 
-  onMount = () => {
-    this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus();
+  onExpand = () => {
+    this.drawerRef.current && this.drawerRef.current.focus();
   };
 
   onClick = () => {
@@ -73,7 +73,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
         <Button id="toggleButton" onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerSection>drawer-section</DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>

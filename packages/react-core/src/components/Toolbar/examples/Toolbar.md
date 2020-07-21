@@ -1,23 +1,22 @@
 ---
-title: 'Toolbar'
-cssPrefix: 'pf-c-toolbar'
-typescript: true
+id: Toolbar
+cssPrefix: pf-c-toolbar
 propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarToggleGroup', 'ToolbarFilter']
-section: 'components'
+section: components
 ---
 
-import { Toolbar , ToolbarItem, ToolbarGroup, ToolbarContent, ToolbarToggleGroup, ToolbarFilter } from '@patternfly/react-core';
-import { Alert, Button, ButtonVariant, Divider, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
 ## Examples
+
 Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=Items
+### Items
+```js
 import React from 'react';
-import { Toolbar , ToolbarItem, ToolbarContent } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
-import { SearchIcon } from '@patternfly/react-icons'
+import { SearchIcon } from '@patternfly/react-icons';
 
 class ToolbarItems extends React.Component {
   constructor(props) {
@@ -25,29 +24,39 @@ class ToolbarItems extends React.Component {
   }
 
   render() {
-    const items = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
-      <ToolbarItem variant="separator" />
-      <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
-    </React.Fragment>;
+    const items = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem variant="separator" />
+        <ToolbarItem>
+          <Button variant="primary">Action</Button>
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
-    return <Toolbar id="toolbar"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
+    return (
+      <Toolbar id="toolbar">
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
   }
 }
-
 ```
 
-```js title=Adjusting-item-spacers
+### Adjusting item spacers
+```js
 import React from 'react';
-import { Toolbar , ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 class ToolbarSpacers extends React.Component {
@@ -78,34 +87,56 @@ class ToolbarSpacers extends React.Component {
       lg: 'spaceItemsLg'
     };
 
-    const items = <React.Fragment>
-          <ToolbarItem spacer={firstSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem spacer={secondSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem spacer={thirdSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem spacer={fourthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem variant="separator"></ToolbarItem>
-          <ToolbarItem spacer={fifthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
-          <ToolbarItem variant="separator"></ToolbarItem>
-          <ToolbarGroup spaceItems={spaceItems}>
-            <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
-            <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
-          </ToolbarGroup>
-      </React.Fragment>;
+    const items = (
+      <React.Fragment>
+        <ToolbarItem spacer={firstSpacers}>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem spacer={secondSpacers}>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem spacer={thirdSpacers}>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem spacer={fourthSpacers}>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem variant="separator"></ToolbarItem>
+        <ToolbarItem spacer={fifthSpacers}>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="primary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem variant="separator"></ToolbarItem>
+        <ToolbarGroup spaceItems={spaceItems}>
+          <ToolbarItem>
+            <Button variant="secondary">Action</Button>
+          </ToolbarItem>
+          <ToolbarItem>
+            <Button variant="secondary">Action</Button>
+          </ToolbarItem>
+        </ToolbarGroup>
+      </React.Fragment>
+    );
 
-    return <Toolbar id="toolbar-spacers"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
+    return (
+      <Toolbar id="toolbar-spacers">
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
   }
 }
-
 ```
 
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=Groups
+### Groups
+```js
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
-import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
+import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
 
 class ToolbarGroupTypes extends React.Component {
   constructor(props) {
@@ -115,21 +146,21 @@ class ToolbarGroupTypes extends React.Component {
       { value: 'Filter 1', disabled: false, isPlaceholder: true },
       { value: 'A', disabled: false },
       { value: 'B', disabled: false },
-      { value: 'C', disabled: false },
+      { value: 'C', disabled: false }
     ];
 
     this.secondOptions = [
       { value: 'Filter 2', disabled: false, isPlaceholder: true },
       { value: '1', disabled: false },
       { value: '2', disabled: false },
-      { value: '3', disabled: false },
+      { value: '3', disabled: false }
     ];
 
     this.thirdOptions = [
       { value: 'Filter 3', disabled: false, isPlaceholder: true },
       { value: 'I', disabled: false },
       { value: 'II', disabled: false },
-      { value: 'III', disabled: false },
+      { value: 'III', disabled: false }
     ];
 
     this.state = {
@@ -138,7 +169,7 @@ class ToolbarGroupTypes extends React.Component {
       secondIsExpanded: false,
       secondSelected: null,
       thirdIsExpanded: false,
-      thirdSelected: null,
+      thirdSelected: null
     };
 
     this.onFirstToggle = isExpanded => {
@@ -182,106 +213,133 @@ class ToolbarGroupTypes extends React.Component {
   }
 
   render() {
-    const { firstIsExpanded, firstSelected, secondIsExpanded, secondSelected, thirdIsExpanded, thirdSelected } = this.state;
+    const {
+      firstIsExpanded,
+      firstSelected,
+      secondIsExpanded,
+      secondSelected,
+      thirdIsExpanded,
+      thirdSelected
+    } = this.state;
 
-    const filterGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onFirstToggle}
-          onSelect={this.onFirstSelect}
-          selections={firstSelected}
-          isOpen={firstIsExpanded}
-        >
-          {this.firstOptions.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
-          ))}
-        </Select>
-     </ToolbarItem>
-     <ToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onSecondToggle}
-          onSelect={this.onSecondSelect}
-          selections={secondSelected}
-          isOpen={secondIsExpanded}
-        >
-          {this.secondOptions.map((option, index) => (
-           <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
-          ))}
-        </Select>
-      </ToolbarItem>
-      <ToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onThirdToggle}
-          onSelect={this.onThirdSelect}
-          selections={thirdSelected}
-          isOpen={thirdIsExpanded}
-        >
-          {this.thirdOptions.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
-          ))}
-        </Select>
-      </ToolbarItem>
-    </React.Fragment>;
+    const filterGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <Select
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.onFirstToggle}
+            onSelect={this.onFirstSelect}
+            selections={firstSelected}
+            isOpen={firstIsExpanded}
+          >
+            {this.firstOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+            ))}
+          </Select>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Select
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.onSecondToggle}
+            onSelect={this.onSecondSelect}
+            selections={secondSelected}
+            isOpen={secondIsExpanded}
+          >
+            {this.secondOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+            ))}
+          </Select>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Select
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.onThirdToggle}
+            onSelect={this.onThirdSelect}
+            selections={thirdSelected}
+            isOpen={thirdIsExpanded}
+          >
+            {this.thirdOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+            ))}
+          </Select>
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
-    const iconButtonGroupItems = <React.Fragment>
-      <ToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></ToolbarItem>
-      <ToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></ToolbarItem>
-      <ToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></ToolbarItem>
-    </React.Fragment>;
+    const iconButtonGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <Button variant="plain" aria-label="edit">
+            <EditIcon />
+          </Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="plain" aria-label="clone">
+            <CloneIcon />
+          </Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="plain" aria-label="sync">
+            <SyncIcon />
+          </Button>
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
-    const buttonGroupItems = <React.Fragment>
-      <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
-      <ToolbarItem><Button variant="secondary">Secondary</Button></ToolbarItem>
-      <ToolbarItem><Button variant="tertiary">Tertiary</Button></ToolbarItem>
-    </React.Fragment>;
+    const buttonGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <Button variant="primary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Secondary</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="tertiary">Tertiary</Button>
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
-    const items = <React.Fragment>
-      <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
-      <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
-      <ToolbarGroup variant="button-group">{buttonGroupItems}</ToolbarGroup>
-    </React.Fragment>;
+    const items = (
+      <React.Fragment>
+        <ToolbarGroup variant="filter-group">{filterGroupItems}</ToolbarGroup>
+        <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
+        <ToolbarGroup variant="button-group">{buttonGroupItems}</ToolbarGroup>
+      </React.Fragment>
+    );
 
-    return <Toolbar id="toolbar-group-types"><ToolbarContent>{items}</ToolbarContent></Toolbar>;
+    return (
+      <Toolbar id="toolbar-group-types">
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
   }
 }
-
 ```
 
 ## Examples with toggle groups and filters
+
 A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.
 
 The Toggle group can either have the toggle state managed by the consumer, or the component.
 
-  - The first Toggle group example below demonstrates a component managed toggle state.
-```js title=Component-managed-toggle-groups
+- The first Toggle group example below demonstrates a component managed toggle state.
+
+### Component managed toggle groups
+```js
 import React from 'react';
-import { Toolbar , ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
-import { SearchIcon, FilterIcon } from '@patternfly/react-icons'
+import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
 
 class ToolbarComponentMangedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       statusSelected: null,
       riskIsExpanded: false,
@@ -293,19 +351,19 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
       { value: 'Running', disabled: false },
-      { value: 'Cancelled', disabled: false },
+      { value: 'Cancelled', disabled: false }
     ];
 
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
-      { value: 'High', disabled: false },
+      { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
-         this.setState({inputValue: newValue});
-        };
+    this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
+    };
 
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -353,16 +411,24 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
   render() {
     const { inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput
+              name="textInput2"
+              id="textInput2"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarGroup variant="filter-group">
           <ToolbarItem>
             <Select
               variant={SelectVariant.single}
@@ -373,11 +439,7 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
               isOpen={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-               <SelectOption
-                 isDisabled={option.disabled}
-                 key={index}
-                 value={option.value}
-               />
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
               ))}
             </Select>
           </ToolbarItem>
@@ -391,45 +453,49 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
               isOpen={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption
-                   isDisabled={option.disabled}
-                   key={index}
-                   value={option.value}
-                 />
-               ))}
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              ))}
             </Select>
           </ToolbarItem>
-       </ToolbarGroup>
-    </React.Fragment>;
+        </ToolbarGroup>
+      </React.Fragment>
+    );
 
-    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
+    const items = (
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        {toggleGroupItems}
+      </ToolbarToggleGroup>
+    );
 
-    return <Toolbar id="toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
-      <ToolbarContent>
-        {items}
-      </ToolbarContent>
-    </Toolbar>;
+    return (
+      <Toolbar id="toolbar-component-managed-toggle-groups" className="pf-m-toggle-group-container">
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
   }
 }
 ```
+
 The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
-  1. Add a toggleIsExpanded callback to Toolbar
-  2. Pass in a boolean into the isExpanded prop to Toolbar
+
+1. Add a toggleIsExpanded callback to Toolbar
+2. Pass in a boolean into the isExpanded prop to Toolbar
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
-```js title=Consumer-managed-toggle-groups
+### Consumer managed toggle groups
+```js
 import React from 'react';
-import { Toolbar , ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
-import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
+import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons';
 
 class ToolbarConsumerMangedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isExpanded: false,
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       statusSelected: null,
       riskIsExpanded: false,
@@ -437,7 +503,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
     };
 
     this.toggleIsExpanded = () => {
-      this.setState((prevState) => ({
+      this.setState(prevState => ({
         isExpanded: !prevState.isExpanded
       }));
     };
@@ -447,19 +513,19 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
       { value: 'Running', disabled: false },
-      { value: 'Cancelled', disabled: false },
+      { value: 'Cancelled', disabled: false }
     ];
 
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
-      { value: 'High', disabled: false },
+      { value: 'High', disabled: false }
     ];
 
-    this.onInputChange = (newValue) => {
-         this.setState({inputValue: newValue});
-        };
+    this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
+    };
 
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -507,16 +573,24 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
   render() {
     const { isExpanded, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput
+              name="textInput2"
+              id="textInput2"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarGroup variant="filter-group">
           <ToolbarItem>
             <Select
               variant={SelectVariant.single}
@@ -527,11 +601,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
               isOpen={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-               <SelectOption
-                 isDisabled={option.disabled}
-                 key={index}
-                 value={option.value}
-               />
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
               ))}
             </Select>
           </ToolbarItem>
@@ -545,28 +615,28 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
               isOpen={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
-                <SelectOption
-                  isDisabled={option.disabled}
-                  key={index}
-                  value={option.value}
-                />
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
               ))}
             </Select>
-        </ToolbarItem>
-      </ToolbarGroup>
-    </React.Fragment>;
+          </ToolbarItem>
+        </ToolbarGroup>
+      </React.Fragment>
+    );
 
-    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
+    const items = (
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        {toggleGroupItems}
+      </ToolbarToggleGroup>
+    );
 
     return (
-      <Toolbar id="toolbar-consumer-managed-toggle-groups"
+      <Toolbar
+        id="toolbar-consumer-managed-toggle-groups"
         isExpanded={isExpanded}
-        className='pf-m-toggle-group-container'
+        className="pf-m-toggle-group-container"
         toggleIsExpanded={this.toggleIsExpanded}
       >
-        <ToolbarContent>
-          {items}
-        </ToolbarContent>
+        <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
   }
@@ -576,44 +646,47 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
 The ToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
-```js title=Data-toolbar-with-filters
+### Data toolbar with filters
+```js
 import React from 'react';
 import {
-    Toolbar,
-    ToolbarItem,
-    ToolbarContent,
-    ToolbarFilter,
-    ToolbarToggleGroup,
-    ToolbarGroup } from '@patternfly/react-core';
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
+  ToolbarGroup
+} from '@patternfly/react-core';
 import {
-    Button,
-    ButtonVariant,
-    InputGroup,
-    Select,
-    SelectOption,
-    Dropdown,
-    DropdownItem,
-    DropdownSeparator,
-    KebabToggle } from '@patternfly/react-core';
-import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
+  Button,
+  ButtonVariant,
+  InputGroup,
+  Select,
+  SelectOption,
+  Dropdown,
+  DropdownItem,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core';
+import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
 
 class ToolbarWithFilterExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isExpanded: false,
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       riskIsExpanded: false,
       filters: {
         risk: ['Low'],
-        status: ['New', 'Pending'],
+        status: ['New', 'Pending']
       },
       kebabIsOpen: false
     };
 
     this.toggleIsExpanded = () => {
-      this.setState((prevState) => ({
+      this.setState(prevState => ({
         isExpanded: !prevState.isExpanded
       }));
     };
@@ -624,20 +697,18 @@ class ToolbarWithFilterExample extends React.Component {
       }));
     };
 
-    this.onInputChange = (newValue) => {
-      this.setState({inputValue: newValue});
+    this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
     };
 
     this.onSelect = (type, event, selection) => {
       const checked = event.target.checked;
-      this.setState((prevState) => {
+      this.setState(prevState => {
         const prevSelections = prevState.filters[type];
         return {
           filters: {
             ...prevState.filters,
-            [type]: checked
-              ? [...prevSelections, selection]
-              : prevSelections.filter(value => value !== selection)
+            [type]: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
           }
         };
       });
@@ -651,9 +722,9 @@ class ToolbarWithFilterExample extends React.Component {
       this.onSelect('risk', event, selection);
     };
 
-    this.onDelete = (type = "", id = "") => {
+    this.onDelete = (type = '', id = '') => {
       if (type) {
-        this.setState((prevState) => {
+        this.setState(prevState => {
           const newState = Object.assign(prevState);
           newState.filters[type.toLowerCase()] = newState.filters[type.toLowerCase()].filter(s => s !== id);
           return {
@@ -664,18 +735,18 @@ class ToolbarWithFilterExample extends React.Component {
         this.setState({
           filters: {
             risk: [],
-            status: [],
+            status: []
           }
-        })
+        });
       }
     };
 
-    this.onDeleteGroup = (type) => {
-      this.setState((prevState) => {
+    this.onDeleteGroup = type => {
+      this.setState(prevState => {
         prevState.filters[type.toLowerCase()] = [];
         return {
-          filters: prevState.filters,
-        }
+          filters: prevState.filters
+        };
       });
     };
 
@@ -696,7 +767,6 @@ class ToolbarWithFilterExample extends React.Component {
         kebabIsOpen: isOpen
       });
     };
-
   }
 
   componentDidMount() {
@@ -708,13 +778,7 @@ class ToolbarWithFilterExample extends React.Component {
   }
 
   render() {
-    const {
-      inputValue,
-      filters,
-      statusIsExpanded,
-      riskIsExpanded,
-      kebabIsOpen,
-    } = this.state;
+    const { inputValue, filters, statusIsExpanded, riskIsExpanded, kebabIsOpen } = this.state;
 
     const statusMenuItems = [
       <SelectOption key="statusNew" value="New" />,
@@ -729,17 +793,30 @@ class ToolbarWithFilterExample extends React.Component {
       <SelectOption key="riskHigh" value="High" />
     ];
 
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem>
-        <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.control} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
-          <ToolbarFilter chips={filters.status} deleteChip={this.onDelete} deleteChipGroup={this.onDeleteGroup} categoryName="Status">
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <InputGroup>
+            <TextInput
+              name="textInput2"
+              id="textInput2"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.control} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </ToolbarItem>
+        <ToolbarGroup variant="filter-group">
+          <ToolbarFilter
+            chips={filters.status}
+            deleteChip={this.onDelete}
+            deleteChipGroup={this.onDeleteGroup}
+            categoryName="Status"
+          >
             <Select
               variant={SelectVariant.checkbox}
               aria-label="Status"
@@ -765,8 +842,9 @@ class ToolbarWithFilterExample extends React.Component {
               {riskMenuItems}
             </Select>
           </ToolbarFilter>
-      </ToolbarGroup>
-    </React.Fragment>;
+        </ToolbarGroup>
+      </React.Fragment>
+    );
 
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -786,29 +864,44 @@ class ToolbarWithFilterExample extends React.Component {
       </DropdownItem>
     ];
 
-    const toolbarItems = <React.Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-        {toggleGroupItems}
-      </ToolbarToggleGroup>
-      <ToolbarGroup variant="icon-button-group">
-        <ToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></ToolbarItem>
-        <ToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></ToolbarItem>
-        <ToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></ToolbarItem>
-      </ToolbarGroup>
-      <ToolbarItem>
-        <Dropdown
-          toggle={<KebabToggle onToggle={this.onKebabToggle} />}
-          isOpen={kebabIsOpen}
-          isPlain
-          dropdownItems={dropdownItems}
-        />
-      </ToolbarItem>
-    </React.Fragment>;
+    const toolbarItems = (
+      <React.Fragment>
+        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+          {toggleGroupItems}
+        </ToolbarToggleGroup>
+        <ToolbarGroup variant="icon-button-group">
+          <ToolbarItem>
+            <Button variant="plain" aria-label="edit">
+              <EditIcon />
+            </Button>
+          </ToolbarItem>
+          <ToolbarItem>
+            <Button variant="plain" aria-label="clone">
+              <CloneIcon />
+            </Button>
+          </ToolbarItem>
+          <ToolbarItem>
+            <Button variant="plain" aria-label="sync">
+              <SyncIcon />
+            </Button>
+          </ToolbarItem>
+        </ToolbarGroup>
+        <ToolbarItem>
+          <Dropdown
+            toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+            isOpen={kebabIsOpen}
+            isPlain
+            dropdownItems={dropdownItems}
+          />
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
     return (
-      <Toolbar id="toolbar-with-filter"
-        className='pf-m-toggle-group-container'
-        collapseListedFiltersBreakpoint='xl'
+      <Toolbar
+        id="toolbar-with-filter"
+        className="pf-m-toggle-group-container"
+        collapseListedFiltersBreakpoint="xl"
         clearAllFilters={this.onDelete}
       >
         <ToolbarContent>{toolbarItems}</ToolbarContent>
@@ -816,16 +909,37 @@ class ToolbarWithFilterExample extends React.Component {
     );
   }
 }
-
 ```
 
 There may be situations where all of the required elements simply cannot fit in a single line.
 
-```js title=Stacked-example
+### Stacked example
+```js
 import React from 'react';
-import { Toolbar, ToolbarContent, ToolbarToggleGroup, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, Divider } from '@patternfly/react-core';
-import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
+import {
+  Button,
+  KebabToggle,
+  Select,
+  SelectOption,
+  Pagination,
+  Dropdown,
+  DropdownSeparator,
+  DropdownToggle,
+  DropdownToggleCheckbox,
+  DropdownItem,
+  Divider,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarToggleGroup,
+  ToolbarGroup,
+  ToolbarItem
+} from '@patternfly/react-core';
+import { EditIcon, FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
 
 class ToolbarStacked extends React.Component {
   constructor(props) {
@@ -836,22 +950,23 @@ class ToolbarStacked extends React.Component {
     this.resourceOptions = [
       { value: 'All resources', disabled: false },
       { value: 'Deployment', disabled: false },
-      { value: 'Pod', disabled: false },
+      { value: 'Pod', disabled: false }
     ];
 
     this.statusOptions = [
-      { value: 'Running', disabled: false, },
+      { value: 'Running', disabled: false },
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
-      { value: 'Cancelled', disabled: false },
+      { value: 'Cancelled', disabled: false }
     ];
 
     this.typeOptions = [
       { value: 'Any type', disabled: false, isPlaceholder: true },
-      { value: 'No type', disabled: false },
+      { value: 'No type', disabled: false }
     ];
 
     this.state = {
+      kebabIsOpen: false,
       resourceIsExpanded: false,
       resourceSelected: null,
       statusIsExpanded: false,
@@ -861,6 +976,12 @@ class ToolbarStacked extends React.Component {
       splitButtonDropdownIsOpen: false,
       page: 1,
       perPage: 20
+    };
+
+    this.onKebabToggle = isOpen => {
+      this.setState({
+        kebabIsOpen: isOpen
+      });
     };
 
     this.onResourceToggle = isExpanded => {
@@ -915,7 +1036,6 @@ class ToolbarStacked extends React.Component {
     };
 
     this.onSplitButtonToggle = isOpen => {
-      console.log("hm");
       this.setState({
         splitButtonDropdownIsOpen: isOpen
       });
@@ -926,11 +1046,37 @@ class ToolbarStacked extends React.Component {
         splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
       });
     };
-
   }
 
   render() {
-    const { resourceIsExpanded, resourceSelected, statusIsExpanded, statusSelected, typeIsExpanded, typeSelected, splitButtonDropdownIsOpen } = this.state;
+    const {
+      kebabIsOpen,
+      resourceIsExpanded,
+      resourceSelected,
+      statusIsExpanded,
+      statusSelected,
+      typeIsExpanded,
+      typeSelected,
+      splitButtonDropdownIsOpen
+    } = this.state;
+
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
 
     const splitButtonDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -945,119 +1091,163 @@ class ToolbarStacked extends React.Component {
       </DropdownItem>
     ];
 
-    const toggleGroupItems = <React.Fragment>
-      <ToolbarItem variant="label" id="stacked-example-resource-select">Resource</ToolbarItem>
-      <ToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onResourceToggle}
-          onSelect={this.onResourceSelect}
-          selections={resourceSelected}
-          isOpen={resourceIsExpanded}
-          ariaLabelledBy="stacked-example-resource-select"
-        >
-          {this.resourceOptions.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
-          ))}
-        </Select>
-     </ToolbarItem>
-     <ToolbarItem variant="label" id="stacked-example-status-select">Status</ToolbarItem>
-     <ToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onStatusToggle}
-          onSelect={this.onStatusSelect}
-          selections={statusSelected}
-          isOpen={statusIsExpanded}
-          ariaLabelledBy="stacked-example-status-select"
-        >
-        {this.statusOptions.map((option, index) => (
-          <SelectOption
-            isDisabled={option.disabled}
-            key={index}
-            value={option.value}
-           />
-         ))}
-        </Select>
-      </ToolbarItem>
-      <ToolbarItem variant="label" id="stacked-example-type-select">Type</ToolbarItem>
-      <ToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onTypeToggle}
-          onSelect={this.onTypeSelect}
-          selections={typeSelected}
-          isOpen={typeIsExpanded}
-          ariaLabelledBy="stacked-example-type-select"
-        >
-          {this.typeOptions.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
-          ))}
-        </Select>
-      </ToolbarItem>
-    </React.Fragment>;
+    const toggleGroupItems = (
+      <React.Fragment>
+        <ToolbarItem variant="label" id="stacked-example-resource-select">
+          Resource
+        </ToolbarItem>
+        <ToolbarItem>
+          <Select
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.onResourceToggle}
+            onSelect={this.onResourceSelect}
+            selections={resourceSelected}
+            isOpen={resourceIsExpanded}
+            ariaLabelledBy="stacked-example-resource-select"
+          >
+            {this.resourceOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+            ))}
+          </Select>
+        </ToolbarItem>
+        <ToolbarItem variant="label" id="stacked-example-status-select">
+          Status
+        </ToolbarItem>
+        <ToolbarItem>
+          <Select
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.onStatusToggle}
+            onSelect={this.onStatusSelect}
+            selections={statusSelected}
+            isOpen={statusIsExpanded}
+            ariaLabelledBy="stacked-example-status-select"
+          >
+            {this.statusOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+            ))}
+          </Select>
+        </ToolbarItem>
+        <ToolbarItem variant="label" id="stacked-example-type-select">
+          Type
+        </ToolbarItem>
+        <ToolbarItem>
+          <Select
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.onTypeToggle}
+            onSelect={this.onTypeSelect}
+            selections={typeSelected}
+            isOpen={typeIsExpanded}
+            ariaLabelledBy="stacked-example-type-select"
+          >
+            {this.typeOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+            ))}
+          </Select>
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
-    const iconButtonGroupItems = <React.Fragment>
-      <ToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></ToolbarItem>
-      <ToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></ToolbarItem>
-    </React.Fragment>;
+    const iconButtonGroupItems = (
+      <React.Fragment>
+        <ToolbarItem>
+          <Button variant="plain" aria-label="edit">
+            <EditIcon />
+          </Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="plain" aria-label="clone">
+            <CloneIcon />
+          </Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="plain" aria-label="sync">
+            <SyncIcon />
+          </Button>
+        </ToolbarItem>
+      </React.Fragment>
+    );
 
+    const firstRowItems = (
+      <React.Fragment>
+        <Toolbar>
+          <ToolbarContent>
+            <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="lg">
+              {toggleGroupItems}
+            </ToolbarToggleGroup>
+            <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
+               <ToolbarItem variant="overflow-menu">
+                <OverflowMenu breakpoint="2xl">
+                  <OverflowMenuContent>
+                    <OverflowMenuGroup groupType="button">
+                      <OverflowMenuItem>
+                        <Button variant={ButtonVariant.primary}>Primary</Button>
+                      </OverflowMenuItem>
+                      <OverflowMenuItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </OverflowMenuItem>
+                    </OverflowMenuGroup>
+                  </OverflowMenuContent>
+                  <OverflowMenuControl hasAdditionalOptions>
+                    <Dropdown
+                      onSelect={this.onResourceSelect}
+                      toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+                      isOpen={kebabIsOpen}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                    />
+                  </OverflowMenuControl>
+                </OverflowMenu>
+              </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+      </React.Fragment>
+    );
 
-    const firstRowItems = <React.Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>
-      <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
-      <ToolbarItem variant="overflow-menu">Overflow Menu</ToolbarItem>
-    </React.Fragment>;
+    const secondRowItems = (
+      <React.Fragment>
+        <Toolbar>
+          <ToolbarContent>
+              <ToolbarItem variant="bulk-select">
+                <Dropdown
+                  onSelect={this.onSplitButtonSelect}
+                  toggle={
+                    <DropdownToggle
+                      id="stacked-example-toggle"
+                      splitButtonItems={[
+                        <DropdownToggleCheckbox id="example-checkbox-1" key="split-checkbox" aria-label="Select all" />
+                      ]}
+                      onToggle={this.onSplitButtonToggle}
+                    />
+                  }
+                  isOpen={splitButtonDropdownIsOpen}
+                  dropdownItems={splitButtonDropdownItems}
+                />
+              </ToolbarItem>
+              <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+                <Pagination
+                  itemCount={37}
+                  perPage={this.state.perPage}
+                  page={this.state.page}
+                  onSetPage={this.onSetPage}
+                  widgetId="pagination-options-menu-top"
+                  onPerPageSelect={this.onPerPageSelect}
+                />
+              </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+      </React.Fragment>
+    );
 
-    const secondRowItems = <React.Fragment>
-      <ToolbarItem variant="bulk-select">
-        <Dropdown
-            onSelect={this.onSplitButtonSelect}
-            toggle={(
-              <DropdownToggle
-                id="stacked-example-toggle"
-                splitButtonItems={[
-                  <DropdownToggleCheckbox
-                    id="example-checkbox-1"
-                    key="split-checkbox"
-                    aria-label="Select all"
-                  />
-                ]}
-                onToggle={this.onSplitButtonToggle}
-              />
-            )}
-            isOpen={splitButtonDropdownIsOpen}
-            dropdownItems={splitButtonDropdownItems}
-          />
-      </ToolbarItem>
-      <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
-        <Pagination
-          itemCount={37}
-          perPage={this.state.perPage}
-          page={this.state.page}
-          onSetPage={this.onSetPage}
-          widgetId="pagination-options-menu-top"
-          onPerPageSelect={this.onPerPageSelect}
-        />
-      </ToolbarItem>
-    </React.Fragment>;
-
-    return <Toolbar id="toolbar-group-types">
-      <ToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</ToolbarContent>
-      <Divider />
-      <ToolbarContent>{secondRowItems}</ToolbarContent>
-    </Toolbar>;
+    return (
+      <React.Fragment>
+        {firstRowItems}
+        <Divider />
+        {secondRowItems}
+      </React.Fragment>
+    );
   }
 }
 ```

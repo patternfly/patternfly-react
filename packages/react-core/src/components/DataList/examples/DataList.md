@@ -1,7 +1,7 @@
 ---
-title: 'Data list'
+id: Data list
 section: components
-cssPrefix: 'pf-c-data-list'
+cssPrefix: pf-c-data-list
 propComponents:
   [
     'DataList',
@@ -14,7 +14,6 @@ propComponents:
     'DataListToggle',
     'DataListContent',
   ]
-typescript: true
 ---
 
 import {
@@ -38,7 +37,8 @@ import { css } from '@patternfly/react-styles';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Button,
@@ -88,7 +88,8 @@ SimpleDataList = () => (
 );
 ```
 
-```js title=Compact
+### Compact
+```js
 import React from 'react';
 import {
   Button,
@@ -138,7 +139,8 @@ SimpleDataList = () => (
 );
 ```
 
-```js title=Checkboxes,-actions-and-additional-cells
+### Checkboxes, actions and additional cells
+```js
 import React from 'react';
 import {
   Button,
@@ -222,6 +224,7 @@ class CheckboxActionDataList extends React.Component {
               aria-labelledby="check-action-item1 check-action-action1"
               id="check-action-action1"
               aria-label="Actions"
+              isPlainButtonAction
             >
               <Dropdown
                 isPlain
@@ -261,6 +264,7 @@ class CheckboxActionDataList extends React.Component {
               aria-labelledby="check-action-item2 check-action-action2"
               id="check-action-action2"
               aria-label="Actions"
+              isPlainButtonAction
             >
               <Dropdown
                 isPlain
@@ -308,6 +312,7 @@ class CheckboxActionDataList extends React.Component {
               aria-labelledby="check-action-item3 check-action-action3"
               id="check-action-action3"
               aria-label="Actions"
+              isPlainButtonAction
             >
               <Dropdown
                 isPlain
@@ -350,7 +355,8 @@ class CheckboxActionDataList extends React.Component {
 }
 ```
 
-```js title=Actions:-single-and-multiple
+### Actions: single and multiple
+```js
 import React from 'react';
 import {
   Button,
@@ -432,6 +438,7 @@ class ActionsDataList extends React.Component {
                 aria-labelledby="multi-actions-item1 multi-actions-action1"
                 id="multi-actions-action1"
                 aria-label="Actions"
+                isPlainButtonAction
               >
                 <Dropdown
                   isPlain
@@ -459,7 +466,8 @@ class ActionsDataList extends React.Component {
 }
 ```
 
-```js title=Expandable
+### Expandable
+```js
 import React from 'react';
 import {
   Button,
@@ -556,7 +564,7 @@ class ExpandableDataList extends React.Component {
                 </DataListCell>
               ]}
             />
-            <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions">
+            <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions" isPlainButtonAction>
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
@@ -611,7 +619,7 @@ class ExpandableDataList extends React.Component {
                 </DataListCell>
               ]}
             />
-            <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions">
+            <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions" isPlainButtonAction>
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
@@ -666,7 +674,7 @@ class ExpandableDataList extends React.Component {
                 </DataListCell>
               ]}
             />
-            <DataListAction aria-labelledby="ex-item3 ex-action3" id="ex-action3" aria-label="Actions">
+            <DataListAction aria-labelledby="ex-item3 ex-action3" id="ex-action3" aria-label="Actions" isPlainButtonAction>
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
@@ -700,7 +708,8 @@ class ExpandableDataList extends React.Component {
 }
 ```
 
-```js title=Width-modifiers
+### Width modifiers
+```js
 import React from 'react';
 import {
   Button,
@@ -811,6 +820,7 @@ class ModifiersDataList extends React.Component {
                 aria-labelledby="width-ex2-item1 width-ex2-action1"
                 id="width-ex2-action1"
                 aria-label="Actions"
+                isPlainButtonAction
               >
                 <Dropdown
                   isPlain
@@ -868,6 +878,7 @@ class ModifiersDataList extends React.Component {
                 aria-labelledby="width-ex3-item1 width-ex3-action1"
                 id="width-ex3-action1"
                 aria-label="Actions"
+                isPlainButtonAction
               >
                 <Dropdown
                   isPlain
@@ -901,7 +912,8 @@ class ModifiersDataList extends React.Component {
 }
 ```
 
-```js title=Selectable-rows
+### Selectable rows
+```js
 import React from 'react';
 import {
   Button,
@@ -975,6 +987,7 @@ class SelectableDataList extends React.Component {
                   aria-labelledby="selectable-action-item1 selectable-action-action1"
                   id="selectable-action-action1"
                   aria-label="Actions"
+                  isPlainButtonAction
                 >
                   <Dropdown
                     isPlain
@@ -1010,6 +1023,7 @@ class SelectableDataList extends React.Component {
                 aria-labelledby="selectable-actions-item2 selectable-actions-action2"
                 id="selectable-actions-action2"
                 aria-label="Actions"
+                isPlainButtonAction
               >
                 <Dropdown
                   isPlain

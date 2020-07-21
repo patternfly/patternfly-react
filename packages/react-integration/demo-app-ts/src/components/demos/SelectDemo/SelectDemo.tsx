@@ -23,6 +23,8 @@ interface TypeAheadOption {
 export interface SelectDemoState {
   singleisOpen: boolean;
   singleSelected: string;
+  singleDescisOpen: boolean;
+  singleDescSelected: string;
   disabledSingleisOpen: boolean;
   disabledSingleSelected: string;
   customSingleisOpen: boolean;
@@ -55,6 +57,8 @@ export class SelectDemo extends Component<SelectDemoState> {
   state = {
     singleisOpen: false,
     singleSelected: '',
+    singleDescisOpen: false,
+    singleDescSelected: '',
     disabledSingleisOpen: false,
     disabledSingleSelected: '',
     customSingleisOpen: false,
@@ -159,6 +163,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  singleDescOnToggle = (singleDescisOpen: boolean) => {
+    this.setState({
+      singleDescisOpen
+    });
+  };
+
   disabledSingleOnToggle = (disabledSingleisOpen: boolean) => {
     this.setState({
       disabledSingleisOpen
@@ -236,6 +246,22 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleSelected: selection,
         singleisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  singleDescOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        singleDescSelected: selection,
+        singleDescisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -495,6 +521,44 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-direction"
           name="toggle-direction"
         />
+      </StackItem>
+    );
+  }
+
+  renderDescriptionSelect() {
+    const { singleDescisOpen, singleDescSelected } = this.state;
+    const titleId = 'title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Select with descriptions
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="single-select-with-descriptions"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.singleDescOnToggle}
+            onSelect={this.singleDescOnSelect}
+            selections={singleDescSelected}
+            isOpen={singleDescisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select with descriptions"
+            maxHeight={200}
+          >
+            {this.singleOptions.map((option, index) => (
+              <SelectOption
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                description="This is a description"
+              />
+            ))}
+          </Select>
+        </div>
       </StackItem>
     );
   }
@@ -973,6 +1037,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderSelectCustomContent()}
         {this.renderTypeaheadSelectInForm()}
         {this.renderMenuOnDocumentBodySelect()}
+        {this.renderDescriptionSelect()}
       </Stack>
     );
   }

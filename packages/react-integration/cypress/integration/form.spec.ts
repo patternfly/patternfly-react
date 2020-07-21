@@ -49,6 +49,11 @@ describe('Form Demo Test', () => {
     cy.get('#age-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
+    cy.get('#age-validated').clear();
+    cy.get('#age2-helper.pf-m-warning').should('exist');
+    cy.get('#age-validated').then(textinput => {
+      expect(textinput.attr('aria-invalid')).to.be.equal('false');
+    });
   });
 
   it('Verify form group label has no top spacer', () => {
@@ -56,9 +61,7 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify selecting the form label help icon launches popover', () => {
-    cy.get('#helper-text-target')
-      .click()
-      .should('have.attr', 'aria-expanded', 'true');
-    cy.get('.tippy-popper').should('exist');
+    cy.get('#helper-text-target').click();
+    cy.get('.pf-c-popover').should('exist');
   });
 });

@@ -1,29 +1,16 @@
 ---
-title: 'Notification drawer'
+id: Notification drawer
 section: components
-cssPrefix: 'pf-c-notification-drawer'
-propComponents:
-  [
-    'NotificationDrawer',
-    'NotificationDrawerBody',
-    'NotificationDrawerHeader',
-    'NotificationDrawerGroup',
-    'NotificationDrawerGroupList',
-    'NotificationDrawerList',
-    'NotificationDrawerListItem',
-    'NotificationDrawerListItemBody',
-    'NotificationDrawerListItemHeader',
-  ]
-typescript: true
+cssPrefix: pf-c-notification-drawer
+propComponents: ['NotificationDrawer', 'NotificationDrawerBody', 'NotificationDrawerHeader', 'NotificationDrawerGroup', 'NotificationDrawerGroupList', 'NotificationDrawerList', 'NotificationDrawerListItem', 'NotificationDrawerListItemBody', 'NotificationDrawerListItemHeader']
 beta: true
 ---
 
-import { Button, Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStatePrimary, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerGroup, NotificationDrawerGroupList, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 ## Examples
-
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -205,7 +192,8 @@ class BasicNotificationDrawer extends React.Component {
 }
 ```
 
-```js title=Groups
+### Groups
+```js
 import React from 'react';
 import {
   Button,
@@ -522,7 +510,8 @@ class GroupNotificationDrawer extends React.Component {
 }
 ```
 
-```js title=Lightweight
+### Lightweight
+```js
 import React from 'react';
 import {
   Button,

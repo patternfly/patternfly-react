@@ -18,7 +18,7 @@ export interface ExpandableSectionProps {
   /** Text that appears in the toggle when collapsed (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
   toggleTextCollapsed?: string;
   /** Callback function to toggle the expandable content */
-  onToggle?: () => void;
+  onToggle?: (isExpanded: boolean) => void;
   /** Forces active state */
   isActive?: boolean;
 }
@@ -42,7 +42,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     toggleText: '',
     toggleTextExpanded: '',
     toggleTextCollapsed: '',
-    onToggle: (): any => undefined,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    onToggle: (isExpanded): void => undefined,
     isActive: false
   };
 
@@ -80,9 +81,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     // uncontrolled
     if (isExpanded === undefined) {
       propOrStateIsExpanded = this.state.isExpanded;
-      onToggle = () => {
-        onToggleProp();
-        this.setState(prevState => ({ isExpanded: !prevState.isExpanded }));
+      onToggle = isOpen => {
+        this.setState({ isExpanded: isOpen }, () => onToggleProp(this.state.isExpanded));
       };
     }
 
@@ -107,7 +107,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           className={css(styles.expandableSectionToggle)}
           type="button"
           aria-expanded={propOrStateIsExpanded}
-          onClick={onToggle}
+          onClick={() => onToggle(!propOrStateIsExpanded)}
         >
           <span className={css(styles.expandableSectionToggleIcon)}>
             <AngleRightIcon aria-hidden />
