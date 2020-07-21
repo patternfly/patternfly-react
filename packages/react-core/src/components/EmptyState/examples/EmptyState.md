@@ -1,8 +1,7 @@
 ---
-title: 'Empty state'
+id: Empty state
 section: components
-cssPrefix: 'pf-c-empty-state'
-typescript: true
+cssPrefix: pf-c-empty-state
 propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateIcon', 'EmptyStateSecondaryActions']
 ---
 import {
@@ -18,7 +17,8 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Small
+### Small
+```js
 import React from 'react';
 import {
   Title,
@@ -54,7 +54,8 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Large
+### Large
+```js
 import React from 'react';
 import {
   Title,
@@ -90,7 +91,8 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Title,
@@ -125,7 +127,8 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Extra-Large
+### Extra Large
+```js
 import React from 'react';
 import {
   Title,
@@ -161,7 +164,8 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Extra-Large
+### Extra Large
+```js
 import React from 'react';
 import {
   Title,
@@ -197,7 +201,8 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Spinner
+### Spinner
+```js
 import React from 'react';
 import {
   Title,
@@ -228,7 +233,8 @@ EmptyStateSpinner = () => {
 }
 ```
 
-```js title=No-match-found
+### No match found
+```js
 import React from 'react';
 import {
   Title,

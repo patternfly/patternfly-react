@@ -1,26 +1,15 @@
 ---
-title: "Options menu"
+id: Options menu
 section: components
-cssPrefix: "pf-c-options-menu"
+cssPrefix: pf-c-options-menu
 propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
-typescript: true
 ouia: true
 ---
-import React from 'react';
-import {
-  OptionsMenu,
-  OptionsMenuItem,
-  OptionsMenuToggle,
-  OptionsMenuItemGroup,
-  OptionsMenuDirection,
-  OptionsMenuPosition,
-  OptionsMenuSeparator,
-  OptionsMenuToggleWithText
-} from '@patternfly/react-core';
 import { CaretDownIcon, SortAmountDownIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Single-option
+### Single option
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -68,7 +57,8 @@ class SingleOption extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -103,7 +93,8 @@ class DisabledOptionsMenu extends React.Component {
 }
 ```
 
-```js title=Multiple-options
+### Multiple options
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuItemGroup, OptionsMenuToggle} from '@patternfly/react-core';
 
@@ -167,7 +158,8 @@ class MultipleOptions extends React.Component {
 }
 ```
 
-```js title=Plain
+### Plain
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 import { SortAmountDownIcon } from '@patternfly/react-icons';
@@ -243,7 +235,8 @@ class Plain extends React.Component {
 }
 ```
 
-```js title=Align-top
+### Align top
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuDirection, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -293,7 +286,8 @@ class Top extends React.Component {
 }
 ```
 
-```js title=Align-right
+### Align right
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuPosition, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -343,7 +337,8 @@ class AlignRight extends React.Component {
 }
 ```
 
-```js title=Plain-with-text
+### Plain with text
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
 import { CaretDownIcon } from '@patternfly/react-icons';
@@ -402,7 +397,8 @@ class PlainWithText extends React.Component {
 }
 ```
 
-```js title=Plain-with-text-disabled
+### Plain with text disabled
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
 import { CaretDownIcon } from '@patternfly/react-icons';
@@ -461,7 +457,8 @@ class PlainWithText extends React.Component {
 }
 ```
 
-```js title=Grouped-items-with-titles
+### Grouped items with titles
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle, OptionsMenuItemGroup } from '@patternfly/react-core';
 
@@ -521,7 +518,8 @@ class GroupedItems extends React.Component {
 
 ```
 
-```js title=Single-option-with-menu-on-document-body
+### Single option with menu on document body
+```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 

@@ -1,6 +1,6 @@
 ---
-title: 'Filterable table'
-section: 'demos'
+id: Filterable table
+section: demos
 ---
 
 ## Examples
@@ -27,7 +27,8 @@ import {
 import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Button,

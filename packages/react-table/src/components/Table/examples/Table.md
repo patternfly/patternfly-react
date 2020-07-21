@@ -1,8 +1,7 @@
 ---
-title: 'Table'
-cssPrefix: 'pf-c-table'
-section: 'components'
-typescript: true
+id: Table
+cssPrefix: pf-c-table
+section: components
 propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell', 'RowErrors', 'IHeaderRow', 'IRowData', 'IColumn', 'IExtraRowData', 'IExtraColumnData', 'ISortBy', 'IAction', 'ISeparator', 'ICell', 'IRowCell', 'IValidatorDef', 'IRow']
 ouia: true
 ---
@@ -38,16 +37,6 @@ import {
 } from '@patternfly/react-table';
 
 import {
-    Checkbox,
-    Button,
-    EmptyState,
-    EmptyStateBody,
-    EmptyStatePrimary,
-    Bullseye,
-    SelectOption
-} from '@patternfly/react-core';
-
-import {
   SearchIcon,
   CodeBranchIcon,
   CodeIcon,
@@ -56,20 +45,20 @@ import {
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-import DemoSortableTable from './demo/DemoSortableTable';
+import DemoSortableTable from './DemoSortableTable';
 
 ## Examples
 
-```js title=Basic
-
+### Basic
+```js
 import React from 'react';
+
 import {
   Table,
   TableHeader,
   TableBody,
   textCenter,
 } from '@patternfly/react-table';
-import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 class SimpleTable extends React.Component {
@@ -122,7 +111,7 @@ class SimpleTable extends React.Component {
 
     return (
       <Table aria-label="Simple Table" cells={columns} rows={rows}>
-        <TableHeader className={css(styles.modifiers.nowrap)}/>
+        <TableHeader className={styles.modifiers.nowrap}/>
         <TableBody />
       </Table>
     );
@@ -131,7 +120,8 @@ class SimpleTable extends React.Component {
 ```
 
 
-```js title=Row-click-handler
+### Row click handler
+```js
 import React from 'react';
 import {
   Table,
@@ -179,7 +169,8 @@ class RowClickTable extends React.Component {
 }
 ```
 
-```js title=Custom-row-wrapper
+### Custom row wrapper
+```js
 import React from 'react';
 import {
   Table,
@@ -254,7 +245,8 @@ class RowWrapperTable extends React.Component {
 }
 ```
 
-```js title=Sortable
+### Sortable
+```js
 import React from 'react';
 import {
   Table,
@@ -305,7 +297,8 @@ class SortableTable extends React.Component {
 }
 ```
 
-```js title=Sortable-with-wrapping-headers
+### Sortable with wrapping headers
+```js
 import React from 'react';
 import {
   Table,
@@ -372,7 +365,8 @@ class SortableWrappingHeaders extends React.Component {
 }
 ```
 
-```js title=Selectable
+### Selectable
+```js
 import React from 'react';
 import {
   Table,
@@ -469,7 +463,8 @@ class SelectableTable extends React.Component {
 }
 ```
 
-```js title=Simple-actions
+### Simple actions
+```js
 import React from 'react';
 import {
   Table,
@@ -532,7 +527,8 @@ class SimpleActionsTable extends React.Component {
 }
 ```
 
-```js title=Actions
+### Actions
+```js
 import React from 'react';
 import {
   Table,
@@ -555,10 +551,17 @@ class ActionsTable extends React.Component {
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five'],
-          type: 'green'
+          type: 'green',
+          actionProps: {
+            dropdownPosition: 'right',
+            dropdownDirection: 'up'
+          }
         },
         {
-          cells: ['a', 'two', 'k', 'four', 'five']
+          cells: ['a', 'two', 'k', 'four', 'five'],
+          actionProps: {
+            'data-specific-attr': 'some-value'
+          }
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five'],
@@ -627,7 +630,8 @@ class ActionsTable extends React.Component {
 }
 ```
 
-```js title=First-cell-as-header
+### First cell as header
+```js
 import React from 'react';
 import {
   Table,
@@ -664,7 +668,8 @@ class CellHeader extends React.Component {
 }
 ```
 
-```js title=Compact
+### Compact
+```js
 import React from 'react';
 import {
   Table,
@@ -700,7 +705,8 @@ class CompactTable extends React.Component {
 }
 ```
 
-```js title=Compact-borderless-rows
+### Compact borderless rows
+```js
 import React from 'react';
 import {
   Table,
@@ -742,7 +748,8 @@ class CompactTableBorderlessRows extends React.Component {
 }
 ```
 
-```js title=Compact-expandable
+### Compact expandable
+```js
 import React from 'react';
 import {
   Table,
@@ -832,7 +839,8 @@ class CompactExpandableTable extends React.Component {
 }
 ```
 
-```js title=With-width-modifiers
+### With width modifiers
+```js
 import React from 'react';
 import {
   Table,
@@ -872,7 +880,8 @@ class WidthTable extends React.Component {
 }
 ```
 
-```js title=Breakpoint-modifiers
+### Breakpoint modifiers
+```js
 import React from 'react';
 import {
   Table,
@@ -925,7 +934,8 @@ class HiddenVisibleBreakpointTable extends React.Component {
 }
 ```
 
-```js title=Collapsible
+### Collapsible
+```js
 import React from 'react';
 import {
   Table,
@@ -1011,7 +1021,8 @@ class CollapsibleTable extends React.Component {
 }
 ```
 
-```js title=Compound-expandable
+### Compound expandable
+```js
 import React from 'react';
 import {
   Table,
@@ -1211,7 +1222,8 @@ class CompoundExpandableTable extends React.Component {
 }
 ```
 
-```js title=Controlling-text
+### Controlling text
+```js
 import React from 'react';
 import {
   Table,
@@ -1266,7 +1278,8 @@ class ControllingText extends React.Component {
 }
 ```
 
-```js title=Modifiers-with-table-text
+### Modifiers with table text
+```js
 import React from 'react';
 import {
   Table,
@@ -1311,7 +1324,8 @@ class ModifiersWithTableText extends React.Component {
 }
 ```
 
-```js title=Empty-state
+### Empty state
+```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title } from '@patternfly/react-core';
@@ -1341,7 +1355,8 @@ EmptyStateTable = () => {
 }
 ```
 
-```js title=Editable-rows isBeta
+### Editable rows
+```js isBeta
 import React from 'react';
 import { TextInput, SelectOption } from '@patternfly/react-core';
 import {

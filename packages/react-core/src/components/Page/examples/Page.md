@@ -1,17 +1,15 @@
 ---
-title: 'Page'
+id: Page
 section: components
-cssPrefix: 'pf-c-page'
-typescript: true
+cssPrefix: pf-c-page
 propComponents:
   ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---
 
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
-
 ## Examples
 
-```js title=Vertical-nav
+### Vertical nav
+```js
 import React from 'react';
 import {
   Page,
@@ -66,7 +64,8 @@ class VerticalPage extends React.Component {
 }
 ```
 
-```js title=Horizontal-nav
+### Horizontal nav
+```js
 import React from 'react';
 import {
   Page,
@@ -102,7 +101,8 @@ HorizontalPage = () => {
 };
 ```
 
-```js title=Main-Section-Padding
+### Main Section Padding
+```js
 import React from 'react';
 import {
   Page,
@@ -164,7 +164,8 @@ class VerticalPage extends React.Component {
 }
 ```
 
-```js title=With-or-without-fill
+### With or without fill
+```js
 import React from 'react';
 import {
   Page,

@@ -1,18 +1,16 @@
 ---
-title: Overflow menu
+id: Overflow menu
 section: components
-cssPrefix: 'pf-c-overflow-menu'
-typescript: true
+cssPrefix: pf-c-overflow-menu
 propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
 ---
 
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
-import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Simple-(responsive)
-import * as React from 'react';
+### Simple (responsive)
+```js
+import React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle } from '@patternfly/react-core';
 
@@ -69,8 +67,9 @@ class SimpleOverflowMenu extends React.Component {
 }
 ```
 
-```js title=Group-types
-import * as React from 'react';
+### Group types
+```js
+import React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
@@ -159,8 +158,9 @@ class OverflowMenuGroupTypes extends React.Component {
 ```
 
 
-```js title=Multiple-groups
-import * as React from 'react';
+### Multiple groups
+```js
+import React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
@@ -242,8 +242,9 @@ class OverflowMenuAdditionalOptions extends React.Component {
 ```
 
 
-```js title=Persistent
-import * as React from 'react';
+### Persistent
+```js
+import React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 

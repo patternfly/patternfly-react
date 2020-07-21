@@ -1,18 +1,17 @@
 ---
-title: 'Tooltip'
+id: Tooltip
 section: components
-cssPrefix: 'pf-c-tooltip'
-typescript: true
+cssPrefix: pf-c-tooltip
 propComponents: ['Tooltip']
 ---
 
-import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 import './TooltipExamples.css';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -29,7 +28,8 @@ BasicTooltip = () => (
 )
 ```
 
-```js title=Tooltip-react-ref
+### Tooltip react ref
+```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -48,7 +48,8 @@ TooltipReactRef = () => {
 )}
 ```
 
-```js title=Tooltip-selector-ref
+### Tooltip selector ref
+```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -65,7 +66,8 @@ TooltipSelectorRef = () => (
 )
 ```
 
-```js title=On-icon
+### On icon
+```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
@@ -84,7 +86,8 @@ OnIconTooltip = () => (
 )
 ```
 
-```js title=Options
+### Options
+```js
 import React from 'react';
 import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 

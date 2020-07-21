@@ -1,8 +1,7 @@
 ---
-title: 'Catalog view tile'
-section: 'extensions'
+id: Catalog view tile
+section: extensions
 propComponents: ['CatalogTile']
-typescript: true
 ---
 
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
@@ -17,7 +16,8 @@ Note: Catalog tile lives in its own package at [`@patternfly/react-catalog-view-
 This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
 
 ## Examples
-```js title=Basic-featured-tile
+### Basic featured tile
+```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon } from '@patternfly/react-icons';
@@ -47,7 +47,8 @@ Basic = () => (
 );
 ```
 
-```js title=Basic-with-footer
+### Basic with footer
+```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
@@ -81,7 +82,8 @@ SimpleFooter = () => (
 );
 ```
 
-```js title=Link-variant
+### Link variant
+```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon } from '@patternfly/react-icons';
@@ -111,7 +113,8 @@ Link = () => (
 );
 ```
 
-```js title=With-multiple-icon-badges
+### With multiple icon badges
+```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
@@ -143,7 +146,8 @@ MultiIcon = () => (
 );
 ```
 
-```js title=With-text-badge
+### With text badge
+```js
 import React from 'react';
 import { CatalogTile } from '@patternfly/react-catalog-view-extension';
 import { pfLogo2 } from './examples/pfLogo2.svg'

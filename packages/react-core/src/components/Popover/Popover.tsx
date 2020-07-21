@@ -249,9 +249,14 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
-  const onDocumentClick = () => {
-    // did not click on trigger or popper (otherwise the event bubbling would have been prevented) which means we clicked outside
+  const onDocumentClick = (event: MouseEvent, triggerElement: HTMLElement, popperElement: HTMLElement) => {
     if (hideOnOutsideClick && visible) {
+      // check if we clicked within the popper, if so don't do anything
+      const isChild = popperElement && popperElement.contains(event.target as Node);
+      if (isChild) {
+        // clicked within the popper
+        return;
+      }
       if (triggerManually) {
         shouldClose(null, hide);
       } else {
@@ -290,9 +295,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         show();
       }
     }
-  };
-  const onPopperClick = (event: MouseEvent) => {
-    event.stopPropagation();
   };
   const onContentMouseDown = () => {
     if (focusTrapActive) {
@@ -349,7 +351,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       placement={position}
       onTriggerClick={onTriggerClick}
       onTriggerEnter={onTriggerEnter}
-      onPopperClick={onPopperClick}
       onDocumentClick={onDocumentClick}
       onDocumentKeyDown={onDocumentKeyDown}
       enableFlip={enableFlip}

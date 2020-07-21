@@ -1,17 +1,16 @@
 ---
-title: 'Notification drawer'
+id: Notification drawer
 section: components
-cssPrefix: 'pf-c-notification-drawer'
+cssPrefix: pf-c-notification-drawer
 propComponents: ['NotificationDrawer', 'NotificationDrawerBody', 'NotificationDrawerHeader', 'NotificationDrawerGroup', 'NotificationDrawerGroupList', 'NotificationDrawerList', 'NotificationDrawerListItem', 'NotificationDrawerListItemBody', 'NotificationDrawerListItemHeader']
-typescript: true
 beta: true
 ---
 
-import { Button, Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStatePrimary, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerGroup, NotificationDrawerGroupList, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 
@@ -152,7 +151,8 @@ constructor(props) {
 }
 ```
 
-```js title=Groups
+### Groups
+```js
 import React from 'react';
 import { Button, Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStatePrimary, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerGroup, NotificationDrawerGroupList, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
@@ -403,7 +403,8 @@ render() {
 }
 ```
 
-```js title=Lightweight
+### Lightweight
+```js
 import React from 'react';
 import {
   Button,

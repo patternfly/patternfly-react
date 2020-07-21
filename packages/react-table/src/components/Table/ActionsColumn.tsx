@@ -67,7 +67,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
 
   render() {
     const { isOpen } = this.state;
-    const { items, children, dropdownPosition, dropdownDirection, isDisabled } = this.props;
+    const { items, children, dropdownPosition, dropdownDirection, isDisabled, rowData } = this.props;
     return (
       <React.Fragment>
         <Dropdown
@@ -91,6 +91,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
             )
           )}
           isPlain
+          {...(rowData && rowData.actionProps)}
         />
         {children}
       </React.Fragment>

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.1...@patternfly/react-charts@6.6.2) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.0...@patternfly/react-charts@6.6.1) (2020-07-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.8...@patternfly/react-charts@6.6.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
 ## [6.5.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.7...@patternfly/react-charts@6.5.8) (2020-07-14)
 
 **Note:** Version bump only for package @patternfly/react-charts

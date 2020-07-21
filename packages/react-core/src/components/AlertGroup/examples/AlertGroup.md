@@ -1,17 +1,14 @@
 ---
-title: Alert group
+id: Alert group
 section: components
-cssPrefix: "pf-c-alert-group"
-typescript: true
+cssPrefix: pf-c-alert-group
 propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLink']
 ---
 
-import * as React from 'react';
-import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
-
 ## Examples
-```js title=Static-alert-group
-import * as React from 'react';
+### Static alert group
+```js
+import React from 'react';
 import { Alert, AlertGroup } from '@patternfly/react-core';
 
 class StaticAlertGroup extends React.Component {
@@ -28,8 +25,9 @@ class StaticAlertGroup extends React.Component {
 }
 ```
 
-```js title=Toast-alert-group
-import * as React from 'react';
+### Toast alert group
+```js
+import React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
 class ToastAlertGroup extends React.Component {
   constructor() {
@@ -79,8 +77,9 @@ class ToastAlertGroup extends React.Component {
 }
 ```
 
-```js title=Singular-dynamic-alert-group
-import * as React from 'react';
+### Singular dynamic alert group
+```js
+import React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 class SingularAdditiveAlertGroup extends React.Component {
   constructor() {
@@ -131,8 +130,9 @@ class SingularAdditiveAlertGroup extends React.Component {
 }
 ```
 
-```js title=Multiple-dynamic-alert-group
-import * as React from 'react';
+### Multiple dynamic alert group
+```js
+import React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 class MultipleAdditiveAlertGroup extends React.Component {
   constructor() {
@@ -186,8 +186,9 @@ class MultipleAdditiveAlertGroup extends React.Component {
 }
 ```
 
-```js title=Async-alert-group
-import * as React from 'react';
+### Async alert group
+```js
+import React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
 class AsyncAdditiveAlertGroup extends React.Component {
   constructor() {

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.6.0...@patternfly/react-tokens@4.7.0) (2020-07-20)
+
+
+### Features
+
+* **tokens:** add componentIndex ([#4572](https://github.com/patternfly/patternfly-react/issues/4572)) ([3c7e7f8](https://github.com/patternfly/patternfly-react/commit/3c7e7f8dfc72ece4796865185f21e644aaf22ea0))
+
+
+
+
+
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.5.3...@patternfly/react-tokens@4.6.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
 ## [4.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.5.2...@patternfly/react-tokens@4.5.3) (2020-07-13)
 
 **Note:** Version bump only for package @patternfly/react-tokens

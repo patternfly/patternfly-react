@@ -1,10 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { FindRefWrapper } from './FindRefWrapper';
-import { usePopper } from 'react-popper';
-import { Placement, Modifier } from '@popperjs/core';
-import getOppositePlacement from '@popperjs/core/lib/utils/getOppositePlacement';
+import { usePopper } from './thirdparty/react-popper/usePopper';
+import { Placement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
+
+const hash: {
+  [key: string]: string;
+} = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+
+const getOppositePlacement = (placement: Placement): any =>
+  placement.replace(/left|right|bottom|top/g, (matched: string) => hash[matched] as \);
 
 export interface ToggleMenuBaseProps {
   /** The container to append the menu to. Defaults to 'inline'
@@ -79,7 +85,7 @@ export interface PopperProps {
   /** Callback function when popper is clicked */
   onPopperClick?: (event?: MouseEvent) => void;
   /** Callback function when document is clicked */
-  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement) => void;
+  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement, popperElement?: HTMLElement) => void;
   /** Callback function when keydown event occurs on document */
   onDocumentKeyDown?: (event?: KeyboardEvent) => void;
   /** Enable to flip the popper when it reaches the boundary */
@@ -117,10 +123,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [refElement, setRefElement] = React.useState<HTMLElement>();
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
-  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refElement || triggerElement), [
+  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refElement || triggerElement, popperElement), [
     isVisible,
     triggerElement,
     refElement,
+    popperElement,
     onDocumentClick
   ]);
   React.useEffect(() => {

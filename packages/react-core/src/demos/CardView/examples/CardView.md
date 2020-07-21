@@ -1,57 +1,9 @@
 ---
-title: 'Card view'
-section: 'demos'
-experimentalStage: 'early'
+id: Card view
+section: demos
+experimentalStage: early
 ---
 
-import React from 'react';
-import {
-Avatar,
-Brand,
-Button,
-ButtonVariant,
-Card,
-CardHeader,
-CardActions,
-CardTitle,
-CardBody,
-Checkbox,
-Dropdown,
-DropdownGroup,
-DropdownToggle,
-DropdownItem,
-DropdownSeparator,
-DropdownPosition,
-DropdownDirection,
-Gallery,
-GalleryItem,
-KebabToggle,
-Nav,
-NavItem,
-NavList,
-OverflowMenu,
-OverflowMenuControl,
-OverflowMenuDropdownItem,
-OverflowMenuItem,
-Page,
-PageHeader,
-PageHeaderTools,
-PageHeaderToolsGroup,
-PageHeaderToolsItem,
-PageSection,
-PageSectionVariants,
-PageSidebar,
-SkipToContent,
-TextContent,
-Text,
-Toolbar,
-ToolbarGroup,
-ToolbarItem,
-ToolbarFilter,
-ToolbarContent,
-ToolbarToggleGroup
-} from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
@@ -70,7 +22,8 @@ This is a demo that showcases Patternfly cards.
 
 ## Examples
 
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -122,7 +75,6 @@ import {
   ToolbarContent,
   ToolbarToggleGroup
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';

@@ -1,16 +1,14 @@
 ---
-title: 'Switch'
+id: Switch
 section: components
-cssPrefix: 'pf-c-switch'
+cssPrefix: pf-c-switch
 propComponents: ['Switch']
-typescript: true
 ouia: true
 ---
 
-import { Switch } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
@@ -40,7 +38,8 @@ class SimpleSwitch extends React.Component {
 }
 ```
 
-```js title=Without-label
+### Without label
+```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
@@ -64,7 +63,8 @@ class NoLabelSwitch extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
@@ -88,7 +88,8 @@ DisabledSwitch = () => (
 );
 ```
 
-```js title=Uncontrolled
+### Uncontrolled
+```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
