@@ -38,7 +38,7 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
   results,
   onNextClick,
   onPreviousClick,
-  'aria-label': ariaLabel = '',
+  'aria-label': ariaLabel = 'Search input',
   ...props
 }: SearchInputProps) => {
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
