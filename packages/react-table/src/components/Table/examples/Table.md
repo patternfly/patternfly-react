@@ -551,10 +551,17 @@ class ActionsTable extends React.Component {
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five'],
-          type: 'green'
+          type: 'green',
+          actionProps: {
+            dropdownPosition: 'right',
+            dropdownDirection: 'up'
+          }
         },
         {
-          cells: ['a', 'two', 'k', 'four', 'five']
+          cells: ['a', 'two', 'k', 'four', 'five'],
+          actionProps: {
+            'data-specific-attr': 'some-value'
+          }
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five'],
