@@ -231,9 +231,9 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
   - The old Toolbar component that is normally used in the PageHeader has been removed in favor of `PageHeaderTools` [(#4223)](https://github.com/patternfly/patternfly-react/pull/4223)
   - Removed separator variant [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
 - **ToolbarItem:**
-  - Removed `breakpointMods` prop in favor of `visiblity`, `alignment`, and `spacer` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+  - Removed `breakpointMods` prop in favor of `visibility`, `alignment`, and `spacer` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
 - **ToolbarToggleGroup:**
-  - Removed `breakpointMods` prop in favor of `visiblity`, `alignment`, `spacer`, and `spaceItems` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+  - Removed `breakpointMods` prop in favor of `visibility`, `alignment`, `spacer`, and `spaceItems` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
 
 ### Wizard
 - **Wizard**
