@@ -123,13 +123,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [refElement, setRefElement] = React.useState<HTMLElement>();
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
-  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refElement || triggerElement, popperElement), [
-    isVisible,
-    triggerElement,
-    refElement,
-    popperElement,
-    onDocumentClick
-  ]);
+  const onDocumentClickCallback = React.useCallback(
+    event => onDocumentClick(event, refElement || triggerElement, popperElement),
+    [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
+  );
   React.useEffect(() => {
     setReady(true);
   }, []);
