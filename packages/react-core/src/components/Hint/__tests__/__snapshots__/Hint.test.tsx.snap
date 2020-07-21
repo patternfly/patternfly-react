@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple hint 1`] = `
+<div
+  className="pf-c-hint"
+>
+  <div
+    className="pf-c-hint__actions"
+  />
+  <HintTitle>
+    Title
+  </HintTitle>
+  <HintBody>
+    Body
+  </HintBody>
+  <HintFooter>
+    Footer
+  </HintFooter>
+</div>
+`;
