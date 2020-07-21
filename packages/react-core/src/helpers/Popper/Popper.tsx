@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from './thirdparty/react-popper/usePopper';
-import { Placement, Modifier } from './thirdparty/popper-core';
+import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
 
 const hash: {
@@ -10,7 +10,7 @@ const hash: {
 } = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
 
 const getOppositePlacement = (placement: Placement): any =>
-  placement.replace(/left|right|bottom|top/g, (matched: string) => hash[matched] as \);
+  placement.replace(/left|right|bottom|top/g, (matched: string) => hash[matched] as BasePlacement);
 
 export interface ToggleMenuBaseProps {
   /** The container to append the menu to. Defaults to 'inline'
