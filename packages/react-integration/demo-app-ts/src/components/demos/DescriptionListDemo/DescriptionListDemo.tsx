@@ -50,8 +50,7 @@ export class DescriptionListDemo extends Component {
           <DescriptionListDescription>
             <DescriptionListText>
               <Button variant="link" isInline icon={<PlusCircleIcon />}>
-                {' '}
-                app=MyApp{' '}
+                app=MyApp
               </Button>
             </DescriptionListText>
           </DescriptionListDescription>
