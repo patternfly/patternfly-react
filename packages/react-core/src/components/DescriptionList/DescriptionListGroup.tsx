@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DescriptionList/desc
 import { css } from '@patternfly/react-styles';
 
 export interface DescriptionListGroupProps extends React.HTMLProps<HTMLDivElement> {
-  /** Any elements that can be rendered in the menu */
+  /** Any elements that can be rendered in the list group */
   children?: any;
   /** Additional classes added to the DescriptionListGroup */
   className?: string;
