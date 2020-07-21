@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.32.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.6...@patternfly/react-core@4.32.7) (2020-07-21)
+
+
+### Bug Fixes
+
+* **Select:** use width prop in select ([#4579](https://github.com/patternfly/patternfly-react/issues/4579)) ([d23b5da](https://github.com/patternfly/patternfly-react/commit/d23b5da129c3661351bd539dd29ac5ce4e013ea5)), closes [#4509](https://github.com/patternfly/patternfly-react/issues/4509)
+
+
+
+
+
 ## [4.32.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.5...@patternfly/react-core@4.32.6) (2020-07-21)
 
 **Note:** Version bump only for package @patternfly/react-core
