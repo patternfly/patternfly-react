@@ -1,13 +1,13 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "4.23.7",
+  "version": "4.23.8",
   "scripts": {
     "build:demo-app": "react-scripts build",
     "start:demo-app": "react-scripts start"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.32.7",
+    "@patternfly/react-core": "^4.32.8",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-router": "^4.3.1",
