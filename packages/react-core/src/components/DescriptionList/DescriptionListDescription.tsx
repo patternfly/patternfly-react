@@ -25,12 +25,12 @@ export const DescriptionListDescription: React.FunctionComponent<DescriptionList
 }: DescriptionListDescriptionProps) => {
   const DescriptionListText: any = textComponent;
   return (
-    <dt className={css(styles.descriptionListDescription, className)} {...props}>
+    <dd className={css(styles.descriptionListDescription, className)} {...props}>
       <DescriptionListText href={href} className={'pf-c-description-list__text'}>
         {icon && <span>{icon}</span>}
         {children}
       </DescriptionListText>
-    </dt>
+    </dd>
   );
 };
 DescriptionListDescription.displayName = 'DescriptionListDescription';
