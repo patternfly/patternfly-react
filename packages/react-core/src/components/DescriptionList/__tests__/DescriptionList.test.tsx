@@ -3,13 +3,36 @@ import { shallow, mount } from 'enzyme';
 import { DescriptionList } from '../DescriptionList';
 import { DescriptionListGroup } from '../DescriptionListGroup';
 import { DescriptionListTerm } from '../DescriptionListTerm';
-import { DescriptionListText } from '../DescriptionListText';
 import { DescriptionListDescription } from '../DescriptionListDescription';
-import { Button } from '../../Button';
 
 describe('Description List', () => {
   test('Description List default', () => {
     const view = shallow(<DescriptionList />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Description List default 3 col', () => {
+    const view = shallow(<DescriptionList columnModifier={{ default: '3Col' }}/>);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Description List md breakpoint', () => {
+    const view = shallow(<DescriptionList columnModifier={{ md: '2Col' }}/>);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Description List lg breakpoint', () => {
+    const view = shallow(<DescriptionList columnModifier={{ lg: '3Col' }}/>);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Description List xl breakpoint', () => {
+    const view = shallow(<DescriptionList columnModifier={{ xl: '1Col' }}/>);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Description List 2xl breakpoint', () => {
+    const view = shallow(<DescriptionList columnModifier={{ '2xl': '2Col' }}/>);
     expect(view).toMatchSnapshot();
   });
 
@@ -46,15 +69,6 @@ describe('Description List', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('Text', () => {
-    const view = shallow(
-        <DescriptionListText className="custom-description-list-text" aria-labelledby="text-1">
-          test
-        </DescriptionListText>
-      );
-      expect(view).toMatchSnapshot();
-  })
-
   test('Description', () => {
     const view = shallow(
         <DescriptionListDescription className="custom-description-list-description" aria-labelledby="description-1">
@@ -63,4 +77,5 @@ describe('Description List', () => {
       );
       expect(view).toMatchSnapshot();
   })
+  
 });

@@ -12,9 +12,7 @@ describe('Description List Demo Test', () => {
   });
 
   it('Verify text', () => {
-    cy.get('.pf-c-description-list__term')
-      .children('.pf-c-description-list__text')
-      .contains('Name');
+    cy.get('.pf-c-description-list__term').contains('Name');
   });
 
   it('Verify description', () => {

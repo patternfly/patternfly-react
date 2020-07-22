@@ -7,17 +7,51 @@ exports[`Description List Auto Column Widths Description List 1`] = `
 `;
 
 exports[`Description List Description 1`] = `
-<dd
+<dt
   aria-labelledby="description-1"
   className="pf-c-description-list__description custom-description-list-description"
 >
-  test
-</dd>
+  <span
+    className="pf-c-description-list__text"
+  >
+    test
+  </span>
+</dt>
+`;
+
+exports[`Description List Description List 2xl breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-2-col-on-2xl"
+/>
 `;
 
 exports[`Description List Description List default 1`] = `
 <dl
   className="pf-c-description-list"
+/>
+`;
+
+exports[`Description List Description List default 3 col 1`] = `
+<dl
+  className="pf-c-description-list pf-m-3-col"
+/>
+`;
+
+exports[`Description List Description List lg breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-3-col-on-lg"
+/>
+`;
+
+exports[`Description List Description List md breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-2-col-on-md"
+/>
+`;
+
+exports[`Description List Description List xl breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-1-col-on-xl"
 />
 `;
 
@@ -46,15 +80,8 @@ exports[`Description List Term default 1`] = `
   aria-labelledby="term-1"
   className="pf-c-description-list__term"
 >
-  test
+  <span>
+    test
+  </span>
 </dt>
-`;
-
-exports[`Description List Text 1`] = `
-<div
-  aria-labelledby="text-1"
-  className="custom-description-list-text"
->
-  test
-</div>
 `;
