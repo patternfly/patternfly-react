@@ -3,11 +3,11 @@ import styles from '@patternfly/react-styles/css/components/DescriptionList/desc
 import { css } from '@patternfly/react-styles';
 
 export interface DescriptionListDescriptionProps extends React.HTMLProps<HTMLElement> {
-  /** Anything that can be rendered inside of list term */
+  /** Anything that can be rendered inside of list description */
   children: React.ReactNode;
-  /** Additional classes added to the DescriptionListTerm */
+  /** Additional classes added to the DescriptionListDescription */
   className?: string;
-  /** Indicates which component will be used for the text wrapped by the term */
+  /** Indicates which component will be used for the text wrapped by the description */
   textComponent?: React.ReactNode;
   /** Default hyperlink location */
   href?: string;
