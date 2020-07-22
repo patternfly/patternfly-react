@@ -34,7 +34,6 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   ...props
 }: DescriptionListProps) => (
   <dl
-    {...props}
     className={css(
       styles.descriptionList,
       isHorizontal && styles.modifiers.horizontal,
@@ -43,6 +42,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       hasInlineGrid && styles.modifiers.inlineGrid,
       className
     )}
+    {...props}
   >
     {children}
   </dl>
