@@ -5,17 +5,19 @@ describe('Popover Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/popover-demo-nav-link');
   });
 
-  it('Launch, Test, and Close Popover', () => {
-    cy.get('div[id="popoverTarget"]').then((popoverLink: JQuery<HTMLDivElement>) => {
-      cy.get('.pf-c-popover').should('not.exist');
-      cy.wrap(popoverLink).click();
-      cy.get('.pf-c-popover').should('exist');
-      cy.get('h6').contains('Popover Header');
-      cy.get('.pf-c-popover__body').contains('Popover Body');
-      cy.get('footer').contains('Popover Footer');
-      cy.get('button[aria-label="Close"]').then(closeBtn => {
-        cy.wrap(closeBtn).click();
+  it('Launch, test, and close Popover', () => {
+    ['popoverTarget', 'popover-selector', 'popover-ref'].forEach(id => {
+      cy.get(`[id="${id}"]`).then((popoverLink: JQuery<HTMLDivElement>) => {
         cy.get('.pf-c-popover').should('not.exist');
+        cy.wrap(popoverLink).click();
+        cy.get('.pf-c-popover').should('exist');
+        cy.get('h6').contains('Popover Header');
+        cy.get('.pf-c-popover__body').contains('Popover Body');
+        cy.get('footer').contains('Popover Footer');
+        cy.get('button[aria-label="Close"]').then(closeBtn => {
+          cy.wrap(closeBtn).click();
+          cy.get('.pf-c-popover').should('not.exist');
+        });
       });
     });
   });

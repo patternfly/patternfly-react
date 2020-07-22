@@ -28,6 +28,44 @@ BasicTooltip = () => (
 )
 ```
 
+### Tooltip react ref
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+TooltipReactRef = () => {
+  const tooltipRef = React.useRef();
+  return (
+  <div style={{ margin: '100px' }}>
+    <button ref={tooltipRef}>Tooltip attached via react ref</button>
+    <Tooltip
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      reference={tooltipRef}
+    />
+  </div>
+)}
+```
+
+### Tooltip selector ref
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+TooltipSelectorRef = () => (
+  <div style={{ margin: '100px' }}>
+    <button id="tooltip-selector">Tooltip attached via selector ref</button>
+    <Tooltip
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      reference={() => document.getElementById('tooltip-selector')}
+    />
+  </div>
+)
+```
+
 ### On icon
 ```js
 import React from 'react';

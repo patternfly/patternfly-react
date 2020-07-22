@@ -32,8 +32,18 @@ export interface PopoverProps {
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /** Body content */
   bodyContent: React.ReactNode;
-  /** The reference element to which the popover is relatively placed to */
-  children: ReactElement<any>;
+  /**
+   * The reference element to which the Popover is relatively placed to.
+   * If you cannot wrap the reference with the Popover, you can use the reference prop instead.
+   * Usage: <Popover><Button>Reference</Button></Popover>
+   */
+  children?: ReactElement<any>;
+  /**
+   * The reference element to which the Popover is relatively placed to.
+   * If you can wrap the reference with the Popover, you can use the children prop instead.
+   * Usage: <Popover reference={() => document.getElementById('reference-element')} />
+   */
+  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Popover additional class */
   className?: string;
   /** Aria label for the Close button */
@@ -161,6 +171,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   id,
   boundary,
   tippyProps,
+  reference,
   ...rest
 }) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -330,6 +341,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   return (
     <Popper
       trigger={children}
+      reference={reference}
       popper={content}
       popperMatchesTriggerWidth={false}
       appendTo={appendTo}
