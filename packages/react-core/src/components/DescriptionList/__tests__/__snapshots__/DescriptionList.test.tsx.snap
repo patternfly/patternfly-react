@@ -7,7 +7,7 @@ exports[`Description List Auto Column Widths Description List 1`] = `
 `;
 
 exports[`Description List Description 1`] = `
-<dt
+<dd
   aria-labelledby="description-1"
   className="pf-c-description-list__description custom-description-list-description"
 >
@@ -16,7 +16,7 @@ exports[`Description List Description 1`] = `
   >
     test
   </span>
-</dt>
+</dd>
 `;
 
 exports[`Description List Description List 2xl breakpoint 1`] = `
