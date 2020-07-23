@@ -135,6 +135,7 @@ export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
 export * from './TextInputDemo/TextInputDemo';
+export * from './TileDemo/TileDemo';
 export * from './TitleDemo/TitleDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
