@@ -95,6 +95,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     }
 
     const isSelectOptionObject =
+      valueToCheck !== undefined &&
       typeof valueToCheck !== 'string' &&
       (valueToCheck as SelectOptionObject).toString &&
       (valueToCheck as SelectOptionObject).compareTo;

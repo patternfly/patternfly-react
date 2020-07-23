@@ -32,8 +32,18 @@ export interface PopoverProps {
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /** Body content */
   bodyContent: React.ReactNode;
-  /** The reference element to which the popover is relatively placed to */
-  children: ReactElement<any>;
+  /**
+   * The reference element to which the Popover is relatively placed to.
+   * If you cannot wrap the reference with the Popover, you can use the reference prop instead.
+   * Usage: <Popover><Button>Reference</Button></Popover>
+   */
+  children?: ReactElement<any>;
+  /**
+   * The reference element to which the Popover is relatively placed to.
+   * If you can wrap the reference with the Popover, you can use the children prop instead.
+   * Usage: <Popover reference={() => document.getElementById('reference-element')} />
+   */
+  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Popover additional class */
   className?: string;
   /** Aria label for the Close button */
@@ -161,6 +171,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   id,
   boundary,
   tippyProps,
+  reference,
   ...rest
 }) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -238,9 +249,14 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
-  const onDocumentClick = () => {
-    // did not click on trigger or popper (otherwise the event bubbling would have been prevented) which means we clicked outside
+  const onDocumentClick = (event: MouseEvent, triggerElement: HTMLElement, popperElement: HTMLElement) => {
     if (hideOnOutsideClick && visible) {
+      // check if we clicked within the popper, if so don't do anything
+      const isChild = popperElement && popperElement.contains(event.target as Node);
+      if (isChild) {
+        // clicked within the popper
+        return;
+      }
       if (triggerManually) {
         shouldClose(null, hide);
       } else {
@@ -279,9 +295,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         show();
       }
     }
-  };
-  const onPopperClick = (event: MouseEvent) => {
-    event.stopPropagation();
   };
   const onContentMouseDown = () => {
     if (focusTrapActive) {
@@ -328,6 +341,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   return (
     <Popper
       trigger={children}
+      reference={reference}
       popper={content}
       popperMatchesTriggerWidth={false}
       appendTo={appendTo}
@@ -337,7 +351,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       placement={position}
       onTriggerClick={onTriggerClick}
       onTriggerEnter={onTriggerEnter}
-      onPopperClick={onPopperClick}
       onDocumentClick={onDocumentClick}
       onDocumentKeyDown={onDocumentKeyDown}
       enableFlip={enableFlip}

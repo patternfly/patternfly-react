@@ -27,8 +27,16 @@ export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
 export interface PopperProps {
-  /** The trigger element */
-  trigger: React.ReactNode;
+  /**
+   * The reference element to which the Popover is relatively placed to.
+   * Use either trigger or reference, not both.
+   */
+  trigger?: React.ReactNode;
+  /**
+   * The reference element to which the Popover is relatively placed to.
+   * Use either trigger or reference, not both.
+   */
+  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** The popper (menu/tooltip/popover) element */
   popper: React.ReactElement;
   /** True to set the width of the popper element to the trigger element's width */
@@ -77,7 +85,7 @@ export interface PopperProps {
   /** Callback function when popper is clicked */
   onPopperClick?: (event?: MouseEvent) => void;
   /** Callback function when document is clicked */
-  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement) => void;
+  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement, popperElement?: HTMLElement) => void;
   /** Callback function when keydown event occurs on document */
   onDocumentKeyDown?: (event?: KeyboardEvent) => void;
   /** Enable to flip the popper when it reaches the boundary */
@@ -108,19 +116,33 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onPopperClick,
   onDocumentKeyDown,
   enableFlip = true,
-  flipBehavior = 'flip'
+  flipBehavior = 'flip',
+  reference
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
+  const [refElement, setRefElement] = React.useState<HTMLElement>(null);
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
-  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, triggerElement), [
+  const refOrTrigger = refElement || triggerElement;
+  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refOrTrigger, popperElement), [
     isVisible,
     triggerElement,
+    refElement,
+    popperElement,
     onDocumentClick
   ]);
   React.useEffect(() => {
     setReady(true);
   }, []);
+  React.useEffect(() => {
+    if (reference) {
+      if ((reference as React.RefObject<any>).current) {
+        setRefElement((reference as React.RefObject<any>).current);
+      } else if (typeof reference === 'function') {
+        setRefElement(reference());
+      }
+    }
+  }, [reference]);
   const addEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
     if (listener && element) {
       element.addEventListener(event, listener);
@@ -132,22 +154,22 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   };
   React.useEffect(() => {
-    addEventListener(onMouseEnter, triggerElement, 'mouseenter');
-    addEventListener(onMouseLeave, triggerElement, 'mouseleave');
-    addEventListener(onFocus, triggerElement, 'focus');
-    addEventListener(onBlur, triggerElement, 'blur');
-    addEventListener(onTriggerClick, triggerElement, 'click');
-    addEventListener(onTriggerEnter, triggerElement, 'keydown');
+    addEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
+    addEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
+    addEventListener(onFocus, refOrTrigger, 'focus');
+    addEventListener(onBlur, refOrTrigger, 'blur');
+    addEventListener(onTriggerClick, refOrTrigger, 'click');
+    addEventListener(onTriggerEnter, refOrTrigger, 'keydown');
     addEventListener(onPopperClick, popperElement, 'click');
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
     addEventListener(onDocumentKeyDown, document, 'keydown');
     return () => {
-      removeEventListener(onMouseEnter, triggerElement, 'mouseenter');
-      removeEventListener(onMouseLeave, triggerElement, 'mouseleave');
-      removeEventListener(onFocus, triggerElement, 'focus');
-      removeEventListener(onBlur, triggerElement, 'blur');
-      removeEventListener(onTriggerClick, triggerElement, 'click');
-      removeEventListener(onTriggerEnter, triggerElement, 'keydown');
+      removeEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
+      removeEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
+      removeEventListener(onFocus, refOrTrigger, 'focus');
+      removeEventListener(onBlur, refOrTrigger, 'blur');
+      removeEventListener(onTriggerClick, refOrTrigger, 'click');
+      removeEventListener(onTriggerEnter, refOrTrigger, 'keydown');
       removeEventListener(onPopperClick, popperElement, 'click');
       onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
       removeEventListener(onDocumentKeyDown, document, 'keydown');
@@ -163,7 +185,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     onTriggerEnter,
     onPopperClick,
     onDocumentClick,
-    onDocumentKeyDown
+    onDocumentKeyDown,
+    refElement
   ]);
   const getPlacement = () => {
     if (placement) {
@@ -197,7 +220,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }),
     [popperMatchesTriggerWidth]
   );
-  const { styles: popperStyles, attributes } = usePopper(triggerElement, popperElement, {
+
+  const { styles: popperStyles, attributes } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -260,7 +284,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   return (
     <>
-      <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
+      {!reference && trigger && (
+        <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
+      )}
       {ready &&
         isVisible &&
         ReactDOM.createPortal(

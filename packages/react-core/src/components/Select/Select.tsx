@@ -574,6 +574,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
+        {...(width && { style: { width } })}
       >
         {isOpen && menuContainer}
       </div>
@@ -589,6 +590,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         )}
         ref={this.parentRef}
         {...getOUIAProps(Select.displayName, ouiaId, ouiaSafe)}
+        {...(width && { style: { width } })}
       >
         <SelectToggle
           id={selectToggleId}

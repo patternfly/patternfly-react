@@ -16,7 +16,8 @@ SimplePopover = () => (
     <Popover
       headerContent={<div>Popover Header</div>}
       bodyContent={
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        <Button onClick={() => console.log('click')}>click</Button></div>
       }
       footerContent="Popover Footer"
     >
@@ -24,6 +25,48 @@ SimplePopover = () => (
     </Popover>
   </div>
 );
+```
+
+### Popover react ref
+```js
+import React from 'react';
+import { Popover } from '@patternfly/react-core';
+
+PopoverReactRef = () => {
+  const popoverRef = React.useRef();
+  return (
+  <div style={{ margin: '100px' }}>
+    <button ref={popoverRef}>Popover attached via react ref</button>
+    <Popover
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      footerContent="Popover Footer"
+      reference={popoverRef}
+    />
+  </div>
+)}
+```
+
+### Popover selector ref
+```js
+import React from 'react';
+import { Popover } from '@patternfly/react-core';
+
+PopoverSelectorRef = () => (
+  <div style={{ margin: '100px' }}>
+    <button id="popover-selector">Popover attached via selector ref</button>
+    <Popover
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      footerContent="Popover Footer"
+      reference={() => document.getElementById('popover-selector')}
+    />
+  </div>
+)
 ```
 
 ### Advanced

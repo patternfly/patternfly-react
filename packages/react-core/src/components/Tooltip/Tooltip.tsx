@@ -27,8 +27,18 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * If you don't want that or prefer to add the aria attribute yourself on the trigger, set aria to 'none'.
    */
   aria?: 'describedby' | 'labelledby' | 'none';
-  /** The reference element to which the tooltip is relatively placed to */
-  children: ReactElement<any>;
+  /**
+   * The reference element to which the Tooltip is relatively placed to.
+   * If you cannot wrap the reference with the Tooltip, you can use the reference prop instead.
+   * Usage: <Tooltip><Button>Reference</Button></Tooltip>
+   */
+  children?: ReactElement<any>;
+  /**
+   * The reference element to which the Tooltip is relatively placed to.
+   * If you can wrap the reference with the Tooltip, you can use the children prop instead.
+   * Usage: <Tooltip reference={() => document.getElementById('reference-element')} />
+   */
+  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Tooltip additional class */
   className?: string;
   /** Tooltip content */
@@ -107,6 +117,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
   children,
   animationDuration = 300,
+  reference,
   boundary,
   isAppLauncher,
   tippyProps,
@@ -225,7 +236,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   };
 
   const addAriaToTrigger = () => {
-    if (aria === 'describedby' && children.props && !children.props['aria-describedby']) {
+    if (aria === 'describedby' && children && children.props && !children.props['aria-describedby']) {
       return React.cloneElement(children, { 'aria-describedby': id });
     } else if (aria === 'labelledby' && children.props && !children.props['aria-labelledby']) {
       return React.cloneElement(children, { 'aria-labelledby': id });
@@ -236,6 +247,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   return (
     <Popper
       trigger={aria !== 'none' ? addAriaToTrigger() : children}
+      reference={reference}
       popper={content}
       popperMatchesTriggerWidth={false}
       appendTo={appendTo}
