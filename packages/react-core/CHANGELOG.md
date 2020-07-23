@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.32.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.8...@patternfly/react-core@4.32.9) (2020-07-23)
+
+
+### Bug Fixes
+
+* **demos:** fix demo headers and imports ([#4607](https://github.com/patternfly/patternfly-react/issues/4607)) ([a144ddd](https://github.com/patternfly/patternfly-react/commit/a144ddd2570408d419ea3526b5a588a4b5228569))
+
+
+
+
+
 ## [4.32.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.7...@patternfly/react-core@4.32.8) (2020-07-22)
 
 **Note:** Version bump only for package @patternfly/react-core
