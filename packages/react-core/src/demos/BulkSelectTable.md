@@ -4,6 +4,7 @@ section: demos
 ---
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
+## Examples
 ### Simple
 ```js
 import React from 'react';

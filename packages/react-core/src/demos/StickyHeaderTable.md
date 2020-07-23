@@ -3,6 +3,10 @@ id: Sticky header table
 section: demos
 ---
 
+## Examples
+
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+
 ### Basic
 ```js isFullscreen
 import React from 'react';

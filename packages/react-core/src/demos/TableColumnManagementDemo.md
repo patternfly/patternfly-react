@@ -5,33 +5,6 @@ section: demos
 
 ## Examples
 
-import {
-  Button,
-  Checkbox,
-  DataList,
-  DataListCheck,
-  DataListItem,
-  DataListItemRow,
-  DataListCell,
-  DataListItemCells,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarToggleGroup,
-  Modal,
-  OptionsMenu,
-  OptionsMenuToggle,
-  OverflowMenu,
-  OverflowMenuGroup,
-  OverflowMenuItem,
-  Pagination,
-  PaginationVariant,
-  Text,
-  TextContent,
-  Select,
-  SelectVariant
-} from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import {
   CodeIcon,
