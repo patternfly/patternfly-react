@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.23.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.23.1...@patternfly/react-integration@4.23.2) (2020-07-23)
+
+
+### Bug Fixes
+
+* **NavExpandable:** converts nav expandable to button ([#4512](https://github.com/patternfly/patternfly-react/issues/4512)) ([ead0266](https://github.com/patternfly/patternfly-react/commit/ead0266fe165d84ed4538772e3c48baf98508044))
+
+
+
+
+
 ## [4.23.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.23.0...@patternfly/react-integration@4.23.1) (2020-07-22)
 
 **Note:** Version bump only for package @patternfly/react-integration

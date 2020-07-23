@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.23.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.9...demo-app-ts@4.23.10) (2020-07-23)
+
+
+### Bug Fixes
+
+* **NavExpandable:** converts nav expandable to button ([#4512](https://github.com/patternfly/patternfly-react/issues/4512)) ([ead0266](https://github.com/patternfly/patternfly-react/commit/ead0266fe165d84ed4538772e3c48baf98508044))
+
+
+
+
+
 ## [4.23.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.8...demo-app-ts@4.23.9) (2020-07-23)
 
 **Note:** Version bump only for package demo-app-ts
