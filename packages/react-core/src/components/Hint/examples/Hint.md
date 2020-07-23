@@ -2,7 +2,7 @@
 id: Hint
 section: components
 cssPrefix: null
-propComponents: ['Hint']
+propComponents: ['Hint', 'HintTitle', 'HintBody', 'HintFooter']
 beta: true
 ---
 
