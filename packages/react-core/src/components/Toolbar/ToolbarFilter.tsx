@@ -67,7 +67,10 @@ export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFi
   render() {
     const { children, chips, deleteChipGroup, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
-    const categoryKey = typeof categoryName === 'string' ? categoryName : categoryName.key;
+    const categoryKey =
+      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
+        ? categoryName.key
+        : categoryName.toString();
 
     const chipGroup = chips.length ? (
       <ToolbarItem variant="chip-group">
