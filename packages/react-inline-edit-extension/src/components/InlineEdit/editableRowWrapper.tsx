@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
-import classNames from 'classnames';
 import { css } from '@patternfly/react-styles';
 import { RowWrapper, RowWrapperRow } from '@patternfly/react-table';
 import {
@@ -225,7 +224,7 @@ export const editableRowWrapper = (RowWrapperComponent: typeof RowWrapper) =>
           <RowWrapperComponent
             {...this.props}
             trRef={this.element}
-            className={classNames(trClassName, className)}
+            className={css(trClassName, className)}
             onScroll={event => {
               if (hasConfirmationButtons) {
                 this.handleScroll();

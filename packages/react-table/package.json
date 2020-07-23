@@ -35,8 +35,6 @@
     "@patternfly/react-icons": "^4.5.1",
     "@patternfly/react-styles": "^4.5.0",
     "@patternfly/react-tokens": "^4.7.0",
-    "@types/classnames": "^2.2.9",
-    "classnames": "^2.2.5",
     "lodash": "^4.17.19",
     "tslib": "^1.11.1"
   },

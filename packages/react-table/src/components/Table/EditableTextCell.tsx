@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
@@ -56,7 +56,7 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
         }}
         aria-label={inputAriaLabel}
       />
-      <div className={classNames(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
+      <div className={css(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
         {props.errorText}
       </div>
     </div>

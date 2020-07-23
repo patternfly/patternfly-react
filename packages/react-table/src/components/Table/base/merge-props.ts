@@ -5,7 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
 import { mergeWith } from 'lodash';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 /**
  * @param {any} props - Props
@@ -29,7 +29,7 @@ export function mergeProps(...props: any) {
     if (key === 'className') {
       // Process class names through classNames to merge properly
       // as a string.
-      return classNames(a, b);
+      return css(a, b);
     }
 
     return undefined;
