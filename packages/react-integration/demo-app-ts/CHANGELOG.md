@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.23.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.11...demo-app-ts@4.23.12) (2020-07-27)
+
+
+### Bug Fixes
+
+* **NotificationDrawer:** fix accessibility issues and add accessibility test cases ([#4466](https://github.com/patternfly/patternfly-react/issues/4466)) ([d4cb0bb](https://github.com/patternfly/patternfly-react/commit/d4cb0bbe4381967713429a58c0f15d6190f3ceff))
+
+
+
+
+
 ## [4.23.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.10...demo-app-ts@4.23.11) (2020-07-23)
 
 **Note:** Version bump only for package demo-app-ts
