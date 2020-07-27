@@ -161,7 +161,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0] = this.filterRef.current;
     }
 
-    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent) {
+    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent && this.refCollection[0]) {
       this.refCollection[0].focus();
     }
 
@@ -289,15 +289,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const { isOpen, isCreatable, createText } = this.props;
     const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
     if (isOpen) {
-      if (position === 'enter' && (typeaheadActiveChild || this.refCollection[0])) {
-        this.setState({
-          typeaheadInputValue:
-            (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
-        });
-        if (typeaheadActiveChild) {
-          typeaheadActiveChild.click();
-        } else {
-          this.refCollection[0].click();
+      if (position === 'enter') {
+        if (typeaheadActiveChild || this.refCollection[0]) {
+          this.setState({
+            typeaheadInputValue:
+              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
+          });
+          if (typeaheadActiveChild) {
+            typeaheadActiveChild.click();
+          } else {
+            this.refCollection[0].click();
+          }
         }
       } else {
         let nextIndex;

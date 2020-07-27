@@ -259,6 +259,34 @@ describe('typeahead select', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('test select existing option on a non-creatable select', () => {
+    const mockEvent = { target: { value: 'Oth' } } as React.ChangeEvent<HTMLInputElement>;
+    const view = mount(
+      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen>
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.find('Select').instance() as any;
+    inst.onChange(mockEvent);
+    inst.handleTypeaheadKeys('enter');
+    view.update();
+    expect(view).toMatchSnapshot();
+  });
+
+  test('test select non-existing option on a non-creatable select', () => {
+    const mockEvent = { target: { value: 'NonExistingOption' } } as React.ChangeEvent<HTMLInputElement>;
+    const view = mount(
+      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen>
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.find('Select').instance() as any;
+    inst.onChange(mockEvent);
+    inst.handleTypeaheadKeys('enter');
+    view.update();
+    expect(view).toMatchSnapshot();
+  });
+
   test('test creatable option', () => {
     const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
