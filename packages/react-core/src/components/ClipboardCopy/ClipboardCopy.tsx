@@ -10,12 +10,14 @@ import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 
-export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>) => {
-  const inpt = event.currentTarget.previousSibling;
-  const r = document.createRange();
-  r.selectNode(inpt);
-  window.getSelection().addRange(r);
+export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
+  const clipboard = event.currentTarget.parentElement;
+  const el = document.createElement('textarea');
+  el.value = text.toString();
+  clipboard.appendChild(el);
+  el.select();
   document.execCommand('copy');
+  clipboard.removeChild(el);
 };
 
 export enum ClipboardCopyVariant {
