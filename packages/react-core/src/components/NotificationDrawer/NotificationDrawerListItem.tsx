@@ -29,20 +29,29 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   tabIndex = 0,
   variant,
   ...props
-}: NotificationDrawerListItemProps) => (
-  <li
-    {...props}
-    className={css(
-      styles.notificationDrawerListItem,
-      isHoverable && styles.modifiers.hoverable,
-      styles.modifiers[variant],
-      isRead && styles.modifiers.read,
-      className
-    )}
-    tabIndex={tabIndex}
-    onClick={e => onClick(e)}
-  >
-    {children}
-  </li>
-);
+}: NotificationDrawerListItemProps) => {
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    // Accessibility function. Click on the list item when pressing Enter or Space on it.
+    if (event.key === 'Enter' || event.key === ' ') {
+      (event.target as HTMLElement).click();
+    }
+  };
+  return (
+    <li
+      {...props}
+      className={css(
+        styles.notificationDrawerListItem,
+        isHoverable && styles.modifiers.hoverable,
+        styles.modifiers[variant],
+        isRead && styles.modifiers.read,
+        className
+      )}
+      tabIndex={tabIndex}
+      onClick={e => onClick(e)}
+      onKeyDown={onKeyDown}
+    >
+      {children}
+    </li>
+  );
+};
 NotificationDrawerListItem.displayName = 'NotificationDrawerListItem';

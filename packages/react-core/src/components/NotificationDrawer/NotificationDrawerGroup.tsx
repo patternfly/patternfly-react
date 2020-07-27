@@ -43,6 +43,12 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
         className={css(styles.notificationDrawerGroupToggle)}
         aria-expanded={isExpanded}
         onClick={e => onExpand(e, !isExpanded)}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onExpand(e, !isExpanded);
+          }
+        }}
       >
         <div>{title}</div>
         <div className={css(styles.notificationDrawerGroupToggleCount)}>
