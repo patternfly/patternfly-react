@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.24.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.14...demo-app-ts@4.24.0) (2020-07-28)
+
+
+### Features
+
+* **Button:** add cta/large modifier ([#4596](https://github.com/patternfly/patternfly-react/issues/4596)) ([bc97c3c](https://github.com/patternfly/patternfly-react/commit/bc97c3cc059fc36f4ab201b1a77ee600c9983ba9))
+* **Hint:** add hint components ([#4595](https://github.com/patternfly/patternfly-react/issues/4595)) ([7adfa83](https://github.com/patternfly/patternfly-react/commit/7adfa83e970f5b3ef49a28358405650367ecc4c9))
+
+
+
+
+
 ## [4.23.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.13...demo-app-ts@4.23.14) (2020-07-28)
 
 **Note:** Version bump only for package demo-app-ts

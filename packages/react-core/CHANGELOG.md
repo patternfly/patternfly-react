@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.14...@patternfly/react-core@4.33.0) (2020-07-28)
+
+
+### Bug Fixes
+
+* **Modal:** ensure getElement does not return null ([#4544](https://github.com/patternfly/patternfly-react/issues/4544)) ([358b0e2](https://github.com/patternfly/patternfly-react/commit/358b0e2a7b20fd87737359bb3f34ad717d0a8efe))
+* **overflowmenu-dropdown-item:** allow to pass dropdown item props ([#4536](https://github.com/patternfly/patternfly-react/issues/4536)) ([4deab01](https://github.com/patternfly/patternfly-react/commit/4deab0164812edb90a0a12c8eeb7dedf5a1b4bb4))
+
+
+### Features
+
+* **Button:** add cta/large modifier ([#4596](https://github.com/patternfly/patternfly-react/issues/4596)) ([bc97c3c](https://github.com/patternfly/patternfly-react/commit/bc97c3cc059fc36f4ab201b1a77ee600c9983ba9))
+* **Hint:** add hint components ([#4595](https://github.com/patternfly/patternfly-react/issues/4595)) ([7adfa83](https://github.com/patternfly/patternfly-react/commit/7adfa83e970f5b3ef49a28358405650367ecc4c9))
+
+
+
+
+
 ## [4.32.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.13...@patternfly/react-core@4.32.14) (2020-07-28)
 
 
