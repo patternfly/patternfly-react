@@ -66,6 +66,7 @@ export * from './FormDemo/FormDemo';
 export * from './FormSelectDemo/FormSelectDemo';
 export * from './GalleryDemo/GalleryDemo';
 export * from './GridDemo/GridDemo';
+export * from './HintDemo/HintDemo';
 export * from './InputGroupDemo/InputGroupDemo';
 export * from './LabelDemo/LabelDemo';
 export * from './LevelDemo/LevelDemo';

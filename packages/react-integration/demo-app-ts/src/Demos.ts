@@ -347,6 +347,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GridDemo
   },
   {
+    id: 'hint-demo',
+    name: 'Hint Demo',
+    componentType: Examples.HintDemo
+  },
+  {
     id: 'input-group-demo',
     name: 'Input Group Demo',
     componentType: Examples.InputGroupDemo
