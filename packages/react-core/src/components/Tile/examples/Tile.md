@@ -114,6 +114,7 @@ LargeStackedTile = () => (
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
+import { BellIcon } from '@patternfly/react-icons';
 
 ExtraContentTile = () => (
   <React.Fragment>
