@@ -13,8 +13,9 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   className?: string;
   /** Value of the search input */
   value?: string;
-  /** The count of returned search results */
-  results?: string;
+  /** The number of search results returned. Either a total number of results,
+   * or a string representing the current result over the total number of results. i.e. "1 / 5" */
+  numberOfResults?: number | string;
   /** An accessible label for the search input */
   'aria-label'?: string;
   /** placeholder text of the search input */
@@ -35,7 +36,7 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
   placeholder,
   onChange,
   onClear,
-  results,
+  numberOfResults,
   onNextClick,
   onPreviousClick,
   'aria-label': ariaLabel = 'Search input',
@@ -63,9 +64,9 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
       </span>
       {value && (
         <span className={css(styles.searchInputUtilities)}>
-          {results && (
+          {numberOfResults && (
             <span className={css(styles.searchInputCount)}>
-              <Badge isRead>{results}</Badge>
+              <Badge isRead>{numberOfResults}</Badge>
             </span>
           )}
           {!!onNextClick && !!onPreviousClick && (

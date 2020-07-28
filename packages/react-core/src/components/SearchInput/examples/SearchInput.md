@@ -49,20 +49,20 @@ class SearchInputWithResultCount extends React.Component {
     super(props);
     this.state = {
       value: '',
-      results: 0
+      numberOfResults: 0
     };
 
     this.onChange = (value, event) => {
       this.setState({
         value: value,
-        results: 3
+        numberOfResults: 3
       });
     };
     
     this.onClear = (event) => {
       this.setState({
         value: '',
-        results: 0
+        numberOfResults: 0
       });
     }
   }
@@ -74,7 +74,7 @@ class SearchInputWithResultCount extends React.Component {
         value={this.state.value}
         onChange={this.onChange}
         onClear={this.onClear}
-        results={this.state.results}
+        numberOfResults={this.state.numberOfResults}
       />
     );
   }
@@ -91,21 +91,21 @@ class SearchInputWithNavigableOptions extends React.Component {
     super(props);
     this.state = {
       value: '',
-      results: 0,
+      numberOfResults: 0,
       currentResult: 1
     };
   
     this.onChange = (value, event) => {
       this.setState({
         value: value,
-        results: 3
+        numberOfResults: 3
       });
     };
     
     this.onClear = (event) => {
       this.setState({
         value: '',
-        results: 0,
+        numberOfResults: 0,
         currentResult: 1
       });
     }
@@ -114,7 +114,7 @@ class SearchInputWithNavigableOptions extends React.Component {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentResult + 1;
         return {
-          currentResult: newCurrentResult <= prevState.results ? newCurrentResult : prevState.results
+          currentResult: newCurrentResult <= prevState.numberOfResults ? newCurrentResult : prevState.numberOfResults
         } 
       });
     }
@@ -136,7 +136,7 @@ class SearchInputWithNavigableOptions extends React.Component {
         value={this.state.value}
         onChange={this.onChange}
         onClear={this.onClear}
-        results={`${this.state.currentResult} / ${this.state.results}`}
+        numberOfResults={`${this.state.currentResult} / ${this.state.numberOfResults}`}
         onNextClick={this.onNext}
         onPreviousClick={this.onPrevious}
       />
