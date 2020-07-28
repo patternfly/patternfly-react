@@ -108,3 +108,23 @@ LargeStackedTile = () => (
   </React.Fragment>
 );
 ```
+
+### Tile with extra content
+
+```js
+import React from 'react';
+import { Tile } from '@patternfly/react-core';
+
+ExtraContentTile = () => (
+  <React.Fragment>
+    <Tile title="Default" icon={<BellIcon />} isStacked>
+      This is really really long subtext that goes on for so long that it has to wrap to the next line. This is really really long subtext that goes on for so long that it has to wrap to the next line.
+    </Tile>{' '}
+    <Tile title="Selected" icon={<BellIcon />} isStacked>
+      This is really really long subtext that goes on for so long that it has to wrap to the next line.
+    </Tile>{' '}
+    <Tile title="Disabled" icon={<BellIcon />} isStacked>
+      Subtext goes here
+    </Tile>
+);
+```
