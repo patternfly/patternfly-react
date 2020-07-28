@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.32.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.13...@patternfly/react-core@4.32.14) (2020-07-28)
+
+
+### Bug Fixes
+
+* **ChipGroup:** Add type button to overflow chip button ([#4608](https://github.com/patternfly/patternfly-react/issues/4608)) ([d135e8b](https://github.com/patternfly/patternfly-react/commit/d135e8bb81dde8a84aa9872eecd5650e30f6347e))
+
+
+
+
+
 ## [4.32.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.32.12...@patternfly/react-core@4.32.13) (2020-07-27)
 
 **Note:** Version bump only for package @patternfly/react-core
