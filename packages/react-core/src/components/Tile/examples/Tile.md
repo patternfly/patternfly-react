@@ -126,5 +126,6 @@ ExtraContentTile = () => (
     <Tile title="Disabled" icon={<BellIcon />} isStacked>
       Subtext goes here
     </Tile>
+  </React.Fragment>
 );
 ```
