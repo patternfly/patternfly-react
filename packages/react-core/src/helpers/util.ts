@@ -196,7 +196,7 @@ export function keyHandler(
  * @param {string} position The orientation of the dropdown
  * @param {string[]} collection Array of refs to the items in the dropdown
  */
-export function getNextIndex(index: number, position: string, collection: any[]) {
+export function getNextIndex(index: number, position: string, collection: any[]): number {
   let nextIndex;
   if (position === 'up') {
     if (index === 0) {
@@ -212,7 +212,7 @@ export function getNextIndex(index: number, position: string, collection: any[])
     nextIndex = index + 1;
   }
   if (collection[nextIndex] === null) {
-    getNextIndex(nextIndex, position, collection);
+    return getNextIndex(nextIndex, position, collection);
   } else {
     return nextIndex;
   }

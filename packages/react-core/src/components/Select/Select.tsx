@@ -7,6 +7,7 @@ import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
+import { SelectGroup } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
@@ -193,7 +194,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children } = this.props;
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children, isGrouped } = this.props;
     let typeaheadFilteredChildren: any;
     if (onFilter) {
       typeaheadFilteredChildren = onFilter(e) || children;
@@ -204,12 +205,36 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } catch (err) {
         input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
-      typeaheadFilteredChildren =
-        e.target.value.toString() !== ''
-          ? React.Children.toArray<React.ReactElement>(this.props.children).filter(
-              child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
-            )
-          : React.Children.toArray(this.props.children);
+      const childrenArray = React.Children.toArray(children);
+      if (isGrouped) {
+        typeaheadFilteredChildren =
+          e.target.value.toString() !== ''
+            ? React.Children.map(children, (group: React.ReactElement) => {
+                if (group.type === SelectGroup) {
+                  const filteredGroupChildren = React.Children.toArray(group.props.children).filter(
+                    (child: React.ReactElement) =>
+                      this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
+                  );
+                  if (filteredGroupChildren.length > 0) {
+                    return React.cloneElement(group, {
+                      titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+                      children: filteredGroupChildren
+                    });
+                  }
+                } else {
+                  return React.Children.toArray(group).filter(
+                    (child: React.ReactElement) =>
+                      this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
+                  );
+                }
+              })
+            : childrenArray;
+      } else {
+        typeaheadFilteredChildren =
+          e.target.value.toString() !== ''
+            ? childrenArray.filter(child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0)
+            : childrenArray;
+      }
     }
     if (!typeaheadFilteredChildren) {
       typeaheadFilteredChildren = [];
@@ -254,12 +279,47 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   extendTypeaheadChildren(typeaheadActiveChild: HTMLElement) {
+    const { isGrouped } = this.props;
+
     let activeElement = null as HTMLElement;
     if (Boolean(typeaheadActiveChild) && typeaheadActiveChild.classList.contains('pf-m-description')) {
       activeElement = typeaheadActiveChild.firstElementChild as HTMLElement;
     } else if (typeaheadActiveChild) {
       activeElement = typeaheadActiveChild;
     }
+    if (isGrouped) {
+      return React.Children.map(
+        this.state.typeaheadFilteredChildren as React.ReactElement[],
+        (group: React.ReactElement) => {
+          if (group.type === SelectGroup) {
+            return React.cloneElement(group, {
+              titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+              children: React.Children.map(group.props.children, (child: React.ReactElement) =>
+                React.cloneElement(child as React.ReactElement, {
+                  isFocused:
+                    activeElement &&
+                    (activeElement.innerText ===
+                      this.getDisplay((child as React.ReactElement).props.value.toString(), 'text') ||
+                      (this.props.isCreatable &&
+                        typeaheadActiveChild.innerText ===
+                          `{createText} "${(child as React.ReactElement).props.value}"`))
+                })
+              )
+            });
+          } else {
+            return React.cloneElement(group, {
+              isFocused:
+                activeElement &&
+                (activeElement.innerText ===
+                  this.getDisplay((group as React.ReactElement).props.value.toString(), 'text') ||
+                  (this.props.isCreatable &&
+                    typeaheadActiveChild.innerText === `{createText} "${(group as React.ReactElement).props.value}"`))
+            });
+          }
+        }
+      );
+    }
+
     return this.state.typeaheadFilteredChildren.map((child: React.ReactNode) =>
       React.cloneElement(child as React.ReactElement, {
         isFocused:
@@ -307,6 +367,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           nextIndex = this.refCollection.length - 1;
         } else {
           nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
+        }
+        if (this.refCollection[nextIndex] === null) {
+          return;
         }
         const hasDescriptionElm = Boolean(this.refCollection[nextIndex].classList.contains('pf-m-description'));
         const optionTextElm = hasDescriptionElm
