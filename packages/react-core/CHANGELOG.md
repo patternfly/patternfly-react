@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.34.2...@patternfly/react-core@4.35.0) (2020-07-29)
+
+
+### Bug Fixes
+
+* **expandable-section:** make children optional ([#4621](https://github.com/patternfly/patternfly-react/issues/4621)) ([5c52c59](https://github.com/patternfly/patternfly-react/commit/5c52c5970c4b9f233296977e86aaeddac9d0b1fb))
+* **Toolbar:** deleteChip expects categoryKey as string ([#4553](https://github.com/patternfly/patternfly-react/issues/4553)) ([f49358c](https://github.com/patternfly/patternfly-react/commit/f49358c52c4193724747b55534bdc092b2ccf87f))
+
+
+### Features
+
+* **Select:** allow typeahead groups, fix few bugs around groups ([#4622](https://github.com/patternfly/patternfly-react/issues/4622)) ([dbacb9b](https://github.com/patternfly/patternfly-react/commit/dbacb9b37bf20dff7d7651650774fed4965c46f6))
+
+
+
+
+
 ## [4.34.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.34.1...@patternfly/react-core@4.34.2) (2020-07-29)
 
 
