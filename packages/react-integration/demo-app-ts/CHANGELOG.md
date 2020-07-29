@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.25.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.24.2...demo-app-ts@4.25.0) (2020-07-29)
+
+
+### Features
+
+* **wiz:** make wiz nav items more easily discoverable ([#4425](https://github.com/patternfly/patternfly-react/issues/4425)) ([92384d4](https://github.com/patternfly/patternfly-react/commit/92384d40cb4d5e3171c6922d00e391ed290239ac))
+
+
+
+
+
 ## [4.24.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.24.1...demo-app-ts@4.24.2) (2020-07-29)
 
 **Note:** Version bump only for package demo-app-ts

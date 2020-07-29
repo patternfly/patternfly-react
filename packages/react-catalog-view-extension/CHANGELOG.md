@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.5.18...@patternfly/react-catalog-view-extension@4.6.0) (2020-07-29)
+
+
+### Features
+
+* **wiz:** make wiz nav items more easily discoverable ([#4425](https://github.com/patternfly/patternfly-react/issues/4425)) ([92384d4](https://github.com/patternfly/patternfly-react/commit/92384d40cb4d5e3171c6922d00e391ed290239ac))
+
+
+
+
+
 ## [4.5.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.5.17...@patternfly/react-catalog-view-extension@4.5.18) (2020-07-29)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
