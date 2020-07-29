@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.33.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.33.1...@patternfly/react-core@4.33.2) (2020-07-29)
+
+
+### Bug Fixes
+
+* **ClipboardCopy:** maintain line breaks & spaces when copying text ([#4619](https://github.com/patternfly/patternfly-react/issues/4619)) ([67f160f](https://github.com/patternfly/patternfly-react/commit/67f160f90eba77b8cced0d8f30cfff4a3274dc86))
+
+
+
+
+
 ## [4.33.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.33.0...@patternfly/react-core@4.33.1) (2020-07-29)
 
 
