@@ -3,7 +3,7 @@ import { SearchInput, SearchInputProps } from '@patternfly/react-core';
 
 interface SearchInputState {
   value: string;
-  numberOfResults: number;
+  resultsCount: number;
   currentResult: number;
 }
 
@@ -13,7 +13,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
     super(props);
     this.state = {
       value: '',
-      numberOfResults: 0,
+      resultsCount: 0,
       currentResult: 1
     };
   }
@@ -21,14 +21,14 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
   onChange = (value: string) => {
     this.setState({
       value,
-      numberOfResults: 3
+      resultsCount: 3
     });
   };
 
   onClear = () => {
     this.setState({
       value: '',
-      numberOfResults: 0,
+      resultsCount: 0,
       currentResult: 1
     });
   };
@@ -37,7 +37,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
     this.setState(prevState => {
       const newCurrentResult = prevState.currentResult + 1;
       return {
-        currentResult: newCurrentResult <= prevState.numberOfResults ? newCurrentResult : prevState.numberOfResults
+        currentResult: newCurrentResult <= prevState.resultsCount ? newCurrentResult : prevState.resultsCount
       };
     });
   };
@@ -58,7 +58,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
         value={this.state.value}
         onChange={this.onChange}
         onClear={this.onClear}
-        numberOfResults={`${this.state.currentResult} / ${this.state.numberOfResults}`}
+        resultsCount={`${this.state.currentResult} / ${this.state.resultsCount}`}
         onNextClick={this.onNext}
         onPreviousClick={this.onPrevious}
       />

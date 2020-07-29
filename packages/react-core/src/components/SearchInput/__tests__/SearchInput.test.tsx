@@ -28,7 +28,7 @@ test('simple search input', () => {
 });
 
 test('result count', () => {
-  const view = mount(<SearchInput {...props} numberOfResults='3' aria-label="simple text input" />);
+  const view = mount(<SearchInput {...props} resultsCount={3} aria-label="simple text input" />);
   expect(view.find('.pf-c-badge')).toMatchSnapshot();
 });
 
@@ -36,7 +36,7 @@ test('navigable search results', () => {
   const view = mount(
     <SearchInput
       {...props}
-      numberOfResults='3/7'
+      resultsCount='3 / 7'
       aria-label="simple text input"
     />);
   expect(view.find('.pf-c-search-input__nav')).toMatchSnapshot();

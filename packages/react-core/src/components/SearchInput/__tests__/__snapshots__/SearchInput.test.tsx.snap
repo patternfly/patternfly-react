@@ -97,7 +97,7 @@ exports[`navigable search results 2`] = `
 <span
   className="pf-c-badge pf-m-read"
 >
-  3/7
+  3 / 7
 </span>
 `;
 
