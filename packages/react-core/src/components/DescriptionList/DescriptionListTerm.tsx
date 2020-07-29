@@ -10,7 +10,7 @@ export interface DescriptionListTermProps extends React.HTMLProps<HTMLElement> {
 }
 
 export const DescriptionListTerm: React.FunctionComponent<DescriptionListTermProps> = ({
-  children = null,
+  children,
   className,
   ...props
 }: DescriptionListTermProps) => (
