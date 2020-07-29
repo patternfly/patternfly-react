@@ -398,6 +398,7 @@ exports[`ChartDonutUtilization 1`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
+          "flyoutPadding": 16,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -409,7 +410,6 @@ exports[`ChartDonutUtilization 1`] = `
           "pointerWidth": 20,
           "style": Object {
             "fill": "#f0f0f0",
-            "padding": 16,
             "pointerEvents": "none",
           },
         },
@@ -863,6 +863,7 @@ exports[`ChartDonutUtilization 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -874,7 +875,6 @@ exports[`ChartDonutUtilization 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -1319,6 +1319,7 @@ exports[`ChartDonutUtilization 2`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
+          "flyoutPadding": 16,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -1330,7 +1331,6 @@ exports[`ChartDonutUtilization 2`] = `
           "pointerWidth": 20,
           "style": Object {
             "fill": "#f0f0f0",
-            "padding": 16,
             "pointerEvents": "none",
           },
         },
@@ -1784,6 +1784,7 @@ exports[`ChartDonutUtilization 2`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -1795,7 +1796,6 @@ exports[`ChartDonutUtilization 2`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -2240,6 +2240,7 @@ exports[`renders component data 1`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
+          "flyoutPadding": 16,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -2251,7 +2252,6 @@ exports[`renders component data 1`] = `
           "pointerWidth": 20,
           "style": Object {
             "fill": "#f0f0f0",
-            "padding": 16,
             "pointerEvents": "none",
           },
         },
@@ -2705,6 +2705,7 @@ exports[`renders component data 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -2716,7 +2717,6 @@ exports[`renders component data 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },

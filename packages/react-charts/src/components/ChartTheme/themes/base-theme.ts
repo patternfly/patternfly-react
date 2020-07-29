@@ -324,6 +324,7 @@ export const BaseTheme = {
   },
   tooltip: {
     cornerRadius: chart_tooltip_corner_radius.value,
+    flyoutPadding: chart_tooltip_Padding.value,
     flyoutStyle: {
       cornerRadius: chart_tooltip_flyoutStyle_corner_radius.value,
       fill: chart_tooltip_flyoutStyle_Fill.value, // background
@@ -335,7 +336,6 @@ export const BaseTheme = {
     pointerWidth: chart_tooltip_pointer_Width.value,
     style: {
       fill: chart_tooltip_Fill.value, // text
-      padding: chart_tooltip_Padding.value,
       pointerEvents: chart_tooltip_PointerEvents.value
     }
   },

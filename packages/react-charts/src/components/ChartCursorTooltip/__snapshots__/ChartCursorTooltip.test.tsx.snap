@@ -424,6 +424,7 @@ exports[`ChartCursorTooltip 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 16,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -435,7 +436,6 @@ exports[`ChartCursorTooltip 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -903,6 +903,7 @@ exports[`ChartCursorTooltip 2`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 16,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -914,7 +915,6 @@ exports[`ChartCursorTooltip 2`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -1385,6 +1385,7 @@ exports[`allows tooltip via container component 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -1396,7 +1397,6 @@ exports[`allows tooltip via container component 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -1842,6 +1842,7 @@ exports[`allows tooltip via container component 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 16,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -1853,7 +1854,6 @@ exports[`allows tooltip via container component 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
