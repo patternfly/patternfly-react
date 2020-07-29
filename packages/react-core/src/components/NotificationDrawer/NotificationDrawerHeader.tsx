@@ -30,7 +30,9 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
     <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
       {title}
     </Text>
-    {count && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unreadText}`}</span>}
+    {count !== undefined && (
+      <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unreadText}`}</span>
+    )}
     {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
   </div>
 );
