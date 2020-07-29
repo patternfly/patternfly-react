@@ -103,7 +103,7 @@ export class Visualization extends Stateful implements Controller {
     }
 
     if (this.graph) {
-      this.parentOrphansToGraph(this.graph);
+      this.parentOrphansToGraph(this.graph, validIds);
     }
   }
 
@@ -269,9 +269,9 @@ export class Visualization extends Stateful implements Controller {
     this.addElement(element);
   }
 
-  private parentOrphansToGraph(graph: Graph): void {
+  private parentOrphansToGraph(graph: Graph, validIds: string[]): void {
     this.getElements().forEach((element: GraphElement) => {
-      if (element !== this.graph && !element.hasParent()) {
+      if (element !== this.graph && (!element.hasParent() || !validIds.includes(element.getParent().getId()))) {
         graph.appendChild(element);
       }
     });
