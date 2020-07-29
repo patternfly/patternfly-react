@@ -16,7 +16,8 @@ it('WizardNavItem should match snapshot (auto-generated)', () => {
       isDisabled={false}
       step={42}
       onNavItemClick={() => undefined}
-      navItemComponent={'a'}
+      navItemComponent={'button'}
+      href={'null'}
     />
   );
   expect(view).toMatchSnapshot();
