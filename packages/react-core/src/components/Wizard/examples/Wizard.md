@@ -42,7 +42,8 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-```js title=Anchors-for-nav-items
+### Anchors for nav items
+```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 import { ExternalLinkAltIcon, SlackHashIcon } from '@patternfly/react-icons';
