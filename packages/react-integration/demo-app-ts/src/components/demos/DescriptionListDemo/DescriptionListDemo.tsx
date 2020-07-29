@@ -102,6 +102,135 @@ export class DescriptionListDemo extends Component {
     );
   }
 
+  render2ColOn2xlDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <br />
+        <Title headingLevel="h2" size="2xl">
+          2 Col on 2xl Breakpoint Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList className="2-col-on-2xl-description-list" columnModifier={{ '2xl': '2Col' }}>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>Example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
+
+  render3ColOnMdDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <br />
+        <Title headingLevel="h2" size="2xl">
+          3 Col on Md Breakpoint Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList className="3-col-on-md-description-list" columnModifier={{ md: '3Col' }}>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>Example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
+
+  renderResponsiveDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <br />
+        <Title headingLevel="h2" size="2xl">
+          Responsive Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList className="responsive-description-list" columnModifier={{ lg: '2Col', xl: '3Col' }}>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>Example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
+
   renderHorizontalDescriptionList() {
     return (
       <StackItem isFilled>
@@ -237,6 +366,9 @@ export class DescriptionListDemo extends Component {
       <Stack hasGutter>
         {this.renderSimpleDescriptionList()}
         {this.render2ColDescriptionList()}
+        {this.render2ColOn2xlDescriptionList()}
+        {this.render3ColOnMdDescriptionList()}
+        {this.renderResponsiveDescriptionList()}
         {this.renderHorizontalDescriptionList()}
         {this.renderAutoColumnWidthsDescriptionList()}
         {this.renderInlineGridDescriptionList()}

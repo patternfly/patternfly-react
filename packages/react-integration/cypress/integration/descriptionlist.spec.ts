@@ -23,6 +23,18 @@ describe('Description List Demo Test', () => {
     cy.get('.2-col-description-list').should('have.class', 'pf-m-2-col');
   });
 
+  it('Verify 3 Col On Md Description List', () => {
+    cy.get('.3-col-on-md-description-list').should('have.class', 'pf-m-3-col-on-md');
+  });
+
+  it('Verify 2 Col On 2xl Description List', () => {
+    cy.get('.2-col-on-2xl-description-list').should('have.class', 'pf-m-2-col-on-2xl');
+  });
+
+  it('Verify Responsive Description List', () => {
+    cy.get('.responsive-description-list').should('have.class', 'pf-m-2-col-on-lg pf-m-3-col-on-xl');
+  });
+
   it('Verify Horizontal Description List', () => {
     cy.get('.horizontal-description-list').should('have.class', 'pf-m-horizontal');
   });
