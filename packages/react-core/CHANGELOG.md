@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.34.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.34.0...@patternfly/react-core@4.34.1) (2020-07-29)
+
+
+### Bug Fixes
+
+* **react-docs:** add missing imports ([#4627](https://github.com/patternfly/patternfly-react/issues/4627)) ([5b6250b](https://github.com/patternfly/patternfly-react/commit/5b6250b3ccfe26e0066b6ea1904dda43e172b487))
+
+
+
+
+
 # [4.34.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.33.2...@patternfly/react-core@4.34.0) (2020-07-29)
 
 
