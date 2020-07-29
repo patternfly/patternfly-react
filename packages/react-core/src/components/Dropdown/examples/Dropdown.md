@@ -9,6 +9,7 @@ ouia: true
 
 import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon, UserIcon } from '@patternfly/react-icons';
 import { Link } from '@reach/router';
+import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
 ## Examples
 
