@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.34.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.34.1...@patternfly/react-core@4.34.2) (2020-07-29)
+
+
+### Bug Fixes
+
+* **wizard:** use new example title format ([#4628](https://github.com/patternfly/patternfly-react/issues/4628)) ([09dd6c5](https://github.com/patternfly/patternfly-react/commit/09dd6c551ba9ce5773608288b02309e3a0858780))
+
+
+
+
+
 ## [4.34.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.34.0...@patternfly/react-core@4.34.1) (2020-07-29)
 
 

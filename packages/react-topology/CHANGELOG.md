@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.50...@patternfly/react-topology@4.4.51) (2020-07-29)
+
+
+### Bug Fixes
+
+* **Topology:** Re-parent nodes with invalid parents to graph ([#4629](https://github.com/patternfly/patternfly-react/issues/4629)) ([63f5046](https://github.com/patternfly/patternfly-react/commit/63f50460c672249efb9c6ed445cc32a1355e116d))
+
+
+
+
+
 ## [4.4.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.49...@patternfly/react-topology@4.4.50) (2020-07-29)
 
 **Note:** Version bump only for package @patternfly/react-topology
