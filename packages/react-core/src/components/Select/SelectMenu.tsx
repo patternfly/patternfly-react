@@ -7,6 +7,7 @@ import { SelectConsumer, SelectVariant } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 
 import { FocusTrap } from '../../helpers';
+import { SelectGroup } from './SelectGroup';
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */
@@ -59,14 +60,19 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     const { children, isGrouped } = this.props;
     const childrenArray: React.ReactElement[] = children as React.ReactElement[];
     if (isGrouped) {
-      return React.Children.map(childrenArray, (group: React.ReactElement, index: number) =>
-        React.cloneElement(group, {
-          titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-          children: group.props.children.map((option: React.ReactElement) =>
-            this.cloneOption(option, index++, randomId)
-          )
-        })
-      );
+      let index = 0;
+      return React.Children.map(childrenArray, (group: React.ReactElement) => {
+        if (group.type === SelectGroup) {
+          return React.cloneElement(group, {
+            titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+            children: React.Children.map(group.props.children, (option: React.ReactElement) =>
+              this.cloneOption(option, index++, randomId)
+            )
+          });
+        } else {
+          return this.cloneOption(group, index++, randomId);
+        }
+      });
     }
     return React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
       this.cloneOption(child, index, randomId)

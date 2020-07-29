@@ -4483,7 +4483,7 @@ exports[`select renders select groups successfully 1`] = `
                 >
                   <button
                     class="pf-c-select__menu-item"
-                    id="pf-random-id-6-1"
+                    id="pf-random-id-6-4"
                     role="option"
                     type="button"
                   >
@@ -4495,7 +4495,7 @@ exports[`select renders select groups successfully 1`] = `
                 >
                   <button
                     class="pf-c-select__menu-item"
-                    id="pf-random-id-6-2"
+                    id="pf-random-id-6-5"
                     role="option"
                     type="button"
                   >
@@ -4507,7 +4507,7 @@ exports[`select renders select groups successfully 1`] = `
                 >
                   <button
                     class="pf-c-select__menu-item"
-                    id="pf-random-id-6-3"
+                    id="pf-random-id-6-6"
                     role="option"
                     type="button"
                   >
@@ -4519,7 +4519,7 @@ exports[`select renders select groups successfully 1`] = `
                 >
                   <button
                     class="pf-c-select__menu-item"
-                    id="pf-random-id-6-4"
+                    id="pf-random-id-6-7"
                     role="option"
                     type="button"
                   >
@@ -4653,7 +4653,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-1"
+                      id="pf-random-id-6-4"
                       role="option"
                       type="button"
                     >
@@ -4665,7 +4665,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-2"
+                      id="pf-random-id-6-5"
                       role="option"
                       type="button"
                     >
@@ -4677,7 +4677,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-3"
+                      id="pf-random-id-6-6"
                       role="option"
                       type="button"
                     >
@@ -4689,7 +4689,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-4"
+                      id="pf-random-id-6-7"
                       role="option"
                       type="button"
                     >
@@ -4846,7 +4846,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-1"
+                      id="pf-random-id-6-4"
                       role="option"
                       type="button"
                     >
@@ -4858,7 +4858,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-2"
+                      id="pf-random-id-6-5"
                       role="option"
                       type="button"
                     >
@@ -4870,7 +4870,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-3"
+                      id="pf-random-id-6-6"
                       role="option"
                       type="button"
                     >
@@ -4882,7 +4882,7 @@ exports[`select renders select groups successfully 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="pf-random-id-6-4"
+                      id="pf-random-id-6-7"
                       role="option"
                       type="button"
                     >
@@ -4932,7 +4932,7 @@ exports[`select renders select groups successfully 1`] = `
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="00"
+                  key=".$00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4965,7 +4965,7 @@ exports[`select renders select groups successfully 1`] = `
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="01"
+                  key=".$01"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4998,7 +4998,7 @@ exports[`select renders select groups successfully 1`] = `
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="02"
+                  key=".$02"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5031,7 +5031,7 @@ exports[`select renders select groups successfully 1`] = `
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="03"
+                  key=".$03"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5073,15 +5073,15 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  id="pf-random-id-6-1"
-                  index={1}
-                  inputId="pf-random-id-6-1"
+                  id="pf-random-id-6-4"
+                  index={4}
+                  inputId="pf-random-id-6-4"
                   isChecked={false}
                   isDisabled={false}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="00"
+                  key=".$00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5093,7 +5093,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
-                      id="pf-random-id-6-1"
+                      id="pf-random-id-6-4"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5106,15 +5106,15 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  id="pf-random-id-6-2"
-                  index={2}
-                  inputId="pf-random-id-6-2"
+                  id="pf-random-id-6-5"
+                  index={5}
+                  inputId="pf-random-id-6-5"
                   isChecked={false}
                   isDisabled={false}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="01"
+                  key=".$01"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5126,7 +5126,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
-                      id="pf-random-id-6-2"
+                      id="pf-random-id-6-5"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5139,15 +5139,15 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  id="pf-random-id-6-3"
-                  index={3}
-                  inputId="pf-random-id-6-3"
+                  id="pf-random-id-6-6"
+                  index={6}
+                  inputId="pf-random-id-6-6"
                   isChecked={false}
                   isDisabled={false}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="02"
+                  key=".$02"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5159,7 +5159,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
-                      id="pf-random-id-6-3"
+                      id="pf-random-id-6-6"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5172,15 +5172,15 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  id="pf-random-id-6-4"
-                  index={4}
-                  inputId="pf-random-id-6-4"
+                  id="pf-random-id-6-7"
+                  index={7}
+                  inputId="pf-random-id-6-7"
                   isChecked={false}
                   isDisabled={false}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="03"
+                  key=".$03"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5192,7 +5192,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
-                      id="pf-random-id-6-4"
+                      id="pf-random-id-6-7"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
