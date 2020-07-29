@@ -14,7 +14,7 @@ import {
   EmptyStateSecondaryActions,
   EmptyStatePrimary
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import { CubesIcon, SearchIcon } from '@patternfly/react-icons';
 
 ## Examples
 ### Small
