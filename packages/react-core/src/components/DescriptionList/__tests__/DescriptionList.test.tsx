@@ -6,22 +6,22 @@ import { DescriptionListTerm } from '../DescriptionListTerm';
 import { DescriptionListDescription } from '../DescriptionListDescription';
 
 describe('Description List', () => {
-  test('Description List default', () => {
+  test('List default', () => {
     const view = shallow(<DescriptionList />);
     expect(view).toMatchSnapshot();
   });
 
-  test('Description List default 3 col', () => {
+  test('List default 3 col', () => {
     const view = shallow(<DescriptionList columnModifier={{ default: '3Col' }}/>);
     expect(view).toMatchSnapshot();
   });
 
-  test('Description List md breakpoint', () => {
+  test('md breakpoint', () => {
     const view = shallow(<DescriptionList columnModifier={{ md: '2Col' }}/>);
     expect(view).toMatchSnapshot();
   });
 
-  test('Description List lg breakpoint', () => {
+  test('lg breakpoint', () => {
     const view = shallow(<DescriptionList columnModifier={{ lg: '3Col' }}/>);
     expect(view).toMatchSnapshot();
   });
@@ -31,7 +31,7 @@ describe('Description List', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('Description List 2xl breakpoint', () => {
+  test('2xl breakpoint', () => {
     const view = shallow(<DescriptionList columnModifier={{ '2xl': '2Col' }}/>);
     expect(view).toMatchSnapshot();
   });

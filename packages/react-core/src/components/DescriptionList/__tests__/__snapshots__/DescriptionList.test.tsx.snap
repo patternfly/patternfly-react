@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Description List 2xl breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-2-col-on-2xl"
+/>
+`;
+
 exports[`Description List Auto Column Widths Description List 1`] = `
 <dl
   className="pf-c-description-list pf-m-auto-column-widths"
@@ -11,42 +17,12 @@ exports[`Description List Description 1`] = `
   aria-labelledby="description-1"
   className="pf-c-description-list__description custom-description-list-description"
 >
-  <span
+  <div
     className="pf-c-description-list__text"
   >
     test
-  </span>
+  </div>
 </dd>
-`;
-
-exports[`Description List Description List 2xl breakpoint 1`] = `
-<dl
-  className="pf-c-description-list pf-m-2-col-on-2xl"
-/>
-`;
-
-exports[`Description List Description List default 1`] = `
-<dl
-  className="pf-c-description-list"
-/>
-`;
-
-exports[`Description List Description List default 3 col 1`] = `
-<dl
-  className="pf-c-description-list pf-m-3-col"
-/>
-`;
-
-exports[`Description List Description List lg breakpoint 1`] = `
-<dl
-  className="pf-c-description-list pf-m-3-col-on-lg"
-/>
-`;
-
-exports[`Description List Description List md breakpoint 1`] = `
-<dl
-  className="pf-c-description-list pf-m-2-col-on-md"
-/>
 `;
 
 exports[`Description List Description List xl breakpoint 1`] = `
@@ -75,13 +51,39 @@ exports[`Description List Inline Grid Description List 1`] = `
 />
 `;
 
+exports[`Description List List default 1`] = `
+<dl
+  className="pf-c-description-list"
+/>
+`;
+
+exports[`Description List List default 3 col 1`] = `
+<dl
+  className="pf-c-description-list pf-m-3-col"
+/>
+`;
+
 exports[`Description List Term default 1`] = `
 <dt
   aria-labelledby="term-1"
   className="pf-c-description-list__term"
 >
-  <span>
+  <span
+    className="pf-c-description-list__text"
+  >
     test
   </span>
 </dt>
+`;
+
+exports[`Description List lg breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-3-col-on-lg"
+/>
+`;
+
+exports[`Description List md breakpoint 1`] = `
+<dl
+  className="pf-c-description-list pf-m-2-col-on-md"
+/>
 `;

@@ -7,29 +7,16 @@ export interface DescriptionListDescriptionProps extends React.HTMLProps<HTMLEle
   children: React.ReactNode;
   /** Additional classes added to the DescriptionListDescription */
   className?: string;
-  /** Indicates which component will be used for the text wrapped by the description */
-  textComponent?: React.ReactNode;
-  /** Default hyperlink location */
-  href?: string;
-  /** Icon added to the left of the label text. */
-  icon?: React.ReactNode;
 }
 
 export const DescriptionListDescription: React.FunctionComponent<DescriptionListDescriptionProps> = ({
   children = null,
-  textComponent = 'span',
   className,
-  href,
-  icon,
   ...props
 }: DescriptionListDescriptionProps) => {
-  const DescriptionListText: any = textComponent;
   return (
     <dd className={css(styles.descriptionListDescription, className)} {...props}>
-      <DescriptionListText href={href} className={'pf-c-description-list__text'}>
-        {icon && <span>{icon}</span>}
-        {children}
-      </DescriptionListText>
+      <div className={'pf-c-description-list__text'}>{children}</div>
     </dd>
   );
 };

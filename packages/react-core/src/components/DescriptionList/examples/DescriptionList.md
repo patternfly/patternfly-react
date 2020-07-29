@@ -4,13 +4,7 @@ section: components
 cssPrefix: 'pf-c-description-list'
 typescript: true
 beta: true
-propComponents:
-  [
-    'DescriptionList',
-    'DescriptionListDescription',
-    'DescriptionListGroup',
-    'DescriptionListTerm',
-  ]
+propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionListGroup', 'DescriptionListTerm']
 ---
 
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
@@ -36,8 +30,8 @@ SimpleDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -84,8 +78,8 @@ TwoColDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -128,8 +122,8 @@ ThreeColOnLgDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -172,8 +166,8 @@ HorizontalDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -216,8 +210,8 @@ Horizontal2ColDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -260,8 +254,8 @@ Horizontal3ColOnLgDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -306,8 +300,8 @@ ResponsiveDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -350,8 +344,8 @@ HorizontalResponsiveDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -396,8 +390,8 @@ AutoColumnsDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -440,8 +434,8 @@ HorizontalAutoColumnsDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
@@ -486,8 +480,8 @@ InlineGridDescriptionList = (
     </DescriptionListGroup>
     <DescriptionListGroup>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription textComponent="a" href="#">
-        mary-test
+      <DescriptionListDescription>
+        <a href="#">mary-test</a>
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>

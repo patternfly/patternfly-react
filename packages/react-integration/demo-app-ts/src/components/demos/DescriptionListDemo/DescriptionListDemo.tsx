@@ -26,15 +26,15 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList>
+          <DescriptionList className="simple-desciption-list">
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Namespace</DescriptionListTerm>
-              <DescriptionListDescription textComponent="a" href="#">
-                mary-test
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -69,15 +69,15 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList columnModifier={{ default: '2Col' }}>
+          <DescriptionList className="2-col-description-list" columnModifier={{ default: '2Col' }}>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Namespace</DescriptionListTerm>
-              <DescriptionListDescription textComponent="a" href="#">
-                mary-test
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -112,15 +112,15 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList isHorizontal>
+          <DescriptionList className="horizontal-description-list" isHorizontal>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Namespace</DescriptionListTerm>
-              <DescriptionListDescription textComponent="a" href="#">
-                mary-test
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -156,15 +156,15 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList hasAutoColumnWidths>
+          <DescriptionList className="auto-col-widths-description-list" hasAutoColumnWidths>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Namespace</DescriptionListTerm>
-              <DescriptionListDescription textComponent="a" href="#">
-                mary-test
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -200,15 +200,15 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList hasInlineGrid>
+          <DescriptionList className="inline-grid-description-list" hasInlineGrid>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Namespace</DescriptionListTerm>
-              <DescriptionListDescription textComponent="a" href="#">
-                mary-test
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
