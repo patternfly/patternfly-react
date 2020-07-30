@@ -420,6 +420,7 @@ exports[`ChartAxis 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -431,7 +432,6 @@ exports[`ChartAxis 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -886,6 +886,7 @@ exports[`ChartAxis 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 16,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -897,7 +898,6 @@ exports[`ChartAxis 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -1380,6 +1380,7 @@ exports[`ChartAxis 2`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -1391,7 +1392,6 @@ exports[`ChartAxis 2`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -1846,6 +1846,7 @@ exports[`ChartAxis 2`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 16,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -1857,7 +1858,6 @@ exports[`ChartAxis 2`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -2330,6 +2330,7 @@ exports[`renders component data 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 16,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -2341,7 +2342,6 @@ exports[`renders component data 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -2450,7 +2450,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2481,7 +2481,7 @@ exports[`renders component data 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -2495,7 +2495,7 @@ exports[`renders component data 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2529,7 +2529,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2559,10 +2559,10 @@ exports[`renders component data 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -2572,10 +2572,10 @@ exports[`renders component data 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -2585,10 +2585,10 @@ exports[`renders component data 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -2597,10 +2597,10 @@ exports[`renders component data 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -2609,10 +2609,10 @@ exports[`renders component data 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -2641,10 +2641,10 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -2685,7 +2685,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2728,7 +2728,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2755,7 +2755,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2763,7 +2763,7 @@ exports[`renders component data 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -2792,7 +2792,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2821,7 +2821,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -2850,7 +2850,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2875,6 +2875,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -2884,10 +2885,10 @@ exports[`renders component data 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -2918,7 +2919,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -3013,7 +3014,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3044,7 +3045,7 @@ exports[`renders component data 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -3058,7 +3059,7 @@ exports[`renders component data 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3092,7 +3093,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3122,10 +3123,10 @@ exports[`renders component data 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -3135,10 +3136,10 @@ exports[`renders component data 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -3148,10 +3149,10 @@ exports[`renders component data 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -3160,10 +3161,10 @@ exports[`renders component data 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -3172,10 +3173,10 @@ exports[`renders component data 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -3204,10 +3205,10 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -3248,7 +3249,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3291,7 +3292,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3318,7 +3319,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3326,7 +3327,7 @@ exports[`renders component data 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -3355,7 +3356,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3384,7 +3385,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -3413,7 +3414,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3438,6 +3439,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -3447,10 +3449,10 @@ exports[`renders component data 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -3481,7 +3483,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -3599,7 +3601,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3630,7 +3632,7 @@ exports[`renders component data 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -3644,7 +3646,7 @@ exports[`renders component data 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3678,7 +3680,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3708,10 +3710,10 @@ exports[`renders component data 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -3721,10 +3723,10 @@ exports[`renders component data 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -3734,10 +3736,10 @@ exports[`renders component data 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -3746,10 +3748,10 @@ exports[`renders component data 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -3758,10 +3760,10 @@ exports[`renders component data 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -3790,10 +3792,10 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -3834,7 +3836,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3877,7 +3879,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3904,7 +3906,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3912,7 +3914,7 @@ exports[`renders component data 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -3941,7 +3943,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3970,7 +3972,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -3999,7 +4001,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4024,6 +4026,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -4033,10 +4036,10 @@ exports[`renders component data 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -4067,7 +4070,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -4180,7 +4183,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4211,7 +4214,7 @@ exports[`renders component data 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -4225,7 +4228,7 @@ exports[`renders component data 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4259,7 +4262,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4289,10 +4292,10 @@ exports[`renders component data 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -4302,10 +4305,10 @@ exports[`renders component data 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -4315,10 +4318,10 @@ exports[`renders component data 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -4327,10 +4330,10 @@ exports[`renders component data 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -4339,10 +4342,10 @@ exports[`renders component data 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -4371,10 +4374,10 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -4415,7 +4418,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4458,7 +4461,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4485,7 +4488,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4493,7 +4496,7 @@ exports[`renders component data 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -4522,7 +4525,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4551,7 +4554,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -4580,7 +4583,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4605,6 +4608,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -4614,10 +4618,10 @@ exports[`renders component data 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -4648,7 +4652,7 @@ exports[`renders component data 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -5098,6 +5102,7 @@ exports[`renders component data 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 16,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -5109,7 +5114,6 @@ exports[`renders component data 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
