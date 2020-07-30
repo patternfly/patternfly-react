@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationBadge/notification-badge';
+import AttentionBellIcon from '@patternfly/react-icons/dist/js/icons/attention-bell-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 export enum NotificationBadgeVariant {
@@ -33,7 +34,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   isRead = false,
   variant = isRead ? 'read' : 'unread',
   count = 0,
-  attentionIcon = <BellIcon />,
+  attentionIcon = <AttentionBellIcon />,
   icon = <BellIcon />,
   className,
   children,
