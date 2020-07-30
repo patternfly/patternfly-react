@@ -8,6 +8,8 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   children: React.ReactNode;
   /** Additional classes added to the page header tools item. */
   className?: string;
+  /** HTML id of the PageHeaderToolsItem */
+  id?: string;
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -23,6 +25,7 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
 
 export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
   children,
+  id,
   className,
   visibility,
   isSelected
@@ -34,6 +37,7 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
       formatBreakpointMods(visibility, styles),
       className
     )}
+    id={id}
   >
     {children}
   </div>
