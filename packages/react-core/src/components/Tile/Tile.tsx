@@ -15,10 +15,10 @@ export interface TileProps extends React.HTMLProps<HTMLDivElement> {
   isSelected?: boolean;
   /** Flag indicating if the tile is disabled */
   isDisabled?: boolean;
-  /** Flag indicating if the tile icon is stacked */
+  /** Flag indicating if the tile header is stacked */
   isStacked?: boolean;
   /** Flag indicating if the stacked tile icon is large */
-  isLargeIcon?: boolean;
+  isDisplayLarge?: boolean;
 }
 
 export const Tile: React.FunctionComponent<TileProps> = ({
@@ -28,7 +28,7 @@ export const Tile: React.FunctionComponent<TileProps> = ({
   isStacked,
   isSelected,
   isDisabled,
-  isLargeIcon,
+  isDisplayLarge,
   className,
   ...props
 }: TileProps) => (
@@ -37,7 +37,7 @@ export const Tile: React.FunctionComponent<TileProps> = ({
       styles.tile,
       isSelected && styles.modifiers.selected,
       isDisabled && styles.modifiers.disabled,
-      isLargeIcon && styles.modifiers.displayLg,
+      isDisplayLarge && styles.modifiers.displayLg,
       className
     )}
     tabIndex={0}

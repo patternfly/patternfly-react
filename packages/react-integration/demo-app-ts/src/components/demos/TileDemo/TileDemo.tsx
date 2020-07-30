@@ -29,7 +29,7 @@ export class TileDemo extends React.Component {
           Subtext is here
         </Tile>
         <br />
-        <Tile title="Stacked Large Icon" id="large-icon" icon={<PlusIcon />} isStacked isLargeIcon>
+        <Tile title="Stacked Large Icon" id="large-icon" icon={<PlusIcon />} isStacked isDisplayLarge>
           Subtext is here
         </Tile>
       </React.Fragment>

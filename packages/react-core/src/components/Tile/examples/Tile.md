@@ -6,7 +6,7 @@ propComponents: ['Tile']
 beta: true
 ---
 
-import { Tile } from '@patternfly/react-core';
+import { Tile, Flex } from '@patternfly/react-core';
 import { PlusIcon, BellIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -96,13 +96,13 @@ import { BellIcon } from '@patternfly/react-icons';
 
 LargeStackedTile = () => (
   <React.Fragment>
-    <Tile title="Default" icon={<BellIcon />} isStacked isLargeIcon>
+    <Tile title="Default" icon={<BellIcon />} isStacked isDisplayLarge>
       Subtext goes here
     </Tile>{' '}
-    <Tile title="Selected" icon={<BellIcon />} isStacked isLargeIcon isSelected>
+    <Tile title="Selected" icon={<BellIcon />} isStacked isDisplayLarge isSelected>
       Subtext goes here
     </Tile>{' '}
-    <Tile title="Disabled" icon={<BellIcon />} isStacked isLargeIcon isDisabled>
+    <Tile title="Disabled" icon={<BellIcon />} isStacked isDisplayLarge isDisabled>
       Subtext goes here
     </Tile>
   </React.Fragment>
@@ -113,20 +113,26 @@ LargeStackedTile = () => (
 
 ```js
 import React from 'react';
-import { Tile } from '@patternfly/react-core';
+import { Tile, Flex } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';
 
 ExtraContentTile = () => (
-  <React.Fragment>
-    <Tile title="Default" icon={<BellIcon />} isStacked>
-      This is really really long subtext that goes on for so long that it has to wrap to the next line. This is really really long subtext that goes on for so long that it has to wrap to the next line.
-    </Tile>{' '}
-    <Tile title="Selected" icon={<BellIcon />} isStacked>
-      This is really really long subtext that goes on for so long that it has to wrap to the next line.
-    </Tile>{' '}
-    <Tile title="Disabled" icon={<BellIcon />} isStacked>
-      Subtext goes here
-    </Tile>
-  </React.Fragment>
+  <Flex>
+    <Flex flex={{ default: 'flex_1' }}>
+      <Tile title="Default" icon={<BellIcon />} isStacked>
+        This is really really long subtext that goes on for so long that it has to wrap to the next line. This is really really long subtext that goes on for so long that it has to wrap to the next line.
+      </Tile>
+    </Flex>
+    <Flex flex={{ default: 'flex_1' }}>
+      <Tile title="Selected" icon={<BellIcon />} isStacked>
+        This is really really long subtext that goes on for so long that it has to wrap to the next line.
+      </Tile>
+    </Flex>
+    <Flex flex={{ default: 'flex_1' }}>
+      <Tile title="Disabled" icon={<BellIcon />} isStacked>
+        Subtext goes here
+      </Tile>
+    </Flex>
+  </Flex>
 );
 ```

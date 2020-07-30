@@ -35,7 +35,7 @@ describe('Tile', () => {
   });
 
   test('renders with stacked large icon', () => {
-    const view = shallow(<Tile title="test" icon={<PlusIcon />} isStacked isLargeIcon />);
+    const view = shallow(<Tile title="test" icon={<PlusIcon />} isStacked isDisplayLarge />);
     expect(view).toMatchSnapshot();
   });
 });
