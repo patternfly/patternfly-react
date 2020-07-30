@@ -15,7 +15,7 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
     xl?: 'hidden' | 'visible';
-    '2xl?': 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
   };
   /** True to make an icon button appear selected */
   isSelected?: boolean;
