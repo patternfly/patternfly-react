@@ -6,33 +6,23 @@ import { DescriptionListTerm } from '../DescriptionListTerm';
 import { DescriptionListDescription } from '../DescriptionListDescription';
 
 describe('Description List', () => {
-  test('List default', () => {
+  test('default', () => {
     const view = shallow(<DescriptionList />);
     expect(view).toMatchSnapshot();
   });
 
-  test('List default 3 col', () => {
-    const view = shallow(<DescriptionList columnModifier={{ default: '3Col' }}/>);
+  test('1 col on all breakpoints', () => {
+    const view = shallow(<DescriptionList columnModifier={{ default: '1Col', md: '1Col', lg: '1Col', xl: '1Col', '2xl': '1Col' }}/>);
     expect(view).toMatchSnapshot();
   });
 
-  test('md breakpoint', () => {
-    const view = shallow(<DescriptionList columnModifier={{ md: '2Col' }}/>);
+  test('2 col on all breakpoints', () => {
+    const view = shallow(<DescriptionList columnModifier={{ default: '2Col', md: '2Col', lg: '2Col', xl: '2Col', '2xl': '2Col' }}/>);
     expect(view).toMatchSnapshot();
   });
 
-  test('lg breakpoint', () => {
-    const view = shallow(<DescriptionList columnModifier={{ lg: '3Col' }}/>);
-    expect(view).toMatchSnapshot();
-  });
-
-  test('Description List xl breakpoint', () => {
-    const view = shallow(<DescriptionList columnModifier={{ xl: '1Col' }}/>);
-    expect(view).toMatchSnapshot();
-  });
-
-  test('2xl breakpoint', () => {
-    const view = shallow(<DescriptionList columnModifier={{ '2xl': '2Col' }}/>);
+  test('3 col on all breakpoints', () => {
+    const view = shallow(<DescriptionList columnModifier={{  default: '3Col', md: '3Col', lg: '3Col', xl: '3Col', '2xl': '3Col'  }}/>);
     expect(view).toMatchSnapshot();
   });
 

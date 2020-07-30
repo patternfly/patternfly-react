@@ -1,8 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Description List 2xl breakpoint 1`] = `
+exports[`Description List 1 col on all breakpoints 1`] = `
 <dl
-  className="pf-c-description-list pf-m-2-col-on-2xl"
+  className="pf-c-description-list pf-m-1-col pf-m-1-col-on-md pf-m-1-col-on-lg pf-m-1-col-on-xl pf-m-1-col-on-2xl"
+/>
+`;
+
+exports[`Description List 2 col on all breakpoints 1`] = `
+<dl
+  className="pf-c-description-list pf-m-2-col pf-m-2-col-on-md pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-2-col-on-2xl"
+/>
+`;
+
+exports[`Description List 3 col on all breakpoints 1`] = `
+<dl
+  className="pf-c-description-list pf-m-3-col pf-m-3-col-on-md pf-m-3-col-on-lg pf-m-3-col-on-xl pf-m-3-col-on-2xl"
 />
 `;
 
@@ -25,12 +37,6 @@ exports[`Description List Description 1`] = `
 </dd>
 `;
 
-exports[`Description List Description List xl breakpoint 1`] = `
-<dl
-  className="pf-c-description-list pf-m-1-col-on-xl"
-/>
-`;
-
 exports[`Description List Group 1`] = `
 <div
   className="pf-c-description-list__group custom-description-list-group"
@@ -51,18 +57,6 @@ exports[`Description List Inline Grid Description List 1`] = `
 />
 `;
 
-exports[`Description List List default 1`] = `
-<dl
-  className="pf-c-description-list"
-/>
-`;
-
-exports[`Description List List default 3 col 1`] = `
-<dl
-  className="pf-c-description-list pf-m-3-col"
-/>
-`;
-
 exports[`Description List Term default 1`] = `
 <dt
   aria-labelledby="term-1"
@@ -76,14 +70,8 @@ exports[`Description List Term default 1`] = `
 </dt>
 `;
 
-exports[`Description List lg breakpoint 1`] = `
+exports[`Description List default 1`] = `
 <dl
-  className="pf-c-description-list pf-m-3-col-on-lg"
-/>
-`;
-
-exports[`Description List md breakpoint 1`] = `
-<dl
-  className="pf-c-description-list pf-m-2-col-on-md"
+  className="pf-c-description-list"
 />
 `;
