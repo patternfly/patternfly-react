@@ -120,7 +120,8 @@ ExtraContentTile = () => (
   <Flex>
     <Flex flex={{ default: 'flex_1' }}>
       <Tile title="Default" icon={<BellIcon />} isStacked>
-        This is really really long subtext that goes on for so long that it has to wrap to the next line. This is really really long subtext that goes on for so long that it has to wrap to the next line.
+        This is really really long subtext that goes on for so long that it has to wrap to the next line. This is really
+        really long subtext that goes on for so long that it has to wrap to the next line.
       </Tile>
     </Flex>
     <Flex flex={{ default: 'flex_1' }}>

@@ -3,7 +3,7 @@ id: Tiles
 section: demos
 ---
 
-import { Tile} from '@patternfly/react-table';
+import { Tile} from '@patternfly/react-core';
 
 ### Tiles with single selection (space)
 
