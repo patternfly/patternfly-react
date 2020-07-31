@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.25.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.25.0...@patternfly/react-integration@4.25.1) (2020-07-31)
+
+
+### Bug Fixes
+
+* **PageHeaderToolsItem:** fix breakpoint typo ([#4634](https://github.com/patternfly/patternfly-react/issues/4634)) ([779890c](https://github.com/patternfly/patternfly-react/commit/779890c9fc3535386c1322269c000ea4b11b0f5b))
+
+
+
+
+
 # [4.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.24.0...@patternfly/react-integration@4.25.0) (2020-07-29)
 
 

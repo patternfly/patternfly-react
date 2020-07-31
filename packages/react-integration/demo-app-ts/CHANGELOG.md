@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.25.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.3...demo-app-ts@4.25.4) (2020-07-31)
+
+
+### Bug Fixes
+
+* **PageHeaderToolsItem:** fix breakpoint typo ([#4634](https://github.com/patternfly/patternfly-react/issues/4634)) ([779890c](https://github.com/patternfly/patternfly-react/commit/779890c9fc3535386c1322269c000ea4b11b0f5b))
+
+
+
+
+
 ## [4.25.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.2...demo-app-ts@4.25.3) (2020-07-29)
 
 **Note:** Version bump only for package demo-app-ts
