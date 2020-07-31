@@ -4,6 +4,8 @@ import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
+import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import { getUniqueId } from '../../helpers/util';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */
@@ -44,6 +46,14 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Id of the checkbox input */
   inputId?: string;
+  /** Internal Flag indicating if the option is favorited */
+  isFavorite?: boolean;
+  /** Aria label text for favoritable button when favorited */
+  ariaIsFavoriteLabel?: string;
+  /** Aria label text for favoritable button when not favorited */
+  ariaIsNotFavoriteLabel?: string;
+  /** ID of the item. Required for tracking favorites */
+  id?: string;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -62,7 +72,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     onClick: () => {},
     sendRef: () => {},
     keyHandler: () => {},
-    inputId: ''
+    inputId: '',
+    isFavorite: null
   };
 
   componentDidMount() {
@@ -95,6 +106,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     const {
       children,
       className,
+      id,
       description,
       value,
       onClick,
@@ -109,16 +121,45 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       index,
       component,
       inputId,
+      isFavorite,
+      ariaIsFavoriteLabel = 'starred',
+      ariaIsNotFavoriteLabel = 'not starred',
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
+
+    if (!id && isFavorite !== null) {
+      // eslint-disable-next-line no-console
+      console.error('Please provide an id to use the favorites feature.');
+    }
+
+    const generatedId = id || getUniqueId('select-option');
+    const favoriteButton = (onFavorite: any) => (
+      <button
+        className={css(styles.selectMenuItem, styles.modifiers.action, styles.modifiers.favoriteAction)}
+        aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
+        onClick={() => {
+          onFavorite(generatedId, isFavorite);
+        }}
+      >
+        <StarIcon />
+      </button>
+    );
+
     return (
       <SelectConsumer>
-        {({ onSelect, onClose, variant, inputIdPrefix }) => (
+        {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
-              <li role="presentation">
+              <li
+                id={generatedId}
+                role="presentation"
+                className={css(
+                  isFavorite !== null && styles.selectMenuWrapper,
+                  isFavorite && styles.modifiers.favorite
+                )}
+              >
                 <Component
                   {...props}
                   className={css(
@@ -166,6 +207,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     </React.Fragment>
                   )}
                 </Component>
+                {isFavorite !== null && id && favoriteButton(onFavorite)}
               </li>
             )}
             {variant === SelectVariant.checkbox && !isNoResultsOption && (
