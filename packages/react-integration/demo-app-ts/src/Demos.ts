@@ -512,6 +512,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FilteringSelectDemo
   },
   {
+    id: 'select-favorites-demo',
+    name: 'Select Favorites Demo',
+    componentType: Examples.SelectFavoritesDemo
+  },
+  {
     id: 'simple-list-demo',
     name: 'Simple List Demo',
     componentType: Examples.SimpleListDemo

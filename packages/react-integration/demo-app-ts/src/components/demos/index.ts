@@ -101,6 +101,7 @@ export * from './RadioDemo/RadioDemo';
 export * from './SearchInputDemo/SearchInputDemo';
 export * from './SelectDemo/SelectDemo';
 export * from './SelectDemo/FilteringSelectDemo';
+export * from './SelectDemo/SelectFavoritesDemo';
 export * from './SimpleList/SimpleListDemo';
 export * from './SpinnerDemo/SpinnerDemo';
 export * from './SplitDemo/SplitDemo';

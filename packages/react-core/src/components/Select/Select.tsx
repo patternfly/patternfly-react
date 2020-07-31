@@ -9,11 +9,13 @@ import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
+import { SelectGroup } from './SelectGroup';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional, GenerateId } from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
+import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/util';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -62,6 +64,12 @@ export interface SelectProps
   toggleAriaLabel?: string;
   /** Label for remove chip button of multiple type ahead select variant */
   removeSelectionAriaLabel?: string;
+  /** ID list of favorited select items */
+  favorites?: string[];
+  /** Label for the favorites group */
+  favoritesLabel?: string;
+  /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
+  onFavorite?: (itemId: string, isFavorite: boolean) => void;
   /** Callback for selection behavior */
   onSelect?: (
     event: React.MouseEvent | React.ChangeEvent,
@@ -145,6 +153,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     customBadgeText: null,
     inputIdPrefix: '',
     menuAppendTo: 'inline',
+    favorites: [] as string[],
+    favoritesLabel: 'Favorites',
     ouiaSafe: true
   };
 
@@ -481,6 +491,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       inputIdPrefix,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
+      favorites,
+      onFavorite,
+      favoritesLabel,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
@@ -488,6 +501,37 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     let childPlaceholderText = null as string;
+
+    // If onFavorites is set,  add isFavorite prop to children and add a Favorites group to the SelectMenu
+    let renderableItems: React.ReactNode[] = [];
+    if (onFavorite) {
+      let favoritesGroup: React.ReactNode[] = [];
+      let renderableFavorites: React.ReactNode[] = [];
+      if (favorites.length > 0) {
+        // if variant is typeahead use filtered children
+        const tempRenderableChildren =
+          variant === 'typeahead' || 'typeaheadmulti' ? typeaheadFilteredChildren : children;
+        renderableFavorites = createRenderableFavorites(tempRenderableChildren, isGrouped, favorites);
+        favoritesGroup = [
+          <SelectGroup key="favorites" label={favoritesLabel}>
+            {renderableFavorites}
+          </SelectGroup>
+        ];
+      }
+      // if variant is type-ahead call the extendTypeaheadChildren before adding favorites
+      const tempExtendedChildren =
+        variant === 'typeahead' || 'typeaheadMulti' ? this.extendTypeaheadChildren(typeaheadActiveChild) : children;
+      if (renderableFavorites.length > 0) {
+        // concat all select options too renderable favorites group and mark items that are favorited with isFavorite
+        renderableItems = favoritesGroup.concat(extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites));
+      } else {
+        // mark items that are favorited with isFavorite
+        renderableItems = extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites);
+      }
+    } else {
+      renderableItems = children;
+    }
+
     if (!customContent) {
       if (!hasAnySelections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
@@ -586,7 +630,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             selected: selections[0],
             openedOnEnter
           };
-          variantChildren = children;
+          variantChildren = renderableItems;
           break;
         case 'checkbox':
           variantProps = {
@@ -601,14 +645,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             selected: selections[0],
             openedOnEnter
           };
-          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadActiveChild);
           break;
         case 'typeaheadmulti':
           variantProps = {
             selected: selections,
             openedOnEnter
           };
-          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadActiveChild);
           break;
       }
     }
@@ -771,7 +815,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       <GenerateId>
         {randomId => (
           <SelectContext.Provider
-            value={{ onSelect, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
+            value={{ onSelect, onFavorite, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
           >
             {menuAppendTo === 'inline' ? (
               mainContainer

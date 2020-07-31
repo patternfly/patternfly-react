@@ -8,6 +8,7 @@ export interface SelectContextInterface {
     isPlaceholder?: boolean
   ) => void;
   onClose: () => void;
+  onFavorite: (itemId: string, isFavorite: boolean) => void;
   variant: string;
   inputIdPrefix: string;
 }
