@@ -5208,7 +5208,7 @@ exports[`renders select with favorites successfully 1`] = `
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="00"
+                  key=".$00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5274,7 +5274,7 @@ exports[`renders select with favorites successfully 1`] = `
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="00"
+                  key=".$00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5331,14 +5331,12 @@ exports[`renders select with favorites successfully 1`] = `
               </div>
             </SelectGroup>
             <SelectGroup
-              isFocused={null}
-              key=".$.0"
+              key=".$.$.0"
               label="group 1"
               titleId="group-1"
             >
               <div
                 className="pf-c-select__menu-group"
-                isFocused={null}
               >
                 <div
                   aria-hidden={true}
@@ -5351,298 +5349,16 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-1"
-                  index={1}
-                  inputId="pf-random-id-7-1"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                    >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-2"
-                  index={2}
-                  inputId="pf-random-id-7-2"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$01"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mrs"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                    >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-2"
-                  index={3}
-                  inputId="pf-random-id-7-3"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$02"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Ms"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                    >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-4"
-                  index={4}
-                  inputId="pf-random-id-7-4"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$03"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Other"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-4"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                    >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
-                    </button>
-                  </li>
-                </SelectOption>
-              </div>
-            </SelectGroup>
-            <SelectGroup
-              isFocused={null}
-              key=".$.1"
-              label="group 2"
-              titleId="group-2"
-            >
-              <div
-                className="pf-c-select__menu-group"
-                isFocused={null}
-              >
-                <div
-                  aria-hidden={true}
-                  className="pf-c-select__menu-group-title"
-                  id="group-2"
-                >
-                  group 2
-                </div>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
                   index={2}
                   inputId="pf-random-id-7-2"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={true}
+                  isFocused={null}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key=".$00"
+                  key=".$.$.$00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5705,10 +5421,11 @@ exports[`renders select with favorites successfully 1`] = `
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
+                  isFocused={null}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key=".$01"
+                  key=".$.$.$01"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5771,10 +5488,11 @@ exports[`renders select with favorites successfully 1`] = `
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
+                  isFocused={null}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key=".$02"
+                  key=".$.$.$02"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5837,10 +5555,296 @@ exports[`renders select with favorites successfully 1`] = `
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
+                  isFocused={null}
                   isNoResultsOption={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key=".$03"
+                  key=".$.$.$03"
+                  keyHandler={[Function]}
+                  onClick={[Function]}
+                  sendRef={[Function]}
+                  value="Other"
+                >
+                  <li
+                    className="pf-c-select__menu-wrapper"
+                    id="option-4"
+                    role="presentation"
+                  >
+                    <button
+                      aria-selected={null}
+                      className="pf-c-select__menu-item"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="option"
+                      type="button"
+                    >
+                      Other
+                    </button>
+                    <button
+                      aria-label="not starred"
+                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+                      onClick={[Function]}
+                    >
+                      <StarIcon
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </StarIcon>
+                    </button>
+                  </li>
+                </SelectOption>
+              </div>
+            </SelectGroup>
+            <SelectGroup
+              key=".$.$.1"
+              label="group 2"
+              titleId="group-2"
+            >
+              <div
+                className="pf-c-select__menu-group"
+              >
+                <div
+                  aria-hidden={true}
+                  className="pf-c-select__menu-group-title"
+                  id="group-2"
+                >
+                  group 2
+                </div>
+                <SelectOption
+                  className=""
+                  component="button"
+                  id="option-1"
+                  index={6}
+                  inputId="pf-random-id-7-6"
+                  isChecked={false}
+                  isDisabled={false}
+                  isFavorite={true}
+                  isFocused={null}
+                  isNoResultsOption={false}
+                  isPlaceholder={false}
+                  isSelected={false}
+                  key=".$.$.$00"
+                  keyHandler={[Function]}
+                  onClick={[Function]}
+                  sendRef={[Function]}
+                  value="Mr"
+                >
+                  <li
+                    className="pf-c-select__menu-wrapper pf-m-favorite"
+                    id="option-1"
+                    role="presentation"
+                  >
+                    <button
+                      aria-selected={null}
+                      className="pf-c-select__menu-item"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="option"
+                      type="button"
+                    >
+                      Mr
+                    </button>
+                    <button
+                      aria-label="starred"
+                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+                      onClick={[Function]}
+                    >
+                      <StarIcon
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </StarIcon>
+                    </button>
+                  </li>
+                </SelectOption>
+                <SelectOption
+                  className=""
+                  component="button"
+                  id="option-2"
+                  index={7}
+                  inputId="pf-random-id-7-7"
+                  isChecked={false}
+                  isDisabled={false}
+                  isFavorite={false}
+                  isFocused={null}
+                  isNoResultsOption={false}
+                  isPlaceholder={false}
+                  isSelected={false}
+                  key=".$.$.$01"
+                  keyHandler={[Function]}
+                  onClick={[Function]}
+                  sendRef={[Function]}
+                  value="Mrs"
+                >
+                  <li
+                    className="pf-c-select__menu-wrapper"
+                    id="option-2"
+                    role="presentation"
+                  >
+                    <button
+                      aria-selected={null}
+                      className="pf-c-select__menu-item"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="option"
+                      type="button"
+                    >
+                      Mrs
+                    </button>
+                    <button
+                      aria-label="not starred"
+                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+                      onClick={[Function]}
+                    >
+                      <StarIcon
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </StarIcon>
+                    </button>
+                  </li>
+                </SelectOption>
+                <SelectOption
+                  className=""
+                  component="button"
+                  id="option-2"
+                  index={8}
+                  inputId="pf-random-id-7-8"
+                  isChecked={false}
+                  isDisabled={false}
+                  isFavorite={false}
+                  isFocused={null}
+                  isNoResultsOption={false}
+                  isPlaceholder={false}
+                  isSelected={false}
+                  key=".$.$.$02"
+                  keyHandler={[Function]}
+                  onClick={[Function]}
+                  sendRef={[Function]}
+                  value="Ms"
+                >
+                  <li
+                    className="pf-c-select__menu-wrapper"
+                    id="option-2"
+                    role="presentation"
+                  >
+                    <button
+                      aria-selected={null}
+                      className="pf-c-select__menu-item"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="option"
+                      type="button"
+                    >
+                      Ms
+                    </button>
+                    <button
+                      aria-label="not starred"
+                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
+                      onClick={[Function]}
+                    >
+                      <StarIcon
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </StarIcon>
+                    </button>
+                  </li>
+                </SelectOption>
+                <SelectOption
+                  className=""
+                  component="button"
+                  id="option-4"
+                  index={9}
+                  inputId="pf-random-id-7-9"
+                  isChecked={false}
+                  isDisabled={false}
+                  isFavorite={false}
+                  isFocused={null}
+                  isNoResultsOption={false}
+                  isPlaceholder={false}
+                  isSelected={false}
+                  key=".$.$.$03"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -6568,7 +6572,6 @@ exports[`select renders select groups successfully 1`] = `
                 >
                   <button
                     class="pf-c-select__menu-item"
-                    id="pf-random-id-6-4"
                     role="option"
                     type="button"
                   >
@@ -7186,8 +7189,8 @@ exports[`select renders select groups successfully 1`] = `
                   className=""
                   component="button"
                   id="option-1"
-                  index={1}
-                  inputId="pf-random-id-6-1"
+                  index={4}
+                  inputId="pf-random-id-6-4"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={null}
@@ -7221,8 +7224,8 @@ exports[`select renders select groups successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={2}
-                  inputId="pf-random-id-6-2"
+                  index={5}
+                  inputId="pf-random-id-6-5"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={null}
@@ -7256,8 +7259,8 @@ exports[`select renders select groups successfully 1`] = `
                   className=""
                   component="button"
                   id="option-3"
-                  index={3}
-                  inputId="pf-random-id-6-3"
+                  index={6}
+                  inputId="pf-random-id-6-6"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={null}
@@ -7291,8 +7294,8 @@ exports[`select renders select groups successfully 1`] = `
                   className=""
                   component="button"
                   id="option-4"
-                  index={4}
-                  inputId="pf-random-id-6-4"
+                  index={7}
+                  inputId="pf-random-id-6-7"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={null}

@@ -9,7 +9,6 @@ import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
-import { SelectGroup } from './SelectGroup';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional, GenerateId } from '../../helpers';
