@@ -1762,7 +1762,7 @@ class FavoritesSelect extends React.Component {
     return (
         <Select
           variant={SelectVariant.typeahead}
-          aria-label="Select Favorites"
+          typeAheadAriaLabel="Select value"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
