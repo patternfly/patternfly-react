@@ -28,7 +28,7 @@ describe('Table Simple Test', () => {
     cy.get(
       '.pf-m-inline-editable > [data-label="Dropdown col 5"] > .pf-c-inline-edit__input > .pf-c-select > .pf-c-select__toggle > .pf-c-select__toggle-button'
     ).click();
-    cy.get('label#uniqueIdRow1Cell5Option3 > .pf-c-check__input').click();
+    cy.get(':nth-child(4) > .pf-c-check__label').click();
     cy.get(
       '.pf-m-inline-editable > .pf-c-table__inline-edit-action > .pf-c-inline-edit__group > :nth-child(1) > .pf-c-button'
     ).click();
@@ -54,7 +54,7 @@ describe('Table Simple Test', () => {
     cy.get(
       '.pf-m-inline-editable:nth-of-type(2) > [data-label="Dropdown col 5"] > .pf-c-inline-edit__input > .pf-c-select > .pf-c-select__toggle > .pf-c-select__toggle-button'
     ).click();
-    cy.get('button#uniqueIdRow2Cell5Option3-3').click();
+    cy.get('#uniqueIdRow2Cell5Option3 > .pf-c-select__menu-item').click();
     cy.get(
       '.pf-m-inline-editable:nth-of-type(2) > .pf-c-table__inline-edit-action > .pf-c-inline-edit__group > :nth-child(2) > .pf-c-button'
     ).click();
