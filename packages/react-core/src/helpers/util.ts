@@ -1,7 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import * as React from 'react';
-import { ApplicationLauncherSeparator } from '../components/ApplicationLauncher/ApplicationLauncherSeparator'; 
+import { ApplicationLauncherSeparator } from '../components/ApplicationLauncher/ApplicationLauncherSeparator';
 
 /**
  * @param {string} input - String to capitalize first letter
