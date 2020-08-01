@@ -22,15 +22,15 @@ describe('Select Test', () => {
 
   it('Verify Single Grouped Select with Favorites', () => {
     cy.get('#favorites-select-grouped').click();
-    cy.get('#Favorites').should('not.exist');
+    cy.get('#My-Favorites').should('not.exist');
     cy.get('#option-grouped-1 > .pf-m-action').should('have.attr', 'aria-label', 'not starred');
     cy.get('#option-grouped-1 > .pf-m-action').click();
-    cy.get('#Favorites').should('exist');
+    cy.get('#My-Favorites').should('exist');
     cy.get('#option-grouped-1 > .pf-m-action').should('have.attr', 'aria-label', 'starred');
     cy.get(':nth-child(2) > #option-grouped-1 > .pf-m-action')
       .first()
       .click();
-    cy.get('#Favorites').should('not.exist');
+    cy.get('#My-Favorites').should('not.exist');
     // toggle closed
     cy.get('#favorites-select-grouped').click();
   });
@@ -85,7 +85,7 @@ describe('Select Test', () => {
     cy.get('#apples-option > .pf-m-action')
       .first()
       .click();
-    cy.get('#Favorites').should('not.exist');
+    cy.get('.pf-c-select__menu-group-title').should('not.exist');
     // toggle closed
     cy.get('#typeahead-multi-select').click();
   });

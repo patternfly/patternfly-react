@@ -1739,14 +1739,17 @@ class FavoritesSelect extends React.Component {
     };
 
     this.options = [
-      <SelectGroup label="Group 1" key="group1">
-        <SelectOption id={"option-1"} key={0} value="Item 1" description="This is a description." />
-        <SelectOption id={"option-2"} key={1} value="Item 2" />
-        <SelectOption id={"option-3"} key={2} value="Item 3 (disabled)" isDisabled/>
+      <SelectGroup label="Status" key="group1">
+        <SelectOption id={"option-1"} key={0} value="Running" description="This is a description." />
+        <SelectOption id={"option-2"} key={1} value="Stopped" />
+        <SelectOption id={"option-3"} key={2} value="Down (disabled)" isDisabled/>
+        <SelectOption id={"option-4"} key={3} value="Degraded" />
+          <SelectOption id={"option-5"} key={4} value="Needs Maintenence" />
       </SelectGroup>,
-      <SelectGroup label="Group 2" key="group2">
-        <SelectOption id={"option-4"} key={3} value="Item 4" />
-        <SelectOption id={"option-5"} key={4} value="Item 5" description="This is a description." />
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption id={"option-6"} key={5} value="Dell" />
+        <SelectOption id={"option-7"} key={6} value="Samsung" description="This is a description." />
+        <SelectOption id={"option-8"} key={7} value="Hewlett-Packard" />
       </SelectGroup>
     ];
   }
@@ -1755,12 +1758,8 @@ class FavoritesSelect extends React.Component {
     const { isOpen, selected, favorites } = this.state;
     const titleId = 'grouped-single-select-id';
     return (
-      <div>
-        <span id={titleId} hidden>
-          Grouped Checkbox Title
-        </span>
         <Select
-          variant={SelectVariant.single}
+          variant={SelectVariant.typeahead}
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
@@ -1773,7 +1772,6 @@ class FavoritesSelect extends React.Component {
         >
           {this.options}
         </Select>
-      </div>
     );
   }
 }
