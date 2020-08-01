@@ -276,6 +276,7 @@ export class SelectFavoritesDemo extends Component<SelectFavoritesDemoState> {
             isGrouped
             onFavorite={this.onFavoriteGrouped}
             favorites={favoritesGrouped}
+            favoritesLabel={"My Favorites"}
           >
             {this.optionsGrouped}
           </Select>
