@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.28.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.27.0...demo-app-ts@4.28.0) (2020-08-03)
+
+
+### Features
+
+* **SearchInput:** add new SearchInput component ([#4588](https://github.com/patternfly/patternfly-react/issues/4588)) ([bca4005](https://github.com/patternfly/patternfly-react/commit/bca40058168bcdf79898ea638f95c0601a8d0e17))
+
+
+
+
+
 # [4.27.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.26.0...demo-app-ts@4.27.0) (2020-08-03)
 
 
