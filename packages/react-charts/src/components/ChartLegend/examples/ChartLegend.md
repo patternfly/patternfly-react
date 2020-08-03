@@ -9,18 +9,21 @@ hideDarkMode: true
 
 import { 
   Chart,
-  ChartArea, 
-  ChartAxis, 
-  ChartBullet, 
-  ChartGroup, 
+  ChartArea,
+  ChartAxis,
+  ChartBullet,
+  ChartDonut,
+  ChartGroup,
+  ChartLabel,
   ChartLegend,
   ChartLegendTooltip,
-  ChartLine, 
-  ChartPie, 
-  ChartScatter, 
-  ChartThemeColor, 
+  ChartLine,
+  ChartPie,
+  ChartScatter,
+  ChartThemeColor,
+  ChartVoronoiContainer,
   createContainer,
-  getInteractiveLegendEvents, 
+  getInteractiveLegendEvents,
   getInteractiveLegendItemStyles 
 } from '@patternfly/react-charts';
 import { chart_area_Opacity, chart_color_black_500 } from '@patternfly/react-tokens';

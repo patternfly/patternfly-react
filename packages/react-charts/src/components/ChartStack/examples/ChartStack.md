@@ -11,7 +11,18 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartBar, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartTooltip, createContainer } from '@patternfly/react-charts';
+import {
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartBar,
+  ChartStack,
+  ChartLegendTooltip,
+  ChartThemeColor,
+  ChartTooltip,
+  ChartVoronoiContainer,
+  createContainer
+} from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
