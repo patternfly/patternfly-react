@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.13.18...@patternfly/react-table@4.14.0) (2020-08-03)
+
+
+### Features
+
+* **NotificationBadge:** add needs attention state and count ([#4516](https://github.com/patternfly/patternfly-react/issues/4516)) ([63c7cbf](https://github.com/patternfly/patternfly-react/commit/63c7cbf0beed5497ca7addf7fc6663229f37ab81))
+
+
+
+
+
 ## [4.13.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.13.17...@patternfly/react-table@4.13.18) (2020-07-31)
 
 **Note:** Version bump only for package @patternfly/react-table

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.36.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.35.1...@patternfly/react-core@4.36.0) (2020-08-03)
+
+
+### Bug Fixes
+
+* **Toolbar*:** change spelling of visiblity prop ([#4560](https://github.com/patternfly/patternfly-react/issues/4560)) ([cc17bf2](https://github.com/patternfly/patternfly-react/commit/cc17bf264a951017969615ebbba8cf6a05c8a5c9)), closes [#4555](https://github.com/patternfly/patternfly-react/issues/4555) [#4556](https://github.com/patternfly/patternfly-react/issues/4556)
+
+
+### Features
+
+* **NotificationBadge:** add needs attention state and count ([#4516](https://github.com/patternfly/patternfly-react/issues/4516)) ([63c7cbf](https://github.com/patternfly/patternfly-react/commit/63c7cbf0beed5497ca7addf7fc6663229f37ab81))
+
+
+
+
+
 ## [4.35.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.35.0...@patternfly/react-core@4.35.1) (2020-07-31)
 
 
