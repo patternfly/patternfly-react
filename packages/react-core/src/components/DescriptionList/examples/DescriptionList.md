@@ -383,7 +383,7 @@ import {
 import { PlusCircleIcon } from '@patternfly/react-icons';
 
 AutoColumnsDescriptionList = (
-  <DescriptionList hasAutoColumnWidths columnModifier={{ default: '3Col' }}>
+  <DescriptionList isAutoColumnWidths columnModifier={{ default: '3Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>
@@ -427,7 +427,7 @@ import {
 import { PlusCircleIcon } from '@patternfly/react-icons';
 
 HorizontalAutoColumnsDescriptionList = (
-  <DescriptionList isHorizontal hasAutoColumnWidths columnModifier={{ lg: '2Col' }}>
+  <DescriptionList isHorizontal isAutoColumnWidths columnModifier={{ lg: '2Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>
@@ -473,7 +473,7 @@ import {
 import { PlusCircleIcon } from '@patternfly/react-icons';
 
 InlineGridDescriptionList = (
-  <DescriptionList columnModifier={{ default: '3Col' }} hasInlineGrid>
+  <DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

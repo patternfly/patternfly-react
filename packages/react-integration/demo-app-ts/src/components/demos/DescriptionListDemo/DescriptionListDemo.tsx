@@ -199,7 +199,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="auto-col-widths-description-list" hasAutoColumnWidths>
+          <DescriptionList id="auto-col-widths-description-list" isAutoColumnWidths>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>
@@ -242,7 +242,7 @@ export class DescriptionListDemo extends Component {
         <Divider component="div" />
         <br />
         <div className="example">
-          <DescriptionList id="inline-grid-description-list" hasInlineGrid>
+          <DescriptionList id="inline-grid-description-list" isInlineGrid>
             <DescriptionListGroup>
               <DescriptionListTerm>Name</DescriptionListTerm>
               <DescriptionListDescription>Example</DescriptionListDescription>

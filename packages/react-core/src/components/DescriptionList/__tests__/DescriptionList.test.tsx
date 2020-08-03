@@ -32,12 +32,12 @@ describe('Description List', () => {
   });
 
   test('Auto Column Widths Description List', () => {
-    const view = shallow(<DescriptionList hasAutoColumnWidths />);
+    const view = shallow(<DescriptionList isAutoColumnWidths />);
     expect(view).toMatchSnapshot();
   });
 
   test('Inline Grid Description List', () => {
-    const view = shallow(<DescriptionList hasInlineGrid />);
+    const view = shallow(<DescriptionList isInlineGrid />);
     expect(view).toMatchSnapshot();
   });
 

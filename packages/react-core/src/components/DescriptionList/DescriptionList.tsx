@@ -11,9 +11,9 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   /** Sets the description list component term and description pair to a horizontal layout. */
   isHorizontal?: boolean;
   /** Sets the description list to format automatically. */
-  hasAutoColumnWidths?: boolean;
+  isAutoColumnWidths?: boolean;
   /** Modifies the description list display to inline-grid. */
-  hasInlineGrid?: boolean;
+  isInlineGrid?: boolean;
   /** Sets the number of columns on the description list */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -28,8 +28,8 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   className = '',
   children = null,
   isHorizontal = false,
-  hasAutoColumnWidths,
-  hasInlineGrid,
+  isAutoColumnWidths,
+  isInlineGrid,
   columnModifier,
   ...props
 }: DescriptionListProps) => (
@@ -37,9 +37,9 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
     className={css(
       styles.descriptionList,
       isHorizontal && styles.modifiers.horizontal,
-      hasAutoColumnWidths && styles.modifiers.autoColumnWidths,
+      isAutoColumnWidths && styles.modifiers.autoColumnWidths,
       formatBreakpointMods(columnModifier, styles),
-      hasInlineGrid && styles.modifiers.inlineGrid,
+      isInlineGrid && styles.modifiers.inlineGrid,
       className
     )}
     {...props}
