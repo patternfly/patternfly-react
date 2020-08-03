@@ -18,6 +18,9 @@ it('WizardToggle should match snapshot (auto-generated)', () => {
       isNavOpen={true}
       onNavToggle={(isOpen: boolean) => undefined as void}
       aria-label={"'Wizard Toggle'"}
+      mainAriaLabelledBy={'null'}
+      mainAriaLabel={'null'}
+      isInPage={true}
     />
   );
   expect(view).toMatchSnapshot();

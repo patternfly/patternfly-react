@@ -5,7 +5,6 @@ PatternFly 4 Icons as React Components.
 ## Usage
 
 ```jsx
-import React from 'react';
 import { TimesIcon } from '@patternfly/react-icons';
 
 const closeIcon = <TimesIcon />;

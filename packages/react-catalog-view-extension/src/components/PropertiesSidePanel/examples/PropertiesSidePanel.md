@@ -1,7 +1,6 @@
 ---
-title: 'Catalog view properties side panel'
-section: 'extensions'
-typescript: true
+id: Catalog view properties side panel
+section: extensions
 propComponents: ['PropertiesSidePanel', 'PropertyItem']
 ---
 
@@ -17,7 +16,8 @@ This package is currently an extension. Extension components do not undergo the 
 
 ## Examples
 
-```js title=Properties-Side-Panel-with-PropertyItems
+### Properties side panel with property items
+```js
 import React from 'react';
 import { PropertiesSidePanel, PropertyItem } from '@patternfly/react-catalog-view-extension';
 import { OkIcon, ExternalLinkAltIcon, GlobeIcon } from '@patternfly/react-icons';

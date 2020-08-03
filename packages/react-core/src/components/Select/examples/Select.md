@@ -1,17 +1,16 @@
 ---
-title: 'Select'
+id: Select
 section: components
-cssPrefix: 'pf-c-select'
+cssPrefix: pf-c-select
 propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
-typescript: true
 ouia: true
 ---
 
-import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';
-
 ## Examples
 
-```js title=Single
+### Single
+
+```js
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
@@ -145,7 +144,9 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-```js title=Single-with-description
+### Single with description
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -227,7 +228,9 @@ class SingleSelectDescription extends React.Component {
 }
 ```
 
-```js title=Grouped-single
+### Grouped single
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
@@ -300,7 +303,9 @@ class GroupedSingleSelectInput extends React.Component {
 }
 ```
 
-```js title=Checkbox-input
+### Checkbox input
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -375,7 +380,9 @@ class CheckboxSelectInput extends React.Component {
 }
 ```
 
-```js title=Checkbox-input-no-badge
+### Checkbox input no badge
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -450,7 +457,9 @@ class CheckboxSelectInputNoBadge extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-input
+### Grouped checkbox input
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
@@ -531,7 +540,9 @@ class GroupedCheckboxSelectInput extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-input-with-filtering
+### Grouped checkbox input with filtering
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
 
@@ -635,7 +646,9 @@ class FilteringCheckboxSelectInput extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-input-with-filtering-and-placeholder-text
+### Grouped checkbox input with filtering and placeholder text
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
 
@@ -740,7 +753,9 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-input-with-filtering-and-custom-badging
+### Grouped checkbox input with filtering and custom badging
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
 
@@ -863,7 +878,9 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
 }
 ```
 
-```js title=Typeahead
+### Typeahead
+
+```js
 import React from 'react';
 import { Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -997,7 +1014,138 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-```js title=Custom-filtering
+### Grouped typeahead
+
+```js
+import React from 'react';
+import { Checkbox, Select, SelectGroup, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class GroupedTypeaheadSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      options: [
+        <SelectGroup label="Status" key="group1">
+          <SelectOption key={0} value="Running" />
+          <SelectOption key={1} value="Stopped" />
+          <SelectOption key={2} value="Down" />
+          <SelectOption key={3} value="Degraded" />
+          <SelectOption key={4} value="Needs Maintenence" />
+        </SelectGroup>,
+        <SelectGroup label="Vendor Names" key="group2">
+          <SelectOption key={5} value="Dell" />
+          <SelectOption key={6} value="Samsung" isDisabled />
+          <SelectOption key={7} value="Hewlett-Packard" />
+        </SelectGroup>
+      ],
+      newOptions: [],
+      isOpen: false,
+      selected: null,
+      isCreatable: false,
+      hasOnCreateOption: false
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.onCreateOption = newValue => {
+      this.setState({
+        newOptions: [...this.state.newOptions, <SelectOption key={newValue} value={newValue} />]
+      });
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.toggleCreatable = checked => {
+      this.setState({
+        isCreatable: checked
+      });
+    };
+
+    this.toggleCreateNew = checked => {
+      this.setState({
+        hasOnCreateOption: checked
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, options, newOptions } = this.state;
+    const titleId = 'grouped-typeahead-select-id';
+    const allOptions =
+      newOptions.length > 0
+        ? options.concat(
+            <SelectGroup label="Created" key="create-group">
+              {newOptions}
+            </SelectGroup>
+          )
+        : options;
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Select a state
+        </span>
+        <Select
+          variant={SelectVariant.typeahead}
+          typeAheadAriaLabel="Select a state"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          onClear={this.clearSelection}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          placeholderText="Select a state"
+          isGrouped
+          isCreatable={isCreatable}
+          onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
+        >
+          {allOptions}
+        </Select>
+        <Checkbox
+          label="isCreatable"
+          isChecked={this.state.isCreatable}
+          onChange={this.toggleCreatable}
+          aria-label="toggle creatable checkbox"
+          id="toggle-creatable-typeahead"
+          name="toggle-creatable-typeahead"
+        />
+        <Checkbox
+          label="onCreateOption"
+          isChecked={this.state.hasOnCreateOption}
+          onChange={this.toggleCreateNew}
+          aria-label="toggle new checkbox"
+          id="toggle-new-typeahead"
+          name="toggle-new-typeahead"
+        />
+      </div>
+    );
+  }
+}
+```
+
+### Custom filtering
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -1078,7 +1226,9 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-```js title=Multiple
+### Multiple
+
+```js
 import React from 'react';
 import { Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -1201,7 +1351,9 @@ class MultiTypeaheadSelectInput extends React.Component {
 }
 ```
 
-```js title=Multiple-with-custom-objects
+### Multiple with custom objects
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -1304,7 +1456,9 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
 }
 ```
 
-```js title=Plain-multiple-typeahead
+### Plain multiple typeahead
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -1386,7 +1540,9 @@ class PlainSelectInput extends React.Component {
 }
 ```
 
-```js title=Panel
+### Panel
+
+```js
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
@@ -1466,7 +1622,9 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-```js title=select-menu-document-body
+### select menu document body
+
+```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 

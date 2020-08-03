@@ -23,6 +23,7 @@ exports[`tooltip renders 1`] = `
   onFocus={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
+  onTriggerEnter={[Function]}
   placement="top"
   popper={
     <div

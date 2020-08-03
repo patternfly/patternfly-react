@@ -35,14 +35,13 @@ npm install @patternfly/react-charts --save
 
 It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
 
-```javascript
+```js
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
 #### Example Component Usage
 
-```javascript
-import React from 'react';
+```js
 import { Area } from '@patternfly/react-charts';
 
 export default <Area />;

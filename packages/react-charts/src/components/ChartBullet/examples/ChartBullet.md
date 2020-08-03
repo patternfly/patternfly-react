@@ -1,7 +1,6 @@
 ---
-title: 'Bullet chart'
-section: 'charts'
-typescript: true
+id: Bullet chart
+section: charts
 propComponents: [
   'ChartAxis',
   'ChartBullet',
@@ -11,7 +10,6 @@ hideDarkMode: true
 ---
 
 import { ChartAxis, ChartBullet, ChartContainer, ChartThemeColor } from '@patternfly/react-charts';
-import { Button, Tooltip } from '@patternfly/react-core';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -23,7 +21,8 @@ Learn to build a bullet chart using a Katacoda tutorial starting with a simple c
 [Start course](https://katacoda.com/patternfly/courses/react-charts/bullet-chart)
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -45,7 +44,8 @@ Basic = (
 )
 ```
 
-```js title=Segmented-primary-measure
+### Segmented primary measure
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -78,7 +78,8 @@ SegmentedPrimaryMeasure = (
 )
 ```
 
-```js title=Responsive-container-with-bottom-aligned-legend
+### Responsive container with bottom aligned legend
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -144,7 +145,8 @@ class BulletChart extends React.Component {
 }
 ```
 
-```js title=Bullet-chart-with-primary-measure-dot
+### Bullet chart with primary measure dot
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -177,7 +179,8 @@ PrimaryMeasureDot = (
 )
 ```
 
-```js title=Error-measure-and-custom-axis-ticks
+### Error measure and custom axis ticks
+```js
 import React from 'react';
 import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
@@ -217,7 +220,8 @@ ErrorMeasureCustomAxis = (
 )
 ```
 
-```js title=Primary-measure-outside-range
+### Primary measure outside range
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -255,7 +259,8 @@ PrimaryMeasureOutsideRange = (
 )
 ```
 
-```js title=Negative-primary-measure
+### Negative primary measure
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -292,7 +297,8 @@ NegativePrimaryMeasure = (
 )
 ```
 
-```js title=Reversed-with-right-aligned-legend
+### Reversed with right aligned legend
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -332,7 +338,8 @@ ReversedRightLegend = (
 )
 ```
 
-```js title=Negative-and-positive-primary-measures
+### Negative and positive primary measures
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -370,7 +377,8 @@ PrimaryMeasures = (
 )
 ```
 
-```js title=Vertical-with-segmented-primary-measure
+### Vertical with segmented primary measure
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -404,7 +412,8 @@ Vertical = (
 )
 ```
 
-```js title=Vertical-primary-measure-outside-max-range
+### Vertical primary measure outside max range
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -440,7 +449,8 @@ VerticalOutsideRange = (
 )
 ```
 
-```js title=Custom-size
+### Custom size
+```js
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -473,7 +483,8 @@ CustomSize = (
 )
 ```
 
-```js title=Horizontal-group
+### Horizontal group
+```js
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
@@ -569,7 +580,8 @@ HorizontalGroup = (
 )
 ```
 
-```js title=Vertical-group
+### Vertical group
+```js
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
@@ -669,7 +681,8 @@ VerticalGroup = (
 )
 ```
 
-```js title=Horizontal-group-with-title
+### Horizontal group with title
+```js
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
@@ -767,7 +780,8 @@ HorizontalGroupWithTitle = (
 )
 ```
 
-```js title=Vertical-group-with-title
+### Vertical group with title
+```js
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 

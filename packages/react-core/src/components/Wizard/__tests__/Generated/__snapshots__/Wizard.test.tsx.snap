@@ -3,7 +3,7 @@
 exports[`Wizard should match snapshot (auto-generated) 1`] = `
 <Modal
   actions={Array []}
-  appendTo={<body />}
+  appendTo={[Function]}
   aria-describedby="string"
   aria-label=""
   aria-labelledby="string"
@@ -37,12 +37,15 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
         descriptionId="string"
         hideClose={false}
         onClose={[Function]}
-        title="''"
+        title="null"
         titleId="string"
       />
       <WizardToggle
         hasNoBodyPadding={false}
+        isInPage={false}
         isNavOpen={false}
+        mainAriaLabel="null"
+        mainAriaLabelledBy="null"
         nav={[Function]}
         onNavToggle={[Function]}
         steps={Array []}

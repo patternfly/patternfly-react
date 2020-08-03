@@ -1,5 +1,5 @@
-describe('Drawer Basic Demo Test', () => {
-  it('Navigate to the drawer basic demo', () => {
+describe('Notification Drawer Basic Demo Test', () => {
+  it('Navigate to the notification drawer basic demo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#notification-drawer-basic-demo-nav-item-link').click();
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-basic-demo-nav-link');
@@ -60,5 +60,42 @@ describe('Drawer Basic Demo Test', () => {
     cy.get('.pf-c-notification-drawer__list-item-timestamp')
       .last()
       .contains('30 minutes ago');
+  });
+
+  // Accessibility test
+  it('Verify keyboard events happen correctly', () => {
+    // Verify the list header toggle button keyboard interactivity opens/closes dropdown menu
+    // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
+    // then press Tab on toggle button, check whether the dropdown menu is closed
+    cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
+      cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
+      cy.get('#notification-0')
+        .find('.pf-c-dropdown__menu.pf-m-align-right')
+        .should('exist');
+      cy.get('#notification-0')
+        .find('.pf-c-dropdown__menu-item')
+        .first()
+        .should('be.focused');
+      cy.wrap(toggleButton).trigger('keydown', { keyCode: 9 });
+      cy.get('#notification-0')
+        .find('.pf-c-dropdown__menu.pf-m-align-right')
+        .should('not.exist');
+    });
+    // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
+    // the method is the same as above
+    cy.get('#toggle-id-1').then((toggleButton: JQuery<HTMLButtonElement>) => {
+      cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
+      cy.get('#notification-1')
+        .find('.pf-c-dropdown__menu.pf-m-align-right')
+        .should('exist');
+      cy.get('#notification-1')
+        .find('.pf-c-dropdown__menu-item')
+        .first()
+        .should('be.focused');
+      cy.wrap(toggleButton).trigger('keydown', { keyCode: 9 });
+      cy.get('#notification-1')
+        .find('.pf-c-dropdown__menu.pf-m-align-right')
+        .should('not.exist');
+    });
   });
 });

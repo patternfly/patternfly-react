@@ -1,42 +1,8 @@
 ---
-title: 'Banner'
-section: 'demos'
+id: Banner
+section: demos
 ---
 
-import React from 'react';
-import {
-Avatar,
-Brand,
-Banner,
-Button,
-ButtonVariant,
-Card,
-CardBody,
-Dropdown,
-DropdownGroup,
-DropdownToggle,
-DropdownItem,
-DropdownSeparator,
-Flex,
-FlexItem,
-Gallery,
-GalleryItem,
-KebabToggle,
-Nav,
-NavItem,
-NavList,
-Page,
-PageHeader,
-PageSection,
-PageSectionVariants,
-PageSidebar,
-SkipToContent,
-TextContent,
-Text,
-PageHeaderTools,
-PageHeaderToolsGroup,
-PageHeaderToolsItem
-} from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -44,7 +10,8 @@ import imgAvatar from './imgAvatar.svg';
 
 ## Examples
 
-```js title=Basic-sticky-banner isFullscreen
+### Basic sticky banner
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -272,7 +239,8 @@ class BannerDemo extends React.Component {
 }
 ```
 
-```js title=Top-and-bottom-banner isFullscreen
+### Top and bottom banner
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,

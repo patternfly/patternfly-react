@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.7.0...@patternfly/react-tokens@4.7.1) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.6.0...@patternfly/react-tokens@4.7.0) (2020-07-20)
+
+
+### Features
+
+* **tokens:** add componentIndex ([#4572](https://github.com/patternfly/patternfly-react/issues/4572)) ([3c7e7f8](https://github.com/patternfly/patternfly-react/commit/3c7e7f8dfc72ece4796865185f21e644aaf22ea0))
+
+
+
+
+
 # [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.5.3...@patternfly/react-tokens@4.6.0) (2020-07-16)
 
 

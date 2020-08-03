@@ -2,10 +2,16 @@ import { Tooltip } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TooltipDemo extends Component {
+  tooltipRef: React.RefObject<HTMLButtonElement>;
   myTooltipProps = {
     content: <div>World</div>,
     children: <div id="tooltipTarget">Hello</div>
   };
+
+  constructor(props: any) {
+    super(props);
+    this.tooltipRef = React.createRef();
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -18,6 +24,19 @@ export class TooltipDemo extends Component {
         <Tooltip content="test deprecated props" tippyProps={{ duration: 0, delay: 0 }} isAppLauncher>
           <button>Trigger</button>
         </Tooltip>
+        <div>
+          <button ref={this.tooltipRef} id="tooltip-ref">
+            Tooltip attached via react ref
+          </button>
+          <Tooltip content={<div>Tooltip attached via react ref</div>} reference={this.tooltipRef} />
+        </div>
+        <div>
+          <button id="tooltip-selector">Tooltip attached via selector ref</button>
+          <Tooltip
+            content={<div>Tooltip attached via selector ref</div>}
+            reference={() => document.getElementById('tooltip-selector')}
+          />
+        </div>
       </div>
     );
   }

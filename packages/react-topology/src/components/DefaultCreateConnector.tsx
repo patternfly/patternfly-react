@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 import AddCircleOIcon from '@patternfly/react-icons/dist/js/icons/add-circle-o-icon';
 import { Tooltip } from '@patternfly/react-core';
 import Point from '../geom/Point';
@@ -23,7 +23,7 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
   tipContents,
   className
 }) => {
-  const classes = classNames('pf-topology-default-create-connector', className);
+  const classes = css('pf-topology-default-create-connector', className);
   return (
     <g className={classes}>
       <line

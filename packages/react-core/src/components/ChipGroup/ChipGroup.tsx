@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Chip } from './Chip';
 import { Tooltip } from '../Tooltip';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
@@ -159,7 +159,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
                 id={`remove_group_${id}`}
                 aria-labelledby={`remove_group_${id} ${id}`}
               >
-                <TimesIcon aria-hidden="true" />
+                <TimesCircleIcon aria-hidden="true" />
               </Button>
             </div>
           )}

@@ -1,21 +1,15 @@
 ---
-title: Table empty states
-section: 'demos'
+id: Table empty states
+section: demos
 ---
 
 ## Examples
 
-import {
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions,
-  Bullseye
-} from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
-```js title=Empty
+### Empty
+```js
 import React from 'react';
 import {
   Bullseye,
@@ -70,7 +64,8 @@ class EmptyStateDemo extends React.Component {
 }
 ```
 
-```js title=Loading
+### Loading
+```js
 import React from 'react';
 import { Bullseye } from "@patternfly/react-core";
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -111,7 +106,8 @@ class LoadingStateDemo extends React.Component {
 
 ```
 
-```js title=Error
+### Error
+```js
 import React from 'react';
 import {
   Bullseye,

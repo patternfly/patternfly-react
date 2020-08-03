@@ -1,7 +1,6 @@
 ---
-title: 'Drawer'
-cssPrefix: 'pf-c-drawer'
-typescript: true
+id: Drawer
+cssPrefix: pf-c-drawer
 propComponents:
   [
     Drawer,
@@ -14,16 +13,15 @@ propComponents:
     DrawerActions,
     DrawerCloseButton
   ]
-section: 'components'
+section: components
 beta: true
 ---
 
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerSection, DrawerHead, DrawerActions, DrawerCloseButton } from '@patternfly/react-core';
-
 ## Examples
 
-```js title=Basic
-import React, { ReactFragment } from 'react';
+### Basic
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -95,8 +93,9 @@ class SimpleDrawer extends React.Component {
 }
 ```
 
-```js title=Panel-on-right
-import React, { ReactFragment } from 'react';
+### Panel on right
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -167,8 +166,9 @@ class SimpleDrawerPanelRight extends React.Component {
 }
 ```
 
-```js title=Panel-on-left
-import React, { ReactFragment } from 'react';
+### Panel on left
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -239,8 +239,9 @@ class SimpleDrawerPanelLeft extends React.Component {
 }
 ```
 
-```js title=Basic-inline
-import React, { ReactFragment } from 'react';
+### Basic inline
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -311,8 +312,9 @@ class SimpleDrawerInlineContent extends React.Component {
 }
 ```
 
-```js title=-Inline-panel-on-right
-import React, { ReactFragment } from 'react';
+### Inline panel on right
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -383,8 +385,9 @@ class DrawerInlineContentPanelRight extends React.Component {
 }
 ```
 
-```js title=-Inline-panel-on-left
-import React, { ReactFragment } from 'react';
+### Inline panel on left
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -455,8 +458,9 @@ class DrawerInlineContentPanelLeft extends React.Component {
 }
 ```
 
-```js title=Stacked-content-body-elements
-import React, { ReactFragment } from 'react';
+### Stacked content body elements
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -529,8 +533,9 @@ class DrawerStackedContentBodyElements extends React.Component {
 }
 ```
 
-```js title=Stacked-content-body-elements
-import React, { ReactFragment } from 'react';
+### Stacked content body elements
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -603,8 +608,9 @@ class DrawerStackedContentBodyElements extends React.Component {
 }
 ```
 
-```js title=Modified-content-padding
-import React, { ReactFragment } from 'react';
+### Modified content padding
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -677,8 +683,9 @@ class DrawerModifiedContentPadding extends React.Component {
 }
 ```
 
-```js title=Modified-panel-padding
-import React, { ReactFragment } from 'react';
+### Modified panel padding
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -749,8 +756,9 @@ class DrawerModifiedPanelPadding extends React.Component {
 }
 ```
 
-```js title=Additional-section-above-drawer-content
-import React, { ReactFragment } from 'react';
+### Additional section above drawer content
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -823,8 +831,9 @@ class DrawerWithSection extends React.Component {
 }
 ```
 
-```js title=Static-drawer
-import React, { ReactFragment } from 'react';
+### Static drawer
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
@@ -861,8 +870,9 @@ StaticDrawer = () => {
 };
 ```
 
-```js title=Breakpoint
-import React, { ReactFragment } from 'react';
+### Breakpoint
+```js
+import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,

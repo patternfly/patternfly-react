@@ -1,14 +1,13 @@
 ---
-title: 'Badge'
+id: Badge
 section: components
-cssPrefix: 'pf-c-badge'
-typescript: true 
+cssPrefix: pf-c-badge
 propComponents: ['Badge']
 ---
-import { Badge } from '@patternfly/react-core';
 
 ## Examples
-```js title=Read
+### Read
+```js
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
 
@@ -25,7 +24,8 @@ ReadBadge = () => (
 );
 ```
 
-```js title=Unread
+### Unread
+```js
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
 

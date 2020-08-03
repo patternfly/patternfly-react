@@ -23,6 +23,12 @@ export interface WizardToggleProps {
   onNavToggle: (isOpen: boolean) => void;
   /** The button's aria-label */
   'aria-label'?: string;
+  /** Sets aria-labelledby on the main element */
+  mainAriaLabelledBy?: string;
+  /** The main's aria-label */
+  mainAriaLabel?: string;
+  /** If the wizard is in-page */
+  isInPage?: boolean;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -33,7 +39,10 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   activeStep,
   children,
   hasNoBodyPadding = false,
-  'aria-label': ariaLabel = 'Wizard Toggle'
+  'aria-label': ariaLabel = 'Wizard Toggle',
+  mainAriaLabelledBy = null,
+  mainAriaLabel = null,
+  isInPage = true
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -54,6 +63,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       }
     }
   }
+
   return (
     <React.Fragment>
       <button
@@ -76,7 +86,14 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       <div className={css(styles.wizardOuterWrap)}>
         <div className={css(styles.wizardInnerWrap)}>
           {nav(isNavOpen)}
-          <WizardBody hasNoBodyPadding={hasNoBodyPadding}>{activeStep.component}</WizardBody>
+          <WizardBody
+            mainComponent={isInPage ? 'div' : 'main'}
+            aria-label={mainAriaLabel}
+            aria-labelledby={mainAriaLabelledBy}
+            hasNoBodyPadding={hasNoBodyPadding}
+          >
+            {activeStep.component}
+          </WizardBody>
         </div>
         {children}
       </div>

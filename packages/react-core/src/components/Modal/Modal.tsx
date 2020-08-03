@@ -79,7 +79,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     onClose: () => undefined as any,
     variant: 'default',
     hasNoBodyWrapper: false,
-    appendTo: (typeof document !== 'undefined' && document.body) || null,
+    appendTo: () => document.body,
     ouiaSafe: true
   };
 
@@ -105,13 +105,10 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
-    let target: HTMLElement;
     if (typeof appendTo === 'function') {
-      target = appendTo();
-    } else {
-      target = appendTo;
+      return appendTo();
     }
-    return target;
+    return appendTo || document.body;
   };
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {

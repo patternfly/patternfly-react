@@ -1,18 +1,17 @@
 ---
-title: 'Tooltip'
+id: Tooltip
 section: components
-cssPrefix: 'pf-c-tooltip'
-typescript: true
+cssPrefix: pf-c-tooltip
 propComponents: ['Tooltip']
 ---
 
-import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 import './TooltipExamples.css';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -29,7 +28,46 @@ BasicTooltip = () => (
 )
 ```
 
-```js title=On-icon
+### Tooltip react ref
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+TooltipReactRef = () => {
+  const tooltipRef = React.useRef();
+  return (
+  <div style={{ margin: '100px' }}>
+    <button ref={tooltipRef}>Tooltip attached via react ref</button>
+    <Tooltip
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      reference={tooltipRef}
+    />
+  </div>
+)}
+```
+
+### Tooltip selector ref
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+TooltipSelectorRef = () => (
+  <div style={{ margin: '100px' }}>
+    <button id="tooltip-selector">Tooltip attached via selector ref</button>
+    <Tooltip
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      reference={() => document.getElementById('tooltip-selector')}
+    />
+  </div>
+)
+```
+
+### On icon
+```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
@@ -48,7 +86,8 @@ OnIconTooltip = () => (
 )
 ```
 
-```js title=Options
+### Options
+```js
 import React from 'react';
 import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 

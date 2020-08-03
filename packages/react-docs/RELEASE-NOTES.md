@@ -1,8 +1,91 @@
 ---
-title: Release notes
+id: Release notes
 section: overview
 releaseNoteTOC: true
 ---
+
+## 2020.09 release notes (2020-07-17)
+- [@patternfly/react-catalog-view-extension@4.5.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.5.1)
+- [@patternfly/react-charts@6.6.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.6.0)
+- [@patternfly/react-core@4.32.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.32.1)
+- [@patternfly/react-icons@4.5.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.5.0)
+- [@patternfly/react-inline-edit-extension@4.5.28](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.28)
+- [@patternfly/react-styles@4.5.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.5.0)
+- [@patternfly/react-table@4.12.1](https://www.npmjs.com/package/@patternfly/react-table/v/4.12.1)
+- [@patternfly/react-tokens@4.6.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.6.0)
+- [@patternfly/react-topology@4.4.30](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.30)
+- [@patternfly/react-virtualized-extension@4.5.20](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.20)
+
+### Components
+- **Alert:** 
+  - Added alert timeout functionality ([#4510](https://github.com/patternfly/patternfly-react/pull/4510))
+  - Added display name to the close action button ([#4426](https://github.com/patternfly/patternfly-react/pull/4426))
+- **Button:** 
+  - Added support for small variation ([#4433](https://github.com/patternfly/patternfly-react/pull/4433))
+- **Data list:** 
+  - Added support for action containers in data list ([#4488](https://github.com/patternfly/patternfly-react/pull/4488))
+- **Drawer:** 
+  - Renamed onMount to onExpand and add animation timeout ([#4508](https://github.com/patternfly/patternfly-react/pull/4508))
+  - Fixed small mistake in the documentation for drawer ([#4473](https://github.com/patternfly/patternfly-react/pull/4473))
+- **Drawer panel content:**
+  - Update to not render children when hidden ([#4500](https://github.com/patternfly/patternfly-react/pull/4500))
+- **Dropdown:** 
+  - Added description to Dropdown item ([#4468](https://github.com/patternfly/patternfly-react/pull/4468))
+  - Added support and documentation for styleChildren to dropdown item ([#4476](https://github.com/patternfly/patternfly-react/pull/4476))
+  - Made the interactions in the demo more life-like ([#4492](https://github.com/patternfly/patternfly-react/pull/4492))
+- **Expandable section:** 
+  - Update to pass expandable value to onToggle ([#4427](https://github.com/patternfly/patternfly-react/pull/4427))
+- **Form:**    
+  - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
+- **Form select:** 
+  - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
+- **Options menu:** 
+  - Fixed accessibility bug in plain with text disabled part ([#4424](https://github.com/patternfly/patternfly-react/pull/4424))
+- **Page header tools:**
+  - Updated to make page header tools item visibility props optional ([#4486](https://github.com/patternfly/patternfly-react/pull/4486))
+- **Popover:**
+  - Rewrote tooltip/popover to use popper ([#4491](https://github.com/patternfly/patternfly-react/pull/4491))
+  - Added tippyProps back so as not to cause breaking changes ([#4543](https://github.com/patternfly/patternfly-react/pull/4543))
+  - Updates to house popper dependencies, added tippy back as a dependency ([#4565](https://github.com/patternfly/patternfly-react/pull/4565))
+- **Select:** 
+  - Added logic to handle SelectOptionObject in comparisons ([#4469](https://github.com/patternfly/patternfly-react/pull/4469))
+  - Added option description property ([#4460](https://github.com/patternfly/patternfly-react/pull/4460))
+  - Fixed typeahead button toggle propagation ([#4472](https://github.com/patternfly/patternfly-react/pull/4472))
+  - Updated to handle missing select group label ([#4464](https://github.com/patternfly/patternfly-react/pull/4464))
+  - Fixed option with description on active display only value ([#4503](https://github.com/patternfly/patternfly-react/pull/4503))
+- **Text area:** 
+  - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
+- **Text input:** 
+  - Added warning state ([#4554](https://github.com/patternfly/patternfly-react/pull/4554))
+- **Toolbar:** 
+  - Used alignment prop instead of align in ToolbarItem ([#4481](https://github.com/patternfly/patternfly-react/pull/4481))
+  - Updated docs to use overflow menu components ([#4459](https://github.com/patternfly/patternfly-react/pull/4459))
+- **Tooltip:**
+  - Rewrote tooltip/popover to use popper ([#4491](https://github.com/patternfly/patternfly-react/pull/4491))
+  - Added tippyProps back so as not to cause breaking changes ([#4543](https://github.com/patternfly/patternfly-react/pull/4543))
+  - Updates to house popper dependencies, added tippy back as a dependency. Fixed pressing the enter key opens all tooltips on the page ([#4565](https://github.com/patternfly/patternfly-react/pull/4565))
+
+### Table
+  - Added sticky header prop and demo ([#4417](https://github.com/patternfly/patternfly-react/pull/4417))
+  - Published prop type interfaces in docs ([#4461](https://github.com/patternfly/patternfly-react/pull/4461))
+
+### Topology
+  - Added lost support for custom menu items in withCreateConnector ([#4493](https://github.com/patternfly/patternfly-react/pull/4493))
+  - Bumped mobx versions in react-topology ([#4442](https://github.com/patternfly/patternfly-react/pull/4442))
+  - Corrected mobx dependencies ([#4487](https://github.com/patternfly/patternfly-react/pull/4487))
+  - Created connector drag spec configuration ([#4529](https://github.com/patternfly/patternfly-react/pull/4529))
+
+### Other
+- **Chore:**
+  - Added dependabot.yml ([#4484](https://github.com/patternfly/patternfly-react/pull/4484))
+  - Added card OUIA attributes ([#4479](https://github.com/patternfly/patternfly-react/pull/4479))
+  - Added radio OUIA attributes ([#4482](https://github.com/patternfly/patternfly-react/pull/4482))
+  - Fixed build on windows ([#4475](https://github.com/patternfly/patternfly-react/pull/4475))
+  - Updated tag from prerelease-v4 to prerelease ([#4539](https://github.com/patternfly/patternfly-react/pull/4539))
+- **Demos:**
+  - Updated docs to use overflow menu components in bulk select table, card view, master detail, pagination and table column management demos ([#4459](https://github.com/patternfly/patternfly-react/pull/4459))
+- **Docs:** 
+  - Removed theme="dark" from docs ([#4485](https://github.com/patternfly/patternfly-react/pull/4485))
 
 ## 2020.08 release notes (2020-06-24)
 - [@patternfly/react-catalog-view-extension@4.4.8](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.4.8)

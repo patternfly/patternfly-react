@@ -3,6 +3,198 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.50...@patternfly/react-inline-edit-extension@4.5.51) (2020-07-31)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.49...@patternfly/react-inline-edit-extension@4.5.50) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.48...@patternfly/react-inline-edit-extension@4.5.49) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.47...@patternfly/react-inline-edit-extension@4.5.48) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.46...@patternfly/react-inline-edit-extension@4.5.47) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.45...@patternfly/react-inline-edit-extension@4.5.46) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.44...@patternfly/react-inline-edit-extension@4.5.45) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.43...@patternfly/react-inline-edit-extension@4.5.44) (2020-07-28)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.42...@patternfly/react-inline-edit-extension@4.5.43) (2020-07-28)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.41...@patternfly/react-inline-edit-extension@4.5.42) (2020-07-27)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.40...@patternfly/react-inline-edit-extension@4.5.41) (2020-07-27)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.39...@patternfly/react-inline-edit-extension@4.5.40) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.38...@patternfly/react-inline-edit-extension@4.5.39) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.37...@patternfly/react-inline-edit-extension@4.5.38) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.36...@patternfly/react-inline-edit-extension@4.5.37) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.35...@patternfly/react-inline-edit-extension@4.5.36) (2020-07-22)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.34...@patternfly/react-inline-edit-extension@4.5.35) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.33...@patternfly/react-inline-edit-extension@4.5.34) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.32...@patternfly/react-inline-edit-extension@4.5.33) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.31...@patternfly/react-inline-edit-extension@4.5.32) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.30...@patternfly/react-inline-edit-extension@4.5.31) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.29...@patternfly/react-inline-edit-extension@4.5.30) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.28...@patternfly/react-inline-edit-extension@4.5.29) (2020-07-17)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [4.5.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.27...@patternfly/react-inline-edit-extension@4.5.28) (2020-07-16)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
 ## [4.5.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.26...@patternfly/react-inline-edit-extension@4.5.27) (2020-07-16)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

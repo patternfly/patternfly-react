@@ -2,8 +2,9 @@
 
 exports[`NotificationDrawerListItem should match snapshot (auto-generated) 1`] = `
 <li
-  className="pf-c-notification-drawer__list-item pf-m-hoverable ''"
+  className="pf-c-notification-drawer__list-item pf-m-hoverable pf-m-default ''"
   onClick={[Function]}
+  onKeyDown={[Function]}
   tabIndex={0}
 >
   <div>

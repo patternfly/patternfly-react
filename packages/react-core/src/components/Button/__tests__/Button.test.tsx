@@ -45,7 +45,11 @@ test('isAriaDisabled button', () => {
 });
 
 test('isAriaDisabled link button', () => {
-  const view = mount(<Button isAriaDisabled component="a">Disabled yet focusable button</Button>);
+  const view = mount(
+    <Button isAriaDisabled component="a">
+      Disabled yet focusable button
+    </Button>
+  );
   expect(view).toMatchSnapshot();
 });
 
@@ -60,6 +64,11 @@ test('isInline', () => {
 
 test('isSmall', () => {
   const view = mount(<Button isSmall>Small Button</Button>);
+  expect(view).toMatchSnapshot();
+});
+
+test('isLarge', () => {
+  const view = mount(<Button isLarge>Large Button</Button>);
   expect(view).toMatchSnapshot();
 });
 

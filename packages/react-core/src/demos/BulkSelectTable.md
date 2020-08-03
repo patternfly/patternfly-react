@@ -1,11 +1,12 @@
 ---
-title: 'Bulk select table'
-section: 'demos'
+id: Bulk select table
+section: demos
 ---
-import { Pagination, Title, Checkbox, Toolbar, ToolbarGroup, ToolbarItem, DropdownItem, Dropdown, DropdownToggleCheckbox, DropdownToggle } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
-```js title=Simple
+## Examples
+### Simple
+```js
 import React from 'react';
 import { Dropdown, DropdownItem, DropdownPosition, DropdownToggle, DropdownToggleCheckbox, Pagination, Title, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';

@@ -137,9 +137,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     if (
       (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
       (event.key === KeyTypes.Tab && !isOpen) ||
-      (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) ||
-      ((event.key === KeyTypes.Space || event.key === KeyTypes.Enter) &&
-        (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti))
+      (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space)
     ) {
       return;
     }

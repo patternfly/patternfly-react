@@ -4,10 +4,11 @@ exports[`WizardNavItem should match snapshot (auto-generated) 1`] = `
 <li
   className="pf-c-wizard__nav-item"
 >
-  <a
+  <button
     aria-current={false}
-    aria-disabled={false}
+    aria-disabled={null}
     className="pf-c-wizard__nav-link"
+    disabled={false}
     onClick={[Function]}
   />
   ReactNode

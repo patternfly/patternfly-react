@@ -335,10 +335,9 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
             className="pf-c-nav__item pf-m-expandable pf-m-expanded expandable-group"
             onClick={[Function]}
           >
-            <a
+            <button
               aria-expanded={true}
               className="pf-c-nav__link"
-              href="#"
               id="grp-1"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -378,7 +377,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                   </AngleRightIcon>
                 </span>
               </span>
-            </a>
+            </button>
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"
@@ -500,10 +499,9 @@ exports[`Expandable Nav List 1`] = `
             className="pf-c-nav__item pf-m-expandable"
             onClick={[Function]}
           >
-            <a
+            <button
               aria-expanded={false}
               className="pf-c-nav__link"
-              href="#"
               id="grp-1"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -543,7 +541,7 @@ exports[`Expandable Nav List 1`] = `
                   </AngleRightIcon>
                 </span>
               </span>
-            </a>
+            </button>
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"
@@ -666,10 +664,9 @@ exports[`Expandable Nav List with aria label 1`] = `
             className="pf-c-nav__item pf-m-expandable"
             onClick={[Function]}
           >
-            <a
+            <button
               aria-expanded={false}
               className="pf-c-nav__link"
-              href="#"
               id={null}
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -709,7 +706,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                   </AngleRightIcon>
                 </span>
               </span>
-            </a>
+            </button>
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 import * as _ from 'lodash';
 import Point from '../geom/Point';
 import { ConnectDragSource } from '../behavior/dnd-types';
@@ -52,7 +52,7 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
     <g
       transform={`translate(${arrowStartPoint[0]}, ${arrowStartPoint[1]}) rotate(${angleDeg})`}
       ref={dragRef}
-      className={classNames('pf-topology-connector-arrow', className)}
+      className={css('pf-topology-connector-arrow', className)}
     >
       <polygon points={pointsStringFromPoints(arrowPoints)} />
       <polygon points={pointsStringFromPoints(boundingBox)} fillOpacity={0} strokeWidth={0} />

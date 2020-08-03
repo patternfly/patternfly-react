@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 import { Checkbox } from '@patternfly/react-core';
 
 import { getUniqueId } from '../../helpers/util';
@@ -28,7 +28,7 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
   checked = false,
   ...props
 }: FilterSidePanelCategoryItemProps) => {
-  const classes = classNames('filter-panel-pf-category-item', className);
+  const classes = css('filter-panel-pf-category-item', className);
   const label = (
     <React.Fragment>
       {icon && <span className="item-icon">{icon}</span>}

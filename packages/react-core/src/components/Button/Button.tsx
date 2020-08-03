@@ -52,6 +52,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   tabIndex?: number;
   /** Adds small styling to the button */
   isSmall?: boolean;
+  /** Adds large styling to the button */
+  isLarge?: boolean;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
@@ -63,6 +65,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   isDisabled = false,
   isAriaDisabled = false,
   isSmall = false,
+  isLarge = false,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
@@ -118,6 +121,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         isSmall && styles.modifiers.small,
+        isLarge && styles.modifiers.displayLg,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

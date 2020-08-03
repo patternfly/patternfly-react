@@ -92,7 +92,12 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
+
     const { expandedState } = this.state;
+
+    const onClick = () => {
+      this.setState(prevState => ({ expandedState: !prevState.expandedState }));
+    };
 
     return (
       <NavContext.Consumer>
@@ -108,12 +113,10 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
-            <a
-              ref={this.expandableRef}
+            <button
               className={styles.navLink}
               id={srText ? null : this.id}
-              href="#"
-              onClick={e => e.preventDefault()}
+              onClick={onClick}
               onMouseDown={e => e.preventDefault()}
               aria-expanded={expandedState}
             >
@@ -123,7 +126,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   <AngleRightIcon aria-hidden="true" />
                 </span>
               </span>
-            </a>
+            </button>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
               {srText && (
                 <h2 className={css(a11yStyles.screenReader)} id={this.id}>

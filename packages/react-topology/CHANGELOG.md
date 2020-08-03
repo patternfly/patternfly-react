@@ -3,6 +3,201 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.52...@patternfly/react-topology@4.4.53) (2020-07-31)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.52](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.51...@patternfly/react-topology@4.4.52) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.50...@patternfly/react-topology@4.4.51) (2020-07-29)
+
+
+### Bug Fixes
+
+* **Topology:** Re-parent nodes with invalid parents to graph ([#4629](https://github.com/patternfly/patternfly-react/issues/4629)) ([63f5046](https://github.com/patternfly/patternfly-react/commit/63f50460c672249efb9c6ed445cc32a1355e116d))
+
+
+
+
+
+## [4.4.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.49...@patternfly/react-topology@4.4.50) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.48...@patternfly/react-topology@4.4.49) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.47...@patternfly/react-topology@4.4.48) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.46...@patternfly/react-topology@4.4.47) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.45...@patternfly/react-topology@4.4.46) (2020-07-28)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.44...@patternfly/react-topology@4.4.45) (2020-07-28)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.43...@patternfly/react-topology@4.4.44) (2020-07-27)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.42...@patternfly/react-topology@4.4.43) (2020-07-27)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.41...@patternfly/react-topology@4.4.42) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.40...@patternfly/react-topology@4.4.41) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.39...@patternfly/react-topology@4.4.40) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.38...@patternfly/react-topology@4.4.39) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.37...@patternfly/react-topology@4.4.38) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.36...@patternfly/react-topology@4.4.37) (2020-07-22)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.35...@patternfly/react-topology@4.4.36) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.34...@patternfly/react-topology@4.4.35) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.33...@patternfly/react-topology@4.4.34) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.32...@patternfly/react-topology@4.4.33) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.31...@patternfly/react-topology@4.4.32) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.30...@patternfly/react-topology@4.4.31) (2020-07-17)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.29...@patternfly/react-topology@4.4.30) (2020-07-16)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [4.4.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.28...@patternfly/react-topology@4.4.29) (2020-07-16)
 
 **Note:** Version bump only for package @patternfly/react-topology

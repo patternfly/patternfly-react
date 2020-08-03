@@ -357,6 +357,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GridDemo
   },
   {
+    id: 'hint-demo',
+    name: 'Hint Demo',
+    componentType: Examples.HintDemo
+  },
+  {
     id: 'input-group-demo',
     name: 'Input Group Demo',
     componentType: Examples.InputGroupDemo
@@ -675,6 +680,16 @@ export const Demos: DemoInterface[] = [
     id: 'toolbar-demo',
     name: 'Toolbar Demo',
     componentType: Examples.ToolbarDemo
+  },
+  {
+    id: 'toolbar-visibility-demo',
+    name: 'Toolbar Visibility Demo',
+    componentType: Examples.ToolbarVisibilityDemo
+  },
+  {
+    id: 'toolbar-visiblity-demo',
+    name: 'Toolbar Visiblity Demo (Deprecated)',
+    componentType: Examples.ToolbarVisiblityDemo
   },
   {
     id: 'tooltip-demo',

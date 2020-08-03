@@ -1,8 +1,7 @@
 ---
-title: 'Login page'
+id: Login page
 section: components
-cssPrefix: 'pf-c-login'
-typescript: true
+cssPrefix: pf-c-login
 propComponents:
   [
     'LoginPage',
@@ -31,7 +30,8 @@ import {
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 ## Examples
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
 import React from 'react';
 import brandImg from './brandImgColor.svg';
 import {

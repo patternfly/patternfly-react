@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.7.0...@patternfly/react-charts@6.7.1) (2020-08-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.3...@patternfly/react-charts@6.7.0) (2020-07-30)
+
+
+### Features
+
+* **charts:** update Victory packages to support OUIA props ([#4633](https://github.com/patternfly/patternfly-react/issues/4633)) ([8674066](https://github.com/patternfly/patternfly-react/commit/8674066337651f5acdf6018fa4e5cd72d37290c0))
+
+
+
+
+
+## [6.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.2...@patternfly/react-charts@6.6.3) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.1...@patternfly/react-charts@6.6.2) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.0...@patternfly/react-charts@6.6.1) (2020-07-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.8...@patternfly/react-charts@6.6.0) (2020-07-16)
 
 

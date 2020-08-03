@@ -402,6 +402,7 @@ exports[`ChartGroup 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 8,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -413,7 +414,6 @@ exports[`ChartGroup 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -857,6 +857,7 @@ exports[`ChartGroup 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -868,7 +869,6 @@ exports[`ChartGroup 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -1314,6 +1314,7 @@ exports[`ChartGroup 2`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 8,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -1325,7 +1326,6 @@ exports[`ChartGroup 2`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -1769,6 +1769,7 @@ exports[`ChartGroup 2`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -1780,7 +1781,6 @@ exports[`ChartGroup 2`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -2226,6 +2226,7 @@ exports[`renders container children 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 8,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -2237,7 +2238,6 @@ exports[`renders container children 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -2682,6 +2682,7 @@ exports[`renders container children 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -2693,7 +2694,6 @@ exports[`renders container children 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },

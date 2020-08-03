@@ -6,7 +6,7 @@ import { Modal, ModalVariant } from '../Modal';
 import { WizardFooterInternal } from './WizardFooterInternal';
 import { WizardToggle } from './WizardToggle';
 import { WizardNav } from './WizardNav';
-import { WizardNavItem } from './WizardNavItem';
+import { WizardNavItem, WizardNavItemProps } from './WizardNavItem';
 import { WizardContextProvider } from './WizardContext';
 import { PickOptional } from '../../helpers/typeUtils';
 import { WizardHeader } from './WizardHeader';
@@ -24,6 +24,8 @@ export interface WizardStep {
   canJumpTo?: boolean;
   /** Sub steps */
   steps?: WizardStep[];
+  /** Props to pass to the WizardNavItem */
+  stepNavItemProps?: React.HTMLProps<HTMLButtonElement | HTMLAnchorElement> | WizardNavItemProps;
   /** (Unused if footer is controlled) Can change the Next button text. If nextButtonText is also set for the Wizard, this step specific one overrides it. */
   nextButtonText?: React.ReactNode;
   /** (Unused if footer is controlled) The condition needed to enable the Next button */
@@ -66,6 +68,12 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   startAtStep?: number;
   /** Aria-label for the Nav */
   navAriaLabel?: string;
+  /** Sets aria-labelledby on nav element */
+  navAriaLabelledBy?: string;
+  /** Aria-label for the main element */
+  mainAriaLabel?: string;
+  /** Sets aria-labelledby on the main element */
+  mainAriaLabelledBy?: string;
   /** Can remove the default padding around the main body content by setting this to true */
   hasNoBodyPadding?: boolean;
   /** (Use to control the footer) Passing in a footer component lets you control the buttons yourself */
@@ -99,7 +107,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   static displayName = 'Wizard';
   private static currentId = 0;
   static defaultProps: PickOptional<WizardProps> = {
-    title: '',
+    title: null,
     description: '',
     className: '',
     startAtStep: 1,
@@ -108,7 +116,10 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     cancelButtonText: 'Cancel',
     hideClose: false,
     closeButtonAriaLabel: 'Close',
-    navAriaLabel: 'Steps',
+    navAriaLabel: null,
+    navAriaLabelledBy: null,
+    mainAriaLabel: null,
+    mainAriaLabelledBy: null,
     hasNoBodyPadding: false,
     onBack: null as WizardStepFunctionType,
     onNext: null as WizardStepFunctionType,
@@ -312,6 +323,9 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       hideClose,
       closeButtonAriaLabel = 'Close',
       navAriaLabel,
+      navAriaLabelledBy,
+      mainAriaLabel,
+      mainAriaLabelledBy,
       hasNoBodyPadding,
       footer,
       appendTo,
@@ -328,76 +342,83 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const computedSteps: WizardStep[] = this.initSteps(steps);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep && activeStep.enableNext !== undefined ? activeStep.enableNext : true;
-
-    const nav = (isWizardNavOpen: boolean) => (
-      <WizardNav isOpen={isWizardNavOpen} aria-label={navAriaLabel}>
-        {computedSteps.map((step, index) => {
-          if (step.isFinishedStep) {
-            // Don't show finished step in the side nav
-            return;
-          }
-          let enabled;
-          let navItemStep;
-          if (step.steps) {
-            let hasActiveChild = false;
-            let canJumpToParent = false;
-            for (const subStep of step.steps) {
-              if (activeStep.name === subStep.name) {
-                // one of the children matches
-                hasActiveChild = true;
-              }
-              if (subStep.canJumpTo) {
-                canJumpToParent = true;
-              }
+    const nav = (isWizardNavOpen: boolean) => {
+      const wizNavAProps = {
+        isOpen: isWizardNavOpen,
+        'aria-label': navAriaLabel,
+        'aria-labelledby': (title || navAriaLabelledBy) && (navAriaLabelledBy || this.titleId)
+      };
+      return (
+        <WizardNav {...wizNavAProps}>
+          {computedSteps.map((step, index) => {
+            if (step.isFinishedStep) {
+              // Don't show finished step in the side nav
+              return;
             }
-            navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.steps[0].name);
+            let enabled;
+            let navItemStep;
+            if (step.steps) {
+              let hasActiveChild = false;
+              let canJumpToParent = false;
+              for (const subStep of step.steps) {
+                if (activeStep.name === subStep.name) {
+                  // one of the children matches
+                  hasActiveChild = true;
+                }
+                if (subStep.canJumpTo) {
+                  canJumpToParent = true;
+                }
+              }
+              navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.steps[0].name);
+              return (
+                <WizardNavItem
+                  key={index}
+                  content={step.name}
+                  isCurrent={hasActiveChild}
+                  isDisabled={!canJumpToParent}
+                  step={navItemStep}
+                  onNavItemClick={this.goToStep}
+                >
+                  <WizardNav {...wizNavAProps} returnList>
+                    {step.steps.map((childStep: WizardStep, indexChild: number) => {
+                      if (childStep.isFinishedStep) {
+                        // Don't show finished step in the side nav
+                        return;
+                      }
+                      navItemStep = this.getFlattenedStepsIndex(flattenedSteps, childStep.name);
+                      enabled = childStep.canJumpTo;
+                      return (
+                        <WizardNavItem
+                          key={`child_${indexChild}`}
+                          content={childStep.name}
+                          isCurrent={activeStep.name === childStep.name}
+                          isDisabled={!enabled}
+                          step={navItemStep}
+                          onNavItemClick={this.goToStep}
+                        />
+                      );
+                    })}
+                  </WizardNav>
+                </WizardNavItem>
+              );
+            }
+            navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.name);
+            enabled = step.canJumpTo;
             return (
               <WizardNavItem
+                {...step.stepNavItemProps}
                 key={index}
                 content={step.name}
-                isCurrent={hasActiveChild}
-                isDisabled={!canJumpToParent}
+                isCurrent={activeStep.name === step.name}
+                isDisabled={!enabled}
                 step={navItemStep}
                 onNavItemClick={this.goToStep}
-              >
-                <WizardNav returnList>
-                  {step.steps.map((childStep: WizardStep, indexChild: number) => {
-                    if (childStep.isFinishedStep) {
-                      // Don't show finished step in the side nav
-                      return;
-                    }
-                    navItemStep = this.getFlattenedStepsIndex(flattenedSteps, childStep.name);
-                    enabled = childStep.canJumpTo;
-                    return (
-                      <WizardNavItem
-                        key={`child_${indexChild}`}
-                        content={childStep.name}
-                        isCurrent={activeStep.name === childStep.name}
-                        isDisabled={!enabled}
-                        step={navItemStep}
-                        onNavItemClick={this.goToStep}
-                      />
-                    );
-                  })}
-                </WizardNav>
-              </WizardNavItem>
+              />
             );
-          }
-          navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.name);
-          enabled = step.canJumpTo;
-          return (
-            <WizardNavItem
-              key={index}
-              content={step.name}
-              isCurrent={activeStep.name === step.name}
-              isDisabled={!enabled}
-              step={navItemStep}
-              onNavItemClick={this.goToStep}
-            />
-          );
-        })}
-      </WizardNav>
-    );
+          })}
+        </WizardNav>
+      );
+    };
 
     const context = {
       goToStepById: this.goToStepById,
@@ -427,6 +448,9 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             />
           )}
           <WizardToggle
+            mainAriaLabel={mainAriaLabel}
+            isInPage={isOpen === undefined}
+            mainAriaLabelledBy={(title || mainAriaLabelledBy) && (mainAriaLabelledBy || this.titleId)}
             isNavOpen={this.state.isNavOpen}
             onNavToggle={isNavOpen => this.setState({ isNavOpen })}
             nav={nav}

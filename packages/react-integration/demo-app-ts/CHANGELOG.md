@@ -3,6 +3,198 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.25.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.3...demo-app-ts@4.25.4) (2020-07-31)
+
+
+### Bug Fixes
+
+* **PageHeaderToolsItem:** fix breakpoint typo ([#4634](https://github.com/patternfly/patternfly-react/issues/4634)) ([779890c](https://github.com/patternfly/patternfly-react/commit/779890c9fc3535386c1322269c000ea4b11b0f5b))
+
+
+
+
+
+## [4.25.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.2...demo-app-ts@4.25.3) (2020-07-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.25.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.1...demo-app-ts@4.25.2) (2020-07-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.25.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.0...demo-app-ts@4.25.1) (2020-07-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.25.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.24.2...demo-app-ts@4.25.0) (2020-07-29)
+
+
+### Features
+
+* **wiz:** make wiz nav items more easily discoverable ([#4425](https://github.com/patternfly/patternfly-react/issues/4425)) ([92384d4](https://github.com/patternfly/patternfly-react/commit/92384d40cb4d5e3171c6922d00e391ed290239ac))
+
+
+
+
+
+## [4.24.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.24.1...demo-app-ts@4.24.2) (2020-07-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.24.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.24.0...demo-app-ts@4.24.1) (2020-07-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.24.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.14...demo-app-ts@4.24.0) (2020-07-28)
+
+
+### Features
+
+* **Button:** add cta/large modifier ([#4596](https://github.com/patternfly/patternfly-react/issues/4596)) ([bc97c3c](https://github.com/patternfly/patternfly-react/commit/bc97c3cc059fc36f4ab201b1a77ee600c9983ba9))
+* **Hint:** add hint components ([#4595](https://github.com/patternfly/patternfly-react/issues/4595)) ([7adfa83](https://github.com/patternfly/patternfly-react/commit/7adfa83e970f5b3ef49a28358405650367ecc4c9))
+
+
+
+
+
+## [4.23.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.13...demo-app-ts@4.23.14) (2020-07-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.12...demo-app-ts@4.23.13) (2020-07-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.11...demo-app-ts@4.23.12) (2020-07-27)
+
+
+### Bug Fixes
+
+* **NotificationDrawer:** fix accessibility issues and add accessibility test cases ([#4466](https://github.com/patternfly/patternfly-react/issues/4466)) ([d4cb0bb](https://github.com/patternfly/patternfly-react/commit/d4cb0bbe4381967713429a58c0f15d6190f3ceff))
+
+
+
+
+
+## [4.23.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.10...demo-app-ts@4.23.11) (2020-07-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.9...demo-app-ts@4.23.10) (2020-07-23)
+
+
+### Bug Fixes
+
+* **NavExpandable:** converts nav expandable to button ([#4512](https://github.com/patternfly/patternfly-react/issues/4512)) ([ead0266](https://github.com/patternfly/patternfly-react/commit/ead0266fe165d84ed4538772e3c48baf98508044))
+
+
+
+
+
+## [4.23.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.8...demo-app-ts@4.23.9) (2020-07-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.7...demo-app-ts@4.23.8) (2020-07-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.6...demo-app-ts@4.23.7) (2020-07-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.5...demo-app-ts@4.23.6) (2020-07-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.4...demo-app-ts@4.23.5) (2020-07-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.3...demo-app-ts@4.23.4) (2020-07-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.2...demo-app-ts@4.23.3) (2020-07-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.1...demo-app-ts@4.23.2) (2020-07-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.23.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.23.0...demo-app-ts@4.23.1) (2020-07-16)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 # [4.23.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.22.7...demo-app-ts@4.23.0) (2020-07-16)
 
 

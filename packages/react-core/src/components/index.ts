@@ -27,6 +27,7 @@ export * from './ExpandableSection';
 export * from './FileUpload';
 export * from './Form';
 export * from './FormSelect';
+export * from './Hint';
 export * from './InputGroup';
 export * from './Label';
 export * from './List';

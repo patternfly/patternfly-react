@@ -64,6 +64,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
       <Component
         onClick={onClick}
         className={css(styles.chip, styles.modifiers.overflow, className)}
+        {...(this.props.component === 'button' ? { type: 'button' } : {})}
         {...getOUIAProps('OverflowChip', ouiaId)}
       >
         <span className={css(styles.chipText)}>{children}</span>

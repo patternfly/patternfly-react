@@ -1,9 +1,14 @@
 ---
-title: 'Sticky header table'
-section: 'demos'
+id: Sticky header table
+section: demos
 ---
 
-```js title=Basic isFullscreen
+## Examples
+
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+
+### Basic
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,

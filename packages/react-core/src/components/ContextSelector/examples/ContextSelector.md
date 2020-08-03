@@ -1,15 +1,13 @@
 ---
-title: 'Context selector'
+id: Context selector
 section: components
 propComponents: ['ContextSelector', 'ContextSelectorItem']
-typescript: true
 ouia: true
 ---
 
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 

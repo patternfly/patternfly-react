@@ -1,15 +1,13 @@
 ---
-title: 'Popover'
+id: Popover
 section: components
-cssPrefix: 'pf-c-popover'
-typescript: true
+cssPrefix: pf-c-popover
 propComponents: ['Popover']
 ---
 
-import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
@@ -18,7 +16,8 @@ SimplePopover = () => (
     <Popover
       headerContent={<div>Popover Header</div>}
       bodyContent={
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        <Button onClick={() => console.log('click')}>click</Button></div>
       }
       footerContent="Popover Footer"
     >
@@ -28,7 +27,50 @@ SimplePopover = () => (
 );
 ```
 
-```js title=Advanced
+### Popover react ref
+```js
+import React from 'react';
+import { Popover } from '@patternfly/react-core';
+
+PopoverReactRef = () => {
+  const popoverRef = React.useRef();
+  return (
+  <div style={{ margin: '100px' }}>
+    <button ref={popoverRef}>Popover attached via react ref</button>
+    <Popover
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      footerContent="Popover Footer"
+      reference={popoverRef}
+    />
+  </div>
+)}
+```
+
+### Popover selector ref
+```js
+import React from 'react';
+import { Popover } from '@patternfly/react-core';
+
+PopoverSelectorRef = () => (
+  <div style={{ margin: '100px' }}>
+    <button id="popover-selector">Popover attached via selector ref</button>
+    <Popover
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+      footerContent="Popover Footer"
+      reference={() => document.getElementById('popover-selector')}
+    />
+  </div>
+)
+```
+
+### Advanced
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
@@ -117,7 +159,8 @@ class AdvancedPopover extends React.Component {
 }
 ```
 
-```js title=Headless
+### Headless
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
@@ -137,7 +180,8 @@ HeadlessPopover = () => (
 );
 ```
 
-```js title=With-Link
+### With Link
+```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
