@@ -213,17 +213,17 @@ class BasicNotificationDrawer extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
+        <PageHeaderToolsItem visibility={{default: 'hidden'}}>
+          <NotificationBadge isSelected={isDrawerExpanded} isRead={this.getNumberUnread() === 0} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+        </PageHeaderToolsItem>
         <PageHeaderToolsGroup
           visibility={{
             default: 'hidden',
             lg: 'visible'
-          }} /** the notificaitons, settings, and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
         >
-          <PageHeaderToolsItem>
-            <NotificationBadge isRead={this.getNumberUnread() === 0} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
-              <BellIcon />
-            </NotificationBadge>
-          </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
@@ -721,17 +721,17 @@ class GroupedNotificationDrawer extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
+        <PageHeaderToolsItem visibility={{default: 'visible'}}>
+          <NotificationBadge isSelected={isDrawerExpanded} isRead={this.getNumberUnread() === 0} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+        </PageHeaderToolsItem>
         <PageHeaderToolsGroup
           visibility={{
             default: 'hidden',
             lg: 'visible'
           }} /** the notificaitons, settings, and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
         >
-          <PageHeaderToolsItem>
-            <NotificationBadge isRead={this.getNumberUnread() === 0} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
-              <BellIcon />
-            </NotificationBadge>
-          </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
