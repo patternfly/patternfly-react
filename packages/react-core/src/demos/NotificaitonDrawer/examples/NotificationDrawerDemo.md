@@ -213,8 +213,8 @@ class BasicNotificationDrawer extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsItem visibility={{default: 'hidden'}}>
-          <NotificationBadge isSelected={isDrawerExpanded} isRead={this.getNumberUnread() === 0} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
+        <PageHeaderToolsItem visibility={{default: 'visible'}} isSelected={isDrawerExpanded}>
+          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
         </PageHeaderToolsItem>
@@ -721,8 +721,8 @@ class GroupedNotificationDrawer extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsItem visibility={{default: 'visible'}}>
-          <NotificationBadge isSelected={isDrawerExpanded} isRead={this.getNumberUnread() === 0} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
+        <PageHeaderToolsItem visibility={{default: 'visible'}} isSelected={isDrawerExpanded}>
+          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
         </PageHeaderToolsItem>
