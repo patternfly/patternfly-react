@@ -354,16 +354,16 @@ exports[`select options renders with description successfully 1`] = `
             role="option"
             type="button"
           >
-            <div
+            <span
               class="pf-c-select__menu-item-main"
             >
               test
-            </div>
-            <div
+            </span>
+            <span
               class="pf-c-select__menu-item-description"
             >
               This is a description
-            </div>
+            </span>
           </button>,
           0,
         ],
@@ -391,16 +391,16 @@ exports[`select options renders with description successfully 1`] = `
       role="option"
       type="button"
     >
-      <div
+      <span
         className="pf-c-select__menu-item-main"
       >
         test
-      </div>
-      <div
+      </span>
+      <span
         className="pf-c-select__menu-item-description"
       >
         This is a description
-      </div>
+      </span>
     </button>
   </li>
 </SelectOption>

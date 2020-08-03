@@ -188,15 +188,15 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 >
                   {description && (
                     <React.Fragment>
-                      <div className={css(styles.selectMenuItemMain)}>
+                      <span className={css(styles.selectMenuItemMain)}>
                         {children || value.toString()}
                         {isSelected && (
                           <span className={css(styles.selectMenuItemIcon)}>
                             <CheckIcon aria-hidden />
                           </span>
                         )}
-                      </div>
-                      <div className={css(styles.selectMenuItemDescription)}>{description}</div>
+                      </span>
+                      <span className={css(styles.selectMenuItemDescription)}>{description}</span>
                     </React.Fragment>
                   )}
                   {!description && (
