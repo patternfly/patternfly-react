@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.27.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.26.0...demo-app-ts@4.27.0) (2020-08-03)
+
+
+### Features
+
+* **DescriptionList:** add new DescriptionList component ([#4586](https://github.com/patternfly/patternfly-react/issues/4586)) ([776aba7](https://github.com/patternfly/patternfly-react/commit/776aba7eef7b43585a841daf1e32d2e60693e34f))
+
+
+
+
+
 # [4.26.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.25.4...demo-app-ts@4.26.0) (2020-08-03)
 
 
