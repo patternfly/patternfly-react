@@ -5,7 +5,32 @@ propComponents: ['ChartTooltip']
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartBar, ChartCursorFlyout, ChartCursorTooltip, ChartDonut, ChartGroup, ChartLabel, ChartLegend, ChartLegendTooltip, ChartLine, ChartPoint, ChartStack, ChartThemeColor, ChartTooltip, createContainer, getCustomTheme } from '@patternfly/react-charts';
+import {
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartBar,
+  ChartContainer,
+  ChartCursorFlyout,
+  ChartCursorTooltip,
+  ChartDonut,
+  ChartDonutThreshold,
+  ChartDonutUtilization,
+  ChartGroup,
+  ChartLabel,
+  ChartLegend,
+  ChartLegendTooltip,
+  ChartLine,
+  ChartPie,
+  ChartPoint,
+  ChartStack,
+  ChartThemeColor,
+  ChartThemeVariant,
+  ChartTooltip,
+  ChartVoronoiContainer,
+  createContainer,
+  getCustomTheme
+} from '@patternfly/react-charts';
 import './chart-tooltip.css';
 
 ## Introduction
