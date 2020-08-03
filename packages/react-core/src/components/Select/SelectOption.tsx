@@ -143,7 +143,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
           onFavorite(generatedId, isFavorite);
         }}
       >
-        <StarIcon />
+        <span className={css(styles.selectMenuItemActionIcon)}>
+          <StarIcon />
+        </span>
       </button>
     );
 
@@ -168,6 +170,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isDisabled && styles.modifiers.disabled,
                     isFocused && styles.modifiers.focus,
                     description && styles.modifiers.description,
+                    isFavorite && styles.modifiers.link,
                     className
                   )}
                   onClick={(event: any) => {

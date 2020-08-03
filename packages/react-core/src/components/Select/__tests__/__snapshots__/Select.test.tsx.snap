@@ -3995,7 +3995,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4005,20 +4005,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4027,7 +4031,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4037,20 +4041,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
               </div>
@@ -4070,7 +4078,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4080,20 +4088,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4112,20 +4124,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="not starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4144,20 +4160,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="not starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4176,20 +4196,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="not starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
               </div>
@@ -4209,7 +4233,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4219,20 +4243,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4251,20 +4279,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="not starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4283,20 +4315,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="not starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
                 <li
@@ -4315,20 +4351,24 @@ exports[`renders select with favorites successfully 1`] = `
                     aria-label="not starred"
                     class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      class="pf-c-select__menu-item-action-icon"
                     >
-                      <path
-                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </li>
               </div>
@@ -4400,7 +4440,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4410,20 +4450,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4432,7 +4476,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4442,20 +4486,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                 </div>
@@ -4475,7 +4523,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4485,20 +4533,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4517,20 +4569,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4549,20 +4605,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4581,20 +4641,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                 </div>
@@ -4614,7 +4678,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4624,20 +4688,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4656,20 +4724,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4688,20 +4760,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4720,20 +4796,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                 </div>
@@ -4828,7 +4908,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4838,20 +4918,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4860,7 +4944,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4870,20 +4954,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                 </div>
@@ -4903,7 +4991,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4913,20 +5001,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4945,20 +5037,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -4977,20 +5073,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -5009,20 +5109,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                 </div>
@@ -5042,7 +5146,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5052,20 +5156,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -5084,20 +5192,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -5116,20 +5228,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                   <li
@@ -5148,20 +5264,24 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                     >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
+                      <span
+                        class="pf-c-select__menu-item-action-icon"
                       >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
+                          />
+                        </svg>
+                      </span>
                     </button>
                   </li>
                 </div>
@@ -5221,7 +5341,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5234,31 +5354,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5287,7 +5411,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5300,31 +5424,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5371,7 +5499,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5384,31 +5512,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5451,31 +5583,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5518,31 +5654,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5585,31 +5725,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5656,7 +5800,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5669,31 +5813,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5736,31 +5884,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5803,31 +5955,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
@@ -5870,31 +6026,35 @@ exports[`renders select with favorites successfully 1`] = `
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
                     >
-                      <StarIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
+                      <span
+                        className="pf-c-select__menu-item-action-icon"
                       >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 576 512"
-                          width="1em"
+                        <StarIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </StarIcon>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
+                            />
+                          </svg>
+                        </StarIcon>
+                      </span>
                     </button>
                   </li>
                 </SelectOption>
