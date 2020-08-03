@@ -2,7 +2,7 @@ import React from 'react';
 import { NotificationBadge, NotificationBadgeProps, NotificationBadgeVariant } from '@patternfly/react-core';
 
 interface NotificationBadgeDemoState {
-  isFirstRead: boolean;
+  firstVariant: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
   secondVariant: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
   secondCount: number;
 }
@@ -15,13 +15,13 @@ export class NotificationBadgeDemo extends React.Component<NotificationBadgeProp
   constructor(props: NotificationBadgeProps) {
     super(props);
     this.state = {
-      isFirstRead: false,
+      firstVariant: 'unread',
       secondVariant: 'attention',
       secondCount: 30
     };
     this.onFirstClick = () => {
       this.setState({
-        isFirstRead: true
+        firstVariant: 'read'
       });
     };
     this.onSecondClick = () => {
@@ -32,12 +32,12 @@ export class NotificationBadgeDemo extends React.Component<NotificationBadgeProp
   }
 
   render() {
-    const { isFirstRead, secondVariant, secondCount } = this.state;
+    const { firstVariant, secondVariant, secondCount } = this.state;
     return (
       <>
         <NotificationBadge
           id="notification-demo-badge1"
-          isRead={isFirstRead}
+          variant={firstVariant}
           onClick={this.onFirstClick}
           aria-label="First notifications"
         />

@@ -12,7 +12,7 @@ export enum NotificationBadgeVariant {
 }
 
 export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
-  /**  Adds styling to the notification badge to indicate it has been read */
+  /** @deprecated Use the variant prop instead - Adds styling to the notification badge to indicate it has been read */
   isRead?: boolean;
   /** Determines the variant of the notification badge */
   variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
@@ -31,19 +31,22 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
 }
 
 export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
-  isRead = false,
+  isRead,
+  children,
   variant = isRead ? 'read' : 'unread',
   count = 0,
   attentionIcon = <AttentionBellIcon />,
   icon = <BellIcon />,
   className,
-  children,
   ...props
 }: NotificationBadgeProps) => (
   <Button variant={ButtonVariant.plain} className={className} {...props}>
     <span className={css(styles.notificationBadge, styles.modifiers[variant])}>
-      {children}
-      {!children && variant === NotificationBadgeVariant.attention ? attentionIcon : icon}
+      {children !== undefined ? (
+        children
+      ) : (
+        variant === NotificationBadgeVariant.attention ? attentionIcon : icon
+      )}
       {count > 0 && <span className={css(styles.notificationBadgeCount)}>{count}</span>}
     </span>
   </Button>

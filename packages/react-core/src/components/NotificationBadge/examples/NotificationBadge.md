@@ -18,12 +18,12 @@ class SimpleNotificationBadge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFirstRead: false,
+      unreadVariant: 'unread',
       attentionVariant: 'attention'
     };
     this.onFirstClick = () => {
       this.setState({
-        isFirstRead: true
+        unreadVariant: 'read'
       });
     };
     this.onSecondClick = () => {
@@ -34,10 +34,10 @@ class SimpleNotificationBadge extends React.Component {
   }
 
   render() {
-    const { isFirstRead, attentionVariant } = this.state;
+    const { unreadVariant, attentionVariant } = this.state;
     return (
       <div className='pf-t-dark'>
-        <NotificationBadge isRead={isFirstRead} onClick={this.onFirstClick} aria-label="First notifications" />
+        <NotificationBadge variant={unreadVariant} onClick={this.onFirstClick} aria-label="First notifications" />
         <NotificationBadge variant={attentionVariant} onClick={this.onSecondClick} aria-label="Second notifications" />
       </div>
     );
