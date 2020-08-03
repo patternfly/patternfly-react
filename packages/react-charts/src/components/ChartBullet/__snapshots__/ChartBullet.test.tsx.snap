@@ -394,7 +394,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
-        "flyoutPadding": 16,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -876,7 +876,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
-          "flyoutPadding": 16,
+          "flyoutPadding": 8,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -1343,7 +1343,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -1814,7 +1814,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -2284,7 +2284,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -2755,7 +2755,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -3225,7 +3225,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -3679,7 +3679,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
-          "flyoutPadding": 16,
+          "flyoutPadding": 8,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -4131,7 +4131,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
-        "flyoutPadding": 16,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -4613,7 +4613,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
-          "flyoutPadding": 16,
+          "flyoutPadding": 8,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -5080,7 +5080,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -5551,7 +5551,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -6021,7 +6021,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -6492,7 +6492,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -6962,7 +6962,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -7416,7 +7416,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
-          "flyoutPadding": 16,
+          "flyoutPadding": 8,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -7869,7 +7869,7 @@ exports[`renders component data 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
-        "flyoutPadding": 16,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -8356,7 +8356,7 @@ exports[`renders component data 1`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
-          "flyoutPadding": 16,
+          "flyoutPadding": 8,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",
@@ -8835,7 +8835,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -9315,7 +9315,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -9786,7 +9786,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -10258,7 +10258,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -10737,7 +10737,7 @@ exports[`renders component data 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 0,
-              "flyoutPadding": 16,
+              "flyoutPadding": 8,
               "flyoutStyle": Object {
                 "cornerRadius": 0,
                 "fill": "#151515",
@@ -11192,7 +11192,7 @@ exports[`renders component data 1`] = `
         },
         "tooltip": Object {
           "cornerRadius": 0,
-          "flyoutPadding": 16,
+          "flyoutPadding": 8,
           "flyoutStyle": Object {
             "cornerRadius": 0,
             "fill": "#151515",

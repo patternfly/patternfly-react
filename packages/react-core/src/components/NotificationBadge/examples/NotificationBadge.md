@@ -5,6 +5,7 @@ cssPrefix: pf-c-notification-badge
 propComponents: ['NotificationBadge']
 ---
 import { BellIcon } from '@patternfly/react-icons';
+import './notificationBadge.css';
 
 ## Examples
 ### Basic
@@ -17,21 +18,67 @@ class SimpleNotificationBadge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isRead: false
+      unreadVariant: 'unread',
+      attentionVariant: 'attention'
     };
-    this.onClick = () => {
+    this.onFirstClick = () => {
       this.setState({
-        isRead: true
+        unreadVariant: 'read'
+      });
+    };
+    this.onSecondClick = () => {
+      this.setState({
+        attentionVariant: 'read'
       });
     };
   }
 
   render() {
-    const { isRead } = this.state;
+    const { unreadVariant, attentionVariant } = this.state;
     return (
-      <NotificationBadge isRead={isRead} onClick={this.onClick} aria-label="Notifications">
-        <BellIcon />
-      </NotificationBadge>
+      <div className='pf-t-dark'>
+        <NotificationBadge variant={unreadVariant} onClick={this.onFirstClick} aria-label="First notifications" />
+        <NotificationBadge variant={attentionVariant} onClick={this.onSecondClick} aria-label="Second notifications" />
+      </div>
+    );
+  }
+}
+```
+
+## Examples
+```js title=With-count
+import React from 'react';
+import { NotificationBadge } from '@patternfly/react-core';
+import { BellIcon } from '@patternfly/react-icons';
+
+class NotificationBadgeWithCount extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstVariant: 'unread',
+      firstCount: 30,
+      secondVariant: 'attention',
+      secondCount: 30
+    };
+    this.onFirstClick = () => {
+      this.setState({
+        firstVariant: 'read',
+      });
+    };
+    this.onSecondClick = () => {
+      this.setState({
+        secondVariant: 'read'
+      });
+    };
+  }
+
+  render() {
+    const { firstVariant, firstCount, secondVariant, secondCount } = this.state;
+    return (
+      <div className='pf-t-dark'>
+        <NotificationBadge variant={firstVariant} onClick={this.onFirstClick} aria-label="First notifications" count={firstCount} />
+        <NotificationBadge variant={secondVariant} onClick={this.onSecondClick} aria-label="Second notifications" count={secondCount} />
+      </div>
     );
   }
 }

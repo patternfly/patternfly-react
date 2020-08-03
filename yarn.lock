@@ -3237,10 +3237,10 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@4.24.3":
-  version "4.24.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.24.3.tgz#4a1d229689cfaf5bfa8539325333d9e7341c7edd"
-  integrity sha512-+OlJe57UBRgp7ZQiTk07qm8N9iMkama9bpvM26jnaa1uyo1JfqeLNsSESIvdfJ+jisydi602yePCj9QC0bPZLA==
+"@patternfly/patternfly@4.31.1":
+  version "4.31.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.31.1.tgz#0385ec687f70ad51ca27919a2b134e4859e76b7e"
+  integrity sha512-swv9FF4dXu6kmFjHzHoHGcRdGw9nOaAxs8stYqynY3/iN2CC60qmNYLX7a2d7Zpuju6nTlTWfeqEBeOpuazRfA==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
