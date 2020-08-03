@@ -186,6 +186,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListCompactDemo
   },
   {
+    id: 'description-list-demo',
+    name: 'Description List Demo',
+    componentType: Examples.DescriptionListDemo
+  },
+  {
+    id: 'description-list-breakpoints-demo',
+    name: 'Description List Breakpoints Demo',
+    componentType: Examples.DescriptionListBreakpointsDemo
+  },
+  {
     id: 'divider-demo',
     name: 'Divider Demo',
     componentType: Examples.DividerDemo
