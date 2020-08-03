@@ -42,11 +42,7 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
 }: NotificationBadgeProps) => (
   <Button variant={ButtonVariant.plain} className={className} {...props}>
     <span className={css(styles.notificationBadge, styles.modifiers[variant])}>
-      {children !== undefined ? (
-        children
-      ) : (
-        variant === NotificationBadgeVariant.attention ? attentionIcon : icon
-      )}
+      {children !== undefined ? children : variant === NotificationBadgeVariant.attention ? attentionIcon : icon}
       {count > 0 && <span className={css(styles.notificationBadgeCount)}>{count}</span>}
     </span>
   </Button>
