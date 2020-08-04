@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.6.1...@patternfly/react-icons@4.7.0) (2020-08-04)
+
+
+### Features
+
+* **NotificationDrawer:** Add notification drawer demo ([#4640](https://github.com/patternfly/patternfly-react/issues/4640)) ([3b9231d](https://github.com/patternfly/patternfly-react/commit/3b9231dab2fd92eb40e38d3a38ffb83562e1dbc2))
+
+
+
+
+
 ## [4.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.6.0...@patternfly/react-icons@4.6.1) (2020-08-04)
 
 **Note:** Version bump only for package @patternfly/react-icons

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.14.3...@patternfly/react-table@4.15.0) (2020-08-04)
+
+
+### Features
+
+* **NotificationDrawer:** Add notification drawer demo ([#4640](https://github.com/patternfly/patternfly-react/issues/4640)) ([3b9231d](https://github.com/patternfly/patternfly-react/commit/3b9231dab2fd92eb40e38d3a38ffb83562e1dbc2))
+
+
+
+
+
 ## [4.14.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.14.2...@patternfly/react-table@4.14.3) (2020-08-04)
 
 **Note:** Version bump only for package @patternfly/react-table
