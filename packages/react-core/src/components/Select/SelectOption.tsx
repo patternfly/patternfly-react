@@ -170,7 +170,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isDisabled && styles.modifiers.disabled,
                     isFocused && styles.modifiers.focus,
                     description && styles.modifiers.description,
-                    isFavorite && styles.modifiers.link,
+                    isFavorite !== null && styles.modifiers.link,
                     className
                   )}
                   onClick={(event: any) => {
