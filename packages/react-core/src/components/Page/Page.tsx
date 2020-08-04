@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 import { debounce } from '../../helpers/util';
+import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -33,6 +34,12 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   header?: React.ReactNode;
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar?: React.ReactNode;
+  /** Notification drawer component for an optional notification drawer (e.g. <NotificationDrawer />) */
+  notificationDrawer?: React.ReactNode;
+  /** Flag indicating Notification drawer in expanded */
+  isNotificationDrawerExpanded?: boolean;
+  /** Callback when notification drawer panel is finished expanding. */
+  onNotificationDrawerExpand?: () => void;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
   /** Sets the value for role on the <main> element */
@@ -73,7 +80,9 @@ export class Page extends React.Component<PageProps, PageState> {
     isManagedSidebar: false,
     defaultManagedSidebarIsOpen: true,
     onPageResize: (): void => null,
-    mainTabIndex: -1
+    mainTabIndex: -1,
+    isNotificationDrawerExpanded: false,
+    onNotificationDrawerExpand: () => null
   };
 
   constructor(props: PageProps) {
@@ -134,6 +143,9 @@ export class Page extends React.Component<PageProps, PageState> {
       children,
       header,
       sidebar,
+      notificationDrawer,
+      isNotificationDrawerExpanded,
+      onNotificationDrawerExpand,
       skipToContent,
       role,
       mainContainerId,
@@ -154,22 +166,37 @@ export class Page extends React.Component<PageProps, PageState> {
       isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
     };
 
+    const main = (
+      <main
+        role={role}
+        id={mainContainerId}
+        className={css(styles.pageMain)}
+        tabIndex={mainTabIndex}
+        aria-label={mainAriaLabel}
+      >
+        {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
+        {children}
+      </main>
+    );
+
+    const panelContent = <DrawerPanelContent>{notificationDrawer}</DrawerPanelContent>;
+
     return (
       <PageContextProvider value={context}>
         <div {...rest} className={css(styles.page, className)}>
           {skipToContent}
           {header}
           {sidebar}
-          <main
-            role={role}
-            id={mainContainerId}
-            className={css(styles.pageMain)}
-            tabIndex={mainTabIndex}
-            aria-label={mainAriaLabel}
-          >
-            {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
-            {children}
-          </main>
+          {notificationDrawer && (
+            <div className={css(styles.pageDrawer)}>
+              <Drawer isExpanded={isNotificationDrawerExpanded} onExpand={onNotificationDrawerExpand}>
+                <DrawerContent panelContent={panelContent}>
+                  <DrawerContentBody>{main}</DrawerContentBody>
+                </DrawerContent>
+              </Drawer>
+            </div>
+          )}
+          {!notificationDrawer && main}
         </div>
       </PageContextProvider>
     );

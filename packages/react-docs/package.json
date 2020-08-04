@@ -23,7 +23,7 @@
     "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts|virtualizedtable/selectable\""
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.31.2",
+    "@patternfly/patternfly": "4.31.3",
     "@patternfly/react-catalog-view-extension": "^4.7.3",
     "@patternfly/react-charts": "^6.8.1",
     "@patternfly/react-core": "^4.38.1",
