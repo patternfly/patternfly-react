@@ -509,7 +509,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (favorites.length > 0) {
         // if variant is typeahead use filtered children
         const tempRenderableChildren =
-          variant === 'typeahead' || 'typeaheadmulti' ? typeaheadFilteredChildren : children;
+          variant === 'typeahead' || variant === 'typeaheadmulti' ? typeaheadFilteredChildren : children;
         renderableFavorites = createRenderableFavorites(tempRenderableChildren, isGrouped, favorites);
         favoritesGroup = [
           <SelectGroup key="favorites" label={favoritesLabel}>
@@ -519,7 +519,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
       // if variant is type-ahead call the extendTypeaheadChildren before adding favorites
       const tempExtendedChildren =
-        variant === 'typeahead' || variant === 'typeaheadMulti' ? this.extendTypeaheadChildren(typeaheadActiveChild) : children;
+        variant === 'typeahead' || variant === 'typeaheadmulti'
+          ? this.extendTypeaheadChildren(typeaheadActiveChild)
+          : children;
       if (renderableFavorites.length > 0) {
         // concat all select options too renderable favorites group and mark items that are favorited with isFavorite
         renderableItems = favoritesGroup.concat(extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites));
