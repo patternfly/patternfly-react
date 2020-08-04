@@ -4114,7 +4114,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4150,7 +4150,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4186,7 +4186,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4269,7 +4269,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4305,7 +4305,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4341,7 +4341,7 @@ exports[`renders select with favorites successfully 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="pf-c-select__menu-item"
+                    class="pf-c-select__menu-item pf-m-link"
                     role="option"
                     type="button"
                   >
@@ -4559,7 +4559,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4595,7 +4595,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4631,7 +4631,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4714,7 +4714,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4750,7 +4750,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -4786,7 +4786,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5027,7 +5027,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5063,7 +5063,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5099,7 +5099,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5182,7 +5182,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5218,7 +5218,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5254,7 +5254,7 @@ exports[`renders select with favorites successfully 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
+                      class="pf-c-select__menu-item pf-m-link"
                       role="option"
                       type="button"
                     >
@@ -5568,7 +5568,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5638,7 +5638,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5708,7 +5708,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5865,7 +5865,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5935,7 +5935,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -6005,7 +6005,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <button
                       aria-selected={null}
-                      className="pf-c-select__menu-item"
+                      className="pf-c-select__menu-item pf-m-link"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
