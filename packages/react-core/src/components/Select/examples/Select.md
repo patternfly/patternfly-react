@@ -1720,9 +1720,20 @@ class FavoritesSelect extends React.Component {
       });
     };
 
-    this.onSelect = (event, selection) => {
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
       this.setState({
-        selected: selection,
+        selected: [],
         isOpen: false
       });
     };
@@ -1770,6 +1781,7 @@ class FavoritesSelect extends React.Component {
           isGrouped
           onFavorite={this.onFavorite}
           favorites={favorites}
+          onClear={this.clearSelection}
         >
           {this.options}
         </Select>
