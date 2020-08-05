@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.29.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.28.2...demo-app-ts@4.29.0) (2020-08-05)
+
+
+### Features
+
+* **Select:** fix space/enter closing typeahead variants incorrectly ([#4663](https://github.com/patternfly/patternfly-react/issues/4663)) ([3635f26](https://github.com/patternfly/patternfly-react/commit/3635f26520af063a926c836c028d8dc896813415))
+
+
+
+
+
 ## [4.28.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.28.1...demo-app-ts@4.28.2) (2020-08-04)
 
 **Note:** Version bump only for package demo-app-ts

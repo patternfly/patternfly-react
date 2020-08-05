@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.40.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.39.0...@patternfly/react-core@4.40.0) (2020-08-05)
+
+
+### Features
+
+* **Select:** fix space/enter closing typeahead variants incorrectly ([#4663](https://github.com/patternfly/patternfly-react/issues/4663)) ([3635f26](https://github.com/patternfly/patternfly-react/commit/3635f26520af063a926c836c028d8dc896813415))
+
+
+
+
+
 # [4.39.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.38.1...@patternfly/react-core@4.39.0) (2020-08-04)
 
 
