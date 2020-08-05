@@ -7,7 +7,7 @@ describe('Select Test', () => {
 
   it('Verify Single Select', () => {
     cy.get('#single-select').click();
-    cy.get('#pf-random-id-0-2').click();
+    cy.get('#Miss').click();
     cy.get('#single-select')
       .contains('Miss')
       .should('exist');
@@ -15,7 +15,7 @@ describe('Select Test', () => {
 
   it('Verify Description Select', () => {
     cy.get('#single-select-with-descriptions').click();
-    cy.get('#pf-random-id-21-2').click();
+    cy.get('#Miss').click();
     cy.get('#single-select-with-descriptions')
       .contains('Miss')
       .should('exist');
@@ -27,7 +27,7 @@ describe('Select Test', () => {
 
   it('Verify Custom Single Select', () => {
     cy.get('#custom-select').click();
-    cy.get('#pf-random-id-1-2').click();
+    cy.get('#Miss').click();
     cy.get('#custom-select')
       .contains('text-Miss')
       .should('exist');
@@ -56,7 +56,7 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
     find('input:nth-child(1)').type('Flo');
     find('#typeahead-select-select-typeahead').should('have.value', 'Flo');
-    find('input:nth-child(1)').trigger('keydown', { keyCode: 13 });
+    find('#typeahead-select-select-typeahead').trigger('keydown', { keyCode: 13 });
     find('#typeahead-select-select-typeahead').should('have.value', 'Florida');
     find('button.pf-c-select__toggle-clear:first').click();
     find('#typeahead-select-select-typeahead').should('have.value', '');
@@ -72,7 +72,7 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
     find('input:nth-child(1)').type('Unknown');
     find('#typeahead-select-select-typeahead').should('have.value', 'Unknown');
-    find('input:nth-child(1)').trigger('keydown', { keyCode: 13 });
+    find('#typeahead-select-select-typeahead').type('{esc}');
     find('#typeahead-select-select-typeahead').should('have.value', '');
   });
 
