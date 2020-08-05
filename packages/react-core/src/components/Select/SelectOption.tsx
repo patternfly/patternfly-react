@@ -137,7 +137,12 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     const generatedId = id || getUniqueId('select-option');
     const favoriteButton = (onFavorite: any) => (
       <button
-        className={css(styles.selectMenuItem, styles.modifiers.action, styles.modifiers.favoriteAction)}
+        className={css(
+          styles.selectMenuItem,
+          styles.modifiers.action,
+          styles.modifiers.favoriteAction,
+          isFocused && styles.modifiers.focus
+        )}
         aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
         onClick={() => {
           onFavorite(generatedId, isFavorite);
@@ -168,9 +173,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     styles.selectMenuItem,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
-                    isFocused && styles.modifiers.focus,
                     description && styles.modifiers.description,
                     isFavorite !== null && styles.modifiers.link,
+                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   onClick={(event: any) => {
