@@ -7,7 +7,7 @@ describe('Select Test', () => {
 
   it('Verify Single Select', () => {
     cy.get('#single-select').click();
-    cy.get('#Miss-2').click();
+    cy.get('#Miss > .pf-c-select__menu-item').click();
     cy.get('#single-select')
       .contains('Miss')
       .should('exist');
@@ -15,7 +15,7 @@ describe('Select Test', () => {
 
   it('Verify Description Select', () => {
     cy.get('#single-select-with-descriptions').click();
-    cy.get('#Miss-2').click();
+    cy.get('#Miss > .pf-c-select__menu-item > .pf-c-select__menu-item-description').click();
     cy.get('#single-select-with-descriptions')
       .contains('Miss')
       .should('exist');
@@ -27,7 +27,7 @@ describe('Select Test', () => {
 
   it('Verify Custom Single Select', () => {
     cy.get('#custom-select').click();
-    cy.get('#Miss-2').click();
+    cy.get('#Miss > .pf-c-select__menu-item').click();
     cy.get('#custom-select')
       .contains('text-Miss')
       .should('exist');
