@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.0...@patternfly/react-tokens@4.9.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* **react-tokens:** fix .d.ts typo ([#4669](https://github.com/patternfly/patternfly-react/issues/4669)) ([0d45a71](https://github.com/patternfly/patternfly-react/commit/0d45a71617992b041dbcf7f860e92e63a6d12332))
+
+
+
+
+
 # [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.8.1...@patternfly/react-tokens@4.9.0) (2020-08-04)
 
 
