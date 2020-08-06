@@ -5,16 +5,16 @@ releaseNoteTOC: true
 ---
 
 ## 2020.10 release notes (2020-08-06)
-- [@patternfly/react-catalog-view-extension@4.8.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.1)
-- [@patternfly/react-charts@6.9.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.0)
-- [@patternfly/react-core@4.40.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.40.0)
+- [@patternfly/react-catalog-view-extension@4.8.2](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.2)
+- [@patternfly/react-charts@6.9.1](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.1)
+- [@patternfly/react-core@4.40.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.40.1)
 - [@patternfly/react-icons@4.7.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.0)
-- [@patternfly/react-inline-edit-extension@4.5.57](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.57)
+- [@patternfly/react-inline-edit-extension@4.5.58](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.58)
 - [@patternfly/react-styles@4.7.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.0)
-- [@patternfly/react-table@4.15.1](https://www.npmjs.com/package/@patternfly/react-table/v/4.15.1)
-- [@patternfly/react-tokens@4.9.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.0)
-- [@patternfly/react-topology@4.4.59](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.59)
-- [@patternfly/react-virtualized-extension@4.5.47](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.47)
+- [@patternfly/react-table@4.15.2](https://www.npmjs.com/package/@patternfly/react-table/v/4.15.2)
+- [@patternfly/react-tokens@4.9.1](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.1)
+- [@patternfly/react-topology@4.4.60](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.60)
+- [@patternfly/react-virtualized-extension@4.5.48](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.48)
 
 ### Components
 - **Button:**
@@ -49,15 +49,15 @@ releaseNoteTOC: true
   - Added reference prop ([#4546](https://github.com/patternfly/patternfly-react/pull/4546))
   - Updated to propagate clicks ([#4585](https://github.com/patternfly/patternfly-react/pull/4585))
 - **SearchInput:** 
-  - Added new s0earch input component ([#4588](https://github.com/patternfly/patternfly-react/pull/4588))
+  - Added new search input component ([#4588](https://github.com/patternfly/patternfly-react/pull/4588))
 - **Select:** 
   - Fixed maximum call stack size exceeded in a read-only typeahead Select field when pressing enter ([#4616](https://github.com/patternfly/patternfly-react/pull/4616))
-  - Fixed type rrror on undefined valueToCheck.toString ([#4603](https://github.com/patternfly/patternfly-react/pull/4603))
+  - Fixed type error on undefined valueToCheck.toString ([#4603](https://github.com/patternfly/patternfly-react/pull/4603))
   - Allowed typeahead groups, fixed a few bugs around groups ([#4622](https://github.com/patternfly/patternfly-react/pull/4622))
   - Fixed space/enter closing typeahead variants incorrectly ([#4663](https://github.com/patternfly/patternfly-react/pull/4663))
   - Use width prop in select ([#4579](https://github.com/patternfly/patternfly-react/pull/4579))
 - **Toolbar*:** 
-  - Changed spelling of visiblity prop ([#4560](https://github.com/patternfly/patternfly-react/pull/4560))
+  - Changed spelling of visiblity prop to visibility([#4560](https://github.com/patternfly/patternfly-react/pull/4560))
   - Fixed so delete chip does not expects categoryKey as string ([#4553](https://github.com/patternfly/patternfly-react/pull/4553))
 - **Tooltip:** 
   - Added reference prop ([#4546](https://github.com/patternfly/patternfly-react/pull/4546))
@@ -73,6 +73,7 @@ releaseNoteTOC: true
 
 ### Tokens
   - Added component index ([#4572](https://github.com/patternfly/patternfly-react/pull/4572))
+  - Fixed .d.ts typo ([#4669](https://github.com/patternfly/patternfly-react/pull/4669))
 
 ### Topology
   - Moved @types to the dependencies list ([#4569](https://github.com/patternfly/patternfly-react/pull/4569))
