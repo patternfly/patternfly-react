@@ -1317,7 +1317,7 @@ Packages released:
   - Updated text in form component ([#2352](https://github.com/patternfly/patternfly-react/pull/2352))
   - Wrapped form label text in new element ([#2322](https://github.com/patternfly/patternfly-react/pull/2332))
 - **Grid:**
-  - Removed size props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
+  - Removed size props from ...props ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
   - Updated grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/pull/2305))
 - **Tabs:**
   - Fixed TypeScript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
