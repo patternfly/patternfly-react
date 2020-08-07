@@ -21,7 +21,7 @@ releaseNoteTOC: true
   - Added isLarge modifier prop (call to action) ([#4596](https://github.com/patternfly/patternfly-react/pull/4596))
 - **Chip group:**
   - Added type button to overflow chip button ([#4608](https://github.com/patternfly/patternfly-react/pull/4608))
-  - Changed TimesIcon to TimesCircleIcon ([#4550](https://github.com/patternfly/patternfly-react/pull/4550))
+  - Changed TimesIcon to TimesCircleIcon in Chips ([#4550](https://github.com/patternfly/patternfly-react/pull/4550))
 - **Description list:** 
   - Added new description list component ([#4586](https://github.com/patternfly/patternfly-react/pull/4586))
 - **Clipboard copy:** 
