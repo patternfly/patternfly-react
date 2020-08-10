@@ -143,6 +143,28 @@ class BasicNotificationDrawer extends React.Component {
                 it is long and wraps to multiple lines.
               </NotificationDrawerListItemBody>
             </NotificationDrawerListItem>
+            <NotificationDrawerListItem variant="danger">
+              <NotificationDrawerListItemHeader
+                truncateTitle={1}
+                variant="danger"
+                title="Unread danger notification title. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
+                srTitle="Danger notification:"
+              >
+                <Dropdown
+                  position={DropdownPosition.right}
+                  onSelect={this.onSelect}
+                  toggle={<KebabToggle onToggle={this.onToggle2} id="toggle-id-2-truncate" />}
+                  isOpen={isOpen2}
+                  isPlain
+                  dropdownItems={dropdownItems}
+                  id="notification-2-truncate"
+                />
+              </NotificationDrawerListItemHeader>
+              <NotificationDrawerListItemBody timestamp="10 minutes ago">
+                This is a danger notification description. This is a long description to show how the title will wrap if
+                it is long and wraps to multiple lines.
+              </NotificationDrawerListItemBody>
+            </NotificationDrawerListItem>
             <NotificationDrawerListItem variant="warning" isRead>
               <NotificationDrawerListItemHeader
                 variant="warning"
