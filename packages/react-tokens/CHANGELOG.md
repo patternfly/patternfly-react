@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.2...@patternfly/react-tokens@4.9.3) (2020-08-12)
+
+
+### Bug Fixes
+
+* **react-tokens:** output to correct cjs index file ([#4685](https://github.com/patternfly/patternfly-react/issues/4685)) ([93f488e](https://github.com/patternfly/patternfly-react/commit/93f488e79b35ed96e77be18ef1411731f7190f4b))
+
+
+
+
+
 ## [4.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.1...@patternfly/react-tokens@4.9.2) (2020-08-10)
 
 **Note:** Version bump only for package @patternfly/react-tokens
