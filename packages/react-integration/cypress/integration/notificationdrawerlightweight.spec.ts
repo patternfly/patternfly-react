@@ -10,7 +10,7 @@ describe('Notification Drawer Lightweight Demo Test', () => {
   });
 
   it('Verify text in header status', () => {
-    cy.get('.pf-c-notification-drawer__header-status').should('not.exist');
+    cy.get('.pf-c-notification-drawer__header-status').contains('2 unread alerts');
   });
 
   it('Verify 3 groups exist', () => {
