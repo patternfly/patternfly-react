@@ -38,6 +38,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   notificationDrawer?: React.ReactNode;
   /** Flag indicating Notification drawer in expanded */
   isNotificationDrawerExpanded?: boolean;
+  /** Flag indicating if breadcrumb width should be limited */
+  isBreadcrumbWidthLimited?: boolean;
   /** Callback when notification drawer panel is finished expanding. */
   onNotificationDrawerExpand?: () => void;
   /** Skip to content component for the page */
@@ -78,6 +80,7 @@ export class Page extends React.Component<PageProps, PageState> {
   static displayName = 'Page';
   static defaultProps: PageProps = {
     isManagedSidebar: false,
+    isBreadcrumbWidthLimited: false,
     defaultManagedSidebarIsOpen: true,
     onPageResize: (): void => null,
     mainTabIndex: -1,
@@ -139,6 +142,7 @@ export class Page extends React.Component<PageProps, PageState> {
   render() {
     const {
       breadcrumb,
+      isBreadcrumbWidthLimited,
       className,
       children,
       header,
@@ -174,7 +178,14 @@ export class Page extends React.Component<PageProps, PageState> {
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
-        {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
+        {breadcrumb && isBreadcrumbWidthLimited && (
+          <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
+            <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
+          </section>
+        )}
+        {breadcrumb && !isBreadcrumbWidthLimited && (
+          <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>
+        )}
         {children}
       </main>
     );
