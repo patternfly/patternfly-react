@@ -10,6 +10,7 @@ import { InfoCircleIcon } from '@patternfly/react-icons';
 ## Examples
 
 ### Filled
+
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
@@ -26,18 +27,29 @@ FilledLabels = () => (
     <Label href="#filled" onClose={Function.prototype}>
       Grey link removeable
     </Label>
+    <Label icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Grey label with icon that overflows
+    </Label>
     <br />
     <br />
-    <Label color="blue">Blue</Label> <Label color="blue" icon={<InfoCircleIcon />}>
+    <Label color="blue">Blue</Label>{' '}
+    <Label color="blue" icon={<InfoCircleIcon />}>
       Blue icon
-    </Label> <Label color="blue" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="blue" onClose={Function.prototype}>
       Blue removeable
-    </Label> <Label color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype}>
       Blue icon removeable
-    </Label> <Label color="blue" href="#filled">
+    </Label>{' '}
+    <Label color="blue" href="#filled">
       Blue link
-    </Label> <Label color="blue" href="#filled" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="blue" href="#filled" onClose={Function.prototype}>
       Blue link removeable
+    </Label>
+    <Label color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Blue label with icon that overflows
     </Label>
     <br />
     <br />
@@ -57,18 +69,29 @@ FilledLabels = () => (
     <Label color="green" href="#filled" onClose={Function.prototype}>
       Green link removeable
     </Label>
+    <Label color="green" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Green label with icon that overflows
+    </Label>
     <br />
     <br />
-    <Label color="orange">Orange</Label> <Label color="orange" icon={<InfoCircleIcon />}>
+    <Label color="orange">Orange</Label>{' '}
+    <Label color="orange" icon={<InfoCircleIcon />}>
       Orange icon
-    </Label> <Label color="orange" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="orange" onClose={Function.prototype}>
       Orange removeable
-    </Label> <Label color="orange" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="orange" icon={<InfoCircleIcon />} onClose={Function.prototype}>
       Orange icon removeable
-    </Label> <Label color="orange" href="#filled">
+    </Label>{' '}
+    <Label color="orange" href="#filled">
       Orange link
-    </Label> <Label color="orange" href="#filled" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="orange" href="#filled" onClose={Function.prototype}>
       Orange link removeable
+    </Label>
+    <Label color="orange" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Orange label with icon that overflows
     </Label>
     <br />
     <br />
@@ -88,18 +111,29 @@ FilledLabels = () => (
     <Label color="red" href="#filled" onClose={Function.prototype}>
       Red link removeable
     </Label>
+    <Label color="red" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Red label with icon that overflows
+    </Label>
     <br />
     <br />
-    <Label color="purple">Purple</Label> <Label color="purple" icon={<InfoCircleIcon />}>
+    <Label color="purple">Purple</Label>{' '}
+    <Label color="purple" icon={<InfoCircleIcon />}>
       Purple icon
-    </Label> <Label color="purple" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="purple" onClose={Function.prototype}>
       Purple removeable
-    </Label> <Label color="purple" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="purple" icon={<InfoCircleIcon />} onClose={Function.prototype}>
       Purple icon removeable
-    </Label> <Label color="purple" href="#filled">
+    </Label>{' '}
+    <Label color="purple" href="#filled">
       Purple link
-    </Label> <Label color="purple" href="#filled" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label color="purple" href="#filled" onClose={Function.prototype}>
       Purple link removeable
+    </Label>
+    <Label color="purple" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Purple label with icon that overflows
     </Label>
     <br />
     <br />
@@ -119,11 +153,15 @@ FilledLabels = () => (
     <Label color="cyan" href="#filled" onClose={Function.prototype}>
       Cyan link removeable
     </Label>
+    <Label color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Cyan label with icon that overflows
+    </Label>
   </React.Fragment>
 );
 ```
 
 ### Outline
+
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
@@ -147,20 +185,31 @@ OutlinedLabels = () => (
     <Label variant="outline" href="#outline" onClose={Function.prototype}>
       Grey link removeable
     </Label>
+    <Label variant="outline" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Grey label with icon that overflows
+    </Label>
     <br />
     <br />
     <Label variant="outline" color="blue">
       Blue
-    </Label> <Label variant="outline" color="blue" icon={<InfoCircleIcon />}>
+    </Label>{' '}
+    <Label variant="outline" color="blue" icon={<InfoCircleIcon />}>
       Blue icon
-    </Label> <Label variant="outline" color="blue" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="blue" onClose={Function.prototype}>
       Blue removeable
-    </Label> <Label variant="outline" color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype}>
       Blue icon removeable
-    </Label> <Label variant="outline" color="blue" href="#outline">
+    </Label>{' '}
+    <Label variant="outline" color="blue" href="#outline">
       Blue link
-    </Label> <Label variant="outline" color="blue" href="#outline" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="blue" href="#outline" onClose={Function.prototype}>
       Blue link removeable
+    </Label>
+    <Label variant="outline" color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Blue label with icon that overflows
     </Label>
     <br />
     <br />
@@ -182,20 +231,31 @@ OutlinedLabels = () => (
     <Label variant="outline" color="green" href="#outline" onClose={Function.prototype}>
       Green link removeable
     </Label>
+    <Label variant="outline" color="green" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Green label with icon that overflows
+    </Label>
     <br />
     <br />
     <Label variant="outline" color="orange">
       Orange
-    </Label> <Label variant="outline" color="orange" icon={<InfoCircleIcon />}>
+    </Label>{' '}
+    <Label variant="outline" color="orange" icon={<InfoCircleIcon />}>
       Orange icon
-    </Label> <Label variant="outline" color="orange" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="orange" onClose={Function.prototype}>
       Orange removeable
-    </Label> <Label variant="outline" color="orange" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="orange" icon={<InfoCircleIcon />} onClose={Function.prototype}>
       Orange icon removeable
-    </Label> <Label variant="outline" color="orange" href="#outline">
+    </Label>{' '}
+    <Label variant="outline" color="orange" href="#outline">
       Orange link
-    </Label> <Label variant="outline" color="orange" href="#outline" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="orange" href="#outline" onClose={Function.prototype}>
       Orange link removeable
+    </Label>
+    <Label variant="outline" color="orange" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Orange label with icon that overflows
     </Label>
     <br />
     <br />
@@ -217,20 +277,31 @@ OutlinedLabels = () => (
     <Label variant="outline" color="red" href="#outline" onClose={Function.prototype}>
       Red link removeable
     </Label>
+    <Label variant="outline" color="red" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Red label with icon that overflows
+    </Label>
     <br />
     <br />
     <Label variant="outline" color="purple">
       Purple
-    </Label> <Label variant="outline" color="purple" icon={<InfoCircleIcon />}>
+    </Label>{' '}
+    <Label variant="outline" color="purple" icon={<InfoCircleIcon />}>
       Purple icon
-    </Label> <Label variant="outline" color="purple" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="purple" onClose={Function.prototype}>
       Purple removeable
-    </Label> <Label variant="outline" color="purple" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="purple" icon={<InfoCircleIcon />} onClose={Function.prototype}>
       Purple icon removeable
-    </Label> <Label variant="outline" color="purple" href="#outline">
+    </Label>{' '}
+    <Label variant="outline" color="purple" href="#outline">
       Purple link
-    </Label> <Label variant="outline" color="purple" href="#outline" onClose={Function.prototype}>
+    </Label>{' '}
+    <Label variant="outline" color="purple" href="#outline" onClose={Function.prototype}>
       Purple link removeable
+    </Label>
+    <Label variant="outline" color="purple" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Purple label with icon that overflows
     </Label>
     <br />
     <br />
@@ -251,6 +322,9 @@ OutlinedLabels = () => (
     </Label>{' '}
     <Label variant="outline" color="cyan" href="#outline" onClose={Function.prototype}>
       Cyan link removeable
+    </Label>
+    <Label variant="outline" color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+      Cyan label with icon that overflows
     </Label>
   </React.Fragment>
 );

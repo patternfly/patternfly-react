@@ -13,6 +13,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'grey';
   /** Variant of the label. */
   variant?: 'outline' | 'filled';
+  /** Flag indicating the label text should be truncated. */
+  isTruncated?: boolean;
   /** Icon added to the left of the label text. */
   icon?: React.ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */
@@ -40,6 +42,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   className = '',
   color = 'grey',
   variant = 'filled',
+  isTruncated = false,
   icon,
   onClose,
   closeBtn,
@@ -68,7 +71,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     >
       <Component className={css(styles.labelContent)} {...(href && { href })}>
         {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
-        {children}
+        {isTruncated && <span className={css(styles.labelText)}>{children}</span>}
+        {!isTruncated && children}
       </Component>
       {onClose && button}
     </span>
