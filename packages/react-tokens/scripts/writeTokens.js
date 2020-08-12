@@ -41,7 +41,7 @@ const outputIndex = (index, indexFile) => {
   outputFileSync(join(outDir, 'esm', indexFile), esmIndexString);
   outputFileSync(join(outDir, 'js', indexFile.replace('.js', '.d.ts')), esmIndexString);
   outputFileSync(
-    join(outDir, 'js', 'index.js'),
+    join(outDir, 'js', indexFile),
     `
 "use strict";
 function __export(m) {
