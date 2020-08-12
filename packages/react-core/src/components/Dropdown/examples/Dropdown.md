@@ -14,6 +14,9 @@ import avatarImg from '../../Avatar/examples/avatarImg.svg';
 ## Examples
 
 ### Basic
+
+This is a test.
+
 ```js
 import React from 'react';
 import {
