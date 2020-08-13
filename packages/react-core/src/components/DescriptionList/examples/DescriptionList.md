@@ -458,7 +458,7 @@ HorizontalAutoColumnsDescriptionList = (
 );
 ```
 
-## Inline Grid
+## Inline grid
 
 ```js title=Default-inline-grid
 import React from 'react';
