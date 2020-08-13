@@ -4,6 +4,96 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.10 release notes (2020-08-12)
+- [@patternfly/react-catalog-view-extension@4.8.4](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.4)
+- [@patternfly/react-charts@6.9.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.3)
+- [@patternfly/react-core@4.40.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.40.3)
+- [@patternfly/react-icons@4.7.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.1)
+- [@patternfly/react-inline-edit-extension@4.5.60](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.60)
+- [@patternfly/react-styles@4.7.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.1)
+- [@patternfly/react-table@4.15.4](https://www.npmjs.com/package/@patternfly/react-table/v/4.15.4)
+- [@patternfly/react-tokens@4.9.3](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.3)
+- [@patternfly/react-topology@4.4.62](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.62)
+- [@patternfly/react-virtualized-extension@4.5.50](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.50)
+
+### Components
+- **Button:**
+  - Added isLarge modifier prop (call to action) ([#4596](https://github.com/patternfly/patternfly-react/pull/4596))
+- **Chip group:**
+  - Added type button to overflow chip button ([#4608](https://github.com/patternfly/patternfly-react/pull/4608))
+  - Changed TimesIcon to TimesCircleIcon in Chips ([#4550](https://github.com/patternfly/patternfly-react/pull/4550))
+- **Description list:** 
+  - Added new description list component ([#4586](https://github.com/patternfly/patternfly-react/pull/4586))
+- **Clipboard copy:** 
+  - Updated to maintain line breaks & spaces when copying text ([#4619](https://github.com/patternfly/patternfly-react/pull/4619))
+- **Dropdown**
+  - Updated dropdown with image example to use an avatar ([#4566](https://github.com/patternfly/patternfly-react/pull/4566))
+- **Expandable section:** 
+  - Made children optional ([#4621](https://github.com/patternfly/patternfly-react/pull/4621))
+- **Hint:**
+  - Added hint components ([#4595](https://github.com/patternfly/patternfly-react/pull/4595))
+- **Modal:** 
+  - Updated to ensure getElement does not return null ([#4544](https://github.com/patternfly/patternfly-react/pull/4544))
+- **Nav expandable:**
+  - Converted nav expandable to button ([#4512](https://github.com/patternfly/patternfly-react/pull/4512))
+- **Notification badge:**
+  - Added needs attention state and count ([#4516](https://github.com/patternfly/patternfly-react/pull/4516))
+- **Notification drawer:**
+  - Fixed accessibility issues and add accessibility test cases ([#4466](https://github.com/patternfly/patternfly-react/pull/4466))
+- **Overflow menu:**
+  - Updated to allow0 passing dropdown item props to overflow menu dropdown item ([#4536](https://github.com/patternfly/patternfly-react/pull/4536))
+- **Page** 
+  - Fixed breakpoint typo in PageHeaderToolsItem: ([#4634](https://github.com/patternfly/patternfly-react/pull/4634))
+  - Used the correct type for the page context ([#4576](https://github.com/patternfly/patternfly-react/pull/4576))
+- **Popover:** 
+  - Added reference prop ([#4546](https://github.com/patternfly/patternfly-react/pull/4546))
+  - Updated to propagate clicks ([#4585](https://github.com/patternfly/patternfly-react/pull/4585))
+- **Search input:** 
+  - Added new search input component ([#4588](https://github.com/patternfly/patternfly-react/pull/4588))
+- **Select:** 
+  - Fixed maximum call stack size exceeded in a read-only typeahead Select field when pressing enter ([#4616](https://github.com/patternfly/patternfly-react/pull/4616))
+  - Fixed type error on undefined valueToCheck.toString ([#4603](https://github.com/patternfly/patternfly-react/pull/4603))
+  - Allowed typeahead groups, fixed a few bugs around groups ([#4622](https://github.com/patternfly/patternfly-react/pull/4622))
+  - Fixed space/enter closing typeahead variants incorrectly ([#4663](https://github.com/patternfly/patternfly-react/pull/4663))
+  - Use width prop in select ([#4579](https://github.com/patternfly/patternfly-react/pull/4579))
+- **Toolbar:** 
+  - Changed spelling of visiblity prop to visibility([#4560](https://github.com/patternfly/patternfly-react/pull/4560))
+  - Fixed so delete chip does not expects categoryKey as string ([#4553](https://github.com/patternfly/patternfly-react/pull/4553))
+- **Tooltip:** 
+  - Added reference prop ([#4546](https://github.com/patternfly/patternfly-react/pull/4546))
+- **Wizard:** 
+  - Made wizard nav items more easily discoverable ([#4425](https://github.com/patternfly/patternfly-react/pull/4425))
+
+### Charts
+  - Updated chart imports ([#4645](https://github.com/patternfly/patternfly-react/pull/4645))
+  - Updated Victory packages to support OUIA props ([#4633](https://github.com/patternfly/patternfly-react/pull/4633))
+
+### Table
+  - Updated to custom properties for actions ([#4559](https://github.com/patternfly/patternfly-react/pull/4559))
+
+### Tokens
+  - Added component index ([#4572](https://github.com/patternfly/patternfly-react/pull/4572))
+  - Fixed .d.ts typo ([#4669](https://github.com/patternfly/patternfly-react/pull/4669))
+
+### Topology
+  - Moved @types to the dependencies list ([#4569](https://github.com/patternfly/patternfly-react/pull/4569))
+  - Re-parented nodes with invalid parents to graph ([#4629](https://github.com/patternfly/patternfly-react/pull/4629))
+
+### Other
+- **Chore:**
+  - Fixed sentence case in 2020.09 notes ([#4571](https://github.com/patternfly/patternfly-react/pull/4571))
+  - Bumped lodash to 4.17.19 ([#4580](https://github.com/patternfly/patternfly-react/pull/4580))
+  - Replaced classnames with css function ([#4582](https://github.com/patternfly/patternfly-react/pull/4582))
+- **Demos:** 
+  - Fixed demo headers and imports ([#4607](https://github.com/patternfly/patternfly-react/pull/4607))
+  - Added notification drawer demo ([#4640](https://github.com/patternfly/patternfly-react/pull/4640))
+- **Docs:**
+  - Updated to use h3s for titles ([#4570](https://github.com/patternfly/patternfly-react/pull/4570))
+  - Added missing imports to React doc ([#4627](https://github.com/patternfly/patternfly-react/pull/4627))
+  - Moved non-patternfly deps to devDeps in React docs ([#4584](https://github.com/patternfly/patternfly-react/pull/4584))
+  - Fixed title syntax in react docs ([#4628](https://github.com/patternfly/patternfly-react/pull/4628))
+  - Fixed typos in upgrade guide ([#4601](https://github.com/patternfly/patternfly-react/pull/4601))
+
 ## 2020.09 release notes (2020-07-17)
 - [@patternfly/react-catalog-view-extension@4.5.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.5.1)
 - [@patternfly/react-charts@6.6.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.6.0)
@@ -1227,7 +1317,7 @@ Packages released:
   - Updated text in form component ([#2352](https://github.com/patternfly/patternfly-react/pull/2352))
   - Wrapped form label text in new element ([#2322](https://github.com/patternfly/patternfly-react/pull/2332))
 - **Grid:**
-  - Removed size props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
+  - Removed size props from ...props ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
   - Updated grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/pull/2305))
 - **Tabs:**
   - Fixed TypeScript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
