@@ -9,6 +9,7 @@ export type PointTuple = [number, number];
 
 export interface Layout {
   layout(): void;
+  stop(): void;
   destroy(): void;
 }
 
@@ -74,7 +75,6 @@ export interface GraphModel extends ElementModel {
   y?: number;
   scale?: number;
   scaleExtent?: ScaleExtent;
-  maxScale?: number;
   layers?: string[];
 }
 
@@ -109,6 +109,7 @@ export interface GraphElement<E extends ElementModel = ElementModel, D = any> ex
   removeChild(child: GraphElement): void;
   remove(): void;
   setModel(model: E): void;
+  toModel(): ElementModel;
   raise(): void;
   getStyle<T extends {}>(): T;
   translateToAbsolute(t: Translatable): void;
@@ -137,6 +138,7 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
   isDimensionsInitialized(): boolean;
+  isPositioned(): boolean;
 }
 
 export interface Edge<E extends EdgeModel = EdgeModel, D = any> extends GraphElement<E, D> {
@@ -206,7 +208,8 @@ export type ElementFactory = (kind: ModelKind, type: string) => GraphElement | u
 
 export interface Controller extends WithState {
   getStore<S extends {} = {}>(): S;
-  fromModel(model: Model): void;
+  fromModel(model: Model, merge?: boolean): void;
+  toModel(): Model;
   hasGraph(): boolean;
   getGraph(): Graph;
   setGraph(graph: Graph): void;
@@ -242,4 +245,5 @@ export const ADD_CHILD_EVENT = 'element-add-child';
 export const ELEMENT_VISIBILITY_CHANGE_EVENT = 'element-visibility-change';
 export const REMOVE_CHILD_EVENT = 'element-remove-child';
 export const NODE_COLLAPSE_CHANGE_EVENT = 'node-collapse-change';
+export const NODE_POSITIONED_EVENT = 'node-positioned';
 export const GRAPH_LAYOUT_END_EVENT = 'graph-layout-end';

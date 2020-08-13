@@ -11,7 +11,8 @@ import {
   NodeShape,
   Edge,
   GraphElement,
-  NODE_COLLAPSE_CHANGE_EVENT
+  NODE_COLLAPSE_CHANGE_EVENT,
+  NODE_POSITIONED_EVENT
 } from '../types';
 import CenterAnchor from '../anchors/CenterAnchor';
 import Rect from '../geom/Rect';
@@ -34,6 +35,8 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
 
   @observable
   private dimensionsInitialized = false;
+
+  private positioned = false;
 
   @observable.ref
   private position = new Point();
@@ -132,7 +135,7 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     }
     const { x, y } = this.position;
     if (bounds.x !== x || bounds.y !== y) {
-      this.position = new Point(bounds.x, bounds.y);
+      this.setPosition(new Point(bounds.x, bounds.y));
     }
   }
 
@@ -142,6 +145,15 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
 
   setPosition(point: Point): void {
     this.position = point;
+    this.positioned = true;
+    try {
+      this.getController().fireEvent(NODE_POSITIONED_EVENT, { node: this });
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+
+  isPositioned(): boolean {
+    return this.positioned;
   }
 
   getDimensions(): Dimensions {
@@ -285,6 +297,19 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     if ('collapsed' in model) {
       this.setCollapsed(!!model.collapsed);
     }
+  }
+
+  toModel(): NodeModel {
+    return {
+      ...super.toModel(),
+      x: this.isPositioned() ? this.getPosition().x : undefined,
+      y: this.isPositioned() ? this.getPosition().y : undefined,
+      width: this.isDimensionsInitialized() ? this.getDimensions().width : undefined,
+      height: this.isDimensionsInitialized() ? this.getDimensions().height : undefined,
+      collapsed: this.isCollapsed(),
+      group: this.isGroup(),
+      shape: this.shape
+    };
   }
 
   translateToParent(t: Translatable): void {
