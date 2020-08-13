@@ -273,3 +273,43 @@ export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
  * Copied from exenv
  */
 export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+/**
+ * This function is a helper for truncating text content on the left, leaving the right side of the content in view
+ *
+ * @param {any} row The text content to be truncated
+ */
+
+export const trimLeft = (row: any) => {
+  const trimContents = (row: { scrollWidth: any; offsetWidth: any }, node: ChildNode) => {
+    while (row.scrollWidth > row.offsetWidth) {
+      const childNode = node.firstChild;
+
+      if (!childNode) {
+        return true;
+      }
+
+      if (childNode.nodeType === document.TEXT_NODE) {
+        trimText(row, node, childNode);
+      } else {
+        const empty = trimContents(row, childNode);
+        if (empty) {
+          node.removeChild(childNode);
+        }
+      }
+    }
+  };
+  const trimText = (row: { scrollWidth: number; offsetWidth: number }, node: ChildNode, textNode: ChildNode) => {
+    let value = '...' + textNode.nodeValue;
+    do {
+      value = '...' + value.substr(4);
+      textNode.nodeValue = value;
+      if (value === '...') {
+        node.removeChild(textNode);
+        return;
+      }
+    } while (row.scrollWidth > row.offsetWidth);
+  };
+
+  trimContents(row, row);
+};
