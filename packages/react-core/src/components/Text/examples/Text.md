@@ -31,8 +31,8 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
-<TextContent id="x" isLeftTruncated style={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-  <Text component={TextVariants.h1}>Hello World Hello World Hello World Hello World Hello World Hello World</Text>
+<TextContent>
+  <Text component={TextVariants.h1}>Hello World</Text>
   <Text component={TextVariants.h2}>Second level</Text>
   <Text component={TextVariants.h3}>Third level</Text>
   <Text component={TextVariants.h4}>Fourth level</Text>
