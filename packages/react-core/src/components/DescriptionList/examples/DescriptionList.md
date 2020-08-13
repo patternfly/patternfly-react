@@ -1,5 +1,5 @@
 ---
-title: 'Description List'
+title: 'Description list'
 section: components
 cssPrefix: 'pf-c-description-list'
 typescript: true
