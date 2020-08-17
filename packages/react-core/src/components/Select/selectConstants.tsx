@@ -37,5 +37,7 @@ export const KeyTypes = {
   Escape: 'Escape',
   Enter: 'Enter',
   ArrowUp: 'ArrowUp',
-  ArrowDown: 'ArrowDown'
+  ArrowDown: 'ArrowDown',
+  ArrowLeft: 'ArrowLeft',
+  ArrowRight: 'ArrowRight'
 };

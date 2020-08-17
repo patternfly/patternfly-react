@@ -26,6 +26,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
       "calls": Array [
         Array [
           null,
+          null,
           0,
         ],
       ],
@@ -92,6 +93,7 @@ exports[`select options renders custom component 1`] = `
               test display
             </div>
           </div>,
+          null,
           0,
         ],
       ],
@@ -161,6 +163,7 @@ exports[`select options renders with custom display and custom user object succe
               test display
             </div>
           </button>,
+          null,
           0,
         ],
       ],
@@ -230,6 +233,7 @@ exports[`select options renders with custom display successfully 1`] = `
               test display
             </div>
           </button>,
+          null,
           0,
         ],
       ],
@@ -290,6 +294,7 @@ exports[`select options renders with custom user object successfully 1`] = `
           >
             Mr.: Test User
           </button>,
+          null,
           0,
         ],
       ],
@@ -365,6 +370,7 @@ exports[`select options renders with description successfully 1`] = `
               This is a description
             </span>
           </button>,
+          null,
           0,
         ],
       ],
@@ -432,6 +438,7 @@ exports[`select options renders with value parameter successfully 1`] = `
           >
             test
           </button>,
+          null,
           0,
         ],
       ],
