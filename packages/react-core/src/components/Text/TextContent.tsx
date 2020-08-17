@@ -9,30 +9,30 @@ export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the TextContent */
   className?: string;
-  /** id of the TextContent */
-  id?: string;
-  /** trim text on left */
+  /** Trim text on left */
   isLeftTruncated?: boolean;
 }
 
 export const TextContent: React.FunctionComponent<TextContentProps> = ({
   children = null,
-  id = '',
   className = '',
   isLeftTruncated = false,
   ...props
 }: TextContentProps) => {
   useEffect(() => {
-    if (isLeftTruncated && id) {
-      const rows = document.getElementById(id).childNodes;
-      for (let i = 0, row; (row = rows[i]); i++) {
-        trimLeft(row);
+    const rows = Array.from(document.getElementsByClassName('pf-c-content'));
+
+    for (const i of rows) {
+      if (isLeftTruncated) {
+        for (const j of rows) {
+          trimLeft(j);
+        }
       }
     }
-  }, [isLeftTruncated, id]);
+  }, [isLeftTruncated]);
 
   return (
-    <div {...props} id={id} className={css(styles.content, className)}>
+    <div {...props} className={css(styles.content, className)}>
       {children}
     </div>
   );

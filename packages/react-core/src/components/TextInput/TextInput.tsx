@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
+import { trimLeft } from '../../helpers/util';
 
 export enum TextInputTypes {
   text = 'text',
@@ -52,6 +53,8 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   'aria-label'?: string;
   /** A reference object to attach to the input box. */
   innerRef?: React.Ref<any>;
+  /** Trim text on left */
+  isLeftTruncated?: boolean;
 }
 
 export class TextInputBase extends React.Component<TextInputProps> {
@@ -64,6 +67,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
     isDisabled: false,
     isReadOnly: false,
     type: TextInputTypes.text,
+    isLeftTruncated: false,
     onChange: (): any => undefined
   };
 
@@ -81,6 +85,24 @@ export class TextInputBase extends React.Component<TextInputProps> {
     }
   };
 
+  componentDidMount() {
+    // this.handleResize();
+    // window.addEventListener('resize', this.handleResize);
+
+    const test = document.getElementsByClassName('pf-c-form-control') as HTMLCollectionOf<HTMLInputElement>;
+    const rows = Array.from(test);
+    // console.log(rows);
+
+    for (const i of rows) {
+      // console.log(i.value);
+      if (this.props.isLeftTruncated) {
+        for (const j of rows) {
+          trimLeft(j);
+        }
+      }
+    }
+  }
+
   render() {
     const {
       innerRef,
@@ -93,17 +115,22 @@ export class TextInputBase extends React.Component<TextInputProps> {
       isReadOnly,
       isRequired,
       isDisabled,
+      isLeftTruncated,
       ...props
     } = this.props;
     return (
       <input
         {...props}
-        className={css(
-          styles.formControl,
-          validated === ValidatedOptions.success && styles.modifiers.success,
-          validated === ValidatedOptions.warning && styles.modifiers.warning,
-          className
-        )}
+        className={
+          isLeftTruncated
+            ? css(styles.formControl)
+            : css(
+                styles.formControl,
+                validated === ValidatedOptions.success && styles.modifiers.success,
+                validated === ValidatedOptions.warning && styles.modifiers.warning,
+                className
+              )
+        }
         onChange={this.handleChange}
         type={type}
         value={value}

@@ -55,7 +55,7 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
-<TextContent id="leftTruncatedText" isLeftTruncated style={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+<TextContent isLeftTruncated style={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }}>
   <Text component={TextVariants.h1}>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </Text>
@@ -76,7 +76,7 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
-<TextContent>
+<TextContent isLeftTruncated>
   <Text component={TextVariants.p}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc
     varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,

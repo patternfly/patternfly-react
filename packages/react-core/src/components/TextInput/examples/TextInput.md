@@ -26,7 +26,7 @@ class SimpleTextInput extends React.Component {
     const { value } = this.state;
 
     return (
-      <TextInput value={value} type="text" onChange={this.handleTextInputChange} aria-label="text input example" />
+      <TextInput isLeftTruncated value={value} type="text" onChange={this.handleTextInputChange} aria-label="text input example" />
     );
   }
 }
@@ -37,7 +37,7 @@ class SimpleTextInput extends React.Component {
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
-<TextInput type="text" value="disabled text input example" aria-label="disabled text input example" isDisabled />
+<TextInput isLeftTruncated style={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} type="text" value="disabled text input example disabled text input example disabled text input example disabled text input example disabled text input example disabled text input example THIS TEXT SHOULD BE VISIBLE" aria-label="disabled text input example" isDisabled />
 ```
 
 ### Read only
