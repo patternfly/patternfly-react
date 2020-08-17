@@ -5,16 +5,16 @@ releaseNoteTOC: true
 ---
 
 ## 2020.10 release notes (2020-08-17)
-- [@patternfly/react-catalog-view-extension@4.8.4](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.4)
-- [@patternfly/react-charts@6.9.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.3)
-- [@patternfly/react-core@4.40.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.40.3)
-- [@patternfly/react-icons@4.7.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.1)
-- [@patternfly/react-inline-edit-extension@4.5.60](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.60)
-- [@patternfly/react-styles@4.7.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.1)
-- [@patternfly/react-table@4.15.4](https://www.npmjs.com/package/@patternfly/react-table/v/4.15.4)
-- [@patternfly/react-tokens@4.9.3](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.3)
-- [@patternfly/react-topology@4.4.62](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.62)
-- [@patternfly/react-virtualized-extension@4.5.50](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.50)
+- [@patternfly/react-catalog-view-extension@4.8.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.5)
+- [@patternfly/react-charts@6.9.4](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.4)
+- [@patternfly/react-core@4.40.4](https://www.npmjs.com/package/@patternfly/react-core/v/4.40.4)
+- [@patternfly/react-icons@4.7.2](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.2)
+- [@patternfly/react-inline-edit-extension@4.5.61](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.61)
+- [@patternfly/react-styles@4.7.2](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.2)
+- [@patternfly/react-table@4.15.5](https://www.npmjs.com/package/@patternfly/react-table/v/4.15.5)
+- [@patternfly/react-tokens@4.9.4](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.4)
+- [@patternfly/react-topology@4.4.63](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.63)
+- [@patternfly/react-virtualized-extension@4.5.51](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.51)
 
 ### Components
 - **Button:**
