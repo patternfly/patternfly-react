@@ -26,7 +26,7 @@ class SimpleTextInput extends React.Component {
     const { value } = this.state;
 
     return (
-      <TextInput isLeftTruncated value="input value input value input value input value input value input value input value input value input value input value THIS HSOULD VE VISIBLE" type="text" onChange={this.handleTextInputChange} aria-label="text input example" />
+      <TextInput isLeftTruncated value={value} type="text" onChange={this.handleTextInputChange} aria-label="text input example" />
     );
   }
 }

@@ -307,8 +307,9 @@ export const trimLeft = (row: any) => {
             console.log("percent", frac * 100)
             console.log("offsetwidth", row.offsetWidth)
             console.log("scrollwidth", row.scrollWidth)
-            let newLength = frac;
-            value = '...' + value.substr(100);
+            let newLength = Math.ceil(value.length * frac);
+            console.log("newLEngth", newLength) 
+            value = '...' + value.substr(newLength);
             parentVal = value;
             console.log("parentVal", parentVal);
             (node as HTMLInputElement).value = parentVal;
