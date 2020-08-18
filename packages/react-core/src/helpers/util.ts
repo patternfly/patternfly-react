@@ -284,8 +284,43 @@ export const trimLeft = (row: any) => {
   const trimContents = (row: { scrollWidth: any; offsetWidth: any }, node: ChildNode) => {
     while (row.scrollWidth > row.offsetWidth) {
       const childNode = node.firstChild;
+      const parent = node;
+      let parentVal = (node as HTMLInputElement).value;
+      // console.log("node", node);
+      // console.log('node value', parentVal);
+      // console.log("document.TEXT_NODE should be 3: ", document.TEXT_NODE);
+      // console.log("childNode", childNode)
+
+      const truncate = (input: string) => (input.length > 5 ? `${input.substring(0, 5)}...` : input);
 
       if (!childNode) {
+        if (parentVal) {
+          let value = '...' + parentVal;
+          let sub = row.scrollWidth - row.offsetWidth;
+          let frac = row.offsetWidth / row.scrollWidth;
+          if (row.scrollWidth > row.offsetWidth) {
+
+
+            console.log("frac: ", frac);
+            console.log('sub', sub)
+            console.log("value length", value.length);
+            console.log("percent", frac * 100)
+            console.log("offsetwidth", row.offsetWidth)
+            console.log("scrollwidth", row.scrollWidth)
+            let newLength = frac;
+            value = '...' + value.substr(100);
+            parentVal = value;
+            console.log("parentVal", parentVal);
+            (node as HTMLInputElement).value = parentVal;
+            console.log((node as HTMLInputElement).value)
+          }
+            // console.log("parentVal", parentVal)
+            // console.log(row.scrollWidth, row.offsetWidth)
+            // if (value === '...') {
+            //   // node.removeChild(textNode);
+            //   return;
+            // }
+         }
         return true;
       }
 
@@ -304,6 +339,7 @@ export const trimLeft = (row: any) => {
     do {
       value = '...' + value.substr(4);
       textNode.nodeValue = value;
+      // console.log(row.offsetWidth, row.scrollWidth)
       if (value === '...') {
         node.removeChild(textNode);
         return;
