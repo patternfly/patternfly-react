@@ -5353,6 +5353,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5423,6 +5424,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5510,6 +5512,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5580,6 +5583,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5650,6 +5654,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5720,6 +5725,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5807,6 +5813,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5877,6 +5884,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -5947,6 +5955,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
@@ -6017,6 +6026,7 @@ exports[`renders select with favorites successfully 1`] = `
                       aria-label="not starred"
                       className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
                       onClick={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <span
                         className="pf-c-select__menu-item-action-icon"
