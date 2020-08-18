@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic not selected 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+>
+  <button
+    aria-label="basic not selected"
+    className="pf-c-toggle-group__button"
+    id="toggleGroupItem"
+    onClick={[Function]}
+  >
+    <span
+      className="pf-c-toggle-group__text"
+    />
+  </button>
+</div>
+`;
+
+exports[`basic selected 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+>
+  <button
+    aria-label="basic selected"
+    className="pf-c-toggle-group__button pf-m-selected"
+    id="toggleGroupItem"
+    onClick={[Function]}
+  >
+    <span
+      className="pf-c-toggle-group__text"
+    />
+  </button>
+</div>
+`;
+
+exports[`icon variant 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+>
+  <button
+    aria-label="icon variant"
+    className="pf-c-toggle-group__button pf-m-selected"
+    id="toggleGroupItem"
+    onClick={[Function]}
+  >
+    <span
+      className="pf-c-toggle-group__icon"
+    />
+  </button>
+</div>
+`;
+
+exports[`isDisabled 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+>
+  <button
+    aria-label="isDisabled"
+    className="pf-c-toggle-group__button"
+    disabled={true}
+    id="toggleGroupItem"
+    onClick={[Function]}
+  >
+    <span
+      className="pf-c-toggle-group__text"
+    />
+  </button>
+</div>
+`;
+
+exports[`light theme 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "variant": "light",
+    }
+  }
+>
+  <div
+    className="pf-c-toggle-group"
+  >
+    <ToggleGroupItem>
+      Test
+    </ToggleGroupItem>
+    <Divider
+      component="div"
+      isVertical={true}
+    />
+    <ToggleGroupItem>
+      Test
+    </ToggleGroupItem>
+  </div>
+</ContextProvider>
+`;
