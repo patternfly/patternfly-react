@@ -20,8 +20,7 @@ describe('Toggle Group Demo Test', () => {
       .click()
       .should('not.have.class', 'pf-m-selected');
 
-    cy.get('#disabled')
-      .should('be.disabled');
+    cy.get('#disabled').should('be.disabled');
 
     cy.get('#third')
       .click()
@@ -57,5 +56,4 @@ describe('Toggle Group Demo Test', () => {
       .click()
       .should('not.have.class', 'pf-m-selected');
   });
-
 });
