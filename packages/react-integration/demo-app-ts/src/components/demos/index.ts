@@ -139,4 +139,5 @@ export * from './TitleDemo/TitleDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './TopologyDemo/TopologyDemo';
+export * from './TreeViewDemo/TreeViewDemo';
 export * from './WizardDemo/WizardDemo';

@@ -56,4 +56,5 @@ export * from './TextInput';
 export * from './Title';
 export * from './Toolbar';
 export * from './Tooltip';
+export * from './TreeView';
 export * from './Wizard';

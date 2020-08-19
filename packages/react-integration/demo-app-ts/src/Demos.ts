@@ -707,6 +707,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TopologyDemo
   },
   {
+    id: 'treeview-demo',
+    name: 'Tree View Demo',
+    componentType: Examples.TreeViewDemo
+  },
+  {
     id: 'wizard-demo',
     name: 'Wizard Demo',
     componentType: Examples.WizardDemo
