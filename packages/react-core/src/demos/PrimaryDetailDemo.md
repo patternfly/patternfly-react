@@ -1,5 +1,5 @@
 ---
-id: Master detail
+id: Primary-detail
 section: demos
 ---
 
@@ -20,7 +20,7 @@ TimesCircleIcon
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 
-### Master detail full page
+### Primary-detail full page
 ```js isFullscreen
 import React from 'react';
 import {
@@ -95,7 +95,7 @@ import {
   TimesCircleIcon
 } from '@patternfly/react-icons';
 
-class MasterDetailFullPage extends React.Component {
+class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -606,7 +606,7 @@ class MasterDetailFullPage extends React.Component {
 }
 ```
 
-### Master detail content padding
+### Primary-detail content padding
 ```js isFullscreen
 import React from 'react';
 import {
@@ -681,7 +681,7 @@ import {
   TimesCircleIcon
 } from '@patternfly/react-icons';
 
-class MasterDetailContentPadding extends React.Component {
+class PrimaryDetailContentPadding extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1193,7 +1193,7 @@ class MasterDetailContentPadding extends React.Component {
 }
 ```
 
-### Master detail card view
+### Primary-detail card view
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1270,7 +1270,7 @@ import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
 
-class MasterDetailCardView extends React.Component {
+class PrimaryDetailCardView extends React.Component {
   constructor(props) {
     super(props);
 
@@ -1681,7 +1681,7 @@ class MasterDetailCardView extends React.Component {
 }
 ```
 
-### Master detail simple list in card
+### Primary-detail simple list in card
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1738,7 +1738,7 @@ import {
 
 import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
-class MasterDetailSimpleListInCard extends React.Component {
+class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1907,7 +1907,7 @@ class MasterDetailSimpleListInCard extends React.Component {
 }
 ```
 
-### Master detail data list in card
+### Primary-detail data list in card
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1967,7 +1967,7 @@ import {
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
-class MasterDetailDataListInCard extends React.Component {
+class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -2217,7 +2217,7 @@ class MasterDetailDataListInCard extends React.Component {
 }
 ```
 
-### Master detail inline modifier
+### Primary-detail inline modifier
 ```js isFullscreen
 import React from 'react';
 import {
@@ -2292,7 +2292,7 @@ import {
   TimesCircleIcon
 } from '@patternfly/react-icons';
 
-class MasterDetailInlineModifier extends React.Component {
+class PrimaryDetailInlineModifier extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
