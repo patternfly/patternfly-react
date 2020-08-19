@@ -240,24 +240,31 @@ class CheckboxTreeView extends React.Component {
       {
         name: 'ApplicationLauncher',
         id: 'AppLaunch',
+        checkProps: { 'aria-label': 'app-launcher-check' },
         children: [
           {
             name: 'Application 1',
             id: 'App1',
-            children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+            checkProps: { 'aria-label': 'app-1-check' },
+            children: [
+              { name: 'Settings', id: 'App1Settings', checkProps: { 'aria-label': 'app-1-settings-check' } },
+              { name: 'Current', id: 'App1Current', checkProps: { 'aria-label': 'app-1-current-check' } }
+            ]
           },
           {
             name: 'Application 2',
             id: 'App2',
+            checkProps: { 'aria-label': 'app-2-check' },
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'App2Settings', checkProps: { 'aria-label': 'app-2-settings-check' } },
               {
                 name: 'Loader',
                 id: 'App2Loader',
+                checkProps: { 'aria-label': 'app-loader-check' },
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                  { name: 'Loading App 1', id: 'LoadApp1', checkProps: { 'aria-label': 'app-1-load-check' } },
+                  { name: 'Loading App 2', id: 'LoadApp2', checkProps: { 'aria-label': 'app-2-load-check' } },
+                  { name: 'Loading App 3', id: 'LoadApp3', checkProps: { 'aria-label': 'app-3-load-check' } }
                 ]
               }
             ]
@@ -268,22 +275,36 @@ class CheckboxTreeView extends React.Component {
       {
         name: 'Cost Management',
         id: 'Cost',
+        checkProps: { 'aria-label': 'cost-check' },
         children: [
           {
             name: 'Application 3',
             id: 'App3',
-            children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+            checkProps: { 'aria-label': 'app-3-check' },
+            children: [
+              { name: 'Settings', id: 'App3Settings', checkProps: { 'aria-label': 'app-3-settings-check' } },
+              { name: 'Current', id: 'App3Current', checkProps: { 'aria-label': 'app-3-current-check' } }
+            ]
           }
         ]
       },
       {
         name: 'Sources',
         id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        checkProps: { 'aria-label': 'sources-check' },
+        children: [
+          {
+            name: 'Application 4',
+            id: 'App4',
+            checkProps: { 'aria-label': 'app-4-check' },
+            children: [{ name: 'Settings', id: 'App4Settings', checkProps: { 'aria-label': 'app-4-settings-check' } }]
+          }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
         id: 'Long',
+        checkProps: { 'aria-label': 'long-check' },
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
