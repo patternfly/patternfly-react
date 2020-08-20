@@ -56,9 +56,9 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   /** Trim text on left */
   isLeftTruncated?: boolean;
   /** Callback function when input is focused */
-  onFocus?: (event?: FocusEvent) => void;
+  onFocus?: (event?: any) => void;
   /** Callback function when input is blurred (focus leaves) */
-  onBlur?: (event?: FocusEvent) => void;
+  onBlur?: (event?: any) => void;
 }
 
 export class TextInputBase extends React.Component<TextInputProps> {
