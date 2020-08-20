@@ -275,78 +275,57 @@ export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
 export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 /**
+ * Calculate the width of the text
+ * Example:
+ * getTextWidth('my text', getComputedStyle(node).font)
+ *
+ * @param {string} text The text to calculate the width for
+ * @param {string} font The computed font of the text
+ */
+export const getTextWidth = (text: string, font?: string) => {
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+
+  context.font = font || getComputedStyle(document.body).font;
+
+  return context.measureText(text).width;
+};
+
+/**
+ * Get the inner dimensions of an element
+ *
+ * @param {HTMLElement} node HTML element to calculate the inner dimensions for
+ */
+export const innerDimensions = (node: HTMLElement) => {
+  const computedStyle = getComputedStyle(node);
+
+  let width = node.clientWidth; // width with padding
+  let height = node.clientHeight; // height with padding
+
+  height -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom)
+  width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight)
+  return { height, width };
+}
+
+/**
  * This function is a helper for truncating text content on the left, leaving the right side of the content in view
  *
- * @param {any} row The text content to be truncated
+ * @param {HTMLElement} node HTML element
+ * @param {string} value The original text value
  */
-
-export const trimLeft = (row: any) => {
-  const trimContents = (row: { scrollWidth: any; offsetWidth: any }, node: ChildNode) => {
-    while (row.scrollWidth > row.offsetWidth) {
-      const childNode = node.firstChild;
-      const parent = node;
-      let parentVal = (node as HTMLInputElement).value;
-      // console.log("node", node);
-      // console.log('node value', parentVal);
-      // console.log("document.TEXT_NODE should be 3: ", document.TEXT_NODE);
-      // console.log("childNode", childNode)
-
-      const truncate = (input: string) => (input.length > 5 ? `${input.substring(0, 5)}...` : input);
-
-      if (!childNode) {
-        if (parentVal) {
-          let value = '...' + parentVal;
-          let sub = row.scrollWidth - row.offsetWidth;
-          let frac = row.offsetWidth / row.scrollWidth;
-          if (row.scrollWidth > row.offsetWidth) {
-
-
-            console.log("frac: ", frac);
-            console.log('sub', sub)
-            console.log("value length", value.length);
-            console.log("percent", frac * 100)
-            console.log("offsetwidth", row.offsetWidth)
-            console.log("scrollwidth", row.scrollWidth)
-            let newLength = Math.ceil(value.length * frac);
-            console.log("newLEngth", newLength) 
-            value = '...' + value.substr(newLength);
-            parentVal = value;
-            console.log("parentVal", parentVal);
-            (node as HTMLInputElement).value = parentVal;
-            console.log((node as HTMLInputElement).value)
-          }
-            // console.log("parentVal", parentVal)
-            // console.log(row.scrollWidth, row.offsetWidth)
-            // if (value === '...') {
-            //   // node.removeChild(textNode);
-            //   return;
-            // }
-         }
-        return true;
-      }
-
-      if (childNode.nodeType === document.TEXT_NODE) {
-        trimText(row, node, childNode);
-      } else {
-        const empty = trimContents(row, childNode);
-        if (empty) {
-          node.removeChild(childNode);
-        }
-      }
+export const trimLeft = (node: HTMLElement, value: string) => {
+  const availableWidth = innerDimensions(node).width;
+  let newValue = value;
+  if (getTextWidth(value, getComputedStyle(node).font) > availableWidth) {
+    // we have text overflow, trim the text to the left and add ... in the front until it fits
+    while (getTextWidth(`...${newValue}`, getComputedStyle(node).font) > availableWidth) {
+      newValue = newValue.substring(1);
     }
-  };
-  const trimText = (row: { scrollWidth: number; offsetWidth: number }, node: ChildNode, textNode: ChildNode) => {
-    let value = '...' + textNode.nodeValue;
-    do {
-      value = '...' + value.substr(4);
-      textNode.nodeValue = value;
-      // console.log(row.offsetWidth, row.scrollWidth)
-      if (value === '...') {
-        node.removeChild(textNode);
-        return;
-      }
-    } while (row.scrollWidth > row.offsetWidth);
-  };
-
-  trimContents(row, row);
+    // replace text with our truncated text
+    if ((node as HTMLInputElement).value) {
+      (node as HTMLInputElement).value = `...${newValue}`;
+    } else {
+      node.innerText = `...${newValue}`;
+    }
+  }
 };

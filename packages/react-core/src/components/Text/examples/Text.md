@@ -6,19 +6,17 @@ propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
 ---
 
 import {
-TextContent,
-Text,
-TextVariants,
-TextList,
-TextListVariants,
-TextListItem,
-TextListItemVariants
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
 } from '@patternfly/react-core';
 
 ## Examples
-
 ### Headings
-
 ```js
 import React from 'react';
 import {
@@ -38,32 +36,10 @@ import {
   <Text component={TextVariants.h4}>Fourth level</Text>
   <Text component={TextVariants.h5}>Fifth level</Text>
   <Text component={TextVariants.h6}>Sixth level</Text>
-</TextContent>;
-```
-
-### Truncated on Left
-
-```js
-import React from 'react';
-import {
-  TextContent,
-  Text,
-  TextVariants,
-  TextList,
-  TextListVariants,
-  TextListItem,
-  TextListItemVariants
-} from '@patternfly/react-core';
-
-<TextContent isLeftTruncated style={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-  <Text component={TextVariants.h1}>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </Text>
-</TextContent>;
+</TextContent>
 ```
 
 ### Body
-
 ```js
 import React from 'react';
 import {
@@ -76,7 +52,7 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
-<TextContent isLeftTruncated>
+<TextContent>
   <Text component={TextVariants.p}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc
     varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,
@@ -94,13 +70,12 @@ import {
     turpis.
   </Text>
   <Text component={TextVariants.small}>Sometimes you need small text to display things like date created</Text>
-</TextContent>;
+</TextContent>
 ```
 
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
 ### Unordered list
-
 ```js
 import React from 'react';
 import {
@@ -126,11 +101,10 @@ import {
     </TextListItem>
     <TextListItem>Ut non enim metus.</TextListItem>
   </TextList>
-</TextContent>;
+</TextContent>
 ```
 
 ### Ordered list
-
 ```js
 import React from 'react';
 import {
@@ -153,11 +127,10 @@ import {
     <TextListItem>Quisque aliquam cursus urna, non bibendum massa viverra eget.</TextListItem>
     <TextListItem>Vivamus maximus ultricies pulvinar.</TextListItem>
   </TextList>
-</TextContent>;
+</TextContent>
 ```
 
 ### Data list
-
 ```js
 import React from 'react';
 import {
@@ -181,5 +154,5 @@ import {
     <TextListItem component={TextListItemVariants.dt}>CSS</TextListItem>
     <TextListItem component={TextListItemVariants.dd}>A technology to make HTML look better</TextListItem>
   </TextList>
-</TextContent>;
+</TextContent>
 ```

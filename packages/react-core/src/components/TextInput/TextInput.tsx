@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
-import { trimLeft } from '../../helpers/util';
+import { debounce, trimLeft } from '../../helpers/util';
 
 export enum TextInputTypes {
   text = 'text',
@@ -52,7 +52,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   /** Aria-label. The input requires an associated id or aria-label. */
   'aria-label'?: string;
   /** A reference object to attach to the input box. */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.RefObject<any>;
   /** Trim text on left */
   isLeftTruncated?: boolean;
 }
@@ -70,6 +70,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
     isLeftTruncated: false,
     onChange: (): any => undefined
   };
+  inputRef = React.createRef<HTMLInputElement>();
 
   constructor(props: TextInputProps) {
     super(props);
@@ -86,22 +87,32 @@ export class TextInputBase extends React.Component<TextInputProps> {
   };
 
   componentDidMount() {
-    // this.handleResize();
-    // window.addEventListener('resize', this.handleResize);
-
-    const test = document.getElementsByClassName('pf-c-form-control') as HTMLCollectionOf<HTMLInputElement>;
-    const rows = Array.from(test);
-    // console.log(rows);
-
-    for (const i of rows) {
-      // console.log(i.value);
-      if (this.props.isLeftTruncated) {
-        for (const j of rows) {
-          trimLeft(j);
-        }
-      }
+    if (this.props.isLeftTruncated) {
+      this.handleResize();
+      window.addEventListener('resize', debounce(this.handleResize, 250));
     }
   }
+
+  componentWillUnmount() {
+    if (this.props.isLeftTruncated) {
+      window.removeEventListener('resize', debounce(this.handleResize, 250));
+    }
+  }
+
+  handleResize = () => {
+    const inputRef = this.props.innerRef || this.inputRef;
+    if (inputRef && inputRef.current) {
+      trimLeft(inputRef.current, String(this.props.value));
+    }
+  };
+
+  restoreText = () => {
+    const inputRef = this.props.innerRef || this.inputRef;
+    // restore the value
+    (inputRef.current as HTMLInputElement).value = String(this.props.value);
+    // make sure we still see the rightmost value to preserve cursor click position
+    inputRef.current.scrollLeft = inputRef.current.scrollWidth;
+  };
 
   render() {
     const {
@@ -121,6 +132,8 @@ export class TextInputBase extends React.Component<TextInputProps> {
     return (
       <input
         {...props}
+        onFocus={(isLeftTruncated && this.restoreText) || null}
+        onBlur={(isLeftTruncated && this.handleResize) || null}
         className={
           isLeftTruncated
             ? css(styles.formControl)
@@ -138,12 +151,12 @@ export class TextInputBase extends React.Component<TextInputProps> {
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}
-        ref={innerRef}
+        ref={innerRef || this.inputRef}
       />
     );
   }
 }
 
 export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
-  <TextInputBase {...props} innerRef={ref} />
+  <TextInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
