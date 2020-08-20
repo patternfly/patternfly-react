@@ -74,6 +74,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             variant={ToggleGroupItemVariant.icon}
             selected={selected.third}
             onChange={this.handleItemClick}
+            aria-label="copy icon button"
           >
             <CopyIcon />
           </ToggleGroupItem>
@@ -83,6 +84,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             variant={ToggleGroupItemVariant.icon}
             selected={selected.fourth}
             onChange={this.handleItemClick}
+            aria-label="undo icon button"
           >
             <UndoIcon />
           </ToggleGroupItem>
@@ -92,6 +94,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             variant={ToggleGroupItemVariant.icon}
             selected={selected.fifth}
             onChange={this.handleItemClick}
+            aria-label="share square icon button"
           >
             <ShareSquareIcon />
           </ToggleGroupItem>

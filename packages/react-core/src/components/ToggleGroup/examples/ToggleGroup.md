@@ -85,13 +85,13 @@ class IconToggleGroupExample extends React.Component {
     const { selected } = this.state;
     return (
       <ToggleGroup>
-        <ToggleGroupItem key={3} buttonId="third" variant={ToggleGroupItemVariant.icon} selected={selected.third} onChange={this.handleItemClick}>
+        <ToggleGroupItem key={3} aria-label="copy icon button" buttonId="third" variant={ToggleGroupItemVariant.icon} selected={selected.third} onChange={this.handleItemClick}>
           <CopyIcon />
         </ToggleGroupItem>
-        <ToggleGroupItem key={4} buttonId="fourth" variant={ToggleGroupItemVariant.icon} selected={selected.fourth} onChange={this.handleItemClick}>
+        <ToggleGroupItem key={4} aria-label="undo icon button" buttonId="fourth" variant={ToggleGroupItemVariant.icon} selected={selected.fourth} onChange={this.handleItemClick}>
           <UndoIcon />
         </ToggleGroupItem>
-        <ToggleGroupItem key={5} buttonId="fifth"  variant={ToggleGroupItemVariant.icon} selected={selected.fifth} onChange={this.handleItemClick}>
+        <ToggleGroupItem key={5} aria-label="share square icon button" buttonId="fifth"  variant={ToggleGroupItemVariant.icon} selected={selected.fifth} onChange={this.handleItemClick}>
           <ShareSquareIcon />
         </ToggleGroupItem>
       </ToggleGroup>
