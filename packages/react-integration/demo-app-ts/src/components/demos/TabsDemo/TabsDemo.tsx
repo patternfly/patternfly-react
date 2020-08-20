@@ -64,6 +64,7 @@ export class TabDemo extends Component {
         </Button>
         <Tabs id="unconnectedChildren" activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab
+            className="custom-tab-1"
             id="demoTab1"
             eventKey={0}
             title={<TabTitleText>Tab item 1</TabTitleText>}
@@ -71,6 +72,7 @@ export class TabDemo extends Component {
             tabContentRef={this.contentRef1}
           />
           <Tab
+            className="custom-tab-2"
             id="demoTab2"
             eventKey={1}
             title={<TabTitleText>Tab item 2</TabTitleText>}

@@ -256,13 +256,14 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                   id: childId,
                   tabContentId,
                   isHidden = false,
+                  className: childClassName = '',
                   ...rest
                 } = child.props;
 
                 return isHidden ? null : (
                   <li
                     key={index}
-                    className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
+                    className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, childClassName)}
                   >
                     <TabButton
                       className={css(styles.tabsLink)}
