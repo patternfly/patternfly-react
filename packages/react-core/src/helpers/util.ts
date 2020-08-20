@@ -284,12 +284,12 @@ export const canUseDOM = !!(typeof window !== 'undefined' && window.document && 
  */
 export const getTextWidth = (text: string, node: HTMLElement) => {
   const computedStyle = getComputedStyle(node);
-  // Firefox returns the empty string for .font, so create the .font property manually
+  // Firefox returns the empty string for .font, so this function creates the .font property manually
   const getFontFromComputedStyle = () => {
     let computedFont = '';
     // Firefox uses percentages for font-stretch, but Canvas does not accept percentages
     // so convert to keywords, as listed at:
-    //   https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch
     const fontStretchLookupTable = {
       '50%': 'ultra-condensed',
       '62.5%': 'extra-condensed',
@@ -362,10 +362,7 @@ export const trimLeft = (node: HTMLElement, value: string) => {
     // we have text overflow, trim the text to the left and add ... in the front until it fits
     while (getTextWidth(`...${newValue}`, node) > availableWidth) {
       newValue = newValue.substring(1);
-      console.log(newValue);
     }
-    console.log(`new text width: ${getTextWidth(`...${newValue}`, node)}`);
-    console.log(`availableWidth: ${availableWidth}`);
     // replace text with our truncated text
     if ((node as HTMLInputElement).value) {
       (node as HTMLInputElement).value = `...${newValue}`;
