@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.29.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.29.4...demo-app-ts@4.29.5) (2020-08-20)
+
+
+### Bug Fixes
+
+* **tabs:** add classNames to tab ([#4578](https://github.com/patternfly/patternfly-react/issues/4578)) ([53a3977](https://github.com/patternfly/patternfly-react/commit/53a397707c059234800dbe6ac57a684f632839b2))
+
+
+
+
+
 ## [4.29.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.29.3...demo-app-ts@4.29.4) (2020-08-17)
 
 **Note:** Version bump only for package demo-app-ts
