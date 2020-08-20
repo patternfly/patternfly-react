@@ -18,7 +18,7 @@ export enum TextInputTypes {
   url = 'url'
 }
 
-export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'disabled' | 'ref'> {
+export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the TextInput. */
   className?: string;
   /** Flag to show if the input is disabled. */
@@ -55,6 +55,10 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   innerRef?: React.RefObject<any>;
   /** Trim text on left */
   isLeftTruncated?: boolean;
+  /** Callback function when input is focused */
+  onFocus?: (event?: FocusEvent) => void;
+  /** Callback function when input is blurred (focus leaves) */
+  onBlur?: (event?: FocusEvent) => void;
 }
 
 export class TextInputBase extends React.Component<TextInputProps> {
@@ -114,6 +118,22 @@ export class TextInputBase extends React.Component<TextInputProps> {
     inputRef.current.scrollLeft = inputRef.current.scrollWidth;
   };
 
+  onFocus = (event?: any) => {
+    const { isLeftTruncated, onFocus } = this.props;
+    if (isLeftTruncated) {
+      this.restoreText();
+    }
+    onFocus && onFocus(event);
+  };
+
+  onBlur = (event?: any) => {
+    const { isLeftTruncated, onBlur } = this.props;
+    if (isLeftTruncated) {
+      this.handleResize();
+    }
+    onBlur && onBlur(event);
+  };
+
   render() {
     const {
       innerRef,
@@ -127,13 +147,17 @@ export class TextInputBase extends React.Component<TextInputProps> {
       isRequired,
       isDisabled,
       isLeftTruncated,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onFocus,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onBlur,
       ...props
     } = this.props;
     return (
       <input
         {...props}
-        onFocus={(isLeftTruncated && this.restoreText) || null}
-        onBlur={(isLeftTruncated && this.handleResize) || null}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
         className={
           isLeftTruncated
             ? css(styles.formControl)
