@@ -39,7 +39,7 @@ export class LabelDemo extends Component {
         <Label color="blue" icon={<InfoCircleIcon />}>
           Blue icon
         </Label>
-        <Label color="blue" isTruncated icon={<InfoCircleIcon />}>
+        <Label color="blue" id="truncated-label" isTruncated icon={<InfoCircleIcon />}>
           Very very very very long label text that should be truncated
         </Label>
       </React.Fragment>
