@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.15.7...@patternfly/react-table@4.15.8) (2020-08-21)
+
+
+### Bug Fixes
+
+* **Table:** fixed table showing cell tooltips on non text cells ([#4689](https://github.com/patternfly/patternfly-react/issues/4689)) ([75c6bc7](https://github.com/patternfly/patternfly-react/commit/75c6bc7c454dc7876fc1c955d94c558f66b5213b)), closes [#4681](https://github.com/patternfly/patternfly-react/issues/4681)
+
+
+
+
+
 ## [4.15.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.15.6...@patternfly/react-table@4.15.7) (2020-08-21)
 
 **Note:** Version bump only for package @patternfly/react-table
