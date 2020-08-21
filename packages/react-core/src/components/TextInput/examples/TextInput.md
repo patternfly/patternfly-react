@@ -26,29 +26,65 @@ class SimpleTextInput extends React.Component {
     const { value } = this.state;
 
     return (
-      <TextInput isLeftTruncated value={value} type="text" onChange={this.handleTextInputChange} aria-label="text input example" />
+      <TextInput value={value} type="text" onChange={this.handleTextInputChange} aria-label="text input example" />
     );
   }
 }
 ```
 
 ### Disabled
+
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
-<TextInput isLeftTruncated style={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} type="text" value="disabled text input example disabled text input example disabled text input example disabled text input example disabled text input example disabled text input example THIS TEXT SHOULD BE VISIBLE" aria-label="disabled text input example" isDisabled />
+<TextInput
+  value="disabled text input example"
+  type="text"
+  onChange={this.handleTextInputChange}
+  aria-label="disabled text input example"
+  isDisabled
+/>;
+```
+
+### Truncated on Left
+
+```js
+import React from 'react';
+import { TextInput } from '@patternfly/react-core';
+
+class LeftTruncatedTextInput extends React.Component {
+
+constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    };
+    this.handleTextInputChange = value => {
+      this.setState({ value });
+    };
+  }
+
+  render() {
+    const { value } = this.state;
+    return (
+      <TextInput isLeftTruncated value={value} type="text" onChange={this.handleTextInputChange} aria-label="left-truncated text input example"  />
+    );
+  }
+}
 ```
 
 ### Read only
+
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
-<TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />
+<TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />;
 ```
 
 ### Invalid
+
 ```js
 import React from 'react';
 import { TextInput, ValidatedOptions } from '@patternfly/react-core';
@@ -82,6 +118,7 @@ class InvalidTextInput extends React.Component {
 ```
 
 ### Select text using ref
+
 ```js
 import React from 'react';
 import { TextInput, Button } from '@patternfly/react-core';
@@ -91,8 +128,14 @@ TextInputSelectAll = () => {
   const ref = React.useRef(null);
   return (
     <React.Fragment>
-      <TextInput ref={ref} value={value} onFocus={() => ref && ref.current && ref.current.select()} onChange={value => setValue(value)} aria-label="select-all" />
+      <TextInput
+        ref={ref}
+        value={value}
+        onFocus={() => ref && ref.current && ref.current.select()}
+        onChange={value => setValue(value)}
+        aria-label="select-all"
+      />
     </React.Fragment>
-  )
-}
+  );
+};
 ```

@@ -147,7 +147,6 @@ export class TextInputBase extends React.Component<TextInputProps> {
       isReadOnly,
       isRequired,
       isDisabled,
-      isLeftTruncated,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onFocus,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -159,16 +158,12 @@ export class TextInputBase extends React.Component<TextInputProps> {
         {...props}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
-        className={
-          isLeftTruncated
-            ? css(styles.formControl)
-            : css(
-                styles.formControl,
-                validated === ValidatedOptions.success && styles.modifiers.success,
-                validated === ValidatedOptions.warning && styles.modifiers.warning,
-                className
-              )
-        }
+        className={css(
+          styles.formControl,
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
+          className
+        )}
         onChange={this.handleChange}
         type={type}
         value={value}
