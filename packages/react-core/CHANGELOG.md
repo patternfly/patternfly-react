@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.40.6...@patternfly/react-core@4.41.0) (2020-08-21)
+
+
+### Features
+
+* **NotificationDrawer:** add formatHeaderText prop to support customize notification drawer header text ([#4684](https://github.com/patternfly/patternfly-react/issues/4684)) ([c11b4d0](https://github.com/patternfly/patternfly-react/commit/c11b4d0a9fd8e1d22cd60ccd89b54942a7026330))
+
+
+
+
+
 ## [4.40.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.40.5...@patternfly/react-core@4.40.6) (2020-08-21)
 
 **Note:** Version bump only for package @patternfly/react-core
