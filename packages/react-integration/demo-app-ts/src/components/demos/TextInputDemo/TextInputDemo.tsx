@@ -4,8 +4,11 @@ import React, { Component } from 'react';
 export class TextInputDemo extends Component {
   state = {
     value: '',
-    validatedTexInputValue: '',
-    validated: ValidatedOptions.default
+    validatedTextInputValue: '',
+    leftTruncatedTextInputValue:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    validated: ValidatedOptions.default,
+    isLeftTruncated: true
   };
 
   handleTextInputChange = (value: string) => {
@@ -20,7 +23,11 @@ export class TextInputDemo extends Component {
     } else {
       validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
     }
-    this.setState({ validatedTexInputValue: value, validated });
+    this.setState({ validatedTextInputValue: value, validated });
+  };
+
+  handleLeftTruncatedTextInputChange = (leftTruncatedTextInputValue: string) => {
+    this.setState({ leftTruncatedTextInputValue });
   };
 
   myTextInputProps: TextInputProps = {
@@ -44,6 +51,7 @@ export class TextInputDemo extends Component {
   render() {
     return (
       <React.Fragment>
+        <Text>Simple Text Input Example</Text>
         <TextInput id="text" onChange={this.myTextInputProps.onChange} />
         <TextInput
           id="text-disabled"
@@ -55,11 +63,18 @@ export class TextInputDemo extends Component {
           isReadOnly={this.myReadOnlyTextInputProps.isReadOnly}
           value={this.myReadOnlyTextInputProps.value}
         />
+        <Text>Text Input Truncated on Left Example</Text>
+        <TextInput
+          id="text-truncated-on-left"
+          isLeftTruncated={this.state.isLeftTruncated}
+          onChange={this.handleLeftTruncatedTextInputChange}
+          value={this.state.leftTruncatedTextInputValue}
+        />
         <Text>Validated text input </Text>
         <TextInput
           id="text-validated"
           onChange={this.handleValidatedTextInputChange}
-          value={this.state.validatedTexInputValue}
+          value={this.state.validatedTextInputValue}
           validated={this.state.validated}
         />
       </React.Fragment>
