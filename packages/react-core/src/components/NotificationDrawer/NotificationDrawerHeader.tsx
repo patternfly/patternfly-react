@@ -14,8 +14,10 @@ export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivEl
   count?: number;
   /**  Notification drawer heading title */
   title?: string;
+  /**  Notification drawer heading custom text following with count */
+  unreadText?: string;
   /**  Notification drawer heading custom text */
-  formatHeaderText?: string;
+  customText?: string;
 }
 
 export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawerHeaderProps> = ({
@@ -23,17 +25,20 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
   className = '',
   count,
   title = 'Notifications',
-  formatHeaderText,
+  unreadText = 'unread',
+  customText,
   ...props
 }: NotificationDrawerHeaderProps) => (
   <div {...props} className={css(styles.notificationDrawerHeader, className)}>
     <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
       {title}
     </Text>
-    {formatHeaderText === undefined ? (
-      count !== undefined && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} unread`}</span>
+    {customText === undefined ? (
+      count !== undefined && (
+        <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unreadText}`}</span>
+      )
     ) : (
-      <span className={css(styles.notificationDrawerHeaderStatus)}>{formatHeaderText}</span>
+      <span className={css(styles.notificationDrawerHeaderStatus)}>{customText}</span>
     )}
     {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
   </div>

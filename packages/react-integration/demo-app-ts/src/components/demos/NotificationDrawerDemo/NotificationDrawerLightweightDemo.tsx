@@ -74,7 +74,7 @@ export class LightweightNotificationDrawerDemo extends React.Component<
 
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader formatHeaderText="2 unread alerts" />
+        <NotificationDrawerHeader customText="2 unread alerts" />
         <NotificationDrawerBody>
           <NotificationDrawerGroupList>
             <NotificationDrawerGroup
