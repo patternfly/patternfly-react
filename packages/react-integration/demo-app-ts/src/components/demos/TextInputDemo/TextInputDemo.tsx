@@ -8,7 +8,6 @@ export class TextInputDemo extends Component {
     leftTruncatedTextInputValue:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     validated: ValidatedOptions.default,
-    isLeftTruncated: true
   };
 
   handleTextInputChange = (value: string) => {
@@ -66,7 +65,7 @@ export class TextInputDemo extends Component {
         <Text>Text Input Truncated on Left Example</Text>
         <TextInput
           id="text-truncated-on-left"
-          isLeftTruncated={this.state.isLeftTruncated}
+          isLeftTruncated
           onChange={this.handleLeftTruncatedTextInputChange}
           value={this.state.leftTruncatedTextInputValue}
         />
