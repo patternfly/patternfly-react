@@ -86,6 +86,7 @@ exports[`light theme 1`] = `
     <Divider
       component="div"
       isVertical={true}
+      key="0 divider"
     />
     <ToggleGroupItem>
       Test
