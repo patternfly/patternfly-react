@@ -58,3 +58,8 @@ test('label with additional class name and props', () => {
   );
   expect(view).toMatchSnapshot();
 });
+
+test('label with truncation', () => {
+  const view = shallow(<Label isTruncated>Something very very very very very long that should be truncated</Label>);
+  expect(view).toMatchSnapshot();
+});

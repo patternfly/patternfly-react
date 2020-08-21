@@ -291,3 +291,19 @@ exports[`label with red color 2`] = `
   </span>
 </span>
 `;
+
+exports[`label with truncation 1`] = `
+<span
+  className="pf-c-label"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    <span
+      className="pf-c-label__text"
+    >
+      Something very very very very very long that should be truncated
+    </span>
+  </span>
+</span>
+`;
