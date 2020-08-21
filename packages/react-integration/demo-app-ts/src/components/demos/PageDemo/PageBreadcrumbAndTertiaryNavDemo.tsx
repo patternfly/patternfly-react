@@ -63,7 +63,7 @@ export class PageBreadcrumbAndTertiaryNavDemo extends React.Component {
         id="page-breadcrumb-and-tertiary-nav-demo"
         header={Header}
         breadcrumb={PageBreadcrumb}
-        tertiarynav={PageNav}
+        tertiaryNav={PageNav}
         isManagedSidebar
       >
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
