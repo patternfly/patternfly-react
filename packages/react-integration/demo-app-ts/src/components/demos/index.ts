@@ -89,6 +89,7 @@ export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './OuiaDemo/OuiaDemo';
 export * from './OverflowMenuDemo/OverflowMenuDemo';
 export * from './PageDemo/PageDemo';
+export * from './PageDemo/PageBreadcrumbAndTertiaryNavDemo';
 export * from './PageDemo/PageManagedSidebarDemo';
 export * from './PageDemo/PageManagedSidebarClosedDemo';
 export * from './PaginationDemo/PaginationDemo';

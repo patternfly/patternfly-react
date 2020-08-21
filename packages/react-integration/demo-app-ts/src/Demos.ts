@@ -452,6 +452,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PageDemo
   },
   {
+    id: 'page-breadcrumb-and-tertiary-nav-demo',
+    name: 'Page Breadcrumb and Tertiary Nav Demo',
+    componentType: Examples.PageBreadcrumbAndTertiaryNavDemo
+  },
+  {
     id: 'page-managed-sidebar-demo',
     name: 'Page Managed Sidebar Demo',
     componentType: Examples.PageManagedSidebarDemo
