@@ -35,6 +35,20 @@ exports[`Check page section with fill example against snapshot 1`] = `
 </PageSection>
 `;
 
+exports[`Check page section with limited width 1`] = `
+<PageSection
+  isWidthLimited={true}
+>
+  <section
+    className="pf-c-page__main-section pf-m-limit-width"
+  >
+    <div
+      className="pf-c-page__main-body"
+    />
+  </section>
+</PageSection>
+`;
+
 exports[`Check page section with no fill example against snapshot 1`] = `
 <PageSection
   isFilled={false}
