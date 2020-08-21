@@ -20,7 +20,7 @@ TimesCircleIcon
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 
-### Primary-detail full page
+### Primary--detail full page
 ```js isFullscreen
 import React from 'react';
 import {
@@ -606,7 +606,7 @@ class PrimaryDetailFullPage extends React.Component {
 }
 ```
 
-### Primary-detail content padding
+### Primary--detail content padding
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1193,7 +1193,7 @@ class PrimaryDetailContentPadding extends React.Component {
 }
 ```
 
-### Primary-detail card view
+### Primary--detail card view
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1681,7 +1681,7 @@ class PrimaryDetailCardView extends React.Component {
 }
 ```
 
-### Primary-detail simple list in card
+### Primary--detail simple list in card
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1907,7 +1907,7 @@ class PrimaryDetailSimpleListInCard extends React.Component {
 }
 ```
 
-### Primary-detail data list in card
+### Primary--detail data list in card
 ```js isFullscreen
 import React from 'react';
 import {
@@ -2217,7 +2217,7 @@ class PrimaryDetailDataListInCard extends React.Component {
 }
 ```
 
-### Primary-detail inline modifier
+### Primary--detail inline modifier
 ```js isFullscreen
 import React from 'react';
 import {
