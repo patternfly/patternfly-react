@@ -31,6 +31,8 @@ export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'ti
   description?: string | React.ReactNode;
   /** Footer for the tile */
   footer?: string | React.ReactNode;
+  /** Body content that isn't truncated */
+  children?: React.ReactNode;
 }
 
 export class CatalogTile extends React.Component<CatalogTileProps> {
@@ -48,7 +50,8 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     badges: [] as React.ReactNode[],
     vendor: null as string | React.ReactNode,
     description: null as string | React.ReactNode,
-    footer: null as string | React.ReactNode
+    footer: null as string | React.ReactNode,
+    children: null as React.ReactNode
   };
 
   private handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
@@ -94,6 +97,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       footer,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       ref,
+      children,
       ...props
     } = this.props;
 
@@ -118,11 +122,14 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
           <div className="catalog-tile-pf-title">{title}</div>
           {vendor && <div className="catalog-tile-pf-subtitle">{vendor}</div>}
         </CardTitle>
-        {description && (
+        {(description || children) && (
           <CardBody className="catalog-tile-pf-body">
-            <div className="catalog-tile-pf-description">
-              <span className={css({ 'has-footer': footer })}>{description}</span>
-            </div>
+            {description && (
+              <div className="catalog-tile-pf-description">
+                <span className={css({ 'has-footer': footer })}>{description}</span>
+              </div>
+            )}
+            {children}
           </CardBody>
         )}
         {footer && <CardFooter className="catalog-tile-pf-footer">{footer}</CardFooter>}

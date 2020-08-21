@@ -21,7 +21,7 @@ This package is currently an extension. Extension components do not undergo the 
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './examples/pfLogo2.svg'
+import { pfLogo2 } from './pfLogo2.svg'
 
 Basic = () => (
   <React.Fragment>
@@ -52,7 +52,7 @@ Basic = () => (
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './examples/pfLogo2.svg'
+import { pfLogo2 } from './pfLogo2.svg'
 
 SimpleFooter = () => (
   <React.Fragment>
@@ -87,7 +87,7 @@ SimpleFooter = () => (
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './examples/pfLogo2.svg'
+import { pfLogo2 } from './pfLogo2.svg'
 
 Link = () => (
   <React.Fragment>
@@ -118,7 +118,7 @@ Link = () => (
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './examples/pfLogo2.svg'
+import { pfLogo2 } from './pfLogo2.svg'
 
 MultiIcon = () => (
   <React.Fragment>
@@ -150,7 +150,7 @@ MultiIcon = () => (
 ```js
 import React from 'react';
 import { CatalogTile } from '@patternfly/react-catalog-view-extension';
-import { pfLogo2 } from './examples/pfLogo2.svg'
+import { pfLogo2 } from './pfLogo2.svg'
 
 TextBadge = () => (
   <React.Fragment>
@@ -169,6 +169,38 @@ TextBadge = () => (
         'This has changed from PatternFly 3.'
       }
     />
+  </React.Fragment>
+);
+```
+
+### With children instead of description
+```js
+import React from 'react';
+import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CogIcon } from '@patternfly/react-icons';
+import { pfLogo2 } from './pfLogo2.svg'
+
+Children = () => (
+  <React.Fragment>
+    <CatalogTile
+      id="simple"
+      featured
+      iconImg={pfLogo2}
+      iconAlt="PatternFly logo"
+      badges={[
+        <CatalogTileBadge title="Certified">
+          <CogIcon />
+        </CatalogTileBadge>
+      ]}
+      title="Patternfly-React"
+      vendor="provided by Red Hat"
+    >
+      This is a very, very long stetch of child text that should be not be truncated
+      and illustrates how Flyers can add longer content to PatternFly 4 catalog tiles
+      using the children prop. Cards usually truncate descriptions at three lines.
+      Cards with a footer are truncated after one line. This has changed from PatternFly 3.
+      Children can be of any length.
+    </CatalogTile>
   </React.Fragment>
 );
 ```
