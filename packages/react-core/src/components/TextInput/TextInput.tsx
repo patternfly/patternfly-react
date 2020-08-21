@@ -141,16 +141,16 @@ export class TextInputBase extends React.Component<TextInputProps> {
       className,
       type,
       value,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onChange,
       validated,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onChange,
+      onFocus,
+      onBlur,
+      isLeftTruncated,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
       isRequired,
       isDisabled,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onFocus,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onBlur,
       ...props
     } = this.props;
     return (
