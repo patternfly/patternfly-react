@@ -52,4 +52,9 @@ describe('Tab Demo Test', () => {
   it('Verify filled tabs', () => {
     cy.get('#filledTabs.pf-m-fill').should('exist');
   });
+
+  it('Verify className in tabs', () => {
+    cy.get('.custom-tab-1').should('have.length', 1);
+    cy.get('.custom-tab-2').should('have.length', 1);
+  });
 });

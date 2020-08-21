@@ -1,5 +1,5 @@
 ---
-title: 'Description List'
+title: 'Description list'
 section: components
 cssPrefix: 'pf-c-description-list'
 typescript: true
@@ -458,7 +458,7 @@ HorizontalAutoColumnsDescriptionList = (
 );
 ```
 
-## Inline Grid
+## Inline grid
 
 ```js title=Default-inline-grid
 import React from 'react';
