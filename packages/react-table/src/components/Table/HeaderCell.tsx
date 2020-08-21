@@ -37,7 +37,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
 
   const [tooltip, setTooltip] = React.useState('');
   const onMouseEnter = (event: any) => {
-    if (event.target.offsetWidth < event.target.scrollWidth) {
+    if (event.target.offsetWidth < event.target.scrollWidth && typeof children === 'string') {
       setTooltip(tooltipProp || event.target.innerHTML);
     } else {
       setTooltip('');

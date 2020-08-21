@@ -58,7 +58,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
 
   const [tooltip, setTooltip] = React.useState('');
   const onMouseEnter = (event: any) => {
-    if (event.target.offsetWidth < event.target.scrollWidth && event.target.children.length === 0) {
+    if (event.target.offsetWidth < event.target.scrollWidth && typeof children === 'string') {
       setTooltip(tooltipProp || event.target.innerHTML);
     } else {
       setTooltip('');
