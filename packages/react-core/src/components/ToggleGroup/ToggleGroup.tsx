@@ -3,7 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 import ToggleGroupContext from './ToggleGroupContext';
 import { Divider } from '../Divider';
-import { GenerateId } from '../../helpers';
 
 export enum ToggleGroupVariant {
   default = 'default',
@@ -22,8 +21,6 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
 export class ToggleGroup extends React.Component<ToggleGroupProps> {
   static displayName = 'ToggleGroup';
   static defaultProps = {
-    className: '',
-    children: '',
     variant: ToggleGroupVariant.default
   };
 

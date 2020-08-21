@@ -3,6 +3,7 @@ id: Toggle group
 section: components
 cssPrefix: pf-c-toggle-group
 propComponents: ['ToggleGroup', 'ToggleGroupItem']
+beta: true
 ---
 import './toggleGroup.css';
 
@@ -10,7 +11,7 @@ import { ToggleGroup, ToggleGroupItem, ToggleGroupIconVariant } from '@patternfl
 import { UndoIcon, CopyIcon, ShareSquareIcon } from '@patternfly/react-icons'; 
 
 ## Examples
-### Default as checkbox group
+### Default with multiple selectable
 ```js
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
@@ -54,7 +55,7 @@ class DefaultToggleGroupExample extends React.Component {
   }
 }
 ```
-### Default as radio group
+### Default with single selectable
 ```js
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';

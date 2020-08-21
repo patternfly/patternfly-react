@@ -28,8 +28,8 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
 }
 
 export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
-  children = '',
-  className = '',
+  children,
+  className,
   variant = 'text',
   isDisabled = false,
   selected = false,
@@ -63,10 +63,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
         {...(buttonId && { id: buttonId })}
       >
         <span
-          className={css(
-            variant === 'icon' && 'pf-c-toggle-group__icon',
-            variant === 'text' && 'pf-c-toggle-group__text'
-          )}
+          className={css(variant === 'icon' && styles.toggleGroupIcon, variant === 'text' && styles.toggleGroupText)}
         >
           {children}
         </span>
