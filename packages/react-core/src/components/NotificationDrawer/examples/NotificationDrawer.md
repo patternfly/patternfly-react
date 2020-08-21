@@ -2,14 +2,27 @@
 id: Notification drawer
 section: components
 cssPrefix: pf-c-notification-drawer
-propComponents: ['NotificationDrawer', 'NotificationDrawerBody', 'NotificationDrawerHeader', 'NotificationDrawerGroup', 'NotificationDrawerGroupList', 'NotificationDrawerList', 'NotificationDrawerListItem', 'NotificationDrawerListItemBody', 'NotificationDrawerListItemHeader']
+propComponents:
+  [
+    'NotificationDrawer',
+    'NotificationDrawerBody',
+    'NotificationDrawerHeader',
+    'NotificationDrawerGroup',
+    'NotificationDrawerGroupList',
+    'NotificationDrawerList',
+    'NotificationDrawerListItem',
+    'NotificationDrawerListItemBody',
+    'NotificationDrawerListItemHeader',
+  ]
 beta: true
 ---
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import {
@@ -193,6 +206,7 @@ class BasicNotificationDrawer extends React.Component {
 ```
 
 ### Groups
+
 ```js
 import React from 'react';
 import {
@@ -511,6 +525,7 @@ class GroupNotificationDrawer extends React.Component {
 ```
 
 ### Lightweight
+
 ```js
 import React from 'react';
 import {
@@ -573,7 +588,7 @@ class LightweightNotificationDrawerDemo extends React.Component {
 
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader />
+        <NotificationDrawerHeader customText="2 unread alerts" />
         <NotificationDrawerBody>
           <NotificationDrawerGroupList>
             <NotificationDrawerGroup
