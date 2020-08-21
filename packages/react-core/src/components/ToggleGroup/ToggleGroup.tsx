@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 import ToggleGroupContext from './ToggleGroupContext';
 import { Divider } from '../Divider';
+import { GenerateId } from '../../helpers';
 
 export enum ToggleGroupVariant {
   default = 'default',
@@ -33,8 +34,9 @@ export class ToggleGroup extends React.Component<ToggleGroupProps> {
     const length = React.Children.count(children);
     React.Children.forEach(children, (child, index) => {
       toggleGroupItemList.push(child);
+      const dividerKey = `${index} divider`;
       if (index !== length - 1) {
-        toggleGroupItemList.push(<Divider isVertical component="div" />);
+        toggleGroupItemList.push(<Divider key={dividerKey} isVertical component="div" />);
       }
     });
 
