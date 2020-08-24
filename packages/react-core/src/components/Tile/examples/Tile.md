@@ -11,6 +11,8 @@ import { PlusIcon, BellIcon } from '@patternfly/react-icons';
 
 ## Examples
 
+Keyboard interaction patterns and a11y is implemented in the Tile demos, located in the [Demo section](/documentation/react/demos/tiledemo).
+
 ### Tile
 
 ```js
