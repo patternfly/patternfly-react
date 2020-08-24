@@ -151,10 +151,8 @@ exports[`tree view renders active successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={true}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="AppLaunch"
           itemData={
             Object {
@@ -411,10 +409,8 @@ exports[`tree view renders active successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App1"
                     itemData={
                       Object {
@@ -560,10 +556,8 @@ exports[`tree view renders active successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App2"
                     itemData={
                       Object {
@@ -728,10 +722,8 @@ exports[`tree view renders active successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Cost"
           itemData={
             Object {
@@ -832,10 +824,8 @@ exports[`tree view renders active successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Sources"
           itemData={
             Object {
@@ -932,10 +922,8 @@ exports[`tree view renders active successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Long"
           itemData={
             Object {
@@ -1163,10 +1151,8 @@ exports[`tree view renders badges successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={true}
-          expandedIcon={null}
           hasBadge={true}
           hasCheck={false}
-          icon={null}
           id="AppLaunch"
           itemData={
             Object {
@@ -1436,10 +1422,8 @@ exports[`tree view renders badges successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={true}
                     hasCheck={false}
-                    icon={null}
                     id="App1"
                     itemData={
                       Object {
@@ -1598,10 +1582,8 @@ exports[`tree view renders badges successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={true}
                     hasCheck={false}
-                    icon={null}
                     id="App2"
                     itemData={
                       Object {
@@ -1779,10 +1761,8 @@ exports[`tree view renders badges successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={true}
           hasCheck={false}
-          icon={null}
           id="Cost"
           itemData={
             Object {
@@ -1896,10 +1876,8 @@ exports[`tree view renders badges successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={true}
           hasCheck={false}
-          icon={null}
           id="Sources"
           itemData={
             Object {
@@ -2009,10 +1987,8 @@ exports[`tree view renders badges successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={true}
           hasCheck={false}
-          icon={null}
           id="Long"
           itemData={
             Object {
@@ -2216,10 +2192,8 @@ exports[`tree view renders basic successfully 1`] = `
         <TreeViewListItem
           compareItems={[Function]}
           defaultExpanded={true}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="AppLaunch"
           itemData={
             Object {
@@ -2440,10 +2414,8 @@ exports[`tree view renders basic successfully 1`] = `
                   <TreeViewListItem
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App1"
                     itemData={
                       Object {
@@ -2571,10 +2543,8 @@ exports[`tree view renders basic successfully 1`] = `
                   <TreeViewListItem
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App2"
                     itemData={
                       Object {
@@ -2721,10 +2691,8 @@ exports[`tree view renders basic successfully 1`] = `
         <TreeViewListItem
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Cost"
           itemData={
             Object {
@@ -2807,10 +2775,8 @@ exports[`tree view renders basic successfully 1`] = `
         <TreeViewListItem
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Sources"
           itemData={
             Object {
@@ -2889,10 +2855,8 @@ exports[`tree view renders basic successfully 1`] = `
         <TreeViewListItem
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Long"
           itemData={
             Object {
@@ -3120,10 +3084,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={true}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={true}
-          icon={null}
           id="AppLaunch"
           itemData={
             Object {
@@ -3389,10 +3351,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={true}
-                    icon={null}
                     id="App1"
                     itemData={
                       Object {
@@ -3547,10 +3507,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={true}
-                    icon={null}
                     id="App2"
                     itemData={
                       Object {
@@ -3724,10 +3682,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={true}
-          icon={null}
           id="Cost"
           itemData={
             Object {
@@ -3837,10 +3793,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={true}
-          icon={null}
           id="Sources"
           itemData={
             Object {
@@ -3946,10 +3900,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={true}
-          icon={null}
           id="Long"
           itemData={
             Object {
@@ -5827,10 +5779,8 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App1"
                     itemData={
                       Object {
@@ -5989,10 +5939,8 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={true}
                     hasCheck={false}
-                    icon={null}
                     id="App2"
                     itemData={
                       Object {
@@ -6192,10 +6140,8 @@ exports[`tree view renders individual flag options successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={true}
           hasCheck={false}
-          icon={null}
           id="Cost"
           itemData={
             Object {
@@ -6345,10 +6291,8 @@ exports[`tree view renders individual flag options successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Sources"
           itemData={
             Object {
@@ -6445,10 +6389,8 @@ exports[`tree view renders individual flag options successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Long"
           itemData={
             Object {
@@ -6715,10 +6657,8 @@ exports[`tree view renders search successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={true}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="AppLaunch"
           itemData={
             Object {
@@ -6975,10 +6915,8 @@ exports[`tree view renders search successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App1"
                     itemData={
                       Object {
@@ -7124,10 +7062,8 @@ exports[`tree view renders search successfully 1`] = `
                     }
                     compareItems={[Function]}
                     defaultExpanded={false}
-                    expandedIcon={null}
                     hasBadge={false}
                     hasCheck={false}
-                    icon={null}
                     id="App2"
                     itemData={
                       Object {
@@ -7292,10 +7228,8 @@ exports[`tree view renders search successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Cost"
           itemData={
             Object {
@@ -7396,10 +7330,8 @@ exports[`tree view renders search successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Sources"
           itemData={
             Object {
@@ -7496,10 +7428,8 @@ exports[`tree view renders search successfully 1`] = `
           }
           compareItems={[Function]}
           defaultExpanded={false}
-          expandedIcon={null}
           hasBadge={false}
           hasCheck={false}
-          icon={null}
           id="Long"
           itemData={
             Object {

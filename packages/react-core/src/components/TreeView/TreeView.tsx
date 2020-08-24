@@ -85,18 +85,18 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
         key={item.name.toString()}
         name={item.name}
         id={item.id}
-        defaultExpanded={defaultAllExpanded || item.defaultExpanded || false}
+        defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
         onSelect={onSelect}
         onCheck={onCheck}
-        hasCheck={hasChecks || item.hasCheck || false}
+        hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
         checkProps={item.checkProps}
-        hasBadge={hasBadges || item.hasBadge || false}
+        hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
         badgeProps={item.checkProps}
         activeItems={activeItems}
         parentItem={parentItem}
         itemData={item}
-        icon={icon || item.icon || null}
-        expandedIcon={expandedIcon || item.expandedIcon || null}
+        icon={item.icon !== undefined ? item.icon : icon}
+        expandedIcon={item.expandedIcon !== undefined ? item.expandedIcon : expandedIcon}
         action={item.action}
         actionProps={item.actionProps}
         compareItems={compareItems}
