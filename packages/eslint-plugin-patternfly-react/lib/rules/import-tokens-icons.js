@@ -1,14 +1,16 @@
+/**
+ * @param specifier module specifier
+ * @param moduleName module name (@patternfly/react-tokens or @patternfly/react-icons)
+ * @returns string of non-treeshaken import
+ */
 function makeImport(specifier, moduleName) {
   let res = `import ${specifier.local.name} from '`;
   res += moduleName.replace(/\/dist\/(js|esm)/, '');
   res += '/dist/js';
   if (moduleName.includes('icon')) {
     res += '/icons/';
-    res += specifier.imported.name
-      .replace(/[A-Z]/g, match => `-${match.toLowerCase()}`)
-      .replace(/^-/, '');
-  }
-  else {
+    res += specifier.imported.name.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`).replace(/^-/, '');
+  } else {
     res += `/${specifier.imported.name}`;
   }
   res += "';";

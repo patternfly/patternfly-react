@@ -33,10 +33,10 @@ import {
   validateCellEdits,
   applyCellEdits,
   EditableTextCell,
-  EditableSelectInputCell
+  EditableSelectInputCell,
+  EmptyStateIcon
 } from '@patternfly/react-table';
 
-import EmptyStateIcon from '@patternfly/react-icons/dist/js/icons/empty-state-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
