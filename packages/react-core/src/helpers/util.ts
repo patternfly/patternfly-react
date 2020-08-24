@@ -183,7 +183,7 @@ export function keyHandler(
     // eslint-disable-next-line react/no-find-dom-node
     const element = ReactDOM.findDOMNode(refsCollection[nextIndex]) as HTMLElement;
     element.focus();
-  } else {
+  } else if (position !== 'tab') {
     if (isMultiDimensional) {
       refsCollection[nextIndex][nextInnerIndex].focus();
     } else {

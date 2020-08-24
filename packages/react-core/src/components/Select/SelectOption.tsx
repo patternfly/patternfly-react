@@ -95,7 +95,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
 
   onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any) => {
     if (event.key === KeyTypes.Tab) {
-      return;
+      this.props.keyHandler(this.props.index, innerIndex, 'tab');
     }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
