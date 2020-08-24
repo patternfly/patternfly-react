@@ -116,6 +116,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
               <input
                 type="checkbox"
                 onChange={(evt: React.ChangeEvent) => onCheck && onCheck(evt, itemData, parentItem)}
+                onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
                 {...checkProps}
               />
             </span>

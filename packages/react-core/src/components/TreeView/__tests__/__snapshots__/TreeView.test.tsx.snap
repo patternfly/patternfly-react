@@ -3192,6 +3192,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <input
                     checked={false}
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                 </span>
@@ -3474,6 +3475,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                             <input
                               checked={false}
                               onChange={[Function]}
+                              onClick={[Function]}
                               type="checkbox"
                             />
                           </span>
@@ -3644,6 +3646,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                             <input
                               checked={false}
                               onChange={[Function]}
+                              onClick={[Function]}
                               type="checkbox"
                             />
                           </span>
@@ -3760,6 +3763,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <input
                     checked={false}
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                 </span>
@@ -3867,6 +3871,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <input
                     checked={false}
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                 </span>
@@ -3968,6 +3973,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <input
                     checked={false}
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                 </span>
@@ -5576,6 +5582,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   <input
                     checked={false}
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                 </span>
