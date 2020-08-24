@@ -10,4 +10,10 @@ describe('Label Demo Test', () => {
       .first()
       .contains('Grey');
   });
+
+  it('Verify isTruncated label', () => {
+    cy.get('#truncated-label .pf-c-label__content span')
+      .last()
+      .should('have.class', 'pf-c-label__text');
+  });
 });
