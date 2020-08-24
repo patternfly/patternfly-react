@@ -53,7 +53,9 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   onSelect,
   onCheck,
   hasCheck = false,
-  checkProps,
+  checkProps = {
+    checked: false
+  },
   hasBadge = false,
   badgeProps = { isRead: true },
   activeItems = [],
