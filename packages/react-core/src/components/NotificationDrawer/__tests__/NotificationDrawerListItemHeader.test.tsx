@@ -27,3 +27,8 @@ test('list item header with variant applied ', () => {
   const view = shallow(<NotificationDrawerListItemHeader title="Pod quit unexpectedly" variant="success" />);
   expect(view).toMatchSnapshot();
 });
+
+test('list item header with truncateTitle', () => {
+  const view = shallow(<NotificationDrawerListItemHeader truncateTitle={1} title="Pod quit unexpectedly" variant="success" />);
+  expect(view.find('h2').prop('className')).toContain('pf-m-truncate');
+});

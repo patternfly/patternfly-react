@@ -9,6 +9,8 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
+import maxLines from '@patternfly/react-tokens/dist/js/c_notification_drawer__list_item_header_title_max_lines';
+
 export const variantIcons = {
   success: CheckCircleIcon,
   danger: ExclamationCircleIcon,
@@ -30,6 +32,8 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
   title: string;
   /**  Variant indicates the severity level */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
+  /** Truncate title to number of lines */
+  truncateTitle?: number;
 }
 
 export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
@@ -39,15 +43,26 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   srTitle,
   title,
   variant = 'default',
+  truncateTitle = 0,
   ...props
 }: NotificationDrawerListItemHeaderProps) => {
+  const titleRef = React.useRef(null);
+  React.useEffect(() => {
+    if (!titleRef.current || !truncateTitle) {
+      return;
+    }
+    titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
+  }, [titleRef, truncateTitle]);
   const Icon = variantIcons[variant];
 
   return (
     <React.Fragment>
       <div {...props} className={css(styles.notificationDrawerListItemHeader, className)}>
         <span className={css(styles.notificationDrawerListItemHeaderIcon)}>{icon ? icon : <Icon />}</span>
-        <h2 className={css(styles.notificationDrawerListItemHeaderTitle)}>
+        <h2
+          ref={titleRef}
+          className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
+        >
           {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
           {title}
         </h2>

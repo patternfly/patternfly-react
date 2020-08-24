@@ -11,7 +11,9 @@ exports[`NotificationDrawerGroup should match snapshot (auto-generated) 1`] = `
       onClick={[Function]}
       onKeyDown={[Function]}
     >
-      <div>
+      <div
+        className="pf-c-notification-drawer__group-toggle-title"
+      >
         string
       </div>
       <div
