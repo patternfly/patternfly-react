@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.44.1...@patternfly/react-core@4.45.0) (2020-08-24)
+
+
+### Features
+
+* **alert,notificationdrawer:** add support to truncate title ([#4399](https://github.com/patternfly/patternfly-react/issues/4399)) ([1506bb8](https://github.com/patternfly/patternfly-react/commit/1506bb821921bf17f6191f0ce2a0fc7be975bdd2))
+
+
+
+
+
 ## [4.44.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.44.0...@patternfly/react-core@4.44.1) (2020-08-24)
 
 
