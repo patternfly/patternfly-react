@@ -870,7 +870,7 @@ class PageLayoutHorizontalNav extends React.Component {
           User management
         </DropdownItem>
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup> 
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
