@@ -118,6 +118,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   private menuComponentRef = React.createRef<HTMLElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private clearRef = React.createRef<HTMLButtonElement>();
+  private inputRef = React.createRef<HTMLInputElement>();
   private refCollection: HTMLElement[][] = [[]];
 
   static defaultProps: PickOptional<SelectProps> = {
@@ -344,8 +345,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
   };
 
-  handleArrowKeys = (index: number, innerIndex: number, position: string) => {
+  handleMenuKeys = (index: number, innerIndex: number, position: string) => {
     keyHandler(index, innerIndex, position, this.refCollection, this.refCollection);
+    if (this.props.variant === SelectVariant.typeahead || this.props.variant === SelectVariant.typeaheadMulti) {
+      if (position !== 'tab') {
+        this.handleTypeaheadKeys(position);
+      }
+    }
   };
 
   handleFocus = () => {
@@ -370,14 +376,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             this.refCollection[0][0].click();
           }
         }
+      } else if (position === 'tab') {
+        if (this.inputRef.current === document.activeElement) {
+          const focusIndex = typeaheadCurrIndex === -1 ? 0 : typeaheadCurrIndex;
+          this.refCollection[focusIndex][0].focus();
+        } else {
+          this.inputRef.current.focus();
+        }
       } else {
         let nextIndex;
         if (typeaheadCurrIndex === -1 && position === 'down') {
           nextIndex = 0;
         } else if (typeaheadCurrIndex === -1 && position === 'up') {
           nextIndex = this.refCollection.length - 1;
-        } else {
+        } else if (position !== 'left' && position !== 'right') {
           nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
+        } else {
+          nextIndex = typeaheadCurrIndex;
         }
         if (this.refCollection[nextIndex] === null) {
           return;
@@ -600,13 +615,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               placeholder={inlineFilterPlaceholderText}
               onKeyDown={event => {
                 if (event.key === KeyTypes.ArrowUp) {
-                  this.handleArrowKeys(0, 0, 'up');
+                  this.handleMenuKeys(0, 0, 'up');
                 } else if (event.key === KeyTypes.ArrowDown) {
-                  this.handleArrowKeys(0, 0, 'down');
+                  this.handleMenuKeys(0, 0, 'down');
                 } else if (event.key === KeyTypes.ArrowLeft) {
-                  this.handleArrowKeys(0, 0, 'left');
+                  this.handleMenuKeys(0, 0, 'left');
                 } else if (event.key === KeyTypes.ArrowRight) {
-                  this.handleArrowKeys(0, 0, 'right');
+                  this.handleMenuKeys(0, 0, 'right');
                 }
               }}
               ref={this.filterRef}
@@ -675,7 +690,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         sendRef={this.sendRef}
-        keyHandler={this.handleArrowKeys}
+        keyHandler={this.handleMenuKeys}
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
       >
@@ -779,6 +794,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {(selections[0] || typeaheadInputValue) && clearBtn}
@@ -802,6 +818,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
