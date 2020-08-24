@@ -43,10 +43,6 @@ export class TextInputDemo extends Component {
     value: 'disabled text input example'
   };
 
-  // mySelectTextUsingRefInputProps: TextInputProps = {
-  //   onBlur?(value: string, event: React.FormEvent<HTMLInputElement>): void;
-  // };
-
   myReadOnlyTextInputProps: TextInputProps = {
     isReadOnly: true,
     value: 'read only text input example'
