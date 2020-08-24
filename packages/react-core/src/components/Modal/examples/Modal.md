@@ -6,7 +6,8 @@ propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'Mo
 ouia: true
 ---
 
-import { WarningTriangleIcon, ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 ## Examples
 
@@ -274,7 +275,7 @@ class WidthModal extends React.Component {
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
-import { WarningTriangleIcon } from '@patternfly/react-icons';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 
 class CustomHeaderFooter extends React.Component {
   constructor(props) {
@@ -454,6 +455,7 @@ class WithWizard extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class WithDropdown extends React.Component {
   constructor(props) {

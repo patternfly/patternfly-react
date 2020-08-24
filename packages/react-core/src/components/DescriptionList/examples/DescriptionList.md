@@ -1,17 +1,17 @@
 ---
-title: 'Description list'
+id: 'Description list'
 section: components
 cssPrefix: 'pf-c-description-list'
-typescript: true
 beta: true
 propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionListGroup', 'DescriptionListTerm']
 ---
 
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 ## Examples
-
-```js title=Default
+### Default
+```js
 import React from 'react';
 import {
   Button,
@@ -20,7 +20,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 SimpleDescriptionList = (
   <DescriptionList>
@@ -54,7 +54,8 @@ SimpleDescriptionList = (
 );
 ```
 
-```js title=Default-2-col
+### Default 2 col
+```js
 import React from 'react';
 import {
   Button,
@@ -64,7 +65,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 TwoColDescriptionList = (
   <DescriptionList
@@ -102,7 +103,8 @@ TwoColDescriptionList = (
 );
 ```
 
-```js title=Default-3-col-on-lg
+### Default 3 col on lg
+```js
 import React from 'react';
 import {
   Button,
@@ -112,7 +114,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 ThreeColOnLgDescriptionList = (
   <DescriptionList columnModifier={{ lg: '3Col' }}>
@@ -146,7 +148,8 @@ ThreeColOnLgDescriptionList = (
 );
 ```
 
-```js title=Horizontal
+### Horizontal
+```js
 import React from 'react';
 import {
   Button,
@@ -156,7 +159,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 HorizontalDescriptionList = (
   <DescriptionList isHorizontal>
@@ -190,7 +193,8 @@ HorizontalDescriptionList = (
 );
 ```
 
-```js title=Horizontal-2-col
+### Horizontal 2 col
+```js
 import React from 'react';
 import {
   Button,
@@ -200,7 +204,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 Horizontal2ColDescriptionList = (
   <DescriptionList isHorizontal columnModifier={{ default: '2Col' }}>
@@ -234,7 +238,8 @@ Horizontal2ColDescriptionList = (
 );
 ```
 
-```js title=Horizontal-3-col-on-lg
+### Horizontal 3 col on lg
+```js
 import React from 'react';
 import {
   Button,
@@ -244,7 +249,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 Horizontal3ColOnLgDescriptionList = (
   <DescriptionList isHorizontal columnModifier={{ lg: '3Col' }}>
@@ -280,7 +285,8 @@ Horizontal3ColOnLgDescriptionList = (
 
 ## Responsive column definitions
 
-```js title=Default-responsive-columns
+### Default responsive columns
+```js
 import React from 'react';
 import {
   Button,
@@ -290,7 +296,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 ResponsiveDescriptionList = (
   <DescriptionList columnModifier={{ lg: '2Col', xl: '3Col' }}>
@@ -324,7 +330,8 @@ ResponsiveDescriptionList = (
 );
 ```
 
-```js title=Horizontal-responsive-columns
+### Horizontal responsive columns
+```js
 import React from 'react';
 import {
   Button,
@@ -334,7 +341,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 HorizontalResponsiveDescriptionList = (
   <DescriptionList isHorizontal columnBreakpoint={{ lg: '2Col', xl: '3Col' }}>
@@ -370,7 +377,8 @@ HorizontalResponsiveDescriptionList = (
 
 ## Auto-column-width
 
-```js title=Default-auto-column-width
+### Default auto column width
+```js
 import React from 'react';
 import {
   Button,
@@ -380,7 +388,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 AutoColumnsDescriptionList = (
   <DescriptionList isAutoColumnWidths columnModifier={{ default: '3Col' }}>
@@ -414,7 +422,8 @@ AutoColumnsDescriptionList = (
 );
 ```
 
-```js title=Horizontal-auto-column-width
+### Horizontal auto column width
+```js
 import React from 'react';
 import {
   Button,
@@ -424,7 +433,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 HorizontalAutoColumnsDescriptionList = (
   <DescriptionList isHorizontal isAutoColumnWidths columnModifier={{ lg: '2Col' }}>
@@ -459,8 +468,8 @@ HorizontalAutoColumnsDescriptionList = (
 ```
 
 ## Inline grid
-
-```js title=Default-inline-grid
+### Default inline grid
+```js
 import React from 'react';
 import {
   Button,
@@ -470,7 +479,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import { PlusCircleIcon } from '@patternfly/react-icons';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 InlineGridDescriptionList = (
   <DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid>

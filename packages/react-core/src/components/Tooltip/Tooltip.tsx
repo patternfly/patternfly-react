@@ -122,7 +122,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   isAppLauncher,
   tippyProps,
   ...rest
-}) => {
+}: TooltipProps) => {
   if (process.env.NODE_ENV !== 'production') {
     boundary !== undefined &&
       console.warn(

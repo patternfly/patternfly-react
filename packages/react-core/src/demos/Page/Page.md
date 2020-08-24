@@ -1,5 +1,5 @@
 ---
-id: Page layout
+id: Page
 section: demos
 ---
 
@@ -34,9 +34,11 @@ PageHeaderToolsGroup,
 PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 - All but the last example set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
 
@@ -47,7 +49,8 @@ import imgAvatar from './imgAvatar.svg';
 
 - To make the page take up the full height, it is recommended to set the height of all ancestor elements up to the page component to `100%`
 
-## Examples
+## Layouts
+This demonstrates a variety of navigation patterns in the context of a full page layout. These can be used as a basis for choosing the most appropriate page template for your application.
 
 ### Default nav
 ```js isFullscreen
@@ -85,9 +88,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutDefaultNav extends React.Component {
   constructor(props) {
@@ -312,9 +317,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutExpandableNav extends React.Component {
   constructor(props) {
@@ -555,9 +562,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutGroupsNav extends React.Component {
   constructor(props) {
@@ -776,9 +785,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutHorizontalNav extends React.Component {
   constructor(props) {
@@ -993,9 +1004,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutManualNav extends React.Component {
   constructor(props) {
@@ -1241,9 +1254,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PageLayoutLightNav extends React.Component {
   constructor(props) {

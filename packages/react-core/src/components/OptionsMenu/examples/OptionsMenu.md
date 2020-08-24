@@ -5,7 +5,8 @@ cssPrefix: pf-c-options-menu
 propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
 ouia: true
 ---
-import { CaretDownIcon, SortAmountDownIcon } from '@patternfly/react-icons';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
 
 ## Examples
 ### Single option
@@ -162,7 +163,7 @@ class MultipleOptions extends React.Component {
 ```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
-import { SortAmountDownIcon } from '@patternfly/react-icons';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
 
 class Plain extends React.Component {
   constructor(props) {
@@ -341,7 +342,7 @@ class AlignRight extends React.Component {
 ```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
-import { CaretDownIcon } from '@patternfly/react-icons';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class PlainWithText extends React.Component {
   constructor(props) {
@@ -401,7 +402,7 @@ class PlainWithText extends React.Component {
 ```js
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
-import { CaretDownIcon } from '@patternfly/react-icons';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class PlainWithText extends React.Component {
   constructor(props) {

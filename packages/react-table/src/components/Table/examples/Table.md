@@ -36,12 +36,13 @@ import {
   EditableSelectInputCell
 } from '@patternfly/react-table';
 
-import {
-  SearchIcon,
-  CodeBranchIcon,
-  CodeIcon,
-  CubeIcon
-} from '@patternfly/react-icons';
+import { EmptyStateIcon } from '@patternfly/react-core';
+
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
@@ -1031,11 +1032,9 @@ import {
   compoundExpand
 } from '@patternfly/react-table';
 
-import {
-  CodeBranchIcon,
-  CodeIcon,
-  CubeIcon
-} from '@patternfly/react-icons';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 // https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/demo/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
@@ -1328,8 +1327,8 @@ class ModifiersWithTableText extends React.Component {
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title } from '@patternfly/react-core';
-import { EmptyStateIcon } from '@patternfly/react-icons';
+import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title, EmptyStateIcon } from '@patternfly/react-core';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 EmptyStateTable = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last Commit']

@@ -6,7 +6,11 @@ propComponents: ['Button']
 ouia: true
 ---
 
-import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon, ArrowRightIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 
 ## Examples
 
@@ -14,7 +18,10 @@ import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon, ArrowRi
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 
 ButtonVariants = () => (
   <React.Fragment>
@@ -44,7 +51,9 @@ ButtonVariants = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 DisabledBtn = () => (
   <React.Fragment>
@@ -74,7 +83,9 @@ DisabledBtn = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 AriaDisabledBtn = () => (
   <React.Fragment>
@@ -104,7 +115,9 @@ AriaDisabledBtn = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 AriaDisabledBtnWithTooltip = () => (
   <Tooltip content="Aria-disabled buttons are like disabled buttons, but focusable. Allows for tooltip support.">
@@ -119,7 +132,9 @@ AriaDisabledBtnWithTooltip = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 AriaDisabledLinkBtnWithTooltip = () => (
   <Tooltip content="Aria-disabled link as button with tooltip">
@@ -157,7 +172,7 @@ LinkButton = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
@@ -196,7 +211,7 @@ ButtonSmallVariants = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { ArrowRightIcon } from '@patternfly/react-icons';
+import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 
 ButtonCTAVariants = () => (
   <React.Fragment>
