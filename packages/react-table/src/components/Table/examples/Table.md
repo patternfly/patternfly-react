@@ -33,9 +33,10 @@ import {
   validateCellEdits,
   applyCellEdits,
   EditableTextCell,
-  EditableSelectInputCell,
-  EmptyStateIcon
+  EditableSelectInputCell
 } from '@patternfly/react-table';
+
+import { EmptyStateIcon } from '@patternfly/react-core';
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -1326,8 +1327,7 @@ class ModifiersWithTableText extends React.Component {
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title } from '@patternfly/react-core';
-import EmptyStateIcon from '@patternfly/react-icons/dist/js/icons/empty-state-icon';
+import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title, EmptyStateIcon } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 EmptyStateTable = () => {
