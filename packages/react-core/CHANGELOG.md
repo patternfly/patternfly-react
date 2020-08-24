@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.41.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.41.0...@patternfly/react-core@4.41.1) (2020-08-24)
+
+
+### Bug Fixes
+
+* **demo:** rename master detail demo to primary-detail ([#4703](https://github.com/patternfly/patternfly-react/issues/4703)) ([8a49a66](https://github.com/patternfly/patternfly-react/commit/8a49a66f89c2449f5ee4ccc337887e7dfd296e33)), closes [#4611](https://github.com/patternfly/patternfly-react/issues/4611)
+
+
+
+
+
 # [4.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.40.6...@patternfly/react-core@4.41.0) (2020-08-21)
 
 

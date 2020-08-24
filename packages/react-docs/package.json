@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "5.8.12",
+  "version": "5.8.13",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease-v4"
@@ -24,16 +24,16 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.35.2",
-    "@patternfly/react-catalog-view-extension": "^4.8.9",
+    "@patternfly/react-catalog-view-extension": "^4.8.10",
     "@patternfly/react-charts": "^6.9.5",
-    "@patternfly/react-core": "^4.41.0",
+    "@patternfly/react-core": "^4.41.1",
     "@patternfly/react-icons": "^4.7.3",
-    "@patternfly/react-inline-edit-extension": "^4.5.65",
+    "@patternfly/react-inline-edit-extension": "^4.5.66",
     "@patternfly/react-styles": "^4.7.3",
-    "@patternfly/react-table": "^4.15.9",
+    "@patternfly/react-table": "^4.15.10",
     "@patternfly/react-tokens": "^4.9.5",
-    "@patternfly/react-topology": "^4.4.66",
-    "@patternfly/react-virtualized-extension": "^4.5.54"
+    "@patternfly/react-topology": "^4.4.67",
+    "@patternfly/react-virtualized-extension": "^4.5.55"
   },
   "devDependencies": {
     "@mdx-js/mdx": "^1.1.5",
