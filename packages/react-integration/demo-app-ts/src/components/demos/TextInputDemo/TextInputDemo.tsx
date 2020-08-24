@@ -5,9 +5,10 @@ export class TextInputDemo extends Component {
   state = {
     value: '',
     validatedTextInputValue: '',
+    selectTextUsingRefValue: 'select all on click',
     leftTruncatedTextInputValue:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    validated: ValidatedOptions.default,
+    validated: ValidatedOptions.default
   };
 
   handleTextInputChange = (value: string) => {
@@ -29,6 +30,10 @@ export class TextInputDemo extends Component {
     this.setState({ leftTruncatedTextInputValue });
   };
 
+  handleTextUsingRefInputChange = (selectTextUsingRefValue: string) => {
+    this.setState({ selectTextUsingRefValue });
+  };
+
   myTextInputProps: TextInputProps = {
     onChange: this.handleTextInputChange
   };
@@ -37,6 +42,10 @@ export class TextInputDemo extends Component {
     isDisabled: true,
     value: 'disabled text input example'
   };
+
+  // mySelectTextUsingRefInputProps: TextInputProps = {
+  //   onBlur?(value: string, event: React.FormEvent<HTMLInputElement>): void;
+  // };
 
   myReadOnlyTextInputProps: TextInputProps = {
     isReadOnly: true,
@@ -69,12 +78,23 @@ export class TextInputDemo extends Component {
           onChange={this.handleLeftTruncatedTextInputChange}
           value={this.state.leftTruncatedTextInputValue}
         />
-        <Text>Validated text input </Text>
+        <Text>Validated Text Input </Text>
         <TextInput
           id="text-validated"
           onChange={this.handleValidatedTextInputChange}
           value={this.state.validatedTextInputValue}
           validated={this.state.validated}
+        />
+        <Text>Select Text Using Ref Example </Text>
+        <TextInput
+          id="text-using-ref"
+          ref={this.ref}
+          value={this.state.selectTextUsingRefValue}
+          onFocus={event => event.target.select()}
+          // eslint-disable-next-line no-console
+          onBlur={() => console.log('blurred')}
+          onChange={this.handleTextUsingRefInputChange}
+          aria-label="select-all"
         />
       </React.Fragment>
     );

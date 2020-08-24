@@ -369,5 +369,11 @@ export const trimLeft = (node: HTMLElement, value: string) => {
     } else {
       node.innerText = `...${newValue}`;
     }
+  } else {
+    if ((node as HTMLInputElement).value) {
+      (node as HTMLInputElement).value = value;
+    } else {
+      node.innerText = value;
+    }
   }
 };
