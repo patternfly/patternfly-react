@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.42.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.41.1...@patternfly/react-core@4.42.0) (2020-08-24)
+
+
+### Features
+
+* **TextInput:** add helper util for left trim ([#4691](https://github.com/patternfly/patternfly-react/issues/4691)) ([44dba19](https://github.com/patternfly/patternfly-react/commit/44dba19f3ba357942484d69721bbdfe4ff4e81d8))
+
+
+
+
+
 ## [4.41.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.41.0...@patternfly/react-core@4.41.1) (2020-08-24)
 
 
