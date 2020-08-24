@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.43.0...@patternfly/react-core@4.44.0) (2020-08-24)
+
+
+### Features
+
+* **Label:** add no overflow prop ([#4680](https://github.com/patternfly/patternfly-react/issues/4680)) ([e9dbde9](https://github.com/patternfly/patternfly-react/commit/e9dbde9a9325d37a7cc084527d01c56f667fab12))
+
+
+
+
+
 # [4.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.42.0...@patternfly/react-core@4.43.0) (2020-08-24)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.33.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.32.0...demo-app-ts@4.33.0) (2020-08-24)
+
+
+### Features
+
+* **Label:** add no overflow prop ([#4680](https://github.com/patternfly/patternfly-react/issues/4680)) ([e9dbde9](https://github.com/patternfly/patternfly-react/commit/e9dbde9a9325d37a7cc084527d01c56f667fab12))
+
+
+
+
+
 # [4.32.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.31.0...demo-app-ts@4.32.0) (2020-08-24)
 
 
