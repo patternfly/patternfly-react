@@ -11,6 +11,8 @@ export class TextInputDemo extends Component {
     validated: ValidatedOptions.default
   };
 
+  ref = React.createRef<HTMLInputElement>();
+
   handleTextInputChange = (value: string) => {
     this.setState({ value });
   };
@@ -86,7 +88,7 @@ export class TextInputDemo extends Component {
           id="text-using-ref"
           ref={this.ref}
           value={this.state.selectTextUsingRefValue}
-          onFocus={event => event.target.select()}
+          onFocus={() => this.ref && this.ref.current && this.ref.current.select()}
           // eslint-disable-next-line no-console
           onBlur={() => console.log('blurred')}
           onChange={this.handleTextUsingRefInputChange}
