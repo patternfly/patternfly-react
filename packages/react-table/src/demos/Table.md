@@ -1899,8 +1899,7 @@ import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger
 class ErrorStateDemo extends React.Component {
 
   render() {
-    console.log('EmptyStateIcon', EmptyStateIcon)
-  
+
     const columns = [
       { title: 'Servers' },
       { title: 'Threads' },
