@@ -7,7 +7,7 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from '../components/Brand/examples/pfLogo.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 ## Examples
@@ -53,7 +53,7 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from './imgBrand.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class BannerDemo extends React.Component {
@@ -285,7 +285,7 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from './imgBrand.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class BannerDemo extends React.Component {

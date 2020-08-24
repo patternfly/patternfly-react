@@ -9,7 +9,7 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from '../../components/Brand/examples/pfLogo.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';

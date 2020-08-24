@@ -16,7 +16,7 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import imgBrand from '../components/Brand/examples/pfLogo.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './Card/pf-logo-small.svg';
 import activeMQIcon from './Card/activemq-core_200x150.png';
