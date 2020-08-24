@@ -1,12 +1,12 @@
 ---
-id: Card view
+id: Card
 section: demos
 experimentalStage: early
 ---
 
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
-import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import imgBrand from '../../components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -18,11 +18,11 @@ import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
 
-This is a demo that showcases Patternfly cards.
-
 ## Examples
 
-### Basic
+This demonstrates how you can assemble a full page view that contains a grid of equal sized cards that includes a toolbar for managing card grid contents.
+
+### Card view
 ```js isFullscreen
 import React from 'react';
 import {
@@ -76,8 +76,8 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
-import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';

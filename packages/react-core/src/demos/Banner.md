@@ -5,8 +5,8 @@ section: demos
 
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import imgBrand from '../components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 ## Examples
 
@@ -50,7 +50,7 @@ import {
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class BannerDemo extends React.Component {
   constructor(props) {
@@ -280,7 +280,7 @@ import {
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class BannerDemo extends React.Component {
   constructor(props) {

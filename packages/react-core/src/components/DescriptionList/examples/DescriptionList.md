@@ -1,8 +1,7 @@
 ---
-title: 'Description list'
+id: 'Description list'
 section: components
 cssPrefix: 'pf-c-description-list'
-typescript: true
 beta: true
 propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionListGroup', 'DescriptionListTerm']
 ---
@@ -10,8 +9,8 @@ propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionLi
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
 
 ## Examples
-
-```js title=Default
+### Default
+```js
 import React from 'react';
 import {
   Button,
@@ -54,7 +53,8 @@ SimpleDescriptionList = (
 );
 ```
 
-```js title=Default-2-col
+### Default 2 col
+```js
 import React from 'react';
 import {
   Button,
@@ -102,7 +102,8 @@ TwoColDescriptionList = (
 );
 ```
 
-```js title=Default-3-col-on-lg
+### Default 3 col on lg
+```js
 import React from 'react';
 import {
   Button,
@@ -146,7 +147,8 @@ ThreeColOnLgDescriptionList = (
 );
 ```
 
-```js title=Horizontal
+### Horizontal
+```js
 import React from 'react';
 import {
   Button,
@@ -190,7 +192,8 @@ HorizontalDescriptionList = (
 );
 ```
 
-```js title=Horizontal-2-col
+### Horizontal 2 col
+```js
 import React from 'react';
 import {
   Button,
@@ -234,7 +237,8 @@ Horizontal2ColDescriptionList = (
 );
 ```
 
-```js title=Horizontal-3-col-on-lg
+### Horizontal 3 col on lg
+```js
 import React from 'react';
 import {
   Button,
@@ -280,7 +284,8 @@ Horizontal3ColOnLgDescriptionList = (
 
 ## Responsive column definitions
 
-```js title=Default-responsive-columns
+### Default responsive columns
+```js
 import React from 'react';
 import {
   Button,
@@ -324,7 +329,8 @@ ResponsiveDescriptionList = (
 );
 ```
 
-```js title=Horizontal-responsive-columns
+### Horizontal responsive columns
+```js
 import React from 'react';
 import {
   Button,
@@ -370,7 +376,8 @@ HorizontalResponsiveDescriptionList = (
 
 ## Auto-column-width
 
-```js title=Default-auto-column-width
+### Default auto column width
+```js
 import React from 'react';
 import {
   Button,
@@ -414,7 +421,8 @@ AutoColumnsDescriptionList = (
 );
 ```
 
-```js title=Horizontal-auto-column-width
+### Horizontal auto column width
+```js
 import React from 'react';
 import {
   Button,
@@ -459,8 +467,8 @@ HorizontalAutoColumnsDescriptionList = (
 ```
 
 ## Inline grid
-
-```js title=Default-inline-grid
+### Default inline grid
+```js
 import React from 'react';
 import {
   Button,

@@ -5,7 +5,7 @@
 Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Your Markdown file can have the following frontmatter:
 ```
 ---
-title: '(required) title of the page'
+id: '(required) title of the page'
 cssPrefix: '(optional) the cssPrefix from @patternfly/patternfly (i.e. pf-c-nav)'
 section: '(optional, default=components) the section the page should be generated under'
 fullscreen: (optional, default=false) if the page should be rendered as-is
@@ -19,7 +19,8 @@ import { requiredDeps } from '@patternfly/any-webpack-alias-in-gatsby-node.js'
 import localDep from './examples/exampleDep.js'
 
 ## Examples
-```js title=Title-describing-example
+### Title describing example
+```js
 <p>Hello, world!</p>
 ```
 `````

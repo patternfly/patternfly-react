@@ -46,7 +46,8 @@ class SimpleNotificationBadge extends React.Component {
 ```
 
 ## Examples
-```js title=With-count
+### With count
+```js
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';

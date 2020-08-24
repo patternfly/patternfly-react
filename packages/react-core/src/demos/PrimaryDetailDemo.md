@@ -15,10 +15,21 @@ CheckCircleIcon,
 ExclamationTriangleIcon,
 FilterIcon,
 SearchIcon,
-TimesCircleIcon
+TimesCircleIcon,
+CaretDownIcon
 } from '@patternfly/react-icons';
-import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
-import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import imgBrand from '../components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import pfIcon from './Card/pf-logo-small.svg';
+import activeMQIcon from './Card/activemq-core_200x150.png';
+import avroIcon from './Card/camel-avro_200x150.png';
+import dropBoxIcon from './Card/camel-dropbox_200x150.png';
+import infinispanIcon from './Card/camel-infinispan_200x150.png';
+import saxonIcon from './Card/camel-saxon_200x150.png';
+import sparkIcon from './Card/camel-spark_200x150.png';
+import swaggerIcon from './Card/camel-swagger-java_200x150.png';
+import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
+import restIcon from './Card/FuseConnector_Icons_REST.png';
 
 ### Primary--detail full page
 ```js isFullscreen
@@ -1257,8 +1268,8 @@ import {
 } from '@patternfly/react-core';
 
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
-import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
-import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -1963,7 +1974,6 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
@@ -2123,7 +2133,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 1</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2135,7 +2145,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 2</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2147,7 +2157,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 3</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2159,7 +2169,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 4</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2171,7 +2181,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 5</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
