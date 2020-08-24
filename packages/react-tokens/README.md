@@ -21,7 +21,7 @@ All Tokens and their corresponding values can be viewed on the
 
 ## Examples
 ```js
-import { global_BackgroundColor_100 } from '@patternfly/react-tokens';
+import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/js/global_-background-color_100';
 ```
 
 #### Each token as three properties
@@ -31,7 +31,7 @@ import { global_BackgroundColor_100 } from '@patternfly/react-tokens';
 - `var`: The property name wrapped in `var()`.
 
 ```js
-import { global_BackgroundColor_100 } from '@patternfly/react-tokens';
+import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/js/global_-background-color_100';
 
 global_BackgroundColor_100.name === '--pf-global--BackgroundColor--100'; // true
 global_BackgroundColor_100.value === '#fff'; // true

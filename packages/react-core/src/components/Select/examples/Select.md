@@ -6,13 +6,15 @@ propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
 ouia: true
 ---
 
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+
 ## Examples
 
 ### Single
 
 ```js
 import React from 'react';
-import { CubeIcon } from '@patternfly/react-icons';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
@@ -1544,7 +1546,7 @@ class PlainSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import { CubeIcon } from '@patternfly/react-icons';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {

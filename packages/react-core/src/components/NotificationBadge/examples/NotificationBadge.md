@@ -4,7 +4,7 @@ section: components
 cssPrefix: pf-c-notification-badge
 propComponents: ['NotificationBadge']
 ---
-import { BellIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import './notificationBadge.css';
 
 ## Examples
@@ -12,7 +12,7 @@ import './notificationBadge.css';
 ```js
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';
-import { BellIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 class SimpleNotificationBadge extends React.Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class SimpleNotificationBadge extends React.Component {
 ```js
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';
-import { BellIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 class NotificationBadgeWithCount extends React.Component {
   constructor(props) {

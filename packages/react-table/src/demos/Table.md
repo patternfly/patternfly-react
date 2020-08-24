@@ -3,18 +3,16 @@ id: Table
 section: demos
 ---
 
-import {
-  CodeIcon,
-  CodeBranchIcon,
-  CubeIcon,
-  FilterIcon,
-  SortAmountDownIcon,
-  SearchIcon,
-  ExclamationCircleIcon,
-  CogIcon,
-  HelpIcon
-} from '@patternfly/react-icons';
-import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -319,13 +317,11 @@ import {
   SelectVariant
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import {
-  CodeIcon,
-  CodeBranchIcon,
-  CubeIcon,
-  FilterIcon,
-  SortAmountDownIcon
-} from '@patternfly/react-icons';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
 
 class ColumnManagementAction extends React.Component {
   constructor(props) {
@@ -884,7 +880,8 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { Table, TableHeader, TableBody, TextInput } from '@patternfly/react-table';
 
 class FilterTableDemo extends React.Component {
@@ -1382,8 +1379,8 @@ import {
   EmptyStateVariant,
   Bullseye
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
-import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core';
 
@@ -1561,7 +1558,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -1781,7 +1780,7 @@ import {
   EmptyStateSecondaryActions,
   Title
 } from '@patternfly/react-core';
-import { SearchIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class EmptyStateDemo extends React.Component {
@@ -1879,8 +1878,8 @@ import {
   Title
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
-import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
 
 class LoadingStateDemo extends React.Component {
 

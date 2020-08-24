@@ -657,7 +657,8 @@ import {
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
 import { debounce } from 'lodash';
-import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, TextInput } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';

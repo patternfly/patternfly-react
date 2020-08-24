@@ -34,7 +34,9 @@ PageHeaderToolsGroup,
 PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -86,7 +88,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -313,7 +317,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -556,7 +562,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -777,7 +785,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -994,7 +1004,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -1242,7 +1254,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 

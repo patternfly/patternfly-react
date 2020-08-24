@@ -1,3 +1,21 @@
+function makeImport(specifier, moduleName) {
+  let res = `import ${specifier.local.name} from '`;
+  res += moduleName.replace(/\/dist\/(js|esm)/, '');
+  res += '/dist/js';
+  if (moduleName.includes('icon')) {
+    res += '/icons/';
+    res += specifier.imported.name
+      .replace(/[A-Z]/g, match => `-${match.toLowerCase()}`)
+      .replace(/^-/, '');
+  }
+  else {
+    res += `/${specifier.imported.name}`;
+  }
+  res += "';";
+
+  return res;
+}
+
 module.exports = {
   meta: {
     docs: {
@@ -26,15 +44,7 @@ module.exports = {
               fix(fixer) {
                 return fixer.replaceText(
                   node,
-                  esmSpecifiers
-                    .map(
-                      specifier =>
-                        `import ${specifier.local.name} from '${node.source.value.replace(
-                          /\/dist\/(js|esm)/,
-                          ''
-                        )}/dist/js/${specifier.imported.name}';`
-                    )
-                    .join('\n')
+                  esmSpecifiers.map(spec => makeImport(spec, node.source.value)).join('\n')
                 );
               }
             });
