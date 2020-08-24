@@ -13,7 +13,7 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 SimpleBreadcrumbs = () => (
-  <Breadcrumb>
+  <Breadcrumb ouiaId="basic">
     <BreadcrumbItem to="#">Section home</BreadcrumbItem>
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>

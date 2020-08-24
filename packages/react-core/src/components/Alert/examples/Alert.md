@@ -19,11 +19,11 @@ class AlertTypes extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Alert title="Default alert title" />
-        <Alert variant="info" title="Info alert title" />
-        <Alert variant="success" title="Success alert title" />
-        <Alert variant="warning" title="Warning alert title" />
-        <Alert variant="danger" title="Danger alert title" />
+        <Alert title="Default alert title" ouiaId="default"/>
+        <Alert variant="info" title="Info alert title" ouiaId="info"/>
+        <Alert variant="success" title="Success alert title" ouiaId="success"/>
+        <Alert variant="warning" title="Warning alert title" ouiaId="warning"/>
+        <Alert variant="danger" title="Danger alert title" ouiaId="danger"/>
       </React.Fragment>
     );
   }

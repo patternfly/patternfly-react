@@ -25,7 +25,7 @@ import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 
 ButtonVariants = () => (
   <React.Fragment>
-    <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
+    <Button variant="primary" ouiaId="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
     <Button variant="tertiary">Tertiary</Button> <Button variant="danger">Danger</Button><br /><br />
     <Button variant="link" icon={<PlusCircleIcon />}>
       Link
@@ -57,7 +57,7 @@ import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 DisabledBtn = () => (
   <React.Fragment>
-    <Button isDisabled>
+    <Button isDisabled ouiaId="primary disabled">
       Primary disabled
     </Button>{' '}
     <Button isDisabled>
