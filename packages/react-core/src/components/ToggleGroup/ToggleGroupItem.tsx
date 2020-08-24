@@ -57,6 +57,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
           toggleGroupContext.variant === 'light' && styles.modifiers.light,
           selected && styles.modifiers.selected
         )}
+        {...(selected && { 'aria-pressed': selected })}
         onClick={handleChange}
         {...(ariaLabel && { 'aria-label': ariaLabel })}
         {...(isDisabled && { disabled: true })}

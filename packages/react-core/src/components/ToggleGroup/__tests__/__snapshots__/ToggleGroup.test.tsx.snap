@@ -23,6 +23,7 @@ exports[`basic selected 1`] = `
 >
   <button
     aria-label="basic selected"
+    aria-pressed={true}
     className="pf-c-toggle-group__button pf-m-selected"
     id="toggleGroupItem"
     onClick={[Function]}
@@ -40,6 +41,7 @@ exports[`icon variant 1`] = `
 >
   <button
     aria-label="icon variant"
+    aria-pressed={true}
     className="pf-c-toggle-group__button pf-m-selected"
     id="toggleGroupItem"
     onClick={[Function]}
@@ -79,6 +81,7 @@ exports[`light theme 1`] = `
 >
   <div
     className="pf-c-toggle-group"
+    role="group"
   >
     <ToggleGroupItem>
       Test

@@ -40,7 +40,7 @@ class DefaultToggleGroupExample extends React.Component {
     const { selected } = this.state;
     
     return (
-      <ToggleGroup>
+      <ToggleGroup aria-label="Default with multiple selectable">
         <ToggleGroupItem key={0} buttonId="first" selected={selected.first} onChange={this.handleItemClick}>
           Option 1
         </ToggleGroupItem>
@@ -76,7 +76,7 @@ class DefaultAsRadioToggleGroupExample extends React.Component {
     const { selected } = this.state;
     
     return (
-      <ToggleGroup>
+      <ToggleGroup aria-label="Default with single selectable">
         <ToggleGroupItem key={3} buttonId="firstRadio" selected={selected === "firstRadio"} onChange={this.handleItemClick}>
           Option 1
         </ToggleGroupItem>
@@ -121,7 +121,7 @@ class IconToggleGroupExample extends React.Component {
   render() {
     const { selected } = this.state;
     return (
-      <ToggleGroup>
+      <ToggleGroup aria-label="Icon variant toggle group">
         <ToggleGroupItem key={6} aria-label="copy icon button" buttonId="third" variant={ToggleGroupItemVariant.icon} selected={selected.third} onChange={this.handleItemClick}>
           <CopyIcon />
         </ToggleGroupItem>
@@ -166,7 +166,7 @@ constructor(props) {
     const { selected } = this.state;
     
     return (
-      <ToggleGroup variant={ToggleGroupVariant.light}>
+      <ToggleGroup variant={ToggleGroupVariant.light} aria-label="Light variant toggle group">
         <ToggleGroupItem key={9} buttonId="sixth" selected={selected.sixth} onChange={this.handleItemClick}>
           Option 1
         </ToggleGroupItem>

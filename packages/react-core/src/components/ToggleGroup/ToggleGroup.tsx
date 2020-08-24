@@ -16,6 +16,8 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Adds toggle group variant styles */
   variant?: ToggleGroupVariant | 'light' | 'default';
+  /** Accessible label for the toggle group */
+  'aria-label'?: string;
 }
 
 export class ToggleGroup extends React.Component<ToggleGroupProps> {
@@ -25,7 +27,7 @@ export class ToggleGroup extends React.Component<ToggleGroupProps> {
   };
 
   render() {
-    const { className, children, variant } = this.props;
+    const { className, children, variant, 'aria-label': ariaLabel } = this.props;
 
     const toggleGroupItemList = [] as any[];
     const length = React.Children.count(children);
@@ -39,7 +41,9 @@ export class ToggleGroup extends React.Component<ToggleGroupProps> {
 
     return (
       <ToggleGroupContext.Provider value={{ variant }}>
-        <div className={css(styles.toggleGroup, className)}>{toggleGroupItemList}</div>
+        <div className={css(styles.toggleGroup, className)} role="group" aria-label={ariaLabel}>
+          {toggleGroupItemList}
+        </div>
       </ToggleGroupContext.Provider>
     );
   }
