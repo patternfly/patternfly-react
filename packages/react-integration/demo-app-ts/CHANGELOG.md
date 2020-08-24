@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.32.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.31.0...demo-app-ts@4.32.0) (2020-08-24)
+
+
+### Features
+
+* **Page:** add width limit ([#4686](https://github.com/patternfly/patternfly-react/issues/4686)) ([16659fc](https://github.com/patternfly/patternfly-react/commit/16659fc9bd5c087d8f818d4a26c080cca5fcbe43))
+
+
+
+
+
 # [4.31.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.30.1...demo-app-ts@4.31.0) (2020-08-24)
 
 
