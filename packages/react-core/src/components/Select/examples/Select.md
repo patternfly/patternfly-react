@@ -1735,7 +1735,7 @@ class FavoritesSelect extends React.Component {
 
     this.clearSelection = () => {
       this.setState({
-        selected: [],
+        selected: null,
         isOpen: false
       });
     };
