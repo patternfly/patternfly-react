@@ -50,7 +50,7 @@ SubtextTile = () => (
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import { PlusIcon } from '@patternfly/react-icons';
+import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
 
 IconTile = () => (
   <React.Fragment>
@@ -72,7 +72,7 @@ IconTile = () => (
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import { BellIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 StackedTile = () => (
   <React.Fragment>
@@ -94,7 +94,7 @@ StackedTile = () => (
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import { BellIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 LargeStackedTile = () => (
   <React.Fragment>
@@ -116,7 +116,7 @@ LargeStackedTile = () => (
 ```js
 import React from 'react';
 import { Tile, Flex } from '@patternfly/react-core';
-import { BellIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 ExtraContentTile = () => (
   <Flex>

@@ -423,7 +423,8 @@ class CheckboxTreeView extends React.Component {
 ```js
 import React from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
-import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
+import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {
@@ -586,7 +587,9 @@ class BadgesTreeView extends React.Component {
 ```js
 import React from 'react';
 import { TreeView, TreeViewDataItem, Button } from '@patternfly/react-core';
-import { EllipsisVIcon, ClipboardIcon, HamburgerIcon } from '@patternfly/react-icons';
+import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
+import HamburgerIcon from '@patternfly/react-icons/dist/js/icons/hamburger-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {
