@@ -687,6 +687,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TitleDemo
   },
   {
+    id: 'toggle-group-demo',
+    name: 'Toggle Group Demo',
+    componentType: Examples.ToggleGroupDemo
+  },
+  {
     id: 'toolbar-demo',
     name: 'Toolbar Demo',
     componentType: Examples.ToolbarDemo

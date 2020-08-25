@@ -55,6 +55,7 @@ export * from './TextArea';
 export * from './TextInput';
 export * from './Tile';
 export * from './Title';
+export * from './ToggleGroup';
 export * from './Toolbar';
 export * from './Tooltip';
 export * from './TreeView';

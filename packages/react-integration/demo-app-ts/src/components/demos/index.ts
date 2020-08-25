@@ -137,6 +137,7 @@ export * from './TextDemo/TextDemo';
 export * from './TextInputDemo/TextInputDemo';
 export * from './TileDemo/TileDemo';
 export * from './TitleDemo/TitleDemo';
+export * from './ToggleGroupDemo/ToggleGroupDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './TopologyDemo/TopologyDemo';
