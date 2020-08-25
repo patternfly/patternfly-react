@@ -1167,6 +1167,7 @@ class PageLayoutTertiaryNav extends React.Component {
           breadcrumb={PageBreadcrumb}
           tertiaryNav={PageNav}
           isManagedSidebar
+          isTertiaryNavWidthLimited
           skipToContent={PageSkipToContent}
           mainContainerId={pageId}
         >
