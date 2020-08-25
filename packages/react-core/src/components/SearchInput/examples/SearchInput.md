@@ -1,5 +1,5 @@
 ---
-id: 'Search Input'
+id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
 propComponents: ['SearchInput']
