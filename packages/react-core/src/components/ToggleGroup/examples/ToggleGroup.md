@@ -8,7 +8,9 @@ beta: true
 import './toggleGroup.css';
 
 import { ToggleGroup, ToggleGroupItem, ToggleGroupItemVariant } from '@patternfly/react-core';
-import { UndoIcon, CopyIcon, ShareSquareIcon } from '@patternfly/react-icons'; 
+import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon'; 
 
 ## Examples
 ### Default with multiple selectable
@@ -95,7 +97,9 @@ class DefaultAsRadioToggleGroupExample extends React.Component {
 ```js
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupItemVariant } from '@patternfly/react-core';
-import { UndoIcon, CopyIcon, ShareSquareIcon } from '@patternfly/react-icons';
+import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon'; 
 
 class IconToggleGroupExample extends React.Component {
   constructor(props) {
