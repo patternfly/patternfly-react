@@ -96,8 +96,24 @@ describe('Nav Test', () => {
     cy.get('#nav-primary-horizontal #horizontal-link2').then((horizontalLink2: JQuery<HTMLAnchorElement>) => {
       cy.wrap(horizontalLink2).click();
       cy.get('#nav-primary-horizontal .pf-c-nav__link').each(
-        (horaizontalNavLink: JQuery<HTMLAnchorElement>, index: number) => {
-          const isCurrent = horaizontalNavLink.hasClass('pf-m-current');
+        (horizontalNavLink: JQuery<HTMLAnchorElement>, index: number) => {
+          const isCurrent = horizontalNavLink.hasClass('pf-m-current');
+          expect(isCurrent).to.be.equal(index === 1);
+        }
+      );
+    });
+  });
+
+  it('Verify Tertiary Nav', () => {
+    cy.get('#nav-primary-tertiary .pf-c-nav__link').each((tertiaryLink: JQuery<HTMLAnchorElement>, index: number) => {
+      const isCurrent = tertiaryLink.hasClass('pf-m-current');
+      expect(isCurrent).to.be.equal(index === 0);
+    });
+    cy.get('#nav-primary-tertiary #tertiary-link2').then((tertiaryLink2: JQuery<HTMLAnchorElement>) => {
+      cy.wrap(tertiaryLink2).click();
+      cy.get('#nav-primary-tertiary .pf-c-nav__link').each(
+        (tertiaryNavLink: JQuery<HTMLAnchorElement>, index: number) => {
+          const isCurrent = tertiaryNavLink.hasClass('pf-m-current');
           expect(isCurrent).to.be.equal(index === 1);
         }
       );

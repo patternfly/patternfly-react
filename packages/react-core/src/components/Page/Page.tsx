@@ -55,6 +55,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
+  /** Flag indicating if tertiary nav width should be limited */
+  isTertiaryNavWidthLimited?: boolean;
   /**
    * If true, the managed sidebar is initially open for desktop view
    */
@@ -66,6 +68,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   onPageResize?: (object: any) => void;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
+  /** Tertiary nav component for the page */
+  tertiaryNav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
 }
@@ -150,6 +154,7 @@ export class Page extends React.Component<PageProps, PageState> {
       notificationDrawer,
       isNotificationDrawerExpanded,
       onNotificationDrawerExpand,
+      isTertiaryNavWidthLimited,
       skipToContent,
       role,
       mainContainerId,
@@ -160,6 +165,7 @@ export class Page extends React.Component<PageProps, PageState> {
       onPageResize,
       mainAriaLabel,
       mainTabIndex,
+      tertiaryNav,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
@@ -178,6 +184,12 @@ export class Page extends React.Component<PageProps, PageState> {
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
+        {tertiaryNav && isTertiaryNavWidthLimited && (
+          <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
+            <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
+          </div>
+        )}
+        {tertiaryNav && !isTertiaryNavWidthLimited && <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>}
         {breadcrumb && isBreadcrumbWidthLimited && (
           <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
             <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
