@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.34.0...@patternfly/react-integration@4.35.0) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Page:** add missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/issues/4707)) ([1abca6d](https://github.com/patternfly/patternfly-react/commit/1abca6d09bd27459c8b3fc84c0f29040f3d33575))
+
+
+### Features
+
+* **Tile:** add tile component ([#4610](https://github.com/patternfly/patternfly-react/issues/4610)) ([a49c28f](https://github.com/patternfly/patternfly-react/commit/a49c28fbeefe2cabdf1be1e4f3e3633a3e01c0d2))
+* **ToggleGroup:** add new toggle group component ([#4702](https://github.com/patternfly/patternfly-react/issues/4702)) ([4c00ae5](https://github.com/patternfly/patternfly-react/commit/4c00ae54da9df1a2560c8033464b91f97eac2ca7))
+* **TreeView:** add treeview, demos, tests ([#4701](https://github.com/patternfly/patternfly-react/issues/4701)) ([1840aac](https://github.com/patternfly/patternfly-react/commit/1840aac8e5fe3b29e349e8cf615d8b914274a16b))
+
+
+
+
+
 # [4.34.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.33.0...@patternfly/react-integration@4.34.0) (2020-08-25)
 
 
