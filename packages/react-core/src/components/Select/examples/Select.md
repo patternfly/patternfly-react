@@ -1701,3 +1701,140 @@ class SelectMenuDocumentBody extends React.Component {
   }
 }
 ```
+
+### OUIA
+
+```js
+import React from 'react';
+import { CubeIcon } from '@patternfly/react-icons';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
+
+class OUIASingleSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      { value: 'Choose...', disabled: false, isPlaceholder: true },
+      { value: 'Mr', disabled: false },
+      { value: 'Miss', disabled: false },
+      { value: 'Mrs', disabled: false },
+      { value: 'Ms', disabled: false },
+      { value: 'Dr', disabled: false },
+      { value: 'Other', disabled: false }
+    ];
+
+    this.state = {
+      isToggleIcon: false,
+      isOpen: false,
+      selected: null,
+      isDisabled: false,
+      direction: SelectDirection.down
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.toggleDisabled = checked => {
+      this.setState({
+        isDisabled: checked
+      });
+    };
+
+    this.setIcon = checked => {
+      this.setState({
+        isToggleIcon: checked
+      });
+    };
+
+    this.toggleDirection = () => {
+      if (this.state.direction === SelectDirection.up) {
+        this.setState({
+          direction: SelectDirection.down
+        });
+      } else {
+        this.setState({
+          direction: SelectDirection.up
+        });
+      }
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'title-id-1';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          toggleIcon={isToggleIcon && <CubeIcon />}
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          isDisabled={isDisabled}
+          direction={direction}
+          ouiaId="Single"
+        >
+          {this.options.map((option, index) => (
+            <SelectOption
+              isDisabled={option.disabled}
+              key={index}
+              value={option.value}
+              isPlaceholder={option.isPlaceholder}
+            />
+          ))}
+        </Select>
+        <Checkbox
+          label="isDisabled"
+          isChecked={this.state.isDisabled}
+          onChange={this.toggleDisabled}
+          aria-label="disabled checkbox"
+          id="toggle-disabled"
+          name="toggle-disabled"
+        />
+        <Checkbox
+          label="Expands up"
+          isChecked={direction === SelectDirection.up}
+          onChange={this.toggleDirection}
+          aria-label="direction checkbox"
+          id="toggle-direction"
+          name="toggle-direction"
+        />
+        <Checkbox
+          label="Show icon"
+          isChecked={isToggleIcon}
+          onChange={this.setIcon}
+          aria-label="show icon checkbox"
+          id="toggle-icon"
+          name="toggle-icon"
+        />
+      </div>
+    );
+  }
+}
+```

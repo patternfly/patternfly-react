@@ -57,7 +57,7 @@ import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 DisabledBtn = () => (
   <React.Fragment>
-    <Button isDisabled ouiaId="primary disabled">
+    <Button isDisabled>
       Primary disabled
     </Button>{' '}
     <Button isDisabled>
@@ -220,6 +220,36 @@ ButtonCTAVariants = () => (
     <Button variant="tertiary" isLarge>Call to action</Button>{' '}
     <Button variant="link" isLarge>Call to action <ArrowRightIcon/></Button>
     <br /><br />
+  </React.Fragment>
+);
+```
+
+### OUIA
+```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon } from '@patternfly/react-icons';
+
+ButtonVariants = () => (
+  <React.Fragment>
+    <Button variant="primary" ouiaId="Primary">Primary</Button> <Button variant="secondary" ouiaId="Secondary">Secondary</Button>{' '}
+    <Button variant="tertiary" ouiaId="Tertiary">Tertiary</Button> <Button variant="danger" ouiaId="Danger">Danger</Button><br /><br />
+    <Button variant="link" icon={<PlusCircleIcon />} ouiaId="Link">
+      Link
+    </Button>{' '}
+    <Button variant="link" icon={<ExternalLinkSquareAltIcon />} iconPosition="right" ouiaId="Link right">
+      Link
+    </Button>
+    <Button variant="link" isInline ouiaId="Inline link">
+      Inline link
+    </Button><br /><br />
+    <Button variant="plain" aria-label="Action" ouiaId="Action">
+      <TimesIcon />
+    </Button><br /><br />
+    <Button variant="control" ouiaId="Control">Control</Button>{' '}
+    <Button variant="control" aria-label="Copy" ouiaId="Copy">
+      <CopyIcon />
+    </Button>
   </React.Fragment>
 );
 ```

@@ -19,11 +19,11 @@ class AlertTypes extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Alert title="Default alert title" ouiaId="default"/>
-        <Alert variant="info" title="Info alert title" ouiaId="info"/>
-        <Alert variant="success" title="Success alert title" ouiaId="success"/>
-        <Alert variant="warning" title="Warning alert title" ouiaId="warning"/>
-        <Alert variant="danger" title="Danger alert title" ouiaId="danger"/>
+        <Alert title="Default alert title"/>
+        <Alert variant="info" title="Info alert title"/>
+        <Alert variant="success" title="Success alert title"/>
+        <Alert variant="warning" title="Warning alert title"/>
+        <Alert variant="danger" title="Danger alert title"/>
       </React.Fragment>
     );
   }
@@ -369,6 +369,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque 
         <Alert variant="danger" truncateTitle={3} title={`
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
         `} />
+```
+
+### OUIA
+```js
+import React from 'react';
+import { Alert } from '@patternfly/react-core';
+
+class AlertOUIA extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert title="Default alert title" ouiaId="default"/>
+        <Alert variant="info" title="Info alert title" ouiaId="info"/>
+        <Alert variant="success" title="Success alert title" ouiaId="success"/>
+        <Alert variant="warning" title="Warning alert title" ouiaId="warning"/>
+        <Alert variant="danger" title="Danger alert title" ouiaId="danger"/>
       </React.Fragment>
     );
   }

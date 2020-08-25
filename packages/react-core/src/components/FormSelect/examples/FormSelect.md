@@ -259,3 +259,40 @@ class FormSelectInputGrouped extends React.Component {
   }
 }
 ```
+
+### OUIA
+```js
+import React from 'react';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+
+class FormSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'mrs'
+    };
+    this.onChange = (value, event) => {
+      this.setState({ value });
+    };
+    this.options = [
+      { value: 'please choose', label: 'Please Choose', disabled: true },
+      { value: 'mr', label: 'Mr', disabled: false },
+      { value: 'miss', label: 'Miss', disabled: false },
+      { value: 'mrs', label: 'Mrs', disabled: false },
+      { value: 'ms', label: 'Ms', disabled: false },
+      { value: 'dr', label: 'Dr', disabled: false },
+      { value: 'other', label: 'Other', disabled: false }
+    ];
+  }
+
+  render() {
+    return (
+      <FormSelect value={this.state.value} onChange={this.onChange} aria-label="FormSelect Input" ouiaId="FormSelect Input">
+        {this.options.map((option, index) => (
+          <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+        ))}
+      </FormSelect>
+    );
+  }
+}
+```

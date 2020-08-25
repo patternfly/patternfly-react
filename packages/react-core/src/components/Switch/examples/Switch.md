@@ -105,3 +105,35 @@ UncontrolledSwitch = () => (
   </React.Fragment>
 );
 ```
+
+### OUIA
+```js
+import React from 'react';
+import { Switch } from '@patternfly/react-core';
+
+class OUIASwitch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChecked: true
+    };
+    this.handleChange = isChecked => {
+      this.setState({ isChecked });
+    };
+  }
+
+  render() {
+    const { isChecked } = this.state;
+    return (
+      <Switch
+        id="simple-switch"
+        label="Message when on"
+        labelOff="Message when off"
+        isChecked={isChecked}
+        onChange={this.handleChange}
+        ouiaId="Simple Switch"
+      />
+    );
+  }
+}
+```

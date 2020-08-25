@@ -13,7 +13,7 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 SimpleBreadcrumbs = () => (
-  <Breadcrumb ouiaId="basic">
+  <Breadcrumb>
     <BreadcrumbItem to="#">Section home</BreadcrumbItem>
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>
@@ -55,6 +55,23 @@ HeadingBreadcrumbs = () => (
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>
     <BreadcrumbItem to="#">Section title</BreadcrumbItem>
     <BreadcrumbHeading to="#">Section title</BreadcrumbHeading>
+  </Breadcrumb>
+);
+```
+
+### OUIA
+```js
+import React from 'react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
+
+SimpleBreadcrumbs = () => (
+  <Breadcrumb ouiaId="basic">
+    <BreadcrumbItem to="#">Section home</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#" isActive>
+      Section Landing
+    </BreadcrumbItem>
   </Breadcrumb>
 );
 ```
