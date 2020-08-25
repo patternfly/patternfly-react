@@ -53,6 +53,7 @@ export * from './Tabs';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
+export * from './Tile';
 export * from './Title';
 export * from './Toolbar';
 export * from './Tooltip';

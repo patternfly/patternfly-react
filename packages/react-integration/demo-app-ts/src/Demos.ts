@@ -677,6 +677,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TextInputDemo
   },
   {
+    id: 'tile-demo',
+    name: 'Tile Demo',
+    componentType: Examples.TileDemo
+  },
+  {
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo

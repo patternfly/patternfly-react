@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tile basic 1`] = `
+<div
+  className="pf-c-tile"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header"
+  >
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tile renders disabled 1`] = `
+<div
+  className="pf-c-tile pf-m-disabled"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header"
+  >
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tile renders selected 1`] = `
+<div
+  className="pf-c-tile pf-m-selected"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header"
+  >
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tile renders with icon 1`] = `
+<div
+  className="pf-c-tile"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header"
+  >
+    <div
+      className="pf-c-tile__icon"
+    >
+      <PlusIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </div>
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tile renders with stacked icon 1`] = `
+<div
+  className="pf-c-tile"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header pf-m-stacked"
+  >
+    <div
+      className="pf-c-tile__icon"
+    >
+      <PlusIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </div>
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tile renders with stacked large icon 1`] = `
+<div
+  className="pf-c-tile pf-m-display-lg"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header pf-m-stacked"
+  >
+    <div
+      className="pf-c-tile__icon"
+    >
+      <PlusIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </div>
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tile renders with subtext 1`] = `
+<div
+  className="pf-c-tile"
+  tabIndex={0}
+>
+  <div
+    className="pf-c-tile__header"
+  >
+    <div
+      className="pf-c-tile__title"
+    >
+      test
+    </div>
+  </div>
+  <div
+    className="pf-c-tile__body"
+  >
+    test subtext
+  </div>
+</div>
+`;
