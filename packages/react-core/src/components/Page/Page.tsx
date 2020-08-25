@@ -185,11 +185,11 @@ export class Page extends React.Component<PageProps, PageState> {
         aria-label={mainAriaLabel}
       >
         {tertiaryNav && isTertiaryNavWidthLimited && (
-          <nav className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
+          <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
             <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
-          </nav>
+          </div>
         )}
-        {tertiaryNav && !isTertiaryNavWidthLimited && <nav className={css(styles.pageMainNav)}>{tertiaryNav}</nav>}
+        {tertiaryNav && !isTertiaryNavWidthLimited && <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>}
         {breadcrumb && isBreadcrumbWidthLimited && (
           <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
             <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
