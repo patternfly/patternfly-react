@@ -271,7 +271,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       typeaheadActiveChild: null,
       creatableValue: e.target.value
     });
-    this.refCollection = [];
+    this.refCollection = [[]];
   };
 
   onClick = (e: React.MouseEvent) => {
