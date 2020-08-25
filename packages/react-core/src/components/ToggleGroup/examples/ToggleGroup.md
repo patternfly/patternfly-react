@@ -7,7 +7,7 @@ beta: true
 ---
 import './toggleGroup.css';
 
-import { ToggleGroup, ToggleGroupItem, ToggleGroupIconVariant } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, ToggleGroupItemVariant } from '@patternfly/react-core';
 import { UndoIcon, CopyIcon, ShareSquareIcon } from '@patternfly/react-icons'; 
 
 ## Examples
@@ -20,31 +20,31 @@ class DefaultToggleGroupExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: {
+      isSelected: {
         first: false,
         second: false
       }
     };
-    this.handleItemClick = (selected, event) => {
+    this.handleItemClick = (isSelected, event) => {
       const id = event.currentTarget.id;
       this.setState(prevState => {
-        prevState.selected[id] = selected;
+        prevState.isSelected[id] = isSelected;
         return {
-          selected: prevState.selected
+          isSelected: prevState.isSelected
         };
       });
     };
   }
   
   render() {
-    const { selected } = this.state;
+    const { isSelected } = this.state;
     
     return (
       <ToggleGroup aria-label="Default with multiple selectable">
-        <ToggleGroupItem key={0} buttonId="first" selected={selected.first} onChange={this.handleItemClick}>
+        <ToggleGroupItem key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick}>
           Option 1
         </ToggleGroupItem>
-        <ToggleGroupItem key={1} buttonId="second" selected={selected.second} onChange={this.handleItemClick}>
+        <ToggleGroupItem key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick}>
           Option 2
         </ToggleGroupItem>
         <ToggleGroupItem key={2} isDisabled>
@@ -64,26 +64,26 @@ class DefaultAsRadioToggleGroupExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: ""
+      isSelected: ""
     };
-    this.handleItemClick = (selected, event) => {
+    this.handleItemClick = (isSelected, event) => {
       const id = event.currentTarget.id;
-      this.setState({ selected: id });
+      this.setState({ isSelected: id });
     };
   }
   
   render() {
-    const { selected } = this.state;
+    const { isSelected } = this.state;
     
     return (
       <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem key={3} buttonId="firstRadio" selected={selected === "firstRadio"} onChange={this.handleItemClick}>
+        <ToggleGroupItem buttonId="firstRadio" isSelected={isSelected === "firstRadio"} onChange={this.handleItemClick}>
           Option 1
         </ToggleGroupItem>
-        <ToggleGroupItem key={4} buttonId="secondRadio" selected={selected === "secondRadio"} onChange={this.handleItemClick}>
+        <ToggleGroupItem buttonId="secondRadio" isSelected={isSelected === "secondRadio"} onChange={this.handleItemClick}>
           Option 2
         </ToggleGroupItem>
-        <ToggleGroupItem key={5} buttonId="thirdRadio" selected={selected === "thirdRadio"} onChange={this.handleItemClick}>
+        <ToggleGroupItem buttonId="thirdRadio" isSelected={isSelected === "thirdRadio"} onChange={this.handleItemClick}>
           Option 3
         </ToggleGroupItem>
       </ToggleGroup>
@@ -101,34 +101,34 @@ class IconToggleGroupExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: {
+      isSelected: {
         third: false,
         fourth: false,
         fifth: true
       }
     };
-    this.handleItemClick = (selected, event) => {
+    this.handleItemClick = (isSelected, event) => {
       const id = event.currentTarget.id;
       this.setState(prevState => {
-        prevState.selected[id] = selected;
+        prevState.isSelected[id] = isSelected;
         return {
-          selected: prevState.selected
+          isSelected: prevState.isSelected
         };
       });
     };
   }
   
   render() {
-    const { selected } = this.state;
+    const { isSelected } = this.state;
     return (
       <ToggleGroup aria-label="Icon variant toggle group">
-        <ToggleGroupItem key={6} aria-label="copy icon button" buttonId="third" variant={ToggleGroupItemVariant.icon} selected={selected.third} onChange={this.handleItemClick}>
+        <ToggleGroupItem aria-label="copy icon button" buttonId="third" variant={ToggleGroupItemVariant.icon} isSelected={isSelected.third} onChange={this.handleItemClick}>
           <CopyIcon />
         </ToggleGroupItem>
-        <ToggleGroupItem key={7} aria-label="undo icon button" buttonId="fourth" variant={ToggleGroupItemVariant.icon} selected={selected.fourth} onChange={this.handleItemClick}>
+        <ToggleGroupItem aria-label="undo icon button" buttonId="fourth" variant={ToggleGroupItemVariant.icon} isSelected={isSelected.fourth} onChange={this.handleItemClick}>
           <UndoIcon />
         </ToggleGroupItem>
-        <ToggleGroupItem key={8} aria-label="share square icon button" buttonId="fifth"  variant={ToggleGroupItemVariant.icon} selected={selected.fifth} onChange={this.handleItemClick}>
+        <ToggleGroupItem aria-label="share square icon button" buttonId="fifth"  variant={ToggleGroupItemVariant.icon} isSelected={isSelected.fifth} onChange={this.handleItemClick}>
           <ShareSquareIcon />
         </ToggleGroupItem>
       </ToggleGroup>
@@ -146,34 +146,34 @@ class LightToggleGroupExample extends React.Component {
 constructor(props) {
     super(props);
     this.state = {
-      selected: {
+      isSelected: {
         sixth: false,
         seventh: false
       }
     };
-    this.handleItemClick = (selected, event) => {
+    this.handleItemClick = (isSelected, event) => {
       const id = event.currentTarget.id;
       this.setState(prevState => {
-        prevState.selected[id] = selected;
+        prevState.isSelected[id] = isSelected;
         return {
-          selected: prevState.selected
+          isSelected: prevState.isSelected
         };
       });
     };
   }
   
   render() {
-    const { selected } = this.state;
+    const { isSelected } = this.state;
     
     return (
       <ToggleGroup variant={ToggleGroupVariant.light} aria-label="Light variant toggle group">
-        <ToggleGroupItem key={9} buttonId="sixth" selected={selected.sixth} onChange={this.handleItemClick}>
+        <ToggleGroupItem buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick}>
           Option 1
         </ToggleGroupItem>
-        <ToggleGroupItem key={10} buttonId="seventh" selected={selected.seventh} onChange={this.handleItemClick}>
+        <ToggleGroupItem buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick}>
           Option 2
         </ToggleGroupItem>
-        <ToggleGroupItem key={11} isDisabled>
+        <ToggleGroupItem isDisabled>
           Option 3
         </ToggleGroupItem>
       </ToggleGroup>

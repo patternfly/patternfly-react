@@ -18,7 +18,7 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
   /** Flag indicating if the toggle group item is disabled */
   isDisabled?: boolean;
   /** Flag indicating if the toggle group item is selected */
-  selected?: boolean;
+  isSelected?: boolean;
   /** required when icon is used with no supporting text */
   'aria-label'?: string;
   /** Optional id for the button within the toggle group item */
@@ -32,7 +32,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   className,
   variant = 'text',
   isDisabled = false,
-  selected = false,
+  isSelected = false,
   'aria-label': ariaLabel = '',
   onChange = () => {},
   buttonId = '',
@@ -41,7 +41,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   const toggleGroupContext = React.useContext(ToggleGroupContext);
 
   const handleChange = (event: any): void => {
-    onChange(!selected, event);
+    onChange(!isSelected, event);
   };
 
   if (!ariaLabel && variant === ToggleGroupItemVariant.icon) {
@@ -55,9 +55,9 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
         className={css(
           styles.toggleGroupButton,
           toggleGroupContext.variant === 'light' && styles.modifiers.light,
-          selected && styles.modifiers.selected
+          isSelected && styles.modifiers.selected
         )}
-        {...(selected && { 'aria-pressed': selected })}
+        aria-pressed={isSelected}
         onClick={handleChange}
         {...(ariaLabel && { 'aria-label': ariaLabel })}
         {...(isDisabled && { disabled: true })}

@@ -11,7 +11,7 @@ import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
 
 interface ToggleGroupState {
-  selected: {
+  isSelected: {
     first: boolean;
     second: boolean;
     third: boolean;
@@ -27,7 +27,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
   constructor(props: ToggleGroupProps) {
     super(props);
     this.state = {
-      selected: {
+      isSelected: {
         first: false,
         second: false,
         third: false,
@@ -39,28 +39,28 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
     };
   }
 
-  handleItemClick = (selected: boolean, event: any) => {
+  handleItemClick = (isSelected: boolean, event: any) => {
     const id = event.currentTarget.id;
     this.setState(prevState => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore-next-line
-      prevState.selected[id] = selected;
+      prevState.isSelected[id] = isSelected;
       return {
-        selected: prevState.selected
+        isSelected: prevState.isSelected
       };
     });
   };
 
   render() {
-    const { selected } = this.state;
+    const { isSelected } = this.state;
 
     return (
       <>
         <ToggleGroup>
-          <ToggleGroupItem key={0} buttonId="first" selected={selected.first} onChange={this.handleItemClick}>
+          <ToggleGroupItem key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick}>
             Option 1
           </ToggleGroupItem>
-          <ToggleGroupItem key={1} buttonId="second" selected={selected.second} onChange={this.handleItemClick}>
+          <ToggleGroupItem key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick}>
             Option 2
           </ToggleGroupItem>
           <ToggleGroupItem key={2} buttonId="disabled" isDisabled>
@@ -72,7 +72,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             key={3}
             buttonId="third"
             variant={ToggleGroupItemVariant.icon}
-            selected={selected.third}
+            isSelected={isSelected.third}
             onChange={this.handleItemClick}
             aria-label="copy icon button"
           >
@@ -82,7 +82,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             key={4}
             buttonId="fourth"
             variant={ToggleGroupItemVariant.icon}
-            selected={selected.fourth}
+            isSelected={isSelected.fourth}
             onChange={this.handleItemClick}
             aria-label="undo icon button"
           >
@@ -92,7 +92,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             key={5}
             buttonId="fifth"
             variant={ToggleGroupItemVariant.icon}
-            selected={selected.fifth}
+            isSelected={isSelected.fifth}
             onChange={this.handleItemClick}
             aria-label="share square icon button"
           >
@@ -100,10 +100,10 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
           </ToggleGroupItem>
         </ToggleGroup>
         <ToggleGroup variant={ToggleGroupVariant.light}>
-          <ToggleGroupItem key={6} buttonId="sixth" selected={selected.sixth} onChange={this.handleItemClick}>
+          <ToggleGroupItem key={6} buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick}>
             Option 1
           </ToggleGroupItem>
-          <ToggleGroupItem key={7} buttonId="seventh" selected={selected.seventh} onChange={this.handleItemClick}>
+          <ToggleGroupItem key={7} buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick}>
             Option 2
           </ToggleGroupItem>
           <ToggleGroupItem key={8} isDisabled>

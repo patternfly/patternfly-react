@@ -6,6 +6,7 @@ exports[`basic not selected 1`] = `
 >
   <button
     aria-label="basic not selected"
+    aria-pressed={false}
     className="pf-c-toggle-group__button"
     id="toggleGroupItem"
     onClick={[Function]}
@@ -20,11 +21,12 @@ exports[`basic not selected 1`] = `
 exports[`basic selected 1`] = `
 <div
   className="pf-c-toggle-group__item"
+  selected={true}
 >
   <button
     aria-label="basic selected"
-    aria-pressed={true}
-    className="pf-c-toggle-group__button pf-m-selected"
+    aria-pressed={false}
+    className="pf-c-toggle-group__button"
     id="toggleGroupItem"
     onClick={[Function]}
   >
@@ -38,11 +40,12 @@ exports[`basic selected 1`] = `
 exports[`icon variant 1`] = `
 <div
   className="pf-c-toggle-group__item"
+  selected={true}
 >
   <button
     aria-label="icon variant"
-    aria-pressed={true}
-    className="pf-c-toggle-group__button pf-m-selected"
+    aria-pressed={false}
+    className="pf-c-toggle-group__button"
     id="toggleGroupItem"
     onClick={[Function]}
   >
@@ -59,6 +62,7 @@ exports[`isDisabled 1`] = `
 >
   <button
     aria-label="isDisabled"
+    aria-pressed={false}
     className="pf-c-toggle-group__button"
     disabled={true}
     id="toggleGroupItem"
