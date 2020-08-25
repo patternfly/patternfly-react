@@ -33,9 +33,9 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Inner prop passed from parent */
   createText?: string;
   /** Internal callback for ref tracking */
-  sendRef?: (ref: React.ReactNode, index: number) => void;
+  sendRef?: (ref: React.ReactNode, favoriteRef: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler?: (index: number, position: string) => void;
+  keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Flag indicating select has an inline text input for filtering */
   hasInlineFilter?: boolean;
   innerRef?: any;

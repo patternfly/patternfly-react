@@ -39,9 +39,9 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   /** Flag forcing the focused state */
   isFocused?: boolean;
   /** Internal callback for ref tracking */
-  sendRef?: (ref: React.ReactNode, index: number) => void;
+  sendRef?: (ref: React.ReactNode, favoriteRef: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler?: (index: number, position: string) => void;
+  keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Optional callback for click event */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Id of the checkbox input */
@@ -59,6 +59,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
 export class SelectOption extends React.Component<SelectOptionProps> {
   static displayName = 'SelectOption';
   private ref = React.createRef<any>();
+  private favoriteRef = React.createRef<any>();
   static defaultProps: SelectOptionProps = {
     className: '',
     value: '',
@@ -77,26 +78,42 @@ export class SelectOption extends React.Component<SelectOptionProps> {
   };
 
   componentDidMount() {
-    this.props.sendRef(this.props.isDisabled ? null : this.ref.current, this.props.index);
+    this.props.sendRef(
+      this.props.isDisabled ? null : this.ref.current,
+      this.props.isDisabled ? null : this.favoriteRef.current,
+      this.props.index
+    );
   }
 
   componentDidUpdate() {
-    this.props.sendRef(this.props.isDisabled ? null : this.ref.current, this.props.index);
+    this.props.sendRef(
+      this.props.isDisabled ? null : this.ref.current,
+      this.props.isDisabled ? null : this.favoriteRef.current,
+      this.props.index
+    );
   }
 
-  onKeyDown = (event: React.KeyboardEvent) => {
+  onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any) => {
     if (event.key === KeyTypes.Tab) {
-      return;
+      this.props.keyHandler(this.props.index, innerIndex, 'tab');
     }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
-      this.props.keyHandler(this.props.index, 'up');
+      this.props.keyHandler(this.props.index, innerIndex, 'up');
     } else if (event.key === KeyTypes.ArrowDown) {
-      this.props.keyHandler(this.props.index, 'down');
+      this.props.keyHandler(this.props.index, innerIndex, 'down');
+    } else if (event.key === KeyTypes.ArrowLeft) {
+      this.props.keyHandler(this.props.index, innerIndex, 'left');
+    } else if (event.key === KeyTypes.ArrowRight) {
+      this.props.keyHandler(this.props.index, innerIndex, 'right');
     } else if (event.key === KeyTypes.Enter) {
-      this.ref.current.click();
-      if (this.context.variant === SelectVariant.checkbox) {
-        this.ref.current.focus();
+      if (onEnter !== undefined) {
+        onEnter();
+      } else {
+        this.ref.current.click();
+        if (this.context.variant === SelectVariant.checkbox) {
+          this.ref.current.focus();
+        }
       }
     }
   };
@@ -147,6 +164,10 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         onClick={() => {
           onFavorite(generatedId, isFavorite);
         }}
+        onKeyDown={event => {
+          this.onKeyDown(event, 1, () => onFavorite(generatedId, isFavorite));
+        }}
+        ref={this.favoriteRef}
       >
         <span className={css(styles.selectMenuItemActionIcon)}>
           <StarIcon />
@@ -174,7 +195,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
                     description && styles.modifiers.description,
-                    isFavorite !== null && styles.modifiers.link,
+                    isFavorite !== null && styles.modifiers.link, //
                     isFocused && styles.modifiers.focus,
                     className
                   )}
@@ -188,7 +209,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   role="option"
                   aria-selected={isSelected || null}
                   ref={this.ref}
-                  onKeyDown={this.onKeyDown}
+                  onKeyDown={(event: React.KeyboardEvent) => {
+                    this.onKeyDown(event, 0);
+                  }}
                   type="button"
                 >
                   {description && (
@@ -229,7 +252,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   description && styles.modifiers.description,
                   className
                 )}
-                onKeyDown={this.onKeyDown}
+                onKeyDown={(event: React.KeyboardEvent) => {
+                  this.onKeyDown(event, 0);
+                }}
               >
                 <input
                   id={inputId || `${inputIdPrefix}-${value.toString()}`}

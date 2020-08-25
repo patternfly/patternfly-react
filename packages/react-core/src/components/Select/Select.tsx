@@ -118,7 +118,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   private menuComponentRef = React.createRef<HTMLElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private clearRef = React.createRef<HTMLButtonElement>();
-  private refCollection: HTMLElement[] = [];
+  private inputRef = React.createRef<HTMLInputElement>();
+  private refCollection: HTMLElement[][] = [[]];
 
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
@@ -168,11 +169,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
     if (this.props.hasInlineFilter) {
-      this.refCollection[0] = this.filterRef.current;
+      this.refCollection[0][0] = this.filterRef.current;
     }
 
     if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent && this.refCollection[0]) {
-      this.refCollection[0].focus();
+      this.refCollection[0][0].focus();
     }
 
     if (prevProps.children !== this.props.children) {
@@ -340,12 +341,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     );
   }
 
-  sendRef = (ref: React.ReactNode, index: number) => {
-    this.refCollection[index] = ref as HTMLElement;
+  sendRef = (optionRef: React.ReactNode, favoriteRef: React.ReactNode, index: number) => {
+    this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
   };
 
-  handleArrowKeys = (index: number, position: string) => {
-    keyHandler(index, 0, position, this.refCollection, this.refCollection);
+  handleMenuKeys = (index: number, innerIndex: number, position: string) => {
+    keyHandler(index, innerIndex, position, this.refCollection, this.refCollection);
+    if (this.props.variant === SelectVariant.typeahead || this.props.variant === SelectVariant.typeaheadMulti) {
+      if (position !== 'tab') {
+        this.handleTypeaheadKeys(position);
+      }
+    }
   };
 
   handleFocus = () => {
@@ -359,16 +365,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
     if (isOpen) {
       if (position === 'enter') {
-        if (typeaheadActiveChild || this.refCollection[0]) {
+        if (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0])) {
           this.setState({
             typeaheadInputValue:
-              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
+              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
           });
           if (typeaheadActiveChild) {
             typeaheadActiveChild.click();
           } else {
-            this.refCollection[0].click();
+            this.refCollection[0][0].click();
           }
+        }
+      } else if (position === 'tab') {
+        if (this.inputRef.current === document.activeElement) {
+          const focusIndex = typeaheadCurrIndex === -1 ? 0 : typeaheadCurrIndex;
+          this.refCollection[focusIndex][0].focus();
+        } else {
+          this.inputRef.current.focus();
         }
       } else {
         let nextIndex;
@@ -376,19 +389,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           nextIndex = 0;
         } else if (typeaheadCurrIndex === -1 && position === 'up') {
           nextIndex = this.refCollection.length - 1;
-        } else {
+        } else if (position !== 'left' && position !== 'right') {
           nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
+        } else {
+          nextIndex = typeaheadCurrIndex;
         }
         if (this.refCollection[nextIndex] === null) {
           return;
         }
-        const hasDescriptionElm = Boolean(this.refCollection[nextIndex].classList.contains('pf-m-description'));
+
+        const hasDescriptionElm = Boolean(
+          this.refCollection[nextIndex][0] && this.refCollection[nextIndex][0].classList.contains('pf-m-description')
+        );
         const optionTextElm = hasDescriptionElm
-          ? (this.refCollection[nextIndex].firstElementChild as HTMLElement)
-          : this.refCollection[nextIndex];
+          ? (this.refCollection[nextIndex][0].firstElementChild as HTMLElement)
+          : this.refCollection[nextIndex][0];
         this.setState({
           typeaheadCurrIndex: nextIndex,
-          typeaheadActiveChild: this.refCollection[nextIndex],
+          typeaheadActiveChild: this.refCollection[nextIndex][0],
           typeaheadInputValue:
             isCreatable && optionTextElm.innerText.includes(createText)
               ? this.state.creatableValue
@@ -597,19 +615,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               placeholder={inlineFilterPlaceholderText}
               onKeyDown={event => {
                 if (event.key === KeyTypes.ArrowUp) {
-                  this.handleArrowKeys(0, 'up');
+                  this.handleMenuKeys(0, 0, 'up');
                 } else if (event.key === KeyTypes.ArrowDown) {
-                  this.handleArrowKeys(0, 'down');
+                  this.handleMenuKeys(0, 0, 'down');
+                } else if (event.key === KeyTypes.ArrowLeft) {
+                  this.handleMenuKeys(0, 0, 'left');
+                } else if (event.key === KeyTypes.ArrowRight) {
+                  this.handleMenuKeys(0, 0, 'right');
                 }
               }}
               ref={this.filterRef}
               autoComplete="off"
-            ></input>
+            />
           </div>
           <Divider key="inline-filter-divider" />
         </React.Fragment>
       );
-      this.refCollection[0] = this.filterRef.current;
+      this.refCollection[0][0] = this.filterRef.current;
       filterWithChildren = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
         React.cloneElement(option, { key: index })
       );
@@ -668,7 +690,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         sendRef={this.sendRef}
-        keyHandler={this.handleArrowKeys}
+        keyHandler={this.handleMenuKeys}
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
       >
@@ -772,6 +794,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {(selections[0] || typeaheadInputValue) && clearBtn}
@@ -795,6 +818,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
