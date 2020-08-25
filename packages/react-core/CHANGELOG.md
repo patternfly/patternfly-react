@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.45.1...@patternfly/react-core@4.46.0) (2020-08-25)
+
+
+### Features
+
+* **modal:** add medium variant ([#4678](https://github.com/patternfly/patternfly-react/issues/4678)) ([203dd08](https://github.com/patternfly/patternfly-react/commit/203dd0802c630fa3979cf349e5308f8fe906c429))
+
+
+
+
+
 ## [4.45.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.45.0...@patternfly/react-core@4.45.1) (2020-08-25)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.34.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.3...demo-app-ts@4.34.0) (2020-08-25)
+
+
+### Features
+
+* **modal:** add medium variant ([#4678](https://github.com/patternfly/patternfly-react/issues/4678)) ([203dd08](https://github.com/patternfly/patternfly-react/commit/203dd0802c630fa3979cf349e5308f8fe906c429))
+
+
+
+
+
 ## [4.33.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.2...demo-app-ts@4.33.3) (2020-08-25)
 
 **Note:** Version bump only for package demo-app-ts
