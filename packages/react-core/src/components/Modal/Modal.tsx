@@ -40,7 +40,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Description of the modal */
   description?: React.ReactNode;
   /** Variant of the modal */
-  variant?: 'small' | 'large' | 'default';
+  variant?: 'small' | 'medium' | 'large' | 'default';
   /** Flag indicating if modal content should be placed in a modal box body wrapper */
   hasNoBodyWrapper?: boolean;
   /** An ID to use for the ModalBox container */
@@ -51,6 +51,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
 
 export enum ModalVariant {
   small = 'small',
+  medium = 'medium',
   large = 'large',
   default = 'default'
 }
