@@ -21,8 +21,6 @@ releaseNoteTOC: true
   - Added support to truncate title ([#4399](https://github.com/patternfly/patternfly-react/pull/4399))
 - **Label:**
   - Added no overflow prop ([#4680](https://github.com/patternfly/patternfly-react/pull/4680))
-- **Page:**
-  - Added missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/pull/4707))
 - **MasterDetail:**
   - Renamed master detail demo to primary-detail ([#4703](https://github.com/patternfly/patternfly-react/pull/4703))
 - **Modal:**
@@ -32,6 +30,7 @@ releaseNoteTOC: true
   - Added formatHeaderText prop to support customize notification drawer header text ([#4684](https://github.com/patternfly/patternfly-react/pull/4684))
 - **Page:**
   - Added width limit prop ([#4686](https://github.com/patternfly/patternfly-react/pull/4686))
+  - Added missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/pull/4707))
 - **SearchInput:**
   - Use title case id in docs ([#4725](https://github.com/patternfly/patternfly-react/pull/4725))
 - **Table:**
