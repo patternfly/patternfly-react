@@ -3,6 +3,7 @@
 #ws-react-c-nav-default,
 #ws-react-c-nav-expandable,
 #ws-react-c-nav-expandable-wsubnavigation-titles,
-#ws-react-c-nav-mixed {
+#ws-react-c-nav-mixed,
+#ws-react-c-nav-ouia {
   background-color: var(--pf-global--BackgroundColor--dark-300);
 }

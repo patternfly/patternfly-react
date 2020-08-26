@@ -126,7 +126,7 @@ class OUIASwitch extends React.Component {
     const { isChecked } = this.state;
     return (
       <Switch
-        id="simple-switch"
+        id="simple-ouia-switch"
         label="Message when on"
         labelOff="Message when off"
         isChecked={isChecked}
