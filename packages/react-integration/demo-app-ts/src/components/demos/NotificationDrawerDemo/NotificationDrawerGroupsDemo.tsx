@@ -27,6 +27,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 interface GroupsNotificationDrawerDemoState {
+  isDrawerOpen: boolean;
   isOpenMap: { [x: string]: boolean };
   firstGroupExpanded: boolean;
   secondGroupExpanded: boolean;
@@ -41,12 +42,19 @@ export class GroupsNotificationDrawerDemo extends React.Component<
   constructor(props: NotificationDrawerProps) {
     super(props);
     this.state = {
+      isDrawerOpen: false,
       isOpenMap: null,
       firstGroupExpanded: false,
       secondGroupExpanded: true,
       thirdGroupExpanded: false
     };
   }
+
+  onDrawerClose = () => {
+    this.setState({
+      isDrawerOpen: false
+    });
+  };
 
   onToggle = (id: string, isOpen: boolean) => {
     this.setState({
@@ -88,7 +96,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={4}>
+        <NotificationDrawerHeader count={4} onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
             toggle={

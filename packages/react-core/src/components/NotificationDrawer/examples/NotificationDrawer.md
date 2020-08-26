@@ -52,6 +52,11 @@ class BasicNotificationDrawer extends React.Component {
       isOpen3: false,
       isOpen4: false
     };
+    onDrawerClose = () => {
+      this.setState({
+        isDrawerOpen: false
+      });
+    };
     this.onToggle0 = isOpen0 => {
       this.setState({
         isOpen0
@@ -102,7 +107,7 @@ class BasicNotificationDrawer extends React.Component {
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={2}>
+        <NotificationDrawerHeader count={2} onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle0} id="toggle-id-0" />}
