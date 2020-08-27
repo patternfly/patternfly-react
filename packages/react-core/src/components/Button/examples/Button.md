@@ -228,7 +228,10 @@ ButtonCTAVariants = () => (
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 
 ButtonVariants = () => (
   <React.Fragment>

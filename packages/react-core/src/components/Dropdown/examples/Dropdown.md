@@ -1407,7 +1407,8 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {

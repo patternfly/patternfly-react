@@ -1706,7 +1706,7 @@ class SelectMenuDocumentBody extends React.Component {
 
 ```js
 import React from 'react';
-import { CubeIcon } from '@patternfly/react-icons';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class OUIASingleSelectInput extends React.Component {
