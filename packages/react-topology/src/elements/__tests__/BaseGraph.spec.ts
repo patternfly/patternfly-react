@@ -8,7 +8,7 @@ import { Visualization } from '../../Visualization';
 
 class TestLayout implements Layout {
   layout = jest.fn();
-
+  stop = jest.fn();
   destroy = jest.fn();
 }
 

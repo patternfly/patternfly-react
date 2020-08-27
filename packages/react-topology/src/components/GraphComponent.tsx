@@ -46,13 +46,6 @@ const GraphComponent: React.FC<GraphComponentProps> = ({
   onSelect,
   onContextMenu
 }) => {
-  const layout = element.getLayout();
-  React.useEffect(() => {
-    element.layout();
-    // Only re-run if the layout changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [layout]);
-
   const { x, y, width, height } = element.getBounds();
   return (
     <>
