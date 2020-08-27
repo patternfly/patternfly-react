@@ -27,7 +27,7 @@ exports[`CatalogTile href renders properly 1`] = `
   >
     <a
       className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
-      data-ouia-component-id="Card-generated-from-route-7"
+      data-ouia-component-id="OUIA-Card-6"
       data-ouia-component-type="PF4/Card"
       data-ouia-safe={true}
       href="http://patternfly.org"
@@ -133,7 +133,7 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <div
         className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
-        data-ouia-component-id="Card-generated-from-route-2"
+        data-ouia-component-id="OUIA-Card-1"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="#"
@@ -416,7 +416,7 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <div
         className="pf-c-card pf-m-hoverable catalog-tile-pf"
-        data-ouia-component-id="Card-generated-from-route-3"
+        data-ouia-component-id="OUIA-Card-2"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="#"
@@ -772,7 +772,7 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <div
         className="pf-c-card pf-m-hoverable catalog-tile-pf"
-        data-ouia-component-id="Card-generated-from-route-4"
+        data-ouia-component-id="OUIA-Card-3"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="#"
@@ -1012,7 +1012,7 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <a
         className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
-        data-ouia-component-id="Card-generated-from-route-5"
+        data-ouia-component-id="OUIA-Card-4"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="https://github.com/patternfly/patternfly-react"
@@ -1277,7 +1277,7 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <a
         className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
-        data-ouia-component-id="Card-generated-from-route-6"
+        data-ouia-component-id="OUIA-Card-5"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="https://github.com/patternfly/patternfly-react"
