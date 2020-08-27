@@ -97,7 +97,7 @@ exports[`optionsMenu expanded 1`] = `
   >
     <div
       className="pf-c-options-menu pf-m-expanded"
-      data-ouia-component-id={4}
+      data-ouia-component-id="OUIA-OptionsMenu-5"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="expanded"
@@ -114,7 +114,7 @@ exports[`optionsMenu expanded 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu pf-m-expanded"
-              data-ouia-component-id="4"
+              data-ouia-component-id="OUIA-OptionsMenu-5"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="expanded"
@@ -287,7 +287,7 @@ exports[`optionsMenu expanded 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu pf-m-expanded"
-                data-ouia-component-id="4"
+                data-ouia-component-id="OUIA-OptionsMenu-5"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="expanded"
@@ -465,7 +465,7 @@ exports[`optionsMenu expanded 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-expanded"
-                  data-ouia-component-id="4"
+                  data-ouia-component-id="OUIA-OptionsMenu-5"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="expanded"
@@ -1167,7 +1167,7 @@ exports[`optionsMenu isDisabled 1`] = `
   >
     <div
       className="pf-c-options-menu"
-      data-ouia-component-id={7}
+      data-ouia-component-id="OUIA-OptionsMenu-8"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="disabled"
@@ -1185,7 +1185,7 @@ exports[`optionsMenu isDisabled 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu"
-              data-ouia-component-id="7"
+              data-ouia-component-id="OUIA-OptionsMenu-8"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="disabled"
@@ -1240,7 +1240,7 @@ exports[`optionsMenu isDisabled 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu"
-                data-ouia-component-id="7"
+                data-ouia-component-id="OUIA-OptionsMenu-8"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="disabled"
@@ -1300,7 +1300,7 @@ exports[`optionsMenu isDisabled 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="7"
+                  data-ouia-component-id="OUIA-OptionsMenu-8"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="disabled"
@@ -1489,7 +1489,7 @@ exports[`optionsMenu open up 1`] = `
   >
     <div
       className="pf-c-options-menu pf-m-top"
-      data-ouia-component-id={2}
+      data-ouia-component-id="OUIA-OptionsMenu-3"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="openUp"
@@ -1506,7 +1506,7 @@ exports[`optionsMenu open up 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu pf-m-top"
-              data-ouia-component-id="2"
+              data-ouia-component-id="OUIA-OptionsMenu-3"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="openUp"
@@ -1560,7 +1560,7 @@ exports[`optionsMenu open up 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu pf-m-top"
-                data-ouia-component-id="2"
+                data-ouia-component-id="OUIA-OptionsMenu-3"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="openUp"
@@ -1619,7 +1619,7 @@ exports[`optionsMenu open up 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-top"
-                  data-ouia-component-id="2"
+                  data-ouia-component-id="OUIA-OptionsMenu-3"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="openUp"
@@ -1807,7 +1807,7 @@ exports[`optionsMenu plain 1`] = `
   >
     <div
       className="pf-c-options-menu"
-      data-ouia-component-id={5}
+      data-ouia-component-id="OUIA-OptionsMenu-6"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="plain"
@@ -1824,7 +1824,7 @@ exports[`optionsMenu plain 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu"
-              data-ouia-component-id="5"
+              data-ouia-component-id="OUIA-OptionsMenu-6"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="plain"
@@ -1858,7 +1858,7 @@ exports[`optionsMenu plain 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu"
-                data-ouia-component-id="5"
+                data-ouia-component-id="OUIA-OptionsMenu-6"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="plain"
@@ -1898,7 +1898,7 @@ exports[`optionsMenu plain 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="5"
+                  data-ouia-component-id="OUIA-OptionsMenu-6"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="plain"
@@ -2036,7 +2036,7 @@ exports[`optionsMenu regular 1`] = `
   >
     <div
       className="pf-c-options-menu"
-      data-ouia-component-id={0}
+      data-ouia-component-id="OUIA-OptionsMenu-1"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="regular"
@@ -2053,7 +2053,7 @@ exports[`optionsMenu regular 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu"
-              data-ouia-component-id="0"
+              data-ouia-component-id="OUIA-OptionsMenu-1"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="regular"
@@ -2107,7 +2107,7 @@ exports[`optionsMenu regular 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu"
-                data-ouia-component-id="0"
+                data-ouia-component-id="OUIA-OptionsMenu-1"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="regular"
@@ -2166,7 +2166,7 @@ exports[`optionsMenu regular 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="0"
+                  data-ouia-component-id="OUIA-OptionsMenu-1"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="regular"
@@ -2355,7 +2355,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
   >
     <div
       className="pf-c-options-menu pf-m-top pf-m-align-right"
-      data-ouia-component-id={3}
+      data-ouia-component-id="OUIA-OptionsMenu-4"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="rightAlignedOpenUp"
@@ -2372,7 +2372,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu pf-m-top pf-m-align-right"
-              data-ouia-component-id="3"
+              data-ouia-component-id="OUIA-OptionsMenu-4"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="rightAlignedOpenUp"
@@ -2426,7 +2426,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu pf-m-top pf-m-align-right"
-                data-ouia-component-id="3"
+                data-ouia-component-id="OUIA-OptionsMenu-4"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="rightAlignedOpenUp"
@@ -2485,7 +2485,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-top pf-m-align-right"
-                  data-ouia-component-id="3"
+                  data-ouia-component-id="OUIA-OptionsMenu-4"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="rightAlignedOpenUp"
@@ -2673,7 +2673,7 @@ exports[`optionsMenu right aligned 1`] = `
   >
     <div
       className="pf-c-options-menu pf-m-align-right"
-      data-ouia-component-id={1}
+      data-ouia-component-id="OUIA-OptionsMenu-2"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="rightAligned"
@@ -2690,7 +2690,7 @@ exports[`optionsMenu right aligned 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu pf-m-align-right"
-              data-ouia-component-id="1"
+              data-ouia-component-id="OUIA-OptionsMenu-2"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="rightAligned"
@@ -2744,7 +2744,7 @@ exports[`optionsMenu right aligned 1`] = `
             Object {
               "current": <div
                 class="pf-c-options-menu pf-m-align-right"
-                data-ouia-component-id="1"
+                data-ouia-component-id="OUIA-OptionsMenu-2"
                 data-ouia-component-type="PF4/OptionsMenu"
                 data-ouia-safe="true"
                 id="rightAligned"
@@ -2803,7 +2803,7 @@ exports[`optionsMenu right aligned 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-align-right"
-                  data-ouia-component-id="1"
+                  data-ouia-component-id="OUIA-OptionsMenu-2"
                   data-ouia-component-type="PF4/OptionsMenu"
                   data-ouia-safe="true"
                   id="rightAligned"
@@ -3000,7 +3000,7 @@ exports[`optionsMenu text 1`] = `
   >
     <div
       className="pf-c-options-menu"
-      data-ouia-component-id={6}
+      data-ouia-component-id="OUIA-OptionsMenu-7"
       data-ouia-component-type="PF4/OptionsMenu"
       data-ouia-safe={true}
       id="text"
@@ -3017,7 +3017,7 @@ exports[`optionsMenu text 1`] = `
           Object {
             "current": <div
               class="pf-c-options-menu"
-              data-ouia-component-id="6"
+              data-ouia-component-id="OUIA-OptionsMenu-7"
               data-ouia-component-type="PF4/OptionsMenu"
               data-ouia-safe="true"
               id="text"

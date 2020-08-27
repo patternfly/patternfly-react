@@ -11,7 +11,7 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
       "menuClass": "pf-c-dropdown__menu",
       "onSelect": [Function],
       "ouiaComponentType": "Dropdown",
-      "ouiaId": undefined,
+      "ouiaId": "OUIA-Dropdown-1",
       "ouiaSafe": undefined,
       "plainTextClass": "pf-m-text",
       "sectionClass": "pf-c-dropdown__group",

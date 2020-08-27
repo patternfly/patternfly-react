@@ -3,7 +3,7 @@
 exports[`Renders ContextSelector 1`] = `
 <div
   className="pf-c-context-selector"
-  data-ouia-component-id={0}
+  data-ouia-component-id="OUIA-ContextSelector-1"
   data-ouia-component-type="PF4/ContextSelector"
   data-ouia-safe={true}
 >
@@ -24,7 +24,7 @@ exports[`Renders ContextSelector 1`] = `
 exports[`Renders ContextSelector open 1`] = `
 <div
   className="pf-c-context-selector pf-m-expanded"
-  data-ouia-component-id={1}
+  data-ouia-component-id="OUIA-ContextSelector-2"
   data-ouia-component-type="PF4/ContextSelector"
   data-ouia-safe={true}
 >

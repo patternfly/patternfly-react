@@ -16,7 +16,7 @@ exports[`Chip closable 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={4}
+      data-ouia-component-id="OUIA-Chip-2"
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >
@@ -38,7 +38,7 @@ exports[`Chip closable 1`] = `
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={5}
+          data-ouia-component-id="OUIA-Button-plain-1"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
@@ -95,7 +95,7 @@ exports[`Chip closable with tooltip 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={8}
+      data-ouia-component-id="OUIA-Chip-3"
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >
@@ -117,7 +117,7 @@ exports[`Chip closable with tooltip 1`] = `
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={9}
+          data-ouia-component-id="OUIA-Button-plain-2"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
@@ -173,7 +173,7 @@ exports[`Chip overflow 1`] = `
   >
     <div
       className="pf-c-chip pf-m-overflow my-chp-cls"
-      data-ouia-component-id={1}
+      data-ouia-component-id="OUIA-Chip-1"
       data-ouia-component-type="PF4/OverflowChip"
       data-ouia-safe={true}
       onClick={[Function]}
@@ -203,7 +203,7 @@ exports[`Chip readonly 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={11}
+      data-ouia-component-id="OUIA-Chip-4"
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >

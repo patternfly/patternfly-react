@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface BreadcrumbProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Children nodes be rendered to the BreadCrumb. Should be of type BreadCrumbItem. */
@@ -19,23 +19,26 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   ouiaId,
   ouiaSafe = true,
   ...props
-}: BreadcrumbProps) => (
-  <nav
-    {...props}
-    aria-label={ariaLabel}
-    className={css(styles.breadcrumb, className)}
-    {...getOUIAProps(Breadcrumb.displayName, ouiaId, ouiaSafe)}
-  >
-    <ol className={styles.breadcrumbList}>
-      {React.Children.map(children, (child, index) => {
-        const showDivider = index > 0;
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, { showDivider });
-        }
+}: BreadcrumbProps) => {
+  const [ouiaStateId] = React.useState(React.useCallback(() => getDefaultOUIAId(Breadcrumb.displayName), []));
+  return (
+    <nav
+      {...props}
+      aria-label={ariaLabel}
+      className={css(styles.breadcrumb, className)}
+      {...getOUIAProps(Breadcrumb.displayName, ouiaId !== undefined ? ouiaId : ouiaStateId, ouiaSafe)}
+    >
+      <ol className={styles.breadcrumbList}>
+        {React.Children.map(children, (child, index) => {
+          const showDivider = index > 0;
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, { showDivider });
+          }
 
-        return child;
-      })}
-    </ol>
-  </nav>
-);
+          return child;
+        })}
+      </ol>
+    </nav>
+  );
+};
 Breadcrumb.displayName = 'Breadcrumb';

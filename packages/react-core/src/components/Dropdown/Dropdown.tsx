@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Anything which can be rendered in a dropdown */
@@ -39,29 +39,32 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   ouiaId,
   ouiaSafe,
   ...props
-}: DropdownProps) => (
-  <DropdownContext.Provider
-    value={{
-      onSelect: event => onSelect && onSelect(event),
-      toggleTextClass: styles.dropdownToggleText,
-      toggleIconClass: styles.dropdownToggleImage,
-      toggleIndicatorClass: styles.dropdownToggleIcon,
-      menuClass: styles.dropdownMenu,
-      itemClass: styles.dropdownMenuItem,
-      toggleClass: styles.dropdownToggle,
-      baseClass: styles.dropdown,
-      baseComponent: 'div',
-      sectionClass: styles.dropdownGroup,
-      sectionTitleClass: styles.dropdownGroupTitle,
-      sectionComponent: 'section',
-      disabledClass: styles.modifiers.disabled,
-      plainTextClass: styles.modifiers.text,
-      ouiaId,
-      ouiaSafe,
-      ouiaComponentType: Dropdown.displayName
-    }}
-  >
-    <DropdownWithContext {...props} />
-  </DropdownContext.Provider>
-);
+}: DropdownProps) => {
+  const [ouiaStateId] = React.useState(React.useCallback(() => getDefaultOUIAId(Dropdown.displayName), []));
+  return (
+    <DropdownContext.Provider
+      value={{
+        onSelect: event => onSelect && onSelect(event),
+        toggleTextClass: styles.dropdownToggleText,
+        toggleIconClass: styles.dropdownToggleImage,
+        toggleIndicatorClass: styles.dropdownToggleIcon,
+        menuClass: styles.dropdownMenu,
+        itemClass: styles.dropdownMenuItem,
+        toggleClass: styles.dropdownToggle,
+        baseClass: styles.dropdown,
+        baseComponent: 'div',
+        sectionClass: styles.dropdownGroup,
+        sectionTitleClass: styles.dropdownGroupTitle,
+        sectionComponent: 'section',
+        disabledClass: styles.modifiers.disabled,
+        plainTextClass: styles.modifiers.text,
+        ouiaId: ouiaId !== undefined ? ouiaId : ouiaStateId,
+        ouiaSafe,
+        ouiaComponentType: Dropdown.displayName
+      }}
+    >
+      <DropdownWithContext {...props} />
+    </DropdownContext.Provider>
+  );
+};
 Dropdown.displayName = 'Dropdown';

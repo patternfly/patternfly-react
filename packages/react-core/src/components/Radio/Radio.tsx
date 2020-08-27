@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
@@ -35,7 +35,7 @@ export interface RadioProps
   description?: React.ReactNode;
 }
 
-export class Radio extends React.Component<RadioProps> {
+export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
   static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',
@@ -50,6 +50,9 @@ export class Radio extends React.Component<RadioProps> {
       // eslint-disable-next-line no-console
       console.error('Radio:', 'Radio requires an aria-label to be specified');
     }
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(Radio.displayName)
+    };
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -87,7 +90,7 @@ export class Radio extends React.Component<RadioProps> {
         checked={checked || isChecked}
         {...(checked === undefined && { defaultChecked })}
         {...(!label && { 'aria-label': ariaLabel })}
-        {...getOUIAProps(Radio.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(Radio.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       />
     );
     const labelRendered = !label ? null : isLabelWrapped ? (

@@ -62,7 +62,7 @@ exports[`component render custom pagination toggle 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={70}
+    data-ouia-component-id="OUIA-Pagination-top-12"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-12"
@@ -207,7 +207,7 @@ exports[`component render custom pagination toggle 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={71}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-13"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -231,7 +231,7 @@ exports[`component render custom pagination toggle 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="71"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-13"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -297,7 +297,7 @@ exports[`component render custom pagination toggle 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="71"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-13"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -358,7 +358,7 @@ exports[`component render custom pagination toggle 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="71"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-13"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -489,7 +489,7 @@ exports[`component render custom pagination toggle 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={72}
+              data-ouia-component-id="OUIA-Button-plain-47"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -540,7 +540,7 @@ exports[`component render custom pagination toggle 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={73}
+              data-ouia-component-id="OUIA-Button-plain-48"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -612,7 +612,7 @@ exports[`component render custom pagination toggle 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={74}
+              data-ouia-component-id="OUIA-Button-plain-49"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -662,7 +662,7 @@ exports[`component render custom pagination toggle 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={75}
+              data-ouia-component-id="OUIA-Button-plain-50"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -753,7 +753,7 @@ exports[`component render custom perPageOptions 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={40}
+    data-ouia-component-id="OUIA-Pagination-top-7"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-7"
@@ -850,7 +850,7 @@ exports[`component render custom perPageOptions 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={41}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-8"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -874,7 +874,7 @@ exports[`component render custom perPageOptions 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="41"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-8"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -968,7 +968,7 @@ exports[`component render custom perPageOptions 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="41"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-8"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -1040,7 +1040,7 @@ exports[`component render custom perPageOptions 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="41"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-8"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -1182,7 +1182,7 @@ exports[`component render custom perPageOptions 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={42}
+              data-ouia-component-id="OUIA-Button-plain-27"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -1233,7 +1233,7 @@ exports[`component render custom perPageOptions 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={43}
+              data-ouia-component-id="OUIA-Button-plain-28"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -1305,7 +1305,7 @@ exports[`component render custom perPageOptions 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={44}
+              data-ouia-component-id="OUIA-Button-plain-29"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -1355,7 +1355,7 @@ exports[`component render custom perPageOptions 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={45}
+              data-ouia-component-id="OUIA-Button-plain-30"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -1458,7 +1458,7 @@ exports[`component render custom start end 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={58}
+    data-ouia-component-id="OUIA-Pagination-top-10"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-10"
@@ -1603,7 +1603,7 @@ exports[`component render custom start end 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={59}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-11"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -1627,7 +1627,7 @@ exports[`component render custom start end 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="59"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-11"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -1721,7 +1721,7 @@ exports[`component render custom start end 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="59"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-11"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -1793,7 +1793,7 @@ exports[`component render custom start end 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="59"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-11"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -1935,7 +1935,7 @@ exports[`component render custom start end 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain"
               data-action="first"
-              data-ouia-component-id={60}
+              data-ouia-component-id="OUIA-Button-plain-39"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -1985,7 +1985,7 @@ exports[`component render custom start end 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain"
               data-action="previous"
-              data-ouia-component-id={61}
+              data-ouia-component-id="OUIA-Button-plain-40"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2056,7 +2056,7 @@ exports[`component render custom start end 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={62}
+              data-ouia-component-id="OUIA-Button-plain-41"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2106,7 +2106,7 @@ exports[`component render custom start end 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={63}
+              data-ouia-component-id="OUIA-Button-plain-42"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2190,7 +2190,7 @@ exports[`component render empty per page options 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={46}
+    data-ouia-component-id="OUIA-Pagination-top-8"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-8"
@@ -2268,7 +2268,7 @@ exports[`component render empty per page options 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={47}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-9"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -2292,7 +2292,7 @@ exports[`component render empty per page options 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="47"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-9"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -2354,7 +2354,7 @@ exports[`component render empty per page options 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={48}
+              data-ouia-component-id="OUIA-Button-plain-31"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -2405,7 +2405,7 @@ exports[`component render empty per page options 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={49}
+              data-ouia-component-id="OUIA-Button-plain-32"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -2477,7 +2477,7 @@ exports[`component render empty per page options 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={50}
+              data-ouia-component-id="OUIA-Button-plain-33"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2527,7 +2527,7 @@ exports[`component render empty per page options 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={51}
+              data-ouia-component-id="OUIA-Button-plain-34"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2630,7 +2630,7 @@ exports[`component render last page 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={34}
+    data-ouia-component-id="OUIA-Pagination-top-6"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-6"
@@ -2775,7 +2775,7 @@ exports[`component render last page 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={35}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-7"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -2799,7 +2799,7 @@ exports[`component render last page 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="35"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-7"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -2893,7 +2893,7 @@ exports[`component render last page 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="35"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-7"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -2965,7 +2965,7 @@ exports[`component render last page 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="35"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-7"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -3107,7 +3107,7 @@ exports[`component render last page 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain"
               data-action="first"
-              data-ouia-component-id={36}
+              data-ouia-component-id="OUIA-Button-plain-23"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -3157,7 +3157,7 @@ exports[`component render last page 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain"
               data-action="previous"
-              data-ouia-component-id={37}
+              data-ouia-component-id="OUIA-Button-plain-24"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -3228,7 +3228,7 @@ exports[`component render last page 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
-              data-ouia-component-id={38}
+              data-ouia-component-id="OUIA-Button-plain-25"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -3279,7 +3279,7 @@ exports[`component render last page 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
-              data-ouia-component-id={39}
+              data-ouia-component-id="OUIA-Button-plain-26"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -3383,7 +3383,7 @@ exports[`component render limited number of pages 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={22}
+    data-ouia-component-id="OUIA-Pagination-top-4"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-4"
@@ -3528,7 +3528,7 @@ exports[`component render limited number of pages 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={23}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-5"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -3552,7 +3552,7 @@ exports[`component render limited number of pages 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="23"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-5"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -3646,7 +3646,7 @@ exports[`component render limited number of pages 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="23"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-5"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -3718,7 +3718,7 @@ exports[`component render limited number of pages 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="23"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-5"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -3860,7 +3860,7 @@ exports[`component render limited number of pages 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={24}
+              data-ouia-component-id="OUIA-Button-plain-15"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -3911,7 +3911,7 @@ exports[`component render limited number of pages 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={25}
+              data-ouia-component-id="OUIA-Button-plain-16"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -3983,7 +3983,7 @@ exports[`component render limited number of pages 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
-              data-ouia-component-id={26}
+              data-ouia-component-id="OUIA-Button-plain-17"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -4034,7 +4034,7 @@ exports[`component render limited number of pages 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
-              data-ouia-component-id={27}
+              data-ouia-component-id="OUIA-Button-plain-18"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -4138,7 +4138,7 @@ exports[`component render no items 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={52}
+    data-ouia-component-id="OUIA-Pagination-top-9"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-9"
@@ -4283,7 +4283,7 @@ exports[`component render no items 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={53}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-10"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -4307,7 +4307,7 @@ exports[`component render no items 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="53"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-10"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -4402,7 +4402,7 @@ exports[`component render no items 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="53"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-10"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -4475,7 +4475,7 @@ exports[`component render no items 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="53"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-10"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -4618,7 +4618,7 @@ exports[`component render no items 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={54}
+              data-ouia-component-id="OUIA-Button-plain-35"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -4669,7 +4669,7 @@ exports[`component render no items 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={55}
+              data-ouia-component-id="OUIA-Button-plain-36"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -4741,7 +4741,7 @@ exports[`component render no items 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
-              data-ouia-component-id={56}
+              data-ouia-component-id="OUIA-Button-plain-37"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -4792,7 +4792,7 @@ exports[`component render no items 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
-              data-ouia-component-id={57}
+              data-ouia-component-id="OUIA-Button-plain-38"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -4896,7 +4896,7 @@ exports[`component render should render correctly bottom 1`] = `
 >
   <div
     className="pf-c-pagination pf-m-bottom"
-    data-ouia-component-id={6}
+    data-ouia-component-id="OUIA-Pagination-bottom-1"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-1"
@@ -5019,7 +5019,7 @@ exports[`component render should render correctly bottom 1`] = `
       >
         <div
           className="pf-c-options-menu pf-m-top"
-          data-ouia-component-id={7}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-2"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -5043,7 +5043,7 @@ exports[`component render should render correctly bottom 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-top"
-                  data-ouia-component-id="7"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-2"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -5137,7 +5137,7 @@ exports[`component render should render correctly bottom 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu pf-m-top"
-                      data-ouia-component-id="7"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-2"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -5209,7 +5209,7 @@ exports[`component render should render correctly bottom 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu pf-m-top"
-                        data-ouia-component-id="7"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-2"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -5351,7 +5351,7 @@ exports[`component render should render correctly bottom 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={8}
+              data-ouia-component-id="OUIA-Button-plain-5"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -5402,7 +5402,7 @@ exports[`component render should render correctly bottom 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={9}
+              data-ouia-component-id="OUIA-Button-plain-6"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -5474,7 +5474,7 @@ exports[`component render should render correctly bottom 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={10}
+              data-ouia-component-id="OUIA-Button-plain-7"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -5524,7 +5524,7 @@ exports[`component render should render correctly bottom 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={11}
+              data-ouia-component-id="OUIA-Button-plain-8"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -5627,7 +5627,7 @@ exports[`component render should render correctly compact 1`] = `
 >
   <div
     className="pf-c-pagination pf-m-compact"
-    data-ouia-component-id={12}
+    data-ouia-component-id="OUIA-Pagination-top-2"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-2"
@@ -5772,7 +5772,7 @@ exports[`component render should render correctly compact 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={13}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-3"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -5796,7 +5796,7 @@ exports[`component render should render correctly compact 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="13"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-3"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -5890,7 +5890,7 @@ exports[`component render should render correctly compact 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="13"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-3"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -5962,7 +5962,7 @@ exports[`component render should render correctly compact 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="13"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-3"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -6104,7 +6104,7 @@ exports[`component render should render correctly compact 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={14}
+              data-ouia-component-id="OUIA-Button-plain-9"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -6155,7 +6155,7 @@ exports[`component render should render correctly compact 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={15}
+              data-ouia-component-id="OUIA-Button-plain-10"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -6258,7 +6258,7 @@ exports[`component render should render correctly disabled 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={16}
+    data-ouia-component-id="OUIA-Pagination-top-3"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-3"
@@ -6403,7 +6403,7 @@ exports[`component render should render correctly disabled 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={17}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-4"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -6427,7 +6427,7 @@ exports[`component render should render correctly disabled 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="17"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-4"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -6522,7 +6522,7 @@ exports[`component render should render correctly disabled 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="17"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-4"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -6595,7 +6595,7 @@ exports[`component render should render correctly disabled 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="17"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-4"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -6738,7 +6738,7 @@ exports[`component render should render correctly disabled 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={18}
+              data-ouia-component-id="OUIA-Button-plain-11"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -6789,7 +6789,7 @@ exports[`component render should render correctly disabled 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={19}
+              data-ouia-component-id="OUIA-Button-plain-12"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -6861,7 +6861,7 @@ exports[`component render should render correctly disabled 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
-              data-ouia-component-id={20}
+              data-ouia-component-id="OUIA-Button-plain-13"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -6912,7 +6912,7 @@ exports[`component render should render correctly disabled 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
-              data-ouia-component-id={21}
+              data-ouia-component-id="OUIA-Button-plain-14"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -7016,7 +7016,7 @@ exports[`component render should render correctly top 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={0}
+    data-ouia-component-id="OUIA-Pagination-top-1"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-0"
@@ -7161,7 +7161,7 @@ exports[`component render should render correctly top 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={1}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-1"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -7185,7 +7185,7 @@ exports[`component render should render correctly top 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="1"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-1"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -7279,7 +7279,7 @@ exports[`component render should render correctly top 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="1"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-1"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -7351,7 +7351,7 @@ exports[`component render should render correctly top 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="1"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-1"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -7493,7 +7493,7 @@ exports[`component render should render correctly top 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={2}
+              data-ouia-component-id="OUIA-Button-plain-1"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -7544,7 +7544,7 @@ exports[`component render should render correctly top 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={3}
+              data-ouia-component-id="OUIA-Button-plain-2"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -7616,7 +7616,7 @@ exports[`component render should render correctly top 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={4}
+              data-ouia-component-id="OUIA-Button-plain-3"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -7666,7 +7666,7 @@ exports[`component render should render correctly top 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={5}
+              data-ouia-component-id="OUIA-Button-plain-4"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -7760,7 +7760,7 @@ exports[`component render titles 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={64}
+    data-ouia-component-id="OUIA-Pagination-top-11"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-11"
@@ -7906,7 +7906,7 @@ exports[`component render titles 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={65}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-12"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -7930,7 +7930,7 @@ exports[`component render titles 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="65"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-12"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -8025,7 +8025,7 @@ exports[`component render titles 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="65"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-12"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -8097,7 +8097,7 @@ exports[`component render titles 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="65"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-12"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -8239,7 +8239,7 @@ exports[`component render titles 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={66}
+              data-ouia-component-id="OUIA-Button-plain-43"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -8290,7 +8290,7 @@ exports[`component render titles 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={67}
+              data-ouia-component-id="OUIA-Button-plain-44"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -8362,7 +8362,7 @@ exports[`component render titles 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={68}
+              data-ouia-component-id="OUIA-Button-plain-45"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -8412,7 +8412,7 @@ exports[`component render titles 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={69}
+              data-ouia-component-id="OUIA-Button-plain-46"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -8516,7 +8516,7 @@ exports[`component render up drop direction 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={76}
+    data-ouia-component-id="OUIA-Pagination-top-13"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-13"
@@ -8661,7 +8661,7 @@ exports[`component render up drop direction 1`] = `
       >
         <div
           className="pf-c-options-menu pf-m-top"
-          data-ouia-component-id={77}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-14"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -8685,7 +8685,7 @@ exports[`component render up drop direction 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-top"
-                  data-ouia-component-id="77"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-14"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -8779,7 +8779,7 @@ exports[`component render up drop direction 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu pf-m-top"
-                      data-ouia-component-id="77"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-14"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -8851,7 +8851,7 @@ exports[`component render up drop direction 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu pf-m-top"
-                        data-ouia-component-id="77"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-14"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -8993,7 +8993,7 @@ exports[`component render up drop direction 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={78}
+              data-ouia-component-id="OUIA-Button-plain-51"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -9044,7 +9044,7 @@ exports[`component render up drop direction 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={79}
+              data-ouia-component-id="OUIA-Button-plain-52"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -9116,7 +9116,7 @@ exports[`component render up drop direction 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
-              data-ouia-component-id={80}
+              data-ouia-component-id="OUIA-Button-plain-53"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -9166,7 +9166,7 @@ exports[`component render up drop direction 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
-              data-ouia-component-id={81}
+              data-ouia-component-id="OUIA-Button-plain-54"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -9269,7 +9269,7 @@ exports[`component render zero results 1`] = `
 >
   <div
     className="pf-c-pagination"
-    data-ouia-component-id={28}
+    data-ouia-component-id="OUIA-Pagination-top-5"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
     id="pagination-options-menu-5"
@@ -9414,7 +9414,7 @@ exports[`component render zero results 1`] = `
       >
         <div
           className="pf-c-options-menu"
-          data-ouia-component-id={29}
+          data-ouia-component-id="OUIA-PaginationOptionsMenu-6"
           data-ouia-component-type="PF4/PaginationOptionsMenu"
           data-ouia-safe={true}
         >
@@ -9438,7 +9438,7 @@ exports[`component render zero results 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
-                  data-ouia-component-id="29"
+                  data-ouia-component-id="OUIA-PaginationOptionsMenu-6"
                   data-ouia-component-type="PF4/PaginationOptionsMenu"
                   data-ouia-safe="true"
                 >
@@ -9533,7 +9533,7 @@ exports[`component render zero results 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
-                      data-ouia-component-id="29"
+                      data-ouia-component-id="OUIA-PaginationOptionsMenu-6"
                       data-ouia-component-type="PF4/PaginationOptionsMenu"
                       data-ouia-safe="true"
                     >
@@ -9606,7 +9606,7 @@ exports[`component render zero results 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
-                        data-ouia-component-id="29"
+                        data-ouia-component-id="OUIA-PaginationOptionsMenu-6"
                         data-ouia-component-type="PF4/PaginationOptionsMenu"
                         data-ouia-safe="true"
                       >
@@ -9749,7 +9749,7 @@ exports[`component render zero results 1`] = `
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
-              data-ouia-component-id={30}
+              data-ouia-component-id="OUIA-Button-plain-19"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -9800,7 +9800,7 @@ exports[`component render zero results 1`] = `
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
-              data-ouia-component-id={31}
+              data-ouia-component-id="OUIA-Button-plain-20"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -9872,7 +9872,7 @@ exports[`component render zero results 1`] = `
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
-              data-ouia-component-id={32}
+              data-ouia-component-id="OUIA-Button-plain-21"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -9923,7 +9923,7 @@ exports[`component render zero results 1`] = `
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
-              data-ouia-component-id={33}
+              data-ouia-component-id="OUIA-Button-plain-22"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}

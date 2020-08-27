@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { getUniqueId } from '../../helpers/util';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface SwitchProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
@@ -26,7 +26,7 @@ export interface SwitchProps
   'aria-label'?: string;
 }
 
-export class Switch extends React.Component<SwitchProps & OUIAProps> {
+export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
   static displayName = 'Switch';
   id: string;
 
@@ -44,6 +44,9 @@ export class Switch extends React.Component<SwitchProps & OUIAProps> {
       console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
     this.id = props.id || getUniqueId();
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(Switch.displayName)
+    };
   }
 
   render() {
@@ -66,7 +69,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps> {
       <label
         className={css(styles.switch, className)}
         htmlFor={this.id}
-        {...getOUIAProps(Switch.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(Switch.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       >
         <input
           id={this.id}

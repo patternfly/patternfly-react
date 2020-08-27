@@ -5,7 +5,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
   <div
     aria-label="string"
     className="pf-c-tabs ''"
-    data-ouia-component-id={0}
+    data-ouia-component-id="OUIA-Tabs-1"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe={true}
     id="string"

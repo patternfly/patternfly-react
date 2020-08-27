@@ -10,7 +10,7 @@ exports[`no label switch is checked 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={6}
+    data-ouia-component-id="OUIA-Switch-7"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="no-label-switch-is-checked"
@@ -69,7 +69,7 @@ exports[`no label switch is not checked 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={7}
+    data-ouia-component-id="OUIA-Switch-8"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="no-label-switch-is-not-checked"
@@ -130,7 +130,7 @@ exports[`switch is checked 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={2}
+    data-ouia-component-id="OUIA-Switch-3"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="switch-is-checked"
@@ -176,7 +176,7 @@ exports[`switch is checked and disabled 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={8}
+    data-ouia-component-id="OUIA-Switch-9"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="switch-is-checked-and-disabled"
@@ -237,7 +237,7 @@ exports[`switch is not checked 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={3}
+    data-ouia-component-id="OUIA-Switch-4"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="switch-is-not-checked"
@@ -283,7 +283,7 @@ exports[`switch is not checked and disabled 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={9}
+    data-ouia-component-id="OUIA-Switch-10"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="switch-is-not-checked-and-disabled"
@@ -343,7 +343,7 @@ exports[`switch with only label is checked 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={4}
+    data-ouia-component-id="OUIA-Switch-5"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="switch-is-checked"
@@ -390,7 +390,7 @@ exports[`switch with only label is not checked 1`] = `
 >
   <label
     className="pf-c-switch"
-    data-ouia-component-id={5}
+    data-ouia-component-id="OUIA-Switch-6"
     data-ouia-component-type="PF4/Switch"
     data-ouia-safe={true}
     htmlFor="switch-is-not-checked"

@@ -4,7 +4,7 @@ import { canUseDOM, KEY_CODES, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Content rendered inside the Modal. */
@@ -58,6 +58,7 @@ export enum ModalVariant {
 
 interface ModalState {
   container: HTMLElement;
+  ouiaStateId: string;
 }
 
 export class Modal extends React.Component<ModalProps, ModalState> {
@@ -94,7 +95,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     this.descriptorId = `pf-modal-part-${descriptorIdNum}`;
 
     this.state = {
-      container: undefined
+      container: undefined,
+      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
     };
   }
 
@@ -211,7 +213,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
-        ouiaId={ouiaId}
+        ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
       />,
       container

@@ -19,6 +19,30 @@ export function getOUIAProps(componentType: string, id: OuiaId | undefined, ouia
   return {
     'data-ouia-component-type': `PF4/${componentType}`,
     'data-ouia-safe': ouiaSafe,
-    'data-ouia-component-id': id === undefined ? uid++ : id
+    'data-ouia-component-id': id === undefined ? `OUIA-${componentType}-${++uid}` : id
   };
+}
+
+const ouiaIdByRoute: any = {};
+/**
+ * Returns a generated id based on the URL location
+ *
+ * @param {string} componentType OUIA component type
+ * @param {string} variant Optional variant to add to the default
+ */
+export function getDefaultOUIAId(componentType: string, variant?: string) {
+  /*
+  ouiaIdByRoute = {
+    [route+componentType]: [number]
+  }
+  */
+  try {
+    const key = `${window.location.href}-${componentType}-${variant || ''}`;
+    if (!ouiaIdByRoute[key]) {
+      ouiaIdByRoute[key] = 0;
+    }
+    return `OUIA-${componentType}-${variant ? `${variant}-` : ''}${++ouiaIdByRoute[key]}`;
+  } catch (exception) {
+    return `OUIA-${componentType}-${variant ? `${variant}-` : ''}${++uid}`;
+  }
 }

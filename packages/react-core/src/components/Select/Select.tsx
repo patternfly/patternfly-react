@@ -11,7 +11,15 @@ import { SelectGroup } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
-import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional, GenerateId } from '../../helpers';
+import {
+  keyHandler,
+  getNextIndex,
+  getOUIAProps,
+  OUIAProps,
+  getDefaultOUIAId,
+  PickOptional,
+  GenerateId
+} from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 
@@ -103,6 +111,7 @@ export interface SelectState {
   typeaheadFilteredChildren: React.ReactNode[];
   typeaheadCurrIndex: number;
   creatableValue: string;
+  ouiaStateId: string;
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
@@ -154,7 +163,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     typeaheadActiveChild: null as HTMLElement,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     typeaheadCurrIndex: -1,
-    creatableValue: ''
+    creatableValue: '',
+    ouiaStateId: getDefaultOUIAId(Select.displayName, this.props.variant)
   };
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
@@ -654,7 +664,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         ref={this.parentRef}
-        {...getOUIAProps(Select.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
       >
         <SelectToggle

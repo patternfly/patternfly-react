@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
 export enum OptionsMenuPosition {
@@ -51,34 +51,37 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   ouiaId,
   ouiaSafe = true,
   ...props
-}: OptionsMenuProps) => (
-  <DropdownContext.Provider
-    value={{
-      id,
-      onSelect: () => undefined,
-      toggleIndicatorClass: styles.optionsMenuToggleIcon,
-      toggleTextClass: styles.optionsMenuToggleText,
-      menuClass: styles.optionsMenuMenu,
-      itemClass: styles.optionsMenuMenuItem,
-      toggleClass: isText ? styles.optionsMenuToggleButton : styles.optionsMenuToggle,
-      baseClass: styles.optionsMenu,
-      disabledClass: styles.modifiers.disabled,
-      menuComponent: isGrouped ? 'div' : 'ul',
-      baseComponent: 'div',
-      ouiaId,
-      ouiaSafe,
-      ouiaComponentType: OptionsMenu.displayName
-    }}
-  >
-    <DropdownWithContext
-      {...props}
-      id={id}
-      dropdownItems={menuItems}
-      className={className}
-      isGrouped={isGrouped}
-      toggle={toggle}
-      menuAppendTo={menuAppendTo}
-    />
-  </DropdownContext.Provider>
-);
+}: OptionsMenuProps) => {
+  const [ouiaStateId] = React.useState(React.useCallback(() => getDefaultOUIAId(OptionsMenu.displayName), []));
+  return (
+    <DropdownContext.Provider
+      value={{
+        id,
+        onSelect: () => undefined,
+        toggleIndicatorClass: styles.optionsMenuToggleIcon,
+        toggleTextClass: styles.optionsMenuToggleText,
+        menuClass: styles.optionsMenuMenu,
+        itemClass: styles.optionsMenuMenuItem,
+        toggleClass: isText ? styles.optionsMenuToggleButton : styles.optionsMenuToggle,
+        baseClass: styles.optionsMenu,
+        disabledClass: styles.modifiers.disabled,
+        menuComponent: isGrouped ? 'div' : 'ul',
+        baseComponent: 'div',
+        ouiaId: ouiaId !== undefined ? ouiaId : ouiaStateId,
+        ouiaSafe,
+        ouiaComponentType: OptionsMenu.displayName
+      }}
+    >
+      <DropdownWithContext
+        {...props}
+        id={id}
+        dropdownItems={menuItems}
+        className={className}
+        isGrouped={isGrouped}
+        toggle={toggle}
+        menuAppendTo={menuAppendTo}
+      />
+    </DropdownContext.Provider>
+  );
+};
 OptionsMenu.displayName = 'OptionsMenu';

@@ -8,7 +8,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helpers/util';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export enum TabsComponent {
   div = 'div',
@@ -62,6 +62,7 @@ interface TabsState {
   disableLeftScrollButton: boolean;
   disableRightScrollButton: boolean;
   shownKeys: (string | number)[];
+  ouiaStateId: string;
 }
 
 export class Tabs extends React.Component<TabsProps, TabsState> {
@@ -73,7 +74,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       showScrollButtons: false,
       disableLeftScrollButton: false,
       disableRightScrollButton: false,
-      shownKeys: [this.props.activeKey] // only for mountOnEnter case
+      shownKeys: [this.props.activeKey], // only for mountOnEnter case
+      ouiaStateId: getDefaultOUIAId(Tabs.displayName)
     };
   }
 
@@ -232,7 +234,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             formatBreakpointMods(inset, styles),
             className
           )}
-          {...getOUIAProps(Tabs.displayName, ouiaId, ouiaSafe)}
+          {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           id={id && id}
           {...props}
         >
