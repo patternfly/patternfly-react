@@ -21,6 +21,10 @@ export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   ...props
 }: TabButtonProps) => {
   const Component = (props.href ? 'a' : 'button') as any;
-  return <Component {...getOUIAProps(TabButton.displayName, ouiaId, ouiaSafe)} {...props}>{children}</Component>;
+  return (
+    <Component {...getOUIAProps(TabButton.displayName, ouiaId, ouiaSafe)} {...props}>
+      {children}
+    </Component>
+  );
 };
 TabButton.displayName = 'TabButton';

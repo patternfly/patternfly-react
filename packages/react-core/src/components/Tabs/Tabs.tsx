@@ -257,7 +257,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                   tabContentId,
                   isHidden = false,
                   className: childClassName = '',
-                  ouiaId,
+                  ouiaId: childOuiaId,
                   ...rest
                 } = child.props;
 
@@ -274,7 +274,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                         tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
                       }
                       tabContentRef={tabContentRef}
-                      ouiaId={ouiaId}
+                      ouiaId={childOuiaId}
                       {...rest}
                     >
                       {title}

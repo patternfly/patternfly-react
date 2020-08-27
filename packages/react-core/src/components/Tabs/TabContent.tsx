@@ -52,7 +52,7 @@ const TabContentBase: React.FC<TabContentProps> = ({
         aria-labelledby={labelledBy}
         role="tabpanel"
         tabIndex={0}
-        {...getOUIAProps("TabContent", ouiaId, ouiaSafe)}
+        {...getOUIAProps('TabContent', ouiaId, ouiaSafe)}
         {...props}
       >
         {children || child.props.children}
