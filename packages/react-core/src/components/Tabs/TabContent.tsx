@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref'> {
+export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref'>, OUIAProps {
   /** content rendered inside the tab content area if used outside Tabs component */
   children?: any;
   /** Child to show in the content area */
@@ -29,6 +30,8 @@ const TabContentBase: React.FC<TabContentProps> = ({
   className,
   eventKey,
   innerRef,
+  ouiaId,
+  ouiaSafe,
   ...props
 }: TabContentProps) => {
   if (children || child) {
@@ -49,6 +52,7 @@ const TabContentBase: React.FC<TabContentProps> = ({
         aria-labelledby={labelledBy}
         role="tabpanel"
         tabIndex={0}
+        {...getOUIAProps("TabContent", ouiaId, ouiaSafe)}
         {...props}
       >
         {children || child.props.children}

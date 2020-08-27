@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'ref'> {
+export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'ref'>, OUIAProps {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode;
   /** additional classes added to the Tab */
@@ -15,9 +16,11 @@ export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   children,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   tabContentRef,
+  ouiaId,
+  ouiaSafe,
   ...props
 }: TabButtonProps) => {
   const Component = (props.href ? 'a' : 'button') as any;
-  return <Component {...props}>{children}</Component>;
+  return <Component {...getOUIAProps(TabButton.displayName, ouiaId, ouiaSafe)} {...props}>{children}</Component>;
 };
 TabButton.displayName = 'TabButton';
