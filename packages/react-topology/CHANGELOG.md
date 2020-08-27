@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.75...@patternfly/react-topology@4.5.0) (2020-08-27)
+
+
+### Features
+
+* **topology:** Enable saving current topology graph model ([#4690](https://github.com/patternfly/patternfly-react/issues/4690)) ([2c4b25c](https://github.com/patternfly/patternfly-react/commit/2c4b25ce8aa64a08de38c0a1884c96df643f348e))
+
+
+
+
+
 ## [4.4.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.74...@patternfly/react-topology@4.4.75) (2020-08-25)
 
 **Note:** Version bump only for package @patternfly/react-topology

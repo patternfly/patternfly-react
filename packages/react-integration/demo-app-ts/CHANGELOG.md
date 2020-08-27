@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.36.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.35.0...demo-app-ts@4.36.0) (2020-08-27)
+
+
+### Features
+
+* **topology:** Enable saving current topology graph model ([#4690](https://github.com/patternfly/patternfly-react/issues/4690)) ([2c4b25c](https://github.com/patternfly/patternfly-react/commit/2c4b25ce8aa64a08de38c0a1884c96df643f348e))
+
+
+
+
+
 # [4.35.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.34.0...demo-app-ts@4.35.0) (2020-08-25)
 
 
