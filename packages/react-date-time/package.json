@@ -1,0 +1,53 @@
+{
+  "name": "@patternfly/react-date-time",
+  "version": "0.0.0",
+  "description": "This library provides a set of React date and time components for use with the PatternFly 4",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "patternfly:src": "src/",
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly",
+    "date",
+    "time"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-date-time#readme",
+  "scripts": {
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@patternfly/patternfly": "4.44.1",
+    "@patternfly/react-core": "^4.54.0",
+    "@patternfly/react-icons": "^4.7.7",
+    "@patternfly/react-styles": "^4.7.5",
+    "@patternfly/react-tokens": "^4.9.9"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "^3.8.3",
+    "flatpickr": "^4.6.6",
+    "moment": "^2.27.0"
+  }
+}
