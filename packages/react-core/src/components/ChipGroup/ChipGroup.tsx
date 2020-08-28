@@ -7,8 +7,9 @@ import { Tooltip } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement> {
+export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAProps {
   /** Content rendered inside the chip group. Should be <Chip> elements. */
   children?: React.ReactNode;
   /** Additional classes added to the chip item */
@@ -110,6 +111,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       numChips,
       expandedText,
       collapsedText,
+      ouiaId,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       defaultIsOpen,
       tooltipPosition,
@@ -128,7 +130,10 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
         : React.Children.toArray(children);
 
       return (
-        <div className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}>
+        <div
+          className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}
+          {...getOUIAProps(ChipGroup.displayName, ouiaId)}
+        >
           {categoryName && this.renderLabel(id)}
           <ul
             className={css(styles.chipGroupList)}
@@ -158,6 +163,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
                 onClick={onClick}
                 id={`remove_group_${id}`}
                 aria-labelledby={`remove_group_${id} ${id}`}
+                ouiaId={ouiaId || closeBtnAriaLabel}
               >
                 <TimesCircleIcon aria-hidden="true" />
               </Button>

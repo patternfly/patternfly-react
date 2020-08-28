@@ -91,6 +91,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
             aria-label={closeBtnAriaLabel}
             id={`remove_${id}`}
             aria-labelledby={`remove_${id} ${id}`}
+            ouiaId={ouiaId || closeBtnAriaLabel}
           >
             <TimesIcon aria-hidden="true" />
           </Button>
