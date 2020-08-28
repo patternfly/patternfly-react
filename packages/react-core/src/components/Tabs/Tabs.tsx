@@ -257,6 +257,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                   tabContentId,
                   isHidden = false,
                   className: childClassName = '',
+                  ouiaId: childOuiaId,
                   ...rest
                 } = child.props;
 
@@ -273,6 +274,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                         tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
                       }
                       tabContentRef={tabContentRef}
+                      ouiaId={childOuiaId}
                       {...rest}
                     >
                       {title}
@@ -300,7 +302,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
           )
           .map((child, index) => (
-            <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />
+            <TabContent
+              key={index}
+              activeKey={activeKey}
+              child={child}
+              id={child.props.id || uniqueId}
+              ouiaId={child.props.ouiaId}
+            />
           ))}
       </React.Fragment>
     );

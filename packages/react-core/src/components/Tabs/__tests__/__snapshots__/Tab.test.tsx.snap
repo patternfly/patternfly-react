@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should not render anything 1`] = `""`;
+exports[`should not render anything 1`] = `
+<Tab
+  eventKey={0}
+  title={
+    <TabTitleText>
+      "Tab item 1"
+    </TabTitleText>
+  }
+/>
+`;
