@@ -5,6 +5,13 @@ describe('Data Toolbar Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/toolbar-demo-nav-link');
   });
 
+  it('has inset classes', () => {
+    cy.get('.pf-c-toolbar').should('have.class', 'pf-m-inset-none');
+    cy.get('.pf-c-toolbar').should('have.class', 'pf-m-inset-sm-on-md');
+    cy.get('.pf-c-toolbar').should('have.class', 'pf-m-inset-2xl-on-xl');
+    cy.get('.pf-c-toolbar').should('have.class', 'pf-m-inset-lg-on-2xl');
+  });
+
   describe('Toggle group and filter chips are appropriately responsive', () => {
     context('wide viewport', () => {
       beforeEach(() => {

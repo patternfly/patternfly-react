@@ -4,6 +4,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
+import { formatBreakpointMods } from '../../helpers/util';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -22,6 +23,15 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Id of the data toolbar */
   id?: string;
+  /** Insets at various breakpoints. */
+  inset?: {
+    default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    sm?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    md?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    lg?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+  };
 }
 
 export interface ToolbarState {
@@ -92,6 +102,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       toggleIsExpanded,
       className,
       children,
+      inset,
       ...props
     } = this.props;
 
@@ -103,7 +114,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const showClearFiltersButton = numberOfFilters > 0;
 
     return (
-      <div className={css(styles.toolbar, className)} id={randomId} {...props}>
+      <div className={css(styles.toolbar, formatBreakpointMods(inset, styles), className)} id={randomId} {...props}>
         <ToolbarContext.Provider
           value={{
             isExpanded,

@@ -286,6 +286,12 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         className="pf-m-toggle-group-container"
         collapseListedFiltersBreakpoint="xl"
         clearFiltersButtonText="Clear filters"
+        inset={{
+          default: 'insetNone',
+          md: 'insetSm',
+          xl: 'inset2xl',
+          '2xl': 'insetLg'
+        }}
       >
         <ToolbarContent>{toolbarItems}</ToolbarContent>
       </Toolbar>
