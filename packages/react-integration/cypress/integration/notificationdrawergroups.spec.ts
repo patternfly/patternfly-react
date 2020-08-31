@@ -5,8 +5,8 @@ describe('Notification Drawer Groups Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-groups-demo-nav-link');
   });
 
-  it('Verify x icon in header', () => {
-    cy.get('.fa-times').should('exist');
+  it('Verify default x icon not in header', () => {
+    cy.get('.fa-times').should('not.exist');
   });
 
   it('Verify text in header title', () => {
