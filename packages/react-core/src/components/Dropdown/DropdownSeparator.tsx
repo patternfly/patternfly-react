@@ -2,8 +2,9 @@ import * as React from 'react';
 import { DropdownArrowContext } from './dropdownConstants';
 import { InternalDropdownItem } from './InternalDropdownItem';
 import { Divider, DividerVariant } from '../Divider';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement> {
+export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement>, OUIAProps {
   /** Classes applied to root element of dropdown item */
   className?: string;
   /** Click event to pass to InternalDropdownItem */
@@ -14,6 +15,8 @@ export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
+  ouiaId,
+  ouiaSafe,
   ...props
 }: SeparatorProps) => (
   <DropdownArrowContext.Consumer>
@@ -24,6 +27,7 @@ export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
         component={<Divider component={DividerVariant.div} />}
         className={className}
         role="separator"
+        {...getOUIAProps(DropdownSeparator.displayName, ouiaId, ouiaSafe)}
       />
     )}
   </DropdownArrowContext.Consumer>

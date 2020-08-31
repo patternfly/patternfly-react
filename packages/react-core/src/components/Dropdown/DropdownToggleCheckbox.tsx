@@ -2,9 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface DropdownToggleCheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'> {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
+    OUIAProps {
   /** Additional classes added to the DropdownToggleCheckbox */
   className?: string;
   /** Flag to show if the checkbox selection is valid or invalid */
@@ -51,7 +53,18 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, onChange, isValid, isDisabled, isChecked, checked, children, ...props } = this.props;
+    const {
+      className,
+      onChange,
+      isValid,
+      isDisabled,
+      isChecked,
+      checked,
+      children,
+      ouiaId,
+      ouiaSafe,
+      ...props
+    } = this.props;
     const text = children && (
       <span className={css(styles.dropdownToggleText, className)} aria-hidden="true" id={`${props.id}-text`}>
         {children}
@@ -67,6 +80,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
           aria-invalid={!isValid}
           disabled={isDisabled}
           checked={this.calculateChecked()}
+          {...getOUIAProps(DropdownToggleCheckbox.displayName, ouiaId, ouiaSafe)}
         />
         {text}
       </label>

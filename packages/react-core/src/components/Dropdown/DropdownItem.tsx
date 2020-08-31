@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropdownItem';
 import { DropdownArrowContext } from './dropdownConstants';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownItemProps extends InternalDropdownItemProps {
+export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
@@ -65,6 +66,8 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   autoFocus,
   description = null,
   styleChildren,
+  ouiaId,
+  ouiaSafe,
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
@@ -89,6 +92,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         autoFocus={autoFocus}
         styleChildren={styleChildren}
         description={description}
+        {...getOUIAProps(DropdownItem.displayName, ouiaId, ouiaSafe)}
         {...props}
       >
         {children}
