@@ -52,7 +52,7 @@ class BasicNotificationDrawer extends React.Component {
       isOpen3: false,
       isOpen4: false
     };
-    onDrawerClose = () => {
+    this.onDrawerClose = () => {
       this.setState({
         isDrawerOpen: false
       });
