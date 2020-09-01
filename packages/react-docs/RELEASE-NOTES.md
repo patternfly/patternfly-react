@@ -21,34 +21,35 @@ releaseNoteTOC: true
   - Added support to truncate title ([#4399](https://github.com/patternfly/patternfly-react/pull/4399))
 - **Label:**
   - Added no overflow prop ([#4680](https://github.com/patternfly/patternfly-react/pull/4680))
-- **MasterDetail:**
+- **Master detail:**
   - Renamed master detail demo to primary-detail ([#4703](https://github.com/patternfly/patternfly-react/pull/4703))
 - **Modal:**
   - Added medium variant ([#4678](https://github.com/patternfly/patternfly-react/pull/4678))
-- **NotificationDrawer:**
+- **Notification drawer:**
   - Added support to truncate title ([#4399](https://github.com/patternfly/patternfly-react/pull/4399))
   - Added formatHeaderText prop to support customize notification drawer header text ([#4684](https://github.com/patternfly/patternfly-react/pull/4684))
 - **Page:**
   - Added width limit prop ([#4686](https://github.com/patternfly/patternfly-react/pull/4686))
   - Added missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/pull/4707))
-- **SearchInput:**
+- **Search input:**
   - Use title case id in docs ([#4725](https://github.com/patternfly/patternfly-react/pull/4725))
-- **Table:**
-  - Fixed table showing cell tooltips on non text cells ([#4689](https://github.com/patternfly/patternfly-react/pull/4689))
 - **Tabs:**
   - Added classNames to tab ([#4578](https://github.com/patternfly/patternfly-react/pull/4578))
-- **TextInput:**
+- **Text input:**
   - Added helper util for left trim ([#4691](https://github.com/patternfly/patternfly-react/pull/4691))
 - **Tile:**
   - Added new tile component ([#4610](https://github.com/patternfly/patternfly-react/pull/4610))
-- **ToggleGroup:**
+- **Toggle group:**
   - Added new toggle group component ([#4702](https://github.com/patternfly/patternfly-react/pull/4702))
-- **TreeView:**
-  - Added new treeview component ([#4701](https://github.com/patternfly/patternfly-react/pull/4701))
+- **Tree view:**
+  - Added new tree view component ([#4701](https://github.com/patternfly/patternfly-react/pull/4701))
 
 ### Catalog view extension
 - **Catalog tile:** 
   - Added children prop ([#4674](https://github.com/patternfly/patternfly-react/pull/4674))
+
+### Table
+- Fixed table showing cell tooltips on non text cells ([#4689](https://github.com/patternfly/patternfly-react/pull/4689))
 
 ## 2020.10 release notes (2020-08-17)
 - [@patternfly/react-catalog-view-extension@4.8.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.5)
