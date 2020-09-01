@@ -1,13 +1,5 @@
 const pfIcons = require('@patternfly/patternfly/icons/pf-icons.json');
 
-/**
- * @param {object} icon PatternFly core icon to convert
- */
-function convertIcon(icon) {
-  icon.yOffset = 64;
-  icon.transform = `rotate(180 0 ${icon.height / 2}) scale(-1 1)`;
-}
-
 const renaming = {
   save: 'save-alt',
   'folder-open': 'folder-open-alt',
@@ -29,7 +21,6 @@ const renaming = {
 function convertIcons(icons) {
   delete icons.history;
 
-  Object.values(icons).forEach(convertIcon);
   Object.entries(renaming).forEach(([oldKey, newKey]) => {
     icons[newKey] = icons[oldKey];
     delete icons[oldKey];
