@@ -372,6 +372,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
+    id: 'label-group-demo',
+    name: 'Label Group Demo',
+    componentType: Examples.LabelGroupDemo
+  },
+  {
     id: 'level-demo',
     name: 'Level Demo',
     componentType: Examples.LevelDemo
