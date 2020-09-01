@@ -19,10 +19,7 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
 }: CardTitleProps) => {
   const Component = component as any;
   return (
-    <Component
-      className={css(styles.cardTitle, className)}
-      {...props}
-    >
+    <Component className={css(styles.cardTitle, className)} {...props}>
       {children}
     </Component>
   );

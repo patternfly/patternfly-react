@@ -29,7 +29,9 @@ export class CardDemo extends React.Component {
         </Card>
         <br></br>
         <Card>
-          <CardTitle id="heading-card" component="h4">Header</CardTitle>
+          <CardTitle id="heading-card" component="h4">
+            Header
+          </CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
