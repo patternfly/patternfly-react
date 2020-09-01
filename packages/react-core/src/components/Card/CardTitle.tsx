@@ -7,15 +7,24 @@ export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the CardTitle */
   className?: string;
+  /** Sets the base component to render. defaults to button */
+  component?: keyof JSX.IntrinsicElements;
 }
 
 export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
   children = null,
   className = '',
+  component = 'div',
   ...props
-}: CardTitleProps) => (
-  <div className={css(styles.cardTitle, className)} {...props}>
-    {children}
-  </div>
-);
+}: CardTitleProps) => {
+  const Component = component as any;
+  return (
+    <Component
+      className={css(styles.cardTitle, className)}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
 CardTitle.displayName = 'CardTitle';

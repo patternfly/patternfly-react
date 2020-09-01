@@ -32,7 +32,11 @@ describe('Card Demo Test', () => {
       .should('have.class', 'pf-m-selectable');
   });
 
-  it('Verify card is flat', () => {
+  it('Verify card is heading element', () => {
+    cy.get('h4').should('have.id', 'heading-card');
+  });
+
+   it('Verify card is flat', () => {
     cy.get('article')
       .last()
       .should('have.class', 'pf-m-flat');

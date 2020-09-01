@@ -28,6 +28,12 @@ export class CardDemo extends React.Component {
           <CardFooter>Footer</CardFooter>
         </Card>
         <br></br>
+        <Card>
+          <CardTitle id="heading-card" component="h4">Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <br></br>
         <Card isFlat>
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
