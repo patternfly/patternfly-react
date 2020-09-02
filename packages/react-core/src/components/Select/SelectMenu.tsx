@@ -8,6 +8,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 
 import { FocusTrap } from '../../helpers';
 import { SelectGroup } from './SelectGroup';
+import { Divider } from '../Divider/Divider';
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */
@@ -82,6 +83,9 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   cloneOption(child: React.ReactElement, index: number, randomId: string) {
     const { selected, sendRef, keyHandler } = this.props;
     const isSelected = this.checkForValue(child.props.value, selected);
+    if (child.type === Divider) {
+      return child;
+    }
     return React.cloneElement(child, {
       inputId: `${randomId}-${index}`,
       id: `${child.props.id ? child.props.id : randomId}-${index}`,
