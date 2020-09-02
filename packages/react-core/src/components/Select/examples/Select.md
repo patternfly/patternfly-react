@@ -234,7 +234,7 @@ class SingleSelectDescription extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, Divider } from '@patternfly/react-core';
 
 class GroupedSingleSelectInput extends React.Component {
   constructor(props) {
@@ -271,6 +271,7 @@ class GroupedSingleSelectInput extends React.Component {
         <SelectOption key={3} value="Degraded" />
         <SelectOption key={4} value="Needs Maintenence" />
       </SelectGroup>,
+      <Divider/>,
       <SelectGroup label="Vendor Names" key="group2">
         <SelectOption key={5} value="Dell" />
         <SelectOption key={6} value="Samsung" isDisabled />
