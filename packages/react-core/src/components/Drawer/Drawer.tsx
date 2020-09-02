@@ -14,7 +14,7 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Indicates if the drawer will always show both content and panel. */
   isStatic?: boolean;
   /** Position of the drawer panel */
-  position?: 'left' | 'right';
+  position?: 'left' | 'right' | 'bottom';
   /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
   onExpand?: () => void;
 }
@@ -49,6 +49,7 @@ export const Drawer: React.SFC<DrawerProps> = ({
         isInline && styles.modifiers.inline,
         isStatic && styles.modifiers.static,
         position === 'left' && styles.modifiers.panelLeft,
+        position === 'bottom' && styles.modifiers.panelBottom,
         className
       )}
       {...props}
