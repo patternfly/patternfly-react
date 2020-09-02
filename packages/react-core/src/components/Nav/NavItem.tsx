@@ -2,8 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
+export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
   /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
@@ -37,6 +38,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   preventDefault = false,
   onClick = null as NavSelectClickHandler,
   component = 'a',
+  ouiaId,
+  ouiaSafe,
   ...props
 }: NavItemProps) => {
   const Component = component as any;
@@ -66,7 +69,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     });
 
   return (
-    <li className={css(styles.navItem, className)}>
+    <li className={css(styles.navItem, className)} {...getOUIAProps(NavItem.displayName, ouiaId, ouiaSafe)}>
       <NavContext.Consumer>
         {context =>
           React.isValidElement(children)
