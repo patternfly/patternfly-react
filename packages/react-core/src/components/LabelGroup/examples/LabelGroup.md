@@ -7,11 +7,14 @@ isBeta: true
 ouia: true
 ---
 
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+
 ## Examples
 ### Basic
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 
 BasicLabelGroup = () => (
   <React.Fragment>
@@ -28,6 +31,7 @@ BasicLabelGroup = () => (
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 
 OverflowLabelGroup = () => (
   <React.Fragment>
@@ -47,6 +51,7 @@ OverflowLabelGroup = () => (
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 
 SimpleCategoryLabelGroup = () => (
   <LabelGroup categoryName="Group label">
@@ -61,6 +66,7 @@ SimpleCategoryLabelGroup = () => (
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 
 CategoryLabelGroupRemovable = () => {
   const [labels, setLabels] = React.useState([
@@ -88,6 +94,7 @@ CategoryLabelGroupRemovable = () => {
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 
 VerticalCategoryLabelGroupOverflowRemovable = () => {
   const [labels, setLabels] = React.useState([
