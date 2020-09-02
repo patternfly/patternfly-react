@@ -352,8 +352,9 @@ class CheckboxSelectInput extends React.Component {
       <SelectOption key={0} value="Active" description="This is a description" />,
       <SelectOption key={1} value="Cancelled" />,
       <SelectOption key={2} value="Paused" />,
-      <SelectOption key={3} value="Warning" />,
-      <SelectOption key={4} value="Restarted" />
+      <Divider key={3} />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />
     ];
   }
 
