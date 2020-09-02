@@ -3,6 +3,7 @@ id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
 propComponents: ['SearchInput']
+beta: true
 ---
 import { SearchInput } from '@patternfly/react-core';
 
