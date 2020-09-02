@@ -3,6 +3,7 @@ id: Label group
 section: components
 cssPrefix: pf-c-label
 propComponents: ['LabelGroup', 'Label']
+isBeta: true
 ouia: true
 ---
 
