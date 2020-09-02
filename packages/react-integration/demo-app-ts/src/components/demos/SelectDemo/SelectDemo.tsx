@@ -113,9 +113,9 @@ export class SelectDemo extends Component<SelectDemoState> {
       id="Cancelled"
     />,
     <SelectOption key={2} value="Paused" inputId="Paused" id="Paused" />,
-    <Divider/>,
-    <SelectOption key={3} value="Warning" inputId="Warning" id="Warning" />,
-    <SelectOption key={4} value="Restarted" inputId="Restarted" id="Restarted" />
+    <Divider key={3} />,
+    <SelectOption key={4} value="Warning" inputId="Warning" id="Warning" />,
+    <SelectOption key={5} value="Restarted" inputId="Restarted" id="Restarted" />
   ];
 
   customTypeaheadOptions = [
