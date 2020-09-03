@@ -6,6 +6,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import { AlertIcon } from './AlertIcon';
 import { capitalize, getOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
+import maxLines from '@patternfly/react-tokens/dist/js/c_alert__title_max_lines';
 
 export enum AlertVariant {
   success = 'success',
@@ -38,6 +39,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
   /** If set to true, the time out is 8000 milliseconds.  If a number is provided, alert will be dismissed after that amount of time in milliseconds. */
   timeout?: number | boolean;
+  /** Truncate title to number of lines */
+  truncateTitle?: number;
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
@@ -54,6 +57,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   ouiaId,
   ouiaSafe = true,
   timeout = false,
+  truncateTitle = 0,
   ...props
 }: AlertProps) => {
   const getHeadingContent = (
@@ -64,7 +68,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   );
 
   const [disableAlert, setDisableAlert] = useState(false);
-
+  const titleRef = React.useRef(null);
+  React.useEffect(() => {
+    if (!titleRef.current || !truncateTitle) {
+      return;
+    }
+    titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
+  }, [titleRef, truncateTitle]);
   const customClassName = css(
     styles.alert,
     isInline && styles.modifiers.inline,
@@ -94,7 +104,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         })}
       >
         <AlertIcon variant={variant} />
-        <h4 className={css(styles.alertTitle)}>{getHeadingContent}</h4>
+        <h4 ref={titleRef} className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}>
+          {getHeadingContent}
+        </h4>
         {actionClose && (
           <AlertContext.Provider value={{ title, variantLabel }}>
             <div className={css(styles.alertAction)}>{actionClose}</div>

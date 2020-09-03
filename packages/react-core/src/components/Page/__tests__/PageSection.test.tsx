@@ -10,6 +10,12 @@ test('Check page section with no padding example against snapshot', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Check page section with limited width', () => {
+  const Section = <PageSection isWidthLimited />;
+  const view = mount(Section);
+  expect(view).toMatchSnapshot();
+});
+
 test('Check page main nav section against snapshot', () => {
   const Section = <PageSection type={PageSectionTypes.nav} />;
   const view = mount(Section);

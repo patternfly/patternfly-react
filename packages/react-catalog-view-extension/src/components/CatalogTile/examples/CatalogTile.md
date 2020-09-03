@@ -5,8 +5,9 @@ propComponents: ['CatalogTile']
 ---
 
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './pfLogo2.svg'
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-check-circle-icon';
+import pfLogo2 from './pfLogo2.svg';
 import './catalogTile.css';
 
 ## Introduction
@@ -20,8 +21,8 @@ This package is currently an extension. Extension components do not undergo the 
 ```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './pfLogo2.svg'
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import pfLogo2 from './pfLogo2.svg';
 
 Basic = () => (
   <React.Fragment>
@@ -51,8 +52,9 @@ Basic = () => (
 ```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './pfLogo2.svg'
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-check-circle-icon';
+import pfLogo2 from './pfLogo2.svg';
 
 SimpleFooter = () => (
   <React.Fragment>
@@ -86,8 +88,8 @@ SimpleFooter = () => (
 ```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './pfLogo2.svg'
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import pfLogo2 from './pfLogo2.svg';
 
 Link = () => (
   <React.Fragment>
@@ -117,8 +119,9 @@ Link = () => (
 ```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './pfLogo2.svg'
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-check-circle-icon';
+import pfLogo2 from './pfLogo2.svg';
 
 MultiIcon = () => (
   <React.Fragment>
@@ -150,7 +153,7 @@ MultiIcon = () => (
 ```js
 import React from 'react';
 import { CatalogTile } from '@patternfly/react-catalog-view-extension';
-import { pfLogo2 } from './pfLogo2.svg'
+import pfLogo2 from './pfLogo2.svg';
 
 TextBadge = () => (
   <React.Fragment>
@@ -177,8 +180,8 @@ TextBadge = () => (
 ```js
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './pfLogo2.svg'
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import pfLogo2 from './pfLogo2.svg';
 
 Children = () => (
   <React.Fragment>

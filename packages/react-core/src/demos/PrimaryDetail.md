@@ -5,20 +5,29 @@ section: demos
 
 ## Examples
 
-import {
-BellIcon,
-CodeBranchIcon,
-CodeIcon,
-CogIcon,
-CubeIcon,
-CheckCircleIcon,
-ExclamationTriangleIcon,
-FilterIcon,
-SearchIcon,
-TimesCircleIcon
-} from '@patternfly/react-icons';
-import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
-import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import pfIcon from './Card/pf-logo-small.svg';
+import activeMQIcon from './Card/activemq-core_200x150.png';
+import avroIcon from './Card/camel-avro_200x150.png';
+import dropBoxIcon from './Card/camel-dropbox_200x150.png';
+import infinispanIcon from './Card/camel-infinispan_200x150.png';
+import saxonIcon from './Card/camel-saxon_200x150.png';
+import sparkIcon from './Card/camel-spark_200x150.png';
+import swaggerIcon from './Card/camel-swagger-java_200x150.png';
+import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
+import restIcon from './Card/FuseConnector_Icons_REST.png';
 
 ### Primary--detail full page
 ```js isFullscreen
@@ -82,18 +91,16 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import {
-  BellIcon,
-  CodeBranchIcon,
-  CodeIcon,
-  CogIcon,
-  CubeIcon,
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
-  FilterIcon,
-  SearchIcon,
-  TimesCircleIcon
-} from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 
 class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
@@ -668,18 +675,16 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import {
-  BellIcon,
-  CodeBranchIcon,
-  CodeIcon,
-  CogIcon,
-  CubeIcon,
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
-  FilterIcon,
-  SearchIcon,
-  TimesCircleIcon
-} from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 
 class PrimaryDetailContentPadding extends React.Component {
   constructor(props) {
@@ -1256,9 +1261,12 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 
-import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
-import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
-import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -1736,7 +1744,10 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 
-import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -1963,9 +1974,12 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -2123,7 +2137,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 1</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2135,7 +2149,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 2</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2147,7 +2161,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 3</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2159,7 +2173,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 4</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2171,7 +2185,7 @@ class PrimaryDetailDataListInCard extends React.Component {
                 dataListCells={[
                   <DataListCell>
                     <div>Node 5</div>
-                    <Link to="#">siemur/test-space</Link>
+                    <a href="#">siemur/test-space</a>
                   </DataListCell>
                 ]}
               />
@@ -2279,18 +2293,16 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import {
-  BellIcon,
-  CodeBranchIcon,
-  CodeIcon,
-  CogIcon,
-  CubeIcon,
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
-  FilterIcon,
-  SearchIcon,
-  TimesCircleIcon
-} from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 
 class PrimaryDetailInlineModifier extends React.Component {
   constructor(props) {

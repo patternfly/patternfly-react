@@ -5,7 +5,11 @@ propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarToggleGroup
 section: components
 ---
 
-import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
+import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 ## Examples
 
@@ -16,7 +20,7 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
-import { SearchIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 class ToolbarItems extends React.Component {
   constructor(props) {
@@ -136,7 +140,9 @@ Often, it makes sense to group sets of like items to create desired associations
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
-import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
+import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 
 class ToolbarGroupTypes extends React.Component {
   constructor(props) {
@@ -333,7 +339,8 @@ The Toggle group can either have the toggle state managed by the consumer, or th
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
-import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 class ToolbarComponentMangedToggleGroup extends React.Component {
   constructor(props) {
@@ -488,7 +495,9 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
-import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons';
+import TextInput from '@patternfly/react-icons/dist/js/icons/text-input';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 class ToolbarConsumerMangedToggleGroup extends React.Component {
   constructor(props) {
@@ -668,7 +677,12 @@ import {
   DropdownSeparator,
   KebabToggle
 } from '@patternfly/react-core';
-import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
+import TextInput from '@patternfly/react-icons/dist/js/icons/text-input';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 
 class ToolbarWithFilterExample extends React.Component {
   constructor(props) {
@@ -939,7 +953,10 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { EditIcon, FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
+import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 
 class ToolbarStacked extends React.Component {
   constructor(props) {

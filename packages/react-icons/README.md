@@ -5,7 +5,7 @@ PatternFly 4 Icons as React Components.
 ## Usage
 
 ```jsx
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 const closeIcon = <TimesIcon />;
 ```
@@ -45,7 +45,7 @@ optimization: {
 
 Use ESM module imports to enable tree shaking with no additional setup required.
 ```JS
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 ```
 
 To enable tree shaking with named imports for CJS modules, utilize [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports) and update a babel.config.js file to utilize the plugin:

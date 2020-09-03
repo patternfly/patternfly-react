@@ -11,6 +11,7 @@ import {
   Chart,
   ChartArea,
   ChartAxis,
+  ChartBar,
   ChartBullet,
   ChartDonut,
   ChartGroup,

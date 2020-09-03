@@ -3,6 +3,9 @@
 exports[`TabButton should match snapshot (auto-generated) 1`] = `
 <a
   className="''"
+  data-ouia-component-id={0}
+  data-ouia-component-type="PF4/TabButton"
+  data-ouia-safe={true}
   href="string"
 >
   <div>

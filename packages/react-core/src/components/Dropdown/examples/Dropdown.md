@@ -7,7 +7,11 @@ propComponents:
 ouia: true
 ---
 
-import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon, UserIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 import { Link } from '@reach/router';
 import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
@@ -25,7 +29,8 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {
@@ -97,7 +102,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class IntialSelectionDropdown extends React.Component {
   constructor(props) {
@@ -237,7 +242,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class DisabledDropdown extends React.Component {
   constructor(props) {
@@ -303,7 +308,8 @@ import {
   DropdownPosition,
   DropdownDirection
 } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class PrimaryDropdown extends React.Component {
   constructor(props) {
@@ -375,7 +381,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class PositionRightDropdown extends React.Component {
   constructor(props) {
@@ -444,7 +450,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class DirectionUpDropdown extends React.Component {
   constructor(props) {
@@ -512,7 +518,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -581,7 +587,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class IconDropdown extends React.Component {
   constructor(props) {
@@ -655,7 +661,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class SplitButtonDropdown extends React.Component {
   constructor(props) {
@@ -732,7 +738,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class SplitButtonDropdown extends React.Component {
   constructor(props) {
@@ -805,7 +811,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 class SplitButtonDropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -886,7 +892,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class SplitButtonDisabledDropdown extends React.Component {
   constructor(props) {
@@ -963,7 +969,10 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 class SplitButtonActionDropdown extends React.Component {
   constructor(props) {
@@ -1076,7 +1085,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class DropdownPanel extends React.Component {
   constructor(props) {
@@ -1125,7 +1134,8 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 import { Link } from '@reach/router';
-import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class RouterDropdown extends React.Component {
   constructor(props) {
@@ -1261,7 +1271,8 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class MenuOnDocumentBodyDropdown extends React.Component {
   constructor(props) {
@@ -1321,7 +1332,9 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { BellIcon, CaretDownIcon, CubesIcon } from '@patternfly/react-icons';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {

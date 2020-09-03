@@ -16,7 +16,7 @@ exports[`Chip closable 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={4}
+      data-ouia-component-id={3}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >
@@ -31,6 +31,7 @@ exports[`Chip closable 1`] = `
         aria-labelledby="remove_chip_one chip_one"
         id="remove_chip_one"
         onClick={[Function]}
+        ouiaId="close"
         variant="plain"
       >
         <button
@@ -38,7 +39,7 @@ exports[`Chip closable 1`] = `
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={5}
+          data-ouia-component-id="close"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
@@ -95,7 +96,7 @@ exports[`Chip closable with tooltip 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={8}
+      data-ouia-component-id={5}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >
@@ -110,6 +111,7 @@ exports[`Chip closable with tooltip 1`] = `
         aria-labelledby="remove_chip_one chip_one"
         id="remove_chip_one"
         onClick={[Function]}
+        ouiaId="close"
         variant="plain"
       >
         <button
@@ -117,7 +119,7 @@ exports[`Chip closable with tooltip 1`] = `
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={9}
+          data-ouia-component-id="close"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
@@ -203,7 +205,7 @@ exports[`Chip readonly 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={11}
+      data-ouia-component-id={7}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >

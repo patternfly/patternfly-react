@@ -173,7 +173,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   tippyProps,
   reference,
   ...rest
-}) => {
+}: PopoverProps) => {
   if (process.env.NODE_ENV !== 'production') {
     boundary !== undefined &&
       console.warn(

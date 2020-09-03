@@ -32,7 +32,7 @@ DropdownPosition,
 KebabToggle,
 DropdownItem
 } from '@patternfly/react-core';
-import { CodeBranchIcon } from '@patternfly/react-icons';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import { css } from '@patternfly/react-styles';
 
 ## Examples
@@ -485,7 +485,7 @@ import {
   DropdownPosition,
   KebabToggle
 } from '@patternfly/react-core';
-import { CodeBranchIcon } from '@patternfly/react-icons';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 
 class ExpandableDataList extends React.Component {
   constructor(props) {

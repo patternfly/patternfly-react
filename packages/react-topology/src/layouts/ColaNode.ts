@@ -13,4 +13,8 @@ export class ColaNode extends LayoutNode implements webcola.Node {
     this.nodeWidth = maxDimension;
     this.nodeHeight = maxDimension;
   }
+  setFixed(fixed: boolean): void {
+    super.setFixed(fixed);
+    this.fixed = fixed ? 1 : 0;
+  }
 }

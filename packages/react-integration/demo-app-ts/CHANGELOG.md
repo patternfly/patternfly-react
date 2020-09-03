@@ -3,6 +3,119 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.36.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.1...demo-app-ts@4.36.2) (2020-09-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.0...demo-app-ts@4.36.1) (2020-08-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.36.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.35.0...demo-app-ts@4.36.0) (2020-08-27)
+
+
+### Features
+
+* **topology:** Enable saving current topology graph model ([#4690](https://github.com/patternfly/patternfly-react/issues/4690)) ([2c4b25c](https://github.com/patternfly/patternfly-react/commit/2c4b25ce8aa64a08de38c0a1884c96df643f348e))
+
+
+
+
+
+# [4.35.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.34.0...demo-app-ts@4.35.0) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Page:** add missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/issues/4707)) ([1abca6d](https://github.com/patternfly/patternfly-react/commit/1abca6d09bd27459c8b3fc84c0f29040f3d33575))
+
+
+### Features
+
+* **Tile:** add tile component ([#4610](https://github.com/patternfly/patternfly-react/issues/4610)) ([a49c28f](https://github.com/patternfly/patternfly-react/commit/a49c28fbeefe2cabdf1be1e4f3e3633a3e01c0d2))
+* **ToggleGroup:** add new toggle group component ([#4702](https://github.com/patternfly/patternfly-react/issues/4702)) ([4c00ae5](https://github.com/patternfly/patternfly-react/commit/4c00ae54da9df1a2560c8033464b91f97eac2ca7))
+* **TreeView:** add treeview, demos, tests ([#4701](https://github.com/patternfly/patternfly-react/issues/4701)) ([1840aac](https://github.com/patternfly/patternfly-react/commit/1840aac8e5fe3b29e349e8cf615d8b914274a16b))
+
+
+
+
+
+# [4.34.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.3...demo-app-ts@4.34.0) (2020-08-25)
+
+
+### Features
+
+* **modal:** add medium variant ([#4678](https://github.com/patternfly/patternfly-react/issues/4678)) ([203dd08](https://github.com/patternfly/patternfly-react/commit/203dd0802c630fa3979cf349e5308f8fe906c429))
+
+
+
+
+
+## [4.33.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.2...demo-app-ts@4.33.3) (2020-08-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.33.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.1...demo-app-ts@4.33.2) (2020-08-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.33.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.0...demo-app-ts@4.33.1) (2020-08-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.33.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.32.0...demo-app-ts@4.33.0) (2020-08-24)
+
+
+### Features
+
+* **Label:** add no overflow prop ([#4680](https://github.com/patternfly/patternfly-react/issues/4680)) ([e9dbde9](https://github.com/patternfly/patternfly-react/commit/e9dbde9a9325d37a7cc084527d01c56f667fab12))
+
+
+
+
+
+# [4.32.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.31.0...demo-app-ts@4.32.0) (2020-08-24)
+
+
+### Features
+
+* **Page:** add width limit ([#4686](https://github.com/patternfly/patternfly-react/issues/4686)) ([16659fc](https://github.com/patternfly/patternfly-react/commit/16659fc9bd5c087d8f818d4a26c080cca5fcbe43))
+
+
+
+
+
+# [4.31.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.30.1...demo-app-ts@4.31.0) (2020-08-24)
+
+
+### Features
+
+* **TextInput:** add helper util for left trim ([#4691](https://github.com/patternfly/patternfly-react/issues/4691)) ([44dba19](https://github.com/patternfly/patternfly-react/commit/44dba19f3ba357942484d69721bbdfe4ff4e81d8))
+
+
+
+
+
 ## [4.30.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.30.0...demo-app-ts@4.30.1) (2020-08-24)
 
 **Note:** Version bump only for package demo-app-ts

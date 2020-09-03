@@ -7,14 +7,26 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, ChartLegend, ChartLine, ChartStack, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import {
-  chart_color_blue_300,
-  chart_color_green_300,
-  chart_color_cyan_300,
-  chart_color_gold_300,
-  chart_color_purple_300
-} from '@patternfly/react-tokens';
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartBar,
+  ChartDonut,
+  ChartGroup,
+  ChartLegend,
+  ChartLine,
+  ChartStack,
+  ChartThemeColor,
+  ChartThemeVariant,
+  ChartVoronoiContainer,
+  getCustomTheme
+} from '@patternfly/react-charts';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
+import chart_color_cyan_300 from '@patternfly/react-tokens/dist/js/chart_color_cyan_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/js/chart_color_gold_300';
+import chart_color_purple_300 from '@patternfly/react-tokens/dist/js/chart_color_purple_300';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -27,7 +39,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-  Green = (
+Green = (
   <div>
     <p>This demonstrates how to apply basic theme colors</p>
     <div style={{ height: '275px', width: '450px' }}>
@@ -101,7 +113,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
-  MultiColor = (
+MultiColor = (
   <div>
     <p>This demonstrates how to apply theme colors for ordered charts like bar, donut, pie, and stack</p>
     <div style={{ height: '230px', width: '350px' }}>
@@ -201,6 +213,10 @@ MultiColorUnordered = (
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/js/chart_color_gold_300';
+import chart_color_purple_300 from '@patternfly/react-tokens/dist/js/chart_color_purple_300';
 
 CustomColors = (
   <div>
@@ -301,12 +317,10 @@ CustomColors = (
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
-import {
-  chart_color_blue_300,
-  chart_color_green_300,
-  chart_color_cyan_300,
-  chart_color_gold_300,
-} from '@patternfly/react-tokens';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
+import chart_color_cyan_300 from '@patternfly/react-tokens/dist/js/chart_color_cyan_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/js/chart_color_gold_300';
 
 class MultiColorChart extends React.Component {
   constructor(props) {

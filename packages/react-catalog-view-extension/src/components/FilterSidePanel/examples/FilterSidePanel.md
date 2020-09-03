@@ -5,7 +5,13 @@ propComponents: ['FilterSidePanel', 'FilterSidePanelCategory', 'FilterSidePanelC
 ---
 
 import { FilterSidePanel, FilterSidePanelCategory, FilterSidePanelCategoryItem } from '@patternfly/react-catalog-view-extension';
-import { StarIcon, CcPaypalIcon, CcAmexIcon, CcDiscoverIcon, CcVisaIcon, CcMastercardIcon, CcDinersClubIcon } from '@patternfly/react-icons';
+import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import CcPaypalIcon from '@patternfly/react-icons/dist/js/icons/cc-paypal-icon';
+import CcAmexIcon from '@patternfly/react-icons/dist/js/icons/cc-amex-icon';
+import CcDiscoverIcon from '@patternfly/react-icons/dist/js/icons/cc-discover-icon';
+import CcVisaIcon from '@patternfly/react-icons/dist/js/icons/cc-visa-icon';
+import CcMastercardIcon from '@patternfly/react-icons/dist/js/icons/cc-mastercard-icon';
+import CcDinersClubIcon from '@patternfly/react-icons/dist/js/icons/cc-diners-club-icon';
 
 import './filterSidePanel.css';
 
@@ -23,7 +29,13 @@ This package is currently an extension. Extension components do not undergo the 
 ```js
 import React from 'react';
 import { FilterSidePanel, FilterSidePanelCategory, FilterSidePanelCategoryItem } from '@patternfly/react-catalog-view-extension';
-import { StarIcon, CcPaypalIcon, CcAmexIcon, CcDiscoverIcon, CcVisaIcon, CcMastercardIcon, CcDinersClubIcon } from '@patternfly/react-icons';
+import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import CcPaypalIcon from '@patternfly/react-icons/dist/js/icons/cc-paypal-icon';
+import CcAmexIcon from '@patternfly/react-icons/dist/js/icons/cc-amex-icon';
+import CcDiscoverIcon from '@patternfly/react-icons/dist/js/icons/cc-discover-icon';
+import CcVisaIcon from '@patternfly/react-icons/dist/js/icons/cc-visa-icon';
+import CcMastercardIcon from '@patternfly/react-icons/dist/js/icons/cc-mastercard-icon';
+import CcDinersClubIcon from '@patternfly/react-icons/dist/js/icons/cc-diners-club-icon';
 import { TextInput } from '@patternfly/react-core';
 
 class MockFilterSidePanelExample extends React.Component {

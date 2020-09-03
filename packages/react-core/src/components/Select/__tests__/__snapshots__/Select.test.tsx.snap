@@ -6704,7 +6704,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   >
     <div
       className="pf-c-select"
-      data-ouia-component-id={47}
+      data-ouia-component-id={45}
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -6731,7 +6731,7 @@ exports[`select with custom content renders closed successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select"
-              data-ouia-component-id="47"
+              data-ouia-component-id="45"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -6869,7 +6869,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
-      data-ouia-component-id={48}
+      data-ouia-component-id={46}
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -6900,7 +6900,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="48"
+              data-ouia-component-id="46"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -7968,6 +7968,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 >
                   <div
                     class="pf-c-chip-group"
+                    data-ouia-component-id="33"
+                    data-ouia-component-type="PF4/ChipGroup"
+                    data-ouia-safe="true"
                   >
                     
                     <ul
@@ -7995,7 +7998,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
                             class="pf-c-button pf-m-plain"
-                            data-ouia-component-id="35"
+                            data-ouia-component-id="Remove"
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe="true"
                             id="remove_pf-random-id-26"
@@ -8023,7 +8026,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         <div
                           class="pf-c-chip"
-                          data-ouia-component-id="36"
+                          data-ouia-component-id="35"
                           data-ouia-component-type="PF4/Chip"
                           data-ouia-safe="true"
                         >
@@ -8038,7 +8041,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-27 pf-random-id-27"
                             class="pf-c-button pf-m-plain"
-                            data-ouia-component-id="37"
+                            data-ouia-component-id="Remove"
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe="true"
                             id="remove_pf-random-id-27"
@@ -8242,6 +8245,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               >
                 <div
                   className="pf-c-chip-group"
+                  data-ouia-component-id={33}
+                  data-ouia-component-type="PF4/ChipGroup"
+                  data-ouia-safe={true}
                 >
                   <ul
                     aria-label="Chip group category"
@@ -8282,6 +8288,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
                               id="remove_pf-random-id-26"
                               onClick={[Function]}
+                              ouiaId="Remove"
                               variant="plain"
                             >
                               <button
@@ -8289,7 +8296,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-26 pf-random-id-26"
                                 className="pf-c-button pf-m-plain"
-                                data-ouia-component-id={35}
+                                data-ouia-component-id="Remove"
                                 data-ouia-component-type="PF4/Button"
                                 data-ouia-safe={true}
                                 disabled={false}
@@ -8348,7 +8355,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <div
                             className="pf-c-chip"
-                            data-ouia-component-id={36}
+                            data-ouia-component-id={35}
                             data-ouia-component-type="PF4/Chip"
                             data-ouia-safe={true}
                           >
@@ -8363,6 +8370,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               aria-labelledby="remove_pf-random-id-27 pf-random-id-27"
                               id="remove_pf-random-id-27"
                               onClick={[Function]}
+                              ouiaId="Remove"
                               variant="plain"
                             >
                               <button
@@ -8370,7 +8378,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-27 pf-random-id-27"
                                 className="pf-c-button pf-m-plain"
-                                data-ouia-component-id={37}
+                                data-ouia-component-id="Remove"
                                 data-ouia-component-type="PF4/Button"
                                 data-ouia-safe={true}
                                 disabled={false}
@@ -8883,7 +8891,7 @@ exports[`typeahead multi select test onChange 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
-      data-ouia-component-id={39}
+      data-ouia-component-id={37}
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -8926,7 +8934,7 @@ exports[`typeahead multi select test onChange 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="39"
+              data-ouia-component-id="37"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >

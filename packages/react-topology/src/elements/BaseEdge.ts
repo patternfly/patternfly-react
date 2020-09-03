@@ -160,4 +160,13 @@ export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends 
       this.bendpoints = model.bendpoints ? model.bendpoints.map(b => new Point(b[0], b[1])) : [];
     }
   }
+
+  toModel(): EdgeModel {
+    return {
+      ...super.toModel(),
+      source: this.getSource() ? this.getSource().getId() : undefined,
+      target: this.getTarget() ? this.getTarget().getId() : undefined,
+      bendpoints: this.getBendpoints().map(bp => [bp.x, bp.y])
+    };
+  }
 }

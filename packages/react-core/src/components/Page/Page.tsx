@@ -38,6 +38,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   notificationDrawer?: React.ReactNode;
   /** Flag indicating Notification drawer in expanded */
   isNotificationDrawerExpanded?: boolean;
+  /** Flag indicating if breadcrumb width should be limited */
+  isBreadcrumbWidthLimited?: boolean;
   /** Callback when notification drawer panel is finished expanding. */
   onNotificationDrawerExpand?: () => void;
   /** Skip to content component for the page */
@@ -53,6 +55,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
+  /** Flag indicating if tertiary nav width should be limited */
+  isTertiaryNavWidthLimited?: boolean;
   /**
    * If true, the managed sidebar is initially open for desktop view
    */
@@ -64,6 +68,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   onPageResize?: (object: any) => void;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
+  /** Tertiary nav component for the page */
+  tertiaryNav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
 }
@@ -78,6 +84,7 @@ export class Page extends React.Component<PageProps, PageState> {
   static displayName = 'Page';
   static defaultProps: PageProps = {
     isManagedSidebar: false,
+    isBreadcrumbWidthLimited: false,
     defaultManagedSidebarIsOpen: true,
     onPageResize: (): void => null,
     mainTabIndex: -1,
@@ -139,6 +146,7 @@ export class Page extends React.Component<PageProps, PageState> {
   render() {
     const {
       breadcrumb,
+      isBreadcrumbWidthLimited,
       className,
       children,
       header,
@@ -146,6 +154,7 @@ export class Page extends React.Component<PageProps, PageState> {
       notificationDrawer,
       isNotificationDrawerExpanded,
       onNotificationDrawerExpand,
+      isTertiaryNavWidthLimited,
       skipToContent,
       role,
       mainContainerId,
@@ -156,6 +165,7 @@ export class Page extends React.Component<PageProps, PageState> {
       onPageResize,
       mainAriaLabel,
       mainTabIndex,
+      tertiaryNav,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
@@ -174,7 +184,20 @@ export class Page extends React.Component<PageProps, PageState> {
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
-        {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
+        {tertiaryNav && isTertiaryNavWidthLimited && (
+          <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
+            <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
+          </div>
+        )}
+        {tertiaryNav && !isTertiaryNavWidthLimited && <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>}
+        {breadcrumb && isBreadcrumbWidthLimited && (
+          <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
+            <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
+          </section>
+        )}
+        {breadcrumb && !isBreadcrumbWidthLimited && (
+          <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>
+        )}
         {children}
       </main>
     );

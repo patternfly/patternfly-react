@@ -141,3 +141,13 @@ Object.values(AlertVariant).forEach(variant => {
     });
   });
 });
+
+
+test('Alert truncate title', () => {
+  const view = mount(<Alert truncateTitle={1} title="this is a test">Alert testing</Alert>);
+  expect(
+    view
+      .find('h4')
+      .prop('className')
+  ).toContain('pf-m-truncate');
+});

@@ -14,7 +14,8 @@ import {
   EmptyStateSecondaryActions,
   EmptyStatePrimary
 } from '@patternfly/react-core';
-import { CubesIcon, SearchIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 ## Examples
 ### Small
@@ -29,7 +30,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.small}>
@@ -66,7 +67,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.large}>
@@ -102,7 +103,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 SimpleEmptyState = () => (
   <EmptyState>
@@ -139,7 +140,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.xl}>
@@ -176,7 +177,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.xl}>
@@ -245,7 +246,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { SearchIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 
 NoMatchEmptyState = () => {

@@ -6,6 +6,12 @@ section: demos
 ## Examples
 
 import { NotificationBadge, NotificationDrawer } from '@patternfly/react-core';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 ### Basic
 ```js isFullscreen
@@ -59,9 +65,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class BasicNotificationDrawer extends React.Component {
@@ -516,9 +524,11 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class GroupedNotificationDrawer extends React.Component {

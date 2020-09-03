@@ -4,9 +4,14 @@ import React, { Component } from 'react';
 export class TextInputDemo extends Component {
   state = {
     value: '',
-    validatedTexInputValue: '',
+    validatedTextInputValue: '',
+    selectTextUsingRefValue: 'select all on click',
+    leftTruncatedTextInputValue:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     validated: ValidatedOptions.default
   };
+
+  ref = React.createRef<HTMLInputElement>();
 
   handleTextInputChange = (value: string) => {
     this.setState({ value });
@@ -20,7 +25,15 @@ export class TextInputDemo extends Component {
     } else {
       validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
     }
-    this.setState({ validatedTexInputValue: value, validated });
+    this.setState({ validatedTextInputValue: value, validated });
+  };
+
+  handleLeftTruncatedTextInputChange = (leftTruncatedTextInputValue: string) => {
+    this.setState({ leftTruncatedTextInputValue });
+  };
+
+  handleTextUsingRefInputChange = (selectTextUsingRefValue: string) => {
+    this.setState({ selectTextUsingRefValue });
   };
 
   myTextInputProps: TextInputProps = {
@@ -44,6 +57,7 @@ export class TextInputDemo extends Component {
   render() {
     return (
       <React.Fragment>
+        <Text>Simple Text Input Example</Text>
         <TextInput id="text" onChange={this.myTextInputProps.onChange} />
         <TextInput
           id="text-disabled"
@@ -55,12 +69,30 @@ export class TextInputDemo extends Component {
           isReadOnly={this.myReadOnlyTextInputProps.isReadOnly}
           value={this.myReadOnlyTextInputProps.value}
         />
-        <Text>Validated text input </Text>
+        <Text>Text Input Truncated on Left Example</Text>
+        <TextInput
+          id="text-truncated-on-left"
+          isLeftTruncated
+          onChange={this.handleLeftTruncatedTextInputChange}
+          value={this.state.leftTruncatedTextInputValue}
+        />
+        <Text>Validated Text Input </Text>
         <TextInput
           id="text-validated"
           onChange={this.handleValidatedTextInputChange}
-          value={this.state.validatedTexInputValue}
+          value={this.state.validatedTextInputValue}
           validated={this.state.validated}
+        />
+        <Text>Select Text Using Ref Example </Text>
+        <TextInput
+          id="text-using-ref"
+          ref={this.ref}
+          value={this.state.selectTextUsingRefValue}
+          onFocus={() => this.ref && this.ref.current && this.ref.current.select()}
+          // eslint-disable-next-line no-console
+          onBlur={() => console.log('blurred')}
+          onChange={this.handleTextUsingRefInputChange}
+          aria-label="select-all"
         />
       </React.Fragment>
     );

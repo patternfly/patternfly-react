@@ -13,6 +13,7 @@ exports[`Check dark page against snapshot 1`] = `
     />
   }
   id="PageId"
+  isBreadcrumbWidthLimited={false}
   isManagedSidebar={false}
   isNotificationDrawerExpanded={false}
   mainTabIndex={-1}
@@ -125,6 +126,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     />
   }
   id="PageId"
+  isBreadcrumbWidthLimited={false}
   isManagedSidebar={false}
   isNotificationDrawerExpanded={false}
   mainTabIndex={-1}
@@ -237,6 +239,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     />
   }
   id="PageId"
+  isBreadcrumbWidthLimited={false}
   isManagedSidebar={false}
   isNotificationDrawerExpanded={false}
   mainTabIndex={-1}
@@ -541,6 +544,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
     />
   }
   id="PageId"
+  isBreadcrumbWidthLimited={false}
   isManagedSidebar={false}
   isNotificationDrawerExpanded={false}
   mainContainerId="main-content-page-layout-test-nav"
@@ -841,6 +845,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     />
   }
   id="PageId"
+  isBreadcrumbWidthLimited={false}
   isManagedSidebar={false}
   isNotificationDrawerExpanded={false}
   mainTabIndex={-1}

@@ -1,14 +1,15 @@
 ---
-title: 'Search Input'
+id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
-typescript: true 
 propComponents: ['SearchInput']
+beta: true
 ---
 import { SearchInput } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
@@ -40,7 +41,8 @@ class BasicSearchInput extends React.Component {
 
 ```
 
-```js title=Match-with-result-count
+### Match with result count
+```js
 import React from 'react';
 import { SearchInput } from '@patternfly/react-core';
 
@@ -82,7 +84,8 @@ class SearchInputWithResultCount extends React.Component {
 
 ```
 
-```js title=Match-with-navigable-options
+### Match with navigable options
+```js
 import React from 'react';
 import { SearchInput } from '@patternfly/react-core';
 

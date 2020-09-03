@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.3](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.2...eslint-plugin-patternfly-react@4.1.3) (2020-08-24)
+
+
+### Bug Fixes
+
+* **docs:** use ids and h3s ([#4720](https://github.com/patternfly/patternfly-react/issues/4720)) ([a3f684f](https://github.com/patternfly/patternfly-react/commit/a3f684fa23cfce3d8e79b86206773292790cec5c))
+
+
+
+
+
 ## [4.1.2](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.1...eslint-plugin-patternfly-react@4.1.2) (2020-07-17)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react

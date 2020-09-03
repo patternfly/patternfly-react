@@ -75,6 +75,7 @@ class BaseLayout implements Layout {
     }
 
     this.forceSimulation = new ForceSimulation(this.options);
+    this.startListening();
   }
 
   destroy(): void {
@@ -176,6 +177,10 @@ class BaseLayout implements Layout {
       controller.addEventListener(ELEMENT_VISIBILITY_CHANGE_EVENT, this.handleElementVisibilityChange);
       controller.addEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
     }
+  }
+
+  stop(): void {
+    this.stopSimulation();
   }
 
   private stopListening(): void {
@@ -359,15 +364,17 @@ class BaseLayout implements Layout {
     return layoutGroups;
   }
 
-  protected initializeNodePositions(newNodes: LayoutNode[], graph: Graph, force: boolean = false): void {
+  protected initializeNodePositions(nodes: LayoutNode[], graph: Graph, force: boolean): void {
     const { width, height } = graph.getBounds();
     const cx = width / 2;
     const cy = height / 2;
-    newNodes.forEach((node: LayoutNode) => {
-      // only init position for nodes that are still at 0, 0
-      const { x, y } = node.element.getPosition();
-      if (force || (x === 0 && y === 0)) {
+
+    nodes.forEach((node: LayoutNode) => {
+      // only init position for nodes that have not been positioned
+      if (force || !node.element.isPositioned()) {
         node.setPosition(cx, cy);
+      } else {
+        node.setFixed(true);
       }
     });
   }
@@ -378,12 +385,6 @@ class BaseLayout implements Layout {
     edges: LayoutLink[], // eslint-disable-line @typescript-eslint/no-unused-vars
     groups: LayoutGroup[] // eslint-disable-line @typescript-eslint/no-unused-vars
   ): void {}
-
-  protected updateExistingNodes(existingNodes: LayoutNode[]): void {
-    existingNodes.forEach(n => {
-      (n as LayoutNode).isFixed = true;
-    });
-  }
 
   protected stopSimulation(): void {
     this.forceSimulation.haltForceSimulation();
@@ -439,7 +440,7 @@ class BaseLayout implements Layout {
     this.edges = this.getLinks(this.graph.getEdges());
 
     // initialize new node positions
-    this.initializeNodePositions(newNodes, this.graph, initialRun);
+    this.initializeNodePositions(this.nodes, this.graph, initialRun);
 
     // re-create the nodes map
     this.nodesMap = this.nodes.reduce((acc, n) => {
@@ -451,8 +452,6 @@ class BaseLayout implements Layout {
     this.edges.push(...this.getFauxEdges(this.groups, this.nodes));
 
     this.setupLayout(this.graph, this.nodes, this.edges, this.groups);
-
-    this.updateExistingNodes(this.nodes.filter(n => !newNodes.includes(n)));
 
     if (initialRun || addingNodes) {
       // Reset the force simulation

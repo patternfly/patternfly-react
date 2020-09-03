@@ -62,6 +62,25 @@ describe('Modal Test', () => {
     });
   });
 
+  it('Verify Medium Modal', () => {
+    cy.get('#showMediumModalButton').then((modalButton: JQuery<HTMLButtonElement>) => {
+      cy.wrap(modalButton).click();
+      cy.get('.pf-c-modal-box.pf-m-md')
+        .then(() => {
+          cy.get('.pf-c-modal-box .pf-c-button[aria-label="Close"]').then(closeButton => {
+            cy.wrap(closeButton).click();
+            cy.get('.pf-c-modal-box').should('not.exist');
+          });
+        })
+        .then(() => {
+          cy.wrap(modalButton).click();
+          cy.get('.pf-c-modal-box').should('exist');
+          cy.get('body').trigger('keydown', { keyCode: 27, which: 27 });
+          cy.get('.pf-c-modal-box').should('not.exist');
+        });
+    });
+  });
+
   it('Verify Large Modal', () => {
     cy.get('#showLargeModalButton').then((modalButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(modalButton).click();

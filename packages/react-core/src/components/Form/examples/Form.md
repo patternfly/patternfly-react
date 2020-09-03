@@ -18,7 +18,8 @@ Checkbox,
 ActionGroup,
 Radio
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon, HelpIcon } from '@patternfly/react-icons';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 ## Examples
 
@@ -37,7 +38,7 @@ import {
   Button,
   Radio
 } from '@patternfly/react-core';
-import { HelpIcon } from '@patternfly/react-icons';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 class SimpleForm extends React.Component {
   constructor(props) {
@@ -278,7 +279,7 @@ import {
   Button,
   Radio
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 class InvalidForm extends React.Component {
   constructor(props) {
@@ -338,7 +339,7 @@ import {
   Button,
   Radio
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 class InvalidForm extends React.Component {
   constructor(props) {

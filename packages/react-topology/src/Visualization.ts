@@ -45,15 +45,24 @@ export class Visualization extends Stateful implements Controller {
   }
 
   @action
-  fromModel(model: Model): void {
+  fromModel(model: Model, merge: boolean = true): void {
     const oldGraph = this.graph;
 
-    // create elements
+    // If not merging, clear out the old elements
+    if (!merge) {
+      _.forIn(this.elements, element => this.removeElement(element));
+    }
+
+    // Create the graph if given in the model
     if (model.graph) {
       this.graph = this.createElement<Graph>(ModelKind.graph, model.graph);
+      if (!merge && oldGraph) {
+        this.graph.setDimensions(oldGraph.getDimensions());
+      }
     }
-    const validIds: string[] = [];
 
+    // Create elements
+    const validIds: string[] = [];
     const idToElement: { [id: string]: ElementModel } = {};
 
     model.nodes &&
@@ -92,14 +101,16 @@ export class Visualization extends Stateful implements Controller {
     model.edges && model.edges.forEach(processElement);
 
     // remove all stale elements
-    _.forIn(this.elements, element => {
-      if (!isGraph(element) && !validIds.includes(element.getId())) {
-        this.removeElement(element);
-      }
-    });
+    if (merge) {
+      _.forIn(this.elements, element => {
+        if (!isGraph(element) && !validIds.includes(element.getId())) {
+          this.removeElement(element);
+        }
+      });
 
-    if (oldGraph && oldGraph !== this.graph) {
-      this.removeElement(oldGraph);
+      if (oldGraph && oldGraph !== this.graph) {
+        this.removeElement(oldGraph);
+      }
     }
 
     if (this.graph) {
@@ -132,6 +143,17 @@ export class Visualization extends Stateful implements Controller {
 
   getElements(): GraphElement[] {
     return _.values(this.elements);
+  }
+
+  toModel(): Model {
+    const graph = this.getGraph();
+    const nodes = this.getElements().filter(n => isNode(n)) as Node[];
+    const edges = this.getElements().filter(e => isEdge(e)) as Edge[];
+    return {
+      graph: graph.toModel(),
+      nodes: nodes.map(n => n.toModel()),
+      edges: edges.map(e => e.toModel())
+    };
   }
 
   addElement(element: GraphElement): void {

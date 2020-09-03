@@ -26,6 +26,8 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   type?: 'default' | 'nav';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
+  /** Limits the width of the section */
+  isWidthLimited?: boolean;
   /** Padding at various breakpoints. */
   padding?: {
     default?: 'padding' | 'noPadding';
@@ -56,6 +58,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   type = 'default',
   padding,
   isFilled,
+  isWidthLimited = false,
   ...props
 }: PageSectionProps) => (
   <section
@@ -66,10 +69,12 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
+      isWidthLimited && styles.modifiers.limitWidth,
       className
     )}
   >
-    {children}
+    {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
+    {!isWidthLimited && children}
   </section>
 );
 PageSection.displayName = 'PageSection';

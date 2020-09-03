@@ -5,7 +5,12 @@ cssPrefix: pf-c-tabs
 propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
 ouia: true
 ---
-import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+import ProjectDiagramIcon from '@patternfly/react-icons/dist/js/icons/project-diagram-icon';
 
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
 
@@ -300,7 +305,12 @@ class InsetTabs extends React.Component {
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
-import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+import ProjectDiagramIcon from '@patternfly/react-icons/dist/js/icons/project-diagram-icon';
 
 class IconAndTextTabs extends React.Component {
   constructor(props) {
@@ -517,7 +527,9 @@ class FilledTabs extends React.Component {
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
-import { UsersIcon,  BoxIcon, DatabaseIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
 
 class FilledTabsWithIcons extends React.Component {
   constructor(props) {
