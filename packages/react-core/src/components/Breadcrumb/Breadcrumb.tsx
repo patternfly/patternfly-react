@@ -19,23 +19,21 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   ouiaId,
   ouiaSafe = true,
   ...props
-}: BreadcrumbProps) => (
-  <nav
-    {...props}
-    aria-label={ariaLabel}
-    className={css(styles.breadcrumb, className)}
-    {...useOUIAProps(Breadcrumb.displayName, ouiaId, ouiaSafe)}
-  >
-    <ol className={styles.breadcrumbList}>
-      {React.Children.map(children, (child, index) => {
-        const showDivider = index > 0;
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, { showDivider });
-        }
+}: BreadcrumbProps) => {
+  const ouiaProps = useOUIAProps(Breadcrumb.displayName, ouiaId, ouiaSafe);
+  return (
+    <nav {...props} aria-label={ariaLabel} className={css(styles.breadcrumb, className)} {...ouiaProps}>
+      <ol className={styles.breadcrumbList}>
+        {React.Children.map(children, (child, index) => {
+          const showDivider = index > 0;
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, { showDivider });
+          }
 
-        return child;
-      })}
-    </ol>
-  </nav>
-);
+          return child;
+        })}
+      </ol>
+    </nav>
+  );
+};
 Breadcrumb.displayName = 'Breadcrumb';

@@ -36,6 +36,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   ...props
 }: CardProps) => {
   const Component = component as any;
+  const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
   return (
     <Component
       className={css(
@@ -49,7 +50,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
       )}
       tabIndex={isSelectable ? '0' : undefined}
       {...props}
-      {...useOUIAProps(Card.displayName, ouiaId, ouiaSafe)}
+      {...ouiaProps}
     >
       {children}
     </Component>

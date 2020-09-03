@@ -78,6 +78,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   tabIndex = null,
   ...props
 }: ButtonProps) => {
+  const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
 
@@ -127,7 +128,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement ? type : null}
-      {...useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant)}
+      {...ouiaProps}
     >
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>

@@ -60,6 +60,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   truncateTitle = 0,
   ...props
 }: AlertProps) => {
+  const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
   const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
@@ -97,7 +98,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         {...props}
         className={customClassName}
         aria-label={ariaLabel}
-        {...useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant)}
+        {...ouiaProps}
         {...(isLiveRegion && {
           'aria-live': 'polite',
           'aria-atomic': 'false'
