@@ -11,7 +11,7 @@ exports[`Dark Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav test=nav-class"
-    data-ouia-component-id="OUIA-Nav-2"
+    data-ouia-component-id="OUIA-Generated-Nav-2"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -112,7 +112,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-1"
+    data-ouia-component-id="OUIA-Generated-Nav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -209,7 +209,7 @@ exports[`Default Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav test=nav-class"
-    data-ouia-component-id="OUIA-Nav-1"
+    data-ouia-component-id="OUIA-Generated-Nav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -310,7 +310,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-2"
+    data-ouia-component-id="OUIA-Generated-Nav-2"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -474,7 +474,7 @@ exports[`Expandable Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-4"
+    data-ouia-component-id="OUIA-Generated-Nav-4"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -639,7 +639,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   <nav
     aria-label="Local"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-5"
+    data-ouia-component-id="OUIA-Generated-Nav-5"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -809,7 +809,7 @@ exports[`Horizontal Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-7"
+    data-ouia-component-id="OUIA-Generated-Nav-7"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -907,7 +907,7 @@ exports[`Nav Grouped List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-6"
+    data-ouia-component-id="OUIA-Generated-Nav-6"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1117,7 +1117,7 @@ exports[`Nav List with custom item nodes 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-9"
+    data-ouia-component-id="OUIA-Generated-Nav-9"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1163,7 +1163,7 @@ exports[`Simple Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-3"
+    data-ouia-component-id="OUIA-Generated-Nav-3"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1261,7 +1261,7 @@ exports[`Tertiary Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id="OUIA-Nav-8"
+    data-ouia-component-id="OUIA-Generated-Nav-8"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >

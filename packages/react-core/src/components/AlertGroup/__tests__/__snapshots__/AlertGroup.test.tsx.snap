@@ -19,7 +19,7 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
           <div
             aria-label="Danger Alert"
             className="pf-c-alert pf-m-danger"
-            data-ouia-component-id="OUIA-Alert-danger-1"
+            data-ouia-component-id="OUIA-Generated-Alert-danger-1"
             data-ouia-component-type="PF4/Alert"
             data-ouia-safe={true}
           >
@@ -88,7 +88,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             <div
               aria-label="Warning Alert"
               class="pf-c-alert pf-m-warning"
-              data-ouia-component-id="OUIA-Alert-warning-1"
+              data-ouia-component-id="OUIA-Generated-Alert-warning-1"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe="true"
             >
@@ -144,7 +144,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             <div
               aria-label="Warning Alert"
               className="pf-c-alert pf-m-warning"
-              data-ouia-component-id="OUIA-Alert-warning-1"
+              data-ouia-component-id="OUIA-Generated-Alert-warning-1"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe={true}
             >
@@ -216,7 +216,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
             <div
               aria-label="Warning Alert"
               class="pf-c-alert pf-m-warning"
-              data-ouia-component-id="OUIA-Alert-warning-1"
+              data-ouia-component-id="OUIA-Generated-Alert-warning-1"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe="true"
             >
@@ -264,7 +264,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               aria-label="Default Alert"
               aria-live="polite"
               class="pf-c-alert"
-              data-ouia-component-id="OUIA-Alert-default-1"
+              data-ouia-component-id="OUIA-Generated-Alert-default-1"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe="true"
             >
@@ -303,7 +303,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   aria-disabled="false"
                   aria-label="Close"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Button-plain-1"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -345,7 +345,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               aria-label="Default Alert"
               aria-live="polite"
               class="pf-c-alert"
-              data-ouia-component-id="OUIA-Alert-default-1"
+              data-ouia-component-id="OUIA-Generated-Alert-default-1"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe="true"
             >
@@ -384,7 +384,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   aria-disabled="false"
                   aria-label="Close"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Button-plain-1"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -437,7 +437,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               aria-label="Default Alert"
               aria-live="polite"
               className="pf-c-alert"
-              data-ouia-component-id="OUIA-Alert-default-1"
+              data-ouia-component-id="OUIA-Generated-Alert-default-1"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe={true}
             >
@@ -500,7 +500,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                       aria-disabled={false}
                       aria-label="Close"
                       className="pf-c-button pf-m-plain"
-                      data-ouia-component-id="OUIA-Button-plain-1"
+                      data-ouia-component-id="OUIA-Generated-Button-plain-1"
                       data-ouia-component-type="PF4/Button"
                       data-ouia-safe={true}
                       disabled={false}

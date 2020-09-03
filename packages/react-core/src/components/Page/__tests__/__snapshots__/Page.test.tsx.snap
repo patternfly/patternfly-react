@@ -305,7 +305,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
             <nav
               aria-label="Breadcrumb"
               className="pf-c-breadcrumb"
-              data-ouia-component-id="OUIA-Breadcrumb-1"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
               data-ouia-component-type="PF4/Breadcrumb"
               data-ouia-safe={true}
             >
@@ -630,7 +630,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
           <nav
             aria-label="Breadcrumb"
             className="pf-c-breadcrumb"
-            data-ouia-component-id="OUIA-Breadcrumb-2"
+            data-ouia-component-id="OUIA-Generated-Breadcrumb-2"
             data-ouia-component-type="PF4/Breadcrumb"
             data-ouia-safe={true}
           >

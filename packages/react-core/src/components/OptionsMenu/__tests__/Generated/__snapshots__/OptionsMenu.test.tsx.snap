@@ -13,7 +13,7 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
       "menuComponent": "ul",
       "onSelect": [Function],
       "ouiaComponentType": "OptionsMenu",
-      "ouiaId": "OUIA-OptionsMenu-1",
+      "ouiaId": "OUIA-Generated-OptionsMenu-1",
       "ouiaSafe": true,
       "toggleClass": "pf-c-options-menu__toggle",
       "toggleIndicatorClass": "pf-c-options-menu__toggle-icon",

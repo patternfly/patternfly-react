@@ -390,7 +390,7 @@ exports[`Actions virtualized table 1`] = `
         },
       ]
     }
-    data-ouia-component-id="OUIA-Table-5"
+    data-ouia-component-id="OUIA-Generated-Table-5"
     data-ouia-component-type="PF4/Table"
     data-ouia-safe={true}
     renderers={
@@ -410,7 +410,7 @@ exports[`Actions virtualized table 1`] = `
     <table
       aria-label="Aria labeled"
       className="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Table-5"
+      data-ouia-component-id="OUIA-Generated-Table-5"
       data-ouia-component-type="PF4/Table"
       data-ouia-safe={true}
       role="grid"
@@ -1536,7 +1536,7 @@ exports[`Selectable virtualized table 1`] = `
         },
       ]
     }
-    data-ouia-component-id="OUIA-Table-6"
+    data-ouia-component-id="OUIA-Generated-Table-6"
     data-ouia-component-type="PF4/Table"
     data-ouia-safe={true}
     renderers={
@@ -1556,7 +1556,7 @@ exports[`Selectable virtualized table 1`] = `
     <table
       aria-label="Aria labeled"
       className="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Table-6"
+      data-ouia-component-id="OUIA-Generated-Table-6"
       data-ouia-component-type="PF4/Table"
       data-ouia-safe={true}
       role="grid"
@@ -2844,7 +2844,7 @@ exports[`Simple Actions table 1`] = `
         },
       ]
     }
-    data-ouia-component-id="OUIA-Table-4"
+    data-ouia-component-id="OUIA-Generated-Table-4"
     data-ouia-component-type="PF4/Table"
     data-ouia-safe={true}
     renderers={
@@ -2864,7 +2864,7 @@ exports[`Simple Actions table 1`] = `
     <table
       aria-label="Aria labeled"
       className="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Table-4"
+      data-ouia-component-id="OUIA-Generated-Table-4"
       data-ouia-component-type="PF4/Table"
       data-ouia-safe={true}
       role="grid"
@@ -4168,7 +4168,7 @@ exports[`Simple virtualized table aria-label 1`] = `
         },
       ]
     }
-    data-ouia-component-id="OUIA-Table-2"
+    data-ouia-component-id="OUIA-Generated-Table-2"
     data-ouia-component-type="PF4/Table"
     data-ouia-safe={true}
     renderers={
@@ -4188,7 +4188,7 @@ exports[`Simple virtualized table aria-label 1`] = `
     <table
       aria-label="Virtual Table Test"
       className="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Table-2"
+      data-ouia-component-id="OUIA-Generated-Table-2"
       data-ouia-component-type="PF4/Table"
       data-ouia-safe={true}
       role="grid"
@@ -5104,7 +5104,7 @@ exports[`Simple virtualized table className 1`] = `
         },
       ]
     }
-    data-ouia-component-id="OUIA-Table-1"
+    data-ouia-component-id="OUIA-Generated-Table-1"
     data-ouia-component-type="PF4/Table"
     data-ouia-safe={true}
     renderers={
@@ -5124,7 +5124,7 @@ exports[`Simple virtualized table className 1`] = `
     <table
       aria-label="Virtual Table Test"
       className="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Table-1"
+      data-ouia-component-id="OUIA-Generated-Table-1"
       data-ouia-component-type="PF4/Table"
       data-ouia-safe={true}
       role="grid"
@@ -6046,7 +6046,7 @@ exports[`Sortable Virtualized Table 1`] = `
         },
       ]
     }
-    data-ouia-component-id="OUIA-Table-3"
+    data-ouia-component-id="OUIA-Generated-Table-3"
     data-ouia-component-type="PF4/Table"
     data-ouia-safe={true}
     renderers={
@@ -6066,7 +6066,7 @@ exports[`Sortable Virtualized Table 1`] = `
     <table
       aria-label="Aria labeled"
       className="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Table-3"
+      data-ouia-component-id="OUIA-Generated-Table-3"
       data-ouia-component-type="PF4/Table"
       data-ouia-safe={true}
       role="grid"

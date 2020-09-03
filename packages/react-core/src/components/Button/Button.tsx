@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -78,7 +78,6 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   tabIndex = null,
   ...props
 }: ButtonProps) => {
-  const [ouiaStateId] = React.useState(React.useCallback(() => getDefaultOUIAId(Button.displayName, variant), []));
   const Component = component as any;
   const isButtonElement = Component === 'button';
 
@@ -128,7 +127,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement ? type : null}
-      {...getOUIAProps(Button.displayName, ouiaId !== undefined ? ouiaId : ouiaStateId, ouiaSafe)}
+      {...useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant)}
     >
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>

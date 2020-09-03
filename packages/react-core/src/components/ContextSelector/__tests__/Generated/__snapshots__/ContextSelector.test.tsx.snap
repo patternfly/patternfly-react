@@ -3,7 +3,7 @@
 exports[`ContextSelector should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-context-selector ''"
-  data-ouia-component-id="OUIA-ContextSelector-1"
+  data-ouia-component-id="OUIA-Generated-ContextSelector-1"
   data-ouia-component-type="PF4/ContextSelector"
   data-ouia-safe={true}
 >

@@ -120,7 +120,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-expanded"
-      data-ouia-component-id="OUIA-ApplicationLauncher-6"
       data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
@@ -140,7 +139,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
             "current": <nav
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-expanded"
-              data-ouia-component-id="OUIA-ApplicationLauncher-6"
               data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
@@ -276,7 +274,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               "current": <nav
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-expanded"
-                data-ouia-component-id="OUIA-ApplicationLauncher-6"
                 data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
@@ -988,7 +985,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-top pf-m-align-right"
-      data-ouia-component-id="OUIA-ApplicationLauncher-4"
       data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
@@ -1008,7 +1004,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             "current": <nav
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-top pf-m-align-right"
-              data-ouia-component-id="OUIA-ApplicationLauncher-4"
               data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
@@ -1062,7 +1057,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               "current": <nav
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-top pf-m-align-right"
-                data-ouia-component-id="OUIA-ApplicationLauncher-4"
                 data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
@@ -1261,7 +1255,6 @@ exports[`ApplicationLauncher dropup 1`] = `
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-top"
-      data-ouia-component-id="OUIA-ApplicationLauncher-3"
       data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
@@ -1281,7 +1274,6 @@ exports[`ApplicationLauncher dropup 1`] = `
             "current": <nav
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-top"
-              data-ouia-component-id="OUIA-ApplicationLauncher-3"
               data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
@@ -1335,7 +1327,6 @@ exports[`ApplicationLauncher dropup 1`] = `
               "current": <nav
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-top"
-                data-ouia-component-id="OUIA-ApplicationLauncher-3"
                 data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
@@ -1534,7 +1525,6 @@ exports[`ApplicationLauncher expanded 1`] = `
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-expanded"
-      data-ouia-component-id="OUIA-ApplicationLauncher-5"
       data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
@@ -1554,7 +1544,6 @@ exports[`ApplicationLauncher expanded 1`] = `
             "current": <nav
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-expanded"
-              data-ouia-component-id="OUIA-ApplicationLauncher-5"
               data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
@@ -1689,7 +1678,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               "current": <nav
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-expanded"
-                data-ouia-component-id="OUIA-ApplicationLauncher-5"
                 data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
@@ -2398,7 +2386,6 @@ exports[`ApplicationLauncher regular 1`] = `
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher"
-      data-ouia-component-id="OUIA-ApplicationLauncher-1"
       data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
@@ -2418,7 +2405,6 @@ exports[`ApplicationLauncher regular 1`] = `
             "current": <nav
               aria-label="Application launcher"
               class="pf-c-app-launcher"
-              data-ouia-component-id="OUIA-ApplicationLauncher-1"
               data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
@@ -2472,7 +2458,6 @@ exports[`ApplicationLauncher regular 1`] = `
               "current": <nav
                 aria-label="Application launcher"
                 class="pf-c-app-launcher"
-                data-ouia-component-id="OUIA-ApplicationLauncher-1"
                 data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
@@ -2671,7 +2656,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-align-right"
-      data-ouia-component-id="OUIA-ApplicationLauncher-2"
       data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
@@ -2691,7 +2675,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
             "current": <nav
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-align-right"
-              data-ouia-component-id="OUIA-ApplicationLauncher-2"
               data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
@@ -2745,7 +2728,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
               "current": <nav
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-align-right"
-                data-ouia-component-id="OUIA-ApplicationLauncher-2"
                 data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
