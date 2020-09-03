@@ -20,4 +20,28 @@ describe('Table Simple Test', () => {
       .find('th')
       .should('have.length', 5);
   });
+
+  it('Verify tooltip info', () => {
+    // there should be two header cells with tooltip and popover info respectively
+    cy.get('.pf-c-table__column-help-action').should('have.length', 2);
+    // tooltip shouldn't exist yet
+    cy.get('.pf-c-tooltip').should('not.exist');
+    // trigger tooltip
+    cy.get('.pf-c-table__column-help-action')
+      .first()
+      .click();
+    cy.get('.pf-c-tooltip').should('exist');
+  });
+
+  it('Verify popover info', () => {
+    // there should be two header cells with tooltip and popover info respectively
+    cy.get('.pf-c-table__column-help-action').should('have.length', 2);
+    // popover shouldn't exist yet
+    cy.get('.pf-c-popover').should('not.exist');
+    // trigger popover
+    cy.get('.pf-c-table__column-help-action')
+      .eq(1)
+      .click();
+    cy.get('.pf-c-popover').should('exist');
+  });
 });

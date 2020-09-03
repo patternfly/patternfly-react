@@ -6,6 +6,7 @@
  */
 
 import * as React from 'react';
+import { TooltipProps, PopoverProps } from '@patternfly/react-core';
 
 // Cell Type
 export interface CellType {
@@ -30,6 +31,15 @@ export interface HeaderType {
   formatters?: formattersType;
   props?: object;
   property?: string;
+  info?: InfoType;
+}
+export interface InfoType {
+  tooltip?: React.ReactNode;
+  tooltipProps?: Omit<TooltipProps, 'content'>;
+  popover?: React.ReactNode;
+  popoverProps?: Omit<PopoverProps, 'bodyContent'>;
+  ariaLabel?: string;
+  className?: string;
 }
 
 // Rows Types
