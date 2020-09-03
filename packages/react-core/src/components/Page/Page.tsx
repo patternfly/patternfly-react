@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ReactDOM from "react-dom";
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
@@ -126,10 +125,9 @@ export class Page extends React.Component<PageProps, PageState> {
     }
   }
 
-  isMobile = () => {
+  isMobile = () =>
     // eslint-disable-next-line radix
-    return window.innerWidth < Number.parseInt(globalBreakpointXl.value, 10);
-  }
+    window.innerWidth < Number.parseInt(globalBreakpointXl.value, 10);
 
   handleResize = debounce(() => {
     const { onPageResize } = this.props;
@@ -147,7 +145,7 @@ export class Page extends React.Component<PageProps, PageState> {
         this.setState({ mobileIsNavOpen: false });
       }
     }
-  }
+  };
 
   onNavToggleMobile = () => {
     this.setState(prevState => ({
