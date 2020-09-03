@@ -27,6 +27,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
         Array [
           null,
           null,
+          null,
           0,
         ],
       ],
@@ -94,6 +95,21 @@ exports[`select options renders custom component 1`] = `
             </div>
           </div>,
           null,
+          <li
+            class=""
+            id="option-1"
+            role="presentation"
+          >
+            <div
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              <div>
+                test display
+              </div>
+            </div>
+          </li>,
           0,
         ],
       ],
@@ -164,6 +180,21 @@ exports[`select options renders with custom display and custom user object succe
             </div>
           </button>,
           null,
+          <li
+            class=""
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              <div>
+                test display
+              </div>
+            </button>
+          </li>,
           0,
         ],
       ],
@@ -234,6 +265,21 @@ exports[`select options renders with custom display successfully 1`] = `
             </div>
           </button>,
           null,
+          <li
+            class=""
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              <div>
+                test display
+              </div>
+            </button>
+          </li>,
           0,
         ],
       ],
@@ -295,6 +341,19 @@ exports[`select options renders with custom user object successfully 1`] = `
             Mr.: Test User
           </button>,
           null,
+          <li
+            class=""
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Mr.: Test User
+            </button>
+          </li>,
           0,
         ],
       ],
@@ -371,6 +430,28 @@ exports[`select options renders with description successfully 1`] = `
             </span>
           </button>,
           null,
+          <li
+            class=""
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item pf-m-description"
+              role="option"
+              type="button"
+            >
+              <span
+                class="pf-c-select__menu-item-main"
+              >
+                test
+              </span>
+              <span
+                class="pf-c-select__menu-item-description"
+              >
+                This is a description
+              </span>
+            </button>
+          </li>,
           0,
         ],
       ],
@@ -439,6 +520,19 @@ exports[`select options renders with value parameter successfully 1`] = `
             test
           </button>,
           null,
+          <li
+            class=""
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              test
+            </button>
+          </li>,
           0,
         ],
       ],

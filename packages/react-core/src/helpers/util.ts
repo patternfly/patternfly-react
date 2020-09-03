@@ -292,19 +292,30 @@ export const createRenderableFavorites = (
 ) => {
   if (isGrouped) {
     const favoriteItems: React.ReactNode[] = [];
-    (items as React.ReactElement[]).forEach(group =>
-      (group.props.children as React.ReactElement[])
-        .filter(item => favorites.includes(item.props.id))
-        .map(item => {
-          if (isEnterTriggersArrowDown) {
-            return favoriteItems.push(
-              React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: isEnterTriggersArrowDown })
-            );
-          } else {
-            return favoriteItems.push(React.cloneElement(item, { isFavorite: true }));
-          }
-        })
-    );
+    (items as React.ReactElement[]).forEach(group => {
+      if (favorites.length > 0) {
+        return (
+          group.props.children &&
+          (group.props.children as React.ReactElement[])
+            .filter(item => favorites.includes(item.props.id))
+            .map(item => {
+              if (isEnterTriggersArrowDown) {
+                return favoriteItems.push(
+                  React.cloneElement(item, {
+                    isFavorite: true,
+                    enterTriggersArrowDown: isEnterTriggersArrowDown,
+                    id: `favorite-${item.props.id}`
+                  })
+                );
+              } else {
+                return favoriteItems.push(
+                  React.cloneElement(item, { isFavorite: true, id: `favorite-${item.props.id}` })
+                );
+              }
+            })
+        );
+      }
+    });
     return favoriteItems;
   }
   return (items as React.ReactElement[])
@@ -328,7 +339,9 @@ export const extendItemsWithFavorite = (items: object, isGrouped: boolean, favor
             return item;
           }
           return React.cloneElement(item, {
-            isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
+            isFavorite: favorites.some(
+              favoriteId => favoriteId === item.props.id || `favorite-${favoriteId}` === item.props.id
+            )
           });
         })
       })
