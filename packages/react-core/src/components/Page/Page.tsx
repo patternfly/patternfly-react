@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ReactDOM from "react-dom";
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
@@ -91,6 +92,7 @@ export class Page extends React.Component<PageProps, PageState> {
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null
   };
+  outerRef = React.createRef<HTMLDivElement>();
 
   constructor(props: PageProps) {
     super(props);
@@ -107,7 +109,9 @@ export class Page extends React.Component<PageProps, PageState> {
   componentDidMount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      window.addEventListener('resize', debounce(this.handleResize, 250));
+      window.addEventListener('resize', this.handleResize);
+      document.addEventListener('mousedown', this.handleClickMobile);
+      document.addEventListener('touchstart', this.handleClickMobile);
       // Initial check if should be shown
       this.handleResize();
     }
@@ -116,20 +120,34 @@ export class Page extends React.Component<PageProps, PageState> {
   componentWillUnmount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      window.removeEventListener('resize', debounce(this.handleResize, 250));
+      window.removeEventListener('resize', this.handleResize);
+      document.removeEventListener('mousedown', this.handleClickMobile);
+      document.removeEventListener('touchstart', this.handleClickMobile);
     }
   }
 
-  handleResize = () => {
-    const { onPageResize } = this.props;
-    const windowSize = window.innerWidth;
+  isMobile = () => {
     // eslint-disable-next-line radix
-    const mobileView = windowSize < Number.parseInt(globalBreakpointXl.value, 10);
+    return window.innerWidth < Number.parseInt(globalBreakpointXl.value, 10);
+  }
+
+  handleResize = debounce(() => {
+    const { onPageResize } = this.props;
+    const mobileView = this.isMobile();
     if (onPageResize) {
-      onPageResize({ mobileView, windowSize });
+      onPageResize({ mobileView, windowSize: window.innerWidth });
     }
     this.setState({ mobileView });
-  };
+  }, 250);
+
+  handleClickMobile = (ev: any) => {
+    if (this.isMobile() && this.outerRef.current) {
+      const sidebarNode = this.outerRef.current.getElementsByClassName(styles.pageSidebar)[0];
+      if (sidebarNode && !sidebarNode.contains(ev.target)) {
+        this.setState({ mobileIsNavOpen: false });
+      }
+    }
+  }
 
   onNavToggleMobile = () => {
     this.setState(prevState => ({
@@ -206,7 +224,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
     return (
       <PageContextProvider value={context}>
-        <div {...rest} className={css(styles.page, className)}>
+        <div ref={this.outerRef} {...rest} className={css(styles.page, className)}>
           {skipToContent}
           {header}
           {sidebar}
