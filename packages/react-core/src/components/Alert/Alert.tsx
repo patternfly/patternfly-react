@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
-import { capitalize, getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { capitalize, getOUIAProps, OUIAProps, useOUIAId } from '../../helpers';
 import { AlertContext } from './AlertContext';
 import maxLines from '@patternfly/react-tokens/dist/js/c_alert__title_max_lines';
 
@@ -60,7 +60,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   truncateTitle = 0,
   ...props
 }: AlertProps) => {
-  const [ouiaStateId] = React.useState(React.useCallback(() => getDefaultOUIAId(Alert.displayName, variant), []));
+  // const [ouiaStateId] = React.useState(React.useCallback(() => getDefaultOUIAId(Alert.displayName, variant), []));
   const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
@@ -98,7 +98,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         {...props}
         className={customClassName}
         aria-label={ariaLabel}
-        {...getOUIAProps(Alert.displayName, ouiaId !== undefined ? ouiaId : ouiaStateId, ouiaSafe)}
+        {...getOUIAProps(Alert.displayName, useOUIAId(ouiaId, Alert.displayName, variant), ouiaSafe)}
         {...(isLiveRegion && {
           'aria-live': 'polite',
           'aria-atomic': 'false'

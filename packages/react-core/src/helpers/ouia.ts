@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 type OuiaId = number | string;
 
 // https://ouia.readthedocs.io/en/latest/README.html#ouia-component
@@ -9,6 +11,9 @@ export interface OUIAProps {
 }
 
 let uid = 0;
+const ouiaPrefix = 'OUIA-Generated-';
+const ouiaIdByRoute: any = {};
+
 /** Get props to conform to OUIA spec
  *
  * @param {string} componentType OUIA component type
@@ -19,11 +24,10 @@ export function getOUIAProps(componentType: string, id: OuiaId | undefined, ouia
   return {
     'data-ouia-component-type': `PF4/${componentType}`,
     'data-ouia-safe': ouiaSafe,
-    'data-ouia-component-id': id === undefined ? `OUIA-${componentType}-${++uid}` : id
+    'data-ouia-component-id': id === undefined ? `${ouiaPrefix}${componentType}-${++uid}` : id
   };
 }
 
-const ouiaIdByRoute: any = {};
 /**
  * Returns a generated id based on the URL location
  *
@@ -41,8 +45,15 @@ export function getDefaultOUIAId(componentType: string, variant?: string) {
     if (!ouiaIdByRoute[key]) {
       ouiaIdByRoute[key] = 0;
     }
-    return `OUIA-${componentType}-${variant ? `${variant}-` : ''}${++ouiaIdByRoute[key]}`;
+    return `${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}${++ouiaIdByRoute[key]}`;
   } catch (exception) {
-    return `OUIA-${componentType}-${variant ? `${variant}-` : ''}${++uid}`;
+    return `${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}${++uid}`;
   }
 }
+
+export const useOUIAId = (ouiaId: OuiaId, componentType: string, variant?: string) => {
+  if (ouiaId !== undefined) {
+    return ouiaId;
+  }
+  return useMemo(() => getDefaultOUIAId(componentType, variant), [componentType, variant]);
+};
