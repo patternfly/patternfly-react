@@ -24,15 +24,15 @@ import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
 <React.Fragment>
-  <Skeleton width="25" />
+  <Skeleton width="25%" />
   <br />
-  <Skeleton width="33" />
+  <Skeleton width="33%" />
   <br />
-  <Skeleton width="50" />
+  <Skeleton width="50%" />
   <br />
-  <Skeleton width="66" />
+  <Skeleton width="66%" />
   <br />
-  <Skeleton width="75" />
+  <Skeleton width="75%" />
   <br />
   <Skeleton />
 </React.Fragment>;
@@ -45,12 +45,12 @@ import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
 <div style={{ height: '400px' }}>
-  <Skeleton height="25" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="33" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="50" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="66" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="75" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="100" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+  <Skeleton height="25%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+  <Skeleton height="33%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+  <Skeleton height="50%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+  <Skeleton height="66%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+  <Skeleton height="75%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+  <Skeleton height="100%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
 </div>;
 ```
 
@@ -92,30 +92,30 @@ import { Skeleton } from '@patternfly/react-core';
 
 <React.Fragment>
   Small circle
-  <Skeleton shape="circle" shapeWidth="sm" />
+  <Skeleton shape="circle" width="sm" />
   <br />
   Medium circle
-  <Skeleton shape="circle" shapeWidth="md" />
+  <Skeleton shape="circle" width="md" />
   <br />
   Large circle
-  <Skeleton shape="circle" shapeWidth="lg" />
+  <Skeleton shape="circle" width="lg" />
   <br />
   Small square
-  <Skeleton shape="square" shapeWidth="sm" />
+  <Skeleton shape="square" width="sm" />
   <br />
   Medium square
-  <Skeleton shape="square" shapeWidth="md" />
+  <Skeleton shape="square" width="md" />
   <br />
   Large square
-  <Skeleton shape="square" shapeWidth="lg" />
+  <Skeleton shape="square" width="lg" />
   <br />
   Small rectangle
-  <Skeleton shapeHeight="sm" shapeWidth="md" />
+  <Skeleton height="sm" width="md" />
   <br />
   Medium rectangle
-  <Skeleton shapeHeight="md" shapeWidth="lg" />
+  <Skeleton height="md" width="lg" />
   <br />
   Large rectangle
-  <Skeleton shapeHeight="lg" />
+  <Skeleton height="lg" />
 </React.Fragment>;
 ```

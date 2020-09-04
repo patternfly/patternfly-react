@@ -5,30 +5,22 @@ import { css } from '@patternfly/react-styles';
 export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Skeleton */
   className?: string;
-  /** The percentage width of the Skeleton */
+  /** The width of the Skeleton. Must specify pixels or percentage, or may be one of "sm", "md", or "lg". */
   width?: string;
-  /** The percentage height of the Skeleton */
+  /** The height of the Skeleton. Must specify pixels or percentage, or may be one of "sm", "md", or "lg". */
   height?: string;
   /** The font size height of the Skeleton */
   fontSize?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
   /** The shape of the Skeleton */
   shape?: 'circle' | 'square' | 'rectangle';
-  /** Width of the shape */
-  shapeWidth?: 'sm' | 'md' | 'lg';
-  /** Height of the shape */
-  shapeHeight?: 'sm' | 'md' | 'lg';
 }
 
-const shapeWidths = {
-  sm: styles.modifiers.widthSm,
-  md: styles.modifiers.widthMd,
-  lg: styles.modifiers.widthLg
-};
-
-const shapeHeights = {
-  sm: styles.modifiers.heightSm,
-  md: styles.modifiers.heightMd,
-  lg: styles.modifiers.heightLg
+const checkPreset = (prop: string, presets: number[]) => {
+  return prop.includes('%') && presets.includes(Number(prop.split('%')[0]))
+    ? prop.split('%')[0]
+    : prop === 'sm' || prop === 'md' || prop === 'lg'
+    ? prop
+    : undefined;
 };
 
 export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
@@ -37,33 +29,34 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   height = '',
   fontSize,
   shape,
-  shapeWidth,
-  shapeHeight,
   ...props
 }: SkeletonProps) => {
-  const presetWidth = Object.values(styles.modifiers).find(key => key === `pf-m-width-${width}`);
-  const presetHeight = Object.values(styles.modifiers).find(key => key === `pf-m-height-${height}`);
-  const fontHeight = Object.values(styles.modifiers).find(key => key === `pf-m-text-${fontSize}`);
+  const presetWidth = checkPreset(width, [25, 33, 50, 66, 75]);
+  const presetWidthClassName =
+    presetWidth && Object.values(styles.modifiers).find(key => key === `pf-m-width-${presetWidth}`);
+  const presetHeight = checkPreset(height, [25, 33, 50, 66, 75, 100]);
+  const presetHeightClassName =
+    presetHeight && Object.values(styles.modifiers).find(key => key === `pf-m-height-${presetHeight}`);
+  const fontHeightClassName = Object.values(styles.modifiers).find(key => key === `pf-m-text-${fontSize}`);
+
   return (
     <div
       {...props}
       className={css(
         styles.skeleton,
-        presetWidth,
-        presetHeight,
-        fontSize && fontHeight,
+        presetHeightClassName,
+        presetWidthClassName,
+        fontSize && fontHeightClassName,
         shape === 'circle' && styles.modifiers.circle,
         shape === 'square' && styles.modifiers.square,
-        shapeWidth && shapeWidths[shapeWidth],
-        shapeHeight && shapeHeights[shapeHeight],
         className
       )}
       {...(((width && !presetWidth) || (height && !presetHeight)) && {
         style: {
-          width: width && !presetWidth ? `${width}%` : undefined,
-          height: height && !presetHeight ? `${height}%` : undefined,
+          '--pf-c-skeleton--Width': width && !presetWidth ? width : undefined,
+          '--pf-c-skeleton--Height:': height && !presetHeight ? height : undefined,
           ...props.style
-        }
+        } as React.CSSProperties
       })}
     ></div>
   );

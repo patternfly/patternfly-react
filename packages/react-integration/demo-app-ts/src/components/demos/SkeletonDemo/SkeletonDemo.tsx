@@ -11,28 +11,28 @@ export class SkeletonDemo extends React.Component {
     return (
       <React.Fragment>
         <h2>Widths</h2>
-        <Skeleton width="15" id="skele-wcustom" />
+        <Skeleton width="15%" id="skele-wcustom" />
         <br />
-        <Skeleton width="25" id="skele-w25" />
+        <Skeleton width="25%" id="skele-w25" />
         <br />
-        <Skeleton width="33" />
+        <Skeleton width="33%" />
         <br />
-        <Skeleton width="50" />
+        <Skeleton width="50%" />
         <br />
-        <Skeleton width="66" />
+        <Skeleton width="66%" />
         <br />
-        <Skeleton width="75" />
+        <Skeleton width="75%" />
         <br />
         <Skeleton />
         <br></br>
         <h2>Heights</h2>
         <div style={{ height: '400px' }}>
-          <Skeleton height="25" id="skele-h25" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-          <Skeleton height="33" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-          <Skeleton height="50" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-          <Skeleton height="66" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-          <Skeleton height="75" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-          <Skeleton height="100" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+          <Skeleton height="25%" id="skele-h25" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+          <Skeleton height="33%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+          <Skeleton height="50%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+          <Skeleton height="66%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+          <Skeleton height="75%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+          <Skeleton height="100%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
         </div>
         <br></br>
         <h2>Fonts</h2>
@@ -51,13 +51,13 @@ export class SkeletonDemo extends React.Component {
         <Skeleton fontSize="4xl" />
         <br></br>
         <h2>Shapes</h2>
-        <Skeleton shape="circle" shapeWidth="sm" id="skele-circle" />
+        <Skeleton shape="circle" width="sm" id="skele-circle" />
         <br />
-        <Skeleton shape="circle" shapeWidth="md" />
+        <Skeleton shape="circle" width="md" />
         <br />
-        <Skeleton shape="square" shapeWidth="sm" id="skele-square" />
+        <Skeleton shape="square" width="sm" id="skele-square" />
         <br />
-        <Skeleton shape="square" shapeWidth="md" />
+        <Skeleton shape="square" width="md" />
       </React.Fragment>
     );
   }

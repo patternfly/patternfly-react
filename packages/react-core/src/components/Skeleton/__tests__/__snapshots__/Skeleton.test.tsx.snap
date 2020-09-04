@@ -14,13 +14,13 @@ exports[`skeleton default 1`] = `
 
 exports[`skeleton rectangle skeleton 1`] = `
 <div
-  className="pf-c-skeleton pf-m-width-md pf-m-height-sm"
+  className="pf-c-skeleton pf-m-height-sm pf-m-width-md"
 />
 `;
 
 exports[`skeleton rectangle skeleton 2`] = `
 <div
-  className="pf-c-skeleton pf-m-width-lg pf-m-height-md"
+  className="pf-c-skeleton pf-m-height-md pf-m-width-lg"
 />
 `;
 
@@ -32,37 +32,37 @@ exports[`skeleton rectangle skeleton 3`] = `
 
 exports[`skeleton shape skeleton with lg width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-circle pf-m-width-lg"
+  className="pf-c-skeleton pf-m-width-lg pf-m-circle"
 />
 `;
 
 exports[`skeleton shape skeleton with lg width 2`] = `
 <div
-  className="pf-c-skeleton pf-m-square pf-m-width-lg"
+  className="pf-c-skeleton pf-m-width-lg pf-m-square"
 />
 `;
 
 exports[`skeleton shape skeleton with md width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-circle pf-m-width-md"
+  className="pf-c-skeleton pf-m-width-md pf-m-circle"
 />
 `;
 
 exports[`skeleton shape skeleton with md width 2`] = `
 <div
-  className="pf-c-skeleton pf-m-square pf-m-width-md"
+  className="pf-c-skeleton pf-m-width-md pf-m-square"
 />
 `;
 
 exports[`skeleton shape skeleton with sm width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-circle pf-m-width-sm"
+  className="pf-c-skeleton pf-m-width-sm pf-m-circle"
 />
 `;
 
 exports[`skeleton shape skeleton with sm width 2`] = `
 <div
-  className="pf-c-skeleton pf-m-square pf-m-width-sm"
+  className="pf-c-skeleton pf-m-width-sm pf-m-square"
 />
 `;
 
@@ -84,67 +84,67 @@ exports[`skeleton skeleton with 4xl font size 1`] = `
 />
 `;
 
-exports[`skeleton skeleton with 25 height 1`] = `
+exports[`skeleton skeleton with 25% height 1`] = `
 <div
   className="pf-c-skeleton pf-m-height-25"
 />
 `;
 
-exports[`skeleton skeleton with 25 width 1`] = `
+exports[`skeleton skeleton with 25% width 1`] = `
 <div
   className="pf-c-skeleton pf-m-width-25"
 />
 `;
 
-exports[`skeleton skeleton with 33 height 1`] = `
+exports[`skeleton skeleton with 33% height 1`] = `
 <div
   className="pf-c-skeleton pf-m-height-33"
 />
 `;
 
-exports[`skeleton skeleton with 33 width 1`] = `
+exports[`skeleton skeleton with 33% width 1`] = `
 <div
   className="pf-c-skeleton pf-m-width-33"
 />
 `;
 
-exports[`skeleton skeleton with 50 height 1`] = `
+exports[`skeleton skeleton with 50% height 1`] = `
 <div
   className="pf-c-skeleton pf-m-height-50"
 />
 `;
 
-exports[`skeleton skeleton with 50 width 1`] = `
+exports[`skeleton skeleton with 50% width 1`] = `
 <div
   className="pf-c-skeleton pf-m-width-50"
 />
 `;
 
-exports[`skeleton skeleton with 66 height 1`] = `
+exports[`skeleton skeleton with 66% height 1`] = `
 <div
   className="pf-c-skeleton pf-m-height-66"
 />
 `;
 
-exports[`skeleton skeleton with 66 width 1`] = `
+exports[`skeleton skeleton with 66% width 1`] = `
 <div
   className="pf-c-skeleton pf-m-width-66"
 />
 `;
 
-exports[`skeleton skeleton with 75 height 1`] = `
+exports[`skeleton skeleton with 75% height 1`] = `
 <div
   className="pf-c-skeleton pf-m-height-75"
 />
 `;
 
-exports[`skeleton skeleton with 75 width 1`] = `
+exports[`skeleton skeleton with 75% width 1`] = `
 <div
   className="pf-c-skeleton pf-m-width-75"
 />
 `;
 
-exports[`skeleton skeleton with 100 height 1`] = `
+exports[`skeleton skeleton with 100% height 1`] = `
 <div
   className="pf-c-skeleton pf-m-height-100"
 />

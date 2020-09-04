@@ -8,14 +8,14 @@ describe('skeleton', () => {
     expect(view).toMatchSnapshot();
   });
 
-  ['25', '33', '50', '66', '75'].forEach((width: string) =>
+  ['25%', '33%', '50%', '66%', '75%'].forEach((width: string) =>
     test(`skeleton with ${width} width`, () => {
       const view = shallow(<Skeleton width={width} />);
       expect(view).toMatchSnapshot();
     })
   );
 
-  ['25', '33', '50', '66', '75', '100'].forEach((height: string) =>
+  ['25%', '33%', '50%', '66%', '75%', '100%'].forEach((height: string) =>
     test(`skeleton with ${height} height`, () => {
       const view = shallow(<Skeleton height={height} />);
       expect(view).toMatchSnapshot();
@@ -40,19 +40,19 @@ describe('skeleton', () => {
   });
 
   test('rectangle skeleton', () => {
-    const view = shallow(<Skeleton shapeHeight="sm" shapeWidth="md" />);
+    const view = shallow(<Skeleton height="sm" width="md" />);
     expect(view).toMatchSnapshot();
-    const viewMd = shallow(<Skeleton shapeHeight="md" shapeWidth="lg" />);
+    const viewMd = shallow(<Skeleton height="md" width="lg" />);
     expect(viewMd).toMatchSnapshot();
-    const viewLg = shallow(<Skeleton shapeHeight="lg" />);
+    const viewLg = shallow(<Skeleton height="lg" />);
     expect(viewLg).toMatchSnapshot();
   });
 
   ['sm', 'md', 'lg'].forEach((width: string) =>
     test(`shape skeleton with ${width} width`, () => {
-      const view = shallow(<Skeleton shape="circle" shapeWidth={width as 'sm' | 'md' | 'lg'} />);
+      const view = shallow(<Skeleton shape="circle" width={width as 'sm' | 'md' | 'lg'} />);
       expect(view).toMatchSnapshot();
-      const viewSquare = shallow(<Skeleton shape="square" shapeWidth={width as 'sm' | 'md' | 'lg'} />);
+      const viewSquare = shallow(<Skeleton shape="square" width={width as 'sm' | 'md' | 'lg'} />);
       expect(viewSquare).toMatchSnapshot();
     })
   );
