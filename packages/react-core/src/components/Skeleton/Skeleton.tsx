@@ -15,13 +15,12 @@ export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   shape?: 'circle' | 'square' | 'rectangle';
 }
 
-const checkPreset = (prop: string, presets: number[]) => {
-  return prop.includes('%') && presets.includes(Number(prop.split('%')[0]))
+const checkPreset = (prop: string, presets: number[]) =>
+  prop.includes('%') && presets.includes(Number(prop.split('%')[0]))
     ? prop.split('%')[0]
     : prop === 'sm' || prop === 'md' || prop === 'lg'
     ? prop
     : undefined;
-};
 
 export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   className = '',
