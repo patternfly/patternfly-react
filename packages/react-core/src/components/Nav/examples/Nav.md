@@ -407,7 +407,7 @@ class NavHorizontalList extends React.Component {
           {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
             return (
-              <NavItem key={num} itemId={num} isActive={activeItem === num}>
+              <NavItem key={num} itemId={num} isActive={activeItem === num} href="#">
                 Horizontal nav item {num}
               </NavItem>
             );
@@ -446,7 +446,7 @@ class NavTertiaryList extends React.Component {
           {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
             return (
-              <NavItem key={num} itemId={num} isActive={activeItem === num}>
+              <NavItem key={num} itemId={num} isActive={activeItem === num} href="#">
                 Tertiary nav item {num}
               </NavItem>
             );
