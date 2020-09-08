@@ -41,7 +41,7 @@
     "@patternfly/patternfly-a11y": "^0.0.17",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
-    "gatsby": "2.21.0",
+    "gatsby": "2.24.55",
     "gatsby-theme-patternfly-org": "^4.2.6",
     "gatsby-transformer-react-docgen-typescript": "^4.0.5",
     "react": "^16.8.0",
