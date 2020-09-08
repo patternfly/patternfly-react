@@ -31,7 +31,7 @@ export class LabelGroupDefaultIsOpenDemo extends Component<{}, BadgeLabelState> 
           count: 3
         },
         {
-          name: 'grapfruit',
+          name: 'grapefruit',
           isRead: true,
           count: 1
         }
@@ -57,7 +57,7 @@ export class LabelGroupDefaultIsOpenDemo extends Component<{}, BadgeLabelState> 
     return (
       <LabelGroup defaultIsOpen>
         {badgeLabelArray.map(label => (
-          <Label key={label.name} onClick={() => this.deleteItem(label.name)}>
+          <Label key={label.name} onClose={() => this.deleteItem(label.name)}>
             {label.name}
             <Badge isRead={label.isRead}>{label.count}</Badge>
           </Label>

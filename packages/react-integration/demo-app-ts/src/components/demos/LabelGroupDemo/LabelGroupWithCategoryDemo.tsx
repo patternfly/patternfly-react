@@ -8,7 +8,7 @@ interface LabelWithCategoryGroupState {
   }[];
 }
 
-export class LabelWithCategoryGroupDemo extends Component<{}, LabelWithCategoryGroupState> {
+export class LabelGroupWithCategoryDemo extends Component<{}, LabelWithCategoryGroupState> {
   deleteItem: (id: string) => void;
   deleteCategory: (category: string) => void;
 
@@ -71,7 +71,7 @@ export class LabelWithCategoryGroupDemo extends Component<{}, LabelWithCategoryG
         tooltipPosition="bottom"
       >
         {currentGroup.labels.map(label => (
-          <Label key={label} onClick={() => this.deleteItem(label)}>
+          <Label key={label} onClose={() => this.deleteItem(label)}>
             {label}
           </Label>
         ))}

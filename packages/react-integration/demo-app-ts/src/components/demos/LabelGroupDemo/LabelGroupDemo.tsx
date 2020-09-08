@@ -47,7 +47,7 @@ export class LabelGroupDemo extends Component<{}, BadgeLabelState> {
     return (
       <LabelGroup>
         {badgeLabelArray.map(label => (
-          <Label key={label.name} onClick={() => this.deleteItem(label.name)}>
+          <Label key={label.name} onClose={() => this.deleteItem(label.name)}>
             {label.name}
             <Badge isRead={label.isRead}>{label.count}</Badge>
           </Label>

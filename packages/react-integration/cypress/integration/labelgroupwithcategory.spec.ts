@@ -1,20 +1,20 @@
-describe('Chip Group with Category Demo Test', () => {
+describe('Label Group with Category Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
-    cy.get('#chipgroup-with-category-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/chipgroup-with-category-demo-nav-link');
+    cy.get('#labelgroup-with-category-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/labelgroup-with-category-demo-nav-link');
   });
 
-  it('Verify delete button on first chip group', () => {
-    const chipGroup = cy.get('.pf-c-chip-group').first();
-    const chipGroupButton = chipGroup.get('#remove_group_pf-random-id-0');
-    chipGroupButton.should('be.visible');
-    chipGroupButton.click();
-    chipGroup.should('not.exist');
+  it('Verify delete button on first label group', () => {
+    const labelGroup = cy.get('.pf-c-label-group').first();
+    const labelGroupButton = labelGroup.get('#remove_group_pf-random-id-0');
+    labelGroupButton.should('be.visible');
+    labelGroupButton.click();
+    labelGroup.should('not.exist');
   });
 
   it('Displays Tooltip', () => {
-    cy.get('.pf-c-chip-group__label')
+    cy.get('.pf-c-label-group__label')
       .last()
       .then((tooltipLink: JQuery<HTMLHeadingElement>) => {
         cy.get('.pf-c-tooltip').should('not.exist');
