@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { getOUIAProps, OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '@patternfly/react-core/dist/js/helpers/ouia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
@@ -24,7 +24,7 @@ export interface RowWrapperProps extends OUIAProps {
   };
 }
 
-export class RowWrapper extends React.Component<RowWrapperProps, {}> {
+export class RowWrapper extends React.Component<RowWrapperProps, { ouiaStateId: string }> {
   static displayName = 'RowWrapper';
   static defaultProps = {
     className: '' as string,
@@ -47,6 +47,10 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
     if (props.onResize) {
       this.handleResize = debounce(this.handleResize, 100);
     }
+
+    this.state = {
+      ouiaStateId: getDefaultOUIAId('TableRow')
+    };
   }
 
   componentDidMount() {
@@ -108,7 +112,7 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
           isEditable && inlineStyles.modifiers.inlineEditable
         )}
         hidden={isExpanded !== undefined && !isExpanded}
-        {...getOUIAProps('TableRow', ouiaId)}
+        {...getOUIAProps('TableRow', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       />
     );
   }

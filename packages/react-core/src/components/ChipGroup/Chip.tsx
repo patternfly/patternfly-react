@@ -5,7 +5,7 @@ import { Tooltip } from '../Tooltip';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Content rendered inside the chip text */
@@ -28,6 +28,7 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
 
 interface ChipState {
   isTooltipVisible: boolean;
+  ouiaStateId: string;
 }
 
 export class Chip extends React.Component<ChipProps, ChipState> {
@@ -35,7 +36,8 @@ export class Chip extends React.Component<ChipProps, ChipState> {
   constructor(props: ChipProps) {
     super(props);
     this.state = {
-      isTooltipVisible: false
+      isTooltipVisible: false,
+      ouiaStateId: getDefaultOUIAId(Chip.displayName)
     };
   }
   span = React.createRef<HTMLSpanElement>();
@@ -65,7 +67,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         onClick={onClick}
         className={css(styles.chip, styles.modifiers.overflow, className)}
         {...(this.props.component === 'button' ? { type: 'button' } : {})}
-        {...getOUIAProps('OverflowChip', ouiaId)}
+        {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       >
         <span className={css(styles.chipText)}>{children}</span>
       </Component>
@@ -79,7 +81,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
       <Component
         className={css(styles.chip, className)}
         {...(this.state.isTooltipVisible && { tabIndex: 0 })}
-        {...getOUIAProps(Chip.displayName, ouiaId)}
+        {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       >
         <span ref={this.span} className={css(styles.chipText)} id={id}>
           {children}
