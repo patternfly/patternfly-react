@@ -8,6 +8,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helpers/util';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
+import { TabProps } from './Tab';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export enum TabsComponent {
@@ -17,7 +18,7 @@ export enum TabsComponent {
 
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
   /** Content rendered inside the tabs component. */
-  children: React.ReactNode;
+  children: React.ReactElement<TabProps>[];
   /** Additional classes added to the tabs */
   className?: string;
   /** The index of the active tab */
@@ -96,7 +97,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
 
   handleTabClick(
     event: React.MouseEvent<HTMLElement, MouseEvent>,
-    eventKey: number,
+    eventKey: number | string,
     tabContentRef: React.RefObject<any>,
     mountOnEnter: boolean
   ) {
@@ -104,7 +105,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     this.props.onSelect(event, eventKey);
     // process any tab content sections outside of the component
     if (tabContentRef) {
-      React.Children.toArray<any>(this.props.children)
+      React.Children.toArray(this.props.children)
+        .map(child => child as React.ReactElement<TabProps>)
         .filter(child => child.props && child.props.tabContentRef && child.props.tabContentRef.current)
         .forEach(child => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
@@ -216,6 +218,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       ...props
     } = this.props;
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
+    const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[]).filter(Boolean);
 
     const uniqueId = id || getUniqueId();
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
@@ -248,42 +251,40 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             <AngleLeftIcon />
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {React.Children.toArray<any>(children)
-              .filter(Boolean)
-              .map((child, index) => {
-                const {
-                  title,
-                  eventKey,
-                  tabContentRef,
-                  id: childId,
-                  tabContentId,
-                  isHidden = false,
-                  className: childClassName = '',
-                  ouiaId: childOuiaId,
-                  ...rest
-                } = child.props;
+            {filteredChildren.map((child, index) => {
+              const {
+                title,
+                eventKey,
+                tabContentRef,
+                id: childId,
+                tabContentId,
+                isHidden = false,
+                className: childClassName = '',
+                ouiaId: childOuiaId,
+                ...rest
+              } = child.props;
 
-                return isHidden ? null : (
-                  <li
-                    key={index}
-                    className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, childClassName)}
+              return isHidden ? null : (
+                <li
+                  key={index}
+                  className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, childClassName)}
+                >
+                  <TabButton
+                    className={css(styles.tabsLink)}
+                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
+                    id={`pf-tab-${eventKey}-${childId || uniqueId}`}
+                    aria-controls={
+                      tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
+                    }
+                    tabContentRef={tabContentRef}
+                    ouiaId={childOuiaId}
+                    {...rest}
                   >
-                    <TabButton
-                      className={css(styles.tabsLink)}
-                      onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
-                      id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-                      aria-controls={
-                        tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
-                      }
-                      tabContentRef={tabContentRef}
-                      ouiaId={childOuiaId}
-                      {...rest}
-                    >
-                      {title}
-                    </TabButton>
-                  </li>
-                );
-              })}
+                    {title}
+                  </TabButton>
+                </li>
+              );
+            })}
           </ul>
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
@@ -295,10 +296,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             <AngleRightIcon />
           </button>
         </Component>
-        {React.Children.toArray<any>(children)
+        {filteredChildren
           .filter(
             child =>
-              child &&
               child.props.children &&
               !(unmountOnExit && child.props.eventKey !== activeKey) &&
               !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)

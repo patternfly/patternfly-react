@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { OUIAProps } from '../../helpers';
 
-export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'> {
+export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'>, OUIAProps {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode;
   /** additional classes added to the Tab */

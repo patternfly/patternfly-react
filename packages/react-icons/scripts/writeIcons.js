@@ -9,7 +9,7 @@ const removeSnake = s =>
     .toUpperCase()
     .replace('-', '')
     .replace('_', '');
-const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])/gi, removeSnake)}`;
+const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
 
 const writeCJSExport = (fname, jsName, icon) => {
   outputFileSync(

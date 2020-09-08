@@ -32,7 +32,7 @@ export interface IconDefinition {
   transform?: string;
 }
 
-export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' | 'ref'> {
+export interface SVGIconProps extends Omit<React.SVGProps<SVGElement>, 'size' | 'ref'> {
   color?: string;
   size?: IconSize | keyof typeof IconSize;
   title?: string;

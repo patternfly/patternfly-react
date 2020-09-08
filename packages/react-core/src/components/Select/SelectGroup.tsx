@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 
 export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Checkboxes within group */
-  children?: React.ReactNode;
+  children?: React.ReactElement<{ value: string }> | React.ReactElement<{ value: string }>[];
   /** Additional classes added to the CheckboxSelectGroup control */
   className?: string;
   /** Group label */
@@ -14,7 +14,7 @@ export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
-  children = [] as React.ReactElement[],
+  children = [],
   className = '',
   label = '',
   titleId = '',
