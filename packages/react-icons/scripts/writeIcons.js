@@ -23,7 +23,6 @@ exports.${jsName}Config = {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
 };
 exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
 exports["default"] = exports.${jsName};
@@ -43,7 +42,6 @@ export const ${jsName}Config = {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
 };
 
 export const ${jsName} = createIcon(${jsName}Config);
@@ -65,7 +63,6 @@ export declare const ${jsName}Config: {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
 };
 export declare const ${jsName}: React.ComponentClass<SVGIconProps>;
 export default ${jsName};
