@@ -31,7 +31,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build:umd": "rollup -c && rollup -c --environment IS_PRODUCTION",
-    "generate": "node scripts/copyStyles.js",
+    "generate": "yarn generate:copy-styles && yarn generate:supported-browsers-regex",
+    "generate:copy-styles": "node scripts/copyStyles.js",
+    "generate:supported-browsers-regex": "scripts/generate-supported-browsers-regex.sh",
     "gen:tests": "yo tsx-docgen"
   },
   "dependencies": {
@@ -48,6 +50,7 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-replace": "^2.3.1",
+    "browserslist-useragent-regexp": "^2.1.0",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "generator-tsx-docgen": "^0.1.0",

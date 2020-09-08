@@ -1,0 +1,29 @@
+{
+  "name": "@patternfly/browserslist-config",
+  "version": "1.0.0",
+  "description": "browserslist config",
+  "main": "index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "scripts": {
+  },
+  "dependencies": {},
+  "devDependencies": {
+  }
+}

@@ -59,7 +59,8 @@ module.exports = {
     'plugin:jest/recommended',
     'prettier',
     'prettier/react',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'plugin:compat/recommended'
   ],
   env: {
     es6: true,
@@ -67,6 +68,6 @@ module.exports = {
     node: true,
     jest: true
   },
-  plugins: ['prettier', 'jest', 'react', 'react-hooks', 'patternfly-react'],
+  plugins: ['prettier', 'jest', 'react', 'react-hooks', 'patternfly-react', 'compat'],
   parser: 'babel-eslint'
 };

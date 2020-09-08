@@ -52,9 +52,5 @@
   },
   "keywords": [
     "gatsby"
-  ],
-  "browserslist": [
-    "last 2 versions",
-    "not ie <= 11"
   ]
 }
