@@ -26,7 +26,11 @@ export class TableSortableDemo extends React.Component<
         'Workspaces',
         'Last Commit'
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);

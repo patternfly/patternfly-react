@@ -43,7 +43,11 @@ const testCellActions = ({
   extraData?: IExtraData;
   expectDisabled?: boolean;
 }) => {
-  const returnedData = cellActions(actions, actionResolver, areActionsDisabled)('', {
+  const returnedData = cellActions(
+    actions,
+    actionResolver,
+    areActionsDisabled
+  )('', {
     rowIndex: 0,
     rowData,
     column: {
