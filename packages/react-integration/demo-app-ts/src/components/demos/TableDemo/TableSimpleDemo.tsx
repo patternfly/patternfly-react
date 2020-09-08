@@ -10,14 +10,39 @@ export class TableSimpleDemo extends React.Component<
     super(props);
     this.state = {
       columns: [
-        { title: 'Repositories' },
+        {
+          title: 'Repositories',
+          header: {
+            info: {
+              tooltip: 'More information about repositories',
+              className: 'repositories-info-tip',
+              tooltipProps: {
+                isContentLeftAligned: true
+              }
+            }
+          }
+        },
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
         {
           title: 'Last Commit',
           transforms: [textCenter],
-          cellTransforms: [textCenter]
+          cellTransforms: [textCenter],
+          header: {
+            info: {
+              popover: (
+                <div>
+                  More <strong>information</strong> on commits
+                </div>
+              ),
+              ariaLabel: 'More information on commits',
+              popoverProps: {
+                headerContent: 'Last Commit',
+                footerContent: <a href="">Click here for even more info</a>
+              }
+            }
+          }
         }
       ],
       rows: [
