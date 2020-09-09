@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, useOUIAId } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
 export enum OptionsMenuPosition {
@@ -65,7 +65,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       disabledClass: styles.modifiers.disabled,
       menuComponent: isGrouped ? 'div' : 'ul',
       baseComponent: 'div',
-      ouiaId,
+      ouiaId: useOUIAId(OptionsMenu.displayName, ouiaId),
       ouiaSafe,
       ouiaComponentType: OptionsMenu.displayName
     }}

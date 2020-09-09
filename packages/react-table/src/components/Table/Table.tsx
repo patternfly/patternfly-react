@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { getOUIAProps, OUIAProps } from '@patternfly/react-core';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import {
   DropdownDirection,
   DropdownPosition
@@ -334,6 +334,9 @@ export class Table extends React.Component<TableProps, {}> {
     ouiaSafe: true,
     isStickyHeader: false
   };
+  state = {
+    ouiaStateId: getDefaultOUIAId(Table.displayName)
+  };
 
   isSelected = (row: IRow) => row.selected === true;
 
@@ -451,7 +454,7 @@ export class Table extends React.Component<TableProps, {}> {
             isStickyHeader && styles.modifiers.stickyHeader,
             className
           )}
-          {...getOUIAProps(Table.displayName, ouiaId, ouiaSafe)}
+          {...getOUIAProps(Table.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         >
           {caption && <caption>{caption}</caption>}
           {children}

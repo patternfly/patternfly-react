@@ -12,7 +12,7 @@ import { KEY_CODES } from '../../helpers/constants';
 import { FocusTrap } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -45,7 +45,7 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-export class ContextSelector extends React.Component<ContextSelectorProps> {
+export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
   static displayName = 'ContextSelector';
   static defaultProps: ContextSelectorProps = {
     children: null as React.ReactNode,
@@ -63,6 +63,12 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     menuAppendTo: 'inline',
     ouiaSafe: true
   };
+  constructor(props: ContextSelectorProps) {
+    super(props);
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(ContextSelector.displayName)
+    };
+  }
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
 
@@ -138,7 +144,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       <div
         className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
         ref={this.parentRef}
-        {...getOUIAProps(ContextSelector.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(ContextSelector.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...props}
       >
         {screenReaderLabel && (

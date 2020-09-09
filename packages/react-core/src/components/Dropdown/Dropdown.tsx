@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, useOUIAId } from '../../helpers';
 
 export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Anything which can be rendered in a dropdown */
@@ -56,7 +56,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       sectionComponent: 'section',
       disabledClass: styles.modifiers.disabled,
       plainTextClass: styles.modifiers.text,
-      ouiaId,
+      ouiaId: useOUIAId(Dropdown.displayName, ouiaId),
       ouiaSafe,
       ouiaComponentType: Dropdown.displayName
     }}
