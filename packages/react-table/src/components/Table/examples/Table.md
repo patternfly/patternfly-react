@@ -67,9 +67,32 @@ class SimpleTable extends React.Component {
     super(props);
     this.state = {
       columns: [
-        { title: 'Repositories' },
+        { 
+          title: 'Repositories',
+          header: {
+            info: {
+              tooltip: 'More information about repositories',
+              className: 'repositories-info-tip',
+              tooltipProps: {
+                isContentLeftAligned: true
+              }
+            }
+          }
+        },
         'Branches',
-        { title: 'Pull requests' },
+        { 
+          title: 'Pull requests',
+          header: {
+            info: {
+              popover: <div>More <strong>information</strong> on pull requests</div>,
+              ariaLabel: 'More information on pull requests',
+              popoverProps: {
+                headerContent: 'Pull requests',
+                footerContent: <a href="">Click here for even more info</a>
+              }
+            }
+          }
+        },
         'Workspaces',
         {
           title: 'Last Commit',
