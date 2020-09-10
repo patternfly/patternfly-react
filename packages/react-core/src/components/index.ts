@@ -33,6 +33,7 @@ export * from './Label';
 export * from './LabelGroup';
 export * from './List';
 export * from './LoginPage';
+export * from './Menu';
 export * from './Modal';
 export * from './Nav';
 export * from './NotificationBadge';
