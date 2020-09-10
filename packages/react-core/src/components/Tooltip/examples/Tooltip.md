@@ -122,6 +122,7 @@ OptionsTooltip = () => {
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
+            aria-label="trigger: mouseenter"
           />
           <Checkbox
             label="trigger: focus"
@@ -133,6 +134,7 @@ OptionsTooltip = () => {
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
+            aria-label="trigger: focus"
           />
           <Checkbox
             label="trigger: click"
@@ -144,6 +146,7 @@ OptionsTooltip = () => {
               setIsVisible(false);
               setTimeout(() => setTrigger(updatedTrigger));
             }}
+            aria-label="trigger: click"
           />
           <Checkbox
             label="trigger: manual"
@@ -155,6 +158,7 @@ OptionsTooltip = () => {
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
+            aria-label="trigger: manual"            
           />
         </div>
         <div style={{ border: '1px solid'}}>
@@ -162,6 +166,7 @@ OptionsTooltip = () => {
             label="content left-aligned"
             isChecked={contentLeftAligned}
             onChange={(checked) => setContentLeftAligned(checked)}
+            aria-label="content left-aligned"          
           />
         </div>
         <div style={{ border: '1px solid'}}>
@@ -169,6 +174,7 @@ OptionsTooltip = () => {
             label="enableFlip"
             isChecked={enableFlip}
             onChange={(checked) => setEnableFlip(checked)}
+            aria-label="enableFlip"        
           />
         </div>
         <div style={{ border: '1px solid'}}>
@@ -195,6 +201,7 @@ OptionsTooltip = () => {
             label="isVisible (also set trigger to only manual to programmatically control it)"
             isChecked={isVisible}
             onChange={(checked) => setIsVisible(checked)}
+            aria-label="isVisible"        
           />
         </div>
         <div style={{ border: '1px solid'}}>
