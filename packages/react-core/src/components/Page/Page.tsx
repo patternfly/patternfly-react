@@ -110,7 +110,6 @@ export class Page extends React.Component<PageProps, PageState> {
     if (isManagedSidebar || onPageResize) {
       window.addEventListener('resize', this.handleResize);
       const currentRef = this.outerRef.current;
-      console.log('currentRef', currentRef)
       if (currentRef) {
         currentRef.addEventListener('mousedown', this.handleClickMobile);
         currentRef.addEventListener('touchstart', this.handleClickMobile);
@@ -143,7 +142,7 @@ export class Page extends React.Component<PageProps, PageState> {
       onPageResize({ mobileView, windowSize: window.innerWidth });
     }
     this.setState({ mobileView });
-  }
+  };
 
   handleResize = debounce(this.resize, 100);
 
