@@ -25,6 +25,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. */
   href?: string;
+  /** Flag indicating if the label is an overflow label */
+  isOverflowLabel?: boolean;
 }
 
 const colorStyles = {
@@ -48,8 +50,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtn,
   closeBtnProps,
   href,
+  isOverflowLabel,
   ...props
 }: LabelProps) => {
+  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
   const Component = href ? 'a' : 'span';
   const button = closeBtn ? (
     closeBtn
@@ -65,9 +69,15 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   );
 
   return (
-    <span
+    <LabelComponent
       {...props}
-      className={css(styles.label, colorStyles[color], variant === 'outline' && styles.modifiers.outline, className)}
+      className={css(
+        styles.label,
+        colorStyles[color],
+        variant === 'outline' && styles.modifiers.outline,
+        isOverflowLabel && styles.modifiers.overflow,
+        className
+      )}
     >
       <Component className={css(styles.labelContent)} {...(href && { href })}>
         {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
@@ -75,7 +85,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         {!isTruncated && children}
       </Component>
       {onClose && button}
-    </span>
+    </LabelComponent>
   );
 };
 Label.displayName = 'Label';

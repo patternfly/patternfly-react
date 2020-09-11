@@ -30,6 +30,7 @@ export * from './FormSelect';
 export * from './Hint';
 export * from './InputGroup';
 export * from './Label';
+export * from './LabelGroup';
 export * from './List';
 export * from './LoginPage';
 export * from './Modal';
