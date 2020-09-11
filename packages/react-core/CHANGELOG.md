@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.48.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.48.0...@patternfly/react-core@4.48.1) (2020-09-11)
+
+
+### Bug Fixes
+
+* **page:** hide PageSideBar onClick on mobile when isManagedSidebar ([#4781](https://github.com/patternfly/patternfly-react/issues/4781)) ([00faa96](https://github.com/patternfly/patternfly-react/commit/00faa966158354663e2062bafb1e936865f1185f))
+
+
+
+
+
 # [4.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.6...@patternfly/react-core@4.48.0) (2020-09-11)
 
 
