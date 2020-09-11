@@ -91,7 +91,7 @@ export class Page extends React.Component<PageProps, PageState> {
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null
   };
-  outerRef = React.createRef<HTMLDivElement>();
+  mainRef = React.createRef<HTMLDivElement>();
 
   constructor(props: PageProps) {
     super(props);
@@ -109,10 +109,10 @@ export class Page extends React.Component<PageProps, PageState> {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
       window.addEventListener('resize', this.handleResize);
-      const currentRef = this.outerRef.current;
+      const currentRef = this.mainRef.current;
       if (currentRef) {
-        currentRef.addEventListener('mousedown', this.handleClickMobile);
-        currentRef.addEventListener('touchstart', this.handleClickMobile);
+        currentRef.addEventListener('mousedown', this.handleMainClick);
+        currentRef.addEventListener('touchstart', this.handleMainClick);
       }
       // Initial check if should be shown
       this.resize();
@@ -123,10 +123,10 @@ export class Page extends React.Component<PageProps, PageState> {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
       window.removeEventListener('resize', this.handleResize);
-      const currentRef = this.outerRef.current;
+      const currentRef = this.mainRef.current;
       if (currentRef) {
-        currentRef.removeEventListener('mousedown', this.handleClickMobile);
-        currentRef.removeEventListener('touchstart', this.handleClickMobile);
+        currentRef.removeEventListener('mousedown', this.handleMainClick);
+        currentRef.removeEventListener('touchstart', this.handleMainClick);
       }
     }
   }
@@ -146,12 +146,9 @@ export class Page extends React.Component<PageProps, PageState> {
 
   handleResize = debounce(this.resize, 250);
 
-  handleClickMobile = (ev: any) => {
-    if (this.isMobile() && this.state.mobileIsNavOpen && this.outerRef.current) {
-      const sidebarNode = this.outerRef.current.getElementsByClassName(styles.pageSidebar)[0];
-      if (sidebarNode && !sidebarNode.contains(ev.target)) {
-        this.setState({ mobileIsNavOpen: false });
-      }
+  handleMainClick = (ev: any) => {
+    if (this.isMobile() && this.state.mobileIsNavOpen && this.mainRef.current) {
+      this.setState({ mobileIsNavOpen: false });
     }
   };
 
@@ -202,6 +199,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
     const main = (
       <main
+        ref={this.mainRef}
         role={role}
         id={mainContainerId}
         className={css(styles.pageMain)}
@@ -230,7 +228,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
     return (
       <PageContextProvider value={context}>
-        <div ref={this.outerRef} {...rest} className={css(styles.page, className)}>
+        <div {...rest} className={css(styles.page, className)}>
           {skipToContent}
           {header}
           {sidebar}
