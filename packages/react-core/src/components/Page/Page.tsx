@@ -144,7 +144,7 @@ export class Page extends React.Component<PageProps, PageState> {
     this.setState({ mobileView });
   };
 
-  handleResize = debounce(this.resize, 100);
+  handleResize = debounce(this.resize, 250);
 
   handleClickMobile = (ev: any) => {
     if (this.isMobile() && this.state.mobileIsNavOpen && this.outerRef.current) {
