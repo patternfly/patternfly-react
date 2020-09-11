@@ -25,7 +25,7 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   'aria-label'?: string;
   /** Set number of labels to show before overflow */
   numLabels?: number;
-  /** Flag if label group can be closed*/
+  /** Flag if label group can be closed */
   isClosable?: boolean;
   /** Aria label for close button */
   closeBtnAriaLabel?: string;
