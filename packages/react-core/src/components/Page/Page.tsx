@@ -109,10 +109,14 @@ export class Page extends React.Component<PageProps, PageState> {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
       window.addEventListener('resize', this.handleResize);
-      document.addEventListener('mousedown', this.handleClickMobile);
-      document.addEventListener('touchstart', this.handleClickMobile);
+      const currentRef = this.outerRef.current;
+      console.log('currentRef', currentRef)
+      if (currentRef) {
+        currentRef.addEventListener('mousedown', this.handleClickMobile);
+        currentRef.addEventListener('touchstart', this.handleClickMobile);
+      }
       // Initial check if should be shown
-      this.handleResize();
+      this.resize();
     }
   }
 
@@ -120,8 +124,11 @@ export class Page extends React.Component<PageProps, PageState> {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
       window.removeEventListener('resize', this.handleResize);
-      document.removeEventListener('mousedown', this.handleClickMobile);
-      document.removeEventListener('touchstart', this.handleClickMobile);
+      const currentRef = this.outerRef.current;
+      if (currentRef) {
+        currentRef.removeEventListener('mousedown', this.handleClickMobile);
+        currentRef.removeEventListener('touchstart', this.handleClickMobile);
+      }
     }
   }
 
@@ -129,17 +136,19 @@ export class Page extends React.Component<PageProps, PageState> {
     // eslint-disable-next-line radix
     window.innerWidth < Number.parseInt(globalBreakpointXl.value, 10);
 
-  handleResize = debounce(() => {
+  resize = () => {
     const { onPageResize } = this.props;
     const mobileView = this.isMobile();
     if (onPageResize) {
       onPageResize({ mobileView, windowSize: window.innerWidth });
     }
     this.setState({ mobileView });
-  }, 250);
+  }
+
+  handleResize = debounce(this.resize, 100);
 
   handleClickMobile = (ev: any) => {
-    if (this.isMobile() && this.outerRef.current) {
+    if (this.isMobile() && this.state.mobileIsNavOpen && this.outerRef.current) {
       const sidebarNode = this.outerRef.current.getElementsByClassName(styles.pageSidebar)[0];
       if (sidebarNode && !sidebarNode.contains(ev.target)) {
         this.setState({ mobileIsNavOpen: false });
