@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/NotificationDrawer/n
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 import { Text, TextVariants } from '../Text';
-import { Button } from '../Button';
+import { Button, ButtonVariant } from '../Button';
 
 export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /**  Content rendered inside the drawer */
@@ -49,12 +49,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
         {children}
         {onClose && (
           <div>
-            <Button
-              className="pf-c-button pf-m-plain"
-              type="button"
-              aria-label={closeButtonAriaLabel}
-              onClick={onClose}
-            >
+            <Button variant={ButtonVariant.plain} aria-label={closeButtonAriaLabel} onClick={onClose}>
               <TimesIcon />
             </Button>
           </div>
