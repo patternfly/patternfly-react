@@ -5,8 +5,8 @@ describe('Notification Drawer Basic Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-basic-demo-nav-link');
   });
 
-  it('Verify x icon in header', () => {
-    cy.get('.fa-times').should('exist');
+  it('Verify svg width and height', () => {
+    cy.get('.pf-c-button > svg').should('exist');
   });
 
   it('Verify 0 groups exist', () => {
