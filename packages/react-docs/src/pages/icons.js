@@ -56,6 +56,8 @@ const iconsPage = ({ location }) => {
         </Text>
         <Grid>
           {allIcons
+            // BREAKING CHANGE - remove line below when AnsibeTowerIcon is removed
+            // hide AnsibeTowerIcon in favor of corrected AnsibleTowerIcon
             .filter(([id]) => id !== 'AnsibeTowerIcon')
             .map(([id, Icon]) => (
               <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
