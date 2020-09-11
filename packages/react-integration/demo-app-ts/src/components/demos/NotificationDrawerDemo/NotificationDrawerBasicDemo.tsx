@@ -17,6 +17,7 @@ import {
 } from '@patternfly/react-core';
 
 interface BasicNotificationDrawerDemoState {
+  isDrawerOpen: boolean;
   isOpen0: boolean;
   isOpen1: boolean;
   isOpen2: boolean;
@@ -32,6 +33,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
   constructor(props: NotificationDrawerProps) {
     super(props);
     this.state = {
+      isDrawerOpen: true,
       isOpen0: false,
       isOpen1: false,
       isOpen2: false,
@@ -39,6 +41,11 @@ export class BasicNotificationDrawerDemo extends React.Component<
       isOpen4: false
     };
   }
+  onDrawerClose = () => {
+    this.setState({
+      isDrawerOpen: false
+    });
+  };
   onToggle0 = (isOpen0: boolean) => {
     this.setState({
       isOpen0
@@ -88,7 +95,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={2}>
+        <NotificationDrawerHeader count={2} onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle0} id="toggle-id-0" />}
