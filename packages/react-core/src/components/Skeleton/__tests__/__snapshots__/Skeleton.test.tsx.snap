@@ -14,13 +14,13 @@ exports[`skeleton default 1`] = `
 
 exports[`skeleton rectangle skeleton 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-sm pf-m-width-md"
+  className="pf-c-skeleton pf-m-width-md pf-m-height-sm"
 />
 `;
 
 exports[`skeleton rectangle skeleton 2`] = `
 <div
-  className="pf-c-skeleton pf-m-height-md pf-m-width-lg"
+  className="pf-c-skeleton pf-m-width-lg pf-m-height-md"
 />
 `;
 
@@ -86,67 +86,133 @@ exports[`skeleton skeleton with 4xl font size 1`] = `
 
 exports[`skeleton skeleton with 25% height 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-25"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "25%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 25% width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-width-25"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "25%",
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 33% height 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-33"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "33%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 33% width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-width-33"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "33%",
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 50% height 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-50"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "50%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 50% width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-width-50"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "50%",
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 66% height 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-66"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "66%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 66% width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-width-66"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "66%",
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 75% height 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-75"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "75%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 75% width 1`] = `
 <div
-  className="pf-c-skeleton pf-m-width-75"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "75%",
+    }
+  }
 />
 `;
 
 exports[`skeleton skeleton with 100% height 1`] = `
 <div
-  className="pf-c-skeleton pf-m-height-100"
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "100%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
 />
 `;
 

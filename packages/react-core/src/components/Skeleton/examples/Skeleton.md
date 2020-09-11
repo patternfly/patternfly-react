@@ -44,13 +44,13 @@ import { Skeleton } from '@patternfly/react-core';
 import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
-<div style={{ height: '400px' }}>
-  <Skeleton height="25%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="33%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="50%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="66%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="75%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
-  <Skeleton height="100%" style={{ width: '15%', display: 'inline-block', marginRight: '4px' }} />
+<div style={{ height: '400px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+  <Skeleton height="25%" width="15%" />
+  <Skeleton height="33%" width="15%" />
+  <Skeleton height="50%" width="15%" />
+  <Skeleton height="66%" width="15%" />
+  <Skeleton height="75%" width="15%" />
+  <Skeleton height="100%" width="15%" />
 </div>;
 ```
 

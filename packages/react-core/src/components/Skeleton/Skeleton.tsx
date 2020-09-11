@@ -15,12 +15,7 @@ export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   shape?: 'circle' | 'square' | 'rectangle';
 }
 
-const checkPreset = (prop: string, presets: number[]) =>
-  prop.includes('%') && presets.includes(Number(prop.split('%')[0]))
-    ? prop.split('%')[0]
-    : prop === 'sm' || prop === 'md' || prop === 'lg'
-    ? prop
-    : undefined;
+const isText = (prop: string) => (prop === 'sm' || prop === 'md' || prop === 'lg' ? prop : undefined);
 
 export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   className = '',
@@ -30,12 +25,8 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   shape,
   ...props
 }: SkeletonProps) => {
-  const presetWidth = checkPreset(width, [25, 33, 50, 66, 75]);
-  const presetWidthClassName =
-    presetWidth && Object.values(styles.modifiers).find(key => key === `pf-m-width-${presetWidth}`);
-  const presetHeight = checkPreset(height, [25, 33, 50, 66, 75, 100]);
-  const presetHeightClassName =
-    presetHeight && Object.values(styles.modifiers).find(key => key === `pf-m-height-${presetHeight}`);
+  const textWidth = isText(width) && Object.values(styles.modifiers).find(key => key === `pf-m-width-${width}`);
+  const textHeight = isText(height) && Object.values(styles.modifiers).find(key => key === `pf-m-height-${height}`);
   const fontHeightClassName = Object.values(styles.modifiers).find(key => key === `pf-m-text-${fontSize}`);
 
   return (
@@ -43,17 +34,17 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
       {...props}
       className={css(
         styles.skeleton,
-        presetHeightClassName,
-        presetWidthClassName,
+        textWidth,
+        textHeight,
         fontSize && fontHeightClassName,
         shape === 'circle' && styles.modifiers.circle,
         shape === 'square' && styles.modifiers.square,
         className
       )}
-      {...(((width && !presetWidth) || (height && !presetHeight)) && {
+      {...(((width && !textWidth) || (height && !textHeight)) && {
         style: {
-          '--pf-c-skeleton--Width': width && !presetWidth ? width : undefined,
-          '--pf-c-skeleton--Height:': height && !presetHeight ? height : undefined,
+          '--pf-c-skeleton--Width': width && !textWidth ? width : undefined,
+          '--pf-c-skeleton--Height': height && !textHeight ? height : undefined,
           ...props.style
         } as React.CSSProperties
       })}
