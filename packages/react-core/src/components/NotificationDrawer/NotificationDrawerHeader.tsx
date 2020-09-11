@@ -2,9 +2,10 @@ import * as React from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 import { Text, TextVariants } from '../Text';
-import { NotificationDrawerCloseButton } from './NotificationDrawerHeaderCloseButton';
+import { Button } from '../Button';
 
 export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /**  Content rendered inside the drawer */
@@ -13,8 +14,6 @@ export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivEl
   className?: string;
   /** Adds custom accessible text to the notification drawer close button. */
   closeButtonAriaLabel?: string;
-  /** Optional icon other than x */
-  closeIcon?: React.ReactNode;
   /**  Notification drawer heading count */
   count?: number;
   /**  Notification drawer heading custom text which can be used instead of providing count/unreadText */
@@ -32,7 +31,6 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
   className = '',
   count,
   closeButtonAriaLabel,
-  closeIcon,
   customText,
   onClose,
   title = 'Notifications',
@@ -50,11 +48,16 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
       <div className={css(styles.notificationDrawerHeaderAction)}>
         {children}
         {onClose && (
-          <NotificationDrawerCloseButton
-            onClose={onClose}
-            icon={closeIcon}
-            closeButtonAriaLabel={closeButtonAriaLabel}
-          />
+          <div>
+            <Button
+              className="pf-c-button pf-m-plain"
+              type="button"
+              aria-label={closeButtonAriaLabel}
+              onClick={onClose}
+            >
+              <TimesIcon />
+            </Button>
+          </div>
         )}
       </div>
     )}

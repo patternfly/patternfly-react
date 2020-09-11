@@ -25,7 +25,6 @@ import {
   Title
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import CustomCloseIcon from '@patternfly/react-icons/dist/js/icons/outlined-times-circle-icon';
 
 interface GroupsNotificationDrawerDemoState {
   isDrawerOpen: boolean;
@@ -97,7 +96,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     ];
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={4} onClose={this.onDrawerClose} closeIcon={<CustomCloseIcon />}>
+        <NotificationDrawerHeader count={4} onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
             toggle={
