@@ -66,14 +66,16 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     });
 
   return (
-    <li className={css(styles.menuItem, className)}>
-      <MenuContext.Consumer>
-        {context =>
-          React.isValidElement(children)
-            ? renderClonedChild(context, children as React.ReactElement)
-            : renderDefaultLink(context)
-        }
-      </MenuContext.Consumer>
+    <li className={css(styles.menuListItem, className)}>
+      <button className={css(styles.menuItem)}>
+        <MenuContext.Consumer>
+          {context =>
+            React.isValidElement(children)
+              ? renderClonedChild(context, children as React.ReactElement)
+              : renderDefaultLink(context)
+          }
+        </MenuContext.Consumer>
+      </button>
     </li>
   );
 };

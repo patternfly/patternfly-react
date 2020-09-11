@@ -14,8 +14,10 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   className,
   ...props
 }: MenuListProps) => (
-  <ul className={'pf-c-menu__list'} {...props}>
-    <li className={css(styles.menuListItem, className)}>{children}</li>
-  </ul>
+  <div className={'pf-c-menu__content'}>
+    <ul className={'pf-c-menu__list'} {...props}>
+          {children}
+    </ul>
+  </div>
 );
 MenuList.displayName = 'MenuList';
