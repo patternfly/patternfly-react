@@ -1,4 +1,4 @@
-describe('Label Group Demo Test', () => {
+describe('Label Group Default Is Open Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#labelgroup-default-is-open-demo-nav-item-link').click();

@@ -382,6 +382,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelGroupDefaultIsOpenDemo
   },
   {
+    id: 'labelgroup-vertical-demo',
+    name: 'LabelGroup Vertical Demo',
+    componentType: Examples.LabelGroupVerticalDemo
+  },
+  {
     id: 'labelgroup-with-category-demo',
     name: 'LabelGroup With Category Demo',
     componentType: Examples.LabelGroupWithCategoryDemo
