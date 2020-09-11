@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.6...@patternfly/react-core@4.48.0) (2020-09-11)
+
+
+### Features
+
+* **Card:** add ability to customize card title and support heading element ([#4761](https://github.com/patternfly/patternfly-react/issues/4761)) ([215c566](https://github.com/patternfly/patternfly-react/commit/215c566057172a73772a514b3413dbdee0542263))
+
+
+
+
+
 ## [4.47.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.5...@patternfly/react-core@4.47.6) (2020-09-11)
 
 **Note:** Version bump only for package @patternfly/react-core
