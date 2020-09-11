@@ -30,7 +30,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
   children,
   className = '',
   count,
-  closeButtonAriaLabel,
+  closeButtonAriaLabel = 'Close',
   customText,
   onClose,
   title = 'Notifications',
@@ -50,7 +50,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
         {onClose && (
           <div>
             <Button variant={ButtonVariant.plain} aria-label={closeButtonAriaLabel} onClick={onClose}>
-              <TimesIcon />
+              <TimesIcon aria-hidden="true" />
             </Button>
           </div>
         )}
