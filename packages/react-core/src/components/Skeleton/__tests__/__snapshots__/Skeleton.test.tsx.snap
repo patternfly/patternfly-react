@@ -12,60 +12,6 @@ exports[`skeleton default 1`] = `
 />
 `;
 
-exports[`skeleton rectangle skeleton 1`] = `
-<div
-  className="pf-c-skeleton pf-m-width-md pf-m-height-sm"
-/>
-`;
-
-exports[`skeleton rectangle skeleton 2`] = `
-<div
-  className="pf-c-skeleton pf-m-width-lg pf-m-height-md"
-/>
-`;
-
-exports[`skeleton rectangle skeleton 3`] = `
-<div
-  className="pf-c-skeleton pf-m-height-lg"
-/>
-`;
-
-exports[`skeleton shape skeleton with lg width 1`] = `
-<div
-  className="pf-c-skeleton pf-m-width-lg pf-m-circle"
-/>
-`;
-
-exports[`skeleton shape skeleton with lg width 2`] = `
-<div
-  className="pf-c-skeleton pf-m-width-lg pf-m-square"
-/>
-`;
-
-exports[`skeleton shape skeleton with md width 1`] = `
-<div
-  className="pf-c-skeleton pf-m-width-md pf-m-circle"
-/>
-`;
-
-exports[`skeleton shape skeleton with md width 2`] = `
-<div
-  className="pf-c-skeleton pf-m-width-md pf-m-square"
-/>
-`;
-
-exports[`skeleton shape skeleton with sm width 1`] = `
-<div
-  className="pf-c-skeleton pf-m-width-sm pf-m-circle"
-/>
-`;
-
-exports[`skeleton shape skeleton with sm width 2`] = `
-<div
-  className="pf-c-skeleton pf-m-width-sm pf-m-square"
-/>
-`;
-
 exports[`skeleton skeleton with 2xl font size 1`] = `
 <div
   className="pf-c-skeleton pf-m-text-2xl"

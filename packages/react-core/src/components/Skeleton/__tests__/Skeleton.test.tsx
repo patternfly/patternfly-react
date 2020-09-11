@@ -38,22 +38,4 @@ describe('skeleton', () => {
     const view = shallow(<Skeleton shape="square" />);
     expect(view).toMatchSnapshot();
   });
-
-  test('rectangle skeleton', () => {
-    const view = shallow(<Skeleton height="sm" width="md" />);
-    expect(view).toMatchSnapshot();
-    const viewMd = shallow(<Skeleton height="md" width="lg" />);
-    expect(viewMd).toMatchSnapshot();
-    const viewLg = shallow(<Skeleton height="lg" />);
-    expect(viewLg).toMatchSnapshot();
-  });
-
-  ['sm', 'md', 'lg'].forEach((width: string) =>
-    test(`shape skeleton with ${width} width`, () => {
-      const view = shallow(<Skeleton shape="circle" width={width as 'sm' | 'md' | 'lg'} />);
-      expect(view).toMatchSnapshot();
-      const viewSquare = shallow(<Skeleton shape="square" width={width as 'sm' | 'md' | 'lg'} />);
-      expect(viewSquare).toMatchSnapshot();
-    })
-  );
 });

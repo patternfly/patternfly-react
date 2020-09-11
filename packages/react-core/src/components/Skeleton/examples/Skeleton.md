@@ -92,30 +92,36 @@ import { Skeleton } from '@patternfly/react-core';
 
 <React.Fragment>
   Small circle
-  <Skeleton shape="circle" width="sm" />
+  <Skeleton shape="circle" width="15%" />
   <br />
   Medium circle
-  <Skeleton shape="circle" width="md" />
+  <Skeleton shape="circle" width="30%" />
   <br />
   Large circle
-  <Skeleton shape="circle" width="lg" />
+  <Skeleton shape="circle" width="50%" />
   <br />
   Small square
-  <Skeleton shape="square" width="sm" />
+  <Skeleton shape="square" width="15%" />
   <br />
   Medium square
-  <Skeleton shape="square" width="md" />
+  <Skeleton shape="square" width="30%" />
   <br />
   Large square
-  <Skeleton shape="square" width="lg" />
+  <Skeleton shape="square" width="50%" />
   <br />
   Small rectangle
-  <Skeleton height="sm" width="md" />
+  <div style={{ height: '200px' }}>
+    <Skeleton height="50%" width="50%" />
+  </div>
   <br />
   Medium rectangle
-  <Skeleton height="md" width="lg" />
+  <div style={{ height: '200px' }}>
+    <Skeleton height="75%" width="75%" />
+  </div>
   <br />
   Large rectangle
-  <Skeleton height="lg" />
+  <div style={{ height: '200px' }}>
+    <Skeleton height="100%" />
+  </div>
 </React.Fragment>;
 ```

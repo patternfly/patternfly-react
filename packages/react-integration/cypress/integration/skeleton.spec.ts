@@ -10,9 +10,6 @@ describe('Skeleton Demo Test', () => {
   it('Verify 25 height skeleton', () => {
     cy.get('#skele-h25').should('have.class', 'pf-m-height-25');
   });
-  it('Verify md font skeleton', () => {
-    cy.get('#skele-md').should('have.class', 'pf-m-text-md');
-  });
   it('Verify circle skeleton', () => {
     cy.get('#skele-circle').should('have.class', 'pf-m-circle');
   });
