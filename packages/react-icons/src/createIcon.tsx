@@ -29,7 +29,6 @@ export interface IconDefinition {
   svgPath: string;
   xOffset?: number;
   yOffset?: number;
-  transform?: string;
 }
 
 export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' | 'ref'> {
@@ -50,8 +49,7 @@ export function createIcon({
   yOffset = 0,
   width,
   height,
-  svgPath,
-  transform = ''
+  svgPath
 }: IconDefinition): React.ComponentClass<SVGIconProps> {
   return class SVGIcon extends React.Component<SVGIconProps> {
     static displayName = name;
@@ -85,7 +83,7 @@ export function createIcon({
           {...props}
         >
           {hasTitle && <title id={this.id}>{title}</title>}
-          <path d={svgPath} transform={transform} />
+          <path d={svgPath} />
         </svg>
       );
     }
