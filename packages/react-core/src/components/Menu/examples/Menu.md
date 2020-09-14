@@ -8,7 +8,7 @@ ouia: true
 
 ## Examples
 
-### Default
+### Basic
 ```js
 import React from 'react';
 import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
@@ -31,18 +31,18 @@ class MenuDefaultList extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+          <MenuListItem component="button" id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Action
-          </MenuItem>
-          <MenuItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          </MenuListItem>
+          <MenuListItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Link
-          </MenuItem>
-          <MenuItem id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
+          </MenuListItem>
+          <MenuListItem isDisabled component="button" id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
             Disabled Action
-          </MenuItem>
-          <MenuItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
+          </MenuListItem>
+          <MenuListItem isDisabled id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
             Disabled Link
-          </MenuItem>
+          </MenuListItem>
         </MenuList>
       </Menu>
     );

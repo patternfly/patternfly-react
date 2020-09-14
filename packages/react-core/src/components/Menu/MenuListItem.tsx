@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext, MenuSelectClickHandler } from './Menu';
 
-export interface MenuItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
+export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
   /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
@@ -24,9 +24,13 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 
   onClick?: MenuSelectClickHandler;
   /** Component used to render NavItems */
   component?: React.ReactNode;
+  /** Render item as disabled option */
+  isDisabled?: boolean;
+  /** Render item with icon */
+  icon?: React.ReactNode;
 }
 
-export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
+export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   children,
   styleChildren = true,
   className,
@@ -37,8 +41,10 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   preventDefault = false,
   onClick = null as MenuSelectClickHandler,
   component = 'a',
+  isDisabled = false,
+  icon = null,
   ...props
-}: MenuItemProps) => {
+}: MenuListItemProps) => {
   const Component = component as any;
 
   const renderDefaultLink = (context: any): React.ReactNode => {
@@ -51,7 +57,10 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         aria-current={isActive ? 'page' : null}
         {...props}
       >
-        {children}
+        <div className={css('pf-c-menu-item__main')}>
+          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+          <span className={css(styles.menuItemText)}>{children}</span>
+        </div>
       </Component>
     );
   };
@@ -66,17 +75,17 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     });
 
   return (
-    <li className={css(styles.menuListItem, className)}>
-      <button className={css(styles.menuItem)}>
-        <MenuContext.Consumer>
-          {context =>
-            React.isValidElement(children)
-              ? renderClonedChild(context, children as React.ReactElement)
-              : renderDefaultLink(context)
-          }
-        </MenuContext.Consumer>
-      </button>
+    <li className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}>
+      {/* <Component className={css(styles.menuItem)}> */}
+      <MenuContext.Consumer>
+        {context =>
+          React.isValidElement(children)
+            ? renderClonedChild(context, children as React.ReactElement)
+            : renderDefaultLink(context)
+        }
+      </MenuContext.Consumer>
+      {/* </Component> */}
     </li>
   );
 };
-MenuItem.displayName = 'MenuItem';
+MenuListItem.displayName = 'MenuListItem';
