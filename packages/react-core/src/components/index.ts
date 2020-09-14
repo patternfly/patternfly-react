@@ -47,6 +47,7 @@ export * from './Radio';
 export * from './SearchInput';
 export * from './Select';
 export * from './SimpleList';
+export * from './Skeleton';
 export * from './SkipToContent';
 export * from './Spinner';
 export * from './Switch';

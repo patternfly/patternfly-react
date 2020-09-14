@@ -107,6 +107,7 @@ export * from './SearchInputDemo/SearchInputDemo';
 export * from './SelectDemo/SelectDemo';
 export * from './SelectDemo/FilteringSelectDemo';
 export * from './SimpleList/SimpleListDemo';
+export * from './SkeletonDemo/SkeletonDemo';
 export * from './SpinnerDemo/SpinnerDemo';
 export * from './SplitDemo/SplitDemo';
 export * from './StackChartDemo/StackedAreaDemo';

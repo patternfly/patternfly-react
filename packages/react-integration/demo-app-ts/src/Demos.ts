@@ -542,6 +542,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SimpleListDemo
   },
   {
+    id: 'skeleton-demo',
+    name: 'Skeleton Demo',
+    componentType: Examples.SkeletonDemo
+  },
+  {
     id: 'spinner-demo',
     name: 'Spinner Demo',
     componentType: Examples.SpinnerDemo
