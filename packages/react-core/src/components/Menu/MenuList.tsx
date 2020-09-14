@@ -16,7 +16,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
 }: MenuListProps) => (
   <div className={'pf-c-menu__content'}>
     <ul className={'pf-c-menu__list'} {...props}>
-          {children}
+      {children}
     </ul>
   </div>
 );

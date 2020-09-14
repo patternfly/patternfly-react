@@ -35,7 +35,7 @@ export interface MenuProps
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
   /** For horizontal navs */
-  variant?: 'default' | 'horizontal' | 'tertiary';
+  variant?: 'default' | 'flyout';
 }
 
 export const MenuContext = React.createContext<{
@@ -144,11 +144,11 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
             styles.menu,
             // theme === 'light' && styles.modifiers.light,
             // isHorizontal && styles.modifiers.horizontal,
-            // variant === 'tertiary' && styles.modifiers.tertiary,
+            variant === 'flyout' && styles.modifiers.flyout,
             // this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
-          aria-label={ariaLabel || variant === 'tertiary' ? 'Local' : 'Global'}
+          aria-label={ariaLabel || variant === 'flyout' ? 'Local' : 'Global'}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >

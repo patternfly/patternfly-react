@@ -28,6 +28,8 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   isDisabled?: boolean;
   /** Render item with icon */
   icon?: React.ReactNode;
+  /** Description of the menu item */
+  description?: string | React.ReactNode;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
@@ -38,11 +40,12 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   isActive = false,
   groupId = null as string,
   itemId = null as string,
+  description = null as string,
   preventDefault = false,
   onClick = null as MenuSelectClickHandler,
   component = 'a',
   isDisabled = false,
-  icon = null,
+  icon,
   ...props
 }: MenuListItemProps) => {
   const Component = component as any;
@@ -61,6 +64,11 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
           {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
           <span className={css(styles.menuItemText)}>{children}</span>
         </div>
+        {description && (
+          <div className={css(styles.menuItemDescription)}>
+            <span>{description}</span>
+          </div>
+        )}
       </Component>
     );
   };
@@ -76,7 +84,6 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
 
   return (
     <li className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}>
-      {/* <Component className={css(styles.menuItem)}> */}
       <MenuContext.Consumer>
         {context =>
           React.isValidElement(children)
@@ -84,7 +91,6 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
             : renderDefaultLink(context)
         }
       </MenuContext.Consumer>
-      {/* </Component> */}
     </li>
   );
 };
