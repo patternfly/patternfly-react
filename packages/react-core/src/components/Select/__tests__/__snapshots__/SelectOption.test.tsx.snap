@@ -10,10 +10,12 @@ exports[`select options disabled renders disabled successfully 1`] = `
 <SelectOption
   className=""
   component="button"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={true}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -23,6 +25,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
     [MockFunction] {
       "calls": Array [
         Array [
+          null,
           null,
           0,
         ],
@@ -38,6 +41,8 @@ exports[`select options disabled renders disabled successfully 1`] = `
   value="test"
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <button
@@ -64,10 +69,12 @@ exports[`select options renders custom component 1`] = `
 <SelectOption
   className=""
   component="div"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={false}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -86,6 +93,7 @@ exports[`select options renders custom component 1`] = `
               test display
             </div>
           </div>,
+          null,
           0,
         ],
       ],
@@ -107,6 +115,8 @@ exports[`select options renders custom component 1`] = `
   }
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <div
@@ -129,10 +139,12 @@ exports[`select options renders with custom display and custom user object succe
 <SelectOption
   className=""
   component="button"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={false}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -151,6 +163,7 @@ exports[`select options renders with custom display and custom user object succe
               test display
             </div>
           </button>,
+          null,
           0,
         ],
       ],
@@ -172,6 +185,8 @@ exports[`select options renders with custom display and custom user object succe
   }
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <button
@@ -194,10 +209,12 @@ exports[`select options renders with custom display successfully 1`] = `
 <SelectOption
   className=""
   component="button"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={false}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -216,6 +233,7 @@ exports[`select options renders with custom display successfully 1`] = `
               test display
             </div>
           </button>,
+          null,
           0,
         ],
       ],
@@ -230,6 +248,8 @@ exports[`select options renders with custom display successfully 1`] = `
   value="test"
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <button
@@ -252,10 +272,12 @@ exports[`select options renders with custom user object successfully 1`] = `
 <SelectOption
   className=""
   component="button"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={false}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -272,6 +294,7 @@ exports[`select options renders with custom user object successfully 1`] = `
           >
             Mr.: Test User
           </button>,
+          null,
           0,
         ],
       ],
@@ -293,6 +316,8 @@ exports[`select options renders with custom user object successfully 1`] = `
   }
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <button
@@ -314,10 +339,12 @@ exports[`select options renders with description successfully 1`] = `
   className=""
   component="button"
   description="This is a description"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={false}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -332,17 +359,18 @@ exports[`select options renders with description successfully 1`] = `
             role="option"
             type="button"
           >
-            <div
+            <span
               class="pf-c-select__menu-item-main"
             >
               test
-            </div>
-            <div
+            </span>
+            <span
               class="pf-c-select__menu-item-description"
             >
               This is a description
-            </div>
+            </span>
           </button>,
+          null,
           0,
         ],
       ],
@@ -357,6 +385,8 @@ exports[`select options renders with description successfully 1`] = `
   value="test"
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <button
@@ -367,16 +397,16 @@ exports[`select options renders with description successfully 1`] = `
       role="option"
       type="button"
     >
-      <div
+      <span
         className="pf-c-select__menu-item-main"
       >
         test
-      </div>
-      <div
+      </span>
+      <span
         className="pf-c-select__menu-item-description"
       >
         This is a description
-      </div>
+      </span>
     </button>
   </li>
 </SelectOption>
@@ -386,10 +416,12 @@ exports[`select options renders with value parameter successfully 1`] = `
 <SelectOption
   className=""
   component="button"
+  id="option-1"
   index={0}
   inputId=""
   isChecked={false}
   isDisabled={false}
+  isFavorite={null}
   isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
@@ -406,6 +438,7 @@ exports[`select options renders with value parameter successfully 1`] = `
           >
             test
           </button>,
+          null,
           0,
         ],
       ],
@@ -420,6 +453,8 @@ exports[`select options renders with value parameter successfully 1`] = `
   value="test"
 >
   <li
+    className=""
+    id="option-1"
     role="presentation"
   >
     <button

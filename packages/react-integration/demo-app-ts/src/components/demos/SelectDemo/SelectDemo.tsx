@@ -94,13 +94,13 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleOptions = [
-    { value: 'Choose...', disabled: false, isPlaceholder: true },
-    { value: 'Mr', disabled: false },
-    { value: 'Miss', disabled: false },
-    { value: 'Mrs', disabled: false },
-    { value: 'Ms', disabled: false },
-    { value: 'Dr', disabled: false },
-    { value: 'Other', disabled: false }
+    { value: 'Choose...', disabled: false, isPlaceholder: true, id: 'single-select-opt-1' },
+    { value: 'Mr', disabled: false, id: 'single-select-opt-2' },
+    { value: 'Miss', disabled: false, id: 'single-select-opt-3' },
+    { value: 'Mrs', disabled: false, id: 'single-select-opt-4' },
+    { value: 'Ms', disabled: false, id: 'single-select-opt-5' },
+    { value: 'Dr', disabled: false, id: 'single-select-opt-6' },
+    { value: 'Other', disabled: false, id: 'single-select-opt-7' }
   ];
 
   checkboxOptions = [

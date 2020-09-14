@@ -22,6 +22,7 @@ import {
 } from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
+import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/util';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -70,6 +71,12 @@ export interface SelectProps
   toggleAriaLabel?: string;
   /** Label for remove chip button of multiple type ahead select variant */
   removeSelectionAriaLabel?: string;
+  /** ID list of favorited select items */
+  favorites?: string[];
+  /** Label for the favorites group */
+  favoritesLabel?: string;
+  /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
+  onFavorite?: (itemId: string, isFavorite: boolean) => void;
   /** Callback for selection behavior */
   onSelect?: (
     event: React.MouseEvent | React.ChangeEvent,
@@ -120,7 +127,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   private menuComponentRef = React.createRef<HTMLElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private clearRef = React.createRef<HTMLButtonElement>();
-  private refCollection: HTMLElement[] = [];
+  private inputRef = React.createRef<HTMLInputElement>();
+  private refCollection: HTMLElement[][] = [[]];
 
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
@@ -154,6 +162,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     customBadgeText: null,
     inputIdPrefix: '',
     menuAppendTo: 'inline',
+    favorites: [] as string[],
+    favoritesLabel: 'Favorites',
     ouiaSafe: true
   };
 
@@ -169,11 +179,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
     if (this.props.hasInlineFilter) {
-      this.refCollection[0] = this.filterRef.current;
+      this.refCollection[0][0] = this.filterRef.current;
     }
 
     if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent && this.refCollection[0]) {
-      this.refCollection[0].focus();
+      this.refCollection[0][0].focus();
     }
 
     if (prevProps.children !== this.props.children) {
@@ -271,7 +281,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       typeaheadActiveChild: null,
       creatableValue: e.target.value
     });
-    this.refCollection = [];
+    this.refCollection = [[]];
   };
 
   onClick = (e: React.MouseEvent) => {
@@ -341,12 +351,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     );
   }
 
-  sendRef = (ref: React.ReactNode, index: number) => {
-    this.refCollection[index] = ref as HTMLElement;
+  sendRef = (optionRef: React.ReactNode, favoriteRef: React.ReactNode, index: number) => {
+    this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
   };
 
-  handleArrowKeys = (index: number, position: string) => {
-    keyHandler(index, 0, position, this.refCollection, this.refCollection);
+  handleMenuKeys = (index: number, innerIndex: number, position: string) => {
+    keyHandler(index, innerIndex, position, this.refCollection, this.refCollection);
+    if (this.props.variant === SelectVariant.typeahead || this.props.variant === SelectVariant.typeaheadMulti) {
+      if (position !== 'tab') {
+        this.handleTypeaheadKeys(position);
+      }
+    }
   };
 
   handleFocus = () => {
@@ -360,16 +375,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
     if (isOpen) {
       if (position === 'enter') {
-        if (typeaheadActiveChild || this.refCollection[0]) {
+        if (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0])) {
           this.setState({
             typeaheadInputValue:
-              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
+              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
           });
           if (typeaheadActiveChild) {
             typeaheadActiveChild.click();
           } else {
-            this.refCollection[0].click();
+            this.refCollection[0][0].click();
           }
+        }
+      } else if (position === 'tab') {
+        if (this.inputRef.current === document.activeElement) {
+          const focusIndex = typeaheadCurrIndex === -1 ? 0 : typeaheadCurrIndex;
+          this.refCollection[focusIndex][0].focus();
+        } else {
+          this.inputRef.current.focus();
         }
       } else {
         let nextIndex;
@@ -377,19 +399,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           nextIndex = 0;
         } else if (typeaheadCurrIndex === -1 && position === 'up') {
           nextIndex = this.refCollection.length - 1;
-        } else {
+        } else if (position !== 'left' && position !== 'right') {
           nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
+        } else {
+          nextIndex = typeaheadCurrIndex;
         }
         if (this.refCollection[nextIndex] === null) {
           return;
         }
-        const hasDescriptionElm = Boolean(this.refCollection[nextIndex].classList.contains('pf-m-description'));
+
+        const hasDescriptionElm = Boolean(
+          this.refCollection[nextIndex][0] && this.refCollection[nextIndex][0].classList.contains('pf-m-description')
+        );
         const optionTextElm = hasDescriptionElm
-          ? (this.refCollection[nextIndex].firstElementChild as HTMLElement)
-          : this.refCollection[nextIndex];
+          ? (this.refCollection[nextIndex][0].firstElementChild as HTMLElement)
+          : this.refCollection[nextIndex][0];
         this.setState({
           typeaheadCurrIndex: nextIndex,
-          typeaheadActiveChild: this.refCollection[nextIndex],
+          typeaheadActiveChild: this.refCollection[nextIndex][0],
           typeaheadInputValue:
             isCreatable && optionTextElm.innerText.includes(createText)
               ? this.state.creatableValue
@@ -491,6 +518,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       inputIdPrefix,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
+      favorites,
+      onFavorite,
+      favoritesLabel,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
@@ -498,6 +528,39 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     let childPlaceholderText = null as string;
+
+    // If onFavorites is set,  add isFavorite prop to children and add a Favorites group to the SelectMenu
+    let renderableItems: React.ReactNode[] = [];
+    if (onFavorite) {
+      let favoritesGroup: React.ReactNode[] = [];
+      let renderableFavorites: React.ReactNode[] = [];
+      if (favorites.length > 0) {
+        // if variant is typeahead use filtered children
+        const tempRenderableChildren =
+          variant === 'typeahead' || variant === 'typeaheadmulti' ? typeaheadFilteredChildren : children;
+        renderableFavorites = createRenderableFavorites(tempRenderableChildren, isGrouped, favorites);
+        favoritesGroup = [
+          <SelectGroup key="favorites" label={favoritesLabel}>
+            {renderableFavorites}
+          </SelectGroup>
+        ];
+      }
+      // if variant is type-ahead call the extendTypeaheadChildren before adding favorites
+      const tempExtendedChildren =
+        variant === 'typeahead' || variant === 'typeaheadmulti'
+          ? this.extendTypeaheadChildren(typeaheadActiveChild)
+          : children;
+      if (renderableFavorites.length > 0) {
+        // concat all select options too renderable favorites group and mark items that are favorited with isFavorite
+        renderableItems = favoritesGroup.concat(extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites));
+      } else {
+        // mark items that are favorited with isFavorite
+        renderableItems = extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites);
+      }
+    } else {
+      renderableItems = children;
+    }
+
     if (!customContent) {
       if (!hasAnySelections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
@@ -562,19 +625,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               placeholder={inlineFilterPlaceholderText}
               onKeyDown={event => {
                 if (event.key === KeyTypes.ArrowUp) {
-                  this.handleArrowKeys(0, 'up');
+                  this.handleMenuKeys(0, 0, 'up');
                 } else if (event.key === KeyTypes.ArrowDown) {
-                  this.handleArrowKeys(0, 'down');
+                  this.handleMenuKeys(0, 0, 'down');
+                } else if (event.key === KeyTypes.ArrowLeft) {
+                  this.handleMenuKeys(0, 0, 'left');
+                } else if (event.key === KeyTypes.ArrowRight) {
+                  this.handleMenuKeys(0, 0, 'right');
                 }
               }}
               ref={this.filterRef}
               autoComplete="off"
-            ></input>
+            />
           </div>
           <Divider key="inline-filter-divider" />
         </React.Fragment>
       );
-      this.refCollection[0] = this.filterRef.current;
+      this.refCollection[0][0] = this.filterRef.current;
       filterWithChildren = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
         React.cloneElement(option, { key: index })
       );
@@ -596,7 +663,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             selected: selections[0],
             openedOnEnter
           };
-          variantChildren = children;
+          variantChildren = renderableItems;
           break;
         case 'checkbox':
           variantProps = {
@@ -611,14 +678,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             selected: selections[0],
             openedOnEnter
           };
-          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadActiveChild);
           break;
         case 'typeaheadmulti':
           variantProps = {
             selected: selections,
             openedOnEnter
           };
-          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadActiveChild);
           break;
       }
     }
@@ -633,7 +700,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         sendRef={this.sendRef}
-        keyHandler={this.handleArrowKeys}
+        keyHandler={this.handleMenuKeys}
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
       >
@@ -737,6 +804,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {(selections[0] || typeaheadInputValue) && clearBtn}
@@ -760,6 +828,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
               {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
@@ -781,7 +850,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       <GenerateId>
         {randomId => (
           <SelectContext.Provider
-            value={{ onSelect, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
+            value={{ onSelect, onFavorite, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
           >
             {menuAppendTo === 'inline' ? (
               mainContainer
