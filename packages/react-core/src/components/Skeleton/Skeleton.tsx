@@ -12,18 +12,20 @@ export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   /** The font size height of the Skeleton */
   fontSize?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
   /** The shape of the Skeleton */
-  shape?: 'circle' | 'square' | 'rectangle';
+  shape?: 'circle' | 'square';
 }
 
 export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
-  className = '',
-  width = '',
-  height = '',
+  className,
+  width,
+  height,
   fontSize,
   shape,
   ...props
 }: SkeletonProps) => {
-  const fontHeightClassName = Object.values(styles.modifiers).find(key => key === `pf-m-text-${fontSize}`);
+  const fontHeightClassName = fontSize
+    ? Object.values(styles.modifiers).find(key => key === `pf-m-text-${fontSize}`)
+    : undefined;
 
   return (
     <div
