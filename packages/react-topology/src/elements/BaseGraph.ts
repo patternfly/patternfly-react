@@ -133,6 +133,9 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   }
 
   reset(): void {
+    if (this.currentLayout) {
+      this.currentLayout.stop();
+    }
     this.scale = 1;
     this.position = new Point(0, 0);
   }
@@ -268,6 +271,18 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     if (p) {
       this.setPosition(p);
     }
+  }
+
+  toModel(): GraphModel {
+    return {
+      ...super.toModel(),
+      layout: this.getLayout(),
+      x: this.getPosition().x,
+      y: this.getPosition().y,
+      scale: this.getScale(),
+      scaleExtent: this.getScaleExtent(),
+      layers: this.getLayers()
+    };
   }
 
   translateToAbsolute(): void {

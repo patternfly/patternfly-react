@@ -73,7 +73,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
         <Button id="toggleButton" onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
           <DrawerSection>drawer-section</DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>

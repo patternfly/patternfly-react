@@ -4,7 +4,7 @@ import { canUseDOM, KEY_CODES, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Content rendered inside the Modal. */
@@ -40,7 +40,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Description of the modal */
   description?: React.ReactNode;
   /** Variant of the modal */
-  variant?: 'small' | 'large' | 'default';
+  variant?: 'small' | 'medium' | 'large' | 'default';
   /** Flag indicating if modal content should be placed in a modal box body wrapper */
   hasNoBodyWrapper?: boolean;
   /** An ID to use for the ModalBox container */
@@ -51,12 +51,14 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
 
 export enum ModalVariant {
   small = 'small',
+  medium = 'medium',
   large = 'large',
   default = 'default'
 }
 
 interface ModalState {
   container: HTMLElement;
+  ouiaStateId: string;
 }
 
 export class Modal extends React.Component<ModalProps, ModalState> {
@@ -93,7 +95,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     this.descriptorId = `pf-modal-part-${descriptorIdNum}`;
 
     this.state = {
-      container: undefined
+      container: undefined,
+      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
     };
   }
 
@@ -210,7 +213,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
-        ouiaId={ouiaId}
+        ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
       />,
       container

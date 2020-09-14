@@ -29,7 +29,7 @@ import swaggerIcon from './Card/camel-swagger-java_200x150.png';
 import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
 import restIcon from './Card/FuseConnector_Icons_REST.png';
 
-### Primary--detail full page
+### Primary-detail full page
 ```js isFullscreen
 import React from 'react';
 import {
@@ -613,7 +613,7 @@ class PrimaryDetailFullPage extends React.Component {
 }
 ```
 
-### Primary--detail content padding
+### Primary-detail content padding
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1198,7 +1198,7 @@ class PrimaryDetailContentPadding extends React.Component {
 }
 ```
 
-### Primary--detail card view
+### Primary-detail card view
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1689,7 +1689,7 @@ class PrimaryDetailCardView extends React.Component {
 }
 ```
 
-### Primary--detail simple list in card
+### Primary-detail simple list in card
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1918,7 +1918,7 @@ class PrimaryDetailSimpleListInCard extends React.Component {
 }
 ```
 
-### Primary--detail data list in card
+### Primary-detail data list in card
 ```js isFullscreen
 import React from 'react';
 import {
@@ -2231,7 +2231,7 @@ class PrimaryDetailDataListInCard extends React.Component {
 }
 ```
 
-### Primary--detail inline modifier
+### Primary-detail inline modifier
 ```js isFullscreen
 import React from 'react';
 import {

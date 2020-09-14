@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.48.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.48.0...@patternfly/react-core@4.48.1) (2020-09-11)
+
+
+### Bug Fixes
+
+* **page:** hide PageSideBar onClick on mobile when isManagedSidebar ([#4781](https://github.com/patternfly/patternfly-react/issues/4781)) ([00faa96](https://github.com/patternfly/patternfly-react/commit/00faa966158354663e2062bafb1e936865f1185f))
+
+
+
+
+
+# [4.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.6...@patternfly/react-core@4.48.0) (2020-09-11)
+
+
+### Features
+
+* **Card:** add ability to customize card title and support heading element ([#4761](https://github.com/patternfly/patternfly-react/issues/4761)) ([215c566](https://github.com/patternfly/patternfly-react/commit/215c566057172a73772a514b3413dbdee0542263))
+
+
+
+
+
+## [4.47.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.5...@patternfly/react-core@4.47.6) (2020-09-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.47.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.4...@patternfly/react-core@4.47.5) (2020-09-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.47.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.3...@patternfly/react-core@4.47.4) (2020-09-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.47.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.2...@patternfly/react-core@4.47.3) (2020-09-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.47.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.1...@patternfly/react-core@4.47.2) (2020-09-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.47.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.47.0...@patternfly/react-core@4.47.1) (2020-08-28)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.46.0...@patternfly/react-core@4.47.0) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Page:** add missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/issues/4707)) ([1abca6d](https://github.com/patternfly/patternfly-react/commit/1abca6d09bd27459c8b3fc84c0f29040f3d33575))
+
+
+### Features
+
+* **Tile:** add tile component ([#4610](https://github.com/patternfly/patternfly-react/issues/4610)) ([a49c28f](https://github.com/patternfly/patternfly-react/commit/a49c28fbeefe2cabdf1be1e4f3e3633a3e01c0d2))
+* **ToggleGroup:** add new toggle group component ([#4702](https://github.com/patternfly/patternfly-react/issues/4702)) ([4c00ae5](https://github.com/patternfly/patternfly-react/commit/4c00ae54da9df1a2560c8033464b91f97eac2ca7))
+* **TreeView:** add treeview, demos, tests ([#4701](https://github.com/patternfly/patternfly-react/issues/4701)) ([1840aac](https://github.com/patternfly/patternfly-react/commit/1840aac8e5fe3b29e349e8cf615d8b914274a16b))
+
+
+
+
+
+# [4.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.45.1...@patternfly/react-core@4.46.0) (2020-08-25)
+
+
+### Features
+
+* **modal:** add medium variant ([#4678](https://github.com/patternfly/patternfly-react/issues/4678)) ([203dd08](https://github.com/patternfly/patternfly-react/commit/203dd0802c630fa3979cf349e5308f8fe906c429))
+
+
+
+
+
+## [4.45.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.45.0...@patternfly/react-core@4.45.1) (2020-08-25)
+
+
+### Bug Fixes
+
+* **search-input:** use title case id ([#4725](https://github.com/patternfly/patternfly-react/issues/4725)) ([2ccb235](https://github.com/patternfly/patternfly-react/commit/2ccb23515057dea80daf279bcecad005309d4903))
+
+
+
+
+
 # [4.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.44.1...@patternfly/react-core@4.45.0) (2020-08-24)
 
 

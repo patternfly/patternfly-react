@@ -3,6 +3,121 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.37.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.37.0...demo-app-ts@4.37.1) (2020-09-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.37.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.6...demo-app-ts@4.37.0) (2020-09-11)
+
+
+### Features
+
+* **Card:** add ability to customize card title and support heading element ([#4761](https://github.com/patternfly/patternfly-react/issues/4761)) ([215c566](https://github.com/patternfly/patternfly-react/commit/215c566057172a73772a514b3413dbdee0542263))
+
+
+
+
+
+## [4.36.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.5...demo-app-ts@4.36.6) (2020-09-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.4...demo-app-ts@4.36.5) (2020-09-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.3...demo-app-ts@4.36.4) (2020-09-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.2...demo-app-ts@4.36.3) (2020-09-04)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.1...demo-app-ts@4.36.2) (2020-09-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.0...demo-app-ts@4.36.1) (2020-08-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.36.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.35.0...demo-app-ts@4.36.0) (2020-08-27)
+
+
+### Features
+
+* **topology:** Enable saving current topology graph model ([#4690](https://github.com/patternfly/patternfly-react/issues/4690)) ([2c4b25c](https://github.com/patternfly/patternfly-react/commit/2c4b25ce8aa64a08de38c0a1884c96df643f348e))
+
+
+
+
+
+# [4.35.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.34.0...demo-app-ts@4.35.0) (2020-08-25)
+
+
+### Bug Fixes
+
+* **Page:** add missing tertiary nav demo, integration, and cypress test ([#4707](https://github.com/patternfly/patternfly-react/issues/4707)) ([1abca6d](https://github.com/patternfly/patternfly-react/commit/1abca6d09bd27459c8b3fc84c0f29040f3d33575))
+
+
+### Features
+
+* **Tile:** add tile component ([#4610](https://github.com/patternfly/patternfly-react/issues/4610)) ([a49c28f](https://github.com/patternfly/patternfly-react/commit/a49c28fbeefe2cabdf1be1e4f3e3633a3e01c0d2))
+* **ToggleGroup:** add new toggle group component ([#4702](https://github.com/patternfly/patternfly-react/issues/4702)) ([4c00ae5](https://github.com/patternfly/patternfly-react/commit/4c00ae54da9df1a2560c8033464b91f97eac2ca7))
+* **TreeView:** add treeview, demos, tests ([#4701](https://github.com/patternfly/patternfly-react/issues/4701)) ([1840aac](https://github.com/patternfly/patternfly-react/commit/1840aac8e5fe3b29e349e8cf615d8b914274a16b))
+
+
+
+
+
+# [4.34.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.3...demo-app-ts@4.34.0) (2020-08-25)
+
+
+### Features
+
+* **modal:** add medium variant ([#4678](https://github.com/patternfly/patternfly-react/issues/4678)) ([203dd08](https://github.com/patternfly/patternfly-react/commit/203dd0802c630fa3979cf349e5308f8fe906c429))
+
+
+
+
+
+## [4.33.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.2...demo-app-ts@4.33.3) (2020-08-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.33.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.33.1...demo-app-ts@4.33.2) (2020-08-24)
 
 **Note:** Version bump only for package demo-app-ts

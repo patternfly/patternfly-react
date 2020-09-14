@@ -6,6 +6,7 @@ interface ModalDemoState {
   isModalOpen: boolean;
   isModalDescriptionOpen: boolean;
   isSmallModalOpen: boolean;
+  isMediumModalOpen: boolean;
   isLargeModalOpen: boolean;
   isHalfWidthModalOpen: boolean;
   isCustomHeaderFooterModalOpen: boolean;
@@ -20,6 +21,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     isModalOpen: false,
     isModalDescriptionOpen: false,
     isSmallModalOpen: false,
+    isMediumModalOpen: false,
     isLargeModalOpen: false,
     isHalfWidthModalOpen: false,
     isCustomHeaderFooterModalOpen: false,
@@ -43,6 +45,12 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   handleSmallModalToggle = () => {
     this.setState(({ isSmallModalOpen }) => ({
       isSmallModalOpen: !isSmallModalOpen
+    }));
+  };
+
+  handleMediumModalToggle = () => {
+    this.setState(({ isMediumModalOpen }) => ({
+      isMediumModalOpen: !isMediumModalOpen
     }));
   };
 
@@ -149,6 +157,33 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             Cancel
           </Button>,
           <Button key="confirm" variant="primary" onClick={this.handleSmallModalToggle}>
+            Confirm
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
+  renderMediumModal() {
+    const { isMediumModalOpen } = this.state;
+
+    return (
+      <Modal
+        variant={'medium'}
+        title="Modal Header"
+        isOpen={isMediumModalOpen}
+        onClose={this.handleMediumModalToggle}
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleMediumModalToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleMediumModalToggle}>
             Confirm
           </Button>
         ]}
@@ -330,6 +365,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           <Button style={buttonStyle} variant="primary" onClick={this.handleSmallModalToggle} id="showSmallModalButton">
             Show Small Modal
           </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleMediumModalToggle}
+            id="showMediumModalButton"
+          >
+            Show Medium Modal
+          </Button>
           <Button style={buttonStyle} variant="primary" onClick={this.handleLargeModalToggle} id="showLargeModalButton">
             Show Large Modal
           </Button>
@@ -377,6 +420,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         </div>
         {this.renderModal()}
         {this.renderSmallModal()}
+        {this.renderMediumModal()}
         {this.renderLargeModal()}
         {this.renderHalfWidthModal()}
         {this.renderCustomHeaderFooterModal()}

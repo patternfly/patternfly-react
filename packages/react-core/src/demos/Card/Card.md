@@ -27,6 +27,7 @@ import restIcon from './FuseConnector_Icons_REST.png';
 This demonstrates how you can assemble a full page view that contains a grid of equal sized cards that includes a toolbar for managing card grid contents.
 
 ### Card view
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -540,7 +541,9 @@ class CardViewBasic extends React.Component {
     const toolbarItems = (
       <React.Fragment>
         <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-        <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">
+          {this.buildFilterDropdown()}
+        </ToolbarItem>
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem>
@@ -586,10 +589,10 @@ class CardViewBasic extends React.Component {
     );
 
     const kebabDropdownItems = [
-      <DropdownItem>
+      <DropdownItem key="kebab-settings">
         <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownItem>
+      <DropdownItem key="kebab-help">
         <HelpIcon /> Help
       </DropdownItem>
     ];
@@ -701,47 +704,43 @@ class CardViewBasic extends React.Component {
           <PageSection>
             <Gallery hasGutter>
               {filtered.map((product, key) => (
-                <React.Fragment>
-                  <Card isHoverable key={key}>
-                    <CardHeader>
-                      <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
-                      <CardActions>
-                        <Dropdown
-                          isPlain
-                          position="right"
-                          onSelect={e => this.onCardKebabDropdownSelect(key, e)}
-                          toggle={
-                            <KebabToggle
-                              onToggle={isCardKebabDropdownOpen =>
-                                this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-                              }
-                            />
-                          }
-                          isOpen={this.state[key]}
-                          dropdownItems={[
-                            <DropdownItem onClick={this.deleteItem(product)} position="right">
-                              <TrashIcon />
-                              Delete
-                            </DropdownItem>
-                          ]}
-                        />
-                        <Checkbox
-                          checked={isChecked}
-                          value={product.id}
-                          selectedItems={selectedItems}
-                          areAllSelected={areAllSelected}
-                          onChange={this.handleCheckboxClick}
-                          isChecked={selectedItems.includes(product.id)}
-                          defaultChecked={this.state.itemsCheckedByDefault}
-                          aria-label="card checkbox example"
-                          id={`check-${product.id}`}
-                        />
-                      </CardActions>
-                    </CardHeader>
-                    <CardTitle>{product.name}</CardTitle>
-                    <CardBody>{product.description}</CardBody>
-                  </Card>
-                </React.Fragment>
+                <Card isHoverable key={product.name}>
+                  <CardHeader>
+                    <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
+                    <CardActions>
+                      <Dropdown
+                        isPlain
+                        position="right"
+                        onSelect={e => this.onCardKebabDropdownSelect(key, e)}
+                        toggle={
+                          <KebabToggle
+                            onToggle={isCardKebabDropdownOpen =>
+                              this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
+                            }
+                          />
+                        }
+                        isOpen={this.state[key]}
+                        dropdownItems={[
+                          <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
+                            <TrashIcon />
+                            Delete
+                          </DropdownItem>
+                        ]}
+                      />
+                      <Checkbox
+                        checked={isChecked}
+                        value={product.id}
+                        onChange={this.handleCheckboxClick}
+                        isChecked={selectedItems.includes(product.id)}
+                        defaultChecked={this.state.itemsCheckedByDefault}
+                        aria-label="card checkbox example"
+                        id={`check-${product.id}`}
+                      />
+                    </CardActions>
+                  </CardHeader>
+                  <CardTitle>{product.name}</CardTitle>
+                  <CardBody>{product.description}</CardBody>
+                </Card>
               ))}
             </Gallery>
           </PageSection>

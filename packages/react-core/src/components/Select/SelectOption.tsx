@@ -205,7 +205,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
                     description && styles.modifiers.description,
-                    isFavorite !== null && styles.modifiers.link, //
+                    isFavorite !== null && styles.modifiers.link,
                     isFocused && styles.modifiers.focus,
                     className
                   )}

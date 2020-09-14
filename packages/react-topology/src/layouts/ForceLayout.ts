@@ -9,7 +9,10 @@ export default class ForceLayout extends BaseLayout implements Layout {
   constructor(graph: Graph, options?: Partial<LayoutOptions>) {
     super(graph, {
       ...options,
-      layoutOnDrag: true
+      layoutOnDrag: true,
+      onSimulationEnd: () => {
+        this.nodes.forEach(n => n.setFixed(false));
+      }
     });
   }
 

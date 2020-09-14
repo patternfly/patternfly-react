@@ -16,6 +16,7 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
 ### Items
+
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
@@ -58,6 +59,7 @@ class ToolbarItems extends React.Component {
 ```
 
 ### Adjusting item spacers
+
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
@@ -133,9 +135,73 @@ class ToolbarSpacers extends React.Component {
 }
 ```
 
+### Adjusting toolbar inset
+
+```js
+import React from 'react';
+import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
+
+class ToolbarSpacers extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const items = (
+      <React.Fragment>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem variant="separator"></ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="primary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem variant="separator"></ToolbarItem>
+        <ToolbarGroup>
+          <ToolbarItem>
+            <Button variant="secondary">Action</Button>
+          </ToolbarItem>
+          <ToolbarItem>
+            <Button variant="secondary">Action</Button>
+          </ToolbarItem>
+        </ToolbarGroup>
+      </React.Fragment>
+    );
+
+    return (
+      <Toolbar
+        id="toolbar-spacers"
+        inset={{
+          default: 'insetNone',
+          md: 'insetSm',
+          xl: 'inset2xl',
+          '2xl': 'insetLg'
+        }}
+      >
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
+  }
+}
+```
+
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
 ### Groups
+
 ```js
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
@@ -335,6 +401,7 @@ The Toggle group can either have the toggle state managed by the consumer, or th
 - The first Toggle group example below demonstrates a component managed toggle state.
 
 ### Component managed toggle groups
+
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
@@ -491,6 +558,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
 ### Consumer managed toggle groups
+
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
@@ -656,6 +724,7 @@ The ToolbarFilter component expects a consumer managed list of applied filters a
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
 ### Data toolbar with filters
+
 ```js
 import React from 'react';
 import {
@@ -928,6 +997,7 @@ class ToolbarWithFilterExample extends React.Component {
 There may be situations where all of the required elements simply cannot fit in a single line.
 
 ### Stacked example
+
 ```js
 import React from 'react';
 import {
@@ -1195,29 +1265,29 @@ class ToolbarStacked extends React.Component {
               {toggleGroupItems}
             </ToolbarToggleGroup>
             <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
-               <ToolbarItem variant="overflow-menu">
-                <OverflowMenu breakpoint="2xl">
-                  <OverflowMenuContent>
-                    <OverflowMenuGroup groupType="button">
-                      <OverflowMenuItem>
-                        <Button variant={ButtonVariant.primary}>Primary</Button>
-                      </OverflowMenuItem>
-                      <OverflowMenuItem>
-                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                      </OverflowMenuItem>
-                    </OverflowMenuGroup>
-                  </OverflowMenuContent>
-                  <OverflowMenuControl hasAdditionalOptions>
-                    <Dropdown
-                      onSelect={this.onResourceSelect}
-                      toggle={<KebabToggle onToggle={this.onKebabToggle} />}
-                      isOpen={kebabIsOpen}
-                      isPlain
-                      dropdownItems={dropdownItems}
-                    />
-                  </OverflowMenuControl>
-                </OverflowMenu>
-              </ToolbarItem>
+            <ToolbarItem variant="overflow-menu">
+              <OverflowMenu breakpoint="2xl">
+                <OverflowMenuContent>
+                  <OverflowMenuGroup groupType="button">
+                    <OverflowMenuItem>
+                      <Button variant={ButtonVariant.primary}>Primary</Button>
+                    </OverflowMenuItem>
+                    <OverflowMenuItem>
+                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                    </OverflowMenuItem>
+                  </OverflowMenuGroup>
+                </OverflowMenuContent>
+                <OverflowMenuControl hasAdditionalOptions>
+                  <Dropdown
+                    onSelect={this.onResourceSelect}
+                    toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+                    isOpen={kebabIsOpen}
+                    isPlain
+                    dropdownItems={dropdownItems}
+                  />
+                </OverflowMenuControl>
+              </OverflowMenu>
+            </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
       </React.Fragment>
@@ -1227,32 +1297,32 @@ class ToolbarStacked extends React.Component {
       <React.Fragment>
         <Toolbar>
           <ToolbarContent>
-              <ToolbarItem variant="bulk-select">
-                <Dropdown
-                  onSelect={this.onSplitButtonSelect}
-                  toggle={
-                    <DropdownToggle
-                      id="stacked-example-toggle"
-                      splitButtonItems={[
-                        <DropdownToggleCheckbox id="example-checkbox-1" key="split-checkbox" aria-label="Select all" />
-                      ]}
-                      onToggle={this.onSplitButtonToggle}
-                    />
-                  }
-                  isOpen={splitButtonDropdownIsOpen}
-                  dropdownItems={splitButtonDropdownItems}
-                />
-              </ToolbarItem>
-              <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
-                <Pagination
-                  itemCount={37}
-                  perPage={this.state.perPage}
-                  page={this.state.page}
-                  onSetPage={this.onSetPage}
-                  widgetId="pagination-options-menu-top"
-                  onPerPageSelect={this.onPerPageSelect}
-                />
-              </ToolbarItem>
+            <ToolbarItem variant="bulk-select">
+              <Dropdown
+                onSelect={this.onSplitButtonSelect}
+                toggle={
+                  <DropdownToggle
+                    id="stacked-example-toggle"
+                    splitButtonItems={[
+                      <DropdownToggleCheckbox id="example-checkbox-1" key="split-checkbox" aria-label="Select all" />
+                    ]}
+                    onToggle={this.onSplitButtonToggle}
+                  />
+                }
+                isOpen={splitButtonDropdownIsOpen}
+                dropdownItems={splitButtonDropdownItems}
+              />
+            </ToolbarItem>
+            <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+              <Pagination
+                itemCount={37}
+                perPage={this.state.perPage}
+                page={this.state.page}
+                onSetPage={this.onSetPage}
+                widgetId="pagination-options-menu-top"
+                onPerPageSelect={this.onPerPageSelect}
+              />
+            </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
       </React.Fragment>

@@ -55,6 +55,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
+  /** Flag indicating if tertiary nav width should be limited */
+  isTertiaryNavWidthLimited?: boolean;
   /**
    * If true, the managed sidebar is initially open for desktop view
    */
@@ -66,6 +68,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   onPageResize?: (object: any) => void;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
+  /** Tertiary nav component for the page */
+  tertiaryNav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
 }
@@ -87,6 +91,7 @@ export class Page extends React.Component<PageProps, PageState> {
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null
   };
+  mainRef = React.createRef<HTMLDivElement>();
 
   constructor(props: PageProps) {
     super(props);
@@ -103,28 +108,48 @@ export class Page extends React.Component<PageProps, PageState> {
   componentDidMount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      window.addEventListener('resize', debounce(this.handleResize, 250));
+      window.addEventListener('resize', this.handleResize);
+      const currentRef = this.mainRef.current;
+      if (currentRef) {
+        currentRef.addEventListener('mousedown', this.handleMainClick);
+        currentRef.addEventListener('touchstart', this.handleMainClick);
+      }
       // Initial check if should be shown
-      this.handleResize();
+      this.resize();
     }
   }
 
   componentWillUnmount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      window.removeEventListener('resize', debounce(this.handleResize, 250));
+      window.removeEventListener('resize', this.handleResize);
+      const currentRef = this.mainRef.current;
+      if (currentRef) {
+        currentRef.removeEventListener('mousedown', this.handleMainClick);
+        currentRef.removeEventListener('touchstart', this.handleMainClick);
+      }
     }
   }
 
-  handleResize = () => {
-    const { onPageResize } = this.props;
-    const windowSize = window.innerWidth;
+  isMobile = () =>
     // eslint-disable-next-line radix
-    const mobileView = windowSize < Number.parseInt(globalBreakpointXl.value, 10);
+    window.innerWidth < Number.parseInt(globalBreakpointXl.value, 10);
+
+  resize = () => {
+    const { onPageResize } = this.props;
+    const mobileView = this.isMobile();
     if (onPageResize) {
-      onPageResize({ mobileView, windowSize });
+      onPageResize({ mobileView, windowSize: window.innerWidth });
     }
     this.setState({ mobileView });
+  };
+
+  handleResize = debounce(this.resize, 250);
+
+  handleMainClick = (ev: any) => {
+    if (this.isMobile() && this.state.mobileIsNavOpen && this.mainRef.current) {
+      this.setState({ mobileIsNavOpen: false });
+    }
   };
 
   onNavToggleMobile = () => {
@@ -150,6 +175,7 @@ export class Page extends React.Component<PageProps, PageState> {
       notificationDrawer,
       isNotificationDrawerExpanded,
       onNotificationDrawerExpand,
+      isTertiaryNavWidthLimited,
       skipToContent,
       role,
       mainContainerId,
@@ -160,6 +186,7 @@ export class Page extends React.Component<PageProps, PageState> {
       onPageResize,
       mainAriaLabel,
       mainTabIndex,
+      tertiaryNav,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
@@ -172,12 +199,19 @@ export class Page extends React.Component<PageProps, PageState> {
 
     const main = (
       <main
+        ref={this.mainRef}
         role={role}
         id={mainContainerId}
         className={css(styles.pageMain)}
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
+        {tertiaryNav && isTertiaryNavWidthLimited && (
+          <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
+            <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
+          </div>
+        )}
+        {tertiaryNav && !isTertiaryNavWidthLimited && <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>}
         {breadcrumb && isBreadcrumbWidthLimited && (
           <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
             <div className={css(styles.pageMainBody)}>{breadcrumb}</div>

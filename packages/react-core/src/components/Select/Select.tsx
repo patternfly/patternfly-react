@@ -11,7 +11,15 @@ import { SelectGroup } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
-import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional, GenerateId } from '../../helpers';
+import {
+  keyHandler,
+  getNextIndex,
+  getOUIAProps,
+  OUIAProps,
+  getDefaultOUIAId,
+  PickOptional,
+  GenerateId
+} from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/util';
@@ -112,6 +120,7 @@ export interface SelectState {
   creatableValue: string;
   tabbedIntoFavoritesMenu: boolean;
   typeaheadStoredIndex: number;
+  ouiaStateId: string;
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
@@ -169,7 +178,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     typeaheadCurrIndex: -1,
     typeaheadStoredIndex: -1,
     creatableValue: '',
-    tabbedIntoFavoritesMenu: false
+    tabbedIntoFavoritesMenu: false,
+    ouiaStateId: getDefaultOUIAId(Select.displayName, this.props.variant)
   };
 
   getTypeaheadActiveChild = (typeaheadCurrIndex: number) =>
@@ -378,7 +388,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     });
   }
-
+  
   sendRef = (
     optionRef: React.ReactNode,
     favoriteRef: React.ReactNode,
@@ -386,7 +396,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     index: number
   ) => {
     this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
-    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;
+    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;\
   };
 
   handleMenuKeys = (index: number, innerIndex: number, position: string) => {
@@ -792,7 +802,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         ref={this.parentRef}
-        {...getOUIAProps(Select.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
       >
         <SelectToggle

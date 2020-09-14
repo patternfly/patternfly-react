@@ -452,6 +452,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PageDemo
   },
   {
+    id: 'page-breadcrumb-and-tertiary-nav-demo',
+    name: 'Page Breadcrumb and Tertiary Nav Demo',
+    componentType: Examples.PageBreadcrumbAndTertiaryNavDemo
+  },
+  {
     id: 'page-managed-sidebar-demo',
     name: 'Page Managed Sidebar Demo',
     componentType: Examples.PageManagedSidebarDemo
@@ -682,9 +687,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TextInputDemo
   },
   {
+    id: 'tile-demo',
+    name: 'Tile Demo',
+    componentType: Examples.TileDemo
+  },
+  {
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo
+  },
+  {
+    id: 'toggle-group-demo',
+    name: 'Toggle Group Demo',
+    componentType: Examples.ToggleGroupDemo
   },
   {
     id: 'toolbar-demo',
@@ -710,6 +725,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-demo',
     name: 'Topology Demo',
     componentType: Examples.TopologyDemo
+  },
+  {
+    id: 'treeview-demo',
+    name: 'Tree View Demo',
+    componentType: Examples.TreeViewDemo
   },
   {
     id: 'wizard-demo',

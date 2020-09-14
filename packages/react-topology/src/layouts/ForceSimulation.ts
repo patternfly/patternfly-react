@@ -11,6 +11,7 @@ interface ForceSimulationOptions {
   collideDistance: number;
   simulationSpeed: number;
   chargeStrength: number;
+  onSimulationEnd?: () => void;
 }
 
 class ForceSimulation {
@@ -53,6 +54,9 @@ class ForceSimulation {
         this.simulation.nodes().forEach((d: ForceSimulationNode) => !this.destroyed && d.update());
       })
     );
+    if (options.onSimulationEnd) {
+      this.simulation.on('end', this.options.onSimulationEnd);
+    }
   }
 
   public destroy(): void {
