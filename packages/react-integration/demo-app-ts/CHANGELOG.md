@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.38.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.37.1...demo-app-ts@4.38.0) (2020-09-14)
+
+
+### Features
+
+* **Drawer:** add bottom panel variation ([#4771](https://github.com/patternfly/patternfly-react/issues/4771)) ([93f8fe4](https://github.com/patternfly/patternfly-react/commit/93f8fe4ec55323212fd1e2dc07986a9f10815bf3))
+* **Skeleton:** add skeleton component, examples, tests ([#4755](https://github.com/patternfly/patternfly-react/issues/4755)) ([1f9a46e](https://github.com/patternfly/patternfly-react/commit/1f9a46ed8f9b3fa2bcef7fc580e7101f7aaef09c))
+* **Toolbar:** add insets property ([#4757](https://github.com/patternfly/patternfly-react/issues/4757)) ([2d388af](https://github.com/patternfly/patternfly-react/commit/2d388afd22a243195dea56b502398a62a7138617))
+
+
+
+
+
 ## [4.37.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.37.0...demo-app-ts@4.37.1) (2020-09-11)
 
 **Note:** Version bump only for package demo-app-ts
