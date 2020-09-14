@@ -43,6 +43,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-8"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -221,6 +222,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-8"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -1081,7 +1083,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   >
     <div
       className="pf-c-select"
-      data-ouia-component-id={11}
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-2"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -1286,6 +1288,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   >
     <div
       className="pf-c-select"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-3"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -1312,6 +1315,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
           Object {
             "current": <div
               class="pf-c-select"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-3"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -1451,6 +1455,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   >
     <div
       className="pf-c-select"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-1"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -1477,6 +1482,7 @@ exports[`checkbox select renders closed successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-1"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -1616,6 +1622,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-4"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -1706,6 +1713,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-4"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -2179,6 +2187,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-7"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -2255,6 +2264,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-7"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -2687,6 +2697,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-5"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -2789,6 +2800,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-5"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -3313,6 +3325,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-checkbox-6"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -3415,6 +3428,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-checkbox-6"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -3794,1648 +3808,6 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                   >
                     <label
                       className="pf-c-check pf-c-select__menu-item"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Ms"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-13-Ms"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-4"
-                    index={4}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$4"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Other"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-13-Other"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </SelectOption>
-                </fieldset>
-              </div>
-            </div>
-          </FocusTrap>
-        </SelectMenu>
-      </ForwardRef>
-    </div>
-  </GenerateId>
-</Select>
-`;
-
-exports[`renders select with favorites successfully 1`] = `
-<Select
-  aria-label=""
-  aria-labelledby=""
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customBadgeText={null}
-  customContent={null}
-  direction="down"
-  favorites={
-    Array [
-      "option-1",
-    ]
-  }
-  favoritesLabel="Favorites"
-  hasInlineFilter={false}
-  inlineFilterPlaceholderText={null}
-  inputIdPrefix=""
-  isCreatable={false}
-  isDisabled={false}
-  isGrouped={true}
-  isOpen={true}
-  isPlain={false}
-  menuAppendTo="inline"
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFavorite={[MockFunction]}
-  onFilter={null}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  ouiaSafe={true}
-  placeholderText=""
-  removeSelectionAriaLabel="Remove"
-  selections={Array []}
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId={null}
-  typeAheadAriaLabel=""
-  variant="single"
-  width=""
->
-  <GenerateId
-    prefix="pf-random-id-"
-  >
-    <div
-      className="pf-c-select pf-m-expanded"
-      data-ouia-component-id={9}
-      data-ouia-component-type="PF4/Select"
-      data-ouia-safe={true}
-    >
-      <SelectToggle
-        aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-3"
-        className=""
-        handleTypeaheadKeys={[Function]}
-        hasClearButton={false}
-        id="pf-select-toggle-id-3"
-        isActive={false}
-        isDisabled={false}
-        isOpen={true}
-        isPlain={false}
-        menuRef={
-          Object {
-            "current": <ul
-              class="pf-c-select__menu"
-              role="listbox"
-            >
-              <div
-                class="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden="true"
-                  class="pf-c-select__menu-group-title"
-                  id="group-1"
-                >
-                  group 1
-                </div>
-                <li
-                  class="pf-c-select__menu-wrapper pf-m-favorite"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                  <button
-                    aria-label="starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-2"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mrs
-                  </button>
-                  <button
-                    aria-label="not starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-2"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Ms
-                  </button>
-                  <button
-                    aria-label="not starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-4"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Other
-                  </button>
-                  <button
-                    aria-label="not starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-              </div>
-              <div
-                class="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden="true"
-                  class="pf-c-select__menu-group-title"
-                  id="group-2"
-                >
-                  group 2
-                </div>
-                <li
-                  class="pf-c-select__menu-wrapper pf-m-favorite"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                  <button
-                    aria-label="starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-2"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mrs
-                  </button>
-                  <button
-                    aria-label="not starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-2"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Ms
-                  </button>
-                  <button
-                    aria-label="not starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-4"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Other
-                  </button>
-                  <button
-                    aria-label="not starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-              </div>
-            </ul>,
-          }
-        }
-        onClose={[Function]}
-        onEnter={[Function]}
-        onToggle={[MockFunction]}
-        parentRef={
-          Object {
-            "current": <div
-              class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="9"
-              data-ouia-component-type="PF4/Select"
-              data-ouia-safe="true"
-            >
-              <button
-                aria-expanded="true"
-                aria-haspopup="listbox"
-                aria-labelledby=" pf-select-toggle-id-3"
-                class="pf-c-select__toggle"
-                id="pf-select-toggle-id-3"
-                type="button"
-              >
-                <div
-                  class="pf-c-select__toggle-wrapper"
-                >
-                  <span
-                    class="pf-c-select__toggle-text"
-                  />
-                </div>
-                <span
-                  class="pf-c-select__toggle-arrow"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
-                </span>
-              </button>
-              <ul
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
-                    id="group-1"
-                  >
-                    group 1
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-4"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
-                    id="group-2"
-                  >
-                    group 2
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-4"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
-              </ul>
-            </div>,
-          }
-        }
-        type="button"
-        variant="single"
-      >
-        <button
-          aria-expanded={true}
-          aria-haspopup="listbox"
-          aria-labelledby=" pf-select-toggle-id-3"
-          className="pf-c-select__toggle"
-          disabled={false}
-          id="pf-select-toggle-id-3"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <div
-            className="pf-c-select__toggle-wrapper"
-          >
-            <span
-              className="pf-c-select__toggle-text"
-            />
-          </div>
-          <span
-            className="pf-c-select__toggle-arrow"
-          >
-            <CaretDownIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </CaretDownIcon>
-          </span>
-        </button>
-      </SelectToggle>
-      <ForwardRef
-        aria-label=""
-        aria-labelledby=""
-        isGrouped={true}
-        keyHandler={[Function]}
-        openedOnEnter={false}
-        sendRef={[Function]}
-      >
-        <SelectMenu
-          aria-label=""
-          aria-labelledby=""
-          className=""
-          hasInlineFilter={false}
-          innerRef={
-            Object {
-              "current": <ul
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
-                    id="group-1"
-                  >
-                    group 1
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-4"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
-                    id="group-2"
-                  >
-                    group 2
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper"
-                    id="option-4"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
-              </ul>,
-            }
-          }
-          isCustomContent={false}
-          isExpanded={false}
-          isGrouped={true}
-          keyHandler={[Function]}
-          maxHeight=""
-          openedOnEnter={false}
-          selected=""
-          sendRef={[Function]}
-        >
-          <ul
-            className="pf-c-select__menu"
-            role="listbox"
-          >
-            <SelectGroup
-              key=".0"
-              label="group 1"
-              titleId="group-1"
-            >
-              <div
-                className="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden={true}
-                  className="pf-c-select__menu-group-title"
-                  id="group-1"
-                >
-                  group 1
-                </div>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
-                  index={0}
-                  inputId="pf-random-id-7-0"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$.$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-2"
-                  index={1}
-                  inputId="pf-random-id-7-1"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$.$01"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mrs"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-2"
-                  index={2}
-                  inputId="pf-random-id-7-2"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$.$02"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Ms"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-4"
-                  index={3}
-                  inputId="pf-random-id-7-3"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$.$03"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Other"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-4"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-              </div>
-            </SelectGroup>
-            <SelectGroup
-              key=".1"
-              label="group 2"
-              titleId="group-2"
-            >
-              <div
-                className="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden={true}
-                  className="pf-c-select__menu-group-title"
-                  id="group-2"
-                >
-                  group 2
-                </div>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
-                  index={4}
-                  inputId="pf-random-id-7-4"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$.$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-2"
-                  index={5}
-                  inputId="pf-random-id-7-5"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={false}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$.$01"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mrs"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper"
-                    id="option-2"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                    <button
-                      aria-label="not starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-=======
                       onKeyDown={[Function]}
                     >
                       <input
@@ -5607,89 +3979,6 @@ exports[`renders select with favorites successfully 1`] = `
               class="pf-c-select__menu"
               role="listbox"
             >
-              <div
-                class="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden="true"
-                  class="pf-c-select__menu-group-title"
-                  id="Favorites"
-                >
-                  Favorites
-                </div>
-                <li
-                  class="pf-c-select__menu-wrapper pf-m-favorite"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                  <button
-                    aria-label="starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper pf-m-favorite"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                  <button
-                    aria-label="starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-              </div>
               <div
                 class="pf-c-select__menu-group"
               >
@@ -6058,89 +4347,6 @@ exports[`renders select with favorites successfully 1`] = `
                   <div
                     aria-hidden="true"
                     class="pf-c-select__menu-group-title"
-                    id="Favorites"
-                  >
-                    Favorites
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
                     id="group-1"
                   >
                     group 1
@@ -6526,89 +4732,6 @@ exports[`renders select with favorites successfully 1`] = `
                   <div
                     aria-hidden="true"
                     class="pf-c-select__menu-group-title"
-                    id="Favorites"
-                  >
-                    Favorites
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
                     id="group-1"
                   >
                     group 1
@@ -6930,166 +5053,7 @@ exports[`renders select with favorites successfully 1`] = `
             role="listbox"
           >
             <SelectGroup
-              key=".$favorites"
-              label="Favorites"
-              titleId="Favorites"
-            >
-              <div
-                className="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden={true}
-                  className="pf-c-select__menu-group-title"
-                  id="Favorites"
-                >
-                  Favorites
-                </div>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
-                  index={0}
-                  inputId="pf-random-id-7-0"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
-                  index={1}
-                  inputId="pf-random-id-7-1"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-              </div>
-            </SelectGroup>
-            <SelectGroup
-              key=".1"
+              key=".0"
               label="group 1"
               titleId="group-1"
             >
@@ -7107,8 +5071,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-1"
-                  index={2}
-                  inputId="pf-random-id-7-2"
+                  index={0}
+                  inputId="pf-random-id-7-0"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={true}
@@ -7178,8 +5142,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={3}
-                  inputId="pf-random-id-7-3"
+                  index={1}
+                  inputId="pf-random-id-7-1"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -7249,8 +5213,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={4}
-                  inputId="pf-random-id-7-4"
+                  index={2}
+                  inputId="pf-random-id-7-2"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -7320,8 +5284,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-4"
-                  index={5}
-                  inputId="pf-random-id-7-5"
+                  index={3}
+                  inputId="pf-random-id-7-3"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -7390,7 +5354,7 @@ exports[`renders select with favorites successfully 1`] = `
               </div>
             </SelectGroup>
             <SelectGroup
-              key=".2"
+              key=".1"
               label="group 2"
               titleId="group-2"
             >
@@ -7408,8 +5372,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-1"
-                  index={6}
-                  inputId="pf-random-id-7-6"
+                  index={4}
+                  inputId="pf-random-id-7-4"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={true}
@@ -7479,8 +5443,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={7}
-                  inputId="pf-random-id-7-7"
+                  index={5}
+                  inputId="pf-random-id-7-5"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -7550,6 +5514,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
+                  index={6}
+                  inputId="pf-random-id-7-6"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -7619,6 +5585,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-4"
+                  index={7}
+                  inputId="pf-random-id-7-7"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -7737,6 +5705,7 @@ exports[`select custom select filter filters properly 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-typeahead-1"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -7758,7 +5727,7 @@ exports[`select custom select filter filters properly 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -7771,7 +5740,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -7784,7 +5753,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -7806,6 +5775,7 @@ exports[`select custom select filter filters properly 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-typeahead-1"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -7877,7 +5847,7 @@ exports[`select custom select filter filters properly 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -7890,7 +5860,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -7903,7 +5873,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -8041,7 +6011,7 @@ exports[`select custom select filter filters properly 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8054,7 +6024,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8067,7 +6037,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -8104,6 +6074,7 @@ exports[`select custom select filter filters properly 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8114,7 +6085,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -8139,6 +6110,7 @@ exports[`select custom select filter filters properly 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8149,7 +6121,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -8174,6 +6146,7 @@ exports[`select custom select filter filters properly 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8184,7 +6157,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -8251,6 +6224,7 @@ exports[`select renders select groups successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-single-6"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -8282,7 +6256,7 @@ exports[`select renders select groups successfully 1`] = `
                   group 1
                 </div>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8295,7 +6269,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8308,7 +6282,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -8321,7 +6295,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -8345,7 +6319,7 @@ exports[`select renders select groups successfully 1`] = `
                   group 2
                 </div>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8358,7 +6332,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8371,7 +6345,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -8384,7 +6358,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -8407,6 +6381,7 @@ exports[`select renders select groups successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-single-6"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -8459,7 +6434,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 1
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -8472,7 +6447,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -8485,7 +6460,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -8498,7 +6473,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -8522,7 +6497,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 2
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -8535,7 +6510,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -8548,7 +6523,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -8561,7 +6536,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -8660,7 +6635,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 1
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -8673,7 +6648,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -8686,7 +6661,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -8699,7 +6674,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -8723,7 +6698,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 2
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -8736,7 +6711,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -8749,7 +6724,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -8762,7 +6737,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -8825,7 +6800,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mr"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -8860,7 +6835,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mrs"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -8895,7 +6870,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Ms"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -8930,7 +6905,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Other"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -8982,7 +6957,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mr"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -9017,7 +6992,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mrs"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -9052,7 +7027,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Ms"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -9087,7 +7062,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Other"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -9695,7 +7670,7 @@ exports[`select single select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -9708,7 +7683,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -9721,7 +7696,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -9734,7 +7709,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -9801,7 +7776,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -9814,7 +7789,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -9827,7 +7802,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -9840,7 +7815,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -9930,7 +7905,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -9943,7 +7918,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -9956,7 +7931,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -9969,7 +7944,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -10016,7 +7991,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -10051,7 +8026,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -10086,7 +8061,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -10121,7 +8096,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -10210,7 +8185,7 @@ exports[`select single select renders expanded successfully with custom objects 
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -10223,7 +8198,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -10236,7 +8211,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -10303,7 +8278,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -10316,7 +8291,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -10329,7 +8304,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -10419,7 +8394,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -10432,7 +8407,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -10445,7 +8420,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -10500,7 +8475,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -10543,7 +8518,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -10586,7 +8561,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -10652,6 +8627,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   >
     <div
       className="pf-c-select"
+      data-ouia-component-id="OUIA-Generated-Select-single-11"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -10678,6 +8654,7 @@ exports[`select with custom content renders closed successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select"
+              data-ouia-component-id="OUIA-Generated-Select-single-11"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -10817,11 +8794,17 @@ exports[`select with custom content renders expanded successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-single-12"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
       <SelectToggle
         aria-label="Options menu"
+        aria-labelledby=" pf-select-toggle-id-18"
+        className=""
+        handleTypeaheadKeys={[Function]}
+        hasClearButton={false}
+        id="pf-select-toggle-id-18"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -10842,12 +8825,16 @@ exports[`select with custom content renders expanded successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-single-12"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
+                aria-labelledby=" pf-select-toggle-id-18"
+                class="pf-c-select__toggle"
+                id="pf-select-toggle-id-18"
                 type="button"
               >
                 <div
@@ -10890,6 +8877,10 @@ exports[`select with custom content renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
+          aria-labelledby=" pf-select-toggle-id-18"
+          className="pf-c-select__toggle"
+          disabled={false}
+          id="pf-select-toggle-id-18"
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
@@ -11060,6 +9051,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   >
     <div
       className="pf-c-select"
+      data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-1"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -11086,6 +9078,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select"
+              data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-1"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -11250,11 +9243,17 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-2"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
       <SelectToggle
         aria-label="Options menu"
+        aria-labelledby=" pf-select-toggle-id-13"
+        className=""
+        handleTypeaheadKeys={[Function]}
+        hasClearButton={false}
+        id="pf-select-toggle-id-13"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -11266,7 +9265,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -11279,7 +9278,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -11292,7 +9291,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -11305,7 +9304,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -11327,6 +9326,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-2"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -11340,6 +9340,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
                     placeholder=""
                     type="text"
                     value=""
@@ -11349,6 +9350,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
+                  aria-labelledby=" pf-select-toggle-id-13"
+                  class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+                  id="pf-select-toggle-id-13"
                   tabindex="-1"
                   type="button"
                 >
@@ -11374,7 +9378,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -11387,7 +9391,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -11400,7 +9404,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -11413,7 +9417,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -11446,6 +9450,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
+              id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -11457,6 +9462,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
+            aria-labelledby=" pf-select-toggle-id-13"
+            className="pf-c-button pf-c-select__toggle-button pf-m-plain"
+            disabled={false}
+            id="pf-select-toggle-id-13"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
@@ -11512,7 +9521,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -11525,7 +9534,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -11538,7 +9547,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -11551,7 +9560,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -11588,6 +9597,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11598,7 +9608,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -11623,6 +9633,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11633,7 +9644,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -11658,6 +9669,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11668,7 +9680,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -11693,6 +9705,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11703,7 +9716,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -11775,6 +9788,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-3"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -11796,7 +9810,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -11828,7 +9842,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -11860,7 +9874,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -11873,7 +9887,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -11895,6 +9909,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-3"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -11920,6 +9935,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         <div
                           class="pf-c-chip"
+                          data-ouia-component-id="OUIA-Generated-Chip-1"
                           data-ouia-component-type="PF4/Chip"
                           data-ouia-safe="true"
                         >
@@ -11934,6 +9950,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                             class="pf-c-button pf-m-plain"
+                            data-ouia-component-id="Remove"
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe="true"
                             id="remove_pf-random-id-24"
@@ -11961,6 +9978,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         <div
                           class="pf-c-chip"
+                          data-ouia-component-id="OUIA-Generated-Chip-2"
                           data-ouia-component-type="PF4/Chip"
                           data-ouia-safe="true"
                         >
@@ -11975,6 +9993,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                             class="pf-c-button pf-m-plain"
+                            data-ouia-component-id="Remove"
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe="true"
                             id="remove_pf-random-id-25"
@@ -12061,7 +10080,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -12093,7 +10112,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -12125,7 +10144,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -12138,7 +10157,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -12209,6 +10228,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <div
                             className="pf-c-chip"
+                            data-ouia-component-id="OUIA-Generated-Chip-1"
                             data-ouia-component-type="PF4/Chip"
                             data-ouia-safe={true}
                           >
@@ -12231,6 +10251,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                                 className="pf-c-button pf-m-plain"
+                                data-ouia-component-id="Remove"
                                 data-ouia-component-type="PF4/Button"
                                 data-ouia-safe={true}
                                 disabled={false}
@@ -12289,6 +10310,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <div
                             className="pf-c-chip"
+                            data-ouia-component-id="OUIA-Generated-Chip-2"
                             data-ouia-component-type="PF4/Chip"
                             data-ouia-safe={true}
                           >
@@ -12311,6 +10333,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                                 className="pf-c-button pf-m-plain"
+                                data-ouia-component-id="Remove"
                                 data-ouia-component-type="PF4/Button"
                                 data-ouia-safe={true}
                                 disabled={false}
@@ -12471,7 +10494,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -12503,7 +10526,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -12535,7 +10558,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -12548,7 +10571,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -12590,6 +10613,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={true}
@@ -12600,7 +10624,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -12655,6 +10679,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={true}
@@ -12665,7 +10690,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -12720,6 +10745,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -12730,7 +10756,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -12755,6 +10781,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -12765,7 +10792,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -13199,6 +11226,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   >
     <div
       className="pf-c-select"
+      data-ouia-component-id="OUIA-Generated-Select-typeahead-2"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -13225,6 +11253,7 @@ exports[`typeahead select renders closed successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select"
+              data-ouia-component-id="OUIA-Generated-Select-typeahead-2"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -13389,6 +11418,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-typeahead-3"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -13410,7 +11440,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -13423,7 +11453,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -13436,7 +11466,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -13449,7 +11479,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -13471,6 +11501,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-typeahead-3"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -13522,7 +11553,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -13535,7 +11566,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -13548,7 +11579,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -13561,7 +11592,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -13664,7 +11695,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -13677,7 +11708,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -13690,7 +11721,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -13703,7 +11734,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -13740,6 +11771,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -13750,7 +11782,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -13775,6 +11807,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -13785,7 +11818,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -13810,6 +11843,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -13820,7 +11854,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -13845,6 +11879,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -13855,7 +11890,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -13922,6 +11957,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-typeahead-4"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -13943,7 +11979,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -13975,7 +12011,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -13988,7 +12024,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -14001,7 +12037,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -14023,6 +12059,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-typeahead-4"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -14094,7 +12131,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -14126,7 +12163,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -14139,7 +12176,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -14152,7 +12189,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -14291,7 +12328,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -14323,7 +12360,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -14336,7 +12373,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -14349,7 +12386,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -14386,6 +12423,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={true}
@@ -14396,7 +12434,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -14451,6 +12489,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -14461,7 +12500,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -14486,6 +12525,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -14496,7 +12536,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -14521,6 +12561,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -14531,7 +12572,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -15342,16 +13383,17 @@ exports[`typeahead select test select existing option on a non-creatable select 
   >
     <div
       className="pf-c-select pf-m-expanded"
+      data-ouia-component-id="OUIA-Generated-Select-typeahead-5"
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-11"
+        aria-labelledby=" pf-select-toggle-id-12"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-11"
+        id="pf-select-toggle-id-12"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -15363,7 +13405,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -15385,6 +13427,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
+              data-ouia-component-id="OUIA-Generated-Select-typeahead-5"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -15398,7 +13441,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-11-select-typeahead"
+                    id="pf-select-toggle-id-12-select-typeahead"
                     placeholder=""
                     type="text"
                     value="Oth"
@@ -15428,9 +13471,9 @@ exports[`typeahead select test select existing option on a non-creatable select 
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-11"
+                  aria-labelledby=" pf-select-toggle-id-12"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-11"
+                  id="pf-select-toggle-id-12"
                   tabindex="-1"
                   type="button"
                 >
@@ -15456,7 +13499,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -15489,7 +13532,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-11-select-typeahead"
+              id="pf-select-toggle-id-12-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -15536,10 +13579,10 @@ exports[`typeahead select test select existing option on a non-creatable select 
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-11"
+            aria-labelledby=" pf-select-toggle-id-12"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-11"
+            id="pf-select-toggle-id-12"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
@@ -15594,7 +13637,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -15631,6 +13674,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isFocused={null}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -15641,7 +13685,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >

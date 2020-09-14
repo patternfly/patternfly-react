@@ -102,18 +102,19 @@ export class SelectOption extends React.Component<SelectOptionProps> {
   }
 
   onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any) => {
+    const { index, keyHandler } = this.props;
     if (event.key === KeyTypes.Tab) {
-      this.props.keyHandler(this.props.index, innerIndex, 'tab');
+      keyHandler(index, innerIndex, 'tab');
     }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
-      this.props.keyHandler(this.props.index, innerIndex, 'up');
+      keyHandler(index, innerIndex, 'up');
     } else if (event.key === KeyTypes.ArrowDown) {
-      this.props.keyHandler(this.props.index, innerIndex, 'down');
+      keyHandler(index, innerIndex, 'down');
     } else if (event.key === KeyTypes.ArrowLeft) {
-      this.props.keyHandler(this.props.index, innerIndex, 'left');
+      keyHandler(index, innerIndex, 'left');
     } else if (event.key === KeyTypes.ArrowRight) {
-      this.props.keyHandler(this.props.index, innerIndex, 'right');
+      keyHandler(index, innerIndex, 'right');
     } else if (event.key === KeyTypes.Enter) {
       if (onEnter !== undefined) {
         onEnter();
@@ -162,12 +163,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     const generatedId = id || getUniqueId('select-option');
     const favoriteButton = (onFavorite: any) => (
       <button
-        className={css(
-          styles.selectMenuItem,
-          styles.modifiers.action,
-          styles.modifiers.favoriteAction,
-          isFocused && styles.modifiers.focus
-        )}
+        className={css(styles.selectMenuItem, styles.modifiers.action, styles.modifiers.favoriteAction)}
         aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
         onClick={() => {
           onFavorite(generatedId.replace('favorite-', ''), isFavorite);
@@ -192,7 +188,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 id={generatedId}
                 role="presentation"
                 className={css(
-                  isFavorite !== null && styles.selectMenuWrapper,
+                  styles.selectMenuWrapper,
                   isFavorite && styles.modifiers.favorite,
                   isFocused && styles.modifiers.focus
                 )}
@@ -206,7 +202,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isDisabled && styles.modifiers.disabled,
                     description && styles.modifiers.description,
                     isFavorite !== null && styles.modifiers.link,
-                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   onClick={(event: any) => {
@@ -258,7 +253,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checkStyles.check,
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
-                  isFocused && styles.modifiers.focus,
                   description && styles.modifiers.description,
                   className
                 )}

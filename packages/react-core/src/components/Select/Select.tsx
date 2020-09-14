@@ -378,17 +378,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
 
-    return typeaheadChildren.map((child: React.ReactNode) => {
+    return typeaheadChildren.map((child: React.ReactNode) =>
       React.cloneElement(child as React.ReactElement, {
         isFocused:
           typeaheadActiveChild &&
           (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
             (this.props.isCreatable &&
               typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
-      });
-    });
+      })
+    );
   }
-  
+
   sendRef = (
     optionRef: React.ReactNode,
     favoriteRef: React.ReactNode,
@@ -396,7 +396,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     index: number
   ) => {
     this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
-    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;\
+    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;
   };
 
   handleMenuKeys = (index: number, innerIndex: number, position: string) => {
@@ -487,20 +487,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         }
         this.moveFocus(nextIndex);
       } else {
-        let nextIndex;
-        if (typeaheadStoredIndex === -1 && position === 'down') {
-          nextIndex = 0;
-        } else if (typeaheadStoredIndex === -1 && position === 'up') {
-          nextIndex = this.refCollection.length - 1;
-        } else if (position !== 'left' && position !== 'right') {
-          nextIndex = getNextIndex(typeaheadStoredIndex, position, this.refCollection);
-        } else {
-          nextIndex = typeaheadStoredIndex;
-        }
-        if (this.refCollection[typeaheadStoredIndex] === null) {
-          return;
-        }
-        this.moveFocus(nextIndex, false);
+        const nextIndex = this.refCollection.findIndex(
+          ref => ref[0] === document.activeElement || ref[1] === document.activeElement
+        );
+        this.moveFocus(nextIndex);
       }
     }
   };

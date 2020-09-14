@@ -42,7 +42,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
   value="test"
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
@@ -96,7 +96,7 @@ exports[`select options renders custom component 1`] = `
           </div>,
           null,
           <li
-            class=""
+            class="pf-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
@@ -131,7 +131,7 @@ exports[`select options renders custom component 1`] = `
   }
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
@@ -181,7 +181,7 @@ exports[`select options renders with custom display and custom user object succe
           </button>,
           null,
           <li
-            class=""
+            class="pf-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
@@ -216,7 +216,7 @@ exports[`select options renders with custom display and custom user object succe
   }
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
@@ -266,7 +266,7 @@ exports[`select options renders with custom display successfully 1`] = `
           </button>,
           null,
           <li
-            class=""
+            class="pf-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
@@ -294,7 +294,7 @@ exports[`select options renders with custom display successfully 1`] = `
   value="test"
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
@@ -342,7 +342,7 @@ exports[`select options renders with custom user object successfully 1`] = `
           </button>,
           null,
           <li
-            class=""
+            class="pf-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
@@ -375,7 +375,7 @@ exports[`select options renders with custom user object successfully 1`] = `
   }
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
@@ -431,7 +431,7 @@ exports[`select options renders with description successfully 1`] = `
           </button>,
           null,
           <li
-            class=""
+            class="pf-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
@@ -466,7 +466,7 @@ exports[`select options renders with description successfully 1`] = `
   value="test"
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
@@ -521,7 +521,7 @@ exports[`select options renders with value parameter successfully 1`] = `
           </button>,
           null,
           <li
-            class=""
+            class="pf-c-select__menu-wrapper"
             id="option-1"
             role="presentation"
           >
@@ -547,7 +547,7 @@ exports[`select options renders with value parameter successfully 1`] = `
   value="test"
 >
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
