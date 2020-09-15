@@ -131,6 +131,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     if (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) {
       if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
         handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
+        event.preventDefault();
       } else if (event.key === KeyTypes.Enter) {
         if (isOpen) {
           handleTypeaheadKeys('enter');

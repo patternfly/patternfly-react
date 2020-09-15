@@ -39,7 +39,12 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   /** Flag forcing the focused state */
   isFocused?: boolean;
   /** Internal callback for ref tracking */
-  sendRef?: (ref: React.ReactNode, favoriteRef: React.ReactNode, index: number) => void;
+  sendRef?: (
+    ref: React.ReactNode,
+    favoriteRef: React.ReactNode,
+    optionContainerRef: React.ReactNode,
+    index: number
+  ) => void;
   /** Internal callback for keyboard navigation */
   keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Optional callback for click event */
@@ -59,6 +64,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
 export class SelectOption extends React.Component<SelectOptionProps> {
   static displayName = 'SelectOption';
   private ref = React.createRef<any>();
+  private liRef = React.createRef<any>();
   private favoriteRef = React.createRef<any>();
   static defaultProps: SelectOptionProps = {
     className: '',
@@ -81,6 +87,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     this.props.sendRef(
       this.props.isDisabled ? null : this.ref.current,
       this.props.isDisabled ? null : this.favoriteRef.current,
+      this.props.isDisabled ? null : this.liRef.current,
       this.props.index
     );
   }
@@ -89,23 +96,25 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     this.props.sendRef(
       this.props.isDisabled ? null : this.ref.current,
       this.props.isDisabled ? null : this.favoriteRef.current,
+      this.props.isDisabled ? null : this.liRef.current,
       this.props.index
     );
   }
 
   onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any) => {
+    const { index, keyHandler } = this.props;
     if (event.key === KeyTypes.Tab) {
-      this.props.keyHandler(this.props.index, innerIndex, 'tab');
+      keyHandler(index, innerIndex, 'tab');
     }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
-      this.props.keyHandler(this.props.index, innerIndex, 'up');
+      keyHandler(index, innerIndex, 'up');
     } else if (event.key === KeyTypes.ArrowDown) {
-      this.props.keyHandler(this.props.index, innerIndex, 'down');
+      keyHandler(index, innerIndex, 'down');
     } else if (event.key === KeyTypes.ArrowLeft) {
-      this.props.keyHandler(this.props.index, innerIndex, 'left');
+      keyHandler(index, innerIndex, 'left');
     } else if (event.key === KeyTypes.ArrowRight) {
-      this.props.keyHandler(this.props.index, innerIndex, 'right');
+      keyHandler(index, innerIndex, 'right');
     } else if (event.key === KeyTypes.Enter) {
       if (onEnter !== undefined) {
         onEnter();
@@ -154,18 +163,13 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     const generatedId = id || getUniqueId('select-option');
     const favoriteButton = (onFavorite: any) => (
       <button
-        className={css(
-          styles.selectMenuItem,
-          styles.modifiers.action,
-          styles.modifiers.favoriteAction,
-          isFocused && styles.modifiers.focus
-        )}
+        className={css(styles.selectMenuItem, styles.modifiers.action, styles.modifiers.favoriteAction)}
         aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
         onClick={() => {
-          onFavorite(generatedId, isFavorite);
+          onFavorite(generatedId.replace('favorite-', ''), isFavorite);
         }}
         onKeyDown={event => {
-          this.onKeyDown(event, 1, () => onFavorite(generatedId, isFavorite));
+          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
         }}
         ref={this.favoriteRef}
       >
@@ -184,9 +188,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 id={generatedId}
                 role="presentation"
                 className={css(
-                  isFavorite !== null && styles.selectMenuWrapper,
-                  isFavorite && styles.modifiers.favorite
+                  styles.selectMenuWrapper,
+                  isFavorite && styles.modifiers.favorite,
+                  isFocused && styles.modifiers.focus
                 )}
+                ref={this.liRef}
               >
                 <Component
                   {...props}
@@ -196,7 +202,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isDisabled && styles.modifiers.disabled,
                     description && styles.modifiers.description,
                     isFavorite !== null && styles.modifiers.link,
-                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   onClick={(event: any) => {
@@ -248,7 +253,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checkStyles.check,
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
-                  isFocused && styles.modifiers.focus,
                   description && styles.modifiers.description,
                   className
                 )}

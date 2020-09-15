@@ -3969,87 +3969,6 @@ exports[`renders select with favorites successfully 1`] = `
                 <div
                   aria-hidden="true"
                   class="pf-c-select__menu-group-title"
-                  id="Favorites"
-                >
-                  Favorites
-                </div>
-                <li
-                  class="pf-c-select__menu-wrapper pf-m-favorite"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                  <button
-                    aria-label="starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper pf-m-favorite"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-link"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                  <button
-                    aria-label="starred"
-                    class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                  >
-                    <span
-                      class="pf-c-select__menu-item-action-icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 576 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </li>
-              </div>
-              <div
-                class="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden="true"
-                  class="pf-c-select__menu-group-title"
                   id="group-1"
                 >
                   group 1
@@ -4084,6 +4003,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4119,6 +4039,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4154,6 +4075,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4189,6 +4111,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4235,6 +4158,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4270,6 +4194,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4305,6 +4230,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4340,6 +4266,7 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          transform=""
                         />
                       </svg>
                     </span>
@@ -4389,6 +4316,7 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <path
                       d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
                     />
                   </svg>
                 </span>
@@ -4397,87 +4325,6 @@ exports[`renders select with favorites successfully 1`] = `
                 class="pf-c-select__menu"
                 role="listbox"
               >
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
-                    id="Favorites"
-                  >
-                    Favorites
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
                 <div
                   class="pf-c-select__menu-group"
                 >
@@ -4518,6 +4365,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4553,6 +4401,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4588,6 +4437,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4623,6 +4473,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4669,6 +4520,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4704,6 +4556,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4739,6 +4592,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4774,6 +4628,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -4829,6 +4684,7 @@ exports[`renders select with favorites successfully 1`] = `
               >
                 <path
                   d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
                 />
               </svg>
             </CaretDownIcon>
@@ -4854,87 +4710,6 @@ exports[`renders select with favorites successfully 1`] = `
                 class="pf-c-select__menu"
                 role="listbox"
               >
-                <div
-                  class="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden="true"
-                    class="pf-c-select__menu-group-title"
-                    id="Favorites"
-                  >
-                    Favorites
-                  </div>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                  <li
-                    class="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item pf-m-link"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      class="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                    >
-                      <span
-                        class="pf-c-select__menu-item-action-icon"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 576 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </li>
-                </div>
                 <div
                   class="pf-c-select__menu-group"
                 >
@@ -4975,6 +4750,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5010,6 +4786,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5045,6 +4822,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5080,6 +4858,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5126,6 +4905,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5161,6 +4941,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5196,6 +4977,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5231,6 +5013,7 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            transform=""
                           />
                         </svg>
                       </span>
@@ -5254,164 +5037,7 @@ exports[`renders select with favorites successfully 1`] = `
             role="listbox"
           >
             <SelectGroup
-              key=".$favorites"
-              label="Favorites"
-              titleId="Favorites"
-            >
-              <div
-                className="pf-c-select__menu-group"
-              >
-                <div
-                  aria-hidden={true}
-                  className="pf-c-select__menu-group-title"
-                  id="Favorites"
-                >
-                  Favorites
-                </div>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
-                  index={0}
-                  inputId="pf-random-id-7-0"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-                <SelectOption
-                  className=""
-                  component="button"
-                  id="option-1"
-                  index={1}
-                  inputId="pf-random-id-7-1"
-                  isChecked={false}
-                  isDisabled={false}
-                  isFavorite={true}
-                  isNoResultsOption={false}
-                  isPlaceholder={false}
-                  isSelected={false}
-                  key=".$00"
-                  keyHandler={[Function]}
-                  onClick={[Function]}
-                  sendRef={[Function]}
-                  value="Mr"
-                >
-                  <li
-                    className="pf-c-select__menu-wrapper pf-m-favorite"
-                    id="option-1"
-                    role="presentation"
-                  >
-                    <button
-                      aria-selected={null}
-                      className="pf-c-select__menu-item pf-m-link"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                    <button
-                      aria-label="starred"
-                      className="pf-c-select__menu-item pf-m-action pf-m-favorite-action"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <span
-                        className="pf-c-select__menu-item-action-icon"
-                      >
-                        <StarIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 576 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            />
-                          </svg>
-                        </StarIcon>
-                      </span>
-                    </button>
-                  </li>
-                </SelectOption>
-              </div>
-            </SelectGroup>
-            <SelectGroup
-              key=".1"
+              key=".0"
               label="group 1"
               titleId="group-1"
             >
@@ -5429,8 +5055,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-1"
-                  index={2}
-                  inputId="pf-random-id-7-2"
+                  index={0}
+                  inputId="pf-random-id-7-0"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={true}
@@ -5488,6 +5114,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5499,8 +5126,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={3}
-                  inputId="pf-random-id-7-3"
+                  index={1}
+                  inputId="pf-random-id-7-1"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -5558,6 +5185,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5569,8 +5197,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={4}
-                  inputId="pf-random-id-7-4"
+                  index={2}
+                  inputId="pf-random-id-7-2"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -5628,6 +5256,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5639,8 +5268,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-4"
-                  index={5}
-                  inputId="pf-random-id-7-5"
+                  index={3}
+                  inputId="pf-random-id-7-3"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -5698,6 +5327,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5708,7 +5338,7 @@ exports[`renders select with favorites successfully 1`] = `
               </div>
             </SelectGroup>
             <SelectGroup
-              key=".2"
+              key=".1"
               label="group 2"
               titleId="group-2"
             >
@@ -5726,8 +5356,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-1"
-                  index={6}
-                  inputId="pf-random-id-7-6"
+                  index={4}
+                  inputId="pf-random-id-7-4"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={true}
@@ -5785,6 +5415,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5796,8 +5427,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={7}
-                  inputId="pf-random-id-7-7"
+                  index={5}
+                  inputId="pf-random-id-7-5"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -5855,6 +5486,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5866,8 +5498,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-2"
-                  index={8}
-                  inputId="pf-random-id-7-8"
+                  index={6}
+                  inputId="pf-random-id-7-6"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -5925,6 +5557,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5936,8 +5569,8 @@ exports[`renders select with favorites successfully 1`] = `
                   className=""
                   component="button"
                   id="option-4"
-                  index={9}
-                  inputId="pf-random-id-7-9"
+                  index={7}
+                  inputId="pf-random-id-7-7"
                   isChecked={false}
                   isDisabled={false}
                   isFavorite={false}
@@ -5995,6 +5628,7 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -6077,7 +5711,7 @@ exports[`select custom select filter filters properly 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -6090,7 +5724,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -6103,7 +5737,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -6195,7 +5829,7 @@ exports[`select custom select filter filters properly 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -6208,7 +5842,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -6221,7 +5855,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -6257,7 +5891,6 @@ exports[`select custom select filter filters properly 1`] = `
               id="custom-select-filters-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value="r"
@@ -6358,7 +5991,7 @@ exports[`select custom select filter filters properly 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -6371,7 +6004,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -6384,7 +6017,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -6432,7 +6065,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -6468,7 +6101,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -6504,7 +6137,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -6603,7 +6236,7 @@ exports[`select renders select groups successfully 1`] = `
                   group 1
                 </div>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -6616,7 +6249,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -6629,7 +6262,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -6642,7 +6275,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -6666,7 +6299,7 @@ exports[`select renders select groups successfully 1`] = `
                   group 2
                 </div>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -6679,7 +6312,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -6692,7 +6325,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -6705,7 +6338,7 @@ exports[`select renders select groups successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -6780,7 +6413,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 1
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -6793,7 +6426,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -6806,7 +6439,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -6819,7 +6452,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -6843,7 +6476,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 2
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -6856,7 +6489,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -6869,7 +6502,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -6882,7 +6515,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -6980,7 +6613,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 1
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -6993,7 +6626,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -7006,7 +6639,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -7019,7 +6652,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -7043,7 +6676,7 @@ exports[`select renders select groups successfully 1`] = `
                     group 2
                   </div>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -7056,7 +6689,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -7069,7 +6702,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -7082,7 +6715,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
+                    class="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -7145,7 +6778,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mr"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -7180,7 +6813,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mrs"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -7215,7 +6848,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Ms"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -7250,7 +6883,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Other"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -7302,7 +6935,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mr"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-1"
                     role="presentation"
                   >
@@ -7337,7 +6970,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Mrs"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-2"
                     role="presentation"
                   >
@@ -7372,7 +7005,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Ms"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-3"
                     role="presentation"
                   >
@@ -7407,7 +7040,7 @@ exports[`select renders select groups successfully 1`] = `
                   value="Other"
                 >
                   <li
-                    className=""
+                    className="pf-c-select__menu-wrapper"
                     id="option-4"
                     role="presentation"
                   >
@@ -8009,7 +7642,7 @@ exports[`select single select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -8022,7 +7655,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -8035,7 +7668,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -8048,7 +7681,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -8114,7 +7747,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8127,7 +7760,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8140,7 +7773,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -8153,7 +7786,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -8242,7 +7875,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8255,7 +7888,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8268,7 +7901,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -8281,7 +7914,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -8328,7 +7961,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -8363,7 +7996,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -8398,7 +8031,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -8433,7 +8066,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -8522,7 +8155,7 @@ exports[`select single select renders expanded successfully with custom objects 
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -8535,7 +8168,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -8548,7 +8181,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -8614,7 +8247,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8627,7 +8260,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8640,7 +8273,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -8729,7 +8362,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -8742,7 +8375,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -8755,7 +8388,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -8810,7 +8443,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -8853,7 +8486,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -8896,7 +8529,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -9133,11 +8766,11 @@ exports[`select with custom content renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-16"
+        aria-labelledby=" pf-select-toggle-id-18"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-16"
+        id="pf-select-toggle-id-18"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -9165,9 +8798,9 @@ exports[`select with custom content renders expanded successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
-                aria-labelledby=" pf-select-toggle-id-16"
+                aria-labelledby=" pf-select-toggle-id-18"
                 class="pf-c-select__toggle"
-                id="pf-select-toggle-id-16"
+                id="pf-select-toggle-id-18"
                 type="button"
               >
                 <div
@@ -9209,10 +8842,10 @@ exports[`select with custom content renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
-          aria-labelledby=" pf-select-toggle-id-16"
+          aria-labelledby=" pf-select-toggle-id-18"
           className="pf-c-select__toggle"
           disabled={false}
-          id="pf-select-toggle-id-16"
+          id="pf-select-toggle-id-18"
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
@@ -9478,7 +9111,6 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value=""
@@ -9579,11 +9211,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-12"
+        aria-labelledby=" pf-select-toggle-id-13"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-12"
+        id="pf-select-toggle-id-13"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -9595,7 +9227,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -9608,7 +9240,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -9621,7 +9253,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -9634,7 +9266,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -9670,7 +9302,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-12-select-multi-typeahead-typeahead"
+                    id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
                     placeholder=""
                     type="text"
                     value=""
@@ -9680,9 +9312,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-12"
+                  aria-labelledby=" pf-select-toggle-id-13"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-12"
+                  id="pf-select-toggle-id-13"
                   tabindex="-1"
                   type="button"
                 >
@@ -9707,7 +9339,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -9720,7 +9352,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -9733,7 +9365,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -9746,7 +9378,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -9779,10 +9411,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-12-select-multi-typeahead-typeahead"
+              id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value=""
@@ -9792,10 +9423,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-12"
+            aria-labelledby=" pf-select-toggle-id-13"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-12"
+            id="pf-select-toggle-id-13"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
@@ -9850,7 +9481,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -9863,7 +9494,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -9876,7 +9507,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -9889,7 +9520,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -9937,7 +9568,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -9973,7 +9604,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -10009,7 +9640,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -10045,7 +9676,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -10139,7 +9770,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -10170,7 +9801,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -10201,7 +9832,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -10214,7 +9845,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -10403,7 +10034,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -10434,7 +10065,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -10465,7 +10096,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -10478,7 +10109,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -10705,7 +10336,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value=""
@@ -10812,7 +10442,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -10843,7 +10473,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -10874,7 +10504,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -10887,7 +10517,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -10940,7 +10570,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -11005,7 +10635,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -11070,7 +10700,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -11106,7 +10736,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -11172,12 +10802,7 @@ exports[`typeahead multi select test onChange 1`] = `
     prefix="pf-random-id-"
   >
     <div
-      className="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-9"
-=======
-      data-ouia-component-id={40}
->>>>>>> feat(Select): Add support for adding favourites
+      className="pf-c-select pf-m-expanded
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -11220,12 +10845,7 @@ exports[`typeahead multi select test onChange 1`] = `
         parentRef={
           Object {
             "current": <div
-              class="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-9"
-=======
-              data-ouia-component-id="40"
->>>>>>> feat(Select): Add support for adding favourites
+              class="pf-c-select pf-m-exp
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -11642,7 +11262,6 @@ exports[`typeahead select renders closed successfully 1`] = `
               id="typeahead-select-closed-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value=""
@@ -11759,7 +11378,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -11772,7 +11391,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -11785,7 +11404,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -11798,7 +11417,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -11871,7 +11490,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -11884,7 +11503,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -11897,7 +11516,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -11910,7 +11529,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -11946,7 +11565,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
               id="pf-select-toggle-id-8-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value=""
@@ -12013,7 +11631,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -12026,7 +11644,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -12039,7 +11657,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -12052,7 +11670,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -12100,7 +11718,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -12136,7 +11754,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -12172,7 +11790,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -12208,7 +11826,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -12297,7 +11915,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -12328,7 +11946,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -12341,7 +11959,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -12354,7 +11972,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -12446,7 +12064,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -12477,7 +12095,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -12490,7 +12108,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -12503,7 +12121,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -12539,7 +12157,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               id="pf-select-toggle-id-9-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value="Mr"
@@ -12641,7 +12258,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-1"
                   role="presentation"
                 >
@@ -12672,7 +12289,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-2"
                   role="presentation"
                 >
@@ -12685,7 +12302,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-3"
                   role="presentation"
                 >
@@ -12698,7 +12315,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -12746,7 +12363,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mr"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-1"
                 role="presentation"
               >
@@ -12811,7 +12428,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mrs"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-2"
                 role="presentation"
               >
@@ -12847,7 +12464,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Ms"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-3"
                 role="presentation"
               >
@@ -12883,7 +12500,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -12949,11 +12566,6 @@ exports[`typeahead select test creatable option 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-8"
-=======
-      data-ouia-component-id={27}
->>>>>>> feat(Select): Add support for adding favourites
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -13000,11 +12612,6 @@ exports[`typeahead select test creatable option 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-8"
-=======
-              data-ouia-component-id="27"
->>>>>>> feat(Select): Add support for adding favourites
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -13334,11 +12941,6 @@ exports[`typeahead select test onChange 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-5"
-=======
-      data-ouia-component-id={21}
->>>>>>> feat(Select): Add support for adding favourites
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -13382,11 +12984,6 @@ exports[`typeahead select test onChange 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-5"
-=======
-              data-ouia-component-id="21"
->>>>>>> feat(Select): Add support for adding favourites
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -13728,7 +13325,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               role="listbox"
             >
               <li
-                class=""
+                class="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -13820,7 +13417,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -13856,7 +13453,6 @@ exports[`typeahead select test select existing option on a non-creatable select 
               id="pf-select-toggle-id-11-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               placeholder=""
               type="text"
               value="Oth"
@@ -13957,7 +13553,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 role="listbox"
               >
                 <li
-                  class=""
+                  class="pf-c-select__menu-wrapper"
                   id="option-4"
                   role="presentation"
                 >
@@ -14005,7 +13601,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               value="Other"
             >
               <li
-                className=""
+                className="pf-c-select__menu-wrapper"
                 id="option-4"
                 role="presentation"
               >
@@ -14071,11 +13667,6 @@ exports[`typeahead select test select non-existing option on a non-creatable sel
   >
     <div
       className="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-7"
-=======
-      data-ouia-component-id={25}
->>>>>>> feat(Select): Add support for adding favourites
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -14119,11 +13710,6 @@ exports[`typeahead select test select non-existing option on a non-creatable sel
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-<<<<<<< HEAD
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-7"
-=======
-              data-ouia-component-id="25"
->>>>>>> feat(Select): Add support for adding favourites
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
