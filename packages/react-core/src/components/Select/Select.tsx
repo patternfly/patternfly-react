@@ -352,8 +352,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         if (group.type === SelectGroup) {
           return React.cloneElement(group, {
             titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-            children: React.Children.map(group.props.children, (child: React.ReactElement) => {
-              return child.type === Divider
+            children: React.Children.map(group.props.children, (child: React.ReactElement) =>
+              child.type === Divider
                 ? child
                 : React.cloneElement(child as React.ReactElement, {
                     isFocused:
@@ -362,8 +362,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                         (this.props.isCreatable &&
                           typeaheadActiveChild.innerText ===
                             `{createText} "${(child as React.ReactElement).props.value}"`))
-                  });
-            })
+                  })
+            )
           });
         } else {
           return React.cloneElement(group, {
