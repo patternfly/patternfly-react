@@ -19,7 +19,7 @@
     "clean": "rimraf dist css"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "4.36.1",
+    "@patternfly/patternfly": "4.41.0",
     "camel-case": "^3.0.0",
     "css": "^2.2.3",
     "fbjs-scripts": "^0.8.3",
