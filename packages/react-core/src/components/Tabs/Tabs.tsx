@@ -194,6 +194,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
+  componentDidUpdate(prevProps: TabsProps) {
+    const { activeKey, mountOnEnter } = this.props;
+    const { shownKeys } = this.state;
+    if (prevProps.activeKey !== activeKey && mountOnEnter && shownKeys.indexOf(activeKey) < 0) {
+      this.setState({
+        shownKeys: shownKeys.concat(activeKey)
+      });
+    }
+  }
+
   render() {
     const {
       className,
