@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.49.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.49.0...@patternfly/react-core@4.49.1) (2020-09-15)
+
+
+### Bug Fixes
+
+* **Tabs:** Handle activeKey props update with mountOnEnter on Tabs ([#4806](https://github.com/patternfly/patternfly-react/issues/4806)) ([4d92313](https://github.com/patternfly/patternfly-react/commit/4d923139b78f9a692532131638fae276f6287485)), closes [#4805](https://github.com/patternfly/patternfly-react/issues/4805)
+
+
+
+
+
 # [4.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.48.1...@patternfly/react-core@4.49.0) (2020-09-14)
 
 
