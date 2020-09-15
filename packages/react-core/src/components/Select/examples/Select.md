@@ -1354,7 +1354,7 @@ class MultiTypeaheadSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
 
 class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   constructor(props) {
