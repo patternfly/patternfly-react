@@ -4003,7 +4003,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4039,7 +4038,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4075,7 +4073,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4111,7 +4108,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4158,7 +4154,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4194,7 +4189,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4230,7 +4224,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4266,7 +4259,6 @@ exports[`renders select with favorites successfully 1`] = `
                       >
                         <path
                           d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                          transform=""
                         />
                       </svg>
                     </span>
@@ -4316,7 +4308,6 @@ exports[`renders select with favorites successfully 1`] = `
                   >
                     <path
                       d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
                     />
                   </svg>
                 </span>
@@ -4365,7 +4356,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4401,7 +4391,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4437,7 +4426,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4473,7 +4461,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4520,7 +4507,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4556,7 +4542,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4592,7 +4577,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4628,7 +4612,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4684,7 +4667,6 @@ exports[`renders select with favorites successfully 1`] = `
               >
                 <path
                   d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
                 />
               </svg>
             </CaretDownIcon>
@@ -4750,7 +4732,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4786,7 +4767,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4822,7 +4802,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4858,7 +4837,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4905,7 +4883,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4941,7 +4918,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -4977,7 +4953,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -5013,7 +4988,6 @@ exports[`renders select with favorites successfully 1`] = `
                         >
                           <path
                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                            transform=""
                           />
                         </svg>
                       </span>
@@ -5114,7 +5088,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5185,7 +5158,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5256,7 +5228,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5327,7 +5298,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5415,7 +5385,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5486,7 +5455,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5557,7 +5525,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -5628,7 +5595,6 @@ exports[`renders select with favorites successfully 1`] = `
                           >
                             <path
                               d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              transform=""
                             />
                           </svg>
                         </StarIcon>
@@ -13309,11 +13275,11 @@ exports[`typeahead select test select existing option on a non-creatable select 
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-11"
+        aria-labelledby=" pf-select-toggle-id-12"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-11"
+        id="pf-select-toggle-id-12"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -13361,7 +13327,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-11-select-typeahead"
+                    id="pf-select-toggle-id-12-select-typeahead"
                     placeholder=""
                     type="text"
                     value="Oth"
@@ -13390,9 +13356,9 @@ exports[`typeahead select test select existing option on a non-creatable select 
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-11"
+                  aria-labelledby=" pf-select-toggle-id-12"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-11"
+                  id="pf-select-toggle-id-12"
                   tabindex="-1"
                   type="button"
                 >
@@ -13450,7 +13416,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-11-select-typeahead"
+              id="pf-select-toggle-id-12-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -13496,10 +13462,10 @@ exports[`typeahead select test select existing option on a non-creatable select 
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-11"
+            aria-labelledby=" pf-select-toggle-id-12"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-11"
+            id="pf-select-toggle-id-12"
             onClick={[Function]}
             tabIndex={-1}
             type="button"

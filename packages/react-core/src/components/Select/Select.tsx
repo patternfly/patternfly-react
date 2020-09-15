@@ -206,10 +206,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
 
-    if (!this.props.isOpen && this.inputRef.current) {
-      this.inputRef.current.focus();
-    }
-
     if (
       this.props.favorites.length !== prevProps.favorites.length ||
       this.state.typeaheadFilteredChildren !== prevState.typeaheadFilteredChildren
