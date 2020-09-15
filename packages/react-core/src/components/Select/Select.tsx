@@ -352,15 +352,18 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         if (group.type === SelectGroup) {
           return React.cloneElement(group, {
             titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-            children: React.Children.map(group.props.children, (child: React.ReactElement) =>
-              React.cloneElement(child as React.ReactElement, {
-                isFocused:
-                  activeElement &&
-                  (activeElement.id === (child as React.ReactElement).props.id ||
-                    (this.props.isCreatable &&
-                      typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
-              })
-            )
+            children: React.Children.map(group.props.children, (child: React.ReactElement) => {
+              return child.type === Divider
+                ? child
+                : React.cloneElement(child as React.ReactElement, {
+                    isFocused:
+                      activeElement &&
+                      (activeElement.id === (child as React.ReactElement).props.id ||
+                        (this.props.isCreatable &&
+                          typeaheadActiveChild.innerText ===
+                            `{createText} "${(child as React.ReactElement).props.value}"`))
+                  });
+            })
           });
         } else {
           return React.cloneElement(group, {
@@ -374,15 +377,18 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
 
-    return typeaheadChildren.map((child: React.ReactNode) =>
-      React.cloneElement(child as React.ReactElement, {
-        isFocused:
-          typeaheadActiveChild &&
-          (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
-            (this.props.isCreatable &&
-              typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
-      })
-    );
+    return typeaheadChildren.map((child: React.ReactNode) => {
+      const childElement = child as any;
+      return childElement.type.displayName === 'Divider'
+        ? child
+        : React.cloneElement(child as React.ReactElement, {
+            isFocused:
+              typeaheadActiveChild &&
+              (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
+                (this.props.isCreatable &&
+                  typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
+          });
+    });
   }
 
   sendRef = (
