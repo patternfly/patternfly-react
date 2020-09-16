@@ -556,6 +556,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   skipToContent={
     <SkipToContent
       href="#main-content-page-layout-test-nav"
+      render={null}
       show={false}
     >
       Skip to Content
@@ -569,6 +570,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   >
     <SkipToContent
       href="#main-content-page-layout-test-nav"
+      render={null}
       show={false}
     >
       <a

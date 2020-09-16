@@ -937,7 +937,7 @@ exports[`Progress variant warning 1`] = `
   variant="warning"
 >
   <div
-    className="pf-c-progress pf-m-warning pf-m-singleline"
+    className="pf-c-progress pf-m-singleline"
     id="warning-progress"
   >
     <ProgressContainer
