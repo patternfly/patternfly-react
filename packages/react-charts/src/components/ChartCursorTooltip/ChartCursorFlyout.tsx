@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helpers, CommonProps, Path } from 'victory-core';
 import isPlainObject from 'lodash/isPlainObject';
-import assign from 'lodash/assign';
 
 const getVerticalPath = (props: any) => {
   const { pointerWidth, cornerRadius, orientation, width, height, center } = props;
@@ -90,7 +89,7 @@ const evaluateProps = (props: any) => {
   const id = Helpers.evaluateProp(props.id, props);
   const style = Helpers.evaluateStyle(props.style, props);
 
-  return assign({}, props, { id, style });
+  return Object.assign({}, props, { id, style });
 };
 
 const ChartCursorFlyout = (props: any) => {
