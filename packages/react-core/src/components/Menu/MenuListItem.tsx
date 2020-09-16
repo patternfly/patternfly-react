@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { MenuContext, MenuSelectClickHandler } from './Menu';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
   /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
@@ -30,6 +31,8 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   icon?: React.ReactNode;
   /** Description of the menu item */
   description?: string | React.ReactNode;
+  /** Render external link icon */
+  isExternalLink?: boolean;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
@@ -45,6 +48,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   onClick = null as MenuSelectClickHandler,
   component = 'a',
   isDisabled = false,
+  isExternalLink = false,
   icon,
   ...props
 }: MenuListItemProps) => {
@@ -60,9 +64,14 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
         aria-current={isActive ? 'page' : null}
         {...props}
       >
-        <div className={css('pf-c-menu-item__main')}>
+        <div className={css(styles.menuItemMain)}>
           {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
           <span className={css(styles.menuItemText)}>{children}</span>
+          {isExternalLink && (
+            <span className={css(styles.menuItemExternalIcon)}>
+              <ExternalLinkAltIcon />
+            </span>
+          )}
         </div>
         {description && (
           <div className={css(styles.menuItemDescription)}>

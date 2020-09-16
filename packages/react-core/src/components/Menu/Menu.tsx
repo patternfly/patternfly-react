@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { SearchInput } from '../SearchInput';
 
 export type MenuSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
@@ -30,12 +31,16 @@ export interface MenuProps
     isExpanded: boolean;
     event: React.FormEvent<HTMLInputElement>;
   }) => void;
+  /** A callback for when the input value changes. */
+  onSearchInputChange?: (changedItem: { value: string; event: React.FormEvent<HTMLInputElement> }) => void;
   /** Accessibility label */
   'aria-label'?: string;
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
-  /** For horizontal navs */
+  /** Indicates menu type */
   variant?: 'default' | 'flyout';
+  /** Search input of menu */
+  searchInput?: React.ReactNode;
 }
 
 export const MenuContext = React.createContext<{
@@ -53,6 +58,7 @@ export const MenuContext = React.createContext<{
     ) => void
   ) => void;
   onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
+  onSearchInputChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
   isHorizontal?: boolean;
 }>({});
@@ -62,6 +68,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
   static defaultProps: MenuProps = {
     onSelect: () => undefined,
     onToggle: () => undefined,
+    onSearchInputChange: () => undefined,
     theme: 'dark',
     ouiaSafe: true
   };
@@ -100,6 +107,13 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     });
   }
 
+  onSearchInputChange(event: React.FormEvent<HTMLInputElement>, value: string) {
+    this.props.onSearchInputChange({
+      event,
+      value
+    });
+  }
+
   render() {
     const {
       'aria-label': ariaLabel,
@@ -109,10 +123,12 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
       onSelect,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
-      theme,
+      onSearchInputChange,
+      // theme,
       ouiaId,
       ouiaSafe,
       variant,
+      searchInput,
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
@@ -135,6 +151,8 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
+          onSearchInputChange: (event: React.FormEvent<HTMLInputElement>, value: string) =>
+            this.onSearchInputChange(event, value),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
           isHorizontal
         }}
@@ -152,6 +170,11 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
+          {searchInput && (
+            <div className="pf-c-menu__search">
+              <SearchInput onChange={this.onSearchInputChange} />
+            </div>
+          )}
           {children}
         </div>
       </MenuContext.Provider>

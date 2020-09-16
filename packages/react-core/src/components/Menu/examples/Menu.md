@@ -238,8 +238,16 @@ class MenuWithFiltering extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      value: ''
     };
+
+    this.onChange = (value, event) => {
+      this.setState({
+        value: value
+      });
+    };
+
     this.onSelect = result => {
       this.setState({
         activeItem: result.itemId
@@ -250,28 +258,31 @@ class MenuWithFiltering extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu onSelect={this.onSelect}>
+      <Menu searchInput onSearchInputChange={this.onChange} onSelect={this.onSelect}>
         <MenuList>
           <MenuListItem
             component="button"
-            icon={<CodeBranchIcon />}
             to="#default-link1"
             itemId={0}
             isActive={activeItem === 0}
           >
-            From Git
-          </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Container Image
+            Action 1
           </MenuListItem>
           <MenuListItem
             component="button"
-            icon={<CubeIcon />}
             to="#default-link2"
             itemId={1}
             isActive={activeItem === 1}
           >
-            Docker File
+            Action 2
+          </MenuListItem>
+          <MenuListItem
+            component="button"
+            to="#default-link2"
+            itemId={1}
+            isActive={activeItem === 1}
+          >
+            Action 3
           </MenuListItem>
         </MenuList>
       </Menu>
@@ -305,13 +316,13 @@ class MenuWithLinks extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+          <MenuListItem isExternalLink to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          <MenuListItem isExternalLink to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          <MenuListItem to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Link 3
           </MenuListItem>
         </MenuList>
