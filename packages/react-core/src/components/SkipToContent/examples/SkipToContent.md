@@ -112,21 +112,29 @@ class SimpleSkipToContent extends React.Component {
 }
 ```
 
-### React Router
+### Mock React Router
 ```js isFullscreen
 import React from 'react';
 import { SkipToContent } from '@patternfly/react-core';
-import { HashLink as Link} from 'react-router-hash-link';
 
-class SimpleSkipToContent extends React.Component {
+class MockReactRouterUsage extends React.Component {
   render() {
+    const MockRouterLink = React.forwardRef((props, ref) => (
+      <a
+        className={`mock-router ${props.className ? props.className : ''}`}
+        href={props.to}
+        ref={ref}
+      >
+        {props.children}
+      </a>
+    ));
     return (
       <React.Fragment>
-        <SkipToContent>
-          <Link to="#main-content">
+        <SkipToContent show render={({ className, ref }) => (
+          <MockRouterLink to="#main-content" className={className} ref={ref}>
             Skip to Content
-          </Link>
-        </SkipToContent> 
+          </MockRouterLink>
+        )} />
         <p>Press tab to skip to content at the bottom of the page.</p>
         <div style={{ height: '2000px' }}></div>
         <h1 id="main-content">Main content</h1>

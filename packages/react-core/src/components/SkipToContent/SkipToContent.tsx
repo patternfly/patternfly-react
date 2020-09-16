@@ -13,15 +13,15 @@ export interface SkipToContentProps extends React.HTMLProps<HTMLAnchorElement> {
   className?: string;
   /** Forces the skip to content to display. This is primarily for demonstration purposes and would not normally be used. */
   show?: boolean;
-  /** Component used to render skip to content link */
-  component?: React.ReactNode;
+  /** Render prop that returns the PatternFly classes and ref that can be forwarded */
+  render?: ({ className, ref }: { className: string; ref: React.RefObject<any> }) => React.ReactNode;
 }
 
 export class SkipToContent extends React.Component<SkipToContentProps> {
   static displayName = 'SkipToContent';
   static defaultProps: PickOptional<SkipToContentProps> = {
     show: false,
-    component: 'a'
+    render: null
   };
   componentRef = React.createRef<any>();
 
@@ -33,26 +33,13 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, className, component, href, show, type, ...rest } = this.props;
-    const Component = component as any;
-
+    const { children, className, href, show, type, render, ...rest } = this.props;
+    const allClassNames = css(buttonStyles.button, buttonStyles.modifiers.primary, styles.skipToContent, className);
     const renderDefaultLink = (): React.ReactNode => (
-      <Component
-        {...rest}
-        className={css(buttonStyles.button, buttonStyles.modifiers.primary, styles.skipToContent, className)}
-        ref={this.componentRef}
-        href={href}
-      >
+      <a {...rest} className={allClassNames} ref={this.componentRef} href={href}>
         {children}
-      </Component>
+      </a>
     );
-
-    const renderClonedChild = (child: React.ReactElement): React.ReactNode =>
-      React.cloneElement(child, {
-        className: css(buttonStyles.button, buttonStyles.modifiers.primary, styles.skipToContent, className),
-        ref: this.componentRef
-      });
-
-    return React.isValidElement(children) ? renderClonedChild(children as React.ReactElement) : renderDefaultLink();
+    return render ? render({ className: allClassNames, ref: this.componentRef }) : renderDefaultLink();
   }
 }
