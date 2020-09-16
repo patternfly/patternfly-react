@@ -116,14 +116,16 @@ class SimpleSkipToContent extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import { SkipToContent } from '@patternfly/react-core';
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link} from 'react-router-hash-link';
 
 class SimpleSkipToContent extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <SkipToContent component='button'>
-          Skip to Content
+        <SkipToContent>
+          <Link to="#main-content">
+            Skip to Content
+          </Link>
         </SkipToContent> 
         <p>Press tab to skip to content at the bottom of the page.</p>
         <div style={{ height: '2000px' }}></div>
