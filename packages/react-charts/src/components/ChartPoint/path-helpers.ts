@@ -1,4 +1,3 @@
-
 export interface PathHelpersInterface {
   circle: Function;
   dash: Function;
