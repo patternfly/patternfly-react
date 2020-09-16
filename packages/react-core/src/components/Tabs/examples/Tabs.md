@@ -13,6 +13,8 @@ import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
 import ProjectDiagramIcon from '@patternfly/react-icons/dist/js/icons/project-diagram-icon';
 
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
+The Tabs items background can be also toggled with 'Tab light variation' checkbox.
+Similarly the 'Tab content light variation' checkbox affects the TabContent background.
 
 ## Examples
 ### Default
@@ -25,7 +27,7 @@ class SimpleTabs extends React.Component {
     super(props);
     this.state = {
       activeTabKey: 0,
-      isBox: false
+      isBox: false,
     };
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
@@ -42,7 +44,8 @@ class SimpleTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const {activeTabKey, isBox } = this.state;
+
     return (
       <div>
         <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
@@ -73,6 +76,73 @@ class SimpleTabs extends React.Component {
               aria-label="show box variation checkbox"
               id="toggle-box"
               name="toggle-box"
+            />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+### Box light variation
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
+
+class SimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isTabsLightScheme: true,
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleScheme = checked => {
+      this.setState({
+        isTabsLightScheme: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox, isTabsLightScheme } = this.state;
+
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} variant={isTabsLightScheme ? 'light300' : 'default'} isBox>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+              label="Tabs light variation"
+              isChecked={isTabsLightScheme}
+              onChange={this.toggleScheme}
+              aria-label="show light scheme variation checkbox"
+              id="toggle-scheme"
+              name="toggle-scheme"
             />
         </div>
       </div>
@@ -847,7 +917,7 @@ class UnmountingSimpleTabs extends React.Component {
 ### Toggled separate content
 ```js
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent, Button, Divider } from '@patternfly/react-core';
+import { Tabs, Tab, TabContent, Button, Divider } from '@patternfly/react-core';
 
 class ToggledSeparateContent extends React.Component {
   constructor(props) {
