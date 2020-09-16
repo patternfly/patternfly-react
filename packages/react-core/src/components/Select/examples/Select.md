@@ -981,8 +981,6 @@ class TypeaheadSelectInput extends React.Component {
               {...(option.description && { description: option.description })}
             />
           ))}
-          <Divider key="testdivider" />
-          <SelectOption key="test" value="testing" />
         </Select>
         <Checkbox
           label="isDisabled"
