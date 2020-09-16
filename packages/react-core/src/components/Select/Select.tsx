@@ -366,13 +366,15 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             )
           });
         } else {
-          return React.cloneElement(group, {
-            isFocused:
-              typeaheadActiveChild &&
-              (typeaheadActiveChild.id === (group as React.ReactElement).props.id ||
-                (this.props.isCreatable &&
-                  typeaheadActiveChild.innerText === `{createText} "${(group as React.ReactElement).props.value}"`))
-          });
+          return group.type === Divider
+            ? group
+            : React.cloneElement(group, {
+                isFocused:
+                  typeaheadActiveChild &&
+                  (typeaheadActiveChild.id === (group as React.ReactElement).props.id ||
+                    (this.props.isCreatable &&
+                      typeaheadActiveChild.innerText === `{createText} "${(group as React.ReactElement).props.value}"`))
+              });
         }
       });
     }
