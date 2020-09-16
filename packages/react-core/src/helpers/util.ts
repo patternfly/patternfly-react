@@ -213,7 +213,7 @@ export function getNextIndex(index: number, position: string, collection: any[])
   } else {
     nextIndex = index + 1;
   }
-  if (collection[nextIndex][0] === null) {
+  if (collection[nextIndex] === undefined || collection[nextIndex][0] === null) {
     return getNextIndex(nextIndex, position, collection);
   } else {
     return nextIndex;
