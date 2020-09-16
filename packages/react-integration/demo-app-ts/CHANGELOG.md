@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.39.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.38.1...demo-app-ts@4.39.0) (2020-09-16)
+
+
+### Features
+
+* **Select:** add support for favourites ([#4642](https://github.com/patternfly/patternfly-react/issues/4642)) ([acd748b](https://github.com/patternfly/patternfly-react/commit/acd748b06a34a54f65a63325f179c7751181cf9a))
+
+
+
+
+
 ## [4.38.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.38.0...demo-app-ts@4.38.1) (2020-09-15)
 
 **Note:** Version bump only for package demo-app-ts
