@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helpers, CommonProps, Path } from 'victory-core';
-import { isPlainObject, assign } from 'lodash';
+import isPlainObject from 'lodash/isPlainObject';
+import assign from 'lodash/assign';
 
 const getVerticalPath = (props: any) => {
   const { pointerWidth, cornerRadius, orientation, width, height, center } = props;

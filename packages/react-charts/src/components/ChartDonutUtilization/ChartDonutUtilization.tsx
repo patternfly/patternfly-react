@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { orderBy } from 'lodash';
+import orderBy from 'lodash/orderBy';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
