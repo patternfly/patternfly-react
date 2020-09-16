@@ -129,7 +129,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
       return React.Children.map(children, (group: React.ReactElement) => {
-        if (group.type === SelectOption) {
+        if (group.type === SelectOption || group.type === Divider) {
           return group;
         }
         return React.cloneElement(group, {
@@ -140,12 +140,14 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
               className={css(styles.selectMenuFieldset)}
             >
               {React.Children.map(group.props.children, (option: React.ReactElement) =>
-                React.cloneElement(option, {
-                  isChecked: this.checkForValue(option.props.value, checked),
-                  sendRef,
-                  keyHandler,
-                  index: index++
-                })
+                option.type === Divider
+                  ? option
+                  : React.cloneElement(option, {
+                      isChecked: this.checkForValue(option.props.value, checked),
+                      sendRef,
+                      keyHandler,
+                      index: index++
+                    })
               )}
             </fieldset>
           )
@@ -153,12 +155,14 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       });
     }
     return React.Children.map(children, (child: React.ReactElement) =>
-      React.cloneElement(child, {
-        isChecked: this.checkForValue(child.props.value, checked),
-        sendRef,
-        keyHandler,
-        index: index++
-      })
+      child.type === Divider
+        ? child
+        : React.cloneElement(child, {
+            isChecked: this.checkForValue(child.props.value, checked),
+            sendRef,
+            keyHandler,
+            index: index++
+          })
     );
   }
 
