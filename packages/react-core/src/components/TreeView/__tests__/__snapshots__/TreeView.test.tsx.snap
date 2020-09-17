@@ -492,7 +492,7 @@ exports[`tree view renders active successfully 1`] = `
                         className="pf-c-tree-view__content"
                       >
                         <button
-                          className="pf-c-tree-view__node pf-m-active"
+                          className="pf-c-tree-view__node pf-m-current"
                           onClick={[Function]}
                         >
                           <span
@@ -1499,7 +1499,7 @@ exports[`tree view renders badges successfully 1`] = `
                         className="pf-c-tree-view__content"
                       >
                         <button
-                          className="pf-c-tree-view__node pf-m-active"
+                          className="pf-c-tree-view__node pf-m-current"
                           onClick={[Function]}
                         >
                           <span
@@ -3417,7 +3417,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         className="pf-c-tree-view__content"
                       >
                         <button
-                          className="pf-c-tree-view__node pf-m-active"
+                          className="pf-c-tree-view__node pf-m-current"
                           onClick={[Function]}
                         >
                           <span
@@ -4544,7 +4544,7 @@ exports[`tree view renders icons successfully 1`] = `
                         className="pf-c-tree-view__content"
                       >
                         <button
-                          className="pf-c-tree-view__node pf-m-active"
+                          className="pf-c-tree-view__node pf-m-current"
                           onClick={[Function]}
                         >
                           <span
@@ -5845,7 +5845,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                         className="pf-c-tree-view__content"
                       >
                         <button
-                          className="pf-c-tree-view__node pf-m-active"
+                          className="pf-c-tree-view__node pf-m-current"
                           onClick={[Function]}
                         >
                           <span
@@ -6961,7 +6961,7 @@ exports[`tree view renders search successfully 1`] = `
                         className="pf-c-tree-view__content"
                       >
                         <button
-                          className="pf-c-tree-view__node pf-m-active"
+                          className="pf-c-tree-view__node pf-m-current"
                           onClick={[Function]}
                         >
                           <span
