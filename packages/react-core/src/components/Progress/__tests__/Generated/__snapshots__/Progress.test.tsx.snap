@@ -6,6 +6,7 @@ exports[`Progress should match snapshot (auto-generated) 1`] = `
   id="''"
 >
   <ProgressContainer
+    isTruncated={false}
     label={null}
     measureLocation="outside"
     parentId="''"
