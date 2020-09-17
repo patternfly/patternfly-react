@@ -130,7 +130,7 @@ class MockReactRouterUsage extends React.Component {
     ));
     return (
       <React.Fragment>
-        <SkipToContent show render={({ className, ref }) => (
+        <SkipToContent render={({ className, ref }) => (
           <MockRouterLink to="#main-content" className={className} ref={ref}>
             Skip to Content
           </MockRouterLink>
