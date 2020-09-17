@@ -611,17 +611,26 @@ class IconTreeView extends React.Component {
         name: 'ApplicationLauncher',
         id: 'AppLaunch',
         action: <EllipsisVIcon />,
+        actionProps: {
+          'aria-label': 'Launch app'
+        },
         children: [
           {
             name: 'Application 1',
             id: 'App1',
             action: <ClipboardIcon />,
+            actionProps: {
+              'aria-label': 'Launch app 1'
+            },
             children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
           },
           {
             name: 'Application 2',
             id: 'App2',
             action: <HamburgerIcon />,
+            actionProps: {
+              'aria-label': 'Launch app 2'
+            },
             children: [
               { name: 'Settings', id: 'App2Settings' },
               {
