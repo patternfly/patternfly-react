@@ -38,8 +38,6 @@ references:
   - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
     js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
-  js_deps_cache_check_key: &js_deps_cache_check_key
-    js-deps-checkfile-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   cypress_cache_key: &cypress_cache_key
     cypress-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   gatsby_cache_key: &gatsby_cache_key
@@ -95,13 +93,10 @@ jobs:
           - "*"
     - restore_cache:
         keys:
-        - *js_deps_cache_check_key
+        - *js_deps_cache_key
     - run:
         name: Conditional install
-        command: if [ ! -f cachefile ]; then yarn install --frozen-lockfile && touch cachefile; fi
-    - save_cache:
-        paths: cachefile
-        key: *js_deps_cache_check_key
+        command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
     - save_cache:
         paths: *js_deps_paths
         key: *js_deps_cache_key

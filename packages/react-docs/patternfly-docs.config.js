@@ -13,8 +13,6 @@ module.exports = {
     { section: 'extensions' },
     { section: 'layouts' }
   ],
-  topNavItems: [
-    { text: 'Icons', path: '/icons' }
-  ],
-  port: 8002,
+  topNavItems: [{ text: 'Icons', path: '/icons' }],
+  port: 8002
 };
