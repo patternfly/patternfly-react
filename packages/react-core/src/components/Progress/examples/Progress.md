@@ -62,6 +62,14 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 <Progress value={33} title="Title" variant={ProgressVariant.danger} />
 ```
 
+### Warning
+```js
+import React from 'react';
+import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
+
+<Progress value={90} title="Title" variant={ProgressVariant.warning} />
+```
+
 ### Inside success
 ```js
 import React from 'react';
