@@ -35,7 +35,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Accessible text description of current progress value, for when value is not a percentage. Use with label. */
   valueText?: string;
   /** Indicate whether to truncate the title */
-  isTruncated?: Boolean;
+  isTruncated?: boolean;
 }
 
 export class Progress extends React.Component<ProgressProps> {
