@@ -13,12 +13,12 @@
   "author": "Red Hat",
   "license": "MIT",
   "scripts": {
+    "analyze": "yarn build:docs --analyze",
     "build:docs": "yarn theme-patternfly-org build all",
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
     "develop": "theme-patternfly-org start",
     "serve": "serve public",
-    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000",
-    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts|virtualizedtable/selectable\""
+    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000"
   },
   "dependencies": {
     "@patternfly/patternfly": "4.42.2",
@@ -34,7 +34,6 @@
     "@patternfly/react-virtualized-extension": "^4.5.74"
   },
   "devDependencies": {
-    "@patternfly/patternfly-a11y": "^0.0.17",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
     "react": "^16.8.0",
