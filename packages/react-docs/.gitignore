@@ -25,3 +25,6 @@ static/base.css
 
 # Old build files
 **/ts-output.json
+
+# Files from theme-patternfly-org
+src/generated/**/*.js
