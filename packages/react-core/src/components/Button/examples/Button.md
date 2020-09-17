@@ -227,3 +227,19 @@ ButtonCTAVariants = () => (
   </React.Fragment>
 );
 ```
+
+### Progress
+```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+
+ButtonProgressVariants = () => (
+  <React.Fragment>
+    <Button isLoading={false} variant="primary">Primary loader</Button>{' '}
+    <Button spinnerAriaValueText="Loading" isLoading variant="primary">Primary loading</Button>{' '}
+    <Button isLoading={false} variant="secondary">Secondary loader</Button>{' '}
+    <Button spinnerAriaValueText="Loading" isLoading variant="secondary">Secondary loading</Button>
+    <br /><br />
+  </React.Fragment>
+);
+```

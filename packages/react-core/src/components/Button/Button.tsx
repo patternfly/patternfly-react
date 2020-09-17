@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
+import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum ButtonVariant {
@@ -35,6 +36,10 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   isDisabled?: boolean;
   /** @beta Adds disabled styling and communicates that the button is disabled using the aria-disabled html attribute */
   isAriaDisabled?: boolean;
+  /** Adds progress styling to button */
+  isLoading?: boolean;
+  /** Aria-valuetext for the loading spinner */
+  spinnerAriaValueText?: string;
   /** @beta Events to prevent when the button is in an aria-disabled state */
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
@@ -65,6 +70,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   isBlock = false,
   isDisabled = false,
   isAriaDisabled = false,
+  isLoading = null,
+  spinnerAriaValueText,
   isSmall = false,
   isLarge = false,
   inoperableEvents = ['onClick', 'onKeyPress'],
@@ -122,6 +129,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        isLoading !== null && styles.modifiers.progress,
+        isLoading && styles.modifiers.inProgress,
         isSmall && styles.modifiers.small,
         isLarge && styles.modifiers.displayLg,
         className
@@ -131,6 +140,11 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       type={isButtonElement ? type : null}
       {...ouiaProps}
     >
+      {isLoading && (
+        <span className={css(styles.buttonProgress)}>
+          <Spinner size={spinnerSize.md} aria-valuetext={spinnerAriaValueText} />
+        </span>
+      )}
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}
