@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.5.11...@patternfly/react-topology@4.5.12) (2020-09-17)
+
+
+### Bug Fixes
+
+* **Topology:** Wrap drag event handlers in actions ([#4826](https://github.com/patternfly/patternfly-react/issues/4826)) ([f947f8b](https://github.com/patternfly/patternfly-react/commit/f947f8bfaba18d55754fff493c6bf9f08b215bd0))
+
+
+
+
+
 ## [4.5.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.5.10...@patternfly/react-topology@4.5.11) (2020-09-16)
 
 **Note:** Version bump only for package @patternfly/react-topology
