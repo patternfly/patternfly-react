@@ -9,4 +9,8 @@ describe('Progress Demo Test', () => {
     cy.get('#simple-progress-description').contains('Simple progress');
     cy.get('#simple-progress .pf-c-progress__status .pf-c-progress__measure').contains('33%');
   });
+
+  it('Verify truncate progress', () => {
+    cy.get('#truncate-progress-description.pf-m-truncate').should('exist');
+  });
 });
