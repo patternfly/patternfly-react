@@ -99,6 +99,24 @@ describe('DataList', () => {
     });
   });
 
+  test('Cell with text modifiers', () => {
+    [
+      { wrapModifier: null as const, class: '' },
+      { wrapModifier: 'breakWord' as const, class: 'pf-m-break-word' },
+      { wrapModifier: 'nowrap' as const, class: 'pf-m-nowrap' },
+      { wrapModifier: 'truncate' as const, class: 'pf-m-truncate' },
+    ].forEach(testCase => {
+      const view = shallow(
+        <DataListCell wrapModifier={testCase.wrapModifier} key="list-id-1" id="primary-item">
+          Primary Id
+        </DataListCell>
+      );
+      testCase.class === ''
+        ? expect(view.props().className).toBe('pf-c-data-list__cell')
+        : expect(view.props().className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+    });
+  });
+
   test('Toggle default with aria label', () => {
     const view = shallow(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
 
