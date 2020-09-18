@@ -14946,6 +14946,11 @@ locutus@^2.0.11:
   dependencies:
     es6-promise "^4.2.5"
 
+lodash-es@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
+
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -21729,10 +21734,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.1.14.tgz#922a48d8efde1b31c3d83f92a186ce1476aad774"
-  integrity sha512-VOesj7lrwzNLlRs2rOtInvBSlhaQVk9D79ACdtDrrKqP99UeEdIMfS9/iqgP6rz8iqvKnladSFbVYnyPkU0W9A==
+theme-patternfly-org@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.1.17.tgz#444189966ec0a319b4c9e66b9e2c87a36e4c51d4"
+  integrity sha512-JCvvanaXNoS1uLPM2zIVz+ZPFABCaJW2w50DJHfonCQC+krt6m5uJJqGgjg6hF03cp/C2tPyAWK+kh6AvWhepA==
   dependencies:
     "@babel/core" "^7.11.6"
     "@babel/plugin-proposal-class-properties" "^7.10.4"
@@ -21760,6 +21765,7 @@ theme-patternfly-org@^0.1.14:
     html-formatter "^0.1.9"
     html-webpack-plugin "^4.4.1"
     js-yaml "^3.14.0"
+    lodash-es "^4.17.15"
     mdast-util-to-hast "^9.1.0"
     mdurl "^1.0.0"
     mini-css-extract-plugin "^0.11.1"

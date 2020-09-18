@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "assumeChangesOnlyAffectDirectDependencies": true,
     "jsx": "react",
     "lib": [
       "es2015",
