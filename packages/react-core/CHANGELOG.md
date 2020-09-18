@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.50.1...@patternfly/react-core@4.50.2) (2020-09-18)
+
+
+### Bug Fixes
+
+* **DropdownToggleCheckbox:** indeterminate warning ([#4844](https://github.com/patternfly/patternfly-react/issues/4844)) ([64f5f5d](https://github.com/patternfly/patternfly-react/commit/64f5f5da19574aa9909ef7e8bc5429f7874095c8))
+
+
+
+
+
 ## [4.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.50.0...@patternfly/react-core@4.50.1) (2020-09-17)
 
 **Note:** Version bump only for package @patternfly/react-core
