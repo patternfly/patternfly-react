@@ -4,6 +4,65 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.12 release notes (2020-09-17)
+- [@patternfly/react-catalog-view-extension@4.8.31](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.31)
+- [@patternfly/react-charts@6.9.8](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.8)
+- [@patternfly/react-core@4.50.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.50.2)
+- [@patternfly/react-icons@4.7.6](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.6)
+- [@patternfly/react-inline-edit-extension@4.5.87](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.87)
+- [@patternfly/react-styles@4.7.5](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.5)
+- [@patternfly/react-table@4.16.20](https://www.npmjs.com/package/@patternfly/react-table/v/4.16.20)
+- [@patternfly/react-tokens@4.9.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.8)
+- [@patternfly/react-topology@4.5.14](https://www.npmjs.com/package/@patternfly/react-topology/v/4.5.14)
+- [@patternfly/react-virtualized-extension@4.5.76](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.76)
+
+### Components
+- **Card:** 
+  - Added ability to customize card title and support heading element ([#4761](https://github.com/patternfly/patternfly-react/pull/4761))
+- **Chip Group:**
+  - Added OUIA props into chip group ([#4749](https://github.com/patternfly/patternfly-react/pull/4749))
+- **Drawer:** 
+  - Added bottom panel variation ([#4771](https://github.com/patternfly/patternfly-react/pull/4771))
+- **Label group:**
+  - Added label group component ([#4775](https://github.com/patternfly/patternfly-react/pull/4775))
+- **Nav:** 
+  - Added href to nav examples ([#4789](https://github.com/patternfly/patternfly-react/pull/4789))
+- **Notification drawer:** 
+  - Added x close button to notification drawer ([#4739](https://github.com/patternfly/patternfly-react/pull/4739))
+- **Page:** 
+  - Hid PageSideBar onClick on mobile when isManagedSidebar is true ([#4781](https://github.com/patternfly/patternfly-react/pull/4781))
+- **Popover:**
+  - Added header cell information for tooltip/popover ([#4778](https://github.com/patternfly/patternfly-react/pull/4778))
+- **Select:** 
+  - Added support for favorites ([#4642](https://github.com/patternfly/patternfly-react/pull/4642))
+- **Skeleton:** 
+  - Added skeleton component ([#4755](https://github.com/patternfly/patternfly-react/pull/4755))
+- **Tabs:**
+  - Handled activeKey props and update with mountOnEnter on tabs ([#4806](https://github.com/patternfly/patternfly-react/pull/4806))
+  - Updated TabButton and TabContent with OUIA ([#4743](https://github.com/patternfly/patternfly-react/pull/4743))
+- **Tests:** 
+  - Updated drawer snapshots ([#4814](https://github.com/patternfly/patternfly-react/pull/4814))
+- **Toolbar:**
+  - Added insets property ([#4757](https://github.com/patternfly/patternfly-react/pull/4757))
+- **Tooltip:**
+  - Added aria-labels to tooltip example checkboxes ([#4788](https://github.com/patternfly/patternfly-react/pull/4788))
+  - Added header cell information for tooltip/popover ([#4778](https://github.com/patternfly/patternfly-react/pull/4778))
+
+### Topology
+  - Enabled saving current topology graph model ([#4690](https://github.com/patternfly/patternfly-react/pull/4690))
+  - Wrapped drag event handlers in actions ([#4826](https://github.com/patternfly/patternfly-react/pull/4826))
+
+### Other
+- **Chore:** 
+  - Used updated icons ([#4764](https://github.com/patternfly/patternfly-react/pull/4764))
+  - Added better ouia defaults ([#4746](https://github.com/patternfly/patternfly-react/pull/4746))
+- **Deps:** 
+  - Bump prismjs from 1.17.1 to 1.21.0 ([#4675](https://github.com/patternfly/patternfly-react/pull/4675))
+- **Docs:** 
+  - Marked search input as beta ([#4774](https://github.com/patternfly/patternfly-react/pull/4774))
+- **Demos:** 
+  - Changed double dashes to single in examples in master detail demo ([#4804](https://github.com/patternfly/patternfly-react/pull/4804))
+
 ## 2020.11 release notes (2020-08-26)
 - [@patternfly/react-catalog-view-extension@4.8.18](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.18)
 - [@patternfly/react-charts@6.9.6](https://www.npmjs.com/package/@patternfly/react-charts/v/6.9.6)
@@ -21,8 +80,6 @@ releaseNoteTOC: true
   - Added support to truncate title ([#4399](https://github.com/patternfly/patternfly-react/pull/4399))
 - **Label:**
   - Added no overflow prop ([#4680](https://github.com/patternfly/patternfly-react/pull/4680))
-- **Master detail:**
-  - Renamed master detail demo to primary-detail ([#4703](https://github.com/patternfly/patternfly-react/pull/4703))
 - **Modal:**
   - Added medium variant ([#4678](https://github.com/patternfly/patternfly-react/pull/4678))
 - **Notification drawer:**
@@ -50,6 +107,10 @@ releaseNoteTOC: true
 
 ### Table
 - Fixed table showing cell tooltips on non text cells ([#4689](https://github.com/patternfly/patternfly-react/pull/4689))
+
+### Other
+- **Demos:**
+  - Renamed master detail demo to primary-detail ([#4703](https://github.com/patternfly/patternfly-react/pull/4703))
 
 ## 2020.10 release notes (2020-08-17)
 - [@patternfly/react-catalog-view-extension@4.8.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.5)
