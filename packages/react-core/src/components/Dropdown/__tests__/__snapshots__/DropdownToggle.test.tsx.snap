@@ -272,7 +272,6 @@ exports[`state focus 1`] = `
 exports[`state hover 1`] = `
 <DropdownToggle
   id="Dropdown Toggle"
-  isHovered={true}
   parentRef={<div />}
 >
   <Toggle
@@ -282,7 +281,6 @@ exports[`state hover 1`] = `
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
-    isHovered={true}
     isOpen={false}
     isPlain={false}
     isPrimary={false}
@@ -296,7 +294,6 @@ exports[`state hover 1`] = `
       className="pf-c-dropdown__toggle"
       disabled={false}
       id="Dropdown Toggle"
-      isHovered={true}
       onClick={[Function]}
       onKeyDown={[Function]}
       type="button"

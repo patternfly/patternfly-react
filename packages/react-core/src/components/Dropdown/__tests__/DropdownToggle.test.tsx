@@ -82,7 +82,7 @@ describe('API', () => {
 describe('state', () => {
   test('hover', () => {
     const view = mount(
-      <DropdownToggle id="Dropdown Toggle" isHovered parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
