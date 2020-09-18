@@ -12,7 +12,7 @@ export interface DropdownMenuProps {
   className?: string;
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
-  /** Flag to indicate if menu should be opened on enter */
+  /** @deprecated - no longer used */
   openedOnEnter?: boolean;
   /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
    * a specific auto-focus item (like a current selection) otherwise leave as true
