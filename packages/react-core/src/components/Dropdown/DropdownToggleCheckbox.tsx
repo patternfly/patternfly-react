@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface DropdownToggleCheckboxProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
@@ -27,7 +27,7 @@ export interface DropdownToggleCheckboxProps
   'aria-label': string;
 }
 
-export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps> {
+export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps, { ouiaStateId: string }> {
   static displayName = 'DropdownToggleCheckbox';
   static defaultProps: PickOptional<DropdownToggleCheckboxProps> = {
     className: '',
@@ -35,6 +35,13 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     isDisabled: false,
     onChange: () => undefined as any
   };
+
+  constructor(props: DropdownToggleCheckboxProps) {
+    super(props);
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(DropdownToggleCheckbox.displayName)
+    };
+  }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange((event.target as HTMLInputElement).checked, event);
@@ -80,7 +87,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
           aria-invalid={!isValid}
           disabled={isDisabled}
           checked={this.calculateChecked()}
-          {...getOUIAProps(DropdownToggleCheckbox.displayName, ouiaId, ouiaSafe)}
+          {...getOUIAProps(DropdownToggleCheckbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         />
         {text}
       </label>

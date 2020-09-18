@@ -7,7 +7,6 @@ exports[`Dropdown toggle 1`] = `
   <Toggle
     bubbleEvent={false}
     className=""
-    data-ouia-component-id={0}
     data-ouia-component-type="PF4/DropdownToggle"
     data-ouia-safe={true}
     getMenuRef={null}
@@ -25,7 +24,6 @@ exports[`Dropdown toggle 1`] = `
     <button
       aria-expanded={false}
       className="pf-c-dropdown__toggle"
-      data-ouia-component-id={0}
       data-ouia-component-type="PF4/DropdownToggle"
       data-ouia-safe={true}
       disabled={false}

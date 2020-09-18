@@ -124,7 +124,6 @@ exports[`optionsMenu expanded 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle"
-                data-ouia-component-id="9"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 id="expanded-toggle"
@@ -175,7 +174,6 @@ exports[`optionsMenu expanded 1`] = `
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
-                        data-ouia-component-id="10"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
                         tabindex="-1"
@@ -190,7 +188,6 @@ exports[`optionsMenu expanded 1`] = `
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
-                        data-ouia-component-id="11"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
                         tabindex="-1"
@@ -206,7 +203,6 @@ exports[`optionsMenu expanded 1`] = `
                       <button
                         aria-disabled="true"
                         class="pf-m-disabled pf-c-options-menu__menu-item"
-                        data-ouia-component-id="12"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
                         disabled=""
@@ -222,7 +218,6 @@ exports[`optionsMenu expanded 1`] = `
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
-                        data-ouia-component-id="13"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
                         tabindex="-1"
@@ -257,7 +252,6 @@ exports[`optionsMenu expanded 1`] = `
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
-                        data-ouia-component-id="14"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
                         tabindex="-1"
@@ -272,7 +266,6 @@ exports[`optionsMenu expanded 1`] = `
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
-                        data-ouia-component-id="15"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
                         tabindex="-1"
@@ -317,7 +310,6 @@ exports[`optionsMenu expanded 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle"
-                  data-ouia-component-id="9"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   id="expanded-toggle"
@@ -368,7 +360,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
-                          data-ouia-component-id="10"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
                           tabindex="-1"
@@ -383,7 +374,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
-                          data-ouia-component-id="11"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
                           tabindex="-1"
@@ -399,7 +389,6 @@ exports[`optionsMenu expanded 1`] = `
                         <button
                           aria-disabled="true"
                           class="pf-m-disabled pf-c-options-menu__menu-item"
-                          data-ouia-component-id="12"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
                           disabled=""
@@ -415,7 +404,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
-                          data-ouia-component-id="13"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
                           tabindex="-1"
@@ -450,7 +438,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
-                          data-ouia-component-id="14"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
                           tabindex="-1"
@@ -465,7 +452,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
-                          data-ouia-component-id="15"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
                           tabindex="-1"
@@ -491,7 +477,6 @@ exports[`optionsMenu expanded 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={9}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -518,7 +503,6 @@ exports[`optionsMenu expanded 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle"
-                    data-ouia-component-id="9"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     id="expanded-toggle"
@@ -569,7 +553,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            data-ouia-component-id="10"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
                             tabindex="-1"
@@ -584,7 +567,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            data-ouia-component-id="11"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
                             tabindex="-1"
@@ -600,7 +582,6 @@ exports[`optionsMenu expanded 1`] = `
                           <button
                             aria-disabled="true"
                             class="pf-m-disabled pf-c-options-menu__menu-item"
-                            data-ouia-component-id="12"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
                             disabled=""
@@ -616,7 +597,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            data-ouia-component-id="13"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
                             tabindex="-1"
@@ -651,7 +631,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            data-ouia-component-id="14"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
                             tabindex="-1"
@@ -666,7 +645,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            data-ouia-component-id="15"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
                             tabindex="-1"
@@ -691,7 +669,6 @@ exports[`optionsMenu expanded 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle"
-              data-ouia-component-id={9}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={false}
@@ -788,7 +765,6 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
-                      data-ouia-component-id={10}
                       data-ouia-component-type="PF4/DropdownItem"
                       data-ouia-safe={true}
                       description={null}
@@ -814,7 +790,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
-                          data-ouia-component-id={10}
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
                           disabled={false}
@@ -844,7 +819,6 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
-                      data-ouia-component-id={11}
                       data-ouia-component-type="PF4/DropdownItem"
                       data-ouia-safe={true}
                       description={null}
@@ -870,7 +844,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
-                          data-ouia-component-id={11}
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
                           disabled={false}
@@ -904,7 +877,6 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
-                      data-ouia-component-id={12}
                       data-ouia-component-type="PF4/DropdownItem"
                       data-ouia-safe={true}
                       description={null}
@@ -931,7 +903,6 @@ exports[`optionsMenu expanded 1`] = `
                         <button
                           aria-disabled={true}
                           className="pf-m-disabled pf-c-options-menu__menu-item"
-                          data-ouia-component-id={12}
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
                           disabled={true}
@@ -961,7 +932,6 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
-                      data-ouia-component-id={13}
                       data-ouia-component-type="PF4/DropdownItem"
                       data-ouia-safe={true}
                       description={null}
@@ -987,7 +957,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
-                          data-ouia-component-id={13}
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
                           disabled={false}
@@ -1054,7 +1023,6 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
-                      data-ouia-component-id={14}
                       data-ouia-component-type="PF4/DropdownItem"
                       data-ouia-safe={true}
                       description={null}
@@ -1080,7 +1048,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
-                          data-ouia-component-id={14}
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
                           disabled={false}
@@ -1110,7 +1077,6 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
-                      data-ouia-component-id={15}
                       data-ouia-component-type="PF4/DropdownItem"
                       data-ouia-safe={true}
                       description={null}
@@ -1136,7 +1102,6 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
-                          data-ouia-component-id={15}
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
                           disabled={false}
@@ -1296,7 +1261,6 @@ exports[`optionsMenu isDisabled 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle"
-                data-ouia-component-id="20"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 disabled=""
@@ -1353,7 +1317,6 @@ exports[`optionsMenu isDisabled 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle"
-                  data-ouia-component-id="20"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   disabled=""
@@ -1391,7 +1354,6 @@ exports[`optionsMenu isDisabled 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={20}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -1418,7 +1380,6 @@ exports[`optionsMenu isDisabled 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle"
-                    data-ouia-component-id="20"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     disabled=""
@@ -1455,7 +1416,6 @@ exports[`optionsMenu isDisabled 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle"
-              data-ouia-component-id={20}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={true}
@@ -1628,7 +1588,6 @@ exports[`optionsMenu open up 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle"
-                data-ouia-component-id="5"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 id="openUp-toggle"
@@ -1684,7 +1643,6 @@ exports[`optionsMenu open up 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle"
-                  data-ouia-component-id="5"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   id="openUp-toggle"
@@ -1721,7 +1679,6 @@ exports[`optionsMenu open up 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={5}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -1748,7 +1705,6 @@ exports[`optionsMenu open up 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle"
-                    data-ouia-component-id="5"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     id="openUp-toggle"
@@ -1784,7 +1740,6 @@ exports[`optionsMenu open up 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle"
-              data-ouia-component-id={5}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={false}
@@ -1957,7 +1912,6 @@ exports[`optionsMenu plain 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle pf-m-plain"
-                data-ouia-component-id="17"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 id="plain-toggle"
@@ -1994,7 +1948,6 @@ exports[`optionsMenu plain 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle pf-m-plain"
-                  data-ouia-component-id="17"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   id="plain-toggle"
@@ -2013,7 +1966,6 @@ exports[`optionsMenu plain 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={17}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -2040,7 +1992,6 @@ exports[`optionsMenu plain 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle pf-m-plain"
-                    data-ouia-component-id="17"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     id="plain-toggle"
@@ -2057,7 +2008,6 @@ exports[`optionsMenu plain 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle pf-m-plain"
-              data-ouia-component-id={17}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={false}
@@ -2201,7 +2151,6 @@ exports[`optionsMenu regular 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle"
-                data-ouia-component-id="1"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 id="regular-toggle"
@@ -2257,7 +2206,6 @@ exports[`optionsMenu regular 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle"
-                  data-ouia-component-id="1"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   id="regular-toggle"
@@ -2294,7 +2242,6 @@ exports[`optionsMenu regular 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={1}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -2321,7 +2268,6 @@ exports[`optionsMenu regular 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle"
-                    data-ouia-component-id="1"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     id="regular-toggle"
@@ -2357,7 +2303,6 @@ exports[`optionsMenu regular 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle"
-              data-ouia-component-id={1}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={false}
@@ -2531,7 +2476,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle"
-                data-ouia-component-id="7"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 id="rightAlignedOpenUp-toggle"
@@ -2587,7 +2531,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle"
-                  data-ouia-component-id="7"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   id="rightAlignedOpenUp-toggle"
@@ -2624,7 +2567,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={7}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -2651,7 +2593,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle"
-                    data-ouia-component-id="7"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     id="rightAlignedOpenUp-toggle"
@@ -2687,7 +2628,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle"
-              data-ouia-component-id={7}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={false}
@@ -2860,7 +2800,6 @@ exports[`optionsMenu right aligned 1`] = `
                 aria-haspopup="listbox"
                 aria-label="Options menu"
                 class="pf-c-options-menu__toggle"
-                data-ouia-component-id="3"
                 data-ouia-component-type="PF4/DropdownToggle"
                 data-ouia-safe="true"
                 id="rightAligned-toggle"
@@ -2916,7 +2855,6 @@ exports[`optionsMenu right aligned 1`] = `
                   aria-haspopup="listbox"
                   aria-label="Options menu"
                   class="pf-c-options-menu__toggle"
-                  data-ouia-component-id="3"
                   data-ouia-component-type="PF4/DropdownToggle"
                   data-ouia-safe="true"
                   id="rightAligned-toggle"
@@ -2953,7 +2891,6 @@ exports[`optionsMenu right aligned 1`] = `
             aria-label="Options menu"
             bubbleEvent={false}
             className=""
-            data-ouia-component-id={3}
             data-ouia-component-type="PF4/DropdownToggle"
             data-ouia-safe={true}
             getMenuRef={[Function]}
@@ -2980,7 +2917,6 @@ exports[`optionsMenu right aligned 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     class="pf-c-options-menu__toggle"
-                    data-ouia-component-id="3"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe="true"
                     id="rightAligned-toggle"
@@ -3016,7 +2952,6 @@ exports[`optionsMenu right aligned 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               className="pf-c-options-menu__toggle"
-              data-ouia-component-id={3}
               data-ouia-component-type="PF4/DropdownToggle"
               data-ouia-safe={true}
               disabled={false}
