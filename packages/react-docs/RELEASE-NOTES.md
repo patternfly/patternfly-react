@@ -23,6 +23,8 @@ releaseNoteTOC: true
   - Added OUIA props into chip group ([#4749](https://github.com/patternfly/patternfly-react/pull/4749))
 - **Drawer:** 
   - Added bottom panel variation ([#4771](https://github.com/patternfly/patternfly-react/pull/4771))
+- **Dropdown:**
+  - Fixed indeterminate warning in dropdown toggle checkbox ([#4844](https://github.com/patternfly/patternfly-react/pull/4844))
 - **Label group:**
   - Added label group component ([#4775](https://github.com/patternfly/patternfly-react/pull/4775))
 - **Nav:** 
