@@ -8,7 +8,7 @@ exports[`3rd state 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
-    checked={null}
+    checked={false}
     disabled={false}
     id="check"
     onChange={[Function]}
