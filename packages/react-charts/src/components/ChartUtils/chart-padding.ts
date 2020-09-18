@@ -7,7 +7,7 @@ export const getPaddingForSide = (
 ): number => {
   if (typeof padding == 'number') {
     return padding as number;
-  } else if (typeof padding == 'object') {
+  } else if (typeof padding == 'object' && Object.keys(padding).length > 0) {
     return padding[side] || 0;
   }
 
