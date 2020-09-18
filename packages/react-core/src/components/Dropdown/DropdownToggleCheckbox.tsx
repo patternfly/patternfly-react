@@ -40,7 +40,13 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
 
   calculateChecked = () => {
     const { isChecked, checked } = this.props;
-    return isChecked !== undefined ? isChecked : checked;
+    if (isChecked === null) {
+      // return false here and the indeterminate state will be set to true through the ref
+      return false;
+    } else if (isChecked !== undefined) {
+      return isChecked;
+    }
+    return checked;
   };
 
   render() {
