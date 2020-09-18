@@ -33,7 +33,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   /** Actual progress value. */
   value: number;
   /** Whether title should be truncated */
-  isTruncated?: boolean;
+  isTitleTruncated?: boolean;
 }
 
 const variantToIcon = {
@@ -49,13 +49,13 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   label = null,
   variant = null,
   measureLocation = ProgressMeasureLocation.top,
-  isTruncated = false
+  isTitleTruncated = false
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
     <React.Fragment>
       <div
-        className={css(progressStyle.progressDescription, isTruncated && progressStyle.modifiers.truncate)}
+        className={css(progressStyle.progressDescription, isTitleTruncated && progressStyle.modifiers.truncate)}
         id={`${parentId}-description`}
         aria-hidden="true"
       >

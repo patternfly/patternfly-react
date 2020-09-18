@@ -11,6 +11,6 @@ describe('Progress Demo Test', () => {
   });
 
   it('Verify truncate progress', () => {
-    cy.get('#truncate-progress-description.pf-m-truncate').should('exist');
+    cy.get('#truncate-title-progress-description.pf-m-truncate').should('exist');
   });
 });

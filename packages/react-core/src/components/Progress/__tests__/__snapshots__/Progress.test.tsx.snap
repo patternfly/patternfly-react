@@ -4,7 +4,7 @@ exports[`Progress measure location inside 1`] = `
 <Progress
   className=""
   id="inside-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="inside"
@@ -20,7 +20,7 @@ exports[`Progress measure location inside 1`] = `
     id="inside-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="inside"
       parentId="inside-progress"
@@ -90,7 +90,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
 <Progress
   className=""
   id="large-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="inside"
@@ -106,7 +106,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
     id="large-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="inside"
       parentId="large-progress"
@@ -176,7 +176,7 @@ exports[`Progress measure location none 1`] = `
 <Progress
   className=""
   id="none-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="none"
@@ -192,7 +192,7 @@ exports[`Progress measure location none 1`] = `
     id="none-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="none"
       parentId="none-progress"
@@ -260,7 +260,7 @@ exports[`Progress measure location outside 1`] = `
 <Progress
   className=""
   id="outside-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="outside"
@@ -276,7 +276,7 @@ exports[`Progress measure location outside 1`] = `
     id="outside-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="outside"
       parentId="outside-progress"
@@ -350,7 +350,7 @@ exports[`Progress measure location top 1`] = `
 <Progress
   className=""
   id="top-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -366,7 +366,7 @@ exports[`Progress measure location top 1`] = `
     id="top-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="top-progress"
@@ -440,7 +440,7 @@ exports[`Progress size lg 1`] = `
 <Progress
   className=""
   id="lg-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -456,7 +456,7 @@ exports[`Progress size lg 1`] = `
     id="lg-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="lg-progress"
@@ -530,7 +530,7 @@ exports[`Progress size md 1`] = `
 <Progress
   className=""
   id="md-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -546,7 +546,7 @@ exports[`Progress size md 1`] = `
     id="md-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="md-progress"
@@ -620,7 +620,7 @@ exports[`Progress size sm 1`] = `
 <Progress
   className=""
   id="sm-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -636,7 +636,7 @@ exports[`Progress size sm 1`] = `
     id="sm-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="sm-progress"
@@ -710,7 +710,7 @@ exports[`Progress variant danger 1`] = `
 <Progress
   className=""
   id="danger-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -726,7 +726,7 @@ exports[`Progress variant danger 1`] = `
     id="danger-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="danger-progress"
@@ -828,7 +828,7 @@ exports[`Progress variant success 1`] = `
 <Progress
   className=""
   id="success-progress"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -844,7 +844,7 @@ exports[`Progress variant success 1`] = `
     id="success-progress"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="success-progress"
@@ -946,7 +946,7 @@ exports[`Progress with aria-valuetext 1`] = `
 <Progress
   className=""
   id="progress-aria-valuetext"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -962,7 +962,7 @@ exports[`Progress with aria-valuetext 1`] = `
     id="progress-aria-valuetext"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="progress-aria-valuetext"
@@ -1039,7 +1039,7 @@ exports[`Simple progress 1`] = `
 <Progress
   className=""
   id="progress-simple-example"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -1055,7 +1055,7 @@ exports[`Simple progress 1`] = `
     id="progress-simple-example"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="progress-simple-example"
@@ -1129,7 +1129,7 @@ exports[`additional label 1`] = `
 <Progress
   className=""
   id="additional-label"
-  isTruncated={false}
+  isTitleTruncated={false}
   label="Additional label"
   max={100}
   measureLocation="top"
@@ -1145,7 +1145,7 @@ exports[`additional label 1`] = `
     id="additional-label"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label="Additional label"
       measureLocation="top"
       parentId="additional-label"
@@ -1219,7 +1219,7 @@ exports[`no value specified 1`] = `
 <Progress
   className=""
   id="no-value"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -1235,7 +1235,7 @@ exports[`no value specified 1`] = `
     id="no-value"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="no-value"
@@ -1309,7 +1309,7 @@ exports[`value higher than maxValue 1`] = `
 <Progress
   className=""
   id="higher-max-value"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={60}
   measureLocation="top"
@@ -1325,7 +1325,7 @@ exports[`value higher than maxValue 1`] = `
     id="higher-max-value"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="higher-max-value"
@@ -1399,7 +1399,7 @@ exports[`value lower than minValue 1`] = `
 <Progress
   className=""
   id="lower-min-value"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -1415,7 +1415,7 @@ exports[`value lower than minValue 1`] = `
     id="lower-min-value"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="lower-min-value"
@@ -1489,7 +1489,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
 <Progress
   className=""
   id="scaled-range-value"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={80}
   measureLocation="top"
@@ -1505,7 +1505,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
     id="scaled-range-value"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="scaled-range-value"
@@ -1579,7 +1579,7 @@ exports[`value scaled with maxValue 1`] = `
 <Progress
   className=""
   id="scaled-max-value"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={80}
   measureLocation="top"
@@ -1595,7 +1595,7 @@ exports[`value scaled with maxValue 1`] = `
     id="scaled-max-value"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="scaled-max-value"
@@ -1669,7 +1669,7 @@ exports[`value scaled with minValue 1`] = `
 <Progress
   className=""
   id="scaled-min-value"
-  isTruncated={false}
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
@@ -1685,7 +1685,7 @@ exports[`value scaled with minValue 1`] = `
     id="scaled-min-value"
   >
     <ProgressContainer
-      isTruncated={false}
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="scaled-min-value"
