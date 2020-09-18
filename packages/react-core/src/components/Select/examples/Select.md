@@ -506,7 +506,7 @@ class GroupedCheckboxSelectInput extends React.Component {
         <SelectOption key={1} value="Stopped" />
         <SelectOption key={2} value="Down" />
         <SelectOption key={3} value="Degraded" />
-        <SelectOption key={4} value="Needs Maintenence" />
+        <SelectOption key={4} value="Needs Maintenance" />
       </SelectGroup>,
       <SelectGroup label="Vendor Names" key="group2">
         <SelectOption key={5} value="Dell" />
@@ -1697,6 +1697,96 @@ class SelectMenuDocumentBody extends React.Component {
           {this.options}
         </Select>
       </div>
+    );
+  }
+}
+```
+
+### Favorites
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+
+class FavoritesSelect extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      selected: null,
+      favorites: []
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.onFavorite = (itemId, isFavorite) => {
+      if (isFavorite) {
+        this.setState({
+          favorites: this.state.favorites.filter(id => id !== itemId)
+        });
+      } else
+        this.setState({
+          favorites: [...this.state.favorites, itemId]
+        });
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption id={"option-1"} key={0} value="Running" description="This is a description." />
+        <SelectOption id={"option-2"} key={1} value="Stopped" />
+        <SelectOption id={"option-3"} key={2} value="Down (disabled)" isDisabled/>
+        <SelectOption id={"option-4"} key={3} value="Degraded" />
+          <SelectOption id={"option-5"} key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption id={"option-6"} key={5} value="Dell" />
+        <SelectOption id={"option-7"} key={6} value="Samsung" description="This is a description." />
+        <SelectOption id={"option-8"} key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+  }
+
+  render() {
+    const { isOpen, selected, favorites } = this.state;
+    const titleId = 'grouped-single-select-id';
+    return (
+        <Select
+          variant={SelectVariant.typeahead}
+          typeAheadAriaLabel="Select value"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Favorites"
+          aria-labelledby={titleId}
+          isGrouped
+          onFavorite={this.onFavorite}
+          favorites={favorites}
+          onClear={this.clearSelection}
+        >
+          {this.options}
+        </Select>
     );
   }
 }

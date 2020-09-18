@@ -16,8 +16,7 @@ import {
   EventListener,
   ModelKind,
   LayoutFactory,
-  Layout,
-  isGraph
+  Layout
 } from './types';
 import defaultElementFactory from './elements/defaultElementFactory';
 import Stateful from './utils/Stateful';
@@ -83,6 +82,7 @@ export class Visualization extends Stateful implements Controller {
     if (model.graph && this.graph) {
       this.graph.setModel(model.graph);
     }
+    validIds.push(this.graph.getId());
 
     const processed: { [id: string]: boolean } = {};
 
@@ -103,7 +103,7 @@ export class Visualization extends Stateful implements Controller {
     // remove all stale elements
     if (merge) {
       _.forIn(this.elements, element => {
-        if (!isGraph(element) && !validIds.includes(element.getId())) {
+        if (!validIds.includes(element.getId())) {
           this.removeElement(element);
         }
       });

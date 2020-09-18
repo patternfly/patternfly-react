@@ -93,9 +93,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
             activeItems &&
               activeItems.length > 0 &&
               activeItems.some(item => compareItems && item && compareItems(item, itemData))
-              ? children
-                ? styles.modifiers.active
-                : styles.modifiers.current
+              ? styles.modifiers.current
               : ''
           )}
           onClick={(evt: React.MouseEvent) => {

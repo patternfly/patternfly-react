@@ -1,4 +1,4 @@
-import { computed, observable } from 'mobx';
+import { computed, observable, action, runInAction } from 'mobx';
 import useVisualizationController from '../hooks/useVisualizationController';
 import {
   DndManager,
@@ -53,6 +53,7 @@ export class DndManagerImpl implements DndManager {
       : [];
   }
 
+  @action
   registerSource(source: DragSource): [string, Unregister] {
     const key = `S${getNextUniqueId()}`;
     this.sources[key] = source;
@@ -64,6 +65,7 @@ export class DndManagerImpl implements DndManager {
     ];
   }
 
+  @action
   registerTarget(target: DropTarget): [string, Unregister] {
     const key = `T${getNextUniqueId()}`;
     this.targets[key] = target;
@@ -173,6 +175,7 @@ export class DndManagerImpl implements DndManager {
     return !!this.state.cancelled;
   }
 
+  @action
   beginDrag(
     sourceIds: string | string[],
     operation: DragOperationWithType | undefined,
@@ -216,6 +219,7 @@ export class DndManagerImpl implements DndManager {
     this.performHitTests();
   }
 
+  @action
   hover(targetIds: string[]): void {
     const ids: string[] = targetIds.filter(id => this.getTarget(id));
     this.state.targetIds = ids;
@@ -231,22 +235,25 @@ export class DndManagerImpl implements DndManager {
     const source = this.getSource(this.getSourceId());
     try {
       if (source) {
-        await source.endDrag(this);
+        await runInAction(() => source.endDrag(this));
       }
     } finally {
-      // clear state
-      delete this.state.didDrop;
-      delete this.state.dropResult;
-      delete this.state.event;
-      delete this.state.isDragging;
-      delete this.state.item;
-      delete this.state.sourceId;
-      delete this.state.targetIds;
-      delete this.state.operation;
-      delete this.state.cancelled;
+      runInAction(() => {
+        // clear state
+        delete this.state.didDrop;
+        delete this.state.dropResult;
+        delete this.state.event;
+        delete this.state.isDragging;
+        delete this.state.item;
+        delete this.state.sourceId;
+        delete this.state.targetIds;
+        delete this.state.operation;
+        delete this.state.cancelled;
+      });
     }
   }
 
+  @action
   drop(): void {
     this.getTargetIds()
       .filter(id => this.canDropOnTarget(id))
@@ -264,6 +271,7 @@ export class DndManagerImpl implements DndManager {
       });
   }
 
+  @action
   drag(x: number, y: number, pageX: number, pageY: number): void {
     if (!this.state.event) {
       throw new Error('Drag event not initialized');
@@ -282,6 +290,7 @@ export class DndManagerImpl implements DndManager {
     this.performHitTests();
   }
 
+  @action
   cancel(): boolean {
     if (!this.state.event) {
       throw new Error('Drag event not initialized');

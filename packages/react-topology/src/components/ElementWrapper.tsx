@@ -13,8 +13,9 @@ interface ElementWrapperProps {
 const ElementComponent: React.FC<ElementWrapperProps> = observer(({ element }) => {
   const kind = element.getKind();
   const type = element.getType();
+  const controller = element.getController();
 
-  const Component = React.useMemo(() => element.getController().getComponent(kind, type), [element, kind, type]);
+  const Component = React.useMemo(() => controller.getComponent(kind, type), [controller, kind, type]);
 
   return (
     <ElementContext.Provider value={element}>
