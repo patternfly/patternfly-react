@@ -17,6 +17,8 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Aria-labelledby of the DataList checkbox */
   'aria-labelledby': string;
+  /** Flag to indicate if other controls are used in the DataListItem */
+  otherControls?: boolean;
 }
 
 export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
@@ -27,10 +29,11 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   isDisabled = false,
   isChecked = null,
   checked = null,
+  otherControls = false,
   ...props
-}: DataListCheckProps) => (
-  <div className={css(styles.dataListItemControl, className)}>
-    <div className={css('pf-c-data-list__check')}>
+}: DataListCheckProps) => {
+  const check = (
+    <div className={css(styles.dataListCheck)}>
       <input
         {...props}
         type="checkbox"
@@ -40,6 +43,12 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
         checked={isChecked || checked}
       />
     </div>
-  </div>
-);
+  );
+  return (
+    <React.Fragment>
+      {!otherControls && <div className={css(styles.dataListItemControl, className)}>{check}</div>}
+      {otherControls && check}
+    </React.Fragment>
+  );
+};
 DataListCheck.displayName = 'DataListCheck';

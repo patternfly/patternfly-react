@@ -38,6 +38,7 @@ import { css } from '@patternfly/react-styles';
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import {
@@ -89,6 +90,7 @@ SimpleDataList = () => (
 ```
 
 ### Compact
+
 ```js
 import React from 'react';
 import {
@@ -140,6 +142,7 @@ SimpleDataList = () => (
 ```
 
 ### Checkboxes, actions and additional cells
+
 ```js
 import React from 'react';
 import {
@@ -356,6 +359,7 @@ class CheckboxActionDataList extends React.Component {
 ```
 
 ### Actions: single and multiple
+
 ```js
 import React from 'react';
 import {
@@ -467,6 +471,7 @@ class ActionsDataList extends React.Component {
 ```
 
 ### Expandable
+
 ```js
 import React from 'react';
 import {
@@ -564,7 +569,12 @@ class ExpandableDataList extends React.Component {
                 </DataListCell>
               ]}
             />
-            <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions" isPlainButtonAction>
+            <DataListAction
+              aria-labelledby="ex-item1 ex-action1"
+              id="ex-action1"
+              aria-label="Actions"
+              isPlainButtonAction
+            >
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
@@ -619,7 +629,12 @@ class ExpandableDataList extends React.Component {
                 </DataListCell>
               ]}
             />
-            <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions" isPlainButtonAction>
+            <DataListAction
+              aria-labelledby="ex-item2 ex-action2"
+              id="ex-action2"
+              aria-label="Actions"
+              isPlainButtonAction
+            >
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
@@ -674,7 +689,12 @@ class ExpandableDataList extends React.Component {
                 </DataListCell>
               ]}
             />
-            <DataListAction aria-labelledby="ex-item3 ex-action3" id="ex-action3" aria-label="Actions" isPlainButtonAction>
+            <DataListAction
+              aria-labelledby="ex-item3 ex-action3"
+              id="ex-action3"
+              aria-label="Actions"
+              isPlainButtonAction
+            >
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
@@ -709,6 +729,7 @@ class ExpandableDataList extends React.Component {
 ```
 
 ### Width modifiers
+
 ```js
 import React from 'react';
 import {
@@ -913,6 +934,7 @@ class ModifiersDataList extends React.Component {
 ```
 
 ### Selectable rows
+
 ```js
 import React from 'react';
 import {
@@ -1052,6 +1074,7 @@ class SelectableDataList extends React.Component {
 ```
 
 ### Controlling text
+
 ```js
 import React from 'react';
 import {
@@ -1063,7 +1086,7 @@ import {
   DataListCell,
   DataListCheck,
   DataListAction,
-  DataListWrapModifier,
+  DataListWrapModifier
 } from '@patternfly/react-core';
 
 SimpleDataList = () => (
@@ -1075,11 +1098,126 @@ SimpleDataList = () => (
             <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
               <span id="simple-item1">Primary content</span>
             </DataListCell>,
-            <DataListCell key="secondary content" wrapModifier={DataListWrapModifier.truncate}>Really really really really really really really really really really really really really really long description that should be truncated before it ends</DataListCell>
+            <DataListCell key="secondary content" wrapModifier={DataListWrapModifier.truncate}>
+              Really really really really really really really really really really really really really really long
+              description that should be truncated before it ends
+            </DataListCell>
           ]}
         />
       </DataListItemRow>
     </DataListItem>
   </DataList>
 );
+```
+
+### Draggable
+
+```js
+import React from 'react';
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  KebabToggle,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListItemRow,
+  DataListCheck,
+  DataListControl,
+  DataListDragButton,
+  DataListItemCells,
+  DataListAction
+} from '@patternfly/react-core';
+
+class DraggableDataList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      list: [
+        <DataListItem aria-labelledby="simple-item1" id="data1" key="1">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton />
+
+              <DataListCheck aria-labelledby="check-item1" name="check1" otherControls />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="item1">
+                  <span id="simple-item1">Item 1</span>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>,
+        <DataListItem aria-labelledby="simple-item2" id="data2" key="2">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton />
+              <DataListCheck aria-labelledby="check-item2" name="check2" otherControls />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="item2">
+                  <span id="simple-item2">Item 2</span>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>,
+        <DataListItem aria-labelledby="simple-item3" id="data3" key="3">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton />
+              <DataListCheck aria-labelledby="check-item3" name="check3" otherControls />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="item3">
+                  <span id="simple-item3">Item 3</span>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>,
+        <DataListItem aria-labelledby="simple-item4" id="data4" key="4">
+          <DataListItemRow>
+            <DataListControl>
+              <DataListDragButton />
+              <DataListCheck aria-labelledby="check-item4" name="check4" otherControls />
+            </DataListControl>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="item4">
+                  <span id="simple-item4">Item 4</span>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+      ]
+    };
+
+    this.onDragFinish = updatedList => {
+      console.log('saving new list');
+      this.setState({
+        list: updatedList
+      });
+    };
+  }
+
+  render() {
+    const { list } = this.state;
+    return (
+      <React.Fragment>
+        <DataList aria-label="draggable data list example" isCompact onDragFinish={this.onDragFinish}>
+          {list}
+        </DataList>
+      </React.Fragment>
+    );
+  }
+}
 ```
