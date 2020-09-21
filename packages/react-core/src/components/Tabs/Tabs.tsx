@@ -17,8 +17,8 @@ export enum TabsComponent {
 }
 
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
-  /** Content rendered inside the tabs component. */
-  children: React.ReactElement<TabProps>[];
+  /** Content rendered inside the tabs component. Must be React.ReactElement<TabProps>[] */
+  children: React.ReactNode;
   /** Additional classes added to the tabs */
   className?: string;
   /** The index of the active tab */
@@ -228,7 +228,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       ...props
     } = this.props;
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
-    const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[]).filter(Boolean);
+    const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[])
+      .filter(Boolean)
+      .filter(child => !child.props.isHidden);
 
     const uniqueId = id || getUniqueId();
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
@@ -261,20 +263,23 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             <AngleLeftIcon />
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {filteredChildren.map((child, index) => {
-              const {
-                title,
-                eventKey,
-                tabContentRef,
-                id: childId,
-                tabContentId,
-                isHidden = false,
-                className: childClassName = '',
-                ouiaId: childOuiaId,
-                ...rest
-              } = child.props;
-
-              return isHidden ? null : (
+            {filteredChildren.map(
+              (
+                {
+                  props: {
+                    title,
+                    eventKey,
+                    tabContentRef,
+                    id: childId,
+                    tabContentId,
+                    isHidden = false,
+                    className: childClassName = '',
+                    ouiaId: childOuiaId,
+                    ...rest
+                  }
+                },
+                index
+              ) => (
                 <li
                   key={index}
                   className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, childClassName)}
@@ -293,8 +298,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                     {title}
                   </TabButton>
                 </li>
-              );
-            })}
+              )
+            )}
           </ul>
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}

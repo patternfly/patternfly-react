@@ -31,8 +31,8 @@ export interface SelectProps
   extends ToggleMenuBaseProps,
     Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
-  /** Content rendered inside the Select */
-  children?: React.ReactElement<SelectGroupProps>[];
+  /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
+  children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
   /** Flag specifying which direction the Select menu expands */
