@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.5.14...@patternfly/react-topology@4.5.15) (2020-09-21)
+
+
+### Bug Fixes
+
+* **topology:** fix selector for cancelling dnd ([#4850](https://github.com/patternfly/patternfly-react/issues/4850)) ([6b9e3fe](https://github.com/patternfly/patternfly-react/commit/6b9e3fe208f60fcdf919c1ed5bb5408e3187b6ce))
+
+
+
+
+
 ## [4.5.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.5.13...@patternfly/react-topology@4.5.14) (2020-09-18)
 
 **Note:** Version bump only for package @patternfly/react-topology
