@@ -272,7 +272,12 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                   ouiaId: childOuiaId,
                   ...rest
                 } = child.props;
-
+                let ariaControls = tabContentId
+                  ? `${tabContentId}`
+                  : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
+                if ((mountOnEnter || unmountOnExit) && eventKey !== activeKey) {
+                  ariaControls = undefined;
+                }
                 return isHidden ? null : (
                   <li
                     key={index}
@@ -282,9 +287,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                       className={css(styles.tabsLink)}
                       onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
                       id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-                      aria-controls={
-                        tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
-                      }
+                      aria-controls={ariaControls}
                       tabContentRef={tabContentRef}
                       ouiaId={childOuiaId}
                       {...rest}
