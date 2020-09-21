@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import { isFunction, isEqualWith } from 'lodash';
+import isEqualWith from 'lodash/isEqualWith';
 import { ColumnsType } from './types';
 
 /**
@@ -13,7 +13,7 @@ import { ColumnsType } from './types';
  */
 export function columnsAreEqual(oldColumns: ColumnsType, newColumns: ColumnsType) {
   return isEqualWith(oldColumns, newColumns, (a, b) => {
-    if (isFunction(a) && isFunction(b)) {
+    if (typeof a === 'function' && typeof b === 'function') {
       return a === b;
     }
 

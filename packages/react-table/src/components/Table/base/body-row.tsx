@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import { isEqual, isFunction } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import * as React from 'react';
 import { columnsAreEqual } from './columns-are-equal';
 import { evaluateFormatters } from './evaluate-formatters';
@@ -35,7 +35,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
     const { renderers } = nextProps;
 
     if (renderers && renderers.row && (renderers.row as React.Component).shouldComponentUpdate) {
-      if (isFunction((renderers.row as React.Component).shouldComponentUpdate)) {
+      if (typeof (renderers.row as React.Component).shouldComponentUpdate === 'function') {
         return (renderers.row as React.Component).shouldComponentUpdate.call(this, nextProps, {}, {});
       }
 
