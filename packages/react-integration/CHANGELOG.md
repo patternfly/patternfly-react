@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.40.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.39.1...@patternfly/react-integration@4.40.0) (2020-09-21)
+
+
+### Features
+
+* **notificationDrawer:** add default variation to notification items ([#4792](https://github.com/patternfly/patternfly-react/issues/4792)) ([7f32482](https://github.com/patternfly/patternfly-react/commit/7f32482604191bcc1a22214f20d7da3ec03eb5bd))
+
+
+
+
+
 ## [4.39.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.39.0...@patternfly/react-integration@4.39.1) (2020-09-17)
 
 **Note:** Version bump only for package @patternfly/react-integration
