@@ -174,7 +174,7 @@ export const useDndDrag = <
                       if (e.key === 'Escape') {
                         if (dndManager.isDragging() && dndManager.cancel()) {
                           operationChangeEvents = undefined;
-                          d3.select(node).on('.drag', null);
+                          d3.select(d3.event.view).on('.drag', null);
                           d3.select(node.ownerDocument).on(createKeyHandlerId(), null);
                           dndManager.endDrag();
                         }
@@ -226,7 +226,7 @@ export const useDndDrag = <
         }
         return () => {
           if (node) {
-            d3.select(node).on('mousedown.drag', null);
+            d3.select(node).on('.drag', null);
             d3.select(node.ownerDocument).on(createKeyHandlerId(), null);
             if (dndManager.isDragging() && dndManager.getSourceId() === monitor.getHandlerId()) {
               dndManager.endDrag();
