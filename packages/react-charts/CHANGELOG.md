@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.9.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.8...@patternfly/react-charts@6.9.9) (2020-09-21)
+
+
+### Bug Fixes
+
+* **charts,table:** replace or use exact lodash imports ([#4830](https://github.com/patternfly/patternfly-react/issues/4830)) ([63a8259](https://github.com/patternfly/patternfly-react/commit/63a8259c49f0eddbc699febb5f72cc5a2defb9eb))
+
+
+
+
+
 ## [6.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.7...@patternfly/react-charts@6.9.8) (2020-09-17)
 
 **Note:** Version bump only for package @patternfly/react-charts

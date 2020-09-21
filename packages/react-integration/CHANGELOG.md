@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.40.1...@patternfly/react-integration@4.41.0) (2020-09-21)
+
+
+### Features
+
+* **react-core-button:** support warning variant ([#4829](https://github.com/patternfly/patternfly-react/issues/4829)) ([6c5df2a](https://github.com/patternfly/patternfly-react/commit/6c5df2adfc78f128448ee7b7450c4bc9c054131f)), closes [#4717](https://github.com/patternfly/patternfly-react/issues/4717)
+
+
+
+
+
 ## [4.40.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.40.0...@patternfly/react-integration@4.40.1) (2020-09-21)
 
 
