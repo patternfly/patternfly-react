@@ -3,6 +3,9 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { SearchInput } from '../SearchInput';
+import { MenuGroup } from '.';
+import { Divider } from '..';
+import { MenuContext } from './MenuContext';
 
 export type MenuSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
@@ -41,27 +44,17 @@ export interface MenuProps
   variant?: 'default' | 'flyout';
   /** Search input of menu */
   searchInput?: React.ReactNode;
+  /** ID list of favorited ApplicationLauncherItems */
+  favorites?: string[];
+  /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
+  onFavorite?: (itemId: string, isFavorite: boolean) => void;
+  /** Label for the favorites group */
+  favoritesLabel?: string;
+  /** Flag to indicate if application launcher has groups */
+  isGrouped?: boolean;
+  /** Array of application launcher items */
+  items?: React.ReactNode[];
 }
-
-export const MenuContext = React.createContext<{
-  onSelect?: (
-    event: React.FormEvent<HTMLInputElement>,
-    groupId: number | string,
-    itemId: number | string,
-    to: string,
-    preventDefault: boolean,
-    onClick: (
-      e: React.FormEvent<HTMLInputElement>,
-      itemId: number | string,
-      groupId: number | string,
-      to: string
-    ) => void
-  ) => void;
-  onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
-  onSearchInputChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
-  updateIsScrollable?: (isScrollable: boolean) => void;
-  isHorizontal?: boolean;
-}>({});
 
 export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ouiaStateId: string }> {
   static displayName = 'Menu';
@@ -69,8 +62,12 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     onSelect: () => undefined,
     onToggle: () => undefined,
     onSearchInputChange: () => undefined,
-    theme: 'dark',
-    ouiaSafe: true
+    // onFavorite: () => undefined,
+    // theme: 'dark',
+    favorites: [] as string[],
+    favoritesLabel: 'Favorites',
+    ouiaSafe: true,
+    isGrouped: false
   };
 
   state = {
@@ -78,7 +75,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant)
   };
 
-  // Callback from NavItem
+  // Callback from MenuItem
   onSelect(
     event: React.FormEvent<HTMLInputElement>,
     groupId: number | string,
@@ -98,7 +95,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     }
   }
 
-  // Callback from NavExpandable
+  // Callback from MenuExpandable
   onToggle(event: React.MouseEvent<HTMLInputElement>, groupId: number | string, toggleValue: boolean) {
     this.props.onToggle({
       event,
@@ -114,6 +111,45 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     });
   }
 
+  createRenderableFavorites = () => {
+    const { items, isGrouped, favorites } = this.props;
+    if (isGrouped) {
+      const favoriteItems: React.ReactNode[] = [];
+      (items as React.ReactElement[]).forEach(group =>
+        (group.props.children as React.ReactElement[])
+          .filter(item => favorites.includes(item.props.id))
+          .map(item => favoriteItems.push(React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true })))
+      );
+      return favoriteItems;
+    }
+    return (items as React.ReactElement[])
+      .filter(item => favorites.includes(item.props.id))
+      .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true }));
+  };
+
+  extendItemsWithFavorite = () => {
+    const { items, isGrouped, favorites } = this.props;
+    if (isGrouped) {
+      return (items as React.ReactElement[]).map(group =>
+        React.cloneElement(group, {
+          children: React.Children.map(group.props.children as React.ReactElement[], item => {
+            if (item.type === Divider) {
+              return item;
+            }
+            return React.cloneElement(item, {
+              isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
+            });
+          })
+        })
+      );
+    }
+    return (items as React.ReactElement[]).map(item =>
+      React.cloneElement(item, {
+        isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
+      })
+    );
+  };
+
   render() {
     const {
       'aria-label': ariaLabel,
@@ -123,19 +159,47 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
       onSelect,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
-      onSearchInputChange,
+      // onSearchInputChange,
       // theme,
       ouiaId,
       ouiaSafe,
       variant,
       searchInput,
+      favorites,
+      favoritesLabel,
+      onFavorite,
+      isGrouped,
+      items,
       ...props
     } = this.props;
-    const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
+    // const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
+    let renderableItems: React.ReactNode[] = [];
+
+    if (onFavorite) {
+      let favoritesGroup: React.ReactNode[] = [];
+      let renderableFavorites: React.ReactNode[] = [];
+      if (favorites.length > 0) {
+        renderableFavorites = this.createRenderableFavorites();
+        favoritesGroup = [
+          <MenuGroup key="favorites" label={favoritesLabel}>
+            {renderableFavorites}
+            <Divider component="li" />
+          </MenuGroup>
+        ];
+      }
+      if (renderableFavorites.length > 0) {
+        renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
+      } else {
+        renderableItems = this.extendItemsWithFavorite();
+      }
+    } else {
+      renderableItems = items;
+    }
 
     return (
       <MenuContext.Provider
         value={{
+          onFavorite,
           onSelect: (
             event: React.FormEvent<HTMLInputElement>,
             groupId: number | string,
@@ -153,8 +217,8 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
             this.onToggle(event, groupId, expanded),
           onSearchInputChange: (event: React.FormEvent<HTMLInputElement>, value: string) =>
             this.onSearchInputChange(event, value),
-          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal
+          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable })
+          // isHorizontal,
         }}
       >
         <div
@@ -172,10 +236,10 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
         >
           {searchInput && (
             <div className="pf-c-menu__search">
-              <SearchInput onChange={this.onSearchInputChange} />
+              <SearchInput />
             </div>
           )}
-          {children}
+          {renderableItems}
         </div>
       </MenuContext.Provider>
     );

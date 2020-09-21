@@ -1,8 +1,10 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import { MenuContext, MenuSelectClickHandler } from './Menu';
+import { MenuSelectClickHandler } from './Menu';
+import { MenuContext } from './MenuContext';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
+import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
 
 export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
   /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
@@ -33,6 +35,14 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   description?: string | React.ReactNode;
   /** Render external link icon */
   isExternalLink?: boolean;
+  /** ID of the item. Required for tracking favorites. */
+  id?: string;
+  /** Flag indicating if the item is favorited */
+  isFavorite?: boolean;
+  /** Aria label text for favoritable button when favorited */
+  ariaIsFavoriteLabel?: string;
+  /** Aria label text for favoritable button when not favorited */
+  ariaIsNotFavoriteLabel?: string;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
@@ -50,6 +60,10 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   isDisabled = false,
   isExternalLink = false,
   icon,
+  id,
+  isFavorite,
+  ariaIsFavoriteLabel,
+  ariaIsNotFavoriteLabel,
   ...props
 }: MenuListItemProps) => {
   const Component = component as any;
@@ -57,28 +71,46 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
-      <Component
-        href={to}
-        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(styles.menuItem, isActive, className)}
-        aria-current={isActive ? 'page' : null}
-        {...props}
-      >
-        <div className={css(styles.menuItemMain)}>
-          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-          <span className={css(styles.menuItemText)}>{children}</span>
-          {isExternalLink && (
-            <span className={css(styles.menuItemExternalIcon)}>
-              <ExternalLinkAltIcon />
-            </span>
-          )}
-        </div>
-        {description && (
-          <div className={css(styles.menuItemDescription)}>
-            <span>{description}</span>
-          </div>
+      <MenuContext.Consumer>
+        {({ onFavorite }) => (
+          <Component
+            href={to}
+            id={id}
+            onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+            className={css(styles.menuItem, isActive, className)}
+            aria-current={isActive ? 'page' : null}
+            {...(isFavorite !== null && {
+              additionalChild: (
+                <button
+                  className={css(styles.menuItemAction, styles.modifiers.favorite)}
+                  aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
+                  onClick={() => {
+                    onFavorite(id, isFavorite);
+                  }}
+                >
+                  <StarIcon />
+                </button>
+              )
+            })}
+            {...props}
+          >
+            <div className={css(styles.menuItemMain)}>
+              {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+              <span className={css(styles.menuItemText)}>{children}</span>
+              {isExternalLink && (
+                <span className={css(styles.menuItemExternalIcon)}>
+                  <ExternalLinkAltIcon />
+                </span>
+              )}
+            </div>
+            {description && (
+              <div className={css(styles.menuItemDescription)}>
+                <span>{description}</span>
+              </div>
+            )}
+          </Component>
         )}
-      </Component>
+      </MenuContext.Consumer>
     );
   };
 
