@@ -263,23 +263,23 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             <AngleLeftIcon />
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {filteredChildren.map(
-              (
-                {
-                  props: {
-                    title,
-                    eventKey,
-                    tabContentRef,
-                    id: childId,
-                    tabContentId,
-                    isHidden = false,
-                    className: childClassName = '',
-                    ouiaId: childOuiaId,
-                    ...rest
-                  }
-                },
-                index
-              ) => (
+            {filteredChildren.map((child, index) => {
+              const {
+                title,
+                eventKey,
+                tabContentRef,
+                id: childId,
+                tabContentId,
+                isHidden,
+                className: childClassName = '',
+                ouiaId: childOuiaId,
+                ...rest
+              } = child.props;
+              let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
+              if ((mountOnEnter || unmountOnExit) && eventKey !== activeKey) {
+                ariaControls = undefined;
+              }
+              return (
                 <li
                   key={index}
                   className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, childClassName)}
@@ -288,9 +288,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                     className={css(styles.tabsLink)}
                     onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
                     id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-                    aria-controls={
-                      tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
-                    }
+                    aria-controls={ariaControls}
                     tabContentRef={tabContentRef}
                     ouiaId={childOuiaId}
                     {...rest}
@@ -298,8 +296,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                     {title}
                   </TabButton>
                 </li>
-              )
-            )}
+              );
+            })}
           </ul>
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}

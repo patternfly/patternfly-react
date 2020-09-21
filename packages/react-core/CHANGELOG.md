@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.51.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.51.0...@patternfly/react-core@4.51.1) (2020-09-21)
+
+
+### Bug Fixes
+
+* **tabs:** conditionally render aria-controls when un/mountOnEnter ([#4796](https://github.com/patternfly/patternfly-react/issues/4796)) ([41d3d0e](https://github.com/patternfly/patternfly-react/commit/41d3d0e1d41c45ba2a7d18f4ab9c3bdca494a3e4))
+
+
+
+
+
+# [4.51.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.50.2...@patternfly/react-core@4.51.0) (2020-09-21)
+
+
+### Features
+
+* **notificationDrawer:** add default variation to notification items ([#4792](https://github.com/patternfly/patternfly-react/issues/4792)) ([7f32482](https://github.com/patternfly/patternfly-react/commit/7f32482604191bcc1a22214f20d7da3ec03eb5bd))
+
+
+
+
+
 ## [4.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.50.1...@patternfly/react-core@4.50.2) (2020-09-18)
 
 
