@@ -5,6 +5,10 @@ describe('Notification Drawer Basic Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-basic-demo-nav-link');
   });
 
+  it('Verify svg width and height', () => {
+    cy.get('.pf-c-button > svg').should('exist');
+  });
+
   it('Verify 0 groups exist', () => {
     cy.get('.pf-c-notification-drawer__group').should('not.exist');
   });
@@ -28,6 +32,9 @@ describe('Notification Drawer Basic Demo Test', () => {
       .eq(2)
       .should('have.class', 'pf-m-hoverable');
     cy.get('.pf-c-notification-drawer__list-item')
+      .eq(3)
+      .should('have.class', 'pf-m-hoverable');
+    cy.get('.pf-c-notification-drawer__list-item')
       .last()
       .should('have.class', 'pf-m-hoverable');
   });
@@ -43,8 +50,11 @@ describe('Notification Drawer Basic Demo Test', () => {
       .eq(2)
       .should('have.class', 'pf-m-warning');
     cy.get('.pf-c-notification-drawer__list-item')
-      .last()
+      .eq(3)
       .should('have.class', 'pf-m-success');
+    cy.get('.pf-c-notification-drawer__list-item')
+      .last()
+      .should('have.class', 'pf-m-default');
   });
 
   it('Verify timestamp in list items', () => {
@@ -58,8 +68,11 @@ describe('Notification Drawer Basic Demo Test', () => {
       .eq(2)
       .contains('20 minutes ago');
     cy.get('.pf-c-notification-drawer__list-item-timestamp')
-      .last()
+      .eq(3)
       .contains('30 minutes ago');
+    cy.get('.pf-c-notification-drawer__list-item-timestamp')
+      .last()
+      .contains('35 minutes ago');
   });
 
   // Accessibility test

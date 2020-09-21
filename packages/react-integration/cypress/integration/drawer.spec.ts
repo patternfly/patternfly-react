@@ -19,6 +19,10 @@ describe('Drawer Demo Test', () => {
     cy.get('#toggleButton').click();
   });
 
+  it('Verify bottom drawer', () => {
+    cy.get('.pf-c-drawer').should('have.class', 'pf-m-panel-bottom');
+  });
+
   it('Verify that focus gets sent to drawer', () => {
     cy.get('#toggleButton').click();
     setTimeout(() => cy.focused().contains('drawer-panel'), 1000);

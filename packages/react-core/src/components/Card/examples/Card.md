@@ -484,3 +484,17 @@ SimpleCard = () => (
   </Card>
 );
 ```
+
+### With heading element
+```js
+import React from 'react';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
+
+HeadingCard = () => (
+  <Card>
+    <CardTitle component="h4">Header</CardTitle>
+    <CardBody>Body</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+);
+```

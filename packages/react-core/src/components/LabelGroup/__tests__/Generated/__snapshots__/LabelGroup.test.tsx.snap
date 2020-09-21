@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelGroup should match snapshot (auto-generated) 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+>
+  <Component />
+</GenerateId>
+`;

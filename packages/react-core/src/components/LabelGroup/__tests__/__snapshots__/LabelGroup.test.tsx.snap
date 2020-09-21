@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelGroup label group default 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+>
+  <Component />
+</GenerateId>
+`;
+
+exports[`LabelGroup label group with category 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+>
+  <Component />
+</GenerateId>
+`;
+
+exports[`LabelGroup label group with category and tooltip 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+>
+  <Component />
+</GenerateId>
+`;
+
+exports[`LabelGroup label group with closable category 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+>
+  <Component />
+</GenerateId>
+`;

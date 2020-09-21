@@ -55,14 +55,18 @@ const iconsPage = ({ location }) => {
           .
         </Text>
         <Grid>
-          {allIcons.map(([id, Icon]) => (
-            <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
-              <Tooltip content={<div>{id}</div>}>
-                <Icon size="xl" title={id} />
-              </Tooltip>
-              <div style={labelStyle}>{getLabel(id)}</div>
-            </GridItem>
-          ))}
+          {allIcons
+            // BREAKING CHANGE - remove line below when AnsibeTowerIcon is removed
+            // hide AnsibeTowerIcon in favor of corrected AnsibleTowerIcon
+            .filter(([id]) => id !== 'AnsibeTowerIcon')
+            .map(([id, Icon]) => (
+              <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
+                <Tooltip content={<div>{id}</div>}>
+                  <Icon size="xl" title={id} />
+                </Tooltip>
+                <div style={labelStyle}>{getLabel(id)}</div>
+              </GridItem>
+            ))}
         </Grid>
       </PageSection>
     </SideNavLayout>

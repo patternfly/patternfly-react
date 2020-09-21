@@ -52,14 +52,14 @@ references:
       at: ~/project
   install_node: &install_node
     run:
-      name: Install node@10 (need right version for `yarn`)
+      name: Install node@12 (need right version for `yarn`)
       command: |
         set +e             
         curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
         export NVM_DIR="/opt/circleci/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        nvm install v10
-        nvm alias default v10
+        nvm install v12
+        nvm alias default v12
         
         # Each step uses the same `$BASH_ENV`, so need to modify it
         echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
@@ -103,7 +103,7 @@ workflows:
 jobs:
   build_pf4:
     docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
     steps:
     - checkout
     - persist_to_workspace:
@@ -137,7 +137,7 @@ jobs:
         paths: *build_cache_paths
   test_jest_pf4:
     docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
     steps:
     - *attach_workspace
     - restore_cache:
@@ -152,7 +152,7 @@ jobs:
         when: always
   build_demo_app:
     docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
     steps:
     - *attach_workspace
     - restore_cache:
@@ -167,7 +167,7 @@ jobs:
           - packages/react-integration/demo-app-ts/build/
   test_integration:
     docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
     parallelism: 3
     steps:
     - *attach_workspace
@@ -196,7 +196,7 @@ jobs:
         path: packages/react-integration/results
   lint_pf4:
     docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
     steps:
     - *attach_workspace
     - restore_cache:
@@ -255,7 +255,7 @@ jobs:
         paths: *gatsby_cache_paths
   test_a11y_pf4:
     docker:
-    - image: circleci/node:10-browsers
+    - image: circleci/node:12-browsers
     steps:
     - *attach_workspace
     - restore_cache:
@@ -276,7 +276,7 @@ jobs:
         path: packages/react-docs/coverage/
   deploy_prerelease:
     docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
     steps:
     - *attach_workspace
     - restore_cache:

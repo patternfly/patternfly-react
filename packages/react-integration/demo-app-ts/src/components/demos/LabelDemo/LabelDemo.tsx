@@ -42,6 +42,9 @@ export class LabelDemo extends Component {
         <Label color="blue" id="truncated-label" isTruncated icon={<InfoCircleIcon />}>
           Very very very very long label text that should be truncated
         </Label>
+        <Label id="overflow-label" isOverflowLabel>
+          Overflow label
+        </Label>
       </React.Fragment>
     );
   }

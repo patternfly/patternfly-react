@@ -117,7 +117,7 @@ class BasicNotificationDrawer extends React.Component {
       });
     };
     
-    this.onNotificationBadgeClick = () => {
+    this.onCloseNotificationDrawer = () => {
       this.setState(prevState => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
@@ -222,7 +222,7 @@ class BasicNotificationDrawer extends React.Component {
     const headerTools = (
       <PageHeaderTools>
         <PageHeaderToolsItem visibility={{default: 'visible'}} isSelected={isDrawerExpanded}>
-          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
+          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onCloseNotificationDrawer} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
         </PageHeaderToolsItem>
@@ -323,7 +323,7 @@ class BasicNotificationDrawer extends React.Component {
     
     const notificationDrawer = (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={this.getNumberUnread()}>
+        <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={isOpen => this.onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />}
@@ -586,7 +586,7 @@ class GroupedNotificationDrawer extends React.Component {
       });
     };
     
-    this.onNotificationBadgeClick = () => {
+    this.onCloseNotificationDrawer = () => {
       this.setState(prevState => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
@@ -732,7 +732,7 @@ class GroupedNotificationDrawer extends React.Component {
     const headerTools = (
       <PageHeaderTools>
         <PageHeaderToolsItem visibility={{default: 'visible'}} isSelected={isDrawerExpanded}>
-          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onNotificationBadgeClick} aria-label="Notifications">
+          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onCloseNotificationDrawer} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
         </PageHeaderToolsItem>
@@ -833,7 +833,7 @@ class GroupedNotificationDrawer extends React.Component {
     
     const notificationDrawer = (
       <NotificationDrawer>
-        <NotificationDrawerHeader count={this.getNumberUnread()}>
+        <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={isOpen => this.onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />}

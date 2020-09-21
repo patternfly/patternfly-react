@@ -3,6 +3,97 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.39.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.39.1...demo-app-ts@4.39.2) (2020-09-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.39.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.39.0...demo-app-ts@4.39.1) (2020-09-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.39.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.38.1...demo-app-ts@4.39.0) (2020-09-16)
+
+
+### Features
+
+* **Select:** add support for favourites ([#4642](https://github.com/patternfly/patternfly-react/issues/4642)) ([acd748b](https://github.com/patternfly/patternfly-react/commit/acd748b06a34a54f65a63325f179c7751181cf9a))
+
+
+
+
+
+## [4.38.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.38.0...demo-app-ts@4.38.1) (2020-09-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.38.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.37.1...demo-app-ts@4.38.0) (2020-09-14)
+
+
+### Features
+
+* **Drawer:** add bottom panel variation ([#4771](https://github.com/patternfly/patternfly-react/issues/4771)) ([93f8fe4](https://github.com/patternfly/patternfly-react/commit/93f8fe4ec55323212fd1e2dc07986a9f10815bf3))
+* **Skeleton:** add skeleton component, examples, tests ([#4755](https://github.com/patternfly/patternfly-react/issues/4755)) ([1f9a46e](https://github.com/patternfly/patternfly-react/commit/1f9a46ed8f9b3fa2bcef7fc580e7101f7aaef09c))
+* **Toolbar:** add insets property ([#4757](https://github.com/patternfly/patternfly-react/issues/4757)) ([2d388af](https://github.com/patternfly/patternfly-react/commit/2d388afd22a243195dea56b502398a62a7138617))
+
+
+
+
+
+## [4.37.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.37.0...demo-app-ts@4.37.1) (2020-09-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.37.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.6...demo-app-ts@4.37.0) (2020-09-11)
+
+
+### Features
+
+* **Card:** add ability to customize card title and support heading element ([#4761](https://github.com/patternfly/patternfly-react/issues/4761)) ([215c566](https://github.com/patternfly/patternfly-react/commit/215c566057172a73772a514b3413dbdee0542263))
+
+
+
+
+
+## [4.36.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.5...demo-app-ts@4.36.6) (2020-09-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.4...demo-app-ts@4.36.5) (2020-09-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.36.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.3...demo-app-ts@4.36.4) (2020-09-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.36.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.36.2...demo-app-ts@4.36.3) (2020-09-04)
 
 **Note:** Version bump only for package demo-app-ts

@@ -372,6 +372,26 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
+    id: 'labelgroup-demo',
+    name: 'LabelGroup Demo',
+    componentType: Examples.LabelGroupDemo
+  },
+  {
+    id: 'labelgroup-default-is-open-demo',
+    name: 'LabelGroup Default is Open Demo',
+    componentType: Examples.LabelGroupDefaultIsOpenDemo
+  },
+  {
+    id: 'labelgroup-vertical-demo',
+    name: 'LabelGroup Vertical Demo',
+    componentType: Examples.LabelGroupVerticalDemo
+  },
+  {
+    id: 'labelgroup-with-category-demo',
+    name: 'LabelGroup With Category Demo',
+    componentType: Examples.LabelGroupWithCategoryDemo
+  },
+  {
     id: 'level-demo',
     name: 'Level Demo',
     componentType: Examples.LevelDemo
@@ -517,9 +537,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FilteringSelectDemo
   },
   {
+    id: 'select-favorites-demo',
+    name: 'Select Favorites Demo',
+    componentType: Examples.SelectFavoritesDemo
+  },
+  {
     id: 'simple-list-demo',
     name: 'Simple List Demo',
     componentType: Examples.SimpleListDemo
+  },
+  {
+    id: 'skeleton-demo',
+    name: 'Skeleton Demo',
+    componentType: Examples.SkeletonDemo
   },
   {
     id: 'spinner-demo',

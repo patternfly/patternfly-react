@@ -16,4 +16,8 @@ describe('Label Demo Test', () => {
       .last()
       .should('have.class', 'pf-c-label__text');
   });
+
+  it('Verify isOverflowLabel label', () => {
+    cy.get('#overflow-label').should('have.class', 'pf-m-overflow');
+  });
 });

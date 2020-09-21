@@ -5,6 +5,10 @@ describe('Notification Drawer Groups Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-groups-demo-nav-link');
   });
 
+  it('Verify svg width and height', () => {
+    cy.get('.pf-c-button > svg').should('exist');
+  });
+
   it('Verify text in header title', () => {
     cy.get('.pf-c-notification-drawer__header-title').contains('Notifications');
   });

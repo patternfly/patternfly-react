@@ -18,7 +18,6 @@ exports[`additional props should be spread to the root svg element 1`] = `
 >
   <path
     d="svgPath"
-    transform=""
   />
 </svg>
 `;

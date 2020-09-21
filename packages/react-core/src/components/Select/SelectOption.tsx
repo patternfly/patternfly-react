@@ -4,6 +4,8 @@ import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
+import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import { getUniqueId } from '../../helpers/util';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */
@@ -37,18 +39,33 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   /** Flag forcing the focused state */
   isFocused?: boolean;
   /** Internal callback for ref tracking */
-  sendRef?: (ref: React.ReactNode, index: number) => void;
+  sendRef?: (
+    ref: React.ReactNode,
+    favoriteRef: React.ReactNode,
+    optionContainerRef: React.ReactNode,
+    index: number
+  ) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler?: (index: number, position: string) => void;
+  keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Optional callback for click event */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Id of the checkbox input */
   inputId?: string;
+  /** Internal Flag indicating if the option is favorited */
+  isFavorite?: boolean;
+  /** Aria label text for favoritable button when favorited */
+  ariaIsFavoriteLabel?: string;
+  /** Aria label text for favoritable button when not favorited */
+  ariaIsNotFavoriteLabel?: string;
+  /** ID of the item. Required for tracking favorites */
+  id?: string;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
   static displayName = 'SelectOption';
   private ref = React.createRef<any>();
+  private liRef = React.createRef<any>();
+  private favoriteRef = React.createRef<any>();
   static defaultProps: SelectOptionProps = {
     className: '',
     value: '',
@@ -62,30 +79,50 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     onClick: () => {},
     sendRef: () => {},
     keyHandler: () => {},
-    inputId: ''
+    inputId: '',
+    isFavorite: null
   };
 
   componentDidMount() {
-    this.props.sendRef(this.props.isDisabled ? null : this.ref.current, this.props.index);
+    this.props.sendRef(
+      this.props.isDisabled ? null : this.ref.current,
+      this.props.isDisabled ? null : this.favoriteRef.current,
+      this.props.isDisabled ? null : this.liRef.current,
+      this.props.index
+    );
   }
 
   componentDidUpdate() {
-    this.props.sendRef(this.props.isDisabled ? null : this.ref.current, this.props.index);
+    this.props.sendRef(
+      this.props.isDisabled ? null : this.ref.current,
+      this.props.isDisabled ? null : this.favoriteRef.current,
+      this.props.isDisabled ? null : this.liRef.current,
+      this.props.index
+    );
   }
 
-  onKeyDown = (event: React.KeyboardEvent) => {
+  onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any) => {
+    const { index, keyHandler } = this.props;
     if (event.key === KeyTypes.Tab) {
-      return;
+      keyHandler(index, innerIndex, 'tab');
     }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
-      this.props.keyHandler(this.props.index, 'up');
+      keyHandler(index, innerIndex, 'up');
     } else if (event.key === KeyTypes.ArrowDown) {
-      this.props.keyHandler(this.props.index, 'down');
+      keyHandler(index, innerIndex, 'down');
+    } else if (event.key === KeyTypes.ArrowLeft) {
+      keyHandler(index, innerIndex, 'left');
+    } else if (event.key === KeyTypes.ArrowRight) {
+      keyHandler(index, innerIndex, 'right');
     } else if (event.key === KeyTypes.Enter) {
-      this.ref.current.click();
-      if (this.context.variant === SelectVariant.checkbox) {
-        this.ref.current.focus();
+      if (onEnter !== undefined) {
+        onEnter();
+      } else {
+        this.ref.current.click();
+        if (this.context.variant === SelectVariant.checkbox) {
+          this.ref.current.focus();
+        }
       }
     }
   };
@@ -95,6 +132,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     const {
       children,
       className,
+      id,
       description,
       value,
       onClick,
@@ -109,24 +147,61 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       index,
       component,
       inputId,
+      isFavorite,
+      ariaIsFavoriteLabel = 'starred',
+      ariaIsNotFavoriteLabel = 'not starred',
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
+
+    if (!id && isFavorite !== null) {
+      // eslint-disable-next-line no-console
+      console.error('Please provide an id to use the favorites feature.');
+    }
+
+    const generatedId = id || getUniqueId('select-option');
+    const favoriteButton = (onFavorite: any) => (
+      <button
+        className={css(styles.selectMenuItem, styles.modifiers.action, styles.modifiers.favoriteAction)}
+        aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
+        onClick={() => {
+          onFavorite(generatedId.replace('favorite-', ''), isFavorite);
+        }}
+        onKeyDown={event => {
+          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
+        }}
+        ref={this.favoriteRef}
+      >
+        <span className={css(styles.selectMenuItemActionIcon)}>
+          <StarIcon />
+        </span>
+      </button>
+    );
+
     return (
       <SelectConsumer>
-        {({ onSelect, onClose, variant, inputIdPrefix }) => (
+        {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
-              <li role="presentation">
+              <li
+                id={generatedId}
+                role="presentation"
+                className={css(
+                  styles.selectMenuWrapper,
+                  isFavorite && styles.modifiers.favorite,
+                  isFocused && styles.modifiers.focus
+                )}
+                ref={this.liRef}
+              >
                 <Component
                   {...props}
                   className={css(
                     styles.selectMenuItem,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
-                    isFocused && styles.modifiers.focus,
                     description && styles.modifiers.description,
+                    isFavorite !== null && styles.modifiers.link,
                     className
                   )}
                   onClick={(event: any) => {
@@ -139,20 +214,22 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   role="option"
                   aria-selected={isSelected || null}
                   ref={this.ref}
-                  onKeyDown={this.onKeyDown}
+                  onKeyDown={(event: React.KeyboardEvent) => {
+                    this.onKeyDown(event, 0);
+                  }}
                   type="button"
                 >
                   {description && (
                     <React.Fragment>
-                      <div className={css(styles.selectMenuItemMain)}>
+                      <span className={css(styles.selectMenuItemMain)}>
                         {children || value.toString()}
                         {isSelected && (
                           <span className={css(styles.selectMenuItemIcon)}>
                             <CheckIcon aria-hidden />
                           </span>
                         )}
-                      </div>
-                      <div className={css(styles.selectMenuItemDescription)}>{description}</div>
+                      </span>
+                      <span className={css(styles.selectMenuItemDescription)}>{description}</span>
                     </React.Fragment>
                   )}
                   {!description && (
@@ -166,6 +243,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     </React.Fragment>
                   )}
                 </Component>
+                {isFavorite !== null && id && favoriteButton(onFavorite)}
               </li>
             )}
             {variant === SelectVariant.checkbox && !isNoResultsOption && (
@@ -175,11 +253,12 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checkStyles.check,
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
-                  isFocused && styles.modifiers.focus,
                   description && styles.modifiers.description,
                   className
                 )}
-                onKeyDown={this.onKeyDown}
+                onKeyDown={(event: React.KeyboardEvent) => {
+                  this.onKeyDown(event, 0);
+                }}
               >
                 <input
                   id={inputId || `${inputIdPrefix}-${value.toString()}`}
