@@ -35,9 +35,6 @@ ButtonVariants = () => (
     </Button>
     <Button variant="link" isInline>
       Inline link
-    </Button><br />
-    <Button variant="link" isInline component="span">
-      Inline link button
     </Button><br /><br />
     <Button variant="plain" aria-label="Action">
       <TimesIcon />
@@ -78,10 +75,6 @@ DisabledBtn = () => (
       <TimesIcon />
     </Button>{' '}
     <Button isDisabled variant="control">Control disabled</Button>
-    <br />
-    <Button variant="link" isInline component="span" isDisabled>
-      Inline link button disabled
-    </Button>
   </React.Fragment>
 );
 ```
@@ -152,7 +145,7 @@ AriaDisabledLinkBtnWithTooltip = () => (
 );
 ```
 
-### Links as button
+### Links as buttons
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
@@ -171,13 +164,23 @@ LinkButton = () => (
     <Button component="a" href="https://pf4.patternfly.org/contribution/#modifiers" variant="link">
       Jump to modifiers in contribution guidelines
     </Button>
-    <br />
+  </React.Fragment>
+);
+```
+
+## Inline link as span
+```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+
+InlineLinkAsSpan = () => (
+  <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <Button variant="link" isInline component="span">
       This is long button text that needs to be a span so that it will wrap inline with the text around it.
     </Button>
     Sed hendrerit nisi in cursus maximus. Ut malesuada nisi turpis, in condimentum velit elementum non.
-  </React.Fragment>
+  </p>
 );
 ```
 

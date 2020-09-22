@@ -130,7 +130,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       )}
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
-      type={(isButtonElement || isInlineSpan) ? type : null}
+      type={isButtonElement || isInlineSpan ? type : null}
       role={isInlineSpan ? 'button' : null}
       {...ouiaProps}
     >
