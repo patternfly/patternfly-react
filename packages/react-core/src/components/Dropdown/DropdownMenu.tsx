@@ -108,7 +108,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
               children:
                 (group.props.children.constructor === Array &&
                   React.Children.map(
-                    group.props.children as React.ReactElement<any>,
+                    (group.props.children as unknown) as React.ReactElement<any>,
                     (option: React.ReactElement<any>) =>
                       React.cloneElement(option, {
                         index: index++

@@ -13,14 +13,12 @@
   "author": "Red Hat",
   "license": "MIT",
   "scripts": {
-    "build:docs": "yarn build:static && yarn build:ram",
-    "build:ram": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build",
-    "build:static": "shx cp -r ../react-core/dist/styles/* static",
-    "clean": "rimraf .cache public static/assets static/base.css",
-    "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts|virtualizedtable/selectable\""
+    "analyze": "yarn build:docs --analyze",
+    "build:docs": "yarn theme-patternfly-org build all",
+    "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
+    "develop": "theme-patternfly-org start",
+    "serve": "serve public",
+    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000"
   },
   "dependencies": {
     "@patternfly/patternfly": "4.42.2",
@@ -36,19 +34,15 @@
     "@patternfly/react-virtualized-extension": "^4.5.79"
   },
   "devDependencies": {
-    "@mdx-js/mdx": "^1.1.5",
-    "@mdx-js/react": "^1.1.5",
-    "@patternfly/patternfly-a11y": "^0.0.17",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
-    "gatsby": "2.21.0",
-    "gatsby-theme-patternfly-org": "^4.2.6",
-    "gatsby-transformer-react-docgen-typescript": "^4.0.5",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1",
     "rimraf": "^2.6.3",
-    "shx": "^0.3.2"
+    "serve": "^11.3.2",
+    "shx": "^0.3.2",
+    "theme-patternfly-org": "^0.1.17"
   },
   "keywords": [
     "gatsby"
