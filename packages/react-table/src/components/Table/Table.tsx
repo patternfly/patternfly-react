@@ -177,6 +177,7 @@ export interface decoratorReturnType {
   parentId?: number;
   colSpan?: number;
   id?: React.ReactText;
+  skipCell?: boolean;
 }
 
 export type ITransform = (label?: IFormatterValueType, extra?: IExtra) => decoratorReturnType;
@@ -241,6 +242,8 @@ export interface IRow extends RowType {
   selected?: boolean;
   /* Whether the row checkbox is disabled */
   disableCheckbox?: boolean;
+  /* Whether to use all cells in child inside an expanded content */
+  useAllCellInExpandedContent?: boolean;
 }
 
 export interface TableProps extends OUIAProps {

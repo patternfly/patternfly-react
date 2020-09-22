@@ -21,6 +21,7 @@ import {
   OnCollapse,
   OnRowEdit
 } from '../Table';
+import { skipRemainingExpandedRow } from './decorators/collapsible';
 
 /**
  * Generate header with transforms and formatters from custom header object.
@@ -220,7 +221,9 @@ const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse:
 
   return header.map((cell: ICell | string, key: number) => {
     const parentIdCell = addAdditionalCellTranforms(cell as ICell, parentId);
-    return key === 0 ? addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length)) : parentIdCell;
+    return key === 0
+      ? addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length))
+      : addAdditionalCellTranforms(parentIdCell as ICell, skipRemainingExpandedRow());
   });
 };
 

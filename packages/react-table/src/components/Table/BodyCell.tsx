@@ -25,6 +25,7 @@ export interface BodyCellProps {
   tooltip?: string;
   onMouseEnter?: (event: any) => void;
   children: React.ReactNode;
+  skipCell?: boolean;
 }
 export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   'data-label': dataLabel = '',
@@ -48,6 +49,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isSelectOpen,
   value,
   name,
+  skipCell,
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {
@@ -84,6 +86,6 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
 
   const bodyCell = tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
 
-  return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : bodyCell;
+  return !isVisible || skipCell ? null : bodyCell;
 };
 BodyCell.displayName = 'BodyCell';

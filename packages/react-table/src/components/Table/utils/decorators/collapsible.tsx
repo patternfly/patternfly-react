@@ -56,12 +56,38 @@ export const expandedRow = (colSpan: number) => {
         extraParams: { contentId = 'expanded-content' }
       }
     }: IExtra
-  ): decoratorReturnType =>
-    rowData.hasOwnProperty('parent') && {
-      // todo: rewrite this logic, it is not type safe
-      colSpan: colSpan + (!!rowData.fullWidth as any),
-      id: contentId + rowIndex,
-      className: rowData.noPadding && css(styles.modifiers.noPadding)
-    };
+  ): decoratorReturnType => {
+    if (rowData.hasOwnProperty('parent')) {
+      const formatter: decoratorReturnType = {
+        id: contentId + rowIndex,
+        className: rowData.noPadding && css(styles.modifiers.noPadding)
+      };
+
+      if (!rowData.useAllCellInExpandedContent) {
+        formatter.colSpan = colSpan + (rowData.fullWidth ? 0 : 1);
+      }
+
+      return formatter;
+    }
+
+    return {};
+  };
   return expandedRowFormatter;
+};
+
+export const skipRemainingExpandedRow = () => {
+  const skipRemainingExpandedRowFormatter = (value: IFormatterValueType, { rowData }: IExtra): decoratorReturnType => {
+    if (rowData.hasOwnProperty('parent')) {
+      const formatter: decoratorReturnType = {};
+
+      if (!rowData.useAllCellInExpandedContent) {
+        formatter.skipCell = true;
+      }
+
+      return formatter;
+    }
+
+    return {};
+  };
+  return skipRemainingExpandedRowFormatter;
 };
