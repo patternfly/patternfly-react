@@ -87,7 +87,11 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
           aria-invalid={!isValid}
           disabled={isDisabled}
           checked={this.calculateChecked()}
-          {...getOUIAProps(DropdownToggleCheckbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
+          {...getOUIAProps(
+            DropdownToggleCheckbox.displayName,
+            ouiaId !== undefined ? ouiaId : this.state.ouiaStateId,
+            ouiaSafe
+          )}
         />
         {text}
       </label>

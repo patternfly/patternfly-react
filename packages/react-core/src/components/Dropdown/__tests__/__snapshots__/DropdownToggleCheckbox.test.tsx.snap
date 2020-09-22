@@ -8,7 +8,7 @@ exports[`3rd state 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
-    checked={null}
+    checked={false}
     data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-5"
     data-ouia-component-type="PF4/DropdownToggleCheckbox"
     data-ouia-safe={true}

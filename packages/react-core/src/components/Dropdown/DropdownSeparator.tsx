@@ -2,7 +2,7 @@ import * as React from 'react';
 import { DropdownArrowContext } from './dropdownConstants';
 import { InternalDropdownItem } from './InternalDropdownItem';
 import { Divider, DividerVariant } from '../Divider';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement>, OUIAProps {
   /** Classes applied to root element of dropdown item */
@@ -18,18 +18,21 @@ export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
   ouiaId,
   ouiaSafe,
   ...props
-}: SeparatorProps) => (
-  <DropdownArrowContext.Consumer>
-    {context => (
-      <InternalDropdownItem
-        {...props}
-        context={context}
-        component={<Divider component={DividerVariant.div} />}
-        className={className}
-        role="separator"
-        {...getOUIAProps(DropdownSeparator.displayName, ouiaId, ouiaSafe)}
-      />
-    )}
-  </DropdownArrowContext.Consumer>
-);
+}: SeparatorProps) => {
+  const ouiaProps = useOUIAProps(DropdownSeparator.displayName, ouiaId, ouiaSafe);
+  return (
+    <DropdownArrowContext.Consumer>
+      {context => (
+        <InternalDropdownItem
+          {...props}
+          context={context}
+          component={<Divider component={DividerVariant.div} />}
+          className={className}
+          role="separator"
+          {...ouiaProps}
+        />
+      )}
+    </DropdownArrowContext.Consumer>
+  );
+};
 DropdownSeparator.displayName = 'DropdownSeparator';
