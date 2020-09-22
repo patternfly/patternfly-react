@@ -57,6 +57,10 @@ describe('Tab Demo Test', () => {
     cy.get('#filledTabs.pf-m-fill').should('exist');
   });
 
+  it('Verify light variant box tabs', () => {
+    cy.get('#boxLightVariantTabs.pf-m-box.pf-m-color-scheme--light-300').should('exist');
+  });
+
   it('Verify className in tabs', () => {
     cy.get('.custom-tab-1').should('have.length', 1);
     cy.get('.custom-tab-2').should('have.length', 1);
