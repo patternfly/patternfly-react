@@ -507,7 +507,7 @@ Packages released:
   - Fixed group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/pull/3838))
   - Allowed count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/pull/3976))
   - Added logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/pull/3895))
-## Table
+### Table
   - Fixed forward ref types ([#3919](https://github.com/patternfly/patternfly-react/pull/3919))
   - Added column management demo ([#3942](https://github.com/patternfly/patternfly-react/pull/3942))
 

@@ -6,7 +6,7 @@ import '@patternfly/react-styles/src/css/components/Topology/topology-view.css';
 import '@patternfly/react-styles/src/css/layouts/Toolbar/toolbar.css';
 
 // Global theme CSS
-import 'gatsby-theme-patternfly-org/global.css';
+import 'theme-patternfly-org/global.css';
 
 // Patternfly
 import '@patternfly/patternfly/patternfly.css';
