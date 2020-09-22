@@ -92,7 +92,7 @@
     "prettier": "node node_modules/.bin/prettier --write \"packages/**/*.{js,jsx,ts,tsx}\" \"scripts/**/*.{js,jsx,ts,tsx}\"",
     "serve:docs": "lerna run serve",
     "serve:integration": "lerna run serve:demo-app",
-    "start": "concurrently --kill-others \"yarn build && yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
+    "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
     "start:pf4": "yarn start",

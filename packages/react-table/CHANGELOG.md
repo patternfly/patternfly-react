@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.16.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.16.22...@patternfly/react-table@4.16.23) (2020-09-21)
+
+
+### Bug Fixes
+
+* **charts,table:** replace or use exact lodash imports ([#4830](https://github.com/patternfly/patternfly-react/issues/4830)) ([63a8259](https://github.com/patternfly/patternfly-react/commit/63a8259c49f0eddbc699febb5f72cc5a2defb9eb))
+
+
+
+
+
 ## [4.16.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.16.21...@patternfly/react-table@4.16.22) (2020-09-21)
 
 **Note:** Version bump only for package @patternfly/react-table

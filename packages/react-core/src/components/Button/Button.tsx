@@ -8,6 +8,7 @@ export enum ButtonVariant {
   secondary = 'secondary',
   tertiary = 'tertiary',
   danger = 'danger',
+  warning = 'warning',
   link = 'link',
   plain = 'plain',
   control = 'control'
@@ -41,7 +42,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' | 'control';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control';
   /** Sets position of the link icon */
   iconPosition?: 'left' | 'right';
   /** Adds accessible text to the button. */

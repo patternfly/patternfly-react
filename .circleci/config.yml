@@ -32,9 +32,8 @@ references:
   - packages/react-virtualized-extension/dist/
   - packages/react-catalog-view-extension/dist/
   - packages/react-icons/dist/
-  gatsby_cache_paths: &gatsby_cache_paths
+  webpack_cache_paths: &webpack_cache_paths
   - packages/react-docs/.cache
-  - packages/react-docs/public
   lint_cache_paths: &lint_cache_paths
   - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
@@ -50,24 +49,6 @@ references:
   attach_workspace: &attach_workspace
     attach_workspace:
       at: ~/project
-  install_node: &install_node
-    run:
-      name: Install node@12 (need right version for `yarn`)
-      command: |
-        set +e             
-        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-        export NVM_DIR="/opt/circleci/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        nvm install v12
-        nvm alias default v12
-        
-        # Each step uses the same `$BASH_ENV`, so need to modify it
-        echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
-        echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
-  install_yarn: &install_yarn
-    run:
-      name: Install yarn
-      command: curl -o- -L https://yarnpkg.com/install.sh | bash
 workflows:
   version: 2
   build_test_deploy:
@@ -88,9 +69,9 @@ workflows:
     - test_integration:
         requires:
         - build_demo_app
-    - test_a11y_pf4:
-        requires:
-        - build_docs_pf4
+    # - test_a11y_pf4:
+    #     requires:
+    #     - build_docs_pf4
     - deploy_prerelease:
         requires:
         - lint_pf4
@@ -229,8 +210,8 @@ jobs:
             fi
         when: always
   build_docs_pf4:
-    machine:
-      image: circleci/classic:latest
+    docker:
+    - image: circleci/node:12
     steps:
     - *attach_workspace
     - restore_cache:
@@ -239,20 +220,18 @@ jobs:
     - restore_cache:
         keys:
         - *gatsby_cache_key
-    - *install_node
-    - *install_yarn
     - run:
         name: Build patternfly-react docs
-        command: ~/.yarn/bin/yarn build:docs
+        command: yarn build:docs
     - save_cache:
-        paths: *gatsby_cache_paths
+        paths: *webpack_cache_paths
         key: *gatsby_cache_key
     - run:
         name: Upload docs to surge.sh
         command: node .circleci/upload-preview.js packages/react-docs/public
     - persist_to_workspace:
         root: ~/project
-        paths: *gatsby_cache_paths
+        paths: *webpack_cache_paths
   test_a11y_pf4:
     docker:
     - image: circleci/node:12-browsers

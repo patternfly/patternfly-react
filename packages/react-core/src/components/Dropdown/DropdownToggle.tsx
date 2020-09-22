@@ -4,8 +4,9 @@ import { Toggle } from './Toggle';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> {
+export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>, OUIAProps {
   /** HTML ID of dropdown toggle */
   id?: string;
   /** Anything which can be rendered as dropdown toggle button */
@@ -65,10 +66,13 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   splitButtonItems,
   splitButtonVariant = 'checkbox',
   'aria-haspopup': ariaHasPopup,
+  ouiaId,
+  ouiaSafe,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {
+  const ouiaProps = useOUIAProps(DropdownToggle.displayName, ouiaId, ouiaSafe);
   const toggle = (
     <DropdownContext.Consumer>
       {({ toggleTextClass, toggleIndicatorClass, toggleIconClass }) => (
@@ -85,6 +89,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isPrimary={isPrimary}
           onToggle={onToggle}
           aria-haspopup={ariaHasPopup}
+          {...ouiaProps}
           {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
         >
           {icon && <span className={css(toggleIconClass)}>{icon}</span>}
