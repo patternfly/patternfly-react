@@ -119,6 +119,10 @@ exports[`DataList List 1`] = `
 <ContextProvider
   value={
     Object {
+      "dragEnd": [Function],
+      "dragKeyHandler": [Function],
+      "dragStart": [Function],
+      "isDraggable": false,
       "isSelectable": false,
       "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
@@ -136,6 +140,10 @@ exports[`DataList List compact 1`] = `
 <ContextProvider
   value={
     Object {
+      "dragEnd": [Function],
+      "dragKeyHandler": [Function],
+      "dragStart": [Function],
+      "isDraggable": false,
       "isSelectable": false,
       "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
@@ -153,6 +161,10 @@ exports[`DataList List default 1`] = `
 <ContextProvider
   value={
     Object {
+      "dragEnd": [Function],
+      "dragKeyHandler": [Function],
+      "dragStart": [Function],
+      "isDraggable": false,
       "isSelectable": false,
       "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
@@ -162,6 +174,28 @@ exports[`DataList List default 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list"
+  />
+</ContextProvider>
+`;
+
+exports[`DataList List draggable 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dragEnd": [Function],
+      "dragKeyHandler": [Function],
+      "dragStart": [Function],
+      "isDraggable": true,
+      "isSelectable": false,
+      "selectedDataListItemId": "",
+      "updateSelectedDataListItem": [Function],
+    }
+  }
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-compact"
+    onDragOver={[Function]}
   />
 </ContextProvider>
 `;

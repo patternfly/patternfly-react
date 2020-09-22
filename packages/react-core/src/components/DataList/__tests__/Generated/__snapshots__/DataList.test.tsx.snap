@@ -4,6 +4,10 @@ exports[`DataList should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "dragEnd": [Function],
+      "dragKeyHandler": [Function],
+      "dragStart": [Function],
+      "isDraggable": false,
       "isSelectable": true,
       "selectedDataListItemId": "''",
       "updateSelectedDataListItem": [Function],
