@@ -311,3 +311,22 @@ test('Empty state table', () => {
       .prop('colSpan')
   ).toEqual(8);
 });
+
+test('Collapsible table with all cells', () => {
+  const localRows = [
+    { ...rows[0], isOpen: true },
+    { ...rows[1], parent: 0, useAllCellInExpandedContent: true },
+    { ...rows[3], isOpen: false },
+    { ...rows[4], parent: 3, useAllCellInExpandedContent: true }
+  ];
+
+  columns[0] = { ...(columns[0] as object), cellFormatters: [expandable] };
+  const onCollapse: OnCollapse = () => undefined;
+  const view = mount(
+    <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={localRows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});

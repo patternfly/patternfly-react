@@ -27,6 +27,7 @@ import {
   IRowData,
   ISeparator
 } from '../Table';
+import { skipRemainingExpandedRow } from './decorators/collapsible';
 
 const testCellActions = ({
   actions,
@@ -270,6 +271,36 @@ describe('Transformer functions', () => {
         { rowIndex: 2, rowData: { parent: 1, noPadding: true }, column: { extraParams: {} } }
       );
       expect(returned).toMatchObject({ colSpan: 5, id: 'expanded-content2', className: 'pf-m-no-padding' });
+    });
+  });
+
+  describe('skipRemainingExpandedRow', () => {
+    test('with parent', () => {
+      const returned = skipRemainingExpandedRow()(
+        { title: 'test' },
+        { rowIndex: 2, columnIndex: 5, rowData: { parent: 1 }, column: { extraParams: {} } }
+      );
+      expect(returned).toMatchObject({ id: 'expanded-content2-5', skipCell: true });
+    });
+
+    test('no parent', () => {
+      expect(skipRemainingExpandedRow()({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
+    });
+
+    test('full width', () => {
+      const returned = skipRemainingExpandedRow()(
+        { title: 'test' },
+        { rowIndex: 2, columnIndex: 5, rowData: { parent: 1, fullWidth: true }, column: { extraParams: {} } }
+      );
+      expect(returned).toMatchObject({ id: 'expanded-content2-5', skipCell: true });
+    });
+
+    test('no padding', () => {
+      const returned = skipRemainingExpandedRow()(
+        { title: 'test' },
+        { rowIndex: 2, columnIndex: 5, rowData: { parent: 1, noPadding: true }, column: { extraParams: {} } }
+      );
+      expect(returned).toMatchObject({ id: 'expanded-content2-5', className: 'pf-m-no-padding' });
     });
   });
 
