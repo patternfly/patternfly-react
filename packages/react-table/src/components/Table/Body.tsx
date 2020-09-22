@@ -71,6 +71,10 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   mapCells = (headerData: IRow[], row: IRow, rowKey: number) => {
     // column indexes start after generated optional columns
     let additionalColsIndexShift = headerData[0].extraParams.firstUserColumnIndex;
+    let remainingSyntheticColumns = 0;
+    if (row.fullWidth && row.useAllCellInExpandedContent) {
+      remainingSyntheticColumns++;
+    }
 
     return {
       ...(row &&
@@ -95,7 +99,10 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 
             // increment the shift index when a cell spans multiple columns
             if (isCellObject && cell.props && cell.props.colSpan) {
-              additionalColsIndexShift += cell.props.colSpan - 1;
+              // Assume colSpan has to be at least 1, but remove the synthetic columns (e.g. onCollapse button)
+              const syntheticColumnsConsumed = Math.min(remainingSyntheticColumns, cell.props.colSpan - 1);
+              remainingSyntheticColumns -= syntheticColumnsConsumed;
+              additionalColsIndexShift += cell.props.colSpan - 1 - syntheticColumnsConsumed;
             }
             return {
               ...acc,
