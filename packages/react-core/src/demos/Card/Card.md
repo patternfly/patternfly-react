@@ -1,7 +1,6 @@
 ---
 id: Card
-section: demos
-experimentalStage: early
+section: components
 ---
 
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
