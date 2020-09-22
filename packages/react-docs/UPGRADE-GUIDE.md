@@ -1,6 +1,6 @@
 ---
 id: Upgrade guide
-section: overview
+section: get-started
 ---
 
 Hey, Flyers! We’ve been busy for the past 12 weeks keeping up with changes to PatternFly’s HTML and CSS. We’ve replaced `babel` with `tsc` as our compiler of choice and removed prop-types in favor of using our `.d.ts` types, which are supported in most editors.
