@@ -81,6 +81,7 @@ exports[`Alert - danger Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
+            role={null}
             type="button"
           >
             <TimesIcon
@@ -202,6 +203,7 @@ exports[`Alert - danger Action Link 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -296,6 +298,7 @@ exports[`Alert - danger Action and Title 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -391,6 +394,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -739,6 +743,7 @@ exports[`Alert - default Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
+            role={null}
             type="button"
           >
             <TimesIcon
@@ -860,6 +865,7 @@ exports[`Alert - default Action Link 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -954,6 +960,7 @@ exports[`Alert - default Action and Title 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -1049,6 +1056,7 @@ exports[`Alert - default Custom aria label 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -1397,6 +1405,7 @@ exports[`Alert - info Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
+            role={null}
             type="button"
           >
             <TimesIcon
@@ -1518,6 +1527,7 @@ exports[`Alert - info Action Link 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -1612,6 +1622,7 @@ exports[`Alert - info Action and Title 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -1707,6 +1718,7 @@ exports[`Alert - info Custom aria label 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -2055,6 +2067,7 @@ exports[`Alert - success Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
+            role={null}
             type="button"
           >
             <TimesIcon
@@ -2176,6 +2189,7 @@ exports[`Alert - success Action Link 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -2270,6 +2284,7 @@ exports[`Alert - success Action and Title 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -2365,6 +2380,7 @@ exports[`Alert - success Custom aria label 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -2713,6 +2729,7 @@ exports[`Alert - warning Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
+            role={null}
             type="button"
           >
             <TimesIcon
@@ -2834,6 +2851,7 @@ exports[`Alert - warning Action Link 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -2928,6 +2946,7 @@ exports[`Alert - warning Action and Title 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test
@@ -3023,6 +3042,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
+            role={null}
             type="button"
           >
             test

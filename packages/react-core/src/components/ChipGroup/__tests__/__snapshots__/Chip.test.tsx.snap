@@ -45,6 +45,7 @@ exports[`Chip closable 1`] = `
           disabled={false}
           id="remove_chip_one"
           onClick={[Function]}
+          role={null}
           type="button"
         >
           <TimesIcon
@@ -124,6 +125,7 @@ exports[`Chip closable with tooltip 1`] = `
           disabled={false}
           id="remove_chip_one"
           onClick={[Function]}
+          role={null}
           type="button"
         >
           <TimesIcon

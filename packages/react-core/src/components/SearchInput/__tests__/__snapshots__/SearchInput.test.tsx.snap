@@ -18,6 +18,7 @@ exports[`navigable search results 1`] = `
       data-ouia-safe={true}
       disabled={false}
       onClick={[MockFunction]}
+      role={null}
       type="button"
     >
       <AngleUpIcon
@@ -60,6 +61,7 @@ exports[`navigable search results 1`] = `
       data-ouia-safe={true}
       disabled={false}
       onClick={[MockFunction]}
+      role={null}
       type="button"
     >
       <AngleDownIcon
