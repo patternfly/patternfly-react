@@ -492,7 +492,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onClickTypeaheadToggleButton = () => {
-    this.inputRef.current.focus();
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus();
+    }
   };
 
   getDisplay = (value: string | SelectOptionObject, type: 'node' | 'text' = 'node') => {
