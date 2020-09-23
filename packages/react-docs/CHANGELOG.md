@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.1...@patternfly/react-docs@5.9.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* **react-docs:** change overview to get-started ([#4862](https://github.com/patternfly/patternfly-react/issues/4862)) ([b6b544f](https://github.com/patternfly/patternfly-react/commit/b6b544fa11e4645d46e927dcbb749e0a0ecfe78d))
+
+
+
+
+
 ## [5.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.0...@patternfly/react-docs@5.9.1) (2020-09-23)
 
 **Note:** Version bump only for package @patternfly/react-docs
