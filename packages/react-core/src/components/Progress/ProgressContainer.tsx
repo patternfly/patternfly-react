@@ -1,6 +1,7 @@
 import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
@@ -34,6 +35,8 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   value: number;
   /** Whether title should be truncated */
   isTitleTruncated?: boolean;
+  /** Position of the tooltip which is displayed if title is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 const variantToIcon = {
@@ -49,18 +52,25 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   label = null,
   variant = null,
   measureLocation = ProgressMeasureLocation.top,
-  isTitleTruncated = false
+  isTitleTruncated = false,
+  tooltipPosition = 'top'
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
+  const renderTitle = () => (
+    <div
+      className={css(progressStyle.progressDescription, isTitleTruncated && progressStyle.modifiers.truncate)}
+      id={`${parentId}-description`}
+      aria-hidden="true"
+    >
+      {title}
+    </div>
+  );
   return (
     <React.Fragment>
-      <div
-        className={css(progressStyle.progressDescription, isTitleTruncated && progressStyle.modifiers.truncate)}
-        id={`${parentId}-description`}
-        aria-hidden="true"
-      >
-        {title}
-      </div>
+      {isTitleTruncated
+        ? <Tooltip position={tooltipPosition} content={<div>{title}</div>}>{renderTitle()}</Tooltip>
+        : renderTitle()
+      }
       <div className={css(progressStyle.progressStatus)} aria-hidden="true">
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
           <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>

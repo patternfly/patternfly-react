@@ -139,5 +139,5 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 import React from 'react';
 import { Progress } from '@patternfly/react-core';
 
-<Progress value={33} title="Very very very very very very very very very very very long title which should be truncated if it does not fit onto one line above the progress bar" isTruncated />
+<Progress value={33} title="Very very very very very very very very very very very long title which should be truncated if it does not fit onto one line above the progress bar" isTitleTruncated />
 ```

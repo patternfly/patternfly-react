@@ -36,6 +36,8 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   valueText?: string;
   /** Indicate whether to truncate the title */
   isTitleTruncated?: boolean;
+  /** Position of the tooltip which is displayed if title is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 export class Progress extends React.Component<ProgressProps> {
@@ -52,7 +54,8 @@ export class Progress extends React.Component<ProgressProps> {
     label: null as React.ReactNode,
     value: 0,
     valueText: null as string,
-    isTitleTruncated: false
+    isTitleTruncated: false,
+    tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right'
   };
 
   id = this.props.id || getUniqueId();
@@ -73,6 +76,7 @@ export class Progress extends React.Component<ProgressProps> {
       max,
       valueText,
       isTitleTruncated,
+      tooltipPosition,
       ...props
     } = this.props;
 
@@ -110,6 +114,7 @@ export class Progress extends React.Component<ProgressProps> {
           measureLocation={measureLocation}
           progressBarAriaProps={progressBarAriaProps}
           isTitleTruncated={isTitleTruncated}
+          tooltipPosition={tooltipPosition}
         />
       </div>
     );
