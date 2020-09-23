@@ -109,6 +109,7 @@ export * from './SelectDemo/FilteringSelectDemo';
 export * from './SelectDemo/SelectFavoritesDemo';
 export * from './SimpleList/SimpleListDemo';
 export * from './SkeletonDemo/SkeletonDemo';
+export * from './SkipToContentDemo/SkipToContentDemo';
 export * from './SpinnerDemo/SpinnerDemo';
 export * from './SplitDemo/SplitDemo';
 export * from './StackChartDemo/StackedAreaDemo';
