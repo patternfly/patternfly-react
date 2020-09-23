@@ -5,6 +5,6 @@ describe('Skip to Content Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/skip-to-content-demo-nav-link');
   });
   it('Should have skip to content component', () => {
-    cy.get('.pf-c-skip-to-content').should('have.attr', 'href', '#ts-demo-app-page-id')
+    cy.get('.pf-c-skip-to-content').should('have.attr', 'href', '#ts-demo-app-page-id');
   });
 });

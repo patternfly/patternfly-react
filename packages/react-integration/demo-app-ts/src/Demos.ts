@@ -550,7 +550,7 @@ export const Demos: DemoInterface[] = [
     id: 'skeleton-demo',
     name: 'Skeleton Demo',
     componentType: Examples.SkeletonDemo
-  },  
+  },
   {
     id: 'skip-to-content-demo',
     name: 'Skip to Content Demo',
