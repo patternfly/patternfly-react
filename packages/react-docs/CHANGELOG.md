@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.44...@patternfly/react-docs@5.9.0) (2020-09-22)
+
+
+### Features
+
+* **workspace:** use new doc theme ([#4840](https://github.com/patternfly/patternfly-react/issues/4840)) ([7bf451d](https://github.com/patternfly/patternfly-react/commit/7bf451d468538cc0b301fb68f0c1a8108600c24f))
+
+
+
+
+
 ## [5.8.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.43...@patternfly/react-docs@5.8.44) (2020-09-21)
 
 **Note:** Version bump only for package @patternfly/react-docs

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.16.23...@patternfly/react-table@4.17.0) (2020-09-22)
+
+
+### Features
+
+* **workspace:** use new doc theme ([#4840](https://github.com/patternfly/patternfly-react/issues/4840)) ([7bf451d](https://github.com/patternfly/patternfly-react/commit/7bf451d468538cc0b301fb68f0c1a8108600c24f))
+
+
+
+
+
 ## [4.16.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.16.22...@patternfly/react-table@4.16.23) (2020-09-21)
 
 
