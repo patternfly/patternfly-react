@@ -171,7 +171,7 @@ LinkButton = () => (
 );
 ```
 
-## Inline link as span
+### Inline link as span
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
@@ -182,7 +182,7 @@ InlineLinkAsSpan = () => (
     <Button variant="link" isInline component="span">
       This is long button text that needs to be a span so that it will wrap inline with the text around it.
     </Button>
-    Sed hendrerit nisi in cursus maximus. Ut malesuada nisi turpis, in condimentum velit elementum non.
+    {' '}Sed hendrerit nisi in cursus maximus. Ut malesuada nisi turpis, in condimentum velit elementum non.
   </p>
 );
 ```
