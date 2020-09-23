@@ -101,28 +101,26 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     if (isGrouped) {
       let index = 0;
       return React.Children.map(children, groupedChildren => {
-        const group = groupedChildren as React.ReactElement<{ children: React.ReactNode }>;
-        return React.cloneElement(group, {
-          ...(group.props &&
-            group.props.children && {
-              children:
-                (group.props.children.constructor === Array &&
-                  React.Children.map(
-                    (group.props.children as unknown) as React.ReactElement<any>,
-                    (option: React.ReactElement<any>) =>
-                      React.cloneElement(option, {
-                        index: index++
-                      })
-                  )) ||
-                React.cloneElement(group.props.children as React.ReactElement<any>, {
-                  index: index++
-                })
-            })
-        });
+        const group = groupedChildren as React.ReactElement;
+        const props: { children?: React.ReactNode } = {};
+        if (group.props && group.props.children) {
+          if (Array.isArray(group.props.children)) {
+            props.children = React.Children.map(group.props.children, option =>
+              React.cloneElement(option as React.ReactElement, {
+                index: index++
+              })
+            );
+          } else {
+            props.children = React.cloneElement(group.props.children as React.ReactElement, {
+              index: index++
+            });
+          }
+        }
+        return React.cloneElement(group, props);
       });
     }
     return React.Children.map(children, (child, index) =>
-      React.cloneElement(child as React.ReactElement<any>, {
+      React.cloneElement(child as React.ReactElement, {
         index
       })
     );

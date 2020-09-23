@@ -7,7 +7,7 @@ import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
-import { SelectGroup } from './SelectGroup';
+import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
@@ -31,7 +31,7 @@ export interface SelectProps
   extends ToggleMenuBaseProps,
     Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
-  /** Content rendered inside the Select */
+  /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
   children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
@@ -261,27 +261,25 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } catch (err) {
         input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
-      const childrenArray = React.Children.toArray(children);
+      const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
       if (isGrouped) {
+        const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
+          this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
           e.target.value.toString() !== ''
-            ? React.Children.map(children, (group: React.ReactElement) => {
+            ? React.Children.map(children, group => {
                 if (group.type === SelectGroup) {
-                  const filteredGroupChildren = React.Children.toArray(group.props.children).filter(
-                    (child: React.ReactElement) =>
-                      this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
-                  );
+                  const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
+                    SelectGroupProps
+                  >[]).filter(childFilter);
                   if (filteredGroupChildren.length > 0) {
                     return React.cloneElement(group, {
                       titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-                      children: filteredGroupChildren
+                      children: filteredGroupChildren as any
                     });
                   }
                 } else {
-                  return React.Children.toArray(group).filter(
-                    (child: React.ReactElement) =>
-                      this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
-                  );
+                  return (React.Children.toArray(group) as React.ReactElement<SelectGroupProps>[]).filter(childFilter);
                 }
               })
             : childrenArray;
@@ -496,11 +494,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       return;
     }
     const item = this.props.isGrouped
-      ? React.Children.toArray<React.ReactElement>(this.props.children)
+      ? (React.Children.toArray(this.props.children) as React.ReactElement[])
           .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
           .find(child => child.props.value.toString() === value.toString())
-      : React.Children.toArray<React.ReactElement>(this.props.children).find(
-          child => child.props.value.toString() === value.toString()
+      : React.Children.toArray(this.props.children).find(
+          child => (child as React.ReactElement).props.value.toString() === value.toString()
         );
     if (item) {
       if (item && item.props.children) {
@@ -514,21 +512,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     return value;
   };
 
-  findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
-    if (!item.props || !item.props.children) {
-      if (typeof item !== 'string') {
-        return '';
-      }
+  findText = (item: React.ReactNode) => {
+    if (typeof item === 'string') {
       return item;
+    } else if (!React.isValidElement(item)) {
+      return '';
+    } else {
+      const multi: string[] = [];
+      React.Children.toArray(item.props.children).forEach(child => multi.push(this.findText(child)));
+      return multi.join('');
     }
-    if (typeof item.props.children === 'string') {
-      return item.props.children;
-    }
-    const multi: string[] = [];
-    React.Children.toArray(item.props.children).forEach((child: React.ReactElement) =>
-      multi.push(this.findText(child))
-    );
-    return multi.join('');
   };
 
   generateSelectedBadge = () => {

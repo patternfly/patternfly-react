@@ -14,44 +14,41 @@ export const editable: ITransform = (label: IFormatterValueType, { rowIndex, row
     if (type === 'save') {
       validationErrors =
         rowData.rowEditValidationRules &&
-        rowData.rowEditValidationRules.reduce(
-          (acc, rule) => {
-            const invalidCells = (rowData.cells as IRowCell[]).filter(cellData => {
-              const testValue =
-                cellData.props.editableValue === '' ? '' : cellData.props.editableValue || cellData.props.value;
+        rowData.rowEditValidationRules.reduce((acc, rule) => {
+          const invalidCells = (rowData.cells as IRowCell[]).filter(cellData => {
+            const testValue =
+              cellData.props.editableValue === '' ? '' : cellData.props.editableValue || cellData.props.value;
 
-              let failedValidation = false;
+            let failedValidation = false;
 
-              if (Array.isArray(testValue) && testValue.length) {
-                // multiple values, like multiselect
-                failedValidation = testValue.reduce((hasInvalidSelection: boolean, el: string) => {
-                  // if one value fails validation, the entire cell is invalid
-                  if (hasInvalidSelection === true) {
-                    return true;
-                  }
-                  return !rule.validator(el);
-                }, failedValidation);
-              } else if (Array.isArray(testValue) && !testValue.length) {
-                // case where all values were dismissed in multiselect
-                failedValidation = !rule.validator('');
-              } else {
-                // simple text fields
-                failedValidation = !rule.validator(testValue);
-              }
-
-              if (failedValidation) {
-                cellData.props.isValid = false;
-              }
-              return failedValidation;
-            });
-
-            if (invalidCells.length) {
-              acc[rule.name] = invalidCells.map(cell => cell.props.name);
+            if (Array.isArray(testValue) && testValue.length) {
+              // multiple values, like multiselect
+              failedValidation = testValue.reduce((hasInvalidSelection: boolean, el: string) => {
+                // if one value fails validation, the entire cell is invalid
+                if (hasInvalidSelection === true) {
+                  return true;
+                }
+                return !rule.validator(el);
+              }, failedValidation);
+            } else if (Array.isArray(testValue) && !testValue.length) {
+              // case where all values were dismissed in multiselect
+              failedValidation = !rule.validator('');
+            } else {
+              // simple text fields
+              failedValidation = !rule.validator(testValue);
             }
-            return acc;
-          },
-          {} as RowErrors
-        );
+
+            if (failedValidation) {
+              cellData.props.isValid = false;
+            }
+            return failedValidation;
+          });
+
+          if (invalidCells.length) {
+            acc[rule.name] = invalidCells.map(cell => cell.props.name);
+          }
+          return acc;
+        }, {} as RowErrors);
     }
 
     // tslint:disable-next-line:no-unused-expression

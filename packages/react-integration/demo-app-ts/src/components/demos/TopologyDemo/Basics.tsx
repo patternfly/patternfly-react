@@ -77,7 +77,10 @@ export const SingleEdge = withTopologySetup(() => {
             type: 'edge',
             source: 'n1',
             target: 'n2',
-            bendpoints: [[80, 30], [110, 10]]
+            bendpoints: [
+              [80, 30],
+              [110, 10]
+            ]
           }
         ]
       }),

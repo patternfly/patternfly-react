@@ -17,7 +17,11 @@ export class TableCompactBorderlessRowsDemo extends React.Component<TableProps, 
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         '' // deliberately empty
       ],
-      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
+      rows: [
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four']
+      ]
     };
   }
 
