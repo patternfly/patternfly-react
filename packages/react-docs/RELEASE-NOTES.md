@@ -694,16 +694,16 @@ Packages released:
 
 ## 2020.01 release notes (2020-01-28)
 Packages released:
-- [@patternfly/react-catalog-view-extension@1.2.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension@1.2.5)
-- [@patternfly/react-charts@5.2.21](https://www.npmjs.com/package/@patternfly/react-charts@5.2.21)
-- [@patternfly/react-core@3.134.2](https://www.npmjs.com/package/@patternfly/react-core@3.134.2)
-- [@patternfly/react-inline-edit-extension@2.15.6](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension@2.15.6)
+- [@patternfly/react-catalog-view-extension@1.2.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.2.5)
+- [@patternfly/react-charts@5.2.21](https://www.npmjs.com/package/@patternfly/react-charts/v/5.2.21)
+- [@patternfly/react-core@3.134.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.134.2)
+- [@patternfly/react-inline-edit-extension@2.15.6](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.15.6)
 - [@patternfly/react-styles@3.6.26](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.26)
-- [@patternfly/react-table@2.25.6](https://www.npmjs.com/package/@patternfly/react-table@2.25.6)
-- [@patternfly/react-tokens@2.7.25](https://www.npmjs.com/package/@patternfly/react-tokens@2.7.25)
-- [@patternfly/react-topology@2.12.5](https://www.npmjs.com/package/@patternfly/react-topology@2.12.5)
-- [@patternfly/react-virtualized-extension@1.3.93](https://www.npmjs.com/package/@patternfly/react-virtualized-extension@1.3.93)
-- [@patternfly/react-icons@3.14.39](https://www.npmjs.com/package/@patternfly/react-icons@3.14.39)
+- [@patternfly/react-table@2.25.6](https://www.npmjs.com/package/@patternfly/react-table/v/2.25.6)
+- [@patternfly/react-tokens@2.7.25](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.25)
+- [@patternfly/react-topology@2.12.5](https://www.npmjs.com/package/@patternfly/react-topology/v/2.12.5)
+- [@patternfly/react-virtualized-extension@1.3.93](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.93)
+- [@patternfly/react-icons@3.14.39](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.39)
 
 ### Components
 - **About modal:** 

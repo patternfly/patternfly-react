@@ -45,7 +45,7 @@ import { Button } from '@patternfly/react-core';
 export default <Button variant="primary">Button</Button>;
 ```
 
-All component documentation is available on [PatternFly.org](https://www.patternfly.org/v4/documentation/react/components/aboutmodal).
+All component documentation is available on [PatternFly.org](https://www.patternfly.org/v4/components/about-modal).
 
 #### Advanced usage
 1. [Applying Overpass font](../../ADVANCED-USAGE-README.md#Applying-Overpass-font)

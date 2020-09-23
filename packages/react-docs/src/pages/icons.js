@@ -38,7 +38,7 @@ const iconsPage = () => {
     <PageSection variant="light">
       <Text>
         These are all of the icons available for use in PatternFly React. For recommended icon usage, see our{' '}
-        <a href="https://www.patternfly.org/v4/design-guidelines/styles/icons">icon usage guidelines</a>.
+        <a href="https://www.patternfly.org/v4/guidelines/icons">icon usage guidelines</a>.
       </Text>
       <Text>
         Learn how you can use them in the{' '}
