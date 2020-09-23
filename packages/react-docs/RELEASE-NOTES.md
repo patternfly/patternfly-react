@@ -1,6 +1,6 @@
 ---
 id: Release notes
-section: overview
+section: get-started
 releaseNoteTOC: true
 ---
 

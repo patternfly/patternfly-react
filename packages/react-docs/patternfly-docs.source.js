@@ -16,11 +16,11 @@ module.exports = (sourceMD, sourceProps) => {
 
   // React MD
   sourceMD(path.join(reactCorePath, '/**/examples/*.md'), 'react');
-  sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react');
+  sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
 
   // React-table MD
   sourceMD(path.join(reactTablePath, '/**/examples/*.md'), 'react');
-  sourceMD(path.join(reactTablePath, '/**/demos/*.md'), 'react');
+  sourceMD(path.join(reactTablePath, '/**/demos/*.md'), 'react-demos');
 
   // Charts MD (no demos yet)
   sourceMD(path.join(reactChartsPath, '/**/examples/*.md'), 'react');

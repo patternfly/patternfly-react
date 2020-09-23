@@ -1,6 +1,6 @@
 ---
 id: Table
-section: demos
+section: components
 ---
 
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
