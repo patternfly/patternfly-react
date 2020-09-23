@@ -11,6 +11,7 @@ exports[`Progress measure location inside 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -33,6 +34,7 @@ exports[`Progress measure location inside 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -97,6 +99,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
   min={0}
   size="sm"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -119,6 +122,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -183,6 +187,7 @@ exports[`Progress measure location none 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -205,6 +210,7 @@ exports[`Progress measure location none 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -267,6 +273,7 @@ exports[`Progress measure location outside 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -289,6 +296,7 @@ exports[`Progress measure location outside 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -357,6 +365,7 @@ exports[`Progress measure location top 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -379,6 +388,7 @@ exports[`Progress measure location top 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -447,6 +457,7 @@ exports[`Progress size lg 1`] = `
   min={0}
   size="lg"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -469,6 +480,7 @@ exports[`Progress size lg 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -537,6 +549,7 @@ exports[`Progress size md 1`] = `
   min={0}
   size="md"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -559,6 +572,7 @@ exports[`Progress size md 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -627,6 +641,7 @@ exports[`Progress size sm 1`] = `
   min={0}
   size="sm"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -649,6 +664,7 @@ exports[`Progress size sm 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -717,6 +733,7 @@ exports[`Progress variant danger 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant="danger"
@@ -739,6 +756,7 @@ exports[`Progress variant danger 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant="danger"
     >
@@ -835,6 +853,7 @@ exports[`Progress variant success 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant="success"
@@ -857,6 +876,7 @@ exports[`Progress variant success 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant="success"
     >
@@ -953,6 +973,7 @@ exports[`Progress with aria-valuetext 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText="Descriptive text here"
   variant={null}
@@ -976,6 +997,7 @@ exports[`Progress with aria-valuetext 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -1046,6 +1068,7 @@ exports[`Simple progress 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -1068,6 +1091,7 @@ exports[`Simple progress 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -1136,6 +1160,7 @@ exports[`additional label 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -1158,6 +1183,7 @@ exports[`additional label 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -1226,6 +1252,7 @@ exports[`no value specified 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={0}
   valueText={null}
   variant={null}
@@ -1248,6 +1275,7 @@ exports[`no value specified 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={0}
       variant={null}
     >
@@ -1316,6 +1344,7 @@ exports[`value higher than maxValue 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={77}
   valueText={null}
   variant={null}
@@ -1338,6 +1367,7 @@ exports[`value higher than maxValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={100}
       variant={null}
     >
@@ -1406,6 +1436,7 @@ exports[`value lower than minValue 1`] = `
   min={40}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -1428,6 +1459,7 @@ exports[`value lower than minValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={0}
       variant={null}
     >
@@ -1496,6 +1528,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
   min={10}
   size={null}
   title=""
+  tooltipPosition="top"
   value={50}
   valueText={null}
   variant={null}
@@ -1518,6 +1551,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={57}
       variant={null}
     >
@@ -1586,6 +1620,7 @@ exports[`value scaled with maxValue 1`] = `
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={50}
   valueText={null}
   variant={null}
@@ -1608,6 +1643,7 @@ exports[`value scaled with maxValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={62}
       variant={null}
     >
@@ -1676,6 +1712,7 @@ exports[`value scaled with minValue 1`] = `
   min={10}
   size={null}
   title=""
+  tooltipPosition="top"
   value={50}
   valueText={null}
   variant={null}
@@ -1698,6 +1735,7 @@ exports[`value scaled with minValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={44}
       variant={null}
     >

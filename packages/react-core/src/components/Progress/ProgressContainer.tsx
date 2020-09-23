@@ -53,7 +53,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   variant = null,
   measureLocation = ProgressMeasureLocation.top,
   isTitleTruncated = false,
-  tooltipPosition = 'top'
+  tooltipPosition
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   const renderTitle = () => (
@@ -67,10 +67,13 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   );
   return (
     <React.Fragment>
-      {isTitleTruncated
-        ? <Tooltip position={tooltipPosition} content={<div>{title}</div>}>{renderTitle()}</Tooltip>
-        : renderTitle()
-      }
+      {isTitleTruncated ? (
+        <Tooltip position={tooltipPosition} content={<div>{title}</div>}>
+          {renderTitle()}
+        </Tooltip>
+      ) : (
+        renderTitle()
+      )}
       <div className={css(progressStyle.progressStatus)} aria-hidden="true">
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
           <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
