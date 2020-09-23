@@ -171,7 +171,7 @@ class VirtualizedExample extends React.Component {
 ### Sortable
 ```js
 import React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -323,7 +323,7 @@ class SortableExample extends React.Component {
 ### Selectable
 ```js
 import React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -480,7 +480,7 @@ class SelectableExample extends React.Component {
 ### Actions
 ```js
 import React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -656,7 +656,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, TextInput } from '@patternfly/react-table';

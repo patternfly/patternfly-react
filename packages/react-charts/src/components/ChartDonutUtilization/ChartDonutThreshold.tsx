@@ -470,7 +470,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   // Render dynamic utilization donut cart
   const renderChildren = () =>
     React.Children.toArray(children).map((child, index) => {
-      if (child.props) {
+      if (React.isValidElement(child)) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
         const dynamicTheme =

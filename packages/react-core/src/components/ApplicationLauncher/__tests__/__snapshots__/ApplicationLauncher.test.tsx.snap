@@ -147,6 +147,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
+                data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
+                data-ouia-component-type="PF4/DropdownToggle"
+                data-ouia-safe="true"
                 id="pf-dropdown-toggle-id-5"
                 type="button"
               >
@@ -178,6 +181,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-7"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                   >
                     Link
@@ -188,6 +194,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-8"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                     type="button"
                   >
@@ -200,6 +209,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <a
                     aria-disabled="true"
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-9"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                   >
                     Disabled Link
@@ -210,6 +222,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <button
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-10"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     disabled=""
                     tabindex="-1"
                     type="button"
@@ -231,6 +246,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-11"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                   >
                     Separated Link
@@ -241,6 +259,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-12"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                     type="button"
                   >
@@ -258,6 +279,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
           aria-label="Application launcher"
           bubbleEvent={false}
           className=""
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe={true}
           getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-5"
           isActive={false}
@@ -281,6 +305,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
+                  data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
+                  data-ouia-component-type="PF4/DropdownToggle"
+                  data-ouia-safe="true"
                   id="pf-dropdown-toggle-id-5"
                   type="button"
                 >
@@ -312,6 +339,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-7"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                     >
                       Link
@@ -322,6 +352,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-8"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                       type="button"
                     >
@@ -334,6 +367,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <a
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-9"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                     >
                       Disabled Link
@@ -344,6 +380,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   >
                     <button
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-10"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       disabled=""
                       tabindex="-1"
                       type="button"
@@ -365,6 +404,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-11"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                     >
                       Separated Link
@@ -375,6 +417,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-12"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                       type="button"
                     >
@@ -391,6 +436,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
             aria-haspopup={true}
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
+            data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
+            data-ouia-component-type="PF4/DropdownToggle"
+            data-ouia-safe={true}
             disabled={false}
             id="pf-dropdown-toggle-id-5"
             onClick={[Function]}
@@ -470,6 +518,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-7"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -495,6 +546,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-7"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     href={null}
                     tabIndex={-1}
                   >
@@ -529,6 +583,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-8"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -553,6 +610,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <button
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-8"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     disabled={false}
                     href={null}
                     tabIndex={-1}
@@ -590,6 +650,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-9"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -615,6 +678,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <a
                     aria-disabled={true}
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-9"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     href={null}
                     tabIndex={-1}
                   >
@@ -651,6 +717,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-10"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -675,6 +744,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <button
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-10"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     disabled={true}
                     href={null}
                     tabIndex={-1}
@@ -708,6 +780,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownSeparator-2"
+                data-ouia-component-type="PF4/DropdownSeparator"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 icon={null}
@@ -761,6 +836,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-11"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -786,6 +864,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-11"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     href={null}
                     tabIndex={-1}
                   >
@@ -820,6 +901,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-12"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -844,6 +928,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <button
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-12"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     disabled={false}
                     href={null}
                     tabIndex={-1}
@@ -1009,6 +1096,9 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
+                data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
+                data-ouia-component-type="PF4/DropdownToggle"
+                data-ouia-safe="true"
                 id="pf-dropdown-toggle-id-3"
                 type="button"
               >
@@ -1038,6 +1128,9 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           aria-label="Application launcher"
           bubbleEvent={false}
           className=""
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe={true}
           getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-3"
           isActive={false}
@@ -1061,6 +1154,9 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
+                  data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
+                  data-ouia-component-type="PF4/DropdownToggle"
+                  data-ouia-safe="true"
                   id="pf-dropdown-toggle-id-3"
                   type="button"
                 >
@@ -1089,6 +1185,9 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             aria-haspopup={true}
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
+            data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
+            data-ouia-component-type="PF4/DropdownToggle"
+            data-ouia-safe={true}
             disabled={false}
             id="pf-dropdown-toggle-id-3"
             onClick={[Function]}
@@ -1276,6 +1375,9 @@ exports[`ApplicationLauncher dropup 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
+                data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
+                data-ouia-component-type="PF4/DropdownToggle"
+                data-ouia-safe="true"
                 id="pf-dropdown-toggle-id-2"
                 type="button"
               >
@@ -1305,6 +1407,9 @@ exports[`ApplicationLauncher dropup 1`] = `
           aria-label="Application launcher"
           bubbleEvent={false}
           className=""
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe={true}
           getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-2"
           isActive={false}
@@ -1328,6 +1433,9 @@ exports[`ApplicationLauncher dropup 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
+                  data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
+                  data-ouia-component-type="PF4/DropdownToggle"
+                  data-ouia-safe="true"
                   id="pf-dropdown-toggle-id-2"
                   type="button"
                 >
@@ -1356,6 +1464,9 @@ exports[`ApplicationLauncher dropup 1`] = `
             aria-haspopup={true}
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
+            data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
+            data-ouia-component-type="PF4/DropdownToggle"
+            data-ouia-safe={true}
             disabled={false}
             id="pf-dropdown-toggle-id-2"
             onClick={[Function]}
@@ -1543,6 +1654,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
+                data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
+                data-ouia-component-type="PF4/DropdownToggle"
+                data-ouia-safe="true"
                 id="pf-dropdown-toggle-id-4"
                 type="button"
               >
@@ -1573,6 +1687,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                   >
                     Link
@@ -1583,6 +1700,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-2"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                     type="button"
                   >
@@ -1595,6 +1715,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <a
                     aria-disabled="true"
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-3"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                   >
                     Disabled Link
@@ -1605,6 +1728,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <button
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-4"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     disabled=""
                     tabindex="-1"
                     type="button"
@@ -1626,6 +1752,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-5"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                   >
                     Separated Link
@@ -1636,6 +1765,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-6"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe="true"
                     tabindex="-1"
                     type="button"
                   >
@@ -1653,6 +1785,9 @@ exports[`ApplicationLauncher expanded 1`] = `
           aria-label="Application launcher"
           bubbleEvent={false}
           className=""
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe={true}
           getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-4"
           isActive={false}
@@ -1676,6 +1811,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
+                  data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
+                  data-ouia-component-type="PF4/DropdownToggle"
+                  data-ouia-safe="true"
                   id="pf-dropdown-toggle-id-4"
                   type="button"
                 >
@@ -1706,6 +1844,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                     >
                       Link
@@ -1716,6 +1857,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-2"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                       type="button"
                     >
@@ -1728,6 +1872,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <a
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-3"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                     >
                       Disabled Link
@@ -1738,6 +1885,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   >
                     <button
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-4"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       disabled=""
                       tabindex="-1"
                       type="button"
@@ -1759,6 +1909,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-5"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                     >
                       Separated Link
@@ -1769,6 +1922,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
+                      data-ouia-component-id="OUIA-Generated-DropdownItem-6"
+                      data-ouia-component-type="PF4/DropdownItem"
+                      data-ouia-safe="true"
                       tabindex="-1"
                       type="button"
                     >
@@ -1785,6 +1941,9 @@ exports[`ApplicationLauncher expanded 1`] = `
             aria-haspopup={true}
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
+            data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
+            data-ouia-component-type="PF4/DropdownToggle"
+            data-ouia-safe={true}
             disabled={false}
             id="pf-dropdown-toggle-id-4"
             onClick={[Function]}
@@ -1862,6 +2021,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -1887,6 +2049,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     href={null}
                     tabIndex={-1}
                   >
@@ -1921,6 +2086,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-2"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -1945,6 +2113,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <button
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-2"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     disabled={false}
                     href={null}
                     tabIndex={-1}
@@ -1982,6 +2153,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-3"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -2007,6 +2181,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <a
                     aria-disabled={true}
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-3"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     href={null}
                     tabIndex={-1}
                   >
@@ -2043,6 +2220,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-4"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -2067,6 +2247,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <button
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-4"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     disabled={true}
                     href={null}
                     tabIndex={-1}
@@ -2100,6 +2283,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownSeparator-1"
+                data-ouia-component-type="PF4/DropdownSeparator"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 icon={null}
@@ -2153,6 +2339,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-5"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -2178,6 +2367,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-5"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     href={null}
                     tabIndex={-1}
                   >
@@ -2212,6 +2404,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                data-ouia-component-id="OUIA-Generated-DropdownItem-6"
+                data-ouia-component-type="PF4/DropdownItem"
+                data-ouia-safe={true}
                 description={null}
                 enterTriggersArrowDown={false}
                 href={null}
@@ -2236,6 +2431,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <button
                     className="pf-c-app-launcher__menu-item"
+                    data-ouia-component-id="OUIA-Generated-DropdownItem-6"
+                    data-ouia-component-type="PF4/DropdownItem"
+                    data-ouia-safe={true}
                     disabled={false}
                     href={null}
                     tabIndex={-1}
@@ -2401,6 +2599,9 @@ exports[`ApplicationLauncher regular 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
+                data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
+                data-ouia-component-type="PF4/DropdownToggle"
+                data-ouia-safe="true"
                 id="pf-dropdown-toggle-id-0"
                 type="button"
               >
@@ -2430,6 +2631,9 @@ exports[`ApplicationLauncher regular 1`] = `
           aria-label="Application launcher"
           bubbleEvent={false}
           className=""
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe={true}
           getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-0"
           isActive={false}
@@ -2453,6 +2657,9 @@ exports[`ApplicationLauncher regular 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
+                  data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
+                  data-ouia-component-type="PF4/DropdownToggle"
+                  data-ouia-safe="true"
                   id="pf-dropdown-toggle-id-0"
                   type="button"
                 >
@@ -2481,6 +2688,9 @@ exports[`ApplicationLauncher regular 1`] = `
             aria-haspopup={true}
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
+            data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
+            data-ouia-component-type="PF4/DropdownToggle"
+            data-ouia-safe={true}
             disabled={false}
             id="pf-dropdown-toggle-id-0"
             onClick={[Function]}
@@ -2668,6 +2878,9 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
+                data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
+                data-ouia-component-type="PF4/DropdownToggle"
+                data-ouia-safe="true"
                 id="pf-dropdown-toggle-id-1"
                 type="button"
               >
@@ -2697,6 +2910,9 @@ exports[`ApplicationLauncher right aligned 1`] = `
           aria-label="Application launcher"
           bubbleEvent={false}
           className=""
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe={true}
           getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-1"
           isActive={false}
@@ -2720,6 +2936,9 @@ exports[`ApplicationLauncher right aligned 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
+                  data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
+                  data-ouia-component-type="PF4/DropdownToggle"
+                  data-ouia-safe="true"
                   id="pf-dropdown-toggle-id-1"
                   type="button"
                 >
@@ -2748,6 +2967,9 @@ exports[`ApplicationLauncher right aligned 1`] = `
             aria-haspopup={true}
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
+            data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
+            data-ouia-component-type="PF4/DropdownToggle"
+            data-ouia-safe={true}
             disabled={false}
             id="pf-dropdown-toggle-id-1"
             onClick={[Function]}

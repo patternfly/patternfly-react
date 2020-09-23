@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { defaults } from 'lodash';
+import defaults from 'lodash/defaults';
 import {
   Helpers,
   LabelOrientationType,

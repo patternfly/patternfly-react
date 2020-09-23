@@ -92,12 +92,12 @@ export interface ChartBarProps extends VictoryBarProps {
   cornerRadius?:
     | NumberOrCallback
     | {
-        top?: number | (NumberOrCallback);
-        topLeft?: number | (NumberOrCallback);
-        topRight?: number | (NumberOrCallback);
-        bottom?: number | (NumberOrCallback);
-        bottomLeft?: number | (NumberOrCallback);
-        bottomRight?: number | (NumberOrCallback);
+        top?: number | NumberOrCallback;
+        topLeft?: number | NumberOrCallback;
+        topRight?: number | NumberOrCallback;
+        bottom?: number | NumberOrCallback;
+        bottomLeft?: number | NumberOrCallback;
+        bottomRight?: number | NumberOrCallback;
       };
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array

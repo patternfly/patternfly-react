@@ -55,6 +55,7 @@ const getLocalVarsMap = cssFiles => {
 
 /**
  * Generates tokens from CSS in node_modules/@patternfly/patternfly/**
+ *
  * @returns {object} of form {
  *   c_about_modal_box: {
  *     ".pf-c-about-modal-box" : {

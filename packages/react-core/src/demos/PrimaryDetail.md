@@ -393,7 +393,7 @@ class PrimaryDetailFullPage extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="full-page-data-toolbar" className="pf-m-toggle-group-container">
+        <Toolbar id="full-page-data-toolbar" className="pf-m-page-insets">
           <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
         <DataList
@@ -599,7 +599,7 @@ class PrimaryDetailFullPage extends React.Component {
             </TextContent>
           </PageSection>
           <Divider component="div" />
-          <PageSection variant={PageSectionVariants.light} noPadding={true}>
+          <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
             <Drawer isExpanded={isDrawerExpanded}>
               <DrawerContent panelContent={panelContent}>
                 <DrawerContentBody>{drawerContent}</DrawerContentBody>
@@ -978,7 +978,7 @@ class PrimaryDetailContentPadding extends React.Component {
 
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="content-padding-data-toolbar" className="pf-m-toggle-group-container">
+        <Toolbar id="content-padding-data-toolbar" className="pf-m-page-insets">
           <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
         <DataList
@@ -1184,7 +1184,7 @@ class PrimaryDetailContentPadding extends React.Component {
             </TextContent>
           </PageSection>
           <Divider component="div" />
-          <PageSection noPadding={true}>
+          <PageSection padding={{ default: 'noPadding' }}>
             <Drawer isExpanded={isDrawerExpanded}>
               <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
                 <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
@@ -1601,7 +1601,7 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     const drawerContent = (
-      <Gallery gutter="md">
+      <Gallery hasGutter>
         {filtered.map((product, key) => (
           <React.Fragment>
             <Card
@@ -1671,14 +1671,14 @@ class PrimaryDetailCardView extends React.Component {
           </PageSection>
           <PageSection>
             <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-              <DrawerSection>
-                <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={this.onDelete}>
+              <DrawerSection className="pf-u-mb-md">
+                <Toolbar id="card-view-data-toolbar-group-types" className="pf-m-page-insets" clearAllFilters={this.onDelete}>
                   <ToolbarContent>{toolbarItems}</ToolbarContent>
                 </Toolbar>
                 <Divider component="div" />
               </DrawerSection>
               <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
-                <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
+                <DrawerContentBody>{drawerContent}</DrawerContentBody>
               </DrawerContent>
             </Drawer>
           </PageSection>
@@ -2106,7 +2106,7 @@ class PrimaryDetailDataListInCard extends React.Component {
 
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="data-list-data-toolbar">
+        <Toolbar id="data-list-data-toolbar" className="pf-m-page-insets">
           <ToolbarContent>
             <ToolbarItem>
               <Dropdown
@@ -2595,7 +2595,7 @@ class PrimaryDetailInlineModifier extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="inline-modifier-data-toolbar" className="pf-m-toggle-group-container">
+        <Toolbar id="inline-modifier-data-toolbar" className="pf-m-page-insets">
           <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
         <DataList
@@ -2801,7 +2801,7 @@ class PrimaryDetailInlineModifier extends React.Component {
             </TextContent>
           </PageSection>
           <Divider component="div" />
-          <PageSection variant={PageSectionVariants.light} noPadding={true}>
+          <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
             <Drawer isExpanded={isDrawerExpanded} isInline>
               <DrawerContent panelContent={panelContent}>
                 <DrawerContentBody>{drawerContent}</DrawerContentBody>

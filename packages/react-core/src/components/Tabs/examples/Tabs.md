@@ -393,28 +393,28 @@ class SecondaryTabs extends React.Component {
       <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
           <Tabs activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
-            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>} >
+            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
               Secondary tab item 1 item section
             </Tab>
-            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>>
+            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>
               Secondary tab item 2 section
             </Tab>
-            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>>
+            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>
               Secondary tab item 3 section
             </Tab>
-            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>>
+            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>
               Secondary tab item 4 section
             </Tab>
-            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>>
+            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>
               Secondary tab item 5 section
             </Tab>
-            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>>
+            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>
               Secondary tab item 6 section
             </Tab>
-            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>>
+            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>
               Secondary tab item 7 section
             </Tab>
-            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>>
+            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>
               Secondary tab item 8 section
             </Tab>
           </Tabs>

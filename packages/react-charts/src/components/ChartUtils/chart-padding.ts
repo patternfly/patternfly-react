@@ -1,4 +1,3 @@
-import { get, isEmpty, isFinite } from 'lodash';
 import { PaddingProps } from 'victory-core';
 
 export const getPaddingForSide = (
@@ -6,12 +5,10 @@ export const getPaddingForSide = (
   padding: PaddingProps,
   fallback: PaddingProps
 ): number => {
-  if (!isEmpty(padding)) {
-    return get(padding, side, 0);
-  }
-
-  if (isFinite(padding)) {
+  if (typeof padding == 'number') {
     return padding as number;
+  } else if (typeof padding == 'object' && Object.keys(padding).length > 0) {
+    return padding[side] || 0;
   }
 
   return getPaddingForSide(side, fallback, 0);

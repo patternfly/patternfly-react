@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.2...@patternfly/react-docs@5.9.3) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.1...@patternfly/react-docs@5.9.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* **react-docs:** change overview to get-started ([#4862](https://github.com/patternfly/patternfly-react/issues/4862)) ([b6b544f](https://github.com/patternfly/patternfly-react/commit/b6b544fa11e4645d46e927dcbb749e0a0ecfe78d))
+
+
+
+
+
+## [5.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.0...@patternfly/react-docs@5.9.1) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [5.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.44...@patternfly/react-docs@5.9.0) (2020-09-22)
+
+
+### Features
+
+* **workspace:** use new doc theme ([#4840](https://github.com/patternfly/patternfly-react/issues/4840)) ([7bf451d](https://github.com/patternfly/patternfly-react/commit/7bf451d468538cc0b301fb68f0c1a8108600c24f))
+
+
+
+
+
+## [5.8.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.43...@patternfly/react-docs@5.8.44) (2020-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.8.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.42...@patternfly/react-docs@5.8.43) (2020-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.8.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.41...@patternfly/react-docs@5.8.42) (2020-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.8.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.40...@patternfly/react-docs@5.8.41) (2020-09-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.8.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.39...@patternfly/react-docs@5.8.40) (2020-09-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.8.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.38...@patternfly/react-docs@5.8.39) (2020-09-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.8.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.37...@patternfly/react-docs@5.8.38) (2020-09-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.8.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.36...@patternfly/react-docs@5.8.37) (2020-09-17)
 
 **Note:** Version bump only for package @patternfly/react-docs
