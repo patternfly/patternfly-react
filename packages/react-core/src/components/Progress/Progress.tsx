@@ -19,7 +19,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Where the measure percent will be located. */
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Status variant of progress. */
-  variant?: 'danger' | 'success';
+  variant?: 'danger' | 'success' | 'warning';
   /** Title above progress. */
   title?: string;
   /** Text description of current progress value to display instead of percentage. */

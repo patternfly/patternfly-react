@@ -9,4 +9,10 @@ describe('Progress Demo Test', () => {
     cy.get('#simple-progress-description').contains('Simple progress');
     cy.get('#simple-progress .pf-c-progress__status .pf-c-progress__measure').contains('33%');
   });
+
+  it('Verify progress element variant classes', () => {
+    cy.get('div[id="warning-progress"]').should('have.class', 'pf-m-warning');
+    cy.get('div[id="danger-progress"]').should('have.class', 'pf-m-danger');
+    cy.get('div[id="success-progress"]').should('have.class', 'pf-m-success');
+  });
 });
