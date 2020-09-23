@@ -723,7 +723,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
 The ToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
-### Data toolbar with filters
+### With filters
 
 ```js
 import React from 'react';
