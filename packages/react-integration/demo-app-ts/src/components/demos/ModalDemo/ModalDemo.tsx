@@ -149,6 +149,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         variant={ModalVariant.small}
+        position="top"
         title="Modal Header"
         isOpen={isSmallModalOpen}
         onClose={this.handleSmallModalToggle}

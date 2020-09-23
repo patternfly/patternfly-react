@@ -12,6 +12,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
@@ -63,6 +64,7 @@ class SimpleModal extends React.Component {
 ```
 
 ### With description
+
 ```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
@@ -115,7 +117,61 @@ class SimpleModal extends React.Component {
 }
 ```
 
+### Top aligned
+
+```js
+import React from 'react';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
+
+class TopModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Top Aligned Modal
+        </Button>
+        <Modal
+          position="top"
+          title="Top modal header"
+          isOpen={isModalOpen}
+          onClose={this.handleModalToggle}
+          actions={[
+            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+              Confirm
+            </Button>,
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
+              Cancel
+            </Button>
+          ]}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ### Small
+
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
@@ -168,6 +224,7 @@ class SmallModal extends React.Component {
 ```
 
 ### Medium
+
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
@@ -220,6 +277,7 @@ class MediumModal extends React.Component {
 ```
 
 ### Large
+
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
@@ -272,6 +330,7 @@ class LargeModal extends React.Component {
 ```
 
 ### Width
+
 ```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
@@ -324,6 +383,7 @@ class WidthModal extends React.Component {
 ```
 
 ### Custom header and footer
+
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
@@ -393,6 +453,7 @@ class CustomHeaderFooter extends React.Component {
 ```
 
 ### No header
+
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
@@ -445,6 +506,7 @@ class NoHeader extends React.Component {
 ```
 
 ### With wizard
+
 ```js
 import React from 'react';
 import { Modal, Button, Wizard } from '@patternfly/react-core';
@@ -495,7 +557,7 @@ class WithWizard extends React.Component {
             steps={steps}
             onClose={this.handleModalToggle}
             height={400}
-        />
+          />
         </Modal>
       </React.Fragment>
     );
@@ -504,6 +566,7 @@ class WithWizard extends React.Component {
 ```
 
 ### With dropdown
+
 ```js
 import React from 'react';
 import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
@@ -541,15 +604,18 @@ class WithDropdown extends React.Component {
     this.onEscapePress = () => {
       const { isDropdownOpen } = this.state;
       if (isDropdownOpen) {
-        this.setState({
-          isDropdownOpen: !isDropdownOpen
-        }, () => {
-          this.onFocus();
-        });
+        this.setState(
+          {
+            isDropdownOpen: !isDropdownOpen
+          },
+          () => {
+            this.onFocus();
+          }
+        );
       } else {
         this.handleModalToggle();
       }
-    }
+    };
   }
 
   render() {
@@ -593,13 +659,20 @@ class WithDropdown extends React.Component {
           onEscapePress={this.onEscapePress}
         >
           <div>
-            Set the dropdown <strong>menuAppendTo</strong> prop to <em>parent</em> in order to allow the dropdown menu break out of the modal container. You'll also want to handle closing of the modal yourself, by listening to the <strong>onEscapePress</strong> callback on the Modal component, so you can close the Dropdown first if it's open.
+            Set the dropdown <strong>menuAppendTo</strong> prop to <em>parent</em> in order to allow the dropdown menu
+            break out of the modal container. You'll also want to handle closing of the modal yourself, by listening to
+            the <strong>onEscapePress</strong> callback on the Modal component, so you can close the Dropdown first if
+            it's open.
           </div>
           <div>
             <Dropdown
               onSelect={this.onSelect}
               toggle={
-                <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+                <DropdownToggle
+                  id="toggle-id-menu-document-body"
+                  onToggle={this.onToggle}
+                  toggleIndicator={CaretDownIcon}
+                >
                   Dropdown with a menu that can break out
                 </DropdownToggle>
               }

@@ -21,6 +21,10 @@ export interface ModalContentProps extends OUIAProps {
   className?: string;
   /** Variant of the modal */
   variant?: 'small' | 'medium' | 'large' | 'default';
+  /** Alternate position of the modal */
+  position?: 'top';
+  /** Custom distance from top */
+  distanceFromTop?: string;
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
@@ -72,6 +76,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   actions = [],
   onClose = () => undefined as any,
   variant = 'default',
+  position,
+  distanceFromTop,
   width = -1,
   boxId,
   labelId,
@@ -134,6 +140,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       style={boxStyle}
       className={className}
       variant={variant}
+      position={position}
+      distanceFromTop={distanceFromTop}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledbyFormatted()}
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
