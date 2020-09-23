@@ -491,6 +491,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
   };
 
+  onClickTypeaheadToggleButton = () => {
+    this.inputRef.current.focus();
+  };
+
   getDisplay = (value: string | SelectOptionObject, type: 'node' | 'text' = 'node') => {
     if (!value) {
       return;
@@ -736,6 +740,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             openedOnEnter
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
         case 'typeaheadmulti':
           variantProps = {
@@ -743,6 +750,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             openedOnEnter
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
       }
     }
@@ -806,6 +816,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           handleTypeaheadKeys={this.handleTypeaheadKeys}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
+          onClickTypeaheadToggleButton={this.onClickTypeaheadToggleButton}
         >
           {customContent && (
             <div className={css(styles.selectToggleWrapper)}>
