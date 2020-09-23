@@ -10,7 +10,7 @@ import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
-import { Chip, ChipGroup } from '../ChipGroup';
+import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
 import {
   keyHandler,
   getNextIndex,
@@ -109,6 +109,8 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
+  /** Optional props to pass to the chip group in the typeaheadmulti variant */
+  chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
 }
 
 export interface SelectState {
@@ -538,6 +540,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   render() {
     const {
       children,
+      chipGroupProps,
       className,
       customContent,
       variant,
@@ -647,7 +650,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
-        <ChipGroup>
+        <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (
               <Chip
