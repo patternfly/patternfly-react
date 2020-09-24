@@ -43,6 +43,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Flag indicating if select toggle has an clear button */
   hasClearButton?: boolean;
+  /** Internal callback for handling focus when typeahead toggle button clicked. */
+  onClickTypeaheadToggleButton?: () => void;
 }
 
 export class SelectToggle extends React.Component<SelectToggleProps> {
@@ -62,7 +64,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     type: 'button',
     onToggle: () => {},
     onEnter: () => {},
-    onClose: () => {}
+    onClose: () => {},
+    onClickTypeaheadToggleButton: () => {}
   };
 
   constructor(props: SelectToggleProps) {
@@ -174,6 +177,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle,
       onEnter,
       onClose,
+      onClickTypeaheadToggleButton,
       handleTypeaheadKeys,
       parentRef,
       menuRef,
@@ -260,6 +264,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
                 if (isOpen) {
                   onClose();
                 }
+                onClickTypeaheadToggleButton();
               }}
               {...((variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) && {
                 tabIndex: -1
