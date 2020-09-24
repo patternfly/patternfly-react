@@ -141,6 +141,9 @@ class BulkSelectTableDemo extends React.Component {
           this.fetch(1, value);
         }}
         variant={variant}
+        titles={{
+          paginationTitle: `${variant} pagination`
+        }}
       />
     );
   }
@@ -208,6 +211,7 @@ class BulkSelectTableDemo extends React.Component {
 
   render() {
     const { loading, res } = this.state;
+    console.log('res', res);
     const rows = res.map(post => ({
       cells: [post.title, post.body],
       selected: post.selected
@@ -1299,6 +1303,9 @@ class ComplexPaginationTableDemo extends React.Component {
           { title: "12", value: 12},
           { title: '20', value: 20 }
         ]}
+        titles={{
+          paginationTitle: `${variant} pagination`
+        }}
       />
     );
   }
@@ -1381,6 +1388,9 @@ class ComplexPaginationTableDemo extends React.Component {
         onSetPage={(_evt, value) => this.fetch(value, perPage)}
         onPerPageSelect={(_evt, value) => this.fetch(1, value)}
         variant={variant}
+        titles={{
+          paginationTitle: `${variant} pagination`
+        }}
       />
     );
   }

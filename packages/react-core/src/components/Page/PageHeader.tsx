@@ -70,7 +70,6 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
                       id="nav-toggle"
                       onClick={navToggle}
                       aria-label={ariaLabel}
-                      aria-controls="page-sidebar"
                       aria-expanded={navOpen ? 'true' : 'false'}
                       variant={ButtonVariant.plain}
                     >
