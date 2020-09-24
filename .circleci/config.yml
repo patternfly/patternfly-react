@@ -145,7 +145,7 @@ jobs:
     - persist_to_workspace:
         root: ~/project
         paths:
-          - packages/react-integration/demo-app-ts/build/
+          - packages/react-integration/demo-app-ts/public/
   test_integration:
     docker:
     - image: circleci/node:12
