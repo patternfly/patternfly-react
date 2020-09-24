@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`disabled date picker 1`] = `
+<input
+  aria-invalid={false}
+  aria-label="disabled text input"
+  className="pf-c-form-control pf-m-icon pf-m-calendar"
+  disabled={true}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder="mm/dd/yyyy"
+  readOnly={false}
+  required={false}
+  type="text"
+/>
+`;
+
 exports[`disabled text input 1`] = `
 <input
   aria-invalid={false}
