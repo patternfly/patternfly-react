@@ -24,7 +24,6 @@
     "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "serve:demo-app": "node scripts/server.js",
     "test:integration": "node --max-old-space-size=4096 ./node_modules/.bin/cypress run"
   },
   "devDependencies": {
@@ -32,7 +31,6 @@
     "cypress": "^3.8.2",
     "jasmine-xml2html-converter": "^0.0.2",
     "junit-merge": "^2.0.0",
-    "local-web-server": "^2.6.1",
     "rimraf": "^2.6.2",
     "ts-loader": "^5.3.3",
     "typescript": "^3.8.3",
