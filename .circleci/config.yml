@@ -34,14 +34,15 @@ references:
   - packages/react-icons/dist/
   webpack_cache_paths: &webpack_cache_paths
   - packages/react-docs/.cache
+  - packages/react-docs/src/generated
   lint_cache_paths: &lint_cache_paths
   - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
     js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   cypress_cache_key: &cypress_cache_key
     cypress-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
-  gatsby_cache_key: &gatsby_cache_key
-    gatsby-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  webpack_cache_key: &webpack_cache_key
+    webpack-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
     build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   lint_cache_key: &lint_cache_key
@@ -219,13 +220,13 @@ jobs:
         - *js_deps_cache_key
     - restore_cache:
         keys:
-        - *gatsby_cache_key
+        - *webpack_cache_key
     - run:
         name: Build patternfly-react docs
         command: yarn build:docs
     - save_cache:
         paths: *webpack_cache_paths
-        key: *gatsby_cache_key
+        key: *webpack_cache_key
     - run:
         name: Upload docs to surge.sh
         command: node .circleci/upload-preview.js packages/react-docs/public
