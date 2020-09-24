@@ -69,9 +69,9 @@ workflows:
     - test_integration:
         requires:
         - build_demo_app
-    # - test_a11y_pf4:
-    #     requires:
-    #     - build_docs_pf4
+    - test_a11y_pf4:
+        requires:
+        - build_docs_pf4
     - deploy_prerelease:
         requires:
         - lint_pf4
@@ -249,7 +249,7 @@ jobs:
         command: yarn test:a11y
     - run:
         name: Upload a11y report
-        command: node .circleci/upload-preview.js packages/react-docs/coverage
+        command: node .circleci/upload-preview.js packages/react-docs/coverage/dist
         when: always
     - store_artifacts:
         path: packages/react-docs/coverage/
