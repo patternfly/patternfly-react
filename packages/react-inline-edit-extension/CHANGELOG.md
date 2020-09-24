@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.95](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.94...@patternfly/react-inline-edit-extension@4.5.95) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+
+
+
 ## [4.5.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.93...@patternfly/react-inline-edit-extension@4.5.94) (2020-09-23)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

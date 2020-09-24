@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.42.0...@patternfly/react-integration@4.43.0) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+### Features
+
+* **select:** pass chip group props on typeaheadmulti variant ([#4855](https://github.com/patternfly/patternfly-react/issues/4855)) ([5d008a0](https://github.com/patternfly/patternfly-react/commit/5d008a025304e22182fd4072cf9a7ddd979c50cf))
+
+
+
+
+
 # [4.42.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.41.1...@patternfly/react-integration@4.42.0) (2020-09-23)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.38...@patternfly/react-catalog-view-extension@4.8.39) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+
+
+
 ## [4.8.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.37...@patternfly/react-catalog-view-extension@4.8.38) (2020-09-23)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
