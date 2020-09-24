@@ -27,7 +27,8 @@ import {
   getInteractiveLegendEvents,
   getInteractiveLegendItemStyles 
 } from '@patternfly/react-charts';
-import { chart_area_Opacity, chart_color_black_500 } from '@patternfly/react-tokens';
+import chart_area_Opacity from '@patternfly/react-tokens/dist/js/chart_area_Opacity';
+import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!

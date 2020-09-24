@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
 
 export enum ProgressMeasureLocation {
@@ -15,7 +16,8 @@ export enum ProgressMeasureLocation {
 
 export enum ProgressVariant {
   danger = 'danger',
-  success = 'success'
+  success = 'success',
+  warning = 'warning'
 }
 
 export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
@@ -28,7 +30,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   /** Label to indicate what progress is showing. */
   label?: React.ReactNode;
   /** Type of progress status. */
-  variant?: 'danger' | 'success';
+  variant?: 'danger' | 'success' | 'warning';
   /** Location of progress value. */
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
@@ -41,7 +43,8 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
 
 const variantToIcon = {
   danger: TimesCircleIcon,
-  success: CheckCircleIcon
+  success: CheckCircleIcon,
+  warning: ExclamationTriangleIcon
 };
 
 export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({

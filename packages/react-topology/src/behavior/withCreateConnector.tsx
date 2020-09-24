@@ -180,7 +180,16 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
             hints={hintsRef.current || []}
           />
           {!active && (
-            <path d={hullPath([[startPoint.x, startPoint.y], [endPoint.x, endPoint.y]], 7)} fillOpacity="0" />
+            <path
+              d={hullPath(
+                [
+                  [startPoint.x, startPoint.y],
+                  [endPoint.x, endPoint.y]
+                ],
+                7
+              )}
+              fillOpacity="0"
+            />
           )}
         </g>
       </Layer>

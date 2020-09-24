@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.42.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.41.3...demo-app-ts@4.42.0) (2020-09-23)
+
+
+### Features
+
+* **progress:** add warning variant ([#4834](https://github.com/patternfly/patternfly-react/issues/4834)) ([ff0b4fc](https://github.com/patternfly/patternfly-react/commit/ff0b4fc51f9b991aa2d389ee20d0eb3a7507314a)), closes [#4818](https://github.com/patternfly/patternfly-react/issues/4818)
+
+
+
+
+
+## [4.41.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.41.2...demo-app-ts@4.41.3) (2020-09-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.41.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.41.1...demo-app-ts@4.41.2) (2020-09-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.41.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.41.0...demo-app-ts@4.41.1) (2020-09-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.41.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.40.1...demo-app-ts@4.41.0) (2020-09-21)
+
+
+### Features
+
+* **react-core-button:** support warning variant ([#4829](https://github.com/patternfly/patternfly-react/issues/4829)) ([6c5df2a](https://github.com/patternfly/patternfly-react/commit/6c5df2adfc78f128448ee7b7450c4bc9c054131f)), closes [#4717](https://github.com/patternfly/patternfly-react/issues/4717)
+
+
+
+
+
+## [4.40.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.40.0...demo-app-ts@4.40.1) (2020-09-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.40.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.39.2...demo-app-ts@4.40.0) (2020-09-21)
+
+
+### Features
+
+* **notificationDrawer:** add default variation to notification items ([#4792](https://github.com/patternfly/patternfly-react/issues/4792)) ([7f32482](https://github.com/patternfly/patternfly-react/commit/7f32482604191bcc1a22214f20d7da3ec03eb5bd))
+
+
+
+
+
+## [4.39.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.39.1...demo-app-ts@4.39.2) (2020-09-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.39.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.39.0...demo-app-ts@4.39.1) (2020-09-17)
 
 **Note:** Version bump only for package demo-app-ts

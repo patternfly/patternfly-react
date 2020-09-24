@@ -5,6 +5,7 @@ cssPrefix: pf-c-divider
 propComponents: ['Divider']
 ---
 
+## Examples
 ### Using hr (default)
 ```js
 import React from 'react';

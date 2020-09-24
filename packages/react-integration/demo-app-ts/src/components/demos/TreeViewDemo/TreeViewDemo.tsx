@@ -16,7 +16,10 @@ export class TreeViewDemo extends Component {
         {
           name: 'Application 1',
           id: 'App1',
-          children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+          children: [
+            { name: 'Settings', id: 'App1Settings' },
+            { name: 'Current', id: 'App1Current' }
+          ]
         },
         {
           name: 'Application 2',
@@ -44,7 +47,10 @@ export class TreeViewDemo extends Component {
         {
           name: 'Application 3',
           id: 'App3',
-          children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+          children: [
+            { name: 'Settings', id: 'App3Settings' },
+            { name: 'Current', id: 'App3Current' }
+          ]
         }
       ]
     },
@@ -122,7 +128,10 @@ export class TreeViewDemo extends Component {
           {
             name: 'Application 1',
             id: 'FApp1',
-            children: [{ name: 'Settings', id: 'FApp1Settings' }, { name: 'Current', id: 'FApp1Current' }]
+            children: [
+              { name: 'Settings', id: 'FApp1Settings' },
+              { name: 'Current', id: 'FApp1Current' }
+            ]
           },
           {
             name: 'Application 2',
@@ -153,7 +162,10 @@ export class TreeViewDemo extends Component {
           {
             name: 'Application 3',
             id: 'FApp3',
-            children: [{ name: 'Settings', id: 'FApp3Settings' }, { name: 'Current', id: 'FApp3Current' }]
+            children: [
+              { name: 'Settings', id: 'FApp3Settings' },
+              { name: 'Current', id: 'FApp3Current' }
+            ]
           }
         ]
       },

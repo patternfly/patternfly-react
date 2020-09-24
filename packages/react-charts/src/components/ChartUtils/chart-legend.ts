@@ -1,4 +1,4 @@
-import { defaults } from 'lodash';
+import defaults from 'lodash/defaults';
 import { Helpers, PaddingProps, TextSize } from 'victory-core';
 import { VictoryLegend } from 'victory-legend';
 import { ChartLegendOrientation, ChartLegendPosition, ChartLegendProps } from '../ChartLegend';

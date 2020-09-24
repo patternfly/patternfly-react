@@ -1,6 +1,6 @@
 ---
-id: Tiles
-section: demos
+id: Tile
+section: components
 ---
 
 import { Tile} from '@patternfly/react-core';

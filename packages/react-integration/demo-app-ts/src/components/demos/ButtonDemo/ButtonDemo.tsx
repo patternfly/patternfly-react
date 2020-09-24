@@ -117,6 +117,9 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.normalButton} id="normal-btn-13" isLarge>
           Large button
         </Button>
+        <Button {...this.normalButton} id="normal-btn-14" variant="warning">
+          Warning
+        </Button>
 
         <Button
           id="aria-disabled-btn-1"
