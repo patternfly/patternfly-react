@@ -34,7 +34,6 @@ references:
   - packages/react-icons/dist/
   webpack_cache_paths: &webpack_cache_paths
   - packages/react-docs/.cache
-  - packages/react-docs/src/generated
   lint_cache_paths: &lint_cache_paths
   - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
@@ -232,7 +231,9 @@ jobs:
         command: node .circleci/upload-preview.js packages/react-docs/public
     - persist_to_workspace:
         root: ~/project
-        paths: *webpack_cache_paths
+        paths:
+        - packages/react-docs/public
+        - packages/react-docs/src/generated
   test_a11y_pf4:
     docker:
     - image: circleci/node:12-browsers
