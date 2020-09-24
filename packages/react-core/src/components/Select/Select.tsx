@@ -863,7 +863,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   ref={this.inputRef}
                 />
               </div>
-              {(selections[0] || typeaheadInputValue) && clearBtn}
+              {hasOnClear && (selections[0] || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
           {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -886,7 +886,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   ref={this.inputRef}
                 />
               </div>
-              {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
+              {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
         </SelectToggle>
