@@ -202,12 +202,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
 
-    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
-      this.setState({
-        typeaheadInputValue: this.props.selections as string
-      });
-    }
-
     if (
       this.props.onFavorite &&
       (this.props.favorites.length !== prevProps.favorites.length ||
