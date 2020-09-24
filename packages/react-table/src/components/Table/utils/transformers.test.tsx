@@ -254,7 +254,7 @@ describe('Transformer functions', () => {
     });
 
     test('no parent', () => {
-      expect(expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
+      expect(expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(null);
     });
 
     test('full width', () => {
@@ -284,7 +284,7 @@ describe('Transformer functions', () => {
     });
 
     test('no parent', () => {
-      expect(skipRemainingExpandedRow()({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
+      expect(skipRemainingExpandedRow()({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(null);
     });
 
     test('full width', () => {

@@ -56,7 +56,7 @@ export const expandedRow = (colSpan: number) => {
         extraParams: { contentId = 'expanded-content' }
       }
     }: IExtra
-  ): decoratorReturnType | false => {
+  ): decoratorReturnType | null => {
     if (rowData.hasOwnProperty('parent')) {
       const formatter: decoratorReturnType = {
         id: contentId + rowIndex,
@@ -70,7 +70,7 @@ export const expandedRow = (colSpan: number) => {
       return formatter;
     }
 
-    return false;
+    return null;
   };
   return expandedRowFormatter;
 };
@@ -86,7 +86,7 @@ export const skipRemainingExpandedRow = () => {
         extraParams: { contentId = 'expanded-content' }
       }
     }: IExtra
-  ): decoratorReturnType | false => {
+  ): decoratorReturnType | null => {
     if (rowData.hasOwnProperty('parent')) {
       const formatter: decoratorReturnType = {
         id: contentId + rowIndex + '-' + columnIndex,
@@ -100,7 +100,7 @@ export const skipRemainingExpandedRow = () => {
       return formatter;
     }
 
-    return false;
+    return null;
   };
   return skipRemainingExpandedRowFormatter;
 };
