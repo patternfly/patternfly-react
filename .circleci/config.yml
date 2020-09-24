@@ -253,8 +253,6 @@ jobs:
         name: Upload a11y report
         command: node .circleci/upload-preview.js packages/react-docs/coverage/dist
         when: always
-    - store_artifacts:
-        path: packages/react-docs/coverage/
   deploy_prerelease:
     docker:
     - image: circleci/node:12

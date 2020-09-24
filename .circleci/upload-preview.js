@@ -23,6 +23,9 @@ let uploadURL = `${repo}-${prnum ? `pr-${prnum}` : prbranch}`
 if (uploadFolderName === '.out') {
   uploadURL += '-pf3';
 }
+else if (uploadFolderName === 'dist') {
+  uploadURL += `-a11y`;
+}
 else if (uploadFolderName === 'results') {
   uploadURL += `-cypress`;
 }
