@@ -1,7 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const staticDir = path.join(process.cwd(), 'static/');
@@ -30,10 +30,8 @@ module.exports = (_env, argv) => {
       rules: [
         {
           test: /\.[tj]sx?$/,
-          include: [
-            path.join(__dirname, 'src')
-          ],
-          use: { loader: 'ts-loader' },
+          include: [path.join(__dirname, 'src')],
+          use: { loader: 'ts-loader' }
         },
         {
           test: /\.css$/,
@@ -46,7 +44,7 @@ module.exports = (_env, argv) => {
             },
             {
               loader: 'css-loader'
-            },
+            }
           ]
         },
         {
@@ -58,7 +56,7 @@ module.exports = (_env, argv) => {
               fallback: 'file-loader',
               name: '[name].[contenthash].[ext]',
               outputPath: 'images/'
-            },
+            }
           }
         },
         {
@@ -76,23 +74,25 @@ module.exports = (_env, argv) => {
       ]
     },
     resolve: {
-      extensions: [".ts", ".tsx", ".js"]
+      extensions: ['.ts', '.tsx', '.js']
     },
     plugins: [
-      new MiniCssExtractPlugin(!isProd ? {} : {
-        filename: '[name].[contenthash].css',
-        chunkFilename: '[name].[contenthash].css',
-      }),
+      new MiniCssExtractPlugin(
+        !isProd
+          ? {}
+          : {
+              filename: '[name].[contenthash].css',
+              chunkFilename: '[name].[contenthash].css'
+            }
+      ),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/index.html')
       }),
       new CopyPlugin({
-        patterns: [
-          { from: staticDir, to: '' }
-        ]
-      }),
+        patterns: [{ from: staticDir, to: '' }]
+      })
     ],
     stats: 'minimal'
   };
-}
+};
