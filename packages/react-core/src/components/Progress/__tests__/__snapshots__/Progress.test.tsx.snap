@@ -966,12 +966,14 @@ exports[`Progress variant warning 1`] = `
 <Progress
   className=""
   id="warning-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant="warning"
@@ -981,6 +983,7 @@ exports[`Progress variant warning 1`] = `
     id="warning-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="warning-progress"
@@ -993,6 +996,7 @@ exports[`Progress variant warning 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant="warning"
     >
