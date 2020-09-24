@@ -41,7 +41,7 @@ test('ModalBox Test top aligned', () => {
 
 test('ModalBox Test top aligned distance', () => {
   const view = shallow(
-    <ModalBox title="Test Modal Box" id="boxId" position="top" distanceFromTop="50px">
+    <ModalBox title="Test Modal Box" id="boxId" position="top" distance="50px">
       This is a ModalBox
     </ModalBox>
   );
