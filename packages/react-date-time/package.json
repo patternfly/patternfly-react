@@ -38,7 +38,8 @@
     "@patternfly/react-core": "^4.55.1",
     "@patternfly/react-icons": "^4.7.7",
     "@patternfly/react-styles": "^4.7.5",
-    "@patternfly/react-tokens": "^4.9.9"
+    "@patternfly/react-tokens": "^4.9.9",
+    "flatpickr": "^4.6.6"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -46,8 +47,6 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "typescript": "^3.8.3",
-    "flatpickr": "^4.6.6",
-    "moment": "^2.27.0"
+    "typescript": "^3.8.3"
   }
 }

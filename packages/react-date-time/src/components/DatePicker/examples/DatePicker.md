@@ -19,7 +19,7 @@ SimpleDatePicker = () => (
     <DatePicker value="03/05/2020"/>
     <br />
     <br />
-    <DatePicker minDate="2020-03-16" maxDate="2020-03-20"/>
+    <DatePicker minDate="03/16/2020" maxDate="03/20/2020"/>
     <br />
     <br />
     <DatePicker 
