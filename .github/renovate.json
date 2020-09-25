@@ -1,0 +1,22 @@
+{
+  "packageRules": [
+    {
+      "datasources": ["npm"],
+      "packageNames": [
+        "lodash",
+        "lodash-es",
+        "focus-trap",
+        "react-dropzone",
+        "tippy.js",
+        "tslib"
+      ]
+    },
+    {
+      "datasources": ["npm"],
+      "packageNames": [
+        "@patternfly/patternfly"
+      ],
+      "followTag": "prerelease"
+    }
+  ]
+}
