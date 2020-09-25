@@ -233,21 +233,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
             });
           }
 
-          const componentContent = description ? (
-            <>
-              <div className={styles.dropdownMenuItemMain}>
-                {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
-                {children}
-              </div>
-              <div className={styles.dropdownMenuItemDescription}>{description}</div>
-            </>
-          ) : (
-            <>
-              {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
-              {children}
-            </>
-          );
-
           return (
             <li
               className={listItemClassName || null}

@@ -146,7 +146,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
   handleResize = debounce(this.resize, 250);
 
-  handleMainClick = (ev: any) => {
+  handleMainClick = () => {
     if (this.isMobile() && this.state.mobileIsNavOpen && this.mainRef.current) {
       this.setState({ mobileIsNavOpen: false });
     }
