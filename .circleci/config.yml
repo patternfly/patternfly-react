@@ -20,6 +20,7 @@ references:
   - packages/react-catalog-view-extension/node_modules/
   - packages/react-codemods/node_modules/
   - packages/react-icons/node_modules/
+  - packages/react-date-time/node_modules/
   build_cache_paths: &build_cache_paths
   - packages/react-charts/dist/
   - packages/react-core/dist/
@@ -32,6 +33,7 @@ references:
   - packages/react-virtualized-extension/dist/
   - packages/react-catalog-view-extension/dist/
   - packages/react-icons/dist/
+  - packages/react-date-time/dist/
   webpack_cache_paths: &webpack_cache_paths
   - packages/react-docs/.cache
   lint_cache_paths: &lint_cache_paths
