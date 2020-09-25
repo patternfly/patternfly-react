@@ -116,7 +116,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     if (isGrouped) {
       const favoriteItems: React.ReactNode[] = [];
       (items as React.ReactElement[]).forEach(group =>
-        (group.props.children as React.ReactElement[])
+        (group.props.children.props.children as React.ReactElement[])
           .filter(item => favorites.includes(item.props.id))
           .map(item => favoriteItems.push(React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true })))
       );

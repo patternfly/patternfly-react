@@ -110,10 +110,9 @@ class MenuIconsList extends React.Component {
         <MenuListItem
           component="button"
           icon={<CubeIcon />}
-          //
           to="#default-link2"
-          itemId={1}
-          isActive={activeItem === 1}
+          itemId={2}
+          isActive={activeItem === 2}
         >
           Docker File
         </MenuListItem>
@@ -159,8 +158,8 @@ class MenuExpandableList extends React.Component {
           description="Description"
           icon={<CubeIcon />}
           to="#default-link2"
-          itemId={1}
-          isActive={activeItem === 1}
+          itemId={2}
+          isActive={activeItem === 2}
         >
           From Docker File
         </MenuListItem>
@@ -201,19 +200,19 @@ class MenuWithFlyout extends React.Component {
         <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Pause rollouts
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Add storage
         </MenuListItem>
         <MenuListItem
           component="button"
           description="Description"
           to="#default-link2"
-          itemId={1}
-          isActive={activeItem === 1}
+          itemId={3}
+          isActive={activeItem === 3}
         >
           Edit
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem component="button" to="#default-link2" itemId={4} isActive={activeItem === 4}>
           Delete deployment config
         </MenuListItem>
       </MenuList>
@@ -261,7 +260,7 @@ class MenuWithFiltering extends React.Component {
         <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Action 2
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Action 3
         </MenuListItem>
       </MenuList>
@@ -301,7 +300,7 @@ class MenuWithLinks extends React.Component {
         <MenuListItem isExternalLink to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Link 2
         </MenuListItem>
-        <MenuListItem to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Link 3
         </MenuListItem>
       </MenuList>
@@ -342,7 +341,7 @@ class MenuWithSeparators extends React.Component {
           Action 2
         </MenuListItem>
         <Divider component="li" />
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Action 3
         </MenuListItem>
       </MenuList>
@@ -384,16 +383,16 @@ class MenuWithTitledGroups extends React.Component {
           <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Link 1
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
             Link 2
           </MenuListItem>
           <Divider component="li" />
         </MenuGroup>
         <MenuGroup label="Group 2">
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          <MenuListItem component="button" to="#default-link2" itemId={3} isActive={activeItem === 3}>
             Link 1
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          <MenuListItem component="button" to="#default-link2" itemId={4} isActive={activeItem === 4}>
             Link 2
           </MenuListItem>
         </MenuGroup>
@@ -453,8 +452,8 @@ class MenuWithTitledGroups extends React.Component {
           icon={<CodeBranchIcon />}
           description="Nunc non ornare ex, et pretium dui. Duis nec augue at urna elementum blandit tincidunt eget metus. Aenean sed metus id urna dignissim interdum. Aenean vel nisl vitae arcu vehicula pulvinar eget nec turpis. Cras sit amet est est."
           to="#default-link2"
-          itemId={1}
-          isActive={activeItem === 1}
+          itemId={2}
+          isActive={activeItem === 2}
         >
           Action 3
         </MenuListItem>
@@ -508,15 +507,15 @@ class MenuWithActions extends React.Component {
           >
             Item 2
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
             Item 3
           </MenuListItem>
           <MenuListItem
             component="button"
             description="This is a description"
             to="#default-link2"
-            itemId={1}
-            isActive={activeItem === 1}
+            itemId={2}
+            isActive={activeItem === 2}
           >
             Item 4
           </MenuListItem>
@@ -542,6 +541,9 @@ class MenuWithFavorites extends React.Component {
       activeItem: 0,
       favorites: []
     };
+
+
+
     this.onSelect = result => {
       this.setState({
         activeItem: result.itemId
@@ -557,26 +559,23 @@ class MenuWithFavorites extends React.Component {
           favorites: [...this.state.favorites, itemId]
         });
     };
+
   }
 
   render() {
+
+
+console.log(this.state.favorites)
     const { activeItem, favorites } = this.state;
     const menuItems = [
-      <MenuGroup label="Favorites">
+      <MenuGroup label="All actions">
         <MenuList>
-          <MenuListItem description="This is a description" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-            Item 1
-          </MenuListItem>
-          <MenuListItem component="Button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Item 2
-          </MenuListItem>
-          <Divider component="li" />
-          <MenuGroup label="All actions">
             <MenuListItem
               description="This is a description"
-              to="#default-link2"
-              itemId={1}
-              isActive={activeItem === 1}
+              to="#default-link1"
+              itemId={0}
+              isActive={activeItem === 0}
+              id="item-1"
             >
               Item 1
             </MenuListItem>
@@ -584,19 +583,23 @@ class MenuWithFavorites extends React.Component {
               description="This is a description"
               to="#default-link2"
               itemId={1}
+              isExternalLink
               isActive={activeItem === 1}
+              id="item-2"
             >
               Item 2
             </MenuListItem>
-            <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+            <MenuListItem to="#default-link3" id="item-3"
+            itemId={2}
+            isExternalLink
+            isActive={activeItem === 2}>
               Item 3
             </MenuListItem>
-          </MenuGroup>
         </MenuList>
       </MenuGroup>
     ];
 
-    return <Menu onSelect={this.onSelect} favorites={favorites} onFavorite={this.onFavorite} items={menuItems}></Menu>;
+    return <Menu onSelect={this.onSelect} favorites={favorites} onFavorite={this.onFavorite} isGrouped items={menuItems}></Menu>;
   }
 }
 ```
@@ -635,8 +638,8 @@ class MenuOptionSingleSelect extends React.Component {
           component="button"
           icon={<TableIcon />}
           to="#default-link2"
-          itemId={1}
-          isActive={activeItem === 1}
+          itemId={2}
+          isActive={activeItem === 2}
         >
           Option 3
         </MenuListItem>
@@ -681,8 +684,8 @@ class MenuOptionMultiSelect extends React.Component {
           component="button"
           icon={<TableIcon />}
           to="#default-link2"
-          itemId={1}
-          isActive={activeItem === 1}
+          itemId={2}
+          isActive={activeItem === 2}
         >
           Option 3
         </MenuListItem>

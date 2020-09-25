@@ -71,46 +71,29 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
-      <MenuContext.Consumer>
-        {({ onFavorite }) => (
-          <Component
-            href={to}
-            id={id}
-            onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-            className={css(styles.menuItem, isActive, className)}
-            aria-current={isActive ? 'page' : null}
-            {...(isFavorite !== null && {
-              additionalChild: (
-                <button
-                  className={css(styles.menuItemAction, styles.modifiers.favorite)}
-                  aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
-                  onClick={() => {
-                    onFavorite(id, isFavorite);
-                  }}
-                >
-                  <StarIcon />
-                </button>
-              )
-            })}
-            {...props}
-          >
-            <div className={css(styles.menuItemMain)}>
-              {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-              <span className={css(styles.menuItemText)}>{children}</span>
-              {isExternalLink && (
-                <span className={css(styles.menuItemExternalIcon)}>
-                  <ExternalLinkAltIcon />
-                </span>
-              )}
-            </div>
-            {description && (
-              <div className={css(styles.menuItemDescription)}>
-                <span>{description}</span>
-              </div>
-            )}
-          </Component>
+      <Component
+        href={to}
+        id={id}
+        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+        className={css(styles.menuItem, isFavorite && styles.modifiers.favorited, isActive, className)}
+        aria-current={isActive ? 'page' : null}
+        {...props}
+      >
+        <div className={css(styles.menuItemMain)}>
+          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+          <span className={css(styles.menuItemText)}>{children}</span>
+          {isExternalLink && (
+            <span className={css(styles.menuItemExternalIcon)}>
+              <ExternalLinkAltIcon />
+            </span>
+          )}
+        </div>
+        {description && (
+          <div className={css(styles.menuItemDescription)}>
+            <span>{description}</span>
+          </div>
         )}
-      </MenuContext.Consumer>
+      </Component>
     );
   };
 
@@ -126,11 +109,28 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   return (
     <li className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}>
       <MenuContext.Consumer>
-        {context =>
-          React.isValidElement(children)
-            ? renderClonedChild(context, children as React.ReactElement)
-            : renderDefaultLink(context)
-        }
+        {context => (
+          <>
+            {React.isValidElement(children)
+              ? renderClonedChild(context, children as React.ReactElement)
+              : renderDefaultLink(context)}
+            {context.onFavorite && (
+              <button
+                className={css(
+                  styles.menuItemAction,
+                  styles.modifiers.favorite,
+                  isFavorite && styles.modifiers.favorited
+                )}
+                aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
+                onClick={() => {
+                  context.onFavorite(id, isFavorite);
+                }}
+              >
+                <StarIcon className={css(styles.menuItemActionIcon)} />
+              </button>
+            )}
+          </>
+        )}
       </MenuContext.Consumer>
     </li>
   );
