@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.43.0...@patternfly/react-integration@4.44.0) (2020-09-25)
+
+
+### Features
+
+* **react-core-button:** add isLoading and spinnerAriaValueText properties ([#4837](https://github.com/patternfly/patternfly-react/issues/4837)) ([bc81323](https://github.com/patternfly/patternfly-react/commit/bc81323af97230879e1ee2d9b9db0f0bfea6dabd)), closes [#4816](https://github.com/patternfly/patternfly-react/issues/4816)
+
+
+
+
+
 # [4.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.42.0...@patternfly/react-integration@4.43.0) (2020-09-24)
 
 
