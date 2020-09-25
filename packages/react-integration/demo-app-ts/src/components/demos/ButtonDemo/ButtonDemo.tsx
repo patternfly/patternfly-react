@@ -120,6 +120,12 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.normalButton} id="normal-btn-14" variant="warning">
           Warning
         </Button>
+        <Button {...this.normalButton} id="normal-btn-15" isLoading>
+          Loading button
+        </Button>
+        <Button {...this.normalButton} id="normal-btn-16" isLoading={false}>
+          Loader button
+        </Button>
 
         <Button
           id="aria-disabled-btn-1"
