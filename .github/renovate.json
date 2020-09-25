@@ -1,15 +1,13 @@
 {
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": ["npm"],
   "packageRules": [
     {
-      "datasources": ["npm"],
-      "packageNames": [
-        "lodash",
-        "lodash-es",
-        "focus-trap",
-        "react-dropzone",
-        "tippy.js",
-        "tslib"
-      ]
+      "packagePatterns": ["*"],
+      "excludePackagePatterns": ["@patternfly/patternfly"],
+      "enabled": false
     },
     {
       "datasources": ["npm"],
