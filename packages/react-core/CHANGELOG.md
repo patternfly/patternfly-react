@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.57.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.56.0...@patternfly/react-core@4.57.0) (2020-09-25)
+
+
+### Features
+
+* **react-core-tabs:** add support for light scheme variant in Tabs && TabContent ([#4832](https://github.com/patternfly/patternfly-react/issues/4832)) ([8bf0619](https://github.com/patternfly/patternfly-react/commit/8bf0619bfd08bf4e7daa3c601ee178d1c1349e76)), closes [#4658](https://github.com/patternfly/patternfly-react/issues/4658)
+
+
+
+
+
 # [4.56.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.55.1...@patternfly/react-core@4.56.0) (2020-09-25)
 
 
