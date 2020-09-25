@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should match snapshot (auto-generated) 1`] = `
-<Fragment>
+<ContextProvider
+  value={
+    Object {
+      "variant": "div",
+    }
+  }
+>
   <div
     aria-label="string"
     className="pf-c-tabs ''"
@@ -10,7 +16,6 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
     data-ouia-safe={true}
     id="string"
     onSelect={[Function]}
-    variant="div"
   >
     <button
       aria-hidden={false}
@@ -65,5 +70,5 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
     id="string"
     key="0"
   />
-</Fragment>
+</ContextProvider>
 `;
