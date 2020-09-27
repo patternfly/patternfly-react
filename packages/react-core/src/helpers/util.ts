@@ -297,7 +297,7 @@ export const createRenderableFavorites = (
         return (
           group.props.children &&
           (group.props.children as React.ReactElement[])
-            .filter(item => favorites.includes(item.props.id))
+            .filter(item => 'props' in item && favorites.includes(item.props.id))
             .map(item => {
               if (isEnterTriggersArrowDown) {
                 return favoriteItems.push(
@@ -319,7 +319,7 @@ export const createRenderableFavorites = (
     return favoriteItems;
   }
   return (items as React.ReactElement[])
-    .filter(item => favorites.includes(item.props.id))
+    .filter(item => 'props' in item && favorites.includes(item.props.id))
     .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: isEnterTriggersArrowDown }));
 };
 
