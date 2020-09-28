@@ -20,7 +20,8 @@
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
-    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts|virtualizedtable/selectable\""
+    "test:a11y": "patternfly-a11y .cache/fullscreenPages.json --prefix https://www.patternfly.org/2020.11 --aggregate --ignore-incomplete --ignore-rules color-contrast,scrollable-region-focusable --skip \"charts|virtualizedtable/selectable\"",
+    "test:os": "patternfly-a11y --config os-config.js"
   },
   "dependencies": {
     "@patternfly/patternfly": "4.42.2",
@@ -38,7 +39,7 @@
   "devDependencies": {
     "@mdx-js/mdx": "^1.1.5",
     "@mdx-js/react": "^1.1.5",
-    "@patternfly/patternfly-a11y": "^0.0.17",
+    "@patternfly/patternfly-a11y": "^2.0.5",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
     "gatsby": "2.21.0",
