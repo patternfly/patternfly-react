@@ -3145,7 +3145,7 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@patternfly/patternfly-a11y@^2.0.10":
+"@patternfly/patternfly-a11y@2.0.10":
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-2.0.10.tgz#dd4ae1a1a6fb2850d0e36180c9a288d9dcba59be"
   integrity sha512-VCOU8G6Yr4ucQUhfbcHq+uk1/gemwDNl/cPtbLWugde/pr/c6dWDMg6JhlFIV9HOhtQiPS0psh228dodDNXTtg==
