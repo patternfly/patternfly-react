@@ -815,7 +815,17 @@ class CompactExpandableTable extends React.Component {
         },
         {
           parent: 3,
-          cells: ['child - 2']
+          cells: [{
+            title: 'child - 2 - Uses 1 column',
+            props: {
+              colSpan: 1
+            }
+          }, {
+            title: 'child - 2 - Uses 3 columns',
+            props: {
+              colSpan: 3
+            }
+          }]
         },
         {
           isOpen: false,
@@ -1077,11 +1087,12 @@ class CompoundExpandableTable extends React.Component {
           cellTransforms: [compoundExpand]
         },
         {
-          title: 'Workspaces',
-          cellTransforms: [compoundExpand]
+          title: 'Header cell',
+          cellFormatters: [expandable]
         },
-        'Last Commit',
-        ''
+        'Branches',
+        { title: 'Pull requests' },
+        '' // deliberately empty
       ],
       rows: [
         {
@@ -1147,7 +1158,7 @@ class CompoundExpandableTable extends React.Component {
           ]
         },
         {
-          isOpen: false,
+          parent: 3,
           cells: [
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th'} },
             {
@@ -1166,6 +1177,7 @@ class CompoundExpandableTable extends React.Component {
               ),
               props: { isOpen: false, ariaControls : 'compound-expansion-table-5' }
             },
+            "",
             {
               title: (
                 <React.Fragment>
@@ -1174,8 +1186,6 @@ class CompoundExpandableTable extends React.Component {
               ),
               props: { isOpen: false, ariaControls : 'compound-expansion-table-6' }
             },
-            '20 minutes',
-            { title: <a href="#">Open in Github</a> }
           ]
         },
         {
@@ -1210,22 +1220,16 @@ class CompoundExpandableTable extends React.Component {
         }
       ]
     };
-    this.onExpand = this.onExpand.bind(this);
+    this.onCollapse = this.onCollapse.bind(this);
   }
 
-  onExpand(event, rowIndex, colIndex, isOpen, rowData, extraData) {
+  onCollapse(event, rowKey, isOpen) {
     const { rows } = this.state;
-    if (!isOpen) {
-      // set all other expanded cells false in this row if we are expanding
-      rows[rowIndex].cells.forEach(cell => {
-        if (cell.props) cell.props.isOpen = false;
-      });
-      rows[rowIndex].cells[colIndex].props.isOpen = true;
-      rows[rowIndex].isOpen = true;
-    } else {
-      rows[rowIndex].cells[colIndex].props.isOpen = false;
-      rows[rowIndex].isOpen = rows[rowIndex].cells.some(cell => cell.props && cell.props.isOpen);
-    }
+    /**
+     * Please do not use rowKey as row index for more complex tables.
+     * Rather use some kind of identifier like ID passed with each row.
+     */
+    rows[rowKey].isOpen = isOpen;
     this.setState({
       rows
     });
@@ -1810,9 +1814,7 @@ class EditableRowsTable extends React.Component {
 
     return (
       <Table
-        actions={actions}
-        onRowEdit={this.updateEditableRows}
-        aria-label="Editable Rows Table"
+        aria-label="Compact expandable table"
         variant={TableVariant.compact}
         cells={columns}
         rows={rows}>

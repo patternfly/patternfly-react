@@ -56,12 +56,15 @@ export const expandedRow = (colSpan: number) => {
         extraParams: { contentId = 'expanded-content' }
       }
     }: IExtra
-  ): decoratorReturnType =>
-    rowData.hasOwnProperty('parent') && {
-      // todo: rewrite this logic, it is not type safe
-      colSpan: colSpan + (!!rowData.fullWidth as any),
-      id: contentId + rowIndex,
-      className: rowData.noPadding && css(styles.modifiers.noPadding)
-    };
+  ): decoratorReturnType => {
+    return (
+      rowData.hasOwnProperty('parent') && {
+        // todo: rewrite this logic, it is not type safe
+        colSpan: rowData.cells.length === 1 ? colSpan + (!!rowData.fullWidth as any) : 1,
+        id: contentId + rowIndex,
+        className: rowData.noPadding && css(styles.modifiers.noPadding)
+      }
+    );
+  };
   return expandedRowFormatter;
 };
