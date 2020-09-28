@@ -160,20 +160,21 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
               </li>
             )}
           </ul>
-          {isClosable && (
-            <div className={css(styles.labelGroupClose)}>
-              <Button
-                variant="plain"
-                aria-label={closeBtnAriaLabel}
-                onClick={onClick}
-                id={`remove_group_${id}`}
-                aria-labelledby={`remove_group_${id} ${id}`}
-              >
-                <TimesCircleIcon aria-hidden="true" />
-              </Button>
-            </div>
-          )}
         </React.Fragment>
+      );
+
+      const close = (
+        <div className={css(styles.labelGroupClose)}>
+          <Button
+            variant="plain"
+            aria-label={closeBtnAriaLabel}
+            onClick={onClick}
+            id={`remove_group_${id}`}
+            aria-labelledby={`remove_group_${id} ${id}`}
+          >
+            <TimesCircleIcon aria-hidden="true" />
+          </Button>
+        </div>
       );
 
       return (
@@ -187,6 +188,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
         >
           {categoryName && <div className={css('pf-c-label-group__main')}>{content}</div>}
           {!categoryName && content}
+          {isClosable && close}
         </div>
       );
     };
