@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": ["npm"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "excludePackagePatterns": ["@patternfly/patternfly"],
+      "enabled": false
+    },
+    {
+      "datasources": ["npm"],
+      "packageNames": [
+        "@patternfly/patternfly"
+      ],
+      "followTag": "prerelease"
+    }
+  ]
+}
