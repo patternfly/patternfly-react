@@ -225,7 +225,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ? [
             <SelectGroup key="favorites" label={this.props.favoritesLabel}>
               {renderableFavorites}
-            </SelectGroup>
+            </SelectGroup>,
+            <Divider key="favorites-group-divider" />
           ]
         : [];
       this.setState({ favoritesGroup });

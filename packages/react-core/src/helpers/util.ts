@@ -2,6 +2,7 @@ import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import * as React from 'react';
 import { ApplicationLauncherSeparator } from '../components/ApplicationLauncher/ApplicationLauncherSeparator';
+import { Divider } from '../components/Divider/Divider';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -335,7 +336,7 @@ export const extendItemsWithFavorite = (items: object, isGrouped: boolean, favor
     return (items as React.ReactElement[]).map(group =>
       React.cloneElement(group, {
         children: React.Children.map(group.props.children as React.ReactElement[], item => {
-          if (item.type === ApplicationLauncherSeparator) {
+          if (item.type === ApplicationLauncherSeparator || item.type === Divider) {
             return item;
           }
           return React.cloneElement(item, {
