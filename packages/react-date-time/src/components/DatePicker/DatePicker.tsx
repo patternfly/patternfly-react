@@ -58,20 +58,22 @@ function parseYYYYMMDD(date: string, format: string) {
   let month = NaN;
   let day = 1;
   let index = 0;
-  for (let formatBlock of format.split(/(yyyy|mm|dd)/i)) {
-    if (formatBlock.toLowerCase() === 'yyyy') {
-      const yearString = date.substr(index, 4);
-      if (yearString.length === 4) {
-        year = toNumber(yearString);
+  if (date.length === format.length) {
+    for (let formatBlock of format.split(/(yyyy|mm|dd)/i)) {
+      if (formatBlock.toLowerCase() === 'yyyy') {
+        const yearString = date.substr(index, 4);
+        if (yearString.length === 4) {
+          year = toNumber(yearString);
+        }
       }
+      else if (formatBlock.toLowerCase() === 'mm') {
+        month = toNumber(date.substr(index, 2));
+      }
+      else if (formatBlock.toLowerCase() === 'dd') {
+        day = toNumber(date.substr(index, 2));
+      }
+      index += formatBlock.length;
     }
-    else if (formatBlock.toLowerCase() === 'mm') {
-      month = toNumber(date.substr(index, 2));
-    }
-    else if (formatBlock.toLowerCase() === 'dd') {
-      day = toNumber(date.substr(index, 2));
-    }
-    index += formatBlock.length;
   }
   
   // Year and month are required
