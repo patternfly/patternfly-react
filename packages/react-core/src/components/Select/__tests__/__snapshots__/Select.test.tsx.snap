@@ -9849,6 +9849,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     data-ouia-safe="true"
                   >
                     
+                    
                     <ul
                       aria-label="Chip group category"
                       class="pf-c-chip-group__list"
