@@ -41,10 +41,19 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
     prevPoint[1] + (arrowEndPoint[1] - prevPoint[1]) * ratio
   ];
 
-  const arrowPoints: [number, number][] = [[0, size / 2], [0, -size / 2], [size, 0]];
+  const arrowPoints: [number, number][] = [
+    [0, size / 2],
+    [0, -size / 2],
+    [size, 0]
+  ];
   const padding = Math.max(size, 8);
   const deltaY = padding / 2;
-  const boundingBox: [number, number][] = [[0, -deltaY], [padding, -deltaY], [padding, deltaY], [0, deltaY]];
+  const boundingBox: [number, number][] = [
+    [0, -deltaY],
+    [padding, -deltaY],
+    [padding, deltaY],
+    [0, deltaY]
+  ];
 
   const angleDeg = 180 - (Math.atan2(arrowEndPoint[1] - prevPoint[1], prevPoint[0] - arrowEndPoint[0]) * 180) / Math.PI;
 

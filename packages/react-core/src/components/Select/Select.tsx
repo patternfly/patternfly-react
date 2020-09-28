@@ -7,10 +7,10 @@ import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
-import { SelectGroup } from './SelectGroup';
+import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
-import { Chip, ChipGroup } from '../ChipGroup';
+import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
 import {
   keyHandler,
   getNextIndex,
@@ -31,7 +31,7 @@ export interface SelectProps
   extends ToggleMenuBaseProps,
     Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
-  /** Content rendered inside the Select */
+  /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
   children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
@@ -109,6 +109,8 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
+  /** Optional props to pass to the chip group in the typeaheadmulti variant */
+  chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
 }
 
 export interface SelectState {
@@ -261,27 +263,25 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } catch (err) {
         input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
-      const childrenArray = React.Children.toArray(children);
+      const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
       if (isGrouped) {
+        const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
+          this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
           e.target.value.toString() !== ''
-            ? React.Children.map(children, (group: React.ReactElement) => {
+            ? React.Children.map(children, group => {
                 if (group.type === SelectGroup) {
-                  const filteredGroupChildren = React.Children.toArray(group.props.children).filter(
-                    (child: React.ReactElement) =>
-                      this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
-                  );
+                  const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
+                    SelectGroupProps
+                  >[]).filter(childFilter);
                   if (filteredGroupChildren.length > 0) {
                     return React.cloneElement(group, {
                       titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-                      children: filteredGroupChildren
+                      children: filteredGroupChildren as any
                     });
                   }
                 } else {
-                  return React.Children.toArray(group).filter(
-                    (child: React.ReactElement) =>
-                      this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
-                  );
+                  return (React.Children.toArray(group) as React.ReactElement<SelectGroupProps>[]).filter(childFilter);
                 }
               })
             : childrenArray;
@@ -491,16 +491,22 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
   };
 
+  onClickTypeaheadToggleButton = () => {
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus();
+    }
+  };
+
   getDisplay = (value: string | SelectOptionObject, type: 'node' | 'text' = 'node') => {
     if (!value) {
       return;
     }
     const item = this.props.isGrouped
-      ? React.Children.toArray<React.ReactElement>(this.props.children)
+      ? (React.Children.toArray(this.props.children) as React.ReactElement[])
           .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
           .find(child => child.props.value.toString() === value.toString())
-      : React.Children.toArray<React.ReactElement>(this.props.children).find(
-          child => child.props.value.toString() === value.toString()
+      : React.Children.toArray(this.props.children).find(
+          child => (child as React.ReactElement).props.value.toString() === value.toString()
         );
     if (item) {
       if (item && item.props.children) {
@@ -514,21 +520,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     return value;
   };
 
-  findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
-    if (!item.props || !item.props.children) {
-      if (typeof item !== 'string') {
-        return '';
-      }
+  findText = (item: React.ReactNode) => {
+    if (typeof item === 'string') {
       return item;
+    } else if (!React.isValidElement(item)) {
+      return '';
+    } else {
+      const multi: string[] = [];
+      React.Children.toArray(item.props.children).forEach(child => multi.push(this.findText(child)));
+      return multi.join('');
     }
-    if (typeof item.props.children === 'string') {
-      return item.props.children;
-    }
-    const multi: string[] = [];
-    React.Children.toArray(item.props.children).forEach((child: React.ReactElement) =>
-      multi.push(this.findText(child))
-    );
-    return multi.join('');
   };
 
   generateSelectedBadge = () => {
@@ -545,6 +546,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   render() {
     const {
       children,
+      chipGroupProps,
       className,
       customContent,
       variant,
@@ -654,7 +656,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
-        <ChipGroup>
+        <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (
               <Chip
@@ -736,6 +738,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             openedOnEnter
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
         case 'typeaheadmulti':
           variantProps = {
@@ -743,6 +748,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             openedOnEnter
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
       }
     }
@@ -806,6 +814,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           handleTypeaheadKeys={this.handleTypeaheadKeys}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
+          onClickTypeaheadToggleButton={this.onClickTypeaheadToggleButton}
         >
           {customContent && (
             <div className={css(styles.selectToggleWrapper)}>

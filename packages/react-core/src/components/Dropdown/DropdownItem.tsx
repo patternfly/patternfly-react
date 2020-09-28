@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropdownItem';
 import { DropdownArrowContext } from './dropdownConstants';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface DropdownItemProps extends InternalDropdownItemProps {
+export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
@@ -65,35 +66,42 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   autoFocus,
   description = null,
   styleChildren,
+  ouiaId,
+  ouiaSafe,
   ...props
-}: DropdownItemProps) => (
-  <DropdownArrowContext.Consumer>
-    {context => (
-      <InternalDropdownItem
-        context={context}
-        role="menuitem"
-        tabIndex={tabIndex}
-        className={className}
-        component={component}
-        isDisabled={isDisabled}
-        isPlainText={isPlainText}
-        isHovered={isHovered}
-        href={href}
-        tooltip={tooltip}
-        tooltipProps={tooltipProps}
-        listItemClassName={listItemClassName}
-        onClick={onClick}
-        additionalChild={additionalChild}
-        customChild={customChild}
-        icon={icon}
-        autoFocus={autoFocus}
-        styleChildren={styleChildren}
-        description={description}
-        {...props}
-      >
-        {children}
-      </InternalDropdownItem>
-    )}
-  </DropdownArrowContext.Consumer>
-);
+}: DropdownItemProps) => {
+  const ouiaProps = useOUIAProps(DropdownItem.displayName, ouiaId, ouiaSafe);
+  return (
+    <DropdownArrowContext.Consumer>
+      {context => (
+        <InternalDropdownItem
+          context={context}
+          role="menuitem"
+          tabIndex={tabIndex}
+          className={className}
+          component={component}
+          isDisabled={isDisabled}
+          isPlainText={isPlainText}
+          isHovered={isHovered}
+          href={href}
+          tooltip={tooltip}
+          tooltipProps={tooltipProps}
+          listItemClassName={listItemClassName}
+          onClick={onClick}
+          additionalChild={additionalChild}
+          customChild={customChild}
+          icon={icon}
+          autoFocus={autoFocus}
+          styleChildren={styleChildren}
+          description={description}
+          {...ouiaProps}
+          {...props}
+        >
+          {children}
+        </InternalDropdownItem>
+      )}
+    </DropdownArrowContext.Consumer>
+  );
+};
+
 DropdownItem.displayName = 'DropdownItem';

@@ -1,11 +1,11 @@
 // Gathers all the required keys from an interface/type T
 export type RequiredKeys<T> = {
-  [K in keyof T]-?: ({} extends { [P in K]: T[K] } ? never : K);
+  [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K;
 }[keyof T];
 
 // Gathers all the optional keys from an interface/type T
 export type OptionalKeys<T> = {
-  [K in keyof T]-?: ({} extends { [P in K]: T[K] } ? K : never);
+  [K in keyof T]-?: {} extends { [P in K]: T[K] } ? K : never;
 }[keyof T];
 
 // Picks all the optional keys from interface/type T

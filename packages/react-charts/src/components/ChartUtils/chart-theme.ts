@@ -1,4 +1,5 @@
-import { cloneDeep, merge } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import merge from 'lodash/merge';
 import { DarkBlueColorTheme } from '../ChartTheme/themes/dark/blue-color-theme';
 import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
 import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';

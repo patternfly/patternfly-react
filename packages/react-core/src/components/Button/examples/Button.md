@@ -26,7 +26,8 @@ import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 ButtonVariants = () => (
   <React.Fragment>
     <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
-    <Button variant="tertiary">Tertiary</Button> <Button variant="danger">Danger</Button><br /><br />
+    <Button variant="tertiary">Tertiary</Button> <Button variant="danger">Danger</Button>{' '}
+    <Button variant="warning">Warning</Button><br /><br />
     <Button variant="link" icon={<PlusCircleIcon />}>
       Link
     </Button>{' '}
@@ -64,7 +65,8 @@ DisabledBtn = () => (
       Secondary disabled
     </Button>{' '}
     <Button isDisabled variant="tertiary">Tertiary disabled</Button>{' '}
-    <Button isDisabled variant="danger">Danger disabled</Button><br /><br />
+    <Button isDisabled variant="danger">Danger disabled</Button>{' '}
+    <Button isDisabled variant="warning">Warning disabled</Button><br /><br />
     <Button isDisabled variant="link" icon={<PlusCircleIcon />}>
       Link disabled
     </Button>{' '}
@@ -96,7 +98,8 @@ AriaDisabledBtn = () => (
       Secondary aria disabled
     </Button>{' '}
     <Button isAriaDisabled variant="tertiary">Tertiary aria disabled</Button>{' '}
-    <Button isAriaDisabled variant="danger">Danger aria disabled</Button><br /><br />
+    <Button isAriaDisabled variant="danger">Danger disabled</Button>{' '}
+    <Button isAriaDisabled variant="warning">Warning disabled</Button><br /><br />
     <Button isAriaDisabled variant="link" icon={<PlusCircleIcon />}>
       Link aria disabled
     </Button>{' '}
@@ -201,7 +204,8 @@ ButtonSmallVariants = () => (
     <Button variant="primary" isSmall>Primary</Button>{' '}
     <Button variant="secondary" isSmall>Secondary</Button>{' '}
     <Button variant="tertiary" isSmall>Tertiary</Button>{' '}
-    <Button variant="danger" isSmall>Danger</Button>
+    <Button variant="danger" isSmall>Danger</Button>{' '}
+    <Button variant="warning" isSmall>Warning</Button>
     <br /><br />
   </React.Fragment>
 );
@@ -222,4 +226,41 @@ ButtonCTAVariants = () => (
     <br /><br />
   </React.Fragment>
 );
+```
+
+### Progress
+```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+
+ButtonProgressVariants = () => {
+  const [isPrimaryLoading, setIsPrimaryLoading] = React.useState(true);
+  const [isSecondaryLoading, setIsSecondaryLoading] = React.useState(true);
+  const extraPrimaryProps = {};
+  if (isPrimaryLoading)
+    extraPrimaryProps.spinnerAriaValueText = "Loading";
+  const extraSecondaryProps = {};
+  if (isSecondaryLoading)
+    extraSecondaryProps.spinnerAriaValueText = "Loading";
+
+  return (
+    <React.Fragment>
+      <Button spinnerAriaValueText={isPrimaryLoading ? "Loading" : undefined}
+              isLoading={isPrimaryLoading}
+              variant="primary"
+              onClick={() => setIsPrimaryLoading(!isPrimaryLoading)}
+              {...extraPrimaryProps}>
+        {isPrimaryLoading ? 'Click to stop loading' : 'Click to start loading'}
+      </Button>{' '}
+      <Button spinnerAriaValueText={isSecondaryLoading ? "Loading" : undefined}
+              isLoading={isSecondaryLoading}
+              variant="secondary"
+              onClick={() => setIsSecondaryLoading(!isSecondaryLoading)}
+              {...extraSecondaryProps}>
+        {isSecondaryLoading ? 'Click to stop loading' : 'Click to start loading'}
+      </Button>
+      <br /><br />
+    </React.Fragment>
+  );
+};
 ```

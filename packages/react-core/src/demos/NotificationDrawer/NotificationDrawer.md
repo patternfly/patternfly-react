@@ -1,6 +1,6 @@
 ---
 id: Notification drawer
-section: demos
+section: components
 ---
 
 ## Examples

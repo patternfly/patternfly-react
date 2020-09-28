@@ -5,7 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
 import * as React from 'react';
-import { isEqual, isFunction } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { RowsType, RowType, RowKeyType, RenderersTypes, createElementType, ColumnsType } from './types';
 import { resolveRowKey } from './resolve-row-key';
 import { BodyRow } from './body-row';
@@ -40,7 +40,7 @@ class BaseBody extends React.Component<BodyProps, {}> {
       renderers.body.wrapper &&
       (renderers.body.wrapper as React.Component).shouldComponentUpdate
     ) {
-      if (isFunction((renderers.body.wrapper as React.Component).shouldComponentUpdate)) {
+      if (typeof (renderers.body.wrapper as React.Component).shouldComponentUpdate === 'function') {
         return (renderers.body.wrapper as React.Component).shouldComponentUpdate.call(this, nextProps, {}, {});
       }
       return true;

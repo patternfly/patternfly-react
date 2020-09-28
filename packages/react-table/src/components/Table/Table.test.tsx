@@ -184,9 +184,21 @@ test('Compound Expandable table', () => {
     { title: 'col2', cell: { transforms: [compoundExpand] } }
   ];
   const compoundRows: IRow[] = [
-    { isOpen: true, cells: [{ title: '1', props: { isOpen: true } }, { title: '2', props: { isOpen: false } }] },
+    {
+      isOpen: true,
+      cells: [
+        { title: '1', props: { isOpen: true } },
+        { title: '2', props: { isOpen: false } }
+      ]
+    },
     { parent: 0, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] },
-    { isOpen: false, cells: [{ title: '3', props: { isOpen: false } }, { title: '4', props: { isOpen: false } }] },
+    {
+      isOpen: false,
+      cells: [
+        { title: '3', props: { isOpen: false } },
+        { title: '4', props: { isOpen: false } }
+      ]
+    },
     { parent: 2, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] }
   ];
   const onExpand: OnExpand = () => undefined;
