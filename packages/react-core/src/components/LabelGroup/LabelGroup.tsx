@@ -137,15 +137,8 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
         ? React.Children.toArray(children).slice(0, numLabels)
         : React.Children.toArray(children);
 
-      return (
-        <div
-          className={css(
-            styles.labelGroup,
-            className,
-            categoryName && styles.modifiers.category,
-            isVertical && styles.modifiers.vertical
-          )}
-        >
+      const content = (
+        <React.Fragment>
           {categoryName && this.renderLabel(id)}
           <ul
             className={css(styles.labelGroupList)}
@@ -180,6 +173,20 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
               </Button>
             </div>
           )}
+        </React.Fragment>
+      );
+
+      return (
+        <div
+          className={css(
+            styles.labelGroup,
+            className,
+            categoryName && styles.modifiers.category,
+            isVertical && styles.modifiers.vertical
+          )}
+        >
+          {categoryName && <div className={css('pf-c-label-group__main')}>{content}</div>}
+          {!categoryName && content}
         </div>
       );
     };
