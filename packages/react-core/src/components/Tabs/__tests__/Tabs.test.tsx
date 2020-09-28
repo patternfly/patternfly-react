@@ -184,3 +184,20 @@ test('should render tabs with separate content', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('should render box tabs of light variant', () => {
+  const view = render(
+    <Tabs id="boxLightVariantTabs" isBox variant="light300">
+      <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={2} title={<TabTitleText>"Tab item 3"</TabTitleText>}>
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+  expect(view).toMatchSnapshot();
+});
+

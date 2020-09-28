@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.57.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.56.0...@patternfly/react-core@4.57.0) (2020-09-25)
+
+
+### Features
+
+* **react-core-tabs:** add support for light scheme variant in Tabs && TabContent ([#4832](https://github.com/patternfly/patternfly-react/issues/4832)) ([8bf0619](https://github.com/patternfly/patternfly-react/commit/8bf0619bfd08bf4e7daa3c601ee178d1c1349e76)), closes [#4658](https://github.com/patternfly/patternfly-react/issues/4658)
+
+
+
+
+
+# [4.56.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.55.1...@patternfly/react-core@4.56.0) (2020-09-25)
+
+
+### Features
+
+* **react-core-button:** add isLoading and spinnerAriaValueText properties ([#4837](https://github.com/patternfly/patternfly-react/issues/4837)) ([bc81323](https://github.com/patternfly/patternfly-react/commit/bc81323af97230879e1ee2d9b9db0f0bfea6dabd)), closes [#4816](https://github.com/patternfly/patternfly-react/issues/4816)
+
+
+
+
+
+## [4.55.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.55.0...@patternfly/react-core@4.55.1) (2020-09-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.55.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.54.0...@patternfly/react-core@4.55.0) (2020-09-24)
 
 

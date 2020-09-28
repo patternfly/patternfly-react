@@ -9,7 +9,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
     aria-disabled={true}
     aria-label={null}
     className="pf-c-button pf-m-primary pf-m-disabled"
-    data-ouia-component-id="OUIA-Generated-Button-primary-11"
+    data-ouia-component-id="OUIA-Generated-Button-primary-12"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={null}
@@ -203,6 +203,50 @@ exports[`isLarge 1`] = `
     type="button"
   >
     Large Button
+  </button>
+</Button>
+`;
+
+exports[`isLoading 1`] = `
+<Button
+  isLoading={true}
+  spinnerAriaValueText="Loading"
+>
+  <button
+    aria-disabled={false}
+    aria-label={null}
+    className="pf-c-button pf-m-primary pf-m-progress pf-m-in-progress"
+    data-ouia-component-id="OUIA-Generated-Button-primary-9"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={false}
+    type="button"
+  >
+    <span
+      className="pf-c-button__progress"
+    >
+      <Spinner
+        aria-valuetext="Loading"
+        size="md"
+      >
+        <span
+          aria-valuetext="Loading"
+          className="pf-c-spinner pf-m-md"
+          role="progressbar"
+        >
+          <span
+            className="pf-c-spinner__clipper"
+          />
+          <span
+            className="pf-c-spinner__lead-ball"
+          />
+          <span
+            className="pf-c-spinner__tail-ball"
+          />
+        </span>
+      </Spinner>
+    </span>
+    Loading Button
   </button>
 </Button>
 `;

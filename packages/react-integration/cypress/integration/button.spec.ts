@@ -41,6 +41,13 @@ describe('Button Demo Test', () => {
     });
   });
 
+  it('Verify Progress button classes and attributes', () => {
+    cy.get('.pf-c-button[id="normal-btn-15"]').should('have.class', 'pf-m-progress');
+    cy.get('.pf-c-button[id="normal-btn-15"]').should('have.class', 'pf-m-in-progress');
+    cy.get('.pf-c-button[id="normal-btn-16"]').should('have.class', 'pf-m-progress');
+    cy.get('.pf-c-button[id="normal-btn-16"]').should('not.have.class', 'pf-m-in-progress');
+  });
+
   it('Verify button can set explicit tabindex attribute', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="normal-btn-10"]').should('have.attr', 'tabindex', '2');

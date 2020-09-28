@@ -82,7 +82,7 @@ describe('API', () => {
 describe('state', () => {
   test('hover', () => {
     const view = mount(
-      <DropdownToggle id="Dropdown Toggle" isHovered parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -100,7 +100,7 @@ describe('state', () => {
 
   test('focus', () => {
     const view = mount(
-      <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -115,7 +115,7 @@ describe('state', () => {
           toggleIndicatorClass: 'another-test-class'
         }}
       >
-        <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
+        <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       </DropdownContext.Provider>
@@ -131,7 +131,7 @@ describe('state', () => {
           toggleIndicatorClass: 'another-test-class'
         }}
       >
-        <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
+        <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       </DropdownContext.Provider>
