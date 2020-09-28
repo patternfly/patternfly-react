@@ -1087,12 +1087,11 @@ class CompoundExpandableTable extends React.Component {
           cellTransforms: [compoundExpand]
         },
         {
-          title: 'Header cell',
-          cellFormatters: [expandable]
+          title: 'Workspaces',
+          cellTransforms: [compoundExpand]
         },
-        'Branches',
-        { title: 'Pull requests' },
-        '' // deliberately empty
+        'Last Commit',
+        ''
       ],
       rows: [
         {
@@ -1158,7 +1157,7 @@ class CompoundExpandableTable extends React.Component {
           ]
         },
         {
-          parent: 3,
+          isOpen: false,
           cells: [
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th'} },
             {
@@ -1177,7 +1176,6 @@ class CompoundExpandableTable extends React.Component {
               ),
               props: { isOpen: false, ariaControls : 'compound-expansion-table-5' }
             },
-            "",
             {
               title: (
                 <React.Fragment>
@@ -1186,6 +1184,8 @@ class CompoundExpandableTable extends React.Component {
               ),
               props: { isOpen: false, ariaControls : 'compound-expansion-table-6' }
             },
+            '20 minutes',
+            { title: <a href="#">Open in Github</a> }
           ]
         },
         {
@@ -1220,16 +1220,22 @@ class CompoundExpandableTable extends React.Component {
         }
       ]
     };
-    this.onCollapse = this.onCollapse.bind(this);
+    this.onExpand = this.onExpand.bind(this);
   }
 
-  onCollapse(event, rowKey, isOpen) {
+  onExpand(event, rowIndex, colIndex, isOpen, rowData, extraData) {
     const { rows } = this.state;
-    /**
-     * Please do not use rowKey as row index for more complex tables.
-     * Rather use some kind of identifier like ID passed with each row.
-     */
-    rows[rowKey].isOpen = isOpen;
+    if (!isOpen) {
+      // set all other expanded cells false in this row if we are expanding
+      rows[rowIndex].cells.forEach(cell => {
+        if (cell.props) cell.props.isOpen = false;
+      });
+      rows[rowIndex].cells[colIndex].props.isOpen = true;
+      rows[rowIndex].isOpen = true;
+    } else {
+      rows[rowIndex].cells[colIndex].props.isOpen = false;
+      rows[rowIndex].isOpen = rows[rowIndex].cells.some(cell => cell.props && cell.props.isOpen);
+    }
     this.setState({
       rows
     });
@@ -1814,7 +1820,9 @@ class EditableRowsTable extends React.Component {
 
     return (
       <Table
-        aria-label="Compact expandable table"
+        actions={actions}
+        onRowEdit={this.updateEditableRows}
+        aria-label="Editable Rows Table"
         variant={TableVariant.compact}
         cells={columns}
         rows={rows}>

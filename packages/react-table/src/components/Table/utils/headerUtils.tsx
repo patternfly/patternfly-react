@@ -218,14 +218,10 @@ const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse:
     return header;
   }
 
-  const mappedHeaders = header.map((cell: ICell | string, key: number) => {
+  return header.map((cell: ICell | string, key: number) => {
     const parentIdCell = addAdditionalCellTranforms(cell as ICell, parentId);
-    // return key === 0 ? addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length)) : parentIdCell;
     return addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length));
   });
-
-  // debugger;
-  return mappedHeaders;
 };
 
 /**
