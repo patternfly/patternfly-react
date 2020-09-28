@@ -18,7 +18,8 @@
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
     "develop": "theme-patternfly-org start",
     "serve": "serve public",
-    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000"
+    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000",
+    "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
     "@patternfly/patternfly": "4.42.2",
@@ -34,6 +35,7 @@
     "@patternfly/react-virtualized-extension": "^4.5.87"
   },
   "devDependencies": {
+    "@patternfly/patternfly-a11y": "^2.0.10",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
     "react": "^16.8.0",

@@ -88,8 +88,14 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     const { isTooltipVisible } = this.state;
     return isTooltipVisible ? (
       <Tooltip position={tooltipPosition} content={categoryName}>
-        <span tabIndex={0} ref={this.headingRef} className={css(styles.chipGroupLabel)} aria-hidden="true" id={id}>
-          {categoryName}
+        <span
+          tabIndex={0}
+          ref={this.headingRef}
+          className={css(styles.chipGroupLabel)}
+          id={id}
+          aria-label={categoryName}
+        >
+          <span aria-hidden="true">{categoryName}</span>
         </span>
       </Tooltip>
     ) : (

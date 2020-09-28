@@ -90,8 +90,14 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
     const { isTooltipVisible } = this.state;
     return isTooltipVisible ? (
       <Tooltip position={tooltipPosition} content={categoryName}>
-        <span tabIndex={0} ref={this.headingRef} className={css(styles.labelGroupLabel)} aria-hidden="true" id={id}>
-          {categoryName}
+        <span
+          tabIndex={0}
+          ref={this.headingRef}
+          className={css(styles.labelGroupLabel)}
+          id={id}
+          aria-label={categoryName}
+        >
+          <span aria-hidden="true">{categoryName}</span>
         </span>
       </Tooltip>
     ) : (
