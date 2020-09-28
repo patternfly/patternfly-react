@@ -5756,25 +5756,6 @@ exports[`select custom select filter filters properly 1`] = `
                   />
                 </div>
                 <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
-                <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
@@ -5872,40 +5853,6 @@ exports[`select custom select filter filters properly 1`] = `
               value="r"
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
@@ -9972,25 +9919,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   />
                 </div>
                 <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
-                <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
@@ -10328,40 +10256,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value=""
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
@@ -12005,25 +11899,6 @@ exports[`typeahead select renders selected successfully 1`] = `
                   />
                 </div>
                 <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
-                <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
@@ -12152,40 +12027,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mr"
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
@@ -13359,25 +13200,6 @@ exports[`typeahead select test select existing option on a non-creatable select 
                   />
                 </div>
                 <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
-                <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
@@ -13449,40 +13271,6 @@ exports[`typeahead select test select existing option on a non-creatable select 
               value="Oth"
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
