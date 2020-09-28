@@ -43,7 +43,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Alternate position of the modal */
   position?: 'top';
-  /** Custom spacer distance from position */
+  /** Can be any valid CSS length/percentage */
   distance?: string;
   /** Flag indicating if modal content should be placed in a modal box body wrapper */
   hasNoBodyWrapper?: boolean;

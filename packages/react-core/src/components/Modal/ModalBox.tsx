@@ -11,7 +11,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Alternate position of the modal */
   position?: 'top';
-  /** Custom spacer distance from position */
+  /** Can be any valid CSS length/percentage */
   distance?: string;
   /** Id to use for Modal Box label */
   'aria-labelledby'?: string;
@@ -47,12 +47,10 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
       variant === 'small' && styles.modifiers.sm,
       variant === 'medium' && styles.modifiers.md
     )}
-    {...(distance && {
-      style: {
-        '--pf-c-modal-box--m-align-top--spacer': distance,
-        ...props.style
-      } as React.CSSProperties
-    })}
+    style={{
+      ...(distance && { '--pf-c-modal-box--m-align-top--spacer': distance }),
+      ...props.style
+    }}
   >
     {children}
   </div>

@@ -23,7 +23,7 @@ export interface ModalContentProps extends OUIAProps {
   variant?: 'small' | 'medium' | 'large' | 'default';
   /** Alternate position of the modal */
   position?: 'top';
-  /** Custom spacer distance from position */
+  /** Can be any valid CSS length/percentage */
   distance?: string;
   /** Flag to show the modal */
   isOpen?: boolean;
