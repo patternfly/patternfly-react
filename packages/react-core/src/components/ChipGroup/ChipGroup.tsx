@@ -175,7 +175,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
           className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}
           {...getOUIAProps(ChipGroup.displayName, ouiaId)}
         >
-          {categoryName && <div className={css('pf-c-chip-group__main')}>{content}</div>}
+          {categoryName && <div className={css(styles.chipGroupMain)}>{content}</div>}
           {!categoryName && content}
           {isClosable && close}
         </div>
