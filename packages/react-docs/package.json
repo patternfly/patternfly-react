@@ -35,7 +35,7 @@
     "@patternfly/react-virtualized-extension": "^4.5.88"
   },
   "devDependencies": {
-    "@patternfly/patternfly-a11y": "^2.0.10",
+    "@patternfly/patternfly-a11y": "2.0.10",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
     "react": "^16.8.0",
