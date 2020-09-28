@@ -60,7 +60,10 @@ function parseYYYYMMDD(date: string, format: string) {
   let index = 0;
   for (let formatBlock of format.split(/(yyyy|mm|dd)/i)) {
     if (formatBlock.toLowerCase() === 'yyyy') {
-      year = toNumber(date.substr(index, 4));
+      const yearString = date.substr(index, 4);
+      if (yearString.length === 4) {
+        year = toNumber(yearString);
+      }
     }
     else if (formatBlock.toLowerCase() === 'mm') {
       month = toNumber(date.substr(index, 2));
@@ -72,7 +75,6 @@ function parseYYYYMMDD(date: string, format: string) {
   }
   
   // Year and month are required
-  console.log('new', year, month, day);
   return new Date(year, month, day);
 }
 
