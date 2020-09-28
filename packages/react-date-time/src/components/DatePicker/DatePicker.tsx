@@ -45,37 +45,34 @@ interface DatePickerState {
   invalidText: string;
 }
 
-
 function toNumber(str: string) {
   if (str) {
     return Number(str);
   }
   return NaN;
 }
-// Supports (yyyy|mm|dd) to parse string to Date object 
+// Supports (yyyy|mm|dd) to parse string to Date object
 function parseYYYYMMDD(date: string, format: string) {
   let year = NaN;
   let month = NaN;
   let day = 1;
   let index = 0;
   if (date.length === format.length) {
-    for (let formatBlock of format.split(/(yyyy|mm|dd)/i)) {
+    for (const formatBlock of format.split(/(yyyy|mm|dd)/i)) {
       if (formatBlock.toLowerCase() === 'yyyy') {
         const yearString = date.substr(index, 4);
         if (yearString.length === 4) {
           year = toNumber(yearString);
         }
-      }
-      else if (formatBlock.toLowerCase() === 'mm') {
+      } else if (formatBlock.toLowerCase() === 'mm') {
         month = toNumber(date.substr(index, 2));
-      }
-      else if (formatBlock.toLowerCase() === 'dd') {
+      } else if (formatBlock.toLowerCase() === 'dd') {
         day = toNumber(date.substr(index, 2));
       }
       index += formatBlock.length;
     }
   }
-  
+
   // Year and month are required
   return new Date(year, month, day);
 }
@@ -83,17 +80,14 @@ function parseYYYYMMDD(date: string, format: string) {
 // Supports (yyyy|mm|dd) to format Date object to string
 function formatYYYYMMDD(date: Date, format: string) {
   let res = '';
-  for (let formatBlock of format.split(/(yy?y?y?|mm|dd?)/i)) {
+  for (const formatBlock of format.split(/(yy?y?y?|mm|dd?)/i)) {
     if (['y', 'yy', 'yyy', 'yyyy'].includes(formatBlock.toLowerCase())) {
       res += String(date.getFullYear()).padStart(4, '0');
-    }
-    else if (['mm'].includes(formatBlock.toLowerCase())) {
+    } else if (['mm'].includes(formatBlock.toLowerCase())) {
       res += String(date.getMonth()).padStart(2, '0');
-    }
-    else if (['d', 'dd'].includes(formatBlock.toLowerCase())) {
+    } else if (['d', 'dd'].includes(formatBlock.toLowerCase())) {
       res += String(date.getDate()).padStart(2, '0');
-    }
-    else {
+    } else {
       res += formatBlock;
     }
   }
@@ -191,10 +185,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
         this.handleError(this.props.dateOutOfRangeErrorMessage || `The date is outside the allowable range.`);
         event.stopPropagation();
       }
-    } else if (isValid(minDate) && (date < minDate)) {
+    } else if (isValid(minDate) && date < minDate) {
       this.handleError(this.props.beforeMinDateErrorMessage || `Date is before the allowable range.`);
       event.stopPropagation();
-    } else if (isValid(maxDate) && (date > maxDate)) {
+    } else if (isValid(maxDate) && date > maxDate) {
       this.handleError(this.props.afterEndDateErrorMessage || `Date is after the allowable range.`);
       event.stopPropagation();
     } else {
