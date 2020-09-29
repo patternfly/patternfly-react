@@ -226,7 +226,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     };
 
     const dragProps = isDraggable && {
-      onDragOver: this.dragOver
+      onDragOver: this.dragOver,
+      onDrop: this.dragOver
     };
 
     return (

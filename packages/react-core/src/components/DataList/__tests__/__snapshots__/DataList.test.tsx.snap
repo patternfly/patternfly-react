@@ -196,6 +196,7 @@ exports[`DataList List draggable 1`] = `
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-compact"
     onDragOver={[Function]}
+    onDrop={[Function]}
   />
 </ContextProvider>
 `;
