@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.16...patternfly-react@2.39.17) (2020-09-29)
+
+
+### Bug Fixes
+
+* Do not handle modified clicks on VerticalNav links ([#4747](https://github.com/patternfly/patternfly-react/issues/4747)) ([679a1fe](https://github.com/patternfly/patternfly-react/commit/679a1feffe35c78be6ad0458647ff3e868c7677d))
+
+
+
+
+
 ## [2.39.16](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.15...patternfly-react@2.39.16) (2020-05-20)
 
 
