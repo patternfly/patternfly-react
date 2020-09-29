@@ -90,15 +90,23 @@ export class AccessConsoles extends React.Component<AccessConsolesProps, AccessC
       [DESKTOP_VIEWER_CONSOLE_TYPE]: this.props.textDesktopViewerConsole
     };
 
-    const selectOptions = [<SelectOption key={NONE_TYPE} isPlaceholder value={items[NONE_TYPE]} />];
+    const selectOptions = [<SelectOption key={NONE_TYPE} id={NONE_TYPE} isPlaceholder value={items[NONE_TYPE]} />];
     if (this.isChildOfTypePresent(VNC_CONSOLE_TYPE)) {
-      selectOptions.push(<SelectOption key={VNC_CONSOLE_TYPE} value={items[VNC_CONSOLE_TYPE]} />);
+      selectOptions.push(<SelectOption key={VNC_CONSOLE_TYPE} id={VNC_CONSOLE_TYPE} value={items[VNC_CONSOLE_TYPE]} />);
     }
     if (this.isChildOfTypePresent(SERIAL_CONSOLE_TYPE)) {
-      selectOptions.push(<SelectOption key={SERIAL_CONSOLE_TYPE} value={items[SERIAL_CONSOLE_TYPE]} />);
+      selectOptions.push(
+        <SelectOption key={SERIAL_CONSOLE_TYPE} id={SERIAL_CONSOLE_TYPE} value={items[SERIAL_CONSOLE_TYPE]} />
+      );
     }
     if (this.isChildOfTypePresent(DESKTOP_VIEWER_CONSOLE_TYPE)) {
-      selectOptions.push(<SelectOption key={DESKTOP_VIEWER_CONSOLE_TYPE} value={items[DESKTOP_VIEWER_CONSOLE_TYPE]} />);
+      selectOptions.push(
+        <SelectOption
+          key={DESKTOP_VIEWER_CONSOLE_TYPE}
+          id={DESKTOP_VIEWER_CONSOLE_TYPE}
+          value={items[DESKTOP_VIEWER_CONSOLE_TYPE]}
+        />
+      );
     }
 
     return (
