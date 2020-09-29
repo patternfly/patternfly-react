@@ -82,8 +82,12 @@ class BaseVerticalNavItemHelper extends React.Component {
 
   onItemClick = event => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
-    const { isMobile, preventHref, updateNavOnItemClick, idPath } = this.props;
+    const { isMobile, preventHref, updateNavOnItemClick, idPath, preventUpdate } = this.props;
     const { onClick } = this.navItem();
+
+    if (preventUpdate(event)) {
+      return;
+    }
 
     if (preventHref && !!onClick) {
       event.preventDefault();
@@ -331,7 +335,8 @@ BaseVerticalNavItemHelper.propTypes = {
   /** anchor id */
   id: PropTypes.string,
   /** anchor data-id */
-  dataID: PropTypes.string
+  dataID: PropTypes.string,
+  preventUpdate: PropTypes.func
 };
 
 BaseVerticalNavItemHelper.defaultProps = {
@@ -341,7 +346,8 @@ BaseVerticalNavItemHelper.defaultProps = {
   isDivider: false,
   preventHref: true,
   id: null,
-  dataID: null
+  dataID: null,
+  preventUpdate: (event) => false
 };
 
 const VerticalNavItemHelper = getContext(navContextTypes)(BaseVerticalNavItemHelper);

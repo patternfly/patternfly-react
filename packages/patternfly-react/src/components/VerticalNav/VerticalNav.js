@@ -272,6 +272,7 @@ class BaseVerticalNav extends React.Component {
                 dataID={secondaryItem.dataID}
                 isDivider={secondaryItem.isDivider}
                 preventHref={secondaryItem.preventHref}
+                preventUpdate={secondaryItem.preventUpdate}
                 item={secondaryItem}
                 key={`secondary_${secondaryItem.title}`}
               >
