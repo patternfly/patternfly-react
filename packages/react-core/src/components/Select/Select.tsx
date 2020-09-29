@@ -268,7 +268,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
       if (isGrouped) {
         const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
-          this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
+          child.props.value && this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
           e.target.value.toString() !== ''
             ? React.Children.map(children, group => {
@@ -504,7 +504,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         this.moveFocus(nextIndex);
       } else {
         const nextIndex = this.refCollection.findIndex(
-          ref => ref[0] === document.activeElement || ref[1] === document.activeElement
+          ref => ref !== undefined && (ref[0] === document.activeElement || ref[1] === document.activeElement)
         );
         this.moveFocus(nextIndex);
       }
