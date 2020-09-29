@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SerialConsole in the CONNECTED state 1`] = `
+Array [
+  <div
+    class="pf-c-console__actions-serial"
+  >
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      My text for Disconnect
+    </button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      Reset
+    </button>
+  </div>,
+  <div
+    class="pf-c-console__serial"
+  >
+    <div
+      class="pf-c-console__xterm"
+    />
+  </div>,
+]
+`;
+
+exports[`SerialConsole in the CONNECTED state 1`] = `
+<Fragment>
+  <SerialConsoleActions
+    onDisconnect={[Function]}
+    onReset={[Function]}
+    textDisconnect="My text for Disconnect"
+  />
+  <div
+    className="pf-c-console__serial"
+  >
+    <XTerm
+      cols={33}
+      rows={44}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`SerialConsole in the DISCONNECTED state 1`] = `
+<Fragment>
+  <div
+    className="pf-c-console__serial"
+  >
+    <EmptyState>
+      <EmptyStateBody>
+        My text for Disconnected
+      </EmptyStateBody>
+      <Button
+        onClick={[Function]}
+      >
+        My text for Connect
+      </Button>
+    </EmptyState>
+  </div>
+</Fragment>
+`;
+
+exports[`SerialConsole in the LOADING state 1`] = `
+<Fragment>
+  <SerialConsoleActions
+    onDisconnect={[Function]}
+    onReset={[Function]}
+  />
+  <div
+    className="pf-c-console__serial"
+  >
+    <EmptyState>
+      <EmptyStateIcon
+        component={[Function]}
+        variant="container"
+      />
+      <EmptyStateBody>
+        My text for Loading
+      </EmptyStateBody>
+    </EmptyState>
+  </div>
+</Fragment>
+`;
