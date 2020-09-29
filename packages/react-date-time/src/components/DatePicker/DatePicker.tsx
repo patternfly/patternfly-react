@@ -53,6 +53,7 @@ function toNumber(str: string) {
 }
 // Supports (yyyy|mm|dd) to parse string to Date object
 function parseYYYYMMDD(date: string, format: string) {
+  console.log("dateStr", date);
   let year = NaN;
   let month = NaN;
   let day = 1;
@@ -79,6 +80,7 @@ function parseYYYYMMDD(date: string, format: string) {
 
 // Supports (yyyy|mm|dd) to format Date object to string
 function formatYYYYMMDD(date: Date, format: string) {
+  console.log("format date", date);
   let res = '';
   for (const formatBlock of format.split(/(yy?y?y?|mm|dd?)/i)) {
     if (['y', 'yy', 'yyy', 'yyyy'].includes(formatBlock.toLowerCase())) {
@@ -134,6 +136,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       minDate,
       maxDate,
       defaultDate: value,
+      ariaDateFormat: dateFormat,
       allowInput: true,
       static: true,
       allowInvalidPreload: true,
