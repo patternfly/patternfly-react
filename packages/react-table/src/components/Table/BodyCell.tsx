@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { SelectProps } from '@patternfly/react-core';
+import { SelectProps } from '@patternfly/react-core/dist/js/components/Select';
 
 export interface BodyCellProps {
   'data-label'?: string;

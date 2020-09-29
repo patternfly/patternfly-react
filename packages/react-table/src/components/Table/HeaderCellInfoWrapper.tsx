@@ -2,7 +2,9 @@ import * as React from 'react';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { Button, Tooltip, Popover, TooltipProps, PopoverProps } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
+import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Popover, PopoverProps } from '@patternfly/react-core/dist/js/components/Popover/Popover';
 
 export interface ColumnHelpWrapperProps {
   /**

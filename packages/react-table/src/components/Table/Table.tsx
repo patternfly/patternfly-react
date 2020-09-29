@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '@patternfly/react-core/dist/js/helpers/ouia';
 import {
   DropdownDirection,
   DropdownPosition
