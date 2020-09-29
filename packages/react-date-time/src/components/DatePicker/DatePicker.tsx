@@ -65,7 +65,7 @@ function parseYYYYMMDD(date: string, format: string) {
           year = toNumber(yearString);
         }
       } else if (formatBlock.toLowerCase() === 'mm') {
-        month = toNumber(date.substr(index, 2));
+        month = toNumber(date.substr(index, 2)) - 1;
       } else if (formatBlock.toLowerCase() === 'dd') {
         day = toNumber(date.substr(index, 2));
       }
@@ -84,7 +84,7 @@ function formatYYYYMMDD(date: Date, format: string) {
     if (['y', 'yy', 'yyy', 'yyyy'].includes(formatBlock.toLowerCase())) {
       res += String(date.getFullYear()).padStart(4, '0');
     } else if (['mm'].includes(formatBlock.toLowerCase())) {
-      res += String(date.getMonth()).padStart(2, '0');
+      res += String(date.getMonth() + 1).padStart(2, '0');
     } else if (['d', 'dd'].includes(formatBlock.toLowerCase())) {
       res += String(date.getDate()).padStart(2, '0');
     } else {
