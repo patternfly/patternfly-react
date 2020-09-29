@@ -28,7 +28,7 @@ export const VncActions: React.FunctionComponent<VncActionProps> = ({
         id="pf-c-console__send-shortcut"
         onSelect={() => setIsOpen(false)}
         toggle={
-          <DropdownToggle id="pf-c-console__toggle-id" onToggle={() => setIsOpen(!isOpen)}>
+          <DropdownToggle id="pf-c-console__actions-vnc-toggle-id" onToggle={() => setIsOpen(!isOpen)}>
             {textSendShortcut}
           </DropdownToggle>
         }
