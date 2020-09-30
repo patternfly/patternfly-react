@@ -353,6 +353,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.optionContainerRefCollection = [];
     if (isGrouped) {
       return React.Children.map(typeaheadChildren as React.ReactElement[], (group: React.ReactElement) => {
+        debugger;
         if (group.type === Divider) {
           return group;
         } else if (group.type === SelectGroup && onFavorite) {
@@ -386,6 +387,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                             `{createText} "${(child as React.ReactElement).props.value}"`))
                   })
             )
+          });
+        } else {
+          // group has been filtered down to SelectOption
+          return React.cloneElement(group as React.ReactElement, {
+            isFocused:
+              typeaheadActiveChild &&
+              (typeaheadActiveChild.innerText === group.props.value.toString() ||
+                (this.props.isCreatable && typeaheadActiveChild.innerText === `{createText} "${group.props.value}"`))
           });
         }
       });
@@ -759,6 +768,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
           if (variantChildren.length === 0) {
+            debugger;
             variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
           }
           break;
