@@ -27,7 +27,7 @@ describe('Select Test', () => {
     cy.get('#option-grouped-1 > .pf-m-action').click();
     cy.get('#My-Favorites').should('exist');
     cy.get('#option-grouped-1 > .pf-m-action').should('have.attr', 'aria-label', 'starred');
-    cy.get(':nth-child(2) > #option-grouped-1 > .pf-m-action')
+    cy.get('#option-grouped-1 > .pf-m-action')
       .first()
       .click();
     cy.get('#My-Favorites').should('not.exist');

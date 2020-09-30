@@ -8696,11 +8696,11 @@ exports[`select with custom content renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-18"
+        aria-labelledby=" pf-select-toggle-id-16"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-18"
+        id="pf-select-toggle-id-16"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -8729,9 +8729,9 @@ exports[`select with custom content renders expanded successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
-                aria-labelledby=" pf-select-toggle-id-18"
+                aria-labelledby=" pf-select-toggle-id-16"
                 class="pf-c-select__toggle"
-                id="pf-select-toggle-id-18"
+                id="pf-select-toggle-id-16"
                 type="button"
               >
                 <div
@@ -8773,10 +8773,10 @@ exports[`select with custom content renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
-          aria-labelledby=" pf-select-toggle-id-18"
+          aria-labelledby=" pf-select-toggle-id-16"
           className="pf-c-select__toggle"
           disabled={false}
-          id="pf-select-toggle-id-18"
+          id="pf-select-toggle-id-16"
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
@@ -9143,11 +9143,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-13"
+        aria-labelledby=" pf-select-toggle-id-12"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-13"
+        id="pf-select-toggle-id-12"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -9235,7 +9235,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
+                    id="pf-select-toggle-id-12-select-multi-typeahead-typeahead"
                     placeholder=""
                     type="text"
                     value=""
@@ -9245,9 +9245,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-13"
+                  aria-labelledby=" pf-select-toggle-id-12"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-13"
+                  id="pf-select-toggle-id-12"
                   tabindex="-1"
                   type="button"
                 >
@@ -9344,7 +9344,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
+              id="pf-select-toggle-id-12-select-multi-typeahead-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -9356,10 +9356,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-13"
+            aria-labelledby=" pf-select-toggle-id-12"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-13"
+            id="pf-select-toggle-id-12"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
@@ -13150,11 +13150,11 @@ exports[`typeahead select test select existing option on a non-creatable select 
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-12"
+        aria-labelledby=" pf-select-toggle-id-11"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-12"
+        id="pf-select-toggle-id-11"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -13203,7 +13203,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-12-select-typeahead"
+                    id="pf-select-toggle-id-11-select-typeahead"
                     placeholder=""
                     type="text"
                     value="Oth"
@@ -13213,9 +13213,9 @@ exports[`typeahead select test select existing option on a non-creatable select 
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-12"
+                  aria-labelledby=" pf-select-toggle-id-11"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-12"
+                  id="pf-select-toggle-id-11"
                   tabindex="-1"
                   type="button"
                 >
@@ -13273,7 +13273,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-12-select-typeahead"
+              id="pf-select-toggle-id-11-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -13285,10 +13285,10 @@ exports[`typeahead select test select existing option on a non-creatable select 
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-12"
+            aria-labelledby=" pf-select-toggle-id-11"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-12"
+            id="pf-select-toggle-id-11"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
