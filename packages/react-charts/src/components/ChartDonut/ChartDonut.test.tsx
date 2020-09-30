@@ -11,7 +11,15 @@ Object.values([true, false]).forEach(() => {
 
 test('renders component data', () => {
   const view = shallow(
-    <ChartDonut data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]} height={200} width={200} />
+    <ChartDonut
+      data={[
+        { x: 'Cats', y: 35 },
+        { x: 'Dogs', y: 55 },
+        { x: 'Birds', y: 10 }
+      ]}
+      height={200}
+      width={200}
+    />
   );
   expect(view).toMatchSnapshot();
 });

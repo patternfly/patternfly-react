@@ -33,7 +33,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -115,7 +115,7 @@ exports[`select options renders custom component 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -200,7 +200,7 @@ exports[`select options renders with custom display and custom user object succe
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -285,7 +285,7 @@ exports[`select options renders with custom display successfully 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -359,7 +359,7 @@ exports[`select options renders with custom user object successfully 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -457,7 +457,7 @@ exports[`select options renders with description successfully 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -538,7 +538,7 @@ exports[`select options renders with value parameter successfully 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],

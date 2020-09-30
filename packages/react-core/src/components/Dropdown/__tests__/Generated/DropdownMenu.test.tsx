@@ -13,7 +13,6 @@ it('DropdownMenu should match snapshot (auto-generated)', () => {
       children={<div>ReactNode</div>}
       className={"''"}
       isOpen={true}
-      openedOnEnter={false}
       autoFocus={true}
       component={'ul'}
       position={'right'}

@@ -215,6 +215,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
             </div>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -1101,6 +1102,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -1304,6 +1306,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -1469,6 +1472,7 @@ exports[`checkbox select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -1698,6 +1702,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
             </div>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -2247,6 +2252,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             </div>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -2781,6 +2787,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
             </div>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -3407,6 +3414,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
             </div>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -4268,6 +4276,7 @@ exports[`renders select with favorites successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -5718,6 +5727,7 @@ exports[`select custom select filter filters properly 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -5745,25 +5755,6 @@ exports[`select custom select filter filters properly 1`] = `
                     value="r"
                   />
                 </div>
-                <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
                 <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
@@ -5862,40 +5853,6 @@ exports[`select custom select filter filters properly 1`] = `
               value="r"
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
@@ -6320,6 +6277,7 @@ exports[`select renders select groups successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -7095,6 +7053,7 @@ exports[`select renders up direction successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -7265,6 +7224,7 @@ exports[`select single select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -7435,6 +7395,7 @@ exports[`select single select renders disabled successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -7662,6 +7623,7 @@ exports[`select single select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -8162,6 +8124,7 @@ exports[`select single select renders expanded successfully with custom objects 
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -8581,6 +8544,7 @@ exports[`select with custom content renders closed successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -8750,6 +8714,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
             </div>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -9001,6 +8966,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -9247,6 +9213,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -9826,6 +9793,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -9848,97 +9816,101 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     data-ouia-component-type="PF4/ChipGroup"
                     data-ouia-safe="true"
                   >
-                    
-                    <ul
-                      aria-label="Chip group category"
-                      class="pf-c-chip-group__list"
-                      role="list"
+                    <div
+                      class="pf-c-chip-group__main"
                     >
-                      <li
-                        class="pf-c-chip-group__list-item"
+                      
+                      <ul
+                        aria-label="Chip group category"
+                        class="pf-c-chip-group__list"
+                        role="list"
                       >
-                        <div
-                          class="pf-c-chip"
-                          data-ouia-component-id="OUIA-Generated-Chip-1"
-                          data-ouia-component-type="PF4/Chip"
-                          data-ouia-safe="true"
+                        <li
+                          class="pf-c-chip-group__list-item"
                         >
-                          <span
-                            class="pf-c-chip__text"
-                            id="pf-random-id-24"
-                          >
-                            Mr
-                          </span>
-                          <button
-                            aria-disabled="false"
-                            aria-label="Remove"
-                            aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
-                            class="pf-c-button pf-m-plain"
-                            data-ouia-component-id="Remove"
-                            data-ouia-component-type="PF4/Button"
+                          <div
+                            class="pf-c-chip"
+                            data-ouia-component-id="OUIA-Generated-Chip-1"
+                            data-ouia-component-type="PF4/Chip"
                             data-ouia-safe="true"
-                            id="remove_pf-random-id-24"
-                            type="button"
                           >
-                            <svg
-                              aria-hidden="true"
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style="vertical-align: -0.125em;"
-                              viewBox="0 0 352 512"
-                              width="1em"
+                            <span
+                              class="pf-c-chip__text"
+                              id="pf-random-id-24"
                             >
-                              <path
-                                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </li>
-                      <li
-                        class="pf-c-chip-group__list-item"
-                      >
-                        <div
-                          class="pf-c-chip"
-                          data-ouia-component-id="OUIA-Generated-Chip-2"
-                          data-ouia-component-type="PF4/Chip"
-                          data-ouia-safe="true"
+                              Mr
+                            </span>
+                            <button
+                              aria-disabled="false"
+                              aria-label="Remove"
+                              aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
+                              class="pf-c-button pf-m-plain"
+                              data-ouia-component-id="Remove"
+                              data-ouia-component-type="PF4/Button"
+                              data-ouia-safe="true"
+                              id="remove_pf-random-id-24"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 352 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </li>
+                        <li
+                          class="pf-c-chip-group__list-item"
                         >
-                          <span
-                            class="pf-c-chip__text"
-                            id="pf-random-id-25"
-                          >
-                            Mrs
-                          </span>
-                          <button
-                            aria-disabled="false"
-                            aria-label="Remove"
-                            aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
-                            class="pf-c-button pf-m-plain"
-                            data-ouia-component-id="Remove"
-                            data-ouia-component-type="PF4/Button"
+                          <div
+                            class="pf-c-chip"
+                            data-ouia-component-id="OUIA-Generated-Chip-2"
+                            data-ouia-component-type="PF4/Chip"
                             data-ouia-safe="true"
-                            id="remove_pf-random-id-25"
-                            type="button"
                           >
-                            <svg
-                              aria-hidden="true"
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style="vertical-align: -0.125em;"
-                              viewBox="0 0 352 512"
-                              width="1em"
+                            <span
+                              class="pf-c-chip__text"
+                              id="pf-random-id-25"
                             >
-                              <path
-                                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </li>
-                    </ul>
+                              Mrs
+                            </span>
+                            <button
+                              aria-disabled="false"
+                              aria-label="Remove"
+                              aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
+                              class="pf-c-button pf-m-plain"
+                              data-ouia-component-id="Remove"
+                              data-ouia-component-type="PF4/Button"
+                              data-ouia-safe="true"
+                              id="remove_pf-random-id-25"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 352 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <input
                     aria-label=""
@@ -9950,25 +9922,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     value=""
                   />
                 </div>
-                <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
                 <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
@@ -10122,174 +10075,180 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   data-ouia-component-type="PF4/ChipGroup"
                   data-ouia-safe={true}
                 >
-                  <ul
-                    aria-label="Chip group category"
-                    className="pf-c-chip-group__list"
-                    role="list"
+                  <div
+                    className="pf-c-chip-group__main"
                   >
-                    <li
-                      className="pf-c-chip-group__list-item"
-                      key="0"
+                    <ul
+                      aria-label="Chip group category"
+                      className="pf-c-chip-group__list"
+                      role="list"
                     >
-                      <Chip
-                        className=""
-                        closeBtnAriaLabel="Remove"
-                        component="div"
-                        isOverflowChip={false}
-                        isReadOnly={false}
-                        key=".$Mr"
-                        onClick={[Function]}
-                        tooltipPosition="top"
+                      <li
+                        className="pf-c-chip-group__list-item"
+                        key="0"
                       >
-                        <GenerateId
-                          prefix="pf-random-id-"
+                        <Chip
+                          className=""
+                          closeBtnAriaLabel="Remove"
+                          component="div"
+                          isOverflowChip={false}
+                          isReadOnly={false}
+                          key=".$Mr"
+                          onClick={[Function]}
+                          tooltipPosition="top"
                         >
-                          <div
-                            className="pf-c-chip"
-                            data-ouia-component-id="OUIA-Generated-Chip-1"
-                            data-ouia-component-type="PF4/Chip"
-                            data-ouia-safe={true}
+                          <GenerateId
+                            prefix="pf-random-id-"
                           >
-                            <span
-                              className="pf-c-chip__text"
-                              id="pf-random-id-24"
+                            <div
+                              className="pf-c-chip"
+                              data-ouia-component-id="OUIA-Generated-Chip-1"
+                              data-ouia-component-type="PF4/Chip"
+                              data-ouia-safe={true}
                             >
-                              Mr
-                            </span>
-                            <Button
-                              aria-label="Remove"
-                              aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
-                              id="remove_pf-random-id-24"
-                              onClick={[Function]}
-                              ouiaId="Remove"
-                              variant="plain"
-                            >
-                              <button
-                                aria-disabled={false}
+                              <span
+                                className="pf-c-chip__text"
+                                id="pf-random-id-24"
+                              >
+                                Mr
+                              </span>
+                              <Button
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
-                                className="pf-c-button pf-m-plain"
-                                data-ouia-component-id="Remove"
-                                data-ouia-component-type="PF4/Button"
-                                data-ouia-safe={true}
-                                disabled={false}
                                 id="remove_pf-random-id-24"
                                 onClick={[Function]}
-                                type="button"
+                                ouiaId="Remove"
+                                variant="plain"
                               >
-                                <TimesIcon
-                                  aria-hidden="true"
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
+                                <button
+                                  aria-disabled={false}
+                                  aria-label="Remove"
+                                  aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
+                                  className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id="Remove"
+                                  data-ouia-component-type="PF4/Button"
+                                  data-ouia-safe={true}
+                                  disabled={false}
+                                  id="remove_pf-random-id-24"
+                                  onClick={[Function]}
+                                  role={null}
+                                  type="button"
                                 >
-                                  <svg
+                                  <TimesIcon
                                     aria-hidden="true"
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 352 512"
-                                    width="1em"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
                                   >
-                                    <path
-                                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                                    />
-                                  </svg>
-                                </TimesIcon>
-                              </button>
-                            </Button>
-                          </div>
-                        </GenerateId>
-                      </Chip>
-                    </li>
-                    <li
-                      className="pf-c-chip-group__list-item"
-                      key="1"
-                    >
-                      <Chip
-                        className=""
-                        closeBtnAriaLabel="Remove"
-                        component="div"
-                        isOverflowChip={false}
-                        isReadOnly={false}
-                        key=".$Mrs"
-                        onClick={[Function]}
-                        tooltipPosition="top"
+                                    <svg
+                                      aria-hidden="true"
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 352 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                      />
+                                    </svg>
+                                  </TimesIcon>
+                                </button>
+                              </Button>
+                            </div>
+                          </GenerateId>
+                        </Chip>
+                      </li>
+                      <li
+                        className="pf-c-chip-group__list-item"
+                        key="1"
                       >
-                        <GenerateId
-                          prefix="pf-random-id-"
+                        <Chip
+                          className=""
+                          closeBtnAriaLabel="Remove"
+                          component="div"
+                          isOverflowChip={false}
+                          isReadOnly={false}
+                          key=".$Mrs"
+                          onClick={[Function]}
+                          tooltipPosition="top"
                         >
-                          <div
-                            className="pf-c-chip"
-                            data-ouia-component-id="OUIA-Generated-Chip-2"
-                            data-ouia-component-type="PF4/Chip"
-                            data-ouia-safe={true}
+                          <GenerateId
+                            prefix="pf-random-id-"
                           >
-                            <span
-                              className="pf-c-chip__text"
-                              id="pf-random-id-25"
+                            <div
+                              className="pf-c-chip"
+                              data-ouia-component-id="OUIA-Generated-Chip-2"
+                              data-ouia-component-type="PF4/Chip"
+                              data-ouia-safe={true}
                             >
-                              Mrs
-                            </span>
-                            <Button
-                              aria-label="Remove"
-                              aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
-                              id="remove_pf-random-id-25"
-                              onClick={[Function]}
-                              ouiaId="Remove"
-                              variant="plain"
-                            >
-                              <button
-                                aria-disabled={false}
+                              <span
+                                className="pf-c-chip__text"
+                                id="pf-random-id-25"
+                              >
+                                Mrs
+                              </span>
+                              <Button
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
-                                className="pf-c-button pf-m-plain"
-                                data-ouia-component-id="Remove"
-                                data-ouia-component-type="PF4/Button"
-                                data-ouia-safe={true}
-                                disabled={false}
                                 id="remove_pf-random-id-25"
                                 onClick={[Function]}
-                                type="button"
+                                ouiaId="Remove"
+                                variant="plain"
                               >
-                                <TimesIcon
-                                  aria-hidden="true"
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
+                                <button
+                                  aria-disabled={false}
+                                  aria-label="Remove"
+                                  aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
+                                  className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id="Remove"
+                                  data-ouia-component-type="PF4/Button"
+                                  data-ouia-safe={true}
+                                  disabled={false}
+                                  id="remove_pf-random-id-25"
+                                  onClick={[Function]}
+                                  role={null}
+                                  type="button"
                                 >
-                                  <svg
+                                  <TimesIcon
                                     aria-hidden="true"
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 352 512"
-                                    width="1em"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
                                   >
-                                    <path
-                                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                                    />
-                                  </svg>
-                                </TimesIcon>
-                              </button>
-                            </Button>
-                          </div>
-                        </GenerateId>
-                      </Chip>
-                    </li>
-                  </ul>
+                                    <svg
+                                      aria-hidden="true"
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 352 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                      />
+                                    </svg>
+                                  </TimesIcon>
+                                </button>
+                              </Button>
+                            </div>
+                          </GenerateId>
+                        </Chip>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </GenerateId>
             </ChipGroup>
@@ -10307,40 +10266,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value=""
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
@@ -11152,6 +11077,7 @@ exports[`typeahead select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -11398,6 +11324,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -11953,6 +11880,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -11980,25 +11908,6 @@ exports[`typeahead select renders selected successfully 1`] = `
                     value="Mr"
                   />
                 </div>
-                <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
                 <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
@@ -12128,40 +12037,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mr"
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"
@@ -13306,6 +13181,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
             </ul>,
           }
         }
+        onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
         onToggle={[MockFunction]}
@@ -13333,25 +13209,6 @@ exports[`typeahead select test select existing option on a non-creatable select 
                     value="Oth"
                   />
                 </div>
-                <button
-                  aria-label="Clear all"
-                  class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                    />
-                  </svg>
-                </button>
                 <button
                   aria-expanded="true"
                   aria-haspopup="listbox"
@@ -13424,40 +13281,6 @@ exports[`typeahead select test select existing option on a non-creatable select 
               value="Oth"
             />
           </div>
-          <button
-            aria-label="Clear all"
-            className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-            disabled={false}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
-          >
-            <TimesCircleIcon
-              aria-hidden={true}
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                />
-              </svg>
-            </TimesCircleIcon>
-          </button>
           <button
             aria-expanded={true}
             aria-haspopup="listbox"

@@ -9,10 +9,11 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
     aria-disabled={true}
     aria-label={null}
     className="pf-c-button pf-m-primary pf-m-disabled"
-    data-ouia-component-id="OUIA-Generated-Button-primary-11"
+    data-ouia-component-id="OUIA-Generated-Button-primary-12"
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={null}
+    role={null}
     tabIndex={-1}
     type={null}
   >
@@ -34,6 +35,7 @@ exports[`control button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     control
@@ -55,30 +57,10 @@ exports[`danger button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     danger
-     Button
-  </button>
-</Button>
-`;
-
-exports[`warning button 1`] = `
-<Button
-  aria-label="warning"
-  variant="warning"
->
-  <button
-    aria-disabled={false}
-    aria-label="warning"
-    className="pf-c-button pf-m-warning"
-    data-ouia-component-id="OUIA-Generated-Button-warning-1"
-    data-ouia-component-type="PF4/Button"
-    data-ouia-safe={true}
-    disabled={false}
-    type="button"
-  >
-    warning
      Button
   </button>
 </Button>
@@ -98,6 +80,7 @@ exports[`isAriaDisabled button 1`] = `
     disabled={false}
     onClick={[Function]}
     onKeyPress={[Function]}
+    role={null}
     tabIndex={null}
     type="button"
   >
@@ -121,6 +104,7 @@ exports[`isAriaDisabled link button 1`] = `
     disabled={null}
     onClick={[Function]}
     onKeyPress={[Function]}
+    role={null}
     tabIndex={null}
     type={null}
   >
@@ -141,6 +125,7 @@ exports[`isBlock 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     Block Button
@@ -160,6 +145,7 @@ exports[`isDisabled 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={true}
+    role={null}
     tabIndex={null}
     type="button"
   >
@@ -181,6 +167,7 @@ exports[`isInline 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     Hovered Button
@@ -200,9 +187,55 @@ exports[`isLarge 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     Large Button
+  </button>
+</Button>
+`;
+
+exports[`isLoading 1`] = `
+<Button
+  isLoading={true}
+  spinnerAriaValueText="Loading"
+>
+  <button
+    aria-disabled={false}
+    aria-label={null}
+    className="pf-c-button pf-m-primary pf-m-progress pf-m-in-progress"
+    data-ouia-component-id="OUIA-Generated-Button-primary-9"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={false}
+    role={null}
+    type="button"
+  >
+    <span
+      className="pf-c-button__progress"
+    >
+      <Spinner
+        aria-valuetext="Loading"
+        size="md"
+      >
+        <span
+          aria-valuetext="Loading"
+          className="pf-c-spinner pf-m-md"
+          role="progressbar"
+        >
+          <span
+            className="pf-c-spinner__clipper"
+          />
+          <span
+            className="pf-c-spinner__lead-ball"
+          />
+          <span
+            className="pf-c-spinner__tail-ball"
+          />
+        </span>
+      </Spinner>
+    </span>
+    Loading Button
   </button>
 </Button>
 `;
@@ -219,6 +252,7 @@ exports[`isSmall 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     Small Button
@@ -239,6 +273,7 @@ exports[`link button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     link
@@ -266,6 +301,7 @@ exports[`link with icon 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     <span
@@ -314,6 +350,7 @@ exports[`plain button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     plain
@@ -335,6 +372,7 @@ exports[`primary button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     primary
@@ -356,6 +394,7 @@ exports[`secondary button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     secondary
@@ -377,9 +416,32 @@ exports[`tertiary button 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     tertiary
+     Button
+  </button>
+</Button>
+`;
+
+exports[`warning button 1`] = `
+<Button
+  aria-label="warning"
+  variant="warning"
+>
+  <button
+    aria-disabled={false}
+    aria-label="warning"
+    className="pf-c-button pf-m-warning"
+    data-ouia-component-id="OUIA-Generated-Button-warning-1"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={false}
+    role={null}
+    type="button"
+  >
+    warning
      Button
   </button>
 </Button>

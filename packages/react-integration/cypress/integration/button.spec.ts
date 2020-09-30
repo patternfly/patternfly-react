@@ -41,6 +41,13 @@ describe('Button Demo Test', () => {
     });
   });
 
+  it('Verify Progress button classes and attributes', () => {
+    cy.get('.pf-c-button[id="normal-btn-15"]').should('have.class', 'pf-m-progress');
+    cy.get('.pf-c-button[id="normal-btn-15"]').should('have.class', 'pf-m-in-progress');
+    cy.get('.pf-c-button[id="normal-btn-16"]').should('have.class', 'pf-m-progress');
+    cy.get('.pf-c-button[id="normal-btn-16"]').should('not.have.class', 'pf-m-in-progress');
+  });
+
   it('Verify button can set explicit tabindex attribute', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="normal-btn-10"]').should('have.attr', 'tabindex', '2');
@@ -145,6 +152,23 @@ describe('Button Demo Test', () => {
       cy.get('.pf-c-button[id="link-as-btn-4"]').should('have.attr', 'tabindex', '4');
 
       cy.get('.pf-c-button[id="link-as-btn-5"]').should('have.attr', 'aria-disabled', 'true');
+    });
+  });
+
+  it('Verify wrapping span link button classes and attributes', () => {
+    cy.get('.btn-demo-area').within(() => {
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.class', 'pf-m-link');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.class', 'pf-m-inline');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.attr', 'aria-disabled', 'false');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.attr', 'tabindex', '0');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.attr', 'role', 'button');
+
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.class', 'pf-m-link');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.class', 'pf-m-inline');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.class', 'pf-m-disabled');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.attr', 'aria-disabled', 'true');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.attr', 'tabindex', '-1');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.attr', 'role', 'button');
     });
   });
 

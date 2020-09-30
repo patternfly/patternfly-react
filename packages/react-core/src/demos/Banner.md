@@ -1,6 +1,6 @@
 ---
 id: Banner
-section: demos
+section: components
 ---
 
 import { css } from '@patternfly/react-styles';

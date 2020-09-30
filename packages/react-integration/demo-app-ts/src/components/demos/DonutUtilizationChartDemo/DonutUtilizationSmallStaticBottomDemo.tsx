@@ -15,7 +15,10 @@ export class DonutUtilizationSmallStaticBottomDemo extends React.Component {
             ariaDesc="Storage capacity"
             ariaTitle="Donut utilization chart with static threshold example"
             constrainToVisibleArea
-            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+            data={[
+              { x: 'Warning at 60%', y: 60 },
+              { x: 'Danger at 90%', y: 90 }
+            ]}
             height={275}
             labels={({ datum }) => (datum.x ? datum.x : null)}
             legendPosition="bottom"

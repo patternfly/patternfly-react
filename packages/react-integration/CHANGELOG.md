@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.45.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.45.0...@patternfly/react-integration@4.45.1) (2020-09-30)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.44.0...@patternfly/react-integration@4.45.0) (2020-09-25)
+
+
+### Features
+
+* **react-core-tabs:** add support for light scheme variant in Tabs && TabContent ([#4832](https://github.com/patternfly/patternfly-react/issues/4832)) ([8bf0619](https://github.com/patternfly/patternfly-react/commit/8bf0619bfd08bf4e7daa3c601ee178d1c1349e76)), closes [#4658](https://github.com/patternfly/patternfly-react/issues/4658)
+
+
+
+
+
+# [4.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.43.0...@patternfly/react-integration@4.44.0) (2020-09-25)
+
+
+### Features
+
+* **react-core-button:** add isLoading and spinnerAriaValueText properties ([#4837](https://github.com/patternfly/patternfly-react/issues/4837)) ([bc81323](https://github.com/patternfly/patternfly-react/commit/bc81323af97230879e1ee2d9b9db0f0bfea6dabd)), closes [#4816](https://github.com/patternfly/patternfly-react/issues/4816)
+
+
+
+
+
+# [4.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.42.0...@patternfly/react-integration@4.43.0) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+### Features
+
+* **select:** pass chip group props on typeaheadmulti variant ([#4855](https://github.com/patternfly/patternfly-react/issues/4855)) ([5d008a0](https://github.com/patternfly/patternfly-react/commit/5d008a025304e22182fd4072cf9a7ddd979c50cf))
+
+
+
+
+
+# [4.42.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.41.1...@patternfly/react-integration@4.42.0) (2020-09-23)
+
+
+### Features
+
+* **progress:** add warning variant ([#4834](https://github.com/patternfly/patternfly-react/issues/4834)) ([ff0b4fc](https://github.com/patternfly/patternfly-react/commit/ff0b4fc51f9b991aa2d389ee20d0eb3a7507314a)), closes [#4818](https://github.com/patternfly/patternfly-react/issues/4818)
+
+
+
+
+
+## [4.41.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.41.0...@patternfly/react-integration@4.41.1) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 # [4.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.40.1...@patternfly/react-integration@4.41.0) (2020-09-21)
 
 

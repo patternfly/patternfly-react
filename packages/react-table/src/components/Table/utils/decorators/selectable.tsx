@@ -39,7 +39,7 @@ export const selectable: ITransform = (
     ...(rowId !== -1
       ? {
           checked: rowData && !!rowData.selected,
-          'aria-labelledby': rowLabeledBy + rowIndex
+          'aria-label': `Select row ${rowIndex}`
         }
       : {
           checked: allRowsSelected,

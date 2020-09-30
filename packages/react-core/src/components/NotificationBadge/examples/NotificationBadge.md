@@ -36,7 +36,7 @@ class SimpleNotificationBadge extends React.Component {
   render() {
     const { unreadVariant, attentionVariant } = this.state;
     return (
-      <div className='pf-t-dark'>
+      <div className="pf-t-dark">
         <NotificationBadge variant={unreadVariant} onClick={this.onFirstClick} aria-label="First notifications" />
         <NotificationBadge variant={attentionVariant} onClick={this.onSecondClick} aria-label="Second notifications" />
       </div>
@@ -76,7 +76,7 @@ class NotificationBadgeWithCount extends React.Component {
   render() {
     const { firstVariant, firstCount, secondVariant, secondCount } = this.state;
     return (
-      <div className='pf-t-dark'>
+      <div className="pf-t-dark">
         <NotificationBadge variant={firstVariant} onClick={this.onFirstClick} aria-label="First notifications" count={firstCount} />
         <NotificationBadge variant={secondVariant} onClick={this.onSecondClick} aria-label="Second notifications" count={secondCount} />
       </div>

@@ -3,6 +3,122 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.11...@patternfly/react-docs@5.9.12) (2020-09-30)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.10...@patternfly/react-docs@5.9.11) (2020-09-30)
+
+
+### Bug Fixes
+
+* **duplicate-cjs:** add transformer-cjs-imports ([#4910](https://github.com/patternfly/patternfly-react/issues/4910)) ([9d0e290](https://github.com/patternfly/patternfly-react/commit/9d0e29031b6a1375e0d1b8f7e576f28b38d25fc8))
+
+
+
+
+
+## [5.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.9...@patternfly/react-docs@5.9.10) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.8...@patternfly/react-docs@5.9.9) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.7...@patternfly/react-docs@5.9.8) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.6...@patternfly/react-docs@5.9.7) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.5...@patternfly/react-docs@5.9.6) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.4...@patternfly/react-docs@5.9.5) (2020-09-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.3...@patternfly/react-docs@5.9.4) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+
+
+
+## [5.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.2...@patternfly/react-docs@5.9.3) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.1...@patternfly/react-docs@5.9.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* **react-docs:** change overview to get-started ([#4862](https://github.com/patternfly/patternfly-react/issues/4862)) ([b6b544f](https://github.com/patternfly/patternfly-react/commit/b6b544fa11e4645d46e927dcbb749e0a0ecfe78d))
+
+
+
+
+
+## [5.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.0...@patternfly/react-docs@5.9.1) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [5.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.44...@patternfly/react-docs@5.9.0) (2020-09-22)
+
+
+### Features
+
+* **workspace:** use new doc theme ([#4840](https://github.com/patternfly/patternfly-react/issues/4840)) ([7bf451d](https://github.com/patternfly/patternfly-react/commit/7bf451d468538cc0b301fb68f0c1a8108600c24f))
+
+
+
+
+
 ## [5.8.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.8.43...@patternfly/react-docs@5.8.44) (2020-09-21)
 
 **Note:** Version bump only for package @patternfly/react-docs

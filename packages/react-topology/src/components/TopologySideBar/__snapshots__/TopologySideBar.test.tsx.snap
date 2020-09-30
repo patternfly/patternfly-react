@@ -61,6 +61,7 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
         data-ouia-safe={true}
         disabled={false}
         onClick={[MockFunction]}
+        role={null}
         type="button"
       >
         <TimesIcon
