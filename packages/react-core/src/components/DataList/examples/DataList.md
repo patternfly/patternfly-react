@@ -1140,9 +1140,13 @@ class DraggableDataList extends React.Component {
         <DataListItem aria-labelledby="simple-item1" id="data1" key="1">
           <DataListItemRow>
             <DataListControl>
-              <DataListDragButton />
-
-              <DataListCheck aria-labelledby="check-item1" name="check1" otherControls />
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="simple-item1"
+                aria-describedby="Press space to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck aria-labelledby="simple-item1" name="check1" otherControls />
             </DataListControl>
             <DataListItemCells
               dataListCells={[
@@ -1156,8 +1160,13 @@ class DraggableDataList extends React.Component {
         <DataListItem aria-labelledby="simple-item2" id="data2" key="2">
           <DataListItemRow>
             <DataListControl>
-              <DataListDragButton />
-              <DataListCheck aria-labelledby="check-item2" name="check2" otherControls />
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="simple-item2"
+                aria-describedby="Press space to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck aria-labelledby="simple-item2" name="check2" otherControls />
             </DataListControl>
             <DataListItemCells
               dataListCells={[
@@ -1171,8 +1180,13 @@ class DraggableDataList extends React.Component {
         <DataListItem aria-labelledby="simple-item3" id="data3" key="3">
           <DataListItemRow>
             <DataListControl>
-              <DataListDragButton />
-              <DataListCheck aria-labelledby="check-item3" name="check3" otherControls />
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="simple-item3"
+                aria-describedby="Press space to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck aria-labelledby="simple-item3" name="check3" otherControls />
             </DataListControl>
             <DataListItemCells
               dataListCells={[
@@ -1186,8 +1200,13 @@ class DraggableDataList extends React.Component {
         <DataListItem aria-labelledby="simple-item4" id="data4" key="4">
           <DataListItemRow>
             <DataListControl>
-              <DataListDragButton />
-              <DataListCheck aria-labelledby="check-item4" name="check4" otherControls />
+              <DataListDragButton
+                aria-label="Reorder"
+                aria-labelledby="simple-item4"
+                aria-describedby="Press space to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                aria-pressed="false"
+              />
+              <DataListCheck aria-labelledby="simple-item4" name="check4" otherControls />
             </DataListControl>
             <DataListItemCells
               dataListCells={[

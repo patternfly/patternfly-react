@@ -98,7 +98,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   move = (arr: React.ReactElement[], oldIndex: number, newIndex: number) => {
     const ghost = React.cloneElement(this.state.draggedItem, {
-      className: css(this.state.draggedItem.props.className, styles.modifiers.ghostRow)
+      className: css(this.state.draggedItem.props.className, styles.modifiers.ghostRow),
+      'aria-pressed': true
     });
 
     arr.splice(oldIndex, 1);
