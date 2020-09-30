@@ -81,7 +81,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   return (
     <React.Fragment>
       {tooltip ? (
-        <Tooltip position={tooltipPosition} content={tooltip}>
+        <Tooltip position={tooltipPosition} content={tooltip} isVisible>
           {Title}
         </Tooltip>
       ) : (
