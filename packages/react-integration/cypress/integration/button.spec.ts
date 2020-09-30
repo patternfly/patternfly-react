@@ -155,6 +155,23 @@ describe('Button Demo Test', () => {
     });
   });
 
+  it('Verify wrapping span link button classes and attributes', () => {
+    cy.get('.btn-demo-area').within(() => {
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.class', 'pf-m-link');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.class', 'pf-m-inline');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.attr', 'aria-disabled', 'false');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.attr', 'tabindex', '0');
+      cy.get('.pf-c-button[id="span-link-btn-1"]').should('have.attr', 'role', 'button');
+
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.class', 'pf-m-link');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.class', 'pf-m-inline');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.class', 'pf-m-disabled');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.attr', 'aria-disabled', 'true');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.attr', 'tabindex', '-1');
+      cy.get('.pf-c-button[id="span-link-btn-2"]').should('have.attr', 'role', 'button');
+    });
+  });
+
   it('Verify isAriaDisabled link as button has tooltip when focused', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="link-as-btn-5"]')

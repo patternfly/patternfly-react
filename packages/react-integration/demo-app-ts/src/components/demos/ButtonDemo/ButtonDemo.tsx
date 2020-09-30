@@ -44,6 +44,12 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
     target: '_blank'
   };
 
+  spanLink: ButtonProps = {
+    component: 'span',
+    variant: 'link',
+    isInline: true
+  };
+
   myButtonProps: ButtonProps = {
     component: 'button',
     href,
@@ -177,6 +183,15 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
             Aria-disabled link as button with tooltip
           </Button>
         </Tooltip>
+
+        <hr className="pf-u-m-md" />
+        <Button {...this.spanLink} id="span-link-btn-1">
+          Span wrapping link
+        </Button>
+        <br />
+        <Button isDisabled {...this.spanLink} id="span-link-btn-2">
+          Disabled span wrapping link
+        </Button>
       </div>
     );
   }

@@ -77,6 +77,7 @@ exports[`ChipGroup chip group default 1`] = `
                       disabled={false}
                       id="remove_pf-random-id-1"
                       onClick={[Function]}
+                      role={null}
                       type="button"
                     >
                       <TimesIcon
@@ -201,6 +202,7 @@ exports[`ChipGroup chip group with category 1`] = `
                       disabled={false}
                       id="remove_pf-random-id-3"
                       onClick={[Function]}
+                      role={null}
                       type="button"
                     >
                       <TimesIcon
@@ -325,6 +327,7 @@ exports[`ChipGroup chip group with category and tooltip 1`] = `
                       disabled={false}
                       id="remove_pf-random-id-13"
                       onClick={[Function]}
+                      role={null}
                       type="button"
                     >
                       <TimesIcon
@@ -449,6 +452,7 @@ exports[`ChipGroup chip group with closable category 1`] = `
                       disabled={false}
                       id="remove_pf-random-id-5"
                       onClick={[Function]}
+                      role={null}
                       type="button"
                     >
                       <TimesIcon
@@ -506,6 +510,7 @@ exports[`ChipGroup chip group with closable category 1`] = `
             disabled={false}
             id="remove_group_pf-random-id-4"
             onClick={[Function]}
+            role={null}
             type="button"
           >
             <TimesCircleIcon

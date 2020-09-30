@@ -218,6 +218,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                   disabled={false}
                                   id="zoom-in"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <span>
@@ -345,6 +346,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                   disabled={false}
                                   id="zoom-out"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <SearchMinusIcon
@@ -493,6 +495,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                   disabled={false}
                                   id="reset-view"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <ExpandIcon
@@ -850,6 +853,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   disabled={false}
                                   id="zoom-in"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <SearchPlusIcon
@@ -998,6 +1002,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   disabled={false}
                                   id="zoom-out"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <SearchMinusIcon
@@ -1146,6 +1151,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   disabled={false}
                                   id="fit-to-screen"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <ExpandArrowsAltIcon
@@ -1294,6 +1300,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   disabled={false}
                                   id="reset-view"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <ExpandIcon
@@ -1356,6 +1363,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             disabled={false}
                             id="legend"
                             onClick={[Function]}
+                            role={null}
                             type="button"
                           >
                             Legend

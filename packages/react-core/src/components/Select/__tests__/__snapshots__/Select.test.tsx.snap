@@ -10131,6 +10131,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                   disabled={false}
                                   id="remove_pf-random-id-24"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -10212,6 +10213,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                   disabled={false}
                                   id="remove_pf-random-id-25"
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <TimesIcon
