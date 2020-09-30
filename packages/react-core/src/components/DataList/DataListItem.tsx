@@ -66,9 +66,12 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
             className
           )}
           aria-labelledby={ariaLabelledBy}
-          role={isSelectable? "option" : null}
+          role={isSelectable ? 'option' : null}
           {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
-          {...(isSelectable && selectedDataListItemId === id && { 'aria-selected': true } && { 'aria-activedescendant': selectedDataListItemId })}
+          {...(isSelectable &&
+            selectedDataListItemId === id && { 'aria-selected': true } && {
+              'aria-activedescendant': selectedDataListItemId
+            })}
           {...props}
         >
           {React.Children.map(
