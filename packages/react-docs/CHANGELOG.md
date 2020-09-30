@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.10...@patternfly/react-docs@5.9.11) (2020-09-30)
+
+
+### Bug Fixes
+
+* **duplicate-cjs:** add transformer-cjs-imports ([#4910](https://github.com/patternfly/patternfly-react/issues/4910)) ([9d0e290](https://github.com/patternfly/patternfly-react/commit/9d0e29031b6a1375e0d1b8f7e576f28b38d25fc8))
+
+
+
+
+
 ## [5.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.9...@patternfly/react-docs@5.9.10) (2020-09-28)
 
 **Note:** Version bump only for package @patternfly/react-docs
