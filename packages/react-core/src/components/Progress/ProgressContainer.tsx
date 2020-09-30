@@ -59,23 +59,33 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   tooltipPosition
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
-  const renderTitle = () => (
+  const [tooltip, setTooltip] = React.useState('');
+  const onMouseEnter = (event: any) => {
+    if (event.target.offsetWidth < event.target.scrollWidth) {
+      setTooltip(title || event.target.innerHTML);
+    } else {
+      setTooltip('');
+    }
+  };
+  const Title = (
     <div
       className={css(progressStyle.progressDescription, isTitleTruncated && progressStyle.modifiers.truncate)}
       id={`${parentId}-description`}
       aria-hidden="true"
+      onMouseEnter={isTitleTruncated ? onMouseEnter : null}
     >
       {title}
     </div>
   );
+
   return (
     <React.Fragment>
-      {isTitleTruncated ? (
-        <Tooltip position={tooltipPosition} content={<div>{title}</div>}>
-          {renderTitle()}
+      {tooltip ? (
+        <Tooltip position={tooltipPosition} content={tooltip}>
+          {Title}
         </Tooltip>
       ) : (
-        renderTitle()
+        Title
       )}
       <div className={css(progressStyle.progressStatus)} aria-hidden="true">
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
