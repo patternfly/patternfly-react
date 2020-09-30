@@ -42,6 +42,7 @@ exports[`Progress measure location inside 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="inside-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -130,6 +131,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="large-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -218,6 +220,7 @@ exports[`Progress measure location none 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="none-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -304,6 +307,7 @@ exports[`Progress measure location outside 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="outside-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -396,6 +400,7 @@ exports[`Progress measure location top 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="top-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -488,6 +493,7 @@ exports[`Progress size lg 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="lg-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -580,6 +586,7 @@ exports[`Progress size md 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="md-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -672,6 +679,7 @@ exports[`Progress size sm 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="sm-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -764,6 +772,7 @@ exports[`Progress variant danger 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="danger-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -884,6 +893,7 @@ exports[`Progress variant success 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="success-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1004,6 +1014,7 @@ exports[`Progress variant warning 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="warning-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1125,6 +1136,7 @@ exports[`Progress with aria-valuetext 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="progress-aria-valuetext-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1219,6 +1231,7 @@ exports[`Simple progress 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="progress-simple-example-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1311,6 +1324,7 @@ exports[`additional label 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="additional-label-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1403,6 +1417,7 @@ exports[`no value specified 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="no-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1495,6 +1510,7 @@ exports[`value higher than maxValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="higher-max-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1587,6 +1603,7 @@ exports[`value lower than minValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="lower-min-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1679,6 +1696,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="scaled-range-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1771,6 +1789,7 @@ exports[`value scaled with maxValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="scaled-max-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1863,6 +1882,7 @@ exports[`value scaled with minValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="scaled-min-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
