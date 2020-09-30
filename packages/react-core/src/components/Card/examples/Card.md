@@ -26,7 +26,7 @@ SimpleCard = () => (
 ### With image and actions
 ```js
 import React from 'react';
-import { Brand, Card, CardHeader, CardHeaderMain, CardActions, CardTitle, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
+import { Brand, Card, CardHeader, CardHeaderMain, CardActions, CardTitle, CardBody, CardFooter, Checkbox, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
 import pfLogo from './pfLogo.svg'; 
 
 class KebabDropdown extends React.Component {
@@ -88,8 +88,7 @@ class KebabDropdown extends React.Component {
               dropdownItems={dropdownItems}
               position={'right'}
             />
-            <input
-              type="checkbox" 
+            <Checkbox
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
@@ -110,7 +109,7 @@ class KebabDropdown extends React.Component {
 ### Card header in card head
 ```js
 import React from 'react';
-import { Card, CardHeader, CardActions, CardTitle, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
+import { Card, CardHeader, CardActions, CardTitle, CardBody, CardFooter, Checkbox, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -168,8 +167,7 @@ class KebabDropdown extends React.Component {
               dropdownItems={dropdownItems}
               position={'right'}
             />
-            <input
-              type="checkbox" 
+            <Checkbox
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
@@ -190,7 +188,7 @@ class KebabDropdown extends React.Component {
 ### Only actions in card head (no header/footer)
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHeader, CardActions, CardTitle, CardBody } from '@patternfly/react-core'; 
+import { Checkbox, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHeader, CardActions, CardTitle, CardBody } from '@patternfly/react-core'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -248,8 +246,7 @@ class KebabDropdown extends React.Component {
               dropdownItems={dropdownItems}
               position={'right'}
             />
-            <input
-              type="checkbox" 
+            <Checkbox
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
