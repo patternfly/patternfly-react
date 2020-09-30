@@ -6,6 +6,7 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
     aria-hidden="true"
     className="pf-c-progress__description"
     id="string-description"
+    onMouseEnter={null}
   >
     ''
   </div>

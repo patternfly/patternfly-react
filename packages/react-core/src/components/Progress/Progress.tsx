@@ -34,6 +34,10 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   max?: number;
   /** Accessible text description of current progress value, for when value is not a percentage. Use with label. */
   valueText?: string;
+  /** Indicate whether to truncate the title */
+  isTitleTruncated?: boolean;
+  /** Position of the tooltip which is displayed if title is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 export class Progress extends React.Component<ProgressProps> {
@@ -49,7 +53,9 @@ export class Progress extends React.Component<ProgressProps> {
     size: null as ProgressSize,
     label: null as React.ReactNode,
     value: 0,
-    valueText: null as string
+    valueText: null as string,
+    isTitleTruncated: false,
+    tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right'
   };
 
   id = this.props.id || getUniqueId();
@@ -69,6 +75,8 @@ export class Progress extends React.Component<ProgressProps> {
       min,
       max,
       valueText,
+      isTitleTruncated,
+      tooltipPosition,
       ...props
     } = this.props;
 
@@ -105,6 +113,8 @@ export class Progress extends React.Component<ProgressProps> {
           variant={variant}
           measureLocation={measureLocation}
           progressBarAriaProps={progressBarAriaProps}
+          isTitleTruncated={isTitleTruncated}
+          tooltipPosition={tooltipPosition}
         />
       </div>
     );

@@ -10,6 +10,10 @@ describe('Progress Demo Test', () => {
     cy.get('#simple-progress .pf-c-progress__status .pf-c-progress__measure').contains('33%');
   });
 
+  it('Verify truncate progress', () => {
+    cy.get('#truncate-title-progress-description.pf-m-truncate').should('exist');
+  });
+
   it('Verify progress element variant classes', () => {
     cy.get('div[id="warning-progress"]').should('have.class', 'pf-m-warning');
     cy.get('div[id="danger-progress"]').should('have.class', 'pf-m-danger');

@@ -4,12 +4,14 @@ exports[`Progress measure location inside 1`] = `
 <Progress
   className=""
   id="inside-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="inside"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -19,6 +21,7 @@ exports[`Progress measure location inside 1`] = `
     id="inside-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="inside"
       parentId="inside-progress"
@@ -31,6 +34,7 @@ exports[`Progress measure location inside 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -38,6 +42,7 @@ exports[`Progress measure location inside 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="inside-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -88,12 +93,14 @@ exports[`Progress measure location inside and small should render large 1`] = `
 <Progress
   className=""
   id="large-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="inside"
   min={0}
   size="sm"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -103,6 +110,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
     id="large-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="inside"
       parentId="large-progress"
@@ -115,6 +123,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -122,6 +131,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="large-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -172,12 +182,14 @@ exports[`Progress measure location none 1`] = `
 <Progress
   className=""
   id="none-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="none"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -187,6 +199,7 @@ exports[`Progress measure location none 1`] = `
     id="none-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="none"
       parentId="none-progress"
@@ -199,6 +212,7 @@ exports[`Progress measure location none 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -206,6 +220,7 @@ exports[`Progress measure location none 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="none-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -254,12 +269,14 @@ exports[`Progress measure location outside 1`] = `
 <Progress
   className=""
   id="outside-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="outside"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -269,6 +286,7 @@ exports[`Progress measure location outside 1`] = `
     id="outside-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="outside"
       parentId="outside-progress"
@@ -281,6 +299,7 @@ exports[`Progress measure location outside 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -288,6 +307,7 @@ exports[`Progress measure location outside 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="outside-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -342,12 +362,14 @@ exports[`Progress measure location top 1`] = `
 <Progress
   className=""
   id="top-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -357,6 +379,7 @@ exports[`Progress measure location top 1`] = `
     id="top-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="top-progress"
@@ -369,6 +392,7 @@ exports[`Progress measure location top 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -376,6 +400,7 @@ exports[`Progress measure location top 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="top-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -430,12 +455,14 @@ exports[`Progress size lg 1`] = `
 <Progress
   className=""
   id="lg-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size="lg"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -445,6 +472,7 @@ exports[`Progress size lg 1`] = `
     id="lg-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="lg-progress"
@@ -457,6 +485,7 @@ exports[`Progress size lg 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -464,6 +493,7 @@ exports[`Progress size lg 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="lg-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -518,12 +548,14 @@ exports[`Progress size md 1`] = `
 <Progress
   className=""
   id="md-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size="md"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -533,6 +565,7 @@ exports[`Progress size md 1`] = `
     id="md-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="md-progress"
@@ -545,6 +578,7 @@ exports[`Progress size md 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -552,6 +586,7 @@ exports[`Progress size md 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="md-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -606,12 +641,14 @@ exports[`Progress size sm 1`] = `
 <Progress
   className=""
   id="sm-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size="sm"
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -621,6 +658,7 @@ exports[`Progress size sm 1`] = `
     id="sm-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="sm-progress"
@@ -633,6 +671,7 @@ exports[`Progress size sm 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -640,6 +679,7 @@ exports[`Progress size sm 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="sm-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -694,12 +734,14 @@ exports[`Progress variant danger 1`] = `
 <Progress
   className=""
   id="danger-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant="danger"
@@ -709,6 +751,7 @@ exports[`Progress variant danger 1`] = `
     id="danger-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="danger-progress"
@@ -721,6 +764,7 @@ exports[`Progress variant danger 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant="danger"
     >
@@ -728,6 +772,7 @@ exports[`Progress variant danger 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="danger-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -810,12 +855,14 @@ exports[`Progress variant success 1`] = `
 <Progress
   className=""
   id="success-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant="success"
@@ -825,6 +872,7 @@ exports[`Progress variant success 1`] = `
     id="success-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="success-progress"
@@ -837,6 +885,7 @@ exports[`Progress variant success 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant="success"
     >
@@ -844,6 +893,7 @@ exports[`Progress variant success 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="success-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -926,12 +976,14 @@ exports[`Progress variant warning 1`] = `
 <Progress
   className=""
   id="warning-progress"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant="warning"
@@ -941,6 +993,7 @@ exports[`Progress variant warning 1`] = `
     id="warning-progress"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="warning-progress"
@@ -953,6 +1006,7 @@ exports[`Progress variant warning 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant="warning"
     >
@@ -960,6 +1014,7 @@ exports[`Progress variant warning 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="warning-progress-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1042,12 +1097,14 @@ exports[`Progress with aria-valuetext 1`] = `
 <Progress
   className=""
   id="progress-aria-valuetext"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText="Descriptive text here"
   variant={null}
@@ -1057,6 +1114,7 @@ exports[`Progress with aria-valuetext 1`] = `
     id="progress-aria-valuetext"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="progress-aria-valuetext"
@@ -1070,6 +1128,7 @@ exports[`Progress with aria-valuetext 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -1077,6 +1136,7 @@ exports[`Progress with aria-valuetext 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="progress-aria-valuetext-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1133,12 +1193,14 @@ exports[`Simple progress 1`] = `
 <Progress
   className=""
   id="progress-simple-example"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -1148,6 +1210,7 @@ exports[`Simple progress 1`] = `
     id="progress-simple-example"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="progress-simple-example"
@@ -1160,6 +1223,7 @@ exports[`Simple progress 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -1167,6 +1231,7 @@ exports[`Simple progress 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="progress-simple-example-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1221,12 +1286,14 @@ exports[`additional label 1`] = `
 <Progress
   className=""
   id="additional-label"
+  isTitleTruncated={false}
   label="Additional label"
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -1236,6 +1303,7 @@ exports[`additional label 1`] = `
     id="additional-label"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label="Additional label"
       measureLocation="top"
       parentId="additional-label"
@@ -1248,6 +1316,7 @@ exports[`additional label 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={33}
       variant={null}
     >
@@ -1255,6 +1324,7 @@ exports[`additional label 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="additional-label-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1309,12 +1379,14 @@ exports[`no value specified 1`] = `
 <Progress
   className=""
   id="no-value"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={0}
   valueText={null}
   variant={null}
@@ -1324,6 +1396,7 @@ exports[`no value specified 1`] = `
     id="no-value"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="no-value"
@@ -1336,6 +1409,7 @@ exports[`no value specified 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={0}
       variant={null}
     >
@@ -1343,6 +1417,7 @@ exports[`no value specified 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="no-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1397,12 +1472,14 @@ exports[`value higher than maxValue 1`] = `
 <Progress
   className=""
   id="higher-max-value"
+  isTitleTruncated={false}
   label={null}
   max={60}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={77}
   valueText={null}
   variant={null}
@@ -1412,6 +1489,7 @@ exports[`value higher than maxValue 1`] = `
     id="higher-max-value"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="higher-max-value"
@@ -1424,6 +1502,7 @@ exports[`value higher than maxValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={100}
       variant={null}
     >
@@ -1431,6 +1510,7 @@ exports[`value higher than maxValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="higher-max-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1485,12 +1565,14 @@ exports[`value lower than minValue 1`] = `
 <Progress
   className=""
   id="lower-min-value"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={40}
   size={null}
   title=""
+  tooltipPosition="top"
   value={33}
   valueText={null}
   variant={null}
@@ -1500,6 +1582,7 @@ exports[`value lower than minValue 1`] = `
     id="lower-min-value"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="lower-min-value"
@@ -1512,6 +1595,7 @@ exports[`value lower than minValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={0}
       variant={null}
     >
@@ -1519,6 +1603,7 @@ exports[`value lower than minValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="lower-min-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1573,12 +1658,14 @@ exports[`value scaled between minValue and maxValue 1`] = `
 <Progress
   className=""
   id="scaled-range-value"
+  isTitleTruncated={false}
   label={null}
   max={80}
   measureLocation="top"
   min={10}
   size={null}
   title=""
+  tooltipPosition="top"
   value={50}
   valueText={null}
   variant={null}
@@ -1588,6 +1675,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
     id="scaled-range-value"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="scaled-range-value"
@@ -1600,6 +1688,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={57}
       variant={null}
     >
@@ -1607,6 +1696,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="scaled-range-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1661,12 +1751,14 @@ exports[`value scaled with maxValue 1`] = `
 <Progress
   className=""
   id="scaled-max-value"
+  isTitleTruncated={false}
   label={null}
   max={80}
   measureLocation="top"
   min={0}
   size={null}
   title=""
+  tooltipPosition="top"
   value={50}
   valueText={null}
   variant={null}
@@ -1676,6 +1768,7 @@ exports[`value scaled with maxValue 1`] = `
     id="scaled-max-value"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="scaled-max-value"
@@ -1688,6 +1781,7 @@ exports[`value scaled with maxValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={62}
       variant={null}
     >
@@ -1695,6 +1789,7 @@ exports[`value scaled with maxValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="scaled-max-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"
@@ -1749,12 +1844,14 @@ exports[`value scaled with minValue 1`] = `
 <Progress
   className=""
   id="scaled-min-value"
+  isTitleTruncated={false}
   label={null}
   max={100}
   measureLocation="top"
   min={10}
   size={null}
   title=""
+  tooltipPosition="top"
   value={50}
   valueText={null}
   variant={null}
@@ -1764,6 +1861,7 @@ exports[`value scaled with minValue 1`] = `
     id="scaled-min-value"
   >
     <ProgressContainer
+      isTitleTruncated={false}
       label={null}
       measureLocation="top"
       parentId="scaled-min-value"
@@ -1776,6 +1874,7 @@ exports[`value scaled with minValue 1`] = `
         }
       }
       title=""
+      tooltipPosition="top"
       value={44}
       variant={null}
     >
@@ -1783,6 +1882,7 @@ exports[`value scaled with minValue 1`] = `
         aria-hidden="true"
         className="pf-c-progress__description"
         id="scaled-min-value-description"
+        onMouseEnter={null}
       />
       <div
         aria-hidden="true"

@@ -6,6 +6,7 @@ exports[`Progress should match snapshot (auto-generated) 1`] = `
   id="''"
 >
   <ProgressContainer
+    isTitleTruncated={false}
     label={null}
     measureLocation="outside"
     parentId="''"
@@ -19,6 +20,7 @@ exports[`Progress should match snapshot (auto-generated) 1`] = `
       }
     }
     title="''"
+    tooltipPosition="top"
     value={0}
     variant="danger"
   />

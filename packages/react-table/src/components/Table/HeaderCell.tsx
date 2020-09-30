@@ -60,6 +60,12 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
     </Component>
   );
 
-  return tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
+  return tooltip !== '' ? (
+    <Tooltip content={tooltip} isVisible>
+      {cell}
+    </Tooltip>
+  ) : (
+    cell
+  );
 };
 HeaderCell.displayName = 'HeaderCell';

@@ -27,7 +27,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   }, []);
 
   return isTooltipVisible ? (
-    <Tooltip content={title}>
+    <Tooltip content={title} isVisible>
       <h1 id={id} ref={h1} className={css(modalStyles.modalBoxTitle, className)} {...props}>
         {title}
       </h1>

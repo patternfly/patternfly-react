@@ -82,7 +82,14 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
     </Component>
   );
 
-  const bodyCell = tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
+  const bodyCell =
+    tooltip !== '' ? (
+      <Tooltip content={tooltip} isVisible>
+        {cell}
+      </Tooltip>
+    ) : (
+      cell
+    );
 
   return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : bodyCell;
 };

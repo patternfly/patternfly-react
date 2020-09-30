@@ -112,7 +112,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 <Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.none} />
 ```
 
-### Failure without measure)
+### Failure without measure
 ```js
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
@@ -140,4 +140,12 @@ import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={2} title="Title" min={0} max={5} label="Step 2: Copying files" valueText="Step 2: Copying files" />
+```
+
+### Truncate title
+```js
+import React from 'react';
+import { Progress } from '@patternfly/react-core';
+
+<Progress value={33} title="Very very very very very very very very very very very long title which should be truncated if it does not fit onto one line above the progress bar" isTitleTruncated />
 ```
