@@ -16,7 +16,10 @@
     "sourceMap": true,
     "declarationMap": true,
     "strict": true,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "plugins": [
+      { "transform": "transformer-cjs-imports" },
+    ]
   },
   "exclude": [
     "**/**.test.tsx",

@@ -1,0 +1,11 @@
+{
+  "name": "transformer-cjs-imports",
+  "version": "4.0.0",
+  "description": "Transform CJS imports to ESM in typescript depending on module target.",
+  "main": "index.js",
+  "author": "Red Hat",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": ">=3.7.2"
+  }
+}

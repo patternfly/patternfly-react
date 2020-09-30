@@ -67,13 +67,15 @@
     "tslint": "^5.12.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^3.6.0",
+    "ttypescript": "^1.5.12"
   },
   "scripts": {
+    "analyze": "yarn workspace @patternfly/react-docs analyze",
     "bootstrap": "lerna bootstrap",
     "build": "yarn build:generate && yarn build:esm && yarn build:cjs",
     "build:cjs": "tsc --build packages/tsconfig.cjs.json -v",
-    "build:esm": "tsc --build packages/tsconfig.json -v",
+    "build:esm": "ttsc --build packages/tsconfig.json -v",
     "build:integration": "lerna run build:demo-app --stream",
     "build:docs": "yarn workspace @patternfly/react-docs build:docs",
     "build:umd": "yarn workspace @patternfly/react-core build:umd",

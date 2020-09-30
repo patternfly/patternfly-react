@@ -1,5 +1,10 @@
 const { fullscreenRoutes } = require('theme-patternfly-org/routes');
 
+/**
+ * Wait for a selector before running axe
+ *
+ * @param page page from puppeteer
+ */
 async function waitFor(page) {
   await page.waitForSelector('#root > *');
 }
