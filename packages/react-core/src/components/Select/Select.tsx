@@ -353,7 +353,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.optionContainerRefCollection = [];
     if (isGrouped) {
       return React.Children.map(typeaheadChildren as React.ReactElement[], (group: React.ReactElement) => {
-        debugger;
         if (group.type === Divider) {
           return group;
         } else if (group.type === SelectGroup && onFavorite) {
@@ -768,7 +767,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
           if (variantChildren.length === 0) {
-            debugger;
             variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
           }
           break;
