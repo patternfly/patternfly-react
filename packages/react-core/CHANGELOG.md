@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.58.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.57.4...@patternfly/react-core@4.58.0) (2020-09-30)
+
+
+### Features
+
+* **Progress:** added truncation ([#4842](https://github.com/patternfly/patternfly-react/issues/4842)) ([3b5f1ba](https://github.com/patternfly/patternfly-react/commit/3b5f1baba4a452abb45f48fb0968be703999dfd4))
+* **Select:** Added support for Divider in Select ([#4772](https://github.com/patternfly/patternfly-react/issues/4772)) ([4071f6f](https://github.com/patternfly/patternfly-react/commit/4071f6fd70d55356f16eebfac9bac3c24af1ed8d))
+
+
+
+
+
 ## [4.57.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.57.3...@patternfly/react-core@4.57.4) (2020-09-30)
 
 **Note:** Version bump only for package @patternfly/react-core
