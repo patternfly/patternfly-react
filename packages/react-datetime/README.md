@@ -40,6 +40,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 #### Example Component Usage
 
 ```js
+import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
 SimpleDatePicker = () => (
