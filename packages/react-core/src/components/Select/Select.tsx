@@ -371,7 +371,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   })
             )
           });
-        } else {
+        } else if (group.type === SelectGroup) {
           return React.cloneElement(group, {
             titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
             children: React.Children.map(group.props.children, (child: React.ReactElement) =>
