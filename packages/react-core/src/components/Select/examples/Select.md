@@ -1353,6 +1353,94 @@ class MultiTypeaheadSelectInput extends React.Component {
 }
 ```
 
+### Multiple with Custom Chip Group Props
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      options: [
+        { value: 'Alabama', disabled: false },
+        { value: 'Florida', disabled: false },
+        { value: 'New Jersey', disabled: false },
+        { value: 'New Mexico', disabled: false, description: 'This is a description' },
+        { value: 'New York', disabled: false },
+        { value: 'North Carolina', disabled: false }
+      ],
+      isOpen: false,
+      selected: [],
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: [],
+        isOpen: false
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isCreatable, hasOnCreateOption } = this.state;
+    const titleId = 'multi-typeahead-custom-chip-group-props-id-1';
+
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Select a state
+        </span>
+        <Select
+          chipGroupProps={{numChips:1, expandedText: "Hide", collapsedText: "Show ${remaining}"}}
+          variant={SelectVariant.typeaheadMulti}
+          typeAheadAriaLabel="Select a state"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          onClear={this.clearSelection}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          placeholderText="Select a state"
+        >
+          {this.state.options.map((option, index) => (
+            <SelectOption
+              isDisabled={option.disabled}
+              key={index}
+              value={option.value}
+              {...(option.description && { description: option.description })}
+            />
+          ))}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
 ### Multiple with custom objects
 
 ```js

@@ -72,7 +72,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadMultiisOpen: false,
     typeaheadMultiSelected: [''],
     cdtypeaheadMultiisOpen: false,
-    cdtypeaheadMultiSelected: [''],
+    cdtypeaheadMultiSelected: [] as string[],
     plainTypeaheadMultiisOpen: false,
     plainTypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsPlain: true,
@@ -472,7 +472,7 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadMultiSelected: [''],
       typeaheadMultiisOpen: false,
       cdtypeaheadMultiisOpen: false,
-      cdtypeaheadMultiSelected: [''],
+      cdtypeaheadMultiSelected: [],
       plainTypeaheadMultiSelected: [''],
       plainTypeaheadMultiisOpen: false,
       customTypeaheadMultiSelected: [''],
@@ -828,6 +828,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             Select a state
           </span>
           <Select
+            chipGroupProps={{ numChips: 1 }}
             toggleId="custom-data-typeahead-multi-select"
             variant={SelectVariant.typeaheadMulti}
             aria-label="Select a state"

@@ -30,7 +30,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -144,7 +144,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],

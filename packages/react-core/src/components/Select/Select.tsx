@@ -10,7 +10,7 @@ import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
-import { Chip, ChipGroup } from '../ChipGroup';
+import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
 import {
   keyHandler,
   getNextIndex,
@@ -109,6 +109,8 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
+  /** Optional props to pass to the chip group in the typeaheadmulti variant */
+  chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
 }
 
 export interface SelectState {
@@ -489,6 +491,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
   };
 
+  onClickTypeaheadToggleButton = () => {
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus();
+    }
+  };
+
   getDisplay = (value: string | SelectOptionObject, type: 'node' | 'text' = 'node') => {
     if (!value) {
       return;
@@ -538,6 +546,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   render() {
     const {
       children,
+      chipGroupProps,
       className,
       customContent,
       variant,
@@ -647,7 +656,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
-        <ChipGroup>
+        <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (
               <Chip
@@ -729,6 +738,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             openedOnEnter
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
         case 'typeaheadmulti':
           variantProps = {
@@ -736,6 +748,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             openedOnEnter
           };
           variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
       }
     }
@@ -799,6 +814,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           handleTypeaheadKeys={this.handleTypeaheadKeys}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
+          onClickTypeaheadToggleButton={this.onClickTypeaheadToggleButton}
         >
           {customContent && (
             <div className={css(styles.selectToggleWrapper)}>
@@ -856,7 +872,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   ref={this.inputRef}
                 />
               </div>
-              {(selections[0] || typeaheadInputValue) && clearBtn}
+              {hasOnClear && (selections[0] || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
           {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -879,7 +895,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   ref={this.inputRef}
                 />
               </div>
-              {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
+              {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
         </SelectToggle>

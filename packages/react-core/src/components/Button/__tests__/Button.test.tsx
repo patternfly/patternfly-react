@@ -72,6 +72,11 @@ test('isLarge', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('isLoading', () => {
+  const view = mount(<Button isLoading spinnerAriaValueText="Loading">Loading Button</Button>);
+  expect(view).toMatchSnapshot();
+});
+
 test('allows passing in a string as the component', () => {
   const component = 'a';
   const view = mount(<Button component={component} />);

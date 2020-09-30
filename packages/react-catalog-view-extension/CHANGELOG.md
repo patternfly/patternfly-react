@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.44...@patternfly/react-catalog-view-extension@4.8.45) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.43...@patternfly/react-catalog-view-extension@4.8.44) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.42...@patternfly/react-catalog-view-extension@4.8.43) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.41...@patternfly/react-catalog-view-extension@4.8.42) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.40...@patternfly/react-catalog-view-extension@4.8.41) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.39...@patternfly/react-catalog-view-extension@4.8.40) (2020-09-24)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.38...@patternfly/react-catalog-view-extension@4.8.39) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+
+
+
 ## [4.8.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.37...@patternfly/react-catalog-view-extension@4.8.38) (2020-09-23)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

@@ -21,6 +21,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   children: React.ReactNode;
   /** Additional classes added to the tabs */
   className?: string;
+  /** Tabs background color variant */
+  variant?: 'default' | 'light300';
   /** The index of the active tab */
   activeKey?: number | string;
   /** Callback to handle tab selection */
@@ -58,6 +60,22 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   };
 }
 
+export interface TabsContextProps {
+  variant: 'default' | 'light300';
+}
+
+const TabsContext = React.createContext<TabsContextProps>({
+  variant: 'default'
+});
+
+export const TabsContextProvider = TabsContext.Provider;
+export const TabsContextConsumer = TabsContext.Consumer;
+
+const variantStyle = {
+  default: '',
+  light300: styles.modifiers.colorSchemeLight_300
+};
+
 interface TabsState {
   showScrollButtons: boolean;
   disableLeftScrollButton: boolean;
@@ -92,7 +110,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     component: TabsComponent.div,
     mountOnEnter: false,
     unmountOnExit: false,
-    ouiaSafe: true
+    ouiaSafe: true,
+    variant: 'default'
   };
 
   handleTabClick(
@@ -225,6 +244,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       mountOnEnter,
       unmountOnExit,
       inset,
+      variant,
       ...props
     } = this.props;
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
@@ -236,7 +256,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
 
     return (
-      <React.Fragment>
+      <TabsContextProvider value={{ variant }}>
         <Component
           aria-label={ariaLabel}
           className={css(
@@ -247,6 +267,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
             formatBreakpointMods(inset, styles),
+            variantStyle[variant],
             className
           )}
           {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
@@ -325,7 +346,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               ouiaId={child.props.ouiaId}
             />
           ))}
-      </React.Fragment>
+      </TabsContextProvider>
     );
   }
 }

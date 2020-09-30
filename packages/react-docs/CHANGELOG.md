@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.9...@patternfly/react-docs@5.9.10) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.8...@patternfly/react-docs@5.9.9) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.7...@patternfly/react-docs@5.9.8) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.6...@patternfly/react-docs@5.9.7) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.5...@patternfly/react-docs@5.9.6) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.4...@patternfly/react-docs@5.9.5) (2020-09-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.9.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.3...@patternfly/react-docs@5.9.4) (2020-09-24)
+
+
+### Bug Fixes
+
+* **demo-app:** replace CRA with webpack and ts-loader ([#4877](https://github.com/patternfly/patternfly-react/issues/4877)) ([1b64309](https://github.com/patternfly/patternfly-react/commit/1b6430943e14acf84fa54115b1a009930cf2372e))
+
+
+
+
+
 ## [5.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.2...@patternfly/react-docs@5.9.3) (2020-09-23)
 
 **Note:** Version bump only for package @patternfly/react-docs

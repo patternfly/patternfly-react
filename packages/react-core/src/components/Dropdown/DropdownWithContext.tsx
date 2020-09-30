@@ -98,7 +98,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               isOpen={isOpen}
               position={position}
               aria-labelledby={contextId ? `${contextId}-toggle` : id}
-              openedOnEnter={openedOnEnter}
               isGrouped={isGrouped}
               autoFocus={openedOnEnter && autoFocus}
             >

@@ -77,7 +77,6 @@ exports[`state active 1`] = `
 exports[`state class changes 1`] = `
 <DropdownToggle
   id="Dropdown Toggle"
-  isFocused={true}
   parentRef={<div />}
 >
   <Toggle
@@ -90,7 +89,6 @@ exports[`state class changes 1`] = `
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
-    isFocused={true}
     isOpen={false}
     isPlain={false}
     isPrimary={false}
@@ -107,7 +105,6 @@ exports[`state class changes 1`] = `
       data-ouia-safe={true}
       disabled={false}
       id="Dropdown Toggle"
-      isFocused={true}
       onClick={[Function]}
       onKeyDown={[Function]}
       type="button"
@@ -153,7 +150,6 @@ exports[`state class changes 1`] = `
 exports[`state class changes 2`] = `
 <DropdownToggle
   id="Dropdown Toggle"
-  isFocused={true}
   parentRef={<div />}
 >
   <Toggle
@@ -166,7 +162,6 @@ exports[`state class changes 2`] = `
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
-    isFocused={true}
     isOpen={false}
     isPlain={false}
     isPrimary={false}
@@ -183,7 +178,6 @@ exports[`state class changes 2`] = `
       data-ouia-safe={true}
       disabled={false}
       id="Dropdown Toggle"
-      isFocused={true}
       onClick={[Function]}
       onKeyDown={[Function]}
       type="button"
@@ -229,7 +223,6 @@ exports[`state class changes 2`] = `
 exports[`state focus 1`] = `
 <DropdownToggle
   id="Dropdown Toggle"
-  isFocused={true}
   parentRef={<div />}
 >
   <Toggle
@@ -242,7 +235,6 @@ exports[`state focus 1`] = `
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
-    isFocused={true}
     isOpen={false}
     isPlain={false}
     isPrimary={false}
@@ -259,7 +251,6 @@ exports[`state focus 1`] = `
       data-ouia-safe={true}
       disabled={false}
       id="Dropdown Toggle"
-      isFocused={true}
       onClick={[Function]}
       onKeyDown={[Function]}
       type="button"
@@ -305,7 +296,6 @@ exports[`state focus 1`] = `
 exports[`state hover 1`] = `
 <DropdownToggle
   id="Dropdown Toggle"
-  isHovered={true}
   parentRef={<div />}
 >
   <Toggle
@@ -318,7 +308,6 @@ exports[`state hover 1`] = `
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
-    isHovered={true}
     isOpen={false}
     isPlain={false}
     isPrimary={false}
@@ -335,7 +324,6 @@ exports[`state hover 1`] = `
       data-ouia-safe={true}
       disabled={false}
       id="Dropdown Toggle"
-      isHovered={true}
       onClick={[Function]}
       onKeyDown={[Function]}
       type="button"
