@@ -208,6 +208,7 @@ exports[`isLoading 1`] = `
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    role={null}
     type="button"
   >
     <span
