@@ -9,7 +9,7 @@ module.exports = (sourceMD, sourceProps) => {
   const reactCorePath = require.resolve('@patternfly/react-core/package.json').replace('package.json', 'src');
   const reactTablePath = require.resolve('@patternfly/react-table/package.json').replace('package.json', 'src');
   const reactChartsPath = require.resolve('@patternfly/react-charts/package.json').replace('package.json', 'src');
-  const reactDateTimePath = require.resolve('@patternfly/react-date-time/package.json').replace('package.json', 'src');
+  const reactDateTimePath = require.resolve('@patternfly/react-datetime/package.json').replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTablePath, '/**/*.tsx'), reactPropsIgnore);

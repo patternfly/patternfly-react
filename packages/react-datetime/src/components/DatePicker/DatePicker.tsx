@@ -13,7 +13,7 @@ export interface DatePickerProps
   /** Additional classes added to the date time picker. */
   className?: string;
   /** Flag indicating whether the value of the date picker is invalid. */
-  invalid?: boolean;
+  isInvalid?: boolean;
   /** Accessible label for the date picker */
   'aria-label'?: string;
   /** The minimum date that a user can start picking from. */
@@ -43,69 +43,37 @@ export interface DatePickerProps
 interface DatePickerState {
   invalid: boolean;
   invalidText: string;
+  flatpickrDateFormat: string;
 }
 
-function toNumber(str: string) {
-  if (str) {
-    return Number(str);
-  }
-  return NaN;
-}
-// Supports (yyyy|mm|dd) to parse string to Date object
-function parseYYYYMMDD(date: string, format: string) {
-  let year = NaN;
-  let month = NaN;
-  let day = 1;
-  let index = 0;
-  if (date.length === format.length) {
-    for (const formatBlock of format.split(/(yyyy|mm|dd)/i)) {
-      if (formatBlock.toLowerCase() === 'yyyy') {
-        const yearString = date.substr(index, 4);
-        if (yearString.length === 4) {
-          year = toNumber(yearString);
-        }
-      } else if (formatBlock.toLowerCase() === 'mm') {
-        month = toNumber(date.substr(index, 2)) - 1;
-      } else if (formatBlock.toLowerCase() === 'dd') {
-        day = toNumber(date.substr(index, 2));
-      }
-      index += formatBlock.length;
-    }
-  }
-
-  // Year and month are required
-  return new Date(year, month, day);
-}
-
-// Supports (yyyy|mm|dd) to format Date object to string
-function formatYYYYMMDD(date: Date, format: string) {
-  let res = '';
-  for (const formatBlock of format.split(/(yy?y?y?|mm|dd?)/i)) {
-    if (['y', 'yy', 'yyy', 'yyyy'].includes(formatBlock.toLowerCase())) {
-      res += String(date.getFullYear()).padStart(4, '0');
-    } else if (['mm'].includes(formatBlock.toLowerCase())) {
-      res += String(date.getMonth() + 1).padStart(2, '0');
-    } else if (['d', 'dd'].includes(formatBlock.toLowerCase())) {
-      res += String(date.getDate()).padStart(2, '0');
+function mapToFlatpickrFormats(format: string) {
+  let flatpickrFormat = '';
+  for (const formatBlock of format.split(/(yyyy|mm|dd)/i)) {
+    if (formatBlock.toLowerCase() === 'yyyy') {
+      flatpickrFormat += 'Y';
+    } else if (formatBlock.toLowerCase() === 'mm') {
+      flatpickrFormat += 'm';
+    } else if (formatBlock.toLowerCase() === 'dd') {
+      flatpickrFormat += 'd';
     } else {
-      res += formatBlock;
+      flatpickrFormat += formatBlock;
     }
   }
-  return res;
+  return flatpickrFormat;
 }
 
 function isValid(date: Date) {
-  return !isNaN(date.getDate());
+  return date && !isNaN(date.getDate());
 }
 
 export class DatePicker extends React.Component<DatePickerProps, DatePickerState> {
   static displayName = 'DatePicker';
   static defaultProps = {
     className: '',
-    invalid: false,
+    isInvalid: false,
     minDate: '',
     maxDate: '',
-    dateFormat: 'MM/DD/YYYY',
+    dateFormat: 'mm/dd/yyyy',
     isDisabled: false,
     locale: DatePickerLocales.en,
     placeholder: 'mm/dd/yyyy',
@@ -116,7 +84,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   constructor(props: DatePickerProps) {
     super(props);
     this.state = {
-      invalid: this.props.invalid,
+      flatpickrDateFormat: mapToFlatpickrFormats(this.props.dateFormat),
+      invalid: this.props.isInvalid,
       invalidText: ''
     };
   }
@@ -127,20 +96,18 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   componentDidMount() {
     const { dateFormat, minDate, maxDate, locale, value } = this.props;
+    const { flatpickrDateFormat } = this.state;
 
     this.calendar = flatpickr(this.inputEl.current, {
-      dateFormat,
+      dateFormat: flatpickrDateFormat,
       locale: (FlatpickrLanguages as any)[locale],
       minDate,
       maxDate,
       defaultDate: value,
-      ariaDateFormat: dateFormat,
       allowInput: true,
       static: true,
       allowInvalidPreload: true,
-      parseDate: (datestr: string, format: string) => parseYYYYMMDD(datestr, format),
-      formatDate: (date: Date, format: string) => formatYYYYMMDD(date, format),
-      errorHandler: (error: Error) => {
+      errorHandler: () => {
         this.handleError(this.props.invalidFormatErrorMessage || `Please use format ${dateFormat}.`);
       },
       onReady: (date, format, fp) => {
@@ -169,28 +136,43 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   };
 
   validateDate = (dateStr: string, event: React.KeyboardEvent | React.ChangeEvent) => {
-    const { dateFormat, minDate: minDateIn, maxDate: maxDateIn } = this.props;
+    const {
+      dateFormat,
+      minDate: minDateIn,
+      maxDate: maxDateIn,
+      invalidFormatErrorMessage,
+      dateOutOfRangeErrorMessage,
+      beforeMinDateErrorMessage,
+      afterEndDateErrorMessage
+    } = this.props;
+
+    const { flatpickrDateFormat } = this.state;
     if (dateStr === '') {
       event.stopPropagation();
       return;
     }
 
-    const date = parseYYYYMMDD(dateStr, dateFormat);
-    const minDate = parseYYYYMMDD(minDateIn, dateFormat);
-    const maxDate = parseYYYYMMDD(maxDateIn, dateFormat);
+    const date = this.calendar.parseDate(dateStr, flatpickrDateFormat);
+    const minDate = this.calendar.parseDate(minDateIn, flatpickrDateFormat);
+    const maxDate = this.calendar.parseDate(maxDateIn, flatpickrDateFormat);
     if (!isValid(date)) {
-      this.handleError(this.props.invalidFormatErrorMessage || `Please use format: ${dateFormat}.`);
+      this.handleError(invalidFormatErrorMessage || `Please use format: ${dateFormat}.`);
       event.stopPropagation();
     } else if (isValid(minDate) && isValid(maxDate)) {
       if (date < minDate || date > maxDate) {
-        this.handleError(this.props.dateOutOfRangeErrorMessage || `The date is outside the allowable range.`);
+        this.handleError(dateOutOfRangeErrorMessage || `The date is outside the allowable range.`);
         event.stopPropagation();
+      } else {
+        this.setState({
+          invalid: false,
+          invalidText: ''
+        });
       }
     } else if (isValid(minDate) && date < minDate) {
-      this.handleError(this.props.beforeMinDateErrorMessage || `Date is before the allowable range.`);
+      this.handleError(beforeMinDateErrorMessage || `Date is before the allowable range.`);
       event.stopPropagation();
     } else if (isValid(maxDate) && date > maxDate) {
-      this.handleError(this.props.afterEndDateErrorMessage || `Date is after the allowable range.`);
+      this.handleError(afterEndDateErrorMessage || `Date is after the allowable range.`);
       event.stopPropagation();
     } else {
       this.setState({
@@ -215,7 +197,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   render() {
     const {
       className,
-      invalid,
+      isInvalid,
       placeholder,
       pattern,
       isDisabled,

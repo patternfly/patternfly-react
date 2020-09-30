@@ -6,13 +6,13 @@ propComponents: ['DatePicker', 'DatePickerLocales']
 beta: true
 ---
 
-import { DatePicker } from '@patternfly/react-date-time';
+import { DatePicker } from '@patternfly/react-datetime';
 
 ## Examples
 ### Basic
 ```js
 import React from 'react';
-import { DatePicker } from '@patternfly/react-date-time';
+import { DatePicker } from '@patternfly/react-datetime';
 
 SimpleDatePicker = () => (
   <React.Fragment>
