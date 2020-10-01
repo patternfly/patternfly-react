@@ -1230,9 +1230,9 @@ class DraggableDataList extends React.Component {
     };
 
     this.onDragMove = (oldIndex, newIndex) => {
-      const {id} = this.state;
+      const { id } = this.state;
       this.setState({
-        liveText: `Dragging item ${id}.`;
+        liveText: `Dragging item ${id}.`
       });
     };
 
