@@ -35,6 +35,7 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   ...props
 }: ModalBoxProps) => {
   if (positionOffset) {
+    style = style || {};
     (style as any)[topSpacer.name] = positionOffset;
   }
   return (

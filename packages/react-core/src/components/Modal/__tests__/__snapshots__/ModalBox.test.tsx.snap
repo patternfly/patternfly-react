@@ -8,7 +8,6 @@ exports[`ModalBox Test 1`] = `
   className="pf-c-modal-box"
   id="boxId"
   role="dialog"
-  style={Object {}}
   title="Test Modal Box"
 >
   This is a ModalBox
@@ -24,7 +23,6 @@ exports[`ModalBox Test isLarge 1`] = `
   id="boxId"
   isLarge={true}
   role="dialog"
-  style={Object {}}
   title="Test Modal Box"
 >
   This is a ModalBox
@@ -40,7 +38,6 @@ exports[`ModalBox Test isSmall 1`] = `
   id="boxId"
   isSmall={true}
   role="dialog"
-  style={Object {}}
   title="Test Modal Box"
 >
   This is a ModalBox
@@ -55,7 +52,6 @@ exports[`ModalBox Test top aligned 1`] = `
   className="pf-c-modal-box pf-m-align-top"
   id="boxId"
   role="dialog"
-  style={Object {}}
   title="Test Modal Box"
 >
   This is a ModalBox
