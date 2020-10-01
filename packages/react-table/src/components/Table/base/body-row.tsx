@@ -80,7 +80,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
             key: `col-${columnIndex}-row-${rowIndex}`,
             ...mergeProps(props, cell && cell.props, transformed)
           },
-          transformed.children ||
+          (!rowData.fullWidth && transformed.children) ||
             evaluateFormatters([...formatters, ...additionalFormaters])(
               rowData[`_${evaluatedProperty}`] || (rowData[evaluatedProperty] as formatterValueType),
               extraParameters

@@ -44,7 +44,7 @@ export const collapsible: IFormatter = (
 };
 
 export const expandable: IFormatter = (value: IFormatterValueType, { rowData }: IExtra) =>
-  rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
+  rowData && rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
 
 export const expandedRow = (colSpan?: number) => {
   const expandedRowFormatter = (

@@ -71,7 +71,10 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   mapCells = (headerData: IRow[], row: IRow, rowKey: number) => {
     // column indexes start after generated optional columns like collapsible or select column(s)
     const { firstUserColumnIndex } = headerData[0].extraParams;
-    let additionalColsIndexShift = row && row.fullWidth && row.cells.length > 1 ? 0 : firstUserColumnIndex;
+    const isFullWidth = row && row.fullWidth;
+    // typically you'd want to map each cell to its column header, but in the case of fullWidth
+    // the first column could be the Select and/or Expandable column
+    let additionalColsIndexShift = isFullWidth ? 0 : firstUserColumnIndex;
     return {
       ...(row &&
         (row.cells || row).reduce(
@@ -84,13 +87,9 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
               // expandable example:
               // rows: [{ parent: 0, fullWidth: true, cells: [{ title: 'fullWidth, child - a', formatters: [expandable]}] }]
               formatters = cell.formatters;
-            } else if (
-              row.fullWidth &&
-              cellIndex > 0 &&
-              headerData[firstUserColumnIndex].cell &&
-              headerData[firstUserColumnIndex].cell.formatters
-            ) {
-              // otherwise if fullWidth is true, grab the first user columns' formatters and apply that to the rest of the cells
+            } else if (isFullWidth && cellIndex < firstUserColumnIndex) {
+              // for backwards compatibility, map the cells that are not under user columns (like Select/Expandable)
+              // to the first user column's header formatters
               formatters = headerData[firstUserColumnIndex].cell.formatters;
             }
             const mappedCell: IMappedCell = {
