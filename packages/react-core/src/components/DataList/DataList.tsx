@@ -20,6 +20,12 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   onSelectDataListItem?: (id: string) => void;
   /** Optional callback to make DataList draggable, fired when dragging ends */
   onDragFinish?: (newList: React.ReactElement[]) => void;
+  /** Optional informational callback for dragging, fired when dragging starts */
+  onDragStart?: (id: string) => void;
+  /** Optional informational callback for dragging, fired when an item moves */
+  onDragMove?: (oldIndex: number, newIndex: number) => void;
+  /** Optional informational callback for dragging, fired when dragging is cancelled */
+  onDragCancel?: () => void;
   /** Id of DataList item currently selected */
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
@@ -97,27 +103,31 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   getIndex = (id: string) => this.state.renderable.findIndex(item => item.props.id === id);
 
   move = (arr: React.ReactElement[], oldIndex: number, newIndex: number) => {
-    const ghost = React.cloneElement(this.state.draggedItem, {
-      className: css(this.state.draggedItem.props.className, styles.modifiers.ghostRow),
+    const { onDragMove } = this.props;
+    const { draggedItem } = this.state;
+    const ghost = React.cloneElement(draggedItem, {
+      className: css(draggedItem.props.className, styles.modifiers.ghostRow),
       'aria-pressed': true
     });
 
     arr.splice(oldIndex, 1);
     arr.splice(newIndex, 0, ghost);
+    onDragMove(oldIndex, newIndex);
     return arr;
   };
 
-  dragStart = (e: React.DragEvent) => {
-    const { children } = this.props;
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', e.currentTarget.id);
+  dragStart = (evt: React.DragEvent) => {
+    const { children, onDragStart } = this.props;
+    evt.dataTransfer.effectAllowed = 'move';
+    evt.dataTransfer.setData('text/plain', evt.currentTarget.id);
     // e.dataTransfer.setDragImage(React.createElement('div'), 0, 0);
 
     this.setState({
       draggedItem: React.Children.toArray(children).find(
-        item => (item as React.ReactElement).props.id === e.currentTarget.id
+        item => (item as React.ReactElement).props.id === evt.currentTarget.id
       ) as React.ReactElement
     });
+    onDragStart(evt.currentTarget.id);
   };
 
   dragEnd = (evt: React.DragEvent) => {
@@ -146,7 +156,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   handleDragButtonKeys = (evt: React.KeyboardEvent) => {
     const { to, draggedItem, dragging, renderable } = this.state;
-    const { children, onDragFinish } = this.props;
+    const { children, onDragFinish, onDragStart, onDragCancel } = this.props;
     if (
       evt.key !== ' ' &&
       evt.key !== 'Escape' &&
@@ -167,7 +177,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     const dragItem = (evt.target as Element).closest('li');
     const dragInd = this.getIndex(dragItem.id);
 
-    if (evt.key === ' ') {
+    if (evt.key === ' ' || (evt.key === 'Enter' && !dragging)) {
+      onDragStart(dragItem.id);
       this.setState({
         dragging: true,
         draggedItem: React.Children.toArray(children).find(
@@ -184,6 +195,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           const data = renderable;
           data.splice(to, 1, draggedItem);
           onDragFinish(data);
+        } else {
+          onDragCancel();
         }
       } else if (evt.key === 'ArrowUp') {
         this.setState(prevState => {
@@ -214,6 +227,9 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onSelectDataListItem,
       selectedDataListItemId,
       isCompact,
+      onDragStart,
+      onDragMove,
+      onDragCancel,
       onDragFinish,
       wrapModifier,
       ...props

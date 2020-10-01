@@ -1136,6 +1136,7 @@ class DraggableDataList extends React.Component {
     super(props);
 
     this.state = {
+      liveText: '',
       list: [
         <DataListItem aria-labelledby="simple-item1" id="data1" key="1">
           <DataListItemRow>
@@ -1220,21 +1221,50 @@ class DraggableDataList extends React.Component {
       ]
     };
 
+    this.onDragStart = id => {
+      this.setState({
+        liveText: `Dragging started for item id: ${id}.`
+      });
+    };
+
+    this.onDragMove = (oldIndex, newIndex) => {
+      this.setState({
+        liveText: `Dragging index ${oldIndex} to ${newIndex}.`
+      });
+    };
+
+    this.onDragCancel = () => {
+      this.setState({
+        liveText: `Dragging cancelled. List is unchanged.`
+      });
+    };
+
     this.onDragFinish = updatedList => {
       console.log('saving new list');
       this.setState({
-        list: updatedList
+        list: updatedList,
+        liveText: `Dragging finished`
       });
     };
   }
 
   render() {
-    const { list } = this.state;
+    const { list, liveText } = this.state;
     return (
       <React.Fragment>
-        <DataList aria-label="draggable data list example" isCompact onDragFinish={this.onDragFinish}>
+        <DataList
+          aria-label="draggable data list example"
+          isCompact
+          onDragFinish={this.onDragFinish}
+          onDragStart={this.onDragStart}
+          onDragMove={this.onDragMove}
+          onDragCancel={this.onDragCancel}
+        >
           {list}
         </DataList>
+        <div className="pf-screen-reader" aria-live="assertive">
+          {liveText}
+        </div>
       </React.Fragment>
     );
   }
