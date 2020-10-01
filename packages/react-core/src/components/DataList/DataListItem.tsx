@@ -66,7 +66,7 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
             className
           )}
           aria-labelledby={ariaLabelledBy}
-          {...(isSelectable && { onClick: selectDataListItem, onKeyDown })}
+          {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
           {...(isSelectable && selectedDataListItemId === id && { 'aria-selected': true })}
           {...props}
         >
