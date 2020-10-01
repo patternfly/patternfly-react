@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
+import c_modal_box_m_align_top_spacer from '@patternfly/react-tokens/dist/js/c_modal_box_m_align_top_spacer';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the ModalBox. */
@@ -30,29 +31,32 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   'aria-labelledby': ariaLabelledby,
   'aria-label': ariaLabel = '',
   'aria-describedby': ariaDescribedby,
+  style,
   ...props
-}: ModalBoxProps) => (
-  <div
-    {...props}
-    role="dialog"
-    aria-label={ariaLabel || null}
-    aria-labelledby={ariaLabelledby || null}
-    aria-describedby={ariaDescribedby}
-    aria-modal="true"
-    className={css(
-      styles.modalBox,
-      className,
-      position === 'top' && styles.modifiers.alignTop,
-      variant === 'large' && styles.modifiers.lg,
-      variant === 'small' && styles.modifiers.sm,
-      variant === 'medium' && styles.modifiers.md
-    )}
-    style={{
-      ...(positionOffset && { '--pf-c-modal-box--m-align-top--spacer': positionOffset }),
-      ...props.style
-    }}
-  >
-    {children}
-  </div>
-);
+}: ModalBoxProps) => {
+  if (positionOffset) {
+    (style as any)[c_modal_box_m_align_top_spacer.name] = positionOffset;
+  }
+  return (
+    <div
+      {...props}
+      role="dialog"
+      aria-label={ariaLabel || null}
+      aria-labelledby={ariaLabelledby || null}
+      aria-describedby={ariaDescribedby}
+      aria-modal="true"
+      className={css(
+        styles.modalBox,
+        className,
+        position === 'top' && styles.modifiers.alignTop,
+        variant === 'large' && styles.modifiers.lg,
+        variant === 'small' && styles.modifiers.sm,
+        variant === 'medium' && styles.modifiers.md
+      )}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+}
 ModalBox.displayName = 'ModalBox';
