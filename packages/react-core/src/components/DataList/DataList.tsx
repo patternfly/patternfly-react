@@ -121,12 +121,21 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     evt.dataTransfer.effectAllowed = 'move';
     evt.dataTransfer.setData('text/plain', evt.currentTarget.id);
     // e.dataTransfer.setDragImage(React.createElement('div'), 0, 0);
-
-    this.setState({
-      draggedItem: React.Children.toArray(children).find(
-        item => (item as React.ReactElement).props.id === evt.currentTarget.id
-      ) as React.ReactElement
-    });
+    const dragItem = React.Children.toArray(children).find(
+      item => (item as React.ReactElement).props.id === evt.currentTarget.id
+    ) as React.ReactElement;
+    const dragInd = this.getIndex(dragItem.props.id);
+    this.setState(
+      {
+        draggedItem: dragItem,
+        to: dragInd
+      },
+      () => {
+        this.setState({
+          renderable: this.move(this.arrayCopy, dragInd, dragInd)
+        });
+      }
+    );
     onDragStart && onDragStart(evt.currentTarget.id);
   };
 
@@ -144,7 +153,9 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     const { to } = this.state;
     evt.preventDefault();
     const currListItem = (evt.target as Element).closest('li');
-
+    if ((evt.target as HTMLElement).classList.contains('ghost-row')) {
+      return;
+    }
     const currInd = currListItem ? this.getIndex(currListItem.id) : 0;
     if (currInd !== to) {
       this.setState(prevState => ({

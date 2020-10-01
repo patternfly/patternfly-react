@@ -1137,6 +1137,7 @@ class DraggableDataList extends React.Component {
 
     this.state = {
       liveText: '',
+      id: '',
       list: [
         <DataListItem aria-labelledby="simple-item1" id="data1" key="1">
           <DataListItemRow>
@@ -1223,13 +1224,15 @@ class DraggableDataList extends React.Component {
 
     this.onDragStart = id => {
       this.setState({
+        id: id,
         liveText: `Dragging started for item id: ${id}.`
       });
     };
 
     this.onDragMove = (oldIndex, newIndex) => {
+      const {id} = this.state;
       this.setState({
-        liveText: `Dragging index ${oldIndex} to ${newIndex}.`
+        liveText: `Dragging item ${id}.`;
       });
     };
 
