@@ -1,7 +1,6 @@
 # PatternFly React
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
-[![PatternFly 3 npm badge](https://img.shields.io/npm/v/patternfly-react.svg?label=PF3%20Core&style=for-the-badge)](https://www.npmjs.com/package/patternfly-react)
 [![PatternFly 4 npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF4%20Core&style=for-the-badge)](https://www.npmjs.com/package/@patternfly/react-core)
 [![CodeCov](https://img.shields.io/codecov/c/gh/patternfly/patternfly-react?style=for-the-badge)](https://codecov.io/gh/patternfly/patternfly-react)
 
@@ -37,8 +36,6 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 | &nbsp;&nbsp;[@patternfly/react-virtualized-extension](./packages/react-virtualized-extension/README.md) | Table and list row virtualization extension |
 | **:x: Deprecated packages** |
 | &nbsp;&nbsp;[@patternfly/react-inline-edit-extension](./packages/react-inline-edit-extension/README.md) | Table inline edit extension |
-| &nbsp;&nbsp;[@patternfly/react-styled-system](./packages/react-styled-system/README.md) | Styled system component prototype |
-| &nbsp;&nbsp;[@patternfly/react-codemods](./packages/react-codemods/README.md) | Codemods for upgrading PatternFly 3 components |
 
 ### Setup
 
