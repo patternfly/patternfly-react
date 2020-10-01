@@ -576,10 +576,6 @@ class ActionsTable extends React.Component {
         {
           cells: ['one', 'two', 'a', 'four', 'five'],
           type: 'green',
-          actionProps: {
-            dropdownPosition: 'right',
-            dropdownDirection: 'up'
-          }
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
@@ -645,6 +641,8 @@ class ActionsTable extends React.Component {
         rows={rows}
         actionResolver={this.actionResolver}
         areActionsDisabled={this.areActionsDisabled}
+        dropdownPosition='right'
+        dropdownDirection='up'
       >
         <TableHeader />
         <TableBody />
