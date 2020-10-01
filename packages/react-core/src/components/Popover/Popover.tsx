@@ -136,7 +136,7 @@ export interface PopoverProps {
   tippyProps?: Partial<TippyProps>;
 }
 
-export interface PopoverState {
+interface PopoverState {
   isOpen: boolean;
   focusTrapActive: boolean;
 }
