@@ -37,7 +37,7 @@ export const collapsible: IFormatter = (
         id={expandId + rowIndex}
         isOpen={rowData && rowData.isOpen}
       >
-        {(typeof value === 'object' && value.title) || value}
+        {value}
       </CollapseColumn>
     )
   };
