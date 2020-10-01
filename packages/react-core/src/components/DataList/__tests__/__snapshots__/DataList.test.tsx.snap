@@ -197,7 +197,6 @@ exports[`DataList List draggable 1`] = `
     className="pf-c-data-list pf-m-compact"
     onDragOver={[Function]}
     onDrop={[Function]}
-    role="listbox"
   />
 </ContextProvider>
 `;
