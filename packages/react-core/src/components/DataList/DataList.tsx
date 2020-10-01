@@ -112,7 +112,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
     arr.splice(oldIndex, 1);
     arr.splice(newIndex, 0, ghost);
-    onDragMove(oldIndex, newIndex);
+    onDragMove && onDragMove(oldIndex, newIndex);
     return arr;
   };
 
@@ -127,7 +127,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
         item => (item as React.ReactElement).props.id === evt.currentTarget.id
       ) as React.ReactElement
     });
-    onDragStart(evt.currentTarget.id);
+    onDragStart && onDragStart(evt.currentTarget.id);
   };
 
   dragEnd = (evt: React.DragEvent) => {
@@ -178,7 +178,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     const dragInd = this.getIndex(dragItem.id);
 
     if (evt.key === ' ' || (evt.key === 'Enter' && !dragging)) {
-      onDragStart(dragItem.id);
+      onDragStart && onDragStart(dragItem.id);
       this.setState({
         dragging: true,
         draggedItem: React.Children.toArray(children).find(
@@ -196,7 +196,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           data.splice(to, 1, draggedItem);
           onDragFinish(data);
         } else {
-          onDragCancel();
+          onDragCancel && onDragCancel();
         }
       } else if (evt.key === 'ArrowUp') {
         this.setState(prevState => {
