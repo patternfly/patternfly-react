@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.16...@patternfly/react-docs@5.10.0) (2020-10-01)
+
+
+### Features
+
+* **DatePicker:** Add basic date picker ([#4888](https://github.com/patternfly/patternfly-react/issues/4888)) ([37bf1c2](https://github.com/patternfly/patternfly-react/commit/37bf1c2acc0dfdff57fa388fa9242ea578f0aeaf))
+
+
+
+
+
 ## [5.9.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.9.15...@patternfly/react-docs@5.9.16) (2020-10-01)
 
 **Note:** Version bump only for package @patternfly/react-docs

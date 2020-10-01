@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.60.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.59.0...@patternfly/react-core@4.60.0) (2020-10-01)
+
+
+### Features
+
+* **DatePicker:** Add basic date picker ([#4888](https://github.com/patternfly/patternfly-react/issues/4888)) ([37bf1c2](https://github.com/patternfly/patternfly-react/commit/37bf1c2acc0dfdff57fa388fa9242ea578f0aeaf))
+* **Modal:** add top align to modal ([#4871](https://github.com/patternfly/patternfly-react/issues/4871)) ([15da8a0](https://github.com/patternfly/patternfly-react/commit/15da8a08867899b20dc774aafcc6bfe458ac9ae0))
+
+
+
+
+
 # [4.59.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.58.2...@patternfly/react-core@4.59.0) (2020-10-01)
 
 

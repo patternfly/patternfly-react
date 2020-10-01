@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.46.0...@patternfly/react-integration@4.47.0) (2020-10-01)
+
+
+### Features
+
+* **Modal:** add top align to modal ([#4871](https://github.com/patternfly/patternfly-react/issues/4871)) ([15da8a0](https://github.com/patternfly/patternfly-react/commit/15da8a08867899b20dc774aafcc6bfe458ac9ae0))
+
+
+
+
+
 # [4.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.45.1...@patternfly/react-integration@4.46.0) (2020-09-30)
 
 
