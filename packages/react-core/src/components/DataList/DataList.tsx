@@ -9,7 +9,7 @@ export enum DataListWrapModifier {
   breakWord = 'breakWord'
 }
 
-export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
+export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, 'onDragStart'> {
   /** Content rendered inside the DataList list */
   children?: React.ReactNode;
   /** Additional classes added to the DataList list */
