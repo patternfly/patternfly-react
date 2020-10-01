@@ -31,7 +31,7 @@ import { LayoutGroup } from './LayoutGroup';
 import { LayoutLink } from './LayoutLink';
 import { LayoutOptions } from './LayoutOptions';
 
-const LAYOUT_DEFAULTS: LayoutOptions = {
+export const LAYOUT_DEFAULTS: LayoutOptions = {
   linkDistance: 60,
   nodeDistance: 35,
   groupDistance: 35,
@@ -41,7 +41,7 @@ const LAYOUT_DEFAULTS: LayoutOptions = {
   allowDrag: true,
   layoutOnDrag: true
 };
-class BaseLayout implements Layout {
+export class BaseLayout implements Layout {
   private graph: Graph;
 
   protected forceSimulation: ForceSimulation;
@@ -464,5 +464,3 @@ class BaseLayout implements Layout {
     this.graph.getController().fireEvent(GRAPH_LAYOUT_END_EVENT, { graph: this.graph });
   }
 }
-
-export { BaseLayout, LayoutNode, LayoutGroup, LayoutLink, LayoutOptions, LAYOUT_DEFAULTS };

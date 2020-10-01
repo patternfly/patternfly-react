@@ -5,7 +5,7 @@ import { BaseLayout } from '.';
 import { LayoutLink } from './LayoutLink';
 import { LayoutOptions } from './LayoutOptions';
 
-export default class ForceLayout extends BaseLayout implements Layout {
+export class ForceLayout extends BaseLayout implements Layout {
   constructor(graph: Graph, options?: Partial<LayoutOptions>) {
     super(graph, {
       ...options,
