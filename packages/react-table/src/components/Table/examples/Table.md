@@ -838,7 +838,7 @@ class CompactExpandableTable extends React.Component {
         },
         {
           isOpen: true,
-          cells: ['parent - 2', 'two', 'three', 'four']
+          cells: ['parent - 5', 'two', 'three', 'four']
         },
         {
           parent: 9,
@@ -859,7 +859,7 @@ class CompactExpandableTable extends React.Component {
         },
         {
           isOpen: true,
-          cells: ['parent - 4', 'two', 'three', 'four']
+          cells: ['parent - 6', 'two', 'three', 'four']
         },
         {
           parent: 11,
