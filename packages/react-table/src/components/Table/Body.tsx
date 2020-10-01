@@ -69,20 +69,30 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   };
 
   mapCells = (headerData: IRow[], row: IRow, rowKey: number) => {
-    // column indexes start after generated optional columns
-    let additionalColsIndexShift = headerData[0].extraParams.firstUserColumnIndex;
-    let remainingSyntheticColumns = 0;
-    if (row.fullWidth && row.useAllCellInExpandedContent) {
-      remainingSyntheticColumns++;
-    }
-
+    // column indexes start after generated optional columns like collapsible or select column(s)
+    const { firstUserColumnIndex } = headerData[0].extraParams;
+    let additionalColsIndexShift = row && row.fullWidth && row.cells.length > 1 ? 0 : firstUserColumnIndex;
     return {
       ...(row &&
         (row.cells || row).reduce(
           (acc: object, cell: IRowCell, cellIndex: number) => {
             const isCellObject = cell === Object(cell);
             const isCellFunction = cell && typeof cell.title === 'function';
-
+            let formatters: any = [];
+            if (isCellObject && cell.formatters) {
+              // give priority to formatters specified on the cell object
+              // expandable example:
+              // rows: [{ parent: 0, fullWidth: true, cells: [{ title: 'fullWidth, child - a', formatters: [expandable]}] }]
+              formatters = cell.formatters;
+            } else if (
+              row.fullWidth &&
+              cellIndex > 0 &&
+              headerData[firstUserColumnIndex].cell &&
+              headerData[firstUserColumnIndex].cell.formatters
+            ) {
+              // otherwise if fullWidth is true, grab the first user columns' formatters and apply that to the rest of the cells
+              formatters = headerData[firstUserColumnIndex].cell.formatters;
+            }
             const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
                 title: isCellObject
@@ -90,6 +100,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
                     ? (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props)
                     : cell.title
                   : cell,
+                formatters,
                 props: {
                   isVisible: true,
                   ...(isCellObject ? cell.props : null)
@@ -99,10 +110,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 
             // increment the shift index when a cell spans multiple columns
             if (isCellObject && cell.props && cell.props.colSpan) {
-              // Assume colSpan has to be at least 1, but remove the synthetic columns (e.g. onCollapse button)
-              const syntheticColumnsConsumed = Math.min(remainingSyntheticColumns, cell.props.colSpan - 1);
-              remainingSyntheticColumns -= syntheticColumnsConsumed;
-              additionalColsIndexShift += cell.props.colSpan - 1 - syntheticColumnsConsumed;
+              additionalColsIndexShift += cell.props.colSpan - 1;
             }
             return {
               ...acc,

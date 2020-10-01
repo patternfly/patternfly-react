@@ -37,7 +37,7 @@ export const collapsible: IFormatter = (
         id={expandId + rowIndex}
         isOpen={rowData && rowData.isOpen}
       >
-        {value}
+        {(typeof value === 'object' && value.title) || value}
       </CollapseColumn>
     )
   };
@@ -46,10 +46,11 @@ export const collapsible: IFormatter = (
 export const expandable: IFormatter = (value: IFormatterValueType, { rowData }: IExtra) =>
   rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
 
-export const expandedRow = (colSpan: number) => {
+export const expandedRow = (colSpan?: number) => {
   const expandedRowFormatter = (
     value: IFormatterValueType,
     {
+      columnIndex,
       rowIndex,
       rowData,
       column: {
@@ -57,10 +58,11 @@ export const expandedRow = (colSpan: number) => {
       }
     }: IExtra
   ): decoratorReturnType =>
+    value &&
     rowData.hasOwnProperty('parent') && {
       // todo: rewrite this logic, it is not type safe
       colSpan: !rowData.cells || rowData.cells.length === 1 ? colSpan + (!!rowData.fullWidth as any) : 1,
-      id: contentId + rowIndex,
+      id: contentId + rowIndex + '-' + columnIndex,
       className: rowData.noPadding && css(styles.modifiers.noPadding)
     };
   return expandedRowFormatter;
