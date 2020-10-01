@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.59.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.58.2...@patternfly/react-core@4.59.0) (2020-10-01)
+
+
+### Bug Fixes
+
+* **ToolTip/index.ts:** Exports TooltipProps as a type to help babel. ([#4854](https://github.com/patternfly/patternfly-react/issues/4854)) ([c7d4df2](https://github.com/patternfly/patternfly-react/commit/c7d4df24009290816e5394865ab6312710f9481b))
+
+
+### Features
+
+* **LabelGroup:** add label group main div for categories ([#4923](https://github.com/patternfly/patternfly-react/issues/4923)) ([9fb7046](https://github.com/patternfly/patternfly-react/commit/9fb7046fafc6b99c3442b77f488432bf1dc2e5e1))
+
+
+
+
+
 ## [4.58.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.58.1...@patternfly/react-core@4.58.2) (2020-10-01)
 
 
