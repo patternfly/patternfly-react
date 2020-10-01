@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.58.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.58.1...@patternfly/react-core@4.58.2) (2020-10-01)
+
+
+### Bug Fixes
+
+* **page:** replace hasNoPadding property in the documentation example ([#4848](https://github.com/patternfly/patternfly-react/issues/4848)) ([0a5465e](https://github.com/patternfly/patternfly-react/commit/0a5465e2d8d93cfd4651d7f4225cccda114af110)), closes [#4856](https://github.com/patternfly/patternfly-react/issues/4856)
+
+
+
+
+
 ## [4.58.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.58.0...@patternfly/react-core@4.58.1) (2020-10-01)
 
 **Note:** Version bump only for package @patternfly/react-core
