@@ -163,36 +163,6 @@ class SimpleInputGroups extends React.Component {
 }
 ```
 
-### With datepicker
-```js
-import React from 'react';
-import CalendarAltIcon from '@patternfly/react-icons/dist/js/icons/calendar-alt-icon';
-import {
-  InputGroup,
-  InputGroupText,
-  TextInput
-} from '@patternfly/react-core';
-
-class SimpleInputGroups extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <InputGroup>
-          <InputGroupText component="label" htmlFor="textInput9">
-            <CalendarAltIcon />
-          </InputGroupText>
-          <TextInput name="textInput9" id="textInput9" type="date" aria-label="Date input example" />
-        </InputGroup>
-      </React.Fragment>
-    );
-  }
-}
-```
-
 ### With popover
 ```js
 import React from 'react';

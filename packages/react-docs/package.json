@@ -26,6 +26,7 @@
     "@patternfly/react-catalog-view-extension": "^4.8.50",
     "@patternfly/react-charts": "^6.10.3",
     "@patternfly/react-core": "^4.59.0",
+    "@patternfly/react-datetime": "^4.0.0",
     "@patternfly/react-icons": "^4.7.9",
     "@patternfly/react-inline-edit-extension": "^4.5.106",
     "@patternfly/react-styles": "^4.7.7",
