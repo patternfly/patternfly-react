@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
-import c_modal_box_m_align_top_spacer from '@patternfly/react-tokens/dist/js/c_modal_box_m_align_top_spacer';
+import topSpacer from '@patternfly/react-tokens/dist/js/c_modal_box_m_align_top_spacer';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the ModalBox. */
@@ -35,7 +35,7 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   ...props
 }: ModalBoxProps) => {
   if (positionOffset) {
-    (style as any)[c_modal_box_m_align_top_spacer.name] = positionOffset;
+    (style as any)[topSpacer.name] = positionOffset;
   }
   return (
     <div
@@ -58,5 +58,5 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
       {children}
     </div>
   );
-}
+};
 ModalBox.displayName = 'ModalBox';
