@@ -54,7 +54,6 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
       <ul
         className={css(styles.dataList, isCompact && styles.modifiers.compact, className)}
         aria-label={ariaLabel}
-        role="listbox"
         {...props}
       >
         {children}
