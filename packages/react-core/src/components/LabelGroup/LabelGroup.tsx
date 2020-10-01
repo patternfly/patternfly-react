@@ -137,15 +137,8 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
         ? React.Children.toArray(children).slice(0, numLabels)
         : React.Children.toArray(children);
 
-      return (
-        <div
-          className={css(
-            styles.labelGroup,
-            className,
-            categoryName && styles.modifiers.category,
-            isVertical && styles.modifiers.vertical
-          )}
-        >
+      const content = (
+        <React.Fragment>
           {categoryName && this.renderLabel(id)}
           <ul
             className={css(styles.labelGroupList)}
@@ -167,19 +160,35 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
               </li>
             )}
           </ul>
-          {isClosable && (
-            <div className={css(styles.labelGroupClose)}>
-              <Button
-                variant="plain"
-                aria-label={closeBtnAriaLabel}
-                onClick={onClick}
-                id={`remove_group_${id}`}
-                aria-labelledby={`remove_group_${id} ${id}`}
-              >
-                <TimesCircleIcon aria-hidden="true" />
-              </Button>
-            </div>
+        </React.Fragment>
+      );
+
+      const close = (
+        <div className={css(styles.labelGroupClose)}>
+          <Button
+            variant="plain"
+            aria-label={closeBtnAriaLabel}
+            onClick={onClick}
+            id={`remove_group_${id}`}
+            aria-labelledby={`remove_group_${id} ${id}`}
+          >
+            <TimesCircleIcon aria-hidden="true" />
+          </Button>
+        </div>
+      );
+
+      return (
+        <div
+          className={css(
+            styles.labelGroup,
+            className,
+            categoryName && styles.modifiers.category,
+            isVertical && styles.modifiers.vertical
           )}
+        >
+          {categoryName && <div className={css(styles.labelGroupMain)}>{content}</div>}
+          {!categoryName && content}
+          {isClosable && close}
         </div>
       );
     };
