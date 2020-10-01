@@ -15,7 +15,8 @@ Object {
   "children": <SelectColumn
     aria-label="Select row 0"
     checked={false}
-    name="checkrow0"
+    className="pf-c-radio__input"
+    name="radioGroup"
     onSelect={[Function]}
   >
     
