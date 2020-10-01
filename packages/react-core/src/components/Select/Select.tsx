@@ -545,7 +545,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
       return item.props.value.toString();
     }
-    return value;
+    return value.toString();
   };
 
   findText = (item: React.ReactNode) => {
