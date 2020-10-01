@@ -125,6 +125,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       e => {
         if (e.code === 'Enter' && e.target === this.inputEl.current) {
           this.validateDate((e.target as HTMLInputElement).value, e as any);
+        } else if (e.code === 'Escape' && this.calendar.isOpen) {
+          this.calendar.close();
         }
       },
       true
