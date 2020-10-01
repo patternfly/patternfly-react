@@ -95,7 +95,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       this.setState({
         renderable: React.Children.toArray(this.props.children) as React.ReactElement[],
         to: -1,
-        draggedItem: null
+        draggedItem: null,
+        dragging: false
       });
     }
   }
@@ -128,7 +129,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     this.setState(
       {
         draggedItem: dragItem,
-        to: dragInd
+        to: dragInd,
+        dragging: true
       },
       () => {
         this.setState({
@@ -153,7 +155,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     const { to } = this.state;
     evt.preventDefault();
     const currListItem = (evt.target as Element).closest('li');
-    if ((evt.target as HTMLElement).classList.contains('ghost-row')) {
+    if (currListItem && currListItem.classList.contains(css(styles.modifiers.ghostRow))) {
       return;
     }
     const currInd = currListItem ? this.getIndex(currListItem.id) : 0;
@@ -245,7 +247,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       wrapModifier,
       ...props
     } = this.props;
-    const { renderable } = this.state;
+    const { renderable, dragging } = this.state;
     const isSelectable = onSelectDataListItem !== undefined;
     const isDraggable = onDragFinish !== undefined;
 
@@ -277,6 +279,10 @@ export class DataList extends React.Component<DataListProps, DataListState> {
             wrapModifier && styles.modifiers[wrapModifier],
             className
           )}
+          style={{
+            ...(dragging && { overflowAnchor: 'none' }),
+            ...props.style
+          }}
           {...props}
           {...dragProps}
         >
