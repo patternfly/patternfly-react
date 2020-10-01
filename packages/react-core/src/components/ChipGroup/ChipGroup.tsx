@@ -88,8 +88,14 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     const { isTooltipVisible } = this.state;
     return isTooltipVisible ? (
       <Tooltip position={tooltipPosition} content={categoryName}>
-        <span tabIndex={0} ref={this.headingRef} className={css(styles.chipGroupLabel)} aria-hidden="true" id={id}>
-          {categoryName}
+        <span
+          tabIndex={0}
+          ref={this.headingRef}
+          className={css(styles.chipGroupLabel)}
+          id={id}
+          aria-label={categoryName}
+        >
+          <span aria-hidden="true">{categoryName}</span>
         </span>
       </Tooltip>
     ) : (
@@ -134,27 +140,29 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
           className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}
           {...getOUIAProps(ChipGroup.displayName, ouiaId)}
         >
-          {categoryName && this.renderLabel(id)}
-          <ul
-            className={css(styles.chipGroupList)}
-            {...(categoryName && { 'aria-labelledby': id })}
-            {...(!categoryName && { 'aria-label': ariaLabel })}
-            role="list"
-            {...rest}
-          >
-            {chipArray.map((child, i) => (
-              <li className={css(styles.chipGroupListItem)} key={i}>
-                {child}
-              </li>
-            ))}
-            {numChildren > numChips && (
-              <li className={css(styles.chipGroupListItem)}>
-                <Chip isOverflowChip onClick={this.toggleCollapse} component="button">
-                  {isOpen ? expandedText : collapsedTextResult}
-                </Chip>
-              </li>
-            )}
-          </ul>
+          <div className={css(styles.chipGroupMain)}>
+            {categoryName && this.renderLabel(id)}
+            <ul
+              className={css(styles.chipGroupList)}
+              {...(categoryName && { 'aria-labelledby': id })}
+              {...(!categoryName && { 'aria-label': ariaLabel })}
+              role="list"
+              {...rest}
+            >
+              {chipArray.map((child, i) => (
+                <li className={css(styles.chipGroupListItem)} key={i}>
+                  {child}
+                </li>
+              ))}
+              {numChildren > numChips && (
+                <li className={css(styles.chipGroupListItem)}>
+                  <Chip isOverflowChip onClick={this.toggleCollapse} component="button">
+                    {isOpen ? expandedText : collapsedTextResult}
+                  </Chip>
+                </li>
+              )}
+            </ul>
+          </div>
           {isClosable && (
             <div className={css(styles.chipGroupClose)}>
               <Button

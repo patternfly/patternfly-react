@@ -160,6 +160,7 @@ describe('Select Test', () => {
 
   it('Verify Checkbox Select', () => {
     cy.get('#check-select').click();
+    cy.get('.pf-c-divider').should('exist');
     cy.get('input#Cancelled').click();
     cy.get('#check-select')
       .contains('1')

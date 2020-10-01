@@ -1,6 +1,5 @@
-const fs = require('fs');
 const path = require('path');
-const Octokit = require('@octokit/rest');
+const { Octokit } = require('@octokit/rest');
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
 const surge = require('surge');
 const publishFn = surge().publish();
@@ -21,14 +20,11 @@ let uploadURL = `${repo}-${prnum ? `pr-${prnum}` : prbranch}`
   .replace(/[\/|\.]/g, '-')
   .replace('-master', '');
 
-if (uploadFolderName === 'coverage') {
-  fs.copyFileSync(
-    path.join(uploadFolder, 'report.html'),
-    path.join(uploadFolder, 'index.html')
-  );
-}
 if (uploadFolderName === '.out') {
   uploadURL += '-pf3';
+}
+else if (uploadFolderName === 'dist') {
+  uploadURL += `-a11y`;
 }
 else if (uploadFolderName === 'results') {
   uploadURL += `-cypress`;
@@ -76,7 +72,7 @@ if (prnum) {
       else if (uploadFolderName === 'public') {
         commentBody += tryAddComment(`PF4 preview: https://${uploadURL}`, commentBody);
       }
-      else if (uploadFolderName === 'coverage') {
+      else if (uploadFolderName === 'dist') {
         commentBody += tryAddComment(`A11y report: https://${uploadURL}`, commentBody);
       }
       else if (uploadFolderName === 'report') {

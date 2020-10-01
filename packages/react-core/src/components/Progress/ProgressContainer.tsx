@@ -1,6 +1,7 @@
 import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
@@ -34,6 +35,10 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
   value: number;
+  /** Whether title should be truncated */
+  isTitleTruncated?: boolean;
+  /** Position of the tooltip which is displayed if title is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 const variantToIcon = {
@@ -49,14 +54,39 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   parentId,
   label = null,
   variant = null,
-  measureLocation = ProgressMeasureLocation.top
+  measureLocation = ProgressMeasureLocation.top,
+  isTitleTruncated = false,
+  tooltipPosition
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
+  const [tooltip, setTooltip] = React.useState('');
+  const onMouseEnter = (event: any) => {
+    if (event.target.offsetWidth < event.target.scrollWidth) {
+      setTooltip(title || event.target.innerHTML);
+    } else {
+      setTooltip('');
+    }
+  };
+  const Title = (
+    <div
+      className={css(progressStyle.progressDescription, isTitleTruncated && progressStyle.modifiers.truncate)}
+      id={`${parentId}-description`}
+      aria-hidden="true"
+      onMouseEnter={isTitleTruncated ? onMouseEnter : null}
+    >
+      {title}
+    </div>
+  );
+
   return (
     <React.Fragment>
-      <div className={css(progressStyle.progressDescription)} id={`${parentId}-description`} aria-hidden="true">
-        {title}
-      </div>
+      {tooltip ? (
+        <Tooltip position={tooltipPosition} content={tooltip} isVisible>
+          {Title}
+        </Tooltip>
+      ) : (
+        Title
+      )}
       <div className={css(progressStyle.progressStatus)} aria-hidden="true">
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
           <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>

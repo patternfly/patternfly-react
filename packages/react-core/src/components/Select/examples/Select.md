@@ -15,19 +15,20 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 ```js
 import React from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox , Divider } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.options = [
-      { value: 'Choose...', disabled: false, isPlaceholder: true },
-      { value: 'Mr', disabled: false },
-      { value: 'Miss', disabled: false },
-      { value: 'Mrs', disabled: false },
-      { value: 'Ms', disabled: false },
-      { value: 'Dr', disabled: false },
-      { value: 'Other', disabled: false }
+       <SelectOption key={0} value="Choose..." isPlaceholder/>,
+        <SelectOption key={1} value="Mr" />,
+        <SelectOption key={2} value="Miss" />,
+        <SelectOption key={3} value="Mrs" />,
+        <SelectOption key={4} value="Ms" />,
+        <Divider component="li" key={5} />,
+        <SelectOption key={6} value="Dr" />,
+        <SelectOption key={7} value="Other" />
     ];
 
     this.state = {
@@ -107,14 +108,7 @@ class SingleSelectInput extends React.Component {
           isDisabled={isDisabled}
           direction={direction}
         >
-          {this.options.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-              isPlaceholder={option.isPlaceholder}
-            />
-          ))}
+          {this.options}
         </Select>
         <Checkbox
           label="isDisabled"
@@ -234,7 +228,7 @@ class SingleSelectDescription extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, Divider } from '@patternfly/react-core';
 
 class GroupedSingleSelectInput extends React.Component {
   constructor(props) {
@@ -271,6 +265,7 @@ class GroupedSingleSelectInput extends React.Component {
         <SelectOption key={3} value="Degraded" />
         <SelectOption key={4} value="Needs Maintenence" />
       </SelectGroup>,
+      <Divider key="divider" />,
       <SelectGroup label="Vendor Names" key="group2">
         <SelectOption key={5} value="Dell" />
         <SelectOption key={6} value="Samsung" isDisabled />
@@ -309,7 +304,7 @@ class GroupedSingleSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVarian, Divider } from '@patternfly/react-core';
 
 class CheckboxSelectInput extends React.Component {
   constructor(props) {
@@ -351,8 +346,9 @@ class CheckboxSelectInput extends React.Component {
       <SelectOption key={0} value="Active" description="This is a description" />,
       <SelectOption key={1} value="Cancelled" />,
       <SelectOption key={2} value="Paused" />,
-      <SelectOption key={3} value="Warning" />,
-      <SelectOption key={4} value="Restarted" />
+      <Divider key={3} />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />
     ];
   }
 
@@ -1020,7 +1016,7 @@ class TypeaheadSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import { Checkbox, Select, SelectGroup, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Checkbox, Select, SelectGroup, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
 
 class GroupedTypeaheadSelectInput extends React.Component {
   constructor(props) {
@@ -1035,6 +1031,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
           <SelectOption key={3} value="Degraded" />
           <SelectOption key={4} value="Needs Maintenence" />
         </SelectGroup>,
+        <Divider key="divider"/>,
         <SelectGroup label="Vendor Names" key="group2">
           <SelectOption key={5} value="Dell" />
           <SelectOption key={6} value="Samsung" isDisabled />
@@ -1445,7 +1442,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
 
 class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   constructor(props) {
@@ -1468,6 +1465,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     };
     this.options = [
       <SelectOption key={0} value={this.createState('Alabama', 'AL', 'Montgomery', 1846)} />,
+      <Divider component="li" key={111} />,
       <SelectOption key={1} value={this.createState('Florida', 'FL', 'Tailahassee', 1845)} />,
       <SelectOption key={2} value={this.createState('New Jersey', 'NJ', 'Trenton', 1787)} />,
       <SelectOption key={3} value={this.createState('New Mexico', 'NM', 'Santa Fe', 1912)} />,

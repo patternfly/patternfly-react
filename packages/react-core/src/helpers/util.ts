@@ -2,6 +2,7 @@ import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import * as React from 'react';
 import { ApplicationLauncherSeparator } from '../components/ApplicationLauncher/ApplicationLauncherSeparator';
+import { Divider } from '../components/Divider/Divider';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -213,7 +214,7 @@ export function getNextIndex(index: number, position: string, collection: any[])
   } else {
     nextIndex = index + 1;
   }
-  if (collection[nextIndex][0] === null) {
+  if (collection[nextIndex] === undefined || collection[nextIndex][0] === null) {
     return getNextIndex(nextIndex, position, collection);
   } else {
     return nextIndex;
@@ -335,7 +336,7 @@ export const extendItemsWithFavorite = (items: object, isGrouped: boolean, favor
     return (items as React.ReactElement[]).map(group =>
       React.cloneElement(group, {
         children: React.Children.map(group.props.children as React.ReactElement[], item => {
-          if (item.type === ApplicationLauncherSeparator) {
+          if (item.type === ApplicationLauncherSeparator || item.type === Divider) {
             return item;
           }
           return React.cloneElement(item, {

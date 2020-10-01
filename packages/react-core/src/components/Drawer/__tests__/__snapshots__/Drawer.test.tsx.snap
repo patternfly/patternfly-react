@@ -81,6 +81,7 @@ exports[`Drawer expands from bottom 1`] = `
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -319,6 +320,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -451,6 +453,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -583,6 +586,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
+                                  role={null}
                                   type="button"
                                 >
                                   <TimesIcon
