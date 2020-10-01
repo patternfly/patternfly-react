@@ -7,7 +7,7 @@ describe('headerUtils', () => {
       const collapsibleTransfroms = calculateColumns(['Some'], { onCollapse: () => undefined as any });
       expect(collapsibleTransfroms[0].cell.formatters).toHaveLength(1);
       expect(collapsibleTransfroms[0].cell.formatters[0].name).toBe('defaultTitle');
-      expect(collapsibleTransfroms[0].cell.transforms).toHaveLength(2);
+      expect(collapsibleTransfroms[0].cell.transforms).toHaveLength(3);
       expect(collapsibleTransfroms[0].extraParams.onCollapse).toBeDefined();
       expect(collapsibleTransfroms[0].header.transforms).toHaveLength(3);
       expect(collapsibleTransfroms[1].cell.transforms).toHaveLength(3);

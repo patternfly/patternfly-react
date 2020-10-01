@@ -62,7 +62,7 @@ export const expandedRow = (colSpan?: number) => {
     rowData.hasOwnProperty('parent') && {
       // todo: rewrite this logic, it is not type safe
       colSpan: !rowData.cells || rowData.cells.length === 1 ? colSpan + (!!rowData.fullWidth as any) : 1,
-      id: contentId + rowIndex + '-' + columnIndex,
+      id: contentId + rowIndex + (columnIndex ? '-' + columnIndex : ''),
       className: rowData.noPadding && css(styles.modifiers.noPadding)
     };
   return expandedRowFormatter;
