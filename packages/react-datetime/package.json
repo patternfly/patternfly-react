@@ -35,10 +35,10 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.50.2",
-    "@patternfly/react-core": "^4.58.2",
-    "@patternfly/react-icons": "^4.7.8",
-    "@patternfly/react-styles": "^4.7.6",
-    "@patternfly/react-tokens": "^4.9.10",
+    "@patternfly/react-core": "^4.59.0",
+    "@patternfly/react-icons": "^4.7.9",
+    "@patternfly/react-styles": "^4.7.7",
+    "@patternfly/react-tokens": "^4.9.11",
     "flatpickr": "^4.6.6"
   },
   "peerDependencies": {
