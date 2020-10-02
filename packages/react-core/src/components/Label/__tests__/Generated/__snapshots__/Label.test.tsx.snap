@@ -8,13 +8,9 @@ exports[`Label should match snapshot (auto-generated) 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      <div>
-        ReactNode
-      </div>
-    </LabelText>
+    <div>
+      ReactNode
+    </div>
   </span>
 </span>
 `;

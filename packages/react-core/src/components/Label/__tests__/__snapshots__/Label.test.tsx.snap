@@ -7,11 +7,7 @@ exports[`label 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -23,11 +19,7 @@ exports[`label 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -39,11 +31,7 @@ exports[`label with additional class name 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -57,11 +45,7 @@ exports[`label with additional class name and props 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -73,11 +57,7 @@ exports[`label with blue color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -89,11 +69,7 @@ exports[`label with blue color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -105,11 +81,7 @@ exports[`label with close button 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
   <Button
     aria-label="label-close-button"
@@ -133,11 +105,7 @@ exports[`label with close button 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
   <Button
     aria-label="label-close-button"
@@ -161,11 +129,7 @@ exports[`label with cyan color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -177,11 +141,7 @@ exports[`label with cyan color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -193,11 +153,7 @@ exports[`label with green color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -209,11 +165,7 @@ exports[`label with green color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -225,11 +177,7 @@ exports[`label with grey color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -241,11 +189,7 @@ exports[`label with grey color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -258,11 +202,7 @@ exports[`label with href 1`] = `
     className="pf-c-label__content"
     href="#"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </a>
 </span>
 `;
@@ -275,11 +215,7 @@ exports[`label with href 2`] = `
     className="pf-c-label__content"
     href="#"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </a>
 </span>
 `;
@@ -291,11 +227,7 @@ exports[`label with orange color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -307,11 +239,7 @@ exports[`label with orange color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -323,11 +251,7 @@ exports[`label with purple color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -339,11 +263,7 @@ exports[`label with purple color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -355,11 +275,7 @@ exports[`label with red color 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -371,11 +287,7 @@ exports[`label with red color 2`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={false}
-    >
-      Something
-    </LabelText>
+    Something
   </span>
 </span>
 `;
@@ -387,11 +299,11 @@ exports[`label with truncation 1`] = `
   <span
     className="pf-c-label__content"
   >
-    <LabelText
-      isTruncated={true}
+    <span
+      className="pf-c-label__text"
     >
       Something very very very very very long that should be truncated
-    </LabelText>
+    </span>
   </span>
 </span>
 `;

@@ -334,20 +334,20 @@ OutlinedLabels = () => (
 ### Router link
 ```js
 import React from 'react';
-import { Label, LabelIcon, LabelText } from '@patternfly/react-core';
+import { Label } from '@patternfly/react-core';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import { Link } from '@reach/router';
 
 RouterLinkLabels = () => (
-  <React.Fragment>
-    <Label customContent={<Link to="/"> <LabelText>router link</LabelText></Link>} />
-    <Label customContent={
-      <Link to="/"> 
-          <LabelIcon><InfoCircleIcon /></LabelIcon> 
-          <LabelText>router link</LabelText>
-      </Link>} />
-  <Label customContent={<Link to="/"> <LabelText isTruncated>router link with very long label</LabelText></Link>} />
-  <Label customContent={<Link to="/"> <LabelText>router link with very long label that is removable</LabelText></Link>} onClose={Function.prototype}/>   
-  </React.Fragment>
+  <Label color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated render={({
+      className, 
+      content 
+    }) => (
+      <Link to="/" className={className}>
+        {content}
+      </Link>
+    )}>
+      Blue label router link with icon that overflows
+    </Label>
 );
 ```

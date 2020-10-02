@@ -3,8 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Label/label';
 import { Button } from '../Button';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import { LabelText } from './LabelText';
-import { LabelIcon } from './LabelIcon';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
@@ -29,16 +27,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   href?: string;
   /** Flag indicating if the label is an overflow label */
   isOverflowLabel?: boolean;
-  /**
-   * This prop supports React Router. You must use the LabelIcon and LabelText in the router link for proper styling.
-   * isTruncated, href and children props do not apply when customContent is used.
-   * Example usage:
-   *   customContent={<Link to="/">
-   *     <LabelIcon><InfoCircleIcon /></LabelIcon>
-   *     <LabelText isTruncated>router link<LabelText/>
-   *   </Link>}
-   */
-  customContent?: React.ReactNode;
+  /** Forwards the label content class name to the content that is rendered.  Use this prop for react router.*/
+  render?: ({ className, content }: { className: string; content: React.ReactNode }) => React.ReactNode;
 }
 
 const colorStyles = {
@@ -63,7 +53,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtnProps,
   href,
   isOverflowLabel,
-  customContent,
+  render,
   ...props
 }: LabelProps) => {
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
@@ -80,6 +70,13 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       <TimesIcon />
     </Button>
   );
+  const content = (
+    <>
+      {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
+      {isTruncated && <span className={css(styles.labelText)}>{children}</span>}
+      {!isTruncated && children}
+    </>
+  );
 
   return (
     <LabelComponent
@@ -92,12 +89,14 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className
       )}
     >
-      {customContent ? (
-        <>{customContent}</>
+      {render ? (
+        render({
+          className: styles.labelContent,
+          content
+        })
       ) : (
         <Component className={css(styles.labelContent)} {...(href && { href })}>
-          {icon && <LabelIcon>{icon}</LabelIcon>}
-          <LabelText isTruncated={isTruncated}>{children}</LabelText>
+          {content}
         </Component>
       )}
       {onClose && button}
