@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.62.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.61.0...@patternfly/react-core@4.62.0) (2020-10-02)
+
+
+### Features
+
+* **Label:** Added support for React router ([#4934](https://github.com/patternfly/patternfly-react/issues/4934)) ([7f3a9ad](https://github.com/patternfly/patternfly-react/commit/7f3a9add2650cef8c8884ffdbaeb6663187775b0))
+
+
+
+
+
 # [4.61.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.60.3...@patternfly/react-core@4.61.0) (2020-10-02)
 
 

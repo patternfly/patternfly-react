@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.48.0...@patternfly/react-integration@4.49.0) (2020-10-02)
+
+
+### Features
+
+* **Label:** Added support for React router ([#4934](https://github.com/patternfly/patternfly-react/issues/4934)) ([7f3a9ad](https://github.com/patternfly/patternfly-react/commit/7f3a9add2650cef8c8884ffdbaeb6663187775b0))
+
+
+
+
+
 # [4.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.47.1...@patternfly/react-integration@4.48.0) (2020-10-02)
 
 
