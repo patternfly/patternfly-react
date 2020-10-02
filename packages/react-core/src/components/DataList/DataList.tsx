@@ -37,7 +37,6 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
 }
 
 interface DataListState {
-  childrenCopy: React.ReactNode;
   draggedItemId: string;
   draggingToItemIndex: number;
   dragging: boolean;
@@ -58,8 +57,7 @@ export const DataListContext = React.createContext<Partial<DataListContextProps>
   isSelectable: false
 });
 
-// Moves i1 to i2 and the rest of the array shifts down
-function moveItem(arr: string[], i1: string, toIndex: number) {
+const moveItem = (arr: string[], i1: string, toIndex: number) => {
   const fromIndex = arr.indexOf(i1);
   if (fromIndex === toIndex) {
     return arr;
@@ -68,7 +66,7 @@ function moveItem(arr: string[], i1: string, toIndex: number) {
   arr.splice(toIndex, 0, temp[0]);
 
   return arr;
-}
+};
 
 export class DataList extends React.Component<DataListProps, DataListState> {
   static displayName = 'DataList';
@@ -84,8 +82,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   ref = React.createRef<HTMLUListElement>();
 
   state: DataListState = {
-    childrenCopy: this.props.children,
-    tempItemOrder: [], // Doesn't matter, set in constructor
+    tempItemOrder: [],
     draggedItemId: null,
     draggingToItemIndex: null,
     dragging: false
@@ -93,7 +90,6 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   componentDidUpdate(oldProps: DataListProps) {
     if (this.dragFinished) {
-      this.arrayCopy = React.Children.toArray(this.props.children) as React.ReactElement[];
       this.dragFinished = false;
 
       this.setState({
@@ -109,7 +105,6 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   getIndex = (id: string) => Array.from(this.ref.current.children).findIndex(item => item.id === id);
 
-  // Moves dom node
   move = (itemOrder: string[]) => {
     const ulNode = this.ref.current;
     const nodes = Array.from(ulNode.children);
@@ -157,7 +152,6 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   dragOver0 = (id: string) => {
     const draggingToItemIndex = Array.from(this.ref.current.children).findIndex(item => item.id === id);
     if (draggingToItemIndex !== this.state.draggingToItemIndex) {
-      console.log('draggedItemId', this.state.draggedItemId, 'draggingToItemIndex', draggingToItemIndex);
       const tempItemOrder = moveItem([...this.props.itemOrder], this.state.draggedItemId, draggingToItemIndex);
       this.move(tempItemOrder);
 
@@ -178,8 +172,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   };
 
   handleDragButtonKeys = (evt: React.KeyboardEvent) => {
-    const { draggedItemId: draggedItem, dragging } = this.state;
-    const { children, onDragFinish, onDragStart, onDragCancel } = this.props;
+    const { dragging } = this.state;
+    const { onDragCancel } = this.props;
     if (
       evt.key !== ' ' &&
       evt.key !== 'Escape' &&
@@ -195,7 +189,6 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     evt.preventDefault();
 
     const dragItem = (evt.target as Element).closest('li');
-    const dragInd = this.getIndex(dragItem.id);
 
     if (evt.key === ' ' || (evt.key === 'Enter' && !dragging)) {
       this.dragStart0(dragItem);
