@@ -109,7 +109,15 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
                 <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
                   <span id="simple-item1">Primary content</span>
                 </DataListCell>,
-                <DataListCell id="truncate-content" key="secondary content" wrapModifier={DataListWrapModifier.truncate}>Really really really really really really really really really really really really really really really really really really really really really really really really really really really really long description that should be truncated before it ends</DataListCell>
+                <DataListCell
+                  id="truncate-content"
+                  key="secondary content"
+                  wrapModifier={DataListWrapModifier.truncate}
+                >
+                  Really really really really really really really really really really really really really really
+                  really really really really really really really really really really really really really really long
+                  description that should be truncated before it ends
+                </DataListCell>
               ]}
             />
           </DataListItemRow>
