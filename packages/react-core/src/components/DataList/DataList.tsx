@@ -3,7 +3,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
-export enum WrapModifier {
+export enum DataListWrapModifier {
   nowrap = 'nowrap',
   truncate = 'truncate',
   breakWord = 'breakWord'
@@ -23,7 +23,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   /** Flag indicating if DataList should have compact styling */
   isCompact?: boolean;
   /** Determines which wrapping modifier to apply to the DataList */
-  wrapModifier?: WrapModifier | 'nowrap' | 'truncate' | 'breakWord';
+  wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
 interface DataListContextProps {

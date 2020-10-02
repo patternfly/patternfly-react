@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { WrapModifier } from './DataList';
+import { DataListWrapModifier } from './DataList';
 
 export interface DataListItemRowProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   children: React.ReactNode;
   className?: string;
   rowid?: string;
-  wrapModifier?: WrapModifier | 'nowrap' | 'truncate' | 'breakWord';
+  wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
 export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { WrapModifier } from './DataList';
+import { DataListWrapModifier } from './DataList';
 
 export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>, 'width'> {
   /** Content rendered inside the DataList cell */
@@ -17,7 +17,7 @@ export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>,
   /** Set to true if the cell content is an Icon */
   isIcon?: boolean;
   /** Determines which wrapping modifier to apply to the DataListCell */
-  wrapModifier?: WrapModifier | 'nowrap' | 'truncate' | 'breakWord';
+  wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
 export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
