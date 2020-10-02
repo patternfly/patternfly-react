@@ -4,18 +4,13 @@ import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Tooltip } from '../Tooltip';
 import { DataListWrapModifier } from './DataList';
 
-export enum DataListTextVariant {
-  div = 'div',
-  nav = 'nav'
-}
-
 export interface DataListTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered within the data list text */
   children?: React.ReactNode;
   /** Additional classes added to the data list text */
   className?: string;
-  /** Determines which element to render as a data list text */
-  variant?: DataListTextVariant | 'span' | 'div';
+  /** Determines which element to render as a data list text. Usually div or span */
+  component?: React.ReactNode;
   /** Determines which wrapping modifier to apply to the data list text */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** text to display on the tooltip */
@@ -27,13 +22,13 @@ export interface DataListTextProps extends React.HTMLProps<HTMLDivElement> {
 export const DataListText: React.FunctionComponent<DataListTextProps> = ({
   children = null,
   className = '',
-  variant = 'span',
+  component = 'span',
   wrapModifier = null,
   tooltip: tooltipProp = '',
   onMouseEnter: onMouseEnterProp = () => {},
   ...props
 }: DataListTextProps) => {
-  const Component: DataListTextVariant | 'span' | 'div' = variant;
+  const Component = component as any;
 
   const [tooltip, setTooltip] = React.useState('');
   const onMouseEnter = (event: any) => {
