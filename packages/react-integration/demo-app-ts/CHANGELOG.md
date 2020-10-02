@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.47.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.47.1...demo-app-ts@4.47.2) (2020-10-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.47.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.47.0...demo-app-ts@4.47.1) (2020-10-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.47.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.46.3...demo-app-ts@4.47.0) (2020-10-01)
+
+
+### Features
+
+* **Modal:** add top align to modal ([#4871](https://github.com/patternfly/patternfly-react/issues/4871)) ([15da8a0](https://github.com/patternfly/patternfly-react/commit/15da8a08867899b20dc774aafcc6bfe458ac9ae0))
+
+
+
+
+
+## [4.46.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.46.2...demo-app-ts@4.46.3) (2020-10-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.46.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.46.1...demo-app-ts@4.46.2) (2020-10-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.46.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.46.0...demo-app-ts@4.46.1) (2020-10-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 # [4.46.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.45.4...demo-app-ts@4.46.0) (2020-09-30)
 
 

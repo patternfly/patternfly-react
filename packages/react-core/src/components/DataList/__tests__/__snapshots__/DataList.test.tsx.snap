@@ -128,7 +128,6 @@ exports[`DataList List 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list data-list-custom"
-    role="listbox"
   />
 </ContextProvider>
 `;
@@ -146,7 +145,6 @@ exports[`DataList List compact 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-compact"
-    role="listbox"
   />
 </ContextProvider>
 `;
@@ -164,7 +162,6 @@ exports[`DataList List default 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list"
-    role="listbox"
   />
 </ContextProvider>
 `;

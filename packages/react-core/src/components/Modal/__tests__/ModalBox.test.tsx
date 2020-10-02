@@ -29,3 +29,21 @@ test('ModalBox Test isSmall', () => {
   );
   expect(view).toMatchSnapshot();
 });
+
+test('ModalBox Test top aligned', () => {
+  const view = shallow(
+    <ModalBox title="Test Modal Box" id="boxId" position="top">
+      This is a ModalBox
+    </ModalBox>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('ModalBox Test top aligned distance', () => {
+  const view = shallow(
+    <ModalBox title="Test Modal Box" id="boxId" position="top" positionOffset="50px">
+      This is a ModalBox
+    </ModalBox>
+  );
+  expect(view).toMatchSnapshot();
+});

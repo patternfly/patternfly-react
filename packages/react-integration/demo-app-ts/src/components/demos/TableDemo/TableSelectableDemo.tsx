@@ -1,12 +1,22 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, headerCol, ICell, IRow } from '@patternfly/react-table';
-import { Checkbox } from '@patternfly/react-core';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableProps,
+  headerCol,
+  ICell,
+  IRow,
+  RowSelectVariant
+} from '@patternfly/react-table';
+import { Checkbox, Divider, Radio } from '@patternfly/react-core';
 import '@patternfly/patternfly/utilities/Spacing/spacing.css';
 
 interface TableState {
   columns: (ICell | string)[];
   rows: IRow[];
   canSelectAll: boolean;
+  selectVariant: 'checkbox' | 'radio';
 }
 
 export class TableSelectableDemo extends React.Component<TableProps, TableState> {
@@ -35,7 +45,8 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
           selected: false
         }
       ],
-      canSelectAll: true
+      canSelectAll: true,
+      selectVariant: RowSelectVariant.checkbox
     };
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -43,14 +54,19 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
 
   onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
     let rows: IRow[];
-    if (rowId === -1) {
+    if (rowId === -1 && this.state.selectVariant) {
       rows = this.state.rows.map(oneRow => {
         oneRow.selected = isSelected;
         return oneRow;
       });
-    } else {
+    } else if (this.state.selectVariant === RowSelectVariant.checkbox) {
       rows = [...this.state.rows];
       rows[rowId].selected = isSelected;
+    } else {
+      rows = this.state.rows.map((oneRow, index) => {
+        oneRow.selected = rowId === index;
+        return oneRow;
+      });
     }
     this.setState({
       rows
@@ -68,10 +84,15 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
   }
 
   render() {
-    const { columns, rows, canSelectAll } = this.state;
+    const { columns, rows, canSelectAll, selectVariant } = this.state;
 
     return (
       <div>
+        <div onChange={(event: any) => this.setState({ selectVariant: event.target.value as RowSelectVariant })}>
+          <Radio id="checkbox" value="checkbox" label="Checkbox Variant" name="selectVariant" defaultChecked />
+          <Radio id="radio" value="radio" label="Radio Variant" name="selectVariant" />
+        </div>
+        <Divider />
         <Checkbox
           label="Can select all"
           className="pf-u-mb-lg"
@@ -80,10 +101,12 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
           aria-label="toggle select all checkbox"
           id="toggle-select-all"
           name="toggle-select-all"
+          isDisabled={selectVariant !== 'checkbox'}
         />
         <Table
           onSelect={this.onSelect}
           canSelectAll={canSelectAll}
+          selectVariant={selectVariant}
           caption="Selectable Table"
           cells={columns}
           rows={rows}

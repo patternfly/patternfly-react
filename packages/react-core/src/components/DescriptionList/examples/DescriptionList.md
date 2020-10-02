@@ -344,7 +344,7 @@ import {
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 HorizontalResponsiveDescriptionList = (
-  <DescriptionList isHorizontal columnBreakpoint={{ lg: '2Col', xl: '3Col' }}>
+  <DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>

@@ -46,6 +46,7 @@ describe('Modal Test', () => {
   it('Verify Small Modal', () => {
     cy.get('#showSmallModalButton').then((modalButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(modalButton).click();
+      cy.get('.pf-c-modal-box').should('have.class', 'pf-m-align-top');
       cy.get('.pf-c-modal-box.pf-m-sm')
         .then(() => {
           cy.get('.pf-c-modal-box .pf-c-button[aria-label="Close"]').then(closeButton => {

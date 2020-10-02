@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.52...@patternfly/react-catalog-view-extension@4.8.53) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.52](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.51...@patternfly/react-catalog-view-extension@4.8.52) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.50...@patternfly/react-catalog-view-extension@4.8.51) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.49...@patternfly/react-catalog-view-extension@4.8.50) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.48...@patternfly/react-catalog-view-extension@4.8.49) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.8.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.47...@patternfly/react-catalog-view-extension@4.8.48) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [4.8.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.46...@patternfly/react-catalog-view-extension@4.8.47) (2020-09-30)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

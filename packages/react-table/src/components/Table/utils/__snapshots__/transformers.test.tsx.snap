@@ -15,7 +15,7 @@ Object {
   "children": <SelectColumn
     aria-label="Select row 0"
     checked={false}
-    name="checkrow0"
+    name="radioGroup"
     onSelect={[Function]}
   >
     
