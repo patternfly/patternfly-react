@@ -39,7 +39,6 @@ export class DataListDraggableDemo extends React.Component {
   };
 
   onDragFinish = (itemOrder: string[]) => {
-    console.log('need to save new list', itemOrder);
     this.setState({
       liveText: `Dragging finished`,
       itemOrder
