@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.47.1...@patternfly/react-integration@4.48.0) (2020-10-02)
+
+
+### Features
+
+* **DataList:** add support for text modifiers ([#4846](https://github.com/patternfly/patternfly-react/issues/4846)) ([4f4271b](https://github.com/patternfly/patternfly-react/commit/4f4271b2c20a869504339173c28300ed65cd7330)), closes [#4822](https://github.com/patternfly/patternfly-react/issues/4822)
+
+
+
+
+
 ## [4.47.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.47.0...@patternfly/react-integration@4.47.1) (2020-10-02)
 
 **Note:** Version bump only for package @patternfly/react-integration
