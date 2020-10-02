@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.60.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.60.1...@patternfly/react-core@4.60.2) (2020-10-02)
+
+
+### Bug Fixes
+
+* **Select:** grouped Select generates invalid HTML ([#4919](https://github.com/patternfly/patternfly-react/issues/4919)) ([9986d51](https://github.com/patternfly/patternfly-react/commit/9986d5177c56a5454cb3ba0c26b74a748d352f2b)), closes [#4917](https://github.com/patternfly/patternfly-react/issues/4917)
+
+
+
+
+
 ## [4.60.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.60.0...@patternfly/react-core@4.60.1) (2020-10-02)
 
 **Note:** Version bump only for package @patternfly/react-core
