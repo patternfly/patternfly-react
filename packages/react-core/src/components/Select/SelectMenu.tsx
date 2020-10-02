@@ -208,6 +208,8 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 ref={innerRef}
                 className={css(styles.selectMenu, className)}
                 role="listbox"
+                aria-label={ariaLabel}
+                aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 {...props}
               >
