@@ -18,7 +18,8 @@ export const selectable: ITransform = (
     column,
     property
   };
-  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
+
+  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect && !rowData.fullWidth) {
     return {
       component: 'td',
       isVisible: true
@@ -56,7 +57,7 @@ export const selectable: ITransform = (
   return {
     className: css(styles.tableCheck),
     component: 'td',
-    isVisible: true,
+    isVisible: !rowData || !rowData.fullWidth,
     children: (
       <SelectColumn
         {...customProps}

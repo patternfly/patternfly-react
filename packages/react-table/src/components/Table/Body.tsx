@@ -69,16 +69,29 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   };
 
   mapCells = (headerData: IRow[], row: IRow, rowKey: number) => {
-    // column indexes start after generated optional columns
-    let additionalColsIndexShift = headerData[0].extraParams.firstUserColumnIndex;
-
+    // column indexes start after generated optional columns like collapsible or select column(s)
+    const { firstUserColumnIndex } = headerData[0].extraParams;
+    const isFullWidth = row && row.fullWidth;
+    // typically you'd want to map each cell to its column header, but in the case of fullWidth
+    // the first column could be the Select and/or Expandable column
+    let additionalColsIndexShift = isFullWidth ? 0 : firstUserColumnIndex;
     return {
       ...(row &&
         (row.cells || row).reduce(
           (acc: object, cell: IRowCell, cellIndex: number) => {
             const isCellObject = cell === Object(cell);
             const isCellFunction = cell && typeof cell.title === 'function';
-
+            let formatters: any = [];
+            if (isCellObject && cell.formatters) {
+              // give priority to formatters specified on the cell object
+              // expandable example:
+              // rows: [{ parent: 0, fullWidth: true, cells: [{ title: 'fullWidth, child - a', formatters: [expandable]}] }]
+              formatters = cell.formatters;
+            } else if (isFullWidth && cellIndex < firstUserColumnIndex) {
+              // for backwards compatibility, map the cells that are not under user columns (like Select/Expandable)
+              // to the first user column's header formatters
+              formatters = headerData[firstUserColumnIndex].cell.formatters;
+            }
             const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
                 title: isCellObject
@@ -86,6 +99,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
                     ? (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props)
                     : cell.title
                   : cell,
+                formatters,
                 props: {
                   isVisible: true,
                   ...(isCellObject ? cell.props : null)

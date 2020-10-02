@@ -69,14 +69,19 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
           console.warn('Table.Body - Failed to receive a transformed result');
         }
 
+        let additionalFormaters = [];
+        if (rowData[evaluatedProperty]) {
+          additionalFormaters = rowData[evaluatedProperty].formatters;
+        }
+
         return React.createElement(
           renderers.cell as createElementType,
           {
             key: `col-${columnIndex}-row-${rowIndex}`,
             ...mergeProps(props, cell && cell.props, transformed)
           },
-          transformed.children ||
-            evaluateFormatters(formatters)(
+          (!rowData.fullWidth && transformed.children) ||
+            evaluateFormatters([...formatters, ...additionalFormaters])(
               rowData[`_${evaluatedProperty}`] || (rowData[evaluatedProperty] as formatterValueType),
               extraParameters
             )

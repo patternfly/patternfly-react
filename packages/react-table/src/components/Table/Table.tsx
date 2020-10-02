@@ -210,6 +210,7 @@ export type RowCellContent = (value?: string, rowIndex?: number, cellIndex?: num
 export interface IRowCell {
   title?: string | React.ReactNode | RowCellContent;
   props?: any;
+  formatters?: IFormatter[];
 }
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix

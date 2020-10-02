@@ -882,26 +882,79 @@ class CompactExpandableTable extends React.Component {
         },
         {
           parent: 1,
-          fullWidth: true,
-          cells: ['child - 1']
+          cells: ['single cell']
         },
         {
-          isOpen: false,
+          isOpen: true,
           cells: ['parent - 2', 'two', 'three', 'four']
         },
         {
           parent: 3,
-          cells: ['child - 2']
+          fullWidth: true,
+          cells: ['single cell - fullWidth']
         },
         {
-          isOpen: false,
+          isOpen: true,
           cells: ['parent - 3', 'two', 'three', 'four']
         },
         {
           parent: 5,
-          fullWidth: true,
           noPadding: true,
-          cells: ['child - 3']
+          cells: ['single cell - noPadding']
+        },
+        {
+          isOpen: true,
+          cells: ['parent - 4', 'two', 'three', 'four']
+        },
+        {
+          parent: 7,
+          noPadding: true,
+          fullWidth: true,
+          cells: ['single cell - fullWidth & noPadding']
+        },
+        {
+          isOpen: true,
+          cells: ['parent - 5', 'two', 'three', 'four']
+        },
+        {
+          parent: 9,
+          cells: [
+            {
+              title: "spans 'Header cell' and 'Branches'",
+              props: {
+                colSpan: 2
+              }
+            },
+            {
+              title: "spans 'Pull requests' and the empty column",
+              props: {
+                colSpan: 2
+              }
+            }
+          ]
+        },
+        {
+          isOpen: true,
+          cells: ['parent - 6', 'two', 'three', 'four']
+        },
+        {
+          parent: 11,
+          fullWidth: true,
+          cells: [
+            {
+              title: "fullWidth, spans the collapsible column and 'Header cell'",
+              props: {
+                colSpan: 2
+              }
+            },
+            {
+              title: "fullWidth, spans 'Branches' and 'Pull requests'",
+              props: {
+                colSpan: 2
+              }
+            },
+            "fullWidth, spans the empty column"
+          ]
         }
       ]
     };
@@ -939,102 +992,7 @@ class CompactExpandableTable extends React.Component {
 }
 ```
 
-### With width modifiers
-```js
-import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  cellWidth
-} from '@patternfly/react-table';
-
-class WidthTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Header cell', transforms: [cellWidth(10)] },
-        'Branches',
-        { title: 'Pull requests', transforms: [cellWidth(30)] },
-        'Workspaces',
-        {
-          title: 'Last Commit',
-          transforms: [cellWidth('max')]
-        }
-      ],
-      rows: [['one', 'two', 'three', 'four', 'five']]
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table aria-label="Table with Width Modifiers" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
-```
-
-### Breakpoint modifiers
-```js
-import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  classNames,
-  Visibility
-} from '@patternfly/react-table';
-
-class HiddenVisibleBreakpointTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        {
-          title: 'Repositories',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)]
-        },
-        'Branches',
-        {
-          title: 'Pull requests',
-          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg, Visibility.hiddenOn_2xl)]
-        },
-        'Workspaces',
-        {
-          title: 'Last Commit',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnSm)]
-        }
-      ],
-      rows: [
-        ['Visible only on md breakpoint', '10', 'Hidden only on md breakpoint', '5', 'Hidden on xs breakpoint'],
-        ['Repository 2', '10', '25', '5', '2 days ago'],
-        ['Repository 3', '10', '25', '5', '2 days ago'],
-        ['Repository 4', '10', '25', '5', '2 days ago']
-      ]
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table aria-label="Table with hidden/visible breakpoint modifiers" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
-```
-
-### Collapsible
+### Expandable
 ```js
 import React from 'react';
 import {
@@ -1044,7 +1002,7 @@ import {
   expandable
 } from '@patternfly/react-table';
 
-class CollapsibleTable extends React.Component {
+class ExpandableTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1312,6 +1270,101 @@ class CompoundExpandableTable extends React.Component {
 
     return (
       <Table aria-label="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+### With width modifiers
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  cellWidth
+} from '@patternfly/react-table';
+
+class WidthTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Header cell', transforms: [cellWidth(10)] },
+        'Branches',
+        { title: 'Pull requests', transforms: [cellWidth(30)] },
+        'Workspaces',
+        {
+          title: 'Last Commit',
+          transforms: [cellWidth('max')]
+        }
+      ],
+      rows: [['one', 'two', 'three', 'four', 'five']]
+    };
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table aria-label="Table with Width Modifiers" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+### Breakpoint modifiers
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  classNames,
+  Visibility
+} from '@patternfly/react-table';
+
+class HiddenVisibleBreakpointTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {
+          title: 'Repositories',
+          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)]
+        },
+        'Branches',
+        {
+          title: 'Pull requests',
+          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg, Visibility.hiddenOn_2xl)]
+        },
+        'Workspaces',
+        {
+          title: 'Last Commit',
+          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnSm)]
+        }
+      ],
+      rows: [
+        ['Visible only on md breakpoint', '10', 'Hidden only on md breakpoint', '5', 'Hidden on xs breakpoint'],
+        ['Repository 2', '10', '25', '5', '2 days ago'],
+        ['Repository 3', '10', '25', '5', '2 days ago'],
+        ['Repository 4', '10', '25', '5', '2 days ago']
+      ]
+    };
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table aria-label="Table with hidden/visible breakpoint modifiers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
