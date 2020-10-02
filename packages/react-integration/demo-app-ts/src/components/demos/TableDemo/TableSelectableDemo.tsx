@@ -45,8 +45,8 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
           selected: false
         }
       ],
-      canSelectAll: false,
-      selectVariant: 'radio'
+      canSelectAll: true,
+      selectVariant: RowSelectVariant.checkbox
     };
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -89,8 +89,8 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
     return (
       <div>
         <div onChange={(event: any) => this.setState({ selectVariant: event.target.value as RowSelectVariant })}>
-          <Radio id="checkbox" value="checkbox" label="Checkbox Variant" name="selectVariant" />
-          <Radio id="radio" value="radio" label="Radio Variant" name="selectVariant" defaultChecked />
+          <Radio id="checkbox" value="checkbox" label="Checkbox Variant" name="selectVariant" defaultChecked />
+          <Radio id="radio" value="radio" label="Radio Variant" name="selectVariant" />
         </div>
         <Divider />
         <Checkbox
