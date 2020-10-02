@@ -6,9 +6,11 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PickOptional } from '../../helpers/typeUtils';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface NavExpandableProps
-  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
+    OUIAProps {
   /** Title shown for the expandable list */
   title: string;
   /** If defined, screen readers will read this text instead of the list title */
@@ -91,7 +93,20 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
+    const {
+      id,
+      title,
+      srText,
+      children,
+      className,
+      isActive,
+      groupId,
+      isExpanded,
+      onExpand,
+      ouiaId,
+      ouiaSafe,
+      ...props
+    } = this.props;
 
     const { expandedState } = this.state;
 
@@ -110,6 +125,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               isActive && styles.modifiers.current,
               className
             )}
+            {...getOUIAProps('NavItem', ouiaId, ouiaSafe)}
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
