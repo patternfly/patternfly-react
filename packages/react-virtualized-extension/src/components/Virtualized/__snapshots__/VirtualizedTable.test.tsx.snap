@@ -2188,7 +2188,6 @@ exports[`Selectable virtualized table 1`] = `
                         <SelectColumn
                           aria-label="Select all rows"
                           checked={false}
-                          className="pf-c-check__input"
                           name="check-all"
                           onSelect={[Function]}
                           selectVariant="checkbox"
@@ -2196,7 +2195,6 @@ exports[`Selectable virtualized table 1`] = `
                           <input
                             aria-label="Select all rows"
                             checked={false}
-                            className="pf-c-check__input"
                             name="check-all"
                             onChange={[Function]}
                             type="checkbox"
