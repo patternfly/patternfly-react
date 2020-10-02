@@ -3968,6 +3968,7 @@ exports[`renders select with favorites successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -4322,6 +4323,7 @@ exports[`renders select with favorites successfully 1`] = `
                 </span>
               </button>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -4698,6 +4700,7 @@ exports[`renders select with favorites successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -5016,6 +5019,8 @@ exports[`renders select with favorites successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -5682,6 +5687,7 @@ exports[`select custom select filter filters properly 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -5782,6 +5788,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </div>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -5910,6 +5917,7 @@ exports[`select custom select filter filters properly 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -5965,6 +5973,8 @@ exports[`select custom select filter filters properly 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -6145,6 +6155,7 @@ exports[`select renders select groups successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -6323,6 +6334,7 @@ exports[`select renders select groups successfully 1`] = `
                 </span>
               </button>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -6523,6 +6535,7 @@ exports[`select renders select groups successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -6665,6 +6678,8 @@ exports[`select renders select groups successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -7565,6 +7580,7 @@ exports[`select single select renders expanded successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -7671,6 +7687,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </span>
               </button>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -7799,6 +7816,7 @@ exports[`select single select renders expanded successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -7867,6 +7885,8 @@ exports[`select single select renders expanded successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -8079,6 +8099,7 @@ exports[`select single select renders expanded successfully with custom objects 
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -8172,6 +8193,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </span>
               </button>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -8287,6 +8309,7 @@ exports[`select single select renders expanded successfully with custom objects 
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -8342,6 +8365,8 @@ exports[`select single select renders expanded successfully with custom objects 
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -9155,6 +9180,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -9268,6 +9294,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </div>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -9410,6 +9437,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -9478,6 +9506,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -9699,6 +9729,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -9949,6 +9980,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </div>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -10329,6 +10361,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -10438,6 +10471,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -11266,6 +11301,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -11379,6 +11415,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </div>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -11520,6 +11557,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -11588,6 +11626,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -11804,6 +11844,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -11935,6 +11976,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </div>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -12095,6 +12137,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -12181,6 +12224,8 @@ exports[`typeahead select renders selected successfully 1`] = `
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
@@ -13162,6 +13207,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
         menuRef={
           Object {
             "current": <ul
+              aria-label=""
               class="pf-c-select__menu"
               role="listbox"
             >
@@ -13236,6 +13282,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 </button>
               </div>
               <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -13338,6 +13385,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
           innerRef={
             Object {
               "current": <ul
+                aria-label=""
                 class="pf-c-select__menu"
                 role="listbox"
               >
@@ -13367,6 +13415,8 @@ exports[`typeahead select test select existing option on a non-creatable select 
           sendRef={[Function]}
         >
           <ul
+            aria-label=""
+            aria-labelledby={null}
             className="pf-c-select__menu"
             role="listbox"
           >
