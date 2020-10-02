@@ -6,6 +6,7 @@ import {
   TableBody,
   TableGridBreakpoint,
   TableVariant,
+  RowSelectVariant,
   cellWidth,
   headerCol,
   sortable,
@@ -229,6 +230,23 @@ test('Selectable table', () => {
   const onSelect: OnSelect = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Selectable table with Radio', () => {
+  const onSelect: OnSelect = () => undefined;
+  const view = mount(
+    <Table
+      aria-label="Aria labeled"
+      selectVariant={RowSelectVariant.radio}
+      onSelect={onSelect}
+      cells={columns}
+      rows={rows}
+    >
       <TableHeader />
       <TableBody />
     </Table>

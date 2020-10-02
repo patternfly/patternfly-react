@@ -33,6 +33,11 @@ export enum TableVariant {
 
 export type RowEditType = 'save' | 'cancel' | 'edit';
 
+export enum RowSelectVariant {
+  radio = 'radio',
+  checkbox = 'checkbox'
+}
+
 export interface RowErrors {
   [name: string]: string[];
 }
@@ -97,6 +102,7 @@ export interface IColumn {
     onCollapse?: OnCollapse;
     onExpand?: OnExpand;
     onSelect?: OnSelect;
+    selectVariant?: 'checkbox' | 'radio';
     onRowEdit?: OnRowEdit;
     rowLabeledBy?: string;
     expandId?: string;
@@ -237,10 +243,12 @@ export interface IRow extends RowType {
   isExpanded?: boolean;
   isFirstVisible?: boolean;
   isLastVisible?: boolean;
-  /* Whether the row checkbox is selected */
+  /** Whether the row checkbox/radio button is selected */
   selected?: boolean;
-  /* Whether the row checkbox is disabled */
+  /** deprecated - Use disableSelection instead - Whether the row checkbox is disabled */
   disableCheckbox?: boolean;
+  /** Whether the row checkbox/radio button is disabled */
+  disableSelection?: boolean;
 }
 
 export interface TableProps extends OUIAProps {
@@ -262,10 +270,12 @@ export interface TableProps extends OUIAProps {
   onCollapse?: OnCollapse;
   /** Function triggered when a compound expandable item is clicked */
   onExpand?: OnExpand;
-  /** Function triggered when a row's checkbox is selected. When this is used, one checkbox will be positioned in the first or second cell of a non-expandable row */
+  /** Function triggered when a row's checkbox is selected. When this is used, one checkbox/radio button will be positioned in the first or second cell of a non-expandable row */
   onSelect?: OnSelect;
-  /** Enables or Disables the ability to select all  */
+  /** Enables or Disables the ability to select all - this is mutually exclusive with radio button select variant */
   canSelectAll?: boolean;
+  /** Specifies the type of the select element variant - can be one of checkbox or radio button */
+  selectVariant?: 'checkbox' | 'radio';
   /* eslint-disable jsdoc/check-tag-names */
   /** @beta Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
   onRowEdit?: OnRowEdit;
@@ -331,6 +341,7 @@ export class Table extends React.Component<TableProps, {}> {
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true,
+    selectVariant: 'checkbox',
     ouiaSafe: true,
     isStickyHeader: false
   };
@@ -367,6 +378,7 @@ export class Table extends React.Component<TableProps, {}> {
       onSort,
       onSelect,
       canSelectAll,
+      selectVariant,
       sortBy,
       children,
       actions,
@@ -402,7 +414,8 @@ export class Table extends React.Component<TableProps, {}> {
       sortBy,
       onSort,
       onSelect,
-      canSelectAll,
+      canSelectAll: selectVariant === RowSelectVariant.radio ? false : canSelectAll,
+      selectVariant,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
       actions,
       actionResolver,

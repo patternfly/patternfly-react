@@ -19,10 +19,43 @@ describe('Table Selectable Test', () => {
     cy.get('thead')
       .find('th')
       .should('have.length', 5);
+
+    // There should be a canSelectAll input
+    cy.get('thead')
+      .find('td')
+      .should('have.length', 1);
   });
 
-  it('Test selectable', () => {
-    cy.get('.pf-c-table__check').should('exist');
-    cy.get('.pf-c-table__check').click({ multiple: true });
+  it('Test selectable checkbox', () => {
+    for (let i = 1; i <= 3; i++) {
+      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).check();
+    }
+
+    for (let i = 1; i <= 3; i++) {
+      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).should('be.checked');
+    }
+  });
+
+  it('Test selectable radio', () => {
+    // Switch to radio buttons table
+    cy.get('input[name=selectVariant][value=radio]').click();
+
+    for (let i = 1; i <= 3; i++) {
+      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).check();
+    }
+    // Only last radio input should be checked in the end of the iteration
+    for (let i = 1; i <= 3; i++) {
+      if (i < 3) {
+        cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).should('not.be.checked');
+      } else {
+        cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).should('be.checked');
+      }
+    }
+  });
+
+  it('Check that first column canSelectAll input is missing', () => {
+    cy.get('thead')
+      .find('td')
+      .should('have.length', 0);
   });
 });

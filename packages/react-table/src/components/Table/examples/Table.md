@@ -424,7 +424,7 @@ class SelectableTable extends React.Component {
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
-          disableCheckbox: true,
+          disableSelection: true,
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five']
@@ -482,6 +482,84 @@ class SelectableTable extends React.Component {
           <TableBody />
         </Table>
       </div>
+    );
+  }
+}
+```
+
+### Selectable radio input
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  RowSelectVariant,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable,
+  cellWidth
+} from '@patternfly/react-table';
+
+class SelectableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories', cellTransforms: [headerCol()] },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
+      rows: [
+        {
+          cells: ['one', 'two', 'a', 'four', 'five']
+        },
+        {
+          cells: ['a', 'two', 'k', 'four', 'five'],
+          disableSelection: true,
+        },
+        {
+          cells: ['p', 'two', 'b', 'four', 'five']
+        }
+      ],
+    };
+    this.onSelect = this.onSelect.bind(this);
+    this.toggleSelect = this.toggleSelect.bind(this);
+  }
+
+  onSelect(event, isSelected, rowId) {
+    let rows = this.state.rows.map((oneRow, index) => {
+      oneRow.selected = rowId === index;
+      return oneRow;
+    });
+    this.setState({
+      rows
+    });
+  }
+
+  toggleSelect(checked) {
+    this.setState({
+      canSelectAll: checked
+    });
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table
+        onSelect={this.onSelect}
+        selectVariant={RowSelectVariant.radio}
+        aria-label="Selectable Table"
+        cells={columns}
+        rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
     );
   }
 }
