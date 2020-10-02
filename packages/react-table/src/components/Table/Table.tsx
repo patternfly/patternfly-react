@@ -247,7 +247,7 @@ export interface IRow extends RowType {
   selected?: boolean;
   /** deprecated - Use disableSelection instead - Whether the row checkbox is disabled */
   disableCheckbox?: boolean;
-  /** Where the row checkbox/radio button is disabled */
+  /** Whether the row checkbox/radio button is disabled */
   disableSelection?: boolean;
 }
 
