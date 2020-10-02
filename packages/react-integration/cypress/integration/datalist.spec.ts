@@ -39,6 +39,10 @@ describe('Data List Demo Test', () => {
     cy.get('#toggle-id').click();
     cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
   });
+
+  it('Verify row truncates', () => {
+    cy.get('#truncate-content').should('have.class', 'pf-m-truncate');
+  });
 });
 
 describe('Data List Compact Demo Test', () => {

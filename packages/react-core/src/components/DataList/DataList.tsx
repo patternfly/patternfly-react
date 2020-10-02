@@ -3,6 +3,12 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
+export enum DataListWrapModifier {
+  nowrap = 'nowrap',
+  truncate = 'truncate',
+  breakWord = 'breakWord'
+}
+
 export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   /** Content rendered inside the DataList list */
   children?: React.ReactNode;
@@ -16,6 +22,8 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
   isCompact?: boolean;
+  /** Determines which wrapping modifier to apply to the DataList */
+  wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
 interface DataListContextProps {
@@ -35,6 +43,7 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   selectedDataListItemId = '',
   onSelectDataListItem,
   isCompact = false,
+  wrapModifier = null,
   ...props
 }: DataListProps) => {
   const isSelectable = onSelectDataListItem !== undefined;
@@ -52,7 +61,12 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
       }}
     >
       <ul
-        className={css(styles.dataList, isCompact && styles.modifiers.compact, className)}
+        className={css(
+          styles.dataList,
+          isCompact && styles.modifiers.compact,
+          className,
+          wrapModifier && styles.modifiers[wrapModifier]
+        )}
         aria-label={ariaLabel}
         {...props}
       >

@@ -46,6 +46,9 @@ interface DatePickerState {
   flatpickrDateFormat: string;
 }
 
+/**
+ * @param format
+ */
 function mapToFlatpickrFormats(format: string) {
   let flatpickrFormat = '';
   for (const formatBlock of format.split(/(yyyy|mm|dd)/i)) {
@@ -62,6 +65,9 @@ function mapToFlatpickrFormats(format: string) {
   return flatpickrFormat;
 }
 
+/**
+ * @param date
+ */
 function isValid(date: Date) {
   return date && !isNaN(date.getDate());
 }

@@ -30,7 +30,7 @@ DataListContent,
 Dropdown,
 DropdownPosition,
 KebabToggle,
-DropdownItem
+DropdownItem,
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import { css } from '@patternfly/react-styles';
@@ -1049,4 +1049,37 @@ class SelectableDataList extends React.Component {
     );
   }
 }
+```
+
+### Controlling text
+```js
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListItemRow,
+  DataListItemCells,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListWrapModifier,
+} from '@patternfly/react-core';
+
+SimpleDataList = () => (
+  <DataList aria-label="Simple data list example">
+    <DataListItem aria-labelledby="simple-item1">
+      <DataListItemRow>
+        <DataListItemCells
+          dataListCells={[
+            <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
+              <span id="simple-item1">Primary content</span>
+            </DataListCell>,
+            <DataListCell key="secondary content" wrapModifier={DataListWrapModifier.truncate}>Really really really really really really really really really really really really really really long description that should be truncated before it ends</DataListCell>
+          ]}
+        />
+      </DataListItemRow>
+    </DataListItem>
+  </DataList>
+);
 ```
