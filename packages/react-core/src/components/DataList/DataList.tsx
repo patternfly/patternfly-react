@@ -19,7 +19,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   /** Optional callback to make DataList selectable, fired when DataListItem selected */
   onSelectDataListItem?: (id: string) => void;
   /** Optional callback to make DataList draggable, fired when dragging ends */
-  onDragFinish?: (newList: React.ReactElement[]) => void;
+  onDragFinish?: (newItemOrder: string[]) => void;
   /** Optional informational callback for dragging, fired when dragging starts */
   onDragStart?: (id: string) => void;
   /** Optional informational callback for dragging, fired when an item moves */
@@ -32,14 +32,16 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   isCompact?: boolean;
   /** Determines which wrapping modifier to apply to the DataList */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
+  /** Order of items in list */
+  itemOrder: string[];
 }
 
 interface DataListState {
   childrenCopy: React.ReactNode;
-  renderable: React.ReactElement[];
-  draggedItem: React.ReactElement;
+  draggedItemId: string;
+  draggingToItemIndex: number;
   dragging: boolean;
-  to: number;
+  tempItemOrder: string[];
 }
 
 interface DataListContextProps {
@@ -56,6 +58,18 @@ export const DataListContext = React.createContext<Partial<DataListContextProps>
   isSelectable: false
 });
 
+// Moves i1 to i2 and the rest of the array shifts down
+function moveItem(arr: string[], i1: string, toIndex: number) {
+  const fromIndex = arr.indexOf(i1);
+  if (fromIndex === toIndex) {
+    return arr;
+  }
+  const temp = arr.splice(fromIndex, 1);
+  arr.splice(toIndex, 0, temp[0]);
+
+  return arr;
+}
+
 export class DataList extends React.Component<DataListProps, DataListState> {
   static displayName = 'DataList';
   static defaultProps: PickOptional<DataListProps> = {
@@ -67,108 +81,104 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   };
   dragFinished: boolean = false;
   arrayCopy: React.ReactElement[] = React.Children.toArray(this.props.children) as React.ReactElement[];
+  ref = React.createRef<HTMLUListElement>();
 
   state: DataListState = {
     childrenCopy: this.props.children,
-    renderable: React.Children.toArray(this.props.children) as React.ReactElement[],
-    to: -1,
-    draggedItem: null,
+    tempItemOrder: [], // Doesn't matter, set in constructor
+    draggedItemId: null,
+    draggingToItemIndex: null,
     dragging: false
   };
 
-  static getDerivedStateFromProps(props: DataListProps, state: DataListState) {
-    if (props.children !== state.childrenCopy) {
-      return {
-        renderable: React.Children.toArray(props.children) as React.ReactElement[],
-        childrenCopy: props.children
-      };
-    }
-
-    return null;
-  }
-
-  componentDidUpdate() {
+  componentDidUpdate(oldProps: DataListProps) {
     if (this.dragFinished) {
       this.arrayCopy = React.Children.toArray(this.props.children) as React.ReactElement[];
       this.dragFinished = false;
 
       this.setState({
-        renderable: React.Children.toArray(this.props.children) as React.ReactElement[],
-        to: -1,
-        draggedItem: null,
+        tempItemOrder: [...this.props.itemOrder],
+        draggedItemId: null,
         dragging: false
       });
     }
+    if (oldProps.itemOrder !== this.props.itemOrder) {
+      this.move(this.props.itemOrder);
+    }
   }
 
-  getIndex = (id: string) => this.state.renderable.findIndex(item => item.props.id === id);
+  getIndex = (id: string) => Array.from(this.ref.current.children).findIndex(item => item.id === id);
 
-  move = (arr: React.ReactElement[], oldIndex: number, newIndex: number) => {
-    const { onDragMove } = this.props;
-    const { draggedItem } = this.state;
-    const ghost = React.cloneElement(draggedItem, {
-      className: css(draggedItem.props.className, styles.modifiers.ghostRow),
-      'aria-pressed': true
+  // Moves dom node
+  move = (itemOrder: string[]) => {
+    const ulNode = this.ref.current;
+    const nodes = Array.from(ulNode.children);
+    if (nodes.map(node => node.id).every((id, i) => id === itemOrder[i])) {
+      return;
+    }
+    while (ulNode.firstChild) {
+      ulNode.removeChild(ulNode.lastChild);
+    }
+
+    itemOrder.forEach(id => {
+      ulNode.appendChild(nodes.find(n => n.id === id));
     });
+  };
 
-    arr.splice(oldIndex, 1);
-    arr.splice(newIndex, 0, ghost);
-    onDragMove && onDragMove(oldIndex, newIndex);
-    return arr;
+  dragStart0 = (el: HTMLElement) => {
+    const { onDragStart } = this.props;
+    const draggedItemId = el.id;
+
+    el.classList.add(styles.modifiers.ghostRow);
+    el.setAttribute('aria-pressed', 'true');
+    this.setState({
+      draggedItemId,
+      dragging: true
+    });
+    onDragStart && onDragStart(draggedItemId);
   };
 
   dragStart = (evt: React.DragEvent) => {
-    const { children, onDragStart } = this.props;
     evt.dataTransfer.effectAllowed = 'move';
     evt.dataTransfer.setData('text/plain', evt.currentTarget.id);
-    // e.dataTransfer.setDragImage(React.createElement('div'), 0, 0);
-    const dragItem = React.Children.toArray(children).find(
-      item => (item as React.ReactElement).props.id === evt.currentTarget.id
-    ) as React.ReactElement;
-    const dragInd = this.getIndex(dragItem.props.id);
-    this.setState(
-      {
-        draggedItem: dragItem,
-        to: dragInd,
-        dragging: true
-      },
-      () => {
-        this.setState({
-          renderable: this.move(this.arrayCopy, dragInd, dragInd)
-        });
-      }
-    );
-    onDragStart && onDragStart(evt.currentTarget.id);
+    this.dragStart0(evt.currentTarget as HTMLElement);
+  };
+
+  dragEnd0 = (el: HTMLElement) => {
+    el.classList.remove(styles.modifiers.ghostRow);
+    el.setAttribute('aria-pressed', 'false');
+    this.props.onDragFinish(this.state.tempItemOrder);
   };
 
   dragEnd = (evt: React.DragEvent) => {
-    const { to, renderable, draggedItem } = this.state;
-    const { onDragFinish } = this.props;
+    this.dragEnd0(evt.currentTarget as HTMLElement);
+  };
 
-    const data = renderable;
-    data.splice(to, 1, draggedItem);
-    this.dragFinished = true;
-    onDragFinish(data);
+  dragOver0 = (id: string) => {
+    const draggingToItemIndex = Array.from(this.ref.current.children).findIndex(item => item.id === id);
+    if (draggingToItemIndex !== this.state.draggingToItemIndex) {
+      console.log('draggedItemId', this.state.draggedItemId, 'draggingToItemIndex', draggingToItemIndex);
+      const tempItemOrder = moveItem([...this.props.itemOrder], this.state.draggedItemId, draggingToItemIndex);
+      this.move(tempItemOrder);
+
+      this.setState({
+        draggingToItemIndex,
+        tempItemOrder
+      });
+    }
   };
 
   dragOver = (evt: React.DragEvent) => {
-    const { to } = this.state;
     evt.preventDefault();
     const currListItem = (evt.target as Element).closest('li');
     if (currListItem && currListItem.classList.contains(css(styles.modifiers.ghostRow))) {
       return;
     }
-    const currInd = currListItem ? this.getIndex(currListItem.id) : 0;
-    if (currInd !== to) {
-      this.setState(prevState => ({
-        to: currInd,
-        renderable: this.move(this.arrayCopy, prevState.to === -1 ? currInd : prevState.to, currInd)
-      }));
-    }
+    this.dragOver0(currListItem.id);
   };
 
   handleDragButtonKeys = (evt: React.KeyboardEvent) => {
-    const { to, draggedItem, dragging, renderable } = this.state;
+    const { draggedItemId: draggedItem, dragging } = this.state;
     const { children, onDragFinish, onDragStart, onDragCancel } = this.props;
     if (
       evt.key !== ' ' &&
@@ -178,10 +188,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       evt.key !== 'ArrowDown'
     ) {
       if (dragging) {
-        this.setState({
-          dragging: false
-        });
-        this.dragFinished = true;
+        evt.preventDefault();
       }
       return;
     }
@@ -191,13 +198,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     const dragInd = this.getIndex(dragItem.id);
 
     if (evt.key === ' ' || (evt.key === 'Enter' && !dragging)) {
-      onDragStart && onDragStart(dragItem.id);
-      this.setState({
-        dragging: true,
-        draggedItem: React.Children.toArray(children).find(
-          item => (item as React.ReactElement).props.id === dragItem.id
-        ) as React.ReactElement
-      });
+      this.dragStart0(dragItem);
     } else if (dragging) {
       if (evt.key === 'Escape' || evt.key === 'Enter') {
         this.setState({
@@ -205,30 +206,22 @@ export class DataList extends React.Component<DataListProps, DataListState> {
         });
         this.dragFinished = true;
         if (evt.key === 'Enter') {
-          const data = renderable;
-          data.splice(to, 1, draggedItem);
-          onDragFinish(data);
+          this.dragEnd0(dragItem);
         } else {
           onDragCancel && onDragCancel();
         }
       } else if (evt.key === 'ArrowUp') {
-        this.setState(prevState => {
-          const prevTo = prevState.to === -1 ? dragInd : prevState.to;
-          const next = prevTo - 1 >= 0 ? prevTo - 1 : 0;
-          return {
-            to: next,
-            renderable: this.move(this.arrayCopy, prevTo, next)
-          };
-        });
+        const nextSelection = dragItem.previousSibling as HTMLElement;
+        if (nextSelection) {
+          this.dragOver0(nextSelection.id);
+          (dragItem.querySelector(`.${styles.dataListItemDraggableButton}`) as HTMLElement).focus();
+        }
       } else if (evt.key === 'ArrowDown') {
-        this.setState(prevState => {
-          const prevTo = prevState.to === -1 ? dragInd : prevState.to;
-          const next = prevTo + 1 < this.arrayCopy.length ? prevTo + 1 : this.arrayCopy.length - 1;
-          return {
-            to: next,
-            renderable: this.move(this.arrayCopy, prevTo, next)
-          };
-        });
+        const nextSelection = dragItem.nextSibling as HTMLElement;
+        if (nextSelection) {
+          this.dragOver0(nextSelection.id);
+          (dragItem.querySelector(`.${styles.dataListItemDraggableButton}`) as HTMLElement).focus();
+        }
       }
     }
   };
@@ -245,9 +238,10 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onDragCancel,
       onDragFinish,
       wrapModifier,
+      itemOrder,
       ...props
     } = this.props;
-    const { renderable, dragging } = this.state;
+    const { dragging } = this.state;
     const isSelectable = onSelectDataListItem !== undefined;
     const isDraggable = onDragFinish !== undefined;
 
@@ -285,8 +279,9 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           }}
           {...props}
           {...dragProps}
+          ref={this.ref}
         >
-          {isDraggable ? renderable : children}
+          {children}
         </ul>
       </DataListContext.Provider>
     );
