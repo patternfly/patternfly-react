@@ -5,6 +5,8 @@ import { MenuSelectClickHandler } from './Menu';
 import { MenuContext } from './MenuContext';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 
 export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
   /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
@@ -35,6 +37,10 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   description?: string | React.ReactNode;
   /** Render external link icon */
   isExternalLink?: boolean;
+  /** Internal flag indicating if the option is selected */
+  isSelected?: boolean;
+  /** Render expandable icon */
+  isExpandable?: boolean;
   /** ID of the item. Required for tracking favorites. */
   id?: string;
   /** Flag indicating if the item is favorited */
@@ -59,6 +65,8 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   component = 'a',
   isDisabled = false,
   isExternalLink = false,
+  isExpandable = false,
+  isSelected = false,
   icon,
   id,
   isFavorite,
@@ -74,8 +82,13 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
       <Component
         href={to}
         id={id}
-        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(styles.menuItem, isFavorite && styles.modifiers.favorited, isActive, className)}
+        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick, isSelected)}
+        className={css(
+          styles.menuItem,
+          isFavorite && styles.modifiers.favorited,
+          isSelected && styles.modifiers.selected,
+          className
+        )}
         aria-current={isActive ? 'page' : null}
         {...props}
       >
@@ -85,6 +98,21 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
           {isExternalLink && (
             <span className={css(styles.menuItemExternalIcon)}>
               <ExternalLinkAltIcon />
+            </span>
+          )}
+          {isExpandable && (
+            <span className={css(styles.menuItemToggleIcon)}>
+              <AngleRightIcon />
+            </span>
+          )}
+          {/* {isSelected && (
+            <span className={css(styles.menuItemSelectIcon)}>
+              <CheckIcon aria-hidden />
+            </span>
+          )} */}
+          {isSelected && (
+            <span className={css(styles.menuItemSelectIcon)}>
+              <CheckIcon aria-hidden />
             </span>
           )}
         </div>
@@ -119,7 +147,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
                 className={css(
                   styles.menuItemAction,
                   styles.modifiers.favorite,
-                  isFavorite && styles.modifiers.favorited
+                  context.onFavorite && isFavorite && styles.modifiers.favorited
                 )}
                 aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
                 onClick={() => {

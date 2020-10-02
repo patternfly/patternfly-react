@@ -4,14 +4,15 @@ import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { SearchInput } from '../SearchInput';
 import { MenuGroup } from '.';
-import { Divider } from '..';
+import { Divider, SelectOptionObject } from '..';
 import { MenuContext } from './MenuContext';
 
 export type MenuSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
   itemId: number | string,
   groupId: number | string,
-  to: string
+  to: string,
+  isSelected: boolean
 ) => void;
 
 export interface MenuProps
@@ -27,6 +28,7 @@ export interface MenuProps
     itemId: number | string;
     to: string;
     event: React.FormEvent<HTMLInputElement>;
+    isSelected: boolean;
   }) => void;
   /** Callback for when a list is expanded or collapsed */
   onToggle?: (toggledItem: {
@@ -41,7 +43,7 @@ export interface MenuProps
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
   /** Indicates menu type */
-  variant?: 'default' | 'flyout';
+  variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
   /** Search input of menu */
   searchInput?: React.ReactNode;
   /** ID list of favorited ApplicationLauncherItems */
@@ -54,6 +56,8 @@ export interface MenuProps
   isGrouped?: boolean;
   /** Array of application launcher items */
   items?: React.ReactNode[];
+  /** Array of selected items for multi select variants. */
+  selections?: (string | SelectOptionObject)[];
 }
 
 export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ouiaStateId: string }> {
@@ -65,6 +69,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     // onFavorite: () => undefined,
     // theme: 'dark',
     favorites: [] as string[],
+    selections: [],
     favoritesLabel: 'Favorites',
     ouiaSafe: true,
     isGrouped: false
@@ -82,16 +87,17 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     itemId: number | string,
     to: string,
     preventDefault: boolean,
+    isSelected: boolean,
     onClick: MenuSelectClickHandler
   ) {
     if (preventDefault) {
       event.preventDefault();
     }
 
-    this.props.onSelect({ groupId, itemId, event, to });
+    this.props.onSelect({ groupId, itemId, event, to, isSelected });
 
     if (onClick) {
-      onClick(event, itemId, groupId, to);
+      onClick(event, itemId, groupId, to, isSelected);
     }
   }
 
@@ -132,7 +138,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     if (isGrouped) {
       return (items as React.ReactElement[]).map(group =>
         React.cloneElement(group, {
-          children: React.Children.map(group.props.children as React.ReactElement[], item => {
+          children: React.Children.map(group.props.children.props.children as React.ReactElement[], item => {
             if (item.type === Divider) {
               return item;
             }
@@ -166,6 +172,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
       variant,
       searchInput,
       favorites,
+      selections,
       favoritesLabel,
       onFavorite,
       isGrouped,
@@ -196,6 +203,47 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
       renderableItems = items;
     }
 
+    let variantProps: any;
+    let variantChildren: any;
+
+    switch (variant) {
+      case 'singleSelect':
+        variantProps = {
+          selected: selections[0]
+          // openedOnEnter
+        };
+        variantChildren = renderableItems;
+        break;
+      // case 'checkbox':
+      //   variantProps = {
+      //     checked: selections,
+      //     isGrouped,
+      //     hasInlineFilter
+      //   };
+      //   variantChildren = filterWithChildren;
+      //   break;
+      // case 'typeahead':
+      //   variantProps = {
+      //     selected: selections[0],
+      //     openedOnEnter
+      //   };
+      //   variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+      //   if (variantChildren.length === 0) {
+      //     variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+      //   }
+      //   break;
+      // case 'typeaheadmulti':
+      //   variantProps = {
+      //     selected: selections,
+      //     openedOnEnter
+      //   };
+      //   variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+      //   if (variantChildren.length === 0) {
+      //     variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+      //   }
+      //   break;
+    }
+
     return (
       <MenuContext.Provider
         value={{
@@ -206,13 +254,15 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
             itemId: number | string,
             to: string,
             preventDefault: boolean,
+            isSelected: boolean,
             onClick: (
               e: React.FormEvent<HTMLInputElement>,
               itemId: number | string,
               groupId: number | string,
-              to: string
+              to: string,
+              isSelected: boolean
             ) => void
-          ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
+          ) => this.onSelect(event, groupId, itemId, to, preventDefault, isSelected, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           onSearchInputChange: (event: React.FormEvent<HTMLInputElement>, value: string) =>

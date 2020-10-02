@@ -147,13 +147,14 @@ class MenuExpandableList extends React.Component {
     const { activeItem } = this.state;
     const menuItems = [
       <MenuList>
-        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+        <MenuListItem isExpandable component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
           From Git
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem isExpandable component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Container Image
         </MenuListItem>
         <MenuListItem
+          isExpandable
           component="button"
           description="Description"
           icon={<CubeIcon />}
@@ -615,23 +616,29 @@ class MenuOptionSingleSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      selectedItem: 0,
     };
+
     this.onSelect = result => {
       this.setState({
-        activeItem: result.itemId
+        activeItem: result.itemId,
+        selectedItem: result.itemId
       });
     };
+
   }
 
+
   render() {
-    const { activeItem } = this.state;
+
+    const { activeItem, selectedItem } = this.state;
     const menuItems = [
       <MenuList>
-        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0} isSelected={selectedItem === 0}>
           Option 1
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1} isSelected={selectedItem === 1}>
           Option 2
         </MenuListItem>
         <MenuListItem
@@ -640,6 +647,7 @@ class MenuOptionSingleSelect extends React.Component {
           to="#default-link2"
           itemId={2}
           isActive={activeItem === 2}
+          isSelected={selectedItem === 2}
         >
           Option 3
         </MenuListItem>

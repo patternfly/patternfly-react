@@ -7,11 +7,13 @@ export const MenuContext = React.createContext<{
     itemId: number | string,
     to: string,
     preventDefault: boolean,
+    isSelected: boolean,
     onClick: (
       e: React.FormEvent<HTMLInputElement>,
       itemId: number | string,
       groupId: number | string,
-      to: string
+      to: string,
+      isSelected: boolean
     ) => void
   ) => void;
   onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
