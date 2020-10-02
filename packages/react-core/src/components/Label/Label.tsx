@@ -27,7 +27,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   href?: string;
   /** Flag indicating if the label is an overflow label */
   isOverflowLabel?: boolean;
-  /** Forwards the label content class name to the content that is rendered.  Use this prop for react router.*/
+  /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
   render?: ({ className, content }: { className: string; content: React.ReactNode }) => React.ReactNode;
 }
 
