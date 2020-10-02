@@ -32,8 +32,8 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   isCompact?: boolean;
   /** Determines which wrapping modifier to apply to the DataList */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
-  /** Order of items in list */
-  itemOrder: string[];
+  /** Order of items in a draggable DataList */
+  itemOrder?: string[];
 }
 
 interface DataListState {
