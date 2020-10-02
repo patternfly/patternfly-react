@@ -203,19 +203,30 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 {children}
               </div>
             )}
-            {variant !== SelectVariant.checkbox && !isCustomContent && (
-              <ul
-                ref={innerRef}
-                className={css(styles.selectMenu, className)}
-                role="listbox"
-                aria-label={ariaLabel}
-                aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                {...props}
-              >
-                {this.extendChildren(inputIdPrefix)}
-              </ul>
-            )}
+            {variant !== SelectVariant.checkbox &&
+              !isCustomContent &&
+              (!isGrouped ? (
+                <ul
+                  ref={innerRef}
+                  className={css(styles.selectMenu, className)}
+                  role="listbox"
+                  aria-label={ariaLabel}
+                  aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                  {...props}
+                >
+                  {this.extendChildren(inputIdPrefix)}
+                </ul>
+              ) : (
+                <div
+                  ref={innerRef}
+                  className={css(styles.selectMenu, className)}
+                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                  {...props}
+                >
+                  {this.extendChildren(inputIdPrefix)}
+                </div>
+              ))}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
                 <div
