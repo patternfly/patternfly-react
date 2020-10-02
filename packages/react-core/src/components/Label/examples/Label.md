@@ -6,6 +6,7 @@ propComponents: ['Label']
 ---
 
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import { Link } from '@reach/router';
 
 ## Examples
 
@@ -326,6 +327,27 @@ OutlinedLabels = () => (
     <Label variant="outline" color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
       Cyan label with icon that overflows
     </Label>
+  </React.Fragment>
+);
+```
+
+### Router link
+```js
+import React from 'react';
+import { Label, LabelIcon, LabelText } from '@patternfly/react-core';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import { Link } from '@reach/router';
+
+RouterLinkLabels = () => (
+  <React.Fragment>
+    <Label customContent={<Link to="/"> <LabelText>router link</LabelText></Link>} />
+    <Label customContent={
+      <Link to="/"> 
+          <LabelIcon><InfoCircleIcon /></LabelIcon> 
+          <LabelText>router link</LabelText>
+      </Link>} />
+  <Label customContent={<Link to="/"> <LabelText isTruncated>router link with very long label</LabelText></Link>} />
+  <Label customContent={<Link to="/"> <LabelText>router link with very long label that is removable</LabelText></Link>} onClose={Function.prototype}/>   
   </React.Fragment>
 );
 ```
