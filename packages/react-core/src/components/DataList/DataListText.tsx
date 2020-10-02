@@ -50,6 +50,12 @@ export const DataListText: React.FunctionComponent<DataListTextProps> = ({
     </Component>
   );
 
-  return tooltip !== '' ? <Tooltip content={tooltip}>{text}</Tooltip> : text;
+  return tooltip !== '' ? (
+    <Tooltip content={tooltip} isVisible>
+      {text}
+    </Tooltip>
+  ) : (
+    text
+  );
 };
 DataListText.displayName = 'DataListText';
