@@ -6,7 +6,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { useOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface NavExpandableProps
   extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
@@ -36,7 +36,7 @@ interface NavExpandableState {
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
-  static displayName = 'NavExpandable';
+  static displayName = 'NavExpandableItem';
   static defaultProps: PickOptional<NavExpandableProps> = {
     srText: '',
     isExpanded: false,
@@ -114,6 +114,12 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
       this.setState(prevState => ({ expandedState: !prevState.expandedState }));
     };
 
+    const ouiaProps = useOUIAProps(
+      NavExpandable.displayName,
+      ouiaId !== undefined ? ouiaId : getDefaultOUIAId(NavExpandable.displayName),
+      ouiaSafe
+    );
+
     return (
       <NavContext.Consumer>
         {(context: any) => (
@@ -125,7 +131,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               isActive && styles.modifiers.current,
               className
             )}
-            {...getOUIAProps('NavItem', ouiaId, ouiaSafe)}
+            {...ouiaProps}
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
