@@ -6,7 +6,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PickOptional } from '../../helpers/typeUtils';
-import { useOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface NavExpandableProps
   extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
@@ -33,6 +33,7 @@ export interface NavExpandableProps
 
 interface NavExpandableState {
   expandedState: boolean;
+  ouiaStateId: string;
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
@@ -51,7 +52,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   id = this.props.id || getUniqueId();
 
   state = {
-    expandedState: this.props.isExpanded
+    expandedState: this.props.isExpanded,
+    ouiaStateId: getDefaultOUIAId(NavExpandable.displayName)
   };
 
   componentDidMount() {
@@ -114,12 +116,6 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
       this.setState(prevState => ({ expandedState: !prevState.expandedState }));
     };
 
-    const ouiaProps = useOUIAProps(
-      NavExpandable.displayName,
-      ouiaId !== undefined ? ouiaId : getDefaultOUIAId(NavExpandable.displayName),
-      ouiaSafe
-    );
-
     return (
       <NavContext.Consumer>
         {(context: any) => (
@@ -131,7 +127,10 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               isActive && styles.modifiers.current,
               className
             )}
-            {...ouiaProps}
+            {...getOUIAProps(
+              NavExpandable.displayName,
+              this.props.ouiaId !== undefined ? this.props.ouiaId : this.state.ouiaStateId
+            )}
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
