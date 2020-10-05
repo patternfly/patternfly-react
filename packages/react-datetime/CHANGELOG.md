@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.2...@patternfly/react-datetime@4.2.3) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
 ## [4.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.1...@patternfly/react-datetime@4.2.2) (2020-10-05)
 
 **Note:** Version bump only for package @patternfly/react-datetime
