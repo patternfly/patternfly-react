@@ -7,6 +7,13 @@
 
 import * as React from 'react';
 import { TooltipProps, PopoverProps } from '@patternfly/react-core';
+import { BaseTable } from '../../BaseTable/BaseTable';
+import { BaseTableHead } from '../../BaseTable/BaseTableHead';
+import { BaseTableHeaderRow } from '../../BaseTable/BaseTableHeaderRow';
+import { BaseTableBody } from '../../BaseTable/BaseTableBody';
+import { BaseTableBodyRow } from '../../BaseTable/BaseTableBodyRow';
+import { BaseHeaderCell } from '../../BaseTable/BaseHeaderCell';
+import { BaseBodyCell } from '../../BaseTable/BaseBodyCell';
 
 // Cell Type
 export interface CellType {
@@ -54,16 +61,16 @@ export interface RowType {
 // Table Defaults
 export const TableDefaults = {
   renderers: {
-    table: 'table',
+    table: BaseTable,
     header: {
-      wrapper: 'thead',
-      row: 'tr',
-      cell: 'th'
+      wrapper: BaseTableHead,
+      row: BaseTableHeaderRow,
+      cell: BaseHeaderCell
     },
     body: {
-      wrapper: 'tbody',
-      row: 'tr',
-      cell: 'td'
+      wrapper: BaseTableBody,
+      row: BaseTableBodyRow,
+      cell: BaseBodyCell
     }
   }
 };

@@ -9,6 +9,7 @@ export * from './EditableTextCell';
 export * from './ExpandableRowContent';
 export * from './Header';
 export * from './HeaderCell';
+export * from './HeaderCellInfoWrapper';
 export * from './RowWrapper';
 export * from './SelectColumn';
 export * from './SortColumn';

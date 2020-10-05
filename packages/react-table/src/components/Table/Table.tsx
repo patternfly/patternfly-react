@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
+import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import {
   DropdownDirection,
   DropdownPosition
@@ -14,7 +13,6 @@ import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';
 import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
-import { toCamel } from './utils';
 import { calculateColumns } from './utils/headerUtils';
 import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
 
@@ -375,7 +373,6 @@ export class Table extends React.Component<TableProps, {}> {
       caption,
       header,
       className,
-      gridBreakPoint,
       onSort,
       onSelect,
       canSelectAll,
@@ -398,11 +395,7 @@ export class Table extends React.Component<TableProps, {}> {
       cells,
       bodyWrapper,
       rowWrapper,
-      borders,
       role,
-      ouiaId,
-      ouiaSafe,
-      isStickyHeader,
       ...props
     } = this.props;
 
@@ -457,18 +450,9 @@ export class Table extends React.Component<TableProps, {}> {
           columns={headerData}
           role={role}
           className={css(
-            styles.table,
-            gridBreakPoint &&
-              stylesGrid.modifiers[
-                toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
-              ],
-            styles.modifiers[variant],
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
-            variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
-            isStickyHeader && styles.modifiers.stickyHeader,
             className
           )}
-          {...getOUIAProps(Table.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         >
           {caption && <caption>{caption}</caption>}
           {children}

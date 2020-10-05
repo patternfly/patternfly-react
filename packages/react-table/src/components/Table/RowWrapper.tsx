@@ -4,6 +4,7 @@ import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
+import { BaseTableBodyRow } from '../BaseTable/BaseTableBodyRow';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
@@ -102,7 +103,7 @@ export class RowWrapper extends React.Component<RowWrapperProps, { ouiaStateId: 
     } = this.props;
 
     return (
-      <tr
+      <BaseTableBodyRow
         {...props}
         ref={trRef as React.Ref<any>}
         className={css(

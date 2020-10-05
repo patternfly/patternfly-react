@@ -1,2 +1,2 @@
 export * from './Table';
-export * from './LightTable';
+export * from './BaseTable';

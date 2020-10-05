@@ -54,13 +54,15 @@ validateCellEdits,
 applyCellEdits,
 EditableTextCell,
 EditableSelectInputCell,
-LightTable,
-LightTableCaption,
-LightTableHead,
-LightTableBody,
-LightTableRow,
-LightHeaderCell,
-LightBodyCell
+BaseTable,
+BaseTableCaption,
+BaseTableHead,
+BaseTableBody,
+BaseTableHeaderRow,
+BaseTableBodyRow,
+BaseHeaderCell,
+BaseBodyCell,
+HeaderCellInfoWrapper
 } from '@patternfly/react-table';
 
 import { EmptyStateIcon } from '@patternfly/react-core';
@@ -76,96 +78,6 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import DemoSortableTable from './DemoSortableTable';
 
 ## Examples
-
-### Composable Table
-
-```js
-import React from 'react';
-import { LightTable, LightTableCaption, LightTableHead, LightTableBody, LightTableRow, LightHeaderCell, LightBodyCell } from '@patternfly/react-table';
-
-ComposableTable = () => {
-  const [columns, setColumns] = React.useState([
-    'Repositories',
-    'Branches',
-    'Pull requests',
-    'Workspaces',
-    'Last commit'
-  ]);
-  const [data, setData] = React.useState([
-    ['Repository 1', 10, 25, 5, '2 days ago'],
-    ['Repository 2', 11, 26, 4, '4 days ago'],
-    ['Repository 3', 12, 27, 3, '3 days ago'],
-    ['Repository 4', 13, 28, 2, '5 days ago']
-  ]);
-  const [sortedBy, setSortedBy] = React.useState(-1);
-  const [sortDirection, setSortDirection] = React.useState([
-    'none',
-    'none',
-    'none',
-    'none',
-    'none'
-  ]);
-  const onSort = (index) => {
-    // changes the active selected style
-    setSortedBy(index);
-    // changes the sort direction
-    const updatedSortDirection = sortDirection.map((dir, sortIndex) => {
-      if (sortIndex === index) {
-        if (dir === 'asc') {
-          return 'desc';
-        } else if (dir === 'desc') {
-          return 'asc';
-        }
-        return 'asc';
-      } else {
-        return 'none';
-      }
-    });
-    setSortDirection(updatedSortDirection);
-    // sorts the row data
-    const updatedData = data.sort((a, b) => {
-      if (typeof a[index] === 'number') {
-        // numeric sort
-        if (updatedSortDirection[index] === 'asc') {
-          return a[index] - b[index];
-        }
-        return b[index] - a[index];
-      } else {
-        // string sort
-        if (updatedSortDirection[index] === 'asc') {
-          return a[index].localeCompare(b[index]);
-        }
-        return b[index].localeCompare(a[index]);
-      }
-    });
-    debugger;
-    setData(updatedData);
-  };
-  return (
-    <LightTable aria-label="This is a simple table example" id="table-basic">
-      <LightTableCaption>This is the table caption</LightTableCaption>
-      <LightTableHead>
-        <LightTableRow>
-          <LightHeaderCell sortable active={sortedBy === 0} sortDirection={sortDirection[0]} onSort={() => onSort(0)}>{columns[0]}</LightHeaderCell>
-          <LightHeaderCell sortable active={sortedBy === 1} sortDirection={sortDirection[1]} onSort={() => onSort(1)}>{columns[1]}</LightHeaderCell>
-          <LightHeaderCell>{columns[2]}</LightHeaderCell>
-          <LightHeaderCell>{columns[3]}</LightHeaderCell>
-          <LightHeaderCell textCenter>{columns[4]}</LightHeaderCell>
-        </LightTableRow>
-      </LightTableHead>
-      <LightTableBody>
-        {data.map((row, rowIndex) => (
-          <LightTableRow key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <LightBodyCell key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>{cell}</LightBodyCell>
-            ))}
-          </LightTableRow>
-        ))}
-      </LightTableBody>
-    </LightTable>
-  );
-}
-```
 
 ### Basic
 
@@ -212,7 +124,7 @@ class SimpleTable extends React.Component {
         },
         'Workspaces',
         {
-          title: 'Last Commit',
+          title: 'Last commit',
           transforms: [textCenter],
           cellTransforms: [textCenter]
         }
@@ -368,6 +280,131 @@ class RowWrapperTable extends React.Component {
 }
 ```
 
+### Composable: Basic, Row click handler, Custom row wrapper
+
+```js
+import React from 'react';
+import {
+  BaseTable,
+  BaseTableHead,
+  BaseTableBody,
+  BaseTableHeaderRow,
+  BaseTableBodyRow,
+  BaseHeaderCell,
+  BaseBodyCell,
+  HeaderCellInfoWrapper
+} from '@patternfly/react-table';
+
+ComposableTableBasic = () => {
+  const [columns, setColumns] = React.useState([
+    'Repositories',
+    'Branches',
+    'Pull requests',
+    'Workspaces',
+    'Last commit'
+  ]);
+  const [data, setData] = React.useState([
+    ['one', 'two', 'three', 'four', 'five'],
+    ['one - 2', null, null, 'four - 2', 'five - 2'],
+    ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3 (not centered)']
+  ]);
+  // map additional configuration to the data
+  // key: row_column
+  const dataConfig = {
+    '1_0': {
+      title: text => <div>{text}</div>,
+      props: { title: 'hover title', colSpan: 3 }
+    },
+    '2_4': {
+      props: { textCenter: false }
+    }
+  };
+  const onRowClick = (event, rowIndex, row) => {
+    console.log(`handle row click ${rowIndex}`, row);
+  };
+  return (
+    <BaseTable aria-label="Simple Table">
+      <BaseTableHead noWrap>
+        <BaseTableHeaderRow>
+          <BaseHeaderCell dataKey={0} dataLabel={columns[0]}>
+            <HeaderCellInfoWrapper
+              variant="tooltip"
+              info="More information about repositories"
+              className="repositories-info-tip"
+              tooltipProps={{
+                isContentLeftAligned: true
+              }}
+            >
+              {columns[0]}
+            </HeaderCellInfoWrapper>
+          </BaseHeaderCell>
+          <BaseHeaderCell dataKey={1} dataLabel={columns[0]}>
+            {columns[1]}
+          </BaseHeaderCell>
+          <BaseHeaderCell dataKey={2} dataLabel={columns[2]}>
+            <HeaderCellInfoWrapper
+              variant="popover"
+              info={
+                <div>
+                  More <strong>information</strong> on pull requests
+                </div>
+              }
+              ariaLabel="More information on pull requests"
+              popoverProps={{
+                headerContent: 'Pull requests',
+                footerContent: <a href="">Click here for even more info</a>
+              }}
+            >
+              {columns[2]}
+            </HeaderCellInfoWrapper>
+          </BaseHeaderCell>
+          <BaseHeaderCell dataKey={3} dataLabel={columns[3]}>
+            {columns[3]}
+          </BaseHeaderCell>
+          <BaseHeaderCell dataKey={4} dataLabel={columns[4]} textCenter>
+            {columns[4]}
+          </BaseHeaderCell>
+        </BaseTableHeaderRow>
+      </BaseTableHead>
+      <BaseTableBody>
+        {data.map((row, rowIndex) => {
+          const isOddRow = (rowIndex + 1) % 2;
+          const customStyle = {
+            borderLeft: '3px solid var(--pf-global--primary-color--100)'
+          };
+          return (
+            <BaseTableBodyRow
+              key={rowIndex}
+              onClick={event => onRowClick(event, rowIndex, row)}
+              className={isOddRow ? 'odd-row-class' : 'even-row-class'}
+              style={isOddRow ? customStyle : {}}
+            >
+              {row.map((cell, cellIndex) => {
+                if (!cell) {
+                  return null;
+                }
+                const cellConfig = dataConfig[`${rowIndex}_${cellIndex}`];
+                return (
+                  <BaseBodyCell
+                    key={`${rowIndex}_${cellIndex}`}
+                    dataKey={cellIndex}
+                    dataLabel={columns[cellIndex]}
+                    textCenter={cellIndex === row.length - 1}
+                    {...((cellConfig && cellConfig.props) || {})}
+                  >
+                    {cellConfig && cellConfig.title ? cellConfig.title(cell) : cell}
+                  </BaseBodyCell>
+                );
+              })}
+            </BaseTableBodyRow>
+          );
+        })}
+      </BaseTableBody>
+    </BaseTable>
+  );
+};
+```
+
 ### Sortable
 
 ```js
@@ -383,9 +420,13 @@ class SortableTable extends React.Component {
         'Branches',
         { title: 'Pull requests', transforms: [sortable] },
         'Workspaces',
-        'Last Commit'
+        'Last commit'
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
@@ -447,7 +488,11 @@ class SortableWrappingHeaders extends React.Component {
           transforms: [sortable, wrappable]
         }
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
@@ -483,6 +528,120 @@ class SortableWrappingHeaders extends React.Component {
 }
 ```
 
+### Composable: Sortable, Sortable with wrapping headers
+
+```js
+import React from 'react';
+import {
+  BaseTable,
+  BaseTableHead,
+  BaseTableBody,
+  BaseTableHeaderRow,
+  BaseTableBodyRow,
+  BaseHeaderCell,
+  BaseBodyCell,
+  HeaderCellInfoWrapper
+} from '@patternfly/react-table';
+
+ComposableTableSortable = () => {
+  const [columns, setColumns] = React.useState([
+    'Repositories',
+    'Branches',
+    'Pull requests',
+    'This is a really long table header that goes on for a long time 4.',
+    'This is a really long table header that goes on for a long time 5.'
+  ]);
+  const [data, setData] = React.useState([
+    ['one', 'two', 'a', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['p', 'two', 'b', 'four', 'five']
+  ]);
+  const [sortedBy, setSortedBy] = React.useState(-1);
+  const [sortDirection, setSortDirection] = React.useState(['none', 'none', 'none', 'none', 'none']);
+  const onSort = index => {
+    // changes the active selected style
+    setSortedBy(index);
+    // changes the sort direction
+    const updatedSortDirection = sortDirection.map((dir, sortIndex) => {
+      if (sortIndex === index) {
+        if (dir === 'asc') {
+          return 'desc';
+        } else if (dir === 'desc') {
+          return 'asc';
+        }
+        return 'asc';
+      } else {
+        return 'none';
+      }
+    });
+    setSortDirection(updatedSortDirection);
+    // sorts the row data
+    const updatedData = data.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (updatedSortDirection[index] === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (updatedSortDirection[index] === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setData(updatedData);
+  };
+  return (
+    <BaseTable aria-label="Sortable Table">
+      <BaseTableHead>
+        <BaseTableHeaderRow>
+          <BaseHeaderCell
+            dataKey={0}
+            sortable
+            active={sortedBy === 0}
+            sortDirection={sortDirection[0]}
+            onSort={() => onSort(0)}
+          >
+            {columns[0]}
+          </BaseHeaderCell>
+          <BaseHeaderCell
+            dataKey={1}
+          >
+            {columns[1]}
+          </BaseHeaderCell>
+          <BaseHeaderCell
+            dataKey={2}
+            sortable
+            active={sortedBy === 2}
+            sortDirection={sortDirection[2]}
+            onSort={() => onSort(2)}
+          >
+            {columns[2]}
+          </BaseHeaderCell>
+          <BaseHeaderCell dataKey={3} modifier="wrap">{columns[3]}</BaseHeaderCell>
+          <BaseHeaderCell dataKey={4} modifier="wrap">
+            {columns[4]}
+          </BaseHeaderCell>
+        </BaseTableHeaderRow>
+      </BaseTableHead>
+      <BaseTableBody>
+        {data.map((row, rowIndex) => (
+          <BaseTableBodyRow key={rowIndex}>
+            {row.map((cell, cellIndex) => (
+              <BaseBodyCell key={`${rowIndex}_${cellIndex}`} dataKey={cellIndex} dataLabel={columns[cellIndex]}>
+                {cell}
+              </BaseBodyCell>
+            ))}
+          </BaseTableBodyRow>
+        ))}
+      </BaseTableBody>
+    </BaseTable>
+  );
+};
+```
+
 ### Selectable
 
 ```js
@@ -509,7 +668,7 @@ class SelectableTable extends React.Component {
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
-        'Last Commit'
+        'Last commit'
       ],
       rows: [
         {
@@ -517,7 +676,7 @@ class SelectableTable extends React.Component {
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true,
+          disableSelection: true
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five']
@@ -582,6 +741,7 @@ class SelectableTable extends React.Component {
 ```
 
 ### Selectable radio input
+
 ```js
 import React from 'react';
 import {
@@ -606,7 +766,7 @@ class SelectableTable extends React.Component {
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
-        'Last Commit'
+        'Last commit'
       ],
       rows: [
         {
@@ -614,12 +774,12 @@ class SelectableTable extends React.Component {
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true,
+          disableSelection: true
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five']
         }
-      ],
+      ]
     };
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -650,7 +810,8 @@ class SelectableTable extends React.Component {
         selectVariant={RowSelectVariant.radio}
         aria-label="Selectable Table"
         cells={columns}
-        rows={rows}>
+        rows={rows}
+      >
         <TableHeader />
         <TableBody />
       </Table>
@@ -674,7 +835,7 @@ class SimpleActionsTable extends React.Component {
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
-        'Last Commit'
+        'Last commit'
       ],
       rows: [
         {
@@ -734,12 +895,12 @@ class ActionsTable extends React.Component {
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
-        'Last Commit'
+        'Last commit'
       ],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five'],
-          type: 'green',
+          type: 'green'
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
@@ -805,8 +966,8 @@ class ActionsTable extends React.Component {
         rows={rows}
         actionResolver={this.actionResolver}
         areActionsDisabled={this.areActionsDisabled}
-        dropdownPosition='right'
-        dropdownDirection='up'
+        dropdownPosition="right"
+        dropdownDirection="up"
       >
         <TableHeader />
         <TableBody />
@@ -831,7 +992,7 @@ class CellHeader extends React.Component {
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
-        'Last Commit'
+        'Last commit'
       ],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
@@ -866,7 +1027,11 @@ class CompactTable extends React.Component {
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         '' // deliberately empty
       ],
-      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
+      rows: [
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four']
+      ]
     };
   }
 
@@ -899,7 +1064,11 @@ class CompactTableBorderlessRows extends React.Component {
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         '' // deliberately empty
       ],
-      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
+      rows: [
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four']
+      ]
     };
   }
 
@@ -1022,7 +1191,7 @@ class CompactExpandableTable extends React.Component {
                 colSpan: 2
               }
             },
-            "fullWidth, spans the empty column"
+            'fullWidth, spans the empty column'
           ]
         }
       ]
@@ -1062,6 +1231,7 @@ class CompactExpandableTable extends React.Component {
 ```
 
 ### Expandable
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
@@ -1079,7 +1249,7 @@ class ExpandableTable extends React.Component {
         { title: 'Pull requests' },
         'Workspaces',
         {
-          title: 'Last Commit'
+          title: 'Last commit'
         }
       ],
       rows: [
@@ -1174,7 +1344,7 @@ class CompoundExpandableTable extends React.Component {
           title: 'Workspaces',
           cellTransforms: [compoundExpand]
         },
-        'Last Commit',
+        'Last commit',
         ''
       ],
       rows: [
@@ -1369,14 +1539,10 @@ class CompoundExpandableTable extends React.Component {
 ```
 
 ### With width modifiers
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  cellWidth
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-table';
 
 class WidthTable extends React.Component {
   constructor(props) {
@@ -1388,7 +1554,7 @@ class WidthTable extends React.Component {
         { title: 'Pull requests', transforms: [cellWidth(30)] },
         'Workspaces',
         {
-          title: 'Last Commit',
+          title: 'Last commit',
           transforms: [cellWidth('max')]
         }
       ],
@@ -1410,16 +1576,10 @@ class WidthTable extends React.Component {
 ```
 
 ### Breakpoint modifiers
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  classNames,
-  Visibility
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, classNames, Visibility } from '@patternfly/react-table';
 
 class HiddenVisibleBreakpointTable extends React.Component {
   constructor(props) {
@@ -1428,7 +1588,9 @@ class HiddenVisibleBreakpointTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)]
+          columnTransforms: [
+            classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)
+          ]
         },
         'Branches',
         {
@@ -1437,7 +1599,7 @@ class HiddenVisibleBreakpointTable extends React.Component {
         },
         'Workspaces',
         {
-          title: 'Last Commit',
+          title: 'Last commit',
           columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnSm)]
         }
       ],
@@ -1594,7 +1756,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 EmptyStateTable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last Commit'];
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const rows = [];
   return (
     <React.Fragment>

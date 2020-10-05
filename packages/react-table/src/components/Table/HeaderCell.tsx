@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { BaseHeaderCell } from '../BaseTable/BaseHeaderCell';
 
 export interface HeaderCellProps {
   'data-label'?: string;
@@ -50,15 +51,24 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   };
 
   const Component = component as any;
-  const cell = (
-    <Component
-      {...mappedProps}
-      onMouseEnter={onMouseEnter}
-      className={css(className, textCenter && styles.modifiers.center)}
-    >
-      {children}
-    </Component>
-  );
+  const cell =
+    Component === 'th' ? (
+      <BaseHeaderCell
+        {...mappedProps}
+        onMouseEnter={onMouseEnter}
+        className={css(className, textCenter && styles.modifiers.center)}
+      >
+        {children}
+      </BaseHeaderCell>
+    ) : (
+      <Component
+        {...mappedProps}
+        onMouseEnter={onMouseEnter}
+        className={css(className, textCenter && styles.modifiers.center)}
+      >
+        {children}
+      </Component>
+    );
 
   return tooltip !== '' ? (
     <Tooltip content={tooltip} isVisible>
