@@ -77,11 +77,11 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     const id = toggle.props.id || `pf-dropdown-toggle-id-${DropdownWithContext.currentId++}`;
     let component: string;
     let renderedContent: React.ReactNode[];
-    let ariaHasPopup = false;
+    // let ariaHasPopup = false;
     if (dropdownItems && dropdownItems.length > 0) {
       component = 'ul';
       renderedContent = dropdownItems;
-      ariaHasPopup = true;
+      // ariaHasPopup = true;
     } else {
       component = 'div';
       renderedContent = React.Children.toArray(children);
@@ -137,7 +137,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                   isOpen,
                   id,
                   isPlain,
-                  'aria-haspopup': ariaHasPopup,
+                  // 'aria-haspopup': ariaHasPopup,
                   onEnter: () => this.onEnter()
                 })
               )}
