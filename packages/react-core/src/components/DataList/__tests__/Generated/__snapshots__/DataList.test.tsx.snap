@@ -4,6 +4,10 @@ exports[`DataList should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "dragEnd": [Function],
+      "dragKeyHandler": [Function],
+      "dragStart": [Function],
+      "isDraggable": false,
       "isSelectable": true,
       "selectedDataListItemId": "''",
       "updateSelectedDataListItem": [Function],
@@ -13,6 +17,7 @@ exports[`DataList should match snapshot (auto-generated) 1`] = `
   <ul
     aria-label="string"
     className="pf-c-data-list ''"
+    style={Object {}}
   >
     ReactNode
   </ul>
