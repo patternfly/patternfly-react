@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.63.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.62.0...@patternfly/react-core@4.63.0) (2020-10-05)
+
+
+### Features
+
+* **DataList:** add draggable feature for basic list ([#4852](https://github.com/patternfly/patternfly-react/issues/4852)) ([532fc5a](https://github.com/patternfly/patternfly-react/commit/532fc5add962b665a90362f45723252ccbc95e1d))
+
+
+
+
+
 # [4.62.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.61.0...@patternfly/react-core@4.62.0) (2020-10-02)
 
 
