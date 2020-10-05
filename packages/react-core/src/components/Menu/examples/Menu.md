@@ -6,7 +6,7 @@ propComponents: ['Menu', 'MenuItem', 'MenuList']
 ouia: true
 ---
 
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon, TableIcon } from '@patternfly/react-icons/dist/js/icons';
+import { BarsIcon, ClipboardIcon, CodeBranchIcon, LayerGroupIcon, CubeIcon, TableIcon, BellIcon } from '@patternfly/react-icons/dist/js/icons';
 
 ## Examples
 
@@ -107,13 +107,7 @@ class MenuIconsList extends React.Component {
         >
           Container Image
         </MenuListItem>
-        <MenuListItem
-          component="button"
-          icon={<CubeIcon />}
-          to="#default-link2"
-          itemId={2}
-          isActive={activeItem === 2}
-        >
+        <MenuListItem component="button" icon={<CubeIcon />} to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Docker File
         </MenuListItem>
       </MenuList>
@@ -408,7 +402,7 @@ class MenuWithTitledGroups extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
+import { Dropdown, Menu, MenuItem, MenuList } from '@patternfly/react-core';
 import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
 
 class MenuWithTitledGroups extends React.Component {
@@ -470,27 +464,66 @@ class MenuWithTitledGroups extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { ClipboardIcon, BarsIcon, CodeBranchIcon, LayerGroupIcon, CubeIcon, BellIcon } from '@patternfly/react-icons/dist/js/icons';
 
 class MenuWithActions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      isKebabDropdownOpen: false,
+      selectedItem: 0
     };
     this.onSelect = result => {
       this.setState({
-        activeItem: result.itemId
+        activeItem: result.itemId,
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+    this.onToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
       });
     };
   }
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, isKebabDropdownOpen } = this.state;
+
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    const kebabToggleAction = (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-6" />}
+        isOpen={isKebabDropdownOpen}
+        isPlain
+        dropdownItems={dropdownItems}
+      />
+    );
+
     const menuItems = [
       <MenuGroup label="Actions">
         <MenuList>
           <MenuListItem
+            isSelected
+            menuItemAction={kebabToggleAction}
             component="button"
             description="This is a description"
             to="#default-link1"
@@ -500,6 +533,8 @@ class MenuWithActions extends React.Component {
             Item 1
           </MenuListItem>
           <MenuListItem
+            isSelected
+            menuItemAction={<BellIcon />}
             component="button"
             description="This is a description"
             to="#default-link2"
@@ -508,10 +543,19 @@ class MenuWithActions extends React.Component {
           >
             Item 2
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+          <MenuListItem
+            isSelected
+            menuItemAction={<ClipboardIcon />}
+            component="button"
+            to="#default-link2"
+            itemId={2}
+            isActive={activeItem === 2}
+          >
             Item 3
           </MenuListItem>
           <MenuListItem
+            isSelected
+            menuItemAction={<BarsIcon />}
             component="button"
             description="This is a description"
             to="#default-link2"
@@ -543,8 +587,6 @@ class MenuWithFavorites extends React.Component {
       favorites: []
     };
 
-
-
     this.onSelect = result => {
       this.setState({
         activeItem: result.itemId
@@ -560,47 +602,48 @@ class MenuWithFavorites extends React.Component {
           favorites: [...this.state.favorites, itemId]
         });
     };
-
   }
 
   render() {
-
-
-console.log(this.state.favorites)
     const { activeItem, favorites } = this.state;
     const menuItems = [
       <MenuGroup label="All actions">
         <MenuList>
-            <MenuListItem
-              description="This is a description"
-              to="#default-link1"
-              itemId={0}
-              isActive={activeItem === 0}
-              id="item-1"
-            >
-              Item 1
-            </MenuListItem>
-            <MenuListItem
-              description="This is a description"
-              to="#default-link2"
-              itemId={1}
-              isExternalLink
-              isActive={activeItem === 1}
-              id="item-2"
-            >
-              Item 2
-            </MenuListItem>
-            <MenuListItem to="#default-link3" id="item-3"
-            itemId={2}
+          <MenuListItem
+            description="This is a description"
+            to="#default-link1"
+            itemId={0}
+            isActive={activeItem === 0}
+            id="item-1"
+          >
+            Item 1
+          </MenuListItem>
+          <MenuListItem
+            description="This is a description"
+            to="#default-link2"
+            itemId={1}
             isExternalLink
-            isActive={activeItem === 2}>
-              Item 3
-            </MenuListItem>
+            isActive={activeItem === 1}
+            id="item-2"
+          >
+            Item 2
+          </MenuListItem>
+          <MenuListItem to="#default-link3" id="item-3" itemId={2} isExternalLink isActive={activeItem === 2}>
+            Item 3
+          </MenuListItem>
         </MenuList>
       </MenuGroup>
     ];
 
-    return <Menu onSelect={this.onSelect} favorites={favorites} onFavorite={this.onFavorite} isGrouped items={menuItems}></Menu>;
+    return (
+      <Menu
+        onSelect={this.onSelect}
+        favorites={favorites}
+        onFavorite={this.onFavorite}
+        isGrouped
+        items={menuItems}
+      ></Menu>
+    );
   }
 }
 ```
@@ -617,7 +660,7 @@ class MenuOptionSingleSelect extends React.Component {
     super(props);
     this.state = {
       activeItem: 0,
-      selectedItem: 0,
+      selectedItem: 0
     };
 
     this.onSelect = result => {
@@ -626,19 +669,28 @@ class MenuOptionSingleSelect extends React.Component {
         selectedItem: result.itemId
       });
     };
-
   }
 
-
   render() {
-
     const { activeItem, selectedItem } = this.state;
     const menuItems = [
       <MenuList>
-        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0} isSelected={selectedItem === 0}>
+        <MenuListItem
+          component="button"
+          to="#default-link1"
+          itemId={0}
+          isActive={activeItem === 0}
+          isSelected={selectedItem === 0}
+        >
           Option 1
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1} isSelected={selectedItem === 1}>
+        <MenuListItem
+          component="button"
+          to="#default-link2"
+          itemId={1}
+          isActive={activeItem === 1}
+          isSelected={selectedItem === 1}
+        >
           Option 2
         </MenuListItem>
         <MenuListItem

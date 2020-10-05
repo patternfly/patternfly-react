@@ -33,6 +33,8 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   isDisabled?: boolean;
   /** Render item with icon */
   icon?: React.ReactNode;
+  /** Render item with action icon */
+  menuItemAction?: React.ReactNode;
   /** Description of the menu item */
   description?: string | React.ReactNode;
   /** Render external link icon */
@@ -68,6 +70,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   isExpandable = false,
   isSelected = false,
   icon,
+  menuItemAction,
   id,
   isFavorite,
   ariaIsFavoriteLabel,
@@ -115,6 +118,11 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
               <CheckIcon aria-hidden />
             </span>
           )}
+          {/* {menuItemAction && (
+            <button className={css(styles.menuItemAction)}>
+              <span className={css(styles.menuItemActionIcon)}>{menuItemAction}</span>
+            </button>
+          )} */}
         </div>
         {description && (
           <div className={css(styles.menuItemDescription)}>
@@ -160,6 +168,11 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
           </>
         )}
       </MenuContext.Consumer>
+      {menuItemAction && (
+        <button className={css(styles.menuItemAction)}>
+          <span className={css(styles.menuItemActionIcon)}>{menuItemAction}</span>
+        </button>
+      )}
     </li>
   );
 };
