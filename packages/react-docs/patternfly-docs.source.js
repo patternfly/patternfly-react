@@ -10,7 +10,9 @@ module.exports = (sourceMD, sourceProps) => {
   const reactTablePath = require.resolve('@patternfly/react-table/package.json').replace('package.json', 'src');
   const reactChartsPath = require.resolve('@patternfly/react-charts/package.json').replace('package.json', 'src');
   const reactDateTimePath = require.resolve('@patternfly/react-datetime/package.json').replace('package.json', 'src');
-  const reactCatalogViewPath = require.resolve('@patternfly/react-catalog-view-extension/package.json').replace('package.json', 'src');
+  const reactCatalogViewPath = require
+    .resolve('@patternfly/react-catalog-view-extension/package.json')
+    .replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTablePath, '/**/*.tsx'), reactPropsIgnore);
@@ -33,7 +35,7 @@ module.exports = (sourceMD, sourceProps) => {
 
   // Catalog view MD
   sourceMD(path.join(reactCatalogViewPath, '/**/examples/*.md'), 'react');
-  
+
   // Release notes
   sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');
 
