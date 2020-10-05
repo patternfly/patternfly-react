@@ -11,6 +11,9 @@
       "path": "./react-core"
     },
     {
+      "path": "./react-datetime"
+    },
+    {
       "path": "./react-icons"
     },
     {

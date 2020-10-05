@@ -1,4 +1,8 @@
 export * from './BaseLayout';
 export * from './ColaLayout';
 export * from './DagreLayout';
-export { default as ForceLayout } from './ForceLayout';
+export * from './ForceLayout';
+export * from './LayoutNode';
+export * from './LayoutGroup';
+export * from './LayoutLink';
+export * from './LayoutOptions';

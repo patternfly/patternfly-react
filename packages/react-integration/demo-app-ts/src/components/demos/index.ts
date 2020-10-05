@@ -31,6 +31,7 @@ export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyExpandedDemo';
 export * from './DataListDemo/DataListDemo';
+export * from './DataListDemo/DataListDraggableDemo';
 export * from './DataListDemo/DataListCompactDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './DescriptionListDemo/DescriptionListDemo';

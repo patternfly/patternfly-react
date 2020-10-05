@@ -401,7 +401,7 @@ class PrimaryDetailFullPage extends React.Component {
           selectedDataListItemId={selectedDataListItemId}
           onSelectDataListItem={this.onSelectDataListItem}
         >
-          <DataListItem aria-labelledby="selectable-action-item1" id="full-page-item1">
+          <DataListItem id="full-page-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -441,7 +441,7 @@ class PrimaryDetailFullPage extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item2" id="full-page-item2">
+          <DataListItem id="full-page-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -488,7 +488,7 @@ class PrimaryDetailFullPage extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item3" id="full-page-item3">
+          <DataListItem id="full-page-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -528,7 +528,7 @@ class PrimaryDetailFullPage extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item4" id="full-page-item4">
+          <DataListItem id="full-page-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -986,7 +986,7 @@ class PrimaryDetailContentPadding extends React.Component {
           selectedDataListItemId={selectedDataListItemId}
           onSelectDataListItem={this.onSelectDataListItem}
         >
-          <DataListItem aria-labelledby="selectable-action-item1" id="content-padding-item1">
+          <DataListItem id="content-padding-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1026,7 +1026,7 @@ class PrimaryDetailContentPadding extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item2" id="content-padding-item2">
+          <DataListItem id="content-padding-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1073,7 +1073,7 @@ class PrimaryDetailContentPadding extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item3" id="content-padding-item3">
+          <DataListItem id="content-padding-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1113,7 +1113,7 @@ class PrimaryDetailContentPadding extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item4" id="content-padding-item4">
+          <DataListItem id="content-padding-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2131,7 +2131,7 @@ class PrimaryDetailDataListInCard extends React.Component {
           selectedDataListItemId={selectedDataListItemId}
           onSelectDataListItem={this.onSelectDataListItem}
         >
-          <DataListItem aria-labelledby="data-list-item1-in-card" id="data-list-item1">
+          <DataListItem aria-label="data-list-item1-in-card" id="data-list-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2143,7 +2143,7 @@ class PrimaryDetailDataListInCard extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="data-list-item2-in-card" id="data-list-item2">
+          <DataListItem aria-label="data-list-item2-in-card" id="data-list-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2155,7 +2155,7 @@ class PrimaryDetailDataListInCard extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="data-list-item3-in-card" id="data-list-item3">
+          <DataListItem aria-label="data-list-item3-in-card" id="data-list-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2167,7 +2167,7 @@ class PrimaryDetailDataListInCard extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="data-list-item4-in-card" id="data-list-item4">
+          <DataListItem aria-label="data-list-item4-in-card" id="data-list-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2179,7 +2179,7 @@ class PrimaryDetailDataListInCard extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="data-list-item5-in-card" id="data-list-item5">
+          <DataListItem aria-label="data-list-item5-in-card" id="data-list-item5">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2603,7 +2603,7 @@ class PrimaryDetailInlineModifier extends React.Component {
           selectedDataListItemId={selectedDataListItemId}
           onSelectDataListItem={this.onSelectDataListItem}
         >
-          <DataListItem aria-labelledby="selectable-action-item1" id="inline-modifier-item1">
+          <DataListItem id="inline-modifier-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2643,7 +2643,7 @@ class PrimaryDetailInlineModifier extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item2" id="inline-modifier-item2">
+          <DataListItem id="inline-modifier-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2690,7 +2690,7 @@ class PrimaryDetailInlineModifier extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item3" id="inline-modifier-item3">
+          <DataListItem id="inline-modifier-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2730,7 +2730,7 @@ class PrimaryDetailInlineModifier extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item4" id="inline-modifier-item4">
+          <DataListItem id="inline-modifier-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[

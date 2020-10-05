@@ -181,6 +181,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListDemo
   },
   {
+    id: 'data-list-draggable-demo',
+    name: 'Data List Draggable Demo',
+    componentType: Examples.DataListDraggableDemo
+  },
+  {
     id: 'data-list-compact-demo',
     name: 'Data List Compact Demo',
     componentType: Examples.DataListCompactDemo

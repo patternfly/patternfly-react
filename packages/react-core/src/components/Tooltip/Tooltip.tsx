@@ -160,14 +160,12 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }
   };
   React.useEffect(() => {
-    if (triggerManually) {
-      if (isVisible) {
-        show();
-      } else {
-        hide();
-      }
+    if (isVisible) {
+      show();
+    } else {
+      hide();
     }
-  }, [isVisible, triggerManually]);
+  }, [isVisible]);
   const show = () => {
     if (transitionTimerRef.current) {
       clearTimeout(transitionTimerRef.current);

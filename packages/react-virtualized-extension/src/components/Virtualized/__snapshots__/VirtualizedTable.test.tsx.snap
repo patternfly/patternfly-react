@@ -120,6 +120,7 @@ exports[`Actions virtualized table 1`] = `
       },
     ]
   }
+  selectVariant="checkbox"
   variant={null}
 >
   <Provider
@@ -154,6 +155,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -198,6 +200,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -241,6 +244,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -284,6 +288,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -327,6 +332,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -371,6 +377,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -454,6 +461,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -498,6 +506,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -541,6 +550,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -584,6 +594,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -627,6 +638,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -671,6 +683,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -748,6 +761,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -792,6 +806,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -835,6 +850,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -878,6 +894,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -921,6 +938,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -965,6 +983,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -1265,6 +1284,7 @@ exports[`Selectable virtualized table 1`] = `
       },
     ]
   }
+  selectVariant="checkbox"
   variant={null}
 >
   <Provider
@@ -1300,6 +1320,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1344,6 +1365,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1388,6 +1410,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1431,6 +1454,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1474,6 +1498,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1517,6 +1542,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1600,6 +1626,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1644,6 +1671,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1688,6 +1716,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1731,6 +1760,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1774,6 +1804,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1817,6 +1848,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1894,6 +1926,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -1938,6 +1971,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -1982,6 +2016,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2025,6 +2060,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2068,6 +2104,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2111,6 +2148,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2152,6 +2190,7 @@ exports[`Selectable virtualized table 1`] = `
                           checked={false}
                           name="check-all"
                           onSelect={[Function]}
+                          selectVariant="checkbox"
                         >
                           <input
                             aria-label="Select all rows"
@@ -2458,6 +2497,7 @@ exports[`Simple Actions table 1`] = `
       },
     ]
   }
+  selectVariant="checkbox"
   variant={null}
 >
   <Provider
@@ -2511,6 +2551,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2574,6 +2615,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2636,6 +2678,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2698,6 +2741,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2760,6 +2804,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2823,6 +2868,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2925,6 +2971,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -2988,6 +3035,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3050,6 +3098,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3112,6 +3161,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3174,6 +3224,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3237,6 +3288,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3333,6 +3385,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3396,6 +3449,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3458,6 +3512,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3520,6 +3575,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3582,6 +3638,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3645,6 +3702,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3941,6 +3999,7 @@ exports[`Simple virtualized table aria-label 1`] = `
       },
     ]
   }
+  selectVariant="checkbox"
   variant={null}
 >
   <Provider
@@ -3975,6 +4034,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4018,6 +4078,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4061,6 +4122,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4104,6 +4166,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4147,6 +4210,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4229,6 +4293,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4272,6 +4337,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4315,6 +4381,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4358,6 +4425,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4401,6 +4469,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4477,6 +4546,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4520,6 +4590,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4563,6 +4634,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4606,6 +4678,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4649,6 +4722,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4877,6 +4951,7 @@ exports[`Simple virtualized table className 1`] = `
       },
     ]
   }
+  selectVariant="checkbox"
   variant={null}
 >
   <Provider
@@ -4911,6 +4986,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4954,6 +5030,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4997,6 +5074,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -5040,6 +5118,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -5083,6 +5162,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": undefined,
           },
           "header": Object {
@@ -5165,6 +5245,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5208,6 +5289,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5251,6 +5333,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5294,6 +5377,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5337,6 +5421,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5413,6 +5498,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5456,6 +5542,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5499,6 +5586,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5542,6 +5630,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5585,6 +5674,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5817,6 +5907,7 @@ exports[`Sortable Virtualized Table 1`] = `
       },
     ]
   }
+  selectVariant="checkbox"
   sortBy={Object {}}
   variant={null}
 >
@@ -5852,6 +5943,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": Object {},
           },
           "header": Object {
@@ -5896,6 +5988,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": Object {},
           },
           "header": Object {
@@ -5939,6 +6032,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": Object {},
           },
           "header": Object {
@@ -5982,6 +6076,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": Object {},
           },
           "header": Object {
@@ -6025,6 +6120,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectVariant": "checkbox",
             "sortBy": Object {},
           },
           "header": Object {
@@ -6107,6 +6203,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6151,6 +6248,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6194,6 +6292,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6237,6 +6336,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6280,6 +6380,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectVariant": "checkbox",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6356,6 +6457,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6400,6 +6502,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6443,6 +6546,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6486,6 +6590,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6529,6 +6634,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectVariant": "checkbox",
                           "sortBy": Object {},
                         },
                         "header": Object {

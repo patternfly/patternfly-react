@@ -46,6 +46,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   showNavToggle = false,
   onNavToggle = () => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
+  'aria-controls': ariaControls = null,
   ...props
 }: PageHeaderProps) => {
   const LogoComponent = logoComponent as any;
@@ -70,7 +71,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
                       id="nav-toggle"
                       onClick={navToggle}
                       aria-label={ariaLabel}
-                      aria-controls="page-sidebar"
+                      aria-controls={ariaControls}
                       aria-expanded={navOpen ? 'true' : 'false'}
                       variant={ButtonVariant.plain}
                     >
@@ -85,10 +86,6 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
                 )}
               </div>
             )}
-            {/* Hide for now until we have the context selector component */}
-            {/* <div className={css(styles.pageHeaderSelector)}>
-            pf-c-context-selector
-          </div> */}
             {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
             {headerTools}
           </header>

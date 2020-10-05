@@ -136,27 +136,9 @@ describe('API', () => {
 });
 
 describe('state', () => {
-  test('hover', () => {
-    const view = mount(
-      <SelectToggle id="Select Toggle" isHovered parentRef={{ current: document.createElement('div') }}>
-        Select
-      </SelectToggle>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
   test('active', () => {
     const view = mount(
       <SelectToggle id="Select Toggle" isActive parentRef={{ current: document.createElement('div') }}>
-        Select
-      </SelectToggle>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
-  test('focus', () => {
-    const view = mount(
-      <SelectToggle id="Select Toggle" isFocused parentRef={{ current: document.createElement('div') }}>
         Select
       </SelectToggle>
     );

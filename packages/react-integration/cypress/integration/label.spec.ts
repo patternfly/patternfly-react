@@ -20,4 +20,10 @@ describe('Label Demo Test', () => {
   it('Verify isOverflowLabel label', () => {
     cy.get('#overflow-label').should('have.class', 'pf-m-overflow');
   });
+
+  it('Verify router link label', () => {
+    cy.url().should('eq', 'http://localhost:3000/label-demo-nav-link');
+    cy.get('#fake-router-link').click();
+    cy.url().should('eq', 'http://localhost:3000/');
+  });
 });

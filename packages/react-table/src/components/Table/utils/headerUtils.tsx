@@ -180,16 +180,17 @@ const actionsTransforms = ({
 /**
  * Function to define collapsible in first column.
  *
+ * @param {*} header info with cellTransforms.
  * @param {*}  extraObject with onCollapse callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const collapsibleTransfroms = ({ onCollapse }: { onCollapse: OnCollapse }) => [
+const collapsibleTransforms = (header: (ICell | string)[], { onCollapse }: { onCollapse: OnCollapse }) => [
   ...(onCollapse
     ? [
         {
           title: '',
           transforms: [emptyTD],
-          cellTransforms: [collapsible]
+          cellTransforms: [collapsible, expandedRow(header.length)]
         }
       ]
     : [])
@@ -217,10 +218,9 @@ const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse:
   if (!onCollapse) {
     return header;
   }
-
-  return header.map((cell: ICell | string, key: number) => {
+  return header.map((cell: ICell | string) => {
     const parentIdCell = addAdditionalCellTranforms(cell as ICell, parentId);
-    return key === 0 ? addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length)) : parentIdCell;
+    return addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length));
   });
 };
 
@@ -271,7 +271,7 @@ const rowEditTransforms = ({ onRowEdit }: { onRowEdit: OnRowEdit }) => [
 export const calculateColumns = (headerRows: (ICell | string)[], extra: any) =>
   headerRows &&
   [
-    ...collapsibleTransfroms(extra),
+    ...collapsibleTransforms(headerRows, extra),
     ...selectableTransforms(extra),
     ...expandContent(headerRows, extra),
     ...rowEditTransforms(extra),

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IExtra, IFormatterValueType, ITransform } from '../../Table';
+import { IExtra, IFormatterValueType, ITransform, RowSelectVariant } from '../../Table';
 import { SelectColumn } from '../../SelectColumn';
 import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 
@@ -10,7 +10,7 @@ export const selectable: ITransform = (
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
   const {
-    extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
+    extraParams: { onSelect, selectVariant, allRowsSelected, rowLabeledBy = 'simple-node' }
   } = column;
   const extraData = {
     rowIndex,
@@ -19,7 +19,7 @@ export const selectable: ITransform = (
     property
   };
 
-  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
+  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect && !rowData.fullWidth) {
     return {
       component: 'td',
       isVisible: true
@@ -39,25 +39,32 @@ export const selectable: ITransform = (
     ...(rowId !== -1
       ? {
           checked: rowData && !!rowData.selected,
-          'aria-labelledby': rowLabeledBy + rowIndex
+          'aria-label': `Select row ${rowIndex}`
         }
       : {
           checked: allRowsSelected,
           'aria-label': 'Select all rows'
         }),
     ...(rowData &&
-      rowData.disableCheckbox && {
+      (rowData.disableCheckbox || rowData.disableSelection) && {
         disabled: true,
         className: checkStyles.checkInput
       })
   };
+  const selectName =
+    rowId !== -1 ? (selectVariant === RowSelectVariant.checkbox ? `checkrow${rowIndex}` : 'radioGroup') : 'check-all';
 
   return {
     className: css(styles.tableCheck),
     component: 'td',
-    isVisible: true,
+    isVisible: !rowData || !rowData.fullWidth,
     children: (
-      <SelectColumn {...customProps} onSelect={selectClick} name={rowId !== -1 ? `checkrow${rowIndex}` : 'check-all'}>
+      <SelectColumn
+        {...customProps}
+        selectVariant={selectVariant as RowSelectVariant}
+        onSelect={selectClick}
+        name={selectName}
+      >
         {label}
       </SelectColumn>
     )

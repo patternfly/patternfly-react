@@ -185,7 +185,7 @@ class VerticalPage extends React.Component {
     return (
       <Page header={Header} sidebar={Sidebar}>
         <PageSection>Section with default padding</PageSection>
-        <PageSection variant={PageSectionVariants.light} hasNoPadding>
+        <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
           Section with no padding
         </PageSection>
         <PageSection padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}>

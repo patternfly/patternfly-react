@@ -89,6 +89,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
+  const isInlineSpan = isInline && Component === 'span';
 
   if (isAriaDisabled && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
@@ -112,6 +113,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       return isButtonElement ? null : -1;
     } else if (isAriaDisabled) {
       return null;
+    } else if (isInlineSpan) {
+      return 0;
     }
   };
 
@@ -137,7 +140,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       )}
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
-      type={isButtonElement ? type : null}
+      type={isButtonElement || isInlineSpan ? type : null}
+      role={isInlineSpan ? 'button' : null}
       {...ouiaProps}
     >
       {isLoading && (

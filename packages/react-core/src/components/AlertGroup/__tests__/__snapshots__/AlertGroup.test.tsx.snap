@@ -496,6 +496,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                       data-ouia-safe={true}
                       disabled={false}
                       onClick={[MockFunction]}
+                      role={null}
                       type="button"
                     >
                       <TimesIcon

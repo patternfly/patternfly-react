@@ -7,6 +7,7 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
+  DataListWrapModifier,
   Dropdown,
   DropdownItem,
   DropdownPosition,
@@ -96,6 +97,26 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
                 </DataListCell>,
                 <DataListCell isFilled={false} alignRight key="secondary content align">
                   <span id="simple-item4">Secondary content (pf-m-align-right pf-m-no-fill)</span>
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="simple-item3">
+          <DataListItemRow>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
+                  <span id="simple-item1">Primary content</span>
+                </DataListCell>,
+                <DataListCell
+                  id="truncate-content"
+                  key="secondary content"
+                  wrapModifier={DataListWrapModifier.truncate}
+                >
+                  Really really really really really really really really really really really really really really
+                  really really really really really really really really really really really really really really long
+                  description that should be truncated before it ends
                 </DataListCell>
               ]}
             />

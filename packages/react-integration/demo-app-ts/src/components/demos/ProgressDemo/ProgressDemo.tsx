@@ -10,6 +10,12 @@ export class ProgressDemo extends React.Component {
         <Progress id="warning-progress" value={66} title="Warning progress" variant="warning" />
         <Progress id="danger-progress" value={99} title="Danger progress" variant="danger" />
         <Progress id="success-progress" value={100} title="Success progress" variant="success" />
+        <Progress
+          id="truncate-title-progress"
+          value={33}
+          title="Really really really really really really really really really really really really really really long description that should be truncated before it ends."
+          isTitleTruncated
+        />
       </>
     );
   }

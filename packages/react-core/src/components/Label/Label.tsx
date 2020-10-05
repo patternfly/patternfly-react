@@ -6,7 +6,7 @@ import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Additional classes added to the label. */
   className?: string;
   /** Color of the label. */
@@ -27,6 +27,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   href?: string;
   /** Flag indicating if the label is an overflow label */
   isOverflowLabel?: boolean;
+  /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
+  render?: ({ className, content }: { className: string; content: React.ReactNode }) => React.ReactNode;
 }
 
 const colorStyles = {
@@ -51,6 +53,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtnProps,
   href,
   isOverflowLabel,
+  render,
   ...props
 }: LabelProps) => {
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
@@ -67,6 +70,13 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       <TimesIcon />
     </Button>
   );
+  const content = (
+    <>
+      {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
+      {isTruncated && <span className={css(styles.labelText)}>{children}</span>}
+      {!isTruncated && children}
+    </>
+  );
 
   return (
     <LabelComponent
@@ -79,11 +89,16 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className
       )}
     >
-      <Component className={css(styles.labelContent)} {...(href && { href })}>
-        {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
-        {isTruncated && <span className={css(styles.labelText)}>{children}</span>}
-        {!isTruncated && children}
-      </Component>
+      {render ? (
+        render({
+          className: styles.labelContent,
+          content
+        })
+      ) : (
+        <Component className={css(styles.labelContent)} {...(href && { href })}>
+          {content}
+        </Component>
+      )}
       {onClose && button}
     </LabelComponent>
   );

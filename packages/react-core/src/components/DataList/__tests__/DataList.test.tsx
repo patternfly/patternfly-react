@@ -22,6 +22,11 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('List draggable', () => {
+    const view = shallow(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
+    expect(view).toMatchSnapshot();
+  });
+
   test('List', () => {
     const view = shallow(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
     expect(view).toMatchSnapshot();
@@ -90,6 +95,24 @@ describe('DataList', () => {
     ].forEach(testCase => {
       const view = shallow(
         <DataListCell width={testCase.width} key="list-id-1" id="primary-item">
+          Primary Id
+        </DataListCell>
+      );
+      testCase.class === ''
+        ? expect(view.props().className).toBe('pf-c-data-list__cell')
+        : expect(view.props().className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+    });
+  });
+
+  test('Cell with text modifiers', () => {
+    [
+      { wrapModifier: null as const, class: '' },
+      { wrapModifier: 'breakWord' as const, class: 'pf-m-break-word' },
+      { wrapModifier: 'nowrap' as const, class: 'pf-m-nowrap' },
+      { wrapModifier: 'truncate' as const, class: 'pf-m-truncate' },
+    ].forEach(testCase => {
+      const view = shallow(
+        <DataListCell wrapModifier={testCase.wrapModifier} key="list-id-1" id="primary-item">
           Primary Id
         </DataListCell>
       );
