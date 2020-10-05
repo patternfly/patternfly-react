@@ -11,7 +11,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 export const isModalAlertVariant = (icon: any): icon is string =>
-  ['success', 'error', 'warning', 'info', 'defaut'].includes(icon as string);
+  ['success', 'danger', 'warning', 'info', 'defaut'].includes(icon as string);
 
 export interface ModalBoxTitleProps {
   /** Content rendered inside the modal box header title. */
@@ -19,7 +19,7 @@ export interface ModalBoxTitleProps {
   /** Optional alert icon (or other) to show before the title of the Modal Header
    * When the predefined alert types are used the default styling
    * will be automatically applied */
-  titleIconVariant?: 'success' | 'error' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
   /** Optional title label text for screen readers */
   titleLabel?: string;
   /** Additional classes added to the modal box header title. */
@@ -42,25 +42,31 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     titleLabel || (isModalAlertVariant(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
   const variantIcons = {
     success: <CheckCircleIcon />,
-    error: <ExclamationCircleIcon />,
+    danger: <ExclamationCircleIcon />,
     warning: <ExclamationTriangleIcon />,
     info: <InfoCircleIcon />,
     default: <BellIcon />
   };
+  const CustomIcon = !isModalAlertVariant(titleIconVariant) && titleIconVariant;
 
   React.useLayoutEffect(() => {
     setIsTooltipVisible(h1.current && h1.current.offsetWidth < h1.current.scrollWidth);
   }, []);
 
   const content = (
-    <h1 id={id} ref={h1} className={css(modalStyles.modalBoxTitle, className)} {...props}>
+    <h1
+      id={id}
+      ref={h1}
+      className={css(modalStyles.modalBoxTitle, titleIconVariant && modalStyles.modifiers.icon, className)}
+      {...props}
+    >
       {titleIconVariant && (
         <span className={css(modalStyles.modalBoxTitleIcon)}>
-          {isModalAlertVariant(titleIconVariant) ? variantIcons[titleIconVariant] : titleIconVariant}
+          {isModalAlertVariant(titleIconVariant) ? variantIcons[titleIconVariant] : <CustomIcon />}
         </span>
       )}
       {label && <span className={css(accessibleStyles.screenReader)}>{label}</span>}
-      {title}
+      <span className={css(modalStyles.modalBoxTitleText)}>{title}</span>
     </h1>
   );
 

@@ -536,7 +536,8 @@ class NoHeader extends React.Component {
         </Button>
         <Modal
           isOpen={isModalOpen}
-          aria-label="No header example"
+          aria-label="Modal custom icon example"
+          title="Modal Header"
           titleIconVariant={BullhornIcon}
           showClose={true}
           aria-describedby="no-header-example"
@@ -587,7 +588,8 @@ class NoHeader extends React.Component {
         </Button>
         <Modal
           isOpen={isModalOpen}
-          aria-label="No header example"
+          aria-label="Modal warning example"
+          title="Modal Header"
           titleIconVariant="warning"
           showClose={true}
           aria-describedby="no-header-example"

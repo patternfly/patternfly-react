@@ -20,7 +20,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional alert icon (or other) to show before the title of the Modal Header
    * When the predefined alert types are used the default styling
    * will be automatically applied */
-  titleIconVariant?: 'success' | 'error' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
   /** Optional title label text for screen readers */
   titleLabel?: string;
   /** Id to use for Modal Box label */

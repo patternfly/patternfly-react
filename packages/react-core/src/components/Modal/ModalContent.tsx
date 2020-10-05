@@ -36,7 +36,7 @@ export interface ModalContentProps extends OUIAProps {
   /** Optional alert icon (or other) to show before the title of the Modal Header
    * When the predefined alert types are used the default styling
    * will be automatically applied */
-  titleIconVariant?: 'success' | 'error' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
   /** Optional title label text for screen readers */
   titleLabel?: string;
   /** Id of Modal Box label */
@@ -155,7 +155,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       className={css(
         className,
         isModalAlertVariant(titleIconVariant) &&
-          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'error' | 'default']
+          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'default']
       )}
       variant={variant}
       position={position}
