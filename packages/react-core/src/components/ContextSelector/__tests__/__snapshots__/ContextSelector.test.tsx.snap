@@ -55,7 +55,7 @@ exports[`Renders ContextSelector open 1`] = `
         className="pf-c-context-selector__menu-search"
       >
         <InputGroup>
-          <ForwardRef
+          <TextInput
             aria-labelledby="pf-context-selector-search-button-id-0"
             onChange={[Function]}
             onKeyPress={[Function]}

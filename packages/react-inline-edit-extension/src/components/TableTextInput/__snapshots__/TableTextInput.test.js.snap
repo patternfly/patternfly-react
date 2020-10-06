@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`focused table text input 1`] = `
-<ForwardRef
+<TextInput
   aria-label="focused text input"
   autoFocus={true}
   defaultValue="test"
@@ -10,7 +10,7 @@ exports[`focused table text input 1`] = `
 `;
 
 exports[`simple table text input 1`] = `
-<ForwardRef
+<TextInput
   aria-label="simple text input"
   autoFocus={false}
   onBlur={[Function]}
