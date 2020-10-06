@@ -10,7 +10,7 @@ export enum TextAreResizeOrientation {
   both = 'both'
 }
 
-export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onChange'> {
+export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onChange' | 'ref'> {
   /** Additional classes added to the TextArea. */
   className?: string;
   /** Flag to show if the TextArea is required. */
@@ -28,11 +28,14 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the TextArea requires an associated id or aria-label. */
   'aria-label'?: string;
+  /** A reference object to attach to the textarea. */
+  innerRef?: React.RefObject<any>;
 }
 
-export class TextArea extends React.Component<TextAreaProps> {
+export class TextAreaBase extends React.Component<TextAreaProps> {
   static displayName = 'TextArea';
   static defaultProps: TextAreaProps = {
+    innerRef: React.createRef<HTMLTextAreaElement>(),
     className: '',
     isRequired: false,
     validated: 'default',
@@ -56,7 +59,7 @@ export class TextArea extends React.Component<TextAreaProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, value, onChange, validated, isRequired, resizeOrientation, ...props } = this.props;
+    const { className, value, onChange, validated, isRequired, resizeOrientation, innerRef, ...props } = this.props;
     const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
     return (
       <textarea
@@ -71,8 +74,13 @@ export class TextArea extends React.Component<TextAreaProps> {
         {...(typeof this.props.defaultValue !== 'string' && { value })}
         aria-invalid={validated === ValidatedOptions.error}
         required={isRequired}
+        ref={innerRef}
         {...props}
       />
     );
   }
 }
+
+export const TextArea = React.forwardRef((props: TextAreaProps, ref: React.Ref<HTMLInputElement>) => (
+  <TextAreaBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+));
