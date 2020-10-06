@@ -92,7 +92,7 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   return (
     <Component
       scope="col"
-      aria-sort={sortParams ? (sortParams['aria-sort'] as 'none' | 'ascending' | 'descending') : 'none'}
+      aria-sort={sortParams ? (sortParams['aria-sort'] as 'none' | 'ascending' | 'descending') : null}
       ref={innerRef}
       data-label={dataLabel || (typeof children === 'string' ? children : null)}
       data-key={columnIndex}
