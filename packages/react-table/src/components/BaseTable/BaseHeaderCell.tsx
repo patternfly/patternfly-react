@@ -1,29 +1,42 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { SortByDirection, SortColumn } from '../Table';
+import {
+  SortByDirection,
+  sortable,
+  selectable,
+  OnSelect,
+  IFormatterValueType,
+  IColumn,
+  ISortBy,
+  OnSort
+} from '../Table';
 
-export interface BaseHeaderCellProps extends React.HTMLProps<HTMLTableHeaderCellElement> {
+export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect'> {
   /** Content rendered inside the <th> header cell */
   children?: React.ReactNode;
   /** Additional classes added to the <th> header cell  */
   className?: string;
   /** Modifies cell to center its contents. */
   textCenter?: boolean;
-  /** Wraps the content in a button and adds a sort icon */
-  sortable?: boolean;
-  /** Req. sortable={true} - Click callback on the sortable cell */
+  /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
   onSort?: Function;
-  /** Req. sortable={true} - Determines the sort icon direction */
-  sortDirection?: SortByDirection | 'none';
-  /** Gives the cell an active styling */
-  active?: boolean;
+  /** Sort direction of the currently sorted column */
+  activeSortDirection?: SortByDirection | 'asc' | 'desc' | 'none';
+  /** Index of the currently sorted column */
+  activeSortIndex?: number;
   /** Adds data-label attribute */
   dataLabel?: string;
-  /** Cell key */
-  dataKey?: number;
+  /** The column index */
+  columnIndex?: number;
   /** Style modifier to apply */
   modifier?: 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap';
+  /** Transforms the cell into a selectable cell - Click callback on select */
+  onSelect?: OnSelect;
+  /** The selectable variant */
+  selectVariant?: 'checkbox' | 'radio';
+  /** Whether all rows are selected */
+  allRowsSelected?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
@@ -32,53 +45,65 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   children,
   className,
   textCenter = false,
-  sortable = false,
   onSort,
-  sortDirection = 'none',
-  active,
+  activeSortDirection = 'none',
+  activeSortIndex,
   dataLabel,
-  dataKey,
+  columnIndex,
   modifier,
+  onSelect,
+  selectVariant = 'checkbox',
+  allRowsSelected,
   innerRef,
   ...props
 }: BaseHeaderCellProps) => {
-  const getAriaSort = () => {
-    if (sortDirection === 'asc') {
-      return 'ascending';
-    } else if (sortDirection === 'desc') {
-      return 'descending';
-    } else {
-      return 'none';
-    }
-  };
+  const sortParams = onSort
+    ? sortable(children as IFormatterValueType, {
+        columnIndex,
+        column: {
+          extraParams: {
+            sortBy: {
+              index: activeSortIndex,
+              direction: activeSortDirection
+            } as ISortBy,
+            onSort: onSort as OnSort
+          }
+        } as IColumn
+      })
+    : null;
+  const selectParams = onSelect
+    ? selectable(children as IFormatterValueType, {
+        columnIndex,
+        column: {
+          extraParams: {
+            onSelect: onSelect as OnSelect,
+            selectVariant: selectVariant as 'checkbox' | 'radio',
+            allRowsSelected
+          }
+        }
+      })
+    : null;
+  const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || 'th';
+  const transformedChildren =
+    (sortParams && sortParams.children) || (selectParams && selectParams.children) || children;
   return (
-    <th
+    <Component
       scope="col"
-      aria-sort={sortable ? getAriaSort() : null}
+      aria-sort={sortParams ? (sortParams['aria-sort'] as 'none' | 'ascending' | 'descending') : 'none'}
       ref={innerRef}
       data-label={dataLabel || (typeof children === 'string' ? children : null)}
-      data-key={dataKey}
+      data-key={columnIndex}
       className={css(
         className,
         textCenter && styles.modifiers.center,
-        sortable && styles.tableSort,
-        active && styles.modifiers.selected,
+        sortParams && sortParams.className,
+        selectParams && selectParams.className,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap']
       )}
       {...props}
     >
-      {sortable ? (
-        <SortColumn
-          isSortedBy={sortDirection !== 'none'}
-          sortDirection={sortDirection !== 'none' ? sortDirection : ''}
-          onSort={onSort}
-        >
-          {children}
-        </SortColumn>
-      ) : (
-        children
-      )}
-    </th>
+      {transformedChildren}
+    </Component>
   );
 };
 

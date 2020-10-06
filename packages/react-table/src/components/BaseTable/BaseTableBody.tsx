@@ -20,9 +20,7 @@ const BaseTableBodyBase: React.FunctionComponent<BaseTableBodyProps> = ({
   </tbody>
 );
 
-export const BaseTableBody = React.forwardRef(
-  (props: BaseTableBodyProps, ref: React.Ref<HTMLTableSectionElement>) => (
-    <BaseTableBodyBase {...props} innerRef={ref} />
-  )
-);
+export const BaseTableBody = React.forwardRef((props: BaseTableBodyProps, ref: React.Ref<HTMLTableSectionElement>) => (
+  <BaseTableBodyBase {...props} innerRef={ref} />
+));
 BaseTableBody.displayName = 'BaseTableBody';

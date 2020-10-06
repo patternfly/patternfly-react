@@ -326,7 +326,7 @@ ComposableTableBasic = () => {
     <BaseTable aria-label="Simple Table">
       <BaseTableHead noWrap>
         <BaseTableHeaderRow>
-          <BaseHeaderCell dataKey={0} dataLabel={columns[0]}>
+          <BaseHeaderCell columnIndex={0} dataLabel={columns[0]}>
             <HeaderCellInfoWrapper
               variant="tooltip"
               info="More information about repositories"
@@ -338,10 +338,10 @@ ComposableTableBasic = () => {
               {columns[0]}
             </HeaderCellInfoWrapper>
           </BaseHeaderCell>
-          <BaseHeaderCell dataKey={1} dataLabel={columns[0]}>
+          <BaseHeaderCell columnIndex={1} dataLabel={columns[0]}>
             {columns[1]}
           </BaseHeaderCell>
-          <BaseHeaderCell dataKey={2} dataLabel={columns[2]}>
+          <BaseHeaderCell columnIndex={2} dataLabel={columns[2]}>
             <HeaderCellInfoWrapper
               variant="popover"
               info={
@@ -358,10 +358,10 @@ ComposableTableBasic = () => {
               {columns[2]}
             </HeaderCellInfoWrapper>
           </BaseHeaderCell>
-          <BaseHeaderCell dataKey={3} dataLabel={columns[3]}>
+          <BaseHeaderCell columnIndex={3} dataLabel={columns[3]}>
             {columns[3]}
           </BaseHeaderCell>
-          <BaseHeaderCell dataKey={4} dataLabel={columns[4]} textCenter>
+          <BaseHeaderCell columnIndex={4} dataLabel={columns[4]} textCenter>
             {columns[4]}
           </BaseHeaderCell>
         </BaseTableHeaderRow>
@@ -387,7 +387,7 @@ ComposableTableBasic = () => {
                 return (
                   <BaseBodyCell
                     key={`${rowIndex}_${cellIndex}`}
-                    dataKey={cellIndex}
+                    columnIndex={cellIndex}
                     dataLabel={columns[cellIndex]}
                     textCenter={cellIndex === row.length - 1}
                     {...((cellConfig && cellConfig.props) || {})}
@@ -556,36 +556,24 @@ ComposableTableSortable = () => {
     ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five']
   ]);
-  const [sortedBy, setSortedBy] = React.useState(-1);
-  const [sortDirection, setSortDirection] = React.useState(['none', 'none', 'none', 'none', 'none']);
-  const onSort = index => {
-    // changes the active selected style
-    setSortedBy(index);
-    // changes the sort direction
-    const updatedSortDirection = sortDirection.map((dir, sortIndex) => {
-      if (sortIndex === index) {
-        if (dir === 'asc') {
-          return 'desc';
-        } else if (dir === 'desc') {
-          return 'asc';
-        }
-        return 'asc';
-      } else {
-        return 'none';
-      }
-    });
-    setSortDirection(updatedSortDirection);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction, extraData) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
     // sorts the row data
     const updatedData = data.sort((a, b) => {
       if (typeof a[index] === 'number') {
         // numeric sort
-        if (updatedSortDirection[index] === 'asc') {
+        if (direction === 'asc') {
           return a[index] - b[index];
         }
         return b[index] - a[index];
       } else {
         // string sort
-        if (updatedSortDirection[index] === 'asc') {
+        if (direction === 'asc') {
           return a[index].localeCompare(b[index]);
         }
         return b[index].localeCompare(a[index]);
@@ -598,30 +586,32 @@ ComposableTableSortable = () => {
       <BaseTableHead>
         <BaseTableHeaderRow>
           <BaseHeaderCell
-            dataKey={0}
-            sortable
-            active={sortedBy === 0}
-            sortDirection={sortDirection[0]}
-            onSort={() => onSort(0)}
+            columnIndex={0}
+            activeSortIndex={activeSortIndex}
+            activeSortDirection={activeSortDirection}
+            onSort={onSort}
           >
             {columns[0]}
           </BaseHeaderCell>
+          <BaseHeaderCell columnIndex={1}>{columns[1]}</BaseHeaderCell>
           <BaseHeaderCell
-            dataKey={1}
-          >
-            {columns[1]}
-          </BaseHeaderCell>
-          <BaseHeaderCell
-            dataKey={2}
-            sortable
-            active={sortedBy === 2}
-            sortDirection={sortDirection[2]}
-            onSort={() => onSort(2)}
+            columnIndex={2}
+            activeSortIndex={activeSortIndex}
+            activeSortDirection={activeSortDirection}
+            onSort={onSort}
           >
             {columns[2]}
           </BaseHeaderCell>
-          <BaseHeaderCell dataKey={3} modifier="wrap">{columns[3]}</BaseHeaderCell>
-          <BaseHeaderCell dataKey={4} modifier="wrap">
+          <BaseHeaderCell columnIndex={3} modifier="wrap">
+            {columns[3]}
+          </BaseHeaderCell>
+          <BaseHeaderCell
+            columnIndex={4}
+            modifier="wrap"
+            activeSortIndex={activeSortIndex}
+            activeSortDirection={activeSortDirection}
+            onSort={onSort}
+          >
             {columns[4]}
           </BaseHeaderCell>
         </BaseTableHeaderRow>
@@ -630,7 +620,7 @@ ComposableTableSortable = () => {
         {data.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
-              <BaseBodyCell key={`${rowIndex}_${cellIndex}`} dataKey={cellIndex} dataLabel={columns[cellIndex]}>
+              <BaseBodyCell key={`${rowIndex}_${cellIndex}`} columnIndex={cellIndex} dataLabel={columns[cellIndex]}>
                 {cell}
               </BaseBodyCell>
             ))}
@@ -740,6 +730,101 @@ class SelectableTable extends React.Component {
 }
 ```
 
+### Composable: Selectable
+
+```js
+import React from 'react';
+import {
+  BaseTable,
+  BaseTableHead,
+  BaseTableBody,
+  BaseTableHeaderRow,
+  BaseTableBodyRow,
+  BaseHeaderCell,
+  BaseBodyCell,
+  HeaderCellInfoWrapper
+} from '@patternfly/react-table';
+
+ComposableTableSelectable = () => {
+  const [columns, setColumns] = React.useState([
+    'Repositories',
+    'Branches',
+    'Pull requests',
+    'Workspaces',
+    'Last commit'
+  ]);
+  const [data, setData] = React.useState([
+    ['one', 'two', 'a', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['p', 'two', 'b', 'four', 'five']
+  ]);
+  const [allRowsSelected, setAllRowsSelected] = React.useState(false);
+  const [selected, setSelected] = React.useState(data.map(row => false));
+  const onSelect = (event, isSelected, rowId, rowData, extraData) => {
+    setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
+    if (!isSelected && allRowsSelected) {
+      setAllRowsSelected(false);
+    } else if (isSelected && !allRowsSelected) {
+      let allSelected = true;
+      for (let i = 0; i < selected.length; i++) {
+        if (i !== rowId) {
+          if (!selected[i]) {
+            allSelected = false;
+          }
+        }
+      }
+      if (allSelected) {
+        setAllRowsSelected(true);
+      }
+    }
+  };
+  const onSelectAll = (event, isSelected, rowId, rowData, extraData) => {
+    setAllRowsSelected(isSelected);
+    setSelected(selected.map(sel => isSelected));
+  };
+  return (
+    <BaseTable aria-label="Selectable Table">
+      <BaseTableHead>
+        <BaseTableHeaderRow>
+          <BaseHeaderCell columnIndex={0} onSelect={onSelectAll} allRowsSelected={allRowsSelected} />
+          <BaseHeaderCell columnIndex={1}>{columns[0]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={2}>{columns[1]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={3}>{columns[2]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={4}>{columns[3]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={5}>{columns[4]}</BaseHeaderCell>
+        </BaseTableHeaderRow>
+      </BaseTableHead>
+      <BaseTableBody>
+        {data.map((row, rowIndex) => (
+          <BaseTableBodyRow key={rowIndex}>
+            <BaseBodyCell
+              key={`${rowIndex}_0`}
+              columnIndex={0}
+              rowIndex={rowIndex}
+              onSelect={onSelect}
+              isSelected={selected[rowIndex]}
+              disableSelection={rowIndex === 1}
+            />
+            {row.map((cell, cellIndex) => {
+              const shiftedIndex = cellIndex + 1;
+              return (
+                <BaseBodyCell
+                  key={`${rowIndex}_${shiftedIndex}`}
+                  columnIndex={shiftedIndex}
+                  dataLabel={columns[cellIndex]}
+                >
+                  {cell}
+                </BaseBodyCell>
+              );
+            })}
+          </BaseTableBodyRow>
+        ))}
+      </BaseTableBody>
+    </BaseTable>
+  );
+};
+```
+
 ### Selectable radio input
 
 ```js
@@ -818,6 +903,82 @@ class SelectableTable extends React.Component {
     );
   }
 }
+```
+
+### Composable: Selectable radio input
+
+```js
+import React from 'react';
+import {
+  BaseTable,
+  BaseTableHead,
+  BaseTableBody,
+  BaseTableHeaderRow,
+  BaseTableBodyRow,
+  BaseHeaderCell,
+  BaseBodyCell,
+  HeaderCellInfoWrapper
+} from '@patternfly/react-table';
+
+ComposableTableSelectableRadio = () => {
+  const [columns, setColumns] = React.useState([
+    'Repositories',
+    'Branches',
+    'Pull requests',
+    'Workspaces',
+    'Last commit'
+  ]);
+  const [data, setData] = React.useState([
+    ['one', 'two', 'a', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['p', 'two', 'b', 'four', 'five']
+  ]);
+  const [selected, setSelected] = React.useState(-1);
+  const onSelect = (event, isSelected, rowId, rowData, extraData) => {
+    setSelected(rowId);
+  };
+  return (
+    <BaseTable aria-label="Selectable Table">
+      <BaseTableHead>
+        <BaseTableHeaderRow>
+          <BaseHeaderCell columnIndex={0} />
+          <BaseHeaderCell columnIndex={1}>{columns[0]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={2}>{columns[1]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={3}>{columns[2]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={4}>{columns[3]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={5}>{columns[4]}</BaseHeaderCell>
+        </BaseTableHeaderRow>
+      </BaseTableHead>
+      <BaseTableBody>
+        {data.map((row, rowIndex) => (
+          <BaseTableBodyRow key={rowIndex}>
+            <BaseBodyCell
+              key={`${rowIndex}_0`}
+              columnIndex={0}
+              rowIndex={rowIndex}
+              onSelect={onSelect}
+              isSelected={selected === rowIndex}
+              disableSelection={rowIndex === 1}
+              selectVariant="radio"
+            />
+            {row.map((cell, cellIndex) => {
+              const shiftedIndex = cellIndex + 1;
+              return (
+                <BaseBodyCell
+                  key={`${rowIndex}_${shiftedIndex}`}
+                  columnIndex={shiftedIndex}
+                  dataLabel={columns[cellIndex]}
+                >
+                  {cell}
+                </BaseBodyCell>
+              );
+            })}
+          </BaseTableBodyRow>
+        ))}
+      </BaseTableBody>
+    </BaseTable>
+  );
+};
 ```
 
 ### Simple actions
@@ -975,6 +1136,108 @@ class ActionsTable extends React.Component {
     );
   }
 }
+```
+
+### Composable: Actions
+
+```js
+import React from 'react';
+import {
+  BaseTable,
+  BaseTableHead,
+  BaseTableBody,
+  BaseTableHeaderRow,
+  BaseTableBodyRow,
+  BaseHeaderCell,
+  BaseBodyCell,
+  HeaderCellInfoWrapper
+} from '@patternfly/react-table';
+
+ComposableTableActions = () => {
+  const defaultActions = [
+    {
+      title: 'Some action',
+      onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+    },
+    {
+      title: <a href="https://www.patternfly.org">Link action</a>
+    },
+    {
+      isSeparator: true
+    },
+    {
+      title: 'Third action',
+      onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
+    }
+  ];
+  const lastRowActions = [
+    {
+      title: 'Some action',
+      onClick: (event, rowId, rowData, extra) => console.log(`clicked on Some action, on row ${rowId}`)
+    },
+    {
+      title: <div>Another action</div>,
+      onClick: (event, rowId, rowData, extra) => console.log(`clicked on Another action, on row ${rowId}`)
+    },
+    {
+      isSeparator: true
+    },
+    {
+      title: 'Third action',
+      onClick: (event, rowId, rowData, extra) => console.log(`clicked on Third action, on row ${rowId}`)
+    }
+  ];
+  const [columns, setColumns] = React.useState([
+    'Repositories',
+    'Branches',
+    'Pull requests',
+    'Workspaces',
+    'Last commit'
+  ]);
+  const [data, setData] = React.useState([
+    ['one', 'two', 'a', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['p', 'two', 'b', 'four', 'five'],
+    ['4', '2', 'b', 'four', 'five'],
+    ['5', '2', 'b', 'four', 'five']
+  ]);
+  const [selected, setSelected] = React.useState(-1);
+  const onSelect = (event, isSelected, rowId, rowData, extraData) => {
+    setSelected(rowId);
+  };
+  return (
+    <BaseTable aria-label="Actions Table">
+      <BaseTableHead>
+        <BaseTableHeaderRow>
+          <BaseHeaderCell columnIndex={0}>{columns[0]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={1}>{columns[1]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={2}>{columns[2]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={3}>{columns[3]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={4}>{columns[4]}</BaseHeaderCell>
+          <BaseHeaderCell columnIndex={5} />
+        </BaseTableHeaderRow>
+      </BaseTableHead>
+      <BaseTableBody>
+        {data.map((row, rowIndex) => (
+          <BaseTableBodyRow key={rowIndex}>
+            {row.map((cell, cellIndex) => (
+              <BaseBodyCell key={`${rowIndex}_${cellIndex}`} columnIndex={cellIndex} dataLabel={columns[cellIndex]}>
+                {cell}
+              </BaseBodyCell>
+            ))}
+            <BaseBodyCell
+              key={`${rowIndex}_5`}
+              columnIndex={5}
+              rowIndex={rowIndex}
+              actions={rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions}
+              actionsDisabled={rowIndex === 3}
+            />
+          </BaseTableBodyRow>
+        ))}
+      </BaseTableBody>
+    </BaseTable>
+  );
+};
 ```
 
 ### First cell as header
