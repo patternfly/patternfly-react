@@ -23,10 +23,8 @@ export interface TreeViewDataItem {
   hasBadge?: boolean;
   /** Additional properties of the tree view item badge */
   badgeProps?: any;
-  /** Action of a tree view item, nested inside a button */
+  /** Action of a tree view item, can be a Button or Dropdown */
   action?: React.ReactNode;
-  /** Additional properties of the tree view item action button */
-  actionProps?: any;
 }
 
 export interface TreeViewProps {
@@ -98,7 +96,6 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
         icon={item.icon !== undefined ? item.icon : icon}
         expandedIcon={item.expandedIcon !== undefined ? item.expandedIcon : expandedIcon}
         action={item.action}
-        actionProps={item.actionProps}
         compareItems={compareItems}
         {...(item.children && {
           children: (
