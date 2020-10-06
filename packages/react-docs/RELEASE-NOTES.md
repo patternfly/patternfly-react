@@ -29,7 +29,7 @@ releaseNoteTOC: true
   - Added ref to omit list ([#4948](https://github.com/patternfly/patternfly-react/pull/4948))
   - Updated aria of data list ([#4913](https://github.com/patternfly/patternfly-react/pull/4913))
 - **Date picker:** 
-  Added basic date picker ([#4888](https://github.com/patternfly/patternfly-react/pull/4888))
+  - Added basic date picker ([#4888](https://github.com/patternfly/patternfly-react/pull/4888))
 - **Dropdown:** 
   - Fixed indeterminate warning in dropdown toggle checkbox([#4844](https://github.com/patternfly/patternfly-react/pull/4844))
   - Added more OUIA props into dropdown component ([#4754](https://github.com/patternfly/patternfly-react/pull/4754))
@@ -50,7 +50,6 @@ releaseNoteTOC: true
   - Fixed handleMainClick function signature ([#4843](https://github.com/patternfly/patternfly-react/pull/4843))
 - **Progress:** 
   - Added warning variant ([#4834](https://github.com/patternfly/patternfly-react/pull/4834))
-- **Progress:** 
   - Added truncation ([#4842](https://github.com/patternfly/patternfly-react/pull/4842))
 - **Select:** 
   - Added support for divider in select ([#4772](https://github.com/patternfly/patternfly-react/pull/4772))
@@ -66,14 +65,14 @@ releaseNoteTOC: true
 - **Tooltip** 
   - Updated to export TooltipProps as a type to help babel ([#4854](https://github.com/patternfly/patternfly-react/pull/4854))
 
-### Catalog view extension:** 
+### Catalog view extension
 - Added back catalogue items ([#4940](https://github.com/patternfly/patternfly-react/pull/4940))
 
 ### Charts
 - Replaced or used exact lodash imports ([#4830](https://github.com/patternfly/patternfly-react/pull/4830))
 
 ### Icons
-- Used lying cast ([#4935](https://github.com/patternfly/patternfly-react/pull/4935))
+- Reverted support for svg alt tags ([#4935](https://github.com/patternfly/patternfly-react/pull/4935))
 
 ### Table
 - Fixed expandable cell content always being on `<td>` ([#4899](https://github.com/patternfly/patternfly-react/pull/4899))
