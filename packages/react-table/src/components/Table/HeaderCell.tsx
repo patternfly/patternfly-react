@@ -50,25 +50,16 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
     onMouseEnterProp(event);
   };
 
-  const Component = component as any;
-  const cell =
-    Component === 'th' ? (
-      <BaseHeaderCell
-        {...mappedProps}
-        onMouseEnter={onMouseEnter}
-        className={css(className, textCenter && styles.modifiers.center)}
-      >
-        {children}
-      </BaseHeaderCell>
-    ) : (
-      <Component
-        {...mappedProps}
-        onMouseEnter={onMouseEnter}
-        className={css(className, textCenter && styles.modifiers.center)}
-      >
-        {children}
-      </Component>
-    );
+  const cell = (
+    <BaseHeaderCell
+      {...mappedProps}
+      onMouseEnter={onMouseEnter}
+      className={css(className, textCenter && styles.modifiers.center)}
+      component={component}
+    >
+      {children}
+    </BaseHeaderCell>
+  );
 
   return tooltip !== '' ? (
     <Tooltip content={tooltip} isVisible>

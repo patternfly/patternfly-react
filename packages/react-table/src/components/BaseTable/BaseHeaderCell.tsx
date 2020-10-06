@@ -17,6 +17,8 @@ export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeade
   children?: React.ReactNode;
   /** Additional classes added to the <th> header cell  */
   className?: string;
+  /** Element to render */
+  component?: React.ReactNode;
   /** Modifies cell to center its contents. */
   textCenter?: boolean;
   /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
@@ -44,6 +46,7 @@ export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeade
 const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   children,
   className,
+  component = 'th',
   textCenter = false,
   onSort,
   activeSortDirection = 'none',
@@ -83,7 +86,7 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
         }
       })
     : null;
-  const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || 'th';
+  const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || component;
   const transformedChildren =
     (sortParams && sortParams.children) || (selectParams && selectParams.children) || children;
   return (

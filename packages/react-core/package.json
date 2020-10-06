@@ -40,7 +40,6 @@
     "@patternfly/react-tokens": "^4.9.11",
     "focus-trap": "4.0.2",
     "react-dropzone": "9.0.0",
-    "react-router-hash-link": "^2.1.0",
     "tippy.js": "5.1.2",
     "tslib": "^1.11.1"
   },

@@ -6,7 +6,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 
 export interface SkipToContentProps extends React.HTMLProps<HTMLAnchorElement> {
   /** The skip to content link. */
-  href?: string;
+  href: string;
   /** Content to display within the skip to content component, typically a string. */
   children?: React.ReactNode;
   /** Additional styles to apply to the skip to content component. */
@@ -31,7 +31,7 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { children, className, href, show, type, ...rest } = this.props;
-    const renderDefaultLink = (): React.ReactNode => (
+    return (
       <a
         {...rest}
         className={css(buttonStyles.button, buttonStyles.modifiers.primary, styles.skipToContent, className)}
@@ -41,11 +41,5 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
         {children}
       </a>
     );
-    const renderClonedChild = (child: React.ReactElement): React.ReactNode =>
-      React.cloneElement(child, {
-        className: css(buttonStyles.button, buttonStyles.modifiers.primary, styles.skipToContent, className),
-        ref: this.componentRef
-      });
-    return React.isValidElement(children) ? renderClonedChild(children as React.ReactElement) : renderDefaultLink();
   }
 }
