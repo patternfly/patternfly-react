@@ -5,16 +5,16 @@ releaseNoteTOC: true
 ---
 
 ## 2020.13 release notes (2020-10-06)
-- [@patternfly/react-catalog-view-extension@4.8.59](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.59)
+- [@patternfly/react-catalog-view-extension@4.8.60](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.60)
 - [@patternfly/react-charts@6.10.4](https://www.npmjs.com/package/@patternfly/react-charts/v/6.10.4)
-- [@patternfly/react-core@4.63.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.63.2)
+- [@patternfly/react-core@4.63.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.63.3)
 - [@patternfly/react-icons@4.7.11](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.11)
-- [@patternfly/react-inline-edit-extension@4.5.116](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.116)
+- [@patternfly/react-inline-edit-extension@4.5.117](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.117)
 - [@patternfly/react-styles@4.7.8](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.8)
-- [@patternfly/react-table@4.18.13](https://www.npmjs.com/package/@patternfly/react-table/v/4.18.13)
+- [@patternfly/react-table@4.18.14](https://www.npmjs.com/package/@patternfly/react-table/v/4.18.14)
 - [@patternfly/react-tokens@4.9.12](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.12)
-- [@patternfly/react-topology@4.6.24](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.24)
-- [@patternfly/react-virtualized-extension@4.5.104](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.104)
+- [@patternfly/react-topology@4.6.25](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.25)
+- [@patternfly/react-virtualized-extension@4.5.105](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.105)
 
 ### Components
 - **Button:** 
@@ -67,7 +67,7 @@ releaseNoteTOC: true
   - Updated to export TooltipProps as a type to help babel ([#4854](https://github.com/patternfly/patternfly-react/pull/4854))
 
 ### Catalog view extension:** 
-  - Added back catalogue items ([#4940](https://github.com/patternfly/patternfly-react/pull/4940))
+- Added back catalogue items ([#4940](https://github.com/patternfly/patternfly-react/pull/4940))
 
 ### Charts
 - Replaced or used exact lodash imports ([#4830](https://github.com/patternfly/patternfly-react/pull/4830))
@@ -84,10 +84,6 @@ releaseNoteTOC: true
 - Fixed exports ([#4927](https://github.com/patternfly/patternfly-react/pull/4927))
 - Fixed selector for cancelling dnd ([#4850](https://github.com/patternfly/patternfly-react/pull/4850))
 - Updated to wrap drag event handlers in actions ([#4826](https://github.com/patternfly/patternfly-react/pull/4826))
-
-### PF3
-- **Vertical nav:**
-  - Updates to not handle modified clicks on VerticalNav links ([#4747](https://github.com/patternfly/patternfly-react/pull/4747))
 
 ### Other
 - **Chore:** 
@@ -111,6 +107,10 @@ releaseNoteTOC: true
   - Changed overview to get-started ([#4862](https://github.com/patternfly/patternfly-react/pull/4862))
   - Removed out of date links from the readme ([#4921](https://github.com/patternfly/patternfly-react/pull/4921))
   - Fixed broken links ([#4870](https://github.com/patternfly/patternfly-react/pull/4870))
+
+### PF3
+- **Vertical nav:**
+  - Updates to not handle modified clicks on VerticalNav links ([#4747](https://github.com/patternfly/patternfly-react/pull/4747))
 
 ## 2020.12 release notes (2020-09-17)
 - [@patternfly/react-catalog-view-extension@4.8.31](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.31)
