@@ -29,6 +29,125 @@ exports[`DataList Cells 1`] = `
 </div>
 `;
 
+exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="2xl"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid-2xl"
+    style={Object {}}
+  />
+</DataList>
+`;
+
+exports[`DataList DataList variants Breakpoint - always 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="always"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid"
+    style={Object {}}
+  />
+</DataList>
+`;
+
+exports[`DataList DataList variants Breakpoint - lg 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="lg"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid-lg"
+    style={Object {}}
+  />
+</DataList>
+`;
+
+exports[`DataList DataList variants Breakpoint - md 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="md"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid-md"
+    style={Object {}}
+  />
+</DataList>
+`;
+
+exports[`DataList DataList variants Breakpoint - none 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="none"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid-none"
+    style={Object {}}
+  />
+</DataList>
+`;
+
+exports[`DataList DataList variants Breakpoint - sm 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="sm"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid-sm"
+    style={Object {}}
+  />
+</DataList>
+`;
+
+exports[`DataList DataList variants Breakpoint - xl 1`] = `
+<DataList
+  aria-label="this is a simple list"
+  className=""
+  gridBreakpoint="xl"
+  isCompact={false}
+  selectedDataListItemId=""
+  wrapModifier={null}
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-grid-xl"
+    style={Object {}}
+  />
+</DataList>
+`;
+
 exports[`DataList DataListAction button 1`] = `
 <div
   className="pf-c-data-list__item-action"
@@ -131,7 +250,7 @@ exports[`DataList List 1`] = `
 >
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list data-list-custom"
+    className="pf-c-data-list pf-m-grid-md data-list-custom"
     style={Object {}}
   />
 </ContextProvider>
@@ -153,7 +272,7 @@ exports[`DataList List compact 1`] = `
 >
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-compact"
+    className="pf-c-data-list pf-m-compact pf-m-grid-md"
     style={Object {}}
   />
 </ContextProvider>
@@ -175,7 +294,7 @@ exports[`DataList List default 1`] = `
 >
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list"
+    className="pf-c-data-list pf-m-grid-md"
     style={Object {}}
   />
 </ContextProvider>
@@ -197,7 +316,7 @@ exports[`DataList List draggable 1`] = `
 >
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-compact"
+    className="pf-c-data-list pf-m-compact pf-m-grid-md"
     onDragLeave={[Function]}
     onDragOver={[Function]}
     onDrop={[Function]}
