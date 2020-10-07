@@ -9,7 +9,6 @@ This package is currently an extension. Extension components do not undergo the 
 <br />
 <br />
 
-import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import virtualGridStyles from './VirtualGrid.example.css';
