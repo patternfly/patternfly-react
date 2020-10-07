@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check form section example against snapshot 1`] = `
+<FormSection>
+  <section
+    className="pf-c-form__section"
+  />
+</FormSection>
+`;
