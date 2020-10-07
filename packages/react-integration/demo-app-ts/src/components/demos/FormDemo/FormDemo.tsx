@@ -3,6 +3,7 @@ import {
   Form,
   FormGroup,
   FormProps,
+  FormSection,
   TextInput,
   Checkbox,
   Popover,
@@ -151,26 +152,30 @@ export class FormDemo extends Component<FormProps, FormState> {
                   <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
                 ))}
               </Select>
-              <FormGroup
-                id="formgroup-validated"
-                label="Validated Age"
-                type="number"
-                helperText="Enter age"
-                helperTextInvalid="Age must be a number"
-                fieldId="age2"
-                validated={validated}
-              >
-                <TextInput
+              <FormSection>
+                <FormGroup
+                  id="formgroup-validated"
+                  label="Validated Age"
+                  type="number"
+                  helperText="Enter age"
+                  helperTextInvalid="Age must be a number"
+                  fieldId="age2"
                   validated={validated}
-                  value={validatedValue}
-                  id="age-validated"
-                  aria-describedby="age-helper-validated"
-                  onChange={this.handleValidatedTextInputChange}
-                />
-              </FormGroup>
-              <FormGroup hasNoPaddingTop id="formgroup-checkbox" label="Subscribe" fieldId="subscribe">
-                <Checkbox id="subscribe" label="Mailing list" />
-              </FormGroup>
+                >
+                  <TextInput
+                    validated={validated}
+                    value={validatedValue}
+                    id="age-validated"
+                    aria-describedby="age-helper-validated"
+                    onChange={this.handleValidatedTextInputChange}
+                  />
+                </FormGroup>
+              </FormSection>
+              <FormSection>
+                <FormGroup hasNoPaddingTop id="formgroup-checkbox" label="Subscribe" fieldId="subscribe">
+                  <Checkbox id="subscribe" label="Mailing list" />
+                </FormGroup>
+              </FormSection>
             </Form>
           </div>
         </div>
