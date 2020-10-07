@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { TextArea } from '../TextArea';
+import { mount, shallow } from 'enzyme';
+import { TextArea, TextAreaBase  } from '../TextArea';
 import { ValidatedOptions } from '../../../helpers/constants';
 
 const props = {
@@ -13,23 +13,23 @@ test('textarea input passes value and event to onChange handler', () => {
   const event = {
     currentTarget: { value: newValue }
   };
-  const view = shallow(<TextArea {...props} aria-label="test textarea" />);
+  const view = shallow(<TextAreaBase {...props} aria-label="test textarea" />);
   view.find('textarea').simulate('change', event);
   expect(props.onChange).toBeCalledWith(newValue, event);
 });
 
 test('simple text input', () => {
-  const view = shallow(<TextArea {...props} aria-label="simple textarea" />);
+  const view = mount(<TextArea {...props} aria-label="simple textarea" />);
   expect(view).toMatchSnapshot();
 });
 
 test('invalid text area', () => {
-  const view = shallow(<TextArea {...props} required validated={'error'} aria-label="invalid textarea" />);
+  const view = mount(<TextArea {...props} required validated={'error'} aria-label="invalid textarea" />);
   expect(view).toMatchSnapshot();
 });
 
 test('validated text area success', () => {
-  const view = shallow(
+  const view = mount(
     <TextArea {...props} required validated={ValidatedOptions.success} aria-label="validated textarea" />
   );
   expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
@@ -37,7 +37,7 @@ test('validated text area success', () => {
 });
 
 test('validated text area warning', () => {
-  const view = shallow(
+  const view = mount(
     <TextArea {...props} required validated={ValidatedOptions.warning} aria-label="validated textarea" />
   );
   expect(view.find('.pf-c-form-control.pf-m-warning').length).toBe(1);
@@ -45,19 +45,19 @@ test('validated text area warning', () => {
 });
 
 test('validated text area error', () => {
-  const view = shallow(
+  const view = mount(
     <TextArea {...props} required validated={ValidatedOptions.error} aria-label="validated textarea" />
   );
   expect(view).toMatchSnapshot();
 });
 
 test('vertically resizable text area', () => {
-  const view = shallow(<TextArea resizeOrientation="vertical" {...props} aria-label="vertical resize textarea" />);
+  const view = mount(<TextArea resizeOrientation="vertical" {...props} aria-label="vertical resize textarea" />);
   expect(view).toMatchSnapshot();
 });
 
 test('horizontally resizable text area', () => {
-  const view = shallow(
+  const view = mount(
     <TextArea
       resizeOrientation="horizontal"
       {...props}
@@ -72,20 +72,20 @@ test('horizontally resizable text area', () => {
 test('should throw console error when no aria-label or id is given', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  shallow(<TextArea {...props} />);
+  mount(<TextArea {...props} />);
   expect(myMock).toBeCalled();
 });
 
 test('should not throw console error when id is given but no aria-label', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  shallow(<TextArea {...props} id="5" />);
+  mount(<TextArea {...props} id="5" />);
   expect(myMock).not.toBeCalled();
 });
 
 test('should not throw console error when aria-label is given but no id', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  shallow(<TextArea {...props} aria-label="test textarea" />);
+  mount(<TextArea {...props} aria-label="test textarea" />);
   expect(myMock).not.toBeCalled();
 });
