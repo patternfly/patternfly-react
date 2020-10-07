@@ -38,9 +38,8 @@ exports[`simple fileuploadfield 1`] = `
   <div
     className="pf-c-file-upload__file-details"
   >
-    <TextArea
+    <ForwardRef
       aria-label="File upload"
-      className=""
       disabled={false}
       id="custom-file-upload"
       isRequired={false}

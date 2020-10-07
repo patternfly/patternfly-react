@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.64.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.3...@patternfly/react-core@4.64.0) (2020-10-07)
+
+
+### Features
+
+* **TextArea:** support passing a ref ([#4953](https://github.com/patternfly/patternfly-react/issues/4953)) ([f8741dd](https://github.com/patternfly/patternfly-react/commit/f8741ddd49854ec1488cce0473a458619946a94d)), closes [#4894](https://github.com/patternfly/patternfly-react/issues/4894)
+
+
+
+
+
 ## [4.63.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.2...@patternfly/react-core@4.63.3) (2020-10-06)
 
 
