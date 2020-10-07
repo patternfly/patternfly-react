@@ -18,6 +18,7 @@ module.exports = (sourceMD, sourceProps) => {
   sourceProps(path.join(reactTablePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactChartsPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactDateTimePath, '/**/*.tsx'), reactPropsIgnore);
+  sourceProps(path.join(reactCatalogViewPath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
   sourceMD(path.join(reactCorePath, '/**/examples/*.md'), 'react');
