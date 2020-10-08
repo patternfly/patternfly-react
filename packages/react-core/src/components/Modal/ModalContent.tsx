@@ -12,7 +12,7 @@ import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
 import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxHeader } from './ModalBoxHeader';
-import { ModalBoxTitle, isModalAlertVariant } from './ModalBoxTitle';
+import { ModalBoxTitle, isVariantIcon } from './ModalBoxTitle';
 
 export interface ModalContentProps extends OUIAProps {
   /** Content rendered inside the Modal. */
@@ -154,7 +154,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       style={boxStyle}
       className={css(
         className,
-        isModalAlertVariant(titleIconVariant) &&
+        isVariantIcon(titleIconVariant) &&
           modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'default']
       )}
       variant={variant}

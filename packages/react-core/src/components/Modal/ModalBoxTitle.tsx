@@ -10,7 +10,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
-export const isModalAlertVariant = (icon: any): icon is string =>
+export const isVariantIcon = (icon: any): icon is string =>
   ['success', 'danger', 'warning', 'info', 'defaut'].includes(icon as string);
 
 export interface ModalBoxTitleProps {
@@ -38,8 +38,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
 }: ModalBoxTitleProps) => {
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   const h1 = React.useRef<HTMLHeadingElement>();
-  const label =
-    titleLabel || (isModalAlertVariant(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
+  const label = titleLabel || (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
   const variantIcons = {
     success: <CheckCircleIcon />,
     danger: <ExclamationCircleIcon />,
@@ -47,7 +46,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     info: <InfoCircleIcon />,
     default: <BellIcon />
   };
-  const CustomIcon = !isModalAlertVariant(titleIconVariant) && titleIconVariant;
+  const CustomIcon = !isVariantIcon(titleIconVariant) && titleIconVariant;
 
   React.useLayoutEffect(() => {
     setIsTooltipVisible(h1.current && h1.current.offsetWidth < h1.current.scrollWidth);
@@ -62,7 +61,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     >
       {titleIconVariant && (
         <span className={css(modalStyles.modalBoxTitleIcon)}>
-          {isModalAlertVariant(titleIconVariant) ? variantIcons[titleIconVariant] : <CustomIcon />}
+          {isVariantIcon(titleIconVariant) ? variantIcons[titleIconVariant] : <CustomIcon />}
         </span>
       )}
       {label && <span className={css(accessibleStyles.screenReader)}>{label}</span>}
