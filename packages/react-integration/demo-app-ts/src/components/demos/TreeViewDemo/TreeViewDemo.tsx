@@ -158,7 +158,7 @@ export class TreeViewDemo extends Component {
         id: 'FCost',
         hasBadge: true,
         action: (
-          <Button>
+          <Button variant="plain" aria-label="Folder action">
             <FolderIcon />
           </Button>
         ),

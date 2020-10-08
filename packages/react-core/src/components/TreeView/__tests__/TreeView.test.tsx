@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { TreeView } from '../TreeView';
 import { Button } from '@patternfly/react-core';
-import { FolderIcon, FolderOpenIcon, FlagIcon } from '@patternfly/react-icons';
+import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
 
 const options = [
   {
@@ -94,7 +94,7 @@ const flagOptions = [
     id: 'Cost',
     hasBadge: true,
     action: (
-      <Button>
+      <Button variant="plain" aria-label="Folder action">
         <FolderIcon />
       </Button>
     ),

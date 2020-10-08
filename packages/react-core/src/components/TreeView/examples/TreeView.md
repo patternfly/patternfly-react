@@ -611,7 +611,7 @@ class IconTreeView extends React.Component {
         name: 'ApplicationLauncher',
         id: 'AppLaunch',
         action: (
-          <Button aria-label="Launch app">
+          <Button variant="plain" aria-label="Launch app">
             <EllipsisVIcon />
           </Button>
         ),
@@ -620,7 +620,7 @@ class IconTreeView extends React.Component {
             name: 'Application 1',
             id: 'App1',
             action: (
-              <Button aria-label="Launch app 1">
+              <Button variant="plain" aria-label="Launch app 1">
                 <ClipboardIcon />
               </Button>
             ),
@@ -633,7 +633,7 @@ class IconTreeView extends React.Component {
             name: 'Application 2',
             id: 'App2',
             action: (
-              <Button aria-label="Launch app 2">
+              <Button variant="plain" aria-label="Launch app 2">
                 <HamburgerIcon />
               </Button>
             ),
