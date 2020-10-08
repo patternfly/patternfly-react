@@ -2,15 +2,17 @@
 id: Pagination
 section: components
 cssPrefix: null
-propComponents: ["Pagination"]
+propComponents: ['Pagination']
 ouia: true
 ---
 
 ## Examples
+
 ### Top
+
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -49,9 +51,10 @@ class PaginationTop extends React.Component {
 ```
 
 ### Bottom
+
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationBottom extends React.Component {
   constructor(props) {
@@ -88,9 +91,10 @@ class PaginationBottom extends React.Component {
 ```
 
 ### Disabled
+
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationDisabled extends React.Component {
   constructor(props) {
@@ -130,9 +134,10 @@ class PaginationDisabled extends React.Component {
 ```
 
 ### No items
+
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -171,9 +176,10 @@ class PaginationTop extends React.Component {
 ```
 
 ### One page
+
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -212,9 +218,10 @@ class PaginationTop extends React.Component {
 ```
 
 ### Compact
+
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -247,6 +254,90 @@ class PaginationTop extends React.Component {
         widgetId="pagination-options-menu-top"
         onPerPageSelect={this.onPerPageSelect}
         isCompact
+      />
+    );
+  }
+}
+```
+
+### Sticky (top)
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
+
+class PaginationSticky extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 1,
+      perPage: 20
+    };
+
+    this.onSetPage = (_event, pageNumber) => {
+      this.setState({
+        page: pageNumber
+      });
+    };
+
+    this.onPerPageSelect = (_event, perPage) => {
+      this.setState({
+        perPage
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Pagination
+        itemCount={523}
+        perPage={this.state.perPage}
+        page={this.state.page}
+        onSetPage={this.onSetPage}
+        widgetId="pagination-options-menu-top"
+        onPerPageSelect={this.onPerPageSelect}
+        isSticky
+      />
+    );
+  }
+}
+```
+
+### Sticky (bottom)
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
+
+class PaginationBottomSticky extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 1
+    };
+    this.onSetPage = (_event, pageNumber) => {
+      this.setState({
+        page: pageNumber
+      });
+    };
+    this.onPerPageSelect = (_event, perPage) => {
+      this.setState({
+        perPage
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Pagination
+        itemCount={333}
+        widgetId="pagination-options-menu-bottom"
+        perPage={this.state.perPage}
+        page={this.state.page}
+        variant={PaginationVariant.bottom}
+        onSetPage={this.onSetPage}
+        onPerPageSelect={this.onPerPageSelect}
+        isSticky
       />
     );
   }

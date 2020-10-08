@@ -18,6 +18,16 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('should render correctly sticky', () => {
+    const wrapper = mount(<Pagination itemCount={20} isSticky />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  test('should render correctly bottom sticky', () => {
+    const wrapper = mount(<Pagination itemCount={20} variant={PaginationVariant.bottom} isSticky />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('should render correctly disabled', () => {
     const wrapper = mount(<Pagination itemCount={20} isDisabled />);
     expect(wrapper).toMatchSnapshot();
