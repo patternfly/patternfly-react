@@ -5,6 +5,20 @@ describe('Select Test', () => {
     cy.url().should('eq', 'http://localhost:3000/select-demo-nav-link');
   });
 
+  it('Verify Select with Divider', () => {
+    cy.get('#single-select-with-divider').click();
+    cy.get('#Miss > .pf-c-select__menu-item').click();
+    cy.get('#single-select-with-divider')
+      .contains('Miss')
+      .should('exist');
+
+    cy.get('#single-select-with-divider').click();
+    cy.get('#Mr > .pf-c-select__menu-item').click();
+    cy.get('#single-select-with-divider')
+      .contains('Mr')
+      .should('exist');
+  });
+
   it('Verify Single Select', () => {
     cy.get('#single-select').click();
     cy.get('#Miss > .pf-c-select__menu-item').click();

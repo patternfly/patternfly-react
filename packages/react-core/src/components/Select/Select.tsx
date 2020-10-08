@@ -534,7 +534,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
           .find(child => child.props.value.toString() === value.toString())
       : React.Children.toArray(this.props.children).find(
-          child => (child as React.ReactElement).props.value.toString() === value.toString()
+          child =>
+            (child as React.ReactElement).props.value &&
+            (child as React.ReactElement).props.value.toString() === value.toString()
         );
     if (item) {
       if (item && item.props.children) {
