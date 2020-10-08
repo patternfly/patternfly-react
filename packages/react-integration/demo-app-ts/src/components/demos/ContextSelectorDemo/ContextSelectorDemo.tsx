@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
+import { ContextSelector, ContextSelectorItem, ContextSelectorFooter, Button } from '@patternfly/react-core';
 
 interface ContextSelectorState {
   isOpen: boolean;
@@ -73,6 +73,11 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
         onSelect={this.onSelect}
         onSearchButtonClick={this.onSearchButtonClick}
         screenReaderLabel="Selected Project:"
+        footer={
+          <ContextSelectorFooter>
+            <Button variant="link">Footer action</Button>
+          </ContextSelectorFooter>
+        }
       >
         {filteredItems.map((item, index) => (
           <ContextSelectorItem key={index}>{item}</ContextSelectorItem>

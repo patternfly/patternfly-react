@@ -6,10 +6,12 @@ ouia: true
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
+import { Button, ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core';
 
 class SimpleContextSelector extends React.Component {
   constructor(props) {
@@ -73,6 +75,11 @@ class SimpleContextSelector extends React.Component {
         onSelect={this.onSelect}
         onSearchButtonClick={this.onSearchButtonClick}
         screenReaderLabel="Selected Project:"
+        footer={
+          <ContextSelectorFooter>
+            <Button variant="link">Footer action</Button>
+          </ContextSelectorFooter>
+        }
       >
         {filteredItems.map((item, index) => (
           <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
