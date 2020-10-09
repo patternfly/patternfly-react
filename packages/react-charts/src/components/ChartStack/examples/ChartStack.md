@@ -272,7 +272,7 @@ class MonthlyResponsiveStack extends React.Component {
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
-            height={275}
+            height={225}
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
