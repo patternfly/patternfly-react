@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.64.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.1...@patternfly/react-core@4.64.2) (2020-10-09)
+
+
+### Bug Fixes
+
+* **Tab:** Tab component properties don't show in the docs ([#4851](https://github.com/patternfly/patternfly-react/issues/4851)) ([3a774e9](https://github.com/patternfly/patternfly-react/commit/3a774e969430dc900ced7921d4452bfc9a8d0dc9)), closes [#4647](https://github.com/patternfly/patternfly-react/issues/4647)
+
+
+
+
+
 ## [4.64.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.0...@patternfly/react-core@4.64.1) (2020-10-09)
 
 **Note:** Version bump only for package @patternfly/react-core
