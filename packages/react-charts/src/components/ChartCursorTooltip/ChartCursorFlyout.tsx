@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Helpers, CommonProps, Path } from 'victory-core';
 import isPlainObject from 'lodash/isPlainObject';
