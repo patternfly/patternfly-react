@@ -198,6 +198,7 @@ exports[`DataList List draggable 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-compact"
+    onDragLeave={[Function]}
     onDragOver={[Function]}
     onDrop={[Function]}
     style={Object {}}
