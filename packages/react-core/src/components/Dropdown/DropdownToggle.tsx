@@ -72,10 +72,12 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {
+
   const ouiaProps = useOUIAProps(DropdownToggle.displayName, ouiaId, ouiaSafe);
   const toggle = (
     <DropdownContext.Consumer>
       {({ toggleTextClass, toggleIndicatorClass, toggleIconClass }) => (
+        <React.Fragment>
         <Toggle
           {...props}
           id={id}
@@ -100,6 +102,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
             </span>
           )}
         </Toggle>
+        </React.Fragment>
       )}
     </DropdownContext.Consumer>
   );
