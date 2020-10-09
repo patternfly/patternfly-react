@@ -164,7 +164,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
         draggingToItemIndex: null
       });
     }
-  }
+  };
 
   dragEnd0 = (el: HTMLElement) => {
     el.classList.remove(styles.modifiers.ghostRow);
@@ -174,17 +174,18 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   isValidDrop = (evt: React.DragEvent) => {
     const ulRect = this.ref.current.getBoundingClientRect();
-    return evt.clientX > ulRect.x &&
+    return (
+      evt.clientX > ulRect.x &&
       evt.clientX < ulRect.x + ulRect.width &&
       evt.clientY > ulRect.y &&
-      evt.clientY < ulRect.y + ulRect.height;
-  }
+      evt.clientY < ulRect.y + ulRect.height
+    );
+  };
 
   dragEnd = (evt: React.DragEvent) => {
     if (this.isValidDrop(evt)) {
       this.dragEnd0(evt.currentTarget as HTMLElement);
-    }
-    else {
+    } else {
       this.onDragCancel();
     }
   };
@@ -202,19 +203,14 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     }
   };
 
-  dragOver = (evt: React.DragEvent) => {
+  dragOver = (evt: React.DragEvent): string | null => {
     evt.preventDefault();
-    
+
     const curListItem = (evt.target as HTMLElement).closest('li');
-    if (
-      !curListItem ||
-      !this.ref.current.contains(curListItem) ||
-      curListItem.id === this.state.draggedItemId
-    ) {
+    if (!curListItem || !this.ref.current.contains(curListItem) || curListItem.id === this.state.draggedItemId) {
       // We're going nowhere, don't bother calling `dragOver0`
       return null;
-    }
-    else {
+    } else {
       this.dragOver0(curListItem.id);
     }
   };
