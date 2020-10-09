@@ -211,7 +211,6 @@ class BulkSelectTableDemo extends React.Component {
 
   render() {
     const { loading, res } = this.state;
-    console.log('res', res);
     const rows = res.map(post => ({
       cells: [post.title, post.body],
       selected: post.selected
