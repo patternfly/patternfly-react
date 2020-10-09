@@ -41,7 +41,7 @@
     "focus-trap": "4.0.2",
     "react-dropzone": "9.0.0",
     "tippy.js": "5.1.2",
-    "tslib": "^1.11.1"
+    "tslib": "1.13.0"
   },
   "devDependencies": {
     "@patternfly/patternfly": "4.50.4",
