@@ -706,7 +706,7 @@ class TooltipChart extends React.Component {
       isVisible: false
     };
     this.showTooltip = () => {
-      this.setState({ isVisible: true });
+      this.setState({ isVisible: !this.state.isVisible });
     };
   }
 
@@ -716,7 +716,7 @@ class TooltipChart extends React.Component {
     return (
       <div>
         <p>This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component</p>
-        <div style={{ height: '285px', width: '230px', textAlign: 'center' }}>
+        <div style={{ height: '230px', width: '230px' }}>
           <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
             <ChartDonutThreshold
               allowTooltip={false}
@@ -734,6 +734,8 @@ class TooltipChart extends React.Component {
               />
             </ChartDonutThreshold>
           </Tooltip>
+        </div>
+        <div style={{ width: '230px', textAlign: 'center' }}>
           <Button onClick={this.showTooltip}>Show Tooltip</Button>
         </div>
       </div>
