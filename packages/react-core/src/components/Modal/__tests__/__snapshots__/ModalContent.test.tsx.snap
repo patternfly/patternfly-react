@@ -26,7 +26,6 @@ exports[`Modal Content Test description 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Content title"
         />
         <ModalBoxDescription>
@@ -69,7 +68,6 @@ exports[`Modal Content Test isOpen 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Content title"
         />
       </ModalBoxHeader>
@@ -107,7 +105,6 @@ exports[`Modal Content Test only body 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Content title"
         />
       </ModalBoxHeader>
@@ -145,7 +142,6 @@ exports[`Modal Content Test with footer 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Content title"
         />
       </ModalBoxHeader>
@@ -186,7 +182,6 @@ exports[`Modal Content Test with onclose 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Content title"
         />
       </ModalBoxHeader>
@@ -229,7 +224,6 @@ exports[`Modal Content test without footer 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Content title"
         />
       </ModalBoxHeader>
@@ -267,7 +261,6 @@ exports[`Modal Test with custom footer 1`] = `
       />
       <ModalBoxHeader>
         <ModalBoxTitle
-          className="pf-c-modal-box__title"
           title="Test Modal Custom Footer"
         />
       </ModalBoxHeader>
