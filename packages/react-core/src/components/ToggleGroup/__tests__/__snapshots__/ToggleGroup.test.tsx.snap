@@ -11,9 +11,11 @@ exports[`basic not selected 1`] = `
     id="toggleGroupItem"
     onClick={[Function]}
   >
-    <span
-      className="pf-c-toggle-group__text"
-    />
+    <ToggleGroupItemElement
+      variant="text"
+    >
+      test
+    </ToggleGroupItemElement>
   </button>
 </div>
 `;
@@ -30,9 +32,11 @@ exports[`basic selected 1`] = `
     id="toggleGroupItem"
     onClick={[Function]}
   >
-    <span
-      className="pf-c-toggle-group__text"
-    />
+    <ToggleGroupItemElement
+      variant="text"
+    >
+      test
+    </ToggleGroupItemElement>
   </button>
 </div>
 `;
@@ -49,9 +53,11 @@ exports[`icon variant 1`] = `
     id="toggleGroupItem"
     onClick={[Function]}
   >
-    <span
-      className="pf-c-toggle-group__icon"
-    />
+    <ToggleGroupItemElement
+      variant="icon"
+    >
+      icon
+    </ToggleGroupItemElement>
   </button>
 </div>
 `;
@@ -68,9 +74,11 @@ exports[`isDisabled 1`] = `
     id="toggleGroupItem"
     onClick={[Function]}
   >
-    <span
-      className="pf-c-toggle-group__text"
-    />
+    <ToggleGroupItemElement
+      variant="text"
+    >
+      test
+    </ToggleGroupItemElement>
   </button>
 </div>
 `;
@@ -87,17 +95,17 @@ exports[`light theme 1`] = `
     className="pf-c-toggle-group"
     role="group"
   >
-    <ToggleGroupItem>
-      Test
-    </ToggleGroupItem>
+    <ToggleGroupItem
+      text="Test"
+    />
     <Divider
       component="div"
       isVertical={true}
       key="0 divider"
     />
-    <ToggleGroupItem>
-      Test
-    </ToggleGroupItem>
+    <ToggleGroupItem
+      text="Test"
+    />
   </div>
 </ContextProvider>
 `;

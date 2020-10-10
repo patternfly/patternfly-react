@@ -2,19 +2,15 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 import ToggleGroupContext from './ToggleGroupContext';
-
-export enum ToggleGroupItemVariant {
-  icon = 'icon',
-  text = 'text'
-}
+import { ToggleGroupItemVariant, ToggleGroupItemElement } from './ToggleGroupItemElement';
 
 export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
-  /** Content rendered inside the toggle group item */
-  children?: React.ReactNode;
+  /** Text rendered inside the toggle group item */
+  text?: React.ReactNode;
+  /** Icon rendered inside the toggle group item */
+  icon?: React.ReactNode;
   /** Additional classes added to the toggle group item */
   className?: string;
-  /** Adds toggle group item variant styles */
-  variant?: ToggleGroupItemVariant | 'icon' | 'text';
   /** Flag indicating if the toggle group item is disabled */
   isDisabled?: boolean;
   /** Flag indicating if the toggle group item is selected */
@@ -28,9 +24,9 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
 }
 
 export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
-  children,
+  text,
+  icon,
   className,
-  variant = 'text',
   isDisabled = false,
   isSelected = false,
   'aria-label': ariaLabel = '',
@@ -44,7 +40,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
     onChange(!isSelected, event);
   };
 
-  if (!ariaLabel && variant === ToggleGroupItemVariant.icon) {
+  if (!ariaLabel && icon && !text) {
     /* eslint-disable no-console */
     console.warn('An accessible aria-label is required when using the toggle group item icon variant.');
   }
@@ -63,11 +59,8 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
         {...(isDisabled && { disabled: true })}
         {...(buttonId && { id: buttonId })}
       >
-        <span
-          className={css(variant === 'icon' && styles.toggleGroupIcon, variant === 'text' && styles.toggleGroupText)}
-        >
-          {children}
-        </span>
+        {icon ? <ToggleGroupItemElement variant={ToggleGroupItemVariant.icon}>{icon}</ToggleGroupItemElement> : null}
+        {text ? <ToggleGroupItemElement variant={ToggleGroupItemVariant.text}>{text}</ToggleGroupItemElement> : null}
       </button>
     </div>
   );
