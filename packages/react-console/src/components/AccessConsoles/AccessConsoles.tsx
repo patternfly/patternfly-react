@@ -2,6 +2,9 @@ import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 import constants from '../common/constants';
+
+import '@patternfly/react-styles/src/css/components/Consoles/AccessConsoles.css';
+
 const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, DESKTOP_VIEWER_CONSOLE_TYPE } = constants;
 
 const getChildTypeName = (child: any) =>

@@ -9,7 +9,6 @@ beta: true
 DesktopViewer lives in its own package at [`@patternfly/react-console`](https://www.npmjs.com/package/@patternfly/react-console)
 
 import { DesktopViewer } from '@patternfly/react-console';
-import '@patternfly/react-console/dist/css/react-console.css';
 
 ## Examples
 

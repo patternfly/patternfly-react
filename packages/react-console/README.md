@@ -38,14 +38,11 @@ It's strongly advised to use the PatternFly Base CSS in your whole project, or s
 
 ```js
 import '@patternfly/react-core/dist/styles/base.css';
-import "@patternfly/react-console/dist/css/react-console.css";
 ```
 
 ```js
 import { VncConsole, SerialConsole } from '@patternfly/react-console';
 ```
-
-All css related to each component is provided alongside it. There is no component level CSS to import.
 
 # Documentation
 

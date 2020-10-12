@@ -10,7 +10,6 @@ beta: true
 AccessConsoles lives in its own package at [`@patternfly/react-console`](https://www.npmjs.com/package/@patternfly/react-console)
 
 import { AccessConsoles, DesktopViewer } from '@patternfly/react-console';
-import '@patternfly/react-console/dist/css/react-console.css';
 
 ## Examples
 

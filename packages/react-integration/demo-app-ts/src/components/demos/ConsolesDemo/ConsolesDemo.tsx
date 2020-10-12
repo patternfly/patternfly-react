@@ -3,8 +3,6 @@ import * as React from 'react';
 import { AccessConsoles, SerialConsole, DesktopViewer, VncConsole } from '@patternfly/react-console';
 import { debounce } from '@patternfly/react-core';
 
-import '@patternfly/react-console/dist/css/react-console.css';
-
 export const ConsolesDemo: React.FC = () => {
   const [status, setStatus] = React.useState('disconnected');
   const setConnected = React.useRef(debounce(() => setStatus('connected'), 3000)).current;

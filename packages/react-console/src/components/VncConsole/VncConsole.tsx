@@ -9,6 +9,8 @@ import RFB from 'novnc-core';
 import { VncActions } from './VncActions';
 import constants from '../common/constants';
 
+import '@patternfly/react-styles/src/css/components/Consoles/VncConsole.css';
+
 const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
 
 export interface VncConsoleProps extends React.HTMLProps<HTMLDivElement> {

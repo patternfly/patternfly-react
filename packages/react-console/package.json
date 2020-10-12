@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-console#readme",
   "scripts": {
-    "generate": "concurrently \"yarn build:sass\" \"yarn copy:sass\"",
     "clean": "rimraf dist"
   },
   "dependencies": {

@@ -4,6 +4,8 @@ import { ManualConnection } from './ManualConnection';
 import { ConnectWithRemoteViewer, ConnectWithRemoteViewerProps } from './ConnectWithRemoteViewer';
 import { ConsoleDetailPropType } from './ConsoleDetailPropType';
 
+import '@patternfly/react-styles/src/css/components/Consoles/DesktopViewer.css';
+
 export interface DesktopViewerProps extends ConnectWithRemoteViewerProps {
   /** Custom content of more-info section  */
   children?: React.ReactNode;
