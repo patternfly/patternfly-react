@@ -237,20 +237,9 @@ $ yarn test
 
 Ensure no lint errors are introduced in `yarn-error.log` after running this command.
 
-5.  Add a commit using `yarn commit`:
+5.  Add a commit using `git commit`:
 
 This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
-
-You can use `commitizen` to help you to follow [the convention][3].
-
-Once you are ready to commit the changes, please use the below commands:
-
-```text
-$ git add <files to be committed>
-$ yarn commit
-```
-
-... and follow the instruction of the interactive prompt.
 
 6.  Rebase
 
