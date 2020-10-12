@@ -645,7 +645,7 @@ class LegendLayoutPieChart extends React.Component {
             ariaTitle="Pie chart example"
             constrainToVisibleArea={true}
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-            height={275}
+            height={230}
             labels={({ datum }) => `${datum.x}: ${datum.y}`}
             legendComponent={this.getLegend([
               { name: 'Cats' }, 
