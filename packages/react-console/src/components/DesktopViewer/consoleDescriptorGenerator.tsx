@@ -1,4 +1,3 @@
-import 'blob-polyfill';
 import { saveAs } from 'file-saver';
 
 import { ConsoleDetailPropType } from './ConsoleDetailPropType';
