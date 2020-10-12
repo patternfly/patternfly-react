@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.30...@patternfly/react-topology@4.6.31) (2020-10-12)
+
+
+### Bug Fixes
+
+* **topology:** Do not update nodes on layout when fixed ([#4978](https://github.com/patternfly/patternfly-react/issues/4978)) ([932fa1f](https://github.com/patternfly/patternfly-react/commit/932fa1fd4cce6fcc1bbbc0a55bbde674701f1803))
+* **topology:** Fix for issue when dragging nodes that get re-created ([#4975](https://github.com/patternfly/patternfly-react/issues/4975)) ([08654b7](https://github.com/patternfly/patternfly-react/commit/08654b7cee943f9a8819b573315dea3592303461))
+
+
+
+
+
 ## [4.6.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.29...@patternfly/react-topology@4.6.30) (2020-10-12)
 
 **Note:** Version bump only for package @patternfly/react-topology

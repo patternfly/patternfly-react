@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.50.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.8...demo-app-ts@4.50.9) (2020-10-12)
+
+
+### Bug Fixes
+
+* **topology:** Do not update nodes on layout when fixed ([#4978](https://github.com/patternfly/patternfly-react/issues/4978)) ([932fa1f](https://github.com/patternfly/patternfly-react/commit/932fa1fd4cce6fcc1bbbc0a55bbde674701f1803))
+
+
+
+
+
 ## [4.50.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.7...demo-app-ts@4.50.8) (2020-10-12)
 
 **Note:** Version bump only for package demo-app-ts
