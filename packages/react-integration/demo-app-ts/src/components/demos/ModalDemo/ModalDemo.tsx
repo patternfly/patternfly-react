@@ -5,6 +5,7 @@ import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-t
 interface ModalDemoState {
   isModalOpen: boolean;
   isModalDescriptionOpen: boolean;
+  isHelpModalOpen: boolean;
   isSmallModalOpen: boolean;
   isMediumModalOpen: boolean;
   isLargeModalOpen: boolean;
@@ -21,6 +22,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   state = {
     isModalOpen: false,
     isModalDescriptionOpen: false,
+    isHelpModalOpen: false,
     isSmallModalOpen: false,
     isMediumModalOpen: false,
     isLargeModalOpen: false,
@@ -47,6 +49,12 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   handleSmallModalToggle = () => {
     this.setState(({ isSmallModalOpen }) => ({
       isSmallModalOpen: !isSmallModalOpen
+    }));
+  };
+
+  handleHelpModalToggle = () => {
+    this.setState(({ isHelpModalOpen }) => ({
+      isHelpModalOpen: !isHelpModalOpen
     }));
   };
 
@@ -388,6 +396,35 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     );
   }
 
+  renderHelpModal() {
+    const { isHelpModalOpen } = this.state;
+
+    return (
+      <Modal
+        variant={ModalVariant.small}
+        help={<Button variant="plain">Help</Button>}
+        position="top"
+        title="Modal Header"
+        isOpen={isHelpModalOpen}
+        onClose={this.handleHelpModalToggle}
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleHelpModalToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleHelpModalToggle}>
+            Confirm
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
   render() {
     const buttonStyle = {
       marginRight: 20,
@@ -464,6 +501,9 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           >
             Show Modal with alert variant
           </Button>
+          <Button style={buttonStyle} variant="primary" onClick={this.handleHelpModalToggle} id="showHelpModalButton">
+            Show Help Modal
+          </Button>
         </div>
         {this.renderModal()}
         {this.renderSmallModal()}
@@ -475,6 +515,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         {this.renderModalWithDescription()}
         {this.renderModalWithCustomEscape()}
         {this.renderModalWithAlertVariant()}
+        {this.renderHelpModal()}
       </React.Fragment>
     );
   }

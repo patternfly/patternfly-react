@@ -29,6 +29,8 @@ export interface ModalContentProps extends OUIAProps {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
+  /** Optional help section for the Modal Header */
+  help?: React.ReactNode;
   /** Description of the modal */
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
@@ -72,6 +74,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   className = '',
   isOpen = false,
   header = null,
+  help = null,
   description = null,
   title = '',
   titleIconVariant = null,
@@ -101,10 +104,10 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   }
 
   const modalBoxHeader = header ? (
-    <ModalBoxHeader>{header}</ModalBoxHeader>
+    <ModalBoxHeader help={help}>{header}</ModalBoxHeader>
   ) : (
     title && (
-      <ModalBoxHeader>
+      <ModalBoxHeader help={help}>
         <ModalBoxTitle title={title} titleIconVariant={titleIconVariant} titleLabel={titleLabel} id={labelId} />
         {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
       </ModalBoxHeader>
