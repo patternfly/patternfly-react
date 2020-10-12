@@ -375,12 +375,13 @@ class SimpleDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle aria-live="polite" aria-haspopup id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+          <DropdownToggle aria-haspopup id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
             Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
+        aria-live="polite"
       />
     );
   }
