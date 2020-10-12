@@ -8,7 +8,7 @@ const ts = require('typescript');
  * for better tree-shaking and smaller bundlers.
  * A large offender of this is Tooltip's Popover helper.
  *
- * @param context TS context
+ * @param {object} context TS context
  */
 function transformerCJSImports(context) {
   // Only transform for ESM build
@@ -19,7 +19,7 @@ function transformerCJSImports(context) {
    * If a node is an import, change its moduleSpecifier
    * Otherwise iterate over all its childern.
    *
-   * @param node TS Node
+   * @param {object} node TS Node
    */
   function visit(node) {
     if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/js/.test(node.moduleSpecifier.text)) {

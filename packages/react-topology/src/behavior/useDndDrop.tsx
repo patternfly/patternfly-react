@@ -1,8 +1,6 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 import { observer } from 'mobx-react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import { pointInSvgPath } from 'point-in-svg-path';
 import { comparer, computed } from 'mobx';
 import ElementContext from '../utils/ElementContext';

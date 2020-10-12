@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import * as React from 'react';
 import { action } from 'mobx';
 import * as _ from 'lodash';

@@ -4,7 +4,6 @@ import { RowType, RowKeyType } from './base/types';
 import { TableContext, IRow, IRowCell, IExtraRowData } from './Table';
 import { isRowExpanded } from './utils';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IComputedData {
   isInput: boolean;
   isButton: boolean;
@@ -42,7 +41,6 @@ const flagVisibility = (rows: IRow[]) => {
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface IMappedCell {
   [name: string]: IRowCell;
 }

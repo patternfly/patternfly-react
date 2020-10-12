@@ -42,8 +42,6 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
   handleItemClick = (isSelected: boolean, event: any) => {
     const id = event.currentTarget.id;
     this.setState(prevState => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore-next-line
       prevState.isSelected[id] = isSelected;
       return {
         isSelected: prevState.isSelected

@@ -61,7 +61,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
       isOpenMap: { [id]: isOpen }
     });
   };
-  onSelect = (event: React.SyntheticEvent<HTMLElement>) => {
+  onSelect = () => {
     this.setState({
       isOpenMap: null
     });

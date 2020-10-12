@@ -201,8 +201,6 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   // Note: theme is required by voronoiContainerMixin
   return (
     // Note: className is valid, but Victory is missing a type
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     <VictoryCursorContainer
       className={chartClassName}
       cursorLabelComponent={chartCursorLabelComponent}

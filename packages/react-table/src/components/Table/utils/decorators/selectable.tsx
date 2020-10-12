@@ -10,7 +10,7 @@ export const selectable: ITransform = (
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
   const {
-    extraParams: { onSelect, selectVariant, allRowsSelected, rowLabeledBy = 'simple-node' }
+    extraParams: { onSelect, selectVariant, allRowsSelected }
   } = column;
   const extraData = {
     rowIndex,

@@ -55,7 +55,6 @@ const generateHeader = (
   formatters: [...(origFormatters || []), ...(header && header.hasOwnProperty('formatters') ? header.formatters : [])]
 });
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ICustomCell {
   cellFormatters?: ICell['cellFormatters'];
   cellTransforms?: ICell['cellTransforms'];
@@ -127,7 +126,6 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ISelectTransform {
   onSelect: OnSelect;
   canSelectAll: boolean;
