@@ -74,12 +74,26 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       this.props.isOpen &&
       document.activeElement.classList[0] === 'pf-c-dropdown__toggle'
     ) {
-      const focusTargetCollection = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
-      const focusTarget = focusTargetCollection && focusTargetCollection[0];
-      if (focusTarget && focusTarget.focus) {
-        setTimeout(() => focusTarget.focus());
+      const refs = this.refsCollection
+      const firstFocusTargetCollection = refs.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
+      const firstFocusTarget = firstFocusTargetCollection && firstFocusTargetCollection[0];
+      if (firstFocusTarget && firstFocusTarget.focus) {
+        setTimeout(() => firstFocusTarget.focus());
+
+      } 
+    } else if (
+      event.key === 'ArrowUp' &&
+      this.props.isOpen &&
+      document.activeElement.classList[0] === 'pf-c-dropdown__toggle'){
+        const refs = this.refsCollection
+        const collectionLength = (refs.length)
+        const lastFocusTargetCollection = (refs.slice(collectionLength -1, collectionLength))
+        const lastFocusTarget = lastFocusTargetCollection && lastFocusTargetCollection[0];
+        if (lastFocusTarget[0] && lastFocusTarget[0].focus) {
+          console.log("focus target", lastFocusTarget[0])
+          setTimeout(() => lastFocusTarget[0].focus());
+        }
       }
-    }
   };
 
   shouldComponentUpdate() {
