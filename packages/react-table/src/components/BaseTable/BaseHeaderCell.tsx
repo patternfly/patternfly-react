@@ -11,6 +11,7 @@ import {
   ISortBy,
   OnSort
 } from '../Table';
+import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 
 export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect'> {
   /** Content rendered inside the <th> header cell */
@@ -41,6 +42,15 @@ export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeade
   allRowsSelected?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /**
+   * Tooltip to show on the header cell
+   * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text
+   * If you want to show a tooltip that differs from the header text, you can set it here
+   * To disable it completely you can set it to null
+   */
+  tooltip?: React.ReactNode;
+  /** Callback on mouse enter */
+  onMouseEnter?: (event: any) => void;
 }
 
 const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
@@ -57,9 +67,20 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   onSelect,
   selectVariant = 'checkbox',
   allRowsSelected,
+  tooltip = '',
+  onMouseEnter: onMouseEnterProp = () => {},
   innerRef,
   ...props
 }: BaseHeaderCellProps) => {
+  const [showTooltip, setShowTooltip] = React.useState(false);
+  const onMouseEnter = (event: any) => {
+    if (event.target.offsetWidth < event.target.scrollWidth) {
+      !showTooltip && setShowTooltip(true);
+    } else {
+      showTooltip && setShowTooltip(false);
+    }
+    onMouseEnterProp(event);
+  };
   const sortParams = onSort
     ? sortable(children as IFormatterValueType, {
         columnIndex,
@@ -89,8 +110,10 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || component;
   const transformedChildren =
     (sortParams && sortParams.children) || (selectParams && selectParams.children) || children;
-  return (
+  // const canShowTooltip = tooltip !== null && ((tooltip === '' && typeof children === 'string') || tooltip !== '');
+  const cell = (
     <Component
+      onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       scope="col"
       aria-sort={sortParams ? (sortParams['aria-sort'] as 'none' | 'ascending' | 'descending') : null}
       ref={innerRef}
@@ -107,6 +130,15 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
     >
       {transformedChildren}
     </Component>
+  );
+
+  const canDefault = tooltip === '' ? typeof children === 'string' : true;
+  return tooltip !== null && canDefault && showTooltip ? (
+    <Tooltip content={tooltip || (tooltip === '' && children)} isVisible>
+      {cell}
+    </Tooltip>
+  ) : (
+    cell
   );
 };
 

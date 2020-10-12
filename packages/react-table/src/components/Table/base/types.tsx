@@ -108,12 +108,12 @@ export interface RendererType {
 export interface RenderersTypes {
   columns: ColumnsType;
   renderers?: {
-    table?: string;
+    table?: any;
     header?: RendererType;
     body?: RendererType;
   };
   components?: {
-    table?: string;
+    table?: any;
     header?: {
       wrapper?: rendererType;
       row?: rendererType;

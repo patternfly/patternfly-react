@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IRow, IRowData, IExtraData, IHeaderRow } from './Table';
 import { mapOpenedRows } from './utils/headerUtils';
 import { BaseTableBody } from '../BaseTable/BaseTableBody';
@@ -34,12 +32,7 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
     return (
       <React.Fragment>
         {mapOpenedRows(mappedRows, props.children).map((oneRow, key) => (
-          <BaseTableBody
-            {...props}
-            className={css(oneRow.isOpen && styles.modifiers.expanded)}
-            key={`tbody-${key}`}
-            ref={tbodyRef as React.Ref<any>}
-          >
+          <BaseTableBody {...props} isExpanded={oneRow.isOpen} key={`tbody-${key}`} ref={tbodyRef as React.Ref<any>}>
             {oneRow.rows}
           </BaseTableBody>
         ))}

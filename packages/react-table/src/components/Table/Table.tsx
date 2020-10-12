@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Table/table';
 import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import {
   DropdownDirection,
@@ -26,7 +25,9 @@ export enum TableGridBreakpoint {
 }
 
 export enum TableVariant {
-  compact = 'compact'
+  compact = 'compact',
+  compactBorderless = 'compactBorderless',
+  compactExpandable = 'compactExpandable'
 }
 
 export type RowEditType = 'save' | 'cancel' | 'edit';
@@ -258,8 +259,12 @@ export interface TableProps extends OUIAProps {
   /** Additional classes added to the Table  */
   className?: string;
   /** Style variant for the Table  */
-  variant?: 'compact';
-  /** Render borders  */
+  variant?: 'compact' | 'compactBorderless' | 'compactExpandable';
+  /**
+   * Render borders
+   *
+   * @deprecated Borders can only be removed for the compact table, set variant="compactBorderless" instead
+   */
   borders?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
@@ -396,6 +401,7 @@ export class Table extends React.Component<TableProps, {}> {
       bodyWrapper,
       rowWrapper,
       role,
+      borders,
       ...props
     } = this.props;
 
@@ -425,6 +431,18 @@ export class Table extends React.Component<TableProps, {}> {
       firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
     });
 
+    const getVariant = () => {
+      if (variant === 'compact') {
+        if (borders === false) {
+          return 'compactBorderless';
+        } else if (onCollapse || onExpand) {
+          return 'compactExpandable';
+        }
+        return 'compact';
+      }
+      return variant;
+    };
+
     const table = (
       <TableContext.Provider
         value={{
@@ -449,10 +467,8 @@ export class Table extends React.Component<TableProps, {}> {
           }}
           columns={headerData}
           role={role}
-          className={css(
-            ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
-            className
-          )}
+          variant={getVariant()}
+          className={className}
         >
           {caption && <caption>{caption}</caption>}
           {children}

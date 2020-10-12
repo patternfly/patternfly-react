@@ -12,10 +12,13 @@ export interface BaseTableProps extends React.HTMLProps<HTMLTableElement>, OUIAP
   children?: React.ReactNode;
   /** Additional classes added to the Table  */
   className?: string;
-  /** Style variant for the Table  */
-  variant?: 'compact';
-  /** Render borders  */
-  borders?: boolean;
+  /**
+   * Style variant for the Table
+   * compact: Modifies to remove borders between rows
+   * compactBorderless: Compact and removes the border lines
+   * compactExpandable: Compact and indicates that the table has expandable rows
+   */
+  variant?: TableVariant | 'compact' | 'compactBorderless' | 'compactExpandable';
   /** Specifies the grid breakpoints  */
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   /** A valid WAI-ARIA role to be applied to the table element */
@@ -30,7 +33,6 @@ const BaseTableBase: React.FunctionComponent<BaseTableProps> = ({
   children,
   className,
   variant,
-  borders = true,
   isStickyHeader = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
@@ -41,6 +43,15 @@ const BaseTableBase: React.FunctionComponent<BaseTableProps> = ({
   ...props
 }: BaseTableProps) => {
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
+  const variantModifiers = () => {
+    if (variant === 'compact') {
+      return styles.modifiers.compact;
+    } else if (variant === 'compactBorderless') {
+      return css(styles.modifiers.compact, styles.modifiers.noBorderRows);
+    } else if (variant === 'compactExpandable') {
+      return css(styles.modifiers.compact, styles.modifiers.expandable);
+    }
+  };
   return (
     <table
       aria-label={ariaLabel}
@@ -52,9 +63,7 @@ const BaseTableBase: React.FunctionComponent<BaseTableProps> = ({
           stylesGrid.modifiers[
             toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
           ],
-        styles.modifiers[variant],
-        // ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
-        variant === TableVariant.compact && borders === false && styles.modifiers.noBorderRows,
+        variantModifiers(),
         isStickyHeader && styles.modifiers.stickyHeader
       )}
       ref={innerRef}
