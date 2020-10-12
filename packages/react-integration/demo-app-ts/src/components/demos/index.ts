@@ -28,6 +28,7 @@ export * from './ChipGroupDemo/ChipGroupDefaultIsOpenDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ChipGroupDemo/ChipGroupWithCategoryDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
+export * from './ConsolesDemo/ConsolesDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyExpandedDemo';
 export * from './DataListDemo/DataListDemo';

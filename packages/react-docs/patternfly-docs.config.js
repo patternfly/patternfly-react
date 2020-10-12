@@ -11,7 +11,8 @@ module.exports = {
     { section: 'components' },
     { section: 'demos' },
     { section: 'extensions' },
-    { section: 'layouts' }
+    { section: 'layouts' },
+    { section: 'consoles' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],
   port: 8002

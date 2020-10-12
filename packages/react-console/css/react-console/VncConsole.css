@@ -1,0 +1,8 @@
+.pf-c-console__vnc {
+    grid-area: main;
+}
+.pf-c-console__actions-vnc {
+  grid-area: actions-extra;
+  display: flex;
+  justify-content: flex-end;
+}
