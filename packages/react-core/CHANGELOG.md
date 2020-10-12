@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.64.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.2...@patternfly/react-core@4.64.3) (2020-10-12)
+
+
+### Bug Fixes
+
+* **nav:** Fix ariaLabel not getting applied ([#4944](https://github.com/patternfly/patternfly-react/issues/4944)) ([7e0a7f1](https://github.com/patternfly/patternfly-react/commit/7e0a7f1ae8a2bd0e7c5df247bb05f70f55929243)), closes [#4507](https://github.com/patternfly/patternfly-react/issues/4507)
+
+
+
+
+
 ## [4.64.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.1...@patternfly/react-core@4.64.2) (2020-10-09)
 
 
