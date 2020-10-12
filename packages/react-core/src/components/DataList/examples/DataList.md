@@ -1162,7 +1162,6 @@ class DraggableDataList extends React.Component {
     };
 
     this.onDragFinish = itemOrder => {
-      console.log('need to save new list', itemOrder);
       this.setState({
         liveText: `Dragging finished`,
         itemOrder

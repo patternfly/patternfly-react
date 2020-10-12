@@ -139,14 +139,55 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     this.dragStart0(evt.currentTarget as HTMLElement);
   };
 
+  onDragCancel = () => {
+    this.move(this.props.itemOrder);
+    Array.from(this.ref.current.children).forEach(el => {
+      el.classList.remove(styles.modifiers.ghostRow);
+      el.setAttribute('aria-pressed', 'false');
+    });
+    this.setState({
+      draggedItemId: null,
+      draggingToItemIndex: null,
+      dragging: false
+    });
+
+    if (this.props.onDragCancel) {
+      this.props.onDragCancel();
+    }
+  };
+
+  dragLeave = (evt: React.DragEvent) => {
+    // This event false fires when we call `this.move()`, so double check we're out of zone
+    if (!this.isValidDrop(evt)) {
+      this.move(this.props.itemOrder);
+      this.setState({
+        draggingToItemIndex: null
+      });
+    }
+  };
+
   dragEnd0 = (el: HTMLElement) => {
     el.classList.remove(styles.modifiers.ghostRow);
     el.setAttribute('aria-pressed', 'false');
     this.props.onDragFinish(this.state.tempItemOrder);
   };
 
+  isValidDrop = (evt: React.DragEvent) => {
+    const ulRect = this.ref.current.getBoundingClientRect();
+    return (
+      evt.clientX > ulRect.x &&
+      evt.clientX < ulRect.x + ulRect.width &&
+      evt.clientY > ulRect.y &&
+      evt.clientY < ulRect.y + ulRect.height
+    );
+  };
+
   dragEnd = (evt: React.DragEvent) => {
-    this.dragEnd0(evt.currentTarget as HTMLElement);
+    if (this.isValidDrop(evt)) {
+      this.dragEnd0(evt.currentTarget as HTMLElement);
+    } else {
+      this.onDragCancel();
+    }
   };
 
   dragOver0 = (id: string) => {
@@ -162,18 +203,20 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     }
   };
 
-  dragOver = (evt: React.DragEvent) => {
+  dragOver = (evt: React.DragEvent): string | null => {
     evt.preventDefault();
-    const currListItem = (evt.target as Element).closest('li');
-    if (currListItem && currListItem.classList.contains(css(styles.modifiers.ghostRow))) {
-      return;
+
+    const curListItem = (evt.target as HTMLElement).closest('li');
+    if (!curListItem || !this.ref.current.contains(curListItem) || curListItem.id === this.state.draggedItemId) {
+      // We're going nowhere, don't bother calling `dragOver0`
+      return null;
+    } else {
+      this.dragOver0(curListItem.id);
     }
-    this.dragOver0(currListItem.id);
   };
 
   handleDragButtonKeys = (evt: React.KeyboardEvent) => {
     const { dragging } = this.state;
-    const { onDragCancel } = this.props;
     if (
       evt.key !== ' ' &&
       evt.key !== 'Escape' &&
@@ -201,7 +244,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
         if (evt.key === 'Enter') {
           this.dragEnd0(dragItem);
         } else {
-          onDragCancel && onDragCancel();
+          this.onDragCancel();
         }
       } else if (evt.key === 'ArrowUp') {
         const nextSelection = dragItem.previousSibling as HTMLElement;
@@ -244,7 +287,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
     const dragProps = isDraggable && {
       onDragOver: this.dragOver,
-      onDrop: this.dragOver
+      onDrop: this.dragOver,
+      onDragLeave: this.dragLeave
     };
 
     return (
