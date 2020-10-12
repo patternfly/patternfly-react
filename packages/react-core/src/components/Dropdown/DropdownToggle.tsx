@@ -76,7 +76,6 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   const toggle = (
     <DropdownContext.Consumer>
       {({ toggleTextClass, toggleIndicatorClass, toggleIconClass }) => (
-        <React.Fragment>
           <Toggle
             {...props}
             id={id}
@@ -101,7 +100,6 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
               </span>
             )}
           </Toggle>
-        </React.Fragment>
       )}
     </DropdownContext.Consumer>
   );

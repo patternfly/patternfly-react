@@ -219,7 +219,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                     hidden={!isOpen}
                     role="menu"
                     ref={setMenuComponentRef}
-                    id="dropdown-menu"
                   >
                     {this.extendChildren()}
                   </MenuComponent>
