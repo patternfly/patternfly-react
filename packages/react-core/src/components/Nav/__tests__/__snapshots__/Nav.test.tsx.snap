@@ -695,7 +695,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   theme="dark"
 >
   <nav
-    aria-label="Local"
+    aria-label="Test"
     className="pf-c-nav"
     data-ouia-component-id="OUIA-Generated-Nav-5"
     data-ouia-component-type="PF4/Nav"
