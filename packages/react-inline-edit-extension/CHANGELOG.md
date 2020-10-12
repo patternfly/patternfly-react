@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.122](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.121...@patternfly/react-inline-edit-extension@4.5.122) (2020-10-12)
+
+
+### Bug Fixes
+
+* **inputgroup:** allow string children ([#4963](https://github.com/patternfly/patternfly-react/issues/4963)) ([2f90073](https://github.com/patternfly/patternfly-react/commit/2f90073111e01c4c5597d04b2a337707881a33ec))
+
+
+
+
+
 ## [4.5.121](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.5.120...@patternfly/react-inline-edit-extension@4.5.121) (2020-10-12)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

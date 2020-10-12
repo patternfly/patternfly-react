@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.64.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.3...@patternfly/react-core@4.64.4) (2020-10-12)
+
+
+### Bug Fixes
+
+* **inputgroup:** allow string children ([#4963](https://github.com/patternfly/patternfly-react/issues/4963)) ([2f90073](https://github.com/patternfly/patternfly-react/commit/2f90073111e01c4c5597d04b2a337707881a33ec))
+
+
+
+
+
 ## [4.64.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.2...@patternfly/react-core@4.64.3) (2020-10-12)
 
 
