@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`horizontally resizable text area 1`] = `
-<ForwardRef
+<TextArea
   aria-label="horizontal resize textarea"
   onChange={[MockFunction]}
   required={true}
@@ -29,11 +29,11 @@ exports[`horizontally resizable text area 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;
 
 exports[`invalid text area 1`] = `
-<ForwardRef
+<TextArea
   aria-label="invalid textarea"
   onChange={[MockFunction]}
   required={true}
@@ -60,11 +60,11 @@ exports[`invalid text area 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;
 
 exports[`simple text input 1`] = `
-<ForwardRef
+<TextArea
   aria-label="simple textarea"
   onChange={[MockFunction]}
   value="test textarea"
@@ -88,11 +88,11 @@ exports[`simple text input 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;
 
 exports[`validated text area error 1`] = `
-<ForwardRef
+<TextArea
   aria-label="validated textarea"
   onChange={[MockFunction]}
   required={true}
@@ -119,11 +119,11 @@ exports[`validated text area error 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;
 
 exports[`validated text area success 1`] = `
-<ForwardRef
+<TextArea
   aria-label="validated textarea"
   onChange={[MockFunction]}
   required={true}
@@ -150,11 +150,11 @@ exports[`validated text area success 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;
 
 exports[`validated text area warning 1`] = `
-<ForwardRef
+<TextArea
   aria-label="validated textarea"
   onChange={[MockFunction]}
   required={true}
@@ -181,11 +181,11 @@ exports[`validated text area warning 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;
 
 exports[`vertically resizable text area 1`] = `
-<ForwardRef
+<TextArea
   aria-label="vertical resize textarea"
   onChange={[MockFunction]}
   resizeOrientation="vertical"
@@ -210,5 +210,5 @@ exports[`vertically resizable text area 1`] = `
       value="test textarea"
     />
   </TextArea>
-</ForwardRef>
+</TextArea>
 `;

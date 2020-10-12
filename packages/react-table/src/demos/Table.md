@@ -833,6 +833,7 @@ import {
   Select,
   SelectOption,
   SelectVariant,
+  TextInput,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -840,7 +841,7 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import { Table, TableHeader, TableBody, TextInput } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
