@@ -108,11 +108,27 @@ export const useDndDrag = <
     return sourceMonitor;
   }, [dndManager]);
 
+  const createKeyHandlerId = React.useCallback(
+    (event: string = '') => `${event}.useDndDrag-${monitor.getHandlerId()}`,
+    [monitor]
+  );
+
+  React.useEffect(
+    () => () => {
+      d3.select(window.document).on(createKeyHandlerId(), null);
+      if (dndManager.isDragging() && dndManager.getSourceId() === monitor.getHandlerId()) {
+        dndManager.endDrag();
+      }
+    },
+    []
+  );
+
   const refCallback: DragElementWrapper = useCallbackRef<DragElementWrapper>(
     React.useCallback(
       (node: SVGElement | Element | null) => {
-        const createKeyHandlerId = (event: string = '') => `${event}.useDndDrag-${monitor.getHandlerId()}`;
+        let ownerDocument: Document;
         if (node) {
+          ownerDocument = node.ownerDocument;
           let operationChangeEvents:
             | {
                 begin: [number, number, number, number];
@@ -127,7 +143,7 @@ export const useDndDrag = <
                 // TODO bridge the gap between scene tree and dom tree
                 () => {
                   const selected =
-                    node instanceof SVGElement ? d3.select(node.ownerSVGElement) : d3.select(node.ownerDocument);
+                    node instanceof SVGElement ? d3.select(node.ownerSVGElement) : d3.select(ownerDocument);
                   return selected.select('[data-surface="true"]').node() as any;
                 }
               )
@@ -166,7 +182,7 @@ export const useDndDrag = <
                     }
                   }
                 });
-                d3.select(node.ownerDocument)
+                d3.select(ownerDocument)
                   .on(
                     createKeyHandlerId('keydown'),
                     action(() => {
@@ -175,7 +191,7 @@ export const useDndDrag = <
                         if (dndManager.isDragging() && dndManager.cancel()) {
                           operationChangeEvents = undefined;
                           d3.select(d3.event.view).on('.drag', null);
-                          d3.select(node.ownerDocument).on(createKeyHandlerId(), null);
+                          d3.select(ownerDocument).on(createKeyHandlerId(), null);
                           dndManager.endDrag();
                         }
                       } else {
@@ -214,7 +230,7 @@ export const useDndDrag = <
                 action(() => {
                   operationChangeEvents = undefined;
                   operation = undefined;
-                  d3.select(node.ownerDocument).on(createKeyHandlerId(), null);
+                  d3.select(ownerDocument).on(createKeyHandlerId(), null);
                   if (dndManager.isDragging()) {
                     dndManager.drop();
                     dndManager.endDrag();
@@ -227,10 +243,6 @@ export const useDndDrag = <
         return () => {
           if (node) {
             d3.select(node).on('.drag', null);
-            d3.select(node.ownerDocument).on(createKeyHandlerId(), null);
-            if (dndManager.isDragging() && dndManager.getSourceId() === monitor.getHandlerId()) {
-              dndManager.endDrag();
-            }
           }
         };
       },
