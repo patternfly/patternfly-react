@@ -72,36 +72,35 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {
-
   const ouiaProps = useOUIAProps(DropdownToggle.displayName, ouiaId, ouiaSafe);
   const toggle = (
     <DropdownContext.Consumer>
       {({ toggleTextClass, toggleIndicatorClass, toggleIconClass }) => (
         <React.Fragment>
-        <Toggle
-          {...props}
-          id={id}
-          className={className}
-          isOpen={isOpen}
-          parentRef={parentRef}
-          getMenuRef={getMenuRef}
-          isActive={isActive}
-          isDisabled={isDisabled}
-          isPlain={isPlain}
-          isPrimary={isPrimary}
-          onToggle={onToggle}
-          aria-haspopup={ariaHasPopup}
-          {...ouiaProps}
-          {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
-        >
-          {icon && <span className={css(toggleIconClass)}>{icon}</span>}
-          {children && <span className={ToggleIndicator && css(toggleTextClass)}>{children}</span>}
-          {ToggleIndicator && (
-            <span className={css(!splitButtonItems && toggleIndicatorClass)}>
-              <ToggleIndicator />
-            </span>
-          )}
-        </Toggle>
+          <Toggle
+            {...props}
+            id={id}
+            className={className}
+            isOpen={isOpen}
+            parentRef={parentRef}
+            getMenuRef={getMenuRef}
+            isActive={isActive}
+            isDisabled={isDisabled}
+            isPlain={isPlain}
+            isPrimary={isPrimary}
+            onToggle={onToggle}
+            aria-haspopup={ariaHasPopup}
+            {...ouiaProps}
+            {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
+          >
+            {icon && <span className={css(toggleIconClass)}>{icon}</span>}
+            {children && <span className={ToggleIndicator && css(toggleTextClass)}>{children}</span>}
+            {ToggleIndicator && (
+              <span className={css(!splitButtonItems && toggleIndicatorClass)}>
+                <ToggleIndicator />
+              </span>
+            )}
+          </Toggle>
         </React.Fragment>
       )}
     </DropdownContext.Consumer>

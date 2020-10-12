@@ -51,6 +51,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   };
 
   componentDidMount() {
+    document.addEventListener('keydown', this.onKeyDown);
     const { autoFocus } = this.props;
 
     if (autoFocus) {
@@ -62,6 +63,24 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       }
     }
   }
+
+  componentWillUnmount = () => {
+    document.removeEventListener('keydown', this.onKeyDown);
+  };
+
+  onKeyDown = (event: any) => {
+    if (
+      event.key === 'ArrowDown' &&
+      this.props.isOpen &&
+      document.activeElement.classList[0] === 'pf-c-dropdown__toggle'
+    ) {
+      const focusTargetCollection = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
+      const focusTarget = focusTargetCollection && focusTargetCollection[0];
+      if (focusTarget && focusTarget.focus) {
+        setTimeout(() => focusTarget.focus());
+      }
+    }
+  };
 
   shouldComponentUpdate() {
     // reset refsCollection before updating to account for child removal between mounts
