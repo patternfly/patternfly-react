@@ -27,19 +27,17 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   dataLabel = '',
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
-}: HeaderCellProps) => {
-  return (
-    <BaseHeaderCell
-      {...props}
-      scope={scope}
-      tooltip={tooltip}
-      onMouseEnter={onMouseEnter}
-      textCenter={textCenter}
-      component={component}
-      className={className}
-    >
-      {children}
-    </BaseHeaderCell>
-  );
-};
+}: HeaderCellProps) => (
+  <BaseHeaderCell
+    {...props}
+    scope={scope}
+    tooltip={tooltip}
+    onMouseEnter={onMouseEnter}
+    textCenter={textCenter}
+    component={component}
+    className={className}
+  >
+    {children}
+  </BaseHeaderCell>
+);
 HeaderCell.displayName = 'HeaderCell';

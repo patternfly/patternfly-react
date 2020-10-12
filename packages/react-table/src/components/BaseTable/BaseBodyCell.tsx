@@ -145,7 +145,7 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
                 onCollapse
               }
             }
-          }),
+          })
           /* expandedRow()('true', {
             rowIndex,
             columnIndex,

@@ -125,7 +125,6 @@ exports[`Actions virtualized table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    borders={true}
     className=""
     columns={
       Array [
@@ -414,25 +413,26 @@ exports[`Actions virtualized table 1`] = `
       }
     }
     role="grid"
+    variant={null}
   >
     <BaseTable
       aria-label="Aria labeled"
-      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
       ouiaSafe={true}
       role="grid"
+      variant={null}
     >
       <BaseTableBase
         aria-label="Aria labeled"
-        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
         isStickyHeader={false}
         ouiaSafe={true}
         role="grid"
+        variant={null}
       >
         <table
           aria-label="Aria labeled"
@@ -1073,6 +1073,8 @@ exports[`Actions virtualized table 1`] = `
                                     data-label="Header cell"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       aria-sort="none"
@@ -1083,6 +1085,8 @@ exports[`Actions virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort="none"
@@ -1160,6 +1164,8 @@ exports[`Actions virtualized table 1`] = `
                                     data-label="Branches"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -1169,6 +1175,8 @@ exports[`Actions virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -1196,6 +1204,8 @@ exports[`Actions virtualized table 1`] = `
                                     data-label="Pull requests"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -1205,6 +1215,8 @@ exports[`Actions virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -1232,6 +1244,8 @@ exports[`Actions virtualized table 1`] = `
                                     data-label="Workspaces"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -1241,6 +1255,8 @@ exports[`Actions virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -1268,6 +1284,8 @@ exports[`Actions virtualized table 1`] = `
                                     data-label="Last Commit"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -1277,6 +1295,8 @@ exports[`Actions virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -1304,6 +1324,9 @@ exports[`Actions virtualized table 1`] = `
                                     data-key={5}
                                     data-label=""
                                     onMouseEnter={[Function]}
+                                    scope=""
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -1312,6 +1335,9 @@ exports[`Actions virtualized table 1`] = `
                                       data-label=""
                                       innerRef={null}
                                       onMouseEnter={[Function]}
+                                      scope=""
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <td
                                         aria-sort={null}
@@ -1319,7 +1345,7 @@ exports[`Actions virtualized table 1`] = `
                                         data-key={5}
                                         data-label=""
                                         onMouseEnter={[Function]}
-                                        scope="col"
+                                        scope=""
                                       />
                                     </BaseHeaderCellBase>
                                   </BaseHeaderCell>
@@ -1466,7 +1492,6 @@ exports[`Selectable virtualized table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    borders={true}
     className=""
     columns={
       Array [
@@ -1755,25 +1780,26 @@ exports[`Selectable virtualized table 1`] = `
       }
     }
     role="grid"
+    variant={null}
   >
     <BaseTable
       aria-label="Aria labeled"
-      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
       ouiaSafe={true}
       role="grid"
+      variant={null}
     >
       <BaseTableBase
         aria-label="Aria labeled"
-        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
         isStickyHeader={false}
         ouiaSafe={true}
         role="grid"
+        variant={null}
       >
         <table
           aria-label="Aria labeled"
@@ -2413,6 +2439,9 @@ exports[`Selectable virtualized table 1`] = `
                                     data-key={0}
                                     data-label=""
                                     onMouseEnter={[Function]}
+                                    scope=""
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className="pf-c-table__check"
@@ -2421,6 +2450,9 @@ exports[`Selectable virtualized table 1`] = `
                                       data-label=""
                                       innerRef={null}
                                       onMouseEnter={[Function]}
+                                      scope=""
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <td
                                         aria-sort={null}
@@ -2428,7 +2460,7 @@ exports[`Selectable virtualized table 1`] = `
                                         data-key={0}
                                         data-label=""
                                         onMouseEnter={[Function]}
-                                        scope="col"
+                                        scope=""
                                       >
                                         <SelectColumn
                                           aria-label="Select all rows"
@@ -2465,6 +2497,8 @@ exports[`Selectable virtualized table 1`] = `
                                     data-label="Header cell"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       aria-sort="none"
@@ -2475,6 +2509,8 @@ exports[`Selectable virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort="none"
@@ -2552,6 +2588,8 @@ exports[`Selectable virtualized table 1`] = `
                                     data-label="Branches"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -2561,6 +2599,8 @@ exports[`Selectable virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -2588,6 +2628,8 @@ exports[`Selectable virtualized table 1`] = `
                                     data-label="Pull requests"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -2597,6 +2639,8 @@ exports[`Selectable virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -2624,6 +2668,8 @@ exports[`Selectable virtualized table 1`] = `
                                     data-label="Workspaces"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -2633,6 +2679,8 @@ exports[`Selectable virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -2660,6 +2708,8 @@ exports[`Selectable virtualized table 1`] = `
                                     data-label="Last Commit"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -2669,6 +2719,8 @@ exports[`Selectable virtualized table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -2856,7 +2908,6 @@ exports[`Simple Actions table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    borders={true}
     className=""
     columns={
       Array [
@@ -3259,25 +3310,26 @@ exports[`Simple Actions table 1`] = `
       }
     }
     role="grid"
+    variant={null}
   >
     <BaseTable
       aria-label="Aria labeled"
-      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
       ouiaSafe={true}
       role="grid"
+      variant={null}
     >
       <BaseTableBase
         aria-label="Aria labeled"
-        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
         isStickyHeader={false}
         ouiaSafe={true}
         role="grid"
+        variant={null}
       >
         <table
           aria-label="Aria labeled"
@@ -4146,6 +4198,8 @@ exports[`Simple Actions table 1`] = `
                                     data-label="Header cell"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       aria-sort="none"
@@ -4156,6 +4210,8 @@ exports[`Simple Actions table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort="none"
@@ -4233,6 +4289,8 @@ exports[`Simple Actions table 1`] = `
                                     data-label="Branches"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -4242,6 +4300,8 @@ exports[`Simple Actions table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -4269,6 +4329,8 @@ exports[`Simple Actions table 1`] = `
                                     data-label="Pull requests"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -4278,6 +4340,8 @@ exports[`Simple Actions table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -4305,6 +4369,8 @@ exports[`Simple Actions table 1`] = `
                                     data-label="Workspaces"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -4314,6 +4380,8 @@ exports[`Simple Actions table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -4341,6 +4409,8 @@ exports[`Simple Actions table 1`] = `
                                     data-label="Last Commit"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -4350,6 +4420,8 @@ exports[`Simple Actions table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -4377,6 +4449,9 @@ exports[`Simple Actions table 1`] = `
                                     data-key={5}
                                     data-label=""
                                     onMouseEnter={[Function]}
+                                    scope=""
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -4385,6 +4460,9 @@ exports[`Simple Actions table 1`] = `
                                       data-label=""
                                       innerRef={null}
                                       onMouseEnter={[Function]}
+                                      scope=""
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <td
                                         aria-sort={null}
@@ -4392,7 +4470,7 @@ exports[`Simple Actions table 1`] = `
                                         data-key={5}
                                         data-label=""
                                         onMouseEnter={[Function]}
-                                        scope="col"
+                                        scope=""
                                       />
                                     </BaseHeaderCellBase>
                                   </BaseHeaderCell>
@@ -4535,7 +4613,6 @@ exports[`Simple virtualized table aria-label 1`] = `
 >
   <Provider
     aria-label="Virtual Table Test"
-    borders={true}
     className=""
     columns={
       Array [
@@ -4777,25 +4854,26 @@ exports[`Simple virtualized table aria-label 1`] = `
       }
     }
     role="grid"
+    variant={null}
   >
     <BaseTable
       aria-label="Virtual Table Test"
-      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
       ouiaSafe={true}
       role="grid"
+      variant={null}
     >
       <BaseTableBase
         aria-label="Virtual Table Test"
-        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
         isStickyHeader={false}
         ouiaSafe={true}
         role="grid"
+        variant={null}
       >
         <table
           aria-label="Virtual Table Test"
@@ -5339,6 +5417,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                     data-label="Header cell"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -5348,6 +5428,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -5375,6 +5457,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                     data-label="Branches"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -5384,6 +5468,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -5411,6 +5497,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                     data-label="Pull requests"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -5420,6 +5508,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -5447,6 +5537,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                     data-label="Workspaces"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -5456,6 +5548,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -5483,6 +5577,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                     data-label="Last Commit"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -5492,6 +5588,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -5644,7 +5742,6 @@ exports[`Simple virtualized table className 1`] = `
 >
   <Provider
     aria-label="Virtual Table Test"
-    borders={true}
     className=""
     columns={
       Array [
@@ -5886,25 +5983,26 @@ exports[`Simple virtualized table className 1`] = `
       }
     }
     role="grid"
+    variant={null}
   >
     <BaseTable
       aria-label="Virtual Table Test"
-      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
       ouiaSafe={true}
       role="grid"
+      variant={null}
     >
       <BaseTableBase
         aria-label="Virtual Table Test"
-        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
         isStickyHeader={false}
         ouiaSafe={true}
         role="grid"
+        variant={null}
       >
         <table
           aria-label="Virtual Table Test"
@@ -6448,6 +6546,8 @@ exports[`Simple virtualized table className 1`] = `
                                     data-label="Header cell"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -6457,6 +6557,8 @@ exports[`Simple virtualized table className 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -6484,6 +6586,8 @@ exports[`Simple virtualized table className 1`] = `
                                     data-label="Branches"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -6493,6 +6597,8 @@ exports[`Simple virtualized table className 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -6520,6 +6626,8 @@ exports[`Simple virtualized table className 1`] = `
                                     data-label="Pull requests"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -6529,6 +6637,8 @@ exports[`Simple virtualized table className 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -6556,6 +6666,8 @@ exports[`Simple virtualized table className 1`] = `
                                     data-label="Workspaces"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -6565,6 +6677,8 @@ exports[`Simple virtualized table className 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -6592,6 +6706,8 @@ exports[`Simple virtualized table className 1`] = `
                                     data-label="Last Commit"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -6601,6 +6717,8 @@ exports[`Simple virtualized table className 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -6758,7 +6876,6 @@ exports[`Sortable Virtualized Table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    borders={true}
     className=""
     columns={
       Array [
@@ -7001,25 +7118,26 @@ exports[`Sortable Virtualized Table 1`] = `
       }
     }
     role="grid"
+    variant={null}
   >
     <BaseTable
       aria-label="Aria labeled"
-      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
       ouiaSafe={true}
       role="grid"
+      variant={null}
     >
       <BaseTableBase
         aria-label="Aria labeled"
-        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
         isStickyHeader={false}
         ouiaSafe={true}
         role="grid"
+        variant={null}
       >
         <table
           aria-label="Aria labeled"
@@ -7568,6 +7686,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                     data-label="Header cell"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       aria-sort="none"
@@ -7578,6 +7698,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort="none"
@@ -7656,6 +7778,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                     data-label="Branches"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -7665,6 +7789,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -7692,6 +7818,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                     data-label="Pull requests"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -7701,6 +7829,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -7728,6 +7858,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                     data-label="Workspaces"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -7737,6 +7869,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
@@ -7764,6 +7898,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                     data-label="Last Commit"
                                     onMouseEnter={[Function]}
                                     scope="col"
+                                    textCenter={false}
+                                    tooltip=""
                                   >
                                     <BaseHeaderCellBase
                                       className=""
@@ -7773,6 +7909,8 @@ exports[`Sortable Virtualized Table 1`] = `
                                       innerRef={null}
                                       onMouseEnter={[Function]}
                                       scope="col"
+                                      textCenter={false}
+                                      tooltip=""
                                     >
                                       <th
                                         aria-sort={null}
