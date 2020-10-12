@@ -247,3 +247,4 @@ export const REMOVE_CHILD_EVENT = 'element-remove-child';
 export const NODE_COLLAPSE_CHANGE_EVENT = 'node-collapse-change';
 export const NODE_POSITIONED_EVENT = 'node-positioned';
 export const GRAPH_LAYOUT_END_EVENT = 'graph-layout-end';
+export const GRAPH_POSITION_CHANGE_EVENT = 'graph-position-change';
