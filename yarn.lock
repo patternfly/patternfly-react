@@ -19838,7 +19838,7 @@ textextensions@^2.5.0:
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
   integrity sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
 
-theme-patternfly-org@^0.1.25:
+theme-patternfly-org@0.1.25:
   version "0.1.25"
   resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.1.25.tgz#47d65a95438bd951e0ad4256d81bb26cdf6afc00"
   integrity sha512-L8U9iQ/BIpVqf33PrkHhBGnXv52xmU0WWU+8zBYJXTnOsrRMbqHdKoIwEqoJ8QDMNSsWnQrfxJVDZ+Pi+QqWpg==
