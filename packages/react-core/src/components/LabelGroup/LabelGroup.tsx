@@ -186,8 +186,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
             isVertical && styles.modifiers.vertical
           )}
         >
-          {categoryName && <div className={css(styles.labelGroupMain)}>{content}</div>}
-          {!categoryName && content}
+          {<div className={css(styles.labelGroupMain)}>{content}</div>}
           {isClosable && close}
         </div>
       );
