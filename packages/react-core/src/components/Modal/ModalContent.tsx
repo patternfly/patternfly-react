@@ -12,7 +12,7 @@ import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
 import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxHeader } from './ModalBoxHeader';
-import { ModalBoxTitle } from './ModalBoxTitle';
+import { ModalBoxTitle, isVariantIcon } from './ModalBoxTitle';
 
 export interface ModalContentProps extends OUIAProps {
   /** Content rendered inside the Modal. */
@@ -33,6 +33,12 @@ export interface ModalContentProps extends OUIAProps {
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
+  /** Optional alert icon (or other) to show before the title of the Modal Header
+   * When the predefined alert types are used the default styling
+   * will be automatically applied */
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  /** Optional title label text for screen readers */
+  titleLabel?: string;
   /** Id of Modal Box label */
   'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
@@ -68,6 +74,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   header = null,
   description = null,
   title = '',
+  titleIconVariant = null,
+  titleLabel = '',
   'aria-label': ariaLabel = '',
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
@@ -97,7 +105,13 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ) : (
     title && (
       <ModalBoxHeader>
-        <ModalBoxTitle title={title} id={labelId} className={css(modalStyles.modalBoxTitle)} />
+        <ModalBoxTitle
+          title={title}
+          titleIconVariant={titleIconVariant}
+          titleLabel={titleLabel}
+          id={labelId}
+          className={css(modalStyles.modalBoxTitle)}
+        />
         {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
       </ModalBoxHeader>
     )
@@ -138,7 +152,11 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBox
       id={boxId}
       style={boxStyle}
-      className={className}
+      className={css(
+        className,
+        isVariantIcon(titleIconVariant) &&
+          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'default']
+      )}
       variant={variant}
       position={position}
       positionOffset={positionOffset}

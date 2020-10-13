@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 
 interface ModalDemoState {
   isModalOpen: boolean;
@@ -12,6 +13,7 @@ interface ModalDemoState {
   isCustomHeaderFooterModalOpen: boolean;
   isNoHeaderModalOpen: boolean;
   isModalCustomEscapeOpen: boolean;
+  isModalAlertVariantOpen: boolean;
   customEscapePressed: boolean;
 }
 
@@ -27,6 +29,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     isCustomHeaderFooterModalOpen: false,
     isNoHeaderModalOpen: false,
     isModalCustomEscapeOpen: false,
+    isModalAlertVariantOpen: false,
     customEscapePressed: false
   };
 
@@ -81,6 +84,13 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   handleModalCustomEscapeToggle = (event?: any, customEscapePressed?: boolean) => {
     this.setState(({ isModalCustomEscapeOpen }) => ({
       isModalCustomEscapeOpen: !isModalCustomEscapeOpen,
+      customEscapePressed
+    }));
+  };
+
+  handleModalAlertVariantToggle = (event?: any, customEscapePressed?: boolean) => {
+    this.setState(({ isModalAlertVariantOpen }) => ({
+      isModalAlertVariantOpen: !isModalAlertVariantOpen,
       customEscapePressed
     }));
   };
@@ -351,6 +361,34 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     );
   }
 
+  renderModalWithAlertVariant() {
+    const { isModalAlertVariantOpen } = this.state;
+
+    return (
+      <Modal
+        title="Modal Header"
+        titleIconVariant="warning"
+        isOpen={isModalAlertVariantOpen}
+        onClose={this.handleModalAlertVariantToggle}
+        aria-describedby="custom-escape-example"
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleModalAlertVariantToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleModalAlertVariantToggle}>
+            Confirm
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
   render() {
     const buttonStyle = {
       marginRight: 20,
@@ -418,6 +456,15 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           >
             Show Modal with custom escape button behavior
           </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleModalAlertVariantToggle}
+            id="showCustomEscapeModalButton"
+            className={this.state.customEscapePressed ? 'customEscapePressed' : ''}
+          >
+            Show Modal with alert variant
+          </Button>
         </div>
         {this.renderModal()}
         {this.renderSmallModal()}
@@ -428,6 +475,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         {this.renderNoHeaderModal()}
         {this.renderModalWithDescription()}
         {this.renderModalWithCustomEscape()}
+        {this.renderModalWithAlertVariant()}
       </React.Fragment>
     );
   }

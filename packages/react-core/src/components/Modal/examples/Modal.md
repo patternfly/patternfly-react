@@ -8,6 +8,7 @@ ouia: true
 
 import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
 
 ## Examples
 
@@ -488,6 +489,111 @@ class NoHeader extends React.Component {
           aria-describedby="no-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
+        >
+          <span id="no-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>
+          <br />
+          <br />
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Custom Icon
+
+```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon'
+
+class NoHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Icon Modal
+        </Button>
+        <Modal
+          isOpen={isModalOpen}
+          aria-label="Modal custom icon example"
+          title="Modal Header"
+          titleIconVariant={BullhornIcon}
+          showClose={true}
+          aria-describedby="no-header-example"
+          onClose={this.handleModalToggle}
+        >
+          <span id="no-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>
+          <br />
+          <br />
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Warning Alert
+
+```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
+class NoHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Icon Modal
+        </Button>
+        <Modal
+          isOpen={isModalOpen}
+          aria-label="Modal warning example"
+          title="Modal Header"
+          titleIconVariant="warning"
+          showClose={true}
+          aria-describedby="no-header-example"
+          onClose={this.handleModalToggle}
         >
           <span id="no-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
