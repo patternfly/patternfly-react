@@ -44,14 +44,13 @@ describe('Label Demo Test', () => {
 
   it('Verify router link label', () => {
     cy.url().should('eq', 'http://localhost:3000/label-demo-nav-link');
-    cy.get('#router-link > .pf-c-label__content')
-      .then((routerTooltipLink: JQuery<HTMLDivElement>) => {
-        cy.get('.pf-c-tooltip').should('not.exist');
-        cy.wrap(routerTooltipLink)
-          .trigger('mouseenter')
-          .get('.pf-c-tooltip')
-          .should('exist');
-      });
+    cy.get('#router-link > .pf-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
+      cy.get('.pf-c-tooltip').should('not.exist');
+      cy.wrap(routerTooltipLink)
+        .trigger('mouseenter')
+        .get('.pf-c-tooltip')
+        .should('exist');
+    });
     cy.get('#router-link').click();
     cy.url().should('eq', 'http://localhost:3000/');
   });
