@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.31...@patternfly/react-topology@4.6.32) (2020-10-13)
+
+
+### Bug Fixes
+
+* **topology:** Add notification on graph position/scale/extent changes ([#5004](https://github.com/patternfly/patternfly-react/issues/5004)) ([4e7025a](https://github.com/patternfly/patternfly-react/commit/4e7025add236d0f5760b275e6821e2154eeadb21))
+
+
+
+
+
 ## [4.6.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.30...@patternfly/react-topology@4.6.31) (2020-10-12)
 
 
