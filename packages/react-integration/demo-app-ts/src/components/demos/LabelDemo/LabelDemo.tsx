@@ -54,7 +54,7 @@ export class LabelDemo extends Component {
           icon={<InfoCircleIcon />}
           isTruncated
           render={({ className, content, componentRef }) => (
-            <Link to="/" className={className} ref={componentRef}>
+            <Link to="/" className={className} innerRef={componentRef}>
               {content}
             </Link>
           )}

@@ -344,7 +344,7 @@ RouterLinkLabels = () => (
       content,
       componentRef 
     }) => (
-      <Link to="/" className={className} ref={componentRef}>
+      <Link to="/" className={className} innerRef={componentRef}>
         {content}
       </Link>
     )}>
