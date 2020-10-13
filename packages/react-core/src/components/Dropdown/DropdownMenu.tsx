@@ -72,7 +72,8 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     if (
       event.key === 'ArrowDown' &&
       this.props.isOpen &&
-      document.activeElement.classList[0] === 'pf-c-dropdown__toggle'
+      (document.activeElement.classList[0] === 'pf-c-dropdown__toggle' ||
+        document.activeElement.classList[0] === 'pf-c-dropdown__toggle-button')
     ) {
       const refs = this.refsCollection;
       const firstFocusTargetCollection = refs.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
@@ -83,7 +84,8 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     } else if (
       event.key === 'ArrowUp' &&
       this.props.isOpen &&
-      document.activeElement.classList[0] === 'pf-c-dropdown__toggle'
+      (document.activeElement.classList[0] === 'pf-c-dropdown__toggle' ||
+        document.activeElement.classList[0] === 'pf-c-dropdown__toggle-button')
     ) {
       const refs = this.refsCollection;
       const collectionLength = refs.length;
