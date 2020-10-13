@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import {
-  Visualization,
   Model,
-  VisualizationSurface,
   ModelKind,
   withPanZoom,
   GraphComponent,

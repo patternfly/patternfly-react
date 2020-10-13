@@ -239,8 +239,6 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   // Note: theme is required by voronoiContainerMixin
   return (
     // Note: className is valid, but Victory is missing a type
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
   );
 };

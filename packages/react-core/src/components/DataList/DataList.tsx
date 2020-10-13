@@ -269,12 +269,14 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onSelectDataListItem,
       selectedDataListItemId,
       isCompact,
+      wrapModifier,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       onDragStart,
       onDragMove,
       onDragCancel,
       onDragFinish,
-      wrapModifier,
       itemOrder,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
     const { dragging } = this.state;

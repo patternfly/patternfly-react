@@ -22,7 +22,7 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
 
 /** The parent <Tabs> component accecesses this component's propeties directly in order to present each Tab */
 export const Tab: React.FunctionComponent<TabProps> = ({
-  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   children,
   className,
   href,
@@ -32,6 +32,6 @@ export const Tab: React.FunctionComponent<TabProps> = ({
   tabContentRef,
   isHidden,
   ...props
-}: /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-TabProps) => <React.Fragment />;
+}: /* eslint-enable @typescript-eslint/no-unused-vars */
+TabProps) => null;
 Tab.displayName = 'Tab';

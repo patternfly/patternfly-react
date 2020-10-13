@@ -335,9 +335,7 @@ ChartLegend.displayName = 'ChartLegend';
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-ChartLegend.getBaseProps = props => {
+(ChartLegend as any).getBaseProps = (props: any) => {
   const theme = getTheme(null, null);
   return (VictoryLegend as any).getBaseProps(
     {

@@ -22,7 +22,7 @@ export class TableStickyHeaderDemo extends React.Component<TableProps, TableStat
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ res: resp, perPage, page }))
-      .catch(err => this.setState({ perPage: 0, page: 0 }));
+      .catch(_err => this.setState({ perPage: 0, page: 0 }));
   }
 
   componentDidMount() {

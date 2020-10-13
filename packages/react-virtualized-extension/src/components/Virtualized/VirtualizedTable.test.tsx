@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { Table, TableHeader, sortable } from '@patternfly/react-table';
@@ -61,7 +60,7 @@ test('Sortable Virtualized Table', () => {
   const rowRenderer = () => {};
 
   const onSortCall = () => undefined as any;
-  columns[0] = { ...(columns[0] as object), transforms: [sortable] };
+  columns[0] = { ...(columns[0] as any), transforms: [sortable] };
   const view = mount(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
       <TableHeader />

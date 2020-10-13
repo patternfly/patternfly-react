@@ -36,24 +36,21 @@
     "@octokit/rest": "^16.39.0",
     "@types/enzyme": "3.9.0",
     "@types/jest": "^24.0.11",
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
     "babel-jest": "^25.1.0",
-    "change-case": "^3.0.2",
     "codecov": "^3.7.2",
-    "commitizen": "^3.0.7",
     "concurrently": "^5.3.0",
-    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "3.10.0",
-    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-adapter-react-16": "1.15.5",
     "enzyme-to-json": "3.4.0",
-    "eslint": "5.6.0",
-    "eslint-plugin-jsdoc": "^21.0.0",
-    "eslint-plugin-markdown": "^1.0.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.0",
+    "eslint": "^7.11.0",
+    "eslint-plugin-markdown": "^1.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
+    "husky": "^4.3.0",
     "jest": "24.1.0",
     "jest-cli": "24.1.0",
     "lerna": "3.16.2",
@@ -64,10 +61,6 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "surge": "^0.21.3",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^3.6.0",
     "ttypescript": "^1.5.12"
   },
   "scripts": {
@@ -85,6 +78,7 @@
     "commit": "git-cz",
     "generate": "yarn plop",
     "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache",
+    "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint:ts": "yarn lint packages",
     "lint:versions": "node scripts/verifyPatternflyVersions.js",
@@ -105,9 +99,9 @@
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
     "watch": "yarn build:esm --watch"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:all --fix"
     }
   },
   "workspaces": {

@@ -3,7 +3,6 @@ import { Table, TableHeader, TableBody, RowWrapperProps, TableProps, ICell, IRow
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ITableRowWrapperDemoState {
   rows: IRow[];
   columns: (ICell | string)[];

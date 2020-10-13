@@ -4,7 +4,6 @@ import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inl
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   /** The current value of the text input */
   value: string;
