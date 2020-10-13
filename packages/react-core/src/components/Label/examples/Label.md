@@ -342,7 +342,7 @@ RouterLinkLabels = () => (
   <Label color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated render={({
       className, 
       content,
-      componentRef, 
+      componentRef 
     }) => (
       <Link to="/" className={className} ref={componentRef}>
         {content}
