@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.64.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.5...@patternfly/react-core@4.64.6) (2020-10-13)
+
+
+### Bug Fixes
+
+* **LabelGroup:** should always contain pf-c-label-group__main ([#4970](https://github.com/patternfly/patternfly-react/issues/4970)) ([277c4a3](https://github.com/patternfly/patternfly-react/commit/277c4a339237b1745b340a37e30b3e894e539139)), closes [#4961](https://github.com/patternfly/patternfly-react/issues/4961)
+
+
+
+
+
 ## [4.64.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.4...@patternfly/react-core@4.64.5) (2020-10-12)
 
 
