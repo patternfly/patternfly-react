@@ -15,9 +15,8 @@ import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
 SimpleDatePicker = () => {
-  
   const onChange = (dateStr, date) => {
-    console.log(date);
+    console.log(dateStr, date);
   };
   
   return (
