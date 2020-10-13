@@ -113,7 +113,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartTooltip,
 class CombinedCursorVoronoiContainer extends React.Component {
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
 
     return (
       <div>
@@ -205,7 +205,7 @@ import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_Font
 class EmbeddedLegend extends React.Component {
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
     
     return (
@@ -309,7 +309,7 @@ class EmbeddedHtml extends React.Component {
 
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }];
 
     // Custom HTML component to create a legend layout

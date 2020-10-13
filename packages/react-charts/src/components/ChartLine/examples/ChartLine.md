@@ -103,7 +103,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTo
 class BottomAlignedLegend extends React.Component {
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
 
     return (
