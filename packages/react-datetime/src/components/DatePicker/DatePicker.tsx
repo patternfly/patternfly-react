@@ -38,6 +38,8 @@ export interface DatePickerProps
   beforeMinDateErrorMessage?: string;
   /** Error message to display when the date is provided after the provided maxDate. */
   afterEndDateErrorMessage?: string;
+  /** Callback called every time the input value changes */
+  onChange?: (value: string, date?: Date | Date[]) => void
 }
 
 interface DatePickerState {
@@ -84,7 +86,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     locale: DatePickerLocales.en,
     placeholder: 'mm/dd/yyyy',
     value: '',
-    'aria-label': 'Date picker'
+    'aria-label': 'Date picker',
+    onChange: ():any => undefined
   };
 
   constructor(props: DatePickerProps) {
@@ -101,7 +104,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   private calendar: any = null;
 
   componentDidMount() {
-    const { dateFormat, minDate, maxDate, locale, value } = this.props;
+    const { dateFormat, minDate, maxDate, locale, value, onChange } = this.props;
     const { flatpickrDateFormat } = this.state;
 
     this.calendar = flatpickr(this.inputEl.current, {
@@ -113,6 +116,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       allowInput: true,
       static: true,
       allowInvalidPreload: true,
+      onChange: (dateObj, dateStr) =>  {
+        onChange(dateStr, dateObj);
+      },
       errorHandler: () => {
         this.handleError(this.props.invalidFormatErrorMessage || `Please use format ${dateFormat}.`);
       },
@@ -151,7 +157,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       invalidFormatErrorMessage,
       dateOutOfRangeErrorMessage,
       beforeMinDateErrorMessage,
-      afterEndDateErrorMessage
+      afterEndDateErrorMessage,
+      onChange
     } = this.props;
 
     const { flatpickrDateFormat } = this.state;
@@ -165,10 +172,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const maxDate = this.calendar.parseDate(maxDateIn, flatpickrDateFormat);
     if (!isValid(date)) {
       this.handleError(invalidFormatErrorMessage || `Please use format: ${dateFormat}.`);
+      onChange(dateStr);
       event.stopPropagation();
     } else if (isValid(minDate) && isValid(maxDate)) {
       if (date < minDate || date > maxDate) {
         this.handleError(dateOutOfRangeErrorMessage || `The date is outside the allowable range.`);
+        onChange(dateStr);
         event.stopPropagation();
       } else {
         this.setState({
@@ -178,9 +187,11 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       }
     } else if (isValid(minDate) && date < minDate) {
       this.handleError(beforeMinDateErrorMessage || `Date is before the allowable range.`);
+      onChange(dateStr);
       event.stopPropagation();
     } else if (isValid(maxDate) && date > maxDate) {
       this.handleError(afterEndDateErrorMessage || `Date is after the allowable range.`);
+      onChange(dateStr);
       event.stopPropagation();
     } else {
       this.setState({
@@ -220,6 +231,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       dateOutOfRangeErrorMessage,
       beforeMinDateErrorMessage,
       afterEndDateErrorMessage,
+      onChange,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
