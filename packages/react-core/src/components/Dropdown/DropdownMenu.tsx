@@ -68,32 +68,31 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     document.removeEventListener('keydown', this.onKeyDown);
   };
 
+  static validToggleClasses = [styles.dropdownToggle, styles.dropdownToggleButton] as string[];
+  static focusFirstRef = (refCollection: HTMLElement[]) => {
+    if (refCollection && refCollection[0] && refCollection[0].focus) {
+      setTimeout(() => refCollection[0].focus());
+    }
+  };
+
   onKeyDown = (event: any) => {
     if (
-      event.key === 'ArrowDown' &&
-      this.props.isOpen &&
-      (document.activeElement.classList[0] === 'pf-c-dropdown__toggle' ||
-        document.activeElement.classList[0] === 'pf-c-dropdown__toggle-button')
+      !this.props.isOpen ||
+      !Array.from(document.activeElement.classList).find(className =>
+        DropdownMenu.validToggleClasses.includes(className)
+      )
     ) {
-      const refs = this.refsCollection;
+      return;
+    }
+    const refs = this.refsCollection;
+    if (event.key === 'ArrowDown') {
       const firstFocusTargetCollection = refs.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
-      const firstFocusTarget = firstFocusTargetCollection && firstFocusTargetCollection[0];
-      if (firstFocusTarget && firstFocusTarget.focus) {
-        setTimeout(() => firstFocusTarget.focus());
-      }
-    } else if (
-      event.key === 'ArrowUp' &&
-      this.props.isOpen &&
-      (document.activeElement.classList[0] === 'pf-c-dropdown__toggle' ||
-        document.activeElement.classList[0] === 'pf-c-dropdown__toggle-button')
-    ) {
-      const refs = this.refsCollection;
+      DropdownMenu.focusFirstRef(firstFocusTargetCollection);
+    } else if (event.key === 'ArrowUp') {
       const collectionLength = refs.length;
       const lastFocusTargetCollection = refs.slice(collectionLength - 1, collectionLength);
       const lastFocusTarget = lastFocusTargetCollection && lastFocusTargetCollection[0];
-      if (lastFocusTarget[0] && lastFocusTarget[0].focus) {
-        setTimeout(() => lastFocusTarget[0].focus());
-      }
+      DropdownMenu.focusFirstRef(lastFocusTarget);
     }
   };
 
