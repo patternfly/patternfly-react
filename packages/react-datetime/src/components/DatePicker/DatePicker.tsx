@@ -39,7 +39,7 @@ export interface DatePickerProps
   /** Error message to display when the date is provided after the provided maxDate. */
   afterEndDateErrorMessage?: string;
   /** Callback called every time the input value changes */
-  onChange?: (value: string, date?: Date | Date[]) => void
+  onChange?: (value: string, date?: Date | Date[]) => void;
 }
 
 interface DatePickerState {
@@ -87,7 +87,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     placeholder: 'mm/dd/yyyy',
     value: '',
     'aria-label': 'Date picker',
-    onChange: ():any => undefined
+    onChange: (): any => undefined
   };
 
   constructor(props: DatePickerProps) {
@@ -116,9 +116,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       allowInput: true,
       static: true,
       allowInvalidPreload: true,
-      onChange: (dateObj, dateStr) =>  {
-        onChange(dateStr, dateObj);
-      },
+      onChange,
       errorHandler: () => {
         this.handleError(this.props.invalidFormatErrorMessage || `Please use format ${dateFormat}.`);
       },
