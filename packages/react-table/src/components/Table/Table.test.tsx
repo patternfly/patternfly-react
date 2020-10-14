@@ -181,8 +181,8 @@ test('Collapsible table', () => {
 
 test('Compound Expandable table', () => {
   const compoundColumns: ColumnsType = [
-    { title: 'col1', cell: { transforms: [compoundExpand] } },
-    { title: 'col2', cell: { transforms: [compoundExpand] } }
+    { title: 'col1', cellTransforms: [compoundExpand] },
+    { title: 'col2', cellTransforms: [compoundExpand] }
   ];
   const compoundRows: IRow[] = [
     {
