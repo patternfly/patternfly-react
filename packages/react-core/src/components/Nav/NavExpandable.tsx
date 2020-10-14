@@ -94,23 +94,23 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   };
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {
-      id,
       title,
       srText,
       children,
       className,
       isActive,
-      groupId,
-      isExpanded,
-      onExpand,
       ouiaId,
-      ouiaSafe,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      groupId,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      id,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isExpanded,
       ...props
     } = this.props;
 
-    const { expandedState } = this.state;
+    const { expandedState, ouiaStateId } = this.state;
 
     const onClick = () => {
       this.setState(prevState => ({ expandedState: !prevState.expandedState }));
@@ -127,10 +127,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               isActive && styles.modifiers.current,
               className
             )}
-            {...getOUIAProps(
-              NavExpandable.displayName,
-              this.props.ouiaId !== undefined ? this.props.ouiaId : this.state.ouiaStateId
-            )}
+            {...getOUIAProps(NavExpandable.displayName, ouiaId !== undefined ? ouiaId : ouiaStateId)}
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
