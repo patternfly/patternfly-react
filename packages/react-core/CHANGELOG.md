@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.64.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.6...@patternfly/react-core@4.64.7) (2020-10-14)
+
+
+### Bug Fixes
+
+* **Label:** Added tooltip to truncated text ([#5007](https://github.com/patternfly/patternfly-react/issues/5007)) ([5881577](https://github.com/patternfly/patternfly-react/commit/58815776532aa0de61c63925746d06d226e061e6))
+* **select:** skip the divider children in getDisplay ([#4998](https://github.com/patternfly/patternfly-react/issues/4998)) ([99fc494](https://github.com/patternfly/patternfly-react/commit/99fc494e636b12f1528e1956f33ff6327379bdb3))
+
+
+
+
+
 ## [4.64.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.5...@patternfly/react-core@4.64.6) (2020-10-13)
 
 
