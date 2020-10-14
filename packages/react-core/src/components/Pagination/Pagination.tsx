@@ -80,9 +80,9 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact */
   isCompact?: boolean;
-  /** Flag indicating if pagination is static */
+  /** Flag indicating if pagination should not be sticky on mobile */
   isStatic?: boolean;
-  /** Flag indicating if pagination is sticky */
+  /** Flag indicating if pagination should stick to its position (based on variant) */
   isSticky?: boolean;
   /** Number of items per page. */
   perPage?: number;
