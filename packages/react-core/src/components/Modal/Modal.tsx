@@ -148,8 +148,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledby,
       hasNoBodyWrapper,
-      header,
-      help
+      header
     } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     const container = document.createElement('div');

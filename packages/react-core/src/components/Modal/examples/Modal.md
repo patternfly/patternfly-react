@@ -799,7 +799,7 @@ class WithDropdown extends React.Component {
 
 ```js
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, Button, Popover } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 class HelpModal extends React.Component {
