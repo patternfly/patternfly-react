@@ -12,5 +12,6 @@ describe('Alert Demo Test', () => {
     cy.wait(16000).then(() => {
       cy.get('#alert-custom-timeout').should('not.exist');
     });
+    cy.on('window:alert', msg => expect(msg).to.contains('Timeout'));
   });
 });
