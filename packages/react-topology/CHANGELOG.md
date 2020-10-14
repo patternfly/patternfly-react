@@ -3,6 +3,109 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.32...@patternfly/react-topology@4.6.33) (2020-10-13)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.31...@patternfly/react-topology@4.6.32) (2020-10-13)
+
+
+### Bug Fixes
+
+* **topology:** Add notification on graph position/scale/extent changes ([#5004](https://github.com/patternfly/patternfly-react/issues/5004)) ([4e7025a](https://github.com/patternfly/patternfly-react/commit/4e7025add236d0f5760b275e6821e2154eeadb21))
+
+
+
+
+
+## [4.6.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.30...@patternfly/react-topology@4.6.31) (2020-10-12)
+
+
+### Bug Fixes
+
+* **topology:** Do not update nodes on layout when fixed ([#4978](https://github.com/patternfly/patternfly-react/issues/4978)) ([932fa1f](https://github.com/patternfly/patternfly-react/commit/932fa1fd4cce6fcc1bbbc0a55bbde674701f1803))
+* **topology:** Fix for issue when dragging nodes that get re-created ([#4975](https://github.com/patternfly/patternfly-react/issues/4975)) ([08654b7](https://github.com/patternfly/patternfly-react/commit/08654b7cee943f9a8819b573315dea3592303461))
+
+
+
+
+
+## [4.6.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.29...@patternfly/react-topology@4.6.30) (2020-10-12)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.28...@patternfly/react-topology@4.6.29) (2020-10-12)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.27...@patternfly/react-topology@4.6.28) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.26...@patternfly/react-topology@4.6.27) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.25...@patternfly/react-topology@4.6.26) (2020-10-07)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.24...@patternfly/react-topology@4.6.25) (2020-10-06)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.23...@patternfly/react-topology@4.6.24) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.22...@patternfly/react-topology@4.6.23) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.6.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.21...@patternfly/react-topology@4.6.22) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [4.6.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.6.20...@patternfly/react-topology@4.6.21) (2020-10-02)
 
 **Note:** Version bump only for package @patternfly/react-topology

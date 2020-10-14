@@ -148,7 +148,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
             this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
-          aria-label={ariaLabel || variant === 'tertiary' ? 'Local' : 'Global'}
+          aria-label={ariaLabel || (variant === 'tertiary' ? 'Local' : 'Global')}
           {...getOUIAProps(Nav.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >

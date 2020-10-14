@@ -3,6 +3,121 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.64.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.5...@patternfly/react-core@4.64.6) (2020-10-13)
+
+
+### Bug Fixes
+
+* **LabelGroup:** should always contain pf-c-label-group__main ([#4970](https://github.com/patternfly/patternfly-react/issues/4970)) ([277c4a3](https://github.com/patternfly/patternfly-react/commit/277c4a339237b1745b340a37e30b3e894e539139)), closes [#4961](https://github.com/patternfly/patternfly-react/issues/4961)
+
+
+
+
+
+## [4.64.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.4...@patternfly/react-core@4.64.5) (2020-10-12)
+
+
+### Bug Fixes
+
+* **datalist:** cancel moving for invalid drops ([#4996](https://github.com/patternfly/patternfly-react/issues/4996)) ([688f260](https://github.com/patternfly/patternfly-react/commit/688f260a63edb65e4ba5c05a1cdc607085cd77c9))
+
+
+
+
+
+## [4.64.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.3...@patternfly/react-core@4.64.4) (2020-10-12)
+
+
+### Bug Fixes
+
+* **inputgroup:** allow string children ([#4963](https://github.com/patternfly/patternfly-react/issues/4963)) ([2f90073](https://github.com/patternfly/patternfly-react/commit/2f90073111e01c4c5597d04b2a337707881a33ec))
+
+
+
+
+
+## [4.64.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.2...@patternfly/react-core@4.64.3) (2020-10-12)
+
+
+### Bug Fixes
+
+* **nav:** Fix ariaLabel not getting applied ([#4944](https://github.com/patternfly/patternfly-react/issues/4944)) ([7e0a7f1](https://github.com/patternfly/patternfly-react/commit/7e0a7f1ae8a2bd0e7c5df247bb05f70f55929243)), closes [#4507](https://github.com/patternfly/patternfly-react/issues/4507)
+
+
+
+
+
+## [4.64.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.1...@patternfly/react-core@4.64.2) (2020-10-09)
+
+
+### Bug Fixes
+
+* **Tab:** Tab component properties don't show in the docs ([#4851](https://github.com/patternfly/patternfly-react/issues/4851)) ([3a774e9](https://github.com/patternfly/patternfly-react/commit/3a774e969430dc900ced7921d4452bfc9a8d0dc9)), closes [#4647](https://github.com/patternfly/patternfly-react/issues/4647)
+
+
+
+
+
+## [4.64.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.0...@patternfly/react-core@4.64.1) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.64.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.3...@patternfly/react-core@4.64.0) (2020-10-07)
+
+
+### Features
+
+* **TextArea:** support passing a ref ([#4953](https://github.com/patternfly/patternfly-react/issues/4953)) ([f8741dd](https://github.com/patternfly/patternfly-react/commit/f8741ddd49854ec1488cce0473a458619946a94d)), closes [#4894](https://github.com/patternfly/patternfly-react/issues/4894)
+
+
+
+
+
+## [4.63.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.2...@patternfly/react-core@4.63.3) (2020-10-06)
+
+
+### Bug Fixes
+
+* **empty-state:** remove duplicate example, use title case ([#4954](https://github.com/patternfly/patternfly-react/issues/4954)) ([0e4a0c3](https://github.com/patternfly/patternfly-react/commit/0e4a0c30dcb9c253206d07fd44f769e7177929a5))
+
+
+
+
+
+## [4.63.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.1...@patternfly/react-core@4.63.2) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.63.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.0...@patternfly/react-core@4.63.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* **datalist:** add ref to omit list ([#4948](https://github.com/patternfly/patternfly-react/issues/4948)) ([7f740df](https://github.com/patternfly/patternfly-react/commit/7f740df79c199a21fc8c7a02ccba88f7199b76b9))
+
+
+
+
+
+# [4.63.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.62.0...@patternfly/react-core@4.63.0) (2020-10-05)
+
+
+### Features
+
+* **DataList:** add draggable feature for basic list ([#4852](https://github.com/patternfly/patternfly-react/issues/4852)) ([532fc5a](https://github.com/patternfly/patternfly-react/commit/532fc5add962b665a90362f45723252ccbc95e1d))
+
+
+
+
+
 # [4.62.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.61.0...@patternfly/react-core@4.62.0) (2020-10-02)
 
 

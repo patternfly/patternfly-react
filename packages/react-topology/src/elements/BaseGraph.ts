@@ -3,7 +3,18 @@ import Rect from '../geom/Rect';
 import Point from '../geom/Point';
 import Dimensions from '../geom/Dimensions';
 import { DEFAULT_LAYERS } from '../const';
-import { Graph, Edge, Node, GraphModel, ModelKind, isNode, isEdge, Layout, ScaleExtent } from '../types';
+import {
+  Graph,
+  Edge,
+  Node,
+  GraphModel,
+  ModelKind,
+  isNode,
+  isEdge,
+  Layout,
+  ScaleExtent,
+  GRAPH_POSITION_CHANGE_EVENT
+} from '../types';
 import BaseElement from './BaseElement';
 
 export default class BaseGraph<E extends GraphModel = GraphModel, D = any> extends BaseElement<E, D>
@@ -55,6 +66,10 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   }
 
   setScaleExtent(scaleExtent: ScaleExtent): void {
+    try {
+      this.getController().fireEvent(GRAPH_POSITION_CHANGE_EVENT, { graph: this });
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
     this.scaleExtent = scaleExtent;
   }
 
@@ -73,7 +88,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     }
     const { x, y } = this.position;
     if (bounds.x !== x || bounds.y !== y) {
-      this.position = new Point(bounds.x, bounds.y);
+      this.setPosition(new Point(bounds.x, bounds.y));
     }
   }
 
@@ -82,6 +97,10 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   }
 
   setPosition(point: Point): void {
+    try {
+      this.getController().fireEvent(GRAPH_POSITION_CHANGE_EVENT, { graph: this });
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
     this.position = point;
   }
 
@@ -129,6 +148,10 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   }
 
   setScale(scale: number): void {
+    try {
+      this.getController().fireEvent(GRAPH_POSITION_CHANGE_EVENT, { graph: this });
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
     this.scale = scale;
   }
 
@@ -136,8 +159,8 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     if (this.currentLayout) {
       this.currentLayout.stop();
     }
-    this.scale = 1;
-    this.position = new Point(0, 0);
+    this.setScale(1);
+    this.setPosition(new Point(0, 0));
   }
 
   scaleBy(scale: number, location?: Point): void {
@@ -150,7 +173,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     this.setScale(newScale);
     x = c.x - x * this.scale;
     y = c.y - y * this.scale;
-    this.position = new Point(x, y);
+    this.setPosition(new Point(x, y));
   }
 
   fit(padding = 0): void {
@@ -191,8 +214,8 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     const ty = fullHeight / 2 - midY * scale;
 
     // TODO should scale and bound be kept in a single geom Transform object instead of separately?
-    this.scale = scale;
-    this.position = new Point(tx, ty);
+    this.setScale(scale);
+    this.setPosition(new Point(tx, ty));
   }
 
   panIntoView = (

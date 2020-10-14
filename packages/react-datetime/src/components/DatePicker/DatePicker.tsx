@@ -205,20 +205,22 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   render() {
     const {
       className,
-      isInvalid,
       placeholder,
-      pattern,
       isDisabled,
+      'aria-label': ariaLabel,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      isInvalid,
+      pattern,
       value,
       dateFormat,
       minDate,
       maxDate,
       locale,
-      'aria-label': ariaLabel,
       invalidFormatErrorMessage,
       dateOutOfRangeErrorMessage,
       beforeMinDateErrorMessage,
       afterEndDateErrorMessage,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
 

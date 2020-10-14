@@ -28,6 +28,8 @@ exports[`Modal Content Test description 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Content title"
+          titleIconVariant={null}
+          titleLabel=""
         />
         <ModalBoxDescription>
           This is a test description.
@@ -71,6 +73,8 @@ exports[`Modal Content Test isOpen 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Content title"
+          titleIconVariant={null}
+          titleLabel=""
         />
       </ModalBoxHeader>
       <ModalBoxBody>
@@ -109,6 +113,8 @@ exports[`Modal Content Test only body 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Content title"
+          titleIconVariant={null}
+          titleLabel=""
         />
       </ModalBoxHeader>
       <ModalBoxBody>
@@ -147,6 +153,8 @@ exports[`Modal Content Test with footer 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Content title"
+          titleIconVariant={null}
+          titleLabel=""
         />
       </ModalBoxHeader>
       <ModalBoxBody>
@@ -188,6 +196,8 @@ exports[`Modal Content Test with onclose 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Content title"
+          titleIconVariant={null}
+          titleLabel=""
         />
       </ModalBoxHeader>
       <ModalBoxBody
@@ -231,6 +241,8 @@ exports[`Modal Content test without footer 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Content title"
+          titleIconVariant={null}
+          titleLabel=""
         />
       </ModalBoxHeader>
       <ModalBoxBody>
@@ -269,6 +281,8 @@ exports[`Modal Test with custom footer 1`] = `
         <ModalBoxTitle
           className="pf-c-modal-box__title"
           title="Test Modal Custom Footer"
+          titleIconVariant={null}
+          titleLabel=""
         />
       </ModalBoxHeader>
       <ModalBoxBody

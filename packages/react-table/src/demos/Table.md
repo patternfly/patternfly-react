@@ -211,7 +211,6 @@ class BulkSelectTableDemo extends React.Component {
 
   render() {
     const { loading, res } = this.state;
-    console.log('res', res);
     const rows = res.map(post => ({
       cells: [post.title, post.body],
       selected: post.selected
@@ -834,6 +833,7 @@ import {
   Select,
   SelectOption,
   SelectVariant,
+  TextInput,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -841,7 +841,7 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import { Table, TableHeader, TableBody, TextInput } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {

@@ -5,12 +5,14 @@ import {
   OnSelect,
   selectable,
   cellActions,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   IAreActionsDisabled,
   IActionsResolver,
+  expandedRow,
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   IActions,
   IFormatterValueType,
   collapsible,
-  expandedRow,
   IRowData,
   IExtraData
 } from '../Table';

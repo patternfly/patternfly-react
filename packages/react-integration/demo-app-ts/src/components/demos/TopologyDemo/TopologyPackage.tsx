@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import * as React from 'react';
 import { action } from 'mobx';
 import * as _ from 'lodash';
@@ -181,6 +180,9 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
             </DropdownItem>,
             <DropdownItem key={3} onClick={() => updateLayout('Cola')}>
               Cola
+            </DropdownItem>,
+            <DropdownItem key={3} onClick={() => updateLayout('ColaNoForce')}>
+              ColaNoForce
             </DropdownItem>
           ]}
         />

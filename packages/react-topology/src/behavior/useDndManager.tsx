@@ -30,6 +30,8 @@ export const matchesType = (
 export class DndManagerImpl implements DndManager {
   private state: DndState;
 
+  private ending: boolean = false;
+
   constructor(state: DndState) {
     this.state = state;
   }
@@ -232,12 +234,18 @@ export class DndManagerImpl implements DndManager {
   }
 
   async endDrag(): Promise<void> {
+    if (this.ending) {
+      return;
+    }
+    this.ending = true;
+
     const source = this.getSource(this.getSourceId());
     try {
       if (source) {
         await runInAction(() => source.endDrag(this));
       }
     } finally {
+      this.ending = false;
       runInAction(() => {
         // clear state
         delete this.state.didDrop;

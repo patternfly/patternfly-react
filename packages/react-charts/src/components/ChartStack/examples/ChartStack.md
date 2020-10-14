@@ -272,7 +272,7 @@ class MonthlyResponsiveStack extends React.Component {
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
-            height={275}
+            height={225}
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
@@ -328,7 +328,7 @@ class MultiColorChart extends React.Component {
     const { width } = this.state;
     
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs' }, { childName: 'birds', name: 'Birds' }];
     
     return (

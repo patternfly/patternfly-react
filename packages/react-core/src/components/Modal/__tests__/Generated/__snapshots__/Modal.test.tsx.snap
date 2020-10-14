@@ -37,6 +37,8 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     ouiaSafe={true}
     showClose={true}
     title="''"
+    titleIconVariant={null}
+    titleLabel=""
     variant="default"
     width={1}
   >

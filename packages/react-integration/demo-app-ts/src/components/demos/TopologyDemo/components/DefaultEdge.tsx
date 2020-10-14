@@ -26,7 +26,6 @@ const Bendpoint: React.FC<BendpointProps> = observer(({ point }) => {
   const [hover, setHover] = React.useState(false);
   const [, ref] = useBendpoint(point);
   return (
-    // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
     <circle
       ref={ref}
       cx={point.x}

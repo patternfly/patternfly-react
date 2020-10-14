@@ -2,7 +2,7 @@ import * as React from 'react';
 import { action } from 'mobx';
 import { observer } from 'mobx-react';
 import ElementContext from '../utils/ElementContext';
-import { EventListener, isNode, Node } from '../types';
+import { Controller, EventListener, isNode, Node } from '../types';
 import { useDndDrag, WithDndDragProps, Modifiers } from './useDndDrag';
 import {
   DragSourceSpec,
@@ -118,7 +118,13 @@ export const useDragNode = <
         canDrag: spec ? spec.canDrag : undefined,
         end: async (dropResult, monitor, p) => {
           // FIXME: Get the controller up front due it issues with model updates during dnd operations
-          const controller = elementRef.current.getController();
+          let controller: Controller;
+          try {
+            controller = elementRef.current.getController();
+          } catch (e) {
+            return;
+          }
+
           if (spec && spec.end) {
             try {
               await spec.end(dropResult, monitor, p);

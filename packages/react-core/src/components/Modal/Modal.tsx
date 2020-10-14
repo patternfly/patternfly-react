@@ -17,6 +17,12 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   header?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
+  /** Optional alert icon (or other) to show before the title of the Modal Header
+   * When the predefined alert types are used the default styling
+   * will be automatically applied */
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  /** Optional title label text for screen readers */
+  titleLabel?: string;
   /** Id to use for Modal Box label */
   'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
@@ -76,6 +82,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     className: '',
     isOpen: false,
     title: '',
+    titleIconVariant: null,
+    titleLabel: '',
     'aria-label': '',
     showClose: true,
     'aria-describedby': '',
@@ -197,6 +205,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedby,
       title,
+      titleIconVariant,
+      titleLabel,
       ouiaId,
       ouiaSafe,
       ...props
@@ -214,6 +224,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         labelId={this.labelId}
         descriptorId={this.descriptorId}
         title={title}
+        titleIconVariant={titleIconVariant}
+        titleLabel={titleLabel}
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}

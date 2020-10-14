@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListContext } from './DataList';
 import { KeyTypes } from '../Select';
 
-export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'children'> {
+export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'children' | 'ref'> {
   /** Flag to show if the expanded content of the DataList item is visible */
   isExpanded?: boolean;
   /** Content rendered inside the DataList item */

@@ -291,9 +291,10 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                 tabContentRef,
                 id: childId,
                 tabContentId,
-                isHidden,
                 className: childClassName = '',
                 ouiaId: childOuiaId,
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                isHidden,
                 ...rest
               } = child.props;
               let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;

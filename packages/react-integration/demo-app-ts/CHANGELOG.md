@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.50.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.9...demo-app-ts@4.50.10) (2020-10-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.8...demo-app-ts@4.50.9) (2020-10-12)
+
+
+### Bug Fixes
+
+* **topology:** Do not update nodes on layout when fixed ([#4978](https://github.com/patternfly/patternfly-react/issues/4978)) ([932fa1f](https://github.com/patternfly/patternfly-react/commit/932fa1fd4cce6fcc1bbbc0a55bbde674701f1803))
+
+
+
+
+
+## [4.50.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.7...demo-app-ts@4.50.8) (2020-10-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.6...demo-app-ts@4.50.7) (2020-10-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.5...demo-app-ts@4.50.6) (2020-10-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.4...demo-app-ts@4.50.5) (2020-10-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.3...demo-app-ts@4.50.4) (2020-10-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.2...demo-app-ts@4.50.3) (2020-10-06)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.1...demo-app-ts@4.50.2) (2020-10-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.50.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.50.0...demo-app-ts@4.50.1) (2020-10-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.50.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.49.0...demo-app-ts@4.50.0) (2020-10-05)
+
+
+### Features
+
+* **DataList:** add draggable feature for basic list ([#4852](https://github.com/patternfly/patternfly-react/issues/4852)) ([532fc5a](https://github.com/patternfly/patternfly-react/commit/532fc5add962b665a90362f45723252ccbc95e1d))
+
+
+
+
+
 # [4.49.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.48.0...demo-app-ts@4.49.0) (2020-10-02)
 
 

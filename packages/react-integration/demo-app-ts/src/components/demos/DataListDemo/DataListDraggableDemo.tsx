@@ -25,7 +25,7 @@ export class DataListDraggableDemo extends React.Component {
     });
   };
 
-  onDragMove = (oldIndex: number, newIndex: number) => {
+  onDragMove = (_oldIndex: number, _newIndex: number) => {
     const { id } = this.state;
     this.setState({
       liveText: `Dragging item ${id}.`
