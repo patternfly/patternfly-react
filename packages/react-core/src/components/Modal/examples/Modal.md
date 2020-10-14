@@ -826,9 +826,21 @@ class HelpModal extends React.Component {
         <Modal
           title="Simple modal header"
           help={
-            <Button variant="plain" aria-label="Help">
-              <HelpIcon />
-            </Button>
+            <Popover
+              headerContent={<div>Help Popover</div>}
+              bodyContent={
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla
+                  turpis.
+                  <Button onClick={() => console.log('click')}>click</Button>
+                </div>
+              }
+              footerContent="Popover Footer"
+            >
+              <Button variant="plain" aria-label="Help">
+                <HelpIcon />
+              </Button>
+            </Popover>
           }
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
