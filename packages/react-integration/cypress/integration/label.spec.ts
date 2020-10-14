@@ -11,10 +11,31 @@ describe('Label Demo Test', () => {
       .contains('Grey');
   });
 
-  it('Verify isTruncated label', () => {
+  it('Verify isTruncated label and no tooltip on short text', () => {
+    cy.get('#truncated-no-tooltip .pf-c-label__content span')
+      .last()
+      .should('have.class', 'pf-c-label__text')
+      .then((noTooltipLink: JQuery<HTMLDivElement>) => {
+        cy.wrap(noTooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('not.exist');
+        cy.wrap(noTooltipLink).trigger('mouseleave');
+      });
+  });
+
+  it('Verify isTruncated label and tooltip', () => {
     cy.get('#truncated-label .pf-c-label__content span')
       .last()
-      .should('have.class', 'pf-c-label__text');
+      .should('have.class', 'pf-c-label__text')
+      .then((tooltipLink: JQuery<HTMLDivElement>) => {
+        cy.get('.pf-c-tooltip').should('not.exist');
+        cy.wrap(tooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('exist');
+        cy.wrap(tooltipLink).trigger('mouseleave');
+      });
   });
 
   it('Verify isOverflowLabel label', () => {
@@ -23,7 +44,14 @@ describe('Label Demo Test', () => {
 
   it('Verify router link label', () => {
     cy.url().should('eq', 'http://localhost:3000/label-demo-nav-link');
-    cy.get('#fake-router-link').click();
+    cy.get('#router-link > .pf-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
+      cy.get('.pf-c-tooltip').should('not.exist');
+      cy.wrap(routerTooltipLink)
+        .trigger('mouseenter')
+        .get('.pf-c-tooltip')
+        .should('exist');
+    });
+    cy.get('#router-link').click();
     cy.url().should('eq', 'http://localhost:3000/');
   });
 });

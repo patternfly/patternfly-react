@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import { Button } from '../Button';
+import { Tooltip } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
@@ -15,6 +16,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   variant?: 'outline' | 'filled';
   /** Flag indicating the label text should be truncated. */
   isTruncated?: boolean;
+  /** Position of the tooltip which is displayed if text is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Icon added to the left of the label text. */
   icon?: React.ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */
@@ -28,7 +31,15 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Flag indicating if the label is an overflow label */
   isOverflowLabel?: boolean;
   /** Forwards the label content and className to rendered function.  Use this prop for react router support.*/
-  render?: ({ className, content }: { className: string; content: React.ReactNode }) => React.ReactNode;
+  render?: ({
+    className,
+    content,
+    componentRef
+  }: {
+    className: string;
+    content: React.ReactNode;
+    componentRef: any;
+  }) => React.ReactNode;
 }
 
 const colorStyles = {
@@ -47,6 +58,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   color = 'grey',
   variant = 'filled',
   isTruncated = false,
+  tooltipPosition,
   icon,
   onClose,
   closeBtn,
@@ -70,10 +82,21 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       <TimesIcon />
     </Button>
   );
+  const textRef = React.createRef<any>();
+  // ref to apply tooltip when rendered is used
+  const componentRef = React.useRef();
+  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
+  React.useLayoutEffect(() => {
+    setIsTooltipVisible(textRef.current && textRef.current.offsetWidth < textRef.current.scrollWidth);
+  }, []);
   const content = (
     <>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
-      {isTruncated && <span className={css(styles.labelText)}>{children}</span>}
+      {isTruncated && (
+        <span ref={textRef} className={css(styles.labelText)}>
+          {children}
+        </span>
+      )}
       {!isTruncated && children}
     </>
   );
@@ -90,10 +113,20 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       )}
     >
       {render ? (
-        render({
-          className: styles.labelContent,
-          content
-        })
+        <>
+          {isTooltipVisible && <Tooltip reference={componentRef} content={children} position={tooltipPosition} />}
+          {render({
+            className: styles.labelContent,
+            content,
+            componentRef
+          })}
+        </>
+      ) : isTooltipVisible ? (
+        <Tooltip content={children} position={tooltipPosition}>
+          <Component className={css(styles.labelContent)} {...(href && { href })}>
+            {content}
+          </Component>
+        </Tooltip>
       ) : (
         <Component className={css(styles.labelContent)} {...(href && { href })}>
           {content}
