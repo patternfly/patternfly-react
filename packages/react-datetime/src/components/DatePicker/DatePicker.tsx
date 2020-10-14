@@ -1,12 +1,11 @@
 import * as React from 'react';
-import flatpickr from 'flatpickr';
 import { css } from '@patternfly/react-styles';
-import FlatpickrLanguages from 'flatpickr/dist/l10n';
-import 'flatpickr/dist/themes/light.css';
 import '@patternfly/patternfly/patternfly-date-picker.css';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import { DatePickerLocales } from './DatePickerUtils';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
+import { parse, format, isValid, Locale } from 'date-fns';
+import { Calendar } from './Calendar';
 
 export interface DatePickerProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -20,12 +19,12 @@ export interface DatePickerProps
   minDate?: string;
   /** The maximum date that a user can pick to. */
   maxDate?: string;
-  /** The case sensitive pattern of tokens representing desired readable format of the date. 'MM/DD/YYYY' by default. */
+  /** The case sensitive pattern of tokens representing desired readable format of the date. https://date-fns.org/v2.16.1/docs/format */
   dateFormat?: string;
   /** Flag indicating the date picker is disabled*/
   isDisabled?: boolean;
   /** Specify the locale of the date. */
-  locale?: DatePickerLocales;
+  locale?: Locale;
   /** String to display in the empty date picker field as a hint for the expected date format */
   placeholder?: string;
   /** A date string. The format could be the expected date format, or an ISO 8601 formatted date string */
@@ -45,33 +44,8 @@ export interface DatePickerProps
 interface DatePickerState {
   invalid: boolean;
   invalidText: string;
-  flatpickrDateFormat: string;
-}
-
-/**
- * @param format
- */
-function mapToFlatpickrFormats(format: string) {
-  let flatpickrFormat = '';
-  for (const formatBlock of format.split(/(yyyy|mm|dd)/i)) {
-    if (formatBlock.toLowerCase() === 'yyyy') {
-      flatpickrFormat += 'Y';
-    } else if (formatBlock.toLowerCase() === 'mm') {
-      flatpickrFormat += 'm';
-    } else if (formatBlock.toLowerCase() === 'dd') {
-      flatpickrFormat += 'd';
-    } else {
-      flatpickrFormat += formatBlock;
-    }
-  }
-  return flatpickrFormat;
-}
-
-/**
- * @param date
- */
-function isValid(date: Date) {
-  return date && !isNaN(date.getDate());
+  value: string;
+  valueDate: Date;
 }
 
 export class DatePicker extends React.Component<DatePickerProps, DatePickerState> {
@@ -81,10 +55,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     isInvalid: false,
     minDate: '',
     maxDate: '',
-    dateFormat: 'mm/dd/yyyy',
+    dateFormat: 'MM/dd/yyyy',
     isDisabled: false,
-    locale: DatePickerLocales.en,
-    placeholder: 'mm/dd/yyyy',
+    locale: DatePickerLocales.enUS,
+    placeholder: 'MM/dd/yyyy',
     value: '',
     'aria-label': 'Date picker',
     onChange: (): any => undefined
@@ -92,65 +66,19 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   constructor(props: DatePickerProps) {
     super(props);
+    let valueDate = parse(props.value, props.dateFormat, new Date());
+    if (!isValid(valueDate)) {
+      valueDate = new Date();
+    }
     this.state = {
-      flatpickrDateFormat: mapToFlatpickrFormats(this.props.dateFormat),
-      invalid: this.props.isInvalid,
-      invalidText: ''
+      invalid: props.isInvalid,
+      invalidText: '',
+      value: props.value,
+      valueDate
     };
   }
 
-  private ref = React.createRef<HTMLDivElement>();
-  private inputEl = React.createRef<HTMLInputElement>();
-  private calendar: any = null;
-
-  componentDidMount() {
-    const { dateFormat, minDate, maxDate, locale, value, onChange } = this.props;
-    const { flatpickrDateFormat } = this.state;
-
-    this.calendar = flatpickr(this.inputEl.current, {
-      dateFormat: flatpickrDateFormat,
-      locale: (FlatpickrLanguages as any)[locale],
-      minDate,
-      maxDate,
-      defaultDate: value,
-      allowInput: true,
-      static: true,
-      allowInvalidPreload: true,
-      onChange: (dates, currentDateString) => {
-        this.validateDate(currentDateString);
-        onChange(currentDateString, dates[0]);
-      },
-      errorHandler: () => {
-        this.handleError(this.props.invalidFormatErrorMessage || `Please use format: ${dateFormat}.`);
-      },
-      onReady: (date, format, fp) => {
-        fp.calendarContainer.classList.add(styles.datePickerCalendar);
-        fp.calendarContainer.parentElement.classList.remove('flatpickr-wrapper');
-      },
-      nextArrow:
-        '<svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" class=""></path></svg>',
-      prevArrow:
-        '<svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" class=""></path></svg>'
-    });
-
-    window.document.body.addEventListener(
-      'keydown',
-      e => {
-        if (e.code === 'Enter' && e.target === this.inputEl.current) {
-          this.validateDate((e.target as HTMLInputElement).value, e as any);
-        } else if (e.code === 'Escape' && this.calendar.isOpen) {
-          this.calendar.close();
-        }
-      },
-      true
-    );
-  }
-
-  toggleCalendar = () => {
-    this.calendar && this.calendar.isOpen ? this.calendar.open() : this.calendar.close();
-  };
-
-  validateDate = (dateStr: string, event?: React.KeyboardEvent | React.ChangeEvent) => {
+  validateDate = (date: Date) => {
     const {
       dateFormat,
       minDate: minDateIn,
@@ -161,61 +89,47 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       afterEndDateErrorMessage
     } = this.props;
 
-    const { flatpickrDateFormat } = this.state;
-    if (dateStr === '') {
-      if (event) {
-        event.stopPropagation();
-      }
-      return;
-    }
-
-    const date = this.calendar.parseDate(dateStr, flatpickrDateFormat);
-    const minDate = this.calendar.parseDate(minDateIn, flatpickrDateFormat);
-    const maxDate = this.calendar.parseDate(maxDateIn, flatpickrDateFormat);
+    const minDate = parse(minDateIn, dateFormat, new Date());
+    const maxDate = parse(maxDateIn, dateFormat, new Date());
+    let invalid = false;
+    let invalidText = '';
     if (!isValid(date)) {
-      this.handleError(invalidFormatErrorMessage || `Please use format: ${dateFormat}.`);
-      if (event) {
-        event.stopPropagation();
-      }
+      invalid = true;
+      invalidText = invalidFormatErrorMessage || `Please use format: ${dateFormat}.`;
     } else if (isValid(minDate) && isValid(maxDate)) {
       if (date < minDate || date > maxDate) {
-        this.handleError(dateOutOfRangeErrorMessage || `The date is outside the allowable range.`);
-        if (event) {
-          event.stopPropagation();
-        }
-      } else {
-        this.setState({
-          invalid: false,
-          invalidText: ''
-        });
+        invalid = true;
+        invalidText = dateOutOfRangeErrorMessage || `The date is outside the allowable range.`;
       }
     } else if (isValid(minDate) && date < minDate) {
-      this.handleError(beforeMinDateErrorMessage || `Date is before the allowable range.`);
-      if (event) {
-        event.stopPropagation();
-      }
+      invalid = true;
+      invalidText = beforeMinDateErrorMessage || `Date is before the allowable range.`;
     } else if (isValid(maxDate) && date > maxDate) {
-      this.handleError(afterEndDateErrorMessage || `Date is after the allowable range.`);
-      if (event) {
-        event.stopPropagation();
-      }
-    } else {
-      this.setState({
-        invalid: false,
-        invalidText: ''
-      });
+      invalid = true;
+      invalidText = afterEndDateErrorMessage || `Date is after the allowable range.`;
     }
-  };
-
-  onBlur = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.validateDate(event.target.value, event);
-  };
-
-  handleError = (errorMessage: string) => {
     this.setState({
-      invalid: true,
-      invalidText: errorMessage
+      invalid,
+      invalidText
     });
+  };
+
+  onTextInput = (value: string) => {
+    this.setState({ value });
+    const valueDate = parse(value, this.props.dateFormat, new Date());
+    if (isValid(valueDate)) {
+      this.setState({ valueDate });
+    }
+    this.validateDate(valueDate);
+  };
+
+  onDateClick = (valueDate: Date) => {
+    const { dateFormat, locale } = this.props;
+    this.setState({
+      value: format(valueDate, dateFormat, { locale }),
+      valueDate
+    });
+    this.validateDate(valueDate);
   };
 
   render() {
@@ -224,14 +138,14 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       placeholder,
       isDisabled,
       'aria-label': ariaLabel,
+      locale,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isInvalid,
       pattern,
-      value,
+      value: valueProp,
       dateFormat,
       minDate,
       maxDate,
-      locale,
       invalidFormatErrorMessage,
       dateOutOfRangeErrorMessage,
       beforeMinDateErrorMessage,
@@ -240,23 +154,21 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       onChange,
       ...props
     } = this.props;
+    const { invalid, invalidText, value, valueDate } = this.state;
 
     return (
-      <div className={css(styles.datePicker, className)} ref={this.ref} {...props}>
+      <div className={css(styles.datePicker, className)} {...props}>
         <TextInput
           isDisabled={isDisabled}
           iconVariant="calendar"
-          onFocus={this.toggleCalendar}
-          onBlur={this.onBlur}
-          onChange={dateStr => onChange(dateStr)}
-          ref={this.inputEl}
           aria-label={ariaLabel}
           placeholder={placeholder}
           validated={this.state.invalid ? 'error' : 'default'}
+          value={value}
+          onChange={this.onTextInput}
         />
-        {this.state.invalid && (
-          <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{this.state.invalidText}</div>
-        )}
+        <Calendar date={valueDate} onChange={this.onDateClick} locale={locale} />
+        {invalid && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{invalidText}</div>}
       </div>
     );
   }

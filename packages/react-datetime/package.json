@@ -39,7 +39,7 @@
     "@patternfly/react-icons": "^4.7.16",
     "@patternfly/react-styles": "^4.7.12",
     "@patternfly/react-tokens": "^4.9.16",
-    "flatpickr": "^4.6.6"
+    "date-fns": "^2.16.1"
   },
   "peerDependencies": {
     "react": "^16.8.0",
