@@ -73,9 +73,13 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   tertiaryNav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
+  /** Flag indicating if the tertiaryNav should be in a group */
   isTertiaryNavGrouped?: boolean;
+  /** Flag indicating if the breadcrumb should be in a group */
   isBreadcrumbGrouped?: boolean;
+  /** Additional content of the group */
   additionalGroupedContent?: React.ReactNode;
+  /** Additional props of the group */
   groupProps?: PageGroupProps;
 }
 
@@ -231,7 +235,7 @@ export class Page extends React.Component<PageProps, PageState> {
     const group = (
       <PageGroup {...groupProps}>
         {isTertiaryNavGrouped && nav}
-        {isBreadcrumbGrouped && breadcrumb}
+        {isBreadcrumbGrouped && crumb}
         {additionalGroupedContent}
       </PageGroup>
     );

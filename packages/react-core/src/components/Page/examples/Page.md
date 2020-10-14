@@ -383,10 +383,10 @@ class GroupPage extends React.Component {
               </BreadcrumbItem>
             </Breadcrumb>
           </PageBreadcrumb>
-          <PageSection variant={PageSectionVariants.dark}>Grouped section</PageSection>
+          <PageSection variant={PageSectionVariants.light}>Grouped section</PageSection>
         </PageGroup>
-        <PageSection variant={PageSectionVariants.light}>Section 1</PageSection>
-        <PageSection variant={PageSectionVariants.light}>Section 2</PageSection>
+        <PageSection variant={PageSectionVariants.dark}>Section 1</PageSection>
+        <PageSection variant={PageSectionVariants.dark}>Section 2</PageSection>
       </Page>
     );
   }

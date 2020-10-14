@@ -43,7 +43,7 @@ export const PageNavigation = ({
     {...props}
   >
     {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-    {children}
+    {!isWidthLimited && children}
   </div>
 );
 PageNavigation.displayName = 'PageNavigation';

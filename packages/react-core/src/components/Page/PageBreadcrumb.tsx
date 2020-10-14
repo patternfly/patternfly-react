@@ -43,7 +43,7 @@ export const PageBreadcrumb = ({
     {...props}
   >
     {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-    {children}
+    {!isWidthLimited && children}
   </section>
 );
 PageBreadcrumb.displayName = 'PageBreadcrumb';

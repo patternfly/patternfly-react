@@ -39,3 +39,28 @@ test('Check page section with fill and no padding example against snapshot', () 
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
+
+test('Verify page section top sticky', () => {
+  const view = mount(<PageSection sticky="top">test</PageSection>);
+  expect(view).toMatchSnapshot();
+});
+
+test('Verify page section bottom sticky', () => {
+  const view = mount(<PageSection sticky="bottom">test</PageSection>);
+  expect(view).toMatchSnapshot();
+});
+
+test('Verify page section top shadow', () => {
+  const view = mount(<PageSection hasShadowTop>test</PageSection>);
+  expect(view).toMatchSnapshot();
+});
+
+test('Verify page section bottom shadow', () => {
+  const view = mount(<PageSection hasShadowBottom>test</PageSection>);
+  expect(view).toMatchSnapshot();
+});
+
+test('Verify page section overflow scroll', () => {
+  const view = mount(<PageSection hasOverflowScroll>test</PageSection>);
+  expect(view).toMatchSnapshot();
+});
