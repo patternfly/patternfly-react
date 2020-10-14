@@ -1,4 +1,5 @@
 export * from './Page';
+export * from './PageGroup';
 export * from './PageHeader';
 export * from './PageSidebar';
 export * from './PageSection';
