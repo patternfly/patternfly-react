@@ -2,10 +2,10 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/patternfly/patternfly-date-picker.css';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import { DatePickerLocales } from './DatePickerUtils';
+import { Locales, Locale } from '../../helpers';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
-import { parse, format, isValid, Locale } from 'date-fns';
-import { Calendar } from './Calendar';
+import { parse, format, isValid } from 'date-fns';
+import { CalendarMonth } from '../CalendarMonth';
 
 export interface DatePickerProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -57,7 +57,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     maxDate: '',
     dateFormat: 'MM/dd/yyyy',
     isDisabled: false,
-    locale: DatePickerLocales.enUS,
+    locale: Locales.enUS,
     placeholder: 'MM/dd/yyyy',
     value: '',
     'aria-label': 'Date picker',
@@ -167,7 +167,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
           value={value}
           onChange={this.onTextInput}
         />
-        <Calendar date={valueDate} onChange={this.onDateClick} locale={locale} />
+        <CalendarMonth date={valueDate} onChange={this.onDateClick} locale={locale} />
         {invalid && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{invalidText}</div>}
       </div>
     );

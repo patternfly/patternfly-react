@@ -2,17 +2,17 @@
 id: Date picker
 section: components
 cssPrefix: pf-c-date-picker
-propComponents: ['DatePicker', 'DatePickerLocales']
+propComponents: ['DatePicker', 'Locales']
 beta: true
 ---
 
-import { DatePicker, DatePickerLocales } from '@patternfly/react-datetime';
+import { DatePicker, Locales } from '@patternfly/react-datetime';
 
 ## Examples
 ### Basic
 ```js
 import React from 'react';
-import { DatePicker, DatePickerLocales } from '@patternfly/react-datetime';
+import { DatePicker, Locales } from '@patternfly/react-datetime';
 
 <React.Fragment>
   <DatePicker value="03/05/2020"/>

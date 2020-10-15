@@ -5,7 +5,8 @@ import { Select, SelectOption } from '@patternfly/react-core/dist/js/components/
 import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 // https://date-fns.org/v2.16.1/docs/format
-import { format, Locale } from 'date-fns';
+import { format } from 'date-fns';
+import { Locales, Locale } from '../../helpers';
 
 export interface CalendarProps {
   /** Month/year to base other dates around */
@@ -42,12 +43,12 @@ const buildCalendar = (year: number, month: number, locale: Locale) => {
   return calendarWeeks;
 };
 
-export const Calendar = ({
-  date: dateProp,
+export const CalendarMonth = ({
+  date: dateProp = new Date(),
   monthFormat = 'MMMM',
   dayFormat = 'EEE',
   onChange = () => {},
-  locale
+  locale = Locales.enUS
 }: CalendarProps) => {
   const longMonthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     .map(monthNum => new Date(1990, monthNum))
@@ -82,7 +83,7 @@ export const Calendar = ({
       <thead>
         <tr>
           <td colSpan={1}>
-            <Button isInline onClick={() => onMonthClick(-1)}>
+            <Button isInline aria-label="Back one month" onClick={() => onMonthClick(-1)}>
               <ArrowLeftIcon />
             </Button>
           </td>
@@ -112,7 +113,7 @@ export const Calendar = ({
             />
           </td>
           <td colSpan={1}>
-            <Button isInline onClick={() => onMonthClick(1)}>
+            <Button isInline aria-label="Forward one month" onClick={() => onMonthClick(1)}>
               <ArrowRightIcon />
             </Button>
           </td>
