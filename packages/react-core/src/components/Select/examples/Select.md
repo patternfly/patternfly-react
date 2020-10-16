@@ -1438,7 +1438,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 }
 ```
 
-### Multiple with Render Custom Chips
+### Multiple with Render Custom Chip Group
 
 ```js
 import React from 'react';
@@ -1488,7 +1488,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
         isOpen: false
       });
     };
-    this.renderCustomChips = () => {
+    this.chipGroupComponent = () => {
         const { selected } = this.state;
       return (
           <ChipGroup>
@@ -1522,7 +1522,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
           isOpen={isOpen}
           aria-labelledby={titleId}
           placeholderText="Select a state"
-          renderCustomChips={this.renderCustomChips()}
+          chipGroupComponent={this.chipGroupComponent()}
         >
           {this.state.options.map((option, index) => (
             <SelectOption

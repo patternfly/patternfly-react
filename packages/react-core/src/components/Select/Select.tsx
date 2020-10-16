@@ -111,8 +111,8 @@ export interface SelectProps
   inputIdPrefix?: string;
   /** Optional props to pass to the chip group in the typeaheadmulti variant */
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
-  /** Optional props to render custom chips in the typeaheadmulti variant */
-  renderCustomChips?: React.ReactElement;
+  /** Optional props to render custom chip group in the typeaheadmulti variant */
+  chipGroupComponent?: React.ReactNode;
 }
 
 export interface SelectState {
@@ -172,7 +172,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
     ouiaSafe: true,
-    renderCustomChips: null
+    chipGroupComponent: null
   };
 
   state: SelectState = {
@@ -580,7 +580,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const {
       children,
       chipGroupProps,
-      renderCustomChips,
+      chipGroupComponent,
       className,
       customContent,
       variant,
@@ -689,7 +689,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
-      selectedChips = renderCustomChips ? renderCustomChips : (
+      selectedChips = chipGroupComponent ? chipGroupComponent : (
         <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (
