@@ -20,9 +20,10 @@ KebabToggle,
 DropdownItem,
 Toolbar,
 ToolbarGroup,
-ToolbarItem
+ToolbarItem,
 InputGroup,
-TextInput
+TextInput,
+Tooltip
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
@@ -55,7 +56,8 @@ import {
   ToolbarGroup,
   ToolbarItem,
   InputGroup,
-  TextInput
+  TextInput,
+  Tooltip
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
@@ -129,10 +131,20 @@ class ExpandableDataList extends React.Component {
         <Toolbar>
           <ToolbarGroup>
             <ToolbarItem variant="bulk-select">
-              <Button onClick={this.onToggleAll} variant="plain">
-                {this.state.allExpanded && <AngleDownIcon />}
-                {!this.state.allExpanded && <AngleRightIcon />}
-              </Button>
+              <Tooltip
+                position="right"
+                content={
+                  <div>
+                    {this.state.allExpanded && 'Collapse all rows'}
+                    {!this.state.allExpanded && 'Expand all rows'}
+                  </div>
+                }
+              >
+                <Button onClick={this.onToggleAll} variant="plain">
+                  {this.state.allExpanded && <AngleDownIcon />}
+                  {!this.state.allExpanded && <AngleRightIcon />}
+                </Button>{' '}
+              </Tooltip>
             </ToolbarItem>
             <ToolbarItem>
               <InputGroup>
@@ -162,7 +174,13 @@ class ExpandableDataList extends React.Component {
       const newExpanded =
         index >= 0 ? [...expanded.slice(0, index), ...expanded.slice(index + 1, expanded.length)] : [...expanded, id];
       this.setState(() => ({ expanded: newExpanded }));
+      if (newExpanded.length === 3) {
+        this.setState(() => ({ allExpanded: true }));
+      } else if (newExpanded.length === 0) {
+        this.setState(() => ({ allExpanded: false }));
+      }
     };
+
     return (
       <React.Fragment>
         {this.renderToolbar()}
