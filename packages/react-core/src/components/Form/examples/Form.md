@@ -419,3 +419,58 @@ class HorizontalForm extends React.Component {
   }
 }
 ```
+
+### Form Sections
+```js
+import React from 'react';
+import { Form, FormGroup, FormSection, TextInput } from '@patternfly/react-core';
+
+class FormSections extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value1: '',
+      value2: '',
+    };
+    this.handleTextInputChange1 = value1 => {
+      this.setState({ value1 });
+    };
+    this.handleTextInputChange2 = value2 => {
+      this.setState({ value2 });
+    };
+  }
+
+  render() {
+    const { value1, value2 } = this.state;
+
+    return (
+      <Form>
+        <FormSection>
+          <FormGroup label="Form section 1 input" isRequired fieldId="simple-form-section-1-input">
+            <TextInput
+              isRequired
+              type="section-1-input"
+              id="simple-form-section-1-input"
+              name="simple-form-section-1-input"
+              value={value1}
+              onChange={this.handleTextInputChange1}
+            />
+          </FormGroup>
+        </FormSection>
+        <FormSection>
+          <FormGroup label="Form section 2 input" isRequired fieldId="simple-form-section-2-input">
+            <TextInput
+              isRequired
+              type="section-2-input"
+              id="simple-form-section-2-input"
+              name="simple-form-section-2-input"
+              value={value2}
+              onChange={this.handleTextInputChange2}
+            />
+          </FormGroup>
+        </FormSection>
+      </Form>
+    );
+  }
+}
+```
