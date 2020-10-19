@@ -192,6 +192,21 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button isDisabled {...this.spanLink} id="span-link-btn-2">
           Disabled span wrapping link
         </Button>
+        <hr className="pf-u-m-md" />
+        <div id="tabstop-test" tabIndex={0}>
+          <Button className="pf-u-m-sm" id="tabstop-test-01">
+            First tab stop
+          </Button>
+          <Button className="pf-u-m-sm" id="tabstop-test-02">
+            Second tab stop
+          </Button>
+          <Button className="pf-u-m-sm" id="tabstop-test-03">
+            Third tab stop
+          </Button>
+          <Button className="pf-u-m-sm" id="tabstop-test-04">
+            Fourth tab stop
+          </Button>
+        </div>
       </div>
     );
   }
