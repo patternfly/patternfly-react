@@ -4,6 +4,7 @@ import '@patternfly/patternfly/patternfly-date-picker.css';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import { Locales, Locale } from '../../helpers';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
+import { Popover } from '@patternfly/react-core/dist/js/components/Popover/Popover';
 import { parse, format, isValid } from 'date-fns';
 import { CalendarMonth } from '../CalendarMonth';
 
@@ -158,16 +159,22 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     return (
       <div className={css(styles.datePicker, className)} {...props}>
-        <TextInput
-          isDisabled={isDisabled}
-          iconVariant="calendar"
-          aria-label={ariaLabel}
-          placeholder={placeholder}
-          validated={this.state.invalid ? 'error' : 'default'}
-          value={value}
-          onChange={this.onTextInput}
-        />
-        <CalendarMonth date={valueDate} onChange={this.onDateClick} locale={locale} />
+        <Popover
+          position="bottom"
+          bodyContent={<CalendarMonth date={valueDate} onChange={this.onDateClick} locale={locale} />}
+          minWidth="23.2rem"
+          showClose={false}
+        >
+          <TextInput
+            isDisabled={isDisabled}
+            iconVariant="calendar"
+            aria-label={ariaLabel}
+            placeholder={placeholder}
+            validated={this.state.invalid ? 'error' : 'default'}
+            value={value}
+            onChange={this.onTextInput}
+          />
+        </Popover>
         {invalid && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{invalidText}</div>}
       </div>
     );

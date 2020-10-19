@@ -48,6 +48,8 @@ export interface PopoverProps {
   className?: string;
   /** Aria label for the Close button */
   closeBtnAriaLabel?: string;
+  /** Whether to show the close button */
+  showClose?: boolean;
   /** Distance of the popover to its target, defaults to 25 */
   distance?: number;
   /**
@@ -159,6 +161,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   minWidth = popoverMinWidth && popoverMinWidth.value,
   maxWidth = popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel = 'Close',
+  showClose = true,
   distance = 25,
   // For every initial starting position, there are 3 escape positions
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
@@ -325,7 +328,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     >
       <PopoverArrow />
       <PopoverContent>
-        <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
+        {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
         {headerContent && <PopoverHeader id={`popover-${uniqueId}-header`}>{headerContent}</PopoverHeader>}
         <PopoverBody id={`popover-${uniqueId}-body`}>{bodyContent}</PopoverBody>
         {footerContent && <PopoverFooter id={`popover-${uniqueId}-footer`}>{footerContent}</PopoverFooter>}

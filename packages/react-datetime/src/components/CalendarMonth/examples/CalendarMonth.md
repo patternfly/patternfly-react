@@ -15,7 +15,7 @@ import React from 'react';
 import { CalendarMonth } from '@patternfly/react-datetime';
 
 BasicCalendarMonth = (
-  <CalendarMonth date={new Date()} onChange={newDate => console.log('Clicked', newDate)} />
+  <CalendarMonth onChange={newDate => console.log('Clicked', newDate)} />
 );
 ```
 
