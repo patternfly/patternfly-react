@@ -1,7 +1,5 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import { SpiceMainConn, sendCtrlAltDel } from '@spice-project/spice-html5';
 
 import constants from '../common/constants';
@@ -52,7 +50,7 @@ export class SpiceConsole extends React.Component<SpiceConsoleProps, SpiceConsol
     textDisconnected: 'Disconnected'
   };
   private spiceStaticComponent: React.ReactNode;
-  private sc: SpiceMainConn;
+  private sc: any;
 
   constructor(props: SpiceConsoleProps) {
     super(props);

@@ -3,13 +3,13 @@ import React from 'react';
 import { EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
 import * as NovncLog from 'novnc-core/lib/util/logging';
-/** Blame all the ts-ignore on https://github.com/larryprice/novnc-core/issues/5 */
+/** Has bad types. https://github.com/larryprice/novnc-core/issues/5 */
 import RFB from 'novnc-core';
 
 import { VncActions } from './VncActions';
 import constants from '../common/constants';
 
-import '@patternfly/react-styles/src/css/components/Consoles/VncConsole.css';
+import '@patternfly/react-styles/css/components/Consoles/VncConsole.css';
 
 const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
 
@@ -84,7 +84,7 @@ export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState
     textDisconnected: 'Disconnected',
     textDisconnect: 'Disconnect'
   };
-  private rfb: RFB;
+  private rfb: any;
   private novncStaticComponent: React.ReactNode;
   private novncElem: HTMLDivElement;
 
@@ -94,14 +94,8 @@ export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState
   }
 
   addEventListeners() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     this.rfb.addEventListener('connect', this.onConnected);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     this.rfb.addEventListener('disconnect', this.onDisconnected);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     this.rfb.addEventListener('securityfailure', this.onSecurityFailure);
   }
 
@@ -131,18 +125,10 @@ export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState
         shared,
         credentials
       };
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      this.rfb = new RFB(this.novncElem, url, options);
+      this.rfb = (new RFB() as any)(this.novncElem, url, options);
       this.addEventListeners();
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
       this.rfb.viewOnly = viewOnly;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
       this.rfb.scaleViewport = scaleViewport;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
       this.rfb.resizeSession = resizeSession;
     } catch (e) {
       onInitFailed && onInitFailed(e);
@@ -184,14 +170,8 @@ export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState
   };
 
   removeEventListeners = () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     this.rfb.removeEventListener('connect', this.onConnected);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     this.rfb.removeEventListener('disconnect', this.onDisconnected);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
   };
 
