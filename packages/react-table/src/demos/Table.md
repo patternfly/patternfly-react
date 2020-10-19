@@ -3,6 +3,7 @@ id: Table
 section: components
 ---
 
+import { Checkbox } from '@patternfly/react-core';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -15,11 +16,25 @@ import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
 ### Bulk select
+
 ```js
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownPosition, DropdownToggle, DropdownToggleCheckbox, Pagination, Title, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  DropdownToggle,
+  DropdownToggleCheckbox,
+  Pagination,
+  Title,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem
+} from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class BulkSelectTableDemo extends React.Component {
@@ -233,7 +248,9 @@ class BulkSelectTableDemo extends React.Component {
         )}
         {loading && (
           <div className="pf-l-bullseye">
-            <Title headingLevel="h2" size="3xl">Please wait while loading data</Title>
+            <Title headingLevel="h2" size="3xl">
+              Please wait while loading data
+            </Title>
           </div>
         )}
         {this.renderPagination('bottom')}
@@ -243,8 +260,185 @@ class BulkSelectTableDemo extends React.Component {
 }
 ```
 
+### Expand/collapse all
+
+```js
+import React from 'react';
+import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
+import { Button, Checkbox, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+
+class ExpandCollapseAllTableDemo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChecked: false,
+      selectedRows: 0,
+      expandedRows: 0,
+      expandCollapseToggle: 'expand',
+      columns: [
+        {
+          title: 'Header cell',
+          cellFormatters: [expandable]
+        },
+        'Branches',
+        'Pull requests',
+        'Workspaces',
+        'Last Commit'
+      ],
+      rows: [
+        {
+          cells: ['one', 'two', 'three', 'four', 'five']
+        },
+        {
+          isOpen: false,
+          cells: ['parent - 1', 'two', 'three', 'four', 'five']
+        },
+        {
+          parent: 1,
+          cells: ['child - 1']
+        },
+        {
+          isOpen: false,
+          cells: ['parent - 2', 'two', 'three', 'four', 'five']
+        },
+        {
+          parent: 3,
+          cells: ['child - 2']
+        },
+        {
+          isOpen: false,
+          cells: ['parent - 3', 'two', 'three', 'four', 'five']
+        },
+        {
+          parent: 5,
+          cells: ['child - 3']
+        }
+      ]
+    };
+    this.onCollapse = this.onCollapse.bind(this);
+    this.toggleCollapseAll = this.toggleCollapseAll.bind(this);
+    this.onSelect = this.onSelect.bind(this);
+    this.toggleSelectAll = this.toggleSelectAll.bind(this);
+  }
+
+  onCollapse(event, rowKey, isOpen) {
+    const { rows, expandedRows, expandCollapseToggle } = this.state;
+    const expandableRowLength = this.state.rows.filter(row => row.isOpen !== undefined).length;
+    /**
+     * Please do not use rowKey as row index for more complex tables.
+     * Rather use some kind of identifier like ID passed with each row.
+     */
+    rows[rowKey].isOpen = isOpen;
+    const updatedExpandedRows = isOpen ? expandedRows + 1 : expandedRows - 1;
+    this.setState({
+      rows,
+      expandedRows: updatedExpandedRows,
+      expandCollapseToggle:
+        updatedExpandedRows === expandableRowLength
+          ? 'collapse'
+          : updatedExpandedRows === 0
+          ? 'expand'
+          : expandCollapseToggle
+    });
+  }
+
+  toggleCollapseAll(collapse) {
+    const expandableRowLength = this.state.rows.filter(row => row.isOpen !== undefined).length;
+    const updatedRows = this.state.rows.map(row =>
+      row.isOpen !== undefined
+        ? {
+            ...row,
+            isOpen: !collapse
+          }
+        : row
+    );
+    this.setState({
+      rows: updatedRows,
+      expandedRows: collapse ? 0 : expandableRowLength,
+      expandCollapseToggle: collapse === false ? 'collapse' : 'expand'
+    });
+  }
+
+  onSelect(event, isSelected, rowId) {
+    let isChecked = null;
+    let selectedRows = this.state.selectedRows;
+    const selectableRowLength = this.state.rows.filter(row => row.parent === undefined).length;
+    let rows;
+    if (rowId === -1) {
+      rows = this.state.rows.map(row => {
+        row.selected = isSelected;
+        return row;
+      });
+      isChecked = isSelected;
+      selectedRows = isSelected ? selectableRowLength : 0;
+    } else {
+      rows = [...this.state.rows];
+      rows[rowId].selected = isSelected;
+      selectedRows = isSelected ? selectedRows + 1 : selectedRows - 1;
+      isChecked = selectedRows === 0 ? false : selectedRows === selectableRowLength ? true : null;
+    }
+    this.setState({
+      rows,
+      isChecked,
+      selectedRows
+    });
+  }
+
+  toggleSelectAll(checked) {
+    this.onSelect(null, checked, -1);
+  }
+
+  render() {
+    const { columns, rows, expandCollapseToggle, isChecked } = this.state;
+
+    return (
+      <React.Fragment>
+        <Toolbar>
+          <ToolbarGroup variant="icon-button-group">
+            <ToolbarItem>
+              {expandCollapseToggle === 'expand' ? (
+                <Button variant="plain" aria-label="Expand all" onClick={() => this.toggleCollapseAll(false)}>
+                  <AngleRightIcon />
+                </Button>
+              ) : (
+                <Button variant="plain" aria-label="Collapse all" onClick={() => this.toggleCollapseAll(true)}>
+                  <AngleDownIcon />
+                </Button>
+              )}
+            </ToolbarItem>
+            <ToolbarItem>
+              <Checkbox
+                isChecked={isChecked}
+                onChange={this.toggleSelectAll}
+                aria-label="toggle select all checkbox"
+                id="toggle-select-all"
+                name="toggle-select-all"
+                label={isChecked ? 'Deselect all' : 'Select all'}
+              />
+            </ToolbarItem>
+          </ToolbarGroup>
+        </Toolbar>
+        <Table
+          aria-label="Collapsible table"
+          onSelect={this.onSelect}
+          onCollapse={this.onCollapse}
+          rows={rows}
+          cells={columns}
+          canSelectAll={false}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+      </React.Fragment>
+    );
+  }
+}
+```
 
 ### Column management
+
 ```js
 import React from 'react';
 import {
@@ -298,14 +492,7 @@ class ColumnManagementAction extends React.Component {
         title: <a href="#">Separated link</a>
       }
     ];
-    this.defaultColumns = [
-      'Repositories',
-      'Branches',
-      'Pull requests',
-      'Workspaces',
-      'Last commit',
-      ''
-    ];
+    this.defaultColumns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit', ''];
     this.defaultRows = [
       {
         cells: [
@@ -314,7 +501,7 @@ class ColumnManagementAction extends React.Component {
               <React.Fragment>
                 <div>Node 1</div>
                 <a href="#">siemur/test-space</a>
-                </React.Fragment>
+              </React.Fragment>
             ),
             props: { column: 'Repositories' }
           },
@@ -328,13 +515,17 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><CodeIcon key="icon" /> 25</React.Fragment>
+              <React.Fragment>
+                <CodeIcon key="icon" /> 25
+              </React.Fragment>
             ),
             props: { column: 'Pull requests' }
           },
           {
             title: (
-              <React.Fragment><CubeIcon key="icon" /> 5</React.Fragment>
+              <React.Fragment>
+                <CubeIcon key="icon" /> 5
+              </React.Fragment>
             ),
             props: { column: 'Workspaces' }
           },
@@ -344,7 +535,9 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><a href="#">Action link</a></React.Fragment>
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
             ),
             props: { column: '' }
           }
@@ -357,7 +550,7 @@ class ColumnManagementAction extends React.Component {
               <React.Fragment>
                 <div>Node 2</div>
                 <a href="#">siemur/test-space</a>
-                </React.Fragment>
+              </React.Fragment>
             ),
             props: { column: 'Repositories' }
           },
@@ -371,13 +564,17 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><CodeIcon key="icon" /> 30</React.Fragment>
+              <React.Fragment>
+                <CodeIcon key="icon" /> 30
+              </React.Fragment>
             ),
             props: { column: 'Pull requests' }
           },
           {
             title: (
-              <React.Fragment><CubeIcon key="icon" /> 2</React.Fragment>
+              <React.Fragment>
+                <CubeIcon key="icon" /> 2
+              </React.Fragment>
             ),
             props: { column: 'Workspaces' }
           },
@@ -387,7 +584,9 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><a href="#">Action link</a></React.Fragment>
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
             ),
             props: { column: '' }
           }
@@ -396,13 +595,13 @@ class ColumnManagementAction extends React.Component {
       {
         cells: [
           {
-            title:(
+            title: (
               <React.Fragment>
                 <div>Node 3</div>
                 <a href="#">siemur/test-space</a>
-                </React.Fragment>
-              ),
-              props: { column: 'Repositories' }
+              </React.Fragment>
+            ),
+            props: { column: 'Repositories' }
           },
           {
             title: (
@@ -414,13 +613,17 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><CodeIcon key="icon" /> 48</React.Fragment>
+              <React.Fragment>
+                <CodeIcon key="icon" /> 48
+              </React.Fragment>
             ),
             props: { column: 'Pull requests' }
           },
           {
             title: (
-              <React.Fragment><CubeIcon key="icon" /> 13</React.Fragment>
+              <React.Fragment>
+                <CubeIcon key="icon" /> 13
+              </React.Fragment>
             ),
             props: { column: 'Workspaces' }
           },
@@ -430,7 +633,9 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><a href="#">Action link</a></React.Fragment>
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
             ),
             props: { column: '' }
           }
@@ -438,7 +643,8 @@ class ColumnManagementAction extends React.Component {
       },
       {
         cells: [
-          { title: (
+          {
+            title: (
               <React.Fragment>
                 <div>Node 4</div>
                 <a href="#">siemur/test-space</a>
@@ -456,13 +662,17 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><CodeIcon key="icon" /> 8</React.Fragment>
+              <React.Fragment>
+                <CodeIcon key="icon" /> 8
+              </React.Fragment>
             ),
             props: { column: 'Pull requests' }
           },
           {
             title: (
-              <React.Fragment><CubeIcon key="icon" /> 20</React.Fragment>
+              <React.Fragment>
+                <CubeIcon key="icon" /> 20
+              </React.Fragment>
             ),
             props: { column: 'Workspaces' }
           },
@@ -472,7 +682,9 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><a href="#">Action link</a></React.Fragment>
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
             ),
             props: { column: '' }
           }
@@ -499,13 +711,17 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><CodeIcon key="icon" /> 21</React.Fragment>
+              <React.Fragment>
+                <CodeIcon key="icon" /> 21
+              </React.Fragment>
             ),
             props: { column: 'Pull requests' }
           },
           {
             title: (
-              <React.Fragment><CubeIcon key="icon" /> 26</React.Fragment>
+              <React.Fragment>
+                <CubeIcon key="icon" /> 26
+              </React.Fragment>
             ),
             props: { column: 'Workspaces' }
           },
@@ -515,12 +731,14 @@ class ColumnManagementAction extends React.Component {
           },
           {
             title: (
-              <React.Fragment><a href="#">Action link</a></React.Fragment>
+              <React.Fragment>
+                <a href="#">Action link</a>
+              </React.Fragment>
             ),
             props: { column: '' }
           }
         ]
-      },
+      }
     ];
     this.state = {
       filters: [],
@@ -539,7 +757,7 @@ class ColumnManagementAction extends React.Component {
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
     this.renderModal = this.renderModal.bind(this);
-    this.matchCheckboxNameToColumn = (name) => {
+    this.matchCheckboxNameToColumn = name => {
       switch (name) {
         case 'check1':
           return 'Repositories';
@@ -558,7 +776,10 @@ class ColumnManagementAction extends React.Component {
       if (checked) {
         const updatedFilters = filters.filter(item => item !== name);
         const filteredColumns = this.defaultColumns.filter(column => !updatedFilters.includes(column));
-        const filteredRows = this.defaultRows.map(({...row}) => { row.cells = row.cells.filter(cell=>(!updatedFilters.includes(cell.props.column))); return row;});
+        const filteredRows = this.defaultRows.map(({ ...row }) => {
+          row.cells = row.cells.filter(cell => !updatedFilters.includes(cell.props.column));
+          return row;
+        });
         this.setState({
           filters: updatedFilters,
           filteredColumns: filteredColumns,
@@ -568,7 +789,10 @@ class ColumnManagementAction extends React.Component {
         let updatedFilters = filters;
         updatedFilters.push(name);
         const filteredColumns = columns.filter(column => !filters.includes(column));
-        const filteredRows = rows.map(({...row}) => { row.cells = row.cells.filter(cell=>(!filters.includes(cell.props.column))); return row;});
+        const filteredRows = rows.map(({ ...row }) => {
+          row.cells = row.cells.filter(cell => !filters.includes(cell.props.column));
+          return row;
+        });
         this.setState({
           filters: updatedFilters,
           filteredColumns: filteredColumns,
@@ -588,7 +812,7 @@ class ColumnManagementAction extends React.Component {
       const value = target.type === 'checkbox' ? target.checked : target.value;
       this.filterData(checked, this.matchCheckboxNameToColumn(target.name));
       this.setState({
-        [target.name]: value,
+        [target.name]: value
       });
     };
     this.handleModalToggle = () => {
@@ -602,16 +826,16 @@ class ColumnManagementAction extends React.Component {
         rows: filteredRows,
         isModalOpen: !isModalOpen
       }));
-    }
+    };
     this.selectAllColumns = () => {
       this.unfilterAllData();
-      this.setState(({
+      this.setState({
         check1: true,
         check2: true,
         check3: true,
         check4: true,
-        check5: true,
-      }));
+        check5: true
+      });
     };
   }
 
@@ -639,108 +863,142 @@ class ColumnManagementAction extends React.Component {
 
   renderModal() {
     const { isModalOpen } = this.state;
-    return <Modal
-      title="Manage columns"
-      isOpen={isModalOpen}
-      variant="small"
-      description={
-        <TextContent>
-          <Text component={TextVariants.p}>
-            Selected categories will be displayed in the table.
-          </Text>
-          <Button isInline onClick={this.selectAllColumns} variant="link">Select all</Button>
-        </TextContent>
-      }
-      onClose={this.handleModalToggle}
-      actions={[
-        <Button key="save" variant="primary" onClick={this.onSave}>
-          Save
-        </Button>,
-        <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-          Cancel
-        </Button>
-      ]}
-    >
-      <DataList aria-label="Table column management" id="table-column-management" isCompact>
-        <DataListItem aria-labelledby="table-column-management-item1">
-          <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item1" isChecked={this.state.check1} name="check1" onChange={this.handleChange} />
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                  Repositories
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item2">
-          <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item2" isChecked={this.state.check2} name="check2" onChange={this.handleChange} />
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                  Branches
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item3">
-          <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item3" isChecked={this.state.check3} name="check3" onChange={this.handleChange} />
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                  Pull requests
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item4">
-          <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item4" isChecked={this.state.check4} name="check4" onChange={this.handleChange} />
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                  Workspaces
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="table-column-management-item5">
-          <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item5" isChecked={this.state.check5} name="check5" onChange={this.handleChange} />
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                  Last commit
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    </Modal>;
+    return (
+      <Modal
+        title="Manage columns"
+        isOpen={isModalOpen}
+        variant="small"
+        description={
+          <TextContent>
+            <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
+            <Button isInline onClick={this.selectAllColumns} variant="link">
+              Select all
+            </Button>
+          </TextContent>
+        }
+        onClose={this.handleModalToggle}
+        actions={[
+          <Button key="save" variant="primary" onClick={this.onSave}>
+            Save
+          </Button>,
+          <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+            Cancel
+          </Button>
+        ]}
+      >
+        <DataList aria-label="Table column management" id="table-column-management" isCompact>
+          <DataListItem aria-labelledby="table-column-management-item1">
+            <DataListItemRow>
+              <DataListCheck
+                aria-labelledby="table-column-management-item1"
+                isChecked={this.state.check1}
+                name="check1"
+                onChange={this.handleChange}
+              />
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell id="table-column-management-item1" key="table-column-management-item1">
+                    Repositories
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+          <DataListItem aria-labelledby="table-column-management-item2">
+            <DataListItemRow>
+              <DataListCheck
+                aria-labelledby="table-column-management-item2"
+                isChecked={this.state.check2}
+                name="check2"
+                onChange={this.handleChange}
+              />
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell id="table-column-management-item2" key="table-column-management-item2">
+                    Branches
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+          <DataListItem aria-labelledby="table-column-management-item3">
+            <DataListItemRow>
+              <DataListCheck
+                aria-labelledby="table-column-management-item3"
+                isChecked={this.state.check3}
+                name="check3"
+                onChange={this.handleChange}
+              />
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell id="table-column-management-item3" key="table-column-management-item3">
+                    Pull requests
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+          <DataListItem aria-labelledby="table-column-management-item4">
+            <DataListItemRow>
+              <DataListCheck
+                aria-labelledby="table-column-management-item4"
+                isChecked={this.state.check4}
+                name="check4"
+                onChange={this.handleChange}
+              />
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell id="table-column-management-item4" key="table-column-management-item4">
+                    Workspaces
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+          <DataListItem aria-labelledby="table-column-management-item5">
+            <DataListItemRow>
+              <DataListCheck
+                aria-labelledby="table-column-management-item5"
+                isChecked={this.state.check5}
+                name="check5"
+                onChange={this.handleChange}
+              />
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell id="table-column-management-item5" key="table-column-management-item5">
+                    Last commit
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+        </DataList>
+      </Modal>
+    );
   }
 
   render() {
     const { canSelectAll, columns, rows } = this.state;
 
-    const toolbarItems = <React.Fragment>
-      <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>Choose one</span>
-      <ToolbarContent>
-        <ToolbarItem variant="overflow-menu">
-          <OverflowMenu breakpoint="md">
+    const toolbarItems = (
+      <React.Fragment>
+        <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
+          Choose one
+        </span>
+        <ToolbarContent>
+          <ToolbarItem variant="overflow-menu">
+            <OverflowMenu breakpoint="md">
               <OverflowMenuItem isPersistent>
                 <Select
                   id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
                   variant={SelectVariant.single}
                   aria-label="Select Input"
                   aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-                  placeholderText={<><FilterIcon /> Name</>}
+                  placeholderText={
+                    <>
+                      <FilterIcon /> Name
+                    </>
+                  }
                 />
               </OverflowMenuItem>
               <OverflowMenuItem>
@@ -750,9 +1008,10 @@ class ColumnManagementAction extends React.Component {
                   menuItems={[]}
                   toggle={
                     <OptionsMenuToggle
-                      toggleTemplate={<SortAmountDownIcon aria-hidden="true"/>}
+                      toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
                       aria-label="Sort by"
-                      hideCaret/>
+                      hideCaret
+                    />
                   }
                 />
               </OverflowMenuItem>
@@ -761,57 +1020,63 @@ class ColumnManagementAction extends React.Component {
                   <Button variant="primary">Action</Button>
                 </OverflowMenuItem>
                 <OverflowMenuItem>
-                  <Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button>
+                  <Button variant="link" onClick={this.handleModalToggle}>
+                    Manage columns
+                  </Button>
                 </OverflowMenuItem>
-            </OverflowMenuGroup>
-          </OverflowMenu>
-        </ToolbarItem>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-          />
-        </ToolbarItem>
-      </ToolbarContent>
-    </React.Fragment>;
+              </OverflowMenuGroup>
+            </OverflowMenu>
+          </ToolbarItem>
+          <ToolbarItem variant="pagination">
+            <Pagination
+              itemCount={37}
+              widgetId="pagination-options-menu-bottom"
+              page={1}
+              variant={PaginationVariant.top}
+              isCompact
+            />
+          </ToolbarItem>
+        </ToolbarContent>
+      </React.Fragment>
+    );
 
-    return <React.Fragment>
-      <Table
-        gridBreakPoint='grid-xl'
-        header={<React.Fragment>
-          <Toolbar id="page-layout-table-column-management-action-toolbar-top">
-          {toolbarItems}
-          </Toolbar>
-        </React.Fragment>}
-        aria-label="This is a table with checkboxes"
-        id="page-layout-table-column-management-action-table"
-        onSelect={this.onSelect}
-        cells={columns}
-        rows={rows}
-        actions={this.actions}
-        canSelectAll={canSelectAll}
-      >
-        <TableHeader />
-        <TableBody />
-      </Table>
-      <Pagination
-        isCompact
-        id="page-layout-table-column-management-action-toolbar-bottom"
-        itemCount={37}
-        widgetId="pagination-options-menu-bottom"
-        page={1}
-        variant={PaginationVariant.bottom}
-      />
-      {this.renderModal()}
-    </React.Fragment>;
+    return (
+      <React.Fragment>
+        <Table
+          gridBreakPoint="grid-xl"
+          header={
+            <React.Fragment>
+              <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
+            </React.Fragment>
+          }
+          aria-label="This is a table with checkboxes"
+          id="page-layout-table-column-management-action-table"
+          onSelect={this.onSelect}
+          cells={columns}
+          rows={rows}
+          actions={this.actions}
+          canSelectAll={canSelectAll}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+        <Pagination
+          isCompact
+          id="page-layout-table-column-management-action-toolbar-bottom"
+          itemCount={37}
+          widgetId="pagination-options-menu-bottom"
+          page={1}
+          variant={PaginationVariant.bottom}
+        />
+        {this.renderModal()}
+      </React.Fragment>
+    );
   }
 }
 ```
 
 ### Filterable
+
 ```js
 import React from 'react';
 import {
@@ -1101,11 +1366,7 @@ class FilterTableDemo extends React.Component {
   renderToolbar() {
     const { filters } = this.state;
     return (
-      <Toolbar
-        id="toolbar-with-chip-groups"
-        clearAllFilters={this.onDelete}
-        collapseListedFiltersBreakpoint="xl"
-      >
+      <Toolbar id="toolbar-with-chip-groups" clearAllFilters={this.onDelete} collapseListedFiltersBreakpoint="xl">
         <ToolbarContent>
           <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
             <ToolbarGroup variant="filter-group">
@@ -1168,7 +1429,9 @@ class FilterTableDemo extends React.Component {
         )}
         {loading && (
           <center>
-            <Title headingLevel="h2" size="3xl">Please wait while loading data</Title>
+            <Title headingLevel="h2" size="3xl">
+              Please wait while loading data
+            </Title>
           </center>
         )}
       </React.Fragment>
@@ -1180,86 +1443,36 @@ class FilterTableDemo extends React.Component {
 ### Automatic pagination
 
 The below example illustrates the `defaultToFullPage` prop, which makes the following changes when the user sets the number of items to display per page to an amount that exceeds the remaining amount of data:
+
 - The component automatically changes the page back to the last full page of results, rather than defaulting to the final page of results.
 
 To demonstrate this, navigate to the last page of data below using the `>>` navigation arrows, then use the dropdown selector to change the view to 5 per page.
-  - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
-  - The `defaultToFullPage` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
+
+- The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
+- The `defaultToFullPage` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
 ```js
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
     super(props);
-    this.columns = [
-      { title: "First column" },
-      { title: "Second column" },
-      { title: "Third column" }
-    ];
+    this.columns = [{ title: 'First column' }, { title: 'Second column' }, { title: 'Third column' }];
     this.defaultRows = [
-      { cells: [
-        { title: "Row 1 column 1" },
-        { title: "Row 1 column 2" },
-        { title: "Row 1 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 2 column 1" },
-        { title: "Row 2 column 2" },
-        { title: "Row 2 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 3 column 1" },
-        { title: "Row 3 column 2" },
-        { title: "Row 3 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 4 column 1" },
-        { title: "Row 4 column 2" },
-        { title: "Row 4 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 5 column 1" },
-        { title: "Row 5 column 2" },
-        { title: "Row 5 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 6 column 1" },
-        { title: "Row 6 column 2" },
-        { title: "Row 6 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 7 column 1" },
-        { title: "Row 7 column 2" },
-        { title: "Row 7 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 8 column 1" },
-        { title: "Row 8 column 2" },
-        { title: "Row 8 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 9 column 1" },
-        { title: "Row 9 column 2" },
-        { title: "Row 9 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 10 column 1" },
-        { title: "Row 10 column 2" },
-        { title: "Row 10 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 11 column 1" },
-        { title: "Row 11 column 2" },
-        { title: "Row 11 column 3" }
-      ]},
-      { cells: [
-        { title: "Row 12 column 1" },
-        { title: "Row 12 column 2" },
-        { title: "Row 12 column 3" }
-      ]}
+      { cells: [{ title: 'Row 1 column 1' }, { title: 'Row 1 column 2' }, { title: 'Row 1 column 3' }] },
+      { cells: [{ title: 'Row 2 column 1' }, { title: 'Row 2 column 2' }, { title: 'Row 2 column 3' }] },
+      { cells: [{ title: 'Row 3 column 1' }, { title: 'Row 3 column 2' }, { title: 'Row 3 column 3' }] },
+      { cells: [{ title: 'Row 4 column 1' }, { title: 'Row 4 column 2' }, { title: 'Row 4 column 3' }] },
+      { cells: [{ title: 'Row 5 column 1' }, { title: 'Row 5 column 2' }, { title: 'Row 5 column 3' }] },
+      { cells: [{ title: 'Row 6 column 1' }, { title: 'Row 6 column 2' }, { title: 'Row 6 column 3' }] },
+      { cells: [{ title: 'Row 7 column 1' }, { title: 'Row 7 column 2' }, { title: 'Row 7 column 3' }] },
+      { cells: [{ title: 'Row 8 column 1' }, { title: 'Row 8 column 2' }, { title: 'Row 8 column 3' }] },
+      { cells: [{ title: 'Row 9 column 1' }, { title: 'Row 9 column 2' }, { title: 'Row 9 column 3' }] },
+      { cells: [{ title: 'Row 10 column 1' }, { title: 'Row 10 column 2' }, { title: 'Row 10 column 3' }] },
+      { cells: [{ title: 'Row 11 column 1' }, { title: 'Row 11 column 2' }, { title: 'Row 11 column 3' }] },
+      { cells: [{ title: 'Row 12 column 1' }, { title: 'Row 12 column 2' }, { title: 'Row 12 column 3' }] }
     ];
     this.defaultPerPage = 10;
     this.state = {
@@ -1298,9 +1511,9 @@ class ComplexPaginationTableDemo extends React.Component {
         onSetPage={this.handleSetPage}
         onPerPageSelect={this.handlePerPageSelect}
         perPageOptions={[
-          { title: "3", value: 3 },
-          { title: "5", value: 5 },
-          { title: "12", value: 12},
+          { title: '3', value: 3 },
+          { title: '5', value: 5 },
+          { title: '12', value: 12 },
           { title: '20', value: 20 }
         ]}
         titles={{
@@ -1326,6 +1539,7 @@ class ComplexPaginationTableDemo extends React.Component {
 ```
 
 ### Pagination
+
 ```js
 import React from 'react';
 import {
@@ -1343,7 +1557,7 @@ import {
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
-import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core';
 
 class ComplexPaginationTableDemo extends React.Component {
@@ -1356,13 +1570,13 @@ class ComplexPaginationTableDemo extends React.Component {
       page: 0,
       error: null,
       loading: true,
-      forceLoadingState: false,
+      forceLoadingState: false
     };
-    
-    this.handleCheckboxChange = (checked) => {
+
+    this.handleCheckboxChange = checked => {
       console.log(checked);
       this.setState({ forceLoadingState: checked });
-    }
+    };
   }
 
   fetch(page, perPage) {
@@ -1396,52 +1610,51 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-
     const { loading, res, error, forceLoadingState } = this.state;
 
     const toolbarItems = (
-    <React.Fragment>
-      <ToolbarContent>
-        <ToolbarItem>
-          <Checkbox
-            label="View loading state"
-            isChecked={this.state.forceLoadingState}
-            onChange={this.handleCheckboxChange}
-            aria-label="view loading state checkbox"
-            id="check"
-            name="check"
-          />
-        </ToolbarItem>
-        <ToolbarItem variant="pagination">
-          {this.renderPagination()}
-        </ToolbarItem>
-      </ToolbarContent>
-    </React.Fragment>
-  );
+      <React.Fragment>
+        <ToolbarContent>
+          <ToolbarItem>
+            <Checkbox
+              label="View loading state"
+              isChecked={this.state.forceLoadingState}
+              onChange={this.handleCheckboxChange}
+              aria-label="view loading state checkbox"
+              id="check"
+              name="check"
+            />
+          </ToolbarItem>
+          <ToolbarItem variant="pagination">{this.renderPagination()}</ToolbarItem>
+        </ToolbarContent>
+      </React.Fragment>
+    );
 
     if (error) {
-      const noResultsRows = [{
-        heightAuto: true,
-        cells: [
-          {
-            props: { colSpan: 8 },
-            title: (
-            <Bullseye>
-              <EmptyState variant={EmptyStateVariant.small}>
-                <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
-                <Title headingLevel="h2" size="lg">
-                  Unable to connect
-                </Title>
-                <EmptyStateBody>
-                  There was an error retrieving data. Check your connection and try again.
-                </EmptyStateBody>
-              </EmptyState>
-            </Bullseye>
-            )
-          },
-        ]
-      }]
-      
+      const noResultsRows = [
+        {
+          heightAuto: true,
+          cells: [
+            {
+              props: { colSpan: 8 },
+              title: (
+                <Bullseye>
+                  <EmptyState variant={EmptyStateVariant.small}>
+                    <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
+                    <Title headingLevel="h2" size="lg">
+                      Unable to connect
+                    </Title>
+                    <EmptyStateBody>
+                      There was an error retrieving data. Check your connection and try again.
+                    </EmptyStateBody>
+                  </EmptyState>
+                </Bullseye>
+              )
+            }
+          ]
+        }
+      ];
+
       return (
         <React.Fragment>
           <Table cells={['Title', 'Body']} rows={noResultsRows} aria-label="Pagination Table Demo">
@@ -1451,26 +1664,34 @@ class ComplexPaginationTableDemo extends React.Component {
         </React.Fragment>
       );
     }
-    
-    const loadingRows = [{
-      heightAuto: true,
-      cells: [
-        {
-          props: { colSpan: 8 },
-          title: (
-          <Bullseye>
-            <center><Spinner size="xl"/></center>
-          </Bullseye>
-          )
-        },
-      ]
-    }];
-    
+
+    const loadingRows = [
+      {
+        heightAuto: true,
+        cells: [
+          {
+            props: { colSpan: 8 },
+            title: (
+              <Bullseye>
+                <center>
+                  <Spinner size="xl" />
+                </center>
+              </Bullseye>
+            )
+          }
+        ]
+      }
+    ];
+
     return (
       <React.Fragment>
-      <Toolbar>{toolbarItems}</Toolbar>
+        <Toolbar>{toolbarItems}</Toolbar>
         {!(loading || forceLoadingState) && (
-          <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
+          <Table
+            cells={['Title', 'Body']}
+            rows={res.map(post => [post.title, post.body])}
+            aria-label="Pagination Table Demo"
+          >
             <TableHeader />
             <TableBody />
           </Table>
@@ -1488,6 +1709,7 @@ class ComplexPaginationTableDemo extends React.Component {
 ```
 
 ### Sticky header
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -1734,6 +1956,7 @@ class PageLayoutDefaultNav extends React.Component {
 These examples demonstrate the use of an [Empty State component](/documentation/react/components/emptystate) inside of a [Table](/documentation/react/components/table). Empty states are useful in a table when a filter returns no results, while data is loading, or when any type of error or exception condition occurs.
 
 ### Empty
+
 ```js
 import React from 'react';
 import {
@@ -1749,9 +1972,7 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class EmptyStateDemo extends React.Component {
-
   render() {
-  
     const columns = [
       { title: 'Servers' },
       { title: 'Threads' },
@@ -1759,10 +1980,10 @@ class EmptyStateDemo extends React.Component {
       { title: 'Workspaces' },
       { title: 'Status' },
       { title: 'Location' }
-    ]
-    
+    ];
+
     const rows = [];
-    
+
     return (
       <React.Fragment>
         <Table cells={columns} rows={rows} aria-label="Empty state demo">
@@ -1790,15 +2011,14 @@ class EmptyStateDemo extends React.Component {
 ```
 
 ### Loading
+
 ```js
 import React from 'react';
-import { Bullseye, Spinner } from "@patternfly/react-core";
+import { Bullseye, Spinner } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class LoadingStateDemo extends React.Component {
-
   render() {
-  
     const columns = [
       { title: 'Servers' },
       { title: 'Threads' },
@@ -1806,19 +2026,23 @@ class LoadingStateDemo extends React.Component {
       { title: 'Workspaces' },
       { title: 'Status' },
       { title: 'Location' }
-    ]
-    const rows = [{
-      heightAuto: true,
-      cells: [
-        {
-          props: { colSpan: 8 },
-          title: (
-            <center><Spinner size="xl"/></center>
-          )
-        },
-      ]
-    }];
-    
+    ];
+    const rows = [
+      {
+        heightAuto: true,
+        cells: [
+          {
+            props: { colSpan: 8 },
+            title: (
+              <center>
+                <Spinner size="xl" />
+              </center>
+            )
+          }
+        ]
+      }
+    ];
+
     return (
       <Table cells={columns} rows={rows} aria-label="Loading Table Demo">
         <TableHeader />
@@ -1827,28 +2051,19 @@ class LoadingStateDemo extends React.Component {
     );
   }
 }
-
 ```
 
 ### Error
+
 ```js
 import React from 'react';
-import {
-  Bullseye,
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateVariant,
-  Title
-} from '@patternfly/react-core';
+import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, Title } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
 
 class ErrorStateDemo extends React.Component {
-
   render() {
-
     const columns = [
       { title: 'Servers' },
       { title: 'Threads' },
@@ -1856,26 +2071,28 @@ class ErrorStateDemo extends React.Component {
       { title: 'Workspaces' },
       { title: 'Status' },
       { title: 'Location' }
-    ]
-    const rows = [{
-      heightAuto: true,
-      cells: [
-        {
-          props: { colSpan: 8 },
-          title: (
-            <EmptyState variant={EmptyStateVariant.small}>
-              <Title headingLevel="h2" size="lg">
-                Unable to connect
-              </Title>
-              <EmptyStateBody>
-                There was an error retrieving data. Check your connection and try again.
-              </EmptyStateBody>
-            </EmptyState>
-          )
-        },
-      ]
-    }];
-    
+    ];
+    const rows = [
+      {
+        heightAuto: true,
+        cells: [
+          {
+            props: { colSpan: 8 },
+            title: (
+              <EmptyState variant={EmptyStateVariant.small}>
+                <Title headingLevel="h2" size="lg">
+                  Unable to connect
+                </Title>
+                <EmptyStateBody>
+                  There was an error retrieving data. Check your connection and try again.
+                </EmptyStateBody>
+              </EmptyState>
+            )
+          }
+        ]
+      }
+    ];
+
     return (
       <Table cells={columns} rows={rows} aria-label="Error Table Demo">
         <TableHeader />
