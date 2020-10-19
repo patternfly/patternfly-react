@@ -689,7 +689,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
-      selectedChips = chipGroupComponent ? chipGroupComponent : (
+      selectedChips = chipGroupComponent ? (
+        chipGroupComponent
+      ) : (
         <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (
