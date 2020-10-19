@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.65.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.7...@patternfly/react-core@4.65.0) (2020-10-19)
+
+
+### Features
+
+* **FormSection:** Add FormSection component ([#4971](https://github.com/patternfly/patternfly-react/issues/4971)) ([5e9106b](https://github.com/patternfly/patternfly-react/commit/5e9106b37f348038f2c7d37571e17427c610676e)), closes [#4960](https://github.com/patternfly/patternfly-react/issues/4960)
+
+
+
+
+
 ## [4.64.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.6...@patternfly/react-core@4.64.7) (2020-10-14)
 
 
