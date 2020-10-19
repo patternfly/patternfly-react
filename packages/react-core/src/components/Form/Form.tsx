@@ -9,15 +9,18 @@ export interface FormProps extends React.HTMLProps<HTMLFormElement> {
   className?: string;
   /** Sets the Form to horizontal. */
   isHorizontal?: boolean;
+  /** Flag to limit the max-width to 500px. */
+  isLimitWidth?: boolean;
 }
 
 export const Form: React.FunctionComponent<FormProps> = ({
   children = null,
   className = '',
   isHorizontal = false,
+  isLimitWidth = false,
   ...props
 }: FormProps) => (
-  <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, className)}>
+  <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, isLimitWidth && styles.modifiers.limitWidth, className)}>
     {children}
   </form>
 );
