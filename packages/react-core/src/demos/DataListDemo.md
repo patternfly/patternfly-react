@@ -140,7 +140,11 @@ class ExpandableDataList extends React.Component {
                   </div>
                 }
               >
-                <Button onClick={this.onToggleAll} variant="plain">
+                <Button
+                  onClick={this.onToggleAll}
+                  variant="plain"
+                  aria-label={this.state.allExpanded ? 'Collapse all rows' : 'Expand all rows'}
+                >
                   {this.state.allExpanded && <AngleDownIcon />}
                   {!this.state.allExpanded && <AngleRightIcon />}
                 </Button>{' '}
