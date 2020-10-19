@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 export enum EmptyStateVariant {
+  'xs' = 'xs',
   small = 'small',
   large = 'large',
   'xl' = 'xl',
@@ -15,7 +16,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the EmptyState */
   children: React.ReactNode;
   /** Modifies EmptyState max-width */
-  variant?: 'small' | 'large' | 'xl' | 'full';
+  variant?: 'xs' | 'small' | 'large' | 'xl' | 'full';
   /** Cause component to consume the available height of its container */
   isFullHeight?: boolean;
 }
@@ -30,6 +31,7 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
   <div
     className={css(
       styles.emptyState,
+      variant === 'xs' && styles.modifiers.xs,
       variant === 'small' && styles.modifiers.sm,
       variant === 'large' && styles.modifiers.lg,
       variant === 'xl' && styles.modifiers.xl,
