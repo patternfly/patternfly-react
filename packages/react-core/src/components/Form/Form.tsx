@@ -20,7 +20,16 @@ export const Form: React.FunctionComponent<FormProps> = ({
   isLimitWidth = false,
   ...props
 }: FormProps) => (
-  <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, isLimitWidth && styles.modifiers.limitWidth, className)}>
+  <form
+    noValidate
+    {...props}
+    className={css(
+      styles.form,
+      isHorizontal && styles.modifiers.horizontal,
+      isLimitWidth && styles.modifiers.limitWidth,
+      className
+    )}
+  >
     {children}
   </form>
 );

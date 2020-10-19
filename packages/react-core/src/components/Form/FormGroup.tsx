@@ -105,9 +105,15 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       )}
 
       <div className={css(styles.formGroupControl, isInline && styles.modifiers.inline)}>
-        {helperTextIsBeforeField && (validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated))}
+        {helperTextIsBeforeField &&
+          (validated === ValidatedOptions.error && helperTextInvalid
+            ? inValidHelperText
+            : showValidHelperTxt(validated))}
         {children}
-        {!helperTextIsBeforeField && (validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated))}
+        {!helperTextIsBeforeField &&
+          (validated === ValidatedOptions.error && helperTextInvalid
+            ? inValidHelperText
+            : showValidHelperTxt(validated))}
       </div>
     </div>
   );

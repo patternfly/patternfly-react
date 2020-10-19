@@ -12,12 +12,9 @@ export const FormAlert: React.FunctionComponent<FormAlertProps> = ({
   children = null,
   className = '',
   ...props
-}: FormAlertProps) => {
-
-  return (
-    <div {...props} className={css('pf-c-form__alert', className)}>
-      {children}
-    </div>
-  );
-};
+}: FormAlertProps) => (
+  <div {...props} className={css('pf-c-form__alert', className)}>
+    {children}
+  </div>
+);
 FormAlert.displayName = 'FormAlert';
