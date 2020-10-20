@@ -786,7 +786,7 @@ class CompactTable extends React.Component {
         { title: 'Header cell' },
         'Branches',
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
-        '' // deliberately empty
+        { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
       ],
       rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
     };
@@ -823,7 +823,7 @@ class CompactTableBorderlessRows extends React.Component {
         { title: 'Header cell' },
         'Branches',
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
-        '' // deliberately empty
+        { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
       ],
       rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
     };
@@ -870,7 +870,7 @@ class CompactExpandableTable extends React.Component {
         },
         'Branches',
         { title: 'Pull requests' },
-        '' // deliberately empty
+        { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
       ],
       rows: [
         {
@@ -1115,7 +1115,10 @@ class CompoundExpandableTable extends React.Component {
           cellTransforms: [compoundExpand]
         },
         'Last Commit',
-        ''
+        {
+          title: '',
+          dataLabel: 'Action'
+        }
       ],
       rows: [
         {

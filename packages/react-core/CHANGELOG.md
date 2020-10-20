@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.66.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.66.0...@patternfly/react-core@4.66.1) (2020-10-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.66.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.65.0...@patternfly/react-core@4.66.0) (2020-10-19)
+
+
+### Features
+
+* **Empty state:** Added extra small variation ([#5012](https://github.com/patternfly/patternfly-react/issues/5012)) ([5ea4ab7](https://github.com/patternfly/patternfly-react/commit/5ea4ab758158697572bc9dc0dfd49528a25e5455))
+
+
+
+
+
+# [4.65.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.7...@patternfly/react-core@4.65.0) (2020-10-19)
+
+
+### Features
+
+* **FormSection:** Add FormSection component ([#4971](https://github.com/patternfly/patternfly-react/issues/4971)) ([5e9106b](https://github.com/patternfly/patternfly-react/commit/5e9106b37f348038f2c7d37571e17427c610676e)), closes [#4960](https://github.com/patternfly/patternfly-react/issues/4960)
+
+
+
+
+
+## [4.64.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.6...@patternfly/react-core@4.64.7) (2020-10-14)
+
+
+### Bug Fixes
+
+* **Label:** Added tooltip to truncated text ([#5007](https://github.com/patternfly/patternfly-react/issues/5007)) ([5881577](https://github.com/patternfly/patternfly-react/commit/58815776532aa0de61c63925746d06d226e061e6))
+* **select:** skip the divider children in getDisplay ([#4998](https://github.com/patternfly/patternfly-react/issues/4998)) ([99fc494](https://github.com/patternfly/patternfly-react/commit/99fc494e636b12f1528e1956f33ff6327379bdb3))
+
+
+
+
+
+## [4.64.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.5...@patternfly/react-core@4.64.6) (2020-10-13)
+
+
+### Bug Fixes
+
+* **LabelGroup:** should always contain pf-c-label-group__main ([#4970](https://github.com/patternfly/patternfly-react/issues/4970)) ([277c4a3](https://github.com/patternfly/patternfly-react/commit/277c4a339237b1745b340a37e30b3e894e539139)), closes [#4961](https://github.com/patternfly/patternfly-react/issues/4961)
+
+
+
+
+
+## [4.64.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.4...@patternfly/react-core@4.64.5) (2020-10-12)
+
+
+### Bug Fixes
+
+* **datalist:** cancel moving for invalid drops ([#4996](https://github.com/patternfly/patternfly-react/issues/4996)) ([688f260](https://github.com/patternfly/patternfly-react/commit/688f260a63edb65e4ba5c05a1cdc607085cd77c9))
+
+
+
+
+
+## [4.64.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.3...@patternfly/react-core@4.64.4) (2020-10-12)
+
+
+### Bug Fixes
+
+* **inputgroup:** allow string children ([#4963](https://github.com/patternfly/patternfly-react/issues/4963)) ([2f90073](https://github.com/patternfly/patternfly-react/commit/2f90073111e01c4c5597d04b2a337707881a33ec))
+
+
+
+
+
+## [4.64.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.2...@patternfly/react-core@4.64.3) (2020-10-12)
+
+
+### Bug Fixes
+
+* **nav:** Fix ariaLabel not getting applied ([#4944](https://github.com/patternfly/patternfly-react/issues/4944)) ([7e0a7f1](https://github.com/patternfly/patternfly-react/commit/7e0a7f1ae8a2bd0e7c5df247bb05f70f55929243)), closes [#4507](https://github.com/patternfly/patternfly-react/issues/4507)
+
+
+
+
+
+## [4.64.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.1...@patternfly/react-core@4.64.2) (2020-10-09)
+
+
+### Bug Fixes
+
+* **Tab:** Tab component properties don't show in the docs ([#4851](https://github.com/patternfly/patternfly-react/issues/4851)) ([3a774e9](https://github.com/patternfly/patternfly-react/commit/3a774e969430dc900ced7921d4452bfc9a8d0dc9)), closes [#4647](https://github.com/patternfly/patternfly-react/issues/4647)
+
+
+
+
+
+## [4.64.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.64.0...@patternfly/react-core@4.64.1) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.64.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.63.3...@patternfly/react-core@4.64.0) (2020-10-07)
 
 

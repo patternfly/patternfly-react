@@ -352,9 +352,6 @@ class InteractiveLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
-
-    // Note: Container order is important
-    this.CursorVoronoiContainer = createContainer("cursor", "voronoi");
   };
 
   componentDidMount() {
@@ -373,6 +370,9 @@ class InteractiveLegendChart extends React.Component {
   // 4. Omit tooltip when all data series are hidden
   render() {
     const { hiddenSeries, width } = this.state;
+
+    // Note: Container order is important
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const allHidden = hiddenSeries.length === this.series.length;
     const tooltip = ({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null;
 
@@ -384,7 +384,7 @@ class InteractiveLegendChart extends React.Component {
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
             containerComponent={
-              <this.CursorVoronoiContainer
+              <CursorVoronoiContainer
                 cursorDimension="x"
                 labels={!allHidden ? tooltip : undefined}
                 labelComponent={<ChartLegendTooltip legendData={this.getLegendData()} title={(datum) => datum.x}/>}
@@ -645,7 +645,7 @@ class LegendLayoutPieChart extends React.Component {
             ariaTitle="Pie chart example"
             constrainToVisibleArea={true}
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-            height={275}
+            height={230}
             labels={({ datum }) => `${datum.x}: ${datum.y}`}
             legendComponent={this.getLegend([
               { name: 'Cats' }, 

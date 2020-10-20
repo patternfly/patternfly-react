@@ -127,7 +127,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   }
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {
       className,
       isOpen,
@@ -135,8 +134,9 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       children,
       component,
       isGrouped,
-      openedOnEnter,
       setMenuComponentRef,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      openedOnEnter,
       ...props
     } = this.props;
     return (

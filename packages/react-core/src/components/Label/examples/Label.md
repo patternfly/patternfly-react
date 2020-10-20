@@ -341,9 +341,10 @@ import { Link } from '@reach/router';
 RouterLinkLabels = () => (
   <Label color="blue" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated render={({
       className, 
-      content 
+      content,
+      componentRef 
     }) => (
-      <Link to="/" className={className}>
+      <Link to="/" className={className} innerRef={componentRef}>
         {content}
       </Link>
     )}>

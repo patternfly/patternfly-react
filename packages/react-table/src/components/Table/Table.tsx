@@ -86,15 +86,13 @@ export enum SortByDirection {
 // Todo: Update type with next breaking change release
 // export type IHeaderRow = ColumnType;
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix, @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IHeaderRow extends ColumnType {}
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRowData extends IRow {
   disableActions?: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IColumn {
   extraParams: {
     sortBy?: ISortBy;
@@ -113,23 +111,19 @@ export interface IColumn {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IExtraRowData {
   rowIndex?: number;
   rowKey?: RowKeyType;
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IExtraColumnData {
   columnIndex?: number;
   column?: IColumn;
   property?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IExtraData extends IExtraColumnData, IExtraRowData {}
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IExtra extends IExtraData {
   rowData?: IRowData;
 }
@@ -139,13 +133,11 @@ export type IFormatterValueType = formatterValueType & {
   props?: any;
 };
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ISortBy {
   index?: number;
   direction?: 'asc' | 'desc';
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
   isSeparator?: boolean;
   itemKey?: string;
@@ -153,7 +145,6 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ISeparator extends IAction {
   isSeparator: boolean;
 }
@@ -163,13 +154,11 @@ export type IActionsResolver = (rowData: IRowData, extraData: IExtraData) => (IA
 export type IAreActionsDisabled = (rowData: IRowData, extraData: IExtraData) => boolean;
 
 // to be removed in future, this interface is no longer accurate
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IDecorator extends React.HTMLProps<HTMLElement> {
   isVisible: boolean;
   children?: React.ReactNode;
 }
 
-// eslint-disable-next-line @typescript-eslint/class-name-casing
 export interface decoratorReturnType {
   className?: string;
   'aria-sort'?: string;
@@ -189,7 +178,6 @@ export type ITransform = (label?: IFormatterValueType, extra?: IExtra) => decora
 
 export type IFormatter = (data?: IFormatterValueType, extra?: IExtra) => formatterValueType & decoratorReturnType;
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ICell {
   title?: string | React.ReactNode;
   transforms?: ITransform[];
@@ -206,21 +194,18 @@ export interface ICell {
 
 export type RowCellContent = (value?: string, rowIndex?: number, cellIndex?: number, props?: any) => void;
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRowCell {
   title?: string | React.ReactNode | RowCellContent;
   props?: any;
   formatters?: IFormatter[];
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IValidatorDef {
   validator: (value: string) => boolean;
   errorText: string;
   name: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRow extends RowType {
   cells?: (React.ReactNode | IRowCell)[];
   isOpen?: boolean;
@@ -277,10 +262,8 @@ export interface TableProps extends OUIAProps {
   canSelectAll?: boolean;
   /** Specifies the type of the select element variant - can be one of checkbox or radio button */
   selectVariant?: 'checkbox' | 'radio';
-  /* eslint-disable jsdoc/check-tag-names */
   /** @beta Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
   onRowEdit?: OnRowEdit;
-  /* eslint-enable jsdoc/check-tag-names */
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
   /** Actions to add to the Table */

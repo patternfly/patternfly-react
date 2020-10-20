@@ -83,3 +83,20 @@ exports[`EmptyState Main variant small 1`] = `
   </div>
 </div>
 `;
+
+exports[`EmptyState Main variant xs 1`] = `
+<div
+  className="pf-c-empty-state pf-m-xs"
+>
+  <div
+    className="pf-c-empty-state__content"
+  >
+    <Title
+      headingLevel="h3"
+      size="md"
+    >
+      EmptyState small
+    </Title>
+  </div>
+</div>
+`;

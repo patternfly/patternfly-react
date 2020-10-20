@@ -201,3 +201,4 @@ export class TextInputBase extends React.Component<TextInputProps> {
 export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
   <TextInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
+TextInput.displayName = 'TextInput';

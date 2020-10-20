@@ -4,6 +4,8 @@ const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout
   switch (type) {
     case 'Cola':
       return new ColaLayout(graph);
+    case 'ColaNoForce':
+      return new ColaLayout(graph, { layoutOnDrag: false });
     case 'Dagre':
       return new DagreLayout(graph);
     case 'Force':

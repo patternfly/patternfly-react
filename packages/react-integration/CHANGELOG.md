@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.52.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.52.0...@patternfly/react-integration@4.52.1) (2020-10-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.52.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.51.0...@patternfly/react-integration@4.52.0) (2020-10-19)
+
+
+### Features
+
+* **Empty state:** Added extra small variation ([#5012](https://github.com/patternfly/patternfly-react/issues/5012)) ([5ea4ab7](https://github.com/patternfly/patternfly-react/commit/5ea4ab758158697572bc9dc0dfd49528a25e5455))
+
+
+
+
+
+# [4.51.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.50.2...@patternfly/react-integration@4.51.0) (2020-10-19)
+
+
+### Features
+
+* **FormSection:** Add FormSection component ([#4971](https://github.com/patternfly/patternfly-react/issues/4971)) ([5e9106b](https://github.com/patternfly/patternfly-react/commit/5e9106b37f348038f2c7d37571e17427c610676e)), closes [#4960](https://github.com/patternfly/patternfly-react/issues/4960)
+
+
+
+
+
+## [4.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.50.1...@patternfly/react-integration@4.50.2) (2020-10-14)
+
+
+### Bug Fixes
+
+* **Label:** Added tooltip to truncated text ([#5007](https://github.com/patternfly/patternfly-react/issues/5007)) ([5881577](https://github.com/patternfly/patternfly-react/commit/58815776532aa0de61c63925746d06d226e061e6))
+* **select:** skip the divider children in getDisplay ([#4998](https://github.com/patternfly/patternfly-react/issues/4998)) ([99fc494](https://github.com/patternfly/patternfly-react/commit/99fc494e636b12f1528e1956f33ff6327379bdb3))
+
+
+
+
+
+## [4.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.50.0...@patternfly/react-integration@4.50.1) (2020-10-12)
+
+
+### Bug Fixes
+
+* **topology:** Do not update nodes on layout when fixed ([#4978](https://github.com/patternfly/patternfly-react/issues/4978)) ([932fa1f](https://github.com/patternfly/patternfly-react/commit/932fa1fd4cce6fcc1bbbc0a55bbde674701f1803))
+
+
+
+
+
 # [4.50.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.49.0...@patternfly/react-integration@4.50.0) (2020-10-05)
 
 

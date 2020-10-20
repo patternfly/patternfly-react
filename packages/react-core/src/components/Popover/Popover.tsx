@@ -136,11 +136,6 @@ export interface PopoverProps {
   tippyProps?: Partial<TippyProps>;
 }
 
-interface PopoverState {
-  isOpen: boolean;
-  focusTrapActive: boolean;
-}
-
 export const Popover: React.FunctionComponent<PopoverProps> = ({
   children,
   position = 'top',

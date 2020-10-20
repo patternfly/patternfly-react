@@ -155,8 +155,6 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   const chartClassName = getClassName({ className });
 
   // Note: className is valid, but Victory is missing a type
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-  // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
 };
 ChartContainer.displayName = 'ChartContainer';

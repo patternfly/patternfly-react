@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { TreeViewSearch } from './TreeViewSearch';

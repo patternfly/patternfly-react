@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Table, TableHeader, TableBody, TableProps, headerCol, ICell, IRow, IActions } from '@patternfly/react-table';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ITableState {
   columns: (ICell | string)[];
   rows: IRow[];

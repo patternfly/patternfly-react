@@ -113,7 +113,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartTooltip,
 class CombinedCursorVoronoiContainer extends React.Component {
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
 
     return (
       <div>
@@ -205,7 +205,7 @@ import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_Font
 class EmbeddedLegend extends React.Component {
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
     
     return (
@@ -309,7 +309,7 @@ class EmbeddedHtml extends React.Component {
 
   render() {
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }];
 
     // Custom HTML component to create a legend layout
@@ -706,7 +706,7 @@ class TooltipChart extends React.Component {
       isVisible: false
     };
     this.showTooltip = () => {
-      this.setState({ isVisible: true });
+      this.setState({ isVisible: !this.state.isVisible });
     };
   }
 
@@ -716,7 +716,7 @@ class TooltipChart extends React.Component {
     return (
       <div>
         <p>This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component</p>
-        <div style={{ height: '285px', width: '230px', textAlign: 'center' }}>
+        <div style={{ height: '230px', width: '230px' }}>
           <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
             <ChartDonutThreshold
               allowTooltip={false}
@@ -734,6 +734,8 @@ class TooltipChart extends React.Component {
               />
             </ChartDonutThreshold>
           </Tooltip>
+        </div>
+        <div style={{ width: '230px', textAlign: 'center' }}>
           <Button onClick={this.showTooltip}>Show Tooltip</Button>
         </div>
       </div>

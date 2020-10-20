@@ -9,7 +9,8 @@ This package is currently an extension. Extension components do not undergo the 
 <br />
 <br />
 
-import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import virtualGridStyles from './VirtualGrid.example.css';
@@ -623,6 +624,7 @@ import {
   DropdownToggle,
   InputGroup,
   Title,
+  TextInput,
   Select,
   SelectOption,
   SelectVariant,
@@ -634,7 +636,7 @@ import {
 import { debounce } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, TextInput } from '@patternfly/react-table';
+import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import virtualGridStyles from './VirtualGrid.example.css';

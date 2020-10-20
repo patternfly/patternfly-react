@@ -82,7 +82,7 @@ export class LayoutNode implements d3.SimulationNodeDatum {
     return this.nodeHeight;
   }
   update() {
-    if (this.xx != null && this.yy != null) {
+    if (!this.isFixed && this.xx != null && this.yy != null) {
       this.node.setBounds(
         this.node
           .getBounds()

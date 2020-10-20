@@ -1,7 +1,5 @@
 import * as React from 'react';
 import {
-  Visualization,
-  VisualizationSurface,
   Model,
   ModelKind,
   Edge,

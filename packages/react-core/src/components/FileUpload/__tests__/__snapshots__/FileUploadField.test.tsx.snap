@@ -8,7 +8,7 @@ exports[`simple fileuploadfield 1`] = `
     className="pf-c-file-upload__file-select"
   >
     <InputGroup>
-      <ForwardRef
+      <TextInput
         aria-describedby="custom-file-upload-browse-button"
         aria-label="Do something custom with this!"
         id="custom-file-upload-filename"
@@ -38,7 +38,7 @@ exports[`simple fileuploadfield 1`] = `
   <div
     className="pf-c-file-upload__file-details"
   >
-    <ForwardRef
+    <TextArea
       aria-label="File upload"
       disabled={false}
       id="custom-file-upload"

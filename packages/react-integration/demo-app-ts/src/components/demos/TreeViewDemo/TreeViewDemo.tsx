@@ -1,4 +1,4 @@
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { Button, TreeView, TreeViewDataItem } from '@patternfly/react-core';
 import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 import React, { Component } from 'react';
@@ -157,7 +157,11 @@ export class TreeViewDemo extends Component {
         name: 'Cost Management',
         id: 'FCost',
         hasBadge: true,
-        action: <FolderIcon />,
+        action: (
+          <Button variant="plain" aria-label="Folder action">
+            <FolderIcon />
+          </Button>
+        ),
         children: [
           {
             name: 'Application 3',

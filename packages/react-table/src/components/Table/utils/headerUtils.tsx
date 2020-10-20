@@ -55,7 +55,6 @@ const generateHeader = (
   formatters: [...(origFormatters || []), ...(header && header.hasOwnProperty('formatters') ? header.formatters : [])]
 });
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ICustomCell {
   cellFormatters?: ICell['cellFormatters'];
   cellTransforms?: ICell['cellTransforms'];
@@ -127,7 +126,6 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ISelectTransform {
   onSelect: OnSelect;
   canSelectAll: boolean;
@@ -212,10 +210,10 @@ const addAdditionalCellTranforms = (cell: ICell, additional: any) => ({
  * Function to change expanded row with additional transforms.
  *
  * @param {*} header info with cellTransforms.
- * @param {*} extraObject with onCollapse function.
+ * @param {*} extra object with onCollapse/onExpand function.
  */
-const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse: OnCollapse }) => {
-  if (!onCollapse) {
+const expandContent = (header: (ICell | string)[], extra: any) => {
+  if (!extra.onCollapse && !extra.onExpand) {
     return header;
   }
   return header.map((cell: ICell | string) => {

@@ -30,6 +30,8 @@ export interface SelectDemoState {
   disabledSingleSelected: string;
   customSingleisOpen: boolean;
   customSingleSelected: string | SelectOptionObject;
+  dividerisOpen: boolean;
+  dividerSelected: string;
   checkisOpen: boolean;
   checkSelected: string[];
   typeaheadisOpen: boolean;
@@ -64,6 +66,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     disabledSingleSelected: '',
     customSingleisOpen: false,
     customSingleSelected: '',
+    dividerisOpen: false,
+    dividerSelected: '',
     checkisOpen: false,
     checkSelected: [''],
     typeaheadisOpen: false,
@@ -172,6 +176,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  dividerOnToggle = (dividerisOpen: boolean) => {
+    this.setState({
+      dividerisOpen
+    });
+  };
+
   disabledSingleOnToggle = (disabledSingleisOpen: boolean) => {
     this.setState({
       disabledSingleisOpen
@@ -265,6 +275,22 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleDescSelected: selection,
         singleDescisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  dividerOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        dividerSelected: selection,
+        dividerisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -525,6 +551,46 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-direction"
           name="toggle-direction"
         />
+      </StackItem>
+    );
+  }
+
+  renderSelectWithDivider() {
+    const { dividerisOpen, dividerSelected } = this.state;
+    const titleId = 'select-with-divider-title-id';
+    const options = this.singleOptions.reduce((acc, option, index) => {
+      const selectOpt = (
+        <SelectOption id={option.value} isDisabled={option.disabled} key={index} value={option.value} />
+      );
+      if (index === 2) {
+        return [...acc, <Divider component="li" key={`divider-${index}`} />, selectOpt];
+      }
+      return [...acc, selectOpt];
+    }, []);
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Select with a divider
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="single-select-with-divider"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.dividerOnToggle}
+            onSelect={this.dividerOnSelect}
+            selections={dividerSelected}
+            isOpen={dividerisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select with divider"
+            maxHeight={200}
+          >
+            {options}
+          </Select>
+        </div>
       </StackItem>
     );
   }
@@ -1050,6 +1116,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderTypeaheadSelectInForm()}
         {this.renderMenuOnDocumentBodySelect()}
         {this.renderDescriptionSelect()}
+        {this.renderSelectWithDivider()}
       </Stack>
     );
   }

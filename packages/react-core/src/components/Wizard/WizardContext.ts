@@ -10,7 +10,7 @@ export interface WizardContextType {
   activeStep: WizardStep;
 }
 
-const WizardContext = React.createContext<WizardContextType>({
+export const WizardContext = React.createContext<WizardContextType>({
   goToStepById: () => null,
   goToStepByName: () => null,
   onNext: () => null,

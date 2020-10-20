@@ -41,7 +41,7 @@ export class PageDemo extends React.Component {
     });
   };
 
-  onDropdownSelect = (event: any) => {
+  onDropdownSelect = (_event: any) => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
@@ -53,7 +53,7 @@ export class PageDemo extends React.Component {
     });
   };
 
-  onKebabDropdownSelect = (event: any) => {
+  onKebabDropdownSelect = (_event: any) => {
     this.setState({
       isKebabDropdownOpen: !this.state.isKebabDropdownOpen
     });

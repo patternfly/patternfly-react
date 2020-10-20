@@ -14,6 +14,8 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
   ouiaSafe={true}
   showClose={false}
   title=""
+  titleIconVariant={null}
+  titleLabel=""
   variant="large"
 >
   <ContextProvider

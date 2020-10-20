@@ -12,9 +12,9 @@ export interface WithRemoveConnectorProps {
   onHideRemoveConnector?: () => void;
 }
 
-type RemoveRenderer = (edge: Edge, onRemove: (edge: Edge) => void, size?: number) => React.ReactElement;
+type RemoveRenderer = (edge: Edge, onRemove: (e: Edge) => void, size?: number) => React.ReactElement;
 
-const defaultRenderRemove: RemoveRenderer = (edge: Edge, onRemove: (edge: Edge) => void) => {
+const defaultRenderRemove: RemoveRenderer = (edge: Edge, onRemove: (e: Edge) => void) => {
   const removeEdge = () => {
     onRemove(edge);
   };
