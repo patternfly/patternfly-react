@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.53.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.52.1...@patternfly/react-integration@4.53.0) (2020-10-20)
+
+
+### Bug Fixes
+
+* **select:** display label and not value in typeahead ([#4916](https://github.com/patternfly/patternfly-react/issues/4916)) ([ea57b3f](https://github.com/patternfly/patternfly-react/commit/ea57b3f6c74189796362ec4ef17ab7119f4f0348))
+
+
+### Features
+
+* **alert:** support callback on alert timeout ([#5014](https://github.com/patternfly/patternfly-react/issues/5014)) ([909c3a7](https://github.com/patternfly/patternfly-react/commit/909c3a75d8c798b90be9bc791609aaec66825e80))
+
+
+
+
+
 ## [4.52.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.52.0...@patternfly/react-integration@4.52.1) (2020-10-19)
 
 **Note:** Version bump only for package @patternfly/react-integration
