@@ -29,6 +29,7 @@
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.4.5",
     "cypress": "^5.2.0",
+    "cypress-plugin-tab": "^1.0.5",
     "jasmine-xml2html-converter": "^0.0.2",
     "junit-merge": "^2.0.0",
     "ts-loader": "^8.0.4",

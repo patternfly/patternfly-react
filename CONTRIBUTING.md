@@ -330,6 +330,6 @@ The process for revoking someone's maintainer status is a discussion limited to 
 - Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
 - Do not merge if the build is failing. Wait until tests are green to merge.
 
-[1]: http://contributor-covenant.org/version/1/4/code_of_conduct.md
+[1]: http://contributor-covenant.org/version/1/4/code-of-conduct.md
 [2]: mailto:patternfly@redhat.com
 [3]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
