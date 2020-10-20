@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 
 export interface FormAlertProps extends React.HTMLProps<HTMLDivElement> {
@@ -13,7 +14,7 @@ export const FormAlert: React.FunctionComponent<FormAlertProps> = ({
   className = '',
   ...props
 }: FormAlertProps) => (
-  <div {...props} className={css('pf-c-form__alert', className)}>
+  <div {...props} className={css(styles.formAlert, className)}>
     {children}
   </div>
 );

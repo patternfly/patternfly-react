@@ -442,7 +442,7 @@ class InvalidForm extends React.Component {
 }
 ```
 
-### Invalid with Form alert
+### Invalid with form alert
 ```js
 import React from 'react';
 import {
