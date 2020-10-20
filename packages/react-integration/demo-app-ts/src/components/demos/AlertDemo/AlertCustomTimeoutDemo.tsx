@@ -17,6 +17,7 @@ export class AlertCustomTimeoutDemo extends React.Component<{}, AlertCustomTimeo
   }
 
   onClick = () => this.setState({ isOpenAlert: true });
+  onTimeout = () => alert('Timeout!');
 
   render() {
     const { isOpenAlert } = this.state;
@@ -26,7 +27,7 @@ export class AlertCustomTimeoutDemo extends React.Component<{}, AlertCustomTimeo
           Open Alert
         </Button>
         {isOpenAlert && (
-          <Alert id="alert-custom-timeout" title="custom timeout" timeout={16000}>
+          <Alert onTimeout={this.onTimeout} id="alert-custom-timeout" title="custom timeout" timeout={16000}>
             custom 16 second timeout
           </Alert>
         )}
