@@ -4,6 +4,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -1024,6 +1025,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -1227,6 +1229,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -1413,6 +1416,7 @@ exports[`checkbox select renders closed successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -1579,6 +1583,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -2143,6 +2148,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -2652,6 +2658,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -3279,6 +3286,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -3906,6 +3914,7 @@ exports[`renders select with favorites successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -5653,6 +5662,7 @@ exports[`select custom select filter filters properly 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -6121,6 +6131,7 @@ exports[`select renders select groups successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -7055,6 +7066,7 @@ exports[`select renders up direction successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -7226,6 +7238,7 @@ exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -7397,6 +7410,7 @@ exports[`select single select renders disabled successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -7569,6 +7583,7 @@ exports[`select single select renders expanded successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -8088,6 +8103,7 @@ exports[`select single select renders expanded successfully with custom objects 
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -8557,6 +8573,7 @@ exports[`select with custom content renders closed successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -8723,6 +8740,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -8978,6 +8996,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -9169,6 +9188,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -9713,6 +9733,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -11099,6 +11120,7 @@ exports[`typeahead select renders closed successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -11290,6 +11312,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -11833,6 +11856,7 @@ exports[`typeahead select renders selected successfully 1`] = `
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
@@ -13197,6 +13221,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
 <Select
   aria-label=""
   aria-labelledby=""
+  chipGroupComponent={null}
   className=""
   clearSelectionsAriaLabel="Clear all"
   createText="Create"
