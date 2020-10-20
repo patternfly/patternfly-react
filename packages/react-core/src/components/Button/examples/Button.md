@@ -54,7 +54,6 @@ import React from 'react';
 import { Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 DisabledBtn = () => (
   <React.Fragment>
@@ -87,7 +86,6 @@ import React from 'react';
 import { Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
 
 AriaDisabledBtn = () => (
   <React.Fragment>
@@ -117,10 +115,7 @@ AriaDisabledBtn = () => (
 ### Aria disabled button with tooltip
 ```js
 import React from 'react';
-import { Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
+import { Button, Tooltip } from '@patternfly/react-core';
 
 AriaDisabledBtnWithTooltip = () => (
   <Tooltip content="Aria-disabled buttons are like disabled buttons, but focusable. Allows for tooltip support.">
@@ -134,10 +129,7 @@ AriaDisabledBtnWithTooltip = () => (
 ### Aria disabled link as button with tooltip
 ```js
 import React from 'react';
-import { Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import Tooltip from '@patternfly/react-icons/dist/js/icons/tooltip';
+import { Button, Tooltip } from '@patternfly/react-core';
 
 AriaDisabledLinkBtnWithTooltip = () => (
   <Tooltip content="Aria-disabled link as button with tooltip">
@@ -215,7 +207,6 @@ InlineLinkAsSpan = () => {
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
