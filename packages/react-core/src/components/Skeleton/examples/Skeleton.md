@@ -24,17 +24,17 @@ import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
 <React.Fragment>
-  <Skeleton width="25%" screenreaderText="Loading contents"/>
+  <Skeleton width="25%" screenreaderText="Loading contents" />
   <br />
-  <Skeleton width="33%" screenreaderText=""/>
+  <Skeleton width="33%" />
   <br />
-  <Skeleton width="50%" screenreaderText=""/>
+  <Skeleton width="50%" />
   <br />
-  <Skeleton width="66%" screenreaderText=""/>
+  <Skeleton width="66%" />
   <br />
-  <Skeleton width="75%" screenreaderText=""/>
+  <Skeleton width="75%" />
   <br />
-  <Skeleton screenreaderText=""/>
+  <Skeleton />
 </React.Fragment>;
 ```
 
@@ -45,12 +45,12 @@ import React from 'react';
 import { Skeleton } from '@patternfly/react-core';
 
 <div style={{ height: '400px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-  <Skeleton height="25%" width="15%" screenreaderText="Loading contents"/>
-  <Skeleton height="33%" width="15%" screenreaderText=""/>
-  <Skeleton height="50%" width="15%" screenreaderText=""/>
-  <Skeleton height="66%" width="15%" screenreaderText=""/>
-  <Skeleton height="75%" width="15%" screenreaderText=""/>
-  <Skeleton height="100%" width="15%" screenreaderText=""/>
+  <Skeleton height="25%" width="15%" screenreaderText="Loading contents" />
+  <Skeleton height="33%" width="15%" />
+  <Skeleton height="50%" width="15%" />
+  <Skeleton height="66%" width="15%" />
+  <Skeleton height="75%" width="15%" />
+  <Skeleton height="100%" width="15%" />
 </div>;
 ```
 

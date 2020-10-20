@@ -23,7 +23,7 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   height,
   fontSize,
   shape,
-  screenreaderText = 'Loading...',
+  screenreaderText,
   ...props
 }: SkeletonProps) => {
   const fontHeightClassName = fontSize
