@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.54.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.53.0...@patternfly/react-integration@4.54.0) (2020-10-20)
+
+
+### Features
+
+* **toggleGroup:** add suport to text + icon ([#4999](https://github.com/patternfly/patternfly-react/issues/4999)) ([ca606e4](https://github.com/patternfly/patternfly-react/commit/ca606e443d69c7ef8774185695a398df001abc57))
+
+
+
+
+
 # [4.53.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.52.1...@patternfly/react-integration@4.53.0) (2020-10-20)
 
 
