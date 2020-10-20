@@ -1,4 +1,5 @@
 import {
+  Button,
   Select,
   SelectOption,
   SelectVariant,
@@ -54,6 +55,8 @@ export interface SelectDemoState {
   noBadgeCheckSelected: string[];
   menuDocumentBodyisOpen: boolean;
   menuDocumentBodySelected: string[];
+  lbltypeaheadSelected: string;
+  lbltypeaheadisOpen: boolean;
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -78,6 +81,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadMultiSelected: [''],
     cdtypeaheadMultiisOpen: false,
     cdtypeaheadMultiSelected: [] as string[],
+    lbltypeaheadSelected: '',
+    lbltypeaheadisOpen: false,
     plainTypeaheadMultiisOpen: false,
     plainTypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsPlain: true,
@@ -90,6 +95,13 @@ export class SelectDemo extends Component<SelectDemoState> {
       { value: 'Florida', disabled: false },
       { value: 'New Jersey', disabled: false },
       { value: 'Texas', disabled: false }
+    ],
+    typeaheadLabelOptions: [
+      { label: 'Alabama', value: 'AL', disabled: false },
+      { label: 'New York', value: 'NY', disabled: false },
+      { label: 'Florida', value: 'FL', disabled: false },
+      { label: 'New Jersey', value: 'NJ', disabled: false },
+      { label: 'North Carolina', value: 'NC', disabled: false }
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
@@ -228,6 +240,10 @@ export class SelectDemo extends Component<SelectDemoState> {
     this.setState({
       cdtypeaheadMultiisOpen
     });
+  };
+
+  lbtypaheadToggle = (lbltypeaheadisOpen: boolean) => {
+    this.setState({ lbltypeaheadisOpen });
   };
 
   plainTypeaheadMultiOnToggle = (plainTypeaheadMultiisOpen: boolean) => {
@@ -433,6 +449,24 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
+  lbltypeaheadSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+      return;
+    }
+    this.setState(
+      {
+        lbltypeaheadSelected: selection,
+        lbltypeaheadisOpen: false
+      },
+      () => console.log('selections: ', this.state.lbltypeaheadSelected)
+    );
+  };
+
   plainTypeaheadMultiOnSelect = (
     event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject
@@ -501,6 +535,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadMultiisOpen: false,
       cdtypeaheadMultiisOpen: false,
       cdtypeaheadMultiSelected: [],
+      lbltypeaheadSelected: '',
+      lbltypeaheadisOpen: false,
       plainTypeaheadMultiSelected: [''],
       plainTypeaheadMultiisOpen: false,
       customTypeaheadMultiSelected: [''],
@@ -848,6 +884,47 @@ export class SelectDemo extends Component<SelectDemoState> {
     );
   }
 
+  renderLabelTypeaheadSelect() {
+    const { typeaheadLabelOptions, lbltypeaheadisOpen, lbltypeaheadSelected } = this.state;
+    const titleId = 'typeahead-select-labels-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Typeahead Select with labelled options
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Select a state
+          </span>
+          <Select
+            toggleId="typeahead-select-label"
+            variant={SelectVariant.typeahead}
+            aria-label="Select a state"
+            onToggle={this.lbtypaheadToggle}
+            onSelect={this.lbltypeaheadSelect}
+            onClear={this.clearSelection}
+            selections={lbltypeaheadSelected}
+            isOpen={lbltypeaheadisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select a state"
+          >
+            {typeaheadLabelOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value}>
+                {option.label}
+              </SelectOption>
+            ))}
+          </Select>
+          <Button
+            id="button-typeahead-labels"
+            onClick={() => this.lbltypeaheadSelect(null, typeaheadLabelOptions[1].value)}
+          >
+            Select {typeaheadLabelOptions[1].label}
+          </Button>
+        </div>
+      </StackItem>
+    );
+  }
+
   renderTypeaheadMultiSelect() {
     const { typeaheadMultiisOpen, typeaheadMultiSelected } = this.state;
     const titleId = 'multi-typeahead-select-id';
@@ -1117,6 +1194,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderMenuOnDocumentBodySelect()}
         {this.renderDescriptionSelect()}
         {this.renderSelectWithDivider()}
+        {this.renderLabelTypeaheadSelect()}
       </Stack>
     );
   }
