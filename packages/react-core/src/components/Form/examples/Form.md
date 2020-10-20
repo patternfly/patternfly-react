@@ -614,7 +614,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
         <FormGroup 
           label="Label" 
           helperText={this.state.helperText}
-          helperTextIsBeforeField 
+          isHelperTextBeforeField 
           fieldId="options">
           <Checkbox label="option 1" id="option-1" />
           <Checkbox label="option 2" id="option-2" />

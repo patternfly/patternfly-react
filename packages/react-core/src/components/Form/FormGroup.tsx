@@ -87,9 +87,8 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const showValidHelperTxt = (validationType: 'success' | 'warning' | 'error' | 'default') =>
     validationType !== ValidatedOptions.error && helperText ? validHelperText : '';
 
-  const helperTextToDisplay = validated === ValidatedOptions.error && helperTextInvalid
-    ? inValidHelperText
-    : showValidHelperTxt(validated);
+  const helperTextToDisplay =
+    validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated);
 
   return (
     <div {...props} className={css(styles.formGroup, className)}>

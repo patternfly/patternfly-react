@@ -94,7 +94,7 @@ describe('FormGroup component', () => {
   test('should render helper text above input', () => {
     const view = mount(
       <Form isHorizontal>
-        <FormGroup label="label" fieldId="label-id" helperText="this is helperText" helperTextIsBeforeField>
+        <FormGroup label="label" fieldId="label-id" helperText="this is helperText" isHelperTextBeforeField>
           <input id="label-id" />
         </FormGroup>
       </Form>

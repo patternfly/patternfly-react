@@ -528,7 +528,7 @@ exports[`FormGroup component should render helper text above input 1`] = `
     <FormGroup
       fieldId="label-id"
       helperText="this is helperText"
-      helperTextIsBeforeField={true}
+      isHelperTextBeforeField={true}
       label="label"
     >
       <div
