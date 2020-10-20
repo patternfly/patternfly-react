@@ -112,6 +112,7 @@ export * from './SimpleList/SimpleListDemo';
 export * from './SkeletonDemo/SkeletonDemo';
 export * from './SpinnerDemo/SpinnerDemo';
 export * from './SplitDemo/SplitDemo';
+export * from './SplitterDemo/SplitterDemo';
 export * from './StackChartDemo/StackedAreaDemo';
 export * from './StackChartDemo/StackBlueDemo';
 export * from './StackChartDemo/StackGoldBottomLegendDemo';

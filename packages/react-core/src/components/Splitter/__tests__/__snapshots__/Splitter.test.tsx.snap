@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple splitter 1`] = `
+<SplitterBase
+  innerRef={null}
+/>
+`;
+
+exports[`vertical splitter 1`] = `
+<SplitterBase
+  innerRef={null}
+  orientation="vertical"
+/>
+`;
