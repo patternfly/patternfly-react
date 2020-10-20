@@ -105,12 +105,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ) : (
     title && (
       <ModalBoxHeader>
-        <ModalBoxTitle
-          title={title}
-          titleIconVariant={titleIconVariant}
-          titleLabel={titleLabel}
-          id={labelId}
-        />
+        <ModalBoxTitle title={title} titleIconVariant={titleIconVariant} titleLabel={titleLabel} id={labelId} />
         {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
       </ModalBoxHeader>
     )
