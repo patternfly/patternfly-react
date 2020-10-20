@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 
 export interface FormAlertProps extends React.HTMLProps<HTMLDivElement> {
@@ -14,7 +13,9 @@ export const FormAlert: React.FunctionComponent<FormAlertProps> = ({
   className = '',
   ...props
 }: FormAlertProps) => (
-  <div {...props} className={css(styles.formAlert, className)}>
+  // There are currently no associated styles with the pf-c-form_alert class.
+  // Therefore, it does not exist in react-styles
+  <div {...props} className={css("pf-c-form__alert", className)}>
     {children}
   </div>
 );
