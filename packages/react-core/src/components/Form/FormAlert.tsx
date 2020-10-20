@@ -15,7 +15,7 @@ export const FormAlert: React.FunctionComponent<FormAlertProps> = ({
 }: FormAlertProps) => (
   // There are currently no associated styles with the pf-c-form_alert class.
   // Therefore, it does not exist in react-styles
-  <div {...props} className={css("pf-c-form__alert", className)}>
+  <div {...props} className={css('pf-c-form__alert', className)}>
     {children}
   </div>
 );
