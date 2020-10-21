@@ -131,7 +131,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
             <ContextSelectorContext.Provider value={{ onSelect }}>
               <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
             </ContextSelectorContext.Provider>
-            {footer && footer}
+            {footer}
           </FocusTrap>
         )}
       </div>
