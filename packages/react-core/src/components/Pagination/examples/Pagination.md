@@ -264,7 +264,7 @@ class PaginationTop extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import { Pagination, PaginationVariant } from '@patternfly/react-core';
+import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
 
 class PaginationSticky extends React.Component {
   constructor(props) {
@@ -296,18 +296,56 @@ class PaginationSticky extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100vh' }}>
-        <button onClick={this.onToggleSticky}>Toggle to {this.state.isTopSticky ? 'bottom' : 'top'} position</button>
-        <Pagination
-          itemCount={523}
-          perPage={this.state.perPage}
-          page={this.state.page}
-          onSetPage={this.onSetPage}
-          widgetId="pagination-options-menu-top"
-          onPerPageSelect={this.onPerPageSelect}
-          isSticky
-          variant={this.state.isTopSticky ? PaginationVariant.top : PaginationVariant.bottom}
-        />
+      <div>
+        {this.state.isTopSticky && (
+          <React.Fragment>
+            <Pagination
+              itemCount={523}
+              perPage={this.state.perPage}
+              page={this.state.page}
+              onSetPage={this.onSetPage}
+              widgetId="pagination-options-menu-top"
+              onPerPageSelect={this.onPerPageSelect}
+              isSticky
+            >
+              <button onClick={this.onToggleSticky}>Toggle to bottom position</button>
+            </Pagination>
+            <Gallery hasGutter>
+              {Array.apply(0, Array(40)).map((x, i) => (
+                <GalleryItem key={i}>
+                  <Card>
+                    <CardBody>This is a card</CardBody>
+                  </Card>
+                </GalleryItem>
+              ))}
+            </Gallery>
+          </React.Fragment>
+        )}
+        {!this.state.isTopSticky && (
+          <React.Fragment>
+            <Gallery hasGutter>
+              {Array.apply(0, Array(40)).map((x, i) => (
+                <GalleryItem key={i}>
+                  <Card>
+                    <CardBody>This is a card</CardBody>
+                  </Card>
+                </GalleryItem>
+              ))}
+            </Gallery>
+            <Pagination
+              itemCount={523}
+              perPage={this.state.perPage}
+              page={this.state.page}
+              onSetPage={this.onSetPage}
+              widgetId="pagination-options-menu-top"
+              onPerPageSelect={this.onPerPageSelect}
+              isSticky
+              variant={PaginationVariant.bottom}
+            >
+              <button onClick={this.onToggleSticky}>Toggle to top position</button>
+            </Pagination>
+          </React.Fragment>
+        )}
       </div>
     );
   }

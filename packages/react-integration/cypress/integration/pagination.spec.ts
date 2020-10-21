@@ -26,8 +26,12 @@ describe('Pagination Demo Test', () => {
       .then(button => expect(button).to.be.disabled);
   });
 
+  it('should be sticky when flag is present', () => {
+    cy.get('.pagination-options-menu-sticky').should('have.class', 'pf-m-sticky');
+  });
+
   it('Verify initial state', () => {
-    cy.get('.pf-c-pagination').should('have.length', 4);
+    cy.get('.pf-c-pagination').should('have.length', 5);
     cy.get('.pagination-options-menu-bottom.pf-c-pagination.pf-m-bottom').should('exist');
     cy.get('.pagination-options-menu-top')
       .find('.pf-c-options-menu__toggle-text')
