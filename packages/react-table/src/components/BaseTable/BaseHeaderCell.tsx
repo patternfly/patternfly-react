@@ -118,7 +118,9 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
       })
     : null;
   const widthParams = width ? cellWidth(width)() : null;
-  const visibilityParams = visibility ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))() : null;
+  const visibilityParams = visibility
+    ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))()
+    : null;
   const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || component;
   const transformedChildren =
     (sortParams && sortParams.children) || (selectParams && selectParams.children) || children;

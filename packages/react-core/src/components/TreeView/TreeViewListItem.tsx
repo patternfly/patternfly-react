@@ -37,10 +37,8 @@ export interface TreeViewListItemProps {
   icon?: React.ReactNode;
   /** Expanded icon of a tree view item */
   expandedIcon?: React.ReactNode;
-  /** Action of a tree view item, nested inside a button */
+  /** Action of a tree view item, can be a Button or Dropdown */
   action?: React.ReactNode;
-  /** Additional properties of the tree view item action button */
-  actionProps?: any;
   /** Callback for item comparison function */
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
 }
@@ -64,13 +62,6 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   icon,
   expandedIcon,
   action,
-  actionProps = {
-    onClick: (evt: React.MouseEvent) => {
-      evt.stopPropagation();
-      evt.preventDefault();
-      onSelect && onSelect(evt, itemData, parentItem);
-    }
-  },
   compareItems
 }: TreeViewListItemProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
@@ -132,11 +123,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
             </span>
           )}
         </button>
-        {action && (
-          <button className={css(styles.treeViewAction)} {...actionProps}>
-            {action}
-          </button>
-        )}
+        {action && <div className={css(styles.treeViewAction)}>{action}</div>}
       </div>
       {isExpanded && children}
     </li>

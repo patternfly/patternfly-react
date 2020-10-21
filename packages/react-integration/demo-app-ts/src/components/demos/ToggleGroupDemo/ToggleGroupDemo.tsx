@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-  ToggleGroupItemVariant,
-  ToggleGroupVariant,
-  ToggleGroupProps
-} from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, ToggleGroupVariant, ToggleGroupProps } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
@@ -55,58 +49,65 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
     return (
       <>
         <ToggleGroup>
-          <ToggleGroupItem key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick}>
-            Option 1
-          </ToggleGroupItem>
-          <ToggleGroupItem key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick}>
-            Option 2
-          </ToggleGroupItem>
-          <ToggleGroupItem key={2} buttonId="disabled" isDisabled>
-            Option 3
-          </ToggleGroupItem>
+          <ToggleGroupItem
+            text="Option 1"
+            key={0}
+            buttonId="first"
+            isSelected={isSelected.first}
+            onChange={this.handleItemClick}
+          />
+          <ToggleGroupItem
+            text="Option 2"
+            key={1}
+            buttonId="second"
+            isSelected={isSelected.second}
+            onChange={this.handleItemClick}
+          />
+          <ToggleGroupItem text="Option 3" key={2} buttonId="disabled" isDisabled />
         </ToggleGroup>
         <ToggleGroup>
           <ToggleGroupItem
+            icon={<CopyIcon />}
             key={3}
             buttonId="third"
-            variant={ToggleGroupItemVariant.icon}
             isSelected={isSelected.third}
             onChange={this.handleItemClick}
             aria-label="copy icon button"
-          >
-            <CopyIcon />
-          </ToggleGroupItem>
+          />
           <ToggleGroupItem
+            icon={<UndoIcon />}
             key={4}
             buttonId="fourth"
-            variant={ToggleGroupItemVariant.icon}
             isSelected={isSelected.fourth}
             onChange={this.handleItemClick}
             aria-label="undo icon button"
-          >
-            <UndoIcon />
-          </ToggleGroupItem>
+          />
           <ToggleGroupItem
+            icon={<ShareSquareIcon />}
+            text="Share"
             key={5}
             buttonId="fifth"
-            variant={ToggleGroupItemVariant.icon}
             isSelected={isSelected.fifth}
             onChange={this.handleItemClick}
             aria-label="share square icon button"
-          >
-            <ShareSquareIcon />
-          </ToggleGroupItem>
+          />
         </ToggleGroup>
         <ToggleGroup variant={ToggleGroupVariant.light}>
-          <ToggleGroupItem key={6} buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick}>
-            Option 1
-          </ToggleGroupItem>
-          <ToggleGroupItem key={7} buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick}>
-            Option 2
-          </ToggleGroupItem>
-          <ToggleGroupItem key={8} isDisabled>
-            Option 3
-          </ToggleGroupItem>
+          <ToggleGroupItem
+            text="Option 1"
+            key={6}
+            buttonId="sixth"
+            isSelected={isSelected.sixth}
+            onChange={this.handleItemClick}
+          />
+          <ToggleGroupItem
+            text="Option 2"
+            key={7}
+            buttonId="seventh"
+            isSelected={isSelected.seventh}
+            onChange={this.handleItemClick}
+          />
+          <ToggleGroupItem icon={<CopyIcon />} text="Option 3" key={8} isDisabled />
         </ToggleGroup>
       </>
     );

@@ -7,12 +7,13 @@ beta: true
 ---
 import './toggleGroup.css';
 
-import { ToggleGroup, ToggleGroupItem, ToggleGroupItemVariant } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem} from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon'; 
+import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
 
 ## Examples
+
 ### Default with multiple selectable
 ```js
 import React from 'react';
@@ -37,26 +38,21 @@ class DefaultToggleGroupExample extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { isSelected } = this.state;
-    
+
     return (
       <ToggleGroup aria-label="Default with multiple selectable">
-        <ToggleGroupItem key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick}>
-          Option 1
-        </ToggleGroupItem>
-        <ToggleGroupItem key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick}>
-          Option 2
-        </ToggleGroupItem>
-        <ToggleGroupItem key={2} isDisabled>
-          Option 3
-        </ToggleGroupItem>
+        <ToggleGroupItem text="Option 1" key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 2" key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 3" key={2} isDisabled/>
       </ToggleGroup>
     );
   }
 }
 ```
+
 ### Default with single selectable
 ```js
 import React from 'react';
@@ -73,33 +69,28 @@ class DefaultAsRadioToggleGroupExample extends React.Component {
       this.setState({ isSelected: id });
     };
   }
-  
+
   render() {
     const { isSelected } = this.state;
-    
+
     return (
       <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem buttonId="firstRadio" isSelected={isSelected === "firstRadio"} onChange={this.handleItemClick}>
-          Option 1
-        </ToggleGroupItem>
-        <ToggleGroupItem buttonId="secondRadio" isSelected={isSelected === "secondRadio"} onChange={this.handleItemClick}>
-          Option 2
-        </ToggleGroupItem>
-        <ToggleGroupItem buttonId="thirdRadio" isSelected={isSelected === "thirdRadio"} onChange={this.handleItemClick}>
-          Option 3
-        </ToggleGroupItem>
+        <ToggleGroupItem text="Option 1" buttonId="firstRadio" isSelected={isSelected === "firstRadio"} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 2" buttonId="secondRadio" isSelected={isSelected === "secondRadio"} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 3" buttonId="thirdRadio" isSelected={isSelected === "thirdRadio"} onChange={this.handleItemClick} />
       </ToggleGroup>
     );
   }
 }
 ```
+
 ### Icons
 ```js
 import React from 'react';
-import { ToggleGroup, ToggleGroupItem, ToggleGroupItemVariant } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon'; 
+import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
 
 class IconToggleGroupExample extends React.Component {
   constructor(props) {
@@ -121,20 +112,56 @@ class IconToggleGroupExample extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { isSelected } = this.state;
     return (
       <ToggleGroup aria-label="Icon variant toggle group">
-        <ToggleGroupItem aria-label="copy icon button" buttonId="third" variant={ToggleGroupItemVariant.icon} isSelected={isSelected.third} onChange={this.handleItemClick}>
-          <CopyIcon />
-        </ToggleGroupItem>
-        <ToggleGroupItem aria-label="undo icon button" buttonId="fourth" variant={ToggleGroupItemVariant.icon} isSelected={isSelected.fourth} onChange={this.handleItemClick}>
-          <UndoIcon />
-        </ToggleGroupItem>
-        <ToggleGroupItem aria-label="share square icon button" buttonId="fifth"  variant={ToggleGroupItemVariant.icon} isSelected={isSelected.fifth} onChange={this.handleItemClick}>
-          <ShareSquareIcon />
-        </ToggleGroupItem>
+        <ToggleGroupItem icon={<CopyIcon />} aria-label="copy icon button" buttonId="third" isSelected={isSelected.third} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<UndoIcon />} aria-label="undo icon button" buttonId="fourth" isSelected={isSelected.fourth} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<ShareSquareIcon />} aria-label="share square icon button" buttonId="fifth" isSelected={isSelected.fifth} onChange={this.handleItemClick} />
+      </ToggleGroup>
+    );
+  }
+}
+```
+
+### Text and icons
+```js
+import React from 'react';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
+
+class TextIconToggleGroupExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isSelected: {
+        third: false,
+        fourth: false,
+        fifth: true
+      }
+    };
+    this.handleItemClick = (isSelected, event) => {
+      const id = event.currentTarget.id;
+      this.setState(prevState => {
+        prevState.isSelected[id] = isSelected;
+        return {
+          isSelected: prevState.isSelected
+        };
+      });
+    };
+  }
+
+  render() {
+    const { isSelected } = this.state;
+    return (
+      <ToggleGroup aria-label="Icon variant toggle group">
+        <ToggleGroupItem icon={<CopyIcon />} text="Copy" aria-label="copy icon button" buttonId="third" isSelected={isSelected.third} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<UndoIcon />} text="Undo" aria-label="undo icon button" buttonId="fourth" isSelected={isSelected.fourth} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<ShareSquareIcon />} text="Share" aria-label="share square icon button" buttonId="fifth" isSelected={isSelected.fifth} onChange={this.handleItemClick} />
       </ToggleGroup>
     );
   }
@@ -165,21 +192,15 @@ constructor(props) {
       });
     };
   }
-  
+
   render() {
     const { isSelected } = this.state;
-    
+
     return (
       <ToggleGroup variant={ToggleGroupVariant.light} aria-label="Light variant toggle group">
-        <ToggleGroupItem buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick}>
-          Option 1
-        </ToggleGroupItem>
-        <ToggleGroupItem buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick}>
-          Option 2
-        </ToggleGroupItem>
-        <ToggleGroupItem isDisabled>
-          Option 3
-        </ToggleGroupItem>
+        <ToggleGroupItem text="Option 1" buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 2" buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 3" isDisabled />
       </ToggleGroup>
     );
   }

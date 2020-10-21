@@ -39,6 +39,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
   /** If set to true, the time out is 8000 milliseconds.  If a number is provided, alert will be dismissed after that amount of time in milliseconds. */
   timeout?: number | boolean;
+  /** Function to be executed on alert timeout. Relevant when the timeout prop is set */
+  onTimeout?: () => void;
   /** Truncate title to number of lines */
   truncateTitle?: number;
 }
@@ -57,6 +59,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   ouiaId,
   ouiaSafe = true,
   timeout = false,
+  onTimeout,
   truncateTitle = 0,
   ...props
 }: AlertProps) => {
@@ -87,6 +90,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     setTimeout(
       () => {
         setDisableAlert(true);
+        if (onTimeout) {
+          onTimeout();
+        }
       },
       timeout === true ? 8000 : timeout
     );

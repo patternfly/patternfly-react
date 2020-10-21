@@ -1,4 +1,5 @@
 import {
+  Button,
   Select,
   SelectOption,
   SelectVariant,
@@ -30,6 +31,8 @@ export interface SelectDemoState {
   disabledSingleSelected: string;
   customSingleisOpen: boolean;
   customSingleSelected: string | SelectOptionObject;
+  dividerisOpen: boolean;
+  dividerSelected: string;
   checkisOpen: boolean;
   checkSelected: string[];
   typeaheadisOpen: boolean;
@@ -52,6 +55,8 @@ export interface SelectDemoState {
   noBadgeCheckSelected: string[];
   menuDocumentBodyisOpen: boolean;
   menuDocumentBodySelected: string[];
+  lbltypeaheadSelected: string;
+  lbltypeaheadisOpen: boolean;
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -64,6 +69,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     disabledSingleSelected: '',
     customSingleisOpen: false,
     customSingleSelected: '',
+    dividerisOpen: false,
+    dividerSelected: '',
     checkisOpen: false,
     checkSelected: [''],
     typeaheadisOpen: false,
@@ -74,6 +81,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadMultiSelected: [''],
     cdtypeaheadMultiisOpen: false,
     cdtypeaheadMultiSelected: [] as string[],
+    lbltypeaheadSelected: '',
+    lbltypeaheadisOpen: false,
     plainTypeaheadMultiisOpen: false,
     plainTypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsPlain: true,
@@ -86,6 +95,13 @@ export class SelectDemo extends Component<SelectDemoState> {
       { value: 'Florida', disabled: false },
       { value: 'New Jersey', disabled: false },
       { value: 'Texas', disabled: false }
+    ],
+    typeaheadLabelOptions: [
+      { label: 'Alabama', value: 'AL', disabled: false },
+      { label: 'New York', value: 'NY', disabled: false },
+      { label: 'Florida', value: 'FL', disabled: false },
+      { label: 'New Jersey', value: 'NJ', disabled: false },
+      { label: 'North Carolina', value: 'NC', disabled: false }
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
@@ -172,6 +188,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  dividerOnToggle = (dividerisOpen: boolean) => {
+    this.setState({
+      dividerisOpen
+    });
+  };
+
   disabledSingleOnToggle = (disabledSingleisOpen: boolean) => {
     this.setState({
       disabledSingleisOpen
@@ -220,6 +242,10 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  lbtypaheadToggle = (lbltypeaheadisOpen: boolean) => {
+    this.setState({ lbltypeaheadisOpen });
+  };
+
   plainTypeaheadMultiOnToggle = (plainTypeaheadMultiisOpen: boolean) => {
     this.setState({
       plainTypeaheadMultiisOpen
@@ -265,6 +291,22 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleDescSelected: selection,
         singleDescisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  dividerOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        dividerSelected: selection,
+        dividerisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -407,6 +449,24 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
+  lbltypeaheadSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+      return;
+    }
+    this.setState(
+      {
+        lbltypeaheadSelected: selection,
+        lbltypeaheadisOpen: false
+      },
+      () => console.log('selections: ', this.state.lbltypeaheadSelected)
+    );
+  };
+
   plainTypeaheadMultiOnSelect = (
     event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject
@@ -475,6 +535,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadMultiisOpen: false,
       cdtypeaheadMultiisOpen: false,
       cdtypeaheadMultiSelected: [],
+      lbltypeaheadSelected: '',
+      lbltypeaheadisOpen: false,
       plainTypeaheadMultiSelected: [''],
       plainTypeaheadMultiisOpen: false,
       customTypeaheadMultiSelected: [''],
@@ -525,6 +587,46 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-direction"
           name="toggle-direction"
         />
+      </StackItem>
+    );
+  }
+
+  renderSelectWithDivider() {
+    const { dividerisOpen, dividerSelected } = this.state;
+    const titleId = 'select-with-divider-title-id';
+    const options = this.singleOptions.reduce((acc, option, index) => {
+      const selectOpt = (
+        <SelectOption id={option.value} isDisabled={option.disabled} key={index} value={option.value} />
+      );
+      if (index === 2) {
+        return [...acc, <Divider component="li" key={`divider-${index}`} />, selectOpt];
+      }
+      return [...acc, selectOpt];
+    }, []);
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Select with a divider
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="single-select-with-divider"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.dividerOnToggle}
+            onSelect={this.dividerOnSelect}
+            selections={dividerSelected}
+            isOpen={dividerisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select with divider"
+            maxHeight={200}
+          >
+            {options}
+          </Select>
+        </div>
       </StackItem>
     );
   }
@@ -778,6 +880,47 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
         />
+      </StackItem>
+    );
+  }
+
+  renderLabelTypeaheadSelect() {
+    const { typeaheadLabelOptions, lbltypeaheadisOpen, lbltypeaheadSelected } = this.state;
+    const titleId = 'typeahead-select-labels-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Typeahead Select with labelled options
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Select a state
+          </span>
+          <Select
+            toggleId="typeahead-select-label"
+            variant={SelectVariant.typeahead}
+            aria-label="Select a state"
+            onToggle={this.lbtypaheadToggle}
+            onSelect={this.lbltypeaheadSelect}
+            onClear={this.clearSelection}
+            selections={lbltypeaheadSelected}
+            isOpen={lbltypeaheadisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select a state"
+          >
+            {typeaheadLabelOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value}>
+                {option.label}
+              </SelectOption>
+            ))}
+          </Select>
+          <Button
+            id="button-typeahead-labels"
+            onClick={() => this.lbltypeaheadSelect(null, typeaheadLabelOptions[1].value)}
+          >
+            Select {typeaheadLabelOptions[1].label}
+          </Button>
+        </div>
       </StackItem>
     );
   }
@@ -1050,6 +1193,8 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderTypeaheadSelectInForm()}
         {this.renderMenuOnDocumentBodySelect()}
         {this.renderDescriptionSelect()}
+        {this.renderSelectWithDivider()}
+        {this.renderLabelTypeaheadSelect()}
       </Stack>
     );
   }

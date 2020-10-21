@@ -111,6 +111,8 @@ export interface SelectProps
   inputIdPrefix?: string;
   /** Optional props to pass to the chip group in the typeaheadmulti variant */
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
+  /** Optional props to render custom chip group in the typeaheadmulti variant */
+  chipGroupComponent?: React.ReactNode;
 }
 
 export interface SelectState {
@@ -169,7 +171,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     menuAppendTo: 'inline',
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
-    ouiaSafe: true
+    ouiaSafe: true,
+    chipGroupComponent: null
   };
 
   state: SelectState = {
@@ -199,12 +202,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (prevProps.children !== this.props.children) {
       this.setState({
         typeaheadFilteredChildren: React.Children.toArray(this.props.children)
-      });
-    }
-
-    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
-      this.setState({
-        typeaheadInputValue: this.props.selections as string
       });
     }
 
@@ -534,7 +531,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
           .find(child => child.props.value.toString() === value.toString())
       : React.Children.toArray(this.props.children).find(
-          child => (child as React.ReactElement).props.value.toString() === value.toString()
+          child =>
+            (child as React.ReactElement).props.value &&
+            (child as React.ReactElement).props.value.toString() === value.toString()
         );
     if (item) {
       if (item && item.props.children) {
@@ -575,6 +574,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const {
       children,
       chipGroupProps,
+      chipGroupComponent,
       className,
       customContent,
       variant,
@@ -683,7 +683,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
-      selectedChips = (
+      selectedChips = chipGroupComponent ? (
+        chipGroupComponent
+      ) : (
         <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (

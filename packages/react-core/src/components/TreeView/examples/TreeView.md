@@ -610,15 +610,20 @@ class IconTreeView extends React.Component {
       {
         name: 'ApplicationLauncher',
         id: 'AppLaunch',
-        action: <EllipsisVIcon />,
-        actionProps: {
-          'aria-label': 'Launch app'
-        },
+        action: (
+          <Button variant="plain" aria-label="Launch app">
+            <EllipsisVIcon />
+          </Button>
+        ),
         children: [
           {
             name: 'Application 1',
             id: 'App1',
-            action: <ClipboardIcon />,
+            action: (
+              <Button variant="plain" aria-label="Launch app 1">
+                <ClipboardIcon />
+              </Button>
+            ),
             actionProps: {
               'aria-label': 'Launch app 1'
             },
@@ -627,10 +632,11 @@ class IconTreeView extends React.Component {
           {
             name: 'Application 2',
             id: 'App2',
-            action: <HamburgerIcon />,
-            actionProps: {
-              'aria-label': 'Launch app 2'
-            },
+            action: (
+              <Button variant="plain" aria-label="Launch app 2">
+                <HamburgerIcon />
+              </Button>
+            ),
             children: [
               { name: 'Settings', id: 'App2Settings' },
               {

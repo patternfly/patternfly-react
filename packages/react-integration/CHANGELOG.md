@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.54.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.53.0...@patternfly/react-integration@4.54.0) (2020-10-20)
+
+
+### Features
+
+* **toggleGroup:** add suport to text + icon ([#4999](https://github.com/patternfly/patternfly-react/issues/4999)) ([ca606e4](https://github.com/patternfly/patternfly-react/commit/ca606e443d69c7ef8774185695a398df001abc57))
+
+
+
+
+
+# [4.53.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.52.1...@patternfly/react-integration@4.53.0) (2020-10-20)
+
+
+### Bug Fixes
+
+* **select:** display label and not value in typeahead ([#4916](https://github.com/patternfly/patternfly-react/issues/4916)) ([ea57b3f](https://github.com/patternfly/patternfly-react/commit/ea57b3f6c74189796362ec4ef17ab7119f4f0348))
+
+
+### Features
+
+* **alert:** support callback on alert timeout ([#5014](https://github.com/patternfly/patternfly-react/issues/5014)) ([909c3a7](https://github.com/patternfly/patternfly-react/commit/909c3a75d8c798b90be9bc791609aaec66825e80))
+
+
+
+
+
+## [4.52.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.52.0...@patternfly/react-integration@4.52.1) (2020-10-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.52.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.51.0...@patternfly/react-integration@4.52.0) (2020-10-19)
+
+
+### Features
+
+* **Empty state:** Added extra small variation ([#5012](https://github.com/patternfly/patternfly-react/issues/5012)) ([5ea4ab7](https://github.com/patternfly/patternfly-react/commit/5ea4ab758158697572bc9dc0dfd49528a25e5455))
+
+
+
+
+
+# [4.51.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.50.2...@patternfly/react-integration@4.51.0) (2020-10-19)
+
+
+### Features
+
+* **FormSection:** Add FormSection component ([#4971](https://github.com/patternfly/patternfly-react/issues/4971)) ([5e9106b](https://github.com/patternfly/patternfly-react/commit/5e9106b37f348038f2c7d37571e17427c610676e)), closes [#4960](https://github.com/patternfly/patternfly-react/issues/4960)
+
+
+
+
+
+## [4.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.50.1...@patternfly/react-integration@4.50.2) (2020-10-14)
+
+
+### Bug Fixes
+
+* **Label:** Added tooltip to truncated text ([#5007](https://github.com/patternfly/patternfly-react/issues/5007)) ([5881577](https://github.com/patternfly/patternfly-react/commit/58815776532aa0de61c63925746d06d226e061e6))
+* **select:** skip the divider children in getDisplay ([#4998](https://github.com/patternfly/patternfly-react/issues/4998)) ([99fc494](https://github.com/patternfly/patternfly-react/commit/99fc494e636b12f1528e1956f33ff6327379bdb3))
+
+
+
+
+
 ## [4.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.50.0...@patternfly/react-integration@4.50.1) (2020-10-12)
 
 

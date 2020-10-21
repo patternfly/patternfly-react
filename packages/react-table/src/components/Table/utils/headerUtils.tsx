@@ -210,10 +210,10 @@ const addAdditionalCellTranforms = (cell: ICell, additional: any) => ({
  * Function to change expanded row with additional transforms.
  *
  * @param {*} header info with cellTransforms.
- * @param {*} extraObject with onCollapse function.
+ * @param {*} extra object with onCollapse/onExpand function.
  */
-const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse: OnCollapse }) => {
-  if (!onCollapse) {
+const expandContent = (header: (ICell | string)[], extra: any) => {
+  if (!extra.onCollapse && !extra.onExpand) {
     return header;
   }
   return header.map((cell: ICell | string) => {

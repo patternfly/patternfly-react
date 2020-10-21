@@ -175,25 +175,28 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
           }) */
         )
       : null;
-  const compoundParams = isCompoundExpanded !== null
-    ? compoundExpand(
-        {
-          title: children,
-          props: {
-            isOpen: isCompoundExpanded
+  const compoundParams =
+    isCompoundExpanded !== null
+      ? compoundExpand(
+          {
+            title: children,
+            props: {
+              isOpen: isCompoundExpanded
+            }
+          } as IFormatterValueType,
+          {
+            columnIndex,
+            rowIndex,
+            column: {
+              extraParams: {}
+            }
           }
-        } as IFormatterValueType,
-        {
-          columnIndex,
-          rowIndex,
-          column: {
-            extraParams: {}
-          }
-        }
-      )
-    : null;
+        )
+      : null;
   const widthParams = width ? cellWidth(width)() : null;
-  const visibilityParams = visibility ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))() : null;
+  const visibilityParams = visibility
+    ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))()
+    : null;
   const Component: any = (selectParams && selectParams.component) || component;
   const transformedChildren =
     (selectParams && selectParams.children) ||
