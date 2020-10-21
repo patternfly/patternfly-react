@@ -122,7 +122,7 @@ class IntialSelectionDropdown extends React.Component {
       this.onFocus();
     };
     this.onFocus = () => {
-      const element = document.getElementById('toggle-id-1');
+      const element = document.getElementById('toggle-id-2');
       element.focus();
     };
   }
@@ -150,7 +150,7 @@ class IntialSelectionDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle id="toggle-id-1" onToggle={this.onToggle}>
+          <DropdownToggle id="toggle-id-2" onToggle={this.onToggle}>
             Dropdown
           </DropdownToggle>
         }

@@ -51,6 +51,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   };
 
   componentDidMount() {
+    document.addEventListener('keydown', this.onKeyDown);
     const { autoFocus } = this.props;
 
     if (autoFocus) {
@@ -62,6 +63,38 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       }
     }
   }
+
+  componentWillUnmount = () => {
+    document.removeEventListener('keydown', this.onKeyDown);
+  };
+
+  static validToggleClasses = [styles.dropdownToggle, styles.dropdownToggleButton] as string[];
+  static focusFirstRef = (refCollection: HTMLElement[]) => {
+    if (refCollection && refCollection[0] && refCollection[0].focus) {
+      setTimeout(() => refCollection[0].focus());
+    }
+  };
+
+  onKeyDown = (event: any) => {
+    if (
+      !this.props.isOpen ||
+      !Array.from(document.activeElement.classList).find(className =>
+        DropdownMenu.validToggleClasses.includes(className)
+      )
+    ) {
+      return;
+    }
+    const refs = this.refsCollection;
+    if (event.key === 'ArrowDown') {
+      const firstFocusTargetCollection = refs.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
+      DropdownMenu.focusFirstRef(firstFocusTargetCollection);
+    } else if (event.key === 'ArrowUp') {
+      const collectionLength = refs.length;
+      const lastFocusTargetCollection = refs.slice(collectionLength - 1, collectionLength);
+      const lastFocusTarget = lastFocusTargetCollection && lastFocusTargetCollection[0];
+      DropdownMenu.focusFirstRef(lastFocusTarget);
+    }
+  };
 
   shouldComponentUpdate() {
     // reset refsCollection before updating to account for child removal between mounts
