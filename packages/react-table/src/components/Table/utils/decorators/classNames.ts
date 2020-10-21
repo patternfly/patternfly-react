@@ -8,15 +8,15 @@ const visibilityModifiers = [
   'hiddenOnMd',
   'hiddenOnLg',
   'hiddenOnXl',
-  'hiddenOn2xl',
+  'hiddenOn_2xl',
   'visibleOnSm',
   'visibleOnMd',
   'visibleOnLg',
   'visibleOnXl',
-  'visibleOn2xl'
+  'visibleOn_2xl'
 ] as (keyof typeof styles.modifiers)[];
 
-interface Visibility {
+export interface IVisibility {
   hidden?: string;
   hiddenOnSm?: string;
   hiddenOnMd?: string;
@@ -33,10 +33,10 @@ interface Visibility {
 export const Visibility = visibilityModifiers
   .filter(key => styles.modifiers[key])
   .reduce((acc, curr) => {
-    const key2 = curr.replace('2xl', '2Xl') as keyof typeof Visibility;
+    const key2 = curr.replace('_2xl', '2Xl') as keyof typeof Visibility;
     acc[key2] = styles.modifiers[curr];
     return acc;
-  }, {} as Visibility);
+  }, {} as IVisibility);
 
 export const classNames = (...classes: string[]): ITransform => () => ({
   className: css(...classes)

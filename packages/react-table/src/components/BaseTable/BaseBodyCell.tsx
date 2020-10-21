@@ -14,9 +14,14 @@ import {
   IFormatterValueType,
   collapsible,
   IRowData,
-  IExtraData
+  IExtraData,
+  compoundExpand,
+  cellWidth,
+  Visibility,
+  classNames
 } from '../Table';
 import { mergeProps } from '../Table/base/merge-props';
+import { IVisibility } from '../Table/utils/decorators/classNames';
 import {
   DropdownDirection,
   DropdownPosition
@@ -60,8 +65,10 @@ export interface BaseBodyCellProps extends Omit<React.HTMLProps<HTMLTableDataCel
   actionsDropdownPosition?: DropdownPosition;
   /** Actions dropdown direction */
   actionsDropdownDirection?: DropdownDirection;
-  /** Turns the cell into an expansion toggle */
+  /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
   isExpanded?: boolean;
+  /** Turns the cell into a compound expansion toggle and determines if the corresponding expansion row is open */
+  isCompoundExpanded?: boolean;
   /** On toggling the expansion */
   onCollapse?: (
     event: React.MouseEvent,
@@ -72,6 +79,10 @@ export interface BaseBodyCellProps extends Omit<React.HTMLProps<HTMLTableDataCel
   ) => undefined;
   /** True to remove padding */
   noPadding?: boolean;
+  /** Width percentage modifier */
+  width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
+  /** Visibility breakpoint modifiers */
+  visibility?: (keyof IVisibility)[];
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
@@ -95,8 +106,11 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
   actionsDropdownPosition,
   actionsDropdownDirection,
   isExpanded = null,
+  isCompoundExpanded = null,
   onCollapse,
   noPadding,
+  width,
+  visibility,
   innerRef,
   ...props
 }: BaseBodyCellProps) => {
@@ -161,11 +175,31 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
           }) */
         )
       : null;
+  const compoundParams = isCompoundExpanded !== null
+    ? compoundExpand(
+        {
+          title: children,
+          props: {
+            isOpen: isCompoundExpanded
+          }
+        } as IFormatterValueType,
+        {
+          columnIndex,
+          rowIndex,
+          column: {
+            extraParams: {}
+          }
+        }
+      )
+    : null;
+  const widthParams = width ? cellWidth(width)() : null;
+  const visibilityParams = visibility ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))() : null;
   const Component: any = (selectParams && selectParams.component) || component;
   const transformedChildren =
     (selectParams && selectParams.children) ||
     (actionParams && actionParams.children) ||
     (expandableParams && expandableParams.children) ||
+    (compoundParams && compoundParams.children) ||
     children;
   return (
     <Component
@@ -178,7 +212,10 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
         selectParams && selectParams.className,
         actionParams && actionParams.className,
         expandableParams && expandableParams.className,
-        modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap']
+        compoundParams && compoundParams.className,
+        modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
+        widthParams && widthParams.className,
+        visibilityParams && visibilityParams.className
       )}
       ref={innerRef}
       {...props}

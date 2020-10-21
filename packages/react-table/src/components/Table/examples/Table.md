@@ -1314,10 +1314,7 @@ class WidthTable extends React.Component {
         'Branches',
         { title: 'Pull requests', transforms: [cellWidth(30)] },
         'Workspaces',
-        {
-          title: 'Last commit',
-          transforms: [cellWidth('max')]
-        }
+        { title: 'Last commit' }
       ],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
@@ -1350,13 +1347,13 @@ class HiddenVisibleBreakpointTable extends React.Component {
         {
           title: 'Repositories',
           columnTransforms: [
-            classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)
+            classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn2Xl)
           ]
         },
         'Branches',
         {
           title: 'Pull requests',
-          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg, Visibility.hiddenOn_2xl)]
+          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg)]
         },
         'Workspaces',
         {

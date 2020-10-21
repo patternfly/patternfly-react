@@ -9,8 +9,12 @@ import {
   IFormatterValueType,
   IColumn,
   ISortBy,
-  OnSort
+  OnSort,
+  cellWidth,
+  Visibility,
+  classNames
 } from '../Table';
+import { IVisibility } from '../Table/utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 
 export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect'> {
@@ -40,8 +44,6 @@ export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeade
   selectVariant?: 'checkbox' | 'radio';
   /** Whether all rows are selected */
   allRowsSelected?: boolean;
-  /** Forwarded ref */
-  innerRef?: React.Ref<any>;
   /**
    * Tooltip to show on the header cell
    * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text
@@ -51,6 +53,12 @@ export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeade
   tooltip?: React.ReactNode;
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
+  /** Width percentage modifier */
+  width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
+  /** Visibility breakpoint modifiers */
+  visibility?: (keyof IVisibility)[];
+  /** Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
 const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
@@ -69,6 +77,8 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   allRowsSelected,
   tooltip = '',
   onMouseEnter: onMouseEnterProp = () => {},
+  width,
+  visibility,
   innerRef,
   ...props
 }: BaseHeaderCellProps) => {
@@ -107,10 +117,11 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
         }
       })
     : null;
+  const widthParams = width ? cellWidth(width)() : null;
+  const visibilityParams = visibility ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))() : null;
   const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || component;
   const transformedChildren =
     (sortParams && sortParams.children) || (selectParams && selectParams.children) || children;
-  // const canShowTooltip = tooltip !== null && ((tooltip === '' && typeof children === 'string') || tooltip !== '');
   const cell = (
     <Component
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
@@ -124,7 +135,9 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
         textCenter && styles.modifiers.center,
         sortParams && sortParams.className,
         selectParams && selectParams.className,
-        modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap']
+        modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
+        widthParams && widthParams.className,
+        visibilityParams && visibilityParams.className
       )}
       {...props}
     >
