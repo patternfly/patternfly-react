@@ -474,7 +474,12 @@ class InvalidFormWithFormAlert extends React.Component {
       <Form>
         { validated === "error" && (
           <FormAlert>
-            <Alert variant="danger" title="You must fill out all required fields before you can proceed." isInline />
+            <Alert 
+              variant="danger" 
+              title="You must fill out all required fields before you can proceed." 
+              aria-live="polite" 
+              isInline 
+            />
           </FormAlert>
         )}
         <FormGroup
