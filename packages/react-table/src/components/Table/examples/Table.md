@@ -28,45 +28,6 @@ ouia: true
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
-import {
-Table,
-TableHeader,
-TableBody,
-TableText,
-sortable,
-SortByDirection,
-headerCol,
-TableVariant,
-expandable,
-compoundExpand,
-cellWidth,
-textCenter,
-wrappable,
-truncate,
-nowrap,
-breakWord,
-fitContent,
-classNames,
-Visibility,
-getErrorTextByValidator,
-cancelCellEdits,
-validateCellEdits,
-applyCellEdits,
-EditableTextCell,
-EditableSelectInputCell,
-BaseTable,
-BaseTableCaption,
-BaseTableHead,
-BaseTableBody,
-BaseTableHeaderRow,
-BaseTableBodyRow,
-BaseHeaderCell,
-BaseBodyCell,
-HeaderCellInfoWrapper
-} from '@patternfly/react-table';
-
-import { EmptyStateIcon } from '@patternfly/react-core';
-
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
@@ -77,7 +38,7 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 
 import DemoSortableTable from './DemoSortableTable';
 
-## Table examples
+## Examples
 
 ### Basic
 

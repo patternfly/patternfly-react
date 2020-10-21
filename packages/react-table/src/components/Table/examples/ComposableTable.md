@@ -19,27 +19,7 @@ beta: true
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
-import {
-classNames,
-Visibility,
-TableText,
-HeaderCellInfoWrapper,
-ExpandableRowContent,
-BaseTable,
-BaseTableCaption,
-BaseTableHead,
-BaseTableBody,
-BaseTableHeaderRow,
-BaseTableBodyRow,
-BaseHeaderCell,
-BaseBodyCell
-} from '@patternfly/react-table';
-
-import {
-EmptyStateIcon,
-ToggleGroup,
-ToggleGroupItem
-} from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -48,9 +28,9 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 import DemoSortableTable from './DemoSortableTable';
 
-## Composable table examples
+## Examples
 
-### Composable: Basic
+### Basic
 
 A basic example using the Base\* table components. Some general notes:
 
@@ -71,18 +51,18 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableBasic = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'three', 'four', 'five'],
     ['one - 2', null, null, 'four - 2', 'five - 2'],
     ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
-  ]);
+  ];
   return (
     <BaseTable aria-label="Simple table using composable components">
       <BaseTableCaption>Simple table using composable components</BaseTableCaption>
@@ -94,7 +74,7 @@ ComposableTableBasic = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <BaseBodyCell key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
@@ -109,7 +89,7 @@ ComposableTableBasic = () => {
 };
 ```
 
-### Composable: Row click handler, Custom row wrapper, header tooltips & popovers
+### Row click handler, custom row wrapper, header tooltips & popovers
 
 This example demonstrates customizing rows, adding tooltip and popover information to header items, and some other misc. props.
 
@@ -132,29 +112,18 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableMisc = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'three', 'four', 'five'],
-    ['one - 2', null, null, 'four - 2', 'five - 2'],
-    ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3 (not centered)']
-  ]);
-  // map additional configuration to the incoming data anyway you want to
-  // key: row_column
-  const dataConfig = {
-    '1_0': {
-      title: text => <div>{text}</div>,
-      props: { title: 'hover title', colSpan: 3 }
-    },
-    '2_4': {
-      props: { textCenter: false }
-    }
-  };
+    [{ title: 'one - 2', colSpan: 3 }, null, null, 'four - 2', 'five - 2'],
+    ['one - 3', 'two - 3', 'three - 3', 'four - 3', { title: 'five - 3 (not centered)', textCenter: false }]
+  ];
   const onRowClick = (event, rowIndex, row) => {
     console.log(`handle row click ${rowIndex}`, row);
   };
@@ -197,7 +166,7 @@ ComposableTableMisc = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => {
+        {rows.map((row, rowIndex) => {
           const isOddRow = (rowIndex + 1) % 2;
           const customStyle = {
             borderLeft: '3px solid var(--pf-global--primary-color--100)'
@@ -213,16 +182,24 @@ ComposableTableMisc = () => {
                 if (!cell) {
                   return null;
                 }
-                const cellConfig = dataConfig[`${rowIndex}_${cellIndex}`];
+                let cellObject;
+                if (typeof cell !== 'object') {
+                  cellObject = {
+                    title: cell
+                  }
+                } else {
+                  cellObject = cell;
+                }
+                const { title, ...rest } = cellObject;
                 return (
                   <BaseBodyCell
                     key={`${rowIndex}_${cellIndex}`}
                     columnIndex={cellIndex}
                     dataLabel={columns[cellIndex]}
                     textCenter={cellIndex === row.length - 1}
-                    {...((cellConfig && cellConfig.props) || {})}
+                    {...rest}
                   >
-                    {cellConfig && cellConfig.title ? cellConfig.title(cell) : cell}
+                    {title}
                   </BaseBodyCell>
                 );
               })}
@@ -235,7 +212,7 @@ ComposableTableMisc = () => {
 };
 ```
 
-### Composable: Sortable, Sortable with wrapping headers
+### Sortable, sortable with wrapping headers
 
 This example demonstrates making columns sortable, and wrapping header text. For sorting it is also important to pass the `columnIndex` to the `BaseHeaderCell`.
 
@@ -252,14 +229,14 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableSortable = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'This is a really long table header that goes on for a long time 1.',
     'This is a really long table header that goes on for a long time 2.',
     'This is a really long table header that goes on for a long time 3.',
     'This is a really long table header that goes on for a long time 4.',
     'This is a really long table header that goes on for a long time 5.'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const [rows, setRows] = React.useState([
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five']
@@ -271,8 +248,8 @@ ComposableTableSortable = () => {
   const onSort = (event, index, direction) => {
     setActiveSortIndex(index);
     setActiveSortDirection(direction);
-    // sorts the row data
-    const updatedData = data.sort((a, b) => {
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
       if (typeof a[index] === 'number') {
         // numeric sort
         if (direction === 'asc') {
@@ -287,7 +264,7 @@ ComposableTableSortable = () => {
         return b[index].localeCompare(a[index]);
       }
     });
-    setData(updatedData);
+    setRows(updatedRows);
   };
   return (
     <BaseTable aria-label="Sortable Table">
@@ -315,7 +292,7 @@ ComposableTableSortable = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <BaseBodyCell key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
@@ -330,7 +307,7 @@ ComposableTableSortable = () => {
 };
 ```
 
-### Composable: Selectable
+### Selectable
 
 This example demonstrates row selection. The selection column is just another column, but with selection specific props added. We add it as the first header cell and also as the first body cell for each row.
 Be sure to also add `columnIndex` to `BaseHeaderCell` and `columnIndex` as well as `rowIndex` to `BaseBodyCell`.
@@ -348,21 +325,21 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableSelectable = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five']
-  ]);
+  ];
   const [allRowsSelected, setAllRowsSelected] = React.useState(false);
-  const [selected, setSelected] = React.useState(data.map(row => false));
-  const onSelect = (event, isSelected, rowId, rowData, extraData) => {
+  const [selected, setSelected] = React.useState(rows.map(row => false));
+  const onSelect = (event, isSelected, rowId) => {
     setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
     if (!isSelected && allRowsSelected) {
       setAllRowsSelected(false);
@@ -380,7 +357,7 @@ ComposableTableSelectable = () => {
       }
     }
   };
-  const onSelectAll = (event, isSelected, rowId, rowData, extraData) => {
+  const onSelectAll = (event, isSelected) => {
     setAllRowsSelected(isSelected);
     setSelected(selected.map(sel => isSelected));
   };
@@ -397,7 +374,7 @@ ComposableTableSelectable = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             <BaseBodyCell
               key={`${rowIndex}_0`}
@@ -427,7 +404,7 @@ ComposableTableSelectable = () => {
 };
 ```
 
-### Composable: Selectable radio input
+### Selectable radio input
 
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props. Just as with selectable, be sure to also add `columnIndex` to `BaseHeaderCell` and `columnIndex` as well as `rowIndex` to `BaseBodyCell`.
 
@@ -444,24 +421,24 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableSelectableRadio = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five']
-  ]);
+  ];
   const [selected, setSelected] = React.useState(-1);
-  const onSelect = (event, isSelected, rowId, rowData, extraData) => {
+  const onSelect = (event, isSelected, rowId) => {
     setSelected(rowId);
   };
   return (
-    <BaseTable aria-label="Selectable Table">
+    <BaseTable aria-label="Radio selectable table">
       <BaseTableHead>
         <BaseTableHeaderRow>
           <BaseHeaderCell columnIndex={0} />
@@ -473,7 +450,7 @@ ComposableTableSelectableRadio = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             <BaseBodyCell
               key={`${rowIndex}_0`}
@@ -504,7 +481,7 @@ ComposableTableSelectableRadio = () => {
 };
 ```
 
-### Composable: Actions
+### Actions
 
 This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
 
@@ -554,22 +531,22 @@ ComposableTableActions = () => {
       onClick: (event, rowId, rowData, extra) => console.log(`clicked on Third action, on row ${rowId}`)
     }
   ];
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five'],
     ['4', '2', 'b', 'four', 'five'],
     ['5', '2', 'b', 'four', 'five']
-  ]);
+  ];
   return (
-    <BaseTable aria-label="Actions Table">
+    <BaseTable aria-label="Actions table">
       <BaseTableHead>
         <BaseTableHeaderRow>
           <BaseHeaderCell columnIndex={0}>{columns[0]}</BaseHeaderCell>
@@ -581,7 +558,7 @@ ComposableTableActions = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <BaseBodyCell key={`${rowIndex}_${cellIndex}`} columnIndex={cellIndex} dataLabel={columns[cellIndex]}>
@@ -603,7 +580,7 @@ ComposableTableActions = () => {
 };
 ```
 
-### Composable: Compact, Compact borderless
+### Compact, compact borderless
 
 You can set the `BaseTable` variant to `compact` or `compactBorderless`.
 
@@ -621,20 +598,20 @@ import {
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 ComposableTableCompact = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five'],
     ['4', '2', 'b', 'four', 'five'],
     ['5', '2', 'b', 'four', 'five']
-  ]);
+  ];
   const [variant, setVariant] = React.useState('compact');
   const handleItemClick = (isSelected, event) => {
     const id = event.currentTarget.id;
@@ -663,7 +640,7 @@ ComposableTableCompact = () => {
           </BaseTableHeaderRow>
         </BaseTableHead>
         <BaseTableBody>
-          {data.map((row, rowIndex) => (
+          {rows.map((row, rowIndex) => (
             <BaseTableBodyRow key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <BaseBodyCell key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
@@ -679,7 +656,7 @@ ComposableTableCompact = () => {
 };
 ```
 
-### Composable: Expandable
+### Expandable
 
 This example demonstrates having expandable rows.
 
@@ -701,14 +678,14 @@ import {
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 ComposableTableExpandable = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rowPairs = [
     { parent: ['one', 'two', 'a', 'four', 'five'], child: null },
     {
       parent: ['parent 1', 'two', 'k', 'four', 'five'],
@@ -766,10 +743,10 @@ ComposableTableExpandable = () => {
       ],
       fullWidth: true
     }
-  ]);
+  ];
   const numColumns = columns.length;
   // Init all to true
-  const [expanded, setExpanded] = React.useState(Object.fromEntries(Object.entries(data).map(([k, v]) => [k, true])));
+  const [expanded, setExpanded] = React.useState(Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, true])));
   const [variant, setVariant] = React.useState(null);
   const handleItemClick = (isSelected, event) => {
     const id = event.currentTarget.id;
@@ -807,7 +784,7 @@ ComposableTableExpandable = () => {
             <BaseHeaderCell columnIndex={5}>{columns[4]}</BaseHeaderCell>
           </BaseTableHeaderRow>
         </BaseTableHead>
-        {data.map((pair, pairIndex) => {
+        {rowPairs.map((pair, pairIndex) => {
           rowIndex += 1;
           const parentRow = (
             <BaseTableBodyRow key={rowIndex}>
@@ -835,9 +812,9 @@ ComposableTableExpandable = () => {
           }
           const childRow = pair.child ? (
             <BaseTableBodyRow key={rowIndex} isExpanded={expanded[pairIndex] === true}>
-              {!data[pairIndex].fullWidth && <BaseBodyCell key={`${rowIndex}_0`} columnIndex={0} />}
-              {data[pairIndex].child.map((cell, cellIndex) => {
-                const shift = data[pairIndex].fullWidth ? 1 : 0;
+              {!rowPairs[pairIndex].fullWidth && <BaseBodyCell key={`${rowIndex}_0`} columnIndex={0} />}
+              {rowPairs[pairIndex].child.map((cell, cellIndex) => {
+                const shift = rowPairs[pairIndex].fullWidth ? 1 : 0;
                 const shiftedCellIndex = cellIndex + shift;
                 return (
                   <BaseBodyCell
@@ -845,9 +822,9 @@ ComposableTableExpandable = () => {
                     rowIndex={rowIndex}
                     columnIndex={shiftedCellIndex}
                     dataLabel={columns[cellIndex]}
-                    noPadding={data[pairIndex].noPadding}
+                    noPadding={rowPairs[pairIndex].noPadding}
                     colSpan={
-                      data[pairIndex].child.length === 1
+                      rowPairs[pairIndex].child.length === 1
                         ? numColumns + shift
                         : cell.props && cell.props.colSpan
                         ? cell.props.colSpan
@@ -875,7 +852,7 @@ ComposableTableExpandable = () => {
 };
 ```
 
-### Composable: Compound expandable
+### Compound expandable
 
 ```js isBeta
 import React from 'react';
@@ -898,18 +875,18 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import DemoSortableTable from './demo/DemoSortableTable';
 
 ComposableCompoundExpandableTable = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit',
     ''
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['siemur/test-space', 10, 4, 4, '20 minutes', 'Open in Github'],
     ['siemur/test-space', 3, 4, 2, '10 minutes', 'Open in Github']
-  ]);
+  ];
   const [activeChild, setActiveChild] = React.useState('0_1');
   // key = row_col of the parent it corresponds to
   const childData = {
@@ -1013,7 +990,7 @@ ComposableCompoundExpandableTable = () => {
             ))}
           </BaseTableHeaderRow>
         </BaseTableHead>
-        {data.map((row, rowIndex) => {
+        {rows.map((row, rowIndex) => {
           const isRowExpanded = activeChild && activeChild.split('_')[0] === `${rowIndex}`;
           return (
             <BaseTableBody key={rowIndex} isExpanded={isRowExpanded}>
@@ -1062,7 +1039,7 @@ ComposableCompoundExpandableTable = () => {
 };
 ```
 
-### Composable: Cell width, breakpoint modifiers
+### Cell width, breakpoint modifiers
 
 ```js isBeta
 import React from 'react';
@@ -1077,18 +1054,18 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableCellWidth = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     ['one', 'two', 'three', 'four', 'five'],
     ['one - 2', null, null, 'four - 2', 'five - 2'],
     ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
-  ]);
+  ];
   return (
     <BaseTable aria-label="Cell widths">
       <BaseTableHead>
@@ -1105,7 +1082,7 @@ ComposableTableCellWidth = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <BaseBodyCell
@@ -1124,7 +1101,7 @@ ComposableTableCellWidth = () => {
 };
 ```
 
-### Composable: Controlling text
+### Controlling text
 
 ```js isBeta
 import React from 'react';
@@ -1139,14 +1116,14 @@ import {
 } from '@patternfly/react-table';
 
 ComposableControllingText = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Truncate (width 20%)',
     'Break word',
     'Wrapping table header text. This th text will wrap instead of truncate.',
     'Fit content',
     'No wrap'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     [
       'This text will truncate instead of wrap.',
       <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>,
@@ -1159,7 +1136,7 @@ ComposableControllingText = () => {
       "This cell's content will adjust itself to the parent th width. This modifier only affects table layouts.",
       <a href="#">No wrap</a>
     ]
-  ]);
+  ];
   return (
     <BaseTable aria-label="Controlling text">
       <BaseTableHead>
@@ -1178,7 +1155,7 @@ ComposableControllingText = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             <BaseBodyCell dataLabel={columns[0]} modifier="truncate">
               {row[0]}
@@ -1199,7 +1176,7 @@ ComposableControllingText = () => {
 };
 ```
 
-### Composable: Modifiers with table text
+### Modifiers with table text
 
 ```js isBeta
 import React from 'react';
@@ -1215,18 +1192,18 @@ import {
 } from '@patternfly/react-table';
 
 ComposableTableText = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Truncating text',
     'Wrapping table header text. This th text will wrap instead of truncate.'
-  ]);
-  const [data, setData] = React.useState([
+  ];
+  const rows = [
     [
       <TableText wrapModifier="truncate">This text will truncate instead of wrap.</TableText>,
       <TableText wrapModifier="nowrap">
         <a href="#">This is a link that needs to be on one line and fully readable.</a>
       </TableText>
     ]
-  ]);
+  ];
   return (
     <BaseTable aria-label="Table text">
       <BaseTableHead>
@@ -1238,7 +1215,7 @@ ComposableTableText = () => {
         </BaseTableHeaderRow>
       </BaseTableHead>
       <BaseTableBody>
-        {data.map((row, rowIndex) => (
+        {rows.map((row, rowIndex) => (
           <BaseTableBodyRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <BaseBodyCell key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
@@ -1253,7 +1230,7 @@ ComposableTableText = () => {
 };
 ```
 
-### Composable: Empty state
+### Empty state
 
 ```js isBeta
 import React from 'react';
@@ -1276,13 +1253,13 @@ import {
 } from '@patternfly/react-table';
 
 ComposableEmptyState = () => {
-  const [columns, setColumns] = React.useState([
+  const columns = [
     'Repositories',
     'Branches',
     'Pull requests',
     'Workspaces',
     'Last commit'
-  ]);
+  ];
   return (
     <React.Fragment>
       <BaseTable aria-label="Empty state">
