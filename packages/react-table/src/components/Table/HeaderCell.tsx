@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Th } from '../BaseTable/Th';
+import { Th } from '../TableComposable/Th';
 
 export interface HeaderCellProps {
   'data-label'?: string;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import { SelectProps } from '@patternfly/react-core';
-import { Td } from '../BaseTable/Td';
+import { Td } from '../TableComposable/Td';
 
 export interface BodyCellProps {
   'data-label'?: string;

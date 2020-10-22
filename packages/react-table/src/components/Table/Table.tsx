@@ -13,7 +13,7 @@ import { HeaderCell } from './HeaderCell';
 import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
-import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
+import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType, HeaderType } from './base';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -178,15 +178,22 @@ export type ITransform = (label?: IFormatterValueType, extra?: IExtra) => decora
 export type IFormatter = (data?: IFormatterValueType, extra?: IExtra) => formatterValueType & decoratorReturnType;
 
 export interface ICell {
+  /* cell contents */
   title?: string | React.ReactNode;
+  /** transformations applied to the header cell */
   transforms?: ITransform[];
+  /** transformations applied to the cells within the column's body */
   cellTransforms?: ITransform[];
+  /** transformations applied to the whole column */
   columnTransforms?: ITransform[];
+  /** formatters applied to the header cell */
   formatters?: IFormatter[];
+  /** formatters applied to the cells within the column's body */
   cellFormatters?: IFormatter[];
+  /** Additional header props, it contains the info prop as well which can be used to add tooltip/popover */
+  header?: HeaderType;
   props?: any;
   data?: any;
-  header?: any;
   cell?: any;
   dataLabel?: string;
 }
@@ -291,7 +298,7 @@ export interface TableProps extends OUIAProps {
   dropdownDirection?: 'up' | 'down';
   /** Row data */
   rows: (IRow | string[])[];
-  /** Cell data */
+  /** Cell/column data */
   cells: (ICell | string)[];
   /** Wrapper for the body  */
   bodyWrapper?: Function;

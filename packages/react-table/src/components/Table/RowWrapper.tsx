@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
-import { Tr } from '../BaseTable/Tr';
+import { Tr } from '../TableComposable/Tr';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {

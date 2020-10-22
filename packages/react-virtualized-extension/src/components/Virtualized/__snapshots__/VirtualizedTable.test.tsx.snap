@@ -415,7 +415,7 @@ exports[`Actions virtualized table 1`] = `
     role="grid"
     variant={null}
   >
-    <BaseTable
+    <TableComposable
       aria-label="Aria labeled"
       className=""
       gridBreakPoint="grid-md"
@@ -424,7 +424,7 @@ exports[`Actions virtualized table 1`] = `
       role="grid"
       variant={null}
     >
-      <BaseTableBase
+      <TableComposableBase
         aria-label="Aria labeled"
         className=""
         gridBreakPoint="grid-md"
@@ -740,22 +740,22 @@ exports[`Actions virtualized table 1`] = `
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "THead",
+                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "BaseTable",
+                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
                   }
                 >
-                  <THead
+                  <Thead
                     className=""
                   >
-                    <THeadBase
+                    <TheadBase
                       className=""
                       innerRef={null}
                     >
@@ -774,7 +774,7 @@ exports[`Actions virtualized table 1`] = `
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "THead",
+                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -1361,15 +1361,15 @@ exports[`Actions virtualized table 1`] = `
                           </Tr>
                         </HeaderRow>
                       </thead>
-                    </THeadBase>
-                  </THead>
+                    </TheadBase>
+                  </Thead>
                 </BaseHeader>
               </Component>
             </ContextHeader>
           </TableHeader>
         </table>
-      </BaseTableBase>
-    </BaseTable>
+      </TableComposableBase>
+    </TableComposable>
   </Provider>
 </Table>
 `;
@@ -1788,7 +1788,7 @@ exports[`Selectable virtualized table 1`] = `
     role="grid"
     variant={null}
   >
-    <BaseTable
+    <TableComposable
       aria-label="Aria labeled"
       className=""
       gridBreakPoint="grid-md"
@@ -1797,7 +1797,7 @@ exports[`Selectable virtualized table 1`] = `
       role="grid"
       variant={null}
     >
-      <BaseTableBase
+      <TableComposableBase
         aria-label="Aria labeled"
         className=""
         gridBreakPoint="grid-md"
@@ -2113,22 +2113,22 @@ exports[`Selectable virtualized table 1`] = `
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "THead",
+                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "BaseTable",
+                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
                   }
                 >
-                  <THead
+                  <Thead
                     className=""
                   >
-                    <THeadBase
+                    <TheadBase
                       className=""
                       innerRef={null}
                     >
@@ -2147,7 +2147,7 @@ exports[`Selectable virtualized table 1`] = `
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "THead",
+                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -2752,15 +2752,15 @@ exports[`Selectable virtualized table 1`] = `
                           </Tr>
                         </HeaderRow>
                       </thead>
-                    </THeadBase>
-                  </THead>
+                    </TheadBase>
+                  </Thead>
                 </BaseHeader>
               </Component>
             </ContextHeader>
           </TableHeader>
         </table>
-      </BaseTableBase>
-    </BaseTable>
+      </TableComposableBase>
+    </TableComposable>
   </Provider>
 </Table>
 `;
@@ -3324,7 +3324,7 @@ exports[`Simple Actions table 1`] = `
     role="grid"
     variant={null}
   >
-    <BaseTable
+    <TableComposable
       aria-label="Aria labeled"
       className=""
       gridBreakPoint="grid-md"
@@ -3333,7 +3333,7 @@ exports[`Simple Actions table 1`] = `
       role="grid"
       variant={null}
     >
-      <BaseTableBase
+      <TableComposableBase
         aria-label="Aria labeled"
         className=""
         gridBreakPoint="grid-md"
@@ -3763,22 +3763,22 @@ exports[`Simple Actions table 1`] = `
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "THead",
+                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "BaseTable",
+                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
                   }
                 >
-                  <THead
+                  <Thead
                     className=""
                   >
-                    <THeadBase
+                    <TheadBase
                       className=""
                       innerRef={null}
                     >
@@ -3797,7 +3797,7 @@ exports[`Simple Actions table 1`] = `
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "THead",
+                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -4498,15 +4498,15 @@ exports[`Simple Actions table 1`] = `
                           </Tr>
                         </HeaderRow>
                       </thead>
-                    </THeadBase>
-                  </THead>
+                    </TheadBase>
+                  </Thead>
                 </BaseHeader>
               </Component>
             </ContextHeader>
           </TableHeader>
         </table>
-      </BaseTableBase>
-    </BaseTable>
+      </TableComposableBase>
+    </TableComposable>
   </Provider>
 </Table>
 `;
@@ -4874,7 +4874,7 @@ exports[`Simple virtualized table aria-label 1`] = `
     role="grid"
     variant={null}
   >
-    <BaseTable
+    <TableComposable
       aria-label="Virtual Table Test"
       className=""
       gridBreakPoint="grid-md"
@@ -4883,7 +4883,7 @@ exports[`Simple virtualized table aria-label 1`] = `
       role="grid"
       variant={null}
     >
-      <BaseTableBase
+      <TableComposableBase
         aria-label="Virtual Table Test"
         className=""
         gridBreakPoint="grid-md"
@@ -5152,22 +5152,22 @@ exports[`Simple virtualized table aria-label 1`] = `
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "THead",
+                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "BaseTable",
+                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
                   }
                 >
-                  <THead
+                  <Thead
                     className=""
                   >
-                    <THeadBase
+                    <TheadBase
                       className=""
                       innerRef={null}
                     >
@@ -5186,7 +5186,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "THead",
+                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -5633,15 +5633,15 @@ exports[`Simple virtualized table aria-label 1`] = `
                           </Tr>
                         </HeaderRow>
                       </thead>
-                    </THeadBase>
-                  </THead>
+                    </TheadBase>
+                  </Thead>
                 </BaseHeader>
               </Component>
             </ContextHeader>
           </TableHeader>
         </table>
-      </BaseTableBase>
-    </BaseTable>
+      </TableComposableBase>
+    </TableComposable>
   </Provider>
 </Table>
 `;
@@ -6009,7 +6009,7 @@ exports[`Simple virtualized table className 1`] = `
     role="grid"
     variant={null}
   >
-    <BaseTable
+    <TableComposable
       aria-label="Virtual Table Test"
       className=""
       gridBreakPoint="grid-md"
@@ -6018,7 +6018,7 @@ exports[`Simple virtualized table className 1`] = `
       role="grid"
       variant={null}
     >
-      <BaseTableBase
+      <TableComposableBase
         aria-label="Virtual Table Test"
         className=""
         gridBreakPoint="grid-md"
@@ -6287,22 +6287,22 @@ exports[`Simple virtualized table className 1`] = `
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "THead",
+                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "BaseTable",
+                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
                   }
                 >
-                  <THead
+                  <Thead
                     className=""
                   >
-                    <THeadBase
+                    <TheadBase
                       className=""
                       innerRef={null}
                     >
@@ -6321,7 +6321,7 @@ exports[`Simple virtualized table className 1`] = `
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "THead",
+                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -6768,15 +6768,15 @@ exports[`Simple virtualized table className 1`] = `
                           </Tr>
                         </HeaderRow>
                       </thead>
-                    </THeadBase>
-                  </THead>
+                    </TheadBase>
+                  </Thead>
                 </BaseHeader>
               </Component>
             </ContextHeader>
           </TableHeader>
         </table>
-      </BaseTableBase>
-    </BaseTable>
+      </TableComposableBase>
+    </TableComposable>
   </Provider>
 </Table>
 `;
@@ -7150,7 +7150,7 @@ exports[`Sortable Virtualized Table 1`] = `
     role="grid"
     variant={null}
   >
-    <BaseTable
+    <TableComposable
       aria-label="Aria labeled"
       className=""
       gridBreakPoint="grid-md"
@@ -7159,7 +7159,7 @@ exports[`Sortable Virtualized Table 1`] = `
       role="grid"
       variant={null}
     >
-      <BaseTableBase
+      <TableComposableBase
         aria-label="Aria labeled"
         className=""
         gridBreakPoint="grid-md"
@@ -7429,22 +7429,22 @@ exports[`Sortable Virtualized Table 1`] = `
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "THead",
+                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "BaseTable",
+                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
                   }
                 >
-                  <THead
+                  <Thead
                     className=""
                   >
-                    <THeadBase
+                    <TheadBase
                       className=""
                       innerRef={null}
                     >
@@ -7463,7 +7463,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "THead",
+                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -7966,15 +7966,15 @@ exports[`Sortable Virtualized Table 1`] = `
                           </Tr>
                         </HeaderRow>
                       </thead>
-                    </THeadBase>
-                  </THead>
+                    </TheadBase>
+                  </Thead>
                 </BaseHeader>
               </Component>
             </ContextHeader>
           </TableHeader>
         </table>
-      </BaseTableBase>
-    </BaseTable>
+      </TableComposableBase>
+    </TableComposable>
   </Provider>
 </Table>
 `;
