@@ -45,11 +45,12 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   const titleRef = React.useRef(null);
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   React.useEffect(() => {
+    // Title will always truncate on overflow regardless of truncateTitle prop
+    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
     if (!titleRef.current || !truncateTitle) {
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
-    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
   }, [titleRef, truncateTitle]);
 
   return (

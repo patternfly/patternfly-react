@@ -23,7 +23,7 @@ describe('Alert Demo Test', () => {
     cy.get('#info-alert').should('not.exist');
   });
 
-  it('Verify isTruncated title and no tooltip on short text', () => {
+  it('Verify truncateTitle and no tooltip on short text', () => {
     cy.get('#default-alert > .pf-c-alert__title')
       .should('have.class', 'pf-m-truncate')
       .then((noTooltipLink: JQuery<HTMLDivElement>) => {
@@ -35,7 +35,7 @@ describe('Alert Demo Test', () => {
       });
   });
 
-  it('Verify isTruncated alert title and tooltip', () => {
+  it('Verify truncateTitle alert and tooltip', () => {
     cy.get('#long-title-alert > .pf-c-alert__title')
       .should('have.class', 'pf-m-truncate')
       .then((tooltipLink: JQuery<HTMLDivElement>) => {
