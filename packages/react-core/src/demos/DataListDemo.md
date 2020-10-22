@@ -20,6 +20,7 @@ KebabToggle,
 DropdownItem,
 Toolbar,
 ToolbarGroup,
+ToolbarContent,
 ToolbarItem,
 ToolbarExpandIconWrapper,
 InputGroup,
@@ -57,6 +58,7 @@ import {
   ToolbarGroup,
   ToolbarItem,
   ToolbarExpandIconWrapper,
+  ToolbarContent,
   InputGroup,
   TextInput,
   Tooltip
@@ -131,44 +133,46 @@ class ExpandableDataList extends React.Component {
     return (
       <React.Fragment>
         <Toolbar>
-          <ToolbarGroup>
-            <ToolbarItem variant="expand-all" isAllExpanded={this.state.allExpanded}>
-              <Tooltip
-                position="right"
-                content={
-                  <div>
-                    {this.state.allExpanded && 'Collapse all rows'}
-                    {!this.state.allExpanded && 'Expand all rows'}
-                  </div>
-                }
-              >
-                <Button
-                  onClick={this.onToggleAll}
-                  variant="plain"
-                  aria-label={this.state.allExpanded ? 'Collapse all rows' : 'Expand all rows'}
+          <ToolbarContent>
+            <ToolbarGroup>
+              <ToolbarItem variant="expand-all" isAllExpanded={this.state.allExpanded}>
+                <Tooltip
+                  position="right"
+                  content={
+                    <div>
+                      {this.state.allExpanded && 'Collapse all rows'}
+                      {!this.state.allExpanded && 'Expand all rows'}
+                    </div>
+                  }
                 >
-                  <ToolbarExpandIconWrapper>
-                    <AngleRightIcon />
-                  </ToolbarExpandIconWrapper>
-                </Button>
-              </Tooltip>
-            </ToolbarItem>
-            <ToolbarItem>
-              <InputGroup>
-                <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
-                <Button variant={ButtonVariant.control} aria-label="search button for search input">
-                  <SearchIcon />
-                </Button>
-              </InputGroup>
-            </ToolbarItem>
-            <ToolbarItem>
-              <Button variant="secondary">Action</Button>
-            </ToolbarItem>
-            <ToolbarItem variant="separator" />
-            <ToolbarItem>
-              <Button variant="primary">Action</Button>
-            </ToolbarItem>
-          </ToolbarGroup>
+                  <Button
+                    onClick={this.onToggleAll}
+                    variant="plain"
+                    aria-label={this.state.allExpanded ? 'Collapse all rows' : 'Expand all rows'}
+                  >
+                    <ToolbarExpandIconWrapper>
+                      <AngleRightIcon />
+                    </ToolbarExpandIconWrapper>
+                  </Button>
+                </Tooltip>
+              </ToolbarItem>
+              <ToolbarItem>
+                <InputGroup>
+                  <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
+                  <Button variant={ButtonVariant.control} aria-label="search button for search input">
+                    <SearchIcon />
+                  </Button>
+                </InputGroup>
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button variant="secondary">Action</Button>
+              </ToolbarItem>
+              <ToolbarItem variant="separator" />
+              <ToolbarItem>
+                <Button variant="primary">Action</Button>
+              </ToolbarItem>
+            </ToolbarGroup>
+          </ToolbarContent>
         </Toolbar>
       </React.Fragment>
     );
