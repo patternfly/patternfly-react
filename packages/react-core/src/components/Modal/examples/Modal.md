@@ -9,6 +9,7 @@ ouia: true
 import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 ## Examples
 
@@ -511,7 +512,7 @@ class NoHeader extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
-import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon'
+import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
 
 class NoHeader extends React.Component {
   constructor(props) {
@@ -787,6 +788,75 @@ class WithDropdown extends React.Component {
               menuAppendTo="parent"
             />
           </div>
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### With help
+
+```js
+import React from 'react';
+import { Modal, Button, Popover } from '@patternfly/react-core';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+
+class HelpModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Modal
+          title="Simple modal header"
+          help={
+            <Popover
+              headerContent={<div>Help Popover</div>}
+              bodyContent={
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla
+                  turpis.
+                </div>
+              }
+              footerContent="Popover Footer"
+            >
+              <Button variant="plain" aria-label="Help">
+                <HelpIcon />
+              </Button>
+            </Popover>
+          }
+          isOpen={isModalOpen}
+          onClose={this.handleModalToggle}
+          actions={[
+            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+              Confirm
+            </Button>,
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
+              Cancel
+            </Button>
+          ]}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
         </Modal>
       </React.Fragment>
     );

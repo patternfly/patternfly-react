@@ -24,7 +24,9 @@ exports[`Modal Content Test description 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Content title"
           titleIconVariant={null}
@@ -68,7 +70,9 @@ exports[`Modal Content Test isOpen 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Content title"
           titleIconVariant={null}
@@ -107,7 +111,9 @@ exports[`Modal Content Test only body 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Content title"
           titleIconVariant={null}
@@ -146,7 +152,9 @@ exports[`Modal Content Test with footer 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Content title"
           titleIconVariant={null}
@@ -188,7 +196,9 @@ exports[`Modal Content Test with onclose 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Content title"
           titleIconVariant={null}
@@ -232,7 +242,9 @@ exports[`Modal Content test without footer 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Content title"
           titleIconVariant={null}
@@ -271,7 +283,9 @@ exports[`Modal Test with custom footer 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <ModalBoxTitle
           title="Test Modal Custom Footer"
           titleIconVariant={null}
@@ -319,7 +333,9 @@ exports[`Modal Test with custom header 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader>
+      <ModalBoxHeader
+        help={null}
+      >
         <span
           id="test-custom-header"
         >
