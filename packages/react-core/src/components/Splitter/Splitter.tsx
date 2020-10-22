@@ -8,9 +8,9 @@ export enum SplitterOrientation {
 }
 
 export interface SplitterProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the Splitter. */
+  /** Additional classes added to the splitter. */
   className?: string;
-  /** Orientation of the Splitter */
+  /** Orientation of the splitter */
   orientation?: 'horizontal' | 'vertical';
   /** A reference object to attach to the splitter. */
   innerRef?: React.RefObject<any>;
