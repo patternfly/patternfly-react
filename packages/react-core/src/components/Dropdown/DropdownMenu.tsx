@@ -56,7 +56,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 
     if (autoFocus) {
       // Focus first non-disabled element
-      const focusTargetCollection = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
+      const focusTargetCollection = this.refsCollection[0];
       const focusTarget = focusTargetCollection && focusTargetCollection[0];
       if (focusTarget && focusTarget.focus) {
         setTimeout(() => focusTarget.focus());
@@ -86,7 +86,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     }
     const refs = this.refsCollection;
     if (event.key === 'ArrowDown') {
-      const firstFocusTargetCollection = refs.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
+      const firstFocusTargetCollection = refs[0];
       DropdownMenu.focusFirstRef(firstFocusTargetCollection);
     } else if (event.key === 'ArrowUp') {
       const collectionLength = refs.length;
