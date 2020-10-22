@@ -620,6 +620,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           label="Label" 
           helperText={this.state.helperText}
           isHelperTextBeforeField 
+          hasNoPaddingTop
           fieldId="options">
           <Checkbox label="option 1" id="option-1" />
           <Checkbox label="option 2" id="option-2" />
