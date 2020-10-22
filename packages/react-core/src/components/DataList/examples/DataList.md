@@ -16,22 +16,6 @@ propComponents:
   ]
 ---
 
-import {
-Button,
-DataList,
-DataListItem,
-DataListItemCells,
-DataListItemRow,
-DataListCell,
-DataListCheck,
-DataListAction,
-DataListToggle,
-DataListContent,
-Dropdown,
-DropdownPosition,
-KebabToggle,
-DropdownItem,
-} from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import { css } from '@patternfly/react-styles';
 
@@ -1190,6 +1174,7 @@ class DraggableDataList extends React.Component {
                   aria-labelledby="simple-item1"
                   aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
                   aria-pressed="false"
+                  isDisabled
                 />
                 <DataListCheck aria-labelledby="simple-item1" name="check1" otherControls />
               </DataListControl>
