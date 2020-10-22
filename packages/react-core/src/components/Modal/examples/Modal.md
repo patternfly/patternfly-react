@@ -832,7 +832,6 @@ class HelpModal extends React.Component {
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla
                   turpis.
-                  <Button onClick={() => console.log('click')}>click</Button>
                 </div>
               }
               footerContent="Popover Footer"
