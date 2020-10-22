@@ -297,7 +297,7 @@ class SimpleForm extends React.Component {
     const { value1, value2, value3 } = this.state;
 
     return (
-      <Form isLimitWidth>
+      <Form isWidthLimited>
         <FormGroup
           label="Name"
           labelIcon={

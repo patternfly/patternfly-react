@@ -14,7 +14,7 @@ describe('Form component', () => {
   });
 
   test('should render form with limited width', () => {
-    const view = shallow(<Form isLimitWidth />);
+    const view = shallow(<Form isWidthLimited />);
     expect(view).toMatchSnapshot();
   });
 });

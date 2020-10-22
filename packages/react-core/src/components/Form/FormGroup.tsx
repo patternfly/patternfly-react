@@ -49,7 +49,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   isInline = false,
   hasNoPaddingTop = false,
   helperText,
-  isHelperTextBeforeField,
+  isHelperTextBeforeField = false,
   helperTextInvalid,
   helperTextIcon,
   helperTextInvalidIcon,
