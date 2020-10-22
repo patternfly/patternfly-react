@@ -856,11 +856,10 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
       tabIndex={-1}
     >
       <PageGroup
-        hasShadowTop={true}
         sticky="bottom"
       >
         <div
-          className="pf-c-page__main-group pf-m-sticky-bottom pf-m-shadow-top"
+          className="pf-c-page__main-group pf-m-sticky-bottom"
         >
           <PageBreadcrumb>
             <section

@@ -145,7 +145,7 @@ test('Check page to verify grouped nav and breadcrumb - new components syntax', 
 
   const view = mount(
     <Page {...props} header={Header} sidebar={Sidebar}>
-      <PageGroup sticky="bottom" hasShadowTop>
+      <PageGroup sticky="bottom">
         <PageBreadcrumb>
           <Breadcrumb>
             <BreadcrumbItem>Section Home</BreadcrumbItem>
