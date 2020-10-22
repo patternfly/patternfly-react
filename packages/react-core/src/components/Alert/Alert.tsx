@@ -7,6 +7,7 @@ import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
 import maxLines from '@patternfly/react-tokens/dist/js/c_alert__title_max_lines';
+import { Tooltip } from '../Tooltip';
 
 export enum AlertVariant {
   success = 'success',
@@ -43,6 +44,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   onTimeout?: () => void;
   /** Truncate title to number of lines */
   truncateTitle?: number;
+  /** Position of the tooltip which is displayed if text is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
@@ -61,6 +64,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   timeout = false,
   onTimeout,
   truncateTitle = 0,
+  tooltipPosition,
   ...props
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
@@ -72,12 +76,14 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   );
 
   const [disableAlert, setDisableAlert] = useState(false);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const titleRef = React.useRef(null);
   React.useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
+    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
   }, [titleRef, truncateTitle]);
   const customClassName = css(
     styles.alert,
@@ -111,9 +117,17 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         })}
       >
         <AlertIcon variant={variant} />
-        <h4 ref={titleRef} className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}>
-          {getHeadingContent}
-        </h4>
+        {isTooltipVisible ? (
+          <Tooltip content={getHeadingContent} position={tooltipPosition}>
+            <h4 ref={titleRef} className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}>
+              {getHeadingContent}
+            </h4>
+          </Tooltip>
+        ) : (
+          <h4 ref={titleRef} className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}>
+            {getHeadingContent}
+          </h4>
+        )}
         {actionClose && (
           <AlertContext.Provider value={{ title, variantLabel }}>
             <div className={css(styles.alertAction)}>{actionClose}</div>

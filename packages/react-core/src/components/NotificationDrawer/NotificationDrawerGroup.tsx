@@ -6,6 +6,7 @@ import styles from '@patternfly/react-styles/css/components/NotificationDrawer/n
 import maxLines from '@patternfly/react-tokens/dist/js/c_notification_drawer__group_toggle_title_max_lines';
 
 import { Badge } from '../Badge';
+import { Tooltip } from '../Tooltip';
 
 export interface NotificationDrawerGroupProps extends React.HTMLProps<HTMLElement> {
   /**  Content rendered inside the group */
@@ -24,6 +25,8 @@ export interface NotificationDrawerGroupProps extends React.HTMLProps<HTMLElemen
   title: string;
   /** Truncate title to number of lines */
   truncateTitle?: number;
+  /** Position of the tooltip which is displayed if text is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawerGroupProps> = ({
@@ -36,14 +39,17 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   onExpand = (event: any, expanded: boolean) => undefined as any,
   title,
   truncateTitle = 0,
+  tooltipPosition,
   ...props
 }: NotificationDrawerGroupProps) => {
   const titleRef = React.useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   React.useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
+    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
   }, [titleRef, truncateTitle]);
 
   return (
@@ -63,12 +69,21 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
             }
           }}
         >
-          <div ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
-            {title}
-          </div>
+          {isTooltipVisible ? (
+            <Tooltip content={title} position={tooltipPosition}>
+              <div ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
+                {title}
+              </div>
+            </Tooltip>
+          ) : (
+            <div ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
+              {title}
+            </div>
+          )}
           <div className={css(styles.notificationDrawerGroupToggleCount)}>
             <Badge isRead={isRead}>{count}</Badge>
           </div>
+
           <span className="pf-c-notification-drawer__group-toggle-icon">
             <AngleRightIcon />
           </span>

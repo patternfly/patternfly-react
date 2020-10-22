@@ -511,10 +511,11 @@ class GroupNotificationDrawer extends React.Component {
               </NotificationDrawerList>
             </NotificationDrawerGroup>
             <NotificationDrawerGroup
-              title="Third notification group"
+              title="Third notification group. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
               isExpanded={thirdGroupExpanded}
               count={0}
               onExpand={this.toggleThirdDrawer}
+              truncateTitle={1}
             >
               <NotificationDrawerList isHidden={!thirdGroupExpanded}>
                 <EmptyState variant={EmptyStateVariant.full}>
