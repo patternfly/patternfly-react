@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.68.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.2...@patternfly/react-core@4.68.3) (2020-10-22)
+
+
+### Bug Fixes
+
+* **Skeleton:** Add screen reader text to skeleton ([#5032](https://github.com/patternfly/patternfly-react/issues/5032)) ([c165bf3](https://github.com/patternfly/patternfly-react/commit/c165bf38f7ec2ba1bcbbdb52bb14a280597af43c))
+
+
+
+
+
 ## [4.68.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.1...@patternfly/react-core@4.68.2) (2020-10-22)
 
 **Note:** Version bump only for package @patternfly/react-core
