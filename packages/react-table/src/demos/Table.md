@@ -397,14 +397,18 @@ class ExpandCollapseAllTableDemo extends React.Component {
       <React.Fragment>
         <Toolbar>
           <ToolbarGroup variant="icon-button-group">
-            <ToolbarItem>
+            <ToolbarItem variant="expand-all" isAllExpanded={expandCollapseToggle !== 'expand'}>
               {expandCollapseToggle === 'expand' ? (
                 <Button variant="plain" aria-label="Expand all" onClick={() => this.toggleCollapseAll(false)}>
-                  <AngleRightIcon />
+                  <ToolbarExpandIconWrapper>
+                    <AngleRightIcon />
+                  </ToolbarExpandIconWrapper>
                 </Button>
               ) : (
                 <Button variant="plain" aria-label="Collapse all" onClick={() => this.toggleCollapseAll(true)}>
-                  <AngleDownIcon />
+                  <ToolbarExpandIconWrapper>
+                    <AngleRightIcon />
+                  </ToolbarExpandIconWrapper>
                 </Button>
               )}
             </ToolbarItem>

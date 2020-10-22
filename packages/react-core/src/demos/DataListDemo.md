@@ -21,6 +21,7 @@ DropdownItem,
 Toolbar,
 ToolbarGroup,
 ToolbarItem,
+ToolbarExpandIconWrapper,
 InputGroup,
 TextInput,
 Tooltip
@@ -55,6 +56,7 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarItem,
+  ToolbarExpandIconWrapper,
   InputGroup,
   TextInput,
   Tooltip
@@ -130,7 +132,7 @@ class ExpandableDataList extends React.Component {
       <React.Fragment>
         <Toolbar>
           <ToolbarGroup>
-            <ToolbarItem variant="bulk-select">
+            <ToolbarItem variant="expand-all" isAllExpanded={this.state.allExpanded}>
               <Tooltip
                 position="right"
                 content={
@@ -145,9 +147,10 @@ class ExpandableDataList extends React.Component {
                   variant="plain"
                   aria-label={this.state.allExpanded ? 'Collapse all rows' : 'Expand all rows'}
                 >
-                  {this.state.allExpanded && <AngleDownIcon />}
-                  {!this.state.allExpanded && <AngleRightIcon />}
-                </Button>{' '}
+                  <ToolbarExpandIconWrapper>
+                    <AngleRightIcon />
+                  </ToolbarExpandIconWrapper>
+                </Button>
               </Tooltip>
             </ToolbarItem>
             <ToolbarItem>
