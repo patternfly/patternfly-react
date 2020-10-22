@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.68.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.3...@patternfly/react-core@4.68.4) (2020-10-22)
+
+
+### Bug Fixes
+
+* **ModalContent:** Remove duplicate pf-c-modal-box__title from ModalContent ([#4980](https://github.com/patternfly/patternfly-react/issues/4980)) ([c21ebcb](https://github.com/patternfly/patternfly-react/commit/c21ebcbd2aeb08df32f54a76e8592d1f6bb864b6)), closes [#4973](https://github.com/patternfly/patternfly-react/issues/4973)
+
+
+
+
+
 ## [4.68.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.2...@patternfly/react-core@4.68.3) (2020-10-22)
 
 
