@@ -1,19 +1,19 @@
 import * as React from 'react';
 
-export interface BaseTableCaptionProps {
+export interface CaptionProps {
   /** Content rendered inside the <caption> caption */
   children?: React.ReactNode;
   /** Additional classes added to the <caption> caption  */
   className?: string;
 }
 
-export const BaseTableCaption: React.FunctionComponent<BaseTableCaptionProps> = ({
+export const Caption: React.FunctionComponent<CaptionProps> = ({
   children,
   className,
   ...props
-}: BaseTableCaptionProps) => (
+}: CaptionProps) => (
   <caption className={className} {...props}>
     {children}
   </caption>
 );
-BaseTableCaption.displayName = 'BaseTableCaption';
+Caption.displayName = 'Caption';

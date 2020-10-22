@@ -2,8 +2,34 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import { css } from '@patternfly/react-styles';
-import { TableGridBreakpoint, TableVariant, toCamel } from '../Table';
+import { TableGridBreakpoint, TableVariant, toCamel, OnSelect } from '../Table';
+import { IVisibility } from '../Table/utils/decorators/classNames';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
+
+export interface BaseCellProps {
+  /** Content rendered inside the cell */
+  children?: React.ReactNode;
+  /** Additional classes added to the cell  */
+  className?: string;
+  /** Element to render */
+  component?: React.ReactNode;
+  /** Modifies cell to center its contents. */
+  textCenter?: boolean;
+  /** Style modifier to apply */
+  modifier?: 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap';
+  /** The column index */
+  columnIndex?: number;
+  /** Transforms the cell into a selectable cell - Click callback on select */
+  onSelect?: OnSelect;
+  /** Whether the cell is selected */
+  isSelected?: boolean;
+  /** Width percentage modifier */
+  width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
+  /** Visibility breakpoint modifiers */
+  visibility?: (keyof IVisibility)[];
+  /** Forwarded ref */
+  innerRef?: React.Ref<any>;
+}
 
 export interface BaseTableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps {
   /** Adds an accessible name for the Table */

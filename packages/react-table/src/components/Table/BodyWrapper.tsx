@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IRow, IRowData, IExtraData, IHeaderRow } from './Table';
 import { mapOpenedRows } from './utils/headerUtils';
-import { BaseTableBody } from '../BaseTable/BaseTableBody';
+import { TBody } from '../BaseTable/TBody';
 
 export interface BodyWrapperProps {
   children?: React.ReactNode;
@@ -32,13 +32,13 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
     return (
       <React.Fragment>
         {mapOpenedRows(mappedRows, props.children).map((oneRow, key) => (
-          <BaseTableBody {...props} isExpanded={oneRow.isOpen} key={`tbody-${key}`} ref={tbodyRef as React.Ref<any>}>
+          <TBody {...props} isExpanded={oneRow.isOpen} key={`tbody-${key}`} ref={tbodyRef as React.Ref<any>}>
             {oneRow.rows}
-          </BaseTableBody>
+          </TBody>
         ))}
       </React.Fragment>
     );
   }
-  return <BaseTableBody {...props} ref={tbodyRef as React.Ref<any>} />;
+  return <TBody {...props} ref={tbodyRef as React.Ref<any>} />;
 };
 BodyWrapper.displayName = 'BodyWrapper';

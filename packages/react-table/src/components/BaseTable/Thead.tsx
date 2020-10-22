@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-export interface BaseTableHeadProps extends React.HTMLProps<HTMLTableSectionElement> {
+export interface THeadProps extends React.HTMLProps<HTMLTableSectionElement> {
   /** Content rendered inside the <tr> row */
   children?: React.ReactNode;
   /** Additional classes added to the <tr> row  */
@@ -13,19 +13,19 @@ export interface BaseTableHeadProps extends React.HTMLProps<HTMLTableSectionElem
   innerRef?: React.Ref<any>;
 }
 
-const BaseTableHeadBase: React.FunctionComponent<BaseTableHeadProps> = ({
+const THeadBase: React.FunctionComponent<THeadProps> = ({
   children,
   className,
   noWrap = false,
   innerRef,
   ...props
-}: BaseTableHeadProps) => (
+}: THeadProps) => (
   <thead className={css(className, noWrap && styles.modifiers.nowrap)} ref={innerRef} {...props}>
     {children}
   </thead>
 );
 
-export const BaseTableHead = React.forwardRef((props: BaseTableHeadProps, ref: React.Ref<HTMLTableSectionElement>) => (
-  <BaseTableHeadBase {...props} innerRef={ref} />
+export const THead = React.forwardRef((props: THeadProps, ref: React.Ref<HTMLTableSectionElement>) => (
+  <THeadBase {...props} innerRef={ref} />
 ));
-BaseTableHead.displayName = 'BaseTableHead';
+THead.displayName = 'THead';

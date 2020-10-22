@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
-import { BaseTableBodyRow } from '../BaseTable/BaseTableBodyRow';
+import { Tr } from '../BaseTable/Tr';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
@@ -96,7 +96,7 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
     } = this.props;
 
     return (
-      <BaseTableBodyRow
+      <Tr
         {...props}
         ref={trRef as React.Ref<any>}
         isExpanded={isExpanded}

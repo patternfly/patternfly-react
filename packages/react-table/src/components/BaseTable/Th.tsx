@@ -16,34 +16,17 @@ import {
 } from '../Table';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { BaseCellProps } from './BaseTable';
 
-export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect'> {
-  /** Content rendered inside the <th> header cell */
-  children?: React.ReactNode;
-  /** Additional classes added to the <th> header cell  */
-  className?: string;
-  /** Element to render */
-  component?: React.ReactNode;
-  /** Modifies cell to center its contents. */
-  textCenter?: boolean;
+export interface ThProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
+  /** The selectable variant */
+  selectVariant?: 'checkbox';
   /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
   onSort?: Function;
   /** Sort direction of the currently sorted column */
   activeSortDirection?: SortByDirection | 'asc' | 'desc' | 'none';
   /** Index of the currently sorted column */
   activeSortIndex?: number;
-  /** Adds data-label attribute */
-  dataLabel?: string;
-  /** The column index */
-  columnIndex?: number;
-  /** Style modifier to apply */
-  modifier?: 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap';
-  /** Transforms the cell into a selectable cell - Click callback on select */
-  onSelect?: OnSelect;
-  /** The selectable variant */
-  selectVariant?: 'checkbox' | 'radio';
-  /** Whether all rows are selected */
-  allRowsSelected?: boolean;
   /**
    * Tooltip to show on the header cell
    * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text
@@ -53,15 +36,9 @@ export interface BaseHeaderCellProps extends Omit<React.HTMLProps<HTMLTableHeade
   tooltip?: React.ReactNode;
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
-  /** Width percentage modifier */
-  width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
-  /** Visibility breakpoint modifiers */
-  visibility?: (keyof IVisibility)[];
-  /** Forwarded ref */
-  innerRef?: React.Ref<any>;
 }
 
-const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
+const ThBase: React.FunctionComponent<ThProps> = ({
   children,
   className,
   component = 'th',
@@ -69,19 +46,18 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   onSort,
   activeSortDirection = 'none',
   activeSortIndex,
-  dataLabel,
   columnIndex,
   modifier,
   onSelect,
   selectVariant = 'checkbox',
-  allRowsSelected,
+  isSelected,
   tooltip = '',
   onMouseEnter: onMouseEnterProp = () => {},
   width,
   visibility,
   innerRef,
   ...props
-}: BaseHeaderCellProps) => {
+}: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
@@ -112,7 +88,7 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
           extraParams: {
             onSelect: onSelect as OnSelect,
             selectVariant: selectVariant as 'checkbox' | 'radio',
-            allRowsSelected
+            allRowsSelected: isSelected
           }
         }
       })
@@ -130,7 +106,6 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
       scope="col"
       aria-sort={sortParams ? (sortParams['aria-sort'] as 'none' | 'ascending' | 'descending') : null}
       ref={innerRef}
-      data-label={dataLabel || (typeof children === 'string' ? children : null)}
       data-key={columnIndex}
       className={css(
         className,
@@ -157,9 +132,9 @@ const BaseHeaderCellBase: React.FunctionComponent<BaseHeaderCellProps> = ({
   );
 };
 
-export const BaseHeaderCell = React.forwardRef(
-  (props: BaseHeaderCellProps, ref: React.Ref<HTMLTableHeaderCellElement>) => (
-    <BaseHeaderCellBase {...props} innerRef={ref} />
+export const Th = React.forwardRef(
+  (props: ThProps, ref: React.Ref<HTMLTableHeaderCellElement>) => (
+    <ThBase {...props} innerRef={ref} />
   )
 );
-BaseHeaderCell.displayName = 'BaseHeaderCell';
+Th.displayName = 'Th';

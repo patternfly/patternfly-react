@@ -4,20 +4,21 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 
-export interface BaseTableBodyRowProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps {
+export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps {
   /** Content rendered inside the <tr> row */
   children?: React.ReactNode;
   /** Additional classes added to the <tr> row  */
   className?: string;
-  /** Makes the row expandable and determines if it's expanded or not */
-  isExpanded?: boolean;
-  /** Whether the row is editable */
-  isEditable?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+
+  /** Only applicable to Tr within the TBody: Makes the row expandable and determines if it's expanded or not */
+  isExpanded?: boolean;
+  /** Only applicable to Tr within the TBody: Whether the row is editable */
+  isEditable?: boolean;
 }
 
-const BaseTableBodyRowBase: React.FunctionComponent<BaseTableBodyRowProps> = ({
+const TrBase: React.FunctionComponent<TrProps> = ({
   children,
   className,
   isExpanded,
@@ -26,7 +27,7 @@ const BaseTableBodyRowBase: React.FunctionComponent<BaseTableBodyRowProps> = ({
   ouiaId,
   ouiaSafe = true,
   ...props
-}: BaseTableBodyRowProps) => {
+}: TrProps) => {
   const ouiaProps = useOUIAProps('TableRow', ouiaId, ouiaSafe);
   return (
     <tr
@@ -46,9 +47,9 @@ const BaseTableBodyRowBase: React.FunctionComponent<BaseTableBodyRowProps> = ({
   );
 };
 
-export const BaseTableBodyRow = React.forwardRef(
-  (props: BaseTableBodyRowProps, ref: React.Ref<HTMLTableRowElement>) => (
-    <BaseTableBodyRowBase {...props} innerRef={ref} />
+export const Tr = React.forwardRef(
+  (props: TrProps, ref: React.Ref<HTMLTableRowElement>) => (
+    <TrBase {...props} innerRef={ref} />
   )
 );
-BaseTableBodyRow.displayName = 'BaseTableBodyRow';
+Tr.displayName = 'Tr';

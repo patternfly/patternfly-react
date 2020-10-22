@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseHeaderCell } from '../BaseTable/BaseHeaderCell';
+import { Th } from '../BaseTable/Th';
 
 export interface HeaderCellProps {
   'data-label'?: string;
@@ -28,7 +28,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: HeaderCellProps) => (
-  <BaseHeaderCell
+  <Th
     {...props}
     scope={scope}
     tooltip={tooltip}
@@ -38,6 +38,6 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
     className={className}
   >
     {children}
-  </BaseHeaderCell>
+  </Th>
 );
 HeaderCell.displayName = 'HeaderCell';

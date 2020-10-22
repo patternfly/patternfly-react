@@ -26,35 +26,18 @@ import {
   DropdownDirection,
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+import { BaseCellProps } from './BaseTable';
 
-export interface BaseBodyCellProps extends Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect'> {
-  /** Content rendered inside the <td> body cell */
-  children?: React.ReactNode;
-  /** Additional classes added to the <td> body cell  */
-  className?: string;
-  /** Element to render */
-  component?: React.ReactNode;
+export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
+  /** The selectable variant */
+  selectVariant?: 'checkbox' | 'radio';
   /**
    * The column header the cell corresponds to.
    * This attribute replaces table header in mobile viewport. It is rendered by ::before pseudo element.
    */
   dataLabel?: string;
-  /** The column index */
-  columnIndex?: number;
   /** The row index */
   rowIndex?: number;
-  /** Modifies cell to center its contents. */
-  textCenter?: boolean;
-  /** Style modifier to apply */
-  modifier?: 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap';
-  /** Transforms the cell into a selectable cell - Click callback on select */
-  onSelect?: OnSelect;
-  /** Whether the checkbox is selected */
-  isSelected?: boolean;
-  /** The selectable variant */
-  selectVariant?: 'checkbox' | 'radio';
-  /** Whether all rows are selected */
-  allRowsSelected?: boolean;
   /** Whether to disable the selection */
   disableSelection?: boolean;
   /** Cell actions */
@@ -79,15 +62,9 @@ export interface BaseBodyCellProps extends Omit<React.HTMLProps<HTMLTableDataCel
   ) => undefined;
   /** True to remove padding */
   noPadding?: boolean;
-  /** Width percentage modifier */
-  width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
-  /** Visibility breakpoint modifiers */
-  visibility?: (keyof IVisibility)[];
-  /** Forwarded ref */
-  innerRef?: React.Ref<any>;
 }
 
-const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
+const TdBase: React.FunctionComponent<TdProps> = ({
   children,
   className,
   component = 'td',
@@ -99,7 +76,6 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
   onSelect,
   isSelected = false,
   selectVariant = 'checkbox',
-  allRowsSelected,
   disableSelection = false,
   actions,
   actionsDisabled,
@@ -113,7 +89,7 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
   visibility,
   innerRef,
   ...props
-}: BaseBodyCellProps) => {
+}: TdProps) => {
   const selectParams = onSelect
     ? selectable(children as IFormatterValueType, {
         columnIndex,
@@ -125,8 +101,7 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
         column: {
           extraParams: {
             onSelect: onSelect as OnSelect,
-            selectVariant: selectVariant as 'checkbox' | 'radio',
-            allRowsSelected
+            selectVariant: selectVariant as 'checkbox' | 'radio'
           }
         }
       })
@@ -228,7 +203,7 @@ const BaseBodyCellBase: React.FunctionComponent<BaseBodyCellProps> = ({
   );
 };
 
-export const BaseBodyCell = React.forwardRef((props: BaseBodyCellProps, ref: React.Ref<HTMLTableDataCellElement>) => (
-  <BaseBodyCellBase {...props} innerRef={ref} />
+export const Td = React.forwardRef((props: TdProps, ref: React.Ref<HTMLTableDataCellElement>) => (
+  <TdBase {...props} innerRef={ref} />
 ));
-BaseBodyCell.displayName = 'BaseBodyCell';
+Td.displayName = 'Td';

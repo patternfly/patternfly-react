@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-export interface BaseTableBodyProps extends React.HTMLProps<HTMLTableSectionElement> {
+export interface TBodyProps extends React.HTMLProps<HTMLTableSectionElement> {
   /** Content rendered inside the <tr> row */
   children?: React.ReactNode;
   /** Additional classes added to the <tr> row  */
@@ -13,19 +13,19 @@ export interface BaseTableBodyProps extends React.HTMLProps<HTMLTableSectionElem
   innerRef?: React.Ref<any>;
 }
 
-const BaseTableBodyBase: React.FunctionComponent<BaseTableBodyProps> = ({
+const TBodyBase: React.FunctionComponent<TBodyProps> = ({
   children,
   className,
   isExpanded,
   innerRef,
   ...props
-}: BaseTableBodyProps) => (
+}: TBodyProps) => (
   <tbody role="rowgroup" className={css(className, isExpanded && styles.modifiers.expanded)} ref={innerRef} {...props}>
     {children}
   </tbody>
 );
 
-export const BaseTableBody = React.forwardRef((props: BaseTableBodyProps, ref: React.Ref<HTMLTableSectionElement>) => (
-  <BaseTableBodyBase {...props} innerRef={ref} />
+export const TBody = React.forwardRef((props: TBodyProps, ref: React.Ref<HTMLTableSectionElement>) => (
+  <TBodyBase {...props} innerRef={ref} />
 ));
-BaseTableBody.displayName = 'BaseTableBody';
+TBody.displayName = 'TBody';

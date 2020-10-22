@@ -37,10 +37,10 @@ exports[`RowWrapper renders correctly 1`] = `
         }
       }
     >
-      <BaseTableBodyRow
+      <Tr
         className=""
       >
-        <BaseTableBodyRowBase
+        <TrBase
           className=""
           innerRef={
             [MockFunction] {
@@ -70,8 +70,8 @@ exports[`RowWrapper renders correctly 1`] = `
             data-ouia-safe={true}
             hidden={false}
           />
-        </BaseTableBodyRowBase>
-      </BaseTableBodyRow>
+        </TrBase>
+      </Tr>
     </RowWrapper>
   </tbody>
 </table>
@@ -89,11 +89,11 @@ exports[`RowWrapper renders expanded correctly 1`] = `
       }
       rowProps={null}
     >
-      <BaseTableBodyRow
+      <Tr
         className=""
         isExpanded={true}
       >
-        <BaseTableBodyRowBase
+        <TrBase
           className=""
           innerRef={null}
           isExpanded={true}
@@ -105,8 +105,8 @@ exports[`RowWrapper renders expanded correctly 1`] = `
             data-ouia-safe={true}
             hidden={false}
           />
-        </BaseTableBodyRowBase>
-      </BaseTableBodyRow>
+        </TrBase>
+      </Tr>
     </RowWrapper>
   </tbody>
 </table>

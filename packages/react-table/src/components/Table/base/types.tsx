@@ -8,12 +8,11 @@
 import * as React from 'react';
 import { TooltipProps, PopoverProps } from '@patternfly/react-core';
 import { BaseTable } from '../../BaseTable/BaseTable';
-import { BaseTableHead } from '../../BaseTable/BaseTableHead';
-import { BaseTableHeaderRow } from '../../BaseTable/BaseTableHeaderRow';
-import { BaseTableBody } from '../../BaseTable/BaseTableBody';
-import { BaseTableBodyRow } from '../../BaseTable/BaseTableBodyRow';
-import { BaseHeaderCell } from '../../BaseTable/BaseHeaderCell';
-import { BaseBodyCell } from '../../BaseTable/BaseBodyCell';
+import { THead } from '../../BaseTable/THead';
+import { TBody } from '../../BaseTable/TBody';
+import { Tr } from '../../BaseTable/Tr';
+import { Th } from '../../BaseTable/Th';
+import { Td } from '../../BaseTable/Td';
 
 // Cell Type
 export interface CellType {
@@ -63,14 +62,14 @@ export const TableDefaults = {
   renderers: {
     table: BaseTable,
     header: {
-      wrapper: BaseTableHead,
-      row: BaseTableHeaderRow,
-      cell: BaseHeaderCell
+      wrapper: THead,
+      row: Tr,
+      cell: Th
     },
     body: {
-      wrapper: BaseTableBody,
-      row: BaseTableBodyRow,
-      cell: BaseBodyCell
+      wrapper: TBody,
+      row: Tr,
+      cell: Td
     }
   }
 };

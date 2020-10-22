@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import { SelectProps } from '@patternfly/react-core';
-import { BaseBodyCell } from '../BaseTable/BaseBodyCell';
+import { Td } from '../BaseTable/Td';
 
 export interface BodyCellProps {
   'data-label'?: string;
@@ -65,7 +65,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   };
 
   const cell = (
-    <BaseBodyCell
+    <Td
       className={className}
       component={component}
       dataLabel={dataLabel && !parentId ? dataLabel : null}
@@ -75,7 +75,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
       {...props}
     >
       {children}
-    </BaseBodyCell>
+    </Td>
   );
 
   const bodyCell =
