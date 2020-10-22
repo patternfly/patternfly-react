@@ -30,7 +30,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.53.0",
+    "@patternfly/patternfly": "4.58.0",
     "@patternfly/react-core": "^4.68.1",
     "@patternfly/react-icons": "^4.7.13",
     "@patternfly/react-styles": "^4.7.9",
