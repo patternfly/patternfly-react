@@ -43,7 +43,7 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** Footer of the Context Selector */
+  /** Footer of the context selector */
   footer?: React.ReactNode;
 }
 
