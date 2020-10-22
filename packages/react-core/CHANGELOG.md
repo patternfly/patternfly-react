@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.69.0...@patternfly/react-core@4.70.0) (2020-10-22)
+
+
+### Features
+
+* **Modal:** add help section to the modal header ([#5002](https://github.com/patternfly/patternfly-react/issues/5002)) ([6a2b79b](https://github.com/patternfly/patternfly-react/commit/6a2b79bf3b79652eeb11f89cb47225deeaa8aaee))
+
+
+
+
+
 # [4.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.4...@patternfly/react-core@4.69.0) (2020-10-22)
 
 
