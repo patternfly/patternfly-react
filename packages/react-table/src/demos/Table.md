@@ -3,7 +3,7 @@ id: Table
 section: components
 ---
 
-import { Checkbox } from '@patternfly/react-core';
+import { Checkbox, ToolbarExpandIconWrapper } from '@patternfly/react-core';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -265,7 +265,7 @@ class BulkSelectTableDemo extends React.Component {
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
-import { Button, Checkbox, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import { Button, Checkbox, Toolbar, ToolbarGroup, ToolbarItem, ToolbarExpandIconWrapper } from '@patternfly/react-core';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
