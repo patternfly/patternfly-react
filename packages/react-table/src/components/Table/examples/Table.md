@@ -903,7 +903,14 @@ class CompactExpandableTable extends React.Component {
 
     return (
       <React.Fragment>
-        <Checkbox label="Compact" isChecked={isCompact} onChange={this.toggleCompact} />
+        <Checkbox 
+          label="Compact" 
+          isChecked={isCompact} 
+          onChange={this.toggleCompact}
+          aria-label="toggle compact variation"
+          id="toggle-compact"
+          name="toggle-compact"
+        />
         <Table
           aria-label="Expandable table"
           variant={isCompact ? TableVariant.compact : null}
