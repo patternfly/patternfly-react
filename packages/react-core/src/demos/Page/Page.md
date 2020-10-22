@@ -1207,7 +1207,7 @@ class PageLayoutTertiaryNav extends React.Component {
 }
 ```
 
-### Grouped tertiary nav and breadcrumb
+### Sticky section group
 
 ```js isFullscreen
 import React from 'react';
@@ -1445,7 +1445,7 @@ class PageLayoutGrouped extends React.Component {
 }
 ```
 
-### Grouped tertiary nav and breadcrumb (alternate syntax)
+### Sticky section group (alternate syntax)
 
 ```js isFullscreen
 import React from 'react';
