@@ -159,7 +159,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
   render() {
     const {
       'aria-label': ariaLabel,
-      children,
+      // children,
       className,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSelect,
@@ -175,7 +175,7 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
       selections,
       favoritesLabel,
       onFavorite,
-      isGrouped,
+      // isGrouped,
       items,
       ...props
     } = this.props;
@@ -208,10 +208,12 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
 
     switch (variant) {
       case 'singleSelect':
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         variantProps = {
           selected: selections[0]
           // openedOnEnter
         };
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         variantChildren = renderableItems;
         break;
       // case 'checkbox':

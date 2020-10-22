@@ -9,7 +9,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 
 export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
-  /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
+  /** Content rendered inside the menu list item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
   styleChildren?: boolean;
@@ -51,6 +51,8 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   ariaIsFavoriteLabel?: string;
   /** Aria label text for favoritable button when not favorited */
   ariaIsNotFavoriteLabel?: string;
+  /** Flyout menu */
+  flyoutMenuItems: React.ReactNode;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
@@ -59,6 +61,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   className,
   to,
   isActive = false,
+  flyoutMenuItems,
   groupId = null as string,
   itemId = null as string,
   description = null as string,
@@ -129,6 +132,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
             <span>{description}</span>
           </div>
         )}
+        {flyoutMenuItems}
       </Component>
     );
   };

@@ -2,11 +2,17 @@
 id: Menu
 section: components
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuItem', 'MenuList']
+propComponents: ['Menu', 'MenuItem', 'MenuListItem', 'MenuList', 'MenuExpandable']
 ouia: true
 ---
 
-import { BarsIcon, ClipboardIcon, CodeBranchIcon, LayerGroupIcon, CubeIcon, TableIcon, BellIcon } from '@patternfly/react-icons/dist/js/icons';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 ## Examples
 
@@ -14,7 +20,7 @@ import { BarsIcon, ClipboardIcon, CodeBranchIcon, LayerGroupIcon, CubeIcon, Tabl
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
 
 class MenuBasicList extends React.Component {
   constructor(props) {
@@ -69,8 +75,11 @@ class MenuBasicList extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+
 
 class MenuIconsList extends React.Component {
   constructor(props) {
@@ -121,8 +130,10 @@ class MenuIconsList extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuList, MenuExpandable, MenuListItem } from '@patternfly/react-core';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 class MenuExpandableList extends React.Component {
   constructor(props) {
@@ -141,23 +152,17 @@ class MenuExpandableList extends React.Component {
     const { activeItem } = this.state;
     const menuItems = [
       <MenuList>
-        <MenuListItem isExpandable component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-          From Git
-        </MenuListItem>
-        <MenuListItem isExpandable component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-          Container Image
-        </MenuListItem>
-        <MenuListItem
-          isExpandable
-          component="button"
-          description="Description"
-          icon={<CubeIcon />}
-          to="#default-link2"
-          itemId={2}
-          isActive={activeItem === 2}
-        >
-          From Docker File
-        </MenuListItem>
+        <MenuExpandable title="From Git">
+          <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+            From Git
+          </MenuListItem>
+        </MenuExpandable>
+
+        <MenuExpandable title="Container Image">
+          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+            Container Image
+          </MenuListItem>
+        </MenuExpandable>
       </MenuList>
     ];
     return <Menu onSelect={this.onSelect} items={menuItems}></Menu>;
@@ -169,24 +174,45 @@ class MenuExpandableList extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
 
 class MenuWithFlyout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      isSubmenuOpen: false
     };
     this.onSelect = result => {
       this.setState({
         activeItem: result.itemId
       });
     };
+
+    handleMenuToggle = () => {
+      console.log("aaaaa")
+      this.setState({ isSubmenuOpen: !this.state.isSubmenuOpen });
+    }
   }
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, handleMenuToggle } = this.state;
+    const flyoutMenuItems = [
+      <MenuList>
+        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+          Application Grouping
+        </MenuListItem>
+        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          Count
+        </MenuListItem>
+        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+          Labels
+        </MenuListItem>
+        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+          Annotations
+        </MenuListItem>
+      </MenuList>
+    ];
     const menuItems = [
       <MenuList>
         <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
@@ -195,7 +221,7 @@ class MenuWithFlyout extends React.Component {
         <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Pause rollouts
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+        <MenuListItem isExpandable component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Add storage
         </MenuListItem>
         <MenuListItem
@@ -204,6 +230,9 @@ class MenuWithFlyout extends React.Component {
           to="#default-link2"
           itemId={3}
           isActive={activeItem === 3}
+          isExpandable
+          onMouseEnter={handleMenuToggle}
+          flyoutMenuItems={this.state.isSubMenuOpen ? flyoutMenuItems : ""}
         >
           Edit
         </MenuListItem>
@@ -221,21 +250,18 @@ class MenuWithFlyout extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
 
 class MenuWithFiltering extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeItem: 0,
-      value: ''
+      inputValue: ''
     };
 
-    this.onChange = (value, event) => {
-      this.setState({
-        value: value
-      });
+  this.onInputChange = newValue => {
+      this.setState({ inputValue: newValue });
     };
 
     this.onSelect = result => {
@@ -260,7 +286,7 @@ class MenuWithFiltering extends React.Component {
         </MenuListItem>
       </MenuList>
     ];
-    return <Menu searchInput onSearchInputChange={this.onChange} onSelect={this.onSelect} items={menuItems}></Menu>;
+    return <Menu searchInput onSelect={this.onSelect} items={menuItems}></Menu>;
   }
 }
 ```
@@ -269,8 +295,7 @@ class MenuWithFiltering extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
 
 class MenuWithLinks extends React.Component {
   constructor(props) {
@@ -309,8 +334,7 @@ class MenuWithLinks extends React.Component {
 
 ```js
 import React from 'react';
-import { Divider, Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Divider, Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
 
 class MenuWithSeparators extends React.Component {
   constructor(props) {
@@ -350,8 +374,7 @@ class MenuWithSeparators extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuGroup, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuGroup, MenuItem, MenuList, MenuListItem, Divider } from '@patternfly/react-core';
 
 class MenuWithTitledGroups extends React.Component {
   constructor(props) {
@@ -402,8 +425,10 @@ class MenuWithTitledGroups extends React.Component {
 
 ```js
 import React from 'react';
-import { Dropdown, Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Dropdown, Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 class MenuWithTitledGroups extends React.Component {
   constructor(props) {
@@ -463,8 +488,14 @@ class MenuWithTitledGroups extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { ClipboardIcon, BarsIcon, CodeBranchIcon, LayerGroupIcon, CubeIcon, BellIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuGroup, MenuList, MenuListItem, KebabToggle, Dropdown, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 class MenuWithActions extends React.Component {
   constructor(props) {
@@ -576,8 +607,7 @@ class MenuWithActions extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuGroup, MenuList, MenuListItem } from '@patternfly/react-core';
 
 class MenuWithFavorites extends React.Component {
   constructor(props) {
@@ -652,8 +682,8 @@ class MenuWithFavorites extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
-import { CodeBranchIcon, LayerGroupIcon, CubeIcon } from '@patternfly/react-icons/dist/js/icons';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 
 class MenuOptionSingleSelect extends React.Component {
   constructor(props) {
@@ -714,30 +744,41 @@ class MenuOptionSingleSelect extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList } from '@patternfly/react-core';
+import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 
 class MenuOptionMultiSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      selectedItems: []
     };
-    this.onSelect = result => {
+    this.onSelect = (item) => {
+        console.log("item ID", item.itemId, "is it there?", this.state.selectedItems.indexOf(item.itemId));
+      if (this.state.selectedItems.indexOf(item.itemId) != -1) {
       this.setState({
-        activeItem: result.itemId
-      });
+          selectedItems: this.state.selectedItems.filter(id => id !== item.itemId)
+        });
+      }
+    else {
+        this.setState({
+          selectedItems: [...this.state.selectedItems, item.itemId]
+        });
+    }
     };
+
   }
 
   render() {
-    const { activeItem } = this.state;
+    console.log(this.state.selectedItems)
+    const { activeItem, selectedItems } = this.state;
     const menuItems = [
       <MenuList>
-        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0} isSelected={selectedItems.indexOf(0) != -1 ? true : false}>
           Option 1
         </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1} isSelected={selectedItems.indexOf(1) != -1 ? true : false}>
           Option 2
         </MenuListItem>
         <MenuListItem
@@ -746,6 +787,7 @@ class MenuOptionMultiSelect extends React.Component {
           to="#default-link2"
           itemId={2}
           isActive={activeItem === 2}
+          isSelected={selectedItems.indexOf(2) != -1 ? true : false}
         >
           Option 3
         </MenuListItem>
