@@ -903,11 +903,7 @@ class CompactExpandableTable extends React.Component {
 
     return (
       <React.Fragment>
-        <Checkbox
-          label="Compact"
-          isChecked={isCompact}
-          onChange={this.toggleCompact}
-        />
+        <Checkbox label="Compact" isChecked={isCompact} onChange={this.toggleCompact} />
         <Table
           aria-label="Expandable table"
           variant={isCompact ? TableVariant.compact : null}
@@ -1164,30 +1160,40 @@ class WidthTable extends React.Component {
     this.state = {
       columns: [
         { title: 'Header cell', transforms: [cellWidth(10)] },
-        { 
+        {
           title: 'Branches (visible only on md)',
           columnTransforms: [
             classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn2Xl)
           ]
         },
-        { 
-          title: 'Pull requests (hidden only on md)', 
+        {
+          title: 'Pull requests (hidden only on md)',
           columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg)]
         },
-        { 
+        {
           title: 'Workspaces (hidden on xs)',
-          columnTransforms: [
-            classNames(Visibility.hidden, Visibility.visibleOnSm)
-          ]
+          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnSm)]
         },
-        { 
+        {
           title: 'Last commit',
           transforms: [cellWidth(30)]
         }
       ],
       rows: [
-        ['one - 1', 'two - 1 (visible only on md)', 'three - 1 (hidden only on md)', 'four - 1 (hidden on xs)', 'five - 1'],
-        ['one - 2', 'two - 2 (visible only on md)', 'three - 2 (hidden only on md)', 'four - 2 (hidden on xs)', 'five - 2']
+        [
+          'one - 1',
+          'two - 1 (visible only on md)',
+          'three - 1 (hidden only on md)',
+          'four - 1 (hidden on xs)',
+          'five - 1'
+        ],
+        [
+          'one - 2',
+          'two - 2 (visible only on md)',
+          'three - 2 (hidden only on md)',
+          'four - 2 (hidden on xs)',
+          'five - 2'
+        ]
       ]
     };
   }
@@ -1822,7 +1828,7 @@ class EditableRowsTable extends React.Component {
 
 ## TableComposable examples
 
-### TableComposable: Basic
+### Composable: Basic
 
 A basic example using the composable table components. The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
 
@@ -1868,7 +1874,7 @@ ComposableTableBasic = () => {
 };
 ```
 
-### TableComposable: Row click handler, custom row wrapper, header tooltips & popovers
+### Composable: Row click handler, custom row wrapper, header tooltips & popovers
 
 This example demonstrates customizing rows, adding tooltip and popover information to header items, and some other misc. props.
 
@@ -1976,7 +1982,7 @@ ComposableTableMisc = () => {
 };
 ```
 
-### TableComposable: Sortable & wrapping headers
+### Composable: Sortable & wrapping headers
 
 This example demonstrates making columns sortable, and wrapping header text. For sorting it is also important to pass the `columnIndex` to the `Th`.
 
@@ -2063,7 +2069,7 @@ ComposableTableSortable = () => {
 };
 ```
 
-### TableComposable: Selectable
+### Composable: Selectable
 
 This example demonstrates row selection. The selection column is just another column, but with selection specific props added. We add it as the first header cell and also as the first body cell for each row.
 Be sure to also add `columnIndex` to `Th` and `columnIndex` as well as `rowIndex` to `Td`.
@@ -2142,7 +2148,7 @@ ComposableTableSelectable = () => {
 };
 ```
 
-### TableComposable: Selectable radio input
+### Composable: Selectable radio input
 
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props. Just as with selectable, be sure to also add `columnIndex` to `Th` and `columnIndex` as well as `rowIndex` to `Td`.
 
@@ -2201,7 +2207,7 @@ ComposableTableSelectableRadio = () => {
 };
 ```
 
-### TableComposable: Actions
+### Composable: Actions
 
 This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
 
@@ -2286,7 +2292,7 @@ ComposableTableActions = () => {
 };
 ```
 
-### TableComposable: Compact, compact borderless
+### Composable: Compact, compact borderless
 
 You can set the `TableComposable` variant to `compact` or `compactBorderless`.
 
@@ -2350,7 +2356,7 @@ ComposableTableCompact = () => {
 };
 ```
 
-### TableComposable: Expandable
+### Composable: Expandable
 
 This example demonstrates having expandable rows.
 
@@ -2443,16 +2449,18 @@ ComposableTableExpandable = () => {
   return (
     <React.Fragment>
       <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem buttonId="default" isSelected={variant === null} onChange={handleItemClick}>
-          Default expandable
-        </ToggleGroupItem>
         <ToggleGroupItem
+          text="Default expandable"
+          buttonId="default"
+          isSelected={variant === null}
+          onChange={handleItemClick}
+        />
+        <ToggleGroupItem
+          text="Compact expandable"
           buttonId="compactExpandable"
           isSelected={variant === 'compactExpandable'}
           onChange={handleItemClick}
-        >
-          Compact expandable
-        </ToggleGroupItem>
+        />
       </ToggleGroup>
       <TableComposable aria-label="Expandable Table" variant={variant}>
         <Thead>
@@ -2533,7 +2541,7 @@ ComposableTableExpandable = () => {
 };
 ```
 
-### TableComposable: Compound expandable
+### Composable: Compound expandable
 
 ```js isBeta
 import React from 'react';
@@ -2704,7 +2712,7 @@ ComposableCompoundExpandableTable = () => {
 };
 ```
 
-### TableComposable: Cell width, breakpoint modifiers
+### Composable: Cell width, breakpoint modifiers
 
 ```js isBeta
 import React from 'react';
@@ -2752,7 +2760,7 @@ ComposableTableCellWidth = () => {
 };
 ```
 
-### TableComposable: Controlling text
+### Composable: Controlling text
 
 ```js isBeta
 import React from 'react';
@@ -2813,7 +2821,7 @@ ComposableControllingText = () => {
 };
 ```
 
-### TableComposable: Modifiers with table text
+### Composable: Modifiers with table text
 
 ```js isBeta
 import React from 'react';
@@ -2853,7 +2861,7 @@ ComposableTableText = () => {
 };
 ```
 
-### TableComposable: Empty state
+### Composable: Empty state
 
 ```js isBeta
 import React from 'react';
