@@ -72,7 +72,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
         >
           {isTooltipVisible ? (
             <Tooltip content={title} position={tooltipPosition}>
-              <div ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
+              <div tabindex={0} ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
                 {title}
               </div>
             </Tooltip>

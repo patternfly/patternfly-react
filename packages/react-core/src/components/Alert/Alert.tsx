@@ -119,7 +119,11 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         <AlertIcon variant={variant} />
         {isTooltipVisible ? (
           <Tooltip content={getHeadingContent} position={tooltipPosition}>
-            <h4 ref={titleRef} className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}>
+            <h4
+              tabIndex={0}
+              ref={titleRef}
+              className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}
+            >
               {getHeadingContent}
             </h4>
           </Tooltip>

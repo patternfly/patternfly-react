@@ -69,6 +69,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
         {isTooltipVisible ? (
           <Tooltip content={title} position={tooltipPosition}>
             <h2
+              tabIndex={0}
               ref={titleRef}
               className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
             >
