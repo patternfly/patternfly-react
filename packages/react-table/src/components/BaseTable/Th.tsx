@@ -18,7 +18,9 @@ import { IVisibility } from '../Table/utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import { BaseCellProps } from './BaseTable';
 
-export interface ThProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
+export interface ThProps
+  extends BaseCellProps,
+    Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
   /** The selectable variant */
   selectVariant?: 'checkbox';
   /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
@@ -132,9 +134,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   );
 };
 
-export const Th = React.forwardRef(
-  (props: ThProps, ref: React.Ref<HTMLTableHeaderCellElement>) => (
-    <ThBase {...props} innerRef={ref} />
-  )
-);
+export const Th = React.forwardRef((props: ThProps, ref: React.Ref<HTMLTableHeaderCellElement>) => (
+  <ThBase {...props} innerRef={ref} />
+));
 Th.displayName = 'Th';

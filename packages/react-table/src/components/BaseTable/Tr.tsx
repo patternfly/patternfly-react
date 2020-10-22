@@ -47,9 +47,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   );
 };
 
-export const Tr = React.forwardRef(
-  (props: TrProps, ref: React.Ref<HTMLTableRowElement>) => (
-    <TrBase {...props} innerRef={ref} />
-  )
-);
+export const Tr = React.forwardRef((props: TrProps, ref: React.Ref<HTMLTableRowElement>) => (
+  <TrBase {...props} innerRef={ref} />
+));
 Tr.displayName = 'Tr';
