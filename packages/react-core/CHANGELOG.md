@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.4...@patternfly/react-core@4.69.0) (2020-10-22)
+
+
+### Features
+
+* **ContextSelector:** add footer to selector ([#4976](https://github.com/patternfly/patternfly-react/issues/4976)) ([e2738d9](https://github.com/patternfly/patternfly-react/commit/e2738d9aa298787f238cebdaa64ac52f1c09b5fa))
+
+
+
+
+
 ## [4.68.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.68.3...@patternfly/react-core@4.68.4) (2020-10-22)
 
 

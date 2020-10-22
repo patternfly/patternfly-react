@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.55.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.54.0...@patternfly/react-integration@4.55.0) (2020-10-22)
+
+
+### Features
+
+* **ContextSelector:** add footer to selector ([#4976](https://github.com/patternfly/patternfly-react/issues/4976)) ([e2738d9](https://github.com/patternfly/patternfly-react/commit/e2738d9aa298787f238cebdaa64ac52f1c09b5fa))
+
+
+
+
+
 # [4.54.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.53.0...@patternfly/react-integration@4.54.0) (2020-10-20)
 
 

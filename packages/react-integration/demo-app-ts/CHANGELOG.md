@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.55.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.54.4...demo-app-ts@4.55.0) (2020-10-22)
+
+
+### Features
+
+* **ContextSelector:** add footer to selector ([#4976](https://github.com/patternfly/patternfly-react/issues/4976)) ([e2738d9](https://github.com/patternfly/patternfly-react/commit/e2738d9aa298787f238cebdaa64ac52f1c09b5fa))
+
+
+
+
+
 ## [4.54.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.54.3...demo-app-ts@4.54.4) (2020-10-22)
 
 **Note:** Version bump only for package demo-app-ts
