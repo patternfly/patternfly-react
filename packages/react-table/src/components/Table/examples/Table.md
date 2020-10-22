@@ -903,9 +903,9 @@ class CompactExpandableTable extends React.Component {
 
     return (
       <React.Fragment>
-        <Checkbox 
-          label="Compact" 
-          isChecked={isCompact} 
+        <Checkbox
+          label="Compact"
+          isChecked={isCompact}
           onChange={this.toggleCompact}
           aria-label="toggle compact variation"
           id="toggle-compact"
@@ -937,7 +937,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/demo/DemoSortableTable.js
+// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/examples/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
@@ -2535,10 +2535,8 @@ ComposableTableExpandable = () => {
           ) : null;
           return (
             <Tbody key={pairIndex} isExpanded={expanded[pairIndex] === true}>
-              <React.Fragment>
-                {parentRow}
-                {childRow}
-              </React.Fragment>
+              {parentRow}
+              {childRow}
             </Tbody>
           );
         })}
@@ -2558,7 +2556,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/demo/DemoSortableTable.js
+// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/examples/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
 
 ComposableCompoundExpandableTable = () => {
@@ -2567,7 +2565,8 @@ ComposableCompoundExpandableTable = () => {
     ['siemur/test-space', 10, 4, 4, '20 minutes', 'Open in Github'],
     ['siemur/test-space', 3, 4, 2, '10 minutes', 'Open in Github']
   ];
-  const [activeChild, setActiveChild] = React.useState('0_1');
+  // index corresponds to row index, and value corresponds to column index of the expanded, null means no cell is expanded
+  const [activeChild, setActiveChild] = React.useState([1, null]);
   // key = row_col of the parent it corresponds to
   const childData = {
     '0_1': {
@@ -2654,67 +2653,74 @@ ComposableCompoundExpandableTable = () => {
   const isCompoundExpanded = (rowIndex, cellIndex) => {
     // only columns 1 - 3 are compound expansion toggles in this example
     if (1 <= cellIndex && cellIndex <= 3) {
-      return activeChild === `${rowIndex}_${cellIndex}`;
+      return activeChild[rowIndex] === cellIndex;
     }
     return null;
   };
   return (
-    <React.Fragment>
-      <TableComposable aria-label="Compound expandable table">
-        <Thead>
-          <Tr>
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex} columnIndex={columnIndex}>
-                {column}
-              </Th>
-            ))}
-          </Tr>
-        </Thead>
-        {rows.map((row, rowIndex) => {
-          const isRowExpanded = activeChild && activeChild.split('_')[0] === `${rowIndex}`;
-          return (
-            <Tbody key={rowIndex} isExpanded={isRowExpanded}>
-              <React.Fragment>
-                <Tr>
-                  {row.map((cell, cellIndex) => (
-                    <Td
-                      key={`${rowIndex}_${cellIndex}`}
-                      rowIndex={rowIndex}
-                      columnIndex={cellIndex}
-                      dataLabel={columns[cellIndex]}
-                      component={cellIndex === 0 ? 'th' : 'td'}
-                      isCompoundExpanded={isCompoundExpanded(rowIndex, cellIndex)}
-                      onClick={() => {
-                        // only columns 1 - 3 are clickable
-                        if (1 <= cellIndex && cellIndex <= 3) {
-                          const current = `${rowIndex}_${cellIndex}`;
-                          if (activeChild === current) {
-                            // closing the expansion on the current toggle
-                            setActiveChild(null);
-                          } else {
-                            // expanding
-                            setActiveChild(current);
-                          }
+    <TableComposable aria-label="Compound expandable table">
+      <Thead>
+        <Tr>
+          {columns.map((column, columnIndex) => (
+            <Th key={columnIndex} columnIndex={columnIndex}>
+              {column}
+            </Th>
+          ))}
+        </Tr>
+      </Thead>
+      {rows.map((row, rowIndex) => {
+        const isRowExpanded = activeChild[rowIndex] !== null;
+        return (
+          <Tbody key={rowIndex} isExpanded={isRowExpanded}>
+            <React.Fragment>
+              <Tr>
+                {row.map((cell, cellIndex) => (
+                  <Td
+                    key={`${rowIndex}_${cellIndex}`}
+                    rowIndex={rowIndex}
+                    columnIndex={cellIndex}
+                    dataLabel={columns[cellIndex]}
+                    component={cellIndex === 0 ? 'th' : 'td'}
+                    isCompoundExpanded={isCompoundExpanded(rowIndex, cellIndex)}
+                    onClick={() => {
+                      // only columns 1 - 3 are clickable
+                      if (1 <= cellIndex && cellIndex <= 3) {
+                        if (activeChild[rowIndex] === cellIndex) {
+                          // closing the expansion on the current toggle
+                          // set the corresponding item to null
+                          const updatedActiveChild = activeChild.map((item, index) =>
+                            index === rowIndex ? null : item
+                          );
+                          setActiveChild(updatedActiveChild);
+                        } else {
+                          // expanding
+                          // set the corresponding cell index
+                          const updatedActiveChild = activeChild.map((item, index) =>
+                            index === rowIndex ? cellIndex : item
+                          );
+                          setActiveChild(updatedActiveChild);
                         }
-                      }}
-                    >
-                      {customRender(cell, cellIndex)}
-                    </Td>
-                  ))}
+                      }
+                    }}
+                  >
+                    {customRender(cell, cellIndex)}
+                  </Td>
+                ))}
+              </Tr>
+              {isRowExpanded && (
+                <Tr key={`${rowIndex}-child`} isExpanded={isRowExpanded}>
+                  <Td rowIndex={rowIndex} dataLabel={columns[0]} noPadding colSpan="6">
+                    <ExpandableRowContent>
+                      {childData[`${rowIndex}_${activeChild[rowIndex]}`].component}
+                    </ExpandableRowContent>
+                  </Td>
                 </Tr>
-                {isRowExpanded && (
-                  <Tr key={`${rowIndex}-child`} isExpanded={isRowExpanded}>
-                    <Td rowIndex={rowIndex} dataLabel={columns[0]} noPadding colSpan="6">
-                      <ExpandableRowContent>{childData[activeChild].component}</ExpandableRowContent>
-                    </Td>
-                  </Tr>
-                )}
-              </React.Fragment>
-            </Tbody>
-          );
-        })}
-      </TableComposable>
-    </React.Fragment>
+              )}
+            </React.Fragment>
+          </Tbody>
+        );
+      })}
+    </TableComposable>
   );
 };
 ```
@@ -2864,58 +2870,6 @@ ComposableTableText = () => {
         ))}
       </Tbody>
     </TableComposable>
-  );
-};
-```
-
-### Composable: Empty state
-
-```js isBeta
-import React from 'react';
-import {
-  TableComposable,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  Caption,
-  Button,
-  EmptyState,
-  EmptyStateBody,
-  EmptyStatePrimary,
-  Bullseye,
-  Title,
-  EmptyStateIcon
-} from '@patternfly/react-table';
-
-ComposableEmptyState = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  return (
-    <React.Fragment>
-      <TableComposable aria-label="Empty state">
-        <Caption>Empty State Table Example</Caption>
-        <Thead>
-          <Tr>
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex} columnIndex={columnIndex}>
-                {column}
-              </Th>
-            ))}
-          </Tr>
-        </Thead>
-      </TableComposable>
-      <EmptyState variant={EmptyStateVariant.small}>
-        <EmptyStateIcon icon={SearchIcon} />
-        <Title headingLevel="h2" size="lg">
-          No results found
-        </Title>
-        <EmptyStateBody>
-          No results match the filter criteria. Remove all filters or clear all filters to show results.
-        </EmptyStateBody>
-        <Button variant="link">Clear all filters</Button>
-      </EmptyState>
-    </React.Fragment>
   );
 };
 ```

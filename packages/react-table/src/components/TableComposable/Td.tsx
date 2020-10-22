@@ -20,7 +20,6 @@ import {
   Visibility,
   classNames
 } from '../Table';
-import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import {
   DropdownDirection,
@@ -124,31 +123,18 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     : null;
   const expandableParams =
     isExpanded !== null
-      ? mergeProps(
-          collapsible(null, {
-            rowIndex,
-            columnIndex,
-            rowData: {
-              isOpen: isExpanded
-            },
-            column: {
-              extraParams: {
-                onCollapse
-              }
+      ? collapsible(null, {
+          rowIndex,
+          columnIndex,
+          rowData: {
+            isOpen: isExpanded
+          },
+          column: {
+            extraParams: {
+              onCollapse
             }
-          })
-          /* expandedRow()('true', {
-            rowIndex,
-            columnIndex,
-            rowData: {
-              parent: 0,
-              noPadding
-            },
-            column: {
-              extraParams: {}
-            }
-          }) */
-        )
+          }
+        })
       : null;
   const compoundParams =
     isCompoundExpanded !== null
