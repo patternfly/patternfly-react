@@ -2,7 +2,7 @@
 id: TableComposable
 cssPrefix: pf-c-table
 section: components
-propComponents: ['BaseTable', 'Caption', 'THead', 'TBody', 'Tr', 'Tr', 'Th', 'Td']
+propComponents: ['BaseTable', 'THead', 'TBody', 'Tr', 'Th', 'Td', 'Caption']
 ouia: true
 beta: true
 ---
