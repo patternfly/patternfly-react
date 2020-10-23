@@ -275,7 +275,7 @@ test('Control text table', () => {
 test('Header width table', () => {
   columns[0] = { ...(columns[0] as object), transforms: [cellWidth(10)] };
   columns[2] = { ...(columns[2] as object), transforms: [cellWidth(30)] };
-  columns[4] = { ...(columns[4] as object), transforms: [cellWidth('max')] };
+  columns[4] = { ...(columns[4] as object), transforms: [cellWidth(100)] };
   const view = mount(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
       <TableHeader />

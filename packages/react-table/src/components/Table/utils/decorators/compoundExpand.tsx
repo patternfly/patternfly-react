@@ -33,6 +33,7 @@ export const compoundExpand: ITransform = (
     className: css(styles.tableCompoundExpansionToggle, props.isOpen && styles.modifiers.expanded),
     children: props.isOpen !== undefined && (
       <button
+        type="button"
         className={css(styles.tableButton)}
         onClick={onToggle}
         aria-expanded={props.isOpen}
