@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.70.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.70.1...@patternfly/react-core@4.70.2) (2020-10-23)
+
+
+### Bug Fixes
+
+* **DataList:** add documentation for properties of DataList{DragButton, Control} ([#5047](https://github.com/patternfly/patternfly-react/issues/5047)) ([8988b47](https://github.com/patternfly/patternfly-react/commit/8988b4714e55db7e46d5ee1f118a58d71016f7f3)), closes [#5046](https://github.com/patternfly/patternfly-react/issues/5046)
+
+
+
+
+
 ## [4.70.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.70.0...@patternfly/react-core@4.70.1) (2020-10-22)
 
 **Note:** Version bump only for package @patternfly/react-core
