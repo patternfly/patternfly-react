@@ -121,7 +121,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       } else if (!node.getAttribute) {
         // eslint-disable-next-line react/no-find-dom-node
         this.refsCollection[index][innerIndex] = ReactDOM.findDOMNode(node) as HTMLElement;
-      } else if (isDisabled || isSeparator) {
+      } else if (isSeparator) {
         this.refsCollection[index][innerIndex] = null;
       } else {
         this.refsCollection[index][innerIndex] = node;
