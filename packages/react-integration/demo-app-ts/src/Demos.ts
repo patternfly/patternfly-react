@@ -697,6 +697,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableWidthModifiersDemo
   },
   {
+    id: 'table-composable-demo',
+    name: 'Table Composable Demo',
+    componentType: Examples.TableComposableDemo
+  },
+  {
     id: 'tab-string-event-key-demo',
     name: 'Tab String Event Key Demo',
     componentType: Examples.TabsStringEventKeyDemo

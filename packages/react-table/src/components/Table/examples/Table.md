@@ -2709,7 +2709,7 @@ ComposableCompoundExpandableTable = () => {
               </Tr>
               {isRowExpanded && (
                 <Tr key={`${rowIndex}-child`} isExpanded={isRowExpanded}>
-                  <Td rowIndex={rowIndex} dataLabel={columns[0]} noPadding colSpan="6">
+                  <Td rowIndex={rowIndex} dataLabel={columns[0]} noPadding colSpan={6}>
                     <ExpandableRowContent>
                       {childData[`${rowIndex}_${activeChild[rowIndex]}`].component}
                     </ExpandableRowContent>
