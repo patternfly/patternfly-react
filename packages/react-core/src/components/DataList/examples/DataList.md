@@ -13,6 +13,8 @@ propComponents:
     'DataListItemRow',
     'DataListToggle',
     'DataListContent',
+    'DataListDragButton',
+    'DataListControl',
   ]
 ---
 
