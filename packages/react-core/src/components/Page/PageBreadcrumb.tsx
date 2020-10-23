@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 
-export interface PageBreadcrumbProps extends React.HTMLProps<HTMLDivElement> {
+export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes to apply to the PageBreadcrumb */
   className?: string;
   /** Content rendered inside of the PageBreadcrumb */

@@ -232,13 +232,13 @@ export class Page extends React.Component<PageProps, PageState> {
 
     const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped;
 
-    const group = (
+    const group = isGrouped ? (
       <PageGroup {...groupProps}>
         {isTertiaryNavGrouped && nav}
         {isBreadcrumbGrouped && crumb}
         {additionalGroupedContent}
       </PageGroup>
-    );
+    ) : null;
 
     const main = (
       <main
@@ -249,7 +249,7 @@ export class Page extends React.Component<PageProps, PageState> {
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
-        {isGrouped && group}
+        {group}
         {!isTertiaryNavGrouped && nav}
         {!isBreadcrumbGrouped && crumb}
         {children}
