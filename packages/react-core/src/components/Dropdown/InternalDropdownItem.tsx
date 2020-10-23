@@ -168,10 +168,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
     if (component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
-      // additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (component === 'button') {
-      additionalProps['aria-disabled'] = isDisabled;       
-      // additionalProps.disabled = isDisabled;
+      additionalProps['aria-disabled'] = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
     }
     const renderWithTooltip = (childNode: React.ReactNode) =>

@@ -1480,6 +1480,7 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <button
+                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -1492,7 +1493,6 @@ exports[`KebabToggle expanded 1`] = `
                   <a
                     aria-disabled="true"
                     class="pf-m-disabled pf-c-dropdown__menu-item"
-                    tabindex="-1"
                   >
                     Disabled Link
                   </a>
@@ -1501,8 +1501,8 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <button
+                    aria-disabled="true"
                     class="pf-m-disabled pf-c-dropdown__menu-item"
-                    disabled=""
                     type="button"
                   >
                     Disabled Action
@@ -1530,6 +1530,7 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <button
+                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -1605,6 +1606,7 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <button
+                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -1617,7 +1619,6 @@ exports[`KebabToggle expanded 1`] = `
                     <a
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-dropdown__menu-item"
-                      tabindex="-1"
                     >
                       Disabled Link
                     </a>
@@ -1626,8 +1627,8 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <button
+                      aria-disabled="true"
                       class="pf-m-disabled pf-c-dropdown__menu-item"
-                      disabled=""
                       type="button"
                     >
                       Disabled Action
@@ -1655,6 +1656,7 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <button
+                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -1787,8 +1789,8 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <button
+                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                disabled={false}
                 type="button"
               >
                 Action
@@ -1826,7 +1828,6 @@ exports[`KebabToggle expanded 1`] = `
               <a
                 aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
-                tabIndex={-1}
               >
                 Disabled Link
               </a>
@@ -1861,8 +1862,8 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <button
+                aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
-                disabled={true}
                 type="button"
               >
                 Disabled Action
@@ -1984,8 +1985,8 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <button
+                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                disabled={false}
                 type="button"
               >
                 Separated Action
@@ -4963,6 +4964,7 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <button
+                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -4975,7 +4977,6 @@ exports[`dropdown expanded 1`] = `
                   <a
                     aria-disabled="true"
                     class="pf-m-disabled pf-c-dropdown__menu-item"
-                    tabindex="-1"
                   >
                     Disabled Link
                   </a>
@@ -4984,8 +4985,8 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <button
+                    aria-disabled="true"
                     class="pf-m-disabled pf-c-dropdown__menu-item"
-                    disabled=""
                     type="button"
                   >
                     Disabled Action
@@ -5013,6 +5014,7 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <button
+                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -5101,6 +5103,7 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <button
+                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -5113,7 +5116,6 @@ exports[`dropdown expanded 1`] = `
                     <a
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-dropdown__menu-item"
-                      tabindex="-1"
                     >
                       Disabled Link
                     </a>
@@ -5122,8 +5124,8 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <button
+                      aria-disabled="true"
                       class="pf-m-disabled pf-c-dropdown__menu-item"
-                      disabled=""
                       type="button"
                     >
                       Disabled Action
@@ -5151,6 +5153,7 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <button
+                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -5294,8 +5297,8 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <button
+                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                disabled={false}
                 type="button"
               >
                 Action
@@ -5333,7 +5336,6 @@ exports[`dropdown expanded 1`] = `
               <a
                 aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
-                tabIndex={-1}
               >
                 Disabled Link
               </a>
@@ -5368,8 +5370,8 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <button
+                aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
-                disabled={true}
                 type="button"
               >
                 Disabled Action
@@ -5491,8 +5493,8 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <button
+                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                disabled={false}
                 type="button"
               >
                 Separated Action
