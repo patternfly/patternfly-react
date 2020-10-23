@@ -252,7 +252,7 @@ describe('Action Dropdown Demo Test', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .first()
       .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Other action');
+    cy.focused().contains('Disabled action');
     // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
     cy.get('.pf-c-dropdown__menu-item')
       .last()
@@ -264,7 +264,7 @@ describe('Action Dropdown Demo Test', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .last()
       .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Action');
+    cy.focused().contains('Disabled action');
     // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
     cy.get('.pf-c-dropdown__menu-item')
       .first()
@@ -392,7 +392,7 @@ describe('Cog Dropdown Demo Test', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .first()
       .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Other action');
+    cy.focused().contains('Disabled action');
     // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
     cy.get('.pf-c-dropdown__menu-item')
       .last()
@@ -404,7 +404,7 @@ describe('Cog Dropdown Demo Test', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .last()
       .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Action');
+    cy.focused().contains('Disabled action');
     // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
     cy.get('.pf-c-dropdown__menu-item')
       .first()
