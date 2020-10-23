@@ -3,7 +3,18 @@ id: Page
 section: components
 cssPrefix: pf-c-page
 propComponents:
-  ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
+  [
+    'Page',
+    'PageHeader',
+    'PageHeaderTools',
+    'PageHeaderToolsGroup',
+    'PageHeaderToolsItem',
+    'PageSidebar',
+    'PageSection',
+    'PageGroup',
+    'PageBreadcrumb',
+    'PageNavigation',
+  ]
 ---
 
 ## Examples
