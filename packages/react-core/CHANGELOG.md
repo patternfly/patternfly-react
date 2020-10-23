@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.73.0...@patternfly/react-core@4.74.0) (2020-10-23)
+
+
+### Features
+
+* **Form:** add FormAlert, isLimitWidth, and allow helper text above field ([#5036](https://github.com/patternfly/patternfly-react/issues/5036)) ([29eb4f3](https://github.com/patternfly/patternfly-react/commit/29eb4f3421b8452457008e9742b87692bbc32791))
+
+
+
+
+
 # [4.73.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.72.0...@patternfly/react-core@4.73.0) (2020-10-23)
 
 
