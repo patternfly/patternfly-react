@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.57.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.56.2...demo-app-ts@4.57.0) (2020-10-23)
+
+
+### Features
+
+* **Splitter:** add Splitter component ([#5051](https://github.com/patternfly/patternfly-react/issues/5051)) ([70073f2](https://github.com/patternfly/patternfly-react/commit/70073f27cf7833ebf4785887636ba6474f53de8b))
+
+
+
+
+
 ## [4.56.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.56.1...demo-app-ts@4.56.2) (2020-10-23)
 
 **Note:** Version bump only for package demo-app-ts

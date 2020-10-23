@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-datetime",
-  "version": "4.2.27",
+  "version": "4.2.28",
   "description": "This library provides a set of React date and time components for use with PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.59.0",
-    "@patternfly/react-core": "^4.70.2",
+    "@patternfly/react-core": "^4.71.0",
     "@patternfly/react-icons": "^4.7.15",
     "@patternfly/react-styles": "^4.7.11",
     "@patternfly/react-tokens": "^4.9.15",
