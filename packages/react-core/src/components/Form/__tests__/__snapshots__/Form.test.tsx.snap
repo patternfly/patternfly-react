@@ -7,6 +7,13 @@ exports[`Form component should render default form variant 1`] = `
 />
 `;
 
+exports[`Form component should render form with limited width 1`] = `
+<form
+  className="pf-c-form pf-m-limit-width"
+  noValidate={true}
+/>
+`;
+
 exports[`Form component should render horizontal form variant 1`] = `
 <form
   className="pf-c-form pf-m-horizontal"
