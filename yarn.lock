@@ -3191,10 +3191,10 @@
     webpack-dev-server "^3.11.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.59.0":
-  version "4.59.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.59.0.tgz#3538c70029061030d5d58277a7842c8928ed6b5e"
-  integrity sha512-jxPIJKsOfPfChSQ8n03hTFtg9XVaexCAm7RpNxrbeGPKSSG7m6cbsZryy+BQUqiWEDZRl81pljjsac3sMc1Fdw==
+"@patternfly/patternfly@4.59.1":
+  version "4.59.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.59.1.tgz#87c03b860f2eec494dfc3ae67f04bf178f06491b"
+  integrity sha512-zk3aqg62JXMTzzJMJsyVgt5fXlcxUUkRKkaxUv/hwpjhGiyLexZ1l3Gupb9ziYl74p38KzbbfcfdnlFCwJZfgg==
 
 "@philpl/buble@^0.19.7":
   version "0.19.7"
