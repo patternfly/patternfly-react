@@ -61,7 +61,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   ref, // Types of Ref are different for React.FC vs React.Component
   additionalChild,
   customChild,
-  tabIndex = 0,
+  tabIndex = -1,
   icon = null,
   autoFocus,
   description = null,
