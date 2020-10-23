@@ -230,7 +230,7 @@ export class Page extends React.Component<PageProps, PageState> {
       )
     ) : null;
 
-    const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped;
+    const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 
     const group = isGrouped ? (
       <PageGroup {...groupProps}>
