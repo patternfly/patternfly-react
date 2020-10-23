@@ -887,7 +887,9 @@ export const TableComposableDemo = () => {
     const rows = [
       [
         'This text will truncate instead of wrap.',
-        <a key="a" href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>,
+        <a key="a" href="#">
+          http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org
+        </a>,
         <p key="b">
           By default,
           <code>thead</code> cells will truncate and
@@ -895,7 +897,9 @@ export const TableComposableDemo = () => {
           <code>.pf-m-wrap</code> on a<code>th</code> to change its behavior.
         </p>,
         "This cell's content will adjust itself to the parent th width. This modifier only affects table layouts.",
-        <a key="c" href="#">No wrap</a>
+        <a key="c" href="#">
+          No wrap
+        </a>
       ]
     ];
     return (
@@ -934,7 +938,9 @@ export const TableComposableDemo = () => {
     const columns = ['Truncating text', 'Wrapping table header text. This th text will wrap instead of truncate.'];
     const rows = [
       [
-        <TableText key="tt 1" wrapModifier="truncate">This text will truncate instead of wrap.</TableText>,
+        <TableText key="tt 1" wrapModifier="truncate">
+          This text will truncate instead of wrap.
+        </TableText>,
         <TableText key="tt 2" wrapModifier="nowrap">
           <a href="#">This is a link that needs to be on one line and fully readable.</a>
         </TableText>
