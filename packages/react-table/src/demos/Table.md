@@ -3,7 +3,7 @@ id: Table
 section: components
 ---
 
-import { Checkbox } from '@patternfly/react-core';
+import { Checkbox, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -265,7 +265,15 @@ class BulkSelectTableDemo extends React.Component {
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
-import { Button, Checkbox, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import {
+  Button,
+  Checkbox,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarExpandIconWrapper,
+  ToolbarContent
+} from '@patternfly/react-core';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
@@ -396,29 +404,35 @@ class ExpandCollapseAllTableDemo extends React.Component {
     return (
       <React.Fragment>
         <Toolbar>
-          <ToolbarGroup variant="icon-button-group">
-            <ToolbarItem>
-              {expandCollapseToggle === 'expand' ? (
-                <Button variant="plain" aria-label="Expand all" onClick={() => this.toggleCollapseAll(false)}>
-                  <AngleRightIcon />
-                </Button>
-              ) : (
-                <Button variant="plain" aria-label="Collapse all" onClick={() => this.toggleCollapseAll(true)}>
-                  <AngleDownIcon />
-                </Button>
-              )}
-            </ToolbarItem>
-            <ToolbarItem>
-              <Checkbox
-                isChecked={isChecked}
-                onChange={this.toggleSelectAll}
-                aria-label="toggle select all checkbox"
-                id="toggle-select-all"
-                name="toggle-select-all"
-                label={isChecked ? 'Deselect all' : 'Select all'}
-              />
-            </ToolbarItem>
-          </ToolbarGroup>
+          <ToolbarContent>
+            <ToolbarGroup variant="icon-button-group">
+              <ToolbarItem variant="expand-all" isAllExpanded={expandCollapseToggle !== 'expand'}>
+                {expandCollapseToggle === 'expand' ? (
+                  <Button variant="plain" aria-label="Expand all" onClick={() => this.toggleCollapseAll(false)}>
+                    <ToolbarExpandIconWrapper>
+                      <AngleRightIcon />
+                    </ToolbarExpandIconWrapper>
+                  </Button>
+                ) : (
+                  <Button variant="plain" aria-label="Collapse all" onClick={() => this.toggleCollapseAll(true)}>
+                    <ToolbarExpandIconWrapper>
+                      <AngleRightIcon />
+                    </ToolbarExpandIconWrapper>
+                  </Button>
+                )}
+              </ToolbarItem>
+              <ToolbarItem>
+                <Checkbox
+                  isChecked={isChecked}
+                  onChange={this.toggleSelectAll}
+                  aria-label="toggle select all checkbox"
+                  id="toggle-select-all"
+                  name="toggle-select-all"
+                  label={isChecked ? 'Deselect all' : 'Select all'}
+                />
+              </ToolbarItem>
+            </ToolbarGroup>
+          </ToolbarContent>
         </Toolbar>
         <Table
           aria-label="Collapsible table"

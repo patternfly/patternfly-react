@@ -12,7 +12,8 @@ export enum ToolbarItemVariant {
   pagination = 'pagination',
   'search-filter' = 'search-filter',
   label = 'label',
-  'chip-group' = 'chip-group'
+  'chip-group' = 'chip-group',
+  'expand-all' = 'expand-all'
 }
 
 export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -27,7 +28,8 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'search-filter'
     | 'label'
     | 'chip-group'
-    | 'separator';
+    | 'separator'
+    | 'expand-all';
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -62,6 +64,8 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** id for this data toolbar item */
   id?: string;
+  /** Flag indicating if the expand-all variant is expanded or not */
+  isAllExpanded?: boolean;
   /** Content to be rendered inside the data toolbar item */
   children?: React.ReactNode;
 }
@@ -75,6 +79,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   spacer,
   id,
   children,
+  isAllExpanded,
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
@@ -97,6 +102,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           styles.modifiers[
             toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
           ],
+        isAllExpanded && styles.modifiers.expanded,
         formatBreakpointMods(visibility || visiblity, styles),
         formatBreakpointMods(alignment, styles),
         formatBreakpointMods(spacer, styles),
