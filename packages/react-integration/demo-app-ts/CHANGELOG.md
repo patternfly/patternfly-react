@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.58.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.57.1...demo-app-ts@4.58.0) (2020-10-23)
+
+
+### Features
+
+* **Pagination:** add sticky modifier flag ([#4977](https://github.com/patternfly/patternfly-react/issues/4977)) ([447772a](https://github.com/patternfly/patternfly-react/commit/447772a2ae1edd3db43fb8088377d72e10c77ade))
+
+
+
+
+
 ## [4.57.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.57.0...demo-app-ts@4.57.1) (2020-10-23)
 
 **Note:** Version bump only for package demo-app-ts
