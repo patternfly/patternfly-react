@@ -58,9 +58,22 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
-    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
-  }, [titleRef, truncateTitle]);
+    const showTooltip = titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight;
+    if (isTooltipVisible !== showTooltip) {
+      setIsTooltipVisible(showTooltip);
+    }
+  }, [titleRef, truncateTitle, isTooltipVisible]);
   const Icon = variantIcons[variant];
+  const Title = (
+    <h2
+      {...(isTooltipVisible && { tabIndex: 0 })}
+      ref={titleRef}
+      className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
+    >
+      {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
+      {title}
+    </h2>
+  );
 
   return (
     <React.Fragment>
@@ -68,23 +81,10 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
         <span className={css(styles.notificationDrawerListItemHeaderIcon)}>{icon ? icon : <Icon />}</span>
         {isTooltipVisible ? (
           <Tooltip content={title} position={tooltipPosition}>
-            <h2
-              tabIndex={0}
-              ref={titleRef}
-              className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
-            >
-              {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
-              {title}
-            </h2>
+            {Title}
           </Tooltip>
         ) : (
-          <h2
-            ref={titleRef}
-            className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
-          >
-            {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
-            {title}
-          </h2>
+          Title
         )}
       </div>
       {children && <div className={css(styles.notificationDrawerListItemAction)}>{children}</div>}

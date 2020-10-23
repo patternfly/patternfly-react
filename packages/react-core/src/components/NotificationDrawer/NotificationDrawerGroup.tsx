@@ -46,12 +46,25 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   React.useEffect(() => {
     // Title will always truncate on overflow regardless of truncateTitle prop
-    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
+    const showTooltip = titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight;
+    if (isTooltipVisible !== showTooltip) {
+      setIsTooltipVisible(showTooltip);
+    }
     if (!titleRef.current || !truncateTitle) {
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
-  }, [titleRef, truncateTitle]);
+  }, [titleRef, truncateTitle, isTooltipVisible]);
+
+  const Title = (
+    <div
+      {...(isTooltipVisible && { tabIndex: 0 })}
+      ref={titleRef}
+      className={css(styles.notificationDrawerGroupToggleTitle)}
+    >
+      {title}
+    </div>
+  );
 
   return (
     <section
@@ -72,14 +85,10 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
         >
           {isTooltipVisible ? (
             <Tooltip content={title} position={tooltipPosition}>
-              <div tabIndex={0} ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
-                {title}
-              </div>
+              {Title}
             </Tooltip>
           ) : (
-            <div ref={titleRef} className={css(styles.notificationDrawerGroupToggleTitle)}>
-              {title}
-            </div>
+            Title
           )}
           <div className={css(styles.notificationDrawerGroupToggleCount)}>
             <Badge isRead={isRead}>{count}</Badge>

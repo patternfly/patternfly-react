@@ -83,13 +83,25 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
-    setIsTooltipVisible(titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight);
-  }, [titleRef, truncateTitle]);
+    const showTooltip = titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight;
+    if (isTooltipVisible !== showTooltip) {
+      setIsTooltipVisible(showTooltip);
+    }
+  }, [titleRef, truncateTitle, isTooltipVisible]);
   const customClassName = css(
     styles.alert,
     isInline && styles.modifiers.inline,
     variant !== AlertVariant.default && styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
     className
+  );
+  const Title = (
+    <h4
+      {...(isTooltipVisible && { tabIndex: 0 })}
+      ref={titleRef}
+      className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}
+    >
+      {getHeadingContent}
+    </h4>
   );
 
   if (disableAlert === false && timeout && timeout !== 0) {
@@ -119,18 +131,10 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         <AlertIcon variant={variant} />
         {isTooltipVisible ? (
           <Tooltip content={getHeadingContent} position={tooltipPosition}>
-            <h4
-              tabIndex={0}
-              ref={titleRef}
-              className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}
-            >
-              {getHeadingContent}
-            </h4>
+            {Title}
           </Tooltip>
         ) : (
-          <h4 ref={titleRef} className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}>
-            {getHeadingContent}
-          </h4>
+          Title
         )}
         {actionClose && (
           <AlertContext.Provider value={{ title, variantLabel }}>
