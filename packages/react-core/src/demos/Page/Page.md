@@ -1423,7 +1423,7 @@ class PageLayoutGrouped extends React.Component {
             </PageSection>
           }
           groupProps={{
-            sticky: 'top',
+            sticky: 'top'
           }}
         >
           <PageSection>
