@@ -1610,7 +1610,7 @@ class PageLayoutGroupedAlt extends React.Component {
     return (
       <React.Fragment>
         <Page header={Header} isManagedSidebar skipToContent={PageSkipToContent} mainContainerId={pageId}>
-          <PageGroup sticky="top" hasShadowBottom>
+          <PageGroup sticky="top">
             <PageNavigation isWidthLimited>
               <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
                 <NavList>
