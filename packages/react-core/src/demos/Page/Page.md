@@ -1424,7 +1424,6 @@ class PageLayoutGrouped extends React.Component {
           }
           groupProps={{
             sticky: 'top',
-            hasShadowBottom: true
           }}
         >
           <PageSection>
