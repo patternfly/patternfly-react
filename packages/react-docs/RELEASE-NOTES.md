@@ -31,7 +31,7 @@ releaseNoteTOC: true
   - Added expand/collapse all ([#5034](https://github.com/patternfly/patternfly-react/pull/5034))
   - Exposed grid modifiers as properties ([#4969](https://github.com/patternfly/patternfly-react/pull/4969))
   - Fixed to cancel moving for invalid drops ([#4996](https://github.com/patternfly/patternfly-react/pull/4996))
-  - Converted DataLIstAction to functional component ([#4947](https://github.com/patternfly/patternfly-react/pull/4947))
+  - Converted DataListAction to functional component ([#4947](https://github.com/patternfly/patternfly-react/pull/4947))
 - **Date picker:** 
   - Exposed date picker input ([#5011](https://github.com/patternfly/patternfly-react/pull/5011))
 - **Dropdown:** 
@@ -65,7 +65,7 @@ releaseNoteTOC: true
 - **Select:** 
   - Updated to display label and not value in typeahead ([#4916](https://github.com/patternfly/patternfly-react/pull/4916))
   - Fixed to skip the divider children in getDisplay ([#4998](https://github.com/patternfly/patternfly-react/pull/4998))
-  - Updated to allow custom chip render props in the multi typehead select ([#5031](https://github.com/patternfly/patternfly-react/pull/5031))
+  - Updated to allow custom chip render props in the multi typeahead select ([#5031](https://github.com/patternfly/patternfly-react/pull/5031))
 - **Skeleton:** 
   - Added screen reader text to skeleton ([#5032](https://github.com/patternfly/patternfly-react/pull/5032))
 - **Splitter:** 
