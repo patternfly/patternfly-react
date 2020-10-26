@@ -128,7 +128,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
   }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, children, isGrouped } = this.props;
+    const { onFilter, children } = this.props;
     let typeaheadFilteredChildren: any;
 
     if (onFilter) {
