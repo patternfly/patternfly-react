@@ -65,11 +65,6 @@ export interface MenuProps
 export interface MenuState {
   typeaheadInputValue: string | null;
   typeaheadFilteredChildren: React.ReactNode[];
-  // favoritesGroup: React.ReactNode[];
-  // typeaheadCurrIndex: number;
-  // creatableValue: string;
-  // tabbedIntoFavoritesMenu: boolean;
-  // typeaheadStoredIndex: number;
   ouiaStateId: string;
 }
 
@@ -79,9 +74,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     onSelect: () => undefined,
     onToggle: () => undefined,
     onFilter: null,
-    // onChange: () => undefined,
-    // onFavorite: () => undefined,
-    // theme: 'dark',
     favorites: [] as string[],
     selections: [],
     favoritesLabel: 'Favorites',
@@ -90,7 +82,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
   };
 
   state: MenuState = {
-    // isScrollable: false,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant),
     typeaheadInputValue: ''
@@ -104,18 +95,13 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     itemId: number | string,
     to: string,
     preventDefault: boolean,
-    isSelected: boolean,
-    onClick: MenuSelectClickHandler
+    isSelected: boolean
   ) {
     if (preventDefault) {
       event.preventDefault();
     }
 
     this.props.onSelect({ groupId, itemId, event, to, isSelected });
-
-    if (onClick) {
-      onClick(event, itemId, groupId, to, isSelected);
-    }
   }
 
   // Callback from MenuExpandable
@@ -140,11 +126,8 @@ export class Menu extends React.Component<MenuProps, MenuState> {
 
       this.setState({
         typeaheadInputValue: e.target.value,
-        // typeaheadCurrIndex: -1,
         typeaheadFilteredChildren
-        // creatableValue: e.target.value
       });
-      // this.refCollection = [[]];
     }
   };
 
@@ -203,21 +186,17 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       onSelect,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
-      // onSearchInputChange,
-      // theme,
       ouiaId,
       ouiaSafe,
       variant,
       searchInput,
       favorites,
-      selections,
+      // selections,
       favoritesLabel,
       onFavorite,
-      // isGrouped,
       items,
       ...props
     } = this.props;
-    // const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
     let renderableItems: React.ReactNode[] = [];
 
     if (onFavorite) {
@@ -241,21 +220,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       renderableItems = items;
     }
 
-    let variantProps: any;
-    let variantChildren: any;
-
-    switch (variant) {
-      case 'singleSelect':
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        variantProps = {
-          selected: selections[0]
-          // openedOnEnter
-        };
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        variantChildren = renderableItems;
-        break;
-    }
-
     return (
       <MenuContext.Provider
         value={{
@@ -266,31 +230,14 @@ export class Menu extends React.Component<MenuProps, MenuState> {
             itemId: number | string,
             to: string,
             preventDefault: boolean,
-            isSelected: boolean,
-            onClick: (
-              e: React.FormEvent<HTMLInputElement>,
-              itemId: number | string,
-              groupId: number | string,
-              to: string,
-              isSelected: boolean
-            ) => void
-          ) => this.onSelect(event, groupId, itemId, to, preventDefault, isSelected, onClick),
+            isSelected: boolean
+          ) => this.onSelect(event, groupId, itemId, to, preventDefault, isSelected),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded)
-          // onSearchInputChange: (event: React.FormEvent<HTMLInputElement>, value: string) => this.onSearchInputChange(val)
-          // updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable })
-          // isHorizontal,
         }}
       >
         <div
-          className={css(
-            styles.menu,
-            // theme === 'light' && styles.modifiers.light,
-            // isHorizontal && styles.modifiers.horizontal,
-            variant === 'flyout' && styles.modifiers.flyout,
-            // this.state.isScrollable && styles.modifiers.scrollable,
-            className
-          )}
+          className={css(styles.menu, variant === 'flyout' && styles.modifiers.flyout, className)}
           aria-label={ariaLabel || variant === 'flyout' ? 'Local' : 'Global'}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}

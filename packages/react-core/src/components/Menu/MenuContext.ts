@@ -19,6 +19,5 @@ export const MenuContext = React.createContext<{
   onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
   onSearchInputChange?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
-  // isHorizontal?: boolean;
   onFavorite?: (itemId: string, isFavorite: boolean) => void;
 }>({});

@@ -111,21 +111,11 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
               <AngleRightIcon />
             </span>
           )}
-          {/* {isSelected && (
-            <span className={css(styles.menuItemSelectIcon)}>
-              <CheckIcon aria-hidden />
-            </span>
-          )} */}
           {isSelected && (
             <span className={css(styles.menuItemSelectIcon)}>
               <CheckIcon aria-hidden />
             </span>
           )}
-          {/* {menuItemAction && (
-            <button className={css(styles.menuItemAction)}>
-              <span className={css(styles.menuItemActionIcon)}>{menuItemAction}</span>
-            </button>
-          )} */}
         </div>
         {description && (
           <div className={css(styles.menuItemDescription)}>

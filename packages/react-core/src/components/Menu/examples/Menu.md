@@ -125,50 +125,6 @@ class MenuIconsList extends React.Component {
 }
 ```
 
-### With expanded toggle
-
-```js
-import React from 'react';
-import { Menu, MenuItem, MenuList, MenuExpandable, MenuListItem } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-
-class MenuExpandableList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
-  }
-
-  render() {
-    const { activeItem } = this.state;
-    const menuItems = [
-      <MenuList>
-        <MenuExpandable title="From Git">
-          <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-            From Git
-          </MenuListItem>
-        </MenuExpandable>
-
-        <MenuExpandable title="Container Image">
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Container Image
-          </MenuListItem>
-        </MenuExpandable>
-      </MenuList>
-    ];
-    return <Menu onSelect={this.onSelect} items={menuItems}></Menu>;
-  }
-}
-```
-
 ### With flyout
 
 ```js
