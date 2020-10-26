@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.58.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.58.0...@patternfly/react-integration@4.58.1) (2020-10-26)
+
+
+### Bug Fixes
+
+* **Alert, NotificationDrawer:** Added tooltips to truncated titles ([#5043](https://github.com/patternfly/patternfly-react/issues/5043)) ([eb77e52](https://github.com/patternfly/patternfly-react/commit/eb77e52337734f462f2ce5f5fd51fbbf3c4aef0e))
+
+
+
+
+
 # [4.58.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.57.0...@patternfly/react-integration@4.58.0) (2020-10-23)
 
 

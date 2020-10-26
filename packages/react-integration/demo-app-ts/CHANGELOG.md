@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.58.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.2...demo-app-ts@4.58.3) (2020-10-26)
+
+
+### Bug Fixes
+
+* **Alert, NotificationDrawer:** Added tooltips to truncated titles ([#5043](https://github.com/patternfly/patternfly-react/issues/5043)) ([eb77e52](https://github.com/patternfly/patternfly-react/commit/eb77e52337734f462f2ce5f5fd51fbbf3c4aef0e))
+
+
+
+
+
 ## [4.58.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.1...demo-app-ts@4.58.2) (2020-10-26)
 
 **Note:** Version bump only for package demo-app-ts
