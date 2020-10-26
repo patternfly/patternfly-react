@@ -40,72 +40,73 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 
 ## Examples
 ### Voronoi container
+
+This demonstrates how to use a voronoi container to display tooltips.
+
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-VononoiContainer = (
-  <div>
-    <p>This demonstrates how to use a voronoi container to display tooltips</p>
-    <div style={{ height: '200px', width: '800px' }}>
-      <Chart
-        ariaDesc="Average number of pets"
-        ariaTitle="Area chart example"
-        containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
-        legendOrientation="vertical"
-        legendPosition="right"
-        height={200}
-        maxDomain={{y: 9}}
-        padding={{
-          bottom: 50,
-          left: 50,
-          right: 200, // Adjusted to accommodate legend
-          top: 50
-        }}
-        width={800}
-      >
-        <ChartAxis />
-        <ChartAxis dependentAxis showGrid/>
-        <ChartGroup>
-          <ChartArea
-            data={[
-              { name: 'Cats', x: '2015', y: 3 },
-              { name: 'Cats', x: '2016', y: 4 },
-              { name: 'Cats', x: '2017', y: 8 },
-              { name: 'Cats', x: '2018', y: 6 }
-            ]}
-            interpolation="monotoneX"
-          />
-          <ChartArea
-            data={[
-              { name: 'Dogs', x: '2015', y: 2 },
-              { name: 'Dogs', x: '2016', y: 3 },
-              { name: 'Dogs', x: '2017', y: 4 },
-              { name: 'Dogs', x: '2018', y: 5 },
-              { name: 'Dogs', x: '2019', y: 6 }
-            ]}
-            interpolation="monotoneX"
-          />
-          <ChartArea
-            data={[
-              { name: 'Birds', x: '2015', y: 1 },
-              { name: 'Birds', x: '2016', y: 2 },
-              { name: 'Birds', x: '2017', y: 3 },
-              { name: 'Birds', x: '2018', y: 2 },
-              { name: 'Birds', x: '2019', y: 4 }
-            ]}
-            interpolation="monotoneX"
-          />
-        </ChartGroup>
-      </Chart>
-    </div>
-  </div>
-)
+<div style={{ height: '200px', width: '800px' }}>
+  <Chart
+    ariaDesc="Average number of pets"
+    ariaTitle="Area chart example"
+    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    height={200}
+    maxDomain={{y: 9}}
+    padding={{
+      bottom: 50,
+      left: 50,
+      right: 200, // Adjusted to accommodate legend
+      top: 50
+    }}
+    width={800}
+  >
+    <ChartAxis />
+    <ChartAxis dependentAxis showGrid/>
+    <ChartGroup>
+      <ChartArea
+        data={[
+          { name: 'Cats', x: '2015', y: 3 },
+          { name: 'Cats', x: '2016', y: 4 },
+          { name: 'Cats', x: '2017', y: 8 },
+          { name: 'Cats', x: '2018', y: 6 }
+        ]}
+        interpolation="monotoneX"
+      />
+      <ChartArea
+        data={[
+          { name: 'Dogs', x: '2015', y: 2 },
+          { name: 'Dogs', x: '2016', y: 3 },
+          { name: 'Dogs', x: '2017', y: 4 },
+          { name: 'Dogs', x: '2018', y: 5 },
+          { name: 'Dogs', x: '2019', y: 6 }
+        ]}
+        interpolation="monotoneX"
+      />
+      <ChartArea
+        data={[
+          { name: 'Birds', x: '2015', y: 1 },
+          { name: 'Birds', x: '2016', y: 2 },
+          { name: 'Birds', x: '2017', y: 3 },
+          { name: 'Birds', x: '2018', y: 2 },
+          { name: 'Birds', x: '2019', y: 4 }
+        ]}
+        interpolation="monotoneX"
+      />
+    </ChartGroup>
+  </Chart>
+</div>
 ```
 
 ### Combined cursor and voronoi containers
+
+This demonstrates how to combine cursor and voronoi containers to display tooltips along with a vertical cursor.
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
@@ -116,78 +117,75 @@ class CombinedCursorVoronoiContainer extends React.Component {
     const CursorVoronoiContainer = createContainer("voronoi", "cursor");
 
     return (
-      <div>
-        <p>This demonstrates how to combine cursor and voronoi containers to display tooltips along with a vertical cursor</p>
-        <div style={{ height: '275px', width: '450px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Line chart example"
-            containerComponent={
-              <CursorVoronoiContainer
-                cursorDimension="x"
-                labels={({ datum }) => `${datum.name}: ${datum.y}`}
-                mouseFollowTooltips
-                voronoiDimension="x"
-                voronoiPadding={50}
-              />
-            }
-            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-            legendPosition="bottom"
-            height={275}
-            maxDomain={{y: 10}}
-            minDomain={{y: 0}}
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50,
-              top: 50
-            }}
-            themeColor={ChartThemeColor.orange}
-            width={450}
-          >
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-            <ChartGroup>
-              <ChartLine
-                data={[
-                  { name: 'Cats', x: '2015', y: 1 },
-                  { name: 'Cats', x: '2016', y: 2 },
-                  { name: 'Cats', x: '2017', y: 5 },
-                  { name: 'Cats', x: '2018', y: 3 }
-                ]}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 1 },
-                  { name: 'Dogs', x: '2017', y: 7 },
-                  { name: 'Dogs', x: '2018', y: 4 }
-                ]}
-                style={{
-                  data: {
-                    strokeDasharray: '3,3'
-                  }
-                }}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Birds', x: '2015', y: 3 },
-                  { name: 'Birds', x: '2016', y: 4 },
-                  { name: 'Birds', x: '2017', y: 9 },
-                  { name: 'Birds', x: '2018', y: 5 }
-                ]}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Mice', x: '2015', y: 3 },
-                  { name: 'Mice', x: '2016', y: 3 },
-                  { name: 'Mice', x: '2017', y: 8 },
-                  { name: 'Mice', x: '2018', y: 7 }
-                ]}
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
+      <div style={{ height: '275px', width: '450px' }}>
+        <Chart
+          ariaDesc="Average number of pets"
+          ariaTitle="Line chart example"
+          containerComponent={
+            <CursorVoronoiContainer
+              cursorDimension="x"
+              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+              mouseFollowTooltips
+              voronoiDimension="x"
+              voronoiPadding={50}
+            />
+          }
+          legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+          legendPosition="bottom"
+          height={275}
+          maxDomain={{y: 10}}
+          minDomain={{y: 0}}
+          padding={{
+            bottom: 75, // Adjusted to accommodate legend
+            left: 50,
+            right: 50,
+            top: 50
+          }}
+          themeColor={ChartThemeColor.orange}
+          width={450}
+        >
+          <ChartAxis tickValues={[2, 3, 4]} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartGroup>
+            <ChartLine
+              data={[
+                { name: 'Cats', x: '2015', y: 1 },
+                { name: 'Cats', x: '2016', y: 2 },
+                { name: 'Cats', x: '2017', y: 5 },
+                { name: 'Cats', x: '2018', y: 3 }
+              ]}
+            />
+            <ChartLine
+              data={[
+                { name: 'Dogs', x: '2015', y: 2 },
+                { name: 'Dogs', x: '2016', y: 1 },
+                { name: 'Dogs', x: '2017', y: 7 },
+                { name: 'Dogs', x: '2018', y: 4 }
+              ]}
+              style={{
+                data: {
+                  strokeDasharray: '3,3'
+                }
+              }}
+            />
+            <ChartLine
+              data={[
+                { name: 'Birds', x: '2015', y: 3 },
+                { name: 'Birds', x: '2016', y: 4 },
+                { name: 'Birds', x: '2017', y: 9 },
+                { name: 'Birds', x: '2018', y: 5 }
+              ]}
+            />
+            <ChartLine
+              data={[
+                { name: 'Mice', x: '2015', y: 3 },
+                { name: 'Mice', x: '2016', y: 3 },
+                { name: 'Mice', x: '2017', y: 8 },
+                { name: 'Mice', x: '2018', y: 7 }
+              ]}
+            />
+          </ChartGroup>
+        </Chart>
       </div>
     );
   }
@@ -195,6 +193,9 @@ class CombinedCursorVoronoiContainer extends React.Component {
 ```
 
 ### Embedded legend
+
+This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
@@ -209,82 +210,79 @@ class EmbeddedLegend extends React.Component {
     const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
     
     return (
-      <div>
-        <p>This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.</p>
-        <div style={{ height: '275px', width: '450px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            containerComponent={
-              <CursorVoronoiContainer
-                cursorDimension="x"
-                labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
-                labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
-                mouseFollowTooltips
-                voronoiDimension="x"
-                voronoiPadding={50}
-              />
-            }
-            legendData={legendData}
-            legendPosition="bottom"
-            height={275}
-            maxDomain={{y: 10}}
-            minDomain={{y: 0}}
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50,
-              top: 50
-            }}
-            themeColor={ChartThemeColor.green}
-            width={450}
-          >
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-            <ChartGroup>
-              <ChartLine
-                data={[
-                  { name: 'Cats', x: '2015', y: 1 },
-                  { name: 'Cats', x: '2016', y: 2 },
-                  { name: 'Cats', x: '2017', y: 5 },
-                  { name: 'Cats', x: '2018', y: 3 }
-                ]}
-                name="cats"
-              />
-              <ChartLine
-                data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 1 },
-                  { name: 'Dogs', x: '2017', y: 7 },
-                  { name: 'Dogs', x: '2018', y: 4 }
-                ]}
-                name="dogs"
-                style={{
-                  data: {
-                    strokeDasharray: '3,3'
-                  }
-                }}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Birds', x: '2015', y: 3 },
-                  { name: 'Birds', x: '2016', y: 4 },
-                  { name: 'Birds', x: '2017', y: 9 },
-                  { name: 'Birds', x: '2018', y: 5 }
-                ]}
-                name="birds"
-              />
-              <ChartLine
-                data={[
-                  { name: 'Mice', x: '2015', y: 3 },
-                  { name: 'Mice', x: '2016', y: null },
-                  { name: 'Mice', x: '2017', y: 8 },
-                  { name: 'Mice', x: '2018', y: 7 }
-                ]}
-                name="mice"
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
+      <div style={{ height: '275px', width: '450px' }}>
+        <Chart
+          ariaDesc="Average number of pets"
+          containerComponent={
+            <CursorVoronoiContainer
+              cursorDimension="x"
+              labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
+              labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
+              mouseFollowTooltips
+              voronoiDimension="x"
+              voronoiPadding={50}
+            />
+          }
+          legendData={legendData}
+          legendPosition="bottom"
+          height={275}
+          maxDomain={{y: 10}}
+          minDomain={{y: 0}}
+          padding={{
+            bottom: 75, // Adjusted to accommodate legend
+            left: 50,
+            right: 50,
+            top: 50
+          }}
+          themeColor={ChartThemeColor.green}
+          width={450}
+        >
+          <ChartAxis tickValues={[2, 3, 4]} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartGroup>
+            <ChartLine
+              data={[
+                { name: 'Cats', x: '2015', y: 1 },
+                { name: 'Cats', x: '2016', y: 2 },
+                { name: 'Cats', x: '2017', y: 5 },
+                { name: 'Cats', x: '2018', y: 3 }
+              ]}
+              name="cats"
+            />
+            <ChartLine
+              data={[
+                { name: 'Dogs', x: '2015', y: 2 },
+                { name: 'Dogs', x: '2016', y: 1 },
+                { name: 'Dogs', x: '2017', y: 7 },
+                { name: 'Dogs', x: '2018', y: 4 }
+              ]}
+              name="dogs"
+              style={{
+                data: {
+                  strokeDasharray: '3,3'
+                }
+              }}
+            />
+            <ChartLine
+              data={[
+                { name: 'Birds', x: '2015', y: 3 },
+                { name: 'Birds', x: '2016', y: 4 },
+                { name: 'Birds', x: '2017', y: 9 },
+                { name: 'Birds', x: '2018', y: 5 }
+              ]}
+              name="birds"
+            />
+            <ChartLine
+              data={[
+                { name: 'Mice', x: '2015', y: 3 },
+                { name: 'Mice', x: '2016', y: null },
+                { name: 'Mice', x: '2017', y: 8 },
+                { name: 'Mice', x: '2018', y: 7 }
+              ]}
+              name="mice"
+            />
+          </ChartGroup>
+        </Chart>
       </div>
     );
   }
@@ -292,6 +290,9 @@ class EmbeddedLegend extends React.Component {
 ```
 
 ### Embedded HTML
+
+This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.
+
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -345,78 +346,75 @@ class EmbeddedHtml extends React.Component {
     );
 
     return (
-      <div>
-        <p>This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.</p>
-        <div ref={this.containerRef} style={{ height: '225px', width: '650px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Area chart example"
-            containerComponent={
-              <CursorVoronoiContainer
-                cursorDimension="x"
-                labels={({ datum }) => `${datum.y}`}
-                labelComponent={
-                  <ChartCursorTooltip
-                    centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
-                    flyout={<ChartCursorFlyout />}
-                    flyoutHeight={110}
-                    flyoutWidth={125}
-                    labelComponent={<HtmlLegendContent legendData={legendData} title={(datum) => datum.x} />}
-                  />
-                }
-                mouseFollowTooltips
-                voronoiDimension="x"
-                voronoiPadding={50}
-              />
-            }
-            legendData={legendData}
-            legendPosition="bottom-left"
-            height={225}
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50,
-              top: 50,
-            }}
-            maxDomain={{y: 9}}
-            themeColor={ChartThemeColor.multiUnordered}
-            width={650}
-          >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
-            <ChartGroup>
-              <ChartArea
-                data={[
-                  { name: 'Cats', x: '2015', y: 3 },
-                  { name: 'Cats', x: '2016', y: 4 },
-                  { name: 'Cats', x: '2017', y: 8 },
-                  { name: 'Cats', x: '2018', y: 6 }
-                ]}
-                interpolation="monotoneX"
-              />
-              <ChartArea
-                data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 3 },
-                  { name: 'Dogs', x: '2017', y: 4 },
-                  { name: 'Dogs', x: '2018', y: 5 },
-                  { name: 'Dogs', x: '2019', y: 6 }
-                ]}
-                interpolation="monotoneX"
-              />
-              <ChartArea
-                data={[
-                  { name: 'Birds', x: '2015', y: 1 },
-                  { name: 'Birds', x: '2016', y: 2 },
-                  { name: 'Birds', x: '2017', y: 3 },
-                  { name: 'Birds', x: '2018', y: 2 },
-                  { name: 'Birds', x: '2019', y: 4 }
-                ]}
-                interpolation="monotoneX"
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
+      <div ref={this.containerRef} style={{ height: '225px', width: '650px' }}>
+        <Chart
+          ariaDesc="Average number of pets"
+          ariaTitle="Area chart example"
+          containerComponent={
+            <CursorVoronoiContainer
+              cursorDimension="x"
+              labels={({ datum }) => `${datum.y}`}
+              labelComponent={
+                <ChartCursorTooltip
+                  centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
+                  flyout={<ChartCursorFlyout />}
+                  flyoutHeight={110}
+                  flyoutWidth={125}
+                  labelComponent={<HtmlLegendContent legendData={legendData} title={(datum) => datum.x} />}
+                />
+              }
+              mouseFollowTooltips
+              voronoiDimension="x"
+              voronoiPadding={50}
+            />
+          }
+          legendData={legendData}
+          legendPosition="bottom-left"
+          height={225}
+          padding={{
+            bottom: 75, // Adjusted to accommodate legend
+            left: 50,
+            right: 50,
+            top: 50,
+          }}
+          maxDomain={{y: 9}}
+          themeColor={ChartThemeColor.multiUnordered}
+          width={650}
+        >
+          <ChartAxis />
+          <ChartAxis dependentAxis showGrid />
+          <ChartGroup>
+            <ChartArea
+              data={[
+                { name: 'Cats', x: '2015', y: 3 },
+                { name: 'Cats', x: '2016', y: 4 },
+                { name: 'Cats', x: '2017', y: 8 },
+                { name: 'Cats', x: '2018', y: 6 }
+              ]}
+              interpolation="monotoneX"
+            />
+            <ChartArea
+              data={[
+                { name: 'Dogs', x: '2015', y: 2 },
+                { name: 'Dogs', x: '2016', y: 3 },
+                { name: 'Dogs', x: '2017', y: 4 },
+                { name: 'Dogs', x: '2018', y: 5 },
+                { name: 'Dogs', x: '2019', y: 6 }
+              ]}
+              interpolation="monotoneX"
+            />
+            <ChartArea
+              data={[
+                { name: 'Birds', x: '2015', y: 1 },
+                { name: 'Birds', x: '2016', y: 2 },
+                { name: 'Birds', x: '2017', y: 3 },
+                { name: 'Birds', x: '2018', y: 2 },
+                { name: 'Birds', x: '2019', y: 4 }
+              ]}
+              interpolation="monotoneX"
+            />
+          </ChartGroup>
+        </Chart>
       </div>
     );
   }
@@ -424,77 +422,78 @@ class EmbeddedHtml extends React.Component {
 ```
 
 ### Data label
+
+This demonstrates an alternate way of applying tooltips using data labels.
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
-DataLabel = (
-  <div>
-    <p>This demonstrates an alternate way of applying tooltips using data labels</p>
-    <div style={{ height: '275px', width: '450px' }}>
-      <Chart
-        ariaDesc="Average number of pets"
-        ariaTitle="Stack chart example"
-        domainPadding={{ x: [30, 25] }}
-        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-        legendPosition="bottom-left"
-        height={275}
-        padding={{
-          bottom: 75, // Adjusted to accommodate legend
-          left: 50,
-          right: 50, 
-          top: 50
-        }}
-        themeColor={ChartThemeColor.multiOrdered}
-        width={450}
-      >
-        <ChartAxis />
-        <ChartAxis dependentAxis showGrid />
-        <ChartStack horizontal>
-          <ChartBar 
-            data={[
-              { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
-              { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
-              { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
-              { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
-            ]} 
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-          <ChartBar 
-            data={[
-              { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
-              { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
-              { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
-              { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
-            ]}
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-          <ChartBar 
-            data={[
-              { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
-              { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
-              { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
-              { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
-            ]}
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-          <ChartBar 
-            data={[
-              { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
-              { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
-              { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
-              { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
-            ]}
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-        </ChartStack>
-      </Chart>
-    </div>
-  </div>
-)
+<div style={{ height: '275px', width: '450px' }}>
+  <Chart
+    ariaDesc="Average number of pets"
+    ariaTitle="Stack chart example"
+    domainPadding={{ x: [30, 25] }}
+    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+    legendPosition="bottom-left"
+    height={275}
+    padding={{
+      bottom: 75, // Adjusted to accommodate legend
+      left: 50,
+      right: 50, 
+      top: 50
+    }}
+    themeColor={ChartThemeColor.multiOrdered}
+    width={450}
+  >
+    <ChartAxis />
+    <ChartAxis dependentAxis showGrid />
+    <ChartStack horizontal>
+      <ChartBar 
+        data={[
+          { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
+          { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
+          { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
+          { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
+        ]} 
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+      <ChartBar 
+        data={[
+          { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
+          { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
+          { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
+          { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
+        ]}
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+      <ChartBar 
+        data={[
+          { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
+          { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
+          { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
+          { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
+        ]}
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+      <ChartBar 
+        data={[
+          { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
+          { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
+          { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
+          { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
+        ]}
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+    </ChartStack>
+  </Chart>
+</div>
 ```
 
 ### Legend
+
+This demonstrates an approach for applying tooltips to a legend using a custom label component.
+
 ```js
 import React from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
@@ -522,32 +521,29 @@ class TooltipPieChart extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>This demonstrates an approach for applying tooltips to a legend using a custom label component</p>
-        <div style={{ height: '275px', width: '300px' }}>
-          <ChartPie
-            ariaDesc="Average number of pets"
-            ariaTitle="Pie chart example"
-            constrainToVisibleArea={true}
-            data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-            height={275}
-            labels={({ datum }) => `${datum.x}: ${datum.y}`}
-            legendComponent={this.getLegend([
-              { name: 'Cats: 35' }, 
-              { name: 'Dogs: 55' }, 
-              { name: 'Birds: 10' }
-            ])}
-            legendPosition="bottom"
-            padding={{
-              bottom: 65,
-              left: 20,
-              right: 20,
-              top: 20
-            }}
-            themeColor={ChartThemeColor.multiOrdered}
-            width={300}
-          />
-        </div>
+      <div style={{ height: '275px', width: '300px' }}>
+        <ChartPie
+          ariaDesc="Average number of pets"
+          ariaTitle="Pie chart example"
+          constrainToVisibleArea={true}
+          data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+          height={275}
+          labels={({ datum }) => `${datum.x}: ${datum.y}`}
+          legendComponent={this.getLegend([
+            { name: 'Cats: 35' }, 
+            { name: 'Dogs: 55' }, 
+            { name: 'Birds: 10' }
+          ])}
+          legendPosition="bottom"
+          padding={{
+            bottom: 65,
+            left: 20,
+            right: 20,
+            top: 20
+          }}
+          themeColor={ChartThemeColor.multiOrdered}
+          width={300}
+        />
       </div>
     );
   }
@@ -555,6 +551,9 @@ class TooltipPieChart extends React.Component {
 ```
 
 ### Left aligned
+
+This demonstrates how to customize tooltip label alignment using theme properties.
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
@@ -584,71 +583,68 @@ class TooltipThemeChart extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>This demonstrates how to customize tooltip label alignment using theme properties</p>
-        <div style={{ height: '250px', width: '600px' }}>
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Line chart example"
-            containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea voronoiDimension="x"/>}
-            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-            legendOrientation="vertical"
-            legendPosition="right"
-            height={250}
-            maxDomain={{y: 10}}
-            minDomain={{y: 0}}
-            padding={{
-              bottom: 50,
-              left: 50,
-              right: 200, // Adjusted to accommodate legend
-              top: 50
-            }}
-            theme={this.myCustomTheme}
-            width={600}
-          >
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-            <ChartGroup>
-              <ChartLine
-                data={[
-                  { name: 'Cats', x: '2015', y: 1 },
-                  { name: 'Cats', x: '2016', y: 2 },
-                  { name: 'Cats', x: '2017', y: 5 },
-                  { name: 'Cats', x: '2018', y: 3 }
-                ]}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 1 },
-                  { name: 'Dogs', x: '2017', y: 7 },
-                  { name: 'Dogs', x: '2018', y: 4 }
-                ]}
-                style={{
-                  data: {
-                    strokeDasharray: '3,3'
-                  }
-                }}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Birds', x: '2015', y: 3 },
-                  { name: 'Birds', x: '2016', y: 4 },
-                  { name: 'Birds', x: '2017', y: 9 },
-                  { name: 'Birds', x: '2018', y: 5 }
-                ]}
-              />
-              <ChartLine
-                data={[
-                  { name: 'Mice', x: '2015', y: 3 },
-                  { name: 'Mice', x: '2016', y: 3 },
-                  { name: 'Mice', x: '2017', y: 8 },
-                  { name: 'Mice', x: '2018', y: 7 }
-                ]}
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
+      <div style={{ height: '250px', width: '600px' }}>
+        <Chart
+          ariaDesc="Average number of pets"
+          ariaTitle="Line chart example"
+          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea voronoiDimension="x"/>}
+          legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+          legendOrientation="vertical"
+          legendPosition="right"
+          height={250}
+          maxDomain={{y: 10}}
+          minDomain={{y: 0}}
+          padding={{
+            bottom: 50,
+            left: 50,
+            right: 200, // Adjusted to accommodate legend
+            top: 50
+          }}
+          theme={this.myCustomTheme}
+          width={600}
+        >
+          <ChartAxis tickValues={[2, 3, 4]} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartGroup>
+            <ChartLine
+              data={[
+                { name: 'Cats', x: '2015', y: 1 },
+                { name: 'Cats', x: '2016', y: 2 },
+                { name: 'Cats', x: '2017', y: 5 },
+                { name: 'Cats', x: '2018', y: 3 }
+              ]}
+            />
+            <ChartLine
+              data={[
+                { name: 'Dogs', x: '2015', y: 2 },
+                { name: 'Dogs', x: '2016', y: 1 },
+                { name: 'Dogs', x: '2017', y: 7 },
+                { name: 'Dogs', x: '2018', y: 4 }
+              ]}
+              style={{
+                data: {
+                  strokeDasharray: '3,3'
+                }
+              }}
+            />
+            <ChartLine
+              data={[
+                { name: 'Birds', x: '2015', y: 3 },
+                { name: 'Birds', x: '2016', y: 4 },
+                { name: 'Birds', x: '2017', y: 9 },
+                { name: 'Birds', x: '2018', y: 5 }
+              ]}
+            />
+            <ChartLine
+              data={[
+                { name: 'Mice', x: '2015', y: 3 },
+                { name: 'Mice', x: '2016', y: 3 },
+                { name: 'Mice', x: '2017', y: 8 },
+                { name: 'Mice', x: '2018', y: 7 }
+              ]}
+            />
+          </ChartGroup>
+        </Chart>
       </div>
     );
   }
@@ -656,44 +652,45 @@ class TooltipThemeChart extends React.Component {
 ```
 
 ### CSS overflow
+
+This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code>.
+
 ```js
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-CSSOverflow = (
-  <div>
-    <p>This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code></p>
-    <div className="ws-react-charts-tooltip-overflow">
-      <div style={{ height: '100px', width: '400px' }}>
-        <ChartGroup
-          ariaDesc="Average number of pets"
-          ariaTitle="Sparkline chart example"
-          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
-          height={100}
-          maxDomain={{y: 9}}
-          padding={0}
-          themeColor={ChartThemeColor.green}
-          width={400}
-        >
-          <ChartArea
-            data={[
-              { name: 'Cats', x: '2015', y: 3 },
-              { name: 'Cats', x: '2016', y: 4 },
-              { name: 'Cats', x: '2017', y: 8 },
-              { name: 'Cats', x: '2018', y: 6 }
-            ]}
-          />
-        </ChartGroup>
-      </div>
-      <ChartContainer>
-        <ChartLabel text="CPU utilization" dy={15}/>
-      </ChartContainer>
-    </div>
+<div className="ws-react-charts-tooltip-overflow">
+  <div style={{ height: '100px', width: '400px' }}>
+    <ChartGroup
+      ariaDesc="Average number of pets"
+      ariaTitle="Sparkline chart example"
+      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
+      height={100}
+      maxDomain={{y: 9}}
+      padding={0}
+      themeColor={ChartThemeColor.green}
+      width={400}
+    >
+      <ChartArea
+        data={[
+          { name: 'Cats', x: '2015', y: 3 },
+          { name: 'Cats', x: '2016', y: 4 },
+          { name: 'Cats', x: '2017', y: 8 },
+          { name: 'Cats', x: '2018', y: 6 }
+        ]}
+      />
+    </ChartGroup>
   </div>
-)
+  <ChartContainer>
+    <ChartLabel text="CPU utilization" dy={15}/>
+  </ChartContainer>
+</div>
 ```
 
 ### Wrapped chart
+
+This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component.
+
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -715,7 +712,6 @@ class TooltipChart extends React.Component {
 
     return (
       <div>
-        <p>This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component</p>
         <div style={{ height: '230px', width: '230px' }}>
           <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
             <ChartDonutThreshold

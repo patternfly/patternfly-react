@@ -29,71 +29,67 @@ Learn to build a sparkline chart using a Katacoda tutorial starting with a simpl
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-Basic = (
-  <div style={{ marginLeft: '50px', marginTop: '50px', height: '135px' }}>
-    <div style={{ height: '100px', width: '400px' }}>
-      <ChartGroup
-        ariaDesc="Average number of pets"
-        ariaTitle="Sparkline chart example"
-        containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-        height={100}
-        maxDomain={{y: 9}}
-        padding={0}
-        width={400}
-      >
-        <ChartArea
-          data={[
-            { name: 'Cats', x: '2015', y: 3 },
-            { name: 'Cats', x: '2016', y: 4 },
-            { name: 'Cats', x: '2017', y: 8 },
-            { name: 'Cats', x: '2018', y: 6 }
-          ]}
-        />
-      </ChartGroup>
-    </div>
-    <ChartContainer>
-      <ChartLabel text="CPU utilization" dy={15}/>
-    </ChartContainer>
+<div style={{ marginLeft: '50px', marginTop: '50px', height: '135px' }}>
+  <div style={{ height: '100px', width: '400px' }}>
+    <ChartGroup
+      ariaDesc="Average number of pets"
+      ariaTitle="Sparkline chart example"
+      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+      height={100}
+      maxDomain={{y: 9}}
+      padding={0}
+      width={400}
+    >
+      <ChartArea
+        data={[
+          { name: 'Cats', x: '2015', y: 3 },
+          { name: 'Cats', x: '2016', y: 4 },
+          { name: 'Cats', x: '2017', y: 8 },
+          { name: 'Cats', x: '2018', y: 6 }
+        ]}
+      />
+    </ChartGroup>
   </div>
-)
+  <ChartContainer>
+    <ChartLabel text="CPU utilization" dy={15}/>
+  </ChartContainer>
+</div>
 ```
 
 ### Green
+
+This demonstrates an alternate way of applying tooltips using CSS overflow
+
 ```js
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-Green = (
-  <React.Fragment>
-    <p>This demonstrates an alternate way of applying tooltips using CSS overflow</p>
-    <div className="ws-react-charts-sparkline-overflow">
-      <div style={{ height: '100px', width: '400px' }}>
-        <ChartGroup
-          ariaDesc="Average number of pets"
-          ariaTitle="Sparkline chart example"
-          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
-          height={100}
-          maxDomain={{y: 9}}
-          padding={0}
-          themeColor={ChartThemeColor.green}
-          width={400}
-        >
-          <ChartArea
-            data={[
-              { name: 'Cats', x: '2015', y: 3 },
-              { name: 'Cats', x: '2016', y: 4 },
-              { name: 'Cats', x: '2017', y: 8 },
-              { name: 'Cats', x: '2018', y: 6 }
-            ]}
-          />
-        </ChartGroup>
-      </div>
-      <ChartContainer>
-        <ChartLabel text="CPU utilization" dy={15}/>
-      </ChartContainer>
-    </div>
-  </React.Fragment>
-)
+<div className="ws-react-charts-sparkline-overflow">
+  <div style={{ height: '100px', width: '400px' }}>
+    <ChartGroup
+      ariaDesc="Average number of pets"
+      ariaTitle="Sparkline chart example"
+      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
+      height={100}
+      maxDomain={{y: 9}}
+      padding={0}
+      themeColor={ChartThemeColor.green}
+      width={400}
+    >
+      <ChartArea
+        data={[
+          { name: 'Cats', x: '2015', y: 3 },
+          { name: 'Cats', x: '2016', y: 4 },
+          { name: 'Cats', x: '2017', y: 8 },
+          { name: 'Cats', x: '2018', y: 6 }
+        ]}
+      />
+    </ChartGroup>
+  </div>
+  <ChartContainer>
+    <ChartLabel text="CPU utilization" dy={15}/>
+  </ChartContainer>
+</div>
 ```
 
 ## Documentation
