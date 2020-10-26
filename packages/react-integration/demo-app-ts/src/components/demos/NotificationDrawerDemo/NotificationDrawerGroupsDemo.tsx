@@ -112,10 +112,12 @@ export class GroupsNotificationDrawerDemo extends React.Component<
         <NotificationDrawerBody>
           <NotificationDrawerGroupList>
             <NotificationDrawerGroup
+              id="short-group-title"
               title="First notification group"
               isExpanded={firstGroupExpanded}
               count={2}
               onExpand={this.toggleFirstDrawer}
+              truncateTitle={1}
             >
               <NotificationDrawerList isHidden={!firstGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
@@ -223,10 +225,13 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               </NotificationDrawerList>
             </NotificationDrawerGroup>
             <NotificationDrawerGroup
-              title="Second notification group"
+              id="long-group-title"
+              title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo."
               isExpanded={secondGroupExpanded}
               count={2}
               onExpand={this.toggleSecondDrawer}
+              truncateTitle={1}
+              tooltipPosition="bottom"
             >
               <NotificationDrawerList isHidden={!secondGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
@@ -334,7 +339,8 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               </NotificationDrawerList>
             </NotificationDrawerGroup>
             <NotificationDrawerGroup
-              title="Third notification group"
+              id="long-title-no-truncate-prop"
+              title="Third notification group. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
               isExpanded={thirdGroupExpanded}
               count={0}
               onExpand={this.toggleThirdDrawer}

@@ -11,6 +11,8 @@ import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/acc
 
 import maxLines from '@patternfly/react-tokens/dist/js/c_notification_drawer__list_item_header_title_max_lines';
 
+import { Tooltip } from '../Tooltip';
+
 export const variantIcons = {
   success: CheckCircleIcon,
   danger: ExclamationCircleIcon,
@@ -34,6 +36,8 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** Truncate title to number of lines */
   truncateTitle?: number;
+  /** Position of the tooltip which is displayed if text is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
@@ -44,28 +48,44 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   title,
   variant = 'default',
   truncateTitle = 0,
+  tooltipPosition,
   ...props
 }: NotificationDrawerListItemHeaderProps) => {
   const titleRef = React.useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   React.useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
     }
     titleRef.current.style.setProperty(maxLines.name, truncateTitle.toString());
-  }, [titleRef, truncateTitle]);
+    const showTooltip = titleRef.current && titleRef.current.offsetHeight < titleRef.current.scrollHeight;
+    if (isTooltipVisible !== showTooltip) {
+      setIsTooltipVisible(showTooltip);
+    }
+  }, [titleRef, truncateTitle, isTooltipVisible]);
   const Icon = variantIcons[variant];
+  const Title = (
+    <h2
+      {...(isTooltipVisible && { tabIndex: 0 })}
+      ref={titleRef}
+      className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
+    >
+      {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
+      {title}
+    </h2>
+  );
 
   return (
     <React.Fragment>
       <div {...props} className={css(styles.notificationDrawerListItemHeader, className)}>
         <span className={css(styles.notificationDrawerListItemHeaderIcon)}>{icon ? icon : <Icon />}</span>
-        <h2
-          ref={titleRef}
-          className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
-        >
-          {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
-          {title}
-        </h2>
+        {isTooltipVisible ? (
+          <Tooltip content={title} position={tooltipPosition}>
+            {Title}
+          </Tooltip>
+        ) : (
+          Title
+        )}
       </div>
       {children && <div className={css(styles.notificationDrawerListItemAction)}>{children}</div>}
     </React.Fragment>

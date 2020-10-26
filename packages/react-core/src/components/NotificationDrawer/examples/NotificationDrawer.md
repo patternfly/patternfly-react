@@ -47,24 +47,24 @@ class BasicNotificationDrawer extends React.Component {
     super(props);
     this.state = {
       isOpen: new Array(6).fill(false),
-      isDrawerOpen: true 
+      isDrawerOpen: true
     };
     this.onDrawerClose = () => {
       this.setState({
         isDrawerOpen: false
       });
     };
-    this.onToggle = (index) => (isOpen) => {
-      newState = [...this.state.isOpen.slice(0, index), isOpen, ...this.state.isOpen.slice(index+1)];
+    this.onToggle = index => isOpen => {
+      newState = [...this.state.isOpen.slice(0, index), isOpen, ...this.state.isOpen.slice(index + 1)];
       this.setState({ isOpen: newState });
     };
     this.onSelect = event => {
-      this.setState({isOpen: new Array(6).fill(false)});
+      this.setState({ isOpen: new Array(6).fill(false) });
     };
   }
 
   render() {
-    const [ isOpen0, isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6 ] = this.state.isOpen;
+    const [isOpen0, isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6] = this.state.isOpen;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -195,10 +195,7 @@ class BasicNotificationDrawer extends React.Component {
               </NotificationDrawerListItemBody>
             </NotificationDrawerListItem>
             <NotificationDrawerListItem isRead>
-              <NotificationDrawerListItemHeader
-                title="Read (default) notification title"
-                srTitle="notification:"
-              >
+              <NotificationDrawerListItemHeader title="Read (default) notification title" srTitle="notification:">
                 <Dropdown
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
@@ -511,10 +508,11 @@ class GroupNotificationDrawer extends React.Component {
               </NotificationDrawerList>
             </NotificationDrawerGroup>
             <NotificationDrawerGroup
-              title="Third notification group"
+              title="Third notification group. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
               isExpanded={thirdGroupExpanded}
               count={0}
               onExpand={this.toggleThirdDrawer}
+              truncateTitle={1}
             >
               <NotificationDrawerList isHidden={!thirdGroupExpanded}>
                 <EmptyState variant={EmptyStateVariant.full}>
