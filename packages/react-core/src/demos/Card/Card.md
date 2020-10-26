@@ -516,7 +516,9 @@ class CardViewBasic extends React.Component {
       selectedItems,
       itemsCheckedByDefault,
       areAllSelected,
-      isChecked
+      isChecked,
+      page,
+      perPage,
     } = this.state;
 
     const toolbarKebabDropdownItems = [
@@ -700,7 +702,7 @@ class CardViewBasic extends React.Component {
               <ToolbarContent>{toolbarItems}</ToolbarContent>
             </Toolbar>
           </PageSection>
-          <PageSection>
+          <PageSection isFilled>
             <Gallery hasGutter>
               {filtered.map((product, key) => (
                 <Card isHoverable key={product.name}>
@@ -742,6 +744,17 @@ class CardViewBasic extends React.Component {
                 </Card>
               ))}
             </Gallery>
+          </PageSection>
+          <PageSection isFilled={false} sticky="bottom" padding={{default: "noPadding"}} variant="light">
+            <Pagination
+              itemCount={this.state.totalItemCount}
+              page={page}
+              page={this.state.page}
+              perPage={this.state.perPage}
+              onPerPageSelect={this.onPerPageSelect}
+              onSetPage={this.onSetPage}
+              variant="bottom"
+            />
           </PageSection>
         </Page>
       </React.Fragment>
