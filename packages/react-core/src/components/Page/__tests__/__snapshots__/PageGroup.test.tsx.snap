@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page group Verify basic render 1`] = `
+<PageGroup>
+  <div
+    className="pf-c-page__main-group"
+  >
+    test
+  </div>
+</PageGroup>
+`;
+
+exports[`page group Verify bottom shadow 1`] = `
+<PageGroup
+  hasShadowBottom={true}
+>
+  <div
+    className="pf-c-page__main-group pf-m-shadow-bottom"
+  >
+    test
+  </div>
+</PageGroup>
+`;
+
+exports[`page group Verify bottom sticky 1`] = `
+<PageGroup
+  sticky="bottom"
+>
+  <div
+    className="pf-c-page__main-group pf-m-sticky-bottom"
+  >
+    test
+  </div>
+</PageGroup>
+`;
+
+exports[`page group Verify overflow scroll 1`] = `
+<PageGroup
+  hasOverflowScroll={true}
+>
+  <div
+    className="pf-c-page__main-group pf-m-overflow-scroll"
+  >
+    test
+  </div>
+</PageGroup>
+`;
+
+exports[`page group Verify top shadow 1`] = `
+<PageGroup
+  hasShadowTop={true}
+>
+  <div
+    className="pf-c-page__main-group pf-m-shadow-top"
+  >
+    test
+  </div>
+</PageGroup>
+`;
+
+exports[`page group Verify top sticky 1`] = `
+<PageGroup
+  sticky="top"
+>
+  <div
+    className="pf-c-page__main-group pf-m-sticky-top"
+  >
+    test
+  </div>
+</PageGroup>
+`;
