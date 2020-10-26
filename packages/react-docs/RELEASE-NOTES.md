@@ -65,7 +65,7 @@ releaseNoteTOC: true
 - **Select:** 
   - Updated to display label and not value in typeahead ([#4916](https://github.com/patternfly/patternfly-react/pull/4916))
   - Fixed to skip the divider children in getDisplay ([#4998](https://github.com/patternfly/patternfly-react/pull/4998))
-  - Updated to allow custom chip render props in the multi typehead select . ([#5031](https://github.com/patternfly/patternfly-react/pull/5031))
+  - Updated to allow custom chip render props in the multi typehead select ([#5031](https://github.com/patternfly/patternfly-react/pull/5031))
 - **Skeleton:** 
   - Added screen reader text to skeleton ([#5032](https://github.com/patternfly/patternfly-react/pull/5032))
 - **Splitter:** 
@@ -88,7 +88,7 @@ releaseNoteTOC: true
 - Fixed example button location ([#4993](https://github.com/patternfly/patternfly-react/pull/4993))
 - Fixed legend example size ([#4995](https://github.com/patternfly/patternfly-react/pull/4995))
 - Fixed stack chart example size ([#4994](https://github.com/patternfly/patternfly-react/pull/4994))
-- **Charts:** Legend tooltip example ([#5006](https://github.com/patternfly/patternfly-react/pull/5006))
+- Fixed legend tooltip example ([#5006](https://github.com/patternfly/patternfly-react/pull/5006))
 
 ### Table
 - Fixed compound expandable data labels ([#5017](https://github.com/patternfly/patternfly-react/pull/5017))
