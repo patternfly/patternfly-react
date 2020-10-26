@@ -38,6 +38,8 @@ export interface MenuProps
   }) => void;
   /** A callback for when the input value changes. */
   onSearchInputChange?: (changedItem: { value: string; event: React.FormEvent<HTMLInputElement> }) => void;
+  /** Optional callback for custom filtering */
+  onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
   /** Accessibility label */
   'aria-label'?: string;
   /** Indicates which theme color to use */
@@ -60,12 +62,24 @@ export interface MenuProps
   selections?: (string | SelectOptionObject)[];
 }
 
-export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ouiaStateId: string }> {
+export interface MenuState {
+  typeaheadInputValue: string | null;
+  typeaheadFilteredChildren: React.ReactNode[];
+  // favoritesGroup: React.ReactNode[];
+  // typeaheadCurrIndex: number;
+  // creatableValue: string;
+  // tabbedIntoFavoritesMenu: boolean;
+  // typeaheadStoredIndex: number;
+  ouiaStateId: string;
+}
+
+export class Menu extends React.Component<MenuProps, MenuState> {
   static displayName = 'Menu';
   static defaultProps: MenuProps = {
     onSelect: () => undefined,
     onToggle: () => undefined,
-    onSearchInputChange: () => undefined,
+    onFilter: null,
+    // onChange: () => undefined,
     // onFavorite: () => undefined,
     // theme: 'dark',
     favorites: [] as string[],
@@ -75,10 +89,13 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     isGrouped: false
   };
 
-  state = {
-    isScrollable: false,
-    ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant)
+  state: MenuState = {
+    // isScrollable: false,
+    typeaheadFilteredChildren: React.Children.toArray(this.props.children),
+    ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant),
+    typeaheadInputValue: ''
   };
+  onFilter: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
 
   // Callback from MenuItem
   onSelect(
@@ -110,7 +127,28 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
     });
   }
 
-  onSearchInputChange(event: React.FormEvent<HTMLInputElement>, value: string) {
+  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { onFilter, children, isGrouped } = this.props;
+    let typeaheadFilteredChildren: any;
+
+    if (onFilter) {
+      typeaheadFilteredChildren = onFilter(e) || children;
+
+      if (!typeaheadFilteredChildren) {
+        typeaheadFilteredChildren = [];
+      }
+
+      this.setState({
+        typeaheadInputValue: e.target.value,
+        // typeaheadCurrIndex: -1,
+        typeaheadFilteredChildren
+        // creatableValue: e.target.value
+      });
+      // this.refCollection = [[]];
+    }
+  };
+
+  onSearchInputChange(value: string, event: React.FormEvent<HTMLInputElement>) {
     this.props.onSearchInputChange({
       event,
       value
@@ -216,34 +254,6 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         variantChildren = renderableItems;
         break;
-      // case 'checkbox':
-      //   variantProps = {
-      //     checked: selections,
-      //     isGrouped,
-      //     hasInlineFilter
-      //   };
-      //   variantChildren = filterWithChildren;
-      //   break;
-      // case 'typeahead':
-      //   variantProps = {
-      //     selected: selections[0],
-      //     openedOnEnter
-      //   };
-      //   variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
-      //   if (variantChildren.length === 0) {
-      //     variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
-      //   }
-      //   break;
-      // case 'typeaheadmulti':
-      //   variantProps = {
-      //     selected: selections,
-      //     openedOnEnter
-      //   };
-      //   variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
-      //   if (variantChildren.length === 0) {
-      //     variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
-      //   }
-      //   break;
     }
 
     return (
@@ -266,10 +276,9 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
             ) => void
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, isSelected, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
-            this.onToggle(event, groupId, expanded),
-          onSearchInputChange: (event: React.FormEvent<HTMLInputElement>, value: string) =>
-            this.onSearchInputChange(event, value),
-          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable })
+            this.onToggle(event, groupId, expanded)
+          // onSearchInputChange: (event: React.FormEvent<HTMLInputElement>, value: string) => this.onSearchInputChange(val)
+          // updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable })
           // isHorizontal,
         }}
       >
@@ -288,7 +297,14 @@ export class Menu extends React.Component<MenuProps, { isScrollable: boolean; ou
         >
           {searchInput && (
             <div className="pf-c-menu__search">
-              <SearchInput />
+              <SearchInput
+                value={this.state.typeaheadInputValue}
+                onChange={(value, event) => {
+                  this.setState({ typeaheadInputValue: value });
+                  this.onSearchInputChange && this.onSearchInputChange(value, event);
+                }}
+                onClear={() => this.setState({ typeaheadInputValue: '' })}
+              />
             </div>
           )}
           {renderableItems}
