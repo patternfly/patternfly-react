@@ -497,7 +497,7 @@ class ProgressiveWizard extends React.Component {
             isChecked={getStartedStepRadio === 'Create'}
             onChange={(_, event) => this.setState({ getStartedStepRadio: event.currentTarget.value })}
             label="Create a new thing"
-            name="radio-step-start"
+            name="radio-step-start-1"
             id="radio-step-start-1"
           />{' '}
           <Radio
@@ -505,7 +505,7 @@ class ProgressiveWizard extends React.Component {
             isChecked={getStartedStepRadio === 'Update'}
             onChange={(_, event) => this.setState({ getStartedStepRadio: event.currentTarget.value })}
             label="Update an existing thing"
-            name="radio-step-start"
+            name="radio-step-start-2"
             id="radio-step-start-2"
           />
         </div>
