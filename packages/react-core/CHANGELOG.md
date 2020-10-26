@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.74.0...@patternfly/react-core@4.75.0) (2020-10-26)
+
+
+### Features
+
+* **DataList:** expose grid modifiers as properties ([#4969](https://github.com/patternfly/patternfly-react/issues/4969)) ([7e26b4e](https://github.com/patternfly/patternfly-react/commit/7e26b4e534ebe569f9fef0152c886014d2ddfcac)), closes [#4965](https://github.com/patternfly/patternfly-react/issues/4965)
+
+
+
+
+
 # [4.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.73.0...@patternfly/react-core@4.74.0) (2020-10-23)
 
 
