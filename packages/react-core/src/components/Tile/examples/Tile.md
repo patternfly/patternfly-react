@@ -6,13 +6,15 @@ propComponents: ['Tile']
 beta: true
 ---
 
-import { PlusIcon, BellIcon } from '@patternfly/react-icons';
+import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+
 
 ## Examples
 
 Keyboard interaction patterns and a11y is implemented in the Tile demos, located in the [Demo section](/documentation/react/demos/tiledemo).
 
-### Tile
+### Basic
 
 ```js
 import React from 'react';
@@ -25,7 +27,8 @@ import { Tile } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-### Tile with subtext
+
+### With subtext
 
 ```js
 import React from 'react';
@@ -42,7 +45,7 @@ import { Tile } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-### Tile with icon
+### With icon
 
 ```js
 import React from 'react';
@@ -62,7 +65,7 @@ import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
 </React.Fragment>
 ```
 
-### Stacked tile
+### Stacked
 
 ```js
 import React from 'react';
@@ -82,7 +85,7 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 </React.Fragment>
 ```
 
-### Stacked tile with large icons
+### Stacked with large icons
 
 ```js
 import React from 'react';
@@ -102,7 +105,7 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 </React.Fragment>
 ```
 
-### Tile with extra content
+### With extra content
 
 ```js
 import React from 'react';
