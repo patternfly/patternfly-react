@@ -15,6 +15,9 @@ import React from 'react';
 import { DatePicker, Locales } from '@patternfly/react-datetime';
 
 <React.Fragment>
+  <DatePicker />
+  <br />
+  <br />
   <DatePicker value="03/05/2020"/>
   <br />
   <br />
@@ -22,13 +25,13 @@ import { DatePicker, Locales } from '@patternfly/react-datetime';
   <br />
   <br />
   <DatePicker 
-    locale={DatePickerLocales.fr}
+    locale={Locales.fr}
     dateFormat="dd.MM.yyyy" 
-    placeholder='jj.mm.aaaa'
-    invalidFormatErrorMessage='Cette date est invalide.'
-    dateOutOfRangeErrorMessage='Cette date dépasse la limite, que ce soit en borne inférieure ou supérieure.'
-    beforeMinDateErrorMessage='Cette date est antérieure à la première date valide.'
-    afterEndDateErrorMessage='Cette date est postérieure à la dernière date valide.'
+    placeholder="jj.mm.aaaa"
+    invalidFormatErrorMessage="Cette date est invalide."
+    dateOutOfRangeErrorMessage="Cette date dépasse la limite, que ce soit en borne inférieure ou supérieure."
+    beforeMinDateErrorMessage="Cette date est antérieure à la première date valide."
+    afterEndDateErrorMessage="Cette date est postérieure à la dernière date valide."
   />
 </React.Fragment>
 ```

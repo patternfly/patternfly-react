@@ -125,12 +125,14 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   };
 
   onDateClick = (valueDate: Date) => {
-    const { dateFormat, locale } = this.props;
+    const { dateFormat, locale, onChange } = this.props;
+    const value = format(valueDate, dateFormat, { locale });
     this.setState({
-      value: format(valueDate, dateFormat, { locale }),
+      value,
       valueDate
     });
     this.validateDate(valueDate);
+    onChange(value, valueDate);
   };
 
   render() {
@@ -151,8 +153,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       dateOutOfRangeErrorMessage,
       beforeMinDateErrorMessage,
       afterEndDateErrorMessage,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
       onChange,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
     const { invalid, invalidText, value, valueDate } = this.state;

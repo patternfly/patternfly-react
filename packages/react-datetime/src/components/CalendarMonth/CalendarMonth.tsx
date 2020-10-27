@@ -15,6 +15,8 @@ export interface CalendarProps {
   monthFormat?: string;
   /** How to format days in header according to date-fns */
   dayFormat?: string;
+  /** How to format days in buttons according to date-fns */
+  buttonFormat?: string;
   /** Callback when date is selected */
   onChange?: (date: Date) => void;
   /** Specify the locale of the date. */
@@ -47,6 +49,7 @@ export const CalendarMonth = ({
   date: dateProp = new Date(),
   monthFormat = 'MMMM',
   dayFormat = 'EEE',
+  buttonFormat = 'd',
   onChange = () => {},
   locale = Locales.enUS
 }: CalendarProps) => {
@@ -58,11 +61,18 @@ export const CalendarMonth = ({
       return prev;
     }, {} as { [key: string]: number });
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+  const [selectedDay, setSelectedDay] = React.useState(format(dateProp, buttonFormat, { locale }));
   const [selectedMonth, setSelectedMonth] = React.useState(format(dateProp, monthFormat, { locale }));
   const [selectedYear, setSelectedYear] = React.useState(format(dateProp, yearFormat, { locale }));
+  const selectedButtonRef = React.useRef<HTMLButtonElement>();
+
   useEffect(() => {
+    setSelectedDay(format(dateProp, buttonFormat, { locale }));
     setSelectedMonth(format(dateProp, monthFormat, { locale }));
     setSelectedYear(format(dateProp, yearFormat, { locale }));
+    if (selectedButtonRef.current) {
+      setTimeout(() => selectedButtonRef.current.focus(), 100);
+    }
   }, [dateProp]);
 
   const onMonthClick = (toAdd: -1 | 1) => {
@@ -131,14 +141,25 @@ export const CalendarMonth = ({
       <tbody>
         {calendar.map((week, index) => (
           <tr key={index}>
-            {week.map((day, index) => (
-              <td key={index}>
-                <button style={{ width: '100%' }} onClick={() => onChange(day)}>
-                  {/* Current design uses this, could custom render anything */}
-                  {format(day, 'd')}
-                </button>
-              </td>
-            ))}
+            {week.map((day, index) => {
+              const autoFocus =
+                format(day, buttonFormat, { locale }) === selectedDay &&
+                format(day, monthFormat, { locale }) === selectedMonth &&
+                format(day, yearFormat, { locale }) === selectedYear;
+              return (
+                <td key={index}>
+                  <button
+                    style={{ width: '100%' }}
+                    onClick={() => onChange(day)}
+                    tabIndex={autoFocus ? 0 : -1}
+                    {...(autoFocus && { ref: selectedButtonRef })}
+                  >
+                    {/* Current design uses this, could custom render anything */}
+                    {format(day, buttonFormat)}
+                  </button>
+                </td>
+              );
+            })}
           </tr>
         ))}
       </tbody>
