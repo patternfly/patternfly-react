@@ -163,7 +163,7 @@ class VerticalResizeTextArea extends React.Component {
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-class horizontalResizeTextArea extends React.Component {
+class HorizontalResizeTextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -188,7 +188,5 @@ class horizontalResizeTextArea extends React.Component {
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-UncontrolledTextArea = () => (
-  <TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
-)
+<TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
 ```

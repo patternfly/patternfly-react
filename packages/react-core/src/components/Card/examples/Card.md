@@ -14,13 +14,11 @@ import pfLogo from './pfLogo.svg';
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-SimpleCard = () => (
-  <Card>
-    <CardTitle>Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card>
+  <CardTitle>Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### With image and actions
@@ -267,18 +265,16 @@ class KebabDropdown extends React.Component {
 import React from 'react';
 import { Brand, Card, CardBody, CardFooter, CardHeader, CardHeaderMain, CardTitle } from '@patternfly/react-core';
 
-ImageCard = () => (
-  <Card>
-    <CardHeader>
-      <CardHeaderMain>
-        <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
-      </CardHeaderMain>
-    </CardHeader> 
-    <CardTitle>Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card>
+  <CardHeader>
+    <CardHeaderMain>
+      <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
+    </CardHeaderMain>
+  </CardHeader> 
+  <CardTitle>Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### With no footer
@@ -286,12 +282,10 @@ ImageCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-NoFooterCard = () => (
-  <Card>
-    <CardTitle>Header</CardTitle>
-    <CardBody>This card has no footer</CardBody>
-  </Card>
-);
+<Card>
+  <CardTitle>Header</CardTitle>
+  <CardBody>This card has no footer</CardBody>
+</Card>
 ```
 
 ### With no header
@@ -299,12 +293,10 @@ NoFooterCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-NoHeaderCard = () => (
-  <Card>
-    <CardBody>This card has no header</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card>
+  <CardBody>This card has no header</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### With only a content section
@@ -312,11 +304,9 @@ NoHeaderCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-ContentOnlyCard = () => (
-  <Card>
-    <CardBody>Body</CardBody>
-  </Card>
-);
+<Card>
+  <CardBody>Body</CardBody>
+</Card>
 ```
 
 ### With multiple body sections
@@ -324,15 +314,13 @@ ContentOnlyCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-MultipleBodyCard = () => (
-  <Card>
-    <CardTitle>Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardBody>Body</CardBody>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card>
+  <CardTitle>Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardBody>Body</CardBody>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### With only one body that fills
@@ -340,15 +328,13 @@ MultipleBodyCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-NoFillBodyCard = () => (
-  <Card style={{ minHeight: '30em' }}>
-    <CardTitle>Header</CardTitle>
-    <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
-    <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card style={{ minHeight: '30em' }}>
+  <CardTitle>Header</CardTitle>
+  <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
+  <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### Hover
@@ -356,13 +342,11 @@ NoFillBodyCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-HoverableCard = () => (
-  <Card isHoverable>
-    <CardTitle>Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card isHoverable>
+  <CardTitle>Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### Compact
@@ -370,13 +354,11 @@ HoverableCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-CompactCard = () => (
-  <Card isCompact>
-    <CardTitle>Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card isCompact>
+  <CardTitle>Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### Selectable and selected
@@ -473,13 +455,11 @@ class SelectableCard extends React.Component {
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-SimpleCard = () => (
-  <Card isFlat>
-    <CardTitle>Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card isFlat>
+  <CardTitle>Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```
 
 ### With heading element
@@ -487,11 +467,9 @@ SimpleCard = () => (
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-HeadingCard = () => (
-  <Card>
-    <CardTitle component="h4">Header</CardTitle>
-    <CardBody>Body</CardBody>
-    <CardFooter>Footer</CardFooter>
-  </Card>
-);
+<Card>
+  <CardTitle component="h4">Header</CardTitle>
+  <CardBody>Body</CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
 ```

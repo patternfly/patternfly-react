@@ -1,9 +1,6 @@
 ---
 id: Themed charts
 section: charts
-propComponents: [
-  'ChartThemeVariant'
-]
 hideDarkMode: true
 ---
 

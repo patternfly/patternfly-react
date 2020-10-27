@@ -11,9 +11,7 @@ propComponents: ['Backdrop']
 import React from 'react';
 import { Backdrop } from '@patternfly/react-core';
 
-SimpleBackdrop = () => (
-  <Backdrop />
-);
+<Backdrop />
 ```
 
 ### With spinner
@@ -21,11 +19,9 @@ SimpleBackdrop = () => (
 import React from 'react';
 import { Backdrop, Spinner, Bullseye } from '@patternfly/react-core';
 
-SpinnerBackdrop = () => (
-  <Backdrop>
-    <Bullseye>
-      <Spinner />
-    </Bullseye>
-  </Backdrop>
-);
+<Backdrop>
+  <Bullseye>
+    <Spinner />
+  </Bullseye>
+</Backdrop>
 ```

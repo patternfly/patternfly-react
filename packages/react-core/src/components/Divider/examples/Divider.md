@@ -6,14 +6,12 @@ propComponents: ['Divider']
 ---
 
 ## Examples
-### Using hr (default)
+### Using hr
 ```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
-DividerHr = () => (
-  <Divider/>
-);
+<Divider/>
 ```
 
 ### Using li
@@ -21,13 +19,11 @@ DividerHr = () => (
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist';
 
-DividerLi = () => (
-  <ul>
-    <li>List item one</li>
-    <Divider component="li"/>
-    <li>List item two</li>
-  </ul>
-);
+<ul>
+  <li>List item one</li>
+  <Divider component="li"/>
+  <li>List item two</li>
+</ul>
 ```
 
 ### Using div
@@ -35,9 +31,7 @@ DividerLi = () => (
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
-DividerDiv = () => (
-  <Divider component="div"/>
-);
+<Divider component="div"/>
 ```
 
 ### Inset medium
@@ -45,9 +39,7 @@ DividerDiv = () => (
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
-DividerInsetMedium = () => (
-  <Divider inset={{default: 'insetMd'}}/>
-);
+<Divider inset={{default: 'insetMd'}}/>
 ```
 
 ### Inset at various breakpoints
@@ -55,15 +47,14 @@ DividerInsetMedium = () => (
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
-DividerInsetVarious = () => (
-  <Divider inset={{
-          default: 'insetMd',
-          md: 'insetNone',
-          lg: 'inset3xl',
-          xl: 'insetLg'
-        }}
-      />
-);
+<Divider
+  inset={{
+    default: 'insetMd',
+    md: 'insetNone',
+    lg: 'inset3xl',
+    xl: 'insetLg'
+  }}
+/>
 ```
 
 ### Vertical in flex layout
@@ -71,13 +62,11 @@ DividerInsetVarious = () => (
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-DividerVertical = () => (
-  <Flex>
-    <FlexItem>first item</FlexItem>
-    <Divider isVertical/>
-    <FlexItem>second item</FlexItem>
-  </Flex>
-);
+<Flex>
+  <FlexItem>first item</FlexItem>
+  <Divider isVertical/>
+  <FlexItem>second item</FlexItem>
+</Flex>
 ```
 
 ### Vertical, inset medium in flex layout
@@ -85,13 +74,11 @@ DividerVertical = () => (
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-DividerVerticalInsetMd = () => (
-  <Flex>
-    <FlexItem>first item</FlexItem>
-    <Divider isVertical inset={{default: 'insetMd'}}/>
-    <FlexItem>second item</FlexItem>
-  </Flex>
-);
+<Flex>
+  <FlexItem>first item</FlexItem>
+  <Divider isVertical inset={{default: 'insetMd'}}/>
+  <FlexItem>second item</FlexItem>
+</Flex>
 ```
 
 ### Vertical, inset at various breakpoints
@@ -99,18 +86,16 @@ DividerVerticalInsetMd = () => (
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-DividerVerticalInsetVarious = () => (
-  <Flex>
-    <FlexItem>first item</FlexItem>
-    <Divider isVertical 
-      inset={{
-        default: 'insetMd',
-        md: 'insetNone',
-        lg: 'insetSm',
-        xl: 'insetXs'
-      }}
-    />
-    <FlexItem>first item</FlexItem>
-  </Flex>
-);
+<Flex>
+  <FlexItem>first item</FlexItem>
+  <Divider isVertical 
+    inset={{
+      default: 'insetMd',
+      md: 'insetNone',
+      lg: 'insetSm',
+      xl: 'insetXs'
+    }}
+  />
+  <FlexItem>first item</FlexItem>
+</Flex>
 ```
