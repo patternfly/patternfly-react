@@ -1,14 +1,16 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import { MenuSelectClickHandler } from './Menu';
+import { Menu, MenuSelectClickHandler } from './Menu';
 import { MenuContext } from './MenuContext';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import { useState } from 'react';
+import { MenuList } from '.';
 
-export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
+export interface MenuListItemProps {
   /** Content rendered inside the menu list item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
@@ -52,7 +54,9 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLAnchorElemen
   /** Aria label text for favoritable button when not favorited */
   ariaIsNotFavoriteLabel?: string;
   /** Flyout menu */
-  flyoutMenuItems: React.ReactNode;
+  flyoutMenu?: React.ReactNode;
+  /** Callback function when mouse leaves trigger */
+  onShowFlyout?: (event?: MouseEvent) => void;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
@@ -61,7 +65,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   className,
   to,
   isActive = false,
-  flyoutMenuItems,
+  flyoutMenu,
   groupId = null as string,
   itemId = null as string,
   description = null as string,
@@ -78,52 +82,71 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   isFavorite,
   ariaIsFavoriteLabel,
   ariaIsNotFavoriteLabel,
+  onShowFlyout,
   ...props
 }: MenuListItemProps) => {
   const Component = component as any;
+  const [flyoutVisible, setFlyoutVisible] = useState(false);
+
+  const showFlyout = (displayFlyout: boolean) => {
+    // eslint-disable-next-line no-console
+    setFlyoutVisible(displayFlyout);
+    onShowFlyout && flyoutVisible && onShowFlyout();
+  };
 
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
-      <Component
-        href={to}
-        id={id}
-        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick, isSelected)}
-        className={css(
-          styles.menuItem,
-          isFavorite && styles.modifiers.favorited,
-          isSelected && styles.modifiers.selected,
-          className
-        )}
-        aria-current={isActive ? 'page' : null}
-        {...props}
-      >
-        <div className={css(styles.menuItemMain)}>
-          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-          <span className={css(styles.menuItemText)}>{children}</span>
-          {isExternalLink && (
-            <span className={css(styles.menuItemExternalIcon)}>
-              <ExternalLinkAltIcon />
-            </span>
+      <>
+        <Component
+          href={to}
+          id={id}
+          onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick, isSelected)}
+          className={css(
+            styles.menuItem,
+            isFavorite && styles.modifiers.favorited,
+            isSelected && styles.modifiers.selected,
+            className
           )}
-          {isExpandable && (
-            <span className={css(styles.menuItemToggleIcon)}>
-              <AngleRightIcon />
-            </span>
-          )}
-          {isSelected && (
-            <span className={css(styles.menuItemSelectIcon)}>
-              <CheckIcon aria-hidden />
-            </span>
-          )}
-        </div>
-        {description && (
-          <div className={css(styles.menuItemDescription)}>
-            <span>{description}</span>
+          aria-current={isActive ? 'page' : null}
+          {...props}
+        >
+          <div className={css(styles.menuItemMain)}>
+            {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+            <span className={css(styles.menuItemText)}>{children}</span>
+            {isExternalLink && (
+              <span className={css(styles.menuItemExternalIcon)}>
+                <ExternalLinkAltIcon />
+              </span>
+            )}
+            {isExpandable && (
+              <span className={css(styles.menuItemToggleIcon)}>
+                <AngleRightIcon />
+              </span>
+            )}
+            {isSelected && (
+              <span className={css(styles.menuItemSelectIcon)}>
+                <CheckIcon aria-hidden />
+              </span>
+            )}
           </div>
+          {description && (
+            <div className={css(styles.menuItemDescription)}>
+              <span>{description}</span>
+            </div>
+          )}
+        </Component>
+        {flyoutVisible && (
+          <Menu>
+            <MenuList>
+              <MenuListItem component="button">Application Grouping</MenuListItem>
+              <MenuListItem component="button">Count</MenuListItem>
+              <MenuListItem component="button">Labels</MenuListItem>
+              <MenuListItem component="button">Annotations</MenuListItem>
+            </MenuList>
+          </Menu>
         )}
-        {flyoutMenuItems}
-      </Component>
+      </>
     );
   };
 
@@ -137,7 +160,11 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
     });
 
   return (
-    <li className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}>
+    <li
+      className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}
+      onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
+      onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
+    >
       <MenuContext.Consumer>
         {context => (
           <>

@@ -144,14 +144,15 @@ class MenuWithFlyout extends React.Component {
       });
     };
 
-    handleMenuToggle = () => {
+    this.onMouseEnter = () => {
       this.setState({ isSubmenuOpen: !this.state.isSubmenuOpen });
     };
   }
 
   render() {
     const { activeItem, handleMenuToggle } = this.state;
-    const flyoutMenuItems = [
+    const flyoutMenu =
+    (<Menu>
       <MenuList>
         <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
           Application Grouping
@@ -166,7 +167,7 @@ class MenuWithFlyout extends React.Component {
           Annotations
         </MenuListItem>
       </MenuList>
-    ];
+    </Menu>);
     const menuItems = [
       <MenuList>
         <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
@@ -185,8 +186,7 @@ class MenuWithFlyout extends React.Component {
           itemId={3}
           isActive={activeItem === 3}
           isExpandable
-          onMouseEnter={handleMenuToggle}
-          flyoutMenuItems={this.state.isSubMenuOpen ? flyoutMenuItems : ''}
+          flyoutMenu={this.state.isSubMenuOpen ? flyoutMenuItems : ''}
         >
           Edit
         </MenuListItem>
