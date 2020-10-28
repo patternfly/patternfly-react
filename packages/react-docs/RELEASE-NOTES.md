@@ -1,7 +1,6 @@
 ---
 id: Release notes
 section: get-started
-releaseNoteTOC: true
 ---
 
 ## 2020.14 release notes (2020-10-27)
