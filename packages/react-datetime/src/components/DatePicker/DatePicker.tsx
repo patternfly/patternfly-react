@@ -28,7 +28,7 @@ export interface DatePickerProps
   locale?: Locale;
   /** String to display in the empty date picker field as a hint for the expected date format */
   placeholder?: string;
-  /** A date string. The format could be the expected date format, or an ISO 8601 formatted date string */
+  /** A date string. */
   value?: string;
   /** Error message to display when the date is provided in an invalid format. */
   invalidFormatErrorMessage?: string;
@@ -42,143 +42,131 @@ export interface DatePickerProps
   onChange?: (value: string, date?: Date) => void;
 }
 
-interface DatePickerState {
-  invalid: boolean;
-  invalidText: string;
-  value: string;
-  valueDate: Date;
-}
+export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
+  className,
+  isInvalid = false,
+  minDate: minDateProp = '',
+  maxDate: maxDateProp = '',
+  dateFormat = 'MM/dd/yyyy',
+  isDisabled = false,
+  locale = Locales.enUS,
+  placeholder = 'MM/dd/yyyy',
+  value: valueProp = '',
+  'aria-label': ariaLabel = 'Date picker',
+  onChange = (): any => undefined,
+  invalidFormatErrorMessage,
+  dateOutOfRangeErrorMessage,
+  beforeMinDateErrorMessage,
+  afterEndDateErrorMessage,
+  ...props
+}: DatePickerProps) => {
+  const myParse = (date: string) => parse(date, dateFormat, new Date(), { locale });
+  const getDefaultValueDate = () => {
+    let res = myParse(valueProp);
+    if (!isValid(res)) {
+      if (isValid(minDate)) {
+        res = new Date(minDate);
+      } else if (isValid(maxDate)) {
+        res = new Date(maxDate);
+      } else {
+        res = new Date();
+      }
+    }
 
-export class DatePicker extends React.Component<DatePickerProps, DatePickerState> {
-  static displayName = 'DatePicker';
-  static defaultProps = {
-    className: '',
-    isInvalid: false,
-    minDate: '',
-    maxDate: '',
-    dateFormat: 'MM/dd/yyyy',
-    isDisabled: false,
-    locale: Locales.enUS,
-    placeholder: 'MM/dd/yyyy',
-    value: '',
-    'aria-label': 'Date picker',
-    onChange: (): any => undefined
+    return res;
   };
 
-  constructor(props: DatePickerProps) {
-    super(props);
-    let valueDate = parse(props.value, props.dateFormat, new Date());
-    if (!isValid(valueDate)) {
-      valueDate = new Date();
-    }
-    this.state = {
-      invalid: props.isInvalid,
-      invalidText: '',
-      value: props.value,
-      valueDate
-    };
-  }
+  const [invalid, setInvalid] = React.useState(isInvalid);
+  const [invalidText, setInvalidText] = React.useState('');
+  const [value, setValue] = React.useState(valueProp);
+  const [minDate, setMinDate] = React.useState(myParse(minDateProp));
+  const [maxDate, setMaxDate] = React.useState(myParse(maxDateProp));
+  const [valueDate, setValueDate] = React.useState(getDefaultValueDate());
+  const [popoverOpen, setPopoverOpen] = React.useState(false);
 
-  validateDate = (date: Date) => {
-    const {
-      dateFormat,
-      minDate: minDateIn,
-      maxDate: maxDateIn,
-      invalidFormatErrorMessage,
-      dateOutOfRangeErrorMessage,
-      beforeMinDateErrorMessage,
-      afterEndDateErrorMessage
-    } = this.props;
+  React.useEffect(() => {
+    setValueDate(getDefaultValueDate());
+  }, [valueProp]);
 
-    const minDate = parse(minDateIn, dateFormat, new Date());
-    const maxDate = parse(maxDateIn, dateFormat, new Date());
-    let invalid = false;
-    let invalidText = '';
+  React.useEffect(() => {
+    setMinDate(myParse(minDateProp));
+  }, [minDateProp]);
+
+  React.useEffect(() => {
+    setMaxDate(myParse(maxDateProp));
+  }, [maxDateProp]);
+
+  const validateDate = (date: Date) => {
+    let isInvalid = false;
     if (!isValid(date)) {
-      invalid = true;
-      invalidText = invalidFormatErrorMessage || `Please use format: ${dateFormat}.`;
+      isInvalid = true;
+      setInvalidText(invalidFormatErrorMessage || `Please use format: ${dateFormat}.`);
     } else if (isValid(minDate) && isValid(maxDate)) {
       if (date < minDate || date > maxDate) {
-        invalid = true;
-        invalidText = dateOutOfRangeErrorMessage || `The date is outside the allowable range.`;
+        isInvalid = true;
+        setInvalidText(dateOutOfRangeErrorMessage || `The date is outside the allowable range.`);
       }
     } else if (isValid(minDate) && date < minDate) {
-      invalid = true;
-      invalidText = beforeMinDateErrorMessage || `Date is before the allowable range.`;
+      isInvalid = true;
+      setInvalidText(beforeMinDateErrorMessage || `Date is before the allowable range.`);
     } else if (isValid(maxDate) && date > maxDate) {
-      invalid = true;
-      invalidText = afterEndDateErrorMessage || `Date is after the allowable range.`;
+      isInvalid = true;
+      setInvalidText(afterEndDateErrorMessage || `Date is after the allowable range.`);
     }
-    this.setState({
-      invalid,
-      invalidText
-    });
+    setInvalid(isInvalid);
+
+    return !isInvalid;
   };
 
-  onTextInput = (value: string) => {
-    this.setState({ value });
-    const valueDate = parse(value, this.props.dateFormat, new Date());
-    if (isValid(valueDate)) {
-      this.setState({ valueDate });
+  const onTextInput = (value: string) => {
+    setValue(value);
+    const newValueDate = myParse(value);
+    if (isValid(newValueDate)) {
+      setValueDate(newValueDate);
     }
-    this.validateDate(valueDate);
+    validateDate(newValueDate);
   };
 
-  onDateClick = (valueDate: Date) => {
-    const { dateFormat, locale, onChange } = this.props;
-    const value = format(valueDate, dateFormat, { locale });
-    this.setState({
-      value,
-      valueDate
-    });
-    this.validateDate(valueDate);
-    onChange(value, valueDate);
+  const onDateClick = (valueDate: Date) => {
+    const newValue = format(valueDate, dateFormat, { locale });
+    setValue(newValue);
+    setValueDate(valueDate);
+    if (validateDate(valueDate)) {
+      onChange(newValue, valueDate);
+      setPopoverOpen(false);
+    }
   };
 
-  render() {
-    const {
-      className,
-      placeholder,
-      isDisabled,
-      'aria-label': ariaLabel,
-      locale,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      isInvalid,
-      pattern,
-      value: valueProp,
-      dateFormat,
-      minDate,
-      maxDate,
-      invalidFormatErrorMessage,
-      dateOutOfRangeErrorMessage,
-      beforeMinDateErrorMessage,
-      afterEndDateErrorMessage,
-      onChange,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
-      ...props
-    } = this.props;
-    const { invalid, invalidText, value, valueDate } = this.state;
-
-    return (
-      <div className={css(styles.datePicker, className)} {...props}>
-        <Popover
-          position="bottom"
-          bodyContent={<CalendarMonth date={valueDate} onChange={this.onDateClick} locale={locale} />}
-          minWidth="23.2rem"
-          showClose={false}
-        >
-          <TextInput
-            isDisabled={isDisabled}
-            iconVariant="calendar"
-            aria-label={ariaLabel}
-            placeholder={placeholder}
-            validated={this.state.invalid ? 'error' : 'default'}
-            value={value}
-            onChange={this.onTextInput}
-          />
-        </Popover>
-        {invalid && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{invalidText}</div>}
-      </div>
-    );
-  }
-}
+  return (
+    <div className={css(styles.datePicker, className)} {...props}>
+      <Popover
+        position="bottom"
+        bodyContent={<CalendarMonth date={valueDate} onChange={onDateClick} locale={locale} />}
+        minWidth="23.2rem"
+        showClose={false}
+        isVisible={popoverOpen}
+        shouldOpen={() => {
+          setPopoverOpen(true);
+          return true;
+        }}
+        shouldClose={() => {
+          setPopoverOpen(false);
+          return true;
+        }}
+        withFocusTrap
+      >
+        <TextInput
+          isDisabled={isDisabled}
+          iconVariant="calendar"
+          aria-label={ariaLabel}
+          placeholder={placeholder}
+          validated={invalid ? 'error' : 'default'}
+          value={value}
+          onChange={onTextInput}
+        />
+      </Popover>
+      {invalid && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{invalidText}</div>}
+    </div>
+  );
+};
+DatePicker.displayName = 'DatePicker';

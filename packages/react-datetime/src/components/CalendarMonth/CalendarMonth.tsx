@@ -6,7 +6,7 @@ import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 // https://date-fns.org/v2.16.1/docs/format
 import { format } from 'date-fns';
-import { Locales, Locale } from '../../helpers';
+import { Locales, Locale, dataFormats } from '../../helpers';
 
 export interface CalendarProps {
   /** Month/year to base other dates around */
@@ -61,33 +61,42 @@ export const CalendarMonth = ({
       return prev;
     }, {} as { [key: string]: number });
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [selectedDay, setSelectedDay] = React.useState(format(dateProp, buttonFormat, { locale }));
-  const [selectedMonth, setSelectedMonth] = React.useState(format(dateProp, monthFormat, { locale }));
-  const [selectedYear, setSelectedYear] = React.useState(format(dateProp, yearFormat, { locale }));
-  const selectedButtonRef = React.useRef<HTMLButtonElement>();
+  const [selectedDate, setSelectedDate] = React.useState(dateProp);
+  const selectedRef = React.useRef<HTMLButtonElement>();
 
   useEffect(() => {
-    setSelectedDay(format(dateProp, buttonFormat, { locale }));
-    setSelectedMonth(format(dateProp, monthFormat, { locale }));
-    setSelectedYear(format(dateProp, yearFormat, { locale }));
-    if (selectedButtonRef.current) {
-      setTimeout(() => selectedButtonRef.current.focus(), 100);
-    }
+    setSelectedDate(dateProp);
   }, [dateProp]);
 
-  const onMonthClick = (toAdd: -1 | 1) => {
-    let newMonth = longMonthNames[selectedMonth] + toAdd;
-    if (newMonth === 12) {
-      setSelectedYear(+selectedYear + 1 + '');
-      newMonth = 0;
-    } else if (newMonth === -1) {
-      setSelectedYear(+selectedYear - 1 + '');
-      newMonth = 11;
+  useEffect(() => {
+    if (selectedRef.current) {
+      selectedRef.current.focus();
     }
-    setSelectedMonth(Object.keys(longMonthNames)[newMonth]);
+  }, [selectedDate]);
+
+  const onMonthClick = (toAdd: -1 | 1) => {
+    const newDate = new Date(selectedDate);
+    newDate.setFullYear(newDate.getFullYear() + toAdd);
+    setSelectedDate(newDate);
   };
 
-  const calendar = buildCalendar(+selectedYear, longMonthNames[selectedMonth], locale);
+  const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
+    const newDate = new Date(selectedDate);
+    if (ev.key === 'ArrowUp') {
+      newDate.setDate(newDate.getDate() - 7);
+    } else if (ev.key === 'ArrowRight') {
+      newDate.setDate(newDate.getDate() + 1);
+    } else if (ev.key === 'ArrowDown') {
+      newDate.setDate(newDate.getDate() + 7);
+    } else if (ev.key === 'ArrowLeft') {
+      newDate.setDate(newDate.getDate() - 1);
+    }
+    if (newDate.getTime() !== selectedDate.getTime()) {
+      setSelectedDate(newDate);
+    }
+  };
+
+  const calendar = buildCalendar(selectedDate.getFullYear(), selectedDate.getMonth(), locale);
   return (
     <table style={{ width: '340px', tableLayout: 'fixed' }}>
       <thead>
@@ -104,13 +113,20 @@ export const CalendarMonth = ({
               onToggle={() => setIsSelectOpen(!isSelectOpen)}
               onSelect={(_ev, longMonth) => {
                 setIsSelectOpen(false);
-                setSelectedMonth(longMonth as string);
+                const monthNum = longMonthNames[longMonth as string];
+                const newDate = new Date(selectedDate);
+                newDate.setMonth(monthNum);
+                setSelectedDate(newDate);
               }}
               variant="single"
-              selections={selectedMonth}
+              selections={format(selectedDate, monthFormat, { locale })}
             >
               {Object.keys(longMonthNames).map(longMonth => (
-                <SelectOption key={longMonth} value={longMonth} isSelected={longMonth === selectedMonth} />
+                <SelectOption
+                  key={longMonth}
+                  value={longMonth}
+                  isSelected={longMonth === format(selectedDate, monthFormat, { locale })}
+                />
               ))}
             </Select>
           </td>
@@ -118,8 +134,12 @@ export const CalendarMonth = ({
             <TextInput
               aria-label="Select a year"
               type="number"
-              value={selectedYear}
-              onChange={year => setSelectedYear(year)}
+              value={format(selectedDate, yearFormat, { locale })}
+              onChange={year => {
+                const newDate = new Date(selectedDate);
+                newDate.setFullYear(+year);
+                setSelectedDate(newDate);
+              }}
             />
           </td>
           <td colSpan={1}>
@@ -138,21 +158,18 @@ export const CalendarMonth = ({
             ))}
         </tr>
       </thead>
-      <tbody>
+      <tbody onKeyDown={onKeyDown}>
         {calendar.map((week, index) => (
           <tr key={index}>
             {week.map((day, index) => {
-              const autoFocus =
-                format(day, buttonFormat, { locale }) === selectedDay &&
-                format(day, monthFormat, { locale }) === selectedMonth &&
-                format(day, yearFormat, { locale }) === selectedYear;
+              const isSelected = format(day, dataFormats.month) === format(selectedDate, dataFormats.month);
               return (
                 <td key={index}>
                   <button
                     style={{ width: '100%' }}
                     onClick={() => onChange(day)}
-                    tabIndex={autoFocus ? 0 : -1}
-                    {...(autoFocus && { ref: selectedButtonRef })}
+                    tabIndex={isSelected ? 0 : -1}
+                    {...(isSelected && { ref: selectedRef })}
                   >
                     {/* Current design uses this, could custom render anything */}
                     {format(day, buttonFormat)}

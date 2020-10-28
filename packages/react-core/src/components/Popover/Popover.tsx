@@ -132,6 +132,8 @@ export interface PopoverProps {
   animationDuration?: number;
   /** id used as part of the various popover elements (popover-${id}-header/body/footer) */
   id?: string;
+  /** Whether to trap focus in the popover */
+  withFocusTrap?: boolean;
   /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** @deprecated - no longer used */
@@ -167,6 +169,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
   animationDuration = 300,
   id,
+  withFocusTrap: propWithFocusTrap,
   boundary,
   tippyProps,
   reference,
@@ -212,7 +215,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     showTimerRef.current = setTimeout(() => {
       setVisible(true);
       setOpacity(1);
-      withFocusTrap && setFocusTrapActive(true);
+      (propWithFocusTrap || withFocusTrap) && setFocusTrapActive(true);
       onShown();
     }, 0);
   };

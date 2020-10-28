@@ -18,7 +18,7 @@ import { DatePicker, Locales } from '@patternfly/react-datetime';
   <DatePicker />
   <br />
   <br />
-  <DatePicker value="03/05/2020"/>
+  <DatePicker value="03/05/2020" />
   <br />
   <br />
   <DatePicker minDate="03/16/2020" maxDate="03/20/2020"/>
