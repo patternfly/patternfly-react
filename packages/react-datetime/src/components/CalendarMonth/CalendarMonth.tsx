@@ -63,14 +63,19 @@ export const CalendarMonth = ({
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [selectedDate, setSelectedDate] = React.useState(dateProp);
   const selectedRef = React.useRef<HTMLButtonElement>();
+  const [focusSelectedDate, setFocusSelectedDate] = React.useState(true);
 
   useEffect(() => {
     setSelectedDate(dateProp);
   }, [dateProp]);
 
   useEffect(() => {
-    if (selectedRef.current) {
-      selectedRef.current.focus();
+    if (focusSelectedDate) {
+      if (selectedRef.current) {
+        selectedRef.current.focus();
+      }
+    } else {
+      setFocusSelectedDate(true);
     }
   }, [selectedDate]);
 
@@ -78,6 +83,7 @@ export const CalendarMonth = ({
     const newDate = new Date(selectedDate);
     newDate.setFullYear(newDate.getFullYear() + toAdd);
     setSelectedDate(newDate);
+    setFocusSelectedDate(false);
   };
 
   const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
@@ -117,6 +123,7 @@ export const CalendarMonth = ({
                 const newDate = new Date(selectedDate);
                 newDate.setMonth(monthNum);
                 setSelectedDate(newDate);
+                setFocusSelectedDate(false);
               }}
               variant="single"
               selections={format(selectedDate, monthFormat, { locale })}
@@ -139,6 +146,7 @@ export const CalendarMonth = ({
                 const newDate = new Date(selectedDate);
                 newDate.setFullYear(+year);
                 setSelectedDate(newDate);
+                setFocusSelectedDate(false);
               }}
             />
           </td>

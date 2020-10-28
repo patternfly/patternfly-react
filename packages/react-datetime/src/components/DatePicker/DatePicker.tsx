@@ -28,7 +28,7 @@ export interface DatePickerProps
   locale?: Locale;
   /** String to display in the empty date picker field as a hint for the expected date format */
   placeholder?: string;
-  /** A date string. */
+  /** A date string. Defaults to the current date. */
   value?: string;
   /** Error message to display when the date is provided in an invalid format. */
   invalidFormatErrorMessage?: string;
