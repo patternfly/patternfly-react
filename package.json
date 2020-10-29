@@ -54,7 +54,7 @@
     "jest": "24.1.0",
     "jest-cli": "24.1.0",
     "lerna": "3.16.2",
-    "minimist": "^1.2.0",
+    "lint-staged": "^10.4.2",
     "mutation-observer": "^1.0.3",
     "plop": "^2.0.0",
     "prettier": "^1.18.2",
@@ -64,45 +64,41 @@
     "ttypescript": "^1.5.12"
   },
   "scripts": {
-    "analyze": "yarn workspace @patternfly/react-docs analyze",
-    "bootstrap": "lerna bootstrap",
     "build": "yarn build:generate && yarn build:esm && yarn build:cjs",
     "build:cjs": "tsc --build packages/tsconfig.cjs.json -v",
     "build:esm": "ttsc --build packages/tsconfig.json -v",
     "build:integration": "lerna run build:demo-app --stream",
     "build:docs": "yarn workspace @patternfly/react-docs build:docs",
-    "build:umd": "yarn workspace @patternfly/react-core build:umd",
     "build:generate": "lerna run generate --parallel --stream",
+    "build:umd": "yarn workspace @patternfly/react-core build:umd",
     "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "rimraf .cache .eslintcache coverage",
-    "commit": "git-cz",
     "generate": "yarn plop",
     "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache",
     "lint:all": "yarn lint:md && yarn lint:versions && yarn lint:ts",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint:ts": "yarn lint packages",
     "lint:versions": "node scripts/verifyPatternflyVersions.js",
-    "prettier": "node node_modules/.bin/prettier --write \"packages/**/*.{js,jsx,ts,tsx}\" \"scripts/**/*.{js,jsx,ts,tsx}\"",
     "serve:docs": "yarn workspace @patternfly/react-docs serve",
     "serve:integration": "lerna run serve:demo-app",
     "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
-    "start:pf4": "yarn start",
-    "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",
-    "test:pf4": "yarn test",
     "test:a11y": "lerna run test:a11y --stream",
-    "test:current": "jest --watch",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",
-    "test:watch": "jest --watchAll",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
     "watch": "yarn build:esm --watch"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint:all --fix"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.md": "yarn lint:md --fix",
+    "*.{js,jsx,ts,tsx}": "yarn lint --fix",
+    "*.json": "yarn lint:versions --fix"
   },
   "workspaces": {
     "packages": [

@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 import { debounce } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
+import { PageGroup, PageGroupProps } from './PageGroup';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -72,6 +73,14 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   tertiaryNav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
+  /** Flag indicating if the tertiaryNav should be in a group */
+  isTertiaryNavGrouped?: boolean;
+  /** Flag indicating if the breadcrumb should be in a group */
+  isBreadcrumbGrouped?: boolean;
+  /** Additional content of the group */
+  additionalGroupedContent?: React.ReactNode;
+  /** Additional props of the group */
+  groupProps?: PageGroupProps;
 }
 
 export interface PageState {
@@ -187,6 +196,10 @@ export class Page extends React.Component<PageProps, PageState> {
       mainAriaLabel,
       mainTabIndex,
       tertiaryNav,
+      isTertiaryNavGrouped,
+      isBreadcrumbGrouped,
+      additionalGroupedContent,
+      groupProps,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
@@ -197,6 +210,36 @@ export class Page extends React.Component<PageProps, PageState> {
       isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
     };
 
+    const nav = tertiaryNav ? (
+      isTertiaryNavWidthLimited ? (
+        <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
+          <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
+        </div>
+      ) : (
+        <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>
+      )
+    ) : null;
+
+    const crumb = breadcrumb ? (
+      isBreadcrumbWidthLimited ? (
+        <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
+          <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
+        </section>
+      ) : (
+        <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>
+      )
+    ) : null;
+
+    const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
+
+    const group = isGrouped ? (
+      <PageGroup {...groupProps}>
+        {isTertiaryNavGrouped && nav}
+        {isBreadcrumbGrouped && crumb}
+        {additionalGroupedContent}
+      </PageGroup>
+    ) : null;
+
     const main = (
       <main
         ref={this.mainRef}
@@ -206,20 +249,9 @@ export class Page extends React.Component<PageProps, PageState> {
         tabIndex={mainTabIndex}
         aria-label={mainAriaLabel}
       >
-        {tertiaryNav && isTertiaryNavWidthLimited && (
-          <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
-            <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
-          </div>
-        )}
-        {tertiaryNav && !isTertiaryNavWidthLimited && <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>}
-        {breadcrumb && isBreadcrumbWidthLimited && (
-          <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
-            <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
-          </section>
-        )}
-        {breadcrumb && !isBreadcrumbWidthLimited && (
-          <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>
-        )}
+        {group}
+        {!isTertiaryNavGrouped && nav}
+        {!isBreadcrumbGrouped && crumb}
         {children}
       </main>
     );

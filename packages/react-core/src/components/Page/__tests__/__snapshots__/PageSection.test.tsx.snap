@@ -72,3 +72,63 @@ exports[`Check page section with no padding example against snapshot 1`] = `
   />
 </PageSection>
 `;
+
+exports[`Verify page section bottom shadow 1`] = `
+<PageSection
+  hasShadowBottom={true}
+>
+  <section
+    className="pf-c-page__main-section pf-m-shadow-bottom"
+  >
+    test
+  </section>
+</PageSection>
+`;
+
+exports[`Verify page section bottom sticky 1`] = `
+<PageSection
+  sticky="bottom"
+>
+  <section
+    className="pf-c-page__main-section pf-m-sticky-bottom"
+  >
+    test
+  </section>
+</PageSection>
+`;
+
+exports[`Verify page section overflow scroll 1`] = `
+<PageSection
+  hasOverflowScroll={true}
+>
+  <section
+    className="pf-c-page__main-section pf-m-overflow-scroll"
+  >
+    test
+  </section>
+</PageSection>
+`;
+
+exports[`Verify page section top shadow 1`] = `
+<PageSection
+  hasShadowTop={true}
+>
+  <section
+    className="pf-c-page__main-section pf-m-shadow-top"
+  >
+    test
+  </section>
+</PageSection>
+`;
+
+exports[`Verify page section top sticky 1`] = `
+<PageSection
+  sticky="top"
+>
+  <section
+    className="pf-c-page__main-section pf-m-sticky-top"
+  >
+    test
+  </section>
+</PageSection>
+`;

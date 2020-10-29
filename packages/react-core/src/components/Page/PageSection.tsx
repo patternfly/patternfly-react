@@ -37,6 +37,14 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'padding' | 'noPadding';
     '2xl'?: 'padding' | 'noPadding';
   };
+  /** Modifier indicating if PageSection is sticky to the top or bottom */
+  sticky?: 'top' | 'bottom';
+  /** Modifier indicating if PageSection should have a shadow at the top */
+  hasShadowTop?: boolean;
+  /** Modifier indicating if PageSection should have a shadow at the bottom */
+  hasShadowBottom?: boolean;
+  /** Flag indicating if the PageSection has a scrolling overflow */
+  hasOverflowScroll?: boolean;
 }
 
 const variantType = {
@@ -59,6 +67,10 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   padding,
   isFilled,
   isWidthLimited = false,
+  sticky,
+  hasShadowTop = false,
+  hasShadowBottom = false,
+  hasOverflowScroll = false,
   ...props
 }: PageSectionProps) => (
   <section
@@ -70,6 +82,11 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
       isWidthLimited && styles.modifiers.limitWidth,
+      sticky === 'top' && styles.modifiers.stickyTop,
+      sticky === 'bottom' && styles.modifiers.stickyBottom,
+      hasShadowTop && styles.modifiers.shadowTop,
+      hasShadowBottom && styles.modifiers.shadowBottom,
+      hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
   >
