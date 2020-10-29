@@ -15,6 +15,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
+  /** Optional help section for the Modal Header */
+  help?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
   /** Optional alert icon (or other) to show before the title of the Modal Header

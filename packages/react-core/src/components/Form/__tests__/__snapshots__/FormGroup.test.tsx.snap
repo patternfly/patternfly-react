@@ -517,6 +517,58 @@ exports[`FormGroup component should render form group variant without label 1`] 
 </FormGroup>
 `;
 
+exports[`FormGroup component should render helper text above input 1`] = `
+<Form
+  isHorizontal={true}
+>
+  <form
+    className="pf-c-form pf-m-horizontal"
+    noValidate={true}
+  >
+    <FormGroup
+      fieldId="label-id"
+      helperText="this is helperText"
+      isHelperTextBeforeField={true}
+      label="label"
+    >
+      <div
+        className="pf-c-form__group"
+      >
+        <div
+          className="pf-c-form__group-label"
+        >
+          <label
+            className="pf-c-form__label"
+            htmlFor="label-id"
+          >
+            <span
+              className="pf-c-form__label-text"
+            >
+              label
+            </span>
+          </label>
+           
+        </div>
+        <div
+          className="pf-c-form__group-control"
+        >
+          <div
+            aria-live="polite"
+            className="pf-c-form__helper-text"
+            id="label-id-helper"
+          >
+            this is helperText
+          </div>
+          <input
+            id="label-id"
+          />
+        </div>
+      </div>
+    </FormGroup>
+  </form>
+</Form>
+`;
+
 exports[`FormGroup component should render horizontal form group variant 1`] = `
 <Form
   isHorizontal={true}

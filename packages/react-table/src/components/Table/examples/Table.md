@@ -113,15 +113,15 @@ Examples:
 ```
 // simple
 columns: ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit']
-// tooltip
+// with tooltip
 columns: [
   {
     title: 'Repositories',
-    header: {
-      info: {
+    transforms: [
+      info({
         tooltip: 'More information about repositories'
-      }
-    }
+      })
+    ]
   }
 ]
 // center header and body cells within the column
@@ -168,21 +168,21 @@ class RowClickTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
-          header: {
-            info: {
+          transforms: [
+            info({
               tooltip: 'More information about repositories',
               className: 'repositories-info-tip',
               tooltipProps: {
                 isContentLeftAligned: true
               }
-            }
-          }
+            })
+          ]
         },
         'Branches',
         {
           title: 'Pull requests',
-          header: {
-            info: {
+          transforms: [
+            info({
               popover: (
                 <div>
                   More <strong>information</strong> on pull requests
@@ -193,8 +193,8 @@ class RowClickTable extends React.Component {
                 headerContent: 'Pull requests',
                 footerContent: <a href="">Click here for even more info</a>
               }
-            }
-          }
+            })
+          ]
         },
         'Workspaces',
         {
@@ -316,6 +316,8 @@ class RowWrapperTable extends React.Component {
 
 ### Sortable & wrapping headers
 
+Note: If you want to add a tooltip/popover to a sortable header, in the `transforms` array the `info` transform has to precede the `sortable` transform.
+
 ```js
 import React from 'react';
 import {
@@ -325,7 +327,8 @@ import {
   sortable,
   SortByDirection,
   wrappable,
-  cellWidth
+  cellWidth,
+  info
 } from '@patternfly/react-table';
 
 class SortableTable extends React.Component {
@@ -334,13 +337,28 @@ class SortableTable extends React.Component {
     this.state = {
       columns: [
         { title: 'Repositories', transforms: [sortable] },
-        'Branches',
         {
-          title: 'Pull requests and this header will wrap since we have also applied the wrappable transform',
+          title: 'Branches',
+          transforms: [
+            info({
+              tooltip: 'More information about branches'
+            }),
+            sortable
+          ]
+        },
+        { title: 'Pull requests', transforms: [sortable] },
+        {
+          title: 'Workspaces - Also this long header will wrap since we have applied the wrappable transform',
           transforms: [sortable, wrappable, cellWidth(20)]
         },
-        'Workspaces',
-        'Last commit'
+        {
+          title: 'Last commit',
+          transforms: [
+            info({
+              tooltip: 'More information about commits'
+            })
+          ]
+        }
       ],
       rows: [
         ['one', 'two', 'a', 'four', 'five'],

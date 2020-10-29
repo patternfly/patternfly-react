@@ -116,11 +116,34 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     );
   }
 
+  renderSticky() {
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Sticky state
+        </Title>
+        <React.Fragment>
+          <Pagination
+            isSticky
+            itemCount={523}
+            perPage={this.state.perPage}
+            page={this.state.topPage}
+            onSetPage={this.onSetTopPage}
+            widgetId="pagination-options-menu-sticky"
+            className="pagination-options-menu-sticky"
+            onPerPageSelect={this.onPerPageSelect}
+          />
+        </React.Fragment>
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
         {this.renderPagination()}
         {this.renderDisabled()}
+        {this.renderSticky()}
       </Stack>
     );
   }

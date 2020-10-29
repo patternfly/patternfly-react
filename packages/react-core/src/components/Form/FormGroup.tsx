@@ -25,8 +25,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   isInline?: boolean;
   /** Removes top spacer from label. */
   hasNoPaddingTop?: boolean;
-  /** Helper text after the field. It can be a simple text or an object. */
+  /** Helper text regarding the field. It can be a simple text or an object. */
   helperText?: React.ReactNode;
+  /** Flag to position the helper text before the field. False by default */
+  isHelperTextBeforeField?: boolean;
   /** Helper text after the field when the field is invalid. It can be a simple text or an object. */
   helperTextInvalid?: React.ReactNode;
   /** Icon displayed to the left of the helper text. */
@@ -47,6 +49,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   isInline = false,
   hasNoPaddingTop = false,
   helperText,
+  isHelperTextBeforeField = false,
   helperTextInvalid,
   helperTextIcon,
   helperTextInvalidIcon,
@@ -84,6 +87,9 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const showValidHelperTxt = (validationType: 'success' | 'warning' | 'error' | 'default') =>
     validationType !== ValidatedOptions.error && helperText ? validHelperText : '';
 
+  const helperTextToDisplay =
+    validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated);
+
   return (
     <div {...props} className={css(styles.formGroup, className)}>
       {label && (
@@ -102,8 +108,9 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       )}
 
       <div className={css(styles.formGroupControl, isInline && styles.modifiers.inline)}>
+        {isHelperTextBeforeField && helperTextToDisplay}
         {children}
-        {validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated)}
+        {!isHelperTextBeforeField && helperTextToDisplay}
       </div>
     </div>
   );

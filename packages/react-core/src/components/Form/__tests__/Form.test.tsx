@@ -12,4 +12,9 @@ describe('Form component', () => {
     const view = shallow(<Form isHorizontal />);
     expect(view).toMatchSnapshot();
   });
+
+  test('should render form with limited width', () => {
+    const view = shallow(<Form isWidthLimited />);
+    expect(view).toMatchSnapshot();
+  });
 });

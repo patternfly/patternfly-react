@@ -13,6 +13,8 @@ export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   fontSize?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
   /** The shape of the Skeleton */
   shape?: 'circle' | 'square';
+  /** Text read just to screen reader users */
+  screenreaderText?: string;
 }
 
 export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
@@ -21,6 +23,7 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
   height,
   fontSize,
   shape,
+  screenreaderText,
   ...props
 }: SkeletonProps) => {
   const fontHeightClassName = fontSize
@@ -44,7 +47,9 @@ export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
           ...props.style
         } as React.CSSProperties
       })}
-    ></div>
+    >
+      <span className="pf-u-screen-reader">{screenreaderText}</span>
+    </div>
   );
 };
 Skeleton.displayName = 'Skeleton';

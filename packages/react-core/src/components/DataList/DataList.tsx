@@ -1,7 +1,18 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import stylesGrid from '@patternfly/react-styles/css/components/DataList/data-list-grid';
 import { PickOptional } from '../../helpers/typeUtils';
+
+const gridBreakpointClasses = {
+  none: stylesGrid.modifiers.gridNone,
+  always: 'pf-m-grid', // Placeholder per https://github.com/patternfly/patternfly-react/issues/4965#issuecomment-704984236
+  sm: stylesGrid.modifiers.gridSm,
+  md: stylesGrid.modifiers.gridMd,
+  lg: stylesGrid.modifiers.gridLg,
+  xl: stylesGrid.modifiers.gridXl,
+  '2xl': stylesGrid.modifiers.grid_2xl
+};
 
 export enum DataListWrapModifier {
   nowrap = 'nowrap',
@@ -30,6 +41,8 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
   isCompact?: boolean;
+  /** Specifies the grid breakpoints  */
+  gridBreakpoint?: 'none' | 'always' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Determines which wrapping modifier to apply to the DataList */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** Order of items in a draggable DataList */
@@ -75,6 +88,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     className: '',
     selectedDataListItemId: '',
     isCompact: false,
+    gridBreakpoint: 'md',
     wrapModifier: null
   };
   dragFinished: boolean = false;
@@ -275,6 +289,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onDragMove,
       onDragCancel,
       onDragFinish,
+      gridBreakpoint,
       itemOrder,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
@@ -309,6 +324,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           className={css(
             styles.dataList,
             isCompact && styles.modifiers.compact,
+            gridBreakpointClasses[gridBreakpoint],
             wrapModifier && styles.modifiers[wrapModifier],
             className
           )}

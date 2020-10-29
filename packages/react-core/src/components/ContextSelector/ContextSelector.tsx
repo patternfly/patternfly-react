@@ -43,6 +43,8 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** Footer of the context selector */
+  footer?: React.ReactNode;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -61,7 +63,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     searchInputPlaceholder: 'Search',
     onSearchButtonClick: () => undefined as any,
     menuAppendTo: 'inline',
-    ouiaSafe: true
+    ouiaSafe: true,
+    footer: null as React.ReactNode
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -98,6 +101,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       menuAppendTo,
       ouiaId,
       ouiaSafe,
+      footer,
       ...props
     } = this.props;
     const menuContainer = (
@@ -127,6 +131,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
             <ContextSelectorContext.Provider value={{ onSelect }}>
               <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
             </ContextSelectorContext.Provider>
+            {footer}
           </FocusTrap>
         )}
       </div>
