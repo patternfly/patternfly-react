@@ -15,7 +15,7 @@ export interface MenuListItemProps {
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
   styleChildren?: boolean;
-  /** Additional classes added to the nav item */
+  /** Additional classes added to the menu list item */
   className?: string;
   /** Target navigation link */
   to?: string;
@@ -137,14 +137,16 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
           )}
         </Component>
         {flyoutVisible && (
-          <Menu>
-            <MenuList>
-              <MenuListItem component="button">Application Grouping</MenuListItem>
-              <MenuListItem component="button">Count</MenuListItem>
-              <MenuListItem component="button">Labels</MenuListItem>
-              <MenuListItem component="button">Annotations</MenuListItem>
-            </MenuList>
-          </Menu>
+          <Menu
+            items={[
+              <MenuList key="list">
+                <MenuListItem component="button">Application Grouping</MenuListItem>
+                <MenuListItem component="button">Count</MenuListItem>
+                <MenuListItem component="button">Labels</MenuListItem>
+                <MenuListItem component="button">Annotations</MenuListItem>
+              </MenuList>
+            ]}
+          />
         )}
       </>
     );

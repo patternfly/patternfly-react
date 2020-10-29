@@ -151,23 +151,24 @@ class MenuWithFlyout extends React.Component {
 
   render() {
     const { activeItem, handleMenuToggle } = this.state;
-    const flyoutMenu =
-    (<Menu>
-      <MenuList>
-        <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-          Application Grouping
-        </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-          Count
-        </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
-          Labels
-        </MenuListItem>
-        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
-          Annotations
-        </MenuListItem>
-      </MenuList>
-    </Menu>);
+    const flyoutMenu = (
+      <Menu>
+        <MenuList>
+          <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+            Application Grouping
+          </MenuListItem>
+          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+            Count
+          </MenuListItem>
+          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+            Labels
+          </MenuListItem>
+          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+            Annotations
+          </MenuListItem>
+        </MenuList>
+      </Menu>
+    );
     const menuItems = [
       <MenuList>
         <MenuListItem component="button" to="#default-link1" itemId={0} isActive={activeItem === 0}>
@@ -176,7 +177,7 @@ class MenuWithFlyout extends React.Component {
         <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Pause rollouts
         </MenuListItem>
-        <MenuListItem isExpandable component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+        <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
           Add storage
         </MenuListItem>
         <MenuListItem
