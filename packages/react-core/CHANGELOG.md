@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.75.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.4...@patternfly/react-core@4.75.5) (2020-10-29)
+
+
+### Bug Fixes
+
+* **docs:** add missing fieldId prop in sample code ([#5059](https://github.com/patternfly/patternfly-react/issues/5059)) ([95b7f0f](https://github.com/patternfly/patternfly-react/commit/95b7f0f12cb6e6c00c7c8fd1b637c06cb44411af))
+
+
+
+
+
 ## [4.75.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.3...@patternfly/react-core@4.75.4) (2020-10-29)
 
 **Note:** Version bump only for package @patternfly/react-core
