@@ -3,39 +3,6 @@ id: Page
 section: components
 ---
 
-import {
-Avatar,
-Brand,
-Button,
-ButtonVariant,
-Card,
-CardBody,
-Dropdown,
-DropdownGroup,
-DropdownToggle,
-DropdownItem,
-DropdownSeparator,
-Gallery,
-GalleryItem,
-KebabToggle,
-Nav,
-NavItem,
-NavList,
-Page,
-PageHeader,
-PageSection,
-PageSectionVariants,
-PageSidebar,
-PageGroup,
-PageBreadcrumb,
-PageNavigation,
-SkipToContent,
-TextContent,
-Text,
-PageHeaderTools,
-PageHeaderToolsGroup,
-PageHeaderToolsItem
-} from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';

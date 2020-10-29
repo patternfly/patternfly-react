@@ -10,7 +10,7 @@ import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescriptio
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 ## Examples
-### Default
+### Basic
 ```js
 import React from 'react';
 import {
@@ -22,36 +22,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-SimpleDescriptionList = (
-  <DescriptionList>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Default 2 col
@@ -67,40 +65,38 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-TwoColDescriptionList = (
-  <DescriptionList
-    columnModifier={{
-      default: '2Col'
-    }}
-  >
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList
+  columnModifier={{
+    default: '2Col'
+  }}
+>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Default 3 col on lg
@@ -116,36 +112,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-ThreeColOnLgDescriptionList = (
-  <DescriptionList columnModifier={{ lg: '3Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList columnModifier={{ lg: '3Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Horizontal
@@ -161,36 +155,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-HorizontalDescriptionList = (
-  <DescriptionList isHorizontal>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList isHorizontal>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Horizontal 2 col
@@ -206,36 +198,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-Horizontal2ColDescriptionList = (
-  <DescriptionList isHorizontal columnModifier={{ default: '2Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList isHorizontal columnModifier={{ default: '2Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Horizontal 3 col on lg
@@ -251,36 +241,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-Horizontal3ColOnLgDescriptionList = (
-  <DescriptionList isHorizontal columnModifier={{ lg: '3Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList isHorizontal columnModifier={{ lg: '3Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ## Responsive column definitions
@@ -298,36 +286,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-ResponsiveDescriptionList = (
-  <DescriptionList columnModifier={{ lg: '2Col', xl: '3Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList columnModifier={{ lg: '2Col', xl: '3Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Horizontal responsive columns
@@ -343,36 +329,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-HorizontalResponsiveDescriptionList = (
-  <DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ## Auto-column-width
@@ -390,36 +374,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-AutoColumnsDescriptionList = (
-  <DescriptionList isAutoColumnWidths columnModifier={{ default: '3Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList isAutoColumnWidths columnModifier={{ default: '3Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ### Horizontal auto column width
@@ -435,36 +417,34 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-HorizontalAutoColumnsDescriptionList = (
-  <DescriptionList isHorizontal isAutoColumnWidths columnModifier={{ lg: '2Col' }}>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList isHorizontal isAutoColumnWidths columnModifier={{ lg: '2Col' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```
 
 ## Inline grid
@@ -481,34 +461,32 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-InlineGridDescriptionList = (
-  <DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Name</DescriptionListTerm>
-      <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Namespace</DescriptionListTerm>
-      <DescriptionListDescription>
-        <a href="#">mary-test</a>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Labels</DescriptionListTerm>
-      <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Pod selector</DescriptionListTerm>
-      <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
-          app=MyApp
-        </Button>
-      </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup>
-      <DescriptionListTerm>Annotation</DescriptionListTerm>
-      <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
-  </DescriptionList>
-);
+<DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
 ```

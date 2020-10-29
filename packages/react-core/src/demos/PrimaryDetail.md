@@ -3,8 +3,6 @@ id: Primary-detail
 section: demos
 ---
 
-## Examples
-
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
@@ -28,6 +26,8 @@ import sparkIcon from './Card/camel-spark_200x150.png';
 import swaggerIcon from './Card/camel-swagger-java_200x150.png';
 import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
 import restIcon from './Card/FuseConnector_Icons_REST.png';
+
+## Demos
 
 ### Primary-detail full page
 ```js isFullscreen

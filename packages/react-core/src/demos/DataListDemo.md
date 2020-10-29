@@ -3,37 +3,13 @@ id: Data list
 section: components
 ---
 
-import {
-Button,
-DataList,
-DataListItem,
-DataListItemCells,
-DataListItemRow,
-DataListCell,
-DataListCheck,
-DataListAction,
-DataListToggle,
-DataListContent,
-Dropdown,
-DropdownPosition,
-KebabToggle,
-DropdownItem,
-Toolbar,
-ToolbarGroup,
-ToolbarContent,
-ToolbarItem,
-ToolbarExpandIconWrapper,
-InputGroup,
-TextInput,
-Tooltip
-} from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import { css } from '@patternfly/react-styles';
 
-## Examples
+## Demos
 
 ### Expandable control in toolbar
 

@@ -11,13 +11,11 @@ propComponents: ['List', 'ListItem']
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
-SimpleList = (
-  <List>
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-  </List>
-);
+<List>
+  <ListItem>First</ListItem>
+  <ListItem>Second</ListItem>
+  <ListItem>Third</ListItem>
+</List>
 ```
 
 ### Inline
@@ -25,13 +23,11 @@ SimpleList = (
 import React from 'react';
 import { List, ListItem, ListVariant } from '@patternfly/react-core';
 
-InlineList = (
-  <List variant={ListVariant.inline}>
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-  </List>
-);
+<List variant={ListVariant.inline}>
+  <ListItem>First</ListItem>
+  <ListItem>Second</ListItem>
+  <ListItem>Third</ListItem>
+</List>
 ```
 
 ### Ordered
@@ -39,11 +35,9 @@ InlineList = (
 import React from 'react';
 import { List, ListItem, ListComponent, OrderType } from '@patternfly/react-core';
 
-OrderedList = (
-  <List component={ListComponent.ol} type={OrderType.number}>
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-  </List>
-);
+<List component={ListComponent.ol} type={OrderType.number}>
+  <ListItem>First</ListItem>
+  <ListItem>Second</ListItem>
+  <ListItem>Third</ListItem>
+</List>
 ```
