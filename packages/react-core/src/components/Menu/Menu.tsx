@@ -185,6 +185,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       onToggle,
       isGrouped,
       onFilter,
+      onSearchInputChange,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ouiaId,
       ouiaSafe,

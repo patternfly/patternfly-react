@@ -193,7 +193,7 @@ class MenuWithFlyout extends React.Component {
             itemId={3}
             isActive={activeItem === 3}
             isExpandable
-            flyoutMenu={this.state.isSubMenuOpen ? flyoutMenuItems : ''}
+            flyoutMenu={flyoutMenu}
           >
             Edit
           </MenuListItem>
@@ -542,7 +542,7 @@ class MenuWithActions extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuGroup label="Actions">
-          <MenuList inGroup>
+          <MenuList>
             <MenuListItem
               isSelected={selectedItems.indexOf(0) != -1}
               menuItemAction={kebabToggleAction}
@@ -762,7 +762,6 @@ class MenuOptionMultiSelect extends React.Component {
             to="#default-link1"
             itemId={0}
             isActive={activeItem === 0}
-            s
             isSelected={selectedItems.indexOf(0) != -1}
           >
             Option 1
