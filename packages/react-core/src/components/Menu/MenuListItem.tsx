@@ -1,14 +1,13 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import { Menu, MenuSelectClickHandler } from './Menu';
+import { MenuSelectClickHandler } from './Menu';
 import { MenuContext } from './MenuContext';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { useState } from 'react';
-import { MenuList } from '.';
 
 export interface MenuListItemProps {
   /** Content rendered inside the menu list item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
@@ -61,7 +60,6 @@ export interface MenuListItemProps {
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   children,
-  styleChildren = true,
   className,
   to,
   isActive = false,
@@ -89,17 +87,21 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   const [flyoutVisible, setFlyoutVisible] = useState(false);
 
   const showFlyout = (displayFlyout: boolean) => {
-    // eslint-disable-next-line no-console
     setFlyoutVisible(displayFlyout);
-    onShowFlyout && flyoutVisible && onShowFlyout();
+    onShowFlyout && displayFlyout && onShowFlyout();
   };
 
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
+    const additionalProps =
+      Component === 'a'
+        ? {
+            href: to
+          }
+        : {};
     return (
       <>
         <Component
-          href={to}
           id={id}
           onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick, isSelected)}
           className={css(
@@ -109,7 +111,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
             className
           )}
           aria-current={isActive ? 'page' : null}
-          {...props}
+          {...additionalProps}
         >
           <div className={css(styles.menuItemMain)}>
             {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
@@ -136,41 +138,22 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
             </div>
           )}
         </Component>
-        {flyoutVisible && (
-          <Menu>
-            <MenuList>
-              <MenuListItem component="button">Application Grouping</MenuListItem>
-              <MenuListItem component="button">Count</MenuListItem>
-              <MenuListItem component="button">Labels</MenuListItem>
-              <MenuListItem component="button">Annotations</MenuListItem>
-            </MenuList>
-          </Menu>
-        )}
+        {flyoutVisible && flyoutMenu}
       </>
     );
   };
-
-  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode =>
-    React.cloneElement(child, {
-      onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-      'aria-current': isActive ? 'page' : null,
-      ...(styleChildren && {
-        className: css(styles.menuItem, isActive, child.props && child.props.className)
-      })
-    });
 
   return (
     <li
       className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}
       onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
       onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
+      {...props}
     >
       <MenuContext.Consumer>
         {context => (
           <>
-            {React.isValidElement(children)
-              ? renderClonedChild(context, children as React.ReactElement)
-              : renderDefaultLink(context)}
+            {renderDefaultLink(context)}
             {context.onFavorite && (
               <button
                 className={css(

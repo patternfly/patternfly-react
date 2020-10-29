@@ -56,8 +56,6 @@ export interface MenuProps
   favoritesLabel?: string;
   /** Flag to indicate if application launcher has groups */
   isGrouped?: boolean;
-  /** Array of application launcher items */
-  items?: React.ReactNode[];
   /** Array of selected items for multi select variants. */
   selections?: (string | SelectOptionObject)[];
 }
@@ -139,25 +137,25 @@ export class Menu extends React.Component<MenuProps, MenuState> {
   }
 
   createRenderableFavorites = () => {
-    const { items, isGrouped, favorites } = this.props;
+    const { children, isGrouped, favorites } = this.props;
     if (isGrouped) {
       const favoriteItems: React.ReactNode[] = [];
-      (items as React.ReactElement[]).forEach(group =>
-        (group.props.children.props.children as React.ReactElement[])
+      React.Children.forEach(children, group =>
+        ((group as React.ReactElement).props.children.props.children as React.ReactElement[])
           .filter(item => favorites.includes(item.props.id))
           .map(item => favoriteItems.push(React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true })))
       );
       return favoriteItems;
     }
-    return (items as React.ReactElement[])
+    return (React.Children.toArray(children) as React.ReactElement[])
       .filter(item => favorites.includes(item.props.id))
       .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true }));
   };
 
   extendItemsWithFavorite = () => {
-    const { items, isGrouped, favorites } = this.props;
+    const { children, isGrouped, favorites } = this.props;
     if (isGrouped) {
-      return (items as React.ReactElement[]).map(group =>
+      return (React.Children.toArray(children) as React.ReactElement[]).map(group =>
         React.cloneElement(group, {
           children: React.Children.map(group.props.children.props.children as React.ReactElement[], item => {
             if (item.type === Divider) {
@@ -170,7 +168,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
         })
       );
     }
-    return (items as React.ReactElement[]).map(item =>
+    return (React.Children.toArray(children) as React.ReactElement[]).map(item =>
       React.cloneElement(item, {
         isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
       })
@@ -180,12 +178,14 @@ export class Menu extends React.Component<MenuProps, MenuState> {
   render() {
     const {
       'aria-label': ariaLabel,
-      // children,
+      children,
       className,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       onSelect,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
+      isGrouped,
+      onFilter,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ouiaId,
       ouiaSafe,
       variant,
@@ -194,7 +194,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       // selections,
       favoritesLabel,
       onFavorite,
-      items,
       ...props
     } = this.props;
     let renderableItems: React.ReactNode[] = [];
@@ -217,7 +216,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
         renderableItems = this.extendItemsWithFavorite();
       }
     } else {
-      renderableItems = items;
+      renderableItems = React.Children.toArray(children);
     }
 
     return (
@@ -243,18 +242,21 @@ export class Menu extends React.Component<MenuProps, MenuState> {
           {...props}
         >
           {searchInput && (
-            <div className="pf-c-menu__search">
-              <SearchInput
-                value={this.state.typeaheadInputValue}
-                onChange={(value, event) => {
-                  this.setState({ typeaheadInputValue: value });
-                  this.onSearchInputChange && this.onSearchInputChange(value, event);
-                }}
-                onClear={() => this.setState({ typeaheadInputValue: '' })}
-              />
-            </div>
+            <React.Fragment>
+              <div className="pf-c-menu__search">
+                <SearchInput
+                  value={this.state.typeaheadInputValue}
+                  onChange={(value, event) => {
+                    this.setState({ typeaheadInputValue: value });
+                    this.onSearchInputChange && this.onSearchInputChange(value, event);
+                  }}
+                  onClear={() => this.setState({ typeaheadInputValue: '' })}
+                />
+              </div>
+              <Divider />
+            </React.Fragment>
           )}
-          {renderableItems}
+          <div className={'pf-c-menu__content'}>{favorites ? renderableItems : children}</div>
         </div>
       </MenuContext.Provider>
     );

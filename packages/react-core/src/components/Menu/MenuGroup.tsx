@@ -20,11 +20,13 @@ export const MenuGroup: React.FunctionComponent<MenuGroupProps> = ({
   titleId = '',
   ...props
 }: MenuGroupProps) => (
-  <div {...props} className={'pf-c-menu__group' + css(className)}>
-    <div className={css(styles.menuGroupTitle)} id={titleId} aria-hidden>
-      {label}
-    </div>
+  <section {...props} className={'pf-c-menu__group' + css(className)}>
+    {label && (
+      <div className={css(styles.menuGroupTitle)} id={titleId} aria-hidden>
+        {label}
+      </div>
+    )}
     {children}
-  </div>
+  </section>
 );
 MenuGroup.displayName = 'MenuGroup';
