@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
-  /** Anything that can be rendered inside of list description */
+  /** Anything that can be rendered inside of menu list */
   children: React.ReactNode;
-  /** Additional classes added to the DescriptionListDescription */
+  /** Additional classes added to the menu list */
   className?: string;
 }
 

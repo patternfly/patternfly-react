@@ -12,9 +12,7 @@ import { useState } from 'react';
 export interface MenuListItemProps {
   /** Content rendered inside the menu list item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
-  /** Whether to set className on children when React.isValidElement(children) */
-  styleChildren?: boolean;
-  /** Additional classes added to the nav item */
+  /** Additional classes added to the menu list item */
   className?: string;
   /** Target navigation link */
   to?: string;

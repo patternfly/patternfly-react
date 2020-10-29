@@ -18,7 +18,7 @@ export type MenuSelectClickHandler = (
 export interface MenuProps
   extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onSelect'>,
     OUIAProps {
-  /** Anything that can be rendered inside of the nav */
+  /** Anything that can be rendered inside of the Menu */
   children?: React.ReactNode;
   /** Additional classes added to the container */
   className?: string;
@@ -48,13 +48,13 @@ export interface MenuProps
   variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
   /** Search input of menu */
   searchInput?: React.ReactNode;
-  /** ID list of favorited ApplicationLauncherItems */
+  /** ID list of favorited MenuListItems */
   favorites?: string[];
-  /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
+  /** Enables favorites. Callback called when an MenuItems's favorite button is clicked */
   onFavorite?: (itemId: string, isFavorite: boolean) => void;
   /** Label for the favorites group */
   favoritesLabel?: string;
-  /** Flag to indicate if application launcher has groups */
+  /** Flag to indicate if menu has groups */
   isGrouped?: boolean;
   /** Array of selected items for multi select variants. */
   selections?: (string | SelectOptionObject)[];
@@ -250,7 +250,10 @@ export class Menu extends React.Component<MenuProps, MenuState> {
                     this.setState({ typeaheadInputValue: value });
                     this.onSearchInputChange && this.onSearchInputChange(value, event);
                   }}
-                  onClear={() => this.setState({ typeaheadInputValue: '' })}
+                  onClear={() => {
+                    this.setState({ typeaheadInputValue: '' });
+                    this.onSearchInputChange && this.onSearchInputChange('', null);
+                  }}
                 />
               </div>
               <Divider />

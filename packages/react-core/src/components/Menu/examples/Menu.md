@@ -173,6 +173,7 @@ class MenuWithFlyout extends React.Component {
         </MenuList>
       </Menu>
     );
+
     return (
       <Menu onSelect={this.onSelect} variant="flyout">
         <MenuList>
@@ -182,7 +183,7 @@ class MenuWithFlyout extends React.Component {
           <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Pause rollouts
           </MenuListItem>
-          <MenuListItem isExpandable component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
             Add storage
           </MenuListItem>
           <MenuListItem
@@ -192,7 +193,7 @@ class MenuWithFlyout extends React.Component {
             itemId={3}
             isActive={activeItem === 3}
             isExpandable
-            flyoutMenu={flyoutMenu}
+            flyoutMenu={this.state.isSubMenuOpen ? flyoutMenuItems : ''}
           >
             Edit
           </MenuListItem>
