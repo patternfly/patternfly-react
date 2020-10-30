@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
-import { ChartCursorTooltip } from '../ChartCursorTooltip';
+import { ChartCursorTooltip } from '../ChartCursorTooltip/ChartCursorTooltip';
 import { ChartLabel } from '../ChartLabel';
 
 /**

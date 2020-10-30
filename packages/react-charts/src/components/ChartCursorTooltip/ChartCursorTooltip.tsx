@@ -12,8 +12,9 @@ import {
 import { VictoryTooltip } from 'victory-tooltip';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip';
-import { getTheme, getCursorTooltipCenterOffset, getCursorTooltipPoniterOrientation } from '../ChartUtils';
+import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip/ChartTooltip';
+import { getTheme } from '../ChartUtils/chart-theme';
+import { getCursorTooltipCenterOffset, getCursorTooltipPoniterOrientation } from '../ChartUtils/chart-tooltip';
 import { ChartCursorFlyout } from './ChartCursorFlyout';
 
 /**
