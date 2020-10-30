@@ -1,4 +1,4 @@
-import { IFormatterValueType, IFormatter } from '../TableContext';
+import { IFormatterValueType, IFormatter } from '../base';
 
 const defaultTitle: IFormatter = (data: IFormatterValueType) =>
   data && data.hasOwnProperty('title') ? data.title : data;

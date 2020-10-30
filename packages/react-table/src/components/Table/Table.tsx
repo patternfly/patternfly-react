@@ -15,6 +15,7 @@ import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
 import { toCamel } from './utils';
 import { calculateColumns } from './utils/headerUtils';
+import { TableContext } from './TableContext';
 import {
   IActions,
   IActionsResolver,
@@ -27,12 +28,9 @@ import {
   OnExpand,
   OnRowEdit,
   OnSelect,
-  OnSort,
-  RowSelectVariant,
-  TableContext,
-  TableGridBreakpoint,
-  TableVariant
-} from './TableContext';
+  OnSort
+} from './base';
+import { RowSelectVariant, TableGridBreakpoint, TableVariant } from './enums';
 
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */

@@ -1,5 +1,5 @@
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { ITransform } from '../../TableContext';
+import { ITransform } from '../../base';
 
 export const breakWord: ITransform = () => ({
   className: styles.modifiers.breakWord

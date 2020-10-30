@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IExtra, IFormatterValueType, ITransform } from '../../TableContext';
+import { IExtra, IFormatterValueType, ITransform } from '../../base';
 import { TableText } from '../../TableText';
 
 export const compoundExpand: ITransform = (

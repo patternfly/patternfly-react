@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import * as React from 'react';
-import { IRow, ICell, IActions, EditableTextCell } from '../components';
+import { IRow, ICell, IActions } from '../components/Table/base';
+import { EditableTextCell } from '../components';
 
 export const columns: (ICell | string)[] = [
   { title: 'Header cell' },

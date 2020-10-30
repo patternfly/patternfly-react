@@ -1,4 +1,4 @@
-import { IRow, IRowCell, IValidatorDef, RowEditType, RowErrors } from '../TableContext';
+import { IRow, IRowCell, IValidatorDef, RowEditType, RowErrors } from '../base';
 
 const hasCompoundParentsExpanded = (parentId: number, compoundParent: number, rows: IRow[]) => {
   // max rows.length parents
