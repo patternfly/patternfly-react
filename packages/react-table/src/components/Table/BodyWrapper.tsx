@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IRow, IRowData, IExtraData, IHeaderRow } from './Table';
+import { IRow, IRowData, IExtraData, IHeaderRow } from './TableContext';
 import { mapOpenedRows } from './utils/headerUtils';
 
 export interface BodyWrapperProps {

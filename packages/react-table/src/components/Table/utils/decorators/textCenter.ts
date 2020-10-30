@@ -1,2 +1,2 @@
-import { ITransform } from '../../Table';
+import { ITransform } from '../../TableContext';
 export const textCenter: ITransform = () => ({ textCenter: true });

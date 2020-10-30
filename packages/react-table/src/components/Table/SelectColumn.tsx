@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RowSelectVariant } from './Table';
+import { RowSelectVariant } from './TableContext';
 
 export interface SelectColumnProps {
   name?: string;

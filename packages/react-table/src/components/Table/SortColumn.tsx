@@ -4,7 +4,7 @@ import LongArrowAltDownIcon from '@patternfly/react-icons/dist/js/icons/long-arr
 import ArrowsAltVIcon from '@patternfly/react-icons/dist/js/icons/arrows-alt-v-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { SortByDirection } from './Table';
+import { SortByDirection } from './TableContext';
 import { TableText } from './TableText';
 
 export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

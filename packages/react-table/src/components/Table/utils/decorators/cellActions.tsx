@@ -12,7 +12,7 @@ import {
   IFormatterValueType,
   IRowData,
   ITransform
-} from '../../Table';
+} from '../../TableContext';
 
 const resolveOrDefault = (
   resolver: IActionsResolver | IAreActionsDisabled,

@@ -1,6 +1,6 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { ITransform } from '../../Table';
+import { ITransform } from '../../TableContext';
 
 const visibilityModifiers = [
   'hidden',
