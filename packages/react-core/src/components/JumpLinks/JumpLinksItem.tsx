@@ -14,21 +14,12 @@ export interface JumpLinksItemProps extends React.HTMLProps<HTMLLIElement> {
 export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   isActive,
   href,
-  node = href,
   children
-}: JumpLinksItemProps) => {
-  React.useEffect(() => {
-    if (typeof node === 'string' && typeof document !== 'undefined') {
-      node = document.querySelector(node) as HTMLElement;
-    }
-  }, [node]);
-
-  return (
-    <li className={css(styles.jumpLinksItem, isActive && styles.modifiers.current)}>
-      <a className={styles.jumpLinksLink} href={href}>
-        <span className={styles.jumpLinksLinkText}>{children}</span>
-      </a>
-    </li>
-  );
-};
+}: JumpLinksItemProps) => (
+  <li className={css(styles.jumpLinksItem, isActive && styles.modifiers.current)}>
+    <a className={styles.jumpLinksLink} href={href} onClick={onClick}>
+      <span className={styles.jumpLinksLinkText}>{children}</span>
+    </a>
+  </li>
+);
 JumpLinksItem.displayName = 'JumpLinksItem';
