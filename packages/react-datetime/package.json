@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-datetime#readme",
   "scripts": {
+    "build:umd": "rollup -c && rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist"
   },
   "dependencies": {

@@ -9,6 +9,7 @@ import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helper
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
+import { TabsContextProvider } from './TabsContext';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export enum TabsComponent {
@@ -59,17 +60,6 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
     '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
   };
 }
-
-export interface TabsContextProps {
-  variant: 'default' | 'light300';
-}
-
-const TabsContext = React.createContext<TabsContextProps>({
-  variant: 'default'
-});
-
-export const TabsContextProvider = TabsContext.Provider;
-export const TabsContextConsumer = TabsContext.Consumer;
 
 const variantStyle = {
   default: '',
