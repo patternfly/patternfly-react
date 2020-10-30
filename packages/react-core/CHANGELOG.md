@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.75.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.5...@patternfly/react-core@4.75.6) (2020-10-30)
+
+
+### Bug Fixes
+
+* **datalist:** respect isDisabled for dragging ([#5052](https://github.com/patternfly/patternfly-react/issues/5052)) ([a8039b0](https://github.com/patternfly/patternfly-react/commit/a8039b00c0a795282319c4a39006c8841c0ad39c))
+
+
+
+
+
 ## [4.75.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.4...@patternfly/react-core@4.75.5) (2020-10-29)
 
 
