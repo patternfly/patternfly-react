@@ -1,3 +1,4 @@
+export * from './Table';
 export * from './ActionsColumn';
 export * from './Body';
 export * from './BodyCell';
@@ -11,7 +12,5 @@ export * from './HeaderCell';
 export * from './RowWrapper';
 export * from './SelectColumn';
 export * from './SortColumn';
-export * from './Table';
-export * from './TableContext';
 export * from './TableText';
 export * from './utils';

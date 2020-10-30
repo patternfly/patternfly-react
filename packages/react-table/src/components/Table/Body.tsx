@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Body as BaseBody } from './base';
 import { RowType, RowKeyType } from './base/types';
-import { TableContext } from './TableContext';
-import { IRow, IRowCell, IExtraRowData } from './base';
+import { TableContext, IRow, IRowCell, IExtraRowData } from './Table';
 import { isRowExpanded } from './utils';
 
 export interface IComputedData {

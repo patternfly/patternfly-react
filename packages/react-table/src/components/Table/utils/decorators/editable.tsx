@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IExtra, IFormatterValueType, ITransform, IRowCell, OnRowEdit, RowErrors, RowEditType } from '../../base';
+import { IExtra, IFormatterValueType, ITransform, IRowCell, OnRowEdit, RowErrors, RowEditType } from '../../Table';
 import { EditColumn } from '../../EditColumn';
 import tableStyles from '@patternfly/react-styles/css/components/Table/table';
 

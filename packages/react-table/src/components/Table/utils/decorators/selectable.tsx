@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { RowSelectVariant } from '../../enums';
-import { IExtra, IFormatterValueType, ITransform } from '../../base';
-import { SelectColumn } from '../../SelectColumn';
+import { IExtra, IFormatterValueType, ITransform } from '../../Table';
+import { SelectColumn, RowSelectVariant } from '../../SelectColumn';
 import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 
 export const selectable: ITransform = (

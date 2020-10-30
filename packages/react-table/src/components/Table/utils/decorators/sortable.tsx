@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { SortByDirection } from '../../enums';
-import { IExtra, IFormatterValueType, ITransform } from '../../base';
-import { SortColumn } from '../../SortColumn';
+import { IExtra, IFormatterValueType, ITransform } from '../../Table';
+import { SortColumn, SortByDirection } from '../../SortColumn';
 
 export const sortable: ITransform = (label: IFormatterValueType, { columnIndex, column, property }: IExtra) => {
   const {

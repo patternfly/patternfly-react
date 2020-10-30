@@ -11,7 +11,16 @@ import {
   editable
 } from './transformers';
 import { defaultTitle } from './formatters';
-import { ICell, IRow, IActions, IActionsResolver, IAreActionsDisabled, OnSelect, OnCollapse, OnRowEdit } from '../base';
+import {
+  ICell,
+  IRow,
+  IActions,
+  IActionsResolver,
+  IAreActionsDisabled,
+  OnSelect,
+  OnCollapse,
+  OnRowEdit
+} from '../Table';
 
 /**
  * Generate header with transforms and formatters from custom header object.

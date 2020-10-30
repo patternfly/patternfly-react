@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IExtra, IFormatterValueType, ITransform } from '../../base';
+import { IExtra, IFormatterValueType, ITransform } from '../../Table';
 
 export const headerCol = (id = 'simple-node') => {
   const headerColObj: ITransform = (value: IFormatterValueType, { rowIndex }: IExtra = {}) => {
