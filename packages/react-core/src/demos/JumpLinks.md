@@ -16,6 +16,7 @@ import { PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, JumpLinks,
 
 ScrollspyH2 = () => {
   const headings = [1,2,3,4,5];
+
   const Header = (
     <PageHeader
       logo="Logo"
@@ -23,11 +24,12 @@ ScrollspyH2 = () => {
       headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
     />
   );
+  const Sidebar = <PageSidebar nav="Navigation" />;
 
   return (
-    <Page header={Header} sidebar={<PageSidebar nav="Navigation" />}>
+    <Page header={Header} sidebar={Sidebar}>
       <PageSection sticky="top">
-        <JumpLinks isCentered>
+        <JumpLinks isCentered scrollableSelector="#scrollable-element">
           {headings.map(i => 
             <JumpLinksItem key={i} href={`#heading-${i}`}>
               {`Heading ${i}`}
@@ -35,7 +37,7 @@ ScrollspyH2 = () => {
           )}
         </JumpLinks>
       </PageSection>
-      <PageGroup hasOverflowScroll>
+      <PageGroup hasOverflowScroll  id="scrollable-element">
         <PageSection>
           {headings.map(i =>
             <div key={i} style={{ maxWidth: '800px', marginBottom: '32px' }}>

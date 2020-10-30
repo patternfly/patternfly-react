@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
-import { JumpLinksItem } from './JumpLinksItem';
+import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 
 export interface JumpLinksProps {
   'aria-label'?: string;
@@ -9,16 +9,11 @@ export interface JumpLinksProps {
   isVertical?: boolean;
   children?: React.ReactNode;
   label?: React.ReactNode;
+  scrollableSelector?: string;
 }
 
-export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
-  isCentered,
-  isVertical,
-  children,
-  label,
-  'aria-label': ariaLabel = typeof label === 'string' ? label : null
-}: JumpLinksProps) => {
-  const scrollItems = React.Children.toArray(children).map((child: any) => {
+const getScrollItems = (children: React.ReactNode) =>
+  React.Children.toArray(children).map((child: any) => {
     if (child.type === JumpLinksItem) {
       const scrollNode = child.props.node || child.props.href;
       if (typeof scrollNode === 'string' && typeof document !== 'undefined') {
@@ -30,7 +25,56 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
     return null;
   });
-  // console.log('scrollItems', scrollItems);
+
+export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
+  isCentered,
+  isVertical,
+  children,
+  label,
+  'aria-label': ariaLabel = typeof label === 'string' ? label : null,
+  scrollableSelector
+}: JumpLinksProps) => {
+  const [scrollItems, setScrollItems] = React.useState(getScrollItems(children));
+  const [activeItemIndex, setActiveItemIndex] = React.useState(0);
+  React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+    if (!(scrollableElement instanceof HTMLElement)) {
+      return;
+    }
+
+    function scrollSpy() {
+      const scrollPosition = scrollableElement.scrollTop;
+      window.requestAnimationFrame(() => {
+        let newScrollItems = scrollItems;
+        // Items might have rendered after this component. Do a quick refresh.
+        if (!newScrollItems[0]) {
+          newScrollItems = getScrollItems(children);
+          setScrollItems(newScrollItems);
+        }
+        const scrollElements = newScrollItems
+          .map((e, index) => ({
+            y: e ? e.offsetTop : null,
+            index
+          }))
+          .filter(({ y }) => y !== null)
+          .sort((e1, e2) => e2.y - e1.y);
+        for (const { y, index } of scrollElements) {
+          if (scrollPosition >= y) {
+            return setActiveItemIndex(index);
+          }
+        }
+      });
+    }
+    if (scrollableElement) {
+      scrollSpy();
+      scrollableElement.addEventListener('scroll', scrollSpy);
+    }
+
+    return () => scrollableElement.removeEventListener('scroll', scrollSpy);
+  }, [scrollItems]);
 
   return (
     <nav
@@ -42,19 +86,27 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         <ul className={styles.jumpLinksList}>
           {React.Children.map(children, (child: any, i: number) => {
             if (child.type === JumpLinksItem) {
-              const { onClick: onClickProp } = child.props;
+              const { onClick: onClickProp, isActive: isActiveProp } = child.props;
               const scrollItem = scrollItems[i];
-              return React.cloneElement(child, {
+              return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
                 onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
-                  if (scrollItem) {
+                  // Items might have rendered after this component. Do a quick refresh.
+                  let newScrollItems;
+                  if (!scrollItem) {
+                    newScrollItems = getScrollItems(children);
+                    setScrollItems(newScrollItems);
+                  }
+                  const newScrollItem = scrollItem || newScrollItems[i];
+
+                  if (newScrollItem) {
+                    newScrollItem.scrollIntoView();
                     ev.preventDefault();
-                    // console.log('scroll to', scrollItem);
-                    scrollItem.scrollIntoView();
                   }
                   if (onClickProp) {
                     onClickProp(ev);
                   }
-                }
+                },
+                isActive: isActiveProp || activeItemIndex === i
               });
             }
             return child;
