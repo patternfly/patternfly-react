@@ -11,7 +11,7 @@ propComponents: ['Divider']
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
-<Divider/>
+<Divider />
 ```
 
 ### Using li
@@ -88,7 +88,7 @@ import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 <Flex>
   <FlexItem>first item</FlexItem>
-  <Divider isVertical 
+  <Divider isVertical
     inset={{
       default: 'insetMd',
       md: 'insetNone',
