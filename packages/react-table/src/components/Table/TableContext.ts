@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { ColumnsType, IHeaderRow, IRow } from './base';
+import { IHeaderRow, IRow } from './Table';
+import { ColumnsType } from './base';
 
 export const TableContext = React.createContext({
   headerData: null as ColumnsType,
