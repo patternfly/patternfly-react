@@ -1203,6 +1203,7 @@ class DraggableDataList extends React.Component {
                   aria-labelledby="simple-item1"
                   aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
                   aria-pressed="false"
+                  isDisabled
                 />
                 <DataListCheck aria-labelledby="simple-item1" name="check1" otherControls />
               </DataListControl>
