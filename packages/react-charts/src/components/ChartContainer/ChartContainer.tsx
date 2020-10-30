@@ -1,7 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType, VictoryContainer, VictoryContainerProps } from 'victory-core';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
 /**

@@ -11,7 +11,7 @@ import {
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
