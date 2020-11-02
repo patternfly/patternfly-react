@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter, CardExpandableContent } from '@patternfly/react-core';
 interface CardDemoState {
   selected: string;
 }
@@ -8,7 +8,8 @@ export class CardDemo extends React.Component {
   static displayName = 'CardDemo';
 
   state: CardDemoState = {
-    selected: null
+    selected: null,
+    isExpanded: false
   };
 
   onKeyDown = (event: any) => {
@@ -26,6 +27,12 @@ export class CardDemo extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+
+  onExpand = () => {
+    this.setState({
+      isExpanded: !this.state.isExpanded
+    });
+  };
 
   render() {
     return (
@@ -71,6 +78,18 @@ export class CardDemo extends React.Component {
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
+        </Card>
+        <br></br>
+        <Card id="expand-card" isExpanded={this.state.isExpanded}>
+          <CardHeader onExpand={this.onExpand}>
+            <CardTitle>Header</CardTitle>
+          </CardHeader>
+          {this.state.isExpanded && (
+            <CardExpandableContent>
+              <CardBody>Body</CardBody>
+              <CardFooter>Footer</CardFooter>
+            </CardExpandableContent>
+          )}
         </Card>
       </React.Fragment>
     );

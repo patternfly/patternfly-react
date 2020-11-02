@@ -49,4 +49,10 @@ describe('Card Demo Test', () => {
     cy.focused().type('{enter}');
     cy.focused().should('not.have.class', 'pf-m-selected');
   });
+
+  it('Verify card is expandable', () => {
+    cy.get('#expand-card').should('not.have.class', 'pf-m-expanded');
+    cy.get('.pf-c-card__header-toggle .pf-c-button').click();
+    cy.get('#expand-card').should('have.class', 'pf-m-expanded');
+  });
 });
