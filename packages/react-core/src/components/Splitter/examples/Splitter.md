@@ -16,7 +16,7 @@ import './splitter.css';
 import React from 'react';
 import { Splitter } from '@patternfly/react-core';
 
-SplitterBasic = () => (<Splitter/>);
+<Splitter/>
 ```
 
 ### Vertical
@@ -24,5 +24,5 @@ SplitterBasic = () => (<Splitter/>);
 import React from 'react';
 import { Splitter } from '@patternfly/react-core';
 
-SplitterVertical = () => (<Splitter orientation="vertical"/>);
+<Splitter orientation="vertical"/>
 ```

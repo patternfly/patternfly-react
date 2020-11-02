@@ -30,6 +30,9 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 
 ## Examples
 ### Area chart
+
+This demonstrates how to add interactive data points to an area chart.
+
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -94,7 +97,6 @@ class ScatterAreaChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <p>This demonstrates how to add interactive data points to an area chart</p>
         <div style={{ height: '250px' }}>
           <Chart
             ariaDesc="Average number of pets"
@@ -146,6 +148,9 @@ class ScatterAreaChart extends React.Component {
 ```
 
 ### Line chart
+
+This demonstrates how to add interactive data points to a line chart.
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -221,7 +226,6 @@ class ScatterLineChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <p>This demonstrates how to add interactive data points to a line chart</p>
         <div style={{ height: '275px' }}>
           <Chart
             ariaDesc="Average number of pets"

@@ -2,38 +2,58 @@
 id: Table
 cssPrefix: pf-c-table
 section: components
-propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell', 'RowErrors', 'IHeaderRow', 'IRowData', 'IColumn', 'IExtraRowData', 'IExtraColumnData', 'ISortBy', 'IAction', 'ISeparator', 'ICell', 'IRowCell', 'IValidatorDef', 'IRow']
+propComponents:
+  [
+    'Table',
+    'TableHeader',
+    'TableBody',
+    'EditableSelectInputCell',
+    'EditableTextCell',
+    'RowErrors',
+    'IHeaderRow',
+    'IRowData',
+    'IColumn',
+    'IExtraRowData',
+    'IExtraColumnData',
+    'ISortBy',
+    'IAction',
+    'ISeparator',
+    'ICell',
+    'IRowCell',
+    'IValidatorDef',
+    'IRow',
+  ]
 ouia: true
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
 import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableText,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  compoundExpand,
-  cellWidth,
-  textCenter,
-  wrappable,
-  truncate,
-  nowrap,
-  breakWord,
-  fitContent,
-  classNames,
-  Visibility,
-  getErrorTextByValidator,
-  cancelCellEdits,
-  validateCellEdits,
-  applyCellEdits,
-  EditableTextCell,
-  EditableSelectInputCell
+Table,
+TableHeader,
+TableBody,
+TableText,
+sortable,
+SortByDirection,
+headerCol,
+TableVariant,
+expandable,
+compoundExpand,
+cellWidth,
+textCenter,
+wrappable,
+truncate,
+nowrap,
+breakWord,
+fitContent,
+classNames,
+Visibility,
+getErrorTextByValidator,
+cancelCellEdits,
+validateCellEdits,
+applyCellEdits,
+EditableTextCell,
+EditableSelectInputCell
 } from '@patternfly/react-table';
 
 import { EmptyStateIcon } from '@patternfly/react-core';
@@ -51,15 +71,11 @@ import DemoSortableTable from './DemoSortableTable';
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  textCenter,
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, textCenter, info } from '@patternfly/react-table';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 class SimpleTable extends React.Component {
@@ -67,31 +83,35 @@ class SimpleTable extends React.Component {
     super(props);
     this.state = {
       columns: [
-        { 
+        {
           title: 'Repositories',
-          header: {
-            info: {
+          transforms: [
+            info({
               tooltip: 'More information about repositories',
               className: 'repositories-info-tip',
               tooltipProps: {
                 isContentLeftAligned: true
               }
-            }
-          }
+            })
+          ]
         },
         'Branches',
-        { 
+        {
           title: 'Pull requests',
-          header: {
-            info: {
-              popover: <div>More <strong>information</strong> on pull requests</div>,
+          transforms: [
+            info({
+              popover: (
+                <div>
+                  More <strong>information</strong> on pull requests
+                </div>
+              ),
               ariaLabel: 'More information on pull requests',
               popoverProps: {
                 headerContent: 'Pull requests',
                 footerContent: <a href="">Click here for even more info</a>
               }
-            }
-          }
+            })
+          ]
         },
         'Workspaces',
         {
@@ -135,7 +155,7 @@ class SimpleTable extends React.Component {
 
     return (
       <Table aria-label="Simple Table" cells={columns} rows={rows}>
-        <TableHeader className={styles.modifiers.nowrap}/>
+        <TableHeader className={styles.modifiers.nowrap} />
         <TableBody />
       </Table>
     );
@@ -143,26 +163,17 @@ class SimpleTable extends React.Component {
 }
 ```
 
-
 ### Row click handler
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class RowClickTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [
-        { title: 'Repositories' },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces'
-      ],
+      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces'],
       rows: [
         {
           cells: ['Repositories one', 'Branches one', 'Pull requests one', 'Workspaces one']
@@ -177,7 +188,7 @@ class RowClickTable extends React.Component {
     };
     this.rowClickHandler = (event, row) => {
       console.log('handle row click', row);
-    }
+    };
   }
 
   render() {
@@ -194,13 +205,10 @@ class RowClickTable extends React.Component {
 ```
 
 ### Custom row wrapper
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
@@ -208,12 +216,7 @@ class RowWrapperTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [
-        { title: 'Repositories' },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces'
-      ],
+      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces'],
       rows: [
         {
           cells: ['Repositories one', 'Branches one', 'Pull requests one', 'Workspaces one']
@@ -226,24 +229,18 @@ class RowWrapperTable extends React.Component {
         }
       ]
     };
-    this.customRowWrapper = ({
-      trRef,
-      className,
-      rowProps,
-      row: { isExpanded, isHeightAuto },
-      ...props
-    }) => {
+    this.customRowWrapper = ({ trRef, className, rowProps, row: { isExpanded, isHeightAuto }, ...props }) => {
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
         borderLeft: '3px solid var(--pf-global--primary-color--100)'
-      }
+      };
       return (
         <tr
           {...props}
           ref={trRef}
           className={css(
             className,
-            (isOddRow ? 'odd-row-class' : 'even-row-class'),
+            isOddRow ? 'odd-row-class' : 'even-row-class',
             'custom-static-class',
             isExpanded !== undefined && styles.tableExpandableRow,
             isExpanded && styles.modifiers.expanded,
@@ -253,14 +250,19 @@ class RowWrapperTable extends React.Component {
           style={isOddRow ? customStyle : {}}
         />
       );
-    }
+    };
   }
 
   render() {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Table with custom row wrapper that styles odd rows" cells={columns} rows={rows} rowWrapper={this.customRowWrapper}>
+      <Table
+        caption="Table with custom row wrapper that styles odd rows"
+        cells={columns}
+        rows={rows}
+        rowWrapper={this.customRowWrapper}
+      >
         <TableHeader />
         <TableBody />
       </Table>
@@ -270,15 +272,10 @@ class RowWrapperTable extends React.Component {
 ```
 
 ### Sortable
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, info, SortByDirection } from '@patternfly/react-table';
 
 class SortableTable extends React.Component {
   constructor(props) {
@@ -286,12 +283,31 @@ class SortableTable extends React.Component {
     this.state = {
       columns: [
         { title: 'Repositories', transforms: [sortable] },
-        'Branches',
+        {
+          title: 'Branches',
+          transforms: [
+            info({
+              tooltip: 'More information about branches'
+            }),
+            sortable
+          ]
+        },
         { title: 'Pull requests', transforms: [sortable] },
         'Workspaces',
-        'Last Commit'
+        {
+          title: 'Last commit',
+          transforms: [
+            info({
+              tooltip: 'More information about commits'
+            })
+          ]
+        }
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
@@ -322,16 +338,10 @@ class SortableTable extends React.Component {
 ```
 
 ### Sortable with wrapping headers
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection,
-  wrappable,
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, SortByDirection, wrappable } from '@patternfly/react-table';
 
 class SortableWrappingHeaders extends React.Component {
   constructor(props) {
@@ -348,7 +358,7 @@ class SortableWrappingHeaders extends React.Component {
         },
         {
           title: 'This is a really long table header that goes on for a long time 3.',
-          transforms: [sortable,wrappable]
+          transforms: [sortable, wrappable]
         },
         {
           title: 'This is a really long table header that goes on for a long time 4.',
@@ -357,9 +367,13 @@ class SortableWrappingHeaders extends React.Component {
         {
           title: 'This is a really long table header that goes on for a long time 5.',
           transforms: [sortable, wrappable]
-        },
+        }
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
@@ -380,7 +394,13 @@ class SortableWrappingHeaders extends React.Component {
     const { columns, rows, sortBy } = this.state;
 
     return (
-      <Table aria-label="Sortable with Wrapping Headers" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+      <Table
+        aria-label="Sortable with Wrapping Headers"
+        sortBy={sortBy}
+        onSort={this.onSort}
+        cells={columns}
+        rows={rows}
+      >
         <TableHeader />
         <TableBody />
       </Table>
@@ -390,6 +410,7 @@ class SortableWrappingHeaders extends React.Component {
 ```
 
 ### Selectable
+
 ```js
 import React from 'react';
 import {
@@ -403,9 +424,7 @@ import {
   expandable,
   cellWidth
 } from '@patternfly/react-table';
-import {
-    Checkbox
-} from '@patternfly/react-core';
+import { Checkbox } from '@patternfly/react-core';
 
 class SelectableTable extends React.Component {
   constructor(props) {
@@ -424,7 +443,7 @@ class SelectableTable extends React.Component {
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true,
+          disableSelection: true
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five']
@@ -471,13 +490,14 @@ class SelectableTable extends React.Component {
           aria-label="toggle select all checkbox"
           id="toggle-select-all"
           name="toggle-select-all"
-          />
+        />
         <Table
           onSelect={this.onSelect}
           canSelectAll={canSelectAll}
           aria-label="Selectable Table"
           cells={columns}
-          rows={rows}>
+          rows={rows}
+        >
           <TableHeader />
           <TableBody />
         </Table>
@@ -488,6 +508,7 @@ class SelectableTable extends React.Component {
 ```
 
 ### Selectable radio input
+
 ```js
 import React from 'react';
 import {
@@ -520,12 +541,12 @@ class SelectableTable extends React.Component {
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true,
+          disableSelection: true
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five']
         }
-      ],
+      ]
     };
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -556,7 +577,8 @@ class SelectableTable extends React.Component {
         selectVariant={RowSelectVariant.radio}
         aria-label="Selectable Table"
         cells={columns}
-        rows={rows}>
+        rows={rows}
+      >
         <TableHeader />
         <TableBody />
       </Table>
@@ -566,14 +588,10 @@ class SelectableTable extends React.Component {
 ```
 
 ### Simple actions
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  headerCol
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
 
 class SimpleActionsTable extends React.Component {
   constructor(props) {
@@ -630,14 +648,10 @@ class SimpleActionsTable extends React.Component {
 ```
 
 ### Actions
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  headerCol
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
 
 class ActionsTable extends React.Component {
   constructor(props) {
@@ -653,7 +667,7 @@ class ActionsTable extends React.Component {
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five'],
-          type: 'green',
+          type: 'green'
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
@@ -719,8 +733,8 @@ class ActionsTable extends React.Component {
         rows={rows}
         actionResolver={this.actionResolver}
         areActionsDisabled={this.areActionsDisabled}
-        dropdownPosition='right'
-        dropdownDirection='up'
+        dropdownPosition="right"
+        dropdownDirection="up"
       >
         <TableHeader />
         <TableBody />
@@ -731,14 +745,10 @@ class ActionsTable extends React.Component {
 ```
 
 ### First cell as header
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  headerCol
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
 
 class CellHeader extends React.Component {
   constructor(props) {
@@ -769,14 +779,10 @@ class CellHeader extends React.Component {
 ```
 
 ### Compact
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableVariant
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-table';
 
 class CompactTable extends React.Component {
   constructor(props) {
@@ -788,7 +794,11 @@ class CompactTable extends React.Component {
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
       ],
-      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
+      rows: [
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four']
+      ]
     };
   }
 
@@ -806,14 +816,10 @@ class CompactTable extends React.Component {
 ```
 
 ### Compact borderless rows
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableVariant
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-table';
 
 class CompactTableBorderlessRows extends React.Component {
   constructor(props) {
@@ -825,7 +831,11 @@ class CompactTableBorderlessRows extends React.Component {
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
       ],
-      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
+      rows: [
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four']
+      ]
     };
   }
 
@@ -849,15 +859,10 @@ class CompactTableBorderlessRows extends React.Component {
 ```
 
 ### Compact expandable
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableVariant,
-  expandable
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableVariant, expandable } from '@patternfly/react-table';
 
 class CompactExpandableTable extends React.Component {
   constructor(props) {
@@ -953,7 +958,7 @@ class CompactExpandableTable extends React.Component {
                 colSpan: 2
               }
             },
-            "fullWidth, spans the empty column"
+            'fullWidth, spans the empty column'
           ]
         }
       ]
@@ -993,14 +998,10 @@ class CompactExpandableTable extends React.Component {
 ```
 
 ### Expandable
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  expandable
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
 
 class ExpandableTable extends React.Component {
   constructor(props) {
@@ -1080,14 +1081,10 @@ class ExpandableTable extends React.Component {
 ```
 
 ### Compound expandable
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  compoundExpand
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, compoundExpand } from '@patternfly/react-table';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
@@ -1124,14 +1121,14 @@ class CompoundExpandableTable extends React.Component {
         {
           isOpen: true,
           cells: [
-            { title: <a href="#">siemur/test-space</a>, props: { component: 'th'} },
+            { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
               title: (
                 <React.Fragment>
                   <CodeBranchIcon key="icon" /> 10
                 </React.Fragment>
               ),
-              props: { isOpen: true, ariaControls : 'compound-expansion-table-1' }
+              props: { isOpen: true, ariaControls: 'compound-expansion-table-1' }
             },
             {
               title: (
@@ -1139,7 +1136,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compound-expansion-table-2' }
+              props: { isOpen: false, ariaControls: 'compound-expansion-table-2' }
             },
             {
               title: (
@@ -1147,7 +1144,7 @@ class CompoundExpandableTable extends React.Component {
                   <CubeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compound-expansion-table-3' }
+              props: { isOpen: false, ariaControls: 'compound-expansion-table-3' }
             },
             '20 minutes',
             { title: <a href="#">Open in Github</a> }
@@ -1158,7 +1155,12 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 1,
           cells: [
             {
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-1', 'three', 'four','five']} id="compound-expansion-table-1" />,
+              title: (
+                <DemoSortableTable
+                  firstColumnRows={['parent-0', 'compound-1', 'three', 'four', 'five']}
+                  id="compound-expansion-table-1"
+                />
+              ),
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1168,7 +1170,12 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 2,
           cells: [
             {
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-2', 'three', 'four','five']} id="compound-expansion-table-2" />,
+              title: (
+                <DemoSortableTable
+                  firstColumnRows={['parent-0', 'compound-2', 'three', 'four', 'five']}
+                  id="compound-expansion-table-2"
+                />
+              ),
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1178,7 +1185,12 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 3,
           cells: [
             {
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-3', 'three', 'four','five']} id="compound-expansion-table-3" />,
+              title: (
+                <DemoSortableTable
+                  firstColumnRows={['parent-0', 'compound-3', 'three', 'four', 'five']}
+                  id="compound-expansion-table-3"
+                />
+              ),
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1186,14 +1198,14 @@ class CompoundExpandableTable extends React.Component {
         {
           isOpen: false,
           cells: [
-            { title: <a href="#">siemur/test-space</a>, props: { component: 'th'} },
+            { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
               title: (
                 <React.Fragment>
                   <CodeBranchIcon key="icon" /> 3
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compound-expansion-table-4' }
+              props: { isOpen: false, ariaControls: 'compound-expansion-table-4' }
             },
             {
               title: (
@@ -1201,7 +1213,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compound-expansion-table-5' }
+              props: { isOpen: false, ariaControls: 'compound-expansion-table-5' }
             },
             {
               title: (
@@ -1209,7 +1221,7 @@ class CompoundExpandableTable extends React.Component {
                   <CubeIcon key="icon" /> 2
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compound-expansion-table-6' }
+              props: { isOpen: false, ariaControls: 'compound-expansion-table-6' }
             },
             '20 minutes',
             { title: <a href="#">Open in Github</a> }
@@ -1220,7 +1232,12 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 1,
           cells: [
             {
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-1', 'three', 'four','five']} id="compound-expansion-table-4" />,
+              title: (
+                <DemoSortableTable
+                  firstColumnRows={['parent-4', 'compound-1', 'three', 'four', 'five']}
+                  id="compound-expansion-table-4"
+                />
+              ),
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1230,7 +1247,12 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 2,
           cells: [
             {
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-2', 'three', 'four','five']} id="compound-expansion-table-5"/>,
+              title: (
+                <DemoSortableTable
+                  firstColumnRows={['parent-4', 'compound-2', 'three', 'four', 'five']}
+                  id="compound-expansion-table-5"
+                />
+              ),
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1240,7 +1262,12 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 3,
           cells: [
             {
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-3', 'three', 'four','five']} id="compound-expansion-table-6"/>,
+              title: (
+                <DemoSortableTable
+                  firstColumnRows={['parent-4', 'compound-3', 'three', 'four', 'five']}
+                  id="compound-expansion-table-6"
+                />
+              ),
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1282,14 +1309,10 @@ class CompoundExpandableTable extends React.Component {
 ```
 
 ### With width modifiers
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  cellWidth
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-table';
 
 class WidthTable extends React.Component {
   constructor(props) {
@@ -1323,16 +1346,10 @@ class WidthTable extends React.Component {
 ```
 
 ### Breakpoint modifiers
+
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  classNames,
-  Visibility
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, classNames, Visibility } from '@patternfly/react-table';
 
 class HiddenVisibleBreakpointTable extends React.Component {
   constructor(props) {
@@ -1341,7 +1358,9 @@ class HiddenVisibleBreakpointTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)]
+          columnTransforms: [
+            classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)
+          ]
         },
         'Branches',
         {
@@ -1377,6 +1396,7 @@ class HiddenVisibleBreakpointTable extends React.Component {
 ```
 
 ### Controlling text
+
 ```js
 import React from 'react';
 import {
@@ -1388,7 +1408,7 @@ import {
   nowrap,
   breakWord,
   cellWidth,
-  fitContent,
+  fitContent
 } from '@patternfly/react-table';
 
 class ControllingText extends React.Component {
@@ -1396,24 +1416,28 @@ class ControllingText extends React.Component {
     super(props);
     this.state = {
       columns: [
-        {title: 'Truncate (width 20%)', transforms: [cellWidth(20)], cellTransforms: [truncate]},
-        {title: 'Break word', cellTransforms: [breakWord]},
-        {title: 'Wrapping table header text. This th text will wrap instead of truncate.', transforms: [wrappable]},
-        {title: 'Fit content', transforms: [fitContent]},
-        {title: '', cellTransforms: [nowrap]},
+        { title: 'Truncate (width 20%)', transforms: [cellWidth(20)], cellTransforms: [truncate] },
+        { title: 'Break word', cellTransforms: [breakWord] },
+        { title: 'Wrapping table header text. This th text will wrap instead of truncate.', transforms: [wrappable] },
+        { title: 'Fit content', transforms: [fitContent] },
+        { title: '', cellTransforms: [nowrap] }
       ],
       rows: [
         [
           'This text will truncate instead of wrap.',
-          {title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>},
-          {title: <p>By default,
-            <code>thead</code> cells will truncate and
-            <code>tbody</code> cells will wrap. Use
-            <code>.pf-m-wrap</code> on a
-            <code>th</code> to change its behavior.</p>
+          { title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a> },
+          {
+            title: (
+              <p>
+                By default,
+                <code>thead</code> cells will truncate and
+                <code>tbody</code> cells will wrap. Use
+                <code>.pf-m-wrap</code> on a<code>th</code> to change its behavior.
+              </p>
+            )
           },
-          'This cell\'s content will adjust itself to the parent th width. This modifier only affects table layouts.',
-          {title: <a href="#">No wrap</a>}
+          "This cell's content will adjust itself to the parent th width. This modifier only affects table layouts.",
+          { title: <a href="#">No wrap</a> }
         ]
       ]
     };
@@ -1433,6 +1457,7 @@ class ControllingText extends React.Component {
 ```
 
 ### Modifiers with table text
+
 ```js
 import React from 'react';
 import {
@@ -1445,7 +1470,7 @@ import {
   nowrap,
   breakWord,
   cellWidth,
-  fitContent,
+  fitContent
 } from '@patternfly/react-table';
 
 class ModifiersWithTableText extends React.Component {
@@ -1453,13 +1478,19 @@ class ModifiersWithTableText extends React.Component {
     super(props);
     this.state = {
       columns: [
-        {title: 'Truncating text', transforms: [cellWidth(30)]},
-        {title: 'Wrapping table header text. This th text will wrap instead of truncate.'},
+        { title: 'Truncating text', transforms: [cellWidth(30)] },
+        { title: 'Wrapping table header text. This th text will wrap instead of truncate.' }
       ],
       rows: [
         [
-          {title: <TableText wrapModifier='truncate'>This text will truncate instead of wrap.</TableText>},
-          {title: <TableText wrapModifier='nowrap'><a href="#">This is a link that needs to be on one line and fully readable.</a></TableText>},
+          { title: <TableText wrapModifier="truncate">This text will truncate instead of wrap.</TableText> },
+          {
+            title: (
+              <TableText wrapModifier="nowrap">
+                <a href="#">This is a link that needs to be on one line and fully readable.</a>
+              </TableText>
+            )
+          }
         ]
       ]
     };
@@ -1479,37 +1510,47 @@ class ModifiersWithTableText extends React.Component {
 ```
 
 ### Empty state
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title, EmptyStateIcon } from '@patternfly/react-core';
+import {
+  Button,
+  EmptyState,
+  EmptyStateBody,
+  EmptyStatePrimary,
+  Bullseye,
+  Title,
+  EmptyStateIcon
+} from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 EmptyStateTable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last Commit']
-  const rows = []
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last Commit'];
+  const rows = [];
   return (
     <React.Fragment>
-    <Table caption="Empty State Table Example" cells={columns} rows={rows}>
-      <TableHeader />
-      <TableBody />
-    </Table>
-    <EmptyState variant={EmptyStateVariant.small}>
-      <EmptyStateIcon icon={SearchIcon} />
-      <Title headingLevel="h2" size="lg">
-        No results found
-      </Title>
-      <EmptyStateBody>
-        No results match the filter criteria. Remove all filters or clear all filters to show results.
-      </EmptyStateBody>
-      <Button variant="link">Clear all filters</Button>
-    </EmptyState>
+      <Table caption="Empty State Table Example" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+      <EmptyState variant={EmptyStateVariant.small}>
+        <EmptyStateIcon icon={SearchIcon} />
+        <Title headingLevel="h2" size="lg">
+          No results found
+        </Title>
+        <EmptyStateBody>
+          No results match the filter criteria. Remove all filters or clear all filters to show results.
+        </EmptyStateBody>
+        <Button variant="link">Clear all filters</Button>
+      </EmptyState>
     </React.Fragment>
   );
-}
+};
 ```
 
 ### Editable rows
+
 ```js isBeta
 import React from 'react';
 import { TextInput, SelectOption } from '@patternfly/react-core';
@@ -1531,16 +1572,13 @@ class EditableRowsTable extends React.Component {
     super(props);
 
     this.state = {
-      columns: [
-        'Text input col 1',
-        'Disabled text input col 2',
-        'Text input col 3',
-        'Text input col 4'
+      columns: ['Text input col 1', 'Disabled text input col 2', 'Text input col 3', 'Text input col 4'],
+      actions: [
+        {
+          title: 'Some action',
+          onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+        }
       ],
-      actions: [{
-        title: 'Some action',
-        onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
-      }],
       rows: [
         {
           rowEditBtnAriaLabel: idx => `Edit row ${idx}`,
@@ -1562,7 +1600,8 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 1 content" />
+                  inputAriaLabel="Row 1 cell 1 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 1 content',
@@ -1578,7 +1617,8 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
                   isDisabled
-                  inputAriaLabel="Row 1 cell 2 content" />
+                  inputAriaLabel="Row 1 cell 2 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 2, disabled content',
@@ -1593,7 +1633,8 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 3 content" />
+                  inputAriaLabel="Row 1 cell 3 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 3 content',
@@ -1617,7 +1658,9 @@ class EditableRowsTable extends React.Component {
                       isPlaceholder={option.isPlaceholder}
                     />
                   ))}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  onToggle={isOpen => {
+                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  }}
                   selections={props.selected}
                 />
               ),
@@ -1627,19 +1670,19 @@ class EditableRowsTable extends React.Component {
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || ['Option 1'],
                 options: [
-                  {value: 'Placeholder...', isPlaceholder: true},
-                  {value: 'Option 1'},
-                  {value: 'Option 2'},
-                  {value: 'Option 3'},
-                  {value: 'Option 4'},
-                  {value: 'Option 5'}
+                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Option 1' },
+                  { value: 'Option 2' },
+                  { value: 'Option 3' },
+                  { value: 'Option 4' },
+                  { value: 'Option 5' }
                 ],
                 editableSelectProps: {
                   variant: 'single',
-                  'aria-label': "Row 1 cell 4 content",
+                  'aria-label': 'Row 1 cell 4 content'
                 }
               }
-            },
+            }
           ]
         },
         {
@@ -1652,7 +1695,8 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 1 content" />
+                  inputAriaLabel="Row 2 cell 1 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 1 content',
@@ -1668,7 +1712,8 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
                   isDisabled
-                  inputAriaLabel="Row 2 cell 2 content" />
+                  inputAriaLabel="Row 2 cell 2 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 2, disabled content',
@@ -1683,7 +1728,8 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 3 content" />
+                  inputAriaLabel="Row 2 cell 3 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 3 content',
@@ -1702,17 +1748,19 @@ class EditableRowsTable extends React.Component {
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => {
                     return (
-                    <SelectOption
-                      key={index}
-                      value={option.value}
-                      id={'uniqueIdRow2Cell4Option' + index}
-                      isPlaceholder={option.isPlaceholder}
-                    />
-                  )
+                      <SelectOption
+                        key={index}
+                        value={option.value}
+                        id={'uniqueIdRow2Cell4Option' + index}
+                        isPlaceholder={option.isPlaceholder}
+                      />
+                    );
                   })}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  onToggle={isOpen => {
+                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  }}
                   selections={props.selected}
-                  />
+                />
               ),
               props: {
                 value: ['Placeholder...'],
@@ -1720,20 +1768,20 @@ class EditableRowsTable extends React.Component {
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || [],
                 options: [
-                  {value: 'Placeholder...', isPlaceholder: true},
-                  {value: 'Option 1'},
-                  {value: 'Option 2'},
-                  {value: 'Option 3'},
-                  {value: 'Option 4'},
-                  {value: 'Option 5'}
+                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Option 1' },
+                  { value: 'Option 2' },
+                  { value: 'Option 3' },
+                  { value: 'Option 4' },
+                  { value: 'Option 5' }
                 ],
                 editableSelectProps: {
                   variant: 'typeaheadmulti',
-                  'aria-label': "Row 2 cell 4 content",
+                  'aria-label': 'Row 2 cell 4 content',
                   toggleId: 'editable-toggle'
                 }
               }
-            },
+            }
           ]
         },
         {
@@ -1768,7 +1816,8 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 3 cell 1 content" />
+                  inputAriaLabel="Row 3 cell 1 content"
+                />
               ),
               props: {
                 value: 'Row 3 cell 1 content',
@@ -1784,7 +1833,8 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
                   isDisabled
-                  inputAriaLabel="Row 3 cell 2 content" />
+                  inputAriaLabel="Row 3 cell 2 content"
+                />
               ),
               props: {
                 value: 'Row 3 cell 2, disabled content',
@@ -1799,7 +1849,8 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 3 cell 3 content" />
+                  inputAriaLabel="Row 3 cell 3 content"
+                />
               ),
               props: {
                 value: 'Row 3 cell 3 content',
@@ -1824,9 +1875,11 @@ class EditableRowsTable extends React.Component {
                       isPlaceholder={option.isPlaceholder}
                     />
                   ))}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  onToggle={isOpen => {
+                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  }}
                   selections={props.selected}
-                  />
+                />
               ),
               props: {
                 value: ['Option 3'],
@@ -1834,16 +1887,16 @@ class EditableRowsTable extends React.Component {
                 isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected || ['Option 3'],
                 options: [
-                  {value: 'Placeholder...', isPlaceholder: true},
-                  {value: 'Option 1'},
-                  {value: 'Option 2'},
-                  {value: 'Option 3'},
-                  {value: 'Option 4'},
-                  {value: 'Option 5'}
+                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Option 1' },
+                  { value: 'Option 2' },
+                  { value: 'Option 3' },
+                  { value: 'Option 4' },
+                  { value: 'Option 5' }
                 ],
                 editableSelectProps: {
                   variant: 'checkbox',
-                  'aria-label': "Row 3 cell 4 content",
+                  'aria-label': 'Row 3 cell 4 content'
                 }
               }
             }
@@ -1917,7 +1970,7 @@ class EditableRowsTable extends React.Component {
         rows: newRows
       });
     };
-    
+
     this.clearSelection = (rowIndex, cellIndex) => {
       const newRows = Array.from(this.state.rows);
       const newCellProps = newRows[rowIndex].cells[cellIndex].props;
@@ -1947,9 +2000,10 @@ class EditableRowsTable extends React.Component {
         aria-label="Editable Rows Table"
         variant={TableVariant.compact}
         cells={columns}
-        rows={rows}>
-          <TableHeader />
-          <TableBody />
+        rows={rows}
+      >
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

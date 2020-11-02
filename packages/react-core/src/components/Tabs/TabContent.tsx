@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/TabContent/tab-content';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
-import { TabsContextConsumer, TabsContextProps } from './Tabs';
+import { TabsContextConsumer, TabsContextProps } from './TabsContext';
 
 export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref'>, OUIAProps {
   /** content rendered inside the tab content area if used outside Tabs component */

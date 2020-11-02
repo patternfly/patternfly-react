@@ -13,13 +13,11 @@ import './split.css';
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-SplitBasicExample = () => (
-  <Split>
-    <SplitItem>content</SplitItem>
-    <SplitItem isFilled>pf-m-fill</SplitItem>
-    <SplitItem>content</SplitItem>
-  </Split>
-);
+<Split>
+  <SplitItem>content</SplitItem>
+  <SplitItem isFilled>pf-m-fill</SplitItem>
+  <SplitItem>content</SplitItem>
+</Split>
 ```
 
 ### With gutter
@@ -27,11 +25,9 @@ SplitBasicExample = () => (
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-SplitWithGutterExample = () => (
-  <Split hasGutter>
-    <SplitItem>content</SplitItem>
-    <SplitItem isFilled>pf-m-fill</SplitItem>
-    <SplitItem>content</SplitItem>
-  </Split>
-);
+<Split hasGutter>
+  <SplitItem>content</SplitItem>
+  <SplitItem isFilled>pf-m-fill</SplitItem>
+  <SplitItem>content</SplitItem>
+</Split>
 ```

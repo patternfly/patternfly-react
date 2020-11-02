@@ -18,22 +18,6 @@ propComponents:
   ]
 ---
 
-import {
-Button,
-DataList,
-DataListItem,
-DataListItemCells,
-DataListItemRow,
-DataListCell,
-DataListCheck,
-DataListAction,
-DataListToggle,
-DataListContent,
-Dropdown,
-DropdownPosition,
-KebabToggle,
-DropdownItem,
-} from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
@@ -61,36 +45,34 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 
-SimpleDataList = () => (
-  <DataList aria-label="Simple data list example">
-    <DataListItem aria-labelledby="simple-item1">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell key="primary content">
-              <span id="simple-item1">Primary content</span>
-            </DataListCell>,
-            <DataListCell key="secondary content">Secondary content</DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-    <DataListItem aria-labelledby="simple-item2">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell isFilled={false} key="secondary content fill">
-              <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
-            </DataListCell>,
-            <DataListCell isFilled={false} alignRight key="secondary content align">
-              Secondary content (pf-m-align-right pf-m-no-fill)
-            </DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-  </DataList>
-);
+<DataList aria-label="Simple data list example">
+  <DataListItem aria-labelledby="simple-item1">
+    <DataListItemRow>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key="primary content">
+            <span id="simple-item1">Primary content</span>
+          </DataListCell>,
+          <DataListCell key="secondary content">Secondary content</DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  </DataListItem>
+  <DataListItem aria-labelledby="simple-item2">
+    <DataListItemRow>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell isFilled={false} key="secondary content fill">
+            <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
+          </DataListCell>,
+          <DataListCell isFilled={false} alignRight key="secondary content align">
+            Secondary content (pf-m-align-right pf-m-no-fill)
+          </DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  </DataListItem>
+</DataList>
 ```
 
 ### Compact
@@ -113,36 +95,34 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 
-SimpleDataList = () => (
-  <DataList aria-label="Compact data list example" isCompact>
-    <DataListItem aria-labelledby="simple-item1">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell key="primary content">
-              <span id="simple-item1">Primary content</span>
-            </DataListCell>,
-            <DataListCell key="secondary content">Secondary content</DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-    <DataListItem aria-labelledby="simple-item2">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell isFilled={false} key="secondary content fill">
-              <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
-            </DataListCell>,
-            <DataListCell isFilled={false} alignRight key="secondary content align">
-              Secondary content (pf-m-align-right pf-m-no-fill)
-            </DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-  </DataList>
-);
+<DataList aria-label="Compact data list example" isCompact>
+  <DataListItem aria-labelledby="simple-item1">
+    <DataListItemRow>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key="primary content">
+            <span id="simple-item1">Primary content</span>
+          </DataListCell>,
+          <DataListCell key="secondary content">Secondary content</DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  </DataListItem>
+  <DataListItem aria-labelledby="simple-item2">
+    <DataListItemRow>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell isFilled={false} key="secondary content fill">
+            <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
+          </DataListCell>,
+          <DataListCell isFilled={false} alignRight key="secondary content align">
+            Secondary content (pf-m-align-right pf-m-no-fill)
+          </DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  </DataListItem>
+</DataList>
 ```
 
 ### Checkboxes, actions and additional cells
@@ -1124,25 +1104,23 @@ import {
   DataListWrapModifier
 } from '@patternfly/react-core';
 
-SimpleDataList = () => (
-  <DataList aria-label="Simple data list example">
-    <DataListItem aria-labelledby="simple-item1">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
-              <span id="simple-item1">Primary content</span>
-            </DataListCell>,
-            <DataListCell key="secondary content" wrapModifier={DataListWrapModifier.truncate}>
-              Really really really really really really really really really really really really really really long
-              description that should be truncated before it ends
-            </DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-  </DataList>
-);
+<DataList aria-label="Simple data list example">
+  <DataListItem aria-labelledby="simple-item1">
+    <DataListItemRow>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
+            <span id="simple-item1">Primary content</span>
+          </DataListCell>,
+          <DataListCell key="secondary content" wrapModifier={DataListWrapModifier.truncate}>
+            Really really really really really really really really really really really really really really long
+            description that should be truncated before it ends
+          </DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  </DataListItem>
+</DataList>
 ```
 
 ### Draggable
@@ -1225,6 +1203,7 @@ class DraggableDataList extends React.Component {
                   aria-labelledby="simple-item1"
                   aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
                   aria-pressed="false"
+                  isDisabled
                 />
                 <DataListCheck aria-labelledby="simple-item1" name="check1" otherControls />
               </DataListControl>
@@ -1320,23 +1299,21 @@ import {
   DataListGridBreakpoint
 } from '@patternfly/react-core';
 
-SimpleDataList = () => (
-  <DataList aria-label="Simple data list example" gridBreakpoint="sm">
-    <DataListItem aria-labelledby="simple-item1">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell key="primary content">
-              <span id="simple-item1">Primary content</span>
-            </DataListCell>,
-            <DataListCell key="secondary content">
-              Really really really really really really really really really really really really really really long
-              description that should be truncated before it ends
-            </DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-  </DataList>
-);
+<DataList aria-label="Simple data list example" gridBreakpoint="sm">
+  <DataListItem aria-labelledby="simple-item1">
+    <DataListItemRow>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key="primary content">
+            <span id="simple-item1">Primary content</span>
+          </DataListCell>,
+          <DataListCell key="secondary content">
+            Really really really really really really really really really really really really really really long
+            description that should be truncated before it ends
+          </DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  </DataListItem>
+</DataList>
 ```

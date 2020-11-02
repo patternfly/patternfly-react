@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.75.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.6...@patternfly/react-core@4.75.7) (2020-10-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.5...@patternfly/react-core@4.75.6) (2020-10-30)
+
+
+### Bug Fixes
+
+* **datalist:** respect isDisabled for dragging ([#5052](https://github.com/patternfly/patternfly-react/issues/5052)) ([a8039b0](https://github.com/patternfly/patternfly-react/commit/a8039b00c0a795282319c4a39006c8841c0ad39c))
+
+
+
+
+
+## [4.75.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.4...@patternfly/react-core@4.75.5) (2020-10-29)
+
+
+### Bug Fixes
+
+* **docs:** add missing fieldId prop in sample code ([#5059](https://github.com/patternfly/patternfly-react/issues/5059)) ([95b7f0f](https://github.com/patternfly/patternfly-react/commit/95b7f0f12cb6e6c00c7c8fd1b637c06cb44411af))
+
+
+
+
+
+## [4.75.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.3...@patternfly/react-core@4.75.4) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.2...@patternfly/react-core@4.75.3) (2020-10-28)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [4.75.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.1...@patternfly/react-core@4.75.2) (2020-10-26)
 
 **Note:** Version bump only for package @patternfly/react-core

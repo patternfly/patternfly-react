@@ -20,14 +20,10 @@ import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
 import pfLogo2 from './examples/pfLogo2.svg';
 
-Basic = () => (
-  <React.Fragment>
-    <CatalogItemHeader
-      iconImg={pfLogo2}
-      title="PatternFly"
-    />
-  </React.Fragment>
-);
+<CatalogItemHeader
+  iconImg={pfLogo2}
+  title="PatternFly"
+  />
 ```
 
 ### With vendor description
@@ -36,17 +32,13 @@ import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
 import pfLogo2 from './examples/pfLogo2.svg';
 
-LongDescription = () => (
-  <React.Fragment>
-    <CatalogItemHeader
-      iconImg={pfLogo2}
-      title="Patternfly-React"
-      vendor={
-        <span>
-          provided by <a href="http://redhat.com">Red Hat</a>
-        </span>
-      }
-    />
-  </React.Fragment>
-);
+<CatalogItemHeader
+  iconImg={pfLogo2}
+  title="Patternfly-React"
+  vendor={
+    <span>
+      provided by <a href="http://redhat.com">Red Hat</a>
+    </span>
+  }
+/>
 ```
