@@ -11,7 +11,7 @@ beta: true
 import React from 'react';
 import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 
-<JumpLinks>
+<JumpLinks hasScrollSpy={false}>
   <JumpLinksItem>Inactive section</JumpLinksItem>
   <JumpLinksItem isActive>Active section</JumpLinksItem>
   <JumpLinksItem>Inactive section</JumpLinksItem>
@@ -23,7 +23,7 @@ import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 import React from 'react';
 import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 
-<JumpLinks isCentered>
+<JumpLinks hasScrollSpy={false} isCentered>
   <JumpLinksItem>Inactive section</JumpLinksItem>
   <JumpLinksItem isActive>Active section</JumpLinksItem>
   <JumpLinksItem>Inactive section</JumpLinksItem>
@@ -36,12 +36,12 @@ import React from 'react';
 import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 
 <React.Fragment>
-  <JumpLinks label="Jump to section">
+  <JumpLinks hasScrollSpy={false} label="Jump to section">
     <JumpLinksItem>Inactive section</JumpLinksItem>
     <JumpLinksItem isActive>Active section</JumpLinksItem>
     <JumpLinksItem>Inactive section</JumpLinksItem>
   </JumpLinks>
-  <JumpLinks isCentered label="Jump to section">
+  <JumpLinks hasScrollSpy={false} isCentered label="Jump to section">
     <JumpLinksItem>Inactive section</JumpLinksItem>
     <JumpLinksItem isActive>Active section</JumpLinksItem>
     <JumpLinksItem>Inactive section</JumpLinksItem>
@@ -54,7 +54,7 @@ import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 import React from 'react';
 import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 
-<JumpLinks isVertical>
+<JumpLinks hasScrollSpy={false} isVertical>
   <JumpLinksItem>Inactive section</JumpLinksItem>
   <JumpLinksItem isActive>Active section</JumpLinksItem>
   <JumpLinksItem>Inactive section</JumpLinksItem>
@@ -66,7 +66,7 @@ import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 import React from 'react';
 import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
 
-<JumpLinks isVertical label="Jump to section">
+<JumpLinks hasScrollSpy={false} isVertical label="Jump to section">
   <JumpLinksItem>Inactive section</JumpLinksItem>
   <JumpLinksItem isActive>Active section</JumpLinksItem>
   <JumpLinksItem>Inactive section</JumpLinksItem>
