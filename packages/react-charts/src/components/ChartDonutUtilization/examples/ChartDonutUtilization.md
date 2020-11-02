@@ -25,19 +25,17 @@ Learn to build a donut utilization chart using a Katacoda tutorial starting with
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-Basic = (
-  <div style={{ height: '230px', width: '230px' }}>
-    <ChartDonutUtilization
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart example"
-      constrainToVisibleArea={true}
-      data={{ x: 'GBps capacity', y: 75 }}
-      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-      subTitle="of 100 GBps"
-      title="75%"
-    />
-  </div>
-)
+<div style={{ height: '230px', width: '230px' }}>
+  <ChartDonutUtilization
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart example"
+    constrainToVisibleArea={true}
+    data={{ x: 'GBps capacity', y: 75 }}
+    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    subTitle="of 100 GBps"
+    title="75%"
+  />
+</div>
 ```
 
 ### Right aligned legend
@@ -223,30 +221,28 @@ class VerticalLegendUtilizationChart extends React.Component {
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-BottomLegend = (
-  <div style={{ height: '275px', width: '300px' }}>
-    <ChartDonutUtilization
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart example"
-      constrainToVisibleArea={true}
-      data={{ x: 'Storage capacity', y: 45 }}
-      height={275}
-      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-      legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-      legendPosition="bottom"
-      padding={{
-        bottom: 65, // Adjusted to accommodate legend
-        left: 20,
-        right: 20,
-        top: 20
-      }}
-      subTitle="of 100 GBps"
-      title="45%"
-      thresholds={[{ value: 60 }, { value: 90 }]}
-      width={300}
-    />
-  </div>
-)
+<div style={{ height: '275px', width: '300px' }}>
+  <ChartDonutUtilization
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart example"
+    constrainToVisibleArea={true}
+    data={{ x: 'Storage capacity', y: 45 }}
+    height={275}
+    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
+    legendPosition="bottom"
+    padding={{
+      bottom: 65, // Adjusted to accommodate legend
+      left: 20,
+      right: 20,
+      top: 20
+    }}
+    subTitle="of 100 GBps"
+    title="45%"
+    thresholds={[{ value: 60 }, { value: 90 }]}
+    width={300}
+  />
+</div>
 ```
 
 ### Small
@@ -254,21 +250,19 @@ BottomLegend = (
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-Small = (
-  <div style={{ height: '175px', width: '175px' }}>
-    <ChartDonutUtilization
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart example"
-      constrainToVisibleArea={true}
-      data={{ x: 'Storage capacity', y: 75 }}
-      height={175}
-      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-      subTitle="of 100 GBps"
-      title="75%"
-      width={175}
-    />
-  </div>
-)
+<div style={{ height: '175px', width: '175px' }}>
+  <ChartDonutUtilization
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart example"
+    constrainToVisibleArea={true}
+    data={{ x: 'Storage capacity', y: 75 }}
+    height={175}
+    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    subTitle="of 100 GBps"
+    title="75%"
+    width={175}
+  />
+</div>
 ```
 
 ### Small with right aligned legend
@@ -331,38 +325,36 @@ class UtilizationChart extends React.Component {
 ```
 
 ### Small with bottom aligned subtitle
+
+This is a small donut utilization chart with bottom aligned legend and right aligned subtitle.
+
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-SmallBottomSubtitle = (
-  <div>
-    <p>This is a small donut utilization chart with bottom aligned legend and right aligned subtitle</p>
-    <div style={{ height: '185px', width: '350px' }}>
-      <ChartDonutUtilization
-        ariaDesc="Storage capacity"
-        ariaTitle="Donut utilization chart example"
-        constrainToVisibleArea={true}
-        data={{ x: 'Storage capacity', y: 45 }}
-        height={185}
-        labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-        legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-        legendOrientation="vertical"
-        padding={{
-          bottom: 25, // Adjusted to accommodate subTitle
-          left: 20,
-          right: 195, // Adjusted to accommodate legend
-          top: 20
-        }}
-        subTitle="of 100 GBps"
-        subTitlePosition="bottom"
-        title="45%"
-        thresholds={[{ value: 60 }, { value: 90 }]}
-        width={350}
-      />
-    </div>
-  </div>
-)
+<div style={{ height: '185px', width: '350px' }}>
+  <ChartDonutUtilization
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart example"
+    constrainToVisibleArea={true}
+    data={{ x: 'Storage capacity', y: 45 }}
+    height={185}
+    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
+    legendOrientation="vertical"
+    padding={{
+      bottom: 25, // Adjusted to accommodate subTitle
+      left: 20,
+      right: 195, // Adjusted to accommodate legend
+      top: 20
+    }}
+    subTitle="of 100 GBps"
+    subTitlePosition="bottom"
+    title="45%"
+    thresholds={[{ value: 60 }, { value: 90 }]}
+    width={350}
+  />
+</div>
 ```
 
 ### Small with right aligned subtitle
@@ -370,31 +362,29 @@ SmallBottomSubtitle = (
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-SmallBottomRightSubtitle = (
-  <div style={{ height: '200px', width: '350px' }}>
-    <ChartDonutUtilization
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart example"
-      constrainToVisibleArea={true}
-      data={{ x: 'Storage capacity', y: 45 }}
-      height={200}
-      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-      legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
-      legendPosition="bottom"
-      padding={{
-        bottom: 45, // Adjusted to accommodate legend
-        left: 20,
-        right: 20,
-        top: 20
-      }}
-      subTitle="of 100 GBps"
-      subTitlePosition="right"
-      title="45%"
-      thresholds={[{ value: 60 }, { value: 90 }]}
-      width={350}
-    />
-  </div>
-)
+<div style={{ height: '200px', width: '350px' }}>
+  <ChartDonutUtilization
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart example"
+    constrainToVisibleArea={true}
+    data={{ x: 'Storage capacity', y: 45 }}
+    height={200}
+    labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
+    legendPosition="bottom"
+    padding={{
+      bottom: 45, // Adjusted to accommodate legend
+      left: 20,
+      right: 20,
+      top: 20
+    }}
+    subTitle="of 100 GBps"
+    subTitlePosition="right"
+    title="45%"
+    thresholds={[{ value: 60 }, { value: 90 }]}
+    width={350}
+  />
+</div>
 ```
 
 ## Donut utilization threshold examples
@@ -403,24 +393,22 @@ SmallBottomRightSubtitle = (
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-StaticThresholds = (
-  <div style={{ height: '230px', width: '230px' }}>
-    <ChartDonutThreshold
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart with static threshold example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-      labels={({ datum }) => datum.x ? datum.x : null}
-    >
-      <ChartDonutUtilization
-        data={{ x: 'Storage capacity', y: 45 }}
-        labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-        subTitle="of 100 GBps"
-        title="45%"
-      />
-    </ChartDonutThreshold>
-  </div>
-)
+<div style={{ height: '230px', width: '230px' }}>
+  <ChartDonutThreshold
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart with static threshold example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+    labels={({ datum }) => datum.x ? datum.x : null}
+  >
+    <ChartDonutUtilization
+      data={{ x: 'Storage capacity', y: 45 }}
+      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      subTitle="of 100 GBps"
+      title="45%"
+    />
+  </ChartDonutThreshold>
+</div>
 ```
 
 ### Static thresholds with right aligned legend
@@ -611,34 +599,32 @@ class CustomLegendThresholdChart extends React.Component {
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-StaticThresholds = (
-  <div style={{ height: '275px', width: '675px' }}>
-    <ChartDonutThreshold
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart with static threshold example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-      height={275}
-      labels={({ datum }) => datum.x ? datum.x : null}
-      padding={{
-        bottom: 65, // Adjusted to accommodate legend
-        left: 20,
-        right: 20,
-        top: 20
-      }}
-      width={675}
-    >
-      <ChartDonutUtilization
-        data={{ x: 'Storage capacity', y: 45 }}
-        labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-        legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
-        legendPosition="bottom"
-        subTitle="of 100 GBps"
-        title="45%"
-      />
-    </ChartDonutThreshold>
-  </div>
-)
+<div style={{ height: '275px', width: '675px' }}>
+  <ChartDonutThreshold
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart with static threshold example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+    height={275}
+    labels={({ datum }) => datum.x ? datum.x : null}
+    padding={{
+      bottom: 65, // Adjusted to accommodate legend
+      left: 20,
+      right: 20,
+      top: 20
+    }}
+    width={675}
+  >
+    <ChartDonutUtilization
+      data={{ x: 'Storage capacity', y: 45 }}
+      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+      legendPosition="bottom"
+      subTitle="of 100 GBps"
+      title="45%"
+    />
+  </ChartDonutThreshold>
+</div>
 ```
 
 ### Small with static thresholds
@@ -646,26 +632,24 @@ StaticThresholds = (
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-SmallStaticThresholds = (
-  <div style={{ height: '185px', width: '185px' }}>
-    <ChartDonutThreshold
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart with static threshold example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-      height={185}
-      labels={({ datum }) => datum.x ? datum.x : null}
-      width={185}
-    >
-      <ChartDonutUtilization
-        data={{ x: 'Storage capacity', y: 45 }}
-        labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-        subTitle="of 100 GBps"
-        title="45%"
-      />
-    </ChartDonutThreshold>
-  </div>
-)
+<div style={{ height: '185px', width: '185px' }}>
+  <ChartDonutThreshold
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart with static threshold example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+    height={185}
+    labels={({ datum }) => datum.x ? datum.x : null}
+    width={185}
+  >
+    <ChartDonutUtilization
+      data={{ x: 'Storage capacity', y: 45 }}
+      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      subTitle="of 100 GBps"
+      title="45%"
+    />
+  </ChartDonutThreshold>
+</div>
 ```
 
 ### Small with static thresholds and right aligned legend
@@ -728,43 +712,41 @@ class ThresholdChart extends React.Component {
 ```
 
 ### Small with subtitle
+
+This is a small donut utilization chart with static thresholds with right aligned legend and bottom aligned subtitle.
+
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-SmallStaticSubtitle = (
-  <div>
-    <p>This is a small donut utilization chart with static thresholds with right aligned legend and bottom aligned subtitle</p>
-    <div style={{ height: '200px', width: '425px' }}>
-      <ChartDonutThreshold
-        ariaDesc="Storage capacity"
-        ariaTitle="Donut utilization chart with static threshold example"
-        constrainToVisibleArea={true}
-        data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-        height={200}
-        labels={({ datum }) => datum.x ? datum.x : null}
-        padding={{
-          bottom: 30, // Adjusted to accommodate label
-          left: 20,
-          right: 260, // Adjusted to accommodate legend
-          top: 20
-        }}
-        subTitlePosition="bottom"
-        width={425}
-      >
-        <ChartDonutUtilization
-          data={{ x: 'Storage capacity', y: 45 }}
-          labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-          legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at  90%' }]}
-          legendOrientation="vertical"
-          subTitle="of 100 GBps"
-          title="45%"
-          thresholds={[{ value: 60 }, { value: 90 }]}
-        />
-      </ChartDonutThreshold>
-    </div>
-  </div>
-)
+<div style={{ height: '200px', width: '425px' }}>
+  <ChartDonutThreshold
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart with static threshold example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+    height={200}
+    labels={({ datum }) => datum.x ? datum.x : null}
+    padding={{
+      bottom: 30, // Adjusted to accommodate label
+      left: 20,
+      right: 260, // Adjusted to accommodate legend
+      top: 20
+    }}
+    subTitlePosition="bottom"
+    width={425}
+  >
+    <ChartDonutUtilization
+      data={{ x: 'Storage capacity', y: 45 }}
+      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at  90%' }]}
+      legendOrientation="vertical"
+      subTitle="of 100 GBps"
+      title="45%"
+      thresholds={[{ value: 60 }, { value: 90 }]}
+    />
+  </ChartDonutThreshold>
+</div>
 ```
 
 ### Small with right aligned subtitle
@@ -772,36 +754,34 @@ SmallStaticSubtitle = (
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-SmallRightSubtitle = (
-  <div style={{ height: '225px', width: '675px' }}>
-    <ChartDonutThreshold
-      ariaDesc="Storage capacity"
-      ariaTitle="Donut utilization chart with static threshold example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-      height={225}
-      labels={({ datum }) => datum.x ? datum.x : null}
-      padding={{
-        bottom: 60, // Adjusted to accommodate legend
-        left: 20,
-        right: 20,
-        top: 20
-      }}
-      subTitlePosition="right"
-      width={675}
-    >
-      <ChartDonutUtilization
-        data={{ x: 'Storage capacity', y: 45 }}
-        labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-        legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
-        legendPosition="bottom"
-        subTitle="of 100 GBps"
-        title="45%"
-        thresholds={[{ value: 60 }, { value: 90 }]}
-      />
-    </ChartDonutThreshold>
-  </div>
-)
+<div style={{ height: '225px', width: '675px' }}>
+  <ChartDonutThreshold
+    ariaDesc="Storage capacity"
+    ariaTitle="Donut utilization chart with static threshold example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+    height={225}
+    labels={({ datum }) => datum.x ? datum.x : null}
+    padding={{
+      bottom: 60, // Adjusted to accommodate legend
+      left: 20,
+      right: 20,
+      top: 20
+    }}
+    subTitlePosition="right"
+    width={675}
+  >
+    <ChartDonutUtilization
+      data={{ x: 'Storage capacity', y: 45 }}
+      labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+      legendPosition="bottom"
+      subTitle="of 100 GBps"
+      title="45%"
+      thresholds={[{ value: 60 }, { value: 90 }]}
+    />
+  </ChartDonutThreshold>
+</div>
 ```
 
 ## Documentation

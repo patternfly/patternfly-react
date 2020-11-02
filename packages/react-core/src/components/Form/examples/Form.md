@@ -129,7 +129,7 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup isInline label="How can we contact you?" isRequired>
+        <FormGroup isInline fieldId="simple-form-checkbox-group" label="How can we contact you?" isRequired>
           <Checkbox label="Email" aria-label="Email" id="inlinecheck1" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck2" />
           <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3" />
@@ -474,11 +474,11 @@ class InvalidFormWithFormAlert extends React.Component {
       <Form>
         { validated === "error" && (
           <FormAlert>
-            <Alert 
-              variant="danger" 
-              title="You must fill out all required fields before you can proceed." 
-              aria-live="polite" 
-              isInline 
+            <Alert
+              variant="danger"
+              title="You must fill out all required fields before you can proceed."
+              aria-live="polite"
+              isInline
             />
           </FormAlert>
         )}
@@ -604,7 +604,7 @@ import React from 'react';
 import { Form, FormGroup, Checkbox } from '@patternfly/react-core';
 
 class HorizontalFormHelperTextOnTop extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -612,14 +612,14 @@ class HorizontalFormHelperTextOnTop extends React.Component {
     };
   }
 
-  
+
   render() {
     return (
       <Form isHorizontal>
-        <FormGroup 
-          label="Label" 
+        <FormGroup
+          label="Label"
           helperText={this.state.helperText}
-          isHelperTextBeforeField 
+          isHelperTextBeforeField
           hasNoPaddingTop
           fieldId="options">
           <Checkbox label="option 1" id="option-1" />

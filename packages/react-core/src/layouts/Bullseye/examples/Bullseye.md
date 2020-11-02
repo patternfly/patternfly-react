@@ -13,9 +13,7 @@ import './bullseye.css';
 import React from 'react';
 import { Bullseye } from '@patternfly/react-core';
 
-BasicBullseyeExample = () => (
-  <Bullseye>
-    <div>Bullseye ◎ layout</div>
-  </Bullseye>
-);
+<Bullseye>
+  <div>Bullseye ◎ layout</div>
+</Bullseye>
 ```

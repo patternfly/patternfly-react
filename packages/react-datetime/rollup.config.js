@@ -3,5 +3,5 @@ const baseConfig = require('../rollup.base');
 
 module.exports = baseConfig({
   packageName: name.replace('@patternfly/', ''),
-  name: 'PatternFlyReact'
+  name: 'PatternFlyDateTime'
 });

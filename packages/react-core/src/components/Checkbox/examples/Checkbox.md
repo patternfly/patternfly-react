@@ -93,12 +93,10 @@ class ControlledCheckbox extends React.Component {
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-UncontrolledCheckbox = () => (
-  <React.Fragment>
-    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-5" />
-    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-6" />
-  </React.Fragment>
-);
+<React.Fragment>
+  <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-5" />
+  <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-6" />
+</React.Fragment>
 ```
 
 ### Disabled
@@ -106,18 +104,16 @@ UncontrolledCheckbox = () => (
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-DisabledCheckbox = () => (
-  <React.Fragment>
-    <Checkbox
-      id="check-7"
-      label="Disabled CheckBox"
-      aria-label="disabled checked checkbox example"
-      defaultChecked
-      isDisabled
-    />{' '}
-    <Checkbox id="check-8" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
-  </React.Fragment>
-);
+<React.Fragment>
+  <Checkbox
+    id="check-7"
+    label="Disabled CheckBox"
+    aria-label="disabled checked checkbox example"
+    defaultChecked
+    isDisabled
+  />{' '}
+  <Checkbox id="check-8" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
+</React.Fragment>
 ```
 
 ### Checkbox with description
@@ -125,7 +121,5 @@ DisabledCheckbox = () => (
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-DisabledCheckbox = () => (
-  <Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
-);
+<Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
 ```

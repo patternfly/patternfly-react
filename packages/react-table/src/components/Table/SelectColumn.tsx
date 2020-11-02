@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { RowSelectVariant } from './Table';
+
+export enum RowSelectVariant {
+  radio = 'radio',
+  checkbox = 'checkbox'
+}
 
 export interface SelectColumnProps {
   name?: string;

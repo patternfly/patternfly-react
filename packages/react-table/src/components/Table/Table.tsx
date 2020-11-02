@@ -14,6 +14,8 @@ import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
 import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType, HeaderType } from './base';
+import { RowSelectVariant } from './SelectColumn';
+import { SortByDirection } from './SortColumn';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -31,11 +33,6 @@ export enum TableVariant {
 }
 
 export type RowEditType = 'save' | 'cancel' | 'edit';
-
-export enum RowSelectVariant {
-  radio = 'radio',
-  checkbox = 'checkbox'
-}
 
 export interface RowErrors {
   [name: string]: string[];
@@ -76,11 +73,6 @@ export type OnRowEdit = (
   rowIndex?: number,
   validationErrors?: RowErrors
 ) => void;
-
-export enum SortByDirection {
-  asc = 'asc',
-  desc = 'desc'
-}
 
 // Todo: Update type with next breaking change release
 // export type IHeaderRow = ColumnType;

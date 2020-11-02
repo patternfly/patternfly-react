@@ -2,7 +2,7 @@
 id: Date picker
 section: components
 cssPrefix: pf-c-date-picker
-propComponents: ['DatePicker', 'DatePickerLocales']
+propComponents: ['DatePicker']
 beta: true
 ---
 
@@ -37,7 +37,7 @@ SimpleDatePicker = () => {
         afterEndDateErrorMessage='Cette date est postérieure à la dernière date valide.'
         onChange={onChange}
       />
-      </React.Fragment>
+    </React.Fragment>
   );
 };
 ```
