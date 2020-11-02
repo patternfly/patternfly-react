@@ -598,7 +598,7 @@ class MenuWithActions extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuGroup, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuItem, MenuGroup, MenuList, MenuListItem, Divider } from '@patternfly/react-core';
 
 class MenuWithFavorites extends React.Component {
   constructor(props) {
@@ -628,32 +628,71 @@ class MenuWithFavorites extends React.Component {
   render() {
     const { activeItem, favorites } = this.state;
 
+    const items = [
+      {
+        text: 'Item 1',
+        description: 'Description 1',
+        to: '#default-link1',
+        itemId: 0,
+        isActive: activeItem === 0,
+        id: 'item-1'
+      },
+      {
+        text: 'Item 2',
+        description: 'Description 2',
+        to: '#default-link2',
+        itemId: 1,
+        isActive: activeItem === 1,
+        id: 'item-2'
+      },
+      {
+        text: 'Item 3',
+        description: 'Description 3',
+        to: '#default-link3',
+        itemId: 2,
+        isActive: activeItem === 2,
+        id: 'item-3'
+      }
+    ];
+
     return (
-      <Menu onSelect={this.onSelect} favorites={favorites} onFavorite={this.onFavorite} isGrouped>
+      <Menu onSelect={this.onSelect}>
+        {favorites.length > 0 && (
+          <React.Fragment>
+            <MenuGroup label="Favorites">
+              <MenuList>
+                {items
+                  // map the items into the favorites group that have been favorited
+                  .filter(item => favorites.includes(item.id))
+                  .map(item => {
+                    const { text, id, ...rest } = item;
+                    return (
+                      <MenuListItem key={id} id={id} onFavorite={this.onFavorite} isFavorite {...rest}>
+                        {text}
+                      </MenuListItem>
+                    );
+                  })}
+              </MenuList>
+            </MenuGroup>
+            <Divider />
+          </React.Fragment>
+        )}
         <MenuGroup label="All actions">
           <MenuList>
-            <MenuListItem
-              description="This is a description"
-              to="#default-link1"
-              itemId={0}
-              isActive={activeItem === 0}
-              id="item-1"
-            >
-              Item 1
-            </MenuListItem>
-            <MenuListItem
-              description="This is a description"
-              to="#default-link2"
-              itemId={1}
-              isExternalLink
-              isActive={activeItem === 1}
-              id="item-2"
-            >
-              Item 2
-            </MenuListItem>
-            <MenuListItem to="#default-link3" id="item-3" itemId={2} isExternalLink isActive={activeItem === 2}>
-              Item 3
-            </MenuListItem>
+            {items.map(item => {
+              const { text, id, ...rest } = item;
+              return (
+                <MenuListItem
+                  key={id}
+                  id={id}
+                  onFavorite={this.onFavorite}
+                  isFavorite={favorites.includes(id)}
+                  {...rest}
+                >
+                  {text}
+                </MenuListItem>
+              );
+            })}
           </MenuList>
         </MenuGroup>
       </Menu>

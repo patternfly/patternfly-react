@@ -54,6 +54,7 @@ export interface MenuListItemProps {
   flyoutMenu?: React.ReactNode;
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: MouseEvent) => void;
+  onFavorite?: (itemId: string, isFavorite: boolean) => void;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
@@ -79,6 +80,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   ariaIsFavoriteLabel,
   ariaIsNotFavoriteLabel,
   onShowFlyout,
+  onFavorite,
   ...props
 }: MenuListItemProps) => {
   const Component = component as any;
@@ -152,16 +154,16 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
         {context => (
           <>
             {renderDefaultLink(context)}
-            {context.onFavorite && (
+            {onFavorite && (
               <button
                 className={css(
                   styles.menuItemAction,
                   styles.modifiers.favorite,
-                  context.onFavorite && isFavorite && styles.modifiers.favorited
+                  onFavorite && isFavorite && styles.modifiers.favorited
                 )}
                 aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
                 onClick={() => {
-                  context.onFavorite(id, isFavorite);
+                  onFavorite(id, isFavorite);
                 }}
               >
                 <StarIcon className={css(styles.menuItemActionIcon)} />

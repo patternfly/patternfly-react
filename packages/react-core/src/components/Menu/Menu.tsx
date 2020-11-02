@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { SearchInput } from '../SearchInput';
-import { MenuGroup } from '.';
 import { Divider, SelectOptionObject } from '..';
 import { MenuContext } from './MenuContext';
 
@@ -48,14 +47,6 @@ export interface MenuProps
   variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
   /** Search input of menu */
   searchInput?: React.ReactNode;
-  /** ID list of favorited MenuListItems */
-  favorites?: string[];
-  /** Enables favorites. Callback called when an MenuItems's favorite button is clicked */
-  onFavorite?: (itemId: string, isFavorite: boolean) => void;
-  /** Label for the favorites group */
-  favoritesLabel?: string;
-  /** Flag to indicate if menu has groups */
-  isGrouped?: boolean;
   /** Array of selected items for multi select variants. */
   selections?: (string | SelectOptionObject)[];
 }
@@ -72,11 +63,8 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     onSelect: () => undefined,
     onToggle: () => undefined,
     onFilter: null,
-    favorites: [] as string[],
     selections: [],
-    favoritesLabel: 'Favorites',
-    ouiaSafe: true,
-    isGrouped: false
+    ouiaSafe: true
   };
 
   state: MenuState = {
@@ -136,45 +124,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     });
   }
 
-  createRenderableFavorites = () => {
-    const { children, isGrouped, favorites } = this.props;
-    if (isGrouped) {
-      const favoriteItems: React.ReactNode[] = [];
-      React.Children.forEach(children, group =>
-        ((group as React.ReactElement).props.children.props.children as React.ReactElement[])
-          .filter(item => favorites.includes(item.props.id))
-          .map(item => favoriteItems.push(React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true })))
-      );
-      return favoriteItems;
-    }
-    return (React.Children.toArray(children) as React.ReactElement[])
-      .filter(item => favorites.includes(item.props.id))
-      .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true }));
-  };
-
-  extendItemsWithFavorite = () => {
-    const { children, isGrouped, favorites } = this.props;
-    if (isGrouped) {
-      return (React.Children.toArray(children) as React.ReactElement[]).map(group =>
-        React.cloneElement(group, {
-          children: React.Children.map(group.props.children.props.children as React.ReactElement[], item => {
-            if (item.type === Divider) {
-              return item;
-            }
-            return React.cloneElement(item, {
-              isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
-            });
-          })
-        })
-      );
-    }
-    return (React.Children.toArray(children) as React.ReactElement[]).map(item =>
-      React.cloneElement(item, {
-        isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
-      })
-    );
-  };
-
   render() {
     const {
       'aria-label': ariaLabel,
@@ -183,7 +132,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onSelect,
       onToggle,
-      isGrouped,
       onFilter,
       onSearchInputChange,
       /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -191,39 +139,13 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       ouiaSafe,
       variant,
       searchInput,
-      favorites,
       // selections,
-      favoritesLabel,
-      onFavorite,
       ...props
     } = this.props;
-    let renderableItems: React.ReactNode[] = [];
-
-    if (onFavorite) {
-      let favoritesGroup: React.ReactNode[] = [];
-      let renderableFavorites: React.ReactNode[] = [];
-      if (favorites.length > 0) {
-        renderableFavorites = this.createRenderableFavorites();
-        favoritesGroup = [
-          <MenuGroup key="favorites" label={favoritesLabel}>
-            {renderableFavorites}
-            <Divider component="li" />
-          </MenuGroup>
-        ];
-      }
-      if (renderableFavorites.length > 0) {
-        renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
-      } else {
-        renderableItems = this.extendItemsWithFavorite();
-      }
-    } else {
-      renderableItems = React.Children.toArray(children);
-    }
 
     return (
       <MenuContext.Provider
         value={{
-          onFavorite,
           onSelect: (
             event: React.FormEvent<HTMLInputElement>,
             groupId: number | string,
@@ -260,7 +182,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
               <Divider />
             </React.Fragment>
           )}
-          <div className={'pf-c-menu__content'}>{favorites ? renderableItems : children}</div>
+          <div className={'pf-c-menu__content'}>{children}</div>
         </div>
       </MenuContext.Provider>
     );
