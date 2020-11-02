@@ -4,9 +4,10 @@ import { Button } from '@patternfly/react-core/dist/js/components/Button';
 import { Select, SelectOption } from '@patternfly/react-core/dist/js/components/Select';
 import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import { css } from '@patternfly/react-styles';
 // https://date-fns.org/v2.16.1/docs/format
 import { format } from 'date-fns';
-import { Locales, Locale, dataFormats } from '../../helpers';
+import { Locales, Locale } from '../../helpers';
 
 export interface CalendarProps {
   /** Month/year to base other dates around */
@@ -45,10 +46,13 @@ const buildCalendar = (year: number, month: number, locale: Locale) => {
   return calendarWeeks;
 };
 
+const isSameDate = (d1: Date, d2: Date) =>
+  d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
+
 export const CalendarMonth = ({
   date: dateProp = new Date(),
   monthFormat = 'MMMM',
-  dayFormat = 'EEE',
+  dayFormat = 'EEEEE',
   buttonFormat = 'd',
   onChange = () => {},
   locale = Locales.enUS
@@ -65,10 +69,7 @@ export const CalendarMonth = ({
   const selectedRef = React.useRef<HTMLButtonElement>();
   const [focusSelectedDate, setFocusSelectedDate] = React.useState(true);
 
-  useEffect(() => {
-    setSelectedDate(dateProp);
-  }, [dateProp]);
-
+  useEffect(() => setSelectedDate(dateProp), [dateProp]);
   useEffect(() => {
     if (focusSelectedDate) {
       if (selectedRef.current) {
@@ -102,92 +103,106 @@ export const CalendarMonth = ({
     }
   };
 
+  const today = new Date();
   const calendar = buildCalendar(selectedDate.getFullYear(), selectedDate.getMonth(), locale);
   return (
-    <table style={{ width: '340px', tableLayout: 'fixed' }}>
-      <thead>
-        <tr>
-          <td colSpan={1}>
-            <Button isInline aria-label="Back one month" onClick={() => onMonthClick(-1)}>
-              <ArrowLeftIcon />
-            </Button>
-          </td>
-          <td colSpan={3}>
-            <Select
-              maxHeight="336px"
-              isOpen={isSelectOpen}
-              onToggle={() => setIsSelectOpen(!isSelectOpen)}
-              onSelect={(_ev, longMonth) => {
-                setIsSelectOpen(false);
-                const monthNum = longMonthNames[longMonth as string];
-                const newDate = new Date(selectedDate);
-                newDate.setMonth(monthNum);
-                setSelectedDate(newDate);
-                setFocusSelectedDate(false);
-              }}
-              variant="single"
-              selections={format(selectedDate, monthFormat, { locale })}
-            >
-              {Object.keys(longMonthNames).map(longMonth => (
-                <SelectOption
-                  key={longMonth}
-                  value={longMonth}
-                  isSelected={longMonth === format(selectedDate, monthFormat, { locale })}
-                />
-              ))}
-            </Select>
-          </td>
-          <td colSpan={2}>
-            <TextInput
-              aria-label="Select a year"
-              type="number"
-              value={format(selectedDate, yearFormat, { locale })}
-              onChange={year => {
-                const newDate = new Date(selectedDate);
-                newDate.setFullYear(+year);
-                setSelectedDate(newDate);
-                setFocusSelectedDate(false);
-              }}
-            />
-          </td>
-          <td colSpan={1}>
-            <Button isInline aria-label="Forward one month" onClick={() => onMonthClick(1)}>
-              <ArrowRightIcon />
-            </Button>
-          </td>
-        </tr>
-        <tr>
-          {calendar[0]
-            .map(date => format(date, dayFormat, { locale }))
-            .map(shortName => (
-              <th key={shortName} style={{ width: '14.285714285%' }}>
-                {shortName}
-              </th>
+    <div className="pf-c-calendar-month">
+      <div className="pf-c-calendar-month__header">
+        <div className="pf-c-calendar-month__header-nav pf-m-prev-month">
+          <Button variant="plain" aria-label="Previous month" onClick={() => onMonthClick(-1)}>
+            <ArrowLeftIcon aria-hidden={true} />
+          </Button>
+        </div>
+        <div className="pf-c-calendar-month__header-month">
+          <Select
+            isOpen={isSelectOpen}
+            onToggle={() => setIsSelectOpen(!isSelectOpen)}
+            onSelect={(_ev, longMonth) => {
+              setIsSelectOpen(false);
+              const monthNum = longMonthNames[longMonth as string];
+              const newDate = new Date(selectedDate);
+              newDate.setMonth(monthNum);
+              setSelectedDate(newDate);
+              setFocusSelectedDate(false);
+            }}
+            variant="single"
+            selections={format(selectedDate, monthFormat, { locale })}
+          >
+            {Object.keys(longMonthNames).map(longMonth => (
+              <SelectOption
+                key={longMonth}
+                value={longMonth}
+                isSelected={longMonth === format(selectedDate, monthFormat, { locale })}
+              />
             ))}
-        </tr>
-      </thead>
-      <tbody onKeyDown={onKeyDown}>
-        {calendar.map((week, index) => (
-          <tr key={index}>
-            {week.map((day, index) => {
-              const isSelected = format(day, dataFormats.month) === format(selectedDate, dataFormats.month);
-              return (
-                <td key={index}>
-                  <button
-                    style={{ width: '100%' }}
-                    onClick={() => onChange(day)}
-                    tabIndex={isSelected ? 0 : -1}
-                    {...(isSelected && { ref: selectedRef })}
-                  >
-                    {/* Current design uses this, could custom render anything */}
-                    {format(day, buttonFormat)}
-                  </button>
-                </td>
-              );
-            })}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </Select>
+        </div>
+        <div className="pf-c-calendar-month__header-year">
+          <TextInput
+            aria-label="Select year"
+            type="number"
+            value={format(selectedDate, yearFormat, { locale })}
+            onChange={year => {
+              const newDate = new Date(selectedDate);
+              newDate.setFullYear(+year);
+              setSelectedDate(newDate);
+              setFocusSelectedDate(false);
+            }}
+          />
+        </div>
+        <div className="pf-c-calendar-month__header-nav pf-m-next-month">
+          <Button variant="plain" aria-label="Next month" onClick={() => onMonthClick(1)}>
+            <ArrowRightIcon aria-hidden={true} />
+          </Button>
+        </div>
+      </div>
+      <div className="pf-c-calendar-month__body">
+        <table className="pf-c-calendar-month__grid">
+          <thead className="pf-c-calendar-month__grid-head">
+            <tr className="pf-c-calendar-month__grid-row">
+              {calendar[0]
+                .map(date => format(date, dayFormat, { locale }))
+                .map(shortName => (
+                  <th key={shortName} className="pf-c-calendar-month__grid-cell" scope="col">
+                    {shortName}
+                  </th>
+                ))}
+            </tr>
+          </thead>
+          <tbody className="pf-c-calendar-month__grid-body" onKeyDown={onKeyDown}>
+            {calendar.map((week, index) => (
+              <tr key={index} className="pf-c-calendar-month__grid-row">
+                {week.map((day, index) => {
+                  const isAdjacentMonth = day.getMonth() !== today.getMonth();
+                  const isToday = isSameDate(day, today);
+                  const isSelected = isSameDate(day, selectedDate);
+                  return (
+                    <td
+                      key={index}
+                      className={css(
+                        'pf-c-calendar-month__grid-cell',
+                        isAdjacentMonth && 'pf-m-adjacent-month',
+                        isToday && 'pf-m-current',
+                        isSelected && 'pf-m-selected'
+                      )}
+                    >
+                      <button
+                        className="pf-c-calendar-month__date"
+                        onClick={() => onChange(day)}
+                        tabIndex={isSelected ? 0 : -1}
+                        {...(isSelected && { ref: selectedRef })}
+                      >
+                        {/* Current design uses this, could custom render anything */}
+                        {format(day, buttonFormat)}
+                      </button>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
