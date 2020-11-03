@@ -13,6 +13,7 @@ exports[`Card should match snapshot (auto-generated) 1`] = `
     data-ouia-component-id="OUIA-Generated-Card-1"
     data-ouia-component-type="PF4/Card"
     data-ouia-safe={true}
+    id=""
   >
     ReactNode
   </article>

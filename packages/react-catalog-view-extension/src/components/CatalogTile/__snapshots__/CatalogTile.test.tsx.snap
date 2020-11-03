@@ -143,6 +143,7 @@ exports[`CatalogTile renders properly 1`] = `
         <CardHeader>
           <div
             className="pf-c-card__header"
+            id=""
           >
             <CardActions>
               <div
@@ -424,6 +425,7 @@ exports[`CatalogTile renders properly 1`] = `
         <CardHeader>
           <div
             className="pf-c-card__header"
+            id=""
           >
             <CardActions>
               <div
@@ -778,6 +780,7 @@ exports[`CatalogTile renders properly 1`] = `
         <CardHeader>
           <div
             className="pf-c-card__header"
+            id=""
           >
             <span
               className="catalog-tile-pf-icon fa fa-codepen"
@@ -1017,6 +1020,7 @@ exports[`CatalogTile renders properly 1`] = `
         <CardHeader>
           <div
             className="pf-c-card__header"
+            id=""
           >
             <CardActions>
               <div
@@ -1280,6 +1284,7 @@ exports[`CatalogTile renders properly 1`] = `
         <CardHeader>
           <div
             className="pf-c-card__header"
+            id=""
           >
             <span
               className="catalog-tile-pf-icon "
