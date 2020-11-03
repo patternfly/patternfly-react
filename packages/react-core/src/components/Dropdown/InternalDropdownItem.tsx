@@ -53,6 +53,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   autoFocus?: boolean;
   /** A short description of the dropdown item, displayed under the dropdown item content */
   description?: React.ReactNode;
+  /** Events to prevent when the button is in an aria-disabled state */
+  inoperableEvents?: string[];
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -78,7 +80,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     enterTriggersArrowDown: false,
     icon: null,
     styleChildren: true,
-    description: null
+    description: null,
+    inoperableEvents: ['onClick', 'onKeyPress']
   };
 
   componentDidMount() {
@@ -161,6 +164,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       autoFocus,
       styleChildren,
       description,
+      inoperableEvents,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -180,6 +184,15 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       ) : (
         childNode
       );
+    const preventedEvents = inoperableEvents.reduce(
+      (handlers, eventToPrevent) => ({
+        ...handlers,
+        [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
+          event.preventDefault();
+        }
+      }),
+      {}
+    );
 
     const renderClonedComponent = (element: React.ReactElement<any>) =>
       React.cloneElement(element, {
@@ -207,7 +220,14 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       );
 
       return (
-        <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
+        <Component
+          {...additionalProps}
+          {...(isDisabled ? preventedEvents : null)}
+          href={href}
+          ref={this.ref}
+          className={classes}
+          id={componentID}
+        >
           {componentContent}
         </Component>
       );
