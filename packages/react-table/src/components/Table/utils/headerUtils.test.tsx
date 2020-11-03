@@ -58,7 +58,7 @@ describe('headerUtils', () => {
       const mixed = calculateColumns(cells, {});
       cells.forEach((oneCell: ICell, key) => {
         test(`${oneCell}`, () => {
-          expect(mixed[key].property).toBe(oneCell.title || oneCell);
+          expect(mixed[key].property).toBe((oneCell.title || oneCell).toUpperCase());
           expect(mixed[key].header.label).toBe(oneCell.title || oneCell);
           expect(mixed[key].header.transforms).toHaveLength(2);
           expect(mixed[key].cell.transforms).toHaveLength(1);
@@ -68,8 +68,8 @@ describe('headerUtils', () => {
     });
 
     test('correct property', () => {
-      expect(calculateColumns(['some'], {})[0].property).toBe('some');
-      expect(calculateColumns(['some with space'], {})[0].property).toBe('some-with-space');
+      expect(calculateColumns(['some'], {})[0].property).toBe('SOME');
+      expect(calculateColumns(['some with space'], {})[0].property).toBe('SOME-WITH-SPACE');
       expect(calculateColumns([''], {})[0].property).toBe('column-0');
     });
 

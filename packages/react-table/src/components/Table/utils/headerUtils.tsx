@@ -109,7 +109,7 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
     property:
       (typeof title === 'string' &&
         title
-          .toLowerCase()
+          .toUpperCase()
           .trim()
           .replace(/\s/g, '-')) ||
       `column-${key}`,
