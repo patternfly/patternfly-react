@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEYHANDLER_DIRECTION } from '../../helpers/constants';
+import { preventedEvents } from '../../helpers/util';
 import { Tooltip } from '../Tooltip';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
@@ -53,7 +54,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   autoFocus?: boolean;
   /** A short description of the dropdown item, displayed under the dropdown item content */
   description?: React.ReactNode;
-  /** Events to prevent when the button is in an aria-disabled state */
+  /** Events to prevent when the item is disabled */
   inoperableEvents?: string[];
 }
 
@@ -184,15 +185,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       ) : (
         childNode
       );
-    const preventedEvents = inoperableEvents.reduce(
-      (handlers, eventToPrevent) => ({
-        ...handlers,
-        [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
-          event.preventDefault();
-        }
-      }),
-      {}
-    );
 
     const renderClonedComponent = (element: React.ReactElement<any>) =>
       React.cloneElement(element, {
@@ -222,7 +214,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       return (
         <Component
           {...additionalProps}
-          {...(isDisabled ? preventedEvents : null)}
+          {...(isDisabled ? preventedEvents(inoperableEvents) : null)}
           href={href}
           ref={this.ref}
           className={classes}
