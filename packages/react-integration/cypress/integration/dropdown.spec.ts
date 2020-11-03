@@ -18,6 +18,23 @@ describe('Dropdown Demo Test', () => {
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
+  it('Verify dropdown menu items disabled', () => {
+    // Links are disabled
+    cy.get('#dropdown > button').click();
+    cy.get('#disabled-link > a').click();
+    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link'); // shouldn't have navigated anywhere
+    cy.get('#disabled-link > a').type('{enter}');
+    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link'); // shouldn't have navigated anywhere
+    // Buttons are disabled
+    cy.get('#disabled-button > button')
+      .click()
+      .should('have.text', 'Disabled Action0');
+    cy.get('#disabled-button > button')
+      .type('{enter}')
+      .should('have.text', 'Disabled Action0');
+    cy.get('#dropdown > button').click();
+  });
+
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
     cy.clock();
