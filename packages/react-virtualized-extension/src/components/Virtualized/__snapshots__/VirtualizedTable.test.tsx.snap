@@ -1185,7 +1185,6 @@ exports[`Actions virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={1}
                                         data-label="Branches"
@@ -1225,7 +1224,6 @@ exports[`Actions virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={2}
                                         data-label="Pull requests"
@@ -1265,7 +1263,6 @@ exports[`Actions virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={3}
                                         data-label="Workspaces"
@@ -1305,7 +1302,6 @@ exports[`Actions virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={4}
                                         data-label="Last Commit"
@@ -1346,7 +1342,6 @@ exports[`Actions virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <td
-                                        aria-sort={null}
                                         className=""
                                         data-key={5}
                                         data-label=""
@@ -2467,7 +2462,6 @@ exports[`Selectable virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <td
-                                        aria-sort={null}
                                         className="pf-c-table__check"
                                         data-key={0}
                                         data-label=""
@@ -2615,7 +2609,6 @@ exports[`Selectable virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={2}
                                         data-label="Branches"
@@ -2655,7 +2648,6 @@ exports[`Selectable virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={3}
                                         data-label="Pull requests"
@@ -2695,7 +2687,6 @@ exports[`Selectable virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={4}
                                         data-label="Workspaces"
@@ -2735,7 +2726,6 @@ exports[`Selectable virtualized table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={5}
                                         data-label="Last Commit"
@@ -4322,7 +4312,6 @@ exports[`Simple Actions table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={1}
                                         data-label="Branches"
@@ -4362,7 +4351,6 @@ exports[`Simple Actions table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={2}
                                         data-label="Pull requests"
@@ -4402,7 +4390,6 @@ exports[`Simple Actions table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={3}
                                         data-label="Workspaces"
@@ -4442,7 +4429,6 @@ exports[`Simple Actions table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={4}
                                         data-label="Last Commit"
@@ -4483,7 +4469,6 @@ exports[`Simple Actions table 1`] = `
                                       tooltip=""
                                     >
                                       <td
-                                        aria-sort={null}
                                         className=""
                                         data-key={5}
                                         data-label=""
@@ -5456,7 +5441,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={0}
                                         data-label="Header cell"
@@ -5496,7 +5480,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={1}
                                         data-label="Branches"
@@ -5536,7 +5519,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={2}
                                         data-label="Pull requests"
@@ -5576,7 +5558,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={3}
                                         data-label="Workspaces"
@@ -5616,7 +5597,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={4}
                                         data-label="Last Commit"
@@ -6591,7 +6571,6 @@ exports[`Simple virtualized table className 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={0}
                                         data-label="Header cell"
@@ -6631,7 +6610,6 @@ exports[`Simple virtualized table className 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={1}
                                         data-label="Branches"
@@ -6671,7 +6649,6 @@ exports[`Simple virtualized table className 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={2}
                                         data-label="Pull requests"
@@ -6711,7 +6688,6 @@ exports[`Simple virtualized table className 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={3}
                                         data-label="Workspaces"
@@ -6751,7 +6727,6 @@ exports[`Simple virtualized table className 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={4}
                                         data-label="Last Commit"
@@ -7829,7 +7804,6 @@ exports[`Sortable Virtualized Table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={1}
                                         data-label="Branches"
@@ -7869,7 +7843,6 @@ exports[`Sortable Virtualized Table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={2}
                                         data-label="Pull requests"
@@ -7909,7 +7882,6 @@ exports[`Sortable Virtualized Table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={3}
                                         data-label="Workspaces"
@@ -7949,7 +7921,6 @@ exports[`Sortable Virtualized Table 1`] = `
                                       tooltip=""
                                     >
                                       <th
-                                        aria-sort={null}
                                         className=""
                                         data-key={4}
                                         data-label="Last Commit"
