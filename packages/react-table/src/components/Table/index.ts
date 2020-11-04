@@ -16,3 +16,4 @@ export * from './SortColumn';
 export * from './TableText';
 export * from './utils';
 export * from './TableTypes';
+export * from './TableContext';
