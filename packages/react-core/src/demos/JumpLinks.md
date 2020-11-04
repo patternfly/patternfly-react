@@ -45,7 +45,7 @@ ScrollspyH2 = () => {
                 headingLevel="h2"
                 size={'2xl'}
                 id={`heading-${i}`}
-                tabIndex={0}
+                tabIndex={-1}
               >
                 {`Heading ${i}`}
               </Title>
