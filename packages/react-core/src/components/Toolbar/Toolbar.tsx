@@ -23,6 +23,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Id of the data toolbar */
   id?: string;
+  /** Flag indicating the toolbar should use the Page insets */
+  usePageInsets?: boolean;
   /** Insets at various breakpoints. */
   inset?: {
     default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
@@ -103,6 +105,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       className,
       children,
       inset,
+      usePageInsets,
       ...props
     } = this.props;
 
@@ -114,7 +117,16 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const showClearFiltersButton = numberOfFilters > 0;
 
     return (
-      <div className={css(styles.toolbar, formatBreakpointMods(inset, styles), className)} id={randomId} {...props}>
+      <div
+        className={css(
+          styles.toolbar,
+          usePageInsets && styles.modifiers.pageInsets,
+          formatBreakpointMods(inset, styles),
+          className
+        )}
+        id={randomId}
+        {...props}
+      >
         <ToolbarContext.Provider
           value={{
             isExpanded,
