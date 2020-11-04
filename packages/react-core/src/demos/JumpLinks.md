@@ -29,7 +29,7 @@ ScrollspyH2 = () => {
   return (
     <Page header={Header} sidebar={Sidebar}>
       <PageSection sticky="top">
-        <JumpLinks isCentered scrollableSelector="#scrollable-element">
+        <JumpLinks isCentered label="Jump to section" scrollableSelector="#scrollable-element">
           {headings.map(i => 
             <JumpLinksItem key={i} href={`#heading-${i}`}>
               {`Heading ${i}`}

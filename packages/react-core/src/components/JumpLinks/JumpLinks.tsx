@@ -3,15 +3,21 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 
-export interface JumpLinksProps {
-  'aria-label'?: string;
+export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
+  /** Whether to center children. */
   isCentered?: boolean;
+  /** Variant to use. */
   isVertical?: boolean;
-  children?: React.ReactNode;
+  /** Label to add to nav element. */
   label?: React.ReactNode;
+  /** Aria-label to add to nav element. Defaults to label. */
+  'aria-label'?: string;
+  /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
   scrollableSelector?: string;
-  hasScrollSpy?: boolean;
+  /** The index of the child Jump link to make active. */
   activeIndex?: number;
+  /** Children nodes */
+  children?: React.ReactNode;
 }
 
 const getScrollItems = (children: React.ReactNode, hasScrollSpy: boolean) =>
@@ -35,9 +41,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   label,
   'aria-label': ariaLabel = typeof label === 'string' ? label : null,
   scrollableSelector,
-  hasScrollSpy = true,
-  activeIndex: activeIndexProp = 0
+  activeIndex: activeIndexProp = 0,
+  ...props
 }: JumpLinksProps) => {
+  const hasScrollSpy = Boolean(scrollableSelector);
   const [scrollItems, setScrollItems] = React.useState(getScrollItems(children, hasScrollSpy));
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
   if (hasScrollSpy) {
@@ -86,6 +93,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     <nav
       className={css(styles.jumpLinks, isCentered && styles.modifiers.center, isVertical && styles.modifiers.vertical)}
       aria-label={ariaLabel}
+      {...props}
     >
       <div className={styles.jumpLinksMain}>
         {label && <div className={styles.jumpLinksLabel}>{label}</div>}
