@@ -8,7 +8,7 @@ beta: true
 
 ### Scrollspy h2 elements
 
-This demo shows JumpLinkItems spying on h2 elements on the scrollable body of a page.
+This demo shows JumpLinkItems spying on h2 elements on the scrollable body of a page. The titles are given a tab index to allow the jump links to focus them.
 
 ```js isFullscreen
 import React from 'react';
@@ -45,6 +45,7 @@ ScrollspyH2 = () => {
                 headingLevel="h2"
                 size={'2xl'}
                 id={`heading-${i}`}
+                tabIndex={0}
               >
                 {`Heading ${i}`}
               </Title>

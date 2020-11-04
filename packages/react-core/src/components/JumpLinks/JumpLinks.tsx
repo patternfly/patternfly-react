@@ -106,6 +106,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
                   if (newScrollItem) {
                     newScrollItem.scrollIntoView();
+                    newScrollItem.focus();
                     ev.preventDefault();
                   }
                   if (onClickProp) {
