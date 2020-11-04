@@ -8,7 +8,7 @@ import {
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 
-import { IAction, IExtraData, IRowData } from './Table';
+import { IAction, IExtraData, IRowData } from './TableTypes';
 
 export interface ActionsColumnProps {
   children?: React.ReactNode;

@@ -2,9 +2,10 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import { css } from '@patternfly/react-styles';
-import { TableGridBreakpoint, TableVariant, toCamel } from '../Table';
+import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
+import { TableGridBreakpoint, TableVariant } from '../Table/TableTypes';
 
 export interface BaseCellProps {
   /** Content rendered inside the cell */

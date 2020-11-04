@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IRow, IRowData, IExtraData, IHeaderRow } from './Table';
+import { IRow, IRowData, IExtraData, IHeaderRow } from './TableTypes';
 import { mapOpenedRows } from './utils/headerUtils';
 import { Tbody } from '../TableComposable/Tbody';
 

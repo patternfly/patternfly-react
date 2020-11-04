@@ -20,7 +20,7 @@ import {
   OnSelect,
   OnCollapse,
   OnRowEdit
-} from '../Table';
+} from '../TableTypes';
 
 /**
  * Generate header with transforms and formatters from custom header object.

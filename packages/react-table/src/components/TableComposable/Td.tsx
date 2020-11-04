@@ -2,26 +2,19 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import {
-  OnSelect,
-  selectable,
-  cellActions,
-  IActions,
-  IFormatterValueType,
-  collapsible,
-  compoundExpand,
-  OnExpand,
-  cellWidth,
-  Visibility,
-  classNames,
-  OnCollapse
-} from '../Table';
-import { mergeProps } from '../Table/base';
-import { IVisibility } from '../Table/utils/decorators/classNames';
-import {
   DropdownDirection,
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 import { BaseCellProps } from './TableComposable';
+import { cellActions } from '../Table/utils/decorators/cellActions';
+import { selectable } from '../Table/utils/decorators/selectable';
+import { collapsible } from '../Table/utils/decorators/collapsible';
+import { compoundExpand } from '../Table/utils/decorators/compoundExpand';
+import { cellWidth } from './../Table/utils/decorators/cellWidth';
+import { Visibility, classNames } from './../Table/utils/decorators/classNames';
+import { mergeProps } from '../Table/base/merge-props';
+import { IVisibility } from '../Table/utils/decorators/classNames';
+import { OnSelect, IFormatterValueType, IActions, OnExpand, OnCollapse } from '../Table/TableTypes';
 
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**

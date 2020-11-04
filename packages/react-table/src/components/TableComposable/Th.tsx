@@ -1,23 +1,17 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import {
-  sortable,
-  selectable,
-  OnSelect,
-  IFormatterValueType,
-  IColumn,
-  ISortBy,
-  OnSort,
-  cellWidth,
-  Visibility,
-  classNames,
-  info
-} from '../Table';
-import { InfoType, mergeProps } from '../Table/base';
+import { info } from '../Table/utils/decorators/info';
+import { sortable } from '../Table/utils/decorators/sortable';
+import { selectable } from '../Table/utils/decorators/selectable';
+import { cellWidth } from './../Table/utils/decorators/cellWidth';
+import { Visibility, classNames } from './../Table/utils/decorators/classNames';
+import { InfoType } from '../Table/base/types';
+import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import { BaseCellProps } from './TableComposable';
+import { OnSelect, IFormatterValueType, IColumn, ISortBy, OnSort } from '../Table/TableTypes';
 
 export interface ThProps
   extends BaseCellProps,

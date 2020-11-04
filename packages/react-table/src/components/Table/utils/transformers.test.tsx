@@ -26,7 +26,7 @@ import {
   IExtraData,
   IRowData,
   ISeparator
-} from '../Table';
+} from '../TableTypes';
 
 const testCellActions = ({
   actions,

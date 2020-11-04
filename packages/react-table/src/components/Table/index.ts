@@ -15,3 +15,4 @@ export * from './SelectColumn';
 export * from './SortColumn';
 export * from './TableText';
 export * from './utils';
+export * from './TableTypes';
