@@ -253,12 +253,17 @@ export const TableComposableDemo = () => {
       <TableComposable aria-label="Selectable Table">
         <Thead>
           <Tr>
-            <Th columnIndex={0} onSelect={onSelectAll} isSelected={allRowsSelected} />
-            <Th columnIndex={1}>{columns[0]}</Th>
-            <Th columnIndex={2}>{columns[1]}</Th>
-            <Th columnIndex={3}>{columns[2]}</Th>
-            <Th columnIndex={4}>{columns[3]}</Th>
-            <Th columnIndex={5}>{columns[4]}</Th>
+            <Th
+              select={{
+                onSelect: onSelectAll,
+                isSelected: allRowsSelected
+              }}
+            />
+            <Th>{columns[0]}</Th>
+            <Th>{columns[1]}</Th>
+            <Th>{columns[2]}</Th>
+            <Th>{columns[3]}</Th>
+            <Th>{columns[4]}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -266,16 +271,17 @@ export const TableComposableDemo = () => {
             <Tr key={rowIndex}>
               <Td
                 key={`${rowIndex}_0`}
-                columnIndex={0}
-                rowIndex={rowIndex}
-                onSelect={onSelect}
-                isSelected={selected[rowIndex]}
-                disableSelection={rowIndex === 1}
+                select={{
+                  rowIndex,
+                  onSelect,
+                  isSelected: selected[rowIndex],
+                  disable: rowIndex === 1
+                }}
               />
               {row.map((cell, cellIndex) => {
                 const shiftedIndex = cellIndex + 1;
                 return (
-                  <Td key={`${rowIndex}_${shiftedIndex}`} columnIndex={shiftedIndex} dataLabel={columns[cellIndex]}>
+                  <Td key={`${rowIndex}_${shiftedIndex}`} dataLabel={columns[cellIndex]}>
                     {cell}
                   </Td>
                 );
@@ -302,12 +308,12 @@ export const TableComposableDemo = () => {
       <TableComposable aria-label="Radio selectable table">
         <Thead>
           <Tr>
-            <Th columnIndex={0} />
-            <Th columnIndex={1}>{columns[0]}</Th>
-            <Th columnIndex={2}>{columns[1]}</Th>
-            <Th columnIndex={3}>{columns[2]}</Th>
-            <Th columnIndex={4}>{columns[3]}</Th>
-            <Th columnIndex={5}>{columns[4]}</Th>
+            <Th />
+            <Th>{columns[0]}</Th>
+            <Th>{columns[1]}</Th>
+            <Th>{columns[2]}</Th>
+            <Th>{columns[3]}</Th>
+            <Th>{columns[4]}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -315,17 +321,18 @@ export const TableComposableDemo = () => {
             <Tr key={rowIndex}>
               <Td
                 key={`${rowIndex}_0`}
-                columnIndex={0}
-                rowIndex={rowIndex}
-                onSelect={onSelect}
-                isSelected={selected === rowIndex}
-                disableSelection={rowIndex === 1}
-                selectVariant="radio"
+                select={{
+                  rowIndex,
+                  onSelect,
+                  isSelected: selected === rowIndex,
+                  disable: rowIndex === 1,
+                  variant: 'radio'
+                }}
               />
               {row.map((cell, cellIndex) => {
                 const shiftedIndex = cellIndex + 1;
                 return (
-                  <Td key={`${rowIndex}_${shiftedIndex}`} columnIndex={shiftedIndex} dataLabel={columns[cellIndex]}>
+                  <Td key={`${rowIndex}_${shiftedIndex}`} dataLabel={columns[cellIndex]}>
                     {cell}
                   </Td>
                 );
@@ -388,28 +395,28 @@ export const TableComposableDemo = () => {
       <TableComposable aria-label="Actions table">
         <Thead>
           <Tr>
-            <Th columnIndex={0}>{columns[0]}</Th>
-            <Th columnIndex={1}>{columns[1]}</Th>
-            <Th columnIndex={2}>{columns[2]}</Th>
-            <Th columnIndex={3}>{columns[3]}</Th>
-            <Th columnIndex={4}>{columns[4]}</Th>
-            <Th columnIndex={5} />
+            <Th>{columns[0]}</Th>
+            <Th>{columns[1]}</Th>
+            <Th>{columns[2]}</Th>
+            <Th>{columns[3]}</Th>
+            <Th>{columns[4]}</Th>
+            <Th />
           </Tr>
         </Thead>
         <Tbody>
           {rows.map((row, rowIndex) => (
             <Tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} columnIndex={cellIndex} dataLabel={columns[cellIndex]}>
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
                   {cell}
                 </Td>
               ))}
               <Td
                 key={`${rowIndex}_5`}
-                columnIndex={5}
-                rowIndex={rowIndex}
-                actions={rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions}
-                actionsDisabled={rowIndex === 3}
+                actions={{
+                  items: rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions,
+                  disable: rowIndex === 3
+                }}
               />
             </Tr>
           ))}
@@ -498,37 +505,14 @@ export const TableComposableDemo = () => {
       },
       {
         parent: ['parent 5', '2', 'b', 'four', 'five'],
-        child: [
-          {
-            title: "spans 'Repositories' and 'Branches'",
-            props: {
-              colSpan: 2
-            }
-          },
-          {
-            title: "spans 'Pull requests' and 'Workspaces', and 'Last commit'",
-            props: {
-              colSpan: 3
-            }
-          }
-        ]
+        child: ["spans 'Repositories' and 'Branches'", "spans 'Pull requests' and 'Workspaces', and 'Last commit'"]
       },
       {
         parent: ['parent 6', '2', 'b', 'four', 'five'],
         child: [
-          {
-            title: "fullWidth, spans the collapsible column and 'Repositories'",
-            props: {
-              colSpan: 2
-            }
-          },
-          {
-            title: "fullWidth, spans 'Branches' and 'Pull requests' and 'Workspaces'",
-            props: {
-              colSpan: 3
-            }
-          },
-          "fullWidth, spans 'Last commit'"
+          "fullWidth, spans the collapsible column and 'Repositories'",
+          "fullWidth, spans 'Branches' and 'Pull requests'",
+          "fullWidth, spans 'Workspaces' and 'Last commit'"
         ],
         fullWidth: true
       }
@@ -543,10 +527,10 @@ export const TableComposableDemo = () => {
       const id = event.currentTarget.id;
       setVariant(id === 'default' ? null : id);
     };
-    const handleExpansionToggle = (rowIndex: number) => {
+    const handleExpansionToggle = (event: any, pairIndex: number) => {
       setExpanded({
         ...expanded,
-        [rowIndex]: !expanded[rowIndex]
+        [pairIndex]: !expanded[pairIndex]
       });
     };
     let rowIndex = -1;
@@ -569,12 +553,12 @@ export const TableComposableDemo = () => {
         <TableComposable aria-label="Expandable Table" variant={variant}>
           <Thead>
             <Tr>
-              <Th columnIndex={0} />
-              <Th columnIndex={1}>{columns[0]}</Th>
-              <Th columnIndex={2}>{columns[1]}</Th>
-              <Th columnIndex={3}>{columns[2]}</Th>
-              <Th columnIndex={4}>{columns[3]}</Th>
-              <Th columnIndex={5}>{columns[4]}</Th>
+              <Th />
+              <Th>{columns[0]}</Th>
+              <Th>{columns[1]}</Th>
+              <Th>{columns[2]}</Th>
+              <Th>{columns[3]}</Th>
+              <Th>{columns[4]}</Th>
             </Tr>
           </Thead>
           {rowPairs.map((pair, pairIndex) => {
@@ -583,18 +567,18 @@ export const TableComposableDemo = () => {
               <Tr key={rowIndex}>
                 <Td
                   key={`${rowIndex}_0`}
-                  rowIndex={rowIndex}
-                  columnIndex={0}
-                  isExpanded={pair.child ? expanded[pairIndex] : null}
-                  onClick={() => handleExpansionToggle(pairIndex)}
+                  expand={
+                    pair.child
+                      ? {
+                          rowIndex,
+                          isExpanded: expanded[pairIndex],
+                          onToggle: event => handleExpansionToggle(event, pairIndex)
+                        }
+                      : null
+                  }
                 />
                 {pair.parent.map((cell: any, cellIndex: number) => (
-                  <Td
-                    key={`${rowIndex}_${cellIndex}`}
-                    rowIndex={rowIndex}
-                    columnIndex={cellIndex + 1}
-                    dataLabel={columns[cellIndex]}
-                  >
+                  <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
                     {cell}
                   </Td>
                 ))}
@@ -605,24 +589,39 @@ export const TableComposableDemo = () => {
             }
             const childRow = pair.child ? (
               <Tr key={rowIndex} isExpanded={expanded[pairIndex] === true}>
-                {!rowPairs[pairIndex].fullWidth && <Td key={`${rowIndex}_0`} columnIndex={0} />}
+                {!rowPairs[pairIndex].fullWidth && <Td key={`${rowIndex}_0`} />}
                 {rowPairs[pairIndex].child.map((cell: any, cellIndex: number) => {
+                  const numChildCells = rowPairs[pairIndex].child.length;
                   const shift = rowPairs[pairIndex].fullWidth ? 1 : 0;
                   const shiftedCellIndex = cellIndex + shift;
+                  // some examples of how you could customize colSpan based on your needs
+                  const getColSpan = () => {
+                    // we have 6 columns (1 expandable column + 5 regular columns)
+                    // for the rowPairs where we've specificed `fullWidth`, add +1 to account for the expandable column
+                    let colSpan = 1;
+                    if (numChildCells === 1) {
+                      // single child cell: take up full width
+                      colSpan = numColumns + shift;
+                    } else if (numChildCells === 2) {
+                      // 2 children
+                      // child 1: 2 colspan
+                      // child 2: 3 or 4 colspan depending on fullWidth
+                      colSpan = cellIndex === 0 ? 2 : 3 + shift;
+                    } else if (numChildCells === 3) {
+                      // 3 children
+                      // child 1: 2 colspam
+                      // child 2: 2 colspan
+                      // child 3: 1 or 2 colspan depending on fullWidth
+                      colSpan = cellIndex === 2 ? 1 + shift : 2;
+                    }
+                    return colSpan;
+                  };
                   return (
                     <Td
                       key={`${rowIndex}_${shiftedCellIndex}`}
-                      rowIndex={rowIndex}
-                      columnIndex={shiftedCellIndex}
                       dataLabel={columns[cellIndex]}
                       noPadding={rowPairs[pairIndex].noPadding}
-                      colSpan={
-                        rowPairs[pairIndex].child.length === 1
-                          ? numColumns + shift
-                          : cell.props && cell.props.colSpan
-                          ? cell.props.colSpan
-                          : 1
-                      }
+                      colSpan={getColSpan()}
                     >
                       <ExpandableRowContent>{cell.title || cell}</ExpandableRowContent>
                     </Td>
@@ -774,56 +773,61 @@ export const TableComposableDemo = () => {
         <Thead>
           <Tr>
             {columns.map((column, columnIndex) => (
-              <Th key={columnIndex} columnIndex={columnIndex}>
-                {column}
-              </Th>
+              <Th key={columnIndex}>{column}</Th>
             ))}
           </Tr>
         </Thead>
         {rows.map((row, rowIndex) => {
           const isRowExpanded = activeChild[rowIndex] !== null;
-          const childIndex: string = `${rowIndex}_${activeChild[rowIndex]}`;
           return (
             <Tbody key={rowIndex} isExpanded={isRowExpanded}>
               <React.Fragment>
                 <Tr>
-                  {row.map((cell, cellIndex) => (
-                    <Td
-                      key={`${rowIndex}_${cellIndex}`}
-                      rowIndex={rowIndex}
-                      columnIndex={cellIndex}
-                      dataLabel={columns[cellIndex]}
-                      component={cellIndex === 0 ? 'th' : 'td'}
-                      isCompoundExpanded={isCompoundExpanded(rowIndex, cellIndex)}
-                      onClick={() => {
-                        // only columns 1 - 3 are clickable
-                        if (1 <= cellIndex && cellIndex <= 3) {
-                          if (activeChild[rowIndex] === cellIndex) {
-                            // closing the expansion on the current toggle
-                            // set the corresponding item to null
-                            const updatedActiveChild = activeChild.map((item, index) =>
-                              index === rowIndex ? null : item
-                            );
-                            setActiveChild(updatedActiveChild);
-                          } else {
-                            // expanding
-                            // set the corresponding cell index
-                            const updatedActiveChild = activeChild.map((item, index) =>
-                              index === rowIndex ? cellIndex : item
-                            );
-                            setActiveChild(updatedActiveChild);
+                  {row.map((cell, cellIndex) => {
+                    // for this example, only columns 1 - 3 are clickable
+                    const compoundExpandParams =
+                      1 <= cellIndex && cellIndex <= 3
+                        ? {
+                            compoundExpand: {
+                              isExpanded: isCompoundExpanded(rowIndex, cellIndex),
+                              onToggle: () => {
+                                if (activeChild[rowIndex] === cellIndex) {
+                                  // closing the expansion on the current toggle
+                                  // set the corresponding item to null
+                                  const updatedActiveChild = activeChild.map((item, index) =>
+                                    index === rowIndex ? null : item
+                                  );
+                                  setActiveChild(updatedActiveChild);
+                                } else {
+                                  // expanding
+                                  // set the corresponding cell index
+                                  const updatedActiveChild = activeChild.map((item, index) =>
+                                    index === rowIndex ? cellIndex : item
+                                  );
+                                  setActiveChild(updatedActiveChild);
+                                }
+                              }
+                            }
                           }
-                        }
-                      }}
-                    >
-                      {customRender(cell, cellIndex)}
-                    </Td>
-                  ))}
+                        : {};
+                    return (
+                      <Td
+                        key={`${rowIndex}_${cellIndex}`}
+                        dataLabel={columns[cellIndex]}
+                        component={cellIndex === 0 ? 'th' : 'td'}
+                        {...compoundExpandParams}
+                      >
+                        {customRender(cell, cellIndex)}
+                      </Td>
+                    );
+                  })}
                 </Tr>
                 {isRowExpanded && (
                   <Tr key={`${rowIndex}-child`} isExpanded={isRowExpanded}>
-                    <Td rowIndex={rowIndex} dataLabel={columns[0]} noPadding colSpan={6}>
-                      <ExpandableRowContent>{childData[childIndex].component}</ExpandableRowContent>
+                    <Td dataLabel={columns[0]} noPadding colSpan={6}>
+                      <ExpandableRowContent>
+                        {childData[`${rowIndex}_${activeChild[rowIndex]}`].component}
+                      </ExpandableRowContent>
                     </Td>
                   </Tr>
                 )}

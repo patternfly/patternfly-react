@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import { css } from '@patternfly/react-styles';
-import { TableGridBreakpoint, TableVariant, toCamel, OnSelect } from '../Table';
+import { TableGridBreakpoint, TableVariant, toCamel } from '../Table';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
 
@@ -17,12 +17,6 @@ export interface BaseCellProps {
   textCenter?: boolean;
   /** Style modifier to apply */
   modifier?: 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap';
-  /** The column index */
-  columnIndex?: number;
-  /** Transforms the cell into a selectable cell - Click callback on select */
-  onSelect?: OnSelect;
-  /** Whether the cell is selected */
-  isSelected?: boolean;
   /** Width percentage modifier */
   width?: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
   /** Visibility breakpoint modifiers */
@@ -69,14 +63,10 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ...props
 }: TableComposableProps) => {
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
-  const variantModifiers = () => {
-    if (variant === 'compact') {
-      return styles.modifiers.compact;
-    } else if (variant === 'compactBorderless') {
-      return css(styles.modifiers.compact, styles.modifiers.noBorderRows);
-    } else if (variant === 'compactExpandable') {
-      return css(styles.modifiers.compact, styles.modifiers.expandable);
-    }
+  const variantModifiers = {
+    compact: styles.modifiers.compact,
+    compactBorderless: css(styles.modifiers.compact, styles.modifiers.noBorderRows),
+    compactExpandable: css(styles.modifiers.compact, styles.modifiers.expandable)
   };
   return (
     <table
@@ -85,11 +75,10 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       className={css(
         className,
         styles.table,
-        gridBreakPoint &&
-          stylesGrid.modifiers[
-            toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
-          ],
-        variantModifiers(),
+        stylesGrid.modifiers?.[
+          toCamel(gridBreakPoint || '').replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
+        ],
+        variantModifiers?.[variant] || '',
         isStickyHeader && styles.modifiers.stickyHeader
       )}
       ref={innerRef}

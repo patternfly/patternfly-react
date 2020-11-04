@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import {
-  SortByDirection,
   sortable,
   selectable,
   OnSelect,
@@ -12,8 +11,10 @@ import {
   OnSort,
   cellWidth,
   Visibility,
-  classNames
+  classNames,
+  info
 } from '../Table';
+import { InfoType, mergeProps } from '../Table/base';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import { BaseCellProps } from './TableComposable';
@@ -21,14 +22,21 @@ import { BaseCellProps } from './TableComposable';
 export interface ThProps
   extends BaseCellProps,
     Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
-  /** The selectable variant */
-  selectVariant?: 'checkbox';
-  /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
-  onSort?: Function;
-  /** Sort direction of the currently sorted column */
-  activeSortDirection?: SortByDirection | 'asc' | 'desc' | 'none';
-  /** Index of the currently sorted column */
-  activeSortIndex?: number;
+  /** Renders a checkbox select so that all row checkboxes can be selected/deselected */
+  select?: {
+    /** Callback on select */
+    onSelect?: OnSelect;
+    /** Whether the cell is selected */
+    isSelected: boolean;
+  };
+  sort?: {
+    /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
+    onSort?: OnSort;
+    /** Provide the currently active column's index and direction */
+    sortBy: ISortBy;
+    /** The column index */
+    columnIndex: number;
+  };
   /**
    * Tooltip to show on the header cell
    * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text
@@ -38,6 +46,8 @@ export interface ThProps
   tooltip?: React.ReactNode;
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
+  /** Adds tooltip/popover info button */
+  info?: InfoType;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -45,19 +55,15 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   className,
   component = 'th',
   textCenter = false,
-  onSort,
-  activeSortDirection = 'none',
-  activeSortIndex,
-  columnIndex,
+  sort = null,
   modifier,
-  onSelect,
-  selectVariant = 'checkbox',
-  isSelected,
+  select = null,
   tooltip = '',
   onMouseEnter: onMouseEnterProp = () => {},
   width,
   visibility,
   innerRef,
+  info: infoProps,
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -69,28 +75,24 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     }
     onMouseEnterProp(event);
   };
-  const sortParams = onSort
+  const sortParams = sort
     ? sortable(children as IFormatterValueType, {
-        columnIndex,
+        columnIndex: sort.columnIndex,
         column: {
           extraParams: {
-            sortBy: {
-              index: activeSortIndex,
-              direction: activeSortDirection
-            } as ISortBy,
-            onSort: onSort as OnSort
+            sortBy: sort.sortBy,
+            onSort: sort?.onSort
           }
         } as IColumn
       })
     : null;
-  const selectParams = onSelect
+  const selectParams = select
     ? selectable(children as IFormatterValueType, {
-        columnIndex,
         column: {
           extraParams: {
-            onSelect: onSelect as OnSelect,
-            selectVariant: selectVariant as 'checkbox' | 'radio',
-            allRowsSelected: isSelected
+            onSelect: select?.onSelect,
+            selectVariant: 'checkbox',
+            allRowsSelected: select.isSelected
           }
         }
       })
@@ -99,29 +101,42 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   const visibilityParams = visibility
     ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))()
     : null;
-  const Component: any = (sortParams && sortParams.component) || (selectParams && selectParams.component) || component;
-  const transformedChildren =
-    (sortParams && sortParams.children) || (selectParams && selectParams.children) || children;
+  let transformedChildren = sortParams?.children || selectParams?.children || children;
+  // info can wrap other transformedChildren
+  let infoParams = null;
+  if (infoProps) {
+    infoParams = info(infoProps)(transformedChildren);
+    transformedChildren = infoParams.children;
+  }
+  const merged = mergeProps(sortParams, selectParams, widthParams, visibilityParams, infoParams);
+  const {
+    // ignore the merged children since we transform them ourselves so we can wrap it with info
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    children: mergedChildren = null,
+    // selectable adds this but we don't want it
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    isVisible = null,
+    className: mergedClassName = '',
+    component: MergedComponent = component,
+    ...mergedProps
+  } = merged;
+
   const cell = (
-    <Component
+    <MergedComponent
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       scope="col"
-      aria-sort={sortParams ? (sortParams['aria-sort'] as 'none' | 'ascending' | 'descending') : null}
       ref={innerRef}
-      data-key={columnIndex}
       className={css(
         className,
         textCenter && styles.modifiers.center,
-        sortParams && sortParams.className,
-        selectParams && selectParams.className,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
-        widthParams && widthParams.className,
-        visibilityParams && visibilityParams.className
+        mergedClassName
       )}
+      {...mergedProps}
       {...props}
     >
       {transformedChildren}
-    </Component>
+    </MergedComponent>
   );
 
   const canDefault = tooltip === '' ? typeof children === 'string' : true;

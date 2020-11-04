@@ -420,7 +420,6 @@ export class Table extends React.Component<TableProps, {}> {
         } else if (onCollapse || onExpand) {
           return 'compactExpandable';
         }
-        return 'compact';
       }
       return variant;
     };

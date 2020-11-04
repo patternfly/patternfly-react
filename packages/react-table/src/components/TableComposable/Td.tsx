@@ -5,21 +5,17 @@ import {
   OnSelect,
   selectable,
   cellActions,
-  /* eslint-disable @typescript-eslint/no-unused-vars */
-  IAreActionsDisabled,
-  IActionsResolver,
-  expandedRow,
-  /* eslint-enable @typescript-eslint/no-unused-vars */
   IActions,
   IFormatterValueType,
   collapsible,
-  IRowData,
-  IExtraData,
   compoundExpand,
+  OnExpand,
   cellWidth,
   Visibility,
-  classNames
+  classNames,
+  OnCollapse
 } from '../Table';
+import { mergeProps } from '../Table/base';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import {
   DropdownDirection,
@@ -28,37 +24,52 @@ import {
 import { BaseCellProps } from './TableComposable';
 
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
-  /** The selectable variant */
-  selectVariant?: 'checkbox' | 'radio';
   /**
    * The column header the cell corresponds to.
    * This attribute replaces table header in mobile viewport. It is rendered by ::before pseudo element.
    */
   dataLabel?: string;
-  /** The row index */
-  rowIndex?: number;
-  /** Whether to disable the selection */
-  disableSelection?: boolean;
-  /** Cell actions */
-  actions?: IActions;
-  /** Whether to disable the actions */
-  actionsDisabled?: boolean;
-  /** Actions dropdown position */
-  actionsDropdownPosition?: DropdownPosition;
-  /** Actions dropdown direction */
-  actionsDropdownDirection?: DropdownDirection;
+  /** Renders a checkbox or radio select */
+  select?: {
+    /** The selectable variant */
+    variant?: 'checkbox' | 'radio';
+    /** Callback on select */
+    onSelect?: OnSelect;
+    /** Whether the cell is selected */
+    isSelected: boolean;
+    /** Whether to disable the selection */
+    disable?: boolean;
+    /** The row index */
+    rowIndex: number;
+  };
+  /** Turns the cell into an actions cell */
+  actions?: {
+    /** Cell actions */
+    items: IActions;
+    /** Whether to disable the actions */
+    disable?: boolean;
+    /** Actions dropdown position */
+    dropdownPosition?: DropdownPosition;
+    /** Actions dropdown direction */
+    dropdownDirection?: DropdownDirection;
+  };
   /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
-  isExpanded?: boolean;
-  /** Turns the cell into a compound expansion toggle and determines if the corresponding expansion row is open */
-  isCompoundExpanded?: boolean;
-  /** On toggling the expansion */
-  onCollapse?: (
-    event: React.MouseEvent,
-    rowIndex: number,
-    isOpen: boolean,
-    rowData: IRowData,
-    extraData: IExtraData
-  ) => undefined;
+  expand?: {
+    isExpanded: boolean;
+    /** The row index */
+    rowIndex: number;
+    /** The column index */
+    columnIndex?: number;
+    /** On toggling the expansion */
+    onToggle?: OnCollapse;
+  };
+  /** Turns the cell into a compound expansion toggle */
+  compoundExpand?: {
+    /** determines if the corresponding expansion row is open */
+    isExpanded: boolean;
+    /** Callback on toggling of the expansion */
+    onToggle?: OnExpand;
+  };
   /** True to remove padding */
   noPadding?: boolean;
 }
@@ -68,88 +79,76 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   className,
   component = 'td',
   dataLabel,
-  columnIndex,
-  rowIndex,
   textCenter = false,
   modifier,
-  onSelect,
-  isSelected = false,
-  selectVariant = 'checkbox',
-  disableSelection = false,
-  actions,
-  actionsDisabled,
-  actionsDropdownPosition,
-  actionsDropdownDirection,
-  isExpanded = null,
-  isCompoundExpanded = null,
-  onCollapse,
+  select = null,
+  actions = null,
+  expand = null,
+  compoundExpand: compoundExpandProp = null,
   noPadding,
   width,
   visibility,
   innerRef,
   ...props
 }: TdProps) => {
-  const selectParams = onSelect
+  const selectParams = select
     ? selectable(children as IFormatterValueType, {
-        columnIndex,
-        rowIndex,
+        rowIndex: select.rowIndex,
         rowData: {
-          selected: isSelected,
-          disableSelection
+          selected: select.isSelected,
+          disableSelection: select?.disable
         },
         column: {
           extraParams: {
-            onSelect: onSelect as OnSelect,
-            selectVariant: selectVariant as 'checkbox' | 'radio'
+            onSelect: select?.onSelect,
+            selectVariant: select.variant || 'checkbox'
           }
         }
       })
     : null;
-  const actionParamsFunc = actions ? cellActions(actions, null, null) : null;
+  const actionParamsFunc = actions ? cellActions(actions.items, null, null) : null;
   const actionParams = actionParamsFunc
     ? actionParamsFunc(null, {
-        rowIndex,
-        columnIndex,
         rowData: {
-          disableActions: actionsDisabled
+          disableActions: actions?.disable
         },
         column: {
           extraParams: {
-            dropdownPosition: actionsDropdownPosition,
-            dropdownDirection: actionsDropdownDirection
+            dropdownPosition: actions?.dropdownPosition,
+            dropdownDirection: actions?.dropdownDirection
           }
         }
       })
     : null;
   const expandableParams =
-    isExpanded !== null
+    expand !== null
       ? collapsible(null, {
-          rowIndex,
-          columnIndex,
+          rowIndex: expand.rowIndex,
+          columnIndex: expand?.columnIndex,
           rowData: {
-            isOpen: isExpanded
+            isOpen: expand.isExpanded
           },
           column: {
             extraParams: {
-              onCollapse
+              onCollapse: expand?.onToggle
             }
           }
         })
       : null;
   const compoundParams =
-    isCompoundExpanded !== null
+    compoundExpandProp !== null
       ? compoundExpand(
           {
             title: children,
             props: {
-              isOpen: isCompoundExpanded
+              isOpen: compoundExpandProp.isExpanded
             }
           } as IFormatterValueType,
           {
-            columnIndex,
-            rowIndex,
             column: {
-              extraParams: {}
+              extraParams: {
+                onExpand: compoundExpandProp?.onToggle
+              }
             }
           }
         )
@@ -158,34 +157,39 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   const visibilityParams = visibility
     ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))()
     : null;
-  const Component: any = (selectParams && selectParams.component) || component;
-  const transformedChildren =
-    (selectParams && selectParams.children) ||
-    (actionParams && actionParams.children) ||
-    (expandableParams && expandableParams.children) ||
-    (compoundParams && compoundParams.children) ||
-    children;
+  const merged = mergeProps(
+    selectParams,
+    actionParams,
+    expandableParams,
+    compoundParams,
+    widthParams,
+    visibilityParams
+  );
+  const {
+    // selectable adds this but we don't want it
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    isVisible = null,
+    children: mergedChildren = null,
+    className: mergedClassName = '',
+    component: MergedComponent = component,
+    ...mergedProps
+  } = merged;
   return (
-    <Component
+    <MergedComponent
       data-label={dataLabel}
-      data-key={columnIndex}
       className={css(
         className,
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
-        selectParams && selectParams.className,
-        actionParams && actionParams.className,
-        expandableParams && expandableParams.className,
-        compoundParams && compoundParams.className,
-        modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
-        widthParams && widthParams.className,
-        visibilityParams && visibilityParams.className
+        styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
+        mergedClassName
       )}
       ref={innerRef}
+      {...mergedProps}
       {...props}
     >
-      {transformedChildren}
-    </Component>
+      {mergedChildren || children}
+    </MergedComponent>
   );
 };
 
