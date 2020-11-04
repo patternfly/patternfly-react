@@ -170,9 +170,11 @@ export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState
   };
 
   removeEventListeners = () => {
-    this.rfb.removeEventListener('connect', this.onConnected);
-    this.rfb.removeEventListener('disconnect', this.onDisconnected);
-    this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
+    if (this.rfb) {
+      this.rfb.removeEventListener('connect', this.onConnected);
+      this.rfb.removeEventListener('disconnect', this.onDisconnected);
+      this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
+    }
   };
 
   render() {

@@ -1,6 +1,6 @@
 ---
 id: AccessConsoles
-section: consoles
+section: extensions
 propComponents: ['AccessConsoles']
 ouia: false
 beta: true
