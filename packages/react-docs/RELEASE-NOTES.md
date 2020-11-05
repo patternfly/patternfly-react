@@ -1,6 +1,6 @@
 ---
 id: Release notes
-section: get-started
+section: developer-resources
 ---
 
 ## 2020.14 release notes (2020-10-27)
