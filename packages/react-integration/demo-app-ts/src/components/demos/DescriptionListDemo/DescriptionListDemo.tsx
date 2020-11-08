@@ -274,6 +274,52 @@ export class DescriptionListDemo extends Component {
       </StackItem>
     );
   }
+  renderAutoFitDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <br />
+        <Title headingLevel="h2" size="2xl">
+          Auto Fit Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList
+            autoMinFitModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
+            id="auto-fit-description-list"
+            isAutoFit
+          >
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
   render() {
     return (
       <Stack hasGutter>
@@ -282,6 +328,7 @@ export class DescriptionListDemo extends Component {
         {this.renderHorizontalDescriptionList()}
         {this.renderAutoColumnWidthsDescriptionList()}
         {this.renderInlineGridDescriptionList()}
+        {this.renderAutoFitDescriptionList()}
       </Stack>
     );
   }
