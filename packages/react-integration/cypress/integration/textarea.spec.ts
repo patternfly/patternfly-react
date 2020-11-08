@@ -102,4 +102,20 @@ describe('Text Area Demo Test', () => {
       });
     cy.get('#textarea5.pf-m-warning').should('exist');
   });
+
+  it('Verify Text Area can not be changed when disabled', () => {
+    cy.get('#textarea6-a').should('be.disabled');
+    cy.get('#textarea6-a').type('testing', { force: true });
+    cy.get('#textarea6-a').should('have.value', 'disabled text area');
+
+    cy.get('#textarea6-b').should('be.disabled');
+    cy.get('#textarea6-a').type('testing', { force: true });
+    cy.get('#textarea6-b').should('have.value', 'isDisabled text area');
+
+    cy.get('#textarea7-a').type('testing', { force: true });
+    cy.get('#textarea7-a').should('have.value', 'readOnly text area');
+
+    cy.get('#textarea7-b').type('testing', { force: true });
+    cy.get('#textarea7-b').should('have.value', 'isReadOnly text area');
+  });
 });

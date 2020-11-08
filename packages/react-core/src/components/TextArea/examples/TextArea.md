@@ -190,3 +190,11 @@ import { TextArea } from '@patternfly/react-core';
 
 <TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
 ```
+
+### Disabled
+```js
+import React from 'react';
+import { TextArea } from '@patternfly/react-core';
+
+<TextArea aria-label="disabled text area example" isDisabled />
+```
