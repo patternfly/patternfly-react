@@ -123,12 +123,12 @@ class IconsActionList extends React.Component {
     return (
       <ActionList hasIcons>
         <ActionListItem>
-          <Button variant="plain" id="times-button">
+          <Button variant="plain" id="times-button" aria-label="times icon button">
             <TimesIcon />
           </Button>
         </ActionListItem>
         <ActionListItem>
-          <Button variant="plain" id="check-button">
+          <Button variant="plain" id="check-button" aria-label="check icon button">
             <CheckIcon />
           </Button>
         </ActionListItem>
@@ -218,7 +218,7 @@ class CancelActionList extends React.Component {
           </ActionListGroup>
           <ActionListGroup>
             <ActionListItem>
-              <Button variant="link" id="cancel-button">
+              <Button variant="link" id="cancel-button2">
                 Cancel
               </Button>
             </ActionListItem>
