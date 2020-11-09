@@ -1,5 +1,6 @@
 export * from './AboutModal/AboutModalDemo';
 export * from './AccordionDemo/AccordionDemo';
+export * from './ActionListDemo/ActionListDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherFavoritesDemo';
 export * from './AlertDemo/AlertDemo';
