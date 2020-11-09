@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.97](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.96...@patternfly/react-catalog-view-extension@4.8.97) (2020-11-09)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [4.8.96](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.95...@patternfly/react-catalog-view-extension@4.8.96) (2020-11-05)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
