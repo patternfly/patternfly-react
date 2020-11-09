@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
+import * as flexToken from '@patternfly/react-tokens/dist/js/l_flex_item_Order';
 
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, setBreakpointCssVars } from '../../helpers/util';
 
 export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Flex layout */
@@ -126,6 +127,14 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'fullWidth';
     '2xl'?: 'fullWidth';
   };
+  /** Modifies the flex layout element order property */
+  order?: {
+    default?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
 }
 
 export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
@@ -138,6 +147,8 @@ export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
   alignSelf,
   align,
   fullWidth,
+  order,
+  style,
   ...props
 }: FlexItemProps) => (
   <div
@@ -152,6 +163,7 @@ export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
       formatBreakpointMods(fullWidth, styles),
       className
     )}
+    style={style || order ? { ...style, ...setBreakpointCssVars(order, flexToken.l_flex_item_Order.name) } : undefined}
   >
     {children}
   </div>

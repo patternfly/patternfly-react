@@ -2,6 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
+import * as gridToken from '@patternfly/react-tokens/dist/js/l_grid_item_Order';
+
+import { setBreakpointCssVars } from '../../helpers/util';
 
 export type gridSpans = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -46,6 +49,14 @@ export interface GridItemProps extends React.HTMLProps<HTMLDivElement> {
   xl2RowSpan?: gridSpans;
   /** the number of columns the grid item is offset on 2xLarge device. Value should be a number 1-12   */
   xl2Offset?: gridSpans;
+  /** Modifies the flex layout element order property */
+  order?: {
+    default?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
 }
 
 export const GridItem: React.FunctionComponent<GridItemProps> = ({
@@ -54,6 +65,8 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
   span = null,
   rowSpan = null,
   offset = null,
+  order,
+  style,
   ...props
 }: GridItemProps) => {
   const classes = [
@@ -88,7 +101,13 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
   });
 
   return (
-    <div className={css(...classes, className)} {...props}>
+    <div
+      className={css(...classes, className)}
+      style={
+        style || order ? { ...style, ...setBreakpointCssVars(order, gridToken.l_grid_item_Order.name) } : undefined
+      }
+      {...props}
+    >
       {children}
     </div>
   );

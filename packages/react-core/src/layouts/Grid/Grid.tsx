@@ -2,6 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
+import * as gridToken from '@patternfly/react-tokens/dist/js/l_grid_item_Order';
+
+import { setBreakpointCssVars } from '../../helpers/util';
 
 export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -24,6 +27,14 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   xl?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a 2xLarge device */
   xl2?: gridItemSpanValueShape;
+  /** Modifies the flex layout element order property */
+  order?: {
+    default?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
 }
 
 export const Grid: React.FunctionComponent<GridProps> = ({
@@ -31,6 +42,8 @@ export const Grid: React.FunctionComponent<GridProps> = ({
   className = '',
   hasGutter,
   span = null,
+  order,
+  style,
   ...props
 }: GridProps) => {
   const classes = [styles.grid, span && styles.modifiers[`all_${span}Col` as keyof typeof styles.modifiers]];
@@ -45,7 +58,13 @@ export const Grid: React.FunctionComponent<GridProps> = ({
   });
 
   return (
-    <div className={css(...classes, hasGutter && styles.modifiers.gutter, className)} {...props}>
+    <div
+      className={css(...classes, hasGutter && styles.modifiers.gutter, className)}
+      style={
+        style || order ? { ...style, ...setBreakpointCssVars(order, gridToken.l_grid_item_Order.name) } : undefined
+      }
+      {...props}
+    >
       {children}
     </div>
   );
