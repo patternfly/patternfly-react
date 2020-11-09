@@ -90,10 +90,8 @@ export const ConnectWithRemoteViewer: React.FunctionComponent<ConnectWithRemoteV
   };
 
   const onClickRDP = () => {
-    if (rdp) {
-      const rdpFile = onGenerate(rdp, RDP_CONSOLE_TYPE);
-      return onDownload(DEFAULT_RDP_FILENAME, rdpFile.content, rdpFile.mimeType || DEFAULT_RDP_MIMETYPE);
-    }
+    const rdpFile = onGenerate(rdp, RDP_CONSOLE_TYPE);
+    return onDownload(DEFAULT_RDP_FILENAME, rdpFile.content, rdpFile.mimeType || DEFAULT_RDP_MIMETYPE);
   };
 
   // RDP button is rendered only if the protocol is available

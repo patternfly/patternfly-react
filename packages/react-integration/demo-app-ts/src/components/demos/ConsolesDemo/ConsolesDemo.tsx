@@ -6,7 +6,7 @@ import { debounce } from '@patternfly/react-core';
 export const ConsolesDemo: React.FC = () => {
   const [status, setStatus] = React.useState('disconnected');
   const setConnected = React.useRef(debounce(() => setStatus('connected'), 3000)).current;
-  const ref = React.createRef<SerialConsole>();
+  const ref = React.createRef<any>();
 
   return (
     <div className="consoles-demo-area">
@@ -18,7 +18,7 @@ export const ConsolesDemo: React.FC = () => {
           }}
           status={status}
           onDisconnect={() => setStatus('disconnected')}
-          onData={data => {
+          onData={(data: string) => {
             ref.current.onDataReceived(data);
           }}
           ref={ref}

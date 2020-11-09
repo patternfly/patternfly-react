@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
-<AccessConsoles
-  preselectedType="_none_"
-  textDesktopViewerConsole="Desktop viewer"
-  textSelectConsoleType="Select console type"
-  textSerialConsole="Serial console"
-  textVncConsole="VNC console"
->
+<AccessConsoles>
   <div
     className="pf-c-console"
   >
@@ -477,10 +471,6 @@ exports[`AccessConsoles with VncConsole as a single child 1`] = `
 exports[`AccessConsoles with preselected SerialConsole 1`] = `
 <AccessConsoles
   preselectedType="SerialConsole"
-  textDesktopViewerConsole="Desktop viewer"
-  textSelectConsoleType="Select console type"
-  textSerialConsole="Serial console"
-  textVncConsole="VNC console"
 >
   <div
     className="pf-c-console"

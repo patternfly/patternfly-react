@@ -62,59 +62,43 @@ export interface VncConsoleProps extends React.HTMLProps<HTMLDivElement> {
   textCtrlAltDel?: string;
 }
 
-export interface VncConsoleState {
-  status: string;
-}
+export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
+  children,
+  host,
+  port = '80',
+  path = '',
+  encrypt = false,
+  resizeSession = true,
+  scaleViewport = false,
+  viewOnly = false,
+  shared = false,
+  credentials,
+  repeaterID = '',
+  vncLogging = 'warn',
+  consoleContainerId,
+  additionalButtons = [] as React.ReactNode[],
+  onDisconnected = () => {},
+  onInitFailed,
+  onSecurityFailure,
+  textConnecting = 'Connecting',
+  textDisconnected = 'Disconnected',
+  textDisconnect = 'Disconnect',
+  textSendShortcut,
+  textCtrlAltDel
+}) => {
+  let rfb: any;
+  let novncStaticComponent: React.ReactNode;
+  let novncElem: HTMLDivElement;
 
-export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState> {
-  static displayName = 'VncConsole';
-  static defaultProps = {
-    port: '80',
-    path: '',
-    encrypt: false,
-    resizeSession: true,
-    scaleViewport: false,
-    viewOnly: false,
-    shared: false,
-    repeaterID: '',
-    vncLogging: 'warn',
-    additionalButtons: [] as React.ReactNode[],
-    onDisconnected: () => {},
-    textConnecting: 'Connecting',
-    textDisconnected: 'Disconnected',
-    textDisconnect: 'Disconnect'
+  const [status, setStatus] = React.useState(CONNECTING);
+
+  const addEventListeners = () => {
+    rfb.addEventListener('connect', onConnected);
+    rfb.addEventListener('disconnect', onDisconnected);
+    rfb.addEventListener('securityfailure', onSecurityFailure);
   };
-  private rfb: any;
-  private novncStaticComponent: React.ReactNode;
-  private novncElem: HTMLDivElement;
 
-  constructor(props: VncConsoleProps) {
-    super(props);
-    this.state = { status: CONNECTING };
-  }
-
-  addEventListeners() {
-    this.rfb.addEventListener('connect', this.onConnected);
-    this.rfb.addEventListener('disconnect', this.onDisconnected);
-    this.rfb.addEventListener('securityfailure', this.onSecurityFailure);
-  }
-
-  componentDidMount() {
-    const {
-      host,
-      port,
-      path,
-      encrypt,
-      resizeSession,
-      scaleViewport,
-      viewOnly,
-      shared,
-      credentials,
-      repeaterID,
-      vncLogging,
-      onInitFailed
-    } = this.props;
-
+  React.useEffect(() => {
     NovncLog.init_logging(vncLogging);
     try {
       const protocol = encrypt ? 'wss' : 'ws';
@@ -125,116 +109,105 @@ export class VncConsole extends React.Component<VncConsoleProps, VncConsoleState
         shared,
         credentials
       };
-      this.rfb = (new RFB() as any)(this.novncElem, url, options);
-      this.addEventListeners();
-      this.rfb.viewOnly = viewOnly;
-      this.rfb.scaleViewport = scaleViewport;
-      this.rfb.resizeSession = resizeSession;
+      rfb = (new RFB() as any)(novncElem, url, options);
+      addEventListeners();
+      rfb.viewOnly = viewOnly;
+      rfb.scaleViewport = scaleViewport;
+      rfb.resizeSession = resizeSession;
     } catch (e) {
       onInitFailed && onInitFailed(e);
-      this.rfb = undefined;
+      rfb = undefined;
     }
-  }
 
-  componentWillUnmount() {
-    this.disconnect();
-    this.removeEventListeners();
-    this.rfb = undefined;
-  }
+    return () => {
+      disconnect();
+      removeEventListeners();
+      rfb = undefined;
+    };
+  }, []);
 
-  disconnect = () => {
-    if (!this.rfb) {
+  const disconnect = () => {
+    if (!rfb) {
       return;
     }
-    this.rfb.disconnect();
+    rfb.disconnect();
   };
 
-  onConnected = () => {
-    this.setState({ status: CONNECTED });
+  const onConnected = () => {
+    setStatus(CONNECTED);
   };
 
-  onDisconnected = (e: any) => {
-    this.setState({ status: DISCONNECTED });
-    this.props.onDisconnected(e);
+  const _onDisconnected = (e: any) => {
+    setStatus(DISCONNECTED);
+    onDisconnected(e);
   };
 
-  onSecurityFailure = (e: any) => {
-    this.setState({ status: DISCONNECTED });
-    this.props.onSecurityFailure(e);
+  const _onSecurityFailure = (e: any) => {
+    setStatus(DISCONNECTED);
+    onSecurityFailure(e);
   };
 
-  onCtrlAltDel = () => {
-    if (this.rfb) {
-      this.rfb.sendCtrlAltDel();
+  const onCtrlAltDel = () => {
+    if (rfb) {
+      rfb.sendCtrlAltDel();
     }
   };
 
-  removeEventListeners = () => {
-    if (this.rfb) {
-      this.rfb.removeEventListener('connect', this.onConnected);
-      this.rfb.removeEventListener('disconnect', this.onDisconnected);
-      this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
+  const removeEventListeners = () => {
+    if (rfb) {
+      rfb.removeEventListener('connect', onConnected);
+      rfb.removeEventListener('disconnect', _onDisconnected);
+      rfb.removeEventListener('securityfailure', _onSecurityFailure);
     }
   };
 
-  render() {
-    const {
-      textDisconnected,
-      textConnecting,
-      textSendShortcut,
-      textCtrlAltDel,
-      textDisconnect,
-      consoleContainerId,
-      additionalButtons
-    } = this.props;
-
-    let status = null;
-    let rightContent = null;
-    switch (this.state.status) {
-      case CONNECTED:
-        rightContent = (
-          <VncActions
-            onCtrlAltDel={this.onCtrlAltDel}
-            textSendShortcut={textSendShortcut}
-            textCtrlAltDel={textCtrlAltDel}
-            textDisconnect={textDisconnect}
-            onDisconnect={this.disconnect}
-            additionalButtons={additionalButtons}
-          />
-        );
-        break;
-      case DISCONNECTED:
-        status = (
-          <EmptyState>
-            <EmptyStateBody>{textDisconnected}</EmptyStateBody>
-          </EmptyState>
-        );
-        break;
-      case CONNECTING:
-      default:
-        status = (
-          <EmptyState>
-            <EmptyStateIcon variant="container" component={Spinner} />
-            <EmptyStateBody>{textConnecting}</EmptyStateBody>
-          </EmptyState>
-        );
-    }
-
-    if (!this.novncStaticComponent) {
-      this.novncStaticComponent = <div id={consoleContainerId} ref={e => (this.novncElem = e)} />;
-    }
-
-    return (
-      <div className="pf-c-console__vnc">
-        {this.props.children}
-        <React.Fragment>
-          {rightContent}
-          <div>
-            {status}
-            {this.novncStaticComponent}
-          </div>
-        </React.Fragment>
-      </div>
-    );
+  let rightContent;
+  let emptyState;
+  switch (status) {
+    case CONNECTED:
+      rightContent = (
+        <VncActions
+          onCtrlAltDel={onCtrlAltDel}
+          textSendShortcut={textSendShortcut}
+          textCtrlAltDel={textCtrlAltDel}
+          textDisconnect={textDisconnect}
+          onDisconnect={disconnect}
+          additionalButtons={additionalButtons}
+        />
+      );
+      break;
+    case DISCONNECTED:
+      emptyState = (
+        <EmptyState>
+          <EmptyStateBody>{textDisconnected}</EmptyStateBody>
+        </EmptyState>
+      );
+      break;
+    case CONNECTING:
+    default:
+      emptyState = (
+        <EmptyState>
+          <EmptyStateIcon variant="container" component={Spinner} />
+          <EmptyStateBody>{textConnecting}</EmptyStateBody>
+        </EmptyState>
+      );
   }
-}
+
+  if (!novncStaticComponent) {
+    novncStaticComponent = <div id={consoleContainerId} ref={e => (novncElem = e)} />;
+  }
+
+  return (
+    <div className="pf-c-console__vnc">
+      {children}
+      <React.Fragment>
+        {rightContent}
+        <div>
+          {emptyState}
+          {novncStaticComponent}
+        </div>
+      </React.Fragment>
+    </div>
+  );
+};
+VncConsole.displayName = 'VncConsole';

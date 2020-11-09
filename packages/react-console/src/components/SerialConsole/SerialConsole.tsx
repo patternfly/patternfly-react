@@ -16,7 +16,17 @@ export interface SerialConsoleProps extends XTermProps {
   onConnect: () => void;
   /** Close connection to backend */
   onDisconnect: () => void;
+  /** Terminal produced data, like key-press */
+  onData: (e: string) => void;
+  /** Terminal title has been changed */
+  onTitleChanged?: () => void;
   /** Connection status; a value from [''connected'; 'disconnected'; 'loading']. Default is 'loading' for a not matching value. */
+  /** The number of columns to resize to */
+  cols?: number;
+  /** The number of rows to resize to */
+  rows?: number;
+  fontFamily?: string;
+  fontSize?: number;
   status?: string;
   /** Text content rendered inside the Connect button */
   textConnect?: string;
@@ -28,120 +38,104 @@ export interface SerialConsoleProps extends XTermProps {
   textDisconnected?: string;
   /* Text content rendered inside the EmptyState for when console is loading */
   textLoading?: string;
+  /** A reference object to attach to the SerialConsole. */
+  innerRef?: React.RefObject<any>;
 }
 
-export class SerialConsole extends React.Component<SerialConsoleProps> {
-  static displayName = 'SerialConsole';
-  static defaultProps: SerialConsoleProps = {
-    onConnect: () => {},
-    onDisconnect: () => {},
-    status: 'loading',
-    textDisconnected: 'Click Connect to open serial console.',
-    textLoading: 'Loading ...',
-    textConnect: 'Connect'
-  };
-  private childTerminal = React.createRef<XTerm>();
+const SerialConsoleBase: React.FunctionComponent<SerialConsoleProps> = ({
+  onConnect,
+  onDisconnect,
+  onTitleChanged = () => {},
+  onData,
+  cols,
+  rows,
+  fontFamily,
+  fontSize,
+  status = 'loading',
+  textConnect = 'Connect',
+  textDisconnect,
+  textReset,
+  textDisconnected = 'Click Connect to open serial console.',
+  textLoading = 'Loading ...',
+  innerRef
+}) => {
+  React.useEffect(() => {
+    onConnect();
+    return () => {
+      onDisconnect();
+    };
+  }, []);
 
-  componentDidMount() {
-    this.props.onConnect();
+  const onConnectClick = () => {
+    onConnect();
+    focusTerminal();
+  };
+
+  const onDisconnectClick = () => {
+    onDisconnect();
+    focusTerminal();
+  };
+
+  const onResetClick = () => {
+    onDisconnect();
+    onConnect();
+    focusTerminal();
+  };
+
+  const focusTerminal = () => {
+    innerRef && innerRef.current && innerRef.current.focusTerminal();
+  };
+
+  let terminal;
+  switch (status) {
+    case CONNECTED:
+      terminal = (
+        <XTerm
+          innerRef={innerRef}
+          cols={cols}
+          rows={rows}
+          fontFamily={fontFamily}
+          fontSize={fontSize}
+          onTitleChanged={onTitleChanged}
+          onData={onData}
+        />
+      );
+      break;
+    case DISCONNECTED:
+      terminal = (
+        <EmptyState>
+          <EmptyStateBody>{textDisconnected}</EmptyStateBody>
+          <Button onClick={onConnectClick}>{textConnect}</Button>
+        </EmptyState>
+      );
+      break;
+    case LOADING:
+    default:
+      terminal = (
+        <EmptyState>
+          <EmptyStateIcon variant="container" component={Spinner} />
+          <EmptyStateBody>{textLoading}</EmptyStateBody>
+        </EmptyState>
+      );
+      break;
   }
 
-  componentWillUnmount() {
-    this.props.onDisconnect();
-  }
-
-  onConnectClick = () => {
-    this.props.onConnect();
-    this.focusTerminal();
-  };
-
-  onDisconnectClick = () => {
-    this.props.onDisconnect();
-    this.focusTerminal();
-  };
-
-  onResetClick = () => {
-    this.props.onDisconnect();
-    this.props.onConnect();
-    this.focusTerminal();
-  };
-
-  focusTerminal = () => {
-    this.childTerminal && this.childTerminal.current.terminal.focus();
-  };
-
-  /**
-   * Backend sent data.
-   *
-   * @param {string} data String content to be writen into the terminal
-   */
-  onDataReceived = (data: string) => {
-    if (this.childTerminal && this.props.status === CONNECTED) {
-      this.childTerminal.current.onDataReceived(data);
-    }
-  };
-
-  /**
-   * Backend closed connection.
-   *
-   * @param {string} reason String error to be written into the terminal
-   */
-  onConnectionClosed = (reason: string) => {
-    if (this.childTerminal) {
-      this.childTerminal.current.onConnectionClosed(reason);
-    }
-  };
-
-  render() {
-    const { status } = this.props;
-
-    let terminal;
-    switch (status) {
-      case CONNECTED:
-        terminal = (
-          <XTerm
-            ref={this.childTerminal}
-            cols={this.props.cols}
-            rows={this.props.rows}
-            fontFamily={this.props.fontFamily}
-            fontSize={this.props.fontSize}
-            onTitleChanged={this.props.onTitleChanged}
-            onResize={this.props.onResize}
-            onData={this.props.onData}
-          />
-        );
-        break;
-      case DISCONNECTED:
-        terminal = (
-          <EmptyState>
-            <EmptyStateBody>{this.props.textDisconnected}</EmptyStateBody>
-            <Button onClick={this.onConnectClick}>{this.props.textConnect}</Button>
-          </EmptyState>
-        );
-        break;
-      case LOADING:
-      default:
-        terminal = (
-          <EmptyState>
-            <EmptyStateIcon variant="container" component={Spinner} />
-            <EmptyStateBody>{this.props.textLoading}</EmptyStateBody>
-          </EmptyState>
-        );
-        break;
-    }
-
-    return (
-      <>
-        {status !== DISCONNECTED && (
-          <SerialConsoleActions
-            onDisconnect={this.onDisconnectClick}
-            onReset={this.onResetClick}
-            textDisconnect={this.props.textDisconnect}
-            textReset={this.props.textReset}
-          />
-        )}
-        <div className="pf-c-console__serial">{terminal}</div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      {status !== DISCONNECTED && (
+        <SerialConsoleActions
+          onDisconnect={onDisconnectClick}
+          onReset={onResetClick}
+          textDisconnect={textDisconnect}
+          textReset={textReset}
+        />
+      )}
+      <div className="pf-c-console__serial">{terminal}</div>
+    </>
+  );
+};
+SerialConsoleBase.displayName = 'SerialConsoleBase';
+export const SerialConsole = React.forwardRef((props: SerialConsoleProps, ref: React.Ref<HTMLDivElement>) => (
+  <SerialConsoleBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+));
+SerialConsole.displayName = 'SerialConsole';

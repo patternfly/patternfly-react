@@ -34,117 +34,89 @@ export interface SpiceConsoleProps extends React.HTMLProps<HTMLDivElement> {
   textCtrlAltDel?: string;
 }
 
-export interface SpiceConsoleState {
-  status: string;
-}
-export class SpiceConsole extends React.Component<SpiceConsoleProps, SpiceConsoleState> {
-  static displayName = 'SpiceConsole';
-  static defaultProps: SpiceConsoleProps = {
-    className: '',
-    children: null,
-    host: '',
-    port: '80',
-    path: '',
-    encrypt: false,
-    textConnecting: 'Connecting',
-    textDisconnected: 'Disconnected'
-  };
-  private spiceStaticComponent: React.ReactNode;
-  private sc: any;
+export const SpiceConsole: React.FunctionComponent<SpiceConsoleProps> = ({
+  children = null,
+  host = '',
+  port = '80',
+  path = '',
+  encrypt = false,
+  password,
+  className = '',
+  onDisconnected,
+  onInitFailed,
+  textConnecting = 'Connecting',
+  textDisconnected = 'Disconnected',
+  textSendShortcut,
+  textCtrlAltDel
+}) => {
+  let spiceStaticComponent: React.ReactNode;
+  let sc: any;
+  const [status, setStatus] = React.useState(CONNECTING);
 
-  constructor(props: SpiceConsoleProps) {
-    super(props);
-    this.state = { status: CONNECTING };
-  }
-
-  componentDidMount() {
-    const { host, port, path, encrypt, password, onInitFailed } = this.props;
-
+  React.useEffect(() => {
     try {
       const protocol = encrypt ? 'wss' : 'ws';
       const uri = `${protocol}://${host}:${port}/${path}`;
 
-      this.sc = new SpiceMainConn({
+      sc = new SpiceMainConn({
         uri,
         /* eslint-disable camelcase */
         screen_id: 'spice-screen',
         password,
-        onerror: this.onSpiceError,
-        onsuccess: this.onConnected
+        onerror: onSpiceError,
+        onsuccess: setStatus(CONNECTED)
       });
     } catch (e) {
       onInitFailed && onInitFailed(e);
-      this.disconnect();
+      disconnect();
     }
-  }
+    return () => disconnect();
+  }, []);
 
-  componentWillUnmount() {
-    this.disconnect();
-  }
-
-  disconnect() {
-    if (this.sc) {
-      this.sc.stop();
-      this.sc = undefined;
+  const disconnect = () => {
+    if (sc) {
+      sc.stop();
+      sc = undefined;
     }
-  }
-  onConnected = () => {
-    this.setState({ status: CONNECTED });
   };
 
-  onCtrlAltDel = () => {
-    if (this.sc) {
+  const onCtrlAltDel = () => {
+    if (sc) {
       sendCtrlAltDel();
     }
   };
 
-  onSpiceError = (e: any) => {
-    this.disconnect();
-    this.onDisconnected(e);
+  const onSpiceError = (e: any) => {
+    disconnect();
+    setStatus(DISCONNECTED);
+    onDisconnected(e);
   };
 
-  onDisconnected = (e: any) => {
-    this.setState({ status: DISCONNECTED });
-    this.props.onDisconnected(e);
-  };
+  if (!spiceStaticComponent) {
+    // create just once
+    spiceStaticComponent = <div id="spice-screen" />;
+  }
 
-  render() {
-    const { textDisconnected, textConnecting, textSendShortcut, textCtrlAltDel } = this.props;
-
-    let status = null;
-    let rightContent = null;
-    switch (this.state.status) {
-      case CONNECTED:
-        rightContent = (
+  return (
+    <div className={css('spice-console', className)}>
+      {children}
+      <div>
+        {status === CONNECTED && (
           <SpiceActions
-            onCtrlAltDel={this.onCtrlAltDel}
+            onCtrlAltDel={onCtrlAltDel}
             textSendShortcut={textSendShortcut}
             textCtrlAltDel={textCtrlAltDel}
           />
-        );
-        break;
-      case DISCONNECTED:
-        status = <div className="spice-console-disconnected">{textDisconnected}</div>;
-        break;
-      case CONNECTING:
-      default:
-        status = <div className="spice-console-connecting">{textConnecting}</div>;
-    }
-
-    if (!this.spiceStaticComponent) {
-      // create just once
-      this.spiceStaticComponent = <div id="spice-screen" />;
-    }
-
-    return (
-      <div className={css('spice-console', this.props.className)}>
-        {this.props.children}
-        <div>{rightContent}</div>
-        <div>
-          {status}
-          {this.spiceStaticComponent}
-        </div>
+        )}
       </div>
-    );
-  }
-}
+      <div>
+        {(status === DISCONNECTED || status === CONNECTING) && (
+          <div className={'spice-console-' + status}>{status === DISCONNECTED ? textDisconnected : textConnecting}</div>
+        )}
+        {status}
+        {spiceStaticComponent}
+      </div>
+    </div>
+  );
+};
+SpiceConsole.displayName = 'SpiceConsole';

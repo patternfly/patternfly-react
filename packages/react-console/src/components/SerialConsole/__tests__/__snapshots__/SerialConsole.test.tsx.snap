@@ -37,60 +37,38 @@ Array [
 `;
 
 exports[`SerialConsole in the CONNECTED state 1`] = `
-<Fragment>
-  <SerialConsoleActions
-    onDisconnect={[Function]}
-    onReset={[Function]}
-    textDisconnect="My text for Disconnect"
-  />
-  <div
-    className="pf-c-console__serial"
-  >
-    <XTerm
-      cols={33}
-      rows={44}
-    />
-  </div>
-</Fragment>
+<SerialConsoleBase
+  cols={33}
+  id="myidprefix"
+  innerRef={null}
+  onConnect={[MockFunction]}
+  onDisconnect={[MockFunction]}
+  rows={44}
+  status="connected"
+  textDisconnect="My text for Disconnect"
+  textReconnect="My text for Reconnect"
+/>
 `;
 
 exports[`SerialConsole in the DISCONNECTED state 1`] = `
-<Fragment>
-  <div
-    className="pf-c-console__serial"
-  >
-    <EmptyState>
-      <EmptyStateBody>
-        My text for Disconnected
-      </EmptyStateBody>
-      <Button
-        onClick={[Function]}
-      >
-        My text for Connect
-      </Button>
-    </EmptyState>
-  </div>
-</Fragment>
+<SerialConsoleBase
+  id="myidprefix"
+  innerRef={null}
+  onConnect={[MockFunction]}
+  onDisconnect={[MockFunction]}
+  status="disconnected"
+  textConnect="My text for Connect"
+  textDisconnected="My text for Disconnected"
+  textDisconnectedTitle="My title for Disconnected"
+/>
 `;
 
 exports[`SerialConsole in the LOADING state 1`] = `
-<Fragment>
-  <SerialConsoleActions
-    onDisconnect={[Function]}
-    onReset={[Function]}
-  />
-  <div
-    className="pf-c-console__serial"
-  >
-    <EmptyState>
-      <EmptyStateIcon
-        component={[Function]}
-        variant="container"
-      />
-      <EmptyStateBody>
-        My text for Loading
-      </EmptyStateBody>
-    </EmptyState>
-  </div>
-</Fragment>
+<SerialConsoleBase
+  innerRef={null}
+  onConnect={[MockFunction]}
+  onDisconnect={[MockFunction]}
+  status="loading"
+  textLoading="My text for Loading"
+/>
 `;
