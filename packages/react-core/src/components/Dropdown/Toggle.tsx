@@ -104,6 +104,7 @@ export class Toggle extends React.Component<ToggleProps> {
       return;
     }
     if (!this.props.bubbleEvent) {
+      this.onEscPress((event as unknown) as KeyboardEvent);
       event.stopPropagation();
     }
     event.preventDefault();
