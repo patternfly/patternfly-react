@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Divider,
   Form,
   FormGroup,
   FormProps,
@@ -23,6 +24,7 @@ export interface FormState {
   selected: string[];
   validatedValue: string;
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.warning | ValidatedOptions.success;
+  checkboxChecked: boolean;
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
@@ -34,8 +36,11 @@ export class FormDemo extends Component<FormProps, FormState> {
       isOpen: false,
       selected: [],
       validatedValue: '',
-      validated: ValidatedOptions.default
+      validated: ValidatedOptions.default,
+      checkboxChecked: false
     };
+
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
   handleTextInputChange = (value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
@@ -81,8 +86,14 @@ export class FormDemo extends Component<FormProps, FormState> {
     window.scrollTo(0, 0);
   }
 
+  handleCheckboxChange(checked: boolean, event: any) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({ ['checkboxChecked']: value });
+  }
+
   render() {
-    const { value, isValid, isOpen, selected, validatedValue, validated } = this.state;
+    const { value, isValid, isOpen, selected, validatedValue, validated, checkboxChecked } = this.state;
     const titleId = 'multi-typeahead-select-id';
     const options = [
       { value: 'Alabama', disabled: false },
@@ -95,7 +106,7 @@ export class FormDemo extends Component<FormProps, FormState> {
 
     return (
       <React.Fragment>
-        <Form>
+        <Form id="form-demo-1">
           <FormGroup
             label="Age"
             labelIcon={
@@ -130,55 +141,61 @@ export class FormDemo extends Component<FormProps, FormState> {
             />
           </FormGroup>
         </Form>
-        <div>
-          <div>
-            <Form>
-              <span id={titleId} hidden>
-                Select a state
-              </span>
-              <Select
-                id={this.props.id}
-                variant={SelectVariant.typeaheadMulti}
-                aria-label="Select a state"
-                onToggle={this.onToggle}
-                onSelect={this.onSelect}
-                onClear={this.clearSelection}
-                selections={selected}
-                isOpen={isOpen}
-                aria-labelledby={titleId}
-                placeholderText="Select a state"
-              >
-                {options.map((option, index) => (
-                  <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-                ))}
-              </Select>
-              <FormSection>
-                <FormGroup
-                  id="formgroup-validated"
-                  label="Validated Age"
-                  type="number"
-                  helperText="Enter age"
-                  helperTextInvalid="Age must be a number"
-                  fieldId="age2"
-                  validated={validated}
-                >
-                  <TextInput
-                    validated={validated}
-                    value={validatedValue}
-                    id="age-validated"
-                    aria-describedby="age-helper-validated"
-                    onChange={this.handleValidatedTextInputChange}
-                  />
-                </FormGroup>
-              </FormSection>
-              <FormSection>
-                <FormGroup hasNoPaddingTop id="formgroup-checkbox" label="Subscribe" fieldId="subscribe">
-                  <Checkbox id="subscribe" label="Mailing list" />
-                </FormGroup>
-              </FormSection>
-            </Form>
-          </div>
-        </div>
+
+        <Divider className="pf-u-my-xl" />
+
+        <Form id="form-demo-2">
+          <FormGroup fieldId="select-state-typeahead">
+            <span id={titleId} hidden>
+              Select a state
+            </span>
+            <Select
+              variant={SelectVariant.typeaheadMulti}
+              aria-label="Select a state"
+              onToggle={this.onToggle}
+              onSelect={this.onSelect}
+              onClear={this.clearSelection}
+              selections={selected}
+              isOpen={isOpen}
+              aria-labelledby={titleId}
+              placeholderText="Select a state"
+            >
+              {options.map((option, index) => (
+                <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              ))}
+            </Select>
+          </FormGroup>
+          <FormSection>
+            <FormGroup
+              id="formgroup-validated"
+              label="Validated Age"
+              type="number"
+              helperText="Enter age"
+              helperTextInvalid="Age must be a number"
+              fieldId="age2"
+              validated={validated}
+            >
+              <TextInput
+                validated={validated}
+                value={validatedValue}
+                id="age-validated"
+                aria-describedby="age-helper-validated"
+                onChange={this.handleValidatedTextInputChange}
+              />
+            </FormGroup>
+          </FormSection>
+          <FormSection>
+            <FormGroup hasNoPaddingTop id="formgroup-checkbox" label="Subscribe" fieldId="subscribe">
+              <Checkbox
+                id="subscribe"
+                name="subscribe"
+                label="Mailing list"
+                isChecked={checkboxChecked}
+                onChange={this.handleCheckboxChange}
+              />
+            </FormGroup>
+          </FormSection>
+        </Form>
       </React.Fragment>
     );
   }
