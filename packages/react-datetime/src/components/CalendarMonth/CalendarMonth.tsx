@@ -69,30 +69,24 @@ export const CalendarMonth = ({
       return prev;
     }, {} as { [key: string]: number });
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [selectedDate, setSelectedDate] = React.useState(dateProp);
-  const selectedRef = React.useRef<HTMLButtonElement>();
-  const [focusSelectedDate, setFocusSelectedDate] = React.useState(true);
+  const [focusedDate, setFocusedDate] = React.useState(dateProp);
+  const focusRef = React.useRef<HTMLButtonElement>();
 
-  useEffect(() => setSelectedDate(dateProp), [dateProp]);
+  useEffect(() => setFocusedDate(dateProp), [dateProp]);
   useEffect(() => {
-    if (focusSelectedDate) {
-      if (selectedRef.current) {
-        selectedRef.current.focus();
-      }
-    } else {
-      setFocusSelectedDate(true);
+    if (focusRef.current) {
+      focusRef.current.focus();
     }
-  }, [selectedDate]);
+  }, [focusedDate]);
 
   const onMonthClick = (toAdd: -1 | 1) => {
-    const newDate = new Date(selectedDate);
+    const newDate = new Date(focusedDate);
     newDate.setMonth(newDate.getMonth() + toAdd);
-    setSelectedDate(newDate);
-    setFocusSelectedDate(false);
+    setFocusedDate(newDate);
   };
 
   const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
-    const newDate = new Date(selectedDate);
+    const newDate = new Date(focusedDate);
     if (ev.key === 'ArrowUp') {
       newDate.setDate(newDate.getDate() - 7);
     } else if (ev.key === 'ArrowRight') {
@@ -102,13 +96,13 @@ export const CalendarMonth = ({
     } else if (ev.key === 'ArrowLeft') {
       newDate.setDate(newDate.getDate() - 1);
     }
-    if (newDate.getTime() !== selectedDate.getTime()) {
-      setSelectedDate(newDate);
+    if (newDate.getTime() !== focusedDate.getTime()) {
+      setFocusedDate(newDate);
     }
   };
 
   const today = new Date();
-  const calendar = buildCalendar(selectedDate.getFullYear(), selectedDate.getMonth(), locale);
+  const calendar = buildCalendar(focusedDate.getFullYear(), focusedDate.getMonth(), locale);
   return (
     <div className={styles.calendarMonth}>
       <div className={styles.calendarMonthHeader}>
@@ -122,21 +116,24 @@ export const CalendarMonth = ({
             isOpen={isSelectOpen}
             onToggle={() => setIsSelectOpen(!isSelectOpen)}
             onSelect={(_ev, longMonth) => {
-              setIsSelectOpen(false);
-              const monthNum = longMonthNames[longMonth as string];
-              const newDate = new Date(selectedDate);
-              newDate.setMonth(monthNum);
-              setSelectedDate(newDate);
-              setFocusSelectedDate(false);
+              // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
+              // to see the SelectOption as a child so it doesn't close the Popover.
+              setTimeout(() => {
+                setIsSelectOpen(false);
+                const monthNum = longMonthNames[longMonth as string];
+                const newDate = new Date(focusedDate);
+                newDate.setMonth(monthNum);
+                setFocusedDate(newDate);
+              }, 0);
             }}
             variant="single"
-            selections={format(selectedDate, monthFormat, { locale })}
+            selections={format(focusedDate, monthFormat, { locale })}
           >
-            {Object.keys(longMonthNames).map(longMonth => (
+            {Object.keys(longMonthNames).map((longMonth, index) => (
               <SelectOption
-                key={longMonth}
+                key={index}
                 value={longMonth}
-                isSelected={longMonth === format(selectedDate, monthFormat, { locale })}
+                isSelected={longMonth === format(focusedDate, monthFormat, { locale })}
               />
             ))}
           </Select>
@@ -145,12 +142,11 @@ export const CalendarMonth = ({
           <TextInput
             aria-label="Select year"
             type="number"
-            value={format(selectedDate, yearFormat, { locale })}
+            value={format(focusedDate, yearFormat, { locale })}
             onChange={year => {
-              const newDate = new Date(selectedDate);
+              const newDate = new Date(focusedDate);
               newDate.setFullYear(+year);
-              setSelectedDate(newDate);
-              setFocusSelectedDate(false);
+              setFocusedDate(newDate);
             }}
           />
         </div>
@@ -165,8 +161,8 @@ export const CalendarMonth = ({
           <tr>
             {calendar[0]
               .map(date => format(date, dayFormat, { locale }))
-              .map(shortName => (
-                <th key={shortName} className={styles.calendarMonthDay} scope="col">
+              .map((shortName, index) => (
+                <th key={index} className={styles.calendarMonthDay} scope="col">
                   {shortName}
                 </th>
               ))}
@@ -176,9 +172,10 @@ export const CalendarMonth = ({
           {calendar.map((week, index) => (
             <tr key={index} className={styles.calendarMonthDatesRow}>
               {week.map((day, index) => {
-                const isAdjacentMonth = day.getMonth() !== selectedDate.getMonth();
+                const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
                 const isToday = isSameDate(day, today);
-                const isSelected = isSameDate(day, selectedDate);
+                const isSelected = isSameDate(day, dateProp);
+                const isFocused = isSameDate(day, focusedDate);
                 const isValid = validators.every(validator => validator(day));
                 return (
                   <td
@@ -188,15 +185,16 @@ export const CalendarMonth = ({
                       isAdjacentMonth && styles.modifiers.adjacentMonth,
                       isToday && styles.modifiers.current,
                       isSelected && styles.modifiers.selected,
+                      isFocused && styles.modifiers.focus,
                       !isValid && styles.modifiers.disabled
                     )}
                   >
                     <button
                       className={styles.calendarMonthDate}
                       onClick={() => onChange(day)}
-                      tabIndex={isSelected ? 0 : -1}
+                      tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
-                      {...(isSelected && { ref: selectedRef })}
+                      {...(isFocused && { ref: focusRef })}
                     >
                       {/* Current design uses this, could custom render anything */}
                       {format(day, buttonFormat)}
