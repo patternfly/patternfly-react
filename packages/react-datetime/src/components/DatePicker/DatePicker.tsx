@@ -159,7 +159,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             date={valueDate}
             onChange={onDateClick}
             locale={locale}
-            dateValidator={date => rangeValidator(date, false)}
+            validators={[date => rangeValidator(date, false)]}
           />
         }
         showClose={false}

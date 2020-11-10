@@ -23,8 +23,8 @@ export interface CalendarProps {
   onChange?: (date: Date) => void;
   /** Specify the locale of the date. */
   locale?: Locale;
-  /** Function that returns if a date is valid and selectable */
-  dateValidator?: (date: Date) => boolean;
+  /** Functions that returns if a date is valid and selectable */
+  validators?: [(date: Date) => boolean];
 }
 
 // Must be numeric given current design
@@ -59,7 +59,7 @@ export const CalendarMonth = ({
   buttonFormat = 'd',
   onChange = () => {},
   locale = Locales.enUS,
-  dateValidator = () => true
+  validators = [() => true]
 }: CalendarProps) => {
   const longMonthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     .map(monthNum => new Date(1990, monthNum))
@@ -179,7 +179,7 @@ export const CalendarMonth = ({
                 const isAdjacentMonth = day.getMonth() !== selectedDate.getMonth();
                 const isToday = isSameDate(day, today);
                 const isSelected = isSameDate(day, selectedDate);
-                const isValid = dateValidator(day);
+                const isValid = validators.every(validator => validator(day));
                 return (
                   <td
                     key={index}
