@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardTitle, CardHeader, CardBody, CardFooter, CardExpandableContent } from '@patternfly/react-core';
 interface CardDemoState {
   selected: string;
+  isExpanded: boolean;
 }
 
 export class CardDemo extends React.Component {
