@@ -134,6 +134,10 @@ export interface PopoverProps {
   id?: string;
   /** Whether to trap focus in the popover */
   withFocusTrap?: boolean;
+  /** Removes fixed-width and allows width to be defined by contents */
+  hasAutoWidth?: boolean;
+  /** Allows content to touch edges of popover container */
+  hasNoPadding?: boolean;
   /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** @deprecated - no longer used */
@@ -173,6 +177,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   boundary,
   tippyProps,
   reference,
+  hasNoPadding = false,
+  hasAutoWidth = false,
   ...rest
 }: PopoverProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -314,7 +320,12 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     <FocusTrap
       active={focusTrapActive}
       focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}
-      className={css(styles.popover, className)}
+      className={css(
+        styles.popover,
+        hasNoPadding && styles.modifiers.noPadding,
+        hasAutoWidth && styles.modifiers.widthAuto,
+        className
+      )}
       role="dialog"
       aria-modal="true"
       aria-label={headerContent ? undefined : ariaLabel}

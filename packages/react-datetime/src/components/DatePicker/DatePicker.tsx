@@ -162,7 +162,6 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             dateValidator={date => rangeValidator(date, false)}
           />
         }
-        minWidth="23.2rem"
         showClose={false}
         isVisible={popoverOpen}
         shouldOpen={() => {
@@ -174,6 +173,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
           return true;
         }}
         withFocusTrap
+        hasNoPadding
+        hasAutoWidth
       >
         <React.Fragment>
           <TextInput
