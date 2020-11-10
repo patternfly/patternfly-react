@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardFooter, CardExpandableContent } from '@patternfly/react-core';
+import { Card, CardTitle, CardHeader, CardBody, CardFooter, CardExpandableContent } from '@patternfly/react-core';
 interface CardDemoState {
   selected: string;
 }
