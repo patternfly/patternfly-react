@@ -634,7 +634,15 @@ class ExpandableCard extends React.Component {
     ];
     return (
       <Card id="card1" isExpanded={this.state.isExpanded}>
-        <CardHeader onExpand={this.onExpand} toggleButtonProps={{ id: 'toggle-button', 'aria-label': 'Toggle button' }}>
+        <CardHeader
+          onExpand={this.onExpand}
+          toggleButtonProps={{
+            id: 'toggle-button',
+            'aria-label': 'Toggle',
+            'aria-labelledby': 'card1',
+            'aria-expanded': this.state.isExpanded
+          }}
+        >
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -745,7 +753,15 @@ class ExpandableIconCard extends React.Component {
     ];
     return (
       <Card id="card-with-image" isExpanded={this.state.isExpanded}>
-        <CardHeader onExpand={this.onExpand} toggleButtonProps={{ id: 'toggle-button', 'aria-label': 'Toggle button' }}>
+        <CardHeader
+          onExpand={this.onExpand}
+          toggleButtonProps={{
+            id: 'toggle-button',
+            'aria-label': 'Toggle',
+            'aria-labelledby': 'card-with-image',
+            'aria-expanded': this.state.isExpanded
+          }}
+        >
           <img src={pfLogoSmall} alt="PatternFly logo" width="27px" />
           <CardActions>
             <Dropdown
