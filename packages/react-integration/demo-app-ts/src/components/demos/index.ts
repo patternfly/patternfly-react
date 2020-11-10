@@ -150,5 +150,6 @@ export * from './ToggleGroupDemo/ToggleGroupDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './TopologyDemo/TopologyDemo';
+export * from './TouchspinDemo/TouchspinDemo';
 export * from './TreeViewDemo/TreeViewDemo';
 export * from './WizardDemo/WizardDemo';
