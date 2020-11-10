@@ -14,15 +14,15 @@ import { DatePicker, Locales } from '@patternfly/react-datetime';
 import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker />
+<DatePicker value="03/05/2020" />
 ```
 
-### Value
+### Helper text
 ```js
 import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker value="03/05/2020" />
+<DatePicker value="03/05/2020" helperText="Select a date." />
 ```
 
 ### Min and max date

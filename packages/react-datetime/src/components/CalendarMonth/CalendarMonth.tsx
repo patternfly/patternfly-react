@@ -5,6 +5,7 @@ import { Select, SelectOption } from '@patternfly/react-core/dist/js/components/
 import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 // https://date-fns.org/v2.16.1/docs/format
 import { format } from 'date-fns';
 import { Locales, Locale } from '../../helpers';
@@ -22,6 +23,8 @@ export interface CalendarProps {
   onChange?: (date: Date) => void;
   /** Specify the locale of the date. */
   locale?: Locale;
+  /** Function that returns if a date is valid and selectable */
+  dateValidator?: (date: Date) => boolean;
 }
 
 // Must be numeric given current design
@@ -55,7 +58,8 @@ export const CalendarMonth = ({
   dayFormat = 'EEEEE',
   buttonFormat = 'd',
   onChange = () => {},
-  locale = Locales.enUS
+  locale = Locales.enUS,
+  dateValidator = () => true
 }: CalendarProps) => {
   const longMonthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     .map(monthNum => new Date(1990, monthNum))
@@ -82,7 +86,7 @@ export const CalendarMonth = ({
 
   const onMonthClick = (toAdd: -1 | 1) => {
     const newDate = new Date(selectedDate);
-    newDate.setFullYear(newDate.getFullYear() + toAdd);
+    newDate.setMonth(newDate.getMonth() + toAdd);
     setSelectedDate(newDate);
     setFocusSelectedDate(false);
   };
@@ -106,14 +110,14 @@ export const CalendarMonth = ({
   const today = new Date();
   const calendar = buildCalendar(selectedDate.getFullYear(), selectedDate.getMonth(), locale);
   return (
-    <div className="pf-c-calendar-month">
-      <div className="pf-c-calendar-month__header">
-        <div className="pf-c-calendar-month__header-nav pf-m-prev-month">
+    <div className={styles.calendarMonth}>
+      <div className={styles.calendarMonthHeader}>
+        <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
           <Button variant="plain" aria-label="Previous month" onClick={() => onMonthClick(-1)}>
             <ArrowLeftIcon aria-hidden={true} />
           </Button>
         </div>
-        <div className="pf-c-calendar-month__header-month">
+        <div className={styles.calendarMonthHeaderMonth}>
           <Select
             isOpen={isSelectOpen}
             onToggle={() => setIsSelectOpen(!isSelectOpen)}
@@ -137,7 +141,7 @@ export const CalendarMonth = ({
             ))}
           </Select>
         </div>
-        <div className="pf-c-calendar-month__header-year">
+        <div className={styles.calendarMonthHeaderYear}>
           <TextInput
             aria-label="Select year"
             type="number"
@@ -150,59 +154,60 @@ export const CalendarMonth = ({
             }}
           />
         </div>
-        <div className="pf-c-calendar-month__header-nav pf-m-next-month">
+        <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
           <Button variant="plain" aria-label="Next month" onClick={() => onMonthClick(1)}>
             <ArrowRightIcon aria-hidden={true} />
           </Button>
         </div>
       </div>
-      <div className="pf-c-calendar-month__body">
-        <table className="pf-c-calendar-month__grid">
-          <thead className="pf-c-calendar-month__grid-head">
-            <tr className="pf-c-calendar-month__grid-row">
-              {calendar[0]
-                .map(date => format(date, dayFormat, { locale }))
-                .map(shortName => (
-                  <th key={shortName} className="pf-c-calendar-month__grid-cell" scope="col">
-                    {shortName}
-                  </th>
-                ))}
-            </tr>
-          </thead>
-          <tbody className="pf-c-calendar-month__grid-body" onKeyDown={onKeyDown}>
-            {calendar.map((week, index) => (
-              <tr key={index} className="pf-c-calendar-month__grid-row">
-                {week.map((day, index) => {
-                  const isAdjacentMonth = day.getMonth() !== today.getMonth();
-                  const isToday = isSameDate(day, today);
-                  const isSelected = isSameDate(day, selectedDate);
-                  return (
-                    <td
-                      key={index}
-                      className={css(
-                        'pf-c-calendar-month__grid-cell',
-                        isAdjacentMonth && 'pf-m-adjacent-month',
-                        isToday && 'pf-m-current',
-                        isSelected && 'pf-m-selected'
-                      )}
+      <table className={styles.calendarMonthCalendar}>
+        <thead className={styles.calendarMonthDays}>
+          <tr>
+            {calendar[0]
+              .map(date => format(date, dayFormat, { locale }))
+              .map(shortName => (
+                <th key={shortName} className={styles.calendarMonthDay} scope="col">
+                  {shortName}
+                </th>
+              ))}
+          </tr>
+        </thead>
+        <tbody onKeyDown={onKeyDown}>
+          {calendar.map((week, index) => (
+            <tr key={index} className={styles.calendarMonthDatesRow}>
+              {week.map((day, index) => {
+                const isAdjacentMonth = day.getMonth() !== selectedDate.getMonth();
+                const isToday = isSameDate(day, today);
+                const isSelected = isSameDate(day, selectedDate);
+                const isValid = dateValidator(day);
+                return (
+                  <td
+                    key={index}
+                    className={css(
+                      styles.calendarMonthDatesCell,
+                      isAdjacentMonth && styles.modifiers.adjacentMonth,
+                      isToday && styles.modifiers.current,
+                      isSelected && styles.modifiers.selected,
+                      !isValid && styles.modifiers.disabled
+                    )}
+                  >
+                    <button
+                      className={styles.calendarMonthDate}
+                      onClick={() => onChange(day)}
+                      tabIndex={isSelected ? 0 : -1}
+                      disabled={!isValid}
+                      {...(isSelected && { ref: selectedRef })}
                     >
-                      <button
-                        className="pf-c-calendar-month__date"
-                        onClick={() => onChange(day)}
-                        tabIndex={isSelected ? 0 : -1}
-                        {...(isSelected && { ref: selectedRef })}
-                      >
-                        {/* Current design uses this, could custom render anything */}
-                        {format(day, buttonFormat)}
-                      </button>
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                      {/* Current design uses this, could custom render anything */}
+                      {format(day, buttonFormat)}
+                    </button>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

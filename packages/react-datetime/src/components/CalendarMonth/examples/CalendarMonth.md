@@ -1,31 +1,23 @@
 ---
 id: Calendar month
 section: components
-# cssPrefix: pf-c-calendar-month
-propComponents: ['CalendarMonth', 'Locales']
+cssPrefix: pf-c-calendar-month
+propComponents: ['CalendarMonth']
 beta: true
 ---
 
 import { CalendarMonth } from '@patternfly/react-datetime';
 
 ## Examples
-### Basic
-```js
-import React from 'react';
-import { CalendarMonth } from '@patternfly/react-datetime';
-
-BasicCalendarMonth = (
-  <CalendarMonth onChange={newDate => console.log('Clicked', newDate)} />
-);
-```
-
-### Selectable
+### Date selected
 ```js
 import React from 'react';
 import { CalendarMonth } from '@patternfly/react-datetime';
 
 SelectableCalendarMonth = () => {
-  const [date, setDate] = React.useState(new Date());
+  const nextWeek = new Date();
+  nextWeek.setDate(nextWeek.getDate() + 7);
+  const [date, setDate] = React.useState(nextWeek);
   
   return (
     <React.Fragment>
