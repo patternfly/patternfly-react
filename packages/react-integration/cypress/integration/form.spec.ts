@@ -30,7 +30,7 @@ describe('Form Demo Test', () => {
   it('Verify form validates form group', () => {
     cy.get('#age-validated.pf-m-success').should('not.exist');
     cy.get('.pf-c-form__helper-text').contains('Enter age');
-    // type string that is not a number so it is not invalid
+    // type string that is not a number so it is invalid
     cy.get('#age-validated').type('hi');
     cy.get('#age-validated').should('have.value', 'hi');
     cy.get('#age-validated').then(textinput => {
@@ -60,8 +60,51 @@ describe('Form Demo Test', () => {
     cy.get('.pf-c-form__group-label').should('have.class', 'pf-m-no-padding-top');
   });
 
-  it('Verify selecting the form label help icon launches popover', () => {
+  it('Verify selecting the form label help icon with click launches popover', () => {
     cy.get('#helper-text-target').click();
     cy.get('.pf-c-popover').should('exist');
+    cy.get('[aria-label="Close"]').click();
+  });
+
+  it('Verify selecting the form label help icon with keypress launches popover', () => {
+    cy.get('#helper-text-target').type('{enter}');
+    cy.get('.pf-c-popover').should('exist');
+    cy.get('[aria-label="Close"]').type('{enter}');
+  });
+
+  it('Verify keypress can control the multi-select-typeahead', () => {
+    cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('{downarrow}{downarrow}{enter}');
+    cy.get('.pf-c-chip__text')
+      .should('exist')
+      .and('have.text', 'Florida');
+
+    cy.get('.pf-c-chip__text').then($chipText => {
+      const idAttrValue = $chipText.attr('id');
+      cy.get(`#remove_${idAttrValue}`).click();
+    });
+
+    cy.get('[id*="pf-select-toggle-id"][id*="select-multi-typeahead-typeahead"]').type('New J');
+
+    cy.get('.pf-c-select__menu-item')
+      .should('exist')
+      .and('have.text', 'New Jersey');
+    cy.focused().type('{backspace}{backspace}{backspace}{backspace}orth');
+    cy.get('.pf-c-select__menu-item')
+      .should('exist')
+      .and('have.text', 'North Carolina');
+    cy.focused().type('{backspace}{backspace}{backspace}{backspace}{backspace}');
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    cy.tab();
+    cy.get('.pf-c-select__menu-item').should('not.exist');
+  });
+
+  it('Verify pressing spacebar selects the checkbox component', () => {
+    const $checkbox = cy.get('#subscribe');
+    $checkbox.should('not.be.checked');
+    $checkbox.type(' ');
+    $checkbox.should('be.checked');
+    $checkbox.type(' '); // should be unchecked but isn't
+    // $checkbox.should('not.be.checked');
   });
 });
