@@ -39,11 +39,11 @@ export interface TableProps extends OUIAProps {
   /** Additional classes added to the Table  */
   className?: string;
   /** Style variant for the Table  */
-  variant?: 'compact' | 'compactBorderless' | 'compactExpandable';
+  variant?: 'compact';
   /**
    * Render borders
-   *
-   * @deprecated Borders can only be removed for the compact table, set variant="compactBorderless" instead
+   * Borders can only currently be disabled if the variant is set to 'compact'
+   * https://github.com/patternfly/patternfly/issues/3650
    */
   borders?: boolean;
   /** Specifies the grid breakpoints  */
@@ -203,17 +203,6 @@ export class Table extends React.Component<TableProps, {}> {
       firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
     });
 
-    const getVariant = () => {
-      if (variant === 'compact') {
-        if (borders === false) {
-          return 'compactBorderless';
-        } else if (onCollapse || onExpand) {
-          return 'compactExpandable';
-        }
-      }
-      return variant;
-    };
-
     const table = (
       <TableContext.Provider
         value={{
@@ -238,7 +227,8 @@ export class Table extends React.Component<TableProps, {}> {
           }}
           columns={headerData}
           role={role}
-          variant={getVariant()}
+          variant={variant}
+          borders={borders}
           className={className}
         >
           {caption && <caption>{caption}</caption>}

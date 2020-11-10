@@ -125,6 +125,7 @@ exports[`Actions virtualized table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
+    borders={true}
     className=""
     columns={
       Array [
@@ -417,6 +418,7 @@ exports[`Actions virtualized table 1`] = `
   >
     <TableComposable
       aria-label="Aria labeled"
+      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
@@ -426,6 +428,7 @@ exports[`Actions virtualized table 1`] = `
     >
       <TableComposableBase
         aria-label="Aria labeled"
+        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
@@ -1493,6 +1496,7 @@ exports[`Selectable virtualized table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
+    borders={true}
     className=""
     columns={
       Array [
@@ -1785,6 +1789,7 @@ exports[`Selectable virtualized table 1`] = `
   >
     <TableComposable
       aria-label="Aria labeled"
+      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
@@ -1794,6 +1799,7 @@ exports[`Selectable virtualized table 1`] = `
     >
       <TableComposableBase
         aria-label="Aria labeled"
+        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
@@ -2910,6 +2916,7 @@ exports[`Simple Actions table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
+    borders={true}
     className=""
     columns={
       Array [
@@ -3316,6 +3323,7 @@ exports[`Simple Actions table 1`] = `
   >
     <TableComposable
       aria-label="Aria labeled"
+      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
@@ -3325,6 +3333,7 @@ exports[`Simple Actions table 1`] = `
     >
       <TableComposableBase
         aria-label="Aria labeled"
+        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
@@ -4616,6 +4625,7 @@ exports[`Simple virtualized table aria-label 1`] = `
 >
   <Provider
     aria-label="Virtual Table Test"
+    borders={true}
     className=""
     columns={
       Array [
@@ -4861,6 +4871,7 @@ exports[`Simple virtualized table aria-label 1`] = `
   >
     <TableComposable
       aria-label="Virtual Table Test"
+      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
@@ -4870,6 +4881,7 @@ exports[`Simple virtualized table aria-label 1`] = `
     >
       <TableComposableBase
         aria-label="Virtual Table Test"
+        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
@@ -5746,6 +5758,7 @@ exports[`Simple virtualized table className 1`] = `
 >
   <Provider
     aria-label="Virtual Table Test"
+    borders={true}
     className=""
     columns={
       Array [
@@ -5991,6 +6004,7 @@ exports[`Simple virtualized table className 1`] = `
   >
     <TableComposable
       aria-label="Virtual Table Test"
+      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
@@ -6000,6 +6014,7 @@ exports[`Simple virtualized table className 1`] = `
     >
       <TableComposableBase
         aria-label="Virtual Table Test"
+        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
@@ -6881,6 +6896,7 @@ exports[`Sortable Virtualized Table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
+    borders={true}
     className=""
     columns={
       Array [
@@ -7127,6 +7143,7 @@ exports[`Sortable Virtualized Table 1`] = `
   >
     <TableComposable
       aria-label="Aria labeled"
+      borders={true}
       className=""
       gridBreakPoint="grid-md"
       isStickyHeader={false}
@@ -7136,6 +7153,7 @@ exports[`Sortable Virtualized Table 1`] = `
     >
       <TableComposableBase
         aria-label="Aria labeled"
+        borders={true}
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}

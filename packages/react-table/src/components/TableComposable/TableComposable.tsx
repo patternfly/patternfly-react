@@ -35,11 +35,15 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   className?: string;
   /**
    * Style variant for the Table
-   * compact: Modifies to remove borders between rows
-   * compactBorderless: Compact and removes the border lines
-   * compactExpandable: Compact and indicates that the table has expandable rows
+   * compact: Reduces spacing and makes the table more compact
    */
-  variant?: TableVariant | 'compact' | 'compactBorderless' | 'compactExpandable';
+  variant?: TableVariant | 'compact';
+  /**
+   * Render borders
+   * Borders can only currently be disabled if the variant is set to 'compact'
+   * https://github.com/patternfly/patternfly/issues/3650
+   */
+  borders?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   /** A valid WAI-ARIA role to be applied to the table element */
@@ -54,6 +58,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   children,
   className,
   variant,
+  borders = true,
   isStickyHeader = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
@@ -64,11 +69,6 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ...props
 }: TableComposableProps) => {
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
-  const variantModifiers = {
-    compact: styles.modifiers.compact,
-    compactBorderless: css(styles.modifiers.compact, styles.modifiers.noBorderRows),
-    compactExpandable: css(styles.modifiers.compact, styles.modifiers.expandable)
-  };
   return (
     <table
       aria-label={ariaLabel}
@@ -79,7 +79,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         stylesGrid.modifiers?.[
           toCamel(gridBreakPoint || '').replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
         ],
-        variantModifiers?.[variant] || '',
+        styles.modifiers[variant],
+        !borders && styles.modifiers.noBorderRows,
         isStickyHeader && styles.modifiers.stickyHeader
       )}
       ref={innerRef}

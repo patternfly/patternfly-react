@@ -42,30 +42,67 @@ The `Table` component is a configuration based component that takes a less decla
 
 ```js
 import React from 'react';
-
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'],
-      rows: [
-        ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
-        ['Repository two', 'Branch two', 'PR two', 'Workspace two', 'Commit two'],
-        ['Repository three', 'Branch three', 'PR three', 'Workspace three', 'Commit three']
-      ]
+      choice: 'default'
     };
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
+
+  handleItemClick(isSelected, event) {
+    this.setState({
+      choice: event.currentTarget.id
+    });
   }
 
   render() {
-    const { columns, rows } = this.state;
+    const { choice } = this.state;
+
+    const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+    const rows = [
+      ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
+      ['Repository two', 'Branch two', 'PR two', 'Workspace two', 'Commit two'],
+      ['Repository three', 'Branch three', 'PR three', 'Workspace three', 'Commit three']
+    ];
 
     return (
-      <Table aria-label="Simple table" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <React.Fragment>
+        <ToggleGroup aria-label="Default with single selectable">
+          <ToggleGroupItem
+            text="Default"
+            buttonId="default"
+            isSelected={choice === 'default'}
+            onChange={this.handleItemClick}
+          />
+          <ToggleGroupItem
+            text="Compact"
+            buttonId="compact"
+            isSelected={choice === 'compact'}
+            onChange={this.handleItemClick}
+          />
+          <ToggleGroupItem
+            text="Compact without borders"
+            buttonId="compactBorderless"
+            isSelected={choice === 'compactBorderless'}
+            onChange={this.handleItemClick}
+          />
+        </ToggleGroup>
+        <Table
+          aria-label="Simple Table"
+          variant={choice !== 'default' ? 'compact' : null}
+          borders={choice !== 'compactBorderless'}
+          cells={columns}
+          rows={rows}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+      </React.Fragment>
     );
   }
 }
@@ -711,70 +748,7 @@ class ActionsTable extends React.Component {
 }
 ```
 
-### Compact
-
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-
-class CompactTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      variant: 'compact',
-      columns: [
-        { title: 'Header cell' },
-        'Branches',
-        { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
-        { title: '' /* deliberately empty */, dataLabel: 'Label for mobile view' }
-      ],
-      rows: [
-        ['one', 'two', 'three', 'four'],
-        ['one', 'two', 'three', 'four'],
-        ['one', 'two', 'three', 'four']
-      ]
-    };
-    this.handleItemClick = this.handleItemClick.bind(this);
-  }
-
-  handleItemClick(isSelected, event) {
-    const variant = event.currentTarget.id;
-    this.setState({
-      variant
-    });
-  }
-
-  render() {
-    const { columns, rows, variant } = this.state;
-
-    return (
-      <React.Fragment>
-        <ToggleGroup aria-label="Default with single selectable">
-          <ToggleGroupItem
-            text="Compact"
-            buttonId="compact"
-            isSelected={variant === 'compact'}
-            onChange={this.handleItemClick}
-          />
-          <ToggleGroupItem
-            text="Compact borderless"
-            buttonId="compactBorderless"
-            isSelected={variant === 'compactBorderless'}
-            onChange={this.handleItemClick}
-          />
-        </ToggleGroup>
-        <Table aria-label="Compact Table" variant={variant} cells={columns} rows={rows}>
-          <TableHeader />
-          <TableBody />
-        </Table>
-      </React.Fragment>
-    );
-  }
-}
-```
-
-### Expandable (compact)
+### Expandable
 
 ```js
 import React from 'react';
@@ -1848,10 +1822,12 @@ Some general notes:
 
 - Provide `dataLabel` prop to the `Td` components so that in mobile view the cell has a label to provide context.
 - If you want a table caption, simply place a `<Caption>My caption</Caption>` as the first child within a `TableComposable`.
+- You can set the `TableComposable` variant to `compact`
 
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption } from '@patternfly/react-table';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 ComposableTableBasic = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
@@ -1860,28 +1836,59 @@ ComposableTableBasic = () => {
     ['one - 2', null, null, 'four - 2', 'five - 2'],
     ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
   ];
+  const [choice, setChoice] = React.useState('default');
+  const handleItemClick = (isSelected, event) => {
+    const id = event.currentTarget.id;
+    setChoice(id);
+  };
   return (
-    <TableComposable aria-label="Simple table using composable components">
-      <Caption>Simple table using composable components</Caption>
-      <Thead>
-        <Tr>
-          {columns.map((column, columnIndex) => (
-            <Th key={columnIndex}>{column}</Th>
-          ))}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                {cell}
-              </Td>
+    <React.Fragment>
+      <ToggleGroup aria-label="Default with single selectable">
+        <ToggleGroupItem
+          text="Default"
+          buttonId="default"
+          isSelected={choice === 'default'}
+          onChange={handleItemClick}
+        />
+        <ToggleGroupItem
+          text="Compact"
+          buttonId="compact"
+          isSelected={choice === 'compact'}
+          onChange={handleItemClick}
+        />
+        <ToggleGroupItem
+          text="Compact borderless"
+          buttonId="compactBorderless"
+          isSelected={choice === 'compactBorderless'}
+          onChange={handleItemClick}
+        />
+      </ToggleGroup>
+      <TableComposable
+        aria-label="Simple table"
+        variant={choice !== 'default' ? 'compact' : null}
+        borders={choice !== 'compactBorderless'}
+      >
+        <Caption>Simple table using composable components</Caption>
+        <Thead>
+          <Tr>
+            {columns.map((column, columnIndex) => (
+              <Th key={columnIndex}>{column}</Th>
             ))}
           </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
+        </Thead>
+        <Tbody>
+          {rows.map((row, rowIndex) => (
+            <Tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                  {cell}
+                </Td>
+              ))}
+            </Tr>
+          ))}
+        </Tbody>
+      </TableComposable>
+    </React.Fragment>
   );
 };
 ```
@@ -2319,81 +2326,17 @@ ComposableTableActions = () => {
 };
 ```
 
-### Composable: Compact, compact borderless
-
-You can set the `TableComposable` variant to `compact` or `compactBorderless`.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-
-ComposableTableCompact = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five'],
-    ['4', '2', 'b', 'four', 'five'],
-    ['5', '2', 'b', 'four', 'five']
-  ];
-  const [variant, setVariant] = React.useState('compact');
-  const handleItemClick = (isSelected, event) => {
-    const id = event.currentTarget.id;
-    setVariant(id);
-  };
-  return (
-    <React.Fragment>
-      <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem
-          text="Compact"
-          buttonId="compact"
-          isSelected={variant === 'compact'}
-          onChange={handleItemClick}
-        />
-        <ToggleGroupItem
-          text="Compact borderless"
-          buttonId="compactBorderless"
-          isSelected={variant === 'compactBorderless'}
-          onChange={handleItemClick}
-        />
-      </ToggleGroup>
-      <TableComposable aria-label="Compact Table" variant={variant}>
-        <Thead>
-          <Tr>
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex}>{column}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {rows.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              ))}
-            </Tr>
-          ))}
-        </Tbody>
-      </TableComposable>
-    </React.Fragment>
-  );
-};
-```
-
 ### Composable: Expandable
 
 This example demonstrates having expandable rows.
 
 - Each parent/child row pair is enclosed in a `Tbody` component.
-- You can make the table more compact by setting the `TableComposable` variant to `compactExpandable`.
+- You can make the table more compact by setting the `TableComposable` variant to `compact`.
 
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { Checkbox } from '@patternfly/react-core';
 
 ComposableTableExpandable = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
@@ -2438,11 +2381,10 @@ ComposableTableExpandable = () => {
   const [expanded, setExpanded] = React.useState(
     Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, Boolean(v.child)]))
   );
-  const [variant, setVariant] = React.useState(null);
-  const handleItemClick = (isSelected, event) => {
-    const id = event.currentTarget.id;
-    setVariant(id === 'default' ? null : id);
-  };
+  const [compact, setCompact] = React.useState(true);
+  const toggleCompact = (checked) => {
+    setCompact(checked);
+  }
   const handleExpansionToggle = (event, pairIndex) => {
     setExpanded({
       ...expanded,
@@ -2452,21 +2394,15 @@ ComposableTableExpandable = () => {
   let rowIndex = -1;
   return (
     <React.Fragment>
-      <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem
-          text="Default expandable"
-          buttonId="default"
-          isSelected={variant === null}
-          onChange={handleItemClick}
-        />
-        <ToggleGroupItem
-          text="Compact expandable"
-          buttonId="compactExpandable"
-          isSelected={variant === 'compactExpandable'}
-          onChange={handleItemClick}
-        />
-      </ToggleGroup>
-      <TableComposable aria-label="Expandable Table" variant={variant}>
+      <Checkbox
+        label="Compact"
+        isChecked={compact}
+        onChange={toggleCompact}
+        aria-label="toggle compact variation"
+        id="toggle-compact"
+        name="toggle-compact"
+      />
+      <TableComposable aria-label="Expandable Table" variant={compact ? 'compact' : null}>
         <Thead>
           <Tr>
             <Th />
@@ -2486,9 +2422,9 @@ ComposableTableExpandable = () => {
                 expand={
                   pair.child
                     ? {
-                        rowIndex,
+                        rowIndex: pairIndex,
                         isExpanded: expanded[pairIndex],
-                        onToggle: event => handleExpansionToggle(event, pairIndex)
+                        onToggle: handleExpansionToggle
                       }
                     : null
                 }
