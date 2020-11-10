@@ -3,7 +3,7 @@ import { Button } from '@patternfly/react-core/dist/js/components/Button';
 import PencilAltIcon from '@patternfly/react-icons/dist/js/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import { OnRowEdit } from './Table';
+import { OnRowEdit } from './TableTypes';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 
