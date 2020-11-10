@@ -31,6 +31,7 @@ Array [
   >
     <div
       class="pf-c-console__xterm"
+      role="list"
     />
   </div>,
 ]

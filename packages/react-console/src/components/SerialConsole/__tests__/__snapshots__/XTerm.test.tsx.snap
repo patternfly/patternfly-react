@@ -3,5 +3,6 @@
 exports[`Render empty XTerm component 1`] = `
 <div
   class="pf-c-console__xterm"
+  role="list"
 />
 `;

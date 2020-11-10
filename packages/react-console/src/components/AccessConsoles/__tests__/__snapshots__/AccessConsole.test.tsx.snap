@@ -9,7 +9,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
       className="pf-c-console__actions"
     >
       <Select
-        aria-label=""
+        aria-label="Select console type"
         aria-labelledby=""
         chipGroupComponent={null}
         className=""
@@ -360,7 +360,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
     className="pf-c-console__actions"
   >
     <Select
-      aria-label=""
+      aria-label="Select console type"
       aria-labelledby=""
       chipGroupComponent={null}
       className=""

@@ -100,6 +100,7 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
       {React.Children.toArray(children).length > 1 && (
         <div className="pf-c-console__actions">
           <Select
+            aria-label={textSelectConsoleType}
             toggleId="pf-c-console__type-selector"
             variant={SelectVariant.single}
             onSelect={(_, selection, isPlaceholder) => {
