@@ -16,6 +16,7 @@ import {
 import accessibilityOverscanIndicesGetter from './accessibilityOverscanIndicesGetter';
 import { VirtualGrid, VirtualGridProps } from './VirtualGrid';
 import { css } from '@patternfly/react-styles';
+import { TableComposable, Tbody } from "@patternfly/react-table";
 
 /**
  * It is inefficient to create and manage a large list of DOM elements within a scrolling container
@@ -234,7 +235,6 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
         aria-label={null}
         aria-readonly={null}
         tabIndex={null}
-        role="presentation"
         autoContainerWidth
         cellRenderer={this._cellRenderer}
         className={classNames}
@@ -245,8 +245,8 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
         onSectionRendered={this._onSectionRendered}
         ref={this._setRef}
         scrollToRow={scrollToIndex}
-        scrollContainerComponent="table"
-        innerScrollContainerComponent="tbody"
+        scrollContainerComponent={TableComposable}
+        innerScrollContainerComponent={Tbody}
       />
     );
   }
