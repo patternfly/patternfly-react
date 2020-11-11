@@ -55,14 +55,14 @@ exports[`DualListSelector basic 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of available options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of available options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           >
             <DualListSelectorListItem
               index={0}
@@ -70,7 +70,6 @@ exports[`DualListSelector basic 1`] = `
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -102,7 +101,6 @@ exports[`DualListSelector basic 1`] = `
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -133,15 +131,18 @@ exports[`DualListSelector basic 1`] = `
       </div>
     </DualListSelectorPane>
     <div
+      aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
       role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add all"
+          isDisabled={false}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
@@ -188,21 +189,23 @@ exports[`DualListSelector basic 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-2"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -237,21 +240,23 @@ exports[`DualListSelector basic 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="remove selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="remove selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-3"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -286,21 +291,23 @@ exports[`DualListSelector basic 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Remove all"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-4"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -369,14 +376,14 @@ exports[`DualListSelector basic 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of chosen options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of chosen options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           />
         </div>
       </div>
@@ -471,14 +478,14 @@ exports[`DualListSelector with actions 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of available options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of available options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           >
             <DualListSelectorListItem
               index={0}
@@ -486,7 +493,6 @@ exports[`DualListSelector with actions 1`] = `
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -518,7 +524,6 @@ exports[`DualListSelector with actions 1`] = `
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -549,15 +554,18 @@ exports[`DualListSelector with actions 1`] = `
       </div>
     </DualListSelectorPane>
     <div
+      aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
       role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add all"
+          isDisabled={false}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
@@ -604,21 +612,23 @@ exports[`DualListSelector with actions 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-14"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -653,21 +663,23 @@ exports[`DualListSelector with actions 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="remove selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="remove selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-15"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -702,9 +714,11 @@ exports[`DualListSelector with actions 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Remove all"
+          isDisabled={false}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
@@ -806,14 +820,14 @@ exports[`DualListSelector with actions 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of chosen options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of chosen options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           >
             <DualListSelectorListItem
               index={0}
@@ -821,7 +835,6 @@ exports[`DualListSelector with actions 1`] = `
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -853,7 +866,6 @@ exports[`DualListSelector with actions 1`] = `
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -944,14 +956,14 @@ exports[`DualListSelector with custom status 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of available options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of available options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           >
             <DualListSelectorListItem
               index={0}
@@ -959,7 +971,6 @@ exports[`DualListSelector with custom status 1`] = `
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -991,7 +1002,6 @@ exports[`DualListSelector with custom status 1`] = `
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -1022,15 +1032,18 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
     </DualListSelectorPane>
     <div
+      aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
       role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add all"
+          isDisabled={false}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
@@ -1077,21 +1090,23 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-10"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -1126,21 +1141,23 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="remove selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="remove selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-11"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -1175,21 +1192,23 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Remove all"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-12"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -1258,14 +1277,14 @@ exports[`DualListSelector with custom status 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of chosen options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of chosen options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           />
         </div>
       </div>
@@ -1327,6 +1346,7 @@ exports[`DualListSelector with search inputs 1`] = `
             className="pf-c-dual-list-selector__tools-filter"
           >
             <input
+              aria-label="Available search input"
               className="pf-c-form-control pf-m-search"
               onChange={[Function]}
               type="search"
@@ -1343,14 +1363,14 @@ exports[`DualListSelector with search inputs 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of available options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of available options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           >
             <DualListSelectorListItem
               index={0}
@@ -1358,7 +1378,6 @@ exports[`DualListSelector with search inputs 1`] = `
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -1390,7 +1409,6 @@ exports[`DualListSelector with search inputs 1`] = `
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
-              role="option"
               sendRef={[Function]}
             >
               <li
@@ -1421,15 +1439,18 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
     </DualListSelectorPane>
     <div
+      aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
       role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add all"
+          isDisabled={false}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
@@ -1476,21 +1497,23 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Add selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-6"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -1525,21 +1548,23 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="remove selected"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="remove selected"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-7"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -1574,21 +1599,23 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
+        role="option"
       >
         <Button
           aria-label="Remove all"
+          isDisabled={true}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <button
-            aria-disabled={false}
+            aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain"
+            className="pf-c-button pf-m-plain pf-m-disabled"
             data-ouia-component-id="OUIA-Generated-Button-plain-8"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role={null}
             tabIndex={-1}
@@ -1654,6 +1681,7 @@ exports[`DualListSelector with search inputs 1`] = `
             className="pf-c-dual-list-selector__tools-filter"
           >
             <input
+              aria-label="Chosen search input"
               className="pf-c-form-control pf-m-search"
               onChange={[Function]}
               type="search"
@@ -1670,14 +1698,14 @@ exports[`DualListSelector with search inputs 1`] = `
           </div>
         </div>
         <div
-          aria-label="List of chosen options"
-          aria-multiselectable="true"
           className="pf-c-dual-list-selector__menu"
-          role="listbox"
           tabIndex={0}
         >
           <ul
+            aria-label="List of chosen options"
+            aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
+            role="listbox"
           />
         </div>
       </div>

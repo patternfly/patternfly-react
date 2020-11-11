@@ -141,6 +141,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                   className={css(formStyles.formControl, formStyles.modifiers.search)}
                   type="search"
                   onChange={this.onChange}
+                  aria-label={`${isChosen ? 'Chosen' : 'Available'} search input`}
                 />
               </div>
             )}
@@ -153,15 +154,13 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
           </div>
         )}
         {options && (
-          <div
-            className={css(styles.dualListSelectorMenu)}
-            ref={this.menuEl}
-            tabIndex={0}
-            role="listbox"
-            aria-multiselectable="true"
-            aria-label={`List of ${isChosen ? 'chosen' : 'available'} options`}
-          >
-            <ul className={css(styles.dualListSelectorList)}>
+          <div className={css(styles.dualListSelectorMenu)} ref={this.menuEl} tabIndex={0}>
+            <ul
+              className={css(styles.dualListSelectorList)}
+              role="listbox"
+              aria-multiselectable="true"
+              aria-label={`List of ${isChosen ? 'chosen' : 'available'} options`}
+            >
               {options.map((option, index) => {
                 if (this.displayOption(option, input)) {
                   return (
@@ -172,7 +171,6 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                       isChosen={isChosen}
                       index={index}
                       sendRef={this.sendRef}
-                      role="option"
                     >
                       {option}
                     </DualListSelectorListItem>

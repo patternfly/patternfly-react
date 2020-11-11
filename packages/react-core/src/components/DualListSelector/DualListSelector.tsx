@@ -244,29 +244,54 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           onOptionSelect={this.onOptionSelect}
           actions={availableOptionsActions}
         />
-        <div className={css(styles.dualListSelectorControls)} tabIndex={0} ref={this.controlsEl} role="listbox">
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button variant={ButtonVariant.plain} onClick={this.addAll} aria-label="Add all" tabIndex={-1}>
+        <div
+          className={css(styles.dualListSelectorControls)}
+          tabIndex={0}
+          ref={this.controlsEl}
+          role="listbox"
+          aria-label="Selector controls"
+        >
+          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+            <Button
+              isDisabled={availableOptions.length === 0}
+              variant={ButtonVariant.plain}
+              onClick={this.addAll}
+              aria-label="Add all"
+              tabIndex={-1}
+            >
               <AngleDoubleRightIcon />
             </Button>
           </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button variant={ButtonVariant.plain} onClick={this.addSelected} aria-label="Add selected" tabIndex={-1}>
+          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+            <Button
+              isDisabled={availableOptionsSelected.length === 0}
+              variant={ButtonVariant.plain}
+              onClick={this.addSelected}
+              aria-label="Add selected"
+              tabIndex={-1}
+            >
               <AngleRightIcon />
             </Button>
           </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
+          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
             <Button
               variant={ButtonVariant.plain}
               onClick={this.removeSelected}
               aria-label="remove selected"
               tabIndex={-1}
+              isDisabled={chosenOptionsSelected.length === 0}
             >
               <AngleLeftIcon />
             </Button>
           </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button variant={ButtonVariant.plain} onClick={this.removeAll} aria-label="Remove all" tabIndex={-1}>
+          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+            <Button
+              isDisabled={chosenOptions.length === 0}
+              variant={ButtonVariant.plain}
+              onClick={this.removeAll}
+              aria-label="Remove all"
+              tabIndex={-1}
+            >
               <AngleDoubleLeftIcon />
             </Button>
           </div>
