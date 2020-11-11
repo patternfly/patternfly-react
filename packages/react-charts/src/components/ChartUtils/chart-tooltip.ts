@@ -49,7 +49,7 @@ export const getCursorTooltipCenterOffset = ({
   offsetCursorDimensionY = false,
   theme
 }: ChartCursorTooltipCenterOffsetInterface) => {
-  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
+  const pointerLength = theme && theme.tooltip ? Number(theme.tooltip.pointerLength) : 10;
   const offsetX = ({ center, flyoutWidth, width }: any) => {
     const offset = flyoutWidth / 2 + pointerLength;
     return width > center.x + flyoutWidth + pointerLength ? offset : -offset;

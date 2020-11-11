@@ -113,8 +113,10 @@ export const getDonutThresholdStaticTheme = (
   invert?: boolean
 ): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
-  if (invert) {
-    staticTheme.pie.colorScale = staticTheme.pie.colorScale.reverse();
+  if (staticTheme.pie.colorScale instanceof Array) {
+    if (invert) {
+      staticTheme.pie.colorScale = staticTheme.pie.colorScale.reverse();
+    }
   }
   return getCustomTheme(themeColor, themeVariant, staticTheme);
 };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PaddingProps, Line, StringOrNumberOrCallback } from 'victory-core';
+import { PaddingProps, Line, StringOrNumberOrCallback, VictoryLabelStyleObject } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -137,10 +137,14 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   };
 
   const labelPadding = {
-    bottom: getPaddingForSide('bottom', padding, Number(theme.legend.style.labels.padding)),
-    left: getPaddingForSide('left', padding, Number(theme.legend.style.labels.padding)),
-    right: getPaddingForSide('right', padding, Number(theme.legend.style.labels.padding)),
-    top: getPaddingForSide('top', padding, Number(theme.legend.style.labels.padding))
+    bottom: getPaddingForSide(
+      'bottom',
+      padding,
+      Number((theme.legend.style.labels as VictoryLabelStyleObject).padding)
+    ),
+    left: getPaddingForSide('left', padding, Number((theme.legend.style.labels as VictoryLabelStyleObject).padding)),
+    right: getPaddingForSide('right', padding, Number((theme.legend.style.labels as VictoryLabelStyleObject).padding)),
+    top: getPaddingForSide('top', padding, Number((theme.legend.style.labels as VictoryLabelStyleObject).padding))
   };
 
   // Horizontal divider to render under the group title
