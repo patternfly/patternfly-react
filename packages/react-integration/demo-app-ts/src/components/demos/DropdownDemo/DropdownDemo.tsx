@@ -20,6 +20,7 @@ interface DropdownState {
   isActionOpen: boolean;
   isCogOpen: boolean;
   isMenuOnDocumentBodyOpen: boolean;
+  counter: number;
 }
 
 export class DropdownDemo extends React.Component<{}, DropdownState> {
@@ -38,6 +39,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
   onMenuDocumentBodyToggle: (isOpen: boolean) => void;
   onMenuDocumentBodySelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onMenuDocumentBodyFocus: () => void;
+  incrementCounter: () => void;
 
   constructor(props: any) {
     super(props);
@@ -45,7 +47,8 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       isOpen: false,
       isActionOpen: false,
       isCogOpen: false,
-      isMenuOnDocumentBodyOpen: false
+      isMenuOnDocumentBodyOpen: false,
+      counter: 0
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -132,6 +135,11 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         element.focus();
       }
     };
+    this.incrementCounter = () => {
+      this.setState(prevState => ({
+        counter: prevState.counter + 1
+      }));
+    };
   }
 
   renderDropdown() {
@@ -144,11 +152,19 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       <DropdownItem key="action" component="button">
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      <DropdownItem key="disabled link" isDisabled href="www.google.com" id="disabled-link">
         Disabled Link
       </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      <DropdownItem
+        key="disabled action"
+        isDisabled
+        component="button"
+        onClick={this.incrementCounter}
+        onKeyPress={this.incrementCounter}
+        id="disabled-button"
+      >
         Disabled Action
+        {this.state.counter}
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
       <DropdownItem key="separated link" description="Separated Link's description">

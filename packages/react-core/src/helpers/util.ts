@@ -377,3 +377,17 @@ export const trimLeft = (node: HTMLElement, value: string) => {
     }
   }
 };
+
+/**
+ * @param {string[]} events - Operations to prevent when disabled
+ */
+export const preventedEvents = (events: string[]) =>
+  events.reduce(
+    (handlers, eventToPrevent) => ({
+      ...handlers,
+      [eventToPrevent]: (event: React.SyntheticEvent<HTMLElement>) => {
+        event.preventDefault();
+      }
+    }),
+    {}
+  );
