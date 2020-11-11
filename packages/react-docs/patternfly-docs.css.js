@@ -5,6 +5,11 @@ import '@patternfly/react-styles/src/css/components/Topology/topology-side-bar.c
 import '@patternfly/react-styles/src/css/components/Topology/topology-view.css';
 import '@patternfly/react-styles/src/css/layouts/Toolbar/toolbar.css';
 
+import '@patternfly/react-styles/src/css/components/Consoles/AccessConsoles.css';
+import '@patternfly/react-styles/src/css/components/Consoles/DesktopViewer.css';
+import '@patternfly/react-styles/src/css/components/Consoles/SerialConsole.css';
+import '@patternfly/react-styles/src/css/components/Consoles/VncConsole.css';
+
 // Global theme CSS
 import 'theme-patternfly-org/global.css';
 

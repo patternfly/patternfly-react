@@ -1,0 +1,503 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
+<AccessConsoles>
+  <div
+    className="pf-c-console"
+  >
+    <div
+      className="pf-c-console__actions"
+    >
+      <Select
+        aria-label="Select console type"
+        aria-labelledby=""
+        chipGroupComponent={null}
+        className=""
+        clearSelectionsAriaLabel="Clear all"
+        createText="Create"
+        customBadgeText={null}
+        customContent={null}
+        direction="down"
+        favorites={Array []}
+        favoritesLabel="Favorites"
+        hasInlineFilter={false}
+        inlineFilterPlaceholderText={null}
+        inputIdPrefix=""
+        isCreatable={false}
+        isDisabled={false}
+        isGrouped={false}
+        isOpen={false}
+        isPlain={false}
+        menuAppendTo="inline"
+        noResultsFoundText="No results found"
+        onClear={[Function]}
+        onCreateOption={[Function]}
+        onFilter={null}
+        onSelect={[Function]}
+        onToggle={[Function]}
+        ouiaSafe={true}
+        placeholderText=""
+        removeSelectionAriaLabel="Remove"
+        selections="Select console type"
+        toggleAriaLabel="Options menu"
+        toggleIcon={null}
+        toggleId="pf-c-console__type-selector"
+        typeAheadAriaLabel=""
+        variant="single"
+        width=""
+      >
+        <GenerateId
+          prefix="pf-random-id-"
+        >
+          <div
+            className="pf-c-select"
+            data-ouia-component-id="OUIA-Generated-Select-single-1"
+            data-ouia-component-type="PF4/Select"
+            data-ouia-safe={true}
+          >
+            <SelectToggle
+              aria-label="Options menu"
+              aria-labelledby=" pf-c-console__type-selector"
+              className=""
+              handleTypeaheadKeys={[Function]}
+              hasClearButton={false}
+              id="pf-c-console__type-selector"
+              isActive={false}
+              isDisabled={false}
+              isOpen={false}
+              isPlain={false}
+              menuRef={
+                Object {
+                  "current": null,
+                }
+              }
+              onClickTypeaheadToggleButton={[Function]}
+              onClose={[Function]}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              parentRef={
+                Object {
+                  "current": <div
+                    class="pf-c-select"
+                    data-ouia-component-id="OUIA-Generated-Select-single-1"
+                    data-ouia-component-type="PF4/Select"
+                    data-ouia-safe="true"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-labelledby=" pf-c-console__type-selector"
+                      class="pf-c-select__toggle"
+                      id="pf-c-console__type-selector"
+                      type="button"
+                    >
+                      <div
+                        class="pf-c-select__toggle-wrapper"
+                      >
+                        <span
+                          class="pf-c-select__toggle-text"
+                        >
+                          Select console type
+                        </span>
+                      </div>
+                      <span
+                        class="pf-c-select__toggle-arrow"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>,
+                }
+              }
+              type="button"
+              variant="single"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby=" pf-c-console__type-selector"
+                className="pf-c-select__toggle"
+                disabled={false}
+                id="pf-c-console__type-selector"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <div
+                  className="pf-c-select__toggle-wrapper"
+                >
+                  <span
+                    className="pf-c-select__toggle-text"
+                  >
+                    Select console type
+                  </span>
+                </div>
+                <span
+                  className="pf-c-select__toggle-arrow"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </span>
+              </button>
+            </SelectToggle>
+          </div>
+        </GenerateId>
+      </Select>
+    </div>
+  </div>
+</AccessConsoles>
+`;
+
+exports[`AccessConsoles switching SerialConsole and VncConsole 2`] = `
+Array [
+  <li
+    className="pf-c-select__menu-wrapper"
+    id="_none_"
+    role="presentation"
+  >
+    <button
+      aria-selected={true}
+      className="pf-c-select__menu-item pf-m-selected"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      Select console type
+      <span
+        className="pf-c-select__menu-item-icon"
+      >
+        <CheckIcon
+          aria-hidden={true}
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+            />
+          </svg>
+        </CheckIcon>
+      </span>
+    </button>
+  </li>,
+  <li
+    className="pf-c-select__menu-wrapper"
+    id="VncConsole"
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      VNC console
+    </button>
+  </li>,
+  <li
+    className="pf-c-select__menu-wrapper"
+    id="SerialConsole"
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      Serial console
+    </button>
+  </li>,
+]
+`;
+
+exports[`AccessConsoles switching SerialConsole and VncConsole 3`] = `
+Array [
+  <li
+    className="pf-c-select__menu-wrapper"
+    id="_none_"
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      Select console type
+    </button>
+  </li>,
+  <li
+    className="pf-c-select__menu-wrapper"
+    id="VncConsole"
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      VNC console
+    </button>
+  </li>,
+  <li
+    className="pf-c-select__menu-wrapper"
+    id="SerialConsole"
+    role="presentation"
+  >
+    <button
+      aria-selected={true}
+      className="pf-c-select__menu-item pf-m-selected"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      Serial console
+      <span
+        className="pf-c-select__menu-item-icon"
+      >
+        <CheckIcon
+          aria-hidden={true}
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+            />
+          </svg>
+        </CheckIcon>
+      </span>
+    </button>
+  </li>,
+]
+`;
+
+exports[`AccessConsoles with DesktopViewer 1`] = `
+<div
+  class="pf-c-console"
+/>
+`;
+
+exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
+<div
+  className="pf-c-console"
+>
+  <div
+    className="pf-c-console__actions"
+  >
+    <Select
+      aria-label="Select console type"
+      aria-labelledby=""
+      chipGroupComponent={null}
+      className=""
+      clearSelectionsAriaLabel="Clear all"
+      createText="Create"
+      customBadgeText={null}
+      customContent={null}
+      direction="down"
+      favorites={Array []}
+      favoritesLabel="Favorites"
+      hasInlineFilter={false}
+      inlineFilterPlaceholderText={null}
+      inputIdPrefix=""
+      isCreatable={false}
+      isDisabled={false}
+      isGrouped={false}
+      isOpen={false}
+      isPlain={false}
+      menuAppendTo="inline"
+      noResultsFoundText="No results found"
+      onClear={[Function]}
+      onCreateOption={[Function]}
+      onFilter={null}
+      onSelect={[Function]}
+      onToggle={[Function]}
+      ouiaSafe={true}
+      placeholderText=""
+      removeSelectionAriaLabel="Remove"
+      selections="Select console type"
+      toggleAriaLabel="Options menu"
+      toggleIcon={null}
+      toggleId="pf-c-console__type-selector"
+      typeAheadAriaLabel=""
+      variant="single"
+      width=""
+    >
+      <SelectOption
+        className=""
+        component="button"
+        id="_none_"
+        index={0}
+        inputId=""
+        isChecked={false}
+        isDisabled={false}
+        isFavorite={null}
+        isNoResultsOption={false}
+        isPlaceholder={true}
+        isSelected={false}
+        key="_none_"
+        keyHandler={[Function]}
+        onClick={[Function]}
+        sendRef={[Function]}
+        value="Select console type"
+      />
+      <SelectOption
+        className=""
+        component="button"
+        id="VncConsole"
+        index={0}
+        inputId=""
+        isChecked={false}
+        isDisabled={false}
+        isFavorite={null}
+        isNoResultsOption={false}
+        isPlaceholder={false}
+        isSelected={false}
+        key="VncConsole"
+        keyHandler={[Function]}
+        onClick={[Function]}
+        sendRef={[Function]}
+        value="VNC console"
+      />
+      <SelectOption
+        className=""
+        component="button"
+        id="SerialConsole"
+        index={0}
+        inputId=""
+        isChecked={false}
+        isDisabled={false}
+        isFavorite={null}
+        isNoResultsOption={false}
+        isPlaceholder={false}
+        isSelected={false}
+        key="SerialConsole"
+        keyHandler={[Function]}
+        onClick={[Function]}
+        sendRef={[Function]}
+        value="Serial console"
+      />
+    </Select>
+  </div>
+</div>
+`;
+
+exports[`AccessConsoles with SerialConsole as a single child 1`] = `
+<div
+  className="pf-c-console"
+/>
+`;
+
+exports[`AccessConsoles with VncConsole as a single child 1`] = `
+<div
+  className="pf-c-console"
+/>
+`;
+
+exports[`AccessConsoles with preselected SerialConsole 1`] = `
+<AccessConsoles
+  preselectedType="SerialConsole"
+>
+  <div
+    className="pf-c-console"
+  >
+    <SerialConsoleConnected
+      type="SerialConsole"
+    >
+      <p>
+        Whatever component, preferably wrapping 
+        <i>
+          SerialConsole
+        </i>
+         with callbacks adapted to a particular backend.
+      </p>
+    </SerialConsoleConnected>
+  </div>
+</AccessConsoles>
+`;
+
+exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
+<div
+  className="pf-c-console"
+/>
+`;
+
+exports[`Empty AccessConsoles 1`] = `
+<div
+  class="pf-c-console"
+/>
+`;

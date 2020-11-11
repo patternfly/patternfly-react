@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page navigation Verify basic render 1`] = `
+<PageNavigation>
+  <div
+    className="pf-c-page__main-nav"
+  >
+    test
+  </div>
+</PageNavigation>
+`;
+
+exports[`page navigation Verify bottom shadow 1`] = `
+<PageNavigation
+  hasShadowBottom={true}
+>
+  <div
+    className="pf-c-page__main-nav pf-m-shadow-bottom"
+  >
+    test
+  </div>
+</PageNavigation>
+`;
+
+exports[`page navigation Verify bottom sticky 1`] = `
+<PageNavigation
+  sticky="bottom"
+>
+  <div
+    className="pf-c-page__main-nav pf-m-sticky-bottom"
+  >
+    test
+  </div>
+</PageNavigation>
+`;
+
+exports[`page navigation Verify limited width 1`] = `
+<PageNavigation
+  isWidthLimited={true}
+>
+  <div
+    className="pf-c-page__main-nav pf-m-limit-width"
+  >
+    <div
+      className="pf-c-page__main-body"
+    >
+      test
+    </div>
+  </div>
+</PageNavigation>
+`;
+
+exports[`page navigation Verify overflow scroll 1`] = `
+<PageNavigation
+  hasOverflowScroll={true}
+>
+  <div
+    className="pf-c-page__main-nav pf-m-overflow-scroll"
+  >
+    test
+  </div>
+</PageNavigation>
+`;
+
+exports[`page navigation Verify top shadow 1`] = `
+<PageNavigation
+  hasShadowTop={true}
+>
+  <div
+    className="pf-c-page__main-nav pf-m-shadow-top"
+  >
+    test
+  </div>
+</PageNavigation>
+`;
+
+exports[`page navigation Verify top sticky 1`] = `
+<PageNavigation
+  sticky="top"
+>
+  <div
+    className="pf-c-page__main-nav pf-m-sticky-top"
+  >
+    test
+  </div>
+</PageNavigation>
+`;

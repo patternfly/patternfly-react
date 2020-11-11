@@ -7,6 +7,12 @@
 
 import * as React from 'react';
 import { TooltipProps, PopoverProps } from '@patternfly/react-core';
+import { TableComposable } from '../../TableComposable/TableComposable';
+import { Thead } from '../../TableComposable/Thead';
+import { Tbody } from '../../TableComposable/Tbody';
+import { Tr } from '../../TableComposable/Tr';
+import { Th } from '../../TableComposable/Th';
+import { Td } from '../../TableComposable/Td';
 
 // Cell Type
 export interface CellType {
@@ -54,16 +60,16 @@ export interface RowType {
 // Table Defaults
 export const TableDefaults = {
   renderers: {
-    table: 'table',
+    table: TableComposable,
     header: {
-      wrapper: 'thead',
-      row: 'tr',
-      cell: 'th'
+      wrapper: Thead,
+      row: Tr,
+      cell: Th
     },
     body: {
-      wrapper: 'tbody',
-      row: 'tr',
-      cell: 'td'
+      wrapper: Tbody,
+      row: Tr,
+      cell: Td
     }
   }
 };
@@ -101,12 +107,12 @@ export interface RendererType {
 export interface RenderersTypes {
   columns: ColumnsType;
   renderers?: {
-    table?: string;
+    table?: any;
     header?: RendererType;
     body?: RendererType;
   };
   components?: {
-    table?: string;
+    table?: any;
     header?: {
       wrapper?: rendererType;
       row?: rendererType;

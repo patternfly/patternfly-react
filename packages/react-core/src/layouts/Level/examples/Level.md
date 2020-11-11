@@ -13,13 +13,11 @@ import './level.css';
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
-LevelBasicExample = () => (
-  <Level>
-    <LevelItem>Level Item</LevelItem>
-    <LevelItem>Level Item</LevelItem>
-    <LevelItem>Level Item</LevelItem>
-  </Level>
-);
+<Level>
+  <LevelItem>Level Item</LevelItem>
+  <LevelItem>Level Item</LevelItem>
+  <LevelItem>Level Item</LevelItem>
+</Level>
 ```
 
 ### With gutters
@@ -27,11 +25,9 @@ LevelBasicExample = () => (
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
-LevelWithGuttersExample = () => (
-  <Level hasGutter>
-    <LevelItem>Level Item</LevelItem>
-    <LevelItem>Level Item</LevelItem>
-    <LevelItem>Level Item</LevelItem>
-  </Level>
-);
+<Level hasGutter>
+  <LevelItem>Level Item</LevelItem>
+  <LevelItem>Level Item</LevelItem>
+  <LevelItem>Level Item</LevelItem>
+</Level>
 ```

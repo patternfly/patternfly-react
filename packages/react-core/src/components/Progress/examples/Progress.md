@@ -6,7 +6,7 @@ propComponents: ['Progress']
 ---
 
 ## Examples
-### Simple
+### Basic
 ```js
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';

@@ -1,5 +1,6 @@
 export * from './Toolbar';
 export * from './ToolbarContent';
+export * from './ToolbarExpandIconWrapper';
 export * from './ToolbarGroup';
 export * from './ToolbarItem';
 export * from './ToolbarFilter';

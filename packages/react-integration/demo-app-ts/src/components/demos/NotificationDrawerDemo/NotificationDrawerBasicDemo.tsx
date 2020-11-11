@@ -76,9 +76,11 @@ export class BasicNotificationDrawerDemo extends React.Component<
           <NotificationDrawerList>
             <NotificationDrawerListItem variant="info">
               <NotificationDrawerListItemHeader
+                id="info-alert-item"
                 variant="info"
                 title="Unread info notification title"
                 srTitle="Info notification:"
+                truncateTitle={10}
               >
                 <Dropdown
                   position={DropdownPosition.right}
@@ -137,9 +139,12 @@ export class BasicNotificationDrawerDemo extends React.Component<
             </NotificationDrawerListItem>
             <NotificationDrawerListItem variant="success" isRead>
               <NotificationDrawerListItemHeader
+                id="long-title-item"
                 variant="success"
-                title="Read success notification title"
+                title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo."
                 srTitle="Success notification:"
+                truncateTitle={1}
+                tooltipPosition="bottom"
               >
                 <Dropdown
                   position={DropdownPosition.right}

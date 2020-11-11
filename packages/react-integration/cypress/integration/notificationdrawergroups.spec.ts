@@ -132,4 +132,42 @@ describe('Notification Drawer Groups Demo Test', () => {
         .should('not.exist');
     });
   });
+
+  it('Verify truncateTitle for group title and no tooltip on short text', () => {
+    cy.get(
+      '#short-group-title > h1 > .pf-c-notification-drawer__group-toggle > .pf-c-notification-drawer__group-toggle-title'
+    ).then((noTooltipLink: JQuery<HTMLDivElement>) => {
+      cy.wrap(noTooltipLink)
+        .trigger('mouseenter')
+        .get('.pf-c-tooltip')
+        .should('not.exist');
+      cy.wrap(noTooltipLink).trigger('mouseleave');
+    });
+  });
+
+  it('Verify truncateTitle group title and tooltip', () => {
+    cy.get(
+      '#long-group-title > h1 > .pf-c-notification-drawer__group-toggle > .pf-c-notification-drawer__group-toggle-title'
+    ).then((tooltipLink: JQuery<HTMLDivElement>) => {
+      cy.get('.pf-c-tooltip').should('not.exist');
+      cy.wrap(tooltipLink)
+        .trigger('mouseenter')
+        .get('.pf-c-tooltip')
+        .should('exist');
+      cy.wrap(tooltipLink).trigger('mouseleave');
+    });
+  });
+
+  it('Verify truncated with no truncateTitle prop group title and tooltip on long title', () => {
+    cy.get(
+      '#long-title-no-truncate-prop > h1 > .pf-c-notification-drawer__group-toggle > .pf-c-notification-drawer__group-toggle-title'
+    ).then((tooltipLink: JQuery<HTMLDivElement>) => {
+      cy.get('.pf-c-tooltip').should('not.exist');
+      cy.wrap(tooltipLink)
+        .trigger('mouseenter')
+        .get('.pf-c-tooltip')
+        .should('exist');
+      cy.wrap(tooltipLink).trigger('mouseleave');
+    });
+  });
 });

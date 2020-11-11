@@ -27,44 +27,20 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
   isPlainButtonAction?: boolean;
 }
 
-interface DataListActionState {
-  isOpen: boolean;
-}
-
-export class DataListAction extends React.Component<DataListActionProps, DataListActionState> {
-  static displayName = 'DataListAction';
-  state = {
-    isOpen: false
-  };
-
-  onToggle = (isOpen: boolean) => {
-    this.setState({ isOpen });
-  };
-
-  onSelect = () => {
-    this.setState(prevState => ({
-      isOpen: !prevState.isOpen
-    }));
-  };
-
-  render() {
-    const {
-      children,
-      className,
-      visibility,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      id,
-      'aria-label': ariaLabel,
-      'aria-labelledby': ariaLabelledBy,
-      isPlainButtonAction,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
-      ...props
-    } = this.props;
-
-    return (
-      <div className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)} {...props}>
-        {isPlainButtonAction ? <div className={css(styles.dataListAction)}>{children}</div> : children}
-      </div>
-    );
-  }
-}
+export const DataListAction: React.FunctionComponent<DataListActionProps> = ({
+  children,
+  className,
+  visibility,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  id,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
+  isPlainButtonAction,
+  /* eslint-enable @typescript-eslint/no-unused-vars */
+  ...props
+}: DataListActionProps) => (
+  <div className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)} {...props}>
+    {isPlainButtonAction ? <div className={css(styles.dataListAction)}>{children}</div> : children}
+  </div>
+);
+DataListAction.displayName = 'DataListAction';

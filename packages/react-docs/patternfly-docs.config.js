@@ -6,7 +6,7 @@ module.exports = {
   hasVersionSwitcher: false,
   hasDesignGuidelines: false,
   sideNavItems: [
-    { section: 'get-started' },
+    { section: 'developer-resources' },
     { section: 'charts' },
     { section: 'components' },
     { section: 'demos' },

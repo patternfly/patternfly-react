@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Th } from '../TableComposable/Th';
 
 export interface HeaderCellProps {
   'data-label'?: string;
@@ -21,51 +19,25 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   component = 'th',
   scope = '',
   textCenter = false,
-  tooltip: tooltipProp = '',
-  onMouseEnter: onMouseEnterProp = () => {},
+  tooltip = '',
+  onMouseEnter = () => {},
   children,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   isVisible,
   dataLabel = '',
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
-}: HeaderCellProps) => {
-  const mappedProps = {
-    ...(scope ? { scope } : {}),
-    ...props
-  };
-
-  const [tooltip, setTooltip] = React.useState('');
-  const onMouseEnter = (event: any) => {
-    if (event.target.offsetWidth < event.target.scrollWidth) {
-      if (tooltipProp) {
-        setTooltip(tooltipProp);
-      } else if (typeof children === 'string') {
-        setTooltip(children);
-      }
-    } else {
-      setTooltip('');
-    }
-    onMouseEnterProp(event);
-  };
-
-  const Component = component as any;
-  const cell = (
-    <Component
-      {...mappedProps}
-      onMouseEnter={onMouseEnter}
-      className={css(className, textCenter && styles.modifiers.center)}
-    >
-      {children}
-    </Component>
-  );
-
-  return tooltip !== '' ? (
-    <Tooltip content={tooltip} isVisible>
-      {cell}
-    </Tooltip>
-  ) : (
-    cell
-  );
-};
+}: HeaderCellProps) => (
+  <Th
+    {...props}
+    scope={scope}
+    tooltip={tooltip}
+    onMouseEnter={onMouseEnter}
+    textCenter={textCenter}
+    component={component}
+    className={className}
+  >
+    {children}
+  </Th>
+);
 HeaderCell.displayName = 'HeaderCell';

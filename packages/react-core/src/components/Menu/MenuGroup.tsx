@@ -22,9 +22,9 @@ export const MenuGroup: React.FunctionComponent<MenuGroupProps> = ({
 }: MenuGroupProps) => (
   <section {...props} className={'pf-c-menu__group' + css(className)}>
     {label && (
-      <div className={css(styles.menuGroupTitle)} id={titleId} aria-hidden>
+      <h1 className={css(styles.menuGroupTitle)} id={titleId} aria-hidden>
         {label}
-      </div>
+      </h1>
     )}
     {children}
   </section>

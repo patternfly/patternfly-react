@@ -22,7 +22,7 @@ import {
 } from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
-import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/util';
+import { createRenderableFavorites, extendItemsWithFavorite } from './favorites';
 
 // seed for the aria-labelledby ID
 let currentId = 0;

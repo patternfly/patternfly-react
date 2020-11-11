@@ -9,8 +9,9 @@ export { collapsible, expandedRow, expandable } from './decorators/collapsible';
 export { compoundExpand } from './decorators/compoundExpand';
 export { headerCol } from './decorators/headerCol';
 export { classNames, Visibility } from './decorators/classNames';
+export { info } from './decorators/info';
 
-import { IFormatterValueType, IExtra, ITransform } from '../Table';
+import { IFormatterValueType, IExtra, ITransform } from '../TableTypes';
 
 const emptyTD: ITransform = () => ({
   scope: '',

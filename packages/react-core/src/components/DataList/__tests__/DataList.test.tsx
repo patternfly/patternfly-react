@@ -22,6 +22,17 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
+  describe('DataList variants', () => {
+    ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach(oneBreakpoint => {
+      test(`Breakpoint - ${oneBreakpoint}`, () => {
+        const view = mount(
+          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint} />
+        );
+        expect(view).toMatchSnapshot();
+      });
+    });
+  });
+
   test('List draggable', () => {
     const view = shallow(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
     expect(view).toMatchSnapshot();

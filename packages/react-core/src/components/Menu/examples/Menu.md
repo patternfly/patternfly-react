@@ -183,7 +183,7 @@ class MenuWithFlyout extends React.Component {
           <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Pause rollouts
           </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+          <MenuListItem isExpandable component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
             Add storage
           </MenuListItem>
           <MenuListItem
@@ -227,7 +227,7 @@ class MenuWithFiltering extends React.Component {
       });
     };
 
-    this.onChange = (value, event) => {
+    this.onChange = ({ event, value }) => {
       this.setState({
         input: value
       });
@@ -235,20 +235,23 @@ class MenuWithFiltering extends React.Component {
   }
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, input } = this.state;
     const menuListItemsText = ['Action 1', 'Action 2', 'Action 3'];
 
-    const menuListItems = menuListItemsText.map((currentValue, index) =>
-      this.state.input.value == null ? (
-        <MenuListItem component="button" to="#default-link1" itemId={index} isActive={activeItem === index}>
+    const menuListItems = menuListItemsText
+      .filter(item => !input || item.toLowerCase().includes(input.toLowerCase()))
+      .map((currentValue, index) => (
+        <MenuListItem key={currentValue} component="button" itemId={index} isActive={activeItem === index}>
           {currentValue}
         </MenuListItem>
-      ) : currentValue.toLowerCase().includes(this.state.input.value) ? (
-        <MenuListItem component="button" to="#default-link1" itemId={index} isActive={activeItem === index}>
-          {currentValue}
+      ));
+    if (input && menuListItems.length === 0) {
+      menuListItems.push(
+        <MenuListItem isDisabled key="no result">
+          No results found
         </MenuListItem>
-      ) : null
-    );
+      );
+    }
 
     return (
       <Menu searchInput onSearchInputChange={this.onChange} onSelect={this.onSelect}>
@@ -365,18 +368,22 @@ class MenuWithTitledGroups extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuGroup>
-          <MenuListItem to="#default-link1" itemId={0} isActive={activeItem === 0}>
-            Link not in group
-          </MenuListItem>
+          <MenuList>
+            <MenuListItem to="#default-link1" itemId={0} isActive={activeItem === 0}>
+              Link not in group
+            </MenuListItem>
+          </MenuList>
         </MenuGroup>
         <Divider />
         <MenuGroup label="Group 1">
-          <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Link 1
-          </MenuListItem>
-          <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
-            Link 2
-          </MenuListItem>
+          <MenuList>
+            <MenuListItem component="button" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+              Link 1
+            </MenuListItem>
+            <MenuListItem component="button" to="#default-link2" itemId={2} isActive={activeItem === 2}>
+              Link 2
+            </MenuListItem>
+          </MenuList>
         </MenuGroup>
         <Divider />
         <MenuGroup label="Group 2">
@@ -547,6 +554,7 @@ class MenuWithActions extends React.Component {
               isSelected={selectedItems.indexOf(0) != -1}
               menuItemAction={kebabToggleAction}
               component="button"
+              aria-label="Dropdown"
               description="This is a description"
               to="#default-link1"
               itemId={0}
@@ -558,6 +566,7 @@ class MenuWithActions extends React.Component {
               isSelected={selectedItems.indexOf(1) != -1}
               menuItemAction={<BellIcon />}
               component="button"
+              aria-label="Alert"
               description="This is a description"
               to="#default-link2"
               itemId={1}
@@ -568,6 +577,7 @@ class MenuWithActions extends React.Component {
             <MenuListItem
               isSelected={selectedItems.indexOf(2) != -1}
               menuItemAction={<ClipboardIcon />}
+              aria-label="Copy"
               component="button"
               to="#default-link2"
               itemId={2}
@@ -579,6 +589,7 @@ class MenuWithActions extends React.Component {
               isSelected={selectedItems.indexOf(3) != -1}
               menuItemAction={<BarsIcon />}
               component="button"
+              aria-label="Expand"
               description="This is a description"
               to="#default-link2"
               itemId={3}
@@ -635,7 +646,9 @@ class MenuWithFavorites extends React.Component {
         to: '#default-link1',
         itemId: 0,
         isActive: activeItem === 0,
-        id: 'item-1'
+        id: 'item-1',
+        ariaIsFavoriteLabel: 'starred',
+        ariaIsNotFavoriteLabel: 'not starred'
       },
       {
         text: 'Item 2',
@@ -643,7 +656,9 @@ class MenuWithFavorites extends React.Component {
         to: '#default-link2',
         itemId: 1,
         isActive: activeItem === 1,
-        id: 'item-2'
+        id: 'item-2',
+        ariaIsFavoriteLabel: 'starred',
+        ariaIsNotFavoriteLabel: 'not starred'
       },
       {
         text: 'Item 3',
@@ -651,7 +666,9 @@ class MenuWithFavorites extends React.Component {
         to: '#default-link3',
         itemId: 2,
         isActive: activeItem === 2,
-        id: 'item-3'
+        id: 'item-3',
+        ariaIsFavoriteLabel: 'starred',
+        ariaIsNotFavoriteLabel: 'not starred'
       }
     ];
 

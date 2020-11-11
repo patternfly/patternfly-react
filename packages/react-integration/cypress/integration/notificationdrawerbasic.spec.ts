@@ -111,4 +111,29 @@ describe('Notification Drawer Basic Demo Test', () => {
         .should('not.exist');
     });
   });
+
+  it('Verify truncateTitle in drawer header list item header and no tooltip on short text', () => {
+    cy.get('#info-alert-item > .pf-c-notification-drawer__list-item-header-title')
+      .should('have.class', 'pf-m-truncate')
+      .then((noTooltipLink: JQuery<HTMLDivElement>) => {
+        cy.wrap(noTooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('not.exist');
+        cy.wrap(noTooltipLink).trigger('mouseleave');
+      });
+  });
+
+  it('Verify truncateTitle in drawer group title and tooltip', () => {
+    cy.get('#long-title-item > .pf-c-notification-drawer__list-item-header-title')
+      .should('have.class', 'pf-m-truncate')
+      .then((tooltipLink: JQuery<HTMLDivElement>) => {
+        cy.get('.pf-c-tooltip').should('not.exist');
+        cy.wrap(tooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('exist');
+        cy.wrap(tooltipLink).trigger('mouseleave');
+      });
+  });
 });

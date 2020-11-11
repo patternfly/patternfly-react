@@ -3,6 +3,142 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.41...@patternfly/react-datetime@4.2.42) (2020-11-09)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.40...@patternfly/react-datetime@4.2.41) (2020-11-05)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.39...@patternfly/react-datetime@4.2.40) (2020-11-04)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.38...@patternfly/react-datetime@4.2.39) (2020-10-30)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.37...@patternfly/react-datetime@4.2.38) (2020-10-30)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.36...@patternfly/react-datetime@4.2.37) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.35...@patternfly/react-datetime@4.2.36) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.34...@patternfly/react-datetime@4.2.35) (2020-10-28)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.33...@patternfly/react-datetime@4.2.34) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.32...@patternfly/react-datetime@4.2.33) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.31...@patternfly/react-datetime@4.2.32) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.30...@patternfly/react-datetime@4.2.31) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.29...@patternfly/react-datetime@4.2.30) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.28...@patternfly/react-datetime@4.2.29) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.27...@patternfly/react-datetime@4.2.28) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.26...@patternfly/react-datetime@4.2.27) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
+## [4.2.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.25...@patternfly/react-datetime@4.2.26) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-datetime
+
+
+
+
+
 ## [4.2.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.24...@patternfly/react-datetime@4.2.25) (2020-10-22)
 
 **Note:** Version bump only for package @patternfly/react-datetime

@@ -55,9 +55,12 @@ export interface MenuListItemProps {
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: MouseEvent) => void;
   onFavorite?: (itemId: string, isFavorite: boolean) => void;
+  /** Accessibility label */
+  'aria-label'?: string;
 }
 
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
+  'aria-label': ariaLabel,
   children,
   className,
   to,
@@ -173,7 +176,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
         )}
       </MenuContext.Consumer>
       {menuItemAction && (
-        <button className={css(styles.menuItemAction)}>
+        <button className={css(styles.menuItemAction)} aria-label={ariaLabel}>
           <span className={css(styles.menuItemActionIcon)}>{menuItemAction}</span>
         </button>
       )}

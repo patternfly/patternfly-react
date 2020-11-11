@@ -3,6 +3,169 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.75.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.9...@patternfly/react-core@4.75.10) (2020-11-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.8...@patternfly/react-core@4.75.9) (2020-11-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.7...@patternfly/react-core@4.75.8) (2020-11-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.6...@patternfly/react-core@4.75.7) (2020-10-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.5...@patternfly/react-core@4.75.6) (2020-10-30)
+
+
+### Bug Fixes
+
+* **datalist:** respect isDisabled for dragging ([#5052](https://github.com/patternfly/patternfly-react/issues/5052)) ([a8039b0](https://github.com/patternfly/patternfly-react/commit/a8039b00c0a795282319c4a39006c8841c0ad39c))
+
+
+
+
+
+## [4.75.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.4...@patternfly/react-core@4.75.5) (2020-10-29)
+
+
+### Bug Fixes
+
+* **docs:** add missing fieldId prop in sample code ([#5059](https://github.com/patternfly/patternfly-react/issues/5059)) ([95b7f0f](https://github.com/patternfly/patternfly-react/commit/95b7f0f12cb6e6c00c7c8fd1b637c06cb44411af))
+
+
+
+
+
+## [4.75.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.3...@patternfly/react-core@4.75.4) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.2...@patternfly/react-core@4.75.3) (2020-10-28)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.1...@patternfly/react-core@4.75.2) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.75.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.0...@patternfly/react-core@4.75.1) (2020-10-26)
+
+
+### Bug Fixes
+
+* **Alert, NotificationDrawer:** Added tooltips to truncated titles ([#5043](https://github.com/patternfly/patternfly-react/issues/5043)) ([eb77e52](https://github.com/patternfly/patternfly-react/commit/eb77e52337734f462f2ce5f5fd51fbbf3c4aef0e))
+
+
+
+
+
+# [4.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.74.0...@patternfly/react-core@4.75.0) (2020-10-26)
+
+
+### Features
+
+* **DataList:** expose grid modifiers as properties ([#4969](https://github.com/patternfly/patternfly-react/issues/4969)) ([7e26b4e](https://github.com/patternfly/patternfly-react/commit/7e26b4e534ebe569f9fef0152c886014d2ddfcac)), closes [#4965](https://github.com/patternfly/patternfly-react/issues/4965)
+
+
+
+
+
+# [4.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.73.0...@patternfly/react-core@4.74.0) (2020-10-23)
+
+
+### Features
+
+* **Form:** add FormAlert, isLimitWidth, and allow helper text above field ([#5036](https://github.com/patternfly/patternfly-react/issues/5036)) ([29eb4f3](https://github.com/patternfly/patternfly-react/commit/29eb4f3421b8452457008e9742b87692bbc32791))
+
+
+
+
+
+# [4.73.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.72.0...@patternfly/react-core@4.73.0) (2020-10-23)
+
+
+### Features
+
+* **Pagination:** add sticky modifier flag ([#4977](https://github.com/patternfly/patternfly-react/issues/4977)) ([447772a](https://github.com/patternfly/patternfly-react/commit/447772a2ae1edd3db43fb8088377d72e10c77ade))
+
+
+
+
+
+# [4.72.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.71.0...@patternfly/react-core@4.72.0) (2020-10-23)
+
+
+### Features
+
+* **DataList:** add expand/collapse all ([#5034](https://github.com/patternfly/patternfly-react/issues/5034)) ([9539481](https://github.com/patternfly/patternfly-react/commit/95394815cda979fe2317de78915447ed1d470296))
+
+
+
+
+
+# [4.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.70.2...@patternfly/react-core@4.71.0) (2020-10-23)
+
+
+### Features
+
+* **Splitter:** add Splitter component ([#5051](https://github.com/patternfly/patternfly-react/issues/5051)) ([70073f2](https://github.com/patternfly/patternfly-react/commit/70073f27cf7833ebf4785887636ba6474f53de8b))
+
+
+
+
+
+## [4.70.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.70.1...@patternfly/react-core@4.70.2) (2020-10-23)
+
+
+### Bug Fixes
+
+* **DataList:** add documentation for properties of DataList{DragButton, Control} ([#5047](https://github.com/patternfly/patternfly-react/issues/5047)) ([8988b47](https://github.com/patternfly/patternfly-react/commit/8988b4714e55db7e46d5ee1f118a58d71016f7f3)), closes [#5046](https://github.com/patternfly/patternfly-react/issues/5046)
+
+
+
+
+
+## [4.70.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.70.0...@patternfly/react-core@4.70.1) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.69.0...@patternfly/react-core@4.70.0) (2020-10-22)
 
 

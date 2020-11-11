@@ -36,7 +36,10 @@ export interface MenuProps
     event: React.FormEvent<HTMLInputElement>;
   }) => void;
   /** A callback for when the input value changes. */
-  onSearchInputChange?: (changedItem: { value: string; event: React.FormEvent<HTMLInputElement> }) => void;
+  onSearchInputChange?: (changedItem: {
+    value: string;
+    event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>;
+  }) => void;
   /** Optional callback for custom filtering */
   onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
   /** Accessibility label */
@@ -53,7 +56,6 @@ export interface MenuProps
 
 export interface MenuState {
   typeaheadInputValue: string | null;
-  typeaheadFilteredChildren: React.ReactNode[];
   ouiaStateId: string;
 }
 
@@ -68,7 +70,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
   };
 
   state: MenuState = {
-    typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant),
     typeaheadInputValue: ''
   };
@@ -88,40 +89,6 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     }
 
     this.props.onSelect({ groupId, itemId, event, to, isSelected });
-  }
-
-  // Callback from MenuExpandable
-  onToggle(event: React.MouseEvent<HTMLInputElement>, groupId: number | string, toggleValue: boolean) {
-    this.props.onToggle({
-      event,
-      groupId,
-      isExpanded: toggleValue
-    });
-  }
-
-  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, children } = this.props;
-    let typeaheadFilteredChildren: any;
-
-    if (onFilter) {
-      typeaheadFilteredChildren = onFilter(e) || children;
-
-      if (!typeaheadFilteredChildren) {
-        typeaheadFilteredChildren = [];
-      }
-
-      this.setState({
-        typeaheadInputValue: e.target.value,
-        typeaheadFilteredChildren
-      });
-    }
-  };
-
-  onSearchInputChange(value: string, event: React.FormEvent<HTMLInputElement>) {
-    this.props.onSearchInputChange({
-      event,
-      value
-    });
   }
 
   render() {
@@ -155,7 +122,11 @@ export class Menu extends React.Component<MenuProps, MenuState> {
             isSelected: boolean
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, isSelected),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
-            this.onToggle(event, groupId, expanded)
+            this.props.onToggle({
+              event,
+              groupId,
+              isExpanded: expanded
+            })
         }}
       >
         <div
@@ -171,18 +142,18 @@ export class Menu extends React.Component<MenuProps, MenuState> {
                   value={this.state.typeaheadInputValue}
                   onChange={(value, event) => {
                     this.setState({ typeaheadInputValue: value });
-                    this.onSearchInputChange && this.onSearchInputChange(value, event);
+                    this.props.onSearchInputChange({ value, event });
                   }}
-                  onClear={() => {
+                  onClear={event => {
                     this.setState({ typeaheadInputValue: '' });
-                    this.onSearchInputChange && this.onSearchInputChange('', null);
+                    this.props.onSearchInputChange({ value: '', event });
                   }}
                 />
               </div>
               <Divider />
             </React.Fragment>
           )}
-          <div className={'pf-c-menu__content'}>{children}</div>
+          <div className={css(styles.menuContent)}>{children}</div>
         </div>
       </MenuContext.Provider>
     );

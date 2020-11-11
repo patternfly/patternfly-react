@@ -10,7 +10,7 @@ import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
-## Examples
+## Demos
 
 ### Basic sticky banner
 ```js isFullscreen

@@ -45,6 +45,34 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
 
       let cellNode;
       const { tooltip, tooltipProps, popover, popoverProps, ariaLabel, className } = info;
+      // consumer can specify header cell tooltip/popover in two ways, but the transforms approach is preferred,
+      // especially for sorting tables that use `transforms: [sortable]`
+      // {
+      //   title: 'Repositories',
+      //   header: {
+      //     info: {
+      //       tooltip: 'More information about repositories',
+      //       className: 'repositories-info-tip',
+      //       tooltipProps: {
+      //         isContentLeftAligned: true
+      //       }
+      //     }
+      //   }
+      // }
+      //
+      // {
+      //   title: 'Repositories',
+      //   transforms: [
+      //     info({
+      //       tooltip: 'More information about repositories',
+      //       className: 'repositories-info-tip',
+      //       tooltipProps: {
+      //         isContentLeftAligned: true
+      //       }
+      //     }),
+      //     sortable
+      //   ]
+      // },
       if (tooltip) {
         cellNode = (
           <HeaderCellInfoWrapper

@@ -20,7 +20,7 @@ import {
   OnSelect,
   OnCollapse,
   OnRowEdit
-} from '../Table';
+} from '../TableTypes';
 
 /**
  * Generate header with transforms and formatters from custom header object.
@@ -30,17 +30,7 @@ import {
  * @returns {*} header, label, transforms: Array, formatters: Array.
  */
 const generateHeader = (
-  {
-    transforms: origTransforms,
-    formatters: origFormatters,
-    columnTransforms,
-    header
-  }: {
-    transforms?: ICell['transforms'];
-    formatters?: ICell['formatters'];
-    columnTransforms?: ICell['columnTransforms'];
-    header?: ICell;
-  },
+  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header }: ICell,
   title?: string | ICell
 ) => ({
   ...header,

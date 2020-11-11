@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IRow, IRowData, IExtraData, IHeaderRow } from './Table';
+import { IRow, IRowData, IExtraData, IHeaderRow } from './TableTypes';
 import { mapOpenedRows } from './utils/headerUtils';
+import { Tbody } from '../TableComposable/Tbody';
 
 export interface BodyWrapperProps {
   children?: React.ReactNode;
@@ -33,18 +32,13 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
     return (
       <React.Fragment>
         {mapOpenedRows(mappedRows, props.children).map((oneRow, key) => (
-          <tbody
-            {...props}
-            className={css(oneRow.isOpen && styles.modifiers.expanded)}
-            key={`tbody-${key}`}
-            ref={tbodyRef as React.Ref<any>}
-          >
+          <Tbody {...props} isExpanded={oneRow.isOpen} key={`tbody-${key}`} ref={tbodyRef as React.Ref<any>}>
             {oneRow.rows}
-          </tbody>
+          </Tbody>
         ))}
       </React.Fragment>
     );
   }
-  return <tbody {...props} ref={tbodyRef as React.Ref<any>} />;
+  return <Tbody {...props} ref={tbodyRef as React.Ref<any>} />;
 };
 BodyWrapper.displayName = 'BodyWrapper';

@@ -3,6 +3,159 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.58.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.12...demo-app-ts@4.58.13) (2020-11-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.11...demo-app-ts@4.58.12) (2020-11-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.10...demo-app-ts@4.58.11) (2020-11-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.9...demo-app-ts@4.58.10) (2020-11-04)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.8...demo-app-ts@4.58.9) (2020-10-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.7...demo-app-ts@4.58.8) (2020-10-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.6...demo-app-ts@4.58.7) (2020-10-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.5...demo-app-ts@4.58.6) (2020-10-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.4...demo-app-ts@4.58.5) (2020-10-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.3...demo-app-ts@4.58.4) (2020-10-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.2...demo-app-ts@4.58.3) (2020-10-26)
+
+
+### Bug Fixes
+
+* **Alert, NotificationDrawer:** Added tooltips to truncated titles ([#5043](https://github.com/patternfly/patternfly-react/issues/5043)) ([eb77e52](https://github.com/patternfly/patternfly-react/commit/eb77e52337734f462f2ce5f5fd51fbbf3c4aef0e))
+
+
+
+
+
+## [4.58.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.1...demo-app-ts@4.58.2) (2020-10-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.58.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.0...demo-app-ts@4.58.1) (2020-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.58.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.57.1...demo-app-ts@4.58.0) (2020-10-23)
+
+
+### Features
+
+* **Pagination:** add sticky modifier flag ([#4977](https://github.com/patternfly/patternfly-react/issues/4977)) ([447772a](https://github.com/patternfly/patternfly-react/commit/447772a2ae1edd3db43fb8088377d72e10c77ade))
+
+
+
+
+
+## [4.57.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.57.0...demo-app-ts@4.57.1) (2020-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.57.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.56.2...demo-app-ts@4.57.0) (2020-10-23)
+
+
+### Features
+
+* **Splitter:** add Splitter component ([#5051](https://github.com/patternfly/patternfly-react/issues/5051)) ([70073f2](https://github.com/patternfly/patternfly-react/commit/70073f27cf7833ebf4785887636ba6474f53de8b))
+
+
+
+
+
+## [4.56.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.56.1...demo-app-ts@4.56.2) (2020-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.56.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.56.0...demo-app-ts@4.56.1) (2020-10-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 # [4.56.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.55.0...demo-app-ts@4.56.0) (2020-10-22)
 
 

@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
+propComponents: ['Tabs', 'TabProps', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
 ouia: true
 ---
 import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
