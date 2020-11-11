@@ -1,10 +1,10 @@
 import * as React from 'react';
+import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import { css } from '@patternfly/react-styles';
 
 export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   /** Anything that can be rendered inside of menu list */
   children: React.ReactNode;
-  /** Additional classes added to the menu list */
-  className?: string;
 }
 
 export const MenuList: React.FunctionComponent<MenuListProps> = ({
@@ -13,7 +13,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   className,
   ...props
 }: MenuListProps) => (
-  <ul className={'pf-c-menu__list'} {...props}>
+  <ul className={css(styles.menuList)} {...props}>
     {children}
   </ul>
 );

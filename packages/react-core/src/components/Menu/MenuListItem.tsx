@@ -141,22 +141,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
             </div>
           )}
         </Component>
-<<<<<<< HEAD
         {flyoutVisible && flyoutMenu}
-=======
-        {flyoutVisible && (
-          <Menu
-            items={[
-              <MenuList key="list">
-                <MenuListItem component="button">Application Grouping</MenuListItem>
-                <MenuListItem component="button">Count</MenuListItem>
-                <MenuListItem component="button">Labels</MenuListItem>
-                <MenuListItem component="button">Annotations</MenuListItem>
-              </MenuList>
-            ]}
-          />
-        )}
->>>>>>> df8a8359e... cleaning up comments, fix filter bug
       </>
     );
   };
