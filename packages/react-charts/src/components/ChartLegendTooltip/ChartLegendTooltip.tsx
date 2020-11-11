@@ -19,6 +19,7 @@ import {
   getLegendTooltipVisibleText,
   getTheme
 } from '../ChartUtils';
+import { isFunction } from 'lodash';
 
 /**
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
@@ -295,7 +296,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 }: ChartLegendTooltipProps) => {
   const pointerLength =
     theme && theme.tooltip
-      ? theme.tooltip.pointerLength instanceof Function
+      ? isFunction(theme.tooltip.pointerLength)
         ? theme.tooltip.pointerLength({ datum, index: rest.index || 0, ...rest })
         : Number(theme.tooltip.pointerLength)
       : 10;
