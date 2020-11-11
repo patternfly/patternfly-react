@@ -6,7 +6,7 @@ import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
   isCentered?: boolean;
-  /** Variant to use. */
+  /** Whether the layout of children is vertical or horizontal. */
   isVertical?: boolean;
   /** Label to add to nav element. */
   label?: React.ReactNode;
