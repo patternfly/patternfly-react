@@ -5,8 +5,6 @@ import { css } from '@patternfly/react-styles';
 export interface MenuGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Items within group */
   children?: React.ReactNode;
-  /** Additional classes added to the MenuGroup */
-  className?: string;
   /** Group label */
   label?: string;
   /** ID for title label */
@@ -15,12 +13,11 @@ export interface MenuGroupProps extends React.HTMLProps<HTMLDivElement> {
 
 export const MenuGroup: React.FunctionComponent<MenuGroupProps> = ({
   children = [] as React.ReactElement[],
-  className = '',
   label = '',
   titleId = '',
   ...props
 }: MenuGroupProps) => (
-  <section {...props} className={'pf-c-menu__group' + css(className)}>
+  <section {...props} className={css(styles.MenuGroup)}>
     {label && (
       <h1 className={css(styles.menuGroupTitle)} id={titleId} aria-hidden>
         {label}

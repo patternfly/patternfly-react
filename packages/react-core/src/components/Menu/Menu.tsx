@@ -235,7 +235,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
               <Divider />
             </React.Fragment>
           )}
-          <div className={'pf-c-menu__content'}>{favorites ? renderableItems : children}</div>
+          <div className={css(styles.menuContent)}>{favorites ? renderableItems : children}</div>
         </div>
       </MenuContext.Provider>
     );
