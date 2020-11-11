@@ -1016,6 +1016,7 @@ exports[`allows tooltip via container component 1`] = `
       portalComponent={<Portal />}
       portalZIndex={99}
       responsive={true}
+      role="img"
       theme={
         Object {
           "area": Object {
@@ -1497,6 +1498,7 @@ exports[`allows tooltip via container component 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -2062,6 +2064,7 @@ exports[`allows tooltip via container component 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -2646,6 +2649,7 @@ exports[`allows tooltip via container component 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -3229,6 +3233,7 @@ exports[`allows tooltip via container component 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}

@@ -492,6 +492,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -1057,6 +1058,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -1641,6 +1643,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -2224,6 +2227,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}
@@ -3722,6 +3726,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -4287,6 +4292,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -4871,6 +4877,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -5454,6 +5461,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}
@@ -6952,6 +6960,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -7517,6 +7526,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -8101,6 +8111,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -8684,6 +8695,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}
