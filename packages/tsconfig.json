@@ -8,6 +8,9 @@
       "path": "./react-charts"
     },
     {
+      "path": "./react-console"
+    },
+    {
       "path": "./react-core"
     },
     {

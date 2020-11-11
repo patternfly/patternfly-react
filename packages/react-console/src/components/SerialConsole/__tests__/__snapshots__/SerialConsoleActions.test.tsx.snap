@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SerialConsoleActions 1`] = `
+<div
+  className="pf-c-console__actions-serial"
+>
+  <Button
+    onClick={[MockFunction]}
+    variant="secondary"
+  >
+    Disconnect
+  </Button>
+  <Button
+    onClick={[MockFunction]}
+    variant="secondary"
+  >
+    Reset
+  </Button>
+</div>
+`;
+
+exports[`Render SerialConsoleActions with custom texts 1`] = `
+<div
+  className="pf-c-console__actions-serial"
+>
+  <Button
+    onClick={[MockFunction]}
+    variant="secondary"
+  >
+    My Disconnect Text
+  </Button>
+  <Button
+    onClick={[MockFunction]}
+    variant="secondary"
+  >
+    My Reconnect Text
+  </Button>
+</div>
+`;
+
+exports[`placeholder render test 1`] = `
+<div
+  className="pf-c-console__actions-serial"
+>
+  <Button
+    variant="secondary"
+  >
+    Disconnect
+  </Button>
+  <Button
+    variant="secondary"
+  >
+    Reset
+  </Button>
+</div>
+`;
