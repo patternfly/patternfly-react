@@ -143,7 +143,7 @@ class ManagedDualListSelector extends React.Component {
         {this.state.availableDescending ? <PficonSortCommonDescIcon/> : <PficonSortCommonAscIcon/>}
       </Button>,
       <Dropdown
-        toggle={<KebabToggle onToggle={(isOpen) => this.onToggle(isOpen, "available")} id="toggle-id-6" />}
+        toggle={<KebabToggle onToggle={(isOpen) => this.onToggle(isOpen, "available")} id="toggle-id-1" />}
         isOpen={this.state.isAvailableKebabOpen}
         isPlain
         dropdownItems={dropdownItems}
@@ -156,7 +156,7 @@ class ManagedDualListSelector extends React.Component {
         {this.state.chosenDescending ? <PficonSortCommonDescIcon/> : <PficonSortCommonAscIcon/>}
       </Button>,
       <Dropdown
-        toggle={<KebabToggle onToggle={(isOpen) => this.onToggle(isOpen, "chosen")} id="toggle-id-6" />}
+        toggle={<KebabToggle onToggle={(isOpen) => this.onToggle(isOpen, "chosen")} id="toggle-id-2" />}
         isOpen={this.state.isChosenKebabOpen}
         isPlain
         dropdownItems={dropdownItems}

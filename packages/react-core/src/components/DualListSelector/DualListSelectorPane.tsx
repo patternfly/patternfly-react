@@ -159,6 +159,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
             tabIndex={0}
             role="listbox"
             aria-multiselectable="true"
+            aria-label={`List of ${isChosen ? 'chosen' : 'available'} options`}
           >
             <ul className={css(styles.dualListSelectorList)}>
               {options.map((option, index) => {
@@ -171,6 +172,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                       isChosen={isChosen}
                       index={index}
                       sendRef={this.sendRef}
+                      role="option"
                     >
                       {option}
                     </DualListSelectorListItem>
