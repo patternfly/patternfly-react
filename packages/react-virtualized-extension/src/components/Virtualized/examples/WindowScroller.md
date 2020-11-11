@@ -83,14 +83,7 @@ class WindowScrollerExample extends React.Component {
     // re-render after resize
     window.addEventListener('resize', this._handleResize);
 
-    // setTimeout(() => {
-    //   const scrollableElement = document.getElementById('content-scrollable-1');
-    //   this.setState({ scrollableElement });
-    // });
     this.setState({ scrollableElement: document.getElementById('content-scrollable-1') });
-
-    // re-render after resize
-    window.addEventListener('resize', this._handleResize);
   }
 
   componentWillUnmount() {
