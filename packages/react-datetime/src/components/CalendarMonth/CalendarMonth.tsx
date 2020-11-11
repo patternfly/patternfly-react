@@ -172,11 +172,12 @@ export const CalendarMonth = ({
           {calendar.map((week, index) => (
             <tr key={index} className={styles.calendarMonthDatesRow}>
               {week.map((day, index) => {
-                const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
                 const isToday = isSameDate(day, today);
                 const isSelected = isSameDate(day, dateProp);
                 const isFocused = isSameDate(day, focusedDate);
                 const isValid = validators.every(validator => validator(day));
+                // Don't apply this class for contrast's sake
+                const isAdjacentMonth = !isSelected && day.getMonth() !== focusedDate.getMonth();
                 return (
                   <td
                     key={index}
