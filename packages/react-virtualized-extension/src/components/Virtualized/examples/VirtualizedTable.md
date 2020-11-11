@@ -18,6 +18,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import { debounce } from '@patternfly/react-core';
@@ -125,7 +126,7 @@ class VirtualizedExample extends React.Component {
         <AutoSizer disableHeight>
           {({ width }) => (
             <VirtualTableBody
-              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -144,7 +145,98 @@ class VirtualizedExample extends React.Component {
 }
 ```
 
+### Using composable table components
+
+```js
+import React from 'react';
+import { debounce } from '@patternfly/react-core';
+import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
+import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
+import virtualGridStyles from './VirtualGrid.example.css';
+import { TableComposable, Thead, Tr, Th, Td, Caption, TableGridBreakpoint } from '@patternfly/react-table';
+
+ComposableTableVirtualized = () => {
+  const rows = [];
+  for (let i = 0; i < 100; i++) {
+    rows.push([`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]);
+  }
+  const [selected, setSelected] = React.useState(rows.map(row => false));
+  const columns = [
+    'Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last Commit'
+  ];
+
+  const onSelect = (event, isSelected, rowId) => {
+    setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
+  };
+
+  const measurementCache = new CellMeasurerCache({
+    fixedWidth: true,
+    minHeight: 44,
+    keyMapper: rowIndex => rowIndex
+  });
+
+  const rowRenderer = ({ index: rowIndex, isScrolling, key, style, parent }) => {
+    const text = rows[rowIndex][0];
+
+    return (
+      <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={rowIndex}>
+        <Tr style={style}>
+          <Td
+            key={`${rowIndex}_0`}
+            select={{
+              rowIndex,
+              onSelect: onSelect,
+              isSelected: selected[rowIndex]
+            }}
+          />
+          {columns.map((col, index) => (
+            <Td key={`${rowIndex}-${++index}`}>
+              {text}
+            </Td>
+          ))}
+        </Tr>
+      </CellMeasurer>
+    );
+  };
+
+  return (
+    <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <TableComposable gridBreakPoint={TableGridBreakpoint.none} role="presentation">
+        <Caption>Virtualized table with composable table components</Caption>
+        <Thead>
+          <Tr>
+            <Th className="pf-c-table__check" />
+            {columns.map((col, index) => (
+              <Th key={++index}>
+                {col}
+              </Th>
+            ))}
+          </Tr>
+        </Thead>
+      </TableComposable>
+      <AutoSizer disableHeight>
+        {({ width }) => (
+          <VirtualTableBody
+            className="pf-c-virtualized pf-c-window-scroller"
+            deferredMeasurementCache={measurementCache}
+            rowHeight={measurementCache.rowHeight}
+            height={400}
+            overscanRowCount={2}
+            columnCount={1}
+            rows={rows}
+            rowCount={rows.length}
+            rowRenderer={rowRenderer}
+            width={width}
+          />
+        )}
+      </AutoSizer>
+    </div>
+  );
+};
+```
+
 ### Sortable
+
 ```js
 import React from 'react';
 import { debounce } from '@patternfly/react-core';
@@ -277,7 +369,7 @@ class SortableExample extends React.Component {
           {({ width }) => (
             <VirtualTableBody
               ref={ref => (this.sortableVirtualBody = ref)}
-              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -297,6 +389,7 @@ class SortableExample extends React.Component {
 ```
 
 ### Selectable
+
 ```js
 import React from 'react';
 import { debounce } from '@patternfly/react-core';
@@ -434,7 +527,7 @@ class SelectableExample extends React.Component {
           {({ width }) => (
             <VirtualTableBody
               ref={ref => (this.selectableVirtualBody = ref)}
-              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -454,6 +547,7 @@ class SelectableExample extends React.Component {
 ```
 
 ### Actions
+
 ```js
 import React from 'react';
 import { debounce } from '@patternfly/react-core';
@@ -586,7 +680,7 @@ class ActionsExample extends React.Component {
           {({ width }) => (
             <VirtualTableBody
               ref={ref => (this.actionsVirtualBody = ref)}
-              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -606,6 +700,7 @@ class ActionsExample extends React.Component {
 ```
 
 ### Filterable with WindowScroller
+
 ```js
 import React from 'react';
 import {
@@ -1066,7 +1161,7 @@ class FilterExample extends React.Component {
                           <VirtualTableBody
                             ref={ref => (this.actionsVirtualBody = ref)}
                             autoHeight
-                            className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+                            className="pf-c-virtualized pf-c-window-scroller"
                             deferredMeasurementCache={measurementCache}
                             rowHeight={measurementCache.rowHeight}
                             height={height || 0}
