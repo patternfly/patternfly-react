@@ -146,8 +146,6 @@ class WindowScrollerExample extends React.Component {
         }}
       >
         <div style={{ padding: 15 }}>
-          {' '}
-          {/* WindowScroller scrollbar gutter spacing */}
           <Table
             caption="WindowScoller allows scrolling of a parent container or the window instead of tbody. It also can be used to dynamically size the table to the size of the scroll element."
             cells={columns}
