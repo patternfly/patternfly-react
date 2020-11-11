@@ -25,7 +25,7 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
   /** Total number of filters currently being applied across all ToolbarFilter components */
   numberOfFilters: number;
   /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
-  collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
+  collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
@@ -53,7 +53,11 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
     };
 
     const collapseListedFilters =
-      typeof window !== 'undefined' ? window.innerWidth < globalBreakpoints[collapseListedFiltersBreakpoint] : false;
+      collapseListedFiltersBreakpoint === 'all'
+        ? true
+        : typeof window !== 'undefined'
+        ? window.innerWidth < globalBreakpoints[collapseListedFiltersBreakpoint]
+        : false;
 
     return (
       <div
