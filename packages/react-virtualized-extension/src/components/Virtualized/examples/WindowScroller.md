@@ -191,8 +191,6 @@ class WindowScrollerExample extends React.Component {
     );
   }
 }
-
-export default WindowScrollerExample;
 ```
 
 ### Using composable table components
