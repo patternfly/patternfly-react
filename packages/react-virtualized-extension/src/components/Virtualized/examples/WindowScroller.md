@@ -50,8 +50,6 @@ class WindowScrollerExample extends React.Component {
       });
     }
 
-    this.scrollableElement = React.createRef();
-
     this.state = {
       scrollToIndex: -1, // can be used to programmatically set current index
       scrollableElement: null,
@@ -85,10 +83,11 @@ class WindowScrollerExample extends React.Component {
     // re-render after resize
     window.addEventListener('resize', this._handleResize);
 
-    setTimeout(() => {
-      const scollableElement = document.getElementById('content-scrollable-1');
-      this.setState({ scollableElement });
-    });
+    // setTimeout(() => {
+    //   const scrollableElement = document.getElementById('content-scrollable-1');
+    //   this.setState({ scrollableElement });
+    // });
+    this.setState({ scrollableElement: document.getElementById('content-scrollable-1') });
 
     // re-render after resize
     window.addEventListener('resize', this._handleResize);
@@ -108,7 +107,7 @@ class WindowScrollerExample extends React.Component {
   }
 
   render() {
-    const { scrollToIndex, columns, rows, scollableElement } = this.state;
+    const { scrollToIndex, columns, rows, scrollableElement } = this.state;
 
     const rowRenderer = ({ index, isScrolling, key, style, parent }) => {
       const { rows, columns } = this.state;
@@ -165,7 +164,7 @@ class WindowScrollerExample extends React.Component {
           >
             <TableHeader />
           </Table>
-          <WindowScroller scrollElement={scollableElement}>
+          {scrollableElement && <WindowScroller scrollElement={scrollableElement}>
             {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
               <AutoSizer disableHeight>
                 {({ width }) => (
@@ -193,7 +192,7 @@ class WindowScrollerExample extends React.Component {
                 )}
               </AutoSizer>
             )}
-          </WindowScroller>
+          </WindowScroller>}
         </div>
       </div>
     );
