@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { css } from '@patternfly/react-styles';
 import { EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
 import * as NovncLog from 'novnc-core/lib/util/logging';
@@ -9,6 +10,7 @@ import RFB from 'novnc-core';
 import { VncActions } from './VncActions';
 import constants from '../common/constants';
 
+import styles from '@patternfly/react-styles/css/components/Consoles/VncConsole';
 import '@patternfly/react-styles/css/components/Consoles/VncConsole.css';
 
 const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
@@ -198,7 +200,7 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   }
 
   return (
-    <div className="pf-c-console__vnc">
+    <div className={css(styles.consoleVnc)}>
       {children}
       <React.Fragment>
         {rightContent}

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { css } from '@patternfly/react-styles';
 import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
 import { XTerm, XTermProps } from './XTerm';
@@ -7,6 +8,7 @@ import { SerialConsoleActions } from './SerialConsoleActions';
 
 import constants from '../common/constants';
 
+import styles from '@patternfly/react-styles/css/components/Consoles/SerialConsole';
 import '@patternfly/react-styles/css/components/Consoles/SerialConsole.css';
 
 const { CONNECTED, DISCONNECTED, LOADING } = constants;
@@ -130,7 +132,7 @@ const SerialConsoleBase: React.FunctionComponent<SerialConsoleProps> = ({
           textReset={textReset}
         />
       )}
-      <div className="pf-c-console__serial">{terminal}</div>
+      <div className={css(styles.consoleSerial)}>{terminal}</div>
     </>
   );
 };

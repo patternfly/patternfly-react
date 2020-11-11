@@ -1,8 +1,10 @@
 import React from 'react';
+import { css } from '@patternfly/react-styles';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 import constants from '../common/constants';
 
+import styles from '@patternfly/react-styles/css/components/Consoles/AccessConsoles';
 import '@patternfly/react-styles/css/components/Consoles/AccessConsoles.css';
 
 const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, DESKTOP_VIEWER_CONSOLE_TYPE } = constants;
@@ -96,9 +98,9 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
   }
 
   return (
-    <div className="pf-c-console">
+    <div className={css(styles.console)}>
       {React.Children.toArray(children).length > 1 && (
-        <div className="pf-c-console__actions">
+        <div className={css(styles.consoleActions)}>
           <Select
             aria-label={textSelectConsoleType}
             toggleId="pf-c-console__type-selector"

@@ -1,5 +1,8 @@
 import React from 'react';
+import { css } from '@patternfly/react-styles';
 import { Dropdown, DropdownItem, DropdownToggle, Button } from '@patternfly/react-core';
+
+import styles from '@patternfly/react-styles/css/components/Consoles/VncConsole';
 
 export interface VncActionProps {
   onDisconnect: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -22,7 +25,7 @@ export const VncActions: React.FunctionComponent<VncActionProps> = ({
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toolbar = (
-    <div className="pf-c-console__actions-vnc">
+    <div className={css(styles.consoleActionsVnc)}>
       {additionalButtons}
       <Dropdown
         id="pf-c-console__send-shortcut"

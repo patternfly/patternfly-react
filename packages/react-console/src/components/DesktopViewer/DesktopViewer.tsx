@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { css } from '@patternfly/react-styles';
 import { ManualConnection } from './ManualConnection';
 import { ConnectWithRemoteViewer, ConnectWithRemoteViewerProps } from './ConnectWithRemoteViewer';
 import { ConsoleDetailPropType } from './ConsoleDetailPropType';
 
+import styles from '@patternfly/react-styles/css/components/Consoles/DesktopViewer';
 import '@patternfly/react-styles/css/components/Consoles/DesktopViewer.css';
 
 export interface DesktopViewerProps extends ConnectWithRemoteViewerProps {
@@ -49,7 +51,7 @@ export const DesktopViewer: React.FunctionComponent<DesktopViewerProps> = ({
   rdp = null,
   ...props
 }: DesktopViewerProps) => (
-  <div className="pf-c-console__desktop-viewer">
+  <div className={css(styles.consoleDesktopViewer)}>
     <ConnectWithRemoteViewer
       spice={spice}
       vnc={vnc}
