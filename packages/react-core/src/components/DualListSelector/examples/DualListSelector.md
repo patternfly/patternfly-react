@@ -33,6 +33,7 @@ class BasicDualListSelector extends React.Component {
       <DualListSelector
         availableOptions={this.state.availableOptions}
         chosenOptions={this.state.chosenOptions}
+        id="basicSelector"
       />
     );
   }
@@ -171,13 +172,14 @@ class ManagedDualListSelector extends React.Component {
         availableOptionsStatus={`${this.state.availableOptions.length} available`}
         availableOptionsActions={availableOptionsActions}
         chosenOptions={this.state.chosenOptions}
-        chosenOptionsStatus={`${this.state.availableOptions.length} chosen`}
+        chosenOptionsStatus={`${this.state.chosenOptions.length} chosen`}
         chosenOptionsActions={chosenOptionsActions}
         addAll={this.onListChange}
         removeAll={this.onListChange}
         addSelected={this.onListChange}
         removeSelected={this.onListChange}
         filterOption={this.filterOption}
+        id="withActions"
       />
     );
   }

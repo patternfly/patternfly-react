@@ -28,10 +28,13 @@ export interface DualListSelectorPaneProps {
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** Flag indicating a search bar should be included above the pane. */
   isSearchable?: boolean;
+  /** Id of the pane. */
+  id: string;
 }
 
 interface DualListSelectorPaneState {
   input: string;
+  focusedOption: string;
 }
 
 export class DualListSelectorPane extends React.Component<DualListSelectorPaneProps, DualListSelectorPaneState> {
@@ -50,7 +53,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
   constructor(props: DualListSelectorPaneProps) {
     super(props);
     this.state = {
-      input: ''
+      input: '',
+      focusedOption: null
     };
   }
 
@@ -82,6 +86,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     }
     if (moveFocus && this.optionsRefs[currentIndex]) {
       this.optionsRefs[currentIndex].focus();
+      this.setState({ focusedOption: `${this.props.id}-option-${currentIndex}` });
     }
   };
 
@@ -94,6 +99,11 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
         .toLowerCase()
         .includes(input.toLowerCase());
     }
+  };
+
+  onOptionSelect = (e: React.MouseEvent | React.ChangeEvent, index: number, isChosen: boolean) => {
+    this.setState({ focusedOption: `${this.props.id}-option-${index}` });
+    this.props.onOptionSelect(e, index, isChosen);
   };
 
   componentDidMount() {
@@ -113,13 +123,14 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       className,
       status,
       selectedOptions,
-      onOptionSelect,
       options,
+      id,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       filterOption,
+      onOptionSelect,
       ...props
     } = this.props;
-    const { input } = this.state;
+    const { input, focusedOption } = this.state;
 
     return (
       <div
@@ -150,7 +161,9 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
         )}
         {status && (
           <div className={css(styles.dualListSelectorStatus)}>
-            <div className={css(styles.dualListSelectorStatusText)}>{status}</div>
+            <div className={css(styles.dualListSelectorStatusText)} id={`${id}-status`}>
+              {status}
+            </div>
           </div>
         )}
         {options && (
@@ -159,7 +172,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
               className={css(styles.dualListSelectorList)}
               role="listbox"
               aria-multiselectable="true"
-              aria-label={`List of ${isChosen ? 'chosen' : 'available'} options`}
+              aria-labelledby={`${id}-status`}
+              aria-activedescendant={focusedOption}
             >
               {options.map((option, index) => {
                 if (this.displayOption(option, input)) {
@@ -167,10 +181,11 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                     <DualListSelectorListItem
                       key={index}
                       isSelected={selectedOptions.indexOf(index) !== -1}
-                      onOptionSelect={onOptionSelect}
+                      onOptionSelect={this.onOptionSelect}
                       isChosen={isChosen}
                       index={index}
                       sendRef={this.sendRef}
+                      id={`${id}-option-${index}`}
                     >
                       {option}
                     </DualListSelectorListItem>

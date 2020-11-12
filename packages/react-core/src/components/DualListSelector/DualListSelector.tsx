@@ -7,7 +7,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { DualListSelectorPane } from './DualListSelectorPane';
-import { PickOptional } from '../../helpers';
+import { getUniqueId, PickOptional } from '../../helpers';
 
 export interface DualListSelectorProps {
   /** Additional classes applied to the dual list selector. */
@@ -42,6 +42,8 @@ export interface DualListSelectorProps {
   isSearchable?: boolean;
   /** Optional filter function for custom filtering based on search string. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
+  /** Id of the dual list selector. */
+  id?: string;
 }
 
 interface DualListSelectorState {
@@ -58,7 +60,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     availableOptions: [] as React.ReactNode[],
     availableOptionsTitle: 'Available options',
     chosenOptions: [] as React.ReactNode[],
-    chosenOptionsTitle: 'Chosen Options'
+    chosenOptionsTitle: 'Chosen Options',
+    id: getUniqueId('dual-list-selector')
   };
 
   constructor(props: DualListSelectorProps) {
@@ -224,6 +227,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       addAll,
       removeAll,
       addSelected,
+      id,
       ...props
     } = this.props;
     const { availableOptions, chosenOptions, chosenOptionsSelected, availableOptionsSelected } = this.state;
@@ -233,7 +237,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       chosenOptionsStatus || `${chosenOptionsSelected.length} of ${chosenOptions.length} items selected`;
 
     return (
-      <div className={css(styles.dualListSelector, className)} {...props}>
+      <div className={css(styles.dualListSelector, className)} id={id} {...props}>
         <DualListSelectorPane
           isSearchable={isSearchable}
           filterOption={filterOption}
@@ -243,6 +247,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           selectedOptions={availableOptionsSelected}
           onOptionSelect={this.onOptionSelect}
           actions={availableOptionsActions}
+          id={`${id}-available-pane`}
         />
         <div
           className={css(styles.dualListSelectorControls)}
@@ -306,6 +311,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           selectedOptions={chosenOptionsSelected}
           onOptionSelect={this.onOptionSelect}
           actions={chosenOptionsActions}
+          id={`${id}-chosen-pane`}
         />
       </div>
     );

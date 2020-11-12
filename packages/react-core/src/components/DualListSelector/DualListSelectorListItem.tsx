@@ -17,6 +17,8 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   index?: number;
   /** Callback fired when an option is selected.  */
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent, index: number, isChosen: boolean) => void;
+  /** ID of the option */
+  id: string;
 }
 
 export const DualListSelectorListItem: React.FunctionComponent<DualListSelectorListItemProps> = ({
@@ -24,6 +26,7 @@ export const DualListSelectorListItem: React.FunctionComponent<DualListSelectorL
   index,
   children,
   className,
+  id,
   isSelected,
   isChosen,
   sendRef,
@@ -38,14 +41,15 @@ export const DualListSelectorListItem: React.FunctionComponent<DualListSelectorL
   return (
     <li
       className={css(styles.dualListSelectorListItem, isSelected && styles.modifiers.selected, className)}
-      aria-selected={isSelected}
       key={index}
-      role="option"
       {...props}
+      aria-selected={isSelected}
+      role="option"
     >
       <button
         className={css(styles.dualListSelectorItem)}
         onClick={e => onOptionSelect(e, index, isChosen)}
+        id={id}
         ref={ref}
         tabIndex={-1}
       >
