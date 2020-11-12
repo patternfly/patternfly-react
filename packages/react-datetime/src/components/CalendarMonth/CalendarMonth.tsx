@@ -112,6 +112,7 @@ export const CalendarMonth = ({
     }
     if (newDate.getTime() !== focusedDate.getTime()) {
       setFocusedDate(newDate);
+      setFocusDate(true);
     }
   };
 
@@ -212,12 +213,11 @@ export const CalendarMonth = ({
                       isAdjacentMonth && styles.modifiers.adjacentMonth,
                       isToday && styles.modifiers.current,
                       isSelected && styles.modifiers.selected,
-                      isFocused && styles.modifiers.focus,
                       !isValid && styles.modifiers.disabled
                     )}
                   >
                     <button
-                      className={styles.calendarMonthDate}
+                      className={css(styles.calendarMonthDate, isFocused && styles.modifiers.focus)}
                       onClick={() => onChange(day)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}

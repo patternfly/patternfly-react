@@ -2644,11 +2644,6 @@
     webpack-dev-server "^3.11.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.59.1":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.59.1.tgz#87c03b860f2eec494dfc3ae67f04bf178f06491b"
-  integrity sha512-zk3aqg62JXMTzzJMJsyVgt5fXlcxUUkRKkaxUv/hwpjhGiyLexZ1l3Gupb9ziYl74p38KzbbfcfdnlFCwJZfgg==
-
 "@patternfly/patternfly@4.65.2":
   version "4.65.2"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.65.2.tgz#8cf14683fe8a05b1701773fbdb377e32a7dc1fc9"

@@ -211,7 +211,7 @@ exports[`tree view renders active successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -483,7 +483,7 @@ exports[`tree view renders active successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -643,7 +643,7 @@ exports[`tree view renders active successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -749,7 +749,7 @@ exports[`tree view renders active successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -846,7 +846,7 @@ exports[`tree view renders active successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -937,7 +937,7 @@ exports[`tree view renders active successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
@@ -1205,7 +1205,7 @@ exports[`tree view renders badges successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -1490,7 +1490,7 @@ exports[`tree view renders badges successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -1663,7 +1663,7 @@ exports[`tree view renders badges successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -1782,7 +1782,7 @@ exports[`tree view renders badges successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -1892,7 +1892,7 @@ exports[`tree view renders badges successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -1996,7 +1996,7 @@ exports[`tree view renders badges successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
@@ -2240,7 +2240,7 @@ exports[`tree view renders basic successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -2476,7 +2476,7 @@ exports[`tree view renders basic successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -2618,7 +2618,7 @@ exports[`tree view renders basic successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -2706,7 +2706,7 @@ exports[`tree view renders basic successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -2785,7 +2785,7 @@ exports[`tree view renders basic successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -2858,7 +2858,7 @@ exports[`tree view renders basic successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
@@ -3126,7 +3126,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -3408,7 +3408,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -3578,7 +3578,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -3694,7 +3694,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -3801,7 +3801,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -3902,7 +3902,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
@@ -4207,7 +4207,7 @@ exports[`tree view renders icons successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -4535,7 +4535,7 @@ exports[`tree view renders icons successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -4737,7 +4737,7 @@ exports[`tree view renders icons successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -4885,7 +4885,7 @@ exports[`tree view renders icons successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -5024,7 +5024,7 @@ exports[`tree view renders icons successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -5157,7 +5157,7 @@ exports[`tree view renders icons successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
@@ -5503,7 +5503,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -5841,7 +5841,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -6016,7 +6016,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -6158,7 +6158,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -6313,7 +6313,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -6404,7 +6404,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
@@ -6711,7 +6711,7 @@ exports[`tree view renders search successfully 1`] = `
         >
           <li
             aria-expanded="true"
-            className="pf-c-tree-view__list-item pf-m-expandable pf-m-expanded"
+            className="pf-c-tree-view__list-item pf-m-expanded"
             id="AppLaunch"
             role="treeitem"
             tabIndex={0}
@@ -6983,7 +6983,7 @@ exports[`tree view renders search successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App1"
                       role="treeitem"
                       tabIndex={0}
@@ -7143,7 +7143,7 @@ exports[`tree view renders search successfully 1`] = `
                     }
                   >
                     <li
-                      className="pf-c-tree-view__list-item pf-m-expandable"
+                      className="pf-c-tree-view__list-item"
                       id="App2"
                       role="treeitem"
                       tabIndex={0}
@@ -7249,7 +7249,7 @@ exports[`tree view renders search successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Cost"
             role="treeitem"
             tabIndex={0}
@@ -7346,7 +7346,7 @@ exports[`tree view renders search successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Sources"
             role="treeitem"
             tabIndex={0}
@@ -7437,7 +7437,7 @@ exports[`tree view renders search successfully 1`] = `
           onSelect={[MockFunction]}
         >
           <li
-            className="pf-c-tree-view__list-item pf-m-expandable"
+            className="pf-c-tree-view__list-item"
             id="Long"
             role="treeitem"
             tabIndex={0}
