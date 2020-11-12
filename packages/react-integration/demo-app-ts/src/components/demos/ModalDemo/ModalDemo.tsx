@@ -115,10 +115,10 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isModalOpen}
         onClose={this.handleModalToggle}
         actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+          <Button key="cancel" data-id="modal-01-cancel-btn" variant="secondary" onClick={this.handleModalToggle}>
             Cancel
           </Button>,
-          <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+          <Button key="confirm" data-id="modal-01-confirm-btn" variant="primary" onClick={this.handleModalToggle}>
             Confirm
           </Button>
         ]}
@@ -296,6 +296,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isCustomHeaderFooterModalOpen}
         header={header}
         title="custom header example"
+        aria-labelledby="customHeaderTitle"
         aria-describedby="custom-header-example"
         onClose={this.handleCustomHeaderFooterModalToggle}
         footer={footer}
@@ -433,7 +434,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <React.Fragment>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+        <div id="tabstop-test" tabIndex={0} style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
           <Button style={buttonStyle} variant="primary" onClick={this.handleModalToggle} id="showDefaultModalButton">
             Show Modal
           </Button>
