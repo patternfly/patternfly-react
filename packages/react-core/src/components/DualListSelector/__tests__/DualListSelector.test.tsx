@@ -5,14 +5,14 @@ import React from 'react';
 describe('DualListSelector', () => {
   test('basic', () => {
     const view = mount(
-      <DualListSelector availableOptions={['Option 1', 'Option 2']}/>
+      <DualListSelector availableOptions={['Option 1', 'Option 2']} id="firstTest"/>
     );
     expect(view).toMatchSnapshot();
   });
 
   test('with search inputs', () => {
     const view = mount(
-      <DualListSelector availableOptions={['Option 1', 'Option 2']} isSearchable/>
+      <DualListSelector availableOptions={['Option 1', 'Option 2']} id="secondTest" isSearchable/>
     );
     expect(view).toMatchSnapshot();
   });
@@ -23,6 +23,7 @@ describe('DualListSelector', () => {
         availableOptions={['Option 1', 'Option 2']}
         availableOptionsStatus="Test status1"
         chosenOptionsStatus="Test status2"
+        id="thirdTest"
       />
     );
     expect(view).toMatchSnapshot();
@@ -33,8 +34,9 @@ describe('DualListSelector', () => {
       <DualListSelector
         availableOptions={['Option 1', 'Option 2']}
         chosenOptions={['Option 3', 'Option 4']}
-        availableOptionsActions={<span>TestNode1</span>}
-        chosenOptionsActions={<span>TestNode2</span>}
+        availableOptionsActions={[<span>TestNode1</span>]}
+        chosenOptionsActions={[<span>TestNode2</span>]}
+        id="fourthTest"
       />
     );
     expect(view).toMatchSnapshot();

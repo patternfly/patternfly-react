@@ -11,14 +11,14 @@ exports[`DualListSelector basic 1`] = `
   availableOptionsTitle="Available options"
   chosenOptions={Array []}
   chosenOptionsTitle="Chosen Options"
-  id="dual-list-selector-1605190402720po6omdcx15f"
+  id="firstTest"
 >
   <div
     className="pf-c-dual-list-selector"
-    id="dual-list-selector-1605190402720po6omdcx15f"
+    id="firstTest"
   >
     <DualListSelectorPane
-      id="dual-list-selector-1605190402720po6omdcx15f-available-pane"
+      id="firstTest-available-pane"
       isChosen={false}
       isSearchable={false}
       onOptionSelect={[Function]}
@@ -53,7 +53,7 @@ exports[`DualListSelector basic 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            id="firstTest-available-pane-status"
           >
             0 of 2 items selected
           </div>
@@ -64,13 +64,13 @@ exports[`DualListSelector basic 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            aria-labelledby="firstTest-available-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
           >
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+              id="firstTest-available-pane-option-0"
               index={0}
               isChosen={false}
               isSelected={false}
@@ -86,7 +86,7 @@ exports[`DualListSelector basic 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+                  id="firstTest-available-pane-option-0"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -103,7 +103,7 @@ exports[`DualListSelector basic 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+              id="firstTest-available-pane-option-1"
               index={1}
               isChosen={false}
               isSelected={false}
@@ -119,7 +119,7 @@ exports[`DualListSelector basic 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+                  id="firstTest-available-pane-option-1"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -351,7 +351,7 @@ exports[`DualListSelector basic 1`] = `
       </div>
     </div>
     <DualListSelectorPane
-      id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane"
+      id="firstTest-chosen-pane"
       isChosen={true}
       isSearchable={false}
       onOptionSelect={[Function]}
@@ -381,7 +381,7 @@ exports[`DualListSelector basic 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            id="firstTest-chosen-pane-status"
           >
             0 of 0 items selected
           </div>
@@ -392,7 +392,7 @@ exports[`DualListSelector basic 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            aria-labelledby="firstTest-chosen-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
@@ -413,9 +413,11 @@ exports[`DualListSelector with actions 1`] = `
     ]
   }
   availableOptionsActions={
-    <span>
-      TestNode1
-    </span>
+    Array [
+      <span>
+        TestNode1
+      </span>,
+    ]
   }
   availableOptionsTitle="Available options"
   chosenOptions={
@@ -425,24 +427,28 @@ exports[`DualListSelector with actions 1`] = `
     ]
   }
   chosenOptionsActions={
-    <span>
-      TestNode2
-    </span>
+    Array [
+      <span>
+        TestNode2
+      </span>,
+    ]
   }
   chosenOptionsTitle="Chosen Options"
-  id="dual-list-selector-1605190402720po6omdcx15f"
+  id="fourthTest"
 >
   <div
     className="pf-c-dual-list-selector"
-    id="dual-list-selector-1605190402720po6omdcx15f"
+    id="fourthTest"
   >
     <DualListSelectorPane
       actions={
-        <span>
-          TestNode1
-        </span>
+        Array [
+          <span>
+            TestNode1
+          </span>,
+        ]
       }
-      id="dual-list-selector-1605190402720po6omdcx15f-available-pane"
+      id="fourthTest-available-pane"
       isChosen={false}
       isSearchable={false}
       onOptionSelect={[Function]}
@@ -488,7 +494,7 @@ exports[`DualListSelector with actions 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            id="fourthTest-available-pane-status"
           >
             0 of 2 items selected
           </div>
@@ -499,13 +505,13 @@ exports[`DualListSelector with actions 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            aria-labelledby="fourthTest-available-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
           >
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+              id="fourthTest-available-pane-option-0"
               index={0}
               isChosen={false}
               isSelected={false}
@@ -521,7 +527,7 @@ exports[`DualListSelector with actions 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+                  id="fourthTest-available-pane-option-0"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -538,7 +544,7 @@ exports[`DualListSelector with actions 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+              id="fourthTest-available-pane-option-1"
               index={1}
               isChosen={false}
               isSelected={false}
@@ -554,7 +560,7 @@ exports[`DualListSelector with actions 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+                  id="fourthTest-available-pane-option-1"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -787,11 +793,13 @@ exports[`DualListSelector with actions 1`] = `
     </div>
     <DualListSelectorPane
       actions={
-        <span>
-          TestNode2
-        </span>
+        Array [
+          <span>
+            TestNode2
+          </span>,
+        ]
       }
-      id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane"
+      id="fourthTest-chosen-pane"
       isChosen={true}
       isSearchable={false}
       onOptionSelect={[Function]}
@@ -837,7 +845,7 @@ exports[`DualListSelector with actions 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            id="fourthTest-chosen-pane-status"
           >
             0 of 2 items selected
           </div>
@@ -848,13 +856,13 @@ exports[`DualListSelector with actions 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            aria-labelledby="fourthTest-chosen-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
           >
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-option-0"
+              id="fourthTest-chosen-pane-option-0"
               index={0}
               isChosen={true}
               isSelected={false}
@@ -870,7 +878,7 @@ exports[`DualListSelector with actions 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-option-0"
+                  id="fourthTest-chosen-pane-option-0"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -887,7 +895,7 @@ exports[`DualListSelector with actions 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-option-1"
+              id="fourthTest-chosen-pane-option-1"
               index={1}
               isChosen={true}
               isSelected={false}
@@ -903,7 +911,7 @@ exports[`DualListSelector with actions 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-option-1"
+                  id="fourthTest-chosen-pane-option-1"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -940,14 +948,14 @@ exports[`DualListSelector with custom status 1`] = `
   chosenOptions={Array []}
   chosenOptionsStatus="Test status2"
   chosenOptionsTitle="Chosen Options"
-  id="dual-list-selector-1605190402720po6omdcx15f"
+  id="thirdTest"
 >
   <div
     className="pf-c-dual-list-selector"
-    id="dual-list-selector-1605190402720po6omdcx15f"
+    id="thirdTest"
   >
     <DualListSelectorPane
-      id="dual-list-selector-1605190402720po6omdcx15f-available-pane"
+      id="thirdTest-available-pane"
       isChosen={false}
       isSearchable={false}
       onOptionSelect={[Function]}
@@ -982,7 +990,7 @@ exports[`DualListSelector with custom status 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            id="thirdTest-available-pane-status"
           >
             Test status1
           </div>
@@ -993,13 +1001,13 @@ exports[`DualListSelector with custom status 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            aria-labelledby="thirdTest-available-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
           >
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+              id="thirdTest-available-pane-option-0"
               index={0}
               isChosen={false}
               isSelected={false}
@@ -1015,7 +1023,7 @@ exports[`DualListSelector with custom status 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+                  id="thirdTest-available-pane-option-0"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -1032,7 +1040,7 @@ exports[`DualListSelector with custom status 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+              id="thirdTest-available-pane-option-1"
               index={1}
               isChosen={false}
               isSelected={false}
@@ -1048,7 +1056,7 @@ exports[`DualListSelector with custom status 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+                  id="thirdTest-available-pane-option-1"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -1280,7 +1288,7 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
     </div>
     <DualListSelectorPane
-      id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane"
+      id="thirdTest-chosen-pane"
       isChosen={true}
       isSearchable={false}
       onOptionSelect={[Function]}
@@ -1310,7 +1318,7 @@ exports[`DualListSelector with custom status 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            id="thirdTest-chosen-pane-status"
           >
             Test status2
           </div>
@@ -1321,7 +1329,7 @@ exports[`DualListSelector with custom status 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            aria-labelledby="thirdTest-chosen-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
@@ -1344,15 +1352,15 @@ exports[`DualListSelector with search inputs 1`] = `
   availableOptionsTitle="Available options"
   chosenOptions={Array []}
   chosenOptionsTitle="Chosen Options"
-  id="dual-list-selector-1605190402720po6omdcx15f"
+  id="secondTest"
   isSearchable={true}
 >
   <div
     className="pf-c-dual-list-selector"
-    id="dual-list-selector-1605190402720po6omdcx15f"
+    id="secondTest"
   >
     <DualListSelectorPane
-      id="dual-list-selector-1605190402720po6omdcx15f-available-pane"
+      id="secondTest-available-pane"
       isChosen={false}
       isSearchable={true}
       onOptionSelect={[Function]}
@@ -1401,7 +1409,7 @@ exports[`DualListSelector with search inputs 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            id="secondTest-available-pane-status"
           >
             0 of 2 items selected
           </div>
@@ -1412,13 +1420,13 @@ exports[`DualListSelector with search inputs 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-available-pane-status"
+            aria-labelledby="secondTest-available-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
           >
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+              id="secondTest-available-pane-option-0"
               index={0}
               isChosen={false}
               isSelected={false}
@@ -1434,7 +1442,7 @@ exports[`DualListSelector with search inputs 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-0"
+                  id="secondTest-available-pane-option-0"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -1451,7 +1459,7 @@ exports[`DualListSelector with search inputs 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
-              id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+              id="secondTest-available-pane-option-1"
               index={1}
               isChosen={false}
               isSelected={false}
@@ -1467,7 +1475,7 @@ exports[`DualListSelector with search inputs 1`] = `
               >
                 <button
                   className="pf-c-dual-list-selector__item"
-                  id="dual-list-selector-1605190402720po6omdcx15f-available-pane-option-1"
+                  id="secondTest-available-pane-option-1"
                   onClick={[Function]}
                   tabIndex={-1}
                 >
@@ -1699,7 +1707,7 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
     </div>
     <DualListSelectorPane
-      id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane"
+      id="secondTest-chosen-pane"
       isChosen={true}
       isSearchable={true}
       onOptionSelect={[Function]}
@@ -1743,7 +1751,7 @@ exports[`DualListSelector with search inputs 1`] = `
         >
           <div
             className="pf-c-dual-list-selector__status-text"
-            id="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            id="secondTest-chosen-pane-status"
           >
             0 of 0 items selected
           </div>
@@ -1754,7 +1762,7 @@ exports[`DualListSelector with search inputs 1`] = `
         >
           <ul
             aria-activedescendant={null}
-            aria-labelledby="dual-list-selector-1605190402720po6omdcx15f-chosen-pane-status"
+            aria-labelledby="secondTest-chosen-pane-status"
             aria-multiselectable="true"
             className="pf-c-dual-list-selector__list"
             role="listbox"
