@@ -6,63 +6,33 @@ propComponents: ['Switch']
 ouia: true
 ---
 
-import { FindRefWrapper } from '@patternfly/react-core/dist/js/helpers/Popper/FindRefWrapper';
-
 ## Examples
 ### Basic
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
-import { FindRefWrapper } from '@patternfly/react-core/dist/js/helpers/Popper/FindRefWrapper';
 
 class SimpleSwitch extends React.Component {
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
     this.state = {
-      isChecked: true,
-      foundElement: null
+      isChecked: true
     };
     this.handleChange = isChecked => {
       this.setState({ isChecked });
     };
-
-    this.focusTextInput = () => {
-      // Explicitly focus the text input using the raw DOM API
-      // Note: we're accessing "current" to get the DOM node
-      debugger;
-      const asd = this.state.foundElement;
-      asd.focus();
-      // this.myRef.current.focus();
-    }
-
-    this.setFoundElement = (ref) => {
-      this.setState({
-        foundElement: ref
-      });
-    }
   }
 
   render() {
     const { isChecked } = this.state;
     return (
-      <React.Fragment>
-        <input
-          type="button"
-          value="Focus the text input"
-          onClick={this.focusTextInput}
-        />
-        <FindRefWrapper onFoundRef={foundRef => this.setFoundElement(foundRef)}>
-        <Switch
-          ref={this.myRef}
-          id="simple-switch"
-          label="Message when on"
-          labelOff="Message when off"
-          isChecked={isChecked}
-          onChange={this.handleChange}
-        />
-        </FindRefWrapper>
-      </React.Fragment>
+      <Switch
+        id="simple-switch"
+        label="Message when on"
+        labelOff="Message when off"
+        isChecked={isChecked}
+        onChange={this.handleChange}
+      />
     );
   }
 }
