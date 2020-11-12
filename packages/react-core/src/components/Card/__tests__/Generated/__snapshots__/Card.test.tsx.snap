@@ -5,6 +5,7 @@ exports[`Card should match snapshot (auto-generated) 1`] = `
   value={
     Object {
       "cardId": "",
+      "isExpanded": false,
     }
   }
 >

@@ -662,12 +662,10 @@ class ExpandableCard extends React.Component {
           </CardActions>
           <CardTitle>Header</CardTitle>
         </CardHeader>
-        {this.state.isExpanded && (
-          <CardExpandableContent>
-            <CardBody>Body</CardBody>
-            <CardFooter>Footer</CardFooter>
-          </CardExpandableContent>
-        )}
+        <CardExpandableContent>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </CardExpandableContent>
       </Card>
     );
   }
@@ -781,12 +779,10 @@ class ExpandableIconCard extends React.Component {
             />
           </CardActions>
         </CardHeader>
-        {this.state.isExpanded && (
-          <CardExpandableContent>
-            <CardBody>Body</CardBody>
-            <CardFooter>Footer</CardFooter>
-          </CardExpandableContent>
-        )}
+        <CardExpandableContent>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </CardExpandableContent>
       </Card>
     );
   }

@@ -28,10 +28,12 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
 
 interface CardContextProps {
   cardId: string;
+  isExpanded: boolean;
 }
 
 export const CardContext = React.createContext<Partial<CardContextProps>>({
-  cardId: ''
+  cardId: '',
+  isExpanded: false
 });
 
 export const Card: React.FunctionComponent<CardProps> = ({
@@ -54,7 +56,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   return (
     <CardContext.Provider
       value={{
-        cardId: id
+        cardId: id,
+        isExpanded
       }}
     >
       <Component

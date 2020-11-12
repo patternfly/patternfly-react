@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
+import { CardContext } from './Card';
 
 export interface CardExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Body */
@@ -14,8 +15,14 @@ export const CardExpandableContent: React.FunctionComponent<CardExpandableConten
   className = '',
   ...props
 }: CardExpandableContentProps) => (
-  <div className={css(styles.cardExpandableContent, className)} {...props}>
-    {children}
-  </div>
+  <CardContext.Consumer>
+    {({ isExpanded }) =>
+      isExpanded ? (
+        <div className={css(styles.cardExpandableContent, className)} {...props}>
+          {children}
+        </div>
+      ) : null
+    }
+  </CardContext.Consumer>
 );
 CardExpandableContent.displayName = 'CardExpandableContent';
