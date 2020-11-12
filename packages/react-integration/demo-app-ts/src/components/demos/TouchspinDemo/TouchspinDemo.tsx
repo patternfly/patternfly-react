@@ -39,18 +39,35 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
     const maxValue = 3;
 
     return (
-      <Touchspin
-        id="touchspin1"
-        value={value}
-        onMinus={this.onMinus}
-        onChange={this.onChange}
-        onPlus={this.onPlus}
-        inputProps={{ id: 'input1', name: 'touchspin-input', 'aria-label': 'touchspin input' }}
-        minusButtonProps={{ isDisabled: value === minValue, id: 'minus-button', 'aria-label': 'minus' }}
-        plusButtonProps={{ isDisabled: value === maxValue, id: 'plus-button', 'aria-label': 'plus' }}
-        unit="%"
-        widthChars={5}
-      />
+      <React.Fragment>
+        <Touchspin
+          id="touchspin1"
+          value={value}
+          onMinus={this.onMinus}
+          onChange={this.onChange}
+          onPlus={this.onPlus}
+          inputProps={{ id: 'input1', name: 'touchspin-input', 'aria-label': 'touchspin input' }}
+          minusButtonProps={{ isDisabled: value === minValue, id: 'minus-button', 'aria-label': 'minus' }}
+          plusButtonProps={{ isDisabled: value === maxValue, id: 'plus-button', 'aria-label': 'plus' }}
+          unit="%"
+          widthChars={5}
+        />
+        <br />
+        <br />
+        <Touchspin
+          id="touchspin2"
+          value={value}
+          onMinus={this.onMinus}
+          onChange={this.onChange}
+          onPlus={this.onPlus}
+          inputProps={{ id: 'input2', name: 'touchspin-input', 'aria-label': 'touchspin input' }}
+          minusButtonProps={{ isDisabled: value === minValue, id: 'minus-button2', 'aria-label': 'minus' }}
+          plusButtonProps={{ isDisabled: value === maxValue, id: 'plus-button2', 'aria-label': 'plus' }}
+          unit="$"
+          unitPosition="before"
+          isDisabled
+        />
+      </React.Fragment>
     );
   }
 }

@@ -8,7 +8,7 @@ import { Button, ButtonProps } from '../Button';
 export interface TouchspinProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the touchspin */
   value?: number;
-  /** Additional classes added to the Skeleton */
+  /** Additional classes added to the touchspin */
   className?: string;
   /** Sets the width of the touchspin to a number of characters */
   widthChars?: number;
@@ -50,7 +50,6 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
   const touchspinUnit = <div className={css(styles.touchspinUnit)}>{unit}</div>;
   return (
     <div
-      {...props}
       className={css(styles.touchspin, className)}
       {...(widthChars && {
         style: {
@@ -58,6 +57,7 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
           ...props.style
         } as React.CSSProperties
       })}
+      {...props}
     >
       {unit && unitPosition === 'before' && touchspinUnit}
       <div className={css(styles.inputGroup)}>
@@ -66,6 +66,7 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
           {...minusButtonProps}
           {...(onMinus && { onClick: evt => onMinus(inputProps.name, evt) })}
           {...(isDisabled && { isDisabled })}
+          {...(!(minusButtonProps && minusButtonProps['aria-label']) && { 'aria-label': 'Minus' })}
         >
           <span className={css(styles.touchspinIcon)}>
             <MinusIcon aria-hidden="true" />
@@ -85,6 +86,7 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
           {...plusButtonProps}
           {...(onPlus && { onClick: evt => onPlus(inputProps.name, evt) })}
           {...(isDisabled && { isDisabled })}
+          {...(!(plusButtonProps && plusButtonProps['aria-label']) && { 'aria-label': 'Plus' })}
         >
           <span className={css(styles.touchspinIcon)}>
             <PlusIcon aria-hidden="true" />

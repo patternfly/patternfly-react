@@ -116,8 +116,9 @@ class UnitTouchspin extends React.Component {
         <Touchspin
           value={value1}
           onMinus={this.onMinus1}
+          onChange={this.onChange1}
           onPlus={this.onPlus1}
-          inputProps={{ onChange: this.onChange1, name: 'touchspin-input1', 'aria-label': 'touchspin input 1' }}
+          inputProps={{ name: 'touchspin-input1', 'aria-label': 'touchspin input 1' }}
           minusButtonProps={{ 'aria-label': 'input 1 minus 1' }}
           plusButtonProps={{ 'aria-label': 'input 1 plus 1' }}
           unit="%"
