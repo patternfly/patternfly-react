@@ -16,12 +16,13 @@ exports[`touchspin disables lower threshold 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         isDisabled={true}
         variant="control"
       >
         <button
           aria-disabled={true}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-control-7"
           data-ouia-component-type="PF4/Button"
@@ -69,11 +70,12 @@ exports[`touchspin disables lower threshold 1`] = `
         value={0}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-8"
           data-ouia-component-type="PF4/Button"
@@ -134,11 +136,12 @@ exports[`touchspin disables upper threshold 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-9"
           data-ouia-component-type="PF4/Button"
@@ -185,12 +188,13 @@ exports[`touchspin disables upper threshold 1`] = `
         value={100}
       />
       <Button
+        aria-label="Plus"
         isDisabled={true}
         variant="control"
       >
         <button
           aria-disabled={true}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-control-10"
           data-ouia-component-type="PF4/Button"
@@ -259,13 +263,14 @@ exports[`touchspin passes button props successfully 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         id="minus-id"
         onClick={[Function]}
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-19"
           data-ouia-component-type="PF4/Button"
@@ -314,13 +319,14 @@ exports[`touchspin passes button props successfully 1`] = `
         value={5}
       />
       <Button
+        aria-label="Plus"
         id="plus-id"
         onClick={[Function]}
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-20"
           data-ouia-component-type="PF4/Button"
@@ -384,11 +390,12 @@ exports[`touchspin passes input props successfully 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-17"
           data-ouia-component-type="PF4/Button"
@@ -436,11 +443,12 @@ exports[`touchspin passes input props successfully 1`] = `
         value={5}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-18"
           data-ouia-component-type="PF4/Button"
@@ -502,11 +510,12 @@ exports[`touchspin renders custom width 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-15"
           data-ouia-component-type="PF4/Button"
@@ -553,11 +562,12 @@ exports[`touchspin renders custom width 1`] = `
         value={5}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-16"
           data-ouia-component-type="PF4/Button"
@@ -615,11 +625,12 @@ exports[`touchspin renders defaults & extra props 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-1"
           data-ouia-component-type="PF4/Button"
@@ -666,11 +677,12 @@ exports[`touchspin renders defaults & extra props 1`] = `
         value={0}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-2"
           data-ouia-component-type="PF4/Button"
@@ -727,12 +739,13 @@ exports[`touchspin renders disabled 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         isDisabled={true}
         variant="control"
       >
         <button
           aria-disabled={true}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-control-5"
           data-ouia-component-type="PF4/Button"
@@ -781,12 +794,13 @@ exports[`touchspin renders disabled 1`] = `
         value={90}
       />
       <Button
+        aria-label="Plus"
         isDisabled={true}
         variant="control"
       >
         <button
           aria-disabled={true}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control pf-m-disabled"
           data-ouia-component-id="OUIA-Generated-Button-control-6"
           data-ouia-component-type="PF4/Button"
@@ -850,11 +864,12 @@ exports[`touchspin renders unit & position 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-13"
           data-ouia-component-type="PF4/Button"
@@ -901,11 +916,12 @@ exports[`touchspin renders unit & position 1`] = `
         value={5}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-14"
           data-ouia-component-type="PF4/Button"
@@ -963,11 +979,12 @@ exports[`touchspin renders unit 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-11"
           data-ouia-component-type="PF4/Button"
@@ -1014,11 +1031,12 @@ exports[`touchspin renders unit 1`] = `
         value={5}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-12"
           data-ouia-component-type="PF4/Button"
@@ -1079,11 +1097,12 @@ exports[`touchspin renders value 1`] = `
       className="pf-c-input-group"
     >
       <Button
+        aria-label="Minus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Minus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-3"
           data-ouia-component-type="PF4/Button"
@@ -1130,11 +1149,12 @@ exports[`touchspin renders value 1`] = `
         value={90}
       />
       <Button
+        aria-label="Plus"
         variant="control"
       >
         <button
           aria-disabled={false}
-          aria-label={null}
+          aria-label="Plus"
           className="pf-c-button pf-m-control"
           data-ouia-component-id="OUIA-Generated-Button-control-4"
           data-ouia-component-type="PF4/Button"
