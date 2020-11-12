@@ -15,43 +15,31 @@ export type MenuSelectClickHandler = (
 ) => void;
 
 export interface MenuProps
-  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'onSelect'>,
+  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onSelect'>,
     OUIAProps {
   /** Anything that can be rendered inside of the Menu */
   children?: React.ReactNode;
   /** Additional classes added to the container */
   className?: string;
   /** Callback for updating when item selection changes */
-  onSelect?: (selectedItem: {
-    groupId: number | string;
-    itemId: number | string;
-    to: string;
-    event: React.FormEvent<HTMLInputElement>;
-    isSelected: boolean;
-  }) => void;
-  /** Callback for when a list is expanded or collapsed */
-  onToggle?: (toggledItem: {
-    groupId: number | string;
-    isExpanded: boolean;
-    event: React.FormEvent<HTMLInputElement>;
-  }) => void;
+  onSelect?: (event: React.MouseEvent, itemId: any) => void;
+  /** Callback called when an MenuItems's favorite button is clicked */
+  onFavorite?: (event: React.MouseEvent, itemId: any) => void;
   /** A callback for when the input value changes. */
-  onSearchInputChange?: (changedItem: {
-    value: string;
-    event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>;
-  }) => void;
-  /** Optional callback for custom filtering */
-  onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
+  onSearchInputChange?: (
+    event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>,
+    value: string
+  ) => void;
   /** Accessibility label */
   'aria-label'?: string;
-  /** Indicates which theme color to use */
-  theme?: 'dark' | 'light';
   /** Indicates menu type */
   variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
   /** Search input of menu */
-  searchInput?: React.ReactNode;
+  hasSearchInput?: React.ReactNode;
   /** Array of selected items for multi select variants. */
   selections?: (string | SelectOptionObject)[];
+  /** Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
 export interface MenuState {
@@ -59,12 +47,8 @@ export interface MenuState {
   ouiaStateId: string;
 }
 
-export class Menu extends React.Component<MenuProps, MenuState> {
-  static displayName = 'Menu';
+class MenuBase extends React.Component<MenuProps, MenuState> {
   static defaultProps: MenuProps = {
-    onSelect: () => undefined,
-    onToggle: () => undefined,
-    onFilter: null,
     selections: [],
     ouiaSafe: true
   };
@@ -73,80 +57,47 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant),
     typeaheadInputValue: ''
   };
-  onFilter: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-
-  // Callback from MenuItem
-  onSelect(
-    event: React.FormEvent<HTMLInputElement>,
-    groupId: number | string,
-    itemId: number | string,
-    to: string,
-    preventDefault: boolean,
-    isSelected: boolean
-  ) {
-    if (preventDefault) {
-      event.preventDefault();
-    }
-
-    this.props.onSelect({ groupId, itemId, event, to, isSelected });
-  }
 
   render() {
     const {
       'aria-label': ariaLabel,
       children,
       className,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
       onSelect,
-      onToggle,
-      onFilter,
+      onFavorite,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       onSearchInputChange,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ouiaId,
       ouiaSafe,
       variant,
-      searchInput,
+      hasSearchInput,
       // selections,
+      innerRef,
       ...props
     } = this.props;
 
     return (
-      <MenuContext.Provider
-        value={{
-          onSelect: (
-            event: React.FormEvent<HTMLInputElement>,
-            groupId: number | string,
-            itemId: number | string,
-            to: string,
-            preventDefault: boolean,
-            isSelected: boolean
-          ) => this.onSelect(event, groupId, itemId, to, preventDefault, isSelected),
-          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
-            this.props.onToggle({
-              event,
-              groupId,
-              isExpanded: expanded
-            })
-        }}
-      >
+      <MenuContext.Provider value={{ onSelect, onFavorite }}>
         <div
           className={css(styles.menu, variant === 'flyout' && styles.modifiers.flyout, className)}
           aria-label={ariaLabel || variant === 'flyout' ? 'Local' : 'Global'}
+          ref={innerRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
-          {searchInput && (
+          {hasSearchInput && (
             <React.Fragment>
               <div className="pf-c-menu__search">
                 <SearchInput
                   value={this.state.typeaheadInputValue}
                   onChange={(value, event) => {
                     this.setState({ typeaheadInputValue: value });
-                    this.props.onSearchInputChange({ value, event });
+                    this.props.onSearchInputChange(event, value);
                   }}
                   onClear={event => {
                     this.setState({ typeaheadInputValue: '' });
-                    this.props.onSearchInputChange({ value: '', event });
+                    this.props.onSearchInputChange(event, '');
                   }}
                 />
               </div>
@@ -159,3 +110,8 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     );
   }
 }
+
+export const Menu = React.forwardRef((props: MenuProps, ref: React.Ref<HTMLDivElement>) => (
+  <MenuBase {...props} innerRef={ref} />
+));
+Menu.displayName = 'Menu';
