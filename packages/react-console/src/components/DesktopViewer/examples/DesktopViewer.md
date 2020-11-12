@@ -17,7 +17,5 @@ import { DesktopViewer } from '@patternfly/react-console';
 import React from 'react';
 import { DesktopViewer } from '@patternfly/react-console';
 
-DesktopViewerBasic = () => (
-  <DesktopViewer spice={{ address: "127.0.0.1", port: "5900" }} vnc={{ address: "127.0.0.1", port: "5901" }} />
-);
+<DesktopViewer spice={{ address: "127.0.0.1", port: "5900" }} vnc={{ address: "127.0.0.1", port: "5901" }} />
 ```

@@ -5,6 +5,9 @@ import styles from '@patternfly/react-styles/css/components/DatePicker/date-pick
 import { Locales, Locale } from '../../helpers';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
 import { Popover } from '@patternfly/react-core/dist/js/components/Popover/Popover';
+import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
+import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
+import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import { parse, format, isValid as isNotNull } from 'date-fns';
 import { CalendarMonth } from '../CalendarMonth';
 
@@ -42,6 +45,8 @@ export interface DatePickerProps
   onChange?: (value: string, date?: Date) => void;
   /** Text for label */
   helperText?: React.ReactNode;
+  /** Aria label for the button */
+  buttonAriaLabel?: string;
 }
 
 export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
@@ -55,6 +60,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   placeholder = 'MM/dd/yyyy',
   value: valueProp = '',
   'aria-label': ariaLabel = 'Date picker',
+  buttonAriaLabel = 'Toggle date picker',
   onChange = (): any => undefined,
   invalidFormatErrorMessage,
   dateOutOfRangeErrorMessage,
@@ -86,6 +92,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [maxDate, setMaxDate] = React.useState(myParse(maxDateProp));
   const [valueDate, setValueDate] = React.useState(getDefaultValueDate());
   const [popoverOpen, setPopoverOpen] = React.useState(false);
+  const popoverContentRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
     setValueDate(getDefaultValueDate());
@@ -155,20 +162,27 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
       <Popover
         position="bottom"
         bodyContent={
-          <CalendarMonth
-            date={valueDate}
-            onChange={onDateClick}
-            locale={locale}
-            validators={[date => rangeValidator(date, false)]}
-          />
+          <div ref={popoverContentRef}>
+            <CalendarMonth
+              date={valueDate}
+              onChange={onDateClick}
+              locale={locale}
+              validators={[date => rangeValidator(date, false)]}
+            />
+          </div>
         }
         showClose={false}
         isVisible={popoverOpen}
-        shouldOpen={() => {
-          setPopoverOpen(true);
-          return true;
-        }}
-        shouldClose={() => {
+        shouldClose={(_1, _2, event) => {
+          event = event as KeyboardEvent;
+          if (
+            event.keyCode &&
+            event.keyCode === 27 &&
+            popoverContentRef.current &&
+            popoverContentRef.current.querySelector('.pf-c-select__menu')
+          ) {
+            return false;
+          }
           setPopoverOpen(false);
           return true;
         }}
@@ -176,19 +190,21 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         hasNoPadding
         hasAutoWidth
       >
-        <React.Fragment>
+        <InputGroup>
           <TextInput
             isDisabled={isDisabled}
-            iconVariant="calendar"
             aria-label={ariaLabel}
             placeholder={placeholder}
             validated={invalid ? 'error' : 'default'}
             value={value}
             onChange={onTextInput}
           />
-          {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
-        </React.Fragment>
+          <Button variant="control" aria-label={buttonAriaLabel} onClick={() => setPopoverOpen(!popoverOpen)}>
+            <OutlinedCalendarAltIcon />
+          </Button>
+        </InputGroup>
       </Popover>
+      {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
       {invalid && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{invalidText}</div>}
     </div>
   );

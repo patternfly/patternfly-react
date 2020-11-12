@@ -68,11 +68,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   return (
     <li
       id={id}
-      className={css(
-        styles.treeViewListItem,
-        !!children && styles.modifiers.expandable,
-        isExpanded && styles.modifiers.expanded
-      )}
+      className={css(styles.treeViewListItem, isExpanded && styles.modifiers.expanded)}
       {...(isExpanded && { 'aria-expanded': 'true' })}
       role="treeitem"
       tabIndex={0}

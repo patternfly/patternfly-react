@@ -120,12 +120,12 @@ export interface PopoverProps {
    * clicked, Enter key was used on it, or the ESC key is used.
    * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void) => void;
+  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
    * used on the focused trigger
    */
-  shouldOpen?: (showFunction?: () => void) => void;
+  shouldOpen?: (showFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /** z-index of the popover */
   zIndex?: number;
   /** CSS fade transition animation duration */
@@ -250,7 +250,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
       if (triggerManually) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
         hide();
       }
@@ -265,7 +265,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         return;
       }
       if (triggerManually) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
         hide();
       }
@@ -275,25 +275,25 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     if (event.keyCode === KEY_CODES.ENTER) {
       if (!visible) {
         if (triggerManually) {
-          shouldOpen(show);
+          shouldOpen(show, event);
         } else {
           show(true);
         }
       } else {
         if (triggerManually) {
-          shouldClose(null, hide);
+          shouldClose(null, hide, event);
         } else {
           hide();
         }
       }
     }
   };
-  const onTriggerClick = () => {
+  const onTriggerClick = (event: MouseEvent) => {
     if (triggerManually) {
       if (visible) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
-        shouldOpen(show);
+        shouldOpen(show, event);
       }
     } else {
       if (visible) {
@@ -311,7 +311,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const closePopover = (event: any) => {
     event.stopPropagation();
     if (triggerManually) {
-      shouldClose(null, hide);
+      shouldClose(null, hide, event);
     } else {
       hide();
     }
