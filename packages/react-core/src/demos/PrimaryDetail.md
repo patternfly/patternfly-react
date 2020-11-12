@@ -1247,6 +1247,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Pagination,
   Progress,
   Select,
   SelectOption,
@@ -1283,6 +1284,8 @@ class PrimaryDetailCardView extends React.Component {
     super(props);
 
     this.state = {
+      page: 1,
+      perPage: 10,
       isDrawerExpanded: false,
       activeCard: null,
       filters: {
@@ -1421,6 +1424,14 @@ class PrimaryDetailCardView extends React.Component {
         isDrawerExpanded: true
       });
     };
+
+    this.onPerPageSelect = (_evt, perPage) => {
+      this.setState({ page: 1, perPage })
+    }
+
+    this.onSetPage = (_evt, page) => {
+      this.setState({ page })
+    }
   }
 
   getAllItems() {
@@ -1669,7 +1680,7 @@ class PrimaryDetailCardView extends React.Component {
               <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
             </TextContent>
           </PageSection>
-          <PageSection>
+          <PageSection isFilled>
             <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
               <DrawerSection className="pf-u-mb-md">
                 <Toolbar id="card-view-data-toolbar-group-types" className="pf-m-page-insets" clearAllFilters={this.onDelete}>
@@ -1681,6 +1692,16 @@ class PrimaryDetailCardView extends React.Component {
                 <DrawerContentBody>{drawerContent}</DrawerContentBody>
               </DrawerContent>
             </Drawer>
+          </PageSection>
+          <PageSection isFilled={false} sticky="bottom" padding={{default: "noPadding"}} variant="light">
+            <Pagination
+              itemCount={filtered.length}
+              page={this.state.page}
+              perPage={this.state.perPage}
+              onPerPageSelect={this.onPerPageSelect}
+              onSetPage={this.onSetPage}
+              variant="bottom"
+            />
           </PageSection>
         </Page>
       </React.Fragment>
