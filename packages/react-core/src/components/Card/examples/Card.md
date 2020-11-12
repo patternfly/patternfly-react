@@ -638,8 +638,8 @@ class ExpandableCard extends React.Component {
           onExpand={this.onExpand}
           toggleButtonProps={{
             id: 'toggle-button',
-            'aria-label': 'Toggle',
-            'aria-labelledby': 'card1',
+            'aria-label': 'Details',
+            'aria-labelledby': 'titleId toggle-button',
             'aria-expanded': this.state.isExpanded
           }}
         >
@@ -660,7 +660,7 @@ class ExpandableCard extends React.Component {
               name="check1"
             />
           </CardActions>
-          <CardTitle>Header</CardTitle>
+          <CardTitle id="titleId">Header</CardTitle>
         </CardHeader>
         <CardExpandableContent>
           <CardBody>Body</CardBody>
@@ -750,13 +750,13 @@ class ExpandableIconCard extends React.Component {
       </DropdownItem>
     ];
     return (
-      <Card id="card-with-image" isExpanded={this.state.isExpanded}>
+      <Card id="image-card" isExpanded={this.state.isExpanded}>
         <CardHeader
           onExpand={this.onExpand}
           toggleButtonProps={{
             id: 'toggle-button',
-            'aria-label': 'Toggle',
-            'aria-labelledby': 'card-with-image',
+            'aria-label': 'Details',
+            'aria-labelledby': 'toggle-button',
             'aria-expanded': this.state.isExpanded
           }}
         >
