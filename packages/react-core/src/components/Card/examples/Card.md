@@ -755,8 +755,7 @@ class ExpandableIconCard extends React.Component {
           onExpand={this.onExpand}
           toggleButtonProps={{
             id: 'toggle-button',
-            'aria-label': 'Details',
-            'aria-labelledby': 'toggle-button',
+            'aria-label': 'PatternFly Details',
             'aria-expanded': this.state.isExpanded
           }}
         >
