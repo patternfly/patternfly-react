@@ -16,7 +16,7 @@ module.exports = {
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|@popperjs|lodash)'],
+  transformIgnorePatterns: ['node_modules/(?!@patternfly|novnc-core|@popperjs|lodash)'],
   testPathIgnorePatterns: [
     '<rootDir>/packages/react-integration/'
   ],

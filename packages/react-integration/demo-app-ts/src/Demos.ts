@@ -171,6 +171,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ClipboardCopyExpandedDemo
   },
   {
+    id: 'consoles-demo',
+    name: 'Consoles Demo',
+    componentType: Examples.ConsolesDemo
+  },
+  {
     id: 'context-selector-demo',
     name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo
@@ -695,6 +700,11 @@ export const Demos: DemoInterface[] = [
     id: 'table-width-modifiers-demo',
     name: 'Table Width Modifers Demo',
     componentType: Examples.TableWidthModifiersDemo
+  },
+  {
+    id: 'table-composable-demo',
+    name: 'Table Composable Demo',
+    componentType: Examples.TableComposableDemo
   },
   {
     id: 'tab-string-event-key-demo',

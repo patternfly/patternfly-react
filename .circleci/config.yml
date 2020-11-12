@@ -7,6 +7,7 @@ references:
   - node_modules/
   - packages/react-charts/node_modules/
   - packages/react-core/node_modules/
+  - packages/react-console/node_modules/
   - packages/react-docs/node_modules/
   - packages/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules/
   - packages/react-inline-edit-extension/node_modules/
@@ -24,6 +25,7 @@ references:
   build_cache_paths: &build_cache_paths
   - packages/react-charts/dist/
   - packages/react-core/dist/
+  - packages/react-console/dist/
   - packages/react-inline-edit-extension/dist/
   - packages/react-styles/css/
   - packages/react-styles/dist/

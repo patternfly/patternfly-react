@@ -174,6 +174,7 @@ exports[`optionsMenu expanded 1`] = `
                       role="menuitem"
                     >
                       <button
+                        aria-disabled="false"
                         class="pf-c-options-menu__menu-item"
                         data-ouia-component-id="OUIA-Generated-DropdownItem-1"
                         data-ouia-component-type="PF4/DropdownItem"
@@ -189,6 +190,7 @@ exports[`optionsMenu expanded 1`] = `
                       role="menuitem"
                     >
                       <button
+                        aria-disabled="false"
                         class="pf-c-options-menu__menu-item"
                         data-ouia-component-id="OUIA-Generated-DropdownItem-2"
                         data-ouia-component-type="PF4/DropdownItem"
@@ -209,7 +211,6 @@ exports[`optionsMenu expanded 1`] = `
                         data-ouia-component-id="OUIA-Generated-DropdownItem-3"
                         data-ouia-component-type="PF4/DropdownItem"
                         data-ouia-safe="true"
-                        disabled=""
                         tabindex="-1"
                         type="button"
                       >
@@ -221,6 +222,7 @@ exports[`optionsMenu expanded 1`] = `
                       role="menuitem"
                     >
                       <button
+                        aria-disabled="false"
                         class="pf-c-options-menu__menu-item"
                         data-ouia-component-id="OUIA-Generated-DropdownItem-4"
                         data-ouia-component-type="PF4/DropdownItem"
@@ -256,6 +258,7 @@ exports[`optionsMenu expanded 1`] = `
                       role="menuitem"
                     >
                       <button
+                        aria-disabled="false"
                         class="pf-c-options-menu__menu-item"
                         data-ouia-component-id="OUIA-Generated-DropdownItem-5"
                         data-ouia-component-type="PF4/DropdownItem"
@@ -271,6 +274,7 @@ exports[`optionsMenu expanded 1`] = `
                       role="menuitem"
                     >
                       <button
+                        aria-disabled="false"
                         class="pf-c-options-menu__menu-item"
                         data-ouia-component-id="OUIA-Generated-DropdownItem-6"
                         data-ouia-component-type="PF4/DropdownItem"
@@ -367,6 +371,7 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled="false"
                           class="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-1"
                           data-ouia-component-type="PF4/DropdownItem"
@@ -382,6 +387,7 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled="false"
                           class="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-2"
                           data-ouia-component-type="PF4/DropdownItem"
@@ -402,7 +408,6 @@ exports[`optionsMenu expanded 1`] = `
                           data-ouia-component-id="OUIA-Generated-DropdownItem-3"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe="true"
-                          disabled=""
                           tabindex="-1"
                           type="button"
                         >
@@ -414,6 +419,7 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled="false"
                           class="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-4"
                           data-ouia-component-type="PF4/DropdownItem"
@@ -449,6 +455,7 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled="false"
                           class="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-5"
                           data-ouia-component-type="PF4/DropdownItem"
@@ -464,6 +471,7 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled="false"
                           class="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-6"
                           data-ouia-component-type="PF4/DropdownItem"
@@ -568,6 +576,7 @@ exports[`optionsMenu expanded 1`] = `
                           role="menuitem"
                         >
                           <button
+                            aria-disabled="false"
                             class="pf-c-options-menu__menu-item"
                             data-ouia-component-id="OUIA-Generated-DropdownItem-1"
                             data-ouia-component-type="PF4/DropdownItem"
@@ -583,6 +592,7 @@ exports[`optionsMenu expanded 1`] = `
                           role="menuitem"
                         >
                           <button
+                            aria-disabled="false"
                             class="pf-c-options-menu__menu-item"
                             data-ouia-component-id="OUIA-Generated-DropdownItem-2"
                             data-ouia-component-type="PF4/DropdownItem"
@@ -603,7 +613,6 @@ exports[`optionsMenu expanded 1`] = `
                             data-ouia-component-id="OUIA-Generated-DropdownItem-3"
                             data-ouia-component-type="PF4/DropdownItem"
                             data-ouia-safe="true"
-                            disabled=""
                             tabindex="-1"
                             type="button"
                           >
@@ -615,6 +624,7 @@ exports[`optionsMenu expanded 1`] = `
                           role="menuitem"
                         >
                           <button
+                            aria-disabled="false"
                             class="pf-c-options-menu__menu-item"
                             data-ouia-component-id="OUIA-Generated-DropdownItem-4"
                             data-ouia-component-type="PF4/DropdownItem"
@@ -650,6 +660,7 @@ exports[`optionsMenu expanded 1`] = `
                           role="menuitem"
                         >
                           <button
+                            aria-disabled="false"
                             class="pf-c-options-menu__menu-item"
                             data-ouia-component-id="OUIA-Generated-DropdownItem-5"
                             data-ouia-component-type="PF4/DropdownItem"
@@ -665,6 +676,7 @@ exports[`optionsMenu expanded 1`] = `
                           role="menuitem"
                         >
                           <button
+                            aria-disabled="false"
                             class="pf-c-options-menu__menu-item"
                             data-ouia-component-id="OUIA-Generated-DropdownItem-6"
                             data-ouia-component-type="PF4/DropdownItem"
@@ -796,6 +808,12 @@ exports[`optionsMenu expanded 1`] = `
                       icon={null}
                       id=""
                       index={-1}
+                      inoperableEvents={
+                        Array [
+                          "onClick",
+                          "onKeyPress",
+                        ]
+                      }
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -813,11 +831,11 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled={false}
                           className="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-1"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
-                          disabled={false}
                           tabIndex={-1}
                           type="button"
                         >
@@ -852,6 +870,12 @@ exports[`optionsMenu expanded 1`] = `
                       icon={null}
                       id=""
                       index={-1}
+                      inoperableEvents={
+                        Array [
+                          "onClick",
+                          "onKeyPress",
+                        ]
+                      }
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -869,11 +893,11 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled={false}
                           className="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-2"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
-                          disabled={false}
                           tabIndex={-1}
                           type="button"
                         >
@@ -912,6 +936,12 @@ exports[`optionsMenu expanded 1`] = `
                       icon={null}
                       id=""
                       index={-1}
+                      inoperableEvents={
+                        Array [
+                          "onClick",
+                          "onKeyPress",
+                        ]
+                      }
                       isDisabled={true}
                       isHovered={false}
                       isPlainText={false}
@@ -934,7 +964,8 @@ exports[`optionsMenu expanded 1`] = `
                           data-ouia-component-id="OUIA-Generated-DropdownItem-3"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
-                          disabled={true}
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
@@ -969,6 +1000,12 @@ exports[`optionsMenu expanded 1`] = `
                       icon={null}
                       id=""
                       index={-1}
+                      inoperableEvents={
+                        Array [
+                          "onClick",
+                          "onKeyPress",
+                        ]
+                      }
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -986,11 +1023,11 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled={false}
                           className="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-4"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
-                          disabled={false}
                           tabIndex={-1}
                           type="button"
                         >
@@ -1062,6 +1099,12 @@ exports[`optionsMenu expanded 1`] = `
                       icon={null}
                       id=""
                       index={-1}
+                      inoperableEvents={
+                        Array [
+                          "onClick",
+                          "onKeyPress",
+                        ]
+                      }
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -1079,11 +1122,11 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled={false}
                           className="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-5"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
-                          disabled={false}
                           tabIndex={-1}
                           type="button"
                         >
@@ -1118,6 +1161,12 @@ exports[`optionsMenu expanded 1`] = `
                       icon={null}
                       id=""
                       index={-1}
+                      inoperableEvents={
+                        Array [
+                          "onClick",
+                          "onKeyPress",
+                        ]
+                      }
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -1135,11 +1184,11 @@ exports[`optionsMenu expanded 1`] = `
                         role="menuitem"
                       >
                         <button
+                          aria-disabled={false}
                           className="pf-c-options-menu__menu-item"
                           data-ouia-component-id="OUIA-Generated-DropdownItem-6"
                           data-ouia-component-type="PF4/DropdownItem"
                           data-ouia-safe={true}
-                          disabled={false}
                           tabIndex={-1}
                           type="button"
                         >

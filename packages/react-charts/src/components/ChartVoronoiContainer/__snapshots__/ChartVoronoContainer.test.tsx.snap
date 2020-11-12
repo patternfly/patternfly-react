@@ -483,6 +483,7 @@ exports[`ChartVoronoiContainer 1`] = `
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
+  role="img"
   theme={
     Object {
       "area": Object {
@@ -1419,6 +1420,7 @@ exports[`ChartVoronoiContainer 2`] = `
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
+  role="img"
   theme={
     Object {
       "area": Object {
@@ -1907,6 +1909,7 @@ exports[`renders container via ChartGroup 1`] = `
       portalComponent={<Portal />}
       portalZIndex={99}
       responsive={true}
+      role="img"
       theme={
         Object {
           "area": Object {

@@ -130,16 +130,6 @@ describe('keyHandler works on ApplicationLauncher', () => {
     expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 
-  test('keyHandler skips disabled items and loops down to top', () => {
-    secondDropdownItem.simulate('keydown', {
-      key: 'ArrowDown',
-      keyCode: KEY_CODES.ARROW_DOWN,
-      which: KEY_CODES.ARROW_DOWN
-    });
-    const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first-button');
-  });
-
   test('keyHandler loops top to bottom', () => {
     firstDropdownItem.simulate('keydown', {
       key: 'ArrowUp',
@@ -147,7 +137,7 @@ describe('keyHandler works on ApplicationLauncher', () => {
       which: KEY_CODES.ARROW_UP
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second-button');
+    expect(focusedElement.getAttribute('id')).toEqual('third-button');
   });
 });
 
@@ -172,6 +162,7 @@ describe('keyHandler works on Dropdown', () => {
   );
   const firstDropdownItem = view.find('#first button').first();
   const secondDropdownItem = view.find('#second button').first();
+  const thirdDropdownItem = view.find('#third button').first();
 
   test('keyHandler advances forward', () => {
     firstDropdownItem.simulate('keydown', {
@@ -193,16 +184,6 @@ describe('keyHandler works on Dropdown', () => {
     expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 
-  test('keyHandler skips disabled items and loops down to top', () => {
-    secondDropdownItem.simulate('keydown', {
-      key: 'ArrowDown',
-      keyCode: KEY_CODES.ARROW_DOWN,
-      which: KEY_CODES.ARROW_DOWN
-    });
-    const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first-button');
-  });
-
   test('keyHandler loops top to bottom', () => {
     firstDropdownItem.simulate('keydown', {
       key: 'ArrowUp',
@@ -210,7 +191,17 @@ describe('keyHandler works on Dropdown', () => {
       which: KEY_CODES.ARROW_UP
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second-button');
+    expect(focusedElement.getAttribute('id')).toEqual('third-button');
+  });
+
+  test('keyHandler loops down to top', () => {
+    thirdDropdownItem.simulate('keydown', {
+      key: 'ArrowDown',
+      keyCode: KEY_CODES.ARROW_DOWN,
+      which: KEY_CODES.ARROW_DOWN
+    });
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 });
 

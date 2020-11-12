@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { CollapseColumn } from '../../CollapseColumn';
 import { ExpandableRowContent } from '../../ExpandableRowContent';
-import { IExtra, IFormatterValueType, IFormatter, decoratorReturnType } from '../../Table';
+import { IExtra, IFormatterValueType, IFormatter, decoratorReturnType } from '../../TableTypes';
 
 export const collapsible: IFormatter = (
   value: IFormatterValueType,

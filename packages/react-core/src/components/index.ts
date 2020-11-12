@@ -50,7 +50,6 @@ export * from './SimpleList';
 export * from './Skeleton';
 export * from './SkipToContent';
 export * from './Spinner';
-export * from './Splitter';
 export * from './Switch';
 export * from './Tabs';
 export * from './Text';

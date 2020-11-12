@@ -47,7 +47,7 @@ async function verifyPatternflyVersions() {
   if (process.argv[2] === '--fix') {
     mismatchedVersions.forEach(([dep, versions]) => {
       const highestVersion = Object.keys(versions)
-        .sort(semver.compare)
+        .sort((a, b) => semver.compare(a.replace(/^\^/, ''), b.replace(/^\^/, '')))
         .pop();
       Object.keys(versions)
         .filter(version => version !== highestVersion)

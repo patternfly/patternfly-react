@@ -1,0 +1,6 @@
+.pf-c-console__desktop-viewer {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+

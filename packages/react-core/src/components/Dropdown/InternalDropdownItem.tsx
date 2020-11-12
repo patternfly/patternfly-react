@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEYHANDLER_DIRECTION } from '../../helpers/constants';
+import { preventedEvents } from '../../helpers/util';
 import { Tooltip } from '../Tooltip';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
@@ -53,6 +54,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   autoFocus?: boolean;
   /** A short description of the dropdown item, displayed under the dropdown item content */
   description?: React.ReactNode;
+  /** Events to prevent when the item is disabled */
+  inoperableEvents?: string[];
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -78,7 +81,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     enterTriggersArrowDown: false,
     icon: null,
     styleChildren: true,
-    description: null
+    description: null,
+    inoperableEvents: ['onClick', 'onKeyPress']
   };
 
   componentDidMount() {
@@ -161,6 +165,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       autoFocus,
       styleChildren,
       description,
+      inoperableEvents,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -168,9 +173,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
     if (component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
-      additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (component === 'button') {
-      additionalProps.disabled = isDisabled;
+      additionalProps['aria-disabled'] = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
     }
     const renderWithTooltip = (childNode: React.ReactNode) =>
@@ -208,7 +212,14 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       );
 
       return (
-        <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
+        <Component
+          {...additionalProps}
+          {...(isDisabled ? preventedEvents(inoperableEvents) : null)}
+          href={href}
+          ref={this.ref}
+          className={classes}
+          id={componentID}
+        >
           {componentContent}
         </Component>
       );

@@ -16,13 +16,16 @@ module.exports = (sourceMD, sourceProps) => {
   const reactVirtualizedPath = require
     .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
+  const reactConsolePath = require.resolve('@patternfly/react-console/package.json').replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
+
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTablePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactChartsPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactDateTimePath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactCatalogViewPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactVirtualizedPath, '/**/*.tsx'), reactPropsIgnore);
+  sourceProps(path.join(reactConsolePath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
   sourceMD(path.join(reactCorePath, '/**/examples/*.md'), 'react');
@@ -43,6 +46,9 @@ module.exports = (sourceMD, sourceProps) => {
 
   // Virtualized MD
   sourceMD(path.join(reactVirtualizedPath, '/**/examples/*.md'), 'react');
+
+  // Consoles MD
+  sourceMD(path.join(reactConsolePath, '/**/examples/*.md'), 'react');
 
   // Release notes
   sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');

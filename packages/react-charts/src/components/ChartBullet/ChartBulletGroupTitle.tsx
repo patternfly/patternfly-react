@@ -137,10 +137,10 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   };
 
   const labelPadding = {
-    bottom: getPaddingForSide('bottom', padding, Number(theme.legend.style.labels.padding)),
-    left: getPaddingForSide('left', padding, Number(theme.legend.style.labels.padding)),
-    right: getPaddingForSide('right', padding, Number(theme.legend.style.labels.padding)),
-    top: getPaddingForSide('top', padding, Number(theme.legend.style.labels.padding))
+    bottom: getPaddingForSide('bottom', padding, Number((theme.legend.style.labels as any).padding)),
+    left: getPaddingForSide('left', padding, Number((theme.legend.style.labels as any).padding)),
+    right: getPaddingForSide('right', padding, Number((theme.legend.style.labels as any).padding)),
+    top: getPaddingForSide('top', padding, Number((theme.legend.style.labels as any).padding))
   };
 
   // Horizontal divider to render under the group title

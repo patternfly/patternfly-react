@@ -2,10 +2,9 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   NumberOrCallback,
-  OrientationTypes,
+  OrientationOrCallback,
   StringOrNumberOrCallback,
   TextAnchorType,
-  VictoryNumberCallback,
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
@@ -20,6 +19,7 @@ import {
   getLegendTooltipVisibleText,
   getTheme
 } from '../ChartUtils';
+import { isFunction } from 'lodash';
 
 /**
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
@@ -196,7 +196,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
    */
-  orientation?: OrientationTypes | VictoryNumberCallback;
+  orientation?: OrientationOrCallback;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
@@ -207,7 +207,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * it will be determined based on the overall orientation of the flyout in relation to its data point, and any center
    * or centerOffset values. Valid values are 'top', 'bottom', 'left' and 'right.
    */
-  pointerOrientation?: OrientationTypes | ((...args: any[]) => OrientationTypes);
+  pointerOrientation?: OrientationOrCallback;
   /**
    * The pointerWidth prop determines the width of the base of the triangular pointer extending from
    * the flyout. This prop may be given as a positive number or a function of datum.
@@ -294,7 +294,12 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartLegendTooltipProps) => {
-  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
+  const pointerLength =
+    theme && theme.tooltip
+      ? isFunction(theme.tooltip.pointerLength)
+        ? theme.tooltip.pointerLength({ index: rest.index || 0, datum, ...rest })
+        : Number(theme.tooltip.pointerLength)
+      : 10;
   const legendTooltipProps = {
     legendData: getLegendTooltipVisibleData({ activePoints, legendData, text, theme }),
     legendProps: getLegendTooltipDataProps(labelComponent.props.legendComponent),
