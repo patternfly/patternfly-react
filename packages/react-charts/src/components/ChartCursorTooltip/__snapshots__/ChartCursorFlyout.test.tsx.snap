@@ -998,6 +998,7 @@ exports[`allows tooltip via container component 1`] = `
       portalComponent={<Portal />}
       portalZIndex={99}
       responsive={true}
+      role="img"
       theme={
         Object {
           "area": Object {

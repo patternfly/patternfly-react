@@ -596,8 +596,16 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       const donutThresholds = getDonutThresholds();
       const mergeThemeProps = (i: number) => {
         // Merge just the first color of dynamic (blue, green, etc.) with static (gray) for expected colorScale
-        newTheme.pie.colorScale[0] = donutThresholds[i].color;
-        newTheme.legend.colorScale[0] = donutThresholds[i].color;
+        if (newTheme.pie.colorScale instanceof Array) {
+          newTheme.pie.colorScale[0] = donutThresholds[i].color;
+        } else {
+          newTheme.pie.colorScale = donutThresholds[i].color;
+        }
+        if (newTheme.legend.colorScale instanceof Array) {
+          newTheme.legend.colorScale[0] = donutThresholds[i].color;
+        } else {
+          newTheme.legend.colorScale = donutThresholds[i].color;
+        }
       };
       for (let i = 0; i < donutThresholds.length; i++) {
         if (invert) {

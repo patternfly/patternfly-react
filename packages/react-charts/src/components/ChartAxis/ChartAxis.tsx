@@ -12,7 +12,7 @@ import {
   RangePropType,
   ScalePropType,
   StringOrNumberOrList,
-  TickLabelProps
+  LabelProps
 } from 'victory-core';
 import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
@@ -338,7 +338,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
       [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     tickLabels?: {
-      [K in keyof TickLabelProps]: string | number | ((tick?: any) => string | number);
+      [K in keyof LabelProps]: string | number | ((tick?: any) => string | number);
     };
   };
   /**
