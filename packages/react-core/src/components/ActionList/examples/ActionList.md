@@ -121,7 +121,7 @@ import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 class IconsActionList extends React.Component {
   render() {
     return (
-      <ActionList hasIcons>
+      <ActionList isIconList>
         <ActionListItem>
           <Button variant="plain" id="times-button" aria-label="times icon button">
             <TimesIcon />

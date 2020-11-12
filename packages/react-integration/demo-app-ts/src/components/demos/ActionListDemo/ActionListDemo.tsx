@@ -86,7 +86,7 @@ export class ActionListDemo extends React.Component<{}, ActionListDemoState> {
             </ActionListItem>
           </ActionListGroup>
         </ActionList>
-        <ActionList hasIcons id="icon-action-list">
+        <ActionList isIconList id="icon-action-list">
           <ActionListItem>
             <Button variant="plain" id="times-icon-button">
               <TimesIcon />

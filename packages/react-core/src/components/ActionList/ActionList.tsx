@@ -5,16 +5,16 @@ import styles from '@patternfly/react-styles/css/components/ActionList/action-li
 export interface ActionListProps extends React.HTMLProps<HTMLDivElement> {
   /** Children of the action list */
   children?: React.ReactNode;
-  /** Flag indicating the action list contains icons */
-  hasIcons?: boolean;
+  /** Flag indicating the action list contains multiple icons and item padding should be removed */
+  isIconList?: boolean;
 }
 
 export const ActionList: React.FunctionComponent<ActionListProps> = ({
   children,
-  hasIcons,
+  isIconList,
   ...props
 }: ActionListProps) => (
-  <div className={css(styles.actionList, hasIcons && styles.modifiers.icons)} {...props}>
+  <div className={css(styles.actionList, isIconList && styles.modifiers.icons)} {...props}>
     {children}
   </div>
 );

@@ -7,8 +7,8 @@ describe('action list', () => {
     const view = mount(<ActionList>test</ActionList>);
     expect(view).toMatchSnapshot();
   });
-  test('hasIcons flag adds modifier', () => {
-    const view = mount(<ActionList hasIcons>test</ActionList>);
+  test('isIconList flag adds modifier', () => {
+    const view = mount(<ActionList isIconList>test</ActionList>);
     expect(view).toMatchSnapshot();
   });
 });
