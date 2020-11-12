@@ -21,6 +21,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AccordionDemo
   },
   {
+    id: 'action-list-demo',
+    name: 'Action List Demo',
+    componentType: Examples.ActionListDemo
+  },
+  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo

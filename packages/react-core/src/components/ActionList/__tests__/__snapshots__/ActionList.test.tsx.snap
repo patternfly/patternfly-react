@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`action list isIconList flag adds modifier 1`] = `
+<ActionList
+  isIconList={true}
+>
+  <div
+    className="pf-c-action-list pf-m-icons"
+  >
+    test
+  </div>
+</ActionList>
+`;
+
+exports[`action list renders successfully 1`] = `
+<ActionList>
+  <div
+    className="pf-c-action-list"
+  >
+    test
+  </div>
+</ActionList>
+`;
