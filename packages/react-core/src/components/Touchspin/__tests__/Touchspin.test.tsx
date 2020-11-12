@@ -19,12 +19,12 @@ describe('touchspin', () => {
   });
 
   test('disables lower threshold', () => {
-    const view = mount(<Touchspin value={0} minusButtonProps={{ isDisabled: true }} />);
+    const view = mount(<Touchspin value={0} min={0} />);
     expect(view).toMatchSnapshot();
   });
 
   test('disables upper threshold', () => {
-    const view = mount(<Touchspin value={100} plusButtonProps={{ isDisabled: true }} />);
+    const view = mount(<Touchspin value={100} max={100} />);
     expect(view).toMatchSnapshot();
   });
 
@@ -44,7 +44,7 @@ describe('touchspin', () => {
   });
 
   test('passes input props successfully', () => {
-    const view = mount(<Touchspin value={5} onChange={jest.fn()} inputProps={{ name: 'test-name' }} />);
+    const view = mount(<Touchspin value={5} onChange={jest.fn()} inputName="test-name" />);
     expect(view).toMatchSnapshot();
   });
 
@@ -53,9 +53,9 @@ describe('touchspin', () => {
       <Touchspin
         value={5}
         onMinus={jest.fn()}
-        minusButtonProps={{ id: 'minus-id' }}
+        minusBtnProps={{ id: 'minus-id' }}
         onPlus={jest.fn()}
-        plusButtonProps={{ id: 'plus-id' }}
+        plusBtnProps={{ id: 'plus-id' }}
       />
     );
     expect(view).toMatchSnapshot();

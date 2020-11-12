@@ -48,9 +48,10 @@ class BasicTouchspin extends React.Component {
         onMinus={this.onMinus}
         onChange={this.onChange}
         onPlus={this.onPlus}
-        inputProps={{ name: 'basic-touchspin-input', 'aria-label': 'touchspin input' }}
-        minusButtonProps={{ 'aria-label': 'minus' }}
-        plusButtonProps={{ 'aria-label': 'plus' }}
+        inputName="input"
+        inputAriaLabel="touchspin input"
+        minusBtnAriaLabel="minus"
+        plusBtnAriaLabel="plus"
       />
     );
   }
@@ -118,9 +119,10 @@ class UnitTouchspin extends React.Component {
           onMinus={this.onMinus1}
           onChange={this.onChange1}
           onPlus={this.onPlus1}
-          inputProps={{ name: 'touchspin-input1', 'aria-label': 'touchspin input 1' }}
-          minusButtonProps={{ 'aria-label': 'input 1 minus 1' }}
-          plusButtonProps={{ 'aria-label': 'input 1 plus 1' }}
+          inputName="input 1"
+          inputAriaLabel="touchspin input 1"
+          minusBtnAriaLabel="minus 1"
+          plusBtnAriaLabel="plus 1"
           unit="%"
         />
         <br />
@@ -130,9 +132,10 @@ class UnitTouchspin extends React.Component {
           onMinus={this.onMinus2}
           onChange={this.onChange2}
           onPlus={this.onPlus2}
-          inputProps={{ name: 'touchspin-input2', 'aria-label': 'touchspin input 2' }}
-          minusButtonProps={{ 'aria-label': 'input 2 minus 0.01' }}
-          plusButtonProps={{ 'aria-label': 'input 2 plus 0.01' }}
+          inputName="input 2"
+          inputAriaLabel="touchspin input 2"
+          minusBtnAriaLabel="minus 0.01"
+          plusBtnAriaLabel="plus 0.01"
           unit="$"
           unitPosition="before"
         />
@@ -154,6 +157,8 @@ class UnitThresholdTouchspin extends React.Component {
     this.state = {
       value: 0
     };
+    this.minValue = 0;
+    this.maxValue = 10;
 
     this.onMinus = () => {
       this.setState({
@@ -162,8 +167,9 @@ class UnitThresholdTouchspin extends React.Component {
     };
 
     this.onChange = event => {
+      const newValue = isNaN(event.target.value) ? 0 : Number(event.target.value);
       this.setState({
-        value: Number(event.target.value)
+        value: newValue > this.maxValue ? this.maxValue : newValue < this.minValue ? this.minValue : newValue
       });
     };
 
@@ -176,8 +182,6 @@ class UnitThresholdTouchspin extends React.Component {
 
   render() {
     const { value } = this.state;
-    const minValue = 0;
-    const maxValue = 10;
 
     return (
       <React.Fragment>
@@ -185,12 +189,15 @@ class UnitThresholdTouchspin extends React.Component {
         <br />
         <Touchspin
           value={value}
+          min={this.minValue}
+          max={this.maxValue}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ name: 'touchspin-input1', 'aria-label': 'touchspin input' }}
-          minusButtonProps={{ isDisabled: value === minValue, 'aria-label': 'minus 1' }}
-          plusButtonProps={{ isDisabled: value === maxValue, 'aria-label': 'plus 1' }}
+          inputName="input"
+          inputAriaLabel="touchspin input"
+          minusBtnAriaLabel="minus"
+          plusBtnAriaLabel="plus"
           unit="%"
         />
       </React.Fragment>
@@ -239,12 +246,15 @@ class DisabledTouchspin extends React.Component {
     return (
       <Touchspin
         value={value}
+        min={minValue}
+        max={maxValue}
         onMinus={this.onMinus}
         onChange={this.onChange}
         onPlus={this.onPlus}
-        inputProps={{ name: 'touchspin-input1', 'aria-label': 'input touchspin' }}
-        minusButtonProps={{ isDisabled: value === minValue, 'aria-label': 'minus 1' }}
-        plusButtonProps={{ isDisabled: value === maxValue, 'aria-label': 'plus 1' }}
+        inputName="input"
+        inputAriaLabel="touchspin input"
+        minusBtnAriaLabel="minus"
+        plusBtnAriaLabel="plus"
         unit="%"
         isDisabled
       />
@@ -275,13 +285,13 @@ class TouchspinSizes extends React.Component {
       });
     };
 
-    this.onMinus = inputName => {
+    this.onMinus = (e, inputName) => {
       this.setState({
         [`${inputName}Value`]: this.state[`${inputName}Value`] - 1
       });
     };
 
-    this.onPlus = inputName => {
+    this.onPlus = (e, inputName) => {
       this.setState({
         [`${inputName}Value`]: this.state[`${inputName}Value`] + 1
       });
@@ -298,9 +308,10 @@ class TouchspinSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ name: 'input1', 'aria-label': 'touchspin input 1' }}
-          minusButtonProps={{ 'aria-label': 'input 1 minus 1' }}
-          plusButtonProps={{ 'aria-label': 'input 1 plus 1' }}
+          inputName="input1"
+          inputAriaLabel="touchspin input 1"
+          minusBtnAriaLabel="input 2 minus"
+          plusBtnAriaLabel="input 2 plus"
           widthChars={1}
         />
         <br />
@@ -310,9 +321,10 @@ class TouchspinSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ name: 'input2', 'aria-label': 'touchspin input 2' }}
-          minusButtonProps={{ 'aria-label': 'input 2 minus 1' }}
-          plusButtonProps={{ 'aria-label': 'input 2 plus 1' }}
+          inputName="input2"
+          inputAriaLabel="touchspin input 2"
+          minusBtnAriaLabel="input 2 minus"
+          plusBtnAriaLabel="input 2 plus"
           widthChars={10}
         />
         <br />
@@ -322,9 +334,10 @@ class TouchspinSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ name: 'input3', 'aria-label': 'touchspin input 3' }}
-          minusButtonProps={{ 'aria-label': 'input 3 minus 1' }}
-          plusButtonProps={{ 'aria-label': 'input 3 plus 1' }}
+          inputName="input3"
+          inputAriaLabel="touchspin input 3"
+          minusBtnAriaLabel="input 3 minus"
+          plusBtnAriaLabel="input 3 plus"
           widthChars={5}
         />
         <br />
@@ -334,9 +347,10 @@ class TouchspinSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ name: 'input4', 'aria-label': 'touchspin input 4' }}
-          minusButtonProps={{ 'aria-label': 'input 4 minus 1' }}
-          plusButtonProps={{ 'aria-label': 'input 4 plus 1' }}
+          inputName="input4"
+          inputAriaLabel="touchspin input 4"
+          minusBtnAriaLabel="input 4 minus"
+          plusBtnAriaLabel="input 4 plus"
           widthChars={5}
         />
       </React.Fragment>

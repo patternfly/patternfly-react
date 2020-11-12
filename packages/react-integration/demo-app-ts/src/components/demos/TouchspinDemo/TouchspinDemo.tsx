@@ -43,12 +43,18 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
         <Touchspin
           id="touchspin1"
           value={value}
+          min={minValue}
+          max={maxValue}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ id: 'input1', name: 'touchspin-input', 'aria-label': 'touchspin input' }}
-          minusButtonProps={{ isDisabled: value === minValue, id: 'minus-button', 'aria-label': 'minus' }}
-          plusButtonProps={{ isDisabled: value === maxValue, id: 'plus-button', 'aria-label': 'plus' }}
+          inputName="input"
+          inputAriaLabel="touchspint input"
+          minusBtnAriaLabel="minus"
+          plusBtnAriaLabel="plus"
+          inputProps={{ id: 'input1' }}
+          minusBtnProps={{ id: 'minus-button' }}
+          plusBtnProps={{ id: 'plus-button' }}
           unit="%"
           widthChars={5}
         />
@@ -57,12 +63,18 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
         <Touchspin
           id="touchspin2"
           value={value}
+          min={minValue}
+          max={maxValue}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
-          inputProps={{ id: 'input2', name: 'touchspin-input', 'aria-label': 'touchspin input' }}
-          minusButtonProps={{ isDisabled: value === minValue, id: 'minus-button2', 'aria-label': 'minus' }}
-          plusButtonProps={{ isDisabled: value === maxValue, id: 'plus-button2', 'aria-label': 'plus' }}
+          inputName="input 2"
+          inputAriaLabel="touchspint input 2"
+          minusBtnAriaLabel="minus"
+          plusBtnAriaLabel="plus"
+          inputProps={{ id: 'input2' }}
+          minusBtnProps={{ id: 'minus-button2' }}
+          plusBtnProps={{ id: 'plus-button2' }}
           unit="$"
           unitPosition="before"
           isDisabled

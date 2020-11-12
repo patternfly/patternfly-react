@@ -15,21 +15,33 @@ export interface TouchspinProps extends React.HTMLProps<HTMLDivElement> {
   /** Indicates the whole touchspin should be disabled */
   isDisabled?: boolean;
   /** Callback for the minus button */
-  onMinus?: (name: string, event: React.MouseEvent) => void;
+  onMinus?: (event: React.MouseEvent, name?: string) => void;
   /** Callback for the text input changing */
   onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
   /** Callback for the plus button */
-  onPlus?: (name: string, event: React.MouseEvent) => void;
+  onPlus?: (event: React.MouseEvent, name?: string) => void;
   /** Adds the given touchspin unit to the touchspin */
   unit?: React.ReactNode;
   /** Position of the touchspin unit in relation to the touchspin */
   unitPosition?: 'before' | 'after';
+  /** Minimum value of the touchspin, disabling the minus button when reached */
+  min?: number;
+  /** Maximum value of the touchspin, disabling the plus button when reached */
+  max?: number;
+  /** Name of the input */
+  inputName?: string;
+  /** Aria label of the input */
+  inputAriaLabel?: string;
+  /** Aria label of the minus button */
+  minusBtnAriaLabel?: string;
+  /** Aria label of the plus button */
+  plusBtnAriaLabel?: string;
   /** Additional properties added to the touchspin text input */
   inputProps?: any;
   /** Additional properties added to the minus button */
-  minusButtonProps?: ButtonProps;
+  minusBtnProps?: ButtonProps;
   /** Additional properties added to the plus button */
-  plusButtonProps?: ButtonProps;
+  plusBtnProps?: ButtonProps;
 }
 
 export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
@@ -42,9 +54,15 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
   onPlus,
   unit,
   unitPosition = 'after',
+  min,
+  max,
+  inputName,
+  inputAriaLabel = 'Input',
+  minusBtnAriaLabel = 'Minus',
+  plusBtnAriaLabel = 'Plus',
   inputProps,
-  minusButtonProps,
-  plusButtonProps,
+  minusBtnProps,
+  plusBtnProps,
   ...props
 }: TouchspinProps) => {
   const touchspinUnit = <div className={css(styles.touchspinUnit)}>{unit}</div>;
@@ -63,10 +81,10 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
       <div className={css(styles.inputGroup)}>
         <Button
           variant="control"
-          {...minusButtonProps}
-          {...(onMinus && { onClick: evt => onMinus(inputProps.name, evt) })}
-          {...(isDisabled && { isDisabled })}
-          {...(!(minusButtonProps && minusButtonProps['aria-label']) && { 'aria-label': 'Minus' })}
+          aria-label={minusBtnAriaLabel}
+          isDisabled={isDisabled || value === min}
+          onClick={evt => onMinus(evt, inputName)}
+          {...minusBtnProps}
         >
           <span className={css(styles.touchspinIcon)}>
             <MinusIcon aria-hidden="true" />
@@ -76,17 +94,19 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
           className={css(styles.formControl)}
           type="text"
           value={value}
-          {...inputProps}
+          name={inputName}
+          aria-label={inputAriaLabel}
           {...(isDisabled && { disabled: isDisabled })}
           {...(onChange && { onChange })}
-          {...(!onChange && !(inputProps && inputProps.onChange) && { readOnly: true })}
+          {...(!onChange && { readOnly: true })}
+          {...inputProps}
         />
         <Button
           variant="control"
-          {...plusButtonProps}
-          {...(onPlus && { onClick: evt => onPlus(inputProps.name, evt) })}
-          {...(isDisabled && { isDisabled })}
-          {...(!(plusButtonProps && plusButtonProps['aria-label']) && { 'aria-label': 'Plus' })}
+          aria-label={plusBtnAriaLabel}
+          isDisabled={isDisabled || value === max}
+          onClick={evt => onPlus(evt, inputName)}
+          {...plusBtnProps}
         >
           <span className={css(styles.touchspinIcon)}>
             <PlusIcon aria-hidden="true" />
