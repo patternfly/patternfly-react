@@ -3,16 +3,8 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { SearchInput } from '../SearchInput';
-import { Divider, SelectOptionObject } from '..';
+import { Divider } from '../Divider';
 import { MenuContext } from './MenuContext';
-
-export type MenuSelectClickHandler = (
-  e: React.FormEvent<HTMLInputElement>,
-  itemId: number | string,
-  groupId: number | string,
-  to: string,
-  isSelected: boolean
-) => void;
 
 export interface MenuProps
   extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onSelect'>,
@@ -36,8 +28,6 @@ export interface MenuProps
   variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
   /** Search input of menu */
   hasSearchInput?: React.ReactNode;
-  /** Array of selected items for multi select variants. */
-  selections?: (string | SelectOptionObject)[];
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
@@ -49,7 +39,6 @@ export interface MenuState {
 
 class MenuBase extends React.Component<MenuProps, MenuState> {
   static defaultProps: MenuProps = {
-    selections: [],
     ouiaSafe: true
   };
 
@@ -65,14 +54,11 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       className,
       onSelect,
       onFavorite,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
       onSearchInputChange,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
       ouiaId,
       ouiaSafe,
       variant,
       hasSearchInput,
-      // selections,
       innerRef,
       ...props
     } = this.props;
@@ -93,11 +79,11 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
                   value={this.state.typeaheadInputValue}
                   onChange={(value, event) => {
                     this.setState({ typeaheadInputValue: value });
-                    this.props.onSearchInputChange(event, value);
+                    onSearchInputChange(event, value);
                   }}
                   onClear={event => {
                     this.setState({ typeaheadInputValue: '' });
-                    this.props.onSearchInputChange(event, '');
+                    onSearchInputChange(event, '');
                   }}
                 />
               </div>
