@@ -2,7 +2,7 @@
 id: Date picker
 section: components
 cssPrefix: pf-c-date-picker
-propComponents: ['DatePicker', 'Locales']
+propComponents: ['DatePicker']
 beta: true
 ---
 

@@ -9,6 +9,8 @@ import styles from '@patternfly/react-styles/css/components/CalendarMonth/calend
 // https://date-fns.org/v2.16.1/docs/format
 import { format } from 'date-fns';
 import { Locales, Locale } from '../../helpers';
+import commonStyles from '@patternfly/react-styles/css/base/patternfly-common';
+import { getUniqueId } from '@patternfly/react-core/dist/js/helpers/util';
 
 export interface CalendarProps {
   /** Month/year to base other dates around */
@@ -17,6 +19,8 @@ export interface CalendarProps {
   monthFormat?: string;
   /** How to format days in header according to date-fns */
   dayFormat?: string;
+  /** How to format days in header for screen readers according to date-fns */
+  longDayFormat?: string;
   /** How to format days in buttons according to date-fns */
   buttonFormat?: string;
   /** Callback when date is selected */
@@ -56,6 +60,7 @@ export const CalendarMonth = ({
   date: dateProp = new Date(),
   monthFormat = 'MMMM',
   dayFormat = 'EEEEE',
+  longDayFormat = 'EEEE',
   buttonFormat = 'd',
   onChange = () => {},
   locale = Locales.enUS,
@@ -71,6 +76,8 @@ export const CalendarMonth = ({
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [focusedDate, setFocusedDate] = React.useState(dateProp);
   const focusRef = React.useRef<HTMLButtonElement>();
+  const [monthSelectId] = React.useState(getUniqueId('month-select'));
+  const [yearInputId] = React.useState(getUniqueId('year-input'));
 
   useEffect(() => setFocusedDate(dateProp), [dateProp]);
   useEffect(() => {
@@ -107,7 +114,12 @@ export const CalendarMonth = ({
     <div className={styles.calendarMonth}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
-          <Button variant="plain" aria-label="Previous month" onClick={() => onMonthClick(-1)}>
+          <Button
+            variant="plain"
+            aria-label="Previous month"
+            aria-labelledby={`${monthSelectId} ${yearInputId}`}
+            onClick={() => onMonthClick(-1)}
+          >
             <ArrowLeftIcon aria-hidden={true} />
           </Button>
         </div>
@@ -128,6 +140,7 @@ export const CalendarMonth = ({
             }}
             variant="single"
             selections={format(focusedDate, monthFormat, { locale })}
+            toggleId={monthSelectId}
           >
             {Object.keys(longMonthNames).map((longMonth, index) => (
               <SelectOption
@@ -148,10 +161,16 @@ export const CalendarMonth = ({
               newDate.setFullYear(+year);
               setFocusedDate(newDate);
             }}
+            id={yearInputId}
           />
         </div>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
-          <Button variant="plain" aria-label="Next month" onClick={() => onMonthClick(1)}>
+          <Button
+            variant="plain"
+            aria-label="Next month"
+            aria-labelledby={`${monthSelectId} ${yearInputId}`}
+            onClick={() => onMonthClick(1)}
+          >
             <ArrowRightIcon aria-hidden={true} />
           </Button>
         </div>
@@ -159,13 +178,12 @@ export const CalendarMonth = ({
       <table className={styles.calendarMonthCalendar}>
         <thead className={styles.calendarMonthDays}>
           <tr>
-            {calendar[0]
-              .map(date => format(date, dayFormat, { locale }))
-              .map((shortName, index) => (
-                <th key={index} className={styles.calendarMonthDay} scope="col">
-                  {shortName}
-                </th>
-              ))}
+            {calendar[0].map((date, index) => (
+              <th key={index} className={styles.calendarMonthDay} scope="col">
+                <span className={commonStyles.screenReader}>{format(date, longDayFormat, { locale })}</span>
+                <span aria-hidden>{format(date, dayFormat, { locale })}</span>
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody onKeyDown={onKeyDown}>
@@ -176,8 +194,7 @@ export const CalendarMonth = ({
                 const isSelected = isSameDate(day, dateProp);
                 const isFocused = isSameDate(day, focusedDate);
                 const isValid = validators.every(validator => validator(day));
-                // Don't apply this class for contrast's sake
-                const isAdjacentMonth = !isSelected && day.getMonth() !== focusedDate.getMonth();
+                const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
                 return (
                   <td
                     key={index}
