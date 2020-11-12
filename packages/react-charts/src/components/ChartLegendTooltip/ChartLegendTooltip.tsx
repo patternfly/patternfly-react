@@ -297,7 +297,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   const pointerLength =
     theme && theme.tooltip
       ? isFunction(theme.tooltip.pointerLength)
-        ? theme.tooltip.pointerLength({ datum, index: rest.index || 0, ...rest })
+        ? theme.tooltip.pointerLength({ index: rest.index || 0, datum, ...rest })
         : Number(theme.tooltip.pointerLength)
       : 10;
   const legendTooltipProps = {
