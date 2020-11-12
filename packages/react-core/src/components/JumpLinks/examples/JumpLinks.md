@@ -6,6 +6,9 @@ beta: true
 ---
 
 ## Examples
+
+These examples are static because they have no element to scroll spy on that makes sense. Check out the [React demos](./react-demos) to see scroll spying in action!
+
 ### Basic
 ```js
 import React from 'react';
