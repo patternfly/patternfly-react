@@ -210,7 +210,15 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       } else {
         controls.forEach((control, index) => {
           if (document.activeElement === control) {
-            currentIndex = key === 'ArrowUp' || key === 'ArrowLeft' ? index - 1 : index + 1;
+            const increment = key === 'ArrowUp' || key === 'ArrowLeft' ? -1 : 1;
+            currentIndex = index + increment;
+            while (
+              currentIndex < controls.length &&
+              currentIndex >= 0 &&
+              controls[currentIndex].classList.contains('pf-m-disabled')
+            ) {
+              currentIndex = currentIndex + increment;
+            }
             moveFocus = true;
           }
         });
