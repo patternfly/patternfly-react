@@ -13,9 +13,8 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 ## Examples
 
-Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
-
 ### Items
+Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
 ```js
 import React from 'react';
@@ -198,9 +197,8 @@ class ToolbarSpacers extends React.Component {
 }
 ```
 
-Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
-
 ### Groups
+Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
 ```js
 import React from 'react';
@@ -393,12 +391,8 @@ class ToolbarGroupTypes extends React.Component {
 ```
 
 ## Examples with toggle groups and filters
-
 A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.
 
-The Toggle group can either have the toggle state managed by the consumer, or the component.
-
-- The first Toggle group example below demonstrates a component managed toggle state.
 
 ### Component managed toggle groups
 
@@ -550,14 +544,13 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
 }
 ```
 
-The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
+### Consumer managed toggle groups
+If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
 
 1. Add a toggleIsExpanded callback to Toolbar
 2. Pass in a boolean into the isExpanded prop to Toolbar
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
-
-### Consumer managed toggle groups
 
 ```js
 import React from 'react';
@@ -720,10 +713,9 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
 }
 ```
 
+### With filters
 The ToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
-
-### With filters
 
 ```js
 import React from 'react';
@@ -994,9 +986,8 @@ class ToolbarWithFilterExample extends React.Component {
 }
 ```
 
-There may be situations where all of the required elements simply cannot fit in a single line.
-
 ### Stacked example
+There may be situations where all of the required elements simply cannot fit in a single line.
 
 ```js
 import React from 'react';
@@ -1020,13 +1011,9 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarToggleGroup,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 
 class ToolbarStacked extends React.Component {
   constructor(props) {
@@ -1237,26 +1224,6 @@ class ToolbarStacked extends React.Component {
       </React.Fragment>
     );
 
-    const iconButtonGroupItems = (
-      <React.Fragment>
-        <ToolbarItem>
-          <Button variant="plain" aria-label="edit">
-            <EditIcon />
-          </Button>
-        </ToolbarItem>
-        <ToolbarItem>
-          <Button variant="plain" aria-label="clone">
-            <CloneIcon />
-          </Button>
-        </ToolbarItem>
-        <ToolbarItem>
-          <Button variant="plain" aria-label="sync">
-            <SyncIcon />
-          </Button>
-        </ToolbarItem>
-      </React.Fragment>
-    );
-
     const firstRowItems = (
       <React.Fragment>
         <Toolbar>
@@ -1264,7 +1231,6 @@ class ToolbarStacked extends React.Component {
             <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="lg">
               {toggleGroupItems}
             </ToolbarToggleGroup>
-            <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
             <ToolbarItem variant="overflow-menu">
               <OverflowMenu breakpoint="2xl">
                 <OverflowMenuContent>
