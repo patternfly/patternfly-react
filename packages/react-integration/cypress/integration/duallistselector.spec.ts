@@ -17,19 +17,19 @@ describe('Dual List Selector Demo Test', () => {
   });
 
   it('Verify selecting options', () => {
-    cy.get('.pf-c-dual-list-selector__list-item.pf-m-selected').should('not.exist');
+    cy.get('.pf-c-dual-list-selector__list-item .pf-m-selected').should('not.exist');
     cy.get('.pf-c-dual-list-selector__list-item')
       .eq(0)
       .click();
-    cy.get('.pf-c-dual-list-selector__list-item.pf-m-selected').should('exist');
+    cy.get('.pf-c-dual-list-selector__list-item .pf-m-selected').should('exist');
     cy.get('.pf-c-dual-list-selector__list-item')
       .eq(1)
       .click();
-    cy.get('.pf-c-dual-list-selector__list-item.pf-m-selected').should('have.length', 2);
+    cy.get('.pf-c-dual-list-selector__list-item .pf-m-selected').should('have.length', 2);
     cy.get('.pf-c-dual-list-selector__list-item')
       .eq(0)
       .click();
-    cy.get('.pf-c-dual-list-selector__list-item.pf-m-selected').should('have.length', 1);
+    cy.get('.pf-c-dual-list-selector__list-item .pf-m-selected').should('have.length', 1);
   });
 
   it('Verify selecting and choosing options', () => {

@@ -40,14 +40,14 @@ export const DualListSelectorListItem: React.FunctionComponent<DualListSelectorL
 
   return (
     <li
-      className={css(styles.dualListSelectorListItem, isSelected && styles.modifiers.selected, className)}
+      className={css(styles.dualListSelectorListItem, className)}
       key={index}
       {...props}
       aria-selected={isSelected}
       role="option"
     >
       <button
-        className={css(styles.dualListSelectorItem)}
+        className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
         onClick={e => onOptionSelect(e, index, isChosen)}
         id={id}
         ref={ref}
