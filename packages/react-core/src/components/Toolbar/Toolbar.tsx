@@ -12,7 +12,7 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Text to display in the clear all filters button */
   clearFiltersButtonText?: string;
   /** The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */
-  collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
+  collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
   isExpanded?: boolean;
   /** A callback for setting the isExpanded flag */
