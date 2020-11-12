@@ -4,6 +4,8 @@ import styles from '@patternfly/react-styles/css/components/SimpleList/simple-li
 import { SimpleListContext } from './SimpleList';
 
 export interface SimpleListItemProps {
+  /** id for the item. */
+  itemId?: number | string;
   /** Content rendered inside the SimpleList item */
   children?: React.ReactNode;
   /** Additional classes added to the SimpleList <li> */
@@ -15,7 +17,7 @@ export interface SimpleListItemProps {
   /** Additional props added to the SimpleList <a> or <button> */
   componentProps?: any;
   /** Indicates if the link is current/highlighted */
-  isCurrent?: boolean;
+  isActive?: boolean;
   /** OnClick callback for the SimpleList item */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Type of button SimpleList item */
@@ -30,7 +32,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
   static defaultProps: SimpleListItemProps = {
     children: null,
     className: '',
-    isCurrent: false,
+    isActive: false,
     component: 'button',
     componentClassName: '',
     type: 'button',
@@ -41,7 +43,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
   render() {
     const {
       children,
-      isCurrent,
+      isActive,
       className,
       component: Component,
       componentClassName,
@@ -54,9 +56,10 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
 
     return (
       <SimpleListContext.Consumer>
-        {({ currentRef, updateCurrentRef }) => {
+        {({ currentRef, updateCurrentRef, controlled }) => {
           const isButton = Component === 'button';
-          const isCurrentItem = this.ref && currentRef ? currentRef.current === this.ref.current : isCurrent;
+          const isCurrentItem =
+            this.ref && currentRef && controlled ? currentRef.current === this.ref.current : isActive;
 
           const additionalComponentProps = isButton
             ? {
