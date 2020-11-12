@@ -28,6 +28,8 @@ export interface DualListSelectorPaneProps {
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** Flag indicating a search bar should be included above the pane. */
   isSearchable?: boolean;
+  /** Accessible label for the search input */
+  searchInputAriaLabel?: string;
   /** Id of the pane. */
   id: string;
 }
@@ -45,7 +47,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     title: '',
     options: [] as React.ReactNode[],
     selectedOptions: [],
-    isSearchable: false
+    isSearchable: false,
+    searchInputAriaLabel: ''
   };
   private menuEl = React.createRef<HTMLDivElement>();
   private optionsRefs = [] as HTMLElement[];
@@ -120,6 +123,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       title,
       actions,
       isSearchable,
+      searchInputAriaLabel,
       className,
       status,
       selectedOptions,
@@ -152,7 +156,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                   className={css(formStyles.formControl, formStyles.modifiers.search)}
                   type="search"
                   onChange={this.onChange}
-                  aria-label={`${isChosen ? 'Chosen' : 'Available'} search input`}
+                  aria-label={searchInputAriaLabel}
                 />
               </div>
             )}

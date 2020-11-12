@@ -169,10 +169,8 @@ class ManagedDualListSelector extends React.Component {
       <DualListSelector
         isSearchable
         availableOptions={this.state.availableOptions}
-        availableOptionsStatus={`${this.state.availableOptions.length} available`}
         availableOptionsActions={availableOptionsActions}
         chosenOptions={this.state.chosenOptions}
-        chosenOptionsStatus={`${this.state.chosenOptions.length} chosen`}
         chosenOptionsActions={chosenOptionsActions}
         addAll={this.onListChange}
         removeAll={this.onListChange}

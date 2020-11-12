@@ -26,20 +26,34 @@ export interface DualListSelectorProps {
   chosenOptions?: React.ReactNode[];
   /** Status message to display above the chosen options pane.*/
   chosenOptionsStatus?: string;
-  /** Actions to be displayed above the available options pane. */
+  /** Actions to be displayed above the chosen options pane. */
   chosenOptionsActions?: React.ReactNode[];
+  /** Accessible label for the controls between the two panes. */
+  controlsAriaLabel?: string;
   /** Optional callback for the add selected button */
   addSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
+  /** Accessible label for the add selected button */
+  addSelectedAriaLabel?: string;
   /** Optional callback for the add all button */
   addAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
+  /** Accessible label for the add all button */
+  addAllAriaLabel?: string;
   /** Optional callback for the remove selected button */
   removeSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
+  /** Accessible label for the remove selected button */
+  removeSelectedAriaLabel?: string;
   /** Optional callback for the remove all button */
   removeAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
+  /** Accessible label for the remove all button */
+  removeAllAriaLabel?: string;
   /** Optional callback fired when an option is selected */
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent) => void;
   /** Flag indicating a search bar should be included above both the available and chosen panes. */
   isSearchable?: boolean;
+  /** Accessible label for the search input on the available options pane. */
+  availableOptionsSearchAriaLabel?: string;
+  /** Accessible label for the search input on the chosen options pane. */
+  chosenOptionsSearchAriaLabel?: string;
   /** Optional filter function for custom filtering based on search string. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** Id of the dual list selector. */
@@ -59,9 +73,16 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
   static defaultProps: PickOptional<DualListSelectorProps> = {
     availableOptions: [] as React.ReactNode[],
     availableOptionsTitle: 'Available options',
+    availableOptionsSearchAriaLabel: 'Available search input',
     chosenOptions: [] as React.ReactNode[],
     chosenOptionsTitle: 'Chosen Options',
-    id: getUniqueId('dual-list-selector')
+    chosenOptionsSearchAriaLabel: 'Chosen search input',
+    id: getUniqueId('dual-list-selector'),
+    controlsAriaLabel: 'Selector controls',
+    addAllAriaLabel: 'Add all',
+    addSelectedAriaLabel: 'Add selected',
+    removeSelectedAriaLabel: 'Remove selected',
+    removeAllAriaLabel: 'Remove all'
   };
 
   constructor(props: DualListSelectorProps) {
@@ -213,13 +234,20 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     const {
       availableOptionsTitle,
       availableOptionsActions,
+      availableOptionsSearchAriaLabel,
       className,
       chosenOptionsTitle,
       chosenOptionsActions,
+      chosenOptionsSearchAriaLabel,
       filterOption,
       isSearchable,
       chosenOptionsStatus,
       availableOptionsStatus,
+      controlsAriaLabel,
+      addAllAriaLabel,
+      addSelectedAriaLabel,
+      removeSelectedAriaLabel,
+      removeAllAriaLabel,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       availableOptions: consumerPassedAvailableOptions,
       chosenOptions: consumerPassedChosenOptions,
@@ -240,6 +268,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       <div className={css(styles.dualListSelector, className)} id={id} {...props}>
         <DualListSelectorPane
           isSearchable={isSearchable}
+          searchInputAriaLabel={availableOptionsSearchAriaLabel}
           filterOption={filterOption}
           status={availableOptionsStatusToDisplay}
           title={availableOptionsTitle}
@@ -254,14 +283,15 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           tabIndex={0}
           ref={this.controlsEl}
           role="listbox"
-          aria-label="Selector controls"
+          aria-label={controlsAriaLabel}
         >
           <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
             <Button
               isDisabled={availableOptions.length === 0}
+              aria-disabled={availableOptions.length === 0}
               variant={ButtonVariant.plain}
               onClick={this.addAll}
-              aria-label="Add all"
+              aria-label={addAllAriaLabel}
               tabIndex={-1}
             >
               <AngleDoubleRightIcon />
@@ -270,9 +300,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
             <Button
               isDisabled={availableOptionsSelected.length === 0}
+              aria-disabled={availableOptionsSelected.length === 0}
               variant={ButtonVariant.plain}
               onClick={this.addSelected}
-              aria-label="Add selected"
+              aria-label={addSelectedAriaLabel}
               tabIndex={-1}
             >
               <AngleRightIcon />
@@ -282,9 +313,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
             <Button
               variant={ButtonVariant.plain}
               onClick={this.removeSelected}
-              aria-label="remove selected"
+              aria-label={removeSelectedAriaLabel}
               tabIndex={-1}
               isDisabled={chosenOptionsSelected.length === 0}
+              aria-disabled={chosenOptionsSelected.length === 0}
             >
               <AngleLeftIcon />
             </Button>
@@ -292,9 +324,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
             <Button
               isDisabled={chosenOptions.length === 0}
+              aria-disabled={chosenOptions.length === 0}
               variant={ButtonVariant.plain}
               onClick={this.removeAll}
-              aria-label="Remove all"
+              aria-label={removeAllAriaLabel}
               tabIndex={-1}
             >
               <AngleDoubleLeftIcon />
@@ -304,6 +337,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         <DualListSelectorPane
           isChosen
           isSearchable={isSearchable}
+          searchInputAriaLabel={chosenOptionsSearchAriaLabel}
           filterOption={filterOption}
           title={chosenOptionsTitle}
           status={chosenOptionsStatusToDisplay}
