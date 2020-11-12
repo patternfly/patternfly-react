@@ -13,7 +13,6 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-ic
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 
 ## Examples
 
@@ -39,7 +38,7 @@ class MenuBasicList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu onSelect={this.onSelect}>
+      <Menu>
         <MenuList>
           <MenuListItem itemId={0} isActive={activeItem === 0} onClick={(event) => console.log('clicked')}>
             Action
@@ -438,13 +437,10 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-ic
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 
 class MenuWithActions extends React.Component {
   constructor(props) {
     super(props);
-    this.actionToggleRef = React.createRef();
-    this.actionMenuRef = React.createRef();
     this.state = {
       activeItem: 0,
       isActionMenuOpen: false,
@@ -462,49 +458,10 @@ class MenuWithActions extends React.Component {
         });
       }
     };
-
-    this.onToggle = () => {
-      this.setState({
-        isActionMenuOpen: !this.state.isActionMenuOpen
-      });
-    };
-
-    this.onDocClick = event => {
-      // close the menu when clicked outside
-      const { isActionMenuOpen } = this.state;
-      const clickedOnToggle = this.actionToggleRef.current && this.actionToggleRef.current.contains(event.target);
-      const clickedWithinMenu = this.actionMenuRef.current && this.actionMenuRef.current.contains(event.target);
-      if (isActionMenuOpen && !(clickedWithinMenu || clickedOnToggle)) {
-        this.setState({
-          isActionMenuOpen: false
-        });
-      }
-    };
-  }
-
-  componentDidMount() {
-    document.addEventListener('mousedown', this.onDocClick);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.onDocClick);
   }
 
   render() {
-    const { activeItem, isActionMenuOpen, selectedItems } = this.state;
-
-    const actionMenu = (
-      <Menu ref={this.actionMenuRef}>
-        <MenuList>
-          <MenuListItem>Action</MenuListItem>
-          <MenuListItem to="#default-link2">Link</MenuListItem>
-          <MenuListItem isDisabled>Disabled Action</MenuListItem>
-          <MenuListItem isDisabled to="#default-link4">
-            Disabled Link
-          </MenuListItem>
-        </MenuList>
-      </Menu>
-    );
+    const { activeItem, selectedItems } = this.state;
 
     return (
       <Menu onSelect={this.onSelect}>
@@ -514,12 +471,9 @@ class MenuWithActions extends React.Component {
               isSelected={selectedItems.indexOf(0) != -1}
               action={
                 <MenuAction
-                  ref={this.actionToggleRef}
-                  icon={<EllipsisVIcon />}
-                  onActionClick={this.onToggle}
-                  aria-label="Dropdown"
-                  menu={actionMenu}
-                  isMenuOpen={isActionMenuOpen}
+                  icon={<CodeBranchIcon />}
+                  onActionClick={() => console.log('clicked on code icon')}
+                  aria-label="Code"
                 />
               }
               description="This is a description"
