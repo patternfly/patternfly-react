@@ -10,10 +10,10 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the CardHeader */
   className?: string;
-  /** ID of the card header */
+  /** ID of the card header. */
   id?: string;
   /** Callback expandable card */
-  onExpand?: (cardId: string) => void;
+  onExpand?: (event: React.MouseEvent, id: string) => void;
   /** Additional props for expandable toggle button */
   toggleButtonProps?: any;
 }
@@ -21,7 +21,7 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
 export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   children = null,
   className = '',
-  id = '',
+  id,
   onExpand,
   toggleButtonProps,
   ...props
@@ -34,8 +34,8 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
             <Button
               variant="plain"
               type="button"
-              onClick={() => {
-                onExpand(cardId);
+              onClick={evt => {
+                onExpand(evt, cardId);
               }}
               {...toggleButtonProps}
             >

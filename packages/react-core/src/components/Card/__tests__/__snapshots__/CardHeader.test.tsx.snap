@@ -8,7 +8,6 @@ exports[`onExpand adds the toggle button 1`] = `
 >
   <div
     className="pf-c-card__header"
-    id=""
   >
     <div
       className="pf-c-card__header-toggle"

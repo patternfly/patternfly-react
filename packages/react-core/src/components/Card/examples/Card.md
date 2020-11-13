@@ -605,7 +605,7 @@ class ExpandableCard extends React.Component {
       const name = target.name;
       this.setState({ [name]: value });
     };
-    this.onExpand = (id, event) => {
+    this.onExpand = (event, id) => {
       console.log(id);
       this.setState({
         isExpanded: !this.state.isExpanded
@@ -722,7 +722,7 @@ class ExpandableIconCard extends React.Component {
       const name = target.name;
       this.setState({ [name]: value });
     };
-    this.onExpand = (id, event) => {
+    this.onExpand = (event, id) => {
       console.log(id);
       this.setState({
         isExpanded: !this.state.isExpanded

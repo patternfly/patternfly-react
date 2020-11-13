@@ -6,7 +6,7 @@ import { useOUIAProps, OUIAProps } from '../../helpers';
 export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Content rendered inside the Card */
   children?: React.ReactNode;
-  /** ID of the Card */
+  /** ID of the Card. Also passed back in the CardHeader onExpand callback. */
   id?: string;
   /** Additional classes added to the Card */
   className?: string;
