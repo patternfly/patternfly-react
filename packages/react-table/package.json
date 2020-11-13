@@ -35,7 +35,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.59.1",
+    "@patternfly/patternfly": "4.65.3",
     "@patternfly/react-core": "^4.75.10",
     "@patternfly/react-icons": "^4.7.16",
     "@patternfly/react-styles": "^4.7.13",
@@ -46,9 +46,5 @@
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
-  },
-  "devDependencies": {
-    "rimraf": "^2.6.2",
-    "typescript": "^3.8.3"
   }
 }
