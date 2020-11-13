@@ -8,7 +8,7 @@ import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { MenuContext } from './MenuContext';
 
 export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'action' | 'onClick'> {
-  /** Content rendered inside the menu list item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
+  /** Content rendered inside the menu list item. */
   children?: React.ReactNode;
   /** Additional classes added to the menu list item */
   className?: string;

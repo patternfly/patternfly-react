@@ -6,9 +6,7 @@ import { SearchInput } from '../SearchInput';
 import { Divider } from '../Divider';
 import { MenuContext } from './MenuContext';
 
-export interface MenuProps
-  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'ref' | 'onSelect'>,
-    OUIAProps {
+export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'>, OUIAProps {
   /** Anything that can be rendered inside of the Menu */
   children?: React.ReactNode;
   /** Additional classes added to the Menu */
@@ -24,8 +22,8 @@ export interface MenuProps
   ) => void;
   /** Accessibility label */
   'aria-label'?: string;
-  /** Indicates menu type */
-  variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
+  /** Indicates if menu is the flyout variant */
+  isFlyoutMenu?: boolean;
   /** Search input of menu */
   hasSearchInput?: boolean;
   /** Forwarded ref */
@@ -33,7 +31,7 @@ export interface MenuProps
 }
 
 export interface MenuState {
-  typeaheadInputValue: string | null;
+  searchInputValue: string | null;
   ouiaStateId: string;
 }
 
@@ -43,8 +41,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   };
 
   state: MenuState = {
-    ouiaStateId: getDefaultOUIAId(Menu.displayName, this.props.variant),
-    typeaheadInputValue: ''
+    ouiaStateId: getDefaultOUIAId(Menu.displayName),
+    searchInputValue: ''
   };
 
   render() {
@@ -57,7 +55,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       onSearchInputChange,
       ouiaId,
       ouiaSafe,
-      variant,
+      isFlyoutMenu,
       hasSearchInput,
       innerRef,
       ...props
@@ -66,8 +64,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     return (
       <MenuContext.Provider value={{ onSelect, onFavorite }}>
         <div
-          className={css(styles.menu, variant === 'flyout' && styles.modifiers.flyout, className)}
-          aria-label={ariaLabel || variant === 'flyout' ? 'Local' : 'Global'}
+          className={css(styles.menu, isFlyoutMenu && styles.modifiers.flyout, className)}
+          aria-label={ariaLabel || isFlyoutMenu ? 'Local' : 'Global'}
           ref={innerRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
@@ -76,13 +74,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             <React.Fragment>
               <div className={styles.menuSearch}>
                 <SearchInput
-                  value={this.state.typeaheadInputValue}
+                  value={this.state.searchInputValue}
                   onChange={(value, event) => {
-                    this.setState({ typeaheadInputValue: value });
+                    this.setState({ searchInputValue: value });
                     onSearchInputChange(event, value);
                   }}
                   onClear={event => {
-                    this.setState({ typeaheadInputValue: '' });
+                    this.setState({ searchInputValue: '' });
                     onSearchInputChange(event, '');
                   }}
                 />

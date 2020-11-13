@@ -149,7 +149,7 @@ class MenuWithFlyout extends React.Component {
     );
 
     return (
-      <Menu onSelect={this.onSelect} variant="flyout">
+      <Menu onSelect={this.onSelect} isFlyoutMenu>
         <MenuList>
           <MenuListItem itemId={0} isActive={activeItem === 0}>
             Start rollout
