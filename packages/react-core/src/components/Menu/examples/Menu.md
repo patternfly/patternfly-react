@@ -340,7 +340,7 @@ class MenuWithTitledGroups extends React.Component {
       <Menu onSelect={this.onSelect}>
         <MenuGroup>
           <MenuList>
-            <MenuListItem to="#default-link1" itemId={0} isActive={activeItem === 0}>
+            <MenuListItem to="#" itemId={0} isActive={activeItem === 0}>
               Link not in group
             </MenuListItem>
           </MenuList>
@@ -348,7 +348,7 @@ class MenuWithTitledGroups extends React.Component {
         <Divider />
         <MenuGroup label="Group 1">
           <MenuList>
-            <MenuListItem itemId={1} isActive={activeItem === 1}>
+            <MenuListItem to="#" itemId={1} isActive={activeItem === 1}>
               Link 1
             </MenuListItem>
             <MenuListItem itemId={2} isActive={activeItem === 2}>
@@ -359,10 +359,10 @@ class MenuWithTitledGroups extends React.Component {
         <Divider />
         <MenuGroup label="Group 2">
           <MenuList>
-            <MenuListItem itemId={3} isActive={activeItem === 3}>
+            <MenuListItem to="#" itemId={3} isActive={activeItem === 3}>
               Link 1
             </MenuListItem>
-            <MenuListItem itemId={4} isActive={activeItem === 4}>
+            <MenuListItem to="#" itemId={4} isActive={activeItem === 4}>
               Link 2
             </MenuListItem>
           </MenuList>

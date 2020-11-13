@@ -34,7 +34,7 @@ const MenuActionBase: React.FunctionComponent<MenuActionProps> = ({
   </button>
 );
 
-export const MenuAction = React.forwardRef((props: MenuActionProps, ref: React.Ref< HTMLButtonElement>) => (
+export const MenuAction = React.forwardRef((props: MenuActionProps, ref: React.Ref<HTMLButtonElement>) => (
   <MenuActionBase {...props} innerRef={ref} />
 ));
 MenuAction.displayName = 'MenuAction';
