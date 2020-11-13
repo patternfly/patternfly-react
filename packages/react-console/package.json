@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-console",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "description": "This package provides VncConsole, SerialConsole and DesktopViewer React components to be used alongside patternfly-react to access virtual machine or server consoles.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -32,7 +32,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.59.1",
+    "@patternfly/patternfly": "4.65.3",
     "@patternfly/react-core": "^4.75.10",
     "@spice-project/spice-html5": "^0.2.1",
     "@types/file-saver": "^2.0.1",
