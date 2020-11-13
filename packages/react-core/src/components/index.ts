@@ -30,6 +30,7 @@ export * from './Form';
 export * from './FormSelect';
 export * from './Hint';
 export * from './InputGroup';
+export * from './JumpLinks';
 export * from './Label';
 export * from './LabelGroup';
 export * from './List';

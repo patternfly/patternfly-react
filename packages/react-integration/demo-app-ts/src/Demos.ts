@@ -377,6 +377,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.HintDemo
   },
   {
+    id: 'jump-links-demo',
+    name: 'Jump Links Demo',
+    componentType: Examples.JumpLinksDemo
+  },
+  {
     id: 'input-group-demo',
     name: 'Input Group Demo',
     componentType: Examples.InputGroupDemo
