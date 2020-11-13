@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.76.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.10...@patternfly/react-core@4.76.0) (2020-11-13)
+
+
+### Features
+
+* **demo:** add sticky bottom pagination to the card demo ([#5000](https://github.com/patternfly/patternfly-react/issues/5000)) ([883fbf6](https://github.com/patternfly/patternfly-react/commit/883fbf6d6304e8651d572ec4b7cd2af5a344fc85))
+* **Toolbar:** add flag to match page insets ([#5098](https://github.com/patternfly/patternfly-react/issues/5098)) ([fb40278](https://github.com/patternfly/patternfly-react/commit/fb40278d7c5610cd735ab1a4976f3aea5b0be86a))
+
+
+
+
+
 ## [4.75.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.9...@patternfly/react-core@4.75.10) (2020-11-09)
 
 **Note:** Version bump only for package @patternfly/react-core

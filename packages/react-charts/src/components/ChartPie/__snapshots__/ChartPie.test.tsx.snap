@@ -462,6 +462,7 @@ exports[`ChartPie 1`] = `
           portalComponent={<Portal />}
           portalZIndex={99}
           responsive={true}
+          role="img"
         />
       }
       data={
@@ -1872,6 +1873,7 @@ exports[`ChartPie 2`] = `
           portalComponent={<Portal />}
           portalZIndex={99}
           responsive={true}
+          role="img"
         />
       }
       data={
@@ -3282,6 +3284,7 @@ exports[`renders component data 1`] = `
           portalComponent={<Portal />}
           portalZIndex={99}
           responsive={true}
+          role="img"
         />
       }
       data={

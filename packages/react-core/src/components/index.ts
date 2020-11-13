@@ -1,6 +1,7 @@
 /** Keep alphabetically sorted */
 export * from './AboutModal';
 export * from './Accordion';
+export * from './ActionList';
 export * from './Alert';
 export * from './AlertGroup';
 export * from './ApplicationLauncher';
@@ -29,6 +30,7 @@ export * from './Form';
 export * from './FormSelect';
 export * from './Hint';
 export * from './InputGroup';
+export * from './JumpLinks';
 export * from './Label';
 export * from './LabelGroup';
 export * from './List';
@@ -51,7 +53,6 @@ export * from './SimpleList';
 export * from './Skeleton';
 export * from './SkipToContent';
 export * from './Spinner';
-export * from './Splitter';
 export * from './Switch';
 export * from './Tabs';
 export * from './Text';

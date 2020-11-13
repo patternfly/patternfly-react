@@ -2412,6 +2412,7 @@ exports[`renders component data 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -2977,6 +2978,7 @@ exports[`renders component data 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -3561,6 +3563,7 @@ exports[`renders component data 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -4144,6 +4147,7 @@ exports[`renders component data 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}

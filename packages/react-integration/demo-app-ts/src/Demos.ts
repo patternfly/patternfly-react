@@ -21,6 +21,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AccordionDemo
   },
   {
+    id: 'action-list-demo',
+    name: 'Action List Demo',
+    componentType: Examples.ActionListDemo
+  },
+  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo
@@ -370,6 +375,11 @@ export const Demos: DemoInterface[] = [
     id: 'hint-demo',
     name: 'Hint Demo',
     componentType: Examples.HintDemo
+  },
+  {
+    id: 'jump-links-demo',
+    name: 'Jump Links Demo',
+    componentType: Examples.JumpLinksDemo
   },
   {
     id: 'input-group-demo',
