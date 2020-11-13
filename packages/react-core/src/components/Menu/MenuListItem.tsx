@@ -29,7 +29,7 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   /** Render item with action */
   action?: React.ReactNode;
   /** Description of the menu item */
-  description?: string | React.ReactNode;
+  description?: React.ReactNode;
   /** Render external link icon */
   isExternalLink?: boolean;
   /** Internal flag indicating if the option is selected */

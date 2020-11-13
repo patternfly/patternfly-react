@@ -11,7 +11,7 @@ export interface MenuProps
     OUIAProps {
   /** Anything that can be rendered inside of the Menu */
   children?: React.ReactNode;
-  /** Additional classes added to the container */
+  /** Additional classes added to the Menu */
   className?: string;
   /** Callback for updating when item selection changes */
   onSelect?: (event: React.MouseEvent, itemId: any) => void;
@@ -27,7 +27,7 @@ export interface MenuProps
   /** Indicates menu type */
   variant?: 'default' | 'flyout' | 'singleSelect' | 'multiSelect';
   /** Search input of menu */
-  hasSearchInput?: React.ReactNode;
+  hasSearchInput?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
@@ -74,7 +74,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
         >
           {hasSearchInput && (
             <React.Fragment>
-              <div className="pf-c-menu__search">
+              <div className={styles.menuSearch}>
                 <SearchInput
                   value={this.state.typeaheadInputValue}
                   onChange={(value, event) => {
