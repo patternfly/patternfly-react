@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links
 export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Whether this item is active. Parent JumpLinks component sets this when passed a `scrollableSelector`. */
   isActive?: boolean;
-  /** Href for this ling */
+  /** Href for this link */
   href?: string;
   /** Selector or HTMLElement to spy on */
   node?: string | HTMLElement;
