@@ -358,12 +358,14 @@ class MenuWithTitledGroups extends React.Component {
         </MenuGroup>
         <Divider />
         <MenuGroup label="Group 2">
-          <MenuListItem itemId={3} isActive={activeItem === 3}>
-            Link 1
-          </MenuListItem>
-          <MenuListItem itemId={4} isActive={activeItem === 4}>
-            Link 2
-          </MenuListItem>
+          <MenuList>
+            <MenuListItem itemId={3} isActive={activeItem === 3}>
+              Link 1
+            </MenuListItem>
+            <MenuListItem itemId={4} isActive={activeItem === 4}>
+              Link 2
+            </MenuListItem>
+          </MenuList>
         </MenuGroup>
       </Menu>
     );
