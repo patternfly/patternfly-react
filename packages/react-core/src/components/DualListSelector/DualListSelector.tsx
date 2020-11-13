@@ -95,6 +95,18 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     };
   }
 
+  componentDidUpdate() {
+    if (
+      JSON.stringify(this.props.availableOptions) !== JSON.stringify(this.state.availableOptions) ||
+      JSON.stringify(this.props.chosenOptions) !== JSON.stringify(this.state.chosenOptions)
+    ) {
+      this.setState({
+        availableOptions: [...this.props.availableOptions],
+        chosenOptions: [...this.props.chosenOptions]
+      });
+    }
+  }
+
   addAll = () => {
     this.setState(prevState => {
       const newChosen = [...prevState.chosenOptions, ...prevState.availableOptions];

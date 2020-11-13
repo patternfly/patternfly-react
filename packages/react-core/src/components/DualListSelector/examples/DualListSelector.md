@@ -78,8 +78,8 @@ class ManagedDualListSelector extends React.Component {
         this.setState(prevState => {
           const available = prevState.availableOptions.sort((a, b) => {
             let returnValue = 0;
-            if (a.props.children > b.props.children) returnValue = -1;
-            if (a.props.children < b.props.children) returnValue = 1;
+            if (a.props.children > b.props.children) returnValue = 1;
+            if (a.props.children < b.props.children) returnValue = -1;
             if (prevState.availableDescending) returnValue = returnValue * -1;
             return returnValue;
           });

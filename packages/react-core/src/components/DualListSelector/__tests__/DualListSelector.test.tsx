@@ -34,8 +34,8 @@ describe('DualListSelector', () => {
       <DualListSelector
         availableOptions={['Option 1', 'Option 2']}
         chosenOptions={['Option 3', 'Option 4']}
-        availableOptionsActions={[<span>TestNode1</span>]}
-        chosenOptionsActions={[<span>TestNode2</span>]}
+        availableOptionsActions={[<span key={1}>TestNode1</span>]}
+        chosenOptionsActions={[<span key={2}>TestNode2</span>]}
         id="fourthTest"
       />
     );

@@ -500,7 +500,9 @@ exports[`DualListSelector with actions 1`] = `
           <div
             className="pf-c-dual-list-selector__tools-actions"
           >
-            <span>
+            <span
+              key="1"
+            >
               TestNode1
             </span>
           </div>
@@ -851,7 +853,9 @@ exports[`DualListSelector with actions 1`] = `
           <div
             className="pf-c-dual-list-selector__tools-actions"
           >
-            <span>
+            <span
+              key="2"
+            >
               TestNode2
             </span>
           </div>
