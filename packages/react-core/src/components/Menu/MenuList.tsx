@@ -5,16 +5,24 @@ import { css } from '@patternfly/react-styles';
 export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   /** Anything that can be rendered inside of menu list */
   children: React.ReactNode;
+  /** Additional classes added to the menu list */
+  className?: string;
+  /** Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const MenuList: React.FunctionComponent<MenuListProps> = ({
+const MenuListBase: React.FunctionComponent<MenuListProps> = ({
   children = null,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
+  innerRef,
   ...props
 }: MenuListProps) => (
-  <ul className={css(styles.menuList)} {...props}>
+  <ul className={css(styles.menuList, className)} ref={innerRef} {...props}>
     {children}
   </ul>
 );
+
+export const MenuList = React.forwardRef((props: MenuListProps, ref: React.Ref<HTMLUListElement>) => (
+  <MenuListBase {...props} innerRef={ref} />
+));
 MenuList.displayName = 'MenuList';
