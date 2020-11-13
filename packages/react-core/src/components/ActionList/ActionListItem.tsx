@@ -8,5 +8,9 @@ export interface ActionListItemProps extends React.HTMLProps<HTMLDivElement> {
 export const ActionListItem: React.FunctionComponent<ActionListItemProps> = ({
   children,
   ...props
-}: ActionListItemProps) => <div {...props}>{children}</div>;
+}: ActionListItemProps) => (
+  <div className="pf-c-action-list__item" {...props}>
+    {children}
+  </div>
+);
 ActionListItem.displayName = 'ActionListItem';
