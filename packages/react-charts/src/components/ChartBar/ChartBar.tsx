@@ -19,7 +19,7 @@ import {
   StringOrNumberOrList,
   VictoryStyleInterface
 } from 'victory-core';
-import { VictoryBar, VictoryBarAlignmentType, VictoryBarProps, VictoryBarTTargetType } from 'victory-bar';
+import { Bar, VictoryBar, VictoryBarAlignmentType, VictoryBarProps, VictoryBarTTargetType } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -422,12 +422,20 @@ export interface ChartBarProps extends VictoryBarProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
+  /**
+   * Use ariaLabel prop to determine how screen reader will read the contents in the chart.
+   * If you don't define this prop, the content in the chart will not be accessible.
+   *
+   * @example ['There are 7 cats in 2015', 'There are 5 cats in 2016', 'There are 8 cats in 2017', 'There are 2 cats in 2018']
+   */
+  ariaLabel?: string[];
 }
 
 export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
+  ariaLabel,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
@@ -440,7 +448,14 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   });
 
   // Note: containerComponent is required for theme
-  return <VictoryBar containerComponent={container} theme={theme} {...rest} />;
+  return (
+    <VictoryBar
+      containerComponent={container}
+      theme={theme}
+      dataComponent={ariaLabel && <Bar ariaLabel={({ index }) => ariaLabel[Number(index)]} tabIndex={0} />}
+      {...rest}
+    />
+  );
 };
 ChartBar.displayName = 'ChartBar';
 

@@ -34,7 +34,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@
     ariaDesc="Average number of pets"
     ariaTitle="Bar chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domain={{y: [0,9]}}
+    domain={{ y: [0, 9] }}
     domainPadding={{ x: [30, 25] }}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
@@ -144,7 +144,7 @@ import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts
     ariaDesc="Average number of pets"
     ariaTitle="Bar chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-    domain={{y: [0,9]}}
+    domain={{ y: [0, 9] }}
     domainPadding={{ x: [30, 25] }}
     legendData={[{ name: 'Cats' }]}
     legendOrientation="vertical"
@@ -163,8 +163,92 @@ import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts
 </div>
 ```
 
+### Basic with right aligned legend (Accessibility Demo)
+
+This demo demonstrate the accessibility function in a Bar chart. You can now focus on the whole chart or the contents in the chart. At the same time, you could use screen reader like VoiceOver to read the chart and contents as you defined in format.
+
+```js
+import React from 'react';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+
+function BasicWithRightAlignedLegendAccessibilityDemo() {
+  const data = {
+    cat: [
+      { name: 'Cats', x: '2015', y: 1 },
+      { name: 'Cats', x: '2016', y: 2 },
+      { name: 'Cats', x: '2017', y: 5 },
+      { name: 'Cats', x: '2018', y: 3 }
+    ],
+    dog: [
+      { name: 'Dogs', x: '2015', y: 2 },
+      { name: 'Dogs', x: '2016', y: 1 },
+      { name: 'Dogs', x: '2017', y: 7 },
+      { name: 'Dogs', x: '2018', y: 4 }
+    ],
+    birds: [
+      { name: 'Birds', x: '2015', y: 4 },
+      { name: 'Birds', x: '2016', y: 4 },
+      { name: 'Birds', x: '2017', y: 9 },
+      { name: 'Birds', x: '2018', y: 7 }
+    ],
+    mice: [
+      { name: 'Mice', x: '2015', y: 3 },
+      { name: 'Mice', x: '2016', y: 3 },
+      { name: 'Mice', x: '2017', y: 8 },
+      { name: 'Mice', x: '2018', y: 5 }
+    ]
+  };
+  const ariaLabel = Object.assign(
+    ...Object.keys(data).map(type => ({
+      [type]: data[type].map(entry => `There are ${entry.y} ${entry.name} in ${entry.x}`)
+    }))
+  );
+  console.log(ariaLabel);
+  return (
+    <div style={{ height: '250px', width: '600px' }}>
+      <Chart
+        ariaDesc="Average number of pets"
+        ariaTitle="Accessible Bar chart example"
+        containerComponent={
+          <ChartVoronoiContainer
+            role="group"
+            tabIndex={0}
+            labels={({ datum }) => `${datum.name}: ${datum.y}`}
+            constrainToVisibleArea
+          />
+        }
+        domain={{ y: [0, 9] }}
+        domainPadding={{ x: [30, 25] }}
+        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+        legendOrientation="vertical"
+        legendPosition="right"
+        height={250}
+        padding={{
+          bottom: 50,
+          left: 50,
+          right: 200, // Adjusted to accommodate legend
+          top: 50
+        }}
+        width={600}
+      >
+        <ChartAxis />
+        <ChartAxis dependentAxis showGrid />
+        <ChartGroup offset={11}>
+          <ChartBar data={data.cat} ariaLabel={ariaLabel.cat} />
+          <ChartBar data={data.dog} ariaLabel={ariaLabel.dog} />
+          <ChartBar data={data.birds} ariaLabel={ariaLabel.birds} />
+          <ChartBar data={data.mice} ariaLabel={ariaLabel.mice} />
+        </ChartGroup>
+      </Chart>
+    </div>
+  );
+}
+```
+
 ## Documentation
+
 ### Tips
+
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
@@ -172,11 +256,12 @@ import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+
+Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
- - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
- - For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
- - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
- - For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)
+- For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+- For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+- For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+- For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+- For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)
