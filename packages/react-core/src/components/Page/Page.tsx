@@ -150,7 +150,9 @@ export class Page extends React.Component<PageProps, PageState> {
     if (onPageResize) {
       onPageResize({ mobileView, windowSize: window.innerWidth });
     }
-    this.setState({ mobileView });
+    if (mobileView !== this.state.mobileView) {
+      this.setState({ mobileView });
+    }
   };
 
   handleResize = debounce(this.resize, 250);

@@ -1,5 +1,6 @@
 export * from './AboutModal/AboutModalDemo';
 export * from './AccordionDemo/AccordionDemo';
+export * from './ActionListDemo/ActionListDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherFavoritesDemo';
 export * from './AlertDemo/AlertDemo';
@@ -153,3 +154,4 @@ export * from './TooltipDemo/TooltipDemo';
 export * from './TopologyDemo/TopologyDemo';
 export * from './TreeViewDemo/TreeViewDemo';
 export * from './WizardDemo/WizardDemo';
+export * from './JumpLinksDemo/JumpLinksDemo';

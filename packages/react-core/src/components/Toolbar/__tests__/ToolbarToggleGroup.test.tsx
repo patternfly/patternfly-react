@@ -40,4 +40,22 @@ describe('Toolbar', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  it('should render with page inset flag', () => {
+    const items = (
+      <React.Fragment>
+        <ToolbarItem>Test</ToolbarItem>
+        <ToolbarItem>Test 2</ToolbarItem>
+        <ToolbarItem variant="separator" />
+        <ToolbarItem>Test 3 </ToolbarItem>
+      </React.Fragment>
+    );
+
+    const view = mount(
+      <Toolbar id="toolbar" usePageInsets>
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });
