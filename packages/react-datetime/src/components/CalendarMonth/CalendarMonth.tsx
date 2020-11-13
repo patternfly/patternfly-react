@@ -31,6 +31,8 @@ export interface CalendarProps extends Omit<React.HTMLProps<HTMLDivElement>, 'on
   validators?: [(date: Date) => boolean];
   /** Classname to add to outer div */
   className?: string;
+  /** @hide Internal prop to allow pressing escape in select menu to not close popover */
+  onSelectToggle?: (open: boolean) => void;
 }
 
 // Must be numeric given current design
@@ -68,6 +70,7 @@ export const CalendarMonth = ({
   locale = Locales.enUS,
   validators = [() => true],
   className,
+  onSelectToggle,
   ...props
 }: CalendarProps) => {
   const longMonthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -138,18 +141,19 @@ export const CalendarMonth = ({
           <Select
             aria-labelledby={hiddenMonthId}
             isOpen={isSelectOpen}
-            onToggle={() => setIsSelectOpen(!isSelectOpen)}
+            onToggle={() => {
+              setIsSelectOpen(!isSelectOpen);
+              onSelectToggle(!isSelectOpen);
+            }}
             onSelect={(_ev, longMonth) => {
               // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
               // to see the SelectOption as a child so it doesn't close the Popover.
-              setTimeout(() => {
-                setIsSelectOpen(false);
-                const monthNum = longMonthNames[longMonth as string];
-                const newDate = new Date(focusedDate);
-                newDate.setMonth(monthNum);
-                setFocusedDate(newDate);
-              }, 0);
-              // Otherwise the new date gets immediately focused?
+              setIsSelectOpen(false);
+              onSelectToggle(false);
+              const monthNum = longMonthNames[longMonth as string];
+              const newDate = new Date(focusedDate);
+              newDate.setMonth(monthNum);
+              setFocusedDate(newDate);
               setFocusDate(false);
             }}
             variant="single"

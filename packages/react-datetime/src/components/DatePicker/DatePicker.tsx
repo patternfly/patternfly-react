@@ -2,10 +2,10 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/patternfly/patternfly-date-picker.css';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { Locales, Locale } from '../../helpers';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
 import { Popover } from '@patternfly/react-core/dist/js/components/Popover/Popover';
-import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
 import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import { parse, format, isValid as isNotNull } from 'date-fns';
@@ -92,7 +92,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [maxDate, setMaxDate] = React.useState(myParse(maxDateProp));
   const [valueDate, setValueDate] = React.useState(getDefaultValueDate());
   const [popoverOpen, setPopoverOpen] = React.useState(false);
-  const popoverContentRef = React.useRef<HTMLDivElement>();
+  const [selectOpen, setSelectOpen] = React.useState(false);
+  const buttonRef = React.useRef<HTMLButtonElement>();
 
   React.useEffect(() => {
     setValueDate(getDefaultValueDate());
@@ -162,25 +163,24 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
       <Popover
         position="bottom"
         bodyContent={
-          <div ref={popoverContentRef}>
-            <CalendarMonth
-              date={valueDate}
-              onChange={onDateClick}
-              locale={locale}
-              validators={[date => rangeValidator(date, false)]}
-            />
-          </div>
+          <CalendarMonth
+            date={valueDate}
+            onChange={onDateClick}
+            locale={locale}
+            validators={[date => rangeValidator(date, false)]}
+            onSelectToggle={open => setSelectOpen(open)}
+          />
         }
         showClose={false}
         isVisible={popoverOpen}
         shouldClose={(_1, _2, event) => {
           event = event as KeyboardEvent;
-          if (
-            event.keyCode &&
-            event.keyCode === 27 &&
-            popoverContentRef.current &&
-            popoverContentRef.current.querySelector('.pf-c-select__menu')
-          ) {
+          // Let the select menu close
+          if (event.keyCode && event.keyCode === 27 && selectOpen) {
+            return false;
+          }
+          // Let our button handle toggling
+          if (buttonRef.current && buttonRef.current.contains(event.target as Node)) {
             return false;
           }
           setPopoverOpen(false);
@@ -199,9 +199,14 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             value={value}
             onChange={onTextInput}
           />
-          <Button variant="control" aria-label={buttonAriaLabel} onClick={() => setPopoverOpen(!popoverOpen)}>
+          <button
+            ref={buttonRef}
+            className={css(buttonStyles.button, buttonStyles.modifiers.control)}
+            aria-label={buttonAriaLabel}
+            onClick={() => setPopoverOpen(!popoverOpen)}
+          >
             <OutlinedCalendarAltIcon />
-          </Button>
+          </button>
         </InputGroup>
       </Popover>
       {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
