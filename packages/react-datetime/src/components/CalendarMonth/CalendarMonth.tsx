@@ -12,7 +12,7 @@ import { Locales, Locale } from '../../helpers';
 import commonStyles from '@patternfly/react-styles/css/base/patternfly-common';
 import { getUniqueId } from '@patternfly/react-core/dist/js/helpers/util';
 
-export interface CalendarProps {
+export interface CalendarProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Month/year to base other dates around */
   date: Date;
   /** How to format months in dropdown according to date-fns */
@@ -29,6 +29,8 @@ export interface CalendarProps {
   locale?: Locale;
   /** Functions that returns if a date is valid and selectable */
   validators?: [(date: Date) => boolean];
+  /** Classname to add to outer div */
+  className?: string;
 }
 
 // Must be numeric given current design
@@ -64,7 +66,9 @@ export const CalendarMonth = ({
   buttonFormat = 'd',
   onChange = () => {},
   locale = Locales.enUS,
-  validators = [() => true]
+  validators = [() => true],
+  className,
+  ...props
 }: CalendarProps) => {
   const longMonthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     .map(monthNum => new Date(1990, monthNum))
@@ -76,8 +80,7 @@ export const CalendarMonth = ({
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [focusedDate, setFocusedDate] = React.useState(dateProp);
   const focusRef = React.useRef<HTMLButtonElement>();
-  const [monthSelectId] = React.useState(getUniqueId('month-select'));
-  const [yearInputId] = React.useState(getUniqueId('year-input'));
+  const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
   const [focusDate, setFocusDate] = React.useState(true);
 
   useEffect(() => setFocusedDate(dateProp), [dateProp]);
@@ -118,21 +121,22 @@ export const CalendarMonth = ({
 
   const today = new Date();
   const calendar = buildCalendar(focusedDate.getFullYear(), focusedDate.getMonth(), locale);
+  const monthFormatted = format(focusedDate, monthFormat, { locale });
+  const yearFormatted = format(focusedDate, yearFormat, { locale });
   return (
-    <div className={styles.calendarMonth}>
+    <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
-          <Button
-            variant="plain"
-            aria-label="Previous month"
-            aria-labelledby={`${monthSelectId} ${yearInputId}`}
-            onClick={() => onMonthClick(-1)}
-          >
+          <Button variant="plain" aria-label="Previous month" onClick={() => onMonthClick(-1)}>
             <ArrowLeftIcon aria-hidden={true} />
           </Button>
         </div>
         <div className={styles.calendarMonthHeaderMonth}>
+          <span id={hiddenMonthId} hidden>
+            Month
+          </span>
           <Select
+            aria-labelledby={hiddenMonthId}
             isOpen={isSelectOpen}
             onToggle={() => setIsSelectOpen(!isSelectOpen)}
             onSelect={(_ev, longMonth) => {
@@ -144,19 +148,15 @@ export const CalendarMonth = ({
                 const newDate = new Date(focusedDate);
                 newDate.setMonth(monthNum);
                 setFocusedDate(newDate);
-                setFocusDate(false);
               }, 0);
+              // Otherwise the new date gets immediately focused?
+              setFocusDate(false);
             }}
             variant="single"
-            selections={format(focusedDate, monthFormat, { locale })}
-            toggleId={monthSelectId}
+            selections={monthFormatted}
           >
             {Object.keys(longMonthNames).map((longMonth, index) => (
-              <SelectOption
-                key={index}
-                value={longMonth}
-                isSelected={longMonth === format(focusedDate, monthFormat, { locale })}
-              />
+              <SelectOption key={index} value={longMonth} isSelected={longMonth === monthFormatted} />
             ))}
           </Select>
         </div>
@@ -164,23 +164,17 @@ export const CalendarMonth = ({
           <TextInput
             aria-label="Select year"
             type="number"
-            value={format(focusedDate, yearFormat, { locale })}
+            value={yearFormatted}
             onChange={year => {
               const newDate = new Date(focusedDate);
               newDate.setFullYear(+year);
               setFocusedDate(newDate);
               setFocusDate(false);
             }}
-            id={yearInputId}
           />
         </div>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
-          <Button
-            variant="plain"
-            aria-label="Next month"
-            aria-labelledby={`${monthSelectId} ${yearInputId}`}
-            onClick={() => onMonthClick(1)}
-          >
+          <Button variant="plain" aria-label="Next month" onClick={() => onMonthClick(1)}>
             <ArrowRightIcon aria-hidden={true} />
           </Button>
         </div>
@@ -205,6 +199,8 @@ export const CalendarMonth = ({
                 const isFocused = isSameDate(day, focusedDate);
                 const isValid = validators.every(validator => validator(day));
                 const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
+                const dayFormatted = format(day, buttonFormat);
+
                 return (
                   <td
                     key={index}
@@ -221,10 +217,11 @@ export const CalendarMonth = ({
                       onClick={() => onChange(day)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
+                      aria-label={`${dayFormatted} ${monthFormatted} ${yearFormatted}`}
                       {...(isFocused && { ref: focusRef })}
                     >
                       {/* Current design uses this, could custom render anything */}
-                      {format(day, buttonFormat)}
+                      {dayFormatted}
                     </button>
                   </td>
                 );
