@@ -206,6 +206,13 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
       if (document.activeElement === this.controlsEl.current) {
         currentIndex = 0;
+        while (
+          currentIndex < controls.length &&
+          currentIndex >= 0 &&
+          controls[currentIndex].classList.contains('pf-m-disabled')
+        ) {
+          currentIndex = currentIndex + 1;
+        }
         moveFocus = true;
       } else {
         controls.forEach((control, index) => {
@@ -290,10 +297,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           className={css(styles.dualListSelectorControls)}
           tabIndex={0}
           ref={this.controlsEl}
-          role="listbox"
           aria-label={controlsAriaLabel}
         >
-          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+          <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
               isDisabled={availableOptions.length === 0}
               aria-disabled={availableOptions.length === 0}
@@ -305,7 +311,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               <AngleDoubleRightIcon />
             </Button>
           </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+          <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
               isDisabled={availableOptionsSelected.length === 0}
               aria-disabled={availableOptionsSelected.length === 0}
@@ -317,7 +323,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               <AngleRightIcon />
             </Button>
           </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+          <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
               variant={ButtonVariant.plain}
               onClick={this.removeSelected}
@@ -329,7 +335,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               <AngleLeftIcon />
             </Button>
           </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')} role="option">
+          <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
               isDisabled={chosenOptions.length === 0}
               aria-disabled={chosenOptions.length === 0}

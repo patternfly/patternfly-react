@@ -150,12 +150,10 @@ exports[`DualListSelector basic 1`] = `
     <div
       aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
-      role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={false}
@@ -207,7 +205,6 @@ exports[`DualListSelector basic 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -259,7 +256,6 @@ exports[`DualListSelector basic 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -311,7 +307,6 @@ exports[`DualListSelector basic 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -604,12 +599,10 @@ exports[`DualListSelector with actions 1`] = `
     <div
       aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
-      role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={false}
@@ -661,7 +654,6 @@ exports[`DualListSelector with actions 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -713,7 +705,6 @@ exports[`DualListSelector with actions 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -765,7 +756,6 @@ exports[`DualListSelector with actions 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={false}
@@ -1113,12 +1103,10 @@ exports[`DualListSelector with custom status 1`] = `
     <div
       aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
-      role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={false}
@@ -1170,7 +1158,6 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -1222,7 +1209,6 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -1274,7 +1260,6 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -1545,12 +1530,10 @@ exports[`DualListSelector with search inputs 1`] = `
     <div
       aria-label="Selector controls"
       className="pf-c-dual-list-selector__controls"
-      role="listbox"
       tabIndex={0}
     >
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={false}
@@ -1602,7 +1585,6 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -1654,7 +1636,6 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
@@ -1706,7 +1687,6 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
       <div
         className="pf-c-dual-list-selector__controls-item"
-        role="option"
       >
         <Button
           aria-disabled={true}
