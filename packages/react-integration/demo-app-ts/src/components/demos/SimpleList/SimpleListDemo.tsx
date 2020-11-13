@@ -26,8 +26,8 @@ export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
       <React.Fragment>
         <h2>Simple List</h2>
         <SimpleList id="simple-list-demo">
-          <SimpleListItem>Item 1</SimpleListItem>
-          <SimpleListItem isActive>Item 2</SimpleListItem>
+          <SimpleListItem isActive>Item 1</SimpleListItem>
+          <SimpleListItem>Item 2</SimpleListItem>
           <SimpleListItem>Item 3</SimpleListItem>
         </SimpleList>
         <br></br>
