@@ -2,24 +2,23 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
-import { MenuContext } from './MenuContext';
+import { MenuContext, MenuItemContext } from './MenuContext';
 
-export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'action' | 'onClick'> {
+export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'action' | 'onClick'> {
   /** Content rendered inside the menu list item. */
   children?: React.ReactNode;
   /** Additional classes added to the menu list item */
   className?: string;
-  /** Identifies the component in the Menu onSelect or onFavorite callback */
+  /** Identifies the component in the Menu onSelect or onActionClick callback */
   itemId?: any;
   /** Target navigation link */
   to?: string;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
   /** Callback for item click */
-  onClick?: (event: React.MouseEvent) => void;
+  onClick?: (event?: any) => void;
   /** Component used to render the menu item */
   component?: React.ReactNode;
   /** Render item as disabled option */
@@ -36,23 +35,17 @@ export interface MenuListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   isSelected?: boolean;
   /** Render expandable icon */
   isExpandable?: boolean;
-  /** Flag indicating if the item is favorited */
-  isFavorite?: boolean;
-  /** Aria label text for favoritable button when favorited */
-  ariaIsFavoriteLabel?: string;
-  /** Aria label text for favoritable button when not favorited */
-  ariaIsNotFavoriteLabel?: string;
   /** Flyout menu */
   flyoutMenu?: React.ReactNode;
   /** Callback function when mouse leaves trigger */
-  onShowFlyout?: (event?: MouseEvent) => void;
+  onShowFlyout?: (event?: any) => void;
   /** Accessibility label */
   'aria-label'?: string;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
 
-const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
+const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   itemId,
@@ -68,13 +61,10 @@ const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
   isSelected = false,
   icon,
   action,
-  isFavorite,
-  ariaIsFavoriteLabel,
-  ariaIsNotFavoriteLabel,
   onShowFlyout,
   innerRef,
   ...props
-}: MenuListItemProps) => {
+}: MenuItemProps) => {
   const Component = component || to ? 'a' : 'button';
   const [flyoutVisible, setFlyoutVisible] = React.useState(false);
 
@@ -83,24 +73,26 @@ const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
     onShowFlyout && displayFlyout && onShowFlyout();
   };
 
-  const onItemSelect = (event: React.MouseEvent, onSelect: any) => {
+  const onItemSelect = (event: any, onSelect: any) => {
     // Trigger callback for Menu onSelect
-    onSelect(event, itemId);
+    onSelect && onSelect(event, itemId);
     // Trigger callback for item onClick
-    onClick(event);
+    onClick && onClick(event);
   };
 
-  const renderDefaultLink = (onSelect: any): React.ReactNode => {
+  const renderItem = (onSelect: any): React.ReactNode => {
     const additionalProps =
       Component === 'a'
         ? {
-            href: to
+            href: to,
+            'aria-disabled': isDisabled ? true : null,
+            tabIndex: isDisabled ? -1 : null
           }
         : {};
     return (
       <>
         <Component
-          onClick={(event: React.MouseEvent) => onItemSelect(event, onSelect)}
+          onClick={(event: any) => onItemSelect(event, onSelect)}
           className={css(styles.menuItem, isSelected && styles.modifiers.selected, className)}
           aria-current={isActive ? 'page' : null}
           {...(isDisabled && { disabled: true })}
@@ -111,12 +103,12 @@ const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
             <span className={css(styles.menuItemText)}>{children}</span>
             {isExternalLink && (
               <span className={css(styles.menuItemExternalIcon)}>
-                <ExternalLinkAltIcon />
+                <ExternalLinkAltIcon aria-hidden />
               </span>
             )}
             {isExpandable && (
               <span className={css(styles.menuItemToggleIcon)}>
-                <AngleRightIcon />
+                <AngleRightIcon aria-hidden />
               </span>
             )}
             {isSelected && (
@@ -145,32 +137,18 @@ const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
       {...props}
     >
       <MenuContext.Consumer>
-        {({ onSelect, onFavorite }) => (
+        {({ onSelect }) => (
           <>
-            {renderDefaultLink(onSelect)}
-            {onFavorite && (
-              <button
-                className={css(
-                  styles.menuItemAction,
-                  styles.modifiers.favorite,
-                  onFavorite && isFavorite && styles.modifiers.favorited,
-                  isDisabled && styles.modifiers.disabled
-                )}
-                aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
-                onClick={(event: React.MouseEvent) => onFavorite(event, itemId)}
-              >
-                <StarIcon className={css(styles.menuItemActionIcon)} />
-              </button>
-            )}
+            {renderItem(onSelect)}
+            <MenuItemContext.Provider value={{ itemId, isDisabled }}>{action}</MenuItemContext.Provider>
           </>
         )}
       </MenuContext.Consumer>
-      {action}
     </li>
   );
 };
 
-export const MenuListItem = React.forwardRef((props: MenuListItemProps, ref: React.Ref<HTMLElement>) => (
-  <MenuListItemBase {...props} innerRef={ref} />
+export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<HTMLElement>) => (
+  <MenuItemBase {...props} innerRef={ref} />
 ));
-MenuListItem.displayName = 'MenuListItem';
+MenuItem.displayName = 'MenuItem';

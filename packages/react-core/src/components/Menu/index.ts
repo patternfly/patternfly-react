@@ -1,5 +1,5 @@
 export * from './Menu';
 export * from './MenuGroup';
-export * from './MenuListItem';
+export * from './MenuItem';
 export * from './MenuList';
-export * from './MenuAction';
+export * from './MenuItemAction';
