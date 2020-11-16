@@ -34,6 +34,8 @@ export interface DualListSelectorProps {
   addSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Accessible label for the add selected button */
   addSelectedAriaLabel?: string;
+  /** Callback fired every time options are chosen or removed */
+  onListChange?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Optional callback for the add all button */
   addAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Accessible label for the add all button */
@@ -113,6 +115,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       if (this.props.addAll) {
         this.props.addAll([], newChosen);
       }
+      if (this.props.onListChange) {
+        this.props.onListChange([], newChosen);
+      }
       return {
         availableOptions: [],
         availableOptionsSelected: [],
@@ -127,6 +132,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       const newAvailable = [...prevState.chosenOptions, ...prevState.availableOptions];
       if (this.props.removeAll) {
         this.props.removeAll(newAvailable, []);
+      }
+      if (this.props.onListChange) {
+        this.props.onListChange(newAvailable, []);
       }
       return {
         availableOptions: newAvailable,
@@ -153,6 +161,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       if (this.props.addSelected) {
         this.props.addSelected(newAvailable, newChosen);
       }
+      if (this.props.onListChange) {
+        this.props.onListChange(newAvailable, newChosen);
+      }
       return {
         chosenOptionsSelected: [],
         availableOptionsSelected: [],
@@ -177,6 +188,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       const newAvailable = [...prevState.availableOptions, ...itemsToRemove];
       if (this.props.removeSelected) {
         this.props.removeSelected(newAvailable, newChosen);
+      }
+      if (this.props.onListChange) {
+        this.props.onListChange(newAvailable, newChosen);
       }
       return {
         chosenOptionsSelected: [],
@@ -282,6 +296,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       addAll,
       removeAll,
       addSelected,
+      onListChange,
       id,
       ...props
     } = this.props;

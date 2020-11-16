@@ -25,7 +25,14 @@ class BasicDualListSelector extends React.Component {
     this.state = {
       availableOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
       chosenOptions: []
-    }
+    };
+    
+    this.onListChange = (newAvailableOptions, newChosenOptions) => {
+      this.setState({
+        availableOptions: newAvailableOptions.sort(),
+        chosenOptions: newChosenOptions.sort(),
+      })
+    };
   }
   
   render() {
@@ -33,6 +40,7 @@ class BasicDualListSelector extends React.Component {
       <DualListSelector
         availableOptions={this.state.availableOptions}
         chosenOptions={this.state.chosenOptions}
+        onListChange={this.onListChange}
         id="basicSelector"
       />
     );
