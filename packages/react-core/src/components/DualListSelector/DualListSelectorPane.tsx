@@ -63,10 +63,11 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ input: e.target.value });
+    this.optionsRefs = [];
   };
 
-  sendRef = (optionRef: React.ReactNode, index: number) => {
-    this.optionsRefs[index] = optionRef as HTMLElement;
+  sendRef = (optionRef: React.ReactNode) => {
+    this.optionsRefs = [...this.optionsRefs, optionRef as HTMLElement];
   };
 
   handleKeys = (event: KeyboardEvent) => {

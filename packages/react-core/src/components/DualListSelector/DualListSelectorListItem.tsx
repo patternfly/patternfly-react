@@ -12,7 +12,7 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   /** Flag indicating this list item is in the chosen pane. */
   isChosen?: boolean;
   /** Internal callback to pass this ref up to the parent. */
-  sendRef?: (optionRef: React.ReactNode, index: number) => void;
+  sendRef?: (optionRef: React.ReactNode) => void;
   /** Internal field used to keep track of order. */
   index?: number;
   /** Callback fired when an option is selected.  */
@@ -21,43 +21,52 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   id: string;
 }
 
-export const DualListSelectorListItem: React.FunctionComponent<DualListSelectorListItemProps> = ({
-  onOptionSelect,
-  index,
-  children,
-  className,
-  id,
-  isSelected,
-  isChosen,
-  sendRef,
-  ...props
-}: DualListSelectorListItemProps) => {
-  const ref = React.useRef<any>();
+export class DualListSelectorListItem extends React.Component<DualListSelectorListItemProps> {
+  private ref = React.createRef<HTMLButtonElement>();
+  static displayName = 'DualListSelectorListItem';
 
-  React.useEffect(() => {
-    sendRef(ref.current, index);
-  }, []);
+  componentDidMount() {
+    this.props.sendRef(this.ref.current);
+  }
 
-  return (
-    <li
-      className={css(styles.dualListSelectorListItem, className)}
-      key={index}
-      {...props}
-      aria-selected={isSelected}
-      role="option"
-    >
-      <button
-        className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
-        onClick={e => onOptionSelect(e, index, isChosen)}
-        id={id}
-        ref={ref}
-        tabIndex={-1}
+  componentDidUpdate() {
+    this.props.sendRef(this.ref.current);
+  }
+
+  render() {
+    const {
+      onOptionSelect,
+      index,
+      children,
+      className,
+      id,
+      isSelected,
+      isChosen,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      sendRef,
+      ...props
+    } = this.props;
+
+    return (
+      <li
+        className={css(styles.dualListSelectorListItem, className)}
+        key={index}
+        {...props}
+        aria-selected={isSelected}
+        role="option"
       >
-        <span className={css(styles.dualListSelectorItemMain)}>
-          <span className={css(styles.dualListSelectorItemText)}>{children}</span>
-        </span>
-      </button>
-    </li>
-  );
-};
-DualListSelectorListItem.displayName = 'DualListSelectorListItem';
+        <button
+          className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
+          onClick={e => onOptionSelect(e, index, isChosen)}
+          id={id}
+          ref={this.ref}
+          tabIndex={-1}
+        >
+          <span className={css(styles.dualListSelectorItemMain)}>
+            <span className={css(styles.dualListSelectorItemText)}>{children}</span>
+          </span>
+        </button>
+      </li>
+    );
+  }
+}
