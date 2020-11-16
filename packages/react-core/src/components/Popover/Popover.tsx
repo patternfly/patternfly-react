@@ -48,6 +48,8 @@ export interface PopoverProps {
   className?: string;
   /** Aria label for the Close button */
   closeBtnAriaLabel?: string;
+  /** Whether to show the close button */
+  showClose?: boolean;
   /** Distance of the popover to its target, defaults to 25 */
   distance?: number;
   /**
@@ -118,18 +120,24 @@ export interface PopoverProps {
    * clicked, Enter key was used on it, or the ESC key is used.
    * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void) => void;
+  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
    * used on the focused trigger
    */
-  shouldOpen?: (showFunction?: () => void) => void;
+  shouldOpen?: (showFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /** z-index of the popover */
   zIndex?: number;
   /** CSS fade transition animation duration */
   animationDuration?: number;
   /** id used as part of the various popover elements (popover-${id}-header/body/footer) */
   id?: string;
+  /** Whether to trap focus in the popover */
+  withFocusTrap?: boolean;
+  /** Removes fixed-width and allows width to be defined by contents */
+  hasAutoWidth?: boolean;
+  /** Allows content to touch edges of popover container */
+  hasNoPadding?: boolean;
   /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** @deprecated - no longer used */
@@ -159,14 +167,18 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   minWidth = popoverMinWidth && popoverMinWidth.value,
   maxWidth = popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel = 'Close',
+  showClose = true,
   distance = 25,
   // For every initial starting position, there are 3 escape positions
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
   animationDuration = 300,
   id,
+  withFocusTrap: propWithFocusTrap,
   boundary,
   tippyProps,
   reference,
+  hasNoPadding = false,
+  hasAutoWidth = false,
   ...rest
 }: PopoverProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -209,7 +221,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     showTimerRef.current = setTimeout(() => {
       setVisible(true);
       setOpacity(1);
-      withFocusTrap && setFocusTrapActive(true);
+      (propWithFocusTrap || withFocusTrap) && setFocusTrapActive(true);
       onShown();
     }, 0);
   };
@@ -238,7 +250,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
       if (triggerManually) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
         hide();
       }
@@ -253,7 +265,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         return;
       }
       if (triggerManually) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
         hide();
       }
@@ -263,25 +275,25 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     if (event.keyCode === KEY_CODES.ENTER) {
       if (!visible) {
         if (triggerManually) {
-          shouldOpen(show);
+          shouldOpen(show, event);
         } else {
           show(true);
         }
       } else {
         if (triggerManually) {
-          shouldClose(null, hide);
+          shouldClose(null, hide, event);
         } else {
           hide();
         }
       }
     }
   };
-  const onTriggerClick = () => {
+  const onTriggerClick = (event: MouseEvent) => {
     if (triggerManually) {
       if (visible) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
-        shouldOpen(show);
+        shouldOpen(show, event);
       }
     } else {
       if (visible) {
@@ -299,7 +311,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const closePopover = (event: any) => {
     event.stopPropagation();
     if (triggerManually) {
-      shouldClose(null, hide);
+      shouldClose(null, hide, event);
     } else {
       hide();
     }
@@ -308,7 +320,12 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     <FocusTrap
       active={focusTrapActive}
       focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}
-      className={css(styles.popover, className)}
+      className={css(
+        styles.popover,
+        hasNoPadding && styles.modifiers.noPadding,
+        hasAutoWidth && styles.modifiers.widthAuto,
+        className
+      )}
       role="dialog"
       aria-modal="true"
       aria-label={headerContent ? undefined : ariaLabel}
@@ -325,7 +342,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     >
       <PopoverArrow />
       <PopoverContent>
-        <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
+        {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
         {headerContent && <PopoverHeader id={`popover-${uniqueId}-header`}>{headerContent}</PopoverHeader>}
         <PopoverBody id={`popover-${uniqueId}-body`}>{bodyContent}</PopoverBody>
         {footerContent && <PopoverFooter id={`popover-${uniqueId}-footer`}>{footerContent}</PopoverFooter>}

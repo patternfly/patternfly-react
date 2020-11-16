@@ -50,10 +50,7 @@ export class FocusTrap extends React.Component<FocusTrapProps> {
 
   componentDidUpdate(prevProps: FocusTrapProps) {
     if (prevProps.active && !this.props.active) {
-      const { returnFocusOnDeactivate } = this.props.focusTrapOptions;
-      const returnFocus = returnFocusOnDeactivate || false;
-      const config = { returnFocus };
-      this.focusTrap.deactivate(config);
+      this.focusTrap.deactivate();
     } else if (!prevProps.active && this.props.active) {
       this.focusTrap.activate();
     }

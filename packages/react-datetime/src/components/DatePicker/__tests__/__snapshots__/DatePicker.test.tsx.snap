@@ -4,14 +4,15 @@ exports[`disabled date picker 1`] = `
 <input
   aria-invalid={false}
   aria-label="disabled date picker"
-  className="pf-c-form-control pf-m-icon pf-m-calendar"
+  className="pf-c-form-control"
   disabled={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  placeholder="mm/dd/yyyy"
+  placeholder="MM/dd/yyyy"
   readOnly={false}
   required={false}
   type="text"
+  value=""
 />
 `;
