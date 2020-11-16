@@ -4,6 +4,7 @@ section: components
 cssPrefix: pf-c-menu
 propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction']
 ouia: true
+beta: true
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
