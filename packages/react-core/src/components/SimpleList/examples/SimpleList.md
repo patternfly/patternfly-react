@@ -16,7 +16,7 @@ import { SimpleList, SimpleListItem } from '@patternfly/react-core';
 
 class SimpleListDemo extends React.Component {
   onSelect(selectedItem, selectedItemProps) {
-    console.log('new selection', selectedItem, selectedItemProps);
+    console.log('new selection SimpleListDemo', selectedItem, selectedItemProps);
   }
 
   render() {
@@ -47,7 +47,7 @@ import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-c
 
 class SimpleListGroupDemo extends React.Component {
   onSelect(selectedItem, selectedItemProps) {
-    console.log('new selection', selectedItem, selectedItemProps);
+    console.log('new selection SimpleListGroupDemo', selectedItem, selectedItemProps);
   }
 
   render() {
@@ -102,7 +102,7 @@ class SimpleListUncontrolledDemo extends React.Component {
   }
 
   onSelect(selectedItem, selectedItemProps) {
-    console.log('new selection', selectedItem, selectedItemProps);
+    console.log('new selection SimpleListUncontrolledDemo', selectedItem, selectedItemProps);
     this.setState({ activeItem: selectedItemProps.itemId });
   }
 
@@ -112,7 +112,7 @@ class SimpleListUncontrolledDemo extends React.Component {
       <SimpleListItem key="item1" itemId={0} isActive={ activeItem === 0}>
         List item 1
       </SimpleListItem>,
-      <SimpleListItem key="item2" itemId={1} isActive={ activeItem === 1} component="a" href="#">
+      <SimpleListItem key="item2" itemId={1} isActive={activeItem === 1}>
         List item 2
       </SimpleListItem>,
       <SimpleListItem key="item3" itemId={2} isActive={ activeItem === 2}>
@@ -121,7 +121,7 @@ class SimpleListUncontrolledDemo extends React.Component {
     ];
 
     return (
-      <SimpleList onSelect={this.onSelect} controlled={false} aria-label="Uncontrolled Simple List Example">
+      <SimpleList onSelect={this.onSelect} isControlled={false} aria-label="Uncontrolled Simple List Example">
         {items}
       </SimpleList>
     );
