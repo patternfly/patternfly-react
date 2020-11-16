@@ -11,10 +11,14 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   children?: React.ReactNode;
   /** Additional classes added to the Menu */
   className?: string;
-  /** Callback for updating when item selection changes */
+  /** Callback for updating when item selection changes. You can also specify onClick on the MenuItem. */
   onSelect?: (event?: any, itemId?: any) => void;
-  /** Callback called when an MenuItems's action button is clicked */
+  /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the MenuItem. */
+  selected?: any | any[];
+  /** Callback called when an MenuItems's action button is clicked. You can also specify it within a MenuItemAction. */
   onActionClick?: (event?: any, itemId?: any) => void;
+  /** Search input of menu */
+  hasSearchInput?: boolean;
   /** A callback for when the input value changes. */
   onSearchInputChange?: (
     event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>,
@@ -22,10 +26,10 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   ) => void;
   /** Accessibility label */
   'aria-label'?: string;
-  /** Indicates if menu is the flyout variant */
-  isFlyoutMenu?: boolean;
-  /** Search input of menu */
-  hasSearchInput?: boolean;
+  /** Indicates if menu contains a flyout menu */
+  containsFlyout?: boolean;
+  /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
+  activeItemId?: any;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
@@ -51,21 +55,23 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       children,
       className,
       onSelect,
+      selected = null,
       onActionClick,
       onSearchInputChange,
       ouiaId,
       ouiaSafe,
-      isFlyoutMenu,
+      containsFlyout,
       hasSearchInput,
+      activeItemId = null,
       innerRef,
       ...props
     } = this.props;
 
     return (
-      <MenuContext.Provider value={{ onSelect, onActionClick }}>
+      <MenuContext.Provider value={{ onSelect, onActionClick, activeItemId, selected }}>
         <div
-          className={css(styles.menu, isFlyoutMenu && styles.modifiers.flyout, className)}
-          aria-label={ariaLabel || isFlyoutMenu ? 'Local' : 'Global'}
+          className={css(styles.menu, containsFlyout && styles.modifiers.flyout, className)}
+          aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
           ref={innerRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
