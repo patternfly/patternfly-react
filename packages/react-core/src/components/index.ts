@@ -62,5 +62,6 @@ export * from './Title';
 export * from './ToggleGroup';
 export * from './Toolbar';
 export * from './Tooltip';
+export * from './Touchspin';
 export * from './TreeView';
 export * from './Wizard';
