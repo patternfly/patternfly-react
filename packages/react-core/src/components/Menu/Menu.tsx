@@ -16,7 +16,7 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the MenuItem. */
   selected?: any | any[];
   /** Callback called when an MenuItems's action button is clicked. You can also specify it within a MenuItemAction. */
-  onActionClick?: (event?: any, itemId?: any) => void;
+  onActionClick?: (event?: any, itemId?: any, actionId?: any) => void;
   /** Search input of menu */
   hasSearchInput?: boolean;
   /** A callback for when the input value changes. */
