@@ -56,12 +56,7 @@ function BasicWithRightAlignedLegend() {
       { name: 'Mice', x: '2018', y: 5 }
     ]
   };
-  const ariaLabel = Object.assign(
-    ...Object.keys(data).map(type => ({
-      [type]: data[type].map(entry => `There are ${entry.y} ${entry.name} in ${entry.x}`)
-    }))
-  );
-  console.log(ariaLabel);
+  const ariaLabelTemplate = datum => `There are ${datum.y} ${datum.name} in ${datum.x}`;
   return (
     <div style={{ height: '250px', width: '600px' }}>
       <Chart
@@ -92,10 +87,10 @@ function BasicWithRightAlignedLegend() {
         <ChartAxis />
         <ChartAxis dependentAxis showGrid />
         <ChartGroup offset={11}>
-          <ChartBar data={data.cat} ariaLabel={ariaLabel.cat} />
-          <ChartBar data={data.dog} ariaLabel={ariaLabel.dog} />
-          <ChartBar data={data.birds} ariaLabel={ariaLabel.birds} />
-          <ChartBar data={data.mice} ariaLabel={ariaLabel.mice} />
+          <ChartBar data={data.cat} ariaLabel={({datum}) => ariaLabelTemplate(datum)} />
+          <ChartBar data={data.dog} ariaLabel={({datum}) => ariaLabelTemplate(datum)} />
+          <ChartBar data={data.birds} ariaLabel={({datum}) => ariaLabelTemplate(datum)} />
+          <ChartBar data={data.mice} ariaLabel={({datum}) => ariaLabelTemplate(datum)} />
         </ChartGroup>
       </Chart>
     </div>

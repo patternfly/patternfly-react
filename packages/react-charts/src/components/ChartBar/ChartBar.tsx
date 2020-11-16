@@ -45,6 +45,13 @@ export interface ChartBarProps extends VictoryBarProps {
    */
   animate?: boolean | AnimatePropTypeInterface;
   /**
+   * Use ariaLabel prop to determine how screen reader will read the contents in the chart.
+   * If you don't define this prop, the content in the chart will not be accessible.
+   *
+   * @example 'There are 7 cats in 2015'
+   */
+  ariaLabel?: string;
+  /**
    * The barRatio prop specifies an approximate ratio between bar widths and spaces between bars.
    * When width is not specified via the barWidth prop or in bar styles, the barRatio prop will
    * be used to calculate a default width for each bar given the total number of bars in the data series
@@ -422,13 +429,6 @@ export interface ChartBarProps extends VictoryBarProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
-  /**
-   * Use ariaLabel prop to determine how screen reader will read the contents in the chart.
-   * If you don't define this prop, the content in the chart will not be accessible.
-   *
-   * @example ['There are 7 cats in 2015', 'There are 5 cats in 2016', 'There are 8 cats in 2017', 'There are 2 cats in 2018']
-   */
-  ariaLabel?: string[];
 }
 
 export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
@@ -452,7 +452,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
     <VictoryBar
       containerComponent={container}
       theme={theme}
-      dataComponent={ariaLabel && <Bar ariaLabel={({ index }) => ariaLabel[Number(index)]} tabIndex={0} />}
+      dataComponent={ariaLabel && <Bar ariaLabel={ariaLabel} tabIndex={0} />}
       {...rest}
     />
   );
