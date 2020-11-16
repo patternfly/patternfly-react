@@ -1,9 +1,17 @@
 import * as React from 'react';
 
 export const MenuContext = React.createContext<{
-  onSelect?: (event: React.MouseEvent, itemId: any) => void;
-  onFavorite?: (event: React.MouseEvent, itemId: any) => void;
+  onSelect?: (event?: any, itemId?: any) => void;
+  onActionClick?: (event?: any, itemId?: any) => void;
 }>({
-  onSelect: () => {},
-  onFavorite: () => {}
+  onActionClick: () => null,
+  onSelect: () => null
+});
+
+export const MenuItemContext = React.createContext<{
+  itemId?: any;
+  isDisabled?: boolean;
+}>({
+  itemId: null,
+  isDisabled: false
 });

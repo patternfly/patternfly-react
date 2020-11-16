@@ -2,7 +2,7 @@
 id: Menu
 section: components
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuListItem', 'MenuAction']
+propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction']
 ouia: true
 ---
 
@@ -20,7 +20,7 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 
 class MenuBasicList extends React.Component {
   constructor(props) {
@@ -40,18 +40,21 @@ class MenuBasicList extends React.Component {
     return (
       <Menu>
         <MenuList>
-          <MenuListItem itemId={0} isActive={activeItem === 0} onClick={(event) => console.log('clicked')}>
+          <MenuItem itemId={0} isActive={activeItem === 0} onClick={event => console.log('clicked')}>
             Action
-          </MenuListItem>
-          <MenuListItem itemId={1} to="#default-link2" isActive={activeItem === 1} onClick={(event) => event.preventDefault()}>
+          </MenuItem>
+          <MenuItem
+            itemId={1}
+            to="#default-link2"
+            isActive={activeItem === 1}
+            onClick={event => event.preventDefault()}
+          >
             Link
-          </MenuListItem>
-          <MenuListItem isDisabled>
-            Disabled Action
-          </MenuListItem>
-          <MenuListItem isDisabled to="#default-link4">
+          </MenuItem>
+          <MenuItem isDisabled>Disabled Action</MenuItem>
+          <MenuItem isDisabled to="#default-link4">
             Disabled Link
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -63,7 +66,7 @@ class MenuBasicList extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -86,15 +89,15 @@ class MenuIconsList extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem icon={<CodeBranchIcon />} itemId={0} isActive={activeItem === 0}>
+          <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId={0} isActive={activeItem === 0}>
             From Git
-          </MenuListItem>
-          <MenuListItem icon={<LayerGroupIcon />} itemId={1} isActive={activeItem === 1}>
+          </MenuItem>
+          <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId={1} isActive={activeItem === 1}>
             Container Image
-          </MenuListItem>
-          <MenuListItem icon={<CubeIcon />} itemId={2} isActive={activeItem === 2}>
+          </MenuItem>
+          <MenuItem icon={<CubeIcon aria-hidden />} itemId={2} isActive={activeItem === 2}>
             Docker File
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -106,7 +109,7 @@ class MenuIconsList extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 
 class MenuWithFlyout extends React.Component {
   constructor(props) {
@@ -128,22 +131,22 @@ class MenuWithFlyout extends React.Component {
   }
 
   render() {
-    const { activeItem, activeItemFlyout, handleMenuToggle } = this.state;
+    const { activeItem, activeItemFlyout } = this.state;
     const flyoutMenu = (
       <Menu onSelect={this.onSelectFlyout}>
         <MenuList>
-          <MenuListItem itemId={10} isActive={activeItem === 10}>
+          <MenuItem itemId={10} isActive={activeItemFlyout === 10}>
             Application Grouping
-          </MenuListItem>
-          <MenuListItem itemId={11} isActive={activeItem === 11}>
+          </MenuItem>
+          <MenuItem itemId={11} isActive={activeItemFlyout === 11}>
             Count
-          </MenuListItem>
-          <MenuListItem itemId={12} isActive={activeItem === 12}>
+          </MenuItem>
+          <MenuItem itemId={12} isActive={activeItemFlyout === 12}>
             Labels
-          </MenuListItem>
-          <MenuListItem itemId={13} isActive={activeItem === 13}>
+          </MenuItem>
+          <MenuItem itemId={13} isActive={activeItemFlyout === 13}>
             Annotations
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -151,16 +154,16 @@ class MenuWithFlyout extends React.Component {
     return (
       <Menu onSelect={this.onSelect} isFlyoutMenu>
         <MenuList>
-          <MenuListItem itemId={0} isActive={activeItem === 0}>
+          <MenuItem itemId={0} isActive={activeItem === 0}>
             Start rollout
-          </MenuListItem>
-          <MenuListItem itemId={1} isActive={activeItem === 1}>
+          </MenuItem>
+          <MenuItem itemId={1} isActive={activeItem === 1}>
             Pause rollouts
-          </MenuListItem>
-          <MenuListItem itemId={2} isActive={activeItem === 2}>
+          </MenuItem>
+          <MenuItem itemId={2} isActive={activeItem === 2}>
             Add storage
-          </MenuListItem>
-          <MenuListItem
+          </MenuItem>
+          <MenuItem
             description="Description"
             itemId={3}
             isActive={activeItem === 3}
@@ -168,10 +171,10 @@ class MenuWithFlyout extends React.Component {
             flyoutMenu={flyoutMenu}
           >
             Edit
-          </MenuListItem>
-          <MenuListItem itemId={4} isActive={activeItem === 4}>
+          </MenuItem>
+          <MenuItem itemId={4} isActive={activeItem === 4}>
             Delete deployment config
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -183,7 +186,7 @@ class MenuWithFlyout extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem, SearchInput } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 
 class MenuWithFiltering extends React.Component {
   constructor(props) {
@@ -213,15 +216,15 @@ class MenuWithFiltering extends React.Component {
     const menuListItems = menuListItemsText
       .filter(item => !input || item.toLowerCase().includes(input.toLowerCase()))
       .map((currentValue, index) => (
-        <MenuListItem key={currentValue} itemId={index} isActive={activeItem === index}>
+        <MenuItem key={currentValue} itemId={index} isActive={activeItem === index}>
           {currentValue}
-        </MenuListItem>
+        </MenuItem>
       ));
     if (input && menuListItems.length === 0) {
       menuListItems.push(
-        <MenuListItem isDisabled key="no result">
+        <MenuItem isDisabled key="no result">
           No results found
-        </MenuListItem>
+        </MenuItem>
       );
     }
 
@@ -238,7 +241,7 @@ class MenuWithFiltering extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 
 class MenuWithLinks extends React.Component {
   constructor(props) {
@@ -258,15 +261,15 @@ class MenuWithLinks extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem isExternalLink to="#default-link1" itemId={0} isActive={activeItem === 0}>
+          <MenuItem isExternalLink to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
-          </MenuListItem>
-          <MenuListItem isExternalLink to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          </MenuItem>
+          <MenuItem isExternalLink to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
-          </MenuListItem>
-          <MenuListItem to="#default-link3" itemId={2} isActive={activeItem === 2}>
+          </MenuItem>
+          <MenuItem to="#default-link3" itemId={2} isActive={activeItem === 2}>
             Link 3
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -278,7 +281,7 @@ class MenuWithLinks extends React.Component {
 
 ```js
 import React from 'react';
-import { Divider, Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Divider, Menu, MenuList, MenuItem } from '@patternfly/react-core';
 
 class MenuWithSeparators extends React.Component {
   constructor(props) {
@@ -298,16 +301,16 @@ class MenuWithSeparators extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem itemId={0} isActive={activeItem === 0}>
+          <MenuItem itemId={0} isActive={activeItem === 0}>
             Action 1
-          </MenuListItem>
-          <MenuListItem itemId={1} isActive={activeItem === 1}>
+          </MenuItem>
+          <MenuItem itemId={1} isActive={activeItem === 1}>
             Action 2
-          </MenuListItem>
+          </MenuItem>
           <Divider component="li" />
-          <MenuListItem itemId={2} isActive={activeItem === 2}>
+          <MenuItem itemId={2} isActive={activeItem === 2}>
             Action 3
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -319,7 +322,7 @@ class MenuWithSeparators extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuGroup, MenuItem, MenuList, MenuListItem, Divider } from '@patternfly/react-core';
+import { Menu, MenuGroup, MenuList, MenuItem, Divider } from '@patternfly/react-core';
 
 class MenuWithTitledGroups extends React.Component {
   constructor(props) {
@@ -340,31 +343,31 @@ class MenuWithTitledGroups extends React.Component {
       <Menu onSelect={this.onSelect}>
         <MenuGroup>
           <MenuList>
-            <MenuListItem to="#" itemId={0} isActive={activeItem === 0}>
+            <MenuItem to="#" itemId={0} isActive={activeItem === 0}>
               Link not in group
-            </MenuListItem>
+            </MenuItem>
           </MenuList>
         </MenuGroup>
         <Divider />
         <MenuGroup label="Group 1">
           <MenuList>
-            <MenuListItem to="#" itemId={1} isActive={activeItem === 1}>
+            <MenuItem to="#" itemId={1} isActive={activeItem === 1}>
               Link 1
-            </MenuListItem>
-            <MenuListItem itemId={2} isActive={activeItem === 2}>
+            </MenuItem>
+            <MenuItem itemId={2} isActive={activeItem === 2}>
               Link 2
-            </MenuListItem>
+            </MenuItem>
           </MenuList>
         </MenuGroup>
         <Divider />
         <MenuGroup label="Group 2">
           <MenuList>
-            <MenuListItem to="#" itemId={3} isActive={activeItem === 3}>
+            <MenuItem to="#" itemId={3} isActive={activeItem === 3}>
               Link 1
-            </MenuListItem>
-            <MenuListItem to="#" itemId={4} isActive={activeItem === 4}>
+            </MenuItem>
+            <MenuItem to="#" itemId={4} isActive={activeItem === 4}>
               Link 2
-            </MenuListItem>
+            </MenuItem>
           </MenuList>
         </MenuGroup>
       </Menu>
@@ -377,12 +380,12 @@ class MenuWithTitledGroups extends React.Component {
 
 ```js
 import React from 'react';
-import { Dropdown, Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-class MenuWithTitledGroups extends React.Component {
+class MenuWithDescription extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -400,26 +403,31 @@ class MenuWithTitledGroups extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem icon={<CodeBranchIcon />} description="Description" itemId={0} isActive={activeItem === 0}>
+          <MenuItem
+            icon={<CodeBranchIcon aria-hidden />}
+            description="Description"
+            itemId={0}
+            isActive={activeItem === 0}
+          >
             Action 1
-          </MenuListItem>
-          <MenuListItem
+          </MenuItem>
+          <MenuItem
             isDisabled
-            icon={<CodeBranchIcon />}
+            icon={<CodeBranchIcon aria-hidden />}
             description="Description"
             itemId={1}
             isActive={activeItem === 1}
           >
             Action 2 disabled
-          </MenuListItem>
-          <MenuListItem
-            icon={<CodeBranchIcon />}
+          </MenuItem>
+          <MenuItem
+            icon={<CodeBranchIcon aria-hidden />}
             description="Nunc non ornare ex, et pretium dui. Duis nec augue at urna elementum blandit tincidunt eget metus. Aenean sed metus id urna dignissim interdum. Aenean vel nisl vitae arcu vehicula pulvinar eget nec turpis. Cras sit amet est est."
             itemId={2}
             isActive={activeItem === 2}
           >
             Action 3
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -431,7 +439,7 @@ class MenuWithTitledGroups extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuGroup, MenuList, MenuListItem, MenuAction } from '@patternfly/react-core';
+import { Menu, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -450,7 +458,7 @@ class MenuWithActions extends React.Component {
     };
 
     this.onSelect = (event, itemId) => {
-      if (this.state.selectedItems.indexOf(itemId) != -1) {
+      if (this.state.selectedItems.indexOf(itemId) !== -1) {
         this.setState({
           selectedItems: this.state.selectedItems.filter(id => id !== itemId)
         });
@@ -466,14 +474,14 @@ class MenuWithActions extends React.Component {
     const { activeItem, selectedItems } = this.state;
 
     return (
-      <Menu onSelect={this.onSelect}>
+      <Menu onSelect={this.onSelect} onActionClick={(event, itemId) => console.log(`clicked on ${itemId}`)}>
         <MenuGroup label="Actions">
           <MenuList>
-            <MenuListItem
+            <MenuItem
               isSelected={selectedItems.indexOf(0) != -1}
               action={
-                <MenuAction
-                  icon={<CodeBranchIcon />}
+                <MenuItemAction
+                  icon={<CodeBranchIcon aria-hidden />}
                   onActionClick={() => console.log('clicked on code icon')}
                   aria-label="Code"
                 />
@@ -483,48 +491,34 @@ class MenuWithActions extends React.Component {
               isActive={activeItem === 0}
             >
               Item 1
-            </MenuListItem>
-            <MenuListItem
+            </MenuItem>
+            <MenuItem
+              isDisabled
               isSelected={selectedItems.indexOf(1) != -1}
-              action={
-                <MenuAction
-                  icon={<BellIcon />}
-                  aria-label="Alert"
-                />
-              }
+              action={<MenuItemAction icon={<BellIcon aria-hidden />} aria-label="Alert" />}
               description="This is a description"
               itemId={1}
               isActive={activeItem === 1}
             >
               Item 2
-            </MenuListItem>
-            <MenuListItem
+            </MenuItem>
+            <MenuItem
               isSelected={selectedItems.indexOf(2) != -1}
-              action={
-                <MenuAction
-                  icon={<ClipboardIcon />}
-                  aria-label="Copy"
-                />
-              }
+              action={<MenuItemAction icon={<ClipboardIcon aria-hidden />} aria-label="Copy" />}
               itemId={2}
               isActive={activeItem === 2}
             >
               Item 3
-            </MenuListItem>
-            <MenuListItem
+            </MenuItem>
+            <MenuItem
               isSelected={selectedItems.indexOf(3) != -1}
-              action={
-                <MenuAction
-                  icon={<BarsIcon />}
-                  aria-label="Expand"
-                />
-              }
+              action={<MenuItemAction icon={<BarsIcon aria-hidden />} aria-label="Expand" />}
               description="This is a description"
               itemId={3}
               isActive={activeItem === 3}
             >
               Item 4
-            </MenuListItem>
+            </MenuItem>
           </MenuList>
         </MenuGroup>
       </Menu>
@@ -537,7 +531,7 @@ class MenuWithActions extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuGroup, MenuList, MenuListItem, Divider } from '@patternfly/react-core';
+import { Menu, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
 
 class MenuWithFavorites extends React.Component {
   constructor(props) {
@@ -558,10 +552,11 @@ class MenuWithFavorites extends React.Component {
         this.setState({
           favorites: this.state.favorites.filter(fav => fav !== itemId)
         });
-      } else
+      } else {
         this.setState({
           favorites: [...this.state.favorites, itemId]
         });
+      }
     };
   }
 
@@ -573,30 +568,24 @@ class MenuWithFavorites extends React.Component {
         text: 'Item 1',
         description: 'Description 1',
         isActive: activeItem === 0,
-        itemId: 'item-1',
-        ariaIsFavoriteLabel: 'starred',
-        ariaIsNotFavoriteLabel: 'not starred'
+        itemId: 'item-1'
       },
       {
         text: 'Item 2',
         description: 'Description 2',
         isActive: activeItem === 1,
-        itemId: 'item-2',
-        ariaIsFavoriteLabel: 'starred',
-        ariaIsNotFavoriteLabel: 'not starred'
+        itemId: 'item-2'
       },
       {
         text: 'Item 3',
         description: 'Description 3',
         isActive: activeItem === 2,
-        itemId: 'item-3',
-        ariaIsFavoriteLabel: 'starred',
-        ariaIsNotFavoriteLabel: 'not starred'
+        itemId: 'item-3'
       }
     ];
 
     return (
-      <Menu onSelect={this.onSelect} onFavorite={this.onFavorite}>
+      <Menu onSelect={this.onSelect} onActionClick={this.onFavorite}>
         {favorites.length > 0 && (
           <React.Fragment>
             <MenuGroup label="Favorites">
@@ -607,9 +596,14 @@ class MenuWithFavorites extends React.Component {
                   .map(item => {
                     const { text, itemId, ...rest } = item;
                     return (
-                      <MenuListItem key={`fav-${itemId}`} itemId={itemId} isFavorite {...rest}>
+                      <MenuItem
+                        key={`fav-${itemId}`}
+                        itemId={itemId}
+                        action={<MenuItemAction icon="favorites" isFavorited aria-label="starred" />}
+                        {...rest}
+                      >
                         {text}
-                      </MenuListItem>
+                      </MenuItem>
                     );
                   })}
               </MenuList>
@@ -621,15 +615,22 @@ class MenuWithFavorites extends React.Component {
           <MenuList>
             {items.map(item => {
               const { text, itemId, ...rest } = item;
+              const isFavorited = favorites.includes(item.itemId);
               return (
-                <MenuListItem
+                <MenuItem
                   key={itemId}
                   itemId={itemId}
-                  isFavorite={favorites.includes(itemId)}
+                  action={
+                    <MenuItemAction
+                      icon="favorites"
+                      isFavorited={isFavorited}
+                      aria-label={isFavorited ? 'starred' : 'not starred'}
+                    />
+                  }
                   {...rest}
                 >
                   {text}
-                </MenuListItem>
+                </MenuItem>
               );
             })}
           </MenuList>
@@ -644,7 +645,7 @@ class MenuWithFavorites extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 
 class MenuOptionSingleSelect extends React.Component {
@@ -668,15 +669,20 @@ class MenuOptionSingleSelect extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem itemId={0} isActive={activeItem === 0} isSelected={selectedItem === 0}>
+          <MenuItem itemId={0} isActive={activeItem === 0} isSelected={selectedItem === 0}>
             Option 1
-          </MenuListItem>
-          <MenuListItem itemId={1} isActive={activeItem === 1} isSelected={selectedItem === 1}>
+          </MenuItem>
+          <MenuItem itemId={1} isActive={activeItem === 1} isSelected={selectedItem === 1}>
             Option 2
-          </MenuListItem>
-          <MenuListItem icon={<TableIcon />} itemId={2} isActive={activeItem === 2} isSelected={selectedItem === 2}>
+          </MenuItem>
+          <MenuItem
+            icon={<TableIcon aria-hidden />}
+            itemId={2}
+            isActive={activeItem === 2}
+            isSelected={selectedItem === 2}
+          >
             Option 3
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -688,7 +694,7 @@ class MenuOptionSingleSelect extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuItem, MenuList, MenuListItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 
 class MenuOptionMultiSelect extends React.Component {
@@ -699,7 +705,7 @@ class MenuOptionMultiSelect extends React.Component {
       selectedItems: []
     };
     this.onSelect = (event, itemId) => {
-      if (this.state.selectedItems.indexOf(itemId) != -1) {
+      if (this.state.selectedItems.indexOf(itemId) !== -1) {
         this.setState({
           selectedItems: this.state.selectedItems.filter(id => id !== itemId)
         });
@@ -716,20 +722,20 @@ class MenuOptionMultiSelect extends React.Component {
     return (
       <Menu onSelect={this.onSelect}>
         <MenuList>
-          <MenuListItem itemId={0} isActive={activeItem === 0} isSelected={selectedItems.indexOf(0) != -1}>
+          <MenuItem itemId={0} isActive={activeItem === 0} isSelected={selectedItems.indexOf(0) !== -1}>
             Option 1
-          </MenuListItem>
-          <MenuListItem itemId={1} isActive={activeItem === 1} isSelected={selectedItems.indexOf(1) != -1}>
+          </MenuItem>
+          <MenuItem itemId={1} isActive={activeItem === 1} isSelected={selectedItems.indexOf(1) !== -1}>
             Option 2
-          </MenuListItem>
-          <MenuListItem
-            icon={<TableIcon />}
+          </MenuItem>
+          <MenuItem
+            icon={<TableIcon aria-hidden />}
             itemId={2}
             isActive={activeItem === 2}
             isSelected={selectedItems.indexOf(2) != -1}
           >
             Option 3
-          </MenuListItem>
+          </MenuItem>
         </MenuList>
       </Menu>
     );

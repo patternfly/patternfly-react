@@ -12,9 +12,9 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** Additional classes added to the Menu */
   className?: string;
   /** Callback for updating when item selection changes */
-  onSelect?: (event: React.MouseEvent, itemId: any) => void;
-  /** Callback called when an MenuItems's favorite button is clicked */
-  onFavorite?: (event: React.MouseEvent, itemId: any) => void;
+  onSelect?: (event?: any, itemId?: any) => void;
+  /** Callback called when an MenuItems's action button is clicked */
+  onActionClick?: (event?: any, itemId?: any) => void;
   /** A callback for when the input value changes. */
   onSearchInputChange?: (
     event: React.FormEvent<HTMLInputElement> | React.SyntheticEvent<HTMLButtonElement>,
@@ -51,7 +51,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       children,
       className,
       onSelect,
-      onFavorite,
+      onActionClick,
       onSearchInputChange,
       ouiaId,
       ouiaSafe,
@@ -62,7 +62,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     } = this.props;
 
     return (
-      <MenuContext.Provider value={{ onSelect, onFavorite }}>
+      <MenuContext.Provider value={{ onSelect, onActionClick }}>
         <div
           className={css(styles.menu, isFlyoutMenu && styles.modifiers.flyout, className)}
           aria-label={ariaLabel || isFlyoutMenu ? 'Local' : 'Global'}
