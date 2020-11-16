@@ -78,15 +78,16 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       if (document.activeElement === this.menuEl.current) {
         currentIndex = 0;
         moveFocus = true;
+        event.preventDefault();
       } else {
         this.optionsRefs.forEach((option, index) => {
           if (document.activeElement === option) {
             currentIndex = key === 'ArrowUp' || key === 'ArrowLeft' ? index - 1 : index + 1;
             moveFocus = true;
+            event.preventDefault();
           }
         });
       }
-      event.preventDefault();
     }
     if (moveFocus && this.optionsRefs[currentIndex]) {
       this.optionsRefs[currentIndex].focus();
