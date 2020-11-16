@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.59.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.14...demo-app-ts@4.59.0) (2020-11-16)
+
+
+### Features
+
+* **Card:** add expandable card, move tests ([#5093](https://github.com/patternfly/patternfly-react/issues/5093)) ([0dd992c](https://github.com/patternfly/patternfly-react/commit/0dd992ca8d3aa998766bc750e6972ab5dab49910))
+* **Touchspin:** add touchspin component ([#5115](https://github.com/patternfly/patternfly-react/issues/5115)) ([9dbe59a](https://github.com/patternfly/patternfly-react/commit/9dbe59acf457910ec8efa8280cbc33c952469724))
+
+
+
+
+
 ## [4.58.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.58.13...demo-app-ts@4.58.14) (2020-11-13)
 
 **Note:** Version bump only for package demo-app-ts
