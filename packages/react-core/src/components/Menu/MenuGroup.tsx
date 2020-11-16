@@ -25,7 +25,7 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
 }: MenuGroupProps) => (
   <section {...props} className={css('pf-c-menu__group', className)} ref={innerRef}>
     {label && (
-      <h1 className={css(styles.menuGroupTitle)} id={titleId} aria-hidden>
+      <h1 className={css(styles.menuGroupTitle)} id={titleId}>
         {label}
       </h1>
     )}
