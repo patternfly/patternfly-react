@@ -101,13 +101,9 @@ const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
       <>
         <Component
           onClick={(event: React.MouseEvent) => onItemSelect(event, onSelect)}
-          className={css(
-            styles.menuItem,
-            isFavorite && styles.modifiers.favorited,
-            isSelected && styles.modifiers.selected,
-            className
-          )}
+          className={css(styles.menuItem, isSelected && styles.modifiers.selected, className)}
           aria-current={isActive ? 'page' : null}
+          {...(isDisabled && { disabled: true })}
           {...additionalProps}
         >
           <div className={css(styles.menuItemMain)}>
@@ -157,7 +153,8 @@ const MenuListItemBase: React.FunctionComponent<MenuListItemProps> = ({
                 className={css(
                   styles.menuItemAction,
                   styles.modifiers.favorite,
-                  onFavorite && isFavorite && styles.modifiers.favorited
+                  onFavorite && isFavorite && styles.modifiers.favorited,
+                  isDisabled && styles.modifiers.disabled
                 )}
                 aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
                 onClick={(event: React.MouseEvent) => onFavorite(event, itemId)}
