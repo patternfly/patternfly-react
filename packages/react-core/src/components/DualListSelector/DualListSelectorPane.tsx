@@ -66,8 +66,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     this.optionsRefs = [];
   };
 
-  sendRef = (optionRef: React.ReactNode) => {
-    this.optionsRefs = [...this.optionsRefs, optionRef as HTMLElement];
+  sendRef = (optionRef: React.ReactNode, index: number) => {
+    this.optionsRefs[index] = optionRef as HTMLElement;
   };
 
   handleKeys = (event: KeyboardEvent) => {
@@ -138,6 +138,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     } = this.props;
     const { input, focusedOption } = this.state;
 
+    let displayIndex = -1;
+
     return (
       <div
         className={css(styles.dualListSelectorPane, isChosen ? styles.modifiers.chosen : 'pf-m-available', className)}
@@ -183,13 +185,15 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
             >
               {options.map((option, index) => {
                 if (this.displayOption(option, input)) {
+                  displayIndex = displayIndex + 1;
                   return (
                     <DualListSelectorListItem
                       key={index}
                       isSelected={selectedOptions.indexOf(index) !== -1}
                       onOptionSelect={this.onOptionSelect}
                       isChosen={isChosen}
-                      index={index}
+                      orderIndex={index}
+                      filteredIndex={displayIndex}
                       sendRef={this.sendRef}
                       id={`${id}-option-${index}`}
                     >

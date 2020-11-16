@@ -240,6 +240,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           currentIndex = currentIndex + 1;
         }
         moveFocus = true;
+        event.preventDefault();
       } else {
         controls.forEach((control, index) => {
           if (document.activeElement === control) {
@@ -253,10 +254,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               currentIndex = currentIndex + increment;
             }
             moveFocus = true;
+            event.preventDefault();
           }
         });
       }
-      event.preventDefault();
     }
     if (moveFocus && controls[currentIndex]) {
       (controls[currentIndex] as HTMLElement).focus();

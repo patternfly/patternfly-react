@@ -12,9 +12,11 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   /** Flag indicating this list item is in the chosen pane. */
   isChosen?: boolean;
   /** Internal callback to pass this ref up to the parent. */
-  sendRef?: (optionRef: React.ReactNode) => void;
-  /** Internal field used to keep track of order. */
-  index?: number;
+  sendRef?: (optionRef: React.ReactNode, index: number) => void;
+  /** Internal field used to keep track of the order of filtered options. */
+  filteredIndex?: number;
+  /** Internal field used to keep track of order of unfiltered options. */
+  orderIndex?: number;
   /** Callback fired when an option is selected.  */
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent, index: number, isChosen: boolean) => void;
   /** ID of the option */
@@ -26,17 +28,17 @@ export class DualListSelectorListItem extends React.Component<DualListSelectorLi
   static displayName = 'DualListSelectorListItem';
 
   componentDidMount() {
-    this.props.sendRef(this.ref.current);
+    this.props.sendRef(this.ref.current, this.props.filteredIndex);
   }
 
   componentDidUpdate() {
-    this.props.sendRef(this.ref.current);
+    this.props.sendRef(this.ref.current, this.props.filteredIndex);
   }
 
   render() {
     const {
       onOptionSelect,
-      index,
+      orderIndex,
       children,
       className,
       id,
@@ -44,20 +46,21 @@ export class DualListSelectorListItem extends React.Component<DualListSelectorLi
       isChosen,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       sendRef,
+      displayIndex,
       ...props
     } = this.props;
 
     return (
       <li
         className={css(styles.dualListSelectorListItem, className)}
-        key={index}
+        key={orderIndex}
         {...props}
         aria-selected={isSelected}
         role="option"
       >
         <button
           className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
-          onClick={e => onOptionSelect(e, index, isChosen)}
+          onClick={e => onOptionSelect(e, orderIndex, isChosen)}
           id={id}
           ref={this.ref}
           tabIndex={-1}
