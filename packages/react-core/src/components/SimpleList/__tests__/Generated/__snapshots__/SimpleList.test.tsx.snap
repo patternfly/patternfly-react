@@ -4,15 +4,15 @@ exports[`SimpleList should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
-      "controlled": true,
       "currentRef": null,
+      "isControlled": true,
       "updateCurrentRef": [Function],
     }
   }
 >
   <div
     className="pf-c-simple-list ''"
-    controlled={true}
+    isControlled={true}
   >
     <ul>
       ReactNode

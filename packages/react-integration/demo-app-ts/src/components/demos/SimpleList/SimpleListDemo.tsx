@@ -54,7 +54,7 @@ export class SimpleListDemo extends React.Component<any, SimpleListDemoState> {
           ) => {
             this.setState({ activeItem: props.itemId });
           }}
-          controlled={false}
+          isControlled={false}
         >
           <SimpleListItem itemId={1} isActive={activeItem === 1}>
             Item 1

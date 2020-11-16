@@ -15,7 +15,7 @@ export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, '
     props: SimpleListItemProps
   ) => void;
   /** Indicates whether component is controlled by its internal state (by default it's true) */
-  controlled?: boolean;
+  isControlled?: boolean;
 }
 
 export interface SimpleListState {
@@ -29,7 +29,7 @@ interface SimpleListContextProps {
     id: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
     props: SimpleListItemProps
   ) => void;
-  controlled: boolean;
+  isControlled: boolean;
 }
 
 export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
@@ -44,7 +44,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
   static defaultProps: SimpleListProps = {
     children: null as React.ReactNode,
     className: '',
-    controlled: true
+    isControlled: true
   };
 
   componentDidMount() {
@@ -78,7 +78,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
         value={{
           currentRef: this.state.currentRef,
           updateCurrentRef: this.handleCurrentUpdate,
-          controlled: this.props.controlled
+          isControlled: this.props.isControlled
         }}
       >
         <div className={css(styles.simpleList, className)} {...props} {...(isGrouped && { role: 'list' })}>

@@ -56,10 +56,10 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
 
     return (
       <SimpleListContext.Consumer>
-        {({ currentRef, updateCurrentRef, controlled }) => {
+        {({ currentRef, updateCurrentRef, isControlled }) => {
           const isButton = Component === 'button';
           const isCurrentItem =
-            this.ref && currentRef && controlled ? currentRef.current === this.ref.current : isActive;
+            this.ref && currentRef && isControlled ? currentRef.current === this.ref.current : isActive;
 
           const additionalComponentProps = isButton
             ? {

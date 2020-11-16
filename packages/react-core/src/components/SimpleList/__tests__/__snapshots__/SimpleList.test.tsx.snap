@@ -3,7 +3,7 @@
 exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 <SimpleList
   className=""
-  controlled={true}
+  isControlled={true}
   onSelect={
     [MockFunction] {
       "calls": Array [
@@ -40,7 +40,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    controlled={true}
+    isControlled={true}
   >
     <ul>
       <SimpleListItem
@@ -120,7 +120,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 exports[`SimpleList onSelect is called when item is selected 1`] = `
 <SimpleList
   className=""
-  controlled={true}
+  isControlled={true}
   onSelect={
     [MockFunction] {
       "calls": Array [
@@ -156,7 +156,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    controlled={true}
+    isControlled={true}
   >
     <ul>
       <SimpleListItem
@@ -233,11 +233,11 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
 exports[`SimpleList renders anchor content 1`] = `
 <SimpleList
   className=""
-  controlled={true}
+  isControlled={true}
 >
   <div
     className="pf-c-simple-list"
-    controlled={true}
+    isControlled={true}
   >
     <ul>
       <SimpleListItem
@@ -317,11 +317,11 @@ exports[`SimpleList renders anchor content 1`] = `
 exports[`SimpleList renders content 1`] = `
 <SimpleList
   className=""
-  controlled={true}
+  isControlled={true}
 >
   <div
     className="pf-c-simple-list"
-    controlled={true}
+    isControlled={true}
   >
     <ul>
       <SimpleListItem
@@ -398,11 +398,11 @@ exports[`SimpleList renders content 1`] = `
 exports[`SimpleList renders grouped content 1`] = `
 <SimpleList
   className=""
-  controlled={true}
+  isControlled={true}
 >
   <div
     className="pf-c-simple-list"
-    controlled={true}
+    isControlled={true}
     role="list"
   >
     <SimpleListGroup
