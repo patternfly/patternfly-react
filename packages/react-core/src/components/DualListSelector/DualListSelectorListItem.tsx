@@ -46,7 +46,7 @@ export class DualListSelectorListItem extends React.Component<DualListSelectorLi
       isChosen,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       sendRef,
-      displayIndex,
+      filteredIndex,
       ...props
     } = this.props;
 
