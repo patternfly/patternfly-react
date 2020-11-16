@@ -88,7 +88,7 @@ export const CalendarMonth = ({
 
   useEffect(() => setFocusedDate(dateProp), [dateProp]);
   useEffect(() => {
-    // When using controls don't move focus
+    // When using header controls don't move focus
     if (focusDate) {
       if (focusRef.current) {
         focusRef.current.focus();
@@ -139,6 +139,8 @@ export const CalendarMonth = ({
             Month
           </span>
           <Select
+            // Max width with "September"
+            width="140px"
             aria-labelledby={hiddenMonthId}
             isOpen={isSelectOpen}
             onToggle={() => {
