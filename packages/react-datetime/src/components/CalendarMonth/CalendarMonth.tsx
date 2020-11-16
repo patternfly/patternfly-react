@@ -219,7 +219,7 @@ export const CalendarMonth = ({
                     )}
                   >
                     <button
-                      className={css(styles.calendarMonthDate, isFocused && styles.modifiers.focus)}
+                      className={css(styles.calendarMonthDate, isFocused && styles.modifiers.hover)}
                       onClick={() => onChange(day)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
