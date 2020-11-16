@@ -8,6 +8,8 @@ beta: true
 
 import { DatePicker, Locales } from '@patternfly/react-datetime';
 
+Note: DatePicker lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime) and uses format strings from [date-fns@^2.0.0](https://date-fns.org/docs/format).
+
 ## Examples
 ### Basic
 ```js

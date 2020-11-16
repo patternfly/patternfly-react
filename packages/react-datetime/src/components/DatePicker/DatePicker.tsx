@@ -23,7 +23,7 @@ export interface DatePickerProps
   minDate?: string;
   /** The maximum date that a user can pick to. */
   maxDate?: string;
-  /** The case sensitive pattern of tokens representing desired readable format of the date. https://date-fns.org/v2.16.1/docs/format */
+  /** The case sensitive date format according to date-fns */
   dateFormat?: string;
   /** Flag indicating the date picker is disabled*/
   isDisabled?: boolean;
