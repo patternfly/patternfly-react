@@ -49,7 +49,46 @@ class BasicDualListSelector extends React.Component {
 
 ```
 
-### Basic with actions
+### Basic with search
+
+```js
+import React from 'react';
+import { 
+  DualListSelector
+} from '@patternfly/react-core';
+
+class BasicDualListSelectorWithSearch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      availableOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+      chosenOptions: []
+    };
+    
+    this.onListChange = (newAvailableOptions, newChosenOptions) => {
+      this.setState({
+        availableOptions: newAvailableOptions.sort(),
+        chosenOptions: newChosenOptions.sort(),
+      })
+    };
+  }
+  
+  render() {
+    return (
+      <DualListSelector
+        isSearchable
+        availableOptions={this.state.availableOptions}
+        chosenOptions={this.state.chosenOptions}
+        onListChange={this.onListChange}
+        id="basicSelectorWithSearch"
+      />
+    );
+  }
+}
+
+```
+
+### Using more complex options with actions
 
 ```js
 import React from 'react';
@@ -64,7 +103,7 @@ import {
 import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-desc-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
 
-class ManagedDualListSelector extends React.Component {
+class ComplexDualListSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,9 +115,9 @@ class ManagedDualListSelector extends React.Component {
       ],
       chosenOptions: [],
       isAvailableKebabOpen: false,
-      availableDescending: true,
+      availableDescending: false,
       isChosenKebabOpen: false,
-      chosenDescending: true
+      chosenDescending: false,
     };
     
     this.onSort = (panel) => {
@@ -102,8 +141,8 @@ class ManagedDualListSelector extends React.Component {
         this.setState(prevState => {
           const chosen = prevState.chosenOptions.sort((a, b) => {
             let returnValue = 0;
-            if (a.props.children > b.props.children) returnValue = -1;
-            if (a.props.children < b.props.children) returnValue =  1;
+            if (a.props.children > b.props.children) returnValue = 1;
+            if (a.props.children < b.props.children) returnValue = -1;
             if (prevState.chosenDescending) returnValue = returnValue * -1;
             return returnValue;
           });
@@ -117,8 +156,20 @@ class ManagedDualListSelector extends React.Component {
     
     this.onListChange = (newAvailableOptions, newChosenOptions) => {
       this.setState({
-        availableOptions: newAvailableOptions,
-        chosenOptions: newChosenOptions,
+        availableOptions: newAvailableOptions.sort((a, b) => {
+          let returnValue = 0;
+          if (a.props.children > b.props.children) returnValue = 1;
+          if (a.props.children < b.props.children) returnValue = -1;
+          if (this.state.availableDescending) returnValue = returnValue * -1;
+          return returnValue;
+        }),
+        chosenOptions: newChosenOptions.sort((a, b) => {
+          let returnValue = 0;
+          if (a.props.children > b.props.children) returnValue = 1;
+          if (a.props.children < b.props.children) returnValue = -1;
+          if (this.state.chosenDescending) returnValue = returnValue * -1;
+          return returnValue;
+        }),
       })
     };
     

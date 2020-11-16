@@ -20,12 +20,13 @@ interface DualListSelectorState {
   chosenDescending: boolean;
 }
 
-export class DualListSelectorDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
+export class DualListSelectorWithActionsDemo extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelectorDemo';
   onSort: (panel: string) => void;
   onListChange: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   onToggle: (isOpen: boolean, pane: string) => void;
   filterOption: (option: React.ReactNode, input: string) => boolean;
+  onOptionSelect: (e: React.MouseEvent | React.ChangeEvent) => void;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -40,7 +41,7 @@ export class DualListSelectorDemo extends React.Component<DualListSelectorProps,
       isAvailableKebabOpen: false,
       availableDescending: true,
       isChosenKebabOpen: false,
-      chosenDescending: true
+      chosenDescending: false
     };
 
     this.onSort = (panel: string) => {
@@ -49,10 +50,10 @@ export class DualListSelectorDemo extends React.Component<DualListSelectorProps,
           const available = prevState.availableOptions.sort((a: any, b: any) => {
             let returnValue = 0;
             if (a.props.children > b.props.children) {
-              returnValue = -1;
+              returnValue = 1;
             }
             if (a.props.children < b.props.children) {
-              returnValue = 1;
+              returnValue = -1;
             }
             if (prevState.availableDescending) {
               returnValue = returnValue * -1;
@@ -71,10 +72,10 @@ export class DualListSelectorDemo extends React.Component<DualListSelectorProps,
           const chosen = prevState.chosenOptions.sort((a: any, b: any) => {
             let returnValue = 0;
             if (a.props.children > b.props.children) {
-              returnValue = -1;
+              returnValue = 1;
             }
             if (a.props.children < b.props.children) {
-              returnValue = 1;
+              returnValue = -1;
             }
             if (prevState.chosenDescending) {
               returnValue = returnValue * -1;
@@ -104,6 +105,11 @@ export class DualListSelectorDemo extends React.Component<DualListSelectorProps,
     };
 
     this.filterOption = (option: any, input: string) => option.props.children.includes(input);
+
+    this.onOptionSelect = (e: React.MouseEvent | React.ChangeEvent) => {
+      // eslint-disable-next-line no-console
+      console.log(e.currentTarget.children.toString());
+    };
   }
 
   render() {
@@ -155,18 +161,31 @@ export class DualListSelectorDemo extends React.Component<DualListSelectorProps,
 
     return (
       <DualListSelector
+        className="demo"
+        id="dual-list-selector-demo"
         isSearchable
         availableOptions={this.state.availableOptions}
+        availableOptionsTitle="Demo available options"
         availableOptionsStatus={`${this.state.availableOptions.length} available`}
         availableOptionsActions={availableOptionsActions}
+        availableOptionsSearchAriaLabel="Demo available options search"
         chosenOptions={this.state.chosenOptions}
-        chosenOptionsStatus={`${this.state.availableOptions.length} chosen`}
+        chosenOptionsTitle="Demo chosen options"
+        chosenOptionsStatus={`${this.state.chosenOptions.length} chosen`}
         chosenOptionsActions={chosenOptionsActions}
+        chosenOptionsSearchAriaLabel="Demo chosen options search"
+        controlsAriaLabel="Demo action controls"
         addAll={this.onListChange}
+        addAllAriaLabel="Demo add all"
         removeAll={this.onListChange}
+        removeAllAriaLabel="Demo remove all"
         addSelected={this.onListChange}
+        addSelectedAriaLabel="Demo add selected"
         removeSelected={this.onListChange}
+        removeSelectedAriaLabel="Demo remove selected"
+        onListChange={this.onListChange}
         filterOption={this.filterOption}
+        onOptionSelect={this.onOptionSelect}
       />
     );
   }

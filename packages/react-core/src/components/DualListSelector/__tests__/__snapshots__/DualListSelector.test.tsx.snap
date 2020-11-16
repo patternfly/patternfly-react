@@ -14,7 +14,7 @@ exports[`DualListSelector basic 1`] = `
   availableOptionsTitle="Available options"
   chosenOptions={Array []}
   chosenOptionsSearchAriaLabel="Chosen search input"
-  chosenOptionsTitle="Chosen Options"
+  chosenOptionsTitle="Chosen options"
   controlsAriaLabel="Selector controls"
   id="firstTest"
   removeAllAriaLabel="Remove all"
@@ -366,7 +366,7 @@ exports[`DualListSelector basic 1`] = `
       searchInputAriaLabel="Chosen search input"
       selectedOptions={Array []}
       status="0 of 0 items selected"
-      title="Chosen Options"
+      title="Chosen options"
     >
       <div
         className="pf-c-dual-list-selector__pane pf-m-chosen"
@@ -380,7 +380,7 @@ exports[`DualListSelector basic 1`] = `
             <div
               className="pf-c-dual-list-selector__title-text"
             >
-              Chosen Options
+              Chosen options
             </div>
           </div>
         </div>
@@ -445,7 +445,7 @@ exports[`DualListSelector with actions 1`] = `
     ]
   }
   chosenOptionsSearchAriaLabel="Chosen search input"
-  chosenOptionsTitle="Chosen Options"
+  chosenOptionsTitle="Chosen options"
   controlsAriaLabel="Selector controls"
   id="fourthTest"
   removeAllAriaLabel="Remove all"
@@ -829,7 +829,7 @@ exports[`DualListSelector with actions 1`] = `
       searchInputAriaLabel="Chosen search input"
       selectedOptions={Array []}
       status="0 of 2 items selected"
-      title="Chosen Options"
+      title="Chosen options"
     >
       <div
         className="pf-c-dual-list-selector__pane pf-m-chosen"
@@ -843,7 +843,7 @@ exports[`DualListSelector with actions 1`] = `
             <div
               className="pf-c-dual-list-selector__title-text"
             >
-              Chosen Options
+              Chosen options
             </div>
           </div>
         </div>
@@ -971,7 +971,7 @@ exports[`DualListSelector with custom status 1`] = `
   chosenOptions={Array []}
   chosenOptionsSearchAriaLabel="Chosen search input"
   chosenOptionsStatus="Test status2"
-  chosenOptionsTitle="Chosen Options"
+  chosenOptionsTitle="Chosen options"
   controlsAriaLabel="Selector controls"
   id="thirdTest"
   removeAllAriaLabel="Remove all"
@@ -1323,7 +1323,7 @@ exports[`DualListSelector with custom status 1`] = `
       searchInputAriaLabel="Chosen search input"
       selectedOptions={Array []}
       status="Test status2"
-      title="Chosen Options"
+      title="Chosen options"
     >
       <div
         className="pf-c-dual-list-selector__pane pf-m-chosen"
@@ -1337,7 +1337,7 @@ exports[`DualListSelector with custom status 1`] = `
             <div
               className="pf-c-dual-list-selector__title-text"
             >
-              Chosen Options
+              Chosen options
             </div>
           </div>
         </div>
@@ -1383,7 +1383,7 @@ exports[`DualListSelector with search inputs 1`] = `
   availableOptionsTitle="Available options"
   chosenOptions={Array []}
   chosenOptionsSearchAriaLabel="Chosen search input"
-  chosenOptionsTitle="Chosen Options"
+  chosenOptionsTitle="Chosen options"
   controlsAriaLabel="Selector controls"
   id="secondTest"
   isSearchable={true}
@@ -1750,7 +1750,7 @@ exports[`DualListSelector with search inputs 1`] = `
       searchInputAriaLabel="Chosen search input"
       selectedOptions={Array []}
       status="0 of 0 items selected"
-      title="Chosen Options"
+      title="Chosen options"
     >
       <div
         className="pf-c-dual-list-selector__pane pf-m-chosen"
@@ -1764,7 +1764,7 @@ exports[`DualListSelector with search inputs 1`] = `
             <div
               className="pf-c-dual-list-selector__title-text"
             >
-              Chosen Options
+              Chosen options
             </div>
           </div>
         </div>

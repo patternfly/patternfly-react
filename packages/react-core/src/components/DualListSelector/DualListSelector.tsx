@@ -77,7 +77,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     availableOptionsTitle: 'Available options',
     availableOptionsSearchAriaLabel: 'Available search input',
     chosenOptions: [] as React.ReactNode[],
-    chosenOptionsTitle: 'Chosen Options',
+    chosenOptionsTitle: 'Chosen options',
     chosenOptionsSearchAriaLabel: 'Chosen search input',
     id: getUniqueId('dual-list-selector'),
     controlsAriaLabel: 'Selector controls',
