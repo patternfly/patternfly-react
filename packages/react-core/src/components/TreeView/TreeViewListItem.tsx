@@ -6,6 +6,10 @@ import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 
+interface CheckProps extends Partial<React.InputHTMLAttributes<HTMLInputElement>> {
+  checked?: boolean | null;
+}
+
 export interface TreeViewListItemProps {
   /** Internal content of a tree view item */
   name: React.ReactNode;
@@ -22,7 +26,7 @@ export interface TreeViewListItemProps {
   /** Flag indicating if a tree view item has a checkbox */
   hasCheck?: boolean;
   /** Additional properties of the tree view item checkbox */
-  checkProps?: any;
+  checkProps?: CheckProps;
   /** Flag indicating if a tree view item has a badge */
   hasBadge?: boolean;
   /** Additional properties of the tree view item badge */
@@ -102,6 +106,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                 type="checkbox"
                 onChange={(evt: React.ChangeEvent) => onCheck && onCheck(evt, itemData, parentItem)}
                 onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+                ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
                 {...checkProps}
               />
             </span>

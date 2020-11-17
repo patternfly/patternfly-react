@@ -372,15 +372,13 @@ class CheckboxTreeView extends React.Component {
       const hasCheck = areAllDescendantsChecked(item);
       // Reset checked properties to be updated
       item.checkProps.checked = false;
-      item.checkProps.ref = elem => elem && (elem.indeterminate = false);
 
       if (hasCheck) {
         item.checkProps.checked = true;
       } else {
         const hasPartialCheck = areSomeDescendantsChecked(item);
         if (hasPartialCheck) {
-          item.checkProps.checked = false;
-          item.checkProps.ref = elem => elem && (elem.indeterminate = true);
+          item.checkProps.checked = null;
         }
       }
 
