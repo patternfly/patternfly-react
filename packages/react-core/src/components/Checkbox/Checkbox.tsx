@@ -11,8 +11,8 @@ export interface CheckboxProps
   isValid?: boolean;
   /** Flag to show if the Checkbox is disabled. */
   isDisabled?: boolean;
-  /** Flag to show if the Checkbox is checked. */
-  isChecked?: boolean;
+  /** Flag to show if the Checkbox is checked. If null, the checkbox will be indeterminate (partially checked). */
+  isChecked?: boolean | null;
   checked?: boolean;
   /** A callback for when the Checkbox selection changes. */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
