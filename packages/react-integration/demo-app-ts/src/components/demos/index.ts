@@ -131,6 +131,7 @@ export * from './TableDemo/TableCompactExpandableDemo';
 export * from './TableDemo/TableCompoundExpandableDemo';
 export * from './TableDemo/TableControlTextDemo';
 export * from './TableDemo/TableEditableDemo';
+export * from './TableDemo/TableEditableCompoundExpandableDemo';
 export * from './TableDemo/TableFirstCellAsHeaderDemo';
 export * from './TableDemo/TableHeadersWrappableDemo';
 export * from './TableDemo/TableRowWrapperDemo';
