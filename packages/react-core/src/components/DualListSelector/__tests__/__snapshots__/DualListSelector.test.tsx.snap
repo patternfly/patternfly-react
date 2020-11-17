@@ -78,12 +78,13 @@ exports[`DualListSelector basic 1`] = `
             role="listbox"
           >
             <DualListSelectorListItem
+              filteredIndex={0}
               id="firstTest-available-pane-option-0"
-              index={0}
               isChosen={false}
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
+              orderIndex={0}
               sendRef={[Function]}
             >
               <li
@@ -111,12 +112,13 @@ exports[`DualListSelector basic 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
+              filteredIndex={1}
               id="firstTest-available-pane-option-1"
-              index={1}
               isChosen={false}
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
+              orderIndex={1}
               sendRef={[Function]}
             >
               <li
@@ -529,12 +531,13 @@ exports[`DualListSelector with actions 1`] = `
             role="listbox"
           >
             <DualListSelectorListItem
+              filteredIndex={0}
               id="fourthTest-available-pane-option-0"
-              index={0}
               isChosen={false}
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
+              orderIndex={0}
               sendRef={[Function]}
             >
               <li
@@ -562,12 +565,13 @@ exports[`DualListSelector with actions 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
+              filteredIndex={1}
               id="fourthTest-available-pane-option-1"
-              index={1}
               isChosen={false}
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
+              orderIndex={1}
               sendRef={[Function]}
             >
               <li
@@ -882,12 +886,13 @@ exports[`DualListSelector with actions 1`] = `
             role="listbox"
           >
             <DualListSelectorListItem
+              filteredIndex={0}
               id="fourthTest-chosen-pane-option-0"
-              index={0}
               isChosen={true}
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
+              orderIndex={0}
               sendRef={[Function]}
             >
               <li
@@ -915,12 +920,13 @@ exports[`DualListSelector with actions 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
+              filteredIndex={1}
               id="fourthTest-chosen-pane-option-1"
-              index={1}
               isChosen={true}
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
+              orderIndex={1}
               sendRef={[Function]}
             >
               <li
@@ -1035,12 +1041,13 @@ exports[`DualListSelector with custom status 1`] = `
             role="listbox"
           >
             <DualListSelectorListItem
+              filteredIndex={0}
               id="thirdTest-available-pane-option-0"
-              index={0}
               isChosen={false}
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
+              orderIndex={0}
               sendRef={[Function]}
             >
               <li
@@ -1068,12 +1075,13 @@ exports[`DualListSelector with custom status 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
+              filteredIndex={1}
               id="thirdTest-available-pane-option-1"
-              index={1}
               isChosen={false}
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
+              orderIndex={1}
               sendRef={[Function]}
             >
               <li
@@ -1462,12 +1470,13 @@ exports[`DualListSelector with search inputs 1`] = `
             role="listbox"
           >
             <DualListSelectorListItem
+              filteredIndex={0}
               id="secondTest-available-pane-option-0"
-              index={0}
               isChosen={false}
               isSelected={false}
               key="0"
               onOptionSelect={[Function]}
+              orderIndex={0}
               sendRef={[Function]}
             >
               <li
@@ -1495,12 +1504,13 @@ exports[`DualListSelector with search inputs 1`] = `
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
+              filteredIndex={1}
               id="secondTest-available-pane-option-1"
-              index={1}
               isChosen={false}
               isSelected={false}
               key="1"
               onOptionSelect={[Function]}
+              orderIndex={1}
               sendRef={[Function]}
             >
               <li
