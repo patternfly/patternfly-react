@@ -36,8 +36,6 @@ import DemoSortableTable from './DemoSortableTable';
 
 ## Table examples
 
-### Test
-
 ### Basic
 
 The `Table` component is a configuration based component that takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. For a more explicit and declarative approach, you can use the `TableComposable` component.
