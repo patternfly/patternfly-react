@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.19.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.19.20...@patternfly/react-table@4.19.21) (2020-11-17)
+
+
+### Bug Fixes
+
+* **compound-table:** set button type on compoundExpand transform button ([#5058](https://github.com/patternfly/patternfly-react/issues/5058)) ([5b52b73](https://github.com/patternfly/patternfly-react/commit/5b52b739bc7d5b1fbe8fce464239aca005fdbd71))
+
+
+
+
+
 ## [4.19.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.19.19...@patternfly/react-table@4.19.20) (2020-11-17)
 
 **Note:** Version bump only for package @patternfly/react-table

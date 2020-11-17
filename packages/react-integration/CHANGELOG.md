@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.60.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.0...@patternfly/react-integration@4.60.1) (2020-11-17)
+
+
+### Bug Fixes
+
+* **compound-table:** set button type on compoundExpand transform button ([#5058](https://github.com/patternfly/patternfly-react/issues/5058)) ([5b52b73](https://github.com/patternfly/patternfly-react/commit/5b52b739bc7d5b1fbe8fce464239aca005fdbd71))
+
+
+
+
+
 # [4.60.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.59.0...@patternfly/react-integration@4.60.0) (2020-11-17)
 
 
