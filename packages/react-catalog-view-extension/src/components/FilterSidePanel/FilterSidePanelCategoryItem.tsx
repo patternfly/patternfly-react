@@ -4,7 +4,7 @@ import { Checkbox } from '@patternfly/react-core';
 
 import { getUniqueId } from '../../helpers/util';
 
-export interface FilterSidePanelCategoryItemProps extends React.Component<Checkbox> {
+export interface FilterSidePanelCategoryItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Children nodes */
   children?: React.ReactNode;
   /** Additional css classes for the Filter Panel Property Item */
@@ -17,6 +17,8 @@ export interface FilterSidePanelCategoryItemProps extends React.Component<Checkb
   onClick?: (event: React.SyntheticEvent<HTMLElement>) => void;
   /** Flag to show if the Filter Item Checkbox is checked. */
   checked?: boolean;
+  /** Title of the checkbox  */
+  title?: string;
 }
 
 export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePanelCategoryItemProps> = ({
@@ -26,6 +28,7 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
   count = null,
   onClick = null,
   checked = false,
+  title = '',
   ...props
 }: FilterSidePanelCategoryItemProps) => {
   const classes = css('filter-panel-pf-category-item', className);
@@ -37,8 +40,8 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
     </React.Fragment>
   );
   return (
-    <div className={classes}>
-      <Checkbox onClick={onClick} checked={checked} id={getUniqueId()} label={label} {...props} />
+    <div className={classes} {...props}>
+      <Checkbox onClick={onClick} checked={checked} id={getUniqueId()} label={label} title={title} />
     </div>
   );
 };
