@@ -99,23 +99,22 @@ class SimpleListUncontrolledDemo extends React.Component {
     this.state = {
       activeItem: 0
     };
-  }
-
-  onSelect(selectedItem, selectedItemProps) {
-    console.log('new selection SimpleListUncontrolledDemo', selectedItem, selectedItemProps);
-    this.setState({ activeItem: selectedItemProps.itemId });
+    this.onSelect = (selectedItem, selectedItemProps) => {
+      console.log('new selection SimpleListUncontrolledDemo', selectedItem, selectedItemProps);
+      this.setState({ activeItem: selectedItemProps.itemId });
+    };
   }
 
   render() {
     const { activeItem } = this.state;
     const items = [
-      <SimpleListItem key="item1" itemId={0} isActive={ activeItem === 0}>
+      <SimpleListItem key="item1" itemId={0} isActive={activeItem === 0}>
         List item 1
       </SimpleListItem>,
       <SimpleListItem key="item2" itemId={1} isActive={activeItem === 1}>
         List item 2
       </SimpleListItem>,
-      <SimpleListItem key="item3" itemId={2} isActive={ activeItem === 2}>
+      <SimpleListItem key="item3" itemId={2} isActive={activeItem === 2}>
         List item 3
       </SimpleListItem>
     ];

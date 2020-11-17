@@ -66,7 +66,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, className, onSelect, ...props } = this.props;
+    const { children, className, onSelect, isControlled, ...props } = this.props;
 
     let isGrouped = false;
     if (children) {
@@ -78,7 +78,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
         value={{
           currentRef: this.state.currentRef,
           updateCurrentRef: this.handleCurrentUpdate,
-          isControlled: this.props.isControlled
+          isControlled
         }}
       >
         <div className={css(styles.simpleList, className)} {...props} {...(isGrouped && { role: 'list' })}>

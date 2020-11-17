@@ -51,6 +51,8 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
       onClick,
       type,
       href,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      itemId,
       ...props
     } = this.props;
 
