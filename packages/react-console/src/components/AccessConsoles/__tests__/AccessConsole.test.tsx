@@ -5,7 +5,7 @@ import { AccessConsoles } from '../AccessConsoles';
 import { SerialConsole } from '../../SerialConsole';
 import { VncConsole } from '../../VncConsole';
 import { DesktopViewer } from '../../DesktopViewer';
-import constants from '../../common/constants';
+import { constants } from '../../common/constants';
 
 const { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, LOADING } = constants;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 import { SerialConsole } from '../SerialConsole';
-import constants from '../../common/constants';
+import { constants } from '../../common/constants';
 
 const { CONNECTED, DISCONNECTED, LOADING } = constants;
 

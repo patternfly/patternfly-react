@@ -1,5 +1,5 @@
 ---
-id: AccessConsoles
+id: Access consoles
 section: extensions
 propComponents: ['AccessConsoles']
 ouia: false

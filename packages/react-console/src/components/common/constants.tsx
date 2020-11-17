@@ -16,7 +16,7 @@ const DEFAULT_RDP_FILENAME = 'console.rdp';
 const DEFAULT_RDP_MIMETYPE = 'application/rdp';
 const DEFAULT_RDP_PORT = 3389;
 
-const constants = {
+export const constants = {
   NONE_TYPE,
   SERIAL_CONSOLE_TYPE,
   SPICE_CONSOLE_TYPE,
@@ -35,5 +35,3 @@ const constants = {
   DEFAULT_RDP_MIMETYPE,
   DEFAULT_RDP_PORT
 };
-
-export default constants;
