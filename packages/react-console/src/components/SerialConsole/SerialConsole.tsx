@@ -9,6 +9,7 @@ import { SerialConsoleActions } from './SerialConsoleActions';
 import constants from '../common/constants';
 
 import styles from '@patternfly/react-styles/css/components/Consoles/SerialConsole';
+import 'xterm/css/xterm.css';
 import '@patternfly/react-styles/css/components/Consoles/SerialConsole.css';
 
 const { CONNECTED, DISCONNECTED, LOADING } = constants;
