@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.79.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.78.0...@patternfly/react-core@4.79.0) (2020-11-17)
+
+
+### Bug Fixes
+
+* **navigation:** move Page html demos to Navigation component ([#5109](https://github.com/patternfly/patternfly-react/issues/5109)) ([d37e774](https://github.com/patternfly/patternfly-react/commit/d37e77433a79004ea3d26b34a1dc365c969909f3))
+
+
+### Features
+
+* **DualListSelector:** add new component ([#5120](https://github.com/patternfly/patternfly-react/issues/5120)) ([0ed1c5a](https://github.com/patternfly/patternfly-react/commit/0ed1c5a0d530cbbba7f026660baec51f6fd03559))
+
+
+
+
+
 # [4.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.77.1...@patternfly/react-core@4.78.0) (2020-11-17)
 
 

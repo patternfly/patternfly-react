@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.60.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.59.2...demo-app-ts@4.60.0) (2020-11-17)
+
+
+### Features
+
+* **DualListSelector:** add new component ([#5120](https://github.com/patternfly/patternfly-react/issues/5120)) ([0ed1c5a](https://github.com/patternfly/patternfly-react/commit/0ed1c5a0d530cbbba7f026660baec51f6fd03559))
+
+
+
+
+
 ## [4.59.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.59.1...demo-app-ts@4.59.2) (2020-11-17)
 
 **Note:** Version bump only for package demo-app-ts
