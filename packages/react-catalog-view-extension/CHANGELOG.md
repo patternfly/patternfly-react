@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.104](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.103...@patternfly/react-catalog-view-extension@4.8.104) (2020-11-17)
+
+
+### Bug Fixes
+
+* **FilterSidePanelCategoryItem:** fix typings ([#5145](https://github.com/patternfly/patternfly-react/issues/5145)) ([a2b55f0](https://github.com/patternfly/patternfly-react/commit/a2b55f0bff33a2afccfb66be4eedf2e5a6639420))
+
+
+
+
+
 ## [4.8.103](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.8.102...@patternfly/react-catalog-view-extension@4.8.103) (2020-11-17)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
