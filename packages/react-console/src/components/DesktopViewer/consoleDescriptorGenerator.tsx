@@ -1,7 +1,7 @@
 import { saveAs } from 'file-saver';
 
 import { ConsoleDetailPropType } from './ConsoleDetailPropType';
-import constants from '../common/constants';
+import { constants } from '../common/constants';
 
 const {
   VNC_CONSOLE_TYPE,

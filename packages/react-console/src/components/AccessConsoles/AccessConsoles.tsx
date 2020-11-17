@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
-import constants from '../common/constants';
+import { constants } from '../common/constants';
 
 import styles from '@patternfly/react-styles/css/components/Consoles/AccessConsoles';
 import '@patternfly/react-styles/css/components/Consoles/AccessConsoles.css';

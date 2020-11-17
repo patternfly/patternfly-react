@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ExpandableSection } from '@patternfly/react-core';
 
-import constants from '../common/constants';
+import { constants } from '../common/constants';
 
 import { MoreInformationDefaultContent } from './MoreInformationDefaultContent';
 import { MoreInformationDefaultRDPContent } from './MoreInformationDefaultRDPContent';

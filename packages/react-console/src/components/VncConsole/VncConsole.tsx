@@ -8,7 +8,7 @@ import * as NovncLog from 'novnc-core/lib/util/logging';
 import RFB from 'novnc-core';
 
 import { VncActions } from './VncActions';
-import constants from '../common/constants';
+import { constants } from '../common/constants';
 
 import styles from '@patternfly/react-styles/css/components/Consoles/VncConsole';
 import '@patternfly/react-styles/css/components/Consoles/VncConsole.css';

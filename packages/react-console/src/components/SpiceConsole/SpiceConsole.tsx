@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { SpiceMainConn, sendCtrlAltDel } from '@spice-project/spice-html5';
 
-import constants from '../common/constants';
+import { constants } from '../common/constants';
 import { SpiceActions } from './SpiceActions';
 
 const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
