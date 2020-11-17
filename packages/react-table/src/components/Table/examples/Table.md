@@ -36,6 +36,8 @@ import DemoSortableTable from './DemoSortableTable';
 
 ## Table examples
 
+### Test
+
 ### Basic
 
 The `Table` component is a configuration based component that takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. For a more explicit and declarative approach, you can use the `TableComposable` component.
@@ -762,7 +764,7 @@ class CompactExpandableTable extends React.Component {
       isCompact: true,
       columns: [
         {
-          title: 'Header cell',
+          title: 'ID',
           cellFormatters: [expandable]
         },
         'Branches',
@@ -2382,9 +2384,9 @@ ComposableTableExpandable = () => {
     Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, Boolean(v.child)]))
   );
   const [compact, setCompact] = React.useState(true);
-  const toggleCompact = (checked) => {
+  const toggleCompact = checked => {
     setCompact(checked);
-  }
+  };
   const handleExpansionToggle = (event, pairIndex) => {
     setExpanded({
       ...expanded,
