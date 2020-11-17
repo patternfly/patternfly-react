@@ -6,7 +6,6 @@ propComponents: ['DualListSelector']
 beta: true
 ---
 
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-desc-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
 
 ## Examples
@@ -100,7 +99,6 @@ import {
   DualListSelector,
   KebabToggle
 } from '@patternfly/react-core';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-desc-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
 
 class ComplexDualListSelector extends React.Component {
@@ -109,15 +107,13 @@ class ComplexDualListSelector extends React.Component {
     this.state = {
       availableOptions: [
         <span>Option 1</span>, 
-        <span>Option 2</span>, 
         <span>Option 3</span>, 
-        <span>Option 4</span>
+        <span>Option 4</span>, 
+        <span>Option 2</span>
       ],
       chosenOptions: [],
       isAvailableKebabOpen: false,
-      availableDescending: false,
       isChosenKebabOpen: false,
-      chosenDescending: false,
     };
     
     this.onSort = (panel) => {
@@ -127,12 +123,10 @@ class ComplexDualListSelector extends React.Component {
             let returnValue = 0;
             if (a.props.children > b.props.children) returnValue = 1;
             if (a.props.children < b.props.children) returnValue = -1;
-            if (prevState.availableDescending) returnValue = returnValue * -1;
             return returnValue;
           });
           return {
             availableOptions: available,
-            availableDescending: !prevState.availableDescending,
           }
         });
       }
@@ -143,12 +137,10 @@ class ComplexDualListSelector extends React.Component {
             let returnValue = 0;
             if (a.props.children > b.props.children) returnValue = 1;
             if (a.props.children < b.props.children) returnValue = -1;
-            if (prevState.chosenDescending) returnValue = returnValue * -1;
             return returnValue;
           });
           return {
             chosenOptions: chosen,
-            chosenDescending: !prevState.chosenDescending
           }
         });
       }
@@ -156,20 +148,8 @@ class ComplexDualListSelector extends React.Component {
     
     this.onListChange = (newAvailableOptions, newChosenOptions) => {
       this.setState({
-        availableOptions: newAvailableOptions.sort((a, b) => {
-          let returnValue = 0;
-          if (a.props.children > b.props.children) returnValue = 1;
-          if (a.props.children < b.props.children) returnValue = -1;
-          if (this.state.availableDescending) returnValue = returnValue * -1;
-          return returnValue;
-        }),
-        chosenOptions: newChosenOptions.sort((a, b) => {
-          let returnValue = 0;
-          if (a.props.children > b.props.children) returnValue = 1;
-          if (a.props.children < b.props.children) returnValue = -1;
-          if (this.state.chosenDescending) returnValue = returnValue * -1;
-          return returnValue;
-        }),
+        availableOptions: newAvailableOptions,
+        chosenOptions: newChosenOptions
       })
     };
     
@@ -200,7 +180,7 @@ class ComplexDualListSelector extends React.Component {
     
     const availableOptionsActions = [
       <Button variant={ButtonVariant.plain} onClick={() => this.onSort("available")} aria-label="Sort" key="availableSortButton">
-        {this.state.availableDescending ? <PficonSortCommonDescIcon/> : <PficonSortCommonAscIcon/>}
+        <PficonSortCommonAscIcon/>
       </Button>,
       <Dropdown
         toggle={<KebabToggle onToggle={(isOpen) => this.onToggle(isOpen, "available")} id="toggle-id-1" />}
@@ -213,7 +193,7 @@ class ComplexDualListSelector extends React.Component {
     
     const chosenOptionsActions = [
       <Button variant={ButtonVariant.plain} onClick={() => this.onSort("chosen")} aria-label="Sort" key="chosenSortButton">
-        {this.state.chosenDescending ? <PficonSortCommonDescIcon/> : <PficonSortCommonAscIcon/>}
+        <PficonSortCommonAscIcon/>
       </Button>,
       <Dropdown
         toggle={<KebabToggle onToggle={(isOpen) => this.onToggle(isOpen, "chosen")} id="toggle-id-2" />}
