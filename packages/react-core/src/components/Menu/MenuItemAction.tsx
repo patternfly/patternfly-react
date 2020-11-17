@@ -9,14 +9,16 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
   className?: string;
   /** The action icon to use */
   icon?: 'favorites' | React.ReactNode;
-  /** Callback on action click, can also be specified on the Menu instead */
-  onActionClick?: (event?: any) => void;
+  /** Callback on action click, can also specify onActionClick on the Menu instead */
+  onClick?: (event?: any) => void;
   /** Accessibility label */
   'aria-label'?: string;
   /** Flag indicating if the item is favorited */
   isFavorited?: boolean;
   /** Disables action, can also be specified on the MenuItem instead */
   isDisabled?: boolean;
+  /** Identifies the action item in the onActionClick on the Menu */
+  actionId?: any;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
 }
@@ -24,22 +26,23 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
 const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
   className = '',
   icon,
-  onActionClick,
+  onClick,
   'aria-label': ariaLabel,
   isFavorited = null,
   isDisabled,
+  actionId,
   innerRef,
   ...props
 }: MenuItemActionProps) => (
   <MenuContext.Consumer>
-    {({ onActionClick: onActionClickContext }) => (
+    {({ onActionClick }) => (
       <MenuItemContext.Consumer>
         {({ itemId, isDisabled: isDisabledContext }) => {
           const onClickButton = (event: any) => {
             // event specified on the MenuItemAction
-            onActionClick && onActionClick(event);
+            onClick && onClick(event);
             // event specified on the Menu
-            onActionClickContext && onActionClickContext(event, itemId);
+            onActionClick && onActionClick(event, itemId, actionId);
           };
           return (
             <button
