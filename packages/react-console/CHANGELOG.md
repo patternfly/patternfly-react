@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.1.2...@patternfly/react-console@4.1.3) (2020-11-17)
+
+
+### Bug Fixes
+
+* **console:** remove css imports ([#5147](https://github.com/patternfly/patternfly-react/issues/5147)) ([df3e2eb](https://github.com/patternfly/patternfly-react/commit/df3e2ebd1eb478ef7b1e48f3c8237c5cc398df4c))
+
+
+
+
+
 ## [4.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.1.1...@patternfly/react-console@4.1.2) (2020-11-16)
 
 

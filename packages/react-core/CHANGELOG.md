@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.77.1...@patternfly/react-core@4.78.0) (2020-11-17)
+
+
+### Features
+
+* **menu:** introduces new menu component ([#4847](https://github.com/patternfly/patternfly-react/issues/4847)) ([e867f09](https://github.com/patternfly/patternfly-react/commit/e867f093c5eef175b44cbb88e3ad229376de123f))
+
+
+
+
+
 ## [4.77.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.77.0...@patternfly/react-core@4.77.1) (2020-11-16)
 
 

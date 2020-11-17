@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.14...@patternfly/react-styles@4.7.15) (2020-11-17)
+
+
+### Bug Fixes
+
+* **console:** remove css imports ([#5147](https://github.com/patternfly/patternfly-react/issues/5147)) ([df3e2eb](https://github.com/patternfly/patternfly-react/commit/df3e2ebd1eb478ef7b1e48f3c8237c5cc398df4c))
+
+
+
+
+
 ## [4.7.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.13...@patternfly/react-styles@4.7.14) (2020-11-13)
 
 **Note:** Version bump only for package @patternfly/react-styles
