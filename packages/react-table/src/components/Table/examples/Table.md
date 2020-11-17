@@ -762,7 +762,7 @@ class CompactExpandableTable extends React.Component {
       isCompact: true,
       columns: [
         {
-          title: 'Header cell',
+          title: 'ID',
           cellFormatters: [expandable]
         },
         'Branches',
@@ -2382,9 +2382,9 @@ ComposableTableExpandable = () => {
     Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, Boolean(v.child)]))
   );
   const [compact, setCompact] = React.useState(true);
-  const toggleCompact = (checked) => {
+  const toggleCompact = checked => {
     setCompact(checked);
-  }
+  };
   const handleExpansionToggle = (event, pairIndex) => {
     setExpanded({
       ...expanded,

@@ -115,7 +115,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
               ...mappedCell
             };
           },
-          { id: row.id !== undefined ? row.id : rowKey }
+          { secretTableRowKeyId: row.id !== undefined ? row.id : rowKey }
         ))
     };
   };
@@ -159,7 +159,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 export const TableBody = ({
   className = '' as string,
   children = null as React.ReactNode,
-  rowKey = 'id' as string,
+  rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   onRow = (...args: any) => Object,
   onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>
