@@ -24,6 +24,12 @@ describe('Breadcrumb Demo Test', () => {
     cy.get('.pf-c-breadcrumb__link').contains('Section Title');
   });
 
+  it('Verify render props in Fake Section Title ', () => {
+    cy.get('span.pf-c-breadcrumb__link').contains('Fake Section Title');
+    cy.get('span.pf-c-breadcrumb__link').should('not.have.attr', 'aria-current');
+    cy.get('span.pf-c-breadcrumb__link').should('have.attr', 'data-href', '/hello');
+  });
+
   it('Verify Section Home takes user to home page', () => {
     cy.get('.pf-c-breadcrumb__link')
       .first()
