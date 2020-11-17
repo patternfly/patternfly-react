@@ -32,7 +32,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.65.3",
+    "@patternfly/patternfly": "4.65.5",
     "@patternfly/react-core": "^4.79.1",
     "@spice-project/spice-html5": "^0.2.1",
     "@types/file-saver": "^2.0.1",
