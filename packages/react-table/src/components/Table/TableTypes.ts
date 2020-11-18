@@ -29,29 +29,29 @@ export type OnSort = (
   event: React.MouseEvent,
   columnIndex: number,
   sortByDirection: SortByDirection,
-  extraData?: IExtraColumnData
+  extraData: IExtraColumnData
 ) => void;
 export type OnCollapse = (
   event: React.MouseEvent,
-  rowIndex?: number,
-  isOpen?: boolean,
-  rowData?: IRowData,
-  extraData?: IExtraData
+  rowIndex: number,
+  isOpen: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
 ) => void;
 export type OnExpand = (
   event: React.MouseEvent,
-  rowIndex?: number,
-  colIndex?: number,
-  isOpen?: boolean,
-  rowData?: IRowData,
-  extraData?: IExtraData
+  rowIndex: number,
+  colIndex: number,
+  isOpen: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
 ) => void;
 export type OnSelect = (
   event: React.FormEvent<HTMLInputElement>,
-  isSelected?: boolean,
-  rowIndex?: number,
-  rowData?: IRowData,
-  extraData?: IExtraData
+  isSelected: boolean,
+  rowIndex: number,
+  rowData: IRowData,
+  extraData: IExtraData
 ) => void;
 export type OnRowEdit = (
   event: React.MouseEvent<HTMLButtonElement>,
