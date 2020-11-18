@@ -49,7 +49,7 @@ section: developer-resources
   -  Added support for indeterminate checkboxes without requiring consumer to use refs ([#5150](https://github.com/patternfly/patternfly-react/pull/5150))
 - **Toolbar:** 
   - Added flag to match page insets ([#5098](https://github.com/patternfly/patternfly-react/pull/5098))
-  - updated breakpoints and formatting examples. Created collapsed variant. ([#5123](https://github.com/patternfly/patternfly-react/pull/5123))
+  - pdated breakpoints and formatting examples. Created collapsed variant. ([#5123](https://github.com/patternfly/patternfly-react/pull/5123))
 - **Touchspin:** 
   - Added touchspin component ([#5115](https://github.com/patternfly/patternfly-react/pull/5115))
 
@@ -76,7 +76,7 @@ section: developer-resources
 - Added virtualized examples with composable components ([#5122](https://github.com/patternfly/patternfly-react/pull/5122))
 
 ### Other
--  **Chore:**
+- **Chore:**
   - Cleanup dependencies ([#5060](https://github.com/patternfly/patternfly-react/pull/5060))
   - Bumped Victory package ([#5116](https://github.com/patternfly/patternfly-react/pull/5116))
   - Fixed circular deps ([#5086](https://github.com/patternfly/patternfly-react/pull/5086))
