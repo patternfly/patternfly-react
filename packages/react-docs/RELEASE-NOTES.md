@@ -8,9 +8,9 @@ section: developer-resources
 - [@patternfly/react-charts@6.12.2](https://www.npmjs.com/package/@patternfly/react-charts/v/6.12.2)
 - [@patternfly/react-core@4.79.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.79.2)
 - [@patternfly/react-icons@4.7.18](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.18)
-- [@patternfly/react-inline-edit-extension@4.5.165](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.165)
+- [@patternfly/react-inline-edit-extension@4.5.166](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.166)
 - [@patternfly/react-styles@4.7.16](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.16)
-- [@patternfly/react-table@4.19.23](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.23)
+- [@patternfly/react-table@4.19.24](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.24)
 - [@patternfly/react-tokens@4.9.18](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.18)
 - [@patternfly/react-topology@4.6.69](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.69)
 - [@patternfly/react-virtualized-extension@4.5.150](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.150)
@@ -25,7 +25,7 @@ section: developer-resources
   - Fixed Typescript type for isChecked prop so it allows null (indeterminate) ([#5148](https://github.com/patternfly/patternfly-react/pull/5148))
 - **Data list:** 
   - Fixed to respect isDisabled for dragging ([#5052](https://github.com/patternfly/patternfly-react/pull/5052))
-- **DualListSelector:**
+- **Dual list selector:**
   - Added new component ([#5120](https://github.com/patternfly/patternfly-react/pull/5120))
 - **Dropdown:**
   - Update disabled dropdown items for accessability ([#5044](https://github.com/patternfly/patternfly-react/pull/5044))
@@ -45,11 +45,11 @@ section: developer-resources
   - Updated skeleton examples ([#5072](https://github.com/patternfly/patternfly-react/pull/5072))
 - **Splitter:** 
   - Removed splitter component ([#5105](https://github.com/patternfly/patternfly-react/pull/5105))
-- **Tree View:**
+- **Tree view:**
   -  Added support for indeterminate checkboxes without requiring consumer to use refs ([#5150](https://github.com/patternfly/patternfly-react/pull/5150))
 - **Toolbar:** 
   - Added flag to match page insets ([#5098](https://github.com/patternfly/patternfly-react/pull/5098))
-  - pdated breakpoints and formatting examples. Created collapsed variant. ([#5123](https://github.com/patternfly/patternfly-react/pull/5123))
+  - Updated breakpoints and formatting examples. Created collapsed variant. ([#5123](https://github.com/patternfly/patternfly-react/pull/5123))
 - **Touchspin:** 
   - Added touchspin component ([#5115](https://github.com/patternfly/patternfly-react/pull/5115))
 
@@ -178,6 +178,7 @@ section: developer-resources
 ### Table
 - Fixed compound expandable data labels ([#5017](https://github.com/patternfly/patternfly-react/pull/5017))
 - Updated demo to show expand/collapse all examples ([#5030](https://github.com/patternfly/patternfly-react/pull/5030))
+- Reverted table type definitions ([#5158](https://github.com/patternfly/patternfly-react/pull/5158))
 
 ### Topology
 - Added notification on graph position/scale/extent changes ([#5004](https://github.com/patternfly/patternfly-react/pull/5004))
