@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.50...@patternfly/react-datetime@4.2.51) (2020-11-19)
+
+
+### Bug Fixes
+
+* **datepicker:** forward popoverprops ([#5160](https://github.com/patternfly/patternfly-react/issues/5160)) ([586a330](https://github.com/patternfly/patternfly-react/commit/586a3306d3a5f4019bcced2bb3a0aeb7f63ef7d5))
+
+
+
+
+
 ## [4.2.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.49...@patternfly/react-datetime@4.2.50) (2020-11-17)
 
 **Note:** Version bump only for package @patternfly/react-datetime
