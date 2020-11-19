@@ -47,8 +47,10 @@ export interface DatePickerProps
   helperText?: React.ReactNode;
   /** Aria label for the button */
   buttonAriaLabel?: string;
+  /** The element to append the popover to */
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /** Props to pass to the Popover */
-  popoverProps?: PopoverProps;
+  popoverProps?: Omit<PopoverProps, 'appendTo'>;
 }
 
 export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
@@ -69,6 +71,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   beforeMinDateErrorMessage,
   afterEndDateErrorMessage,
   helperText,
+  appendTo,
   popoverProps,
   ...props
 }: DatePickerProps) => {
@@ -192,6 +195,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         withFocusTrap
         hasNoPadding
         hasAutoWidth
+        appendTo={appendTo}
         {...popoverProps}
       >
         <InputGroup>
