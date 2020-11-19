@@ -6,9 +6,9 @@ propComponents: ['DatePicker']
 beta: true
 ---
 
-import { DatePicker, Locales } from '@patternfly/react-datetime';
+import { DatePicker } from '@patternfly/react-datetime';
 
-Note: DatePicker lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime) and uses format strings from [date-fns@^2.0.0](https://date-fns.org/docs/format).
+Note: DatePicker lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime).
 
 ## Examples
 ### Basic
@@ -16,7 +16,7 @@ Note: DatePicker lives in its own package at [@patternfly/react-datetime](https:
 import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker value="03/05/2020" />
+<DatePicker value="2020-03-05" onChange={(str, date) => console.log('onChange', str, date)} />
 ```
 
 ### Helper text
@@ -24,7 +24,7 @@ import { DatePicker } from '@patternfly/react-datetime';
 import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker value="03/05/2020" helperText="Select a date." />
+<DatePicker value="2020-03-05" helperText="Use the calendar button to select a date." />
 ```
 
 ### Min and max date
@@ -32,22 +32,51 @@ import { DatePicker } from '@patternfly/react-datetime';
 import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker minDate="03/16/2020" maxDate="03/20/2020"/>
+MinMaxDate = () => {
+  const minDate = new Date(2020, 2, 16);
+  const maxDate = new Date(2020, 2, 20);
+  const rangeValidator = date => {
+    if (date < minDate) {
+      return 'Date is before the allowable range.';
+    }
+    else if (date > maxDate) {
+      return 'Date is after the allowable range.';
+    }
+
+    return '';
+  };
+  return <DatePicker value="2020-03-17" validators={[rangeValidator]} />;
+}
 ```
 
 ### French
 
 ```js
 import React from 'react';
-import { DatePicker, Locales } from '@patternfly/react-datetime';
+import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker 
-  locale={Locales.fr}
-  dateFormat="dd.MM.yyyy" 
-  placeholder="jj.mm.aaaa"
-  invalidFormatErrorMessage="Cette date est invalide."
-  dateOutOfRangeErrorMessage="Cette date dépasse la limite, que ce soit en borne inférieure ou supérieure."
-  beforeMinDateErrorMessage="Cette date est antérieure à la première date valide."
-  afterEndDateErrorMessage="Cette date est postérieure à la dernière date valide."
-/>
+FrenchMinMaxDate = () => {
+  const minDate = new Date(2020, 2, 16);
+  const maxDate = new Date(2020, 2, 20);
+  const rangeValidator = date => {
+    if (date < minDate) {
+      return 'Cette date est antérieure à la première date valide.';
+    }
+    else if (date > maxDate) {
+      return 'Cette date est postérieure à la dernière date valide.';
+    }
+
+    return '';
+  };
+  return (
+    <DatePicker
+      value="2020-03-17"
+      validators={[rangeValidator]}
+      placeholder="aaaa-mm-jj"
+      invalidFormatText="Cette date est invalide."
+      locale="fr"
+      weekStart={1}
+    />
+  );
+}
 ```
