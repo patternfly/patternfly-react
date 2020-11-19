@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/DatePicker/date-pick
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { Locales, Locale } from '../../helpers';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
-import { Popover } from '@patternfly/react-core/dist/js/components/Popover/Popover';
+import { Popover, PopoverProps } from '@patternfly/react-core/dist/js/components/Popover/Popover';
 import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import { parse, format, isValid as isNotNull } from 'date-fns';
@@ -47,6 +47,10 @@ export interface DatePickerProps
   helperText?: React.ReactNode;
   /** Aria label for the button */
   buttonAriaLabel?: string;
+  /** The element to append the popover to */
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
+  /** Props to pass to the Popover */
+  popoverProps?: Omit<PopoverProps, 'appendTo'>;
 }
 
 export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
@@ -67,6 +71,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   beforeMinDateErrorMessage,
   afterEndDateErrorMessage,
   helperText,
+  appendTo,
+  popoverProps,
   ...props
 }: DatePickerProps) => {
   const myParse = (date: string) => parse(date, dateFormat, new Date(), { locale });
@@ -189,6 +195,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         withFocusTrap
         hasNoPadding
         hasAutoWidth
+        appendTo={appendTo}
+        {...popoverProps}
       >
         <InputGroup>
           <TextInput
