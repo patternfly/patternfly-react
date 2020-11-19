@@ -4,6 +4,7 @@ packages=(
   @patternfly/react-catalog-view-extension
   @patternfly/react-charts
   @patternfly/react-core
+  @patternfly/react-datetime
   @patternfly/react-icons
   @patternfly/react-inline-edit-extension
   @patternfly/react-styles
