@@ -12,13 +12,13 @@ import { getUniqueId } from '@patternfly/react-core/dist/js/helpers/util';
 export interface CalendarProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Month/year to base other dates around */
   date: Date;
-  /** How to format months in Select according to date-fns */
+  /** How to format months in Select */
   monthFormat?: (date: Date) => React.ReactNode;
-  /** How to format week days in header according to date-fns */
+  /** How to format week days in header */
   weekdayFormat?: (date: Date) => React.ReactNode;
-  /** How to format days in header for screen readers according to date-fns */
+  /** How to format days in header for screen readers */
   longWeekdayFormat?: (date: Date) => React.ReactNode;
-  /** How to format days in buttons in table cells according to date-fns */
+  /** How to format days in buttons in table cells */
   buttonFormat?: (date: Date) => React.ReactNode;
   /** If using the default formatters which locale to use. Undefined defaults to current locale. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation */
   locale?: string;
