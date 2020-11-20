@@ -30,8 +30,8 @@ export interface PopoverProps {
   'aria-label'?: string;
   /** The element to append the popover to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
-  /** Body content */
-  bodyContent: React.ReactNode;
+  /** Body content; you can provide a function which will receive the hide function as an argument if you need to close the Popover after an action */
+  bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /**
    * The reference element to which the Popover is relatively placed to.
    * If you cannot wrap the reference with the Popover, you can use the reference prop instead.
@@ -67,10 +67,10 @@ export interface PopoverProps {
    * space to the right, so it finally shows the popover on the left.
    */
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
-  /** Footer content */
-  footerContent?: React.ReactNode;
-  /** Header content, leave empty for no header */
-  headerContent?: React.ReactNode;
+  /** Footer content; you can provide a function which will receive the hide function as an argument if you need to close the Popover after an action */
+  footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  /** Header content, leave empty for no header; you can provide a function which will receive the hide function as an argument if you need to close the Popover after an action */
+  headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -343,9 +343,19 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       <PopoverArrow />
       <PopoverContent>
         {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
-        {headerContent && <PopoverHeader id={`popover-${uniqueId}-header`}>{headerContent}</PopoverHeader>}
-        <PopoverBody id={`popover-${uniqueId}-body`}>{bodyContent}</PopoverBody>
-        {footerContent && <PopoverFooter id={`popover-${uniqueId}-footer`}>{footerContent}</PopoverFooter>}
+        {headerContent && (
+          <PopoverHeader id={`popover-${uniqueId}-header`}>
+            {typeof headerContent === 'function' ? headerContent(hide) : headerContent}
+          </PopoverHeader>
+        )}
+        <PopoverBody id={`popover-${uniqueId}-body`}>
+          {typeof bodyContent === 'function' ? bodyContent(hide) : bodyContent}
+        </PopoverBody>
+        {footerContent && (
+          <PopoverFooter id={`popover-${uniqueId}-footer`}>
+            {typeof footerContent === 'function' ? footerContent(hide) : footerContent}
+          </PopoverFooter>
+        )}
       </PopoverContent>
     </FocusTrap>
   );

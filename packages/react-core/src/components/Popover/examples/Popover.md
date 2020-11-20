@@ -6,7 +6,9 @@ propComponents: ['Popover']
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
@@ -15,17 +17,46 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
   <Popover
     headerContent={<div>Popover Header</div>}
     bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-      <Button onClick={() => console.log('click')}>click</Button></div>
+      <div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+        <div>
+          <Button onClick={() => console.log('click')}>click</Button>
+        </div>
+      </div>
     }
     footerContent="Popover Footer"
   >
     <Button>Toggle Popover</Button>
   </Popover>
-</div>
+</div>;
+```
+
+### Close popover from content
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+<div style={{ margin: '100px' }}>
+  <Popover
+    headerContent={<div>Popover Header</div>}
+    bodyContent={hide => (
+      <div>
+        <div>All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover component passes the hide function to which can be used to close the Popover after some user interaction.</div>
+        <div><Button onClick={hide}>Close the popover</Button></div>
+      </div>
+    )}
+    footerContent="Popover Footer"
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+</div>;
 ```
 
 ### Popover react ref
+
 ```js
 import React from 'react';
 import { Popover } from '@patternfly/react-core';
@@ -38,17 +69,20 @@ PopoverReactRef = () => {
       <Popover
         headerContent={<div>Popover Header</div>}
         bodyContent={
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
         }
         footerContent="Popover Footer"
         reference={popoverRef}
       />
     </div>
   );
-}
-```
+};
+````
 
 ### Popover selector ref
+
 ```js
 import React from 'react';
 import { Popover } from '@patternfly/react-core';
@@ -63,10 +97,11 @@ import { Popover } from '@patternfly/react-core';
     footerContent="Popover Footer"
     reference={() => document.getElementById('popover-selector')}
   />
-</div>
+</div>;
 ```
 
 ### Advanced
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
@@ -157,6 +192,7 @@ class AdvancedPopover extends React.Component {
 ```
 
 ### Headless
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
@@ -172,10 +208,11 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
   >
     <Button>Toggle Popover</Button>
   </Popover>
-</div>
+</div>;
 ```
 
 ### With Link
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
@@ -183,7 +220,13 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 <div style={{ margin: '100px' }}>
   <Popover
     bodyContent={
-      <div><a href="https://www.patternfly.org/" target="_blank">PatternFly</a> is a community project that promotes design commonality and improved user experience. Its offerings include open source code, patterns, style guides, and an active community that helps support it all.</div>
+      <div>
+        <a href="https://www.patternfly.org/" target="_blank">
+          PatternFly
+        </a>{' '}
+        is a community project that promotes design commonality and improved user experience. Its offerings include open
+        source code, patterns, style guides, and an active community that helps support it all.
+      </div>
     }
     aria-label="Popover with Link"
     closeBtnAriaLabel="Close Popover with Link"
@@ -191,5 +234,5 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
   >
     <Button>Toggle Popover</Button>
   </Popover>
-</div>
+</div>;
 ```
