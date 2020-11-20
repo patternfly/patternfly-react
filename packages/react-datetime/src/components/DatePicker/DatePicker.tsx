@@ -7,10 +7,11 @@ import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/T
 import { Popover, PopoverProps } from '@patternfly/react-core/dist/js/components/Popover/Popover';
 import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
-import { CalendarMonth } from '../CalendarMonth';
+import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
 
 export interface DatePickerProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
+  extends CalendarFormat,
+    Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the date time picker. */
   className?: string;
   /** Accessible label for the date picker */
@@ -37,18 +38,6 @@ export interface DatePickerProps
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /** Props to pass to the Popover */
   popoverProps?: Omit<PopoverProps, 'appendTo'>;
-  /** How to format months in Calendar */
-  monthFormat?: (date: Date) => React.ReactNode;
-  /** How to format week days in Calendar */
-  weekdayFormat?: (date: Date) => React.ReactNode;
-  /** How to format days in Calendar */
-  longWeekdayFormat?: (date: Date) => React.ReactNode;
-  /** How to format days in Calendar */
-  buttonFormat?: (date: Date) => React.ReactNode;
-  /** If using the default formatters which locale to use. Undefined defaults to current locale. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation */
-  locale?: string;
-  /** Day of week that starts the week in Calendar. 0 is Sunday, 6 is Saturday. */
-  weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   /** Functions that returns an error message if a date is invalid */
   validators?: ((date: Date) => string)[];
 }
@@ -62,7 +51,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   dateParse = (val: string) => new Date(`${val}T00:00:00`),
   isDisabled = false,
   placeholder = 'yyyy-MM-dd',
-  value: valueProp = dateFormat(new Date()),
+  value: valueProp = '',
   'aria-label': ariaLabel = 'Date picker',
   buttonAriaLabel = 'Toggle date picker',
   onChange = (): any => undefined,
@@ -73,7 +62,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   monthFormat,
   weekdayFormat,
   longWeekdayFormat,
-  buttonFormat,
+  dayFormat,
   weekStart,
   validators = [],
   ...props
@@ -122,7 +111,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             monthFormat={monthFormat}
             weekdayFormat={weekdayFormat}
             longWeekdayFormat={longWeekdayFormat}
-            buttonFormat={buttonFormat}
+            dayFormat={dayFormat}
             weekStart={weekStart}
           />
         }

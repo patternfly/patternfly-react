@@ -2,11 +2,11 @@
 id: Date picker
 section: components
 cssPrefix: pf-c-date-picker
-propComponents: ['DatePicker']
+propComponents: ['DatePicker', 'CalendarFormat']
 beta: true
 ---
 
-import { DatePicker } from '@patternfly/react-datetime';
+import { DatePicker, Weekday } from '@patternfly/react-datetime';
 
 Note: DatePicker lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime).
 
@@ -17,6 +17,35 @@ import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
 <DatePicker value="2020-03-05" onChange={(str, date) => console.log('onChange', str, date)} />
+```
+
+### American format
+```js
+import React from 'react';
+import { DatePicker } from '@patternfly/react-datetime';
+
+AmericanFormat = () => {
+  const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+  const dateParse = date => {
+    const split = date.split('/');
+    if (split.length !== 3) {
+      return new Date();
+    }
+    let month = split[0];
+    let day = split[1];
+    let year = split[2];
+    return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T00:00:00`);
+  };
+
+  return (
+    <DatePicker
+      value="03/05/2020"
+      placeholder="MM/dd/yyyy"
+      dateFormat={dateFormat}
+      dateParse={dateParse}
+    />
+  );
+}
 ```
 
 ### Helper text
@@ -53,7 +82,7 @@ MinMaxDate = () => {
 
 ```js
 import React from 'react';
-import { DatePicker } from '@patternfly/react-datetime';
+import { DatePicker, Weekday } from '@patternfly/react-datetime';
 
 FrenchMinMaxDate = () => {
   const minDate = new Date(2020, 2, 16);
@@ -75,7 +104,7 @@ FrenchMinMaxDate = () => {
       placeholder="aaaa-mm-jj"
       invalidFormatText="Cette date est invalide."
       locale="fr"
-      weekStart={1}
+      weekStart={Weekday.Monday}
     />
   );
 }

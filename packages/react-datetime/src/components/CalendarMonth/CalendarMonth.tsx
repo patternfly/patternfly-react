@@ -9,9 +9,17 @@ import styles from '@patternfly/react-styles/css/components/CalendarMonth/calend
 import commonStyles from '@patternfly/react-styles/css/base/patternfly-common';
 import { getUniqueId } from '@patternfly/react-core/dist/js/helpers/util';
 
-export interface CalendarProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
-  /** Month/year to base other dates around */
-  date: Date;
+export enum Weekday {
+  Sunday = 0,
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday
+}
+
+export interface CalendarFormat {
   /** How to format months in Select */
   monthFormat?: (date: Date) => React.ReactNode;
   /** How to format week days in header */
@@ -19,11 +27,16 @@ export interface CalendarProps extends Omit<React.HTMLProps<HTMLDivElement>, 'on
   /** How to format days in header for screen readers */
   longWeekdayFormat?: (date: Date) => React.ReactNode;
   /** How to format days in buttons in table cells */
-  buttonFormat?: (date: Date) => React.ReactNode;
+  dayFormat?: (date: Date) => React.ReactNode;
   /** If using the default formatters which locale to use. Undefined defaults to current locale. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation */
   locale?: string;
   /** Day of week that starts the week. 0 is Sunday, 6 is Saturday. */
-  weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | Weekday;
+}
+
+export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+  /** Month/year to base other dates around */
+  date: Date;
   /** Callback when date is selected */
   onChange?: (date: Date) => void;
   /** Functions that returns if a date is valid and selectable */
@@ -65,8 +78,8 @@ export const CalendarMonth = ({
   monthFormat = date => date.toLocaleDateString(locale, { month: 'long' }),
   weekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'narrow' }),
   longWeekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'long' }),
-  buttonFormat = date => date.getDate(),
-  weekStart = 0,
+  dayFormat = date => date.getDate(),
+  weekStart = 0, // Use the American Sunday as a default
   onChange = () => {},
   validators = [() => true],
   className,
@@ -200,7 +213,7 @@ export const CalendarMonth = ({
                 const isFocused = isSameDate(day, focusedDate);
                 const isValid = validators.every(validator => validator(day));
                 const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
-                const dayFormatted = buttonFormat(day);
+                const dayFormatted = dayFormat(day);
 
                 return (
                   <td
