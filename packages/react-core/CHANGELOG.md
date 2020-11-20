@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.79.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.2...@patternfly/react-core@4.79.3) (2020-11-20)
+
+
+### Bug Fixes
+
+* **form-demo:** tidy form demo examples ([#5172](https://github.com/patternfly/patternfly-react/issues/5172)) ([4abb31e](https://github.com/patternfly/patternfly-react/commit/4abb31e457b217ab9b0af74efd74ac869678535f))
+
+
+
+
+
 ## [4.79.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.1...@patternfly/react-core@4.79.2) (2020-11-17)
 
 **Note:** Version bump only for package @patternfly/react-core
