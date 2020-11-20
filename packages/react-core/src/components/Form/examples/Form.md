@@ -67,7 +67,7 @@ class SimpleForm extends React.Component {
             <Popover
               headerContent={
                 <div>
-                  The <a href="https://schema.org/name">name</a> of a <a href="https://schema.org/Person">Person</a>
+                  The{' '}<a href="https://schema.org/name" target="_blank">name</a>{' '}of a{' '}<a href="https://schema.org/Person" target="_blank">Person</a>
                 </div>
               }
               bodyContent={
@@ -85,9 +85,10 @@ class SimpleForm extends React.Component {
               }
             >
               <button
+                type="button"
                 aria-label="More info for name field"
                 onClick={e => e.preventDefault()}
-                aria-describedby="simple-form-name"
+                aria-describedby="simple-form-name-01"
                 className="pf-c-form__group-label-help"
               >
                 <HelpIcon noVerticalAlign />
@@ -95,50 +96,50 @@ class SimpleForm extends React.Component {
             </Popover>
           }
           isRequired
-          fieldId="simple-form-name"
+          fieldId="simple-form-name-01"
           helperText="Please provide your full name"
         >
           <TextInput
             isRequired
             type="text"
-            id="simple-form-name"
-            name="simple-form-name"
-            aria-describedby="simple-form-name-helper"
+            id="simple-form-name-01"
+            name="simple-form-name-01"
+            aria-describedby="simple-form-name-01-helper"
             value={value1}
             onChange={this.handleTextInputChange1}
           />
         </FormGroup>
-        <FormGroup label="Email" isRequired fieldId="simple-form-email">
+        <FormGroup label="Email" isRequired fieldId="simple-form-email-01">
           <TextInput
             isRequired
             type="email"
-            id="simple-form-email"
-            name="simple-form-email"
+            id="simple-form-email-01"
+            name="simple-form-email-01"
             value={value2}
             onChange={this.handleTextInputChange2}
           />
         </FormGroup>
-        <FormGroup label="Phone number" isRequired fieldId="simple-form-number">
+        <FormGroup label="Phone number" isRequired fieldId="simple-form-number-01">
           <TextInput
             isRequired
             type="tel"
-            id="simple-form-number"
+            id="simple-form-number-01"
             placeholder="555-555-5555"
-            name="simple-form-number"
+            name="simple-form-number-01"
             value={value3}
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
         <FormGroup isInline fieldId="simple-form-checkbox-group" label="How can we contact you?" isRequired>
-          <Checkbox label="Email" aria-label="Email" id="inlinecheck1" />
-          <Checkbox label="Phone" aria-label="Phone" id="inlinecheck2" />
-          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3" />
+          <Checkbox label="Email" aria-label="Email" id="inlinecheck01" />
+          <Checkbox label="Phone" aria-label="Phone" id="inlinecheck02" />
+          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck03" />
         </FormGroup>
-        <FormGroup label="Additional Note" fieldId="simple-form-note">
-          <TextInput isDisabled type="text" id="simple-form-note" name="simple-form-number" value="disabled" />
+        <FormGroup label="Additional Note" fieldId="simple-form-note-01">
+          <TextInput isDisabled type="text" id="simple-form-note-01" name="simple-form-number" value="disabled" />
         </FormGroup>
-        <FormGroup fieldId="checkbox1">
-          <Checkbox label="I'd like updates via email" id="checkbox1" name="checkbox1" aria-label="Update via email" />
+        <FormGroup fieldId="checkbox01">
+          <Checkbox label="I'd like updates via email" id="checkbox01" name="checkbox01" aria-label="Update via email" />
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
@@ -304,7 +305,7 @@ class SimpleForm extends React.Component {
             <Popover
               headerContent={
                 <div>
-                  The <a href="https://schema.org/name">name</a> of a <a href="https://schema.org/Person">Person</a>
+                  The{' '}<a href="https://schema.org/name" target="_blank">name</a>{' '}of a{' '}<a href="https://schema.org/Person" target="_blank">Person</a>
                 </div>
               }
               bodyContent={
@@ -322,9 +323,10 @@ class SimpleForm extends React.Component {
               }
             >
               <button
+                type="button"
                 aria-label="More info for name field"
                 onClick={e => e.preventDefault()}
-                aria-describedby="simple-form-name"
+                aria-describedby="simple-form-name-02"
                 className="pf-c-form__group-label-help"
               >
                 <HelpIcon noVerticalAlign />
@@ -332,25 +334,25 @@ class SimpleForm extends React.Component {
             </Popover>
           }
           isRequired
-          fieldId="simple-form-name"
+          fieldId="simple-form-name-02"
           helperText="Please provide your full name"
         >
           <TextInput
             isRequired
             type="text"
-            id="simple-form-name"
-            name="simple-form-name"
-            aria-describedby="simple-form-name-helper"
+            id="simple-form-name-02"
+            name="simple-form-name-02"
+            aria-describedby="simple-form-name-02-helper"
             value={value1}
             onChange={this.handleTextInputChange1}
           />
         </FormGroup>
-        <FormGroup label="Email" isRequired fieldId="simple-form-email">
+        <FormGroup label="Email" isRequired fieldId="simple-form-email-02">
           <TextInput
             isRequired
             type="email"
-            id="simple-form-email"
-            name="simple-form-email"
+            id="simple-form-email-02"
+            name="simple-form-email-02"
             value={value2}
             onChange={this.handleTextInputChange2}
           />
@@ -367,15 +369,15 @@ class SimpleForm extends React.Component {
           />
         </FormGroup>
         <FormGroup isInline label="How can we contact you?" isRequired>
-          <Checkbox label="Email" aria-label="Email" id="inlinecheck1" />
-          <Checkbox label="Phone" aria-label="Phone" id="inlinecheck2" />
-          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3" />
+          <Checkbox label="Email" aria-label="Email" id="inlinecheck04" />
+          <Checkbox label="Phone" aria-label="Phone" id="inlinecheck05" />
+          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck06" />
         </FormGroup>
-        <FormGroup label="Additional Note" fieldId="simple-form-note">
-          <TextInput isDisabled type="text" id="simple-form-note" name="simple-form-number" value="disabled" />
+        <FormGroup label="Additional Note" fieldId="simple-form-note-02">
+          <TextInput isDisabled type="text" id="simple-form-note-02" name="simple-form-number" value="disabled" />
         </FormGroup>
-        <FormGroup fieldId="checkbox1">
-          <Checkbox label="I'd like updates via email" id="checkbox1" name="checkbox1" aria-label="Update via email" />
+        <FormGroup fieldId="checkbox02">
+          <Checkbox label="I'd like updates via email" id="checkbox02" name="checkbox02" aria-label="Update via email" />
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
@@ -492,14 +494,14 @@ class InvalidFormWithFormAlert extends React.Component {
           }
           helperTextInvalid="Age has to be a number"
           helperTextInvalidIcon={<ExclamationCircleIcon />}
-          fieldId="age-1"
+          fieldId="age-2"
           validated={validated}
         >
           <TextInput
             validated={validated}
             value={value}
-            id="age-1"
-            aria-describedby="age-1-helper"
+            id="age-2"
+            aria-describedby="age-2-helper"
             onChange={this.handleTextInputChange}
           />
         </FormGroup>
@@ -562,14 +564,14 @@ class InvalidForm extends React.Component {
           helperText={helperText}
           helperTextInvalid={invalidText}
           helperTextInvalidIcon={<ExclamationCircleIcon />}
-          fieldId="age-2"
+          fieldId="age-3"
           validated={validated}
         >
           <TextInput
             validated={validated}
             value={value}
-            id="age-2"
-            aria-describedby="age-2-helper"
+            id="age-3"
+            aria-describedby="age-3-helper"
             onChange={this.handleTextInputChange}
           />
         </FormGroup>
@@ -589,8 +591,8 @@ class HorizontalForm extends React.Component {
     return (
       <Form isHorizontal>
         <FormGroup label="Label" hasNoPaddingTop fieldId="options">
-          <Checkbox label="option 1" id="option-1" />
-          <Checkbox label="option 2" id="option-2" />
+          <Checkbox label="option 1" id="option-01" />
+          <Checkbox label="option 2" id="option-02" />
         </FormGroup>
       </Form>
     );
@@ -622,8 +624,8 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           isHelperTextBeforeField
           hasNoPaddingTop
           fieldId="options">
-          <Checkbox label="option 1" id="option-1" />
-          <Checkbox label="option 2" id="option-2" />
+          <Checkbox label="option 1" id="option-03" />
+          <Checkbox label="option 2" id="option-04" />
         </FormGroup>
       </Form>
     );
