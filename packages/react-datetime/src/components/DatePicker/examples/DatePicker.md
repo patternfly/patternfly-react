@@ -16,7 +16,7 @@ Note: DatePicker lives in its own package at [@patternfly/react-datetime](https:
 import React from 'react';
 import { DatePicker } from '@patternfly/react-datetime';
 
-<DatePicker value="2020-03-05" onChange={(str, date) => console.log('onChange', str, date)} />
+<DatePicker onChange={(str, date) => console.log('onChange', str, date)} />
 ```
 
 ### American format
