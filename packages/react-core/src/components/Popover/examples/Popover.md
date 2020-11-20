@@ -13,20 +13,12 @@ propComponents: ['Popover']
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
-<div style={{ margin: '100px' }}>
+<div style={{ margin: '50px' }}>
   <Popover
-    headerContent={<div>Popover Header</div>}
-    bodyContent={
-      <div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-        </div>
-        <div>
-          <Button onClick={() => console.log('click')}>click</Button>
-        </div>
-      </div>
-    }
-    footerContent="Popover Footer"
+    aria-label="Basic popover"
+    headerContent={<div>Popover header</div>}
+    bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
+    footerContent="Popover footer"
   >
     <Button>Toggle Popover</Button>
   </Popover>
@@ -39,16 +31,62 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
-<div style={{ margin: '100px' }}>
+<div style={{ margin: '50px' }}>
   <Popover
-    headerContent={<div>Popover Header</div>}
+    aria-label="Popover with button in the body that can close it"
+    headerContent={<div>Popover header</div>}
     bodyContent={hide => (
       <div>
-        <div>All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover component passes the hide function to which can be used to close the Popover after some user interaction.</div>
-        <div><Button onClick={hide}>Close the popover</Button></div>
+        <div>
+          All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
+          component passes the hide function to which can be used to close the Popover after some user interaction.
+        </div>
+        <div>
+          <Button onClick={hide}>Close popover</Button>
+        </div>
       </div>
     )}
-    footerContent="Popover Footer"
+    footerContent="Popover footer"
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+</div>;
+```
+
+### Without header/footer/close and no padding
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+<div style={{ margin: '50px' }}>
+  <Popover
+    aria-label="Popover with no header, footer, close button, and padding"
+    hasNoPadding
+    showClose={false}
+    bodyContent={hide => (
+      <div>
+        This popover has no padding and is intended for use with content that has its own spacing and should touch the
+        edges of the popover container.
+      </div>
+    )}
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+</div>;
+```
+
+### Width auto
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+<div style={{ margin: '50px' }}>
+  <Popover
+    aria-label="Popover with auto-width"
+    hasAutoWidth
+    bodyContent={hide => <div>Removes fixed-width and allows width to be defined by contents</div>}
   >
     <Button>Toggle Popover</Button>
   </Popover>
@@ -64,9 +102,10 @@ import { Popover } from '@patternfly/react-core';
 PopoverReactRef = () => {
   const popoverRef = React.useRef();
   return (
-    <div style={{ margin: '100px' }}>
+    <div style={{ margin: '50px' }}>
       <button ref={popoverRef}>Popover attached via react ref</button>
       <Popover
+        aria-label="Popover with react reference example"
         headerContent={<div>Popover Header</div>}
         bodyContent={
           <div>
@@ -79,7 +118,7 @@ PopoverReactRef = () => {
     </div>
   );
 };
-````
+```
 
 ### Popover selector ref
 
@@ -87,9 +126,10 @@ PopoverReactRef = () => {
 import React from 'react';
 import { Popover } from '@patternfly/react-core';
 
-<div style={{ margin: '100px' }}>
+<div style={{ margin: '50px' }}>
   <button id="popover-selector">Popover attached via selector ref</button>
   <Popover
+    aria-label="Popover with selector reference example"
     headerContent={<div>Popover Header</div>}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
@@ -165,15 +205,16 @@ class AdvancedPopover extends React.Component {
           />
         </div>
 
-        <div style={{ margin: '100px' }}>
+        <div style={{ margin: '50px' }}>
           <Popover
+            aria-label="Advanced popover usages example"
             position={this.state.position}
             hideOnOutsideClick={false}
             isVisible={this.state.show}
             shouldClose={this.shouldClose}
             shouldOpen={this.shouldOpen}
             enableFlip={this.state.keepInViewChecked}
-            appendTo={() => document.getElementById('___gatsby')}
+            appendTo={() => document.body}
             headerContent={<div>Popover Header</div>}
             bodyContent={
               <div>
@@ -189,50 +230,4 @@ class AdvancedPopover extends React.Component {
     );
   }
 }
-```
-
-### Headless
-
-```js
-import React from 'react';
-import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
-
-<div style={{ margin: '100px' }}>
-  <Popover
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-    aria-label="Headless Popover"
-    closeBtnAriaLabel="Close Headless Popover"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
-</div>;
-```
-
-### With Link
-
-```js
-import React from 'react';
-import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
-
-<div style={{ margin: '100px' }}>
-  <Popover
-    bodyContent={
-      <div>
-        <a href="https://www.patternfly.org/" target="_blank">
-          PatternFly
-        </a>{' '}
-        is a community project that promotes design commonality and improved user experience. Its offerings include open
-        source code, patterns, style guides, and an active community that helps support it all.
-      </div>
-    }
-    aria-label="Popover with Link"
-    closeBtnAriaLabel="Close Popover with Link"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
-</div>;
 ```
