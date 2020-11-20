@@ -2,16 +2,16 @@
 id: Calendar month
 section: components
 cssPrefix: pf-c-calendar-month
-propComponents: ['CalendarMonth']
+propComponents: ['CalendarMonth', 'CalendarFormat']
 beta: true
 ---
 
 import { CalendarMonth } from '@patternfly/react-datetime';
 
-Note: CalendarMonth lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime) and uses format strings from [date-fns@^2.0.0](https://date-fns.org/docs/format).
+Note: CalendarMonth lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime).
 
 ## Examples
-### Date selected
+### Selectable date
 ```js
 import React from 'react';
 import { CalendarMonth } from '@patternfly/react-datetime';

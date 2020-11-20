@@ -39,8 +39,7 @@
     "@patternfly/react-core": "^4.79.2",
     "@patternfly/react-icons": "^4.7.18",
     "@patternfly/react-styles": "^4.7.16",
-    "@patternfly/react-tokens": "^4.9.18",
-    "date-fns": "^2.16.1"
+    "@patternfly/react-tokens": "^4.9.18"
   },
   "peerDependencies": {
     "react": "^16.8.0",

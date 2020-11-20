@@ -6,42 +6,54 @@ import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
-// https://date-fns.org/v2.16.1/docs/format
-import { format } from 'date-fns';
-import { Locales, Locale } from '../../helpers';
 import commonStyles from '@patternfly/react-styles/css/base/patternfly-common';
 import { getUniqueId } from '@patternfly/react-core/dist/js/helpers/util';
 
-export interface CalendarProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export enum Weekday {
+  Sunday = 0,
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday
+}
+
+export interface CalendarFormat {
+  /** How to format months in Select */
+  monthFormat?: (date: Date) => React.ReactNode;
+  /** How to format week days in header */
+  weekdayFormat?: (date: Date) => React.ReactNode;
+  /** How to format days in header for screen readers */
+  longWeekdayFormat?: (date: Date) => React.ReactNode;
+  /** How to format days in buttons in table cells */
+  dayFormat?: (date: Date) => React.ReactNode;
+  /** If using the default formatters which locale to use. Undefined defaults to current locale. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation */
+  locale?: string;
+  /** Day of week that starts the week. 0 is Sunday, 6 is Saturday. */
+  weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | Weekday;
+}
+
+export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Month/year to base other dates around */
   date: Date;
-  /** How to format months in dropdown according to date-fns */
-  monthFormat?: string;
-  /** How to format days in header according to date-fns */
-  dayFormat?: string;
-  /** How to format days in header for screen readers according to date-fns */
-  longDayFormat?: string;
-  /** How to format days in buttons according to date-fns */
-  buttonFormat?: string;
   /** Callback when date is selected */
   onChange?: (date: Date) => void;
-  /** Specify the locale of the date. */
-  locale?: Locale;
   /** Functions that returns if a date is valid and selectable */
-  validators?: [(date: Date) => boolean];
+  validators?: ((date: Date) => boolean)[];
   /** Classname to add to outer div */
   className?: string;
   /** @hide Internal prop to allow pressing escape in select menu to not close popover */
   onSelectToggle?: (open: boolean) => void;
 }
 
-// Must be numeric given current design
-const yearFormat = 'yyyy';
+// Must be numeric given current header design
+const yearFormat = (date: Date) => date.getFullYear();
 
-const buildCalendar = (year: number, month: number, locale: Locale) => {
+const buildCalendar = (year: number, month: number, weekStart: number) => {
   const selectedDate = new Date(year, month);
   const firstDayOfWeek = new Date(selectedDate);
-  firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + locale.options.weekStartsOn);
+  firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
   // We will always show 6 weeks like google calendar
   // Assume we just want the numbers for now...
   const calendarWeeks = [] as Date[][];
@@ -62,24 +74,19 @@ const isSameDate = (d1: Date, d2: Date) =>
 
 export const CalendarMonth = ({
   date: dateProp = new Date(),
-  monthFormat = 'MMMM',
-  dayFormat = 'EEEEE',
-  longDayFormat = 'EEEE',
-  buttonFormat = 'd',
+  locale = undefined,
+  monthFormat = date => date.toLocaleDateString(locale, { month: 'long' }),
+  weekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'narrow' }),
+  longWeekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'long' }),
+  dayFormat = date => date.getDate(),
+  weekStart = 0, // Use the American Sunday as a default
   onChange = () => {},
-  locale = Locales.enUS,
   validators = [() => true],
   className,
   onSelectToggle = () => {},
   ...props
 }: CalendarProps) => {
-  const longMonthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    .map(monthNum => new Date(1990, monthNum))
-    .map(date => format(date, monthFormat, { locale }))
-    .reduce((prev, cur, index) => {
-      prev[cur] = index;
-      return prev;
-    }, {} as { [key: string]: number });
+  const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [focusedDate, setFocusedDate] = React.useState(dateProp);
   const focusRef = React.useRef<HTMLButtonElement>();
@@ -123,9 +130,9 @@ export const CalendarMonth = ({
   };
 
   const today = new Date();
-  const calendar = buildCalendar(focusedDate.getFullYear(), focusedDate.getMonth(), locale);
-  const monthFormatted = format(focusedDate, monthFormat, { locale });
-  const yearFormatted = format(focusedDate, yearFormat, { locale });
+  const calendar = buildCalendar(focusedDate.getFullYear(), focusedDate.getMonth(), weekStart);
+  const monthFormatted = monthFormat(focusedDate);
+  const yearFormatted = yearFormat(focusedDate);
   return (
     <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
@@ -147,22 +154,23 @@ export const CalendarMonth = ({
               setIsSelectOpen(!isSelectOpen);
               onSelectToggle(!isSelectOpen);
             }}
-            onSelect={(_ev, longMonth) => {
+            onSelect={(_ev, monthNum) => {
               // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
               // to see the SelectOption as a child so it doesn't close the Popover.
               setIsSelectOpen(false);
               onSelectToggle(false);
-              const monthNum = longMonthNames[longMonth as string];
               const newDate = new Date(focusedDate);
-              newDate.setMonth(monthNum);
+              newDate.setMonth(Number(monthNum as string));
               setFocusedDate(newDate);
               setFocusDate(false);
             }}
             variant="single"
             selections={monthFormatted}
           >
-            {Object.keys(longMonthNames).map((longMonth, index) => (
-              <SelectOption key={index} value={longMonth} isSelected={longMonth === monthFormatted} />
+            {longMonths.map((longMonth, index) => (
+              <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
+                {longMonth}
+              </SelectOption>
             ))}
           </Select>
         </div>
@@ -190,8 +198,8 @@ export const CalendarMonth = ({
           <tr>
             {calendar[0].map((date, index) => (
               <th key={index} className={styles.calendarMonthDay} scope="col">
-                <span className={commonStyles.screenReader}>{format(date, longDayFormat, { locale })}</span>
-                <span aria-hidden>{format(date, dayFormat, { locale })}</span>
+                <span className={commonStyles.screenReader}>{longWeekdayFormat(date)}</span>
+                <span aria-hidden>{weekdayFormat(date)}</span>
               </th>
             ))}
           </tr>
@@ -205,7 +213,7 @@ export const CalendarMonth = ({
                 const isFocused = isSameDate(day, focusedDate);
                 const isValid = validators.every(validator => validator(day));
                 const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
-                const dayFormatted = format(day, buttonFormat);
+                const dayFormatted = dayFormat(day);
 
                 return (
                   <td
