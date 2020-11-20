@@ -34,7 +34,7 @@ AmericanFormat = () => {
     let month = split[0];
     let day = split[1];
     let year = split[2];
-    return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T00:00:00`);
+    return new Date(`${year.padStart(4, '0')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T00:00:00`);
   };
 
   return (
