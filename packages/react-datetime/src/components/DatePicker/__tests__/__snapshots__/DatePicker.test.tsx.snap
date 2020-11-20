@@ -13,6 +13,6 @@ exports[`disabled date picker 1`] = `
   readOnly={false}
   required={false}
   type="text"
-  value="2020-11-19"
+  value="2020-11-20"
 />
 `;
