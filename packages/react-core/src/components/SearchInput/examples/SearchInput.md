@@ -60,7 +60,7 @@ class SearchInputWithResultCount extends React.Component {
         resultsCount: 3
       });
     };
-    
+
     this.onClear = (event) => {
       this.setState({
         value: '',
@@ -146,4 +146,26 @@ class SearchInputWithNavigableOptions extends React.Component {
     );
   }
 }
+```
+
+### Focus search input using ref
+```js
+import React from 'react';
+import { SearchInput, Button } from '@patternfly/react-core';
+
+TextInputSelectAll = () => {
+  const [value, setValue] = React.useState('');
+  const ref = React.useRef(null);
+  return (
+    <React.Fragment>
+      <SearchInput
+        ref={ref}
+        value={value}
+        onChange={setValue}
+        onClear={() => setValue('')}
+      />
+      <Button onClick={() => ref.current && ref.current.focus()}>Focus on the search input</Button>
+    </React.Fragment>
+  );
+};
 ```

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { SearchInput } from '../SearchInput';
 
 
@@ -10,17 +10,6 @@ const props = {
   onPreviousClick: jest.fn(),
   onClear: jest.fn()
 };
-
-test('input passes value and event to onChange handler', () => {
-  const newValue = 'new test input';
-  const event = {
-    currentTarget: { value: newValue }
-  };
-  const view = shallow(<SearchInput {...props} aria-label="test input" />);
-
-  view.find('input').simulate('change', event);
-  expect(props.onChange).toBeCalledWith(newValue, event);
-});
 
 test('simple search input', () => {
   const view = mount(<SearchInput {...props} aria-label="simple text input" />);
