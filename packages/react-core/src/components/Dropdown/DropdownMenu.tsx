@@ -79,7 +79,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     if (
       !this.props.isOpen ||
       !Array.from(document.activeElement.classList).find(className =>
-        DropdownMenu.validToggleClasses.includes(className)
+        DropdownMenu.validToggleClasses.concat(this.context.toggleClass).includes(className)
       )
     ) {
       return;
@@ -245,3 +245,5 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     );
   }
 }
+
+DropdownMenu.contextType = DropdownContext;
