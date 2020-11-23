@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.60.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.2...@patternfly/react-integration@4.60.3) (2020-11-23)
+
+
+### Bug Fixes
+
+* **charts:** replace victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/issues/5179)) ([bef64a5](https://github.com/patternfly/patternfly-react/commit/bef64a5e8f8ba060061df611d028dec5f8e9adf2))
+
+
+
+
+
 ## [4.60.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.1...@patternfly/react-integration@4.60.2) (2020-11-23)
 
 
