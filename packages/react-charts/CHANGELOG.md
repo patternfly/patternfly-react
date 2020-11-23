@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.12.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.2...@patternfly/react-charts@6.12.3) (2020-11-23)
+
+
+### Bug Fixes
+
+* **react-charts:** bump victory and move victory dep to demo app ([#5178](https://github.com/patternfly/patternfly-react/issues/5178)) ([45ec687](https://github.com/patternfly/patternfly-react/commit/45ec687506af9c0cb512feb25aa33ca2b73a7ff4))
+
+
+
+
+
 ## [6.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.1...@patternfly/react-charts@6.12.2) (2020-11-17)
 
 **Note:** Version bump only for package @patternfly/react-charts
