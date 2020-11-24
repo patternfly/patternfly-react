@@ -82,11 +82,18 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     const newValueDate = dateParse(value);
     if (isValidDate(newValueDate)) {
       setValueDate(newValueDate);
-      setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
       onChange(value, newValueDate);
     } else {
-      setErrorText(invalidFormatText);
       onChange(value);
+    }
+  };
+
+  const onBlur = () => {
+    const newValueDate = dateParse(value);
+    if (isValidDate(newValueDate)) {
+      setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
+    } else {
+      setErrorText(invalidFormatText);
     }
   };
 
@@ -148,6 +155,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             validated={errorText ? 'error' : 'default'}
             value={value}
             onChange={onTextInput}
+            onBlur={onBlur}
           />
           <button
             ref={buttonRef}
