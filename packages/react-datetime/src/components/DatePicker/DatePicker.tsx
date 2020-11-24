@@ -82,7 +82,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     const newValueDate = dateParse(value);
     if (isValidDate(newValueDate)) {
       setValueDate(newValueDate);
-      onChange(value, newValueDate);
+      onChange(value, new Date(newValueDate));
     } else {
       onChange(value);
     }
@@ -103,7 +103,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     setValueDate(newValueDate);
     setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
     setPopoverOpen(false);
-    onChange(newValue, newValueDate);
+    onChange(newValue, new Date(newValueDate));
   };
 
   return (
