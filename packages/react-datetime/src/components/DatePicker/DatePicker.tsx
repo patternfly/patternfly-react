@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import '@patternfly/patternfly/patternfly-date-picker.css';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
 import { Popover, PopoverProps } from '@patternfly/react-core/dist/js/components/Popover/Popover';
 import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
-import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
+import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
 
 export interface DatePickerProps
   extends CalendarFormat,
@@ -42,8 +41,6 @@ export interface DatePickerProps
   validators?: ((date: Date) => string)[];
 }
 
-const isValidDate = (date: Date) => !isNaN(date.getTime());
-
 export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   className,
   locale = undefined,
@@ -65,6 +62,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   dayFormat,
   weekStart,
   validators = [],
+  rangeStart,
   ...props
 }: DatePickerProps) => {
   const [value, setValue] = React.useState(valueProp);
@@ -73,6 +71,11 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [popoverOpen, setPopoverOpen] = React.useState(false);
   const [selectOpen, setSelectOpen] = React.useState(false);
   const buttonRef = React.useRef<HTMLButtonElement>();
+
+  React.useEffect(() => {
+    setValue(valueProp);
+    setValueDate(dateParse(valueProp));
+  }, [valueProp]);
 
   const onTextInput = (value: string) => {
     setValue(value);
@@ -113,6 +116,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             longWeekdayFormat={longWeekdayFormat}
             dayFormat={dayFormat}
             weekStart={weekStart}
+            rangeStart={rangeStart}
           />
         }
         showClose={false}
@@ -150,6 +154,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             className={css(buttonStyles.button, buttonStyles.modifiers.control)}
             aria-label={buttonAriaLabel}
             onClick={() => setPopoverOpen(!popoverOpen)}
+            disabled={isDisabled}
           >
             <OutlinedCalendarAltIcon />
           </button>

@@ -38,8 +38,9 @@ module.exports = (sourceMD, sourceProps) => {
   // Charts MD (no demos yet)
   sourceMD(path.join(reactChartsPath, '/**/examples/*.md'), 'react');
 
-  // Date-time MD (no demos yet)
+  // Date-time MD
   sourceMD(path.join(reactDateTimePath, '/**/examples/*.md'), 'react');
+  sourceMD(path.join(reactDateTimePath, '/**/demos/*.md'), 'react-demos');
 
   // Catalog view MD
   sourceMD(path.join(reactCatalogViewPath, '/**/examples/*.md'), 'react');

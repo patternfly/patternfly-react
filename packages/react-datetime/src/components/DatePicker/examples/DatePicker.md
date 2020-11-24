@@ -109,3 +109,27 @@ FrenchMinMaxDate = () => {
   );
 }
 ```
+
+### Controlled
+
+```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { DatePicker } from '@patternfly/react-datetime';
+
+ControlledDate = () => {
+  const initialValue = '2020-03-17';
+  const [value, setValue] = React.useState(initialValue);
+  return (
+    <React.Fragment>
+      <Button onClick={() => setValue(initialValue)}>
+        Reset date
+      </Button>
+      <DatePicker
+        value={value}
+        onChange={value => setValue(value)}
+      />
+    </React.Fragment>
+  );
+}
+```

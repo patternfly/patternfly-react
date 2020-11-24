@@ -32,6 +32,8 @@ export interface CalendarFormat {
   locale?: string;
   /** Day of week that starts the week. 0 is Sunday, 6 is Saturday. */
   weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | Weekday;
+  /** Which date to start range styles from */
+  rangeStart?: Date;
 }
 
 export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -50,17 +52,21 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
 // Must be numeric given current header design
 const yearFormat = (date: Date) => date.getFullYear();
 
-const buildCalendar = (year: number, month: number, weekStart: number) => {
+const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
   const selectedDate = new Date(year, month);
   const firstDayOfWeek = new Date(selectedDate);
   firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
   // We will always show 6 weeks like google calendar
   // Assume we just want the numbers for now...
-  const calendarWeeks = [] as Date[][];
+  const calendarWeeks = [];
   for (let i = 0; i < 6; i++) {
     const week = [];
     for (let j = 0; j < 7; j++) {
-      week.push(new Date(firstDayOfWeek));
+      const date = new Date(firstDayOfWeek);
+      week.push({
+        date,
+        isValid: validators.every(validator => validator(date))
+      });
       firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
     }
     calendarWeeks.push(week);
@@ -71,6 +77,8 @@ const buildCalendar = (year: number, month: number, weekStart: number) => {
 
 const isSameDate = (d1: Date, d2: Date) =>
   d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
+
+export const isValidDate = (date: Date) => Boolean(date && !isNaN(date as any));
 
 export const CalendarMonth = ({
   date: dateProp = new Date(),
@@ -84,11 +92,17 @@ export const CalendarMonth = ({
   validators = [() => true],
   className,
   onSelectToggle = () => {},
+  rangeStart,
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [focusedDate, setFocusedDate] = React.useState(dateProp);
+  // eslint-disable-next-line prefer-const
+  let [focusedDate, setFocusedDate] = React.useState(dateProp);
+  if (!isValidDate(focusedDate)) {
+    focusedDate = new Date();
+  }
+  const [hoveredDate, setHoveredDate] = React.useState(focusedDate);
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
   const [focusDate, setFocusDate] = React.useState(true);
@@ -109,6 +123,7 @@ export const CalendarMonth = ({
     const newDate = new Date(focusedDate);
     newDate.setMonth(newDate.getMonth() + toAdd);
     setFocusedDate(newDate);
+    setHoveredDate(newDate);
     setFocusDate(false);
   };
 
@@ -123,14 +138,21 @@ export const CalendarMonth = ({
     } else if (ev.key === 'ArrowLeft') {
       newDate.setDate(newDate.getDate() - 1);
     }
-    if (newDate.getTime() !== focusedDate.getTime()) {
+    if (newDate.getTime() !== focusedDate.getTime() && validators.every(validator => validator(newDate))) {
       setFocusedDate(newDate);
+      setHoveredDate(newDate);
       setFocusDate(true);
     }
   };
 
   const today = new Date();
-  const calendar = buildCalendar(focusedDate.getFullYear(), focusedDate.getMonth(), weekStart);
+  const focusedYear = focusedDate.getFullYear();
+  const focusedMonth = focusedDate.getMonth();
+  const calendar = React.useMemo(() => buildCalendar(focusedYear, focusedMonth, weekStart, validators), [
+    focusedYear,
+    focusedMonth,
+    weekStart
+  ]);
   const monthFormatted = monthFormat(focusedDate);
   const yearFormatted = yearFormat(focusedDate);
   return (
@@ -162,6 +184,7 @@ export const CalendarMonth = ({
               const newDate = new Date(focusedDate);
               newDate.setMonth(Number(monthNum as string));
               setFocusedDate(newDate);
+              setHoveredDate(newDate);
               setFocusDate(false);
             }}
             variant="single"
@@ -183,6 +206,7 @@ export const CalendarMonth = ({
               const newDate = new Date(focusedDate);
               newDate.setFullYear(+year);
               setFocusedDate(newDate);
+              setHoveredDate(newDate);
               setFocusDate(false);
             }}
           />
@@ -196,7 +220,7 @@ export const CalendarMonth = ({
       <table className={styles.calendarMonthCalendar}>
         <thead className={styles.calendarMonthDays}>
           <tr>
-            {calendar[0].map((date, index) => (
+            {calendar[0].map(({ date }, index) => (
               <th key={index} className={styles.calendarMonthDay} scope="col">
                 <span className={commonStyles.screenReader}>{longWeekdayFormat(date)}</span>
                 <span aria-hidden>{weekdayFormat(date)}</span>
@@ -207,13 +231,24 @@ export const CalendarMonth = ({
         <tbody onKeyDown={onKeyDown}>
           {calendar.map((week, index) => (
             <tr key={index} className={styles.calendarMonthDatesRow}>
-              {week.map((day, index) => {
-                const isToday = isSameDate(day, today);
-                const isSelected = isSameDate(day, dateProp);
-                const isFocused = isSameDate(day, focusedDate);
-                const isValid = validators.every(validator => validator(day));
-                const isAdjacentMonth = day.getMonth() !== focusedDate.getMonth();
-                const dayFormatted = dayFormat(day);
+              {week.map(({ date, isValid }, index) => {
+                const dayFormatted = dayFormat(date);
+                const isToday = isSameDate(date, today);
+                const isSelected = isValidDate(dateProp) && isSameDate(date, dateProp);
+                const isFocused = isSameDate(date, focusedDate);
+                const isAdjacentMonth = date.getMonth() !== focusedDate.getMonth();
+                let isInRange = false;
+                let isRangeStart = false;
+                let isRangeEnd = false;
+                if (isValidDate(rangeStart)) {
+                  if (hoveredDate > rangeStart || isSameDate(hoveredDate, rangeStart)) {
+                    isInRange = date > rangeStart && date < hoveredDate;
+                    isRangeStart = isSameDate(date, rangeStart);
+                    isRangeEnd = isSameDate(date, hoveredDate);
+                  }
+                  // Don't handle focused dates before start dates for now.
+                  // Core would likely need new styles
+                }
 
                 return (
                   <td
@@ -222,19 +257,26 @@ export const CalendarMonth = ({
                       styles.calendarMonthDatesCell,
                       isAdjacentMonth && styles.modifiers.adjacentMonth,
                       isToday && styles.modifiers.current,
-                      isSelected && styles.modifiers.selected,
-                      !isValid && styles.modifiers.disabled
+                      (isSelected || isRangeStart) && styles.modifiers.selected,
+                      !isValid && styles.modifiers.disabled,
+                      (isInRange || isRangeStart || isRangeEnd) && styles.modifiers.inRange,
+                      isRangeStart && styles.modifiers.startRange,
+                      isRangeEnd && styles.modifiers.endRange
                     )}
                   >
                     <button
-                      className={css(styles.calendarMonthDate, isFocused && styles.modifiers.hover)}
-                      onClick={() => onChange(day)}
+                      className={css(
+                        styles.calendarMonthDate,
+                        isRangeEnd && styles.modifiers.hover,
+                        !isValid && styles.modifiers.disabled
+                      )}
+                      onClick={() => onChange(date)}
+                      onMouseOver={() => setHoveredDate(date)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
                       aria-label={`${dayFormatted} ${monthFormatted} ${yearFormatted}`}
                       {...(isFocused && { ref: focusRef })}
                     >
-                      {/* Current design uses this, could custom render anything */}
                       {dayFormatted}
                     </button>
                   </td>
