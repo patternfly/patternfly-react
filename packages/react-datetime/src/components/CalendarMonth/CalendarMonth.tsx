@@ -80,8 +80,10 @@ const isSameDate = (d1: Date, d2: Date) =>
 
 export const isValidDate = (date: Date) => Boolean(date && !isNaN(date as any));
 
+const today = new Date();
+
 export const CalendarMonth = ({
-  date: dateProp = new Date(),
+  date: dateProp = today,
   locale = undefined,
   monthFormat = date => date.toLocaleDateString(locale, { month: 'long' }),
   weekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'narrow' }),
@@ -98,16 +100,20 @@ export const CalendarMonth = ({
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   // eslint-disable-next-line prefer-const
-  let [focusedDate, setFocusedDate] = React.useState(dateProp);
+  let [focusedDate, setFocusedDate] = React.useState(new Date(dateProp));
   if (!isValidDate(focusedDate)) {
-    focusedDate = new Date();
+    focusedDate = today;
   }
-  const [hoveredDate, setHoveredDate] = React.useState(focusedDate);
+  const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
   const [focusDate, setFocusDate] = React.useState(true);
 
-  useEffect(() => setFocusedDate(dateProp), [dateProp]);
+  useEffect(() => {
+    if (!(isValidDate(dateProp) && isSameDate(focusedDate, dateProp))) {
+      setFocusedDate(dateProp);
+    }
+  }, [dateProp]);
   useEffect(() => {
     // When using header controls don't move focus
     if (focusDate) {
@@ -145,7 +151,6 @@ export const CalendarMonth = ({
     }
   };
 
-  const today = new Date();
   const focusedYear = focusedDate.getFullYear();
   const focusedMonth = focusedDate.getMonth();
   const calendar = React.useMemo(() => buildCalendar(focusedYear, focusedMonth, weekStart, validators), [
