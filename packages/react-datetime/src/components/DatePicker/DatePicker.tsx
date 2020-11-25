@@ -77,6 +77,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     setValueDate(dateParse(valueProp));
   }, [valueProp]);
 
+  const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
+
   const onTextInput = (value: string) => {
     setValue(value);
     const newValueDate = dateParse(value);
@@ -91,7 +93,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const onBlur = () => {
     const newValueDate = dateParse(value);
     if (isValidDate(newValueDate)) {
-      setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
+      setError(newValueDate);
     } else {
       setErrorText(invalidFormatText);
     }
@@ -101,9 +103,19 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     const newValue = dateFormat(newValueDate);
     setValue(newValue);
     setValueDate(newValueDate);
-    setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
+    setError(newValueDate);
     setPopoverOpen(false);
     onChange(newValue, new Date(newValueDate));
+  };
+
+  const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
+    if (ev.key === 'Enter' && value) {
+      if (isValidDate(valueDate)) {
+        setError(valueDate);
+      } else {
+        setErrorText(invalidFormatText);
+      }
+    }
   };
 
   return (
@@ -156,6 +168,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             value={value}
             onChange={onTextInput}
             onBlur={onBlur}
+            onKeyPress={onKeyPress}
           />
           <button
             ref={buttonRef}
