@@ -9,6 +9,7 @@ exports[`disabled date picker 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyPress={[Function]}
   placeholder="yyyy-MM-dd"
   readOnly={false}
   required={false}
