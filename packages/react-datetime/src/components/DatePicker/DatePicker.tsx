@@ -52,7 +52,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   'aria-label': ariaLabel = 'Date picker',
   buttonAriaLabel = 'Toggle date picker',
   onChange = (): any => undefined,
-  invalidFormatText = 'Could not parse date',
+  invalidFormatText = 'Invalid date',
   helperText,
   appendTo,
   popoverProps,
