@@ -82,8 +82,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const onTextInput = (value: string) => {
     setValue(value);
     const newValueDate = dateParse(value);
+    setValueDate(newValueDate);
     if (isValidDate(newValueDate)) {
-      setValueDate(newValueDate);
       onChange(value, new Date(newValueDate));
     } else {
       onChange(value);
