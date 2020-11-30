@@ -28,7 +28,8 @@ import {
   ICell,
   TableVariant,
   TableGridBreakpoint,
-  IHeaderRow
+  IHeaderRow,
+  OnFavorite
 } from './TableTypes';
 
 export interface TableProps extends OUIAProps {
@@ -96,6 +97,8 @@ export interface TableProps extends OUIAProps {
   role?: string;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
+  /** Function triggered when a row is favorited/unfavorited */
+  onFavorite?: OnFavorite;
 }
 
 export class Table extends React.Component<TableProps, {}> {
@@ -174,6 +177,7 @@ export class Table extends React.Component<TableProps, {}> {
       rowWrapper,
       role,
       borders,
+      onFavorite,
       ...props
     } = this.props;
 
@@ -200,7 +204,8 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
-      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
+      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length,
+      onFavorite
     });
 
     const table = (

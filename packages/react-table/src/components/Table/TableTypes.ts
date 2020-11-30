@@ -60,6 +60,13 @@ export type OnRowEdit = (
   rowIndex?: number,
   validationErrors?: RowErrors
 ) => void;
+export type OnFavorite = (
+  event: React.MouseEvent,
+  rowIndex: number,
+  isFavorited: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
 
 // Todo: Update type with next breaking change release
 // export type IHeaderRow = ColumnType;
@@ -86,6 +93,7 @@ export interface IColumn {
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
     allRowsSelected?: boolean;
+    onFavorite?: OnFavorite;
   };
 }
 

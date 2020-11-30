@@ -10,6 +10,7 @@ export { compoundExpand } from './decorators/compoundExpand';
 export { headerCol } from './decorators/headerCol';
 export { classNames, Visibility } from './decorators/classNames';
 export { info } from './decorators/info';
+export { favoritable } from './decorators/favoritable';
 
 import { IFormatterValueType, IExtra, ITransform } from '../TableTypes';
 

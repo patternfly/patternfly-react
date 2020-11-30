@@ -27,7 +27,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, Popover, Button } from '@patternfly/react-core';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -43,13 +43,14 @@ The `Table` component is a configuration based component that takes a less decla
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, Popover, Button } from '@patternfly/react-core';
 
 class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      choice: 'default'
+      choice: 'default',
+      isVisible: true
     };
     this.handleItemClick = this.handleItemClick.bind(this);
   }
@@ -60,14 +61,42 @@ class SimpleTable extends React.Component {
     });
   }
 
+  togglePopover() {
+    this.setState({
+      isVisible: !this.state.isVisible
+    });
+  }
+
   render() {
     const { choice } = this.state;
 
+    const MyPopover = ({ text, children }) => (
+      <Popover
+        isVisible
+        bodyContent={
+          <div>
+            {text}
+            <div>
+              <Button onClick={hide}>Close popover</Button>
+            </div>
+          </div>
+        }
+      >
+        {children}
+      </Popover>
+    );
+
     const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
     const rows = [
-      ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
-      ['Repository two', 'Branch two', 'PR two', 'Workspace two', 'Commit two'],
-      ['Repository three', 'Branch three', 'PR three', 'Workspace three', 'Commit three']
+      ['Repository one', 'Branch one', 'PR one', 'Workspace one', {
+        title: <Popover bodyContent={<button onClick={() => {}}>Press to commit 1</button>}><Button>Commit 1</Button></Popover>
+      }],
+      ['Repository two', 'Branch two', 'PR two', 'Workspace two', {
+        title: <Popover bodyContent="b"><Button>Commit 2</Button></Popover>
+      }],
+      ['Repository three', 'Branch three', 'PR three', 'Workspace three', {
+        title: <Popover bodyContent="c"><Button>Commit 3</Button></Popover>
+      }]
     ];
 
     return (
@@ -515,6 +544,122 @@ class SelectableTable extends React.Component {
 }
 ```
 
+### Favorites
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable
+} from '@patternfly/react-table';
+import { Checkbox } from '@patternfly/react-core';
+
+class FavoritesTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories', cellTransforms: [headerCol()] },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last commit'
+      ],
+      rows: [
+        {
+          favorited: true,
+          cells: ['one', 'two', 'a', 'four', 'five']
+        },
+        {
+          cells: ['a', 'two', 'k', 'four', 'five'],
+          disableSelection: true
+        },
+        {
+          cells: ['p', 'two', 'b', 'four', 'five']
+        }
+      ],
+      canSelectAll: true
+    };
+    this.onSelect = this.onSelect.bind(this);
+    this.toggleSelect = this.toggleSelect.bind(this);
+    this.onFavorite = this.onFavorite.bind(this);
+  }
+
+  onSelect(event, isSelected, rowId) {
+    let rows;
+    if (rowId === -1) {
+      rows = this.state.rows.map(oneRow => {
+        oneRow.selected = isSelected;
+        return oneRow;
+      });
+    } else {
+      rows = [...this.state.rows];
+      rows[rowId].selected = isSelected;
+    }
+    this.setState({
+      rows
+    });
+  }
+
+  onFavorite(event, isFavorited, rowId) {
+    let rows;
+    if (rowId === -1) {
+      rows = this.state.rows.map(oneRow => {
+        oneRow.favorited = isFavorited;
+        return oneRow;
+      });
+    } else {
+      rows = [...this.state.rows];
+      rows[rowId].favorited = isFavorited;
+    }
+    this.setState({
+      rows
+    });
+  }
+
+  toggleSelect(checked) {
+    this.setState({
+      canSelectAll: checked
+    });
+  }
+
+  render() {
+    const { columns, rows, canSelectAll } = this.state;
+
+    return (
+      <div>
+        <Checkbox
+          label="Can select all"
+          className="pf-u-mb-lg"
+          isChecked={canSelectAll}
+          onChange={this.toggleSelect}
+          aria-label="toggle select all checkbox"
+          id="toggle-select-all"
+          name="toggle-select-all"
+        />
+        <Table
+          onFavorite={this.onFavorite}
+          // onSelect={this.onSelect}
+          // canSelectAll={canSelectAll}
+          aria-label="Selectable Table"
+          cells={columns}
+          rows={rows}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+      </div>
+    );
+  }
+}
+```
+
 ### Selectable radio input
 
 ```js
@@ -946,6 +1091,7 @@ class CompoundExpandableTable extends React.Component {
       rows: [
         {
           isOpen: true,
+          selected: true,
           cells: [
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
@@ -1125,7 +1271,7 @@ class CompoundExpandableTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table aria-label="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
+      <Table aria-label="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns} onSelect={() => {}}>
         <TableHeader />
         <TableBody />
       </Table>
