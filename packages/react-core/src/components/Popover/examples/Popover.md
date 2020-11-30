@@ -25,7 +25,43 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 </div>;
 ```
 
-### Close popover from content
+### Close popover from content (controlled)
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+PopoverCloseControlled = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  return (
+    <div style={{ margin: '50px' }}>
+      <Popover
+        aria-label="Popover with button in the body that can close it"
+        isVisible={isVisible}
+        shouldOpen={() => setIsVisible(true)}
+        shouldClose={() => setIsVisible(false)}
+        headerContent={<div>Popover header</div>}
+        bodyContent={
+          <div>
+            <div>
+              All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
+              component passes the hide function to which can be used to close the Popover after some user interaction.
+            </div>
+            <div>
+              <button onClick={() => setIsVisible(false)}>Close popover</button>
+            </div>
+          </div>
+        }
+        footerContent="Popover footer"
+      >
+        <Button>Toggle Popover</Button>
+      </Popover>
+    </div>
+  );
+};
+```
+
+### Close popover from content (uncontrolled)
 
 ```js
 import React from 'react';
@@ -42,7 +78,7 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
           component passes the hide function to which can be used to close the Popover after some user interaction.
         </div>
         <div>
-          <Button onClick={hide}>Close popover</Button>
+          <button onClick={hide}>Close popover</button>
         </div>
       </div>
     )}
@@ -70,6 +106,7 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
         edges of the popover container.
       </div>
     )}
+    withFocusTrap={false /* no focusable content in this example */}
   >
     <Button>Toggle Popover</Button>
   </Popover>
@@ -223,7 +260,7 @@ class AdvancedPopover extends React.Component {
             }
             footerContent="Popover Footer"
           >
-            <Button onClick={this.handleClick}>Toggle Popover</Button>
+            <Button>Toggle Popover</Button>
           </Popover>
         </div>
       </div>
