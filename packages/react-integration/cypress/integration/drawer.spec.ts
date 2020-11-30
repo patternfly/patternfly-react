@@ -23,6 +23,10 @@ describe('Drawer Demo Test', () => {
     cy.get('.pf-c-drawer').should('have.class', 'pf-m-panel-bottom');
   });
 
+  it('Verify resizable drawer', () => {
+    cy.get('.pf-c-drawer__panel').should('have.class', 'pf-m-resizable');
+  });
+
   it('Verify that focus gets sent to drawer', () => {
     cy.get('#toggleButton').click();
     setTimeout(() => cy.focused().contains('drawer-panel'), 1000);
