@@ -46,7 +46,7 @@ DateRangePicker = () => {
           aria-label="Start date"
         />
       </SplitItem>
-      <SplitItem style={{ paddingLeft: '12px', paddingRight: '12px', marginTop: 'auto', marginBottom: 'auto' }}>
+      <SplitItem style={{ padding: '6px 12px 0 12px' }}>
         to
       </SplitItem>
       <SplitItem>

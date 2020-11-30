@@ -63,6 +63,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   weekStart,
   validators = [],
   rangeStart,
+  style = {},
   ...props
 }: DatePickerProps) => {
   const [value, setValue] = React.useState(valueProp);
@@ -71,6 +72,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [popoverOpen, setPopoverOpen] = React.useState(false);
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [pristine, setPristine] = React.useState(true);
+  const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
+  (style as any)['--pf-c-date-picker__input--c-form-control--width-chars'] = widthChars;
   const buttonRef = React.useRef<HTMLButtonElement>();
 
   React.useEffect(() => {
@@ -124,7 +127,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   };
 
   return (
-    <div className={css(styles.datePicker, className)} {...props}>
+    <div className={css(styles.datePicker, className)} style={style} {...props}>
       <Popover
         position="bottom"
         bodyContent={
@@ -164,27 +167,29 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         appendTo={appendTo}
         {...popoverProps}
       >
-        <InputGroup>
-          <TextInput
-            isDisabled={isDisabled}
-            aria-label={ariaLabel}
-            placeholder={placeholder}
-            validated={errorText ? 'error' : 'default'}
-            value={value}
-            onChange={onTextInput}
-            onBlur={onBlur}
-            onKeyPress={onKeyPress}
-          />
-          <button
-            ref={buttonRef}
-            className={css(buttonStyles.button, buttonStyles.modifiers.control)}
-            aria-label={buttonAriaLabel}
-            onClick={() => setPopoverOpen(!popoverOpen)}
-            disabled={isDisabled}
-          >
-            <OutlinedCalendarAltIcon />
-          </button>
-        </InputGroup>
+        <div className={styles.datePickerInput}>
+          <InputGroup>
+            <TextInput
+              isDisabled={isDisabled}
+              aria-label={ariaLabel}
+              placeholder={placeholder}
+              validated={errorText ? 'error' : 'default'}
+              value={value}
+              onChange={onTextInput}
+              onBlur={onBlur}
+              onKeyPress={onKeyPress}
+            />
+            <button
+              ref={buttonRef}
+              className={css(buttonStyles.button, buttonStyles.modifiers.control)}
+              aria-label={buttonAriaLabel}
+              onClick={() => setPopoverOpen(!popoverOpen)}
+              disabled={isDisabled}
+            >
+              <OutlinedCalendarAltIcon />
+            </button>
+          </InputGroup>
+        </div>
       </Popover>
       {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
       {errorText && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>}
