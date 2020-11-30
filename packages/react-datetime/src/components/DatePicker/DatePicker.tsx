@@ -70,6 +70,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [errorText, setErrorText] = React.useState('');
   const [popoverOpen, setPopoverOpen] = React.useState(false);
   const [selectOpen, setSelectOpen] = React.useState(false);
+  const [pristine, setPristine] = React.useState(true);
   const buttonRef = React.useRef<HTMLButtonElement>();
 
   React.useEffect(() => {
@@ -80,6 +81,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
 
   const onTextInput = (value: string) => {
+    setPristine(false);
     setValue(value);
     const newValueDate = dateParse(value);
     setValueDate(newValueDate);
@@ -91,6 +93,9 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   };
 
   const onBlur = () => {
+    if (pristine) {
+      return;
+    }
     const newValueDate = dateParse(value);
     if (isValidDate(newValueDate)) {
       setError(newValueDate);

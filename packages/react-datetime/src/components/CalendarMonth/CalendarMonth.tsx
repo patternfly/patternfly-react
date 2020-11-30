@@ -34,6 +34,14 @@ export interface CalendarFormat {
   weekStart?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | Weekday;
   /** Which date to start range styles from */
   rangeStart?: Date;
+  /** Aria-label for the previous month button */
+  prevMonthAriaLabel?: string;
+  /** Aria-label for the next month button */
+  nextMonthAriaLabel?: string;
+  /** Aria-label for the year input */
+  yearInputAriaLabel?: string;
+  /** Aria-label for the date cells */
+  cellAriaLabel?: (date: Date) => string;
 }
 
 export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -95,6 +103,10 @@ export const CalendarMonth = ({
   className,
   onSelectToggle = () => {},
   rangeStart,
+  prevMonthAriaLabel = 'Previous month',
+  nextMonthAriaLabel = 'Next month',
+  yearInputAriaLabel = 'Select year',
+  cellAriaLabel,
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
@@ -164,7 +176,7 @@ export const CalendarMonth = ({
     <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
-          <Button variant="plain" aria-label="Previous month" onClick={() => onMonthClick(-1)}>
+          <Button variant="plain" aria-label={prevMonthAriaLabel} onClick={() => onMonthClick(-1)}>
             <ArrowLeftIcon aria-hidden={true} />
           </Button>
         </div>
@@ -204,7 +216,7 @@ export const CalendarMonth = ({
         </div>
         <div className={styles.calendarMonthHeaderYear}>
           <TextInput
-            aria-label="Select year"
+            aria-label={yearInputAriaLabel}
             type="number"
             value={yearFormatted}
             onChange={year => {
@@ -217,7 +229,7 @@ export const CalendarMonth = ({
           />
         </div>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
-          <Button variant="plain" aria-label="Next month" onClick={() => onMonthClick(1)}>
+          <Button variant="plain" aria-label={nextMonthAriaLabel} onClick={() => onMonthClick(1)}>
             <ArrowRightIcon aria-hidden={true} />
           </Button>
         </div>
@@ -279,7 +291,9 @@ export const CalendarMonth = ({
                       onMouseOver={() => setHoveredDate(date)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
-                      aria-label={`${dayFormatted} ${monthFormatted} ${yearFormatted}`}
+                      aria-label={
+                        cellAriaLabel ? cellAriaLabel(date) : `${dayFormatted} ${monthFormatted} ${yearFormatted}`
+                      }
                       {...(isFocused && { ref: focusRef })}
                     >
                       {dayFormatted}
