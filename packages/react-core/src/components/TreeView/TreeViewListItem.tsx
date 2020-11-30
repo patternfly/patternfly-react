@@ -71,6 +71,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
 }: TreeViewListItemProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const Component = hasCheck ? 'div' : 'button';
+  const ToggleComponent = hasCheck ? 'button' : 'div';
   return (
     <li
       id={id}
@@ -85,26 +86,35 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
             <Component
               className={css(
                 styles.treeViewNode,
-                activeItems &&
+                !children &&
+                  activeItems &&
                   activeItems.length > 0 &&
                   activeItems.some(item => compareItems && item && compareItems(item, itemData))
                   ? styles.modifiers.current
                   : ''
               )}
               onClick={(evt: React.MouseEvent) => {
-                if (children) {
-                  setIsExpanded(!isExpanded);
+                if (!hasCheck) {
+                  if (children) {
+                    setIsExpanded(!isExpanded);
+                  }
+                  onSelect && onSelect(evt, itemData, parentItem);
                 }
-                onSelect && onSelect(evt, itemData, parentItem);
               }}
             >
               {children && (
-                <div className={css(styles.treeViewNodeToggle)}>
+                <ToggleComponent
+                  className={css(styles.treeViewNodeToggle)}
+                  onClick={() => {
+                    if (hasCheck) {
+                      setIsExpanded(!isExpanded);
+                    }
+                  }}
+                >
                   <span className={css(styles.treeViewNodeToggleIcon)}>
-                    {!isExpanded && <AngleRightIcon aria-hidden="true" />}
-                    {isExpanded && <AngleDownIcon aria-hidden="true" />}
+                    <AngleRightIcon aria-hidden="true" />
                   </span>
-                </div>
+                </ToggleComponent>
               )}
               {hasCheck && (
                 <span className={css(styles.treeViewNodeCheck)}>
@@ -124,9 +134,15 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                   {isExpanded && (expandedIcon || icon)}
                 </span>
               )}
-              <label className={css(styles.treeViewNodeText)} {...(hasCheck && { htmlFor: randomId })}>
-                {name}
-              </label>
+              {hasCheck ? (
+                <label className={css(styles.treeViewNodeText)} {...(hasCheck && { htmlFor: randomId })}>
+                  {name}
+                </label>
+              ) : (
+                <span className={css(styles.treeViewNodeText)} {...(hasCheck && { htmlFor: randomId })}>
+                  {name}
+                </span>
+              )}
               {hasBadge && children && (
                 <span className={css(styles.treeViewNodeCount)}>
                   <Badge {...badgeProps}>{(children as React.ReactElement).props.data.length}</Badge>
