@@ -46,6 +46,7 @@ DateRangePicker = () => {
         style={tmpStyleHack}
         onChange={onFromChange}
         validators={[fromValidator]}
+        aria-label="Start date"
       />
       {' to '}
       <DatePicker
@@ -55,6 +56,7 @@ DateRangePicker = () => {
         isDisabled={!isValidDate(from)}
         rangeStart={from}
         validators={[toValidator]}
+        aria-label="End date"
       />
     </div>
   );
