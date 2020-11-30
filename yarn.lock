@@ -18768,10 +18768,10 @@ textextensions@^2.5.0:
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
   integrity sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
 
-theme-patternfly-org@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.2.1.tgz#a54256c66de81921e6df117b302f1f54f786c836"
-  integrity sha512-eiHYZNV84eGjIlZEASCVgRfTjgayJs74KCqLhHEOubV3H9ZmpPQ/VBdJTdegnVOSdTCGyRsg2BO9xk343Fs1BA==
+theme-patternfly-org@0.2.11:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.2.11.tgz#25a36413b3e596b50d91430b0508a9483fb66fb0"
+  integrity sha512-fNl4DhzJm3wkREg0NZDZihLQ+Tr1DCLF0IFVUM2/SUzJMIYZbpu1Sto5IlwfxNF3Rd0HtDcYIeK5upXjuk0Jmw==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -18811,9 +18811,7 @@ theme-patternfly-org@0.2.1:
     prismjs "^1.17.1"
     puppeteer "^5.3.1"
     puppeteer-cluster "^0.22.0"
-    react "^16.8.0"
     react-docgen "^5.3.0"
-    react-dom "^16.8.0"
     react-live "^2.2.0"
     react-ssr-prepass "^1.2.1"
     remark-footnotes "^1.0.0"
