@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.55...@patternfly/react-datetime@4.3.0) (2020-12-01)
+
+
+### Features
+
+* **date-picker:** bugfixes and add range picker demo ([#5184](https://github.com/patternfly/patternfly-react/issues/5184)) ([7e7c430](https://github.com/patternfly/patternfly-react/commit/7e7c430fc9b7946c285e8719d8f80354457ced75))
+
+
+
+
+
 ## [4.2.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-datetime@4.2.54...@patternfly/react-datetime@4.2.55) (2020-11-30)
 
 **Note:** Version bump only for package @patternfly/react-datetime
