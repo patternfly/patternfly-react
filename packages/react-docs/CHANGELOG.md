@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.11.0...@patternfly/react-docs@5.12.0) (2020-12-01)
+
+
+### Features
+
+* **react-core:** move react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/issues/5201)) ([a36d5d0](https://github.com/patternfly/patternfly-react/commit/a36d5d05a0a839cef5b8ab2790ef10ccd8b89d30))
+
+
+
+
+
 # [5.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.10.79...@patternfly/react-docs@5.11.0) (2020-12-01)
 
 
