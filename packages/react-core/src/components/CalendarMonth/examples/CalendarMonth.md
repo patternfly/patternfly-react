@@ -6,16 +6,12 @@ propComponents: ['CalendarMonth', 'CalendarFormat']
 beta: true
 ---
 
-import { CalendarMonth } from '@patternfly/react-datetime';
-
-Note: CalendarMonth lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime).
-
 ## Examples
 
 ### Default
 ```js
 import React from 'react';
-import { CalendarMonth } from '@patternfly/react-datetime';
+import { CalendarMonth } from '@patternfly/react-core';
 
 <CalendarMonth />
 ```
@@ -23,7 +19,7 @@ import { CalendarMonth } from '@patternfly/react-datetime';
 ### Selectable date
 ```js
 import React from 'react';
-import { CalendarMonth } from '@patternfly/react-datetime';
+import { CalendarMonth } from '@patternfly/react-core';
 
 SelectableCalendarMonth = () => {
   const [date, setDate] = React.useState(new Date(2020, 10, 24));

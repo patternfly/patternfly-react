@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
-import { Button } from '@patternfly/react-core/dist/js/components/Button';
-import { Select, SelectOption } from '@patternfly/react-core/dist/js/components/Select';
+import { TextInput } from '../TextInput/TextInput';
+import { Button } from '../Button/Button';
+import { Select, SelectOption } from '../Select';
 import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 import commonStyles from '@patternfly/react-styles/css/base/patternfly-common';
-import { getUniqueId } from '@patternfly/react-core/dist/js/helpers/util';
+import { getUniqueId } from '../../helpers/util';
 
 export enum Weekday {
   Sunday = 0,
@@ -157,6 +157,7 @@ export const CalendarMonth = ({
       newDate.setDate(newDate.getDate() - 1);
     }
     if (newDate.getTime() !== focusedDate.getTime() && isValidated(newDate)) {
+      ev.preventDefault();
       setFocusedDate(newDate);
       setHoveredDate(newDate);
       setShouldFocus(true);

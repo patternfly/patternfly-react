@@ -3,9 +3,6 @@ id: Date picker
 section: components
 ---
 
-import { Split, SplitItem } from '@patternfly/react-core';
-import { DatePicker, isValidDate } from '@patternfly/react-datetime';
-
 ## Demos
 
 ### Date range picker
@@ -13,8 +10,7 @@ import { DatePicker, isValidDate } from '@patternfly/react-datetime';
 Intended to be used as a filter. After selecting a start date the next day is automatically selected.
 
 ```js
-import { Split, SplitItem } from '@patternfly/react-core';
-import { DatePicker, isValidDate } from '@patternfly/react-datetime';
+import { Split, SplitItem, DatePicker, isValidDate } from '@patternfly/react-core';
 
 DateRangePicker = () => {
   const [from, setFrom] = React.useState();

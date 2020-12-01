@@ -2,9 +2,9 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
-import { Popover, PopoverProps } from '@patternfly/react-core/dist/js/components/Popover/Popover';
-import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
+import { TextInput } from '../TextInput/TextInput';
+import { Popover, PopoverProps } from '../Popover/Popover';
+import { InputGroup } from '../InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
 
