@@ -9,7 +9,6 @@ describe('TreeView Demo Test', () => {
     cy.get('#basic').should('exist');
     cy.get('#App1').should('exist');
     cy.get('#App1').click();
-    cy.get('#App1 .pf-c-tree-view__node').should('have.class', 'pf-m-current');
     cy.get('#App1Settings').should('exist');
     cy.get('#App1Settings').click();
     cy.get('#App1Settings .pf-c-tree-view__node').should('have.class', 'pf-m-current');
