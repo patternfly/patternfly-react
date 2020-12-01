@@ -43,7 +43,7 @@ references:
   cypress_cache_key: &cypress_cache_key
     cypress-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   webpack_cache_key: &webpack_cache_key
-    webpack-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+    webpack-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}-{{checksum "packages/react-docs/patternfly-docs.source.js"}}
   build_cache_key: &build_cache_key
     build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   lint_cache_key: &lint_cache_key
