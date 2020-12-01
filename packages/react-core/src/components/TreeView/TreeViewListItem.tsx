@@ -109,6 +109,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                       setIsExpanded(!isExpanded);
                     }
                   }}
+                  {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
                 >
                   <span className={css(styles.treeViewNodeToggleIcon)}>
                     <AngleRightIcon aria-hidden="true" />
@@ -134,13 +135,11 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                 </span>
               )}
               {hasCheck ? (
-                <label className={css(styles.treeViewNodeText)} {...(hasCheck && { htmlFor: randomId })}>
+                <label className={css(styles.treeViewNodeText)} htmlFor={randomId} id={`label-${randomId}`}>
                   {name}
                 </label>
               ) : (
-                <span className={css(styles.treeViewNodeText)} {...(hasCheck && { htmlFor: randomId })}>
-                  {name}
-                </span>
+                <span className={css(styles.treeViewNodeText)}>{name}</span>
               )}
               {hasBadge && children && (
                 <span className={css(styles.treeViewNodeCount)}>

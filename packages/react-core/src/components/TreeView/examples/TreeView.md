@@ -217,49 +217,49 @@ class CheckboxTreeView extends React.Component {
           {
             name: 'Application 1',
             id: 'App1',
-            checkProps: { 'aria-label': 'app-1-check', checked: false },
+            checkProps: { checked: false },
             children: [
               {
                 name: 'Settings',
                 id: 'App1Settings',
-                checkProps: { 'aria-label': 'app-1-settings-check', checked: false }
+                checkProps: { checked: false }
               },
               {
                 name: 'Current',
                 id: 'App1Current',
-                checkProps: { 'aria-label': 'app-1-current-check', checked: false }
+                checkProps: { checked: false }
               }
             ]
           },
           {
             name: 'Application 2',
             id: 'App2',
-            checkProps: { 'aria-label': 'app-2-check', checked: false },
+            checkProps: { checked: false },
             children: [
               {
                 name: 'Settings',
                 id: 'App2Settings',
-                checkProps: { 'aria-label': 'app-2-settings-check', checked: false }
+                checkProps: { checked: false }
               },
               {
                 name: 'Loader',
                 id: 'App2Loader',
-                checkProps: { 'aria-label': 'app-loader-check', checked: false },
+                checkProps: { checked: false },
                 children: [
                   {
                     name: 'Loading App 1',
                     id: 'LoadApp1',
-                    checkProps: { 'aria-label': 'app-1-load-check', checked: false }
+                    checkProps: { checked: false }
                   },
                   {
                     name: 'Loading App 2',
                     id: 'LoadApp2',
-                    checkProps: { 'aria-label': 'app-2-load-check', checked: false }
+                    checkProps: { checked: false }
                   },
                   {
                     name: 'Loading App 3',
                     id: 'LoadApp3',
-                    checkProps: { 'aria-label': 'app-3-load-check', checked: false }
+                    checkProps: { checked: false }
                   }
                 ]
               }
