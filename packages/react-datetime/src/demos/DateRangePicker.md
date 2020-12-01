@@ -10,7 +10,7 @@ import { DatePicker, isValidDate } from '@patternfly/react-datetime';
 
 ### Date range picker
 
-Intended to be used as a filter. After selecting a start date the next day is automatically selected. Future dates are not allowed.
+Intended to be used as a filter. After selecting a start date the next day is automatically selected.
 
 ```js
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -20,16 +20,11 @@ DateRangePicker = () => {
   const [from, setFrom] = React.useState();
   const [to, setTo] = React.useState();
 
-  const today = new Date();
-  const fromValidator = date => date <= today ? '' : 'You cannot pick a future date';
-  const toValidator = date => isValidDate(from) && date >= from && date <= today ? '' : 'To date must be less than from date';
+  const toValidator = date => isValidDate(from) && date >= from ? '' : 'To date must be less than from date';
   const onFromChange = (_str, date) => {
     setFrom(new Date(date));
     if (isValidDate(date)) {
       date.setDate(date.getDate() + 1);
-      if (date > today) {
-        date = today;
-      }
       setTo(date.toISOString().substring(0, 10));
     }
     else {
@@ -42,7 +37,6 @@ DateRangePicker = () => {
       <SplitItem>
         <DatePicker
           onChange={onFromChange}
-          validators={[fromValidator]}
           aria-label="Start date"
         />
       </SplitItem>

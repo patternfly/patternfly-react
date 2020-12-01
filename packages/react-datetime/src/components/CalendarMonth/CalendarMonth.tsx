@@ -119,8 +119,10 @@ export const CalendarMonth = ({
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
-  const [focusDate, setFocusDate] = React.useState(true);
+  const [shouldFocus, setShouldFocus] = React.useState(true);
 
+  const isValidated = (date: Date) => validators.every(validator => validator(date));
+  const focusedDateValidated = isValidated(focusedDate);
   useEffect(() => {
     if (!(isValidDate(dateProp) && isSameDate(focusedDate, dateProp))) {
       setFocusedDate(dateProp);
@@ -128,21 +130,19 @@ export const CalendarMonth = ({
   }, [dateProp]);
   useEffect(() => {
     // When using header controls don't move focus
-    if (focusDate) {
-      if (focusRef.current) {
+    if (shouldFocus) {
+      if (focusRef.current && focusedDateValidated) {
         focusRef.current.focus();
       }
     } else {
-      setFocusDate(true);
+      setShouldFocus(true);
     }
   }, [focusedDate]);
 
-  const onMonthClick = (toAdd: -1 | 1) => {
-    const newDate = new Date(focusedDate);
-    newDate.setMonth(newDate.getMonth() + toAdd);
+  const onMonthClick = (newDate: Date) => {
     setFocusedDate(newDate);
     setHoveredDate(newDate);
-    setFocusDate(false);
+    setShouldFocus(false);
   };
 
   const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
@@ -156,13 +156,21 @@ export const CalendarMonth = ({
     } else if (ev.key === 'ArrowLeft') {
       newDate.setDate(newDate.getDate() - 1);
     }
-    if (newDate.getTime() !== focusedDate.getTime() && validators.every(validator => validator(newDate))) {
+    if (newDate.getTime() !== focusedDate.getTime() && isValidated(newDate)) {
       setFocusedDate(newDate);
       setHoveredDate(newDate);
-      setFocusDate(true);
+      setShouldFocus(true);
     }
   };
 
+  const addMonth = (toAdd: -1 | 1) => {
+    const newDate = new Date(focusedDate);
+    newDate.setMonth(newDate.getMonth() + toAdd);
+    return newDate;
+  };
+
+  const prevMonth = addMonth(-1);
+  const nextMonth = addMonth(1);
   const focusedYear = focusedDate.getFullYear();
   const focusedMonth = focusedDate.getMonth();
   const calendar = React.useMemo(() => buildCalendar(focusedYear, focusedMonth, weekStart, validators), [
@@ -170,13 +178,26 @@ export const CalendarMonth = ({
     focusedMonth,
     weekStart
   ]);
+  if (!focusedDateValidated) {
+    const toFocus = calendar
+      .reduce((acc, cur) => [...acc, ...cur], [])
+      .filter(({ date, isValid }) => isValid && date.getMonth() === focusedMonth)
+      .map(({ date }) => ({ date, days: Math.abs(focusedDate.getTime() - date.getTime()) }))
+      .sort((o1, o2) => o1.days - o2.days)
+      .map(({ date }) => date)[0];
+    if (toFocus) {
+      setFocusedDate(toFocus);
+      setHoveredDate(toFocus);
+    }
+  }
+  const isHoveredDateValid = isValidated(hoveredDate);
   const monthFormatted = monthFormat(focusedDate);
   const yearFormatted = yearFormat(focusedDate);
   return (
     <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
-          <Button variant="plain" aria-label={prevMonthAriaLabel} onClick={() => onMonthClick(-1)}>
+          <Button variant="plain" aria-label={prevMonthAriaLabel} onClick={() => onMonthClick(prevMonth)}>
             <ArrowLeftIcon aria-hidden={true} />
           </Button>
         </div>
@@ -202,7 +223,7 @@ export const CalendarMonth = ({
               newDate.setMonth(Number(monthNum as string));
               setFocusedDate(newDate);
               setHoveredDate(newDate);
-              setFocusDate(false);
+              setShouldFocus(false);
             }}
             variant="single"
             selections={monthFormatted}
@@ -224,12 +245,12 @@ export const CalendarMonth = ({
               newDate.setFullYear(+year);
               setFocusedDate(newDate);
               setHoveredDate(newDate);
-              setFocusDate(false);
+              setShouldFocus(false);
             }}
           />
         </div>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
-          <Button variant="plain" aria-label={nextMonthAriaLabel} onClick={() => onMonthClick(1)}>
+          <Button variant="plain" aria-label={nextMonthAriaLabel} onClick={() => onMonthClick(nextMonth)}>
             <ArrowRightIcon aria-hidden={true} />
           </Button>
         </div>
@@ -257,7 +278,7 @@ export const CalendarMonth = ({
                 let isInRange = false;
                 let isRangeStart = false;
                 let isRangeEnd = false;
-                if (isValidDate(rangeStart)) {
+                if (isValidDate(rangeStart) && isHoveredDateValid) {
                   if (hoveredDate > rangeStart || isSameDate(hoveredDate, rangeStart)) {
                     isInRange = date > rangeStart && date < hoveredDate;
                     isRangeStart = isSameDate(date, rangeStart);
