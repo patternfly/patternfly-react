@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import '@patternfly/patternfly/patternfly-date-picker.css';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
 import { Popover, PopoverProps } from '@patternfly/react-core/dist/js/components/Popover/Popover';
 import { InputGroup } from '@patternfly/react-core/dist/js/components/InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
-import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
+import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
 
 export interface DatePickerProps
   extends CalendarFormat,
@@ -42,8 +41,6 @@ export interface DatePickerProps
   validators?: ((date: Date) => string)[];
 }
 
-const isValidDate = (date: Date) => !isNaN(date.getTime());
-
 export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   className,
   locale = undefined,
@@ -55,7 +52,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   'aria-label': ariaLabel = 'Date picker',
   buttonAriaLabel = 'Toggle date picker',
   onChange = (): any => undefined,
-  invalidFormatText = 'Could not parse date',
+  invalidFormatText = 'Invalid date',
   helperText,
   appendTo,
   popoverProps,
@@ -65,6 +62,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   dayFormat,
   weekStart,
   validators = [],
+  rangeStart,
+  style = {},
   ...props
 }: DatePickerProps) => {
   const [value, setValue] = React.useState(valueProp);
@@ -72,18 +71,39 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [errorText, setErrorText] = React.useState('');
   const [popoverOpen, setPopoverOpen] = React.useState(false);
   const [selectOpen, setSelectOpen] = React.useState(false);
+  const [pristine, setPristine] = React.useState(true);
+  const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
+  (style as any)['--pf-c-date-picker__input--c-form-control--width-chars'] = widthChars;
   const buttonRef = React.useRef<HTMLButtonElement>();
 
+  React.useEffect(() => {
+    setValue(valueProp);
+    setValueDate(dateParse(valueProp));
+  }, [valueProp]);
+
+  const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
+
   const onTextInput = (value: string) => {
+    setPristine(false);
     setValue(value);
     const newValueDate = dateParse(value);
+    setValueDate(newValueDate);
     if (isValidDate(newValueDate)) {
-      setValueDate(newValueDate);
-      setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
-      onChange(value, newValueDate);
+      onChange(value, new Date(newValueDate));
+    } else {
+      onChange(value);
+    }
+  };
+
+  const onBlur = () => {
+    if (pristine) {
+      return;
+    }
+    const newValueDate = dateParse(value);
+    if (isValidDate(newValueDate)) {
+      setError(newValueDate);
     } else {
       setErrorText(invalidFormatText);
-      onChange(value);
     }
   };
 
@@ -91,13 +111,23 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     const newValue = dateFormat(newValueDate);
     setValue(newValue);
     setValueDate(newValueDate);
-    setErrorText(validators.map(validator => validator(newValueDate)).join('\n') || '');
+    setError(newValueDate);
     setPopoverOpen(false);
-    onChange(newValue, newValueDate);
+    onChange(newValue, new Date(newValueDate));
+  };
+
+  const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
+    if (ev.key === 'Enter' && value) {
+      if (isValidDate(valueDate)) {
+        setError(valueDate);
+      } else {
+        setErrorText(invalidFormatText);
+      }
+    }
   };
 
   return (
-    <div className={css(styles.datePicker, className)} {...props}>
+    <div className={css(styles.datePicker, className)} style={style} {...props}>
       <Popover
         position="bottom"
         bodyContent={
@@ -113,6 +143,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
             longWeekdayFormat={longWeekdayFormat}
             dayFormat={dayFormat}
             weekStart={weekStart}
+            rangeStart={rangeStart}
           />
         }
         showClose={false}
@@ -136,24 +167,29 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         appendTo={appendTo}
         {...popoverProps}
       >
-        <InputGroup>
-          <TextInput
-            isDisabled={isDisabled}
-            aria-label={ariaLabel}
-            placeholder={placeholder}
-            validated={errorText ? 'error' : 'default'}
-            value={value}
-            onChange={onTextInput}
-          />
-          <button
-            ref={buttonRef}
-            className={css(buttonStyles.button, buttonStyles.modifiers.control)}
-            aria-label={buttonAriaLabel}
-            onClick={() => setPopoverOpen(!popoverOpen)}
-          >
-            <OutlinedCalendarAltIcon />
-          </button>
-        </InputGroup>
+        <div className={styles.datePickerInput}>
+          <InputGroup>
+            <TextInput
+              isDisabled={isDisabled}
+              aria-label={ariaLabel}
+              placeholder={placeholder}
+              validated={errorText ? 'error' : 'default'}
+              value={value}
+              onChange={onTextInput}
+              onBlur={onBlur}
+              onKeyPress={onKeyPress}
+            />
+            <button
+              ref={buttonRef}
+              className={css(buttonStyles.button, buttonStyles.modifiers.control)}
+              aria-label={buttonAriaLabel}
+              onClick={() => setPopoverOpen(!popoverOpen)}
+              disabled={isDisabled}
+            >
+              <OutlinedCalendarAltIcon />
+            </button>
+          </InputGroup>
+        </div>
       </Popover>
       {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
       {errorText && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>}
