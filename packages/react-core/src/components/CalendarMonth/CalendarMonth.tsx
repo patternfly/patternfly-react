@@ -157,6 +157,7 @@ export const CalendarMonth = ({
       newDate.setDate(newDate.getDate() - 1);
     }
     if (newDate.getTime() !== focusedDate.getTime() && isValidated(newDate)) {
+      ev.preventDefault();
       setFocusedDate(newDate);
       setHoveredDate(newDate);
       setShouldFocus(true);
