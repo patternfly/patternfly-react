@@ -27,6 +27,23 @@ describe('Popover Demo Test', () => {
       cy.wrap(popoverLink).click();
       cy.get('.pf-c-popover').should('exist');
       cy.get('h6').should('have.class', 'pf-m-md');
+      cy.get('button[aria-label="Close"]').then(closeBtn => {
+        cy.wrap(closeBtn).click();
+        cy.get('.pf-c-popover').should('not.exist');
+      });
+    });
+  });
+
+  it('Close popover from content', () => {
+    cy.get(`[id="popover-content-close-toggle"]`).then((popoverLink: JQuery<HTMLDivElement>) => {
+      cy.get('.pf-c-popover').should('not.exist');
+      cy.wrap(popoverLink).click();
+      cy.get('.pf-c-popover').should('exist');
+      cy.get('.pf-c-popover__body').should('exist');
+      cy.get('[id="popover-content-close-btn"]').then(btn => {
+        cy.wrap(btn).click();
+        cy.get('.pf-c-popover').should('not.exist');
+      });
     });
   });
 });

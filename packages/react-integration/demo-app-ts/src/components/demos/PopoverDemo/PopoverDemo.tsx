@@ -57,6 +57,28 @@ export class PopoverDemo extends Component {
             reference={this.popoverRef}
           />
         </div>
+        <Popover
+          id="popover-content-close"
+          aria-label="Popover with button in the body that can close it"
+          headerContent={<div>Popover header</div>}
+          bodyContent={hide => (
+            <div>
+              <div>
+                All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
+                component passes the hide function to which can be used to close the Popover after some user
+                interaction.
+              </div>
+              <div>
+                <button id="popover-content-close-btn" onClick={hide}>
+                  Close popover
+                </button>
+              </div>
+            </div>
+          )}
+          footerContent="Popover footer"
+        >
+          <button id="popover-content-close-toggle">Toggle Popover</button>
+        </Popover>
       </>
     );
   }
