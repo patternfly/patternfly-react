@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Popover, PopoverPosition } from '../Popover';
+import { act } from 'react-dom/test-utils';
 
 test('popover renders close-button, header and body', () => {
   const view = shallow(
@@ -63,10 +64,24 @@ test('popover can specify position as object value', () => {
   expect(view).toMatchSnapshot();
 });
 
+const waitForComponentToPaint = async (wrapper: any) => {
+  await act(async () => {
+    await new Promise(resolve => setTimeout(resolve, 0));
+    wrapper.update();
+  });
+};
+
 test('popover can close from content (uncontrolled)', () => {
-  const view = shallow(
+  jest.useFakeTimers();
+  const mockHide = jest.fn();
+  const view = mount(
     <Popover
+      id="test"
       aria-label="Popover with button in the body that can close it"
+      onHide={mockHide}
+      isVisible={
+        true /* just for testing purposes to test that the popover would close when calling hide from bodyContent */
+      }
       headerContent={<div>Popover header</div>}
       bodyContent={hide => (
         <div>
@@ -75,7 +90,9 @@ test('popover can close from content (uncontrolled)', () => {
             component passes the hide function to which can be used to close the Popover after some user interaction.
           </div>
           <div>
-            <button id="uncontrolled-close" onClick={hide}>Close popover</button>
+            <button id="uncontrolled-close" onClick={hide}>
+              Close popover
+            </button>
           </div>
         </div>
       )}
@@ -84,9 +101,26 @@ test('popover can close from content (uncontrolled)', () => {
       <button id="uncontrolled-toggle">Toggle Popover</button>
     </Popover>
   );
+
+  waitForComponentToPaint(view);
+  jest.runAllTimers();
+
   expect(view).toMatchSnapshot();
-  view.find('#uncontrolled-toggle').simulate('click');
-  expect(view.find('.pf-c-popover').length).toBe(1);
-  view.find('#uncontrolled-close').simulate('click');
-  expect(view.find('.pf-c-popover').length).toBe(0);
+  
+  // popover visible
+  expect(document.querySelectorAll('.pf-c-popover').length).toBe(1);
+  // hide function not called yet
+  expect(mockHide.mock.calls).toHaveLength(0);
+
+  // get reference to the button within the bodyContent which is mounted on document.body
+  const button = document.querySelector("#uncontrolled-close");
+  act(() => {
+    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  });
+
+  // hide function was called
+  expect(mockHide.mock.calls).toHaveLength(1);
+  jest.runAllTimers();
+  // popover no longer visible
+  expect(document.querySelectorAll('.pf-c-popover').length).toBe(0);
 });
