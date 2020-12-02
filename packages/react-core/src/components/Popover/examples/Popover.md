@@ -63,6 +63,8 @@ PopoverCloseControlled = () => {
 
 ### Close popover from content (uncontrolled)
 
+Note: If you use the isVisible prop, either refer to the example above or if you want to use the hide callback from the content then be sure to keep isVisible in-sync.
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
