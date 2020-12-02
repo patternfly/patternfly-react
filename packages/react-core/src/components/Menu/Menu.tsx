@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import { SearchInput } from '../SearchInput';
 import { Divider } from '../Divider';
 import { MenuContext } from './MenuContext';
 
@@ -79,15 +79,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           {hasSearchInput && (
             <React.Fragment>
               <div className={styles.menuSearch}>
-                <SearchInput
+                <input
+                  className={css(formStyles.formControl)}
+                  type="search"
                   value={this.state.searchInputValue}
-                  onChange={(value, event) => {
-                    this.setState({ searchInputValue: value });
-                    onSearchInputChange(event, value);
-                  }}
-                  onClear={event => {
-                    this.setState({ searchInputValue: '' });
-                    onSearchInputChange(event, '');
+                  onChange={e => {
+                    this.setState({ searchInputValue: e.currentTarget.value });
+                    onSearchInputChange(e, e.currentTarget.value);
                   }}
                 />
               </div>
