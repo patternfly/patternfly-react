@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.60.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.9...demo-app-ts@4.60.10) (2020-12-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.60.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.8...demo-app-ts@4.60.9) (2020-11-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.60.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.7...demo-app-ts@4.60.8) (2020-11-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.60.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.6...demo-app-ts@4.60.7) (2020-11-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.60.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.5...demo-app-ts@4.60.6) (2020-11-23)
+
+
+### Bug Fixes
+
+* **charts:** replace victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/issues/5179)) ([bef64a5](https://github.com/patternfly/patternfly-react/commit/bef64a5e8f8ba060061df611d028dec5f8e9adf2))
+
+
+
+
+
+## [4.60.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.4...demo-app-ts@4.60.5) (2020-11-23)
+
+
+### Bug Fixes
+
+* **react-charts:** bump victory and move victory dep to demo app ([#5178](https://github.com/patternfly/patternfly-react/issues/5178)) ([45ec687](https://github.com/patternfly/patternfly-react/commit/45ec687506af9c0cb512feb25aa33ca2b73a7ff4))
+
+
+
+
+
+## [4.60.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.3...demo-app-ts@4.60.4) (2020-11-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.60.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.60.2...demo-app-ts@4.60.3) (2020-11-17)
 
 **Note:** Version bump only for package demo-app-ts

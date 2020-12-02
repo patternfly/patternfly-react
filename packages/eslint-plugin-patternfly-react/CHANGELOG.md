@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.5](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.4...eslint-plugin-patternfly-react@4.1.5) (2020-11-20)
+
+
+### Bug Fixes
+
+* **eslint:** fix @patternfly/react-icons/createIcon differently ([#5163](https://github.com/patternfly/patternfly-react/issues/5163)) ([271464d](https://github.com/patternfly/patternfly-react/commit/271464d3293704b29a24e5a4f140deb2b3985cda))
+
+
+
+
+
 ## [4.1.4](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.3...eslint-plugin-patternfly-react@4.1.4) (2020-09-22)
 
 
