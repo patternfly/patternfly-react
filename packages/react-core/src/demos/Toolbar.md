@@ -6,7 +6,6 @@ section: components
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
-import './toolbar.css';
 
 ## Demos
 ### Console log viewer toolbar demo
@@ -274,8 +273,8 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const items = (
       <React.Fragment>
-        <ToolbarGroup>{leftAlignedItems}</ToolbarGroup>
-        <ToolbarGroup>{rightAlignedItems}</ToolbarGroup>
+        <ToolbarGroup alignment={{default: 'alignLeft'}}>{leftAlignedItems}</ToolbarGroup>
+        <ToolbarGroup alignment={{default: 'alignRight'}}>{rightAlignedItems}</ToolbarGroup>
       </React.Fragment>
     );
 
