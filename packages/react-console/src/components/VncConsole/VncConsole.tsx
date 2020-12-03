@@ -3,9 +3,9 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
-import * as NovncLog from 'novnc-core/lib/util/logging';
+import { initLogging } from '@novnc/novnc/core/util/logging';
 /** Has bad types. https://github.com/larryprice/novnc-core/issues/5 */
-import RFB from 'novnc-core';
+import RFB from '@novnc/novnc/core/rfb';
 
 import { VncActions } from './VncActions';
 import { constants } from '../common/constants';
@@ -101,7 +101,7 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   };
 
   React.useEffect(() => {
-    NovncLog.init_logging(vncLogging);
+    initLogging(vncLogging);
     try {
       const protocol = encrypt ? 'wss' : 'ws';
       const url = `${protocol}://${host}:${port}/${path}`;
@@ -111,7 +111,7 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
         shared,
         credentials
       };
-      rfb = (new RFB() as any)(novncElem, url, options);
+      rfb = new RFB(novncElem, url, options);
       addEventListeners();
       rfb.viewOnly = viewOnly;
       rfb.scaleViewport = scaleViewport;

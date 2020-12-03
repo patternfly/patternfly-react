@@ -2498,6 +2498,11 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
+"@novnc/novnc@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.2.0.tgz#535ffd7d074022d35205deae2753100f1f2b29f3"
+  integrity sha512-FaUckOedGhSbwQBXk/KGyxKt9ngskg4wPw6ghbHWXOUEmQscAZr3467lTU5DSfppwHJt5k+lQiHoeYUuY90l2Q==
+
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@npmcli/move-file/-/move-file-1.0.1.tgz#de103070dac0f48ce49cf6693c23af59c0f70464"
@@ -3226,11 +3231,6 @@
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
-
-"@types/novnc-core@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@types/novnc-core/-/novnc-core-0.1.2.tgz#2f20dc578d2e29bb109a59d75624a8fdf74383b6"
-  integrity sha512-x0YhIrX0E/PmAqLvPh1CKzpXKIOnN8OST6xn1OMyTmLlFg4sAgpz6pnDBOj1ZZeQVYo4a9rjoZlmlwS1AuUYfg==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -14266,11 +14266,6 @@ normalize-url@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
-
-novnc-core@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/novnc-core/-/novnc-core-0.3.0.tgz#92a5c823727e2154287b239a987f2b1c9dce6e34"
-  integrity sha512-B00+HU2AisvvonHAfPPibONKXFxy47fe978awH5nb6JXxsVJAgT5m7nNJ2fjrbNVcpJ4C2EPg/uZcfgvFl8tSQ==
 
 npm-api@^1.0.0:
   version "1.0.0"
