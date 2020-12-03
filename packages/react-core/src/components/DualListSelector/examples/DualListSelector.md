@@ -230,24 +230,30 @@ class TreeDualListSelector extends React.Component {
         {
           text: 'Folder 1',
           checked: false,
-          checkProps: { 'aria-label': 'Custom aria label checkbox' },
+          checkProps: { 'aria-label': 'Folder 1' },
           hasBadge: true,
           badgeProps: { isRead: true },
           children: [
-            { text: 'Option 1', checked: false },
+            { text: 'Option 1', checked: false, checkProps: { 'aria-label': 'Option 1' } },
             {
               text: 'Folder 1A',
               checked: false,
+              checkProps: { 'aria-label': 'Folder 1A' },
               children: [
-                { text: 'Option 2', checked: false },
-                { text: 'Option 3', checked: false }
+                { text: 'Option 2', checked: false, checkProps: { 'aria-label': 'Option 2' } },
+                { text: 'Option 3', checked: false, checkProps: { 'aria-label': 'Option 3' } }
               ]
             },
-            { text: 'Option 4', checked: false }
+            { text: 'Option 4', checked: false, checkProps: { 'aria-label': 'Option 4' } }
           ]
         },
-        { text: 'Option 5', checked: false },
-        { text: 'Folder 2', checked: false, children: [{ text: 'Option 6', checked: false }] }
+        { text: 'Option 5', checked: false, checkProps: { 'aria-label': 'Option 5' } },
+        {
+          text: 'Folder 2',
+          checked: false,
+          checkProps: { 'aria-label': 'Folder 2' },
+          children: [{ text: 'Option 6', checked: false, checkProps: { 'aria-label': 'Option 6' } }]
+        }
       ]
     };
 
