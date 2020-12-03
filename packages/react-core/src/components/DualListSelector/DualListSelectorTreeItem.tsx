@@ -113,9 +113,6 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
         <div
           className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
           onClick={e => {
-            if (children) {
-              this.setState({ isExpanded: !this.state.isExpanded });
-            }
             if (!hasCheck) {
               onOptionSelect(e, null, isChosen, text, itemData, parentItem);
             }
