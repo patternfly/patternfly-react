@@ -54,6 +54,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           '2xl': 'width_25'
         }}
         isResizable
+        increment={50}
       >
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
