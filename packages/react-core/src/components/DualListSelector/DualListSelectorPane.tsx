@@ -112,6 +112,23 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     }
   };
 
+  filterInput = (item: DualListSelectorTreeItemData, input: string): boolean => {
+    if (this.props.filterOption) {
+      return this.props.filterOption(item, input);
+    } else {
+      if (item.text.toLowerCase().includes(input.toLowerCase()) || input === '') {
+        return true;
+      }
+    }
+    if (item.children) {
+      return (
+        (item.children = item.children
+          .map(opt => Object.assign({}, opt))
+          .filter(child => this.filterInput(child, input))).length > 0
+      );
+    }
+  };
+
   displayOption = (option: React.ReactNode, input: string) => {
     if (this.props.filterOption) {
       return this.props.filterOption(option, input);
@@ -236,7 +253,13 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
         {options && isTree && (
           <div className={css(styles.dualListSelectorMenu)} ref={this.menuEl} tabIndex={0}>
             <DualListSelectorTree
-              data={options as DualListSelectorTreeItemData[]}
+              data={
+                isSearchable
+                  ? (options as DualListSelectorTreeItemData[])
+                      .map(opt => Object.assign({}, opt))
+                      .filter(item => this.filterInput(item as DualListSelectorTreeItemData, input))
+                  : (options as DualListSelectorTreeItemData[])
+              }
               isChosen={isChosen}
               sendRef={this.sendRef}
               onOptionSelect={this.onOptionSelect}

@@ -272,6 +272,7 @@ class TreeDualListSelector extends React.Component {
         chosenOptions={this.state.chosenOptions}
         onListChange={this.onListChange}
         id="basicSelector"
+        isSearchable
         isTree
         hasChecks
       />
