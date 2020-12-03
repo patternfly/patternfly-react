@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Dropdown, DropdownItem, DropdownToggle, Button } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownToggle, Button, ButtonVariant } from '@patternfly/react-core';
 
 import styles from '@patternfly/react-styles/css/components/Consoles/VncConsole';
 
@@ -42,7 +42,9 @@ export const VncActions: React.FunctionComponent<VncActionProps> = ({
           </DropdownItem>
         ]}
       />
-      <Button onClick={onDisconnect}>{textDisconnect}</Button>
+      <Button variant={ButtonVariant.secondary} onClick={onDisconnect}>
+        {textDisconnect}
+      </Button>
     </div>
   );
 
