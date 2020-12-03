@@ -78,8 +78,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
   ...props
-}: TreeViewProps) => (
-  <div className={css(styles.treeView)} {...props}>
+}: TreeViewProps) => {
+  const treeViewList = (
     <TreeViewList isNested={isNested} onSearch={onSearch} searchProps={searchProps}>
       {data.map(item => (
         <TreeViewListItem
@@ -120,7 +120,18 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
         />
       ))}
     </TreeViewList>
-  </div>
-);
+  );
+  return (
+    <>
+      {parentItem ? (
+        treeViewList
+      ) : (
+        <div className={css(styles.treeView)} {...props}>
+          {treeViewList}
+        </div>
+      )}
+    </>
+  );
+};
 
 TreeView.displayName = 'TreeView';
