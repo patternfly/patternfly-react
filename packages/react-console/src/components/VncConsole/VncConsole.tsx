@@ -200,16 +200,18 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   }
 
   return (
-    <div className={css(styles.consoleVnc)}>
-      {children}
-      <React.Fragment>
-        {rightContent}
-        <div>
-          {emptyState}
-          {novncStaticComponent}
-        </div>
-      </React.Fragment>
-    </div>
+    <>
+      {rightContent}
+      <div className={css(styles.consoleVnc)}>
+        {children}
+        <React.Fragment>
+          <div>
+            {emptyState}
+            {novncStaticComponent}
+          </div>
+        </React.Fragment>
+      </div>
+    </>
   );
 };
 VncConsole.displayName = 'VncConsole';
