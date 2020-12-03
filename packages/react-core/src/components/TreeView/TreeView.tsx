@@ -92,7 +92,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
           checkProps={item.checkProps}
           hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
-          badgeProps={item.checkProps}
+          badgeProps={item.badgeProps}
           activeItems={activeItems}
           parentItem={parentItem}
           itemData={item}

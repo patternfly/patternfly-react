@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
 import { css } from '@patternfly/react-styles';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { DualListSelectorListItem } from './DualListSelectorListItem';
+import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { PickOptional } from '../../helpers';
 
 export interface DualListSelectorPaneProps {
@@ -10,6 +11,10 @@ export interface DualListSelectorPaneProps {
   className?: string;
   /** Flag indicating if this pane is the chosen pane. */
   isChosen?: boolean;
+  /* Flag indicating if the dual list selector uses trees instead of simple lists */
+  isTree?: boolean;
+  /** Flag indicating if the dual list selector tree options have checkboxes */
+  hasChecks?: boolean;
   /** Status to display above the pane. */
   status?: string;
   /** Title of the pane. */
@@ -17,11 +22,23 @@ export interface DualListSelectorPaneProps {
   /** Options to list in the pane. */
   options?: React.ReactNode[];
   /** Options currently selected in the pane. */
-  selectedOptions?: number[];
+  selectedOptions?: string[] | number[];
   /** Callback for search input. */
   onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Callback for when an option is selected. */
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent, index: number, isChosen: boolean) => void;
+  onOptionSelect?: (
+    e: React.MouseEvent | React.ChangeEvent,
+    index: number,
+    isChosen: boolean,
+    text?: string,
+    itemData?: any,
+    parentData?: any
+  ) => void;
+  onOptionCheck?: (
+    evt: React.ChangeEvent<HTMLInputElement>,
+    isChosen: boolean,
+    itemData: DualListSelectorTreeItemData
+  ) => void;
   /** Actions to place above the pane. */
   actions?: React.ReactNode[];
   /** Filter function for custom filtering based on search string. */
@@ -106,9 +123,16 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     }
   };
 
-  onOptionSelect = (e: React.MouseEvent | React.ChangeEvent, index: number, isChosen: boolean) => {
+  onOptionSelect = (
+    e: React.MouseEvent | React.ChangeEvent,
+    index: number,
+    isChosen: boolean,
+    text?: string,
+    itemData?: any,
+    parentItem?: any
+  ) => {
     this.setState({ focusedOption: `${this.props.id}-option-${index}` });
-    this.props.onOptionSelect(e, index, isChosen);
+    this.props.onOptionSelect(e, index, isChosen, text, itemData, parentItem);
   };
 
   componentDidMount() {
@@ -125,6 +149,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       title,
       actions,
       isSearchable,
+      isTree,
+      hasChecks,
       searchInputAriaLabel,
       className,
       status,
@@ -134,6 +160,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       /* eslint-disable @typescript-eslint/no-unused-vars */
       filterOption,
       onOptionSelect,
+      onOptionCheck,
       ...props
     } = this.props;
     const { input, focusedOption } = this.state;
@@ -174,7 +201,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
             </div>
           </div>
         )}
-        {options && (
+        {options && !isTree && (
           <div className={css(styles.dualListSelectorMenu)} ref={this.menuEl} tabIndex={0}>
             <ul
               className={css(styles.dualListSelectorList)}
@@ -189,7 +216,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                   return (
                     <DualListSelectorListItem
                       key={index}
-                      isSelected={selectedOptions.indexOf(index) !== -1}
+                      isSelected={(selectedOptions as number[]).indexOf(index) !== -1}
                       onOptionSelect={this.onOptionSelect}
                       isChosen={isChosen}
                       orderIndex={index}
@@ -204,6 +231,19 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                 return;
               })}
             </ul>
+          </div>
+        )}
+        {options && isTree && (
+          <div className={css(styles.dualListSelectorMenu)} ref={this.menuEl} tabIndex={0}>
+            <DualListSelectorTree
+              data={options as DualListSelectorTreeItemData[]}
+              isChosen={isChosen}
+              sendRef={this.sendRef}
+              onOptionSelect={this.onOptionSelect}
+              onOptionCheck={onOptionCheck}
+              selectedOptions={selectedOptions as string[]}
+              hasChecks={hasChecks}
+            />
           </div>
         )}
       </div>
