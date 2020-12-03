@@ -6,26 +6,134 @@ propComponents: ['Popover']
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
-<div style={{ margin: '100px' }}>
+<div style={{ margin: '50px' }}>
   <Popover
-    headerContent={<div>Popover Header</div>}
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-      <Button onClick={() => console.log('click')}>click</Button></div>
-    }
-    footerContent="Popover Footer"
+    aria-label="Basic popover"
+    headerContent={<div>Popover header</div>}
+    bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
+    footerContent="Popover footer"
   >
     <Button>Toggle Popover</Button>
   </Popover>
-</div>
+</div>;
+```
+
+### Close popover from content (controlled)
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+PopoverCloseControlled = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  return (
+    <div style={{ margin: '50px' }}>
+      <Popover
+        aria-label="Popover with button in the body that can close it"
+        isVisible={isVisible}
+        shouldOpen={() => setIsVisible(true)}
+        shouldClose={() => setIsVisible(false)}
+        headerContent={<div>Popover header</div>}
+        bodyContent={
+          <div>
+            <div>
+              All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
+              component passes the hide function to which can be used to close the Popover after some user interaction.
+            </div>
+            <div>
+              <button onClick={() => setIsVisible(false)}>Close popover</button>
+            </div>
+          </div>
+        }
+        footerContent="Popover footer"
+      >
+        <Button>Toggle Popover</Button>
+      </Popover>
+    </div>
+  );
+};
+```
+
+### Close popover from content (uncontrolled)
+
+Note: If you use the isVisible prop, either refer to the example above or if you want to use the hide callback from the content then be sure to keep isVisible in-sync.
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+<div style={{ margin: '50px' }}>
+  <Popover
+    aria-label="Popover with button in the body that can close it"
+    headerContent={<div>Popover header</div>}
+    bodyContent={hide => (
+      <div>
+        <div>
+          All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
+          component passes the hide function to which can be used to close the Popover after some user interaction.
+        </div>
+        <div>
+          <button onClick={hide}>Close popover</button>
+        </div>
+      </div>
+    )}
+    footerContent="Popover footer"
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+</div>;
+```
+
+### Without header/footer/close and no padding
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+<div style={{ margin: '50px' }}>
+  <Popover
+    aria-label="Popover with no header, footer, close button, and padding"
+    hasNoPadding
+    showClose={false}
+    bodyContent={hide => (
+      <div>
+        This popover has no padding and is intended for use with content that has its own spacing and should touch the
+        edges of the popover container.
+      </div>
+    )}
+    withFocusTrap={false /* no focusable content in this example */}
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+</div>;
+```
+
+### Width auto
+
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+<div style={{ margin: '50px' }}>
+  <Popover
+    aria-label="Popover with auto-width"
+    hasAutoWidth
+    bodyContent={hide => <div>Removes fixed-width and allows width to be defined by contents</div>}
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+</div>;
 ```
 
 ### Popover react ref
+
 ```js
 import React from 'react';
 import { Popover } from '@patternfly/react-core';
@@ -33,29 +141,34 @@ import { Popover } from '@patternfly/react-core';
 PopoverReactRef = () => {
   const popoverRef = React.useRef();
   return (
-    <div style={{ margin: '100px' }}>
+    <div style={{ margin: '50px' }}>
       <button ref={popoverRef}>Popover attached via react ref</button>
       <Popover
+        aria-label="Popover with react reference example"
         headerContent={<div>Popover Header</div>}
         bodyContent={
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
         }
         footerContent="Popover Footer"
         reference={popoverRef}
       />
     </div>
   );
-}
+};
 ```
 
 ### Popover selector ref
+
 ```js
 import React from 'react';
 import { Popover } from '@patternfly/react-core';
 
-<div style={{ margin: '100px' }}>
+<div style={{ margin: '50px' }}>
   <button id="popover-selector">Popover attached via selector ref</button>
   <Popover
+    aria-label="Popover with selector reference example"
     headerContent={<div>Popover Header</div>}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
@@ -63,10 +176,11 @@ import { Popover } from '@patternfly/react-core';
     footerContent="Popover Footer"
     reference={() => document.getElementById('popover-selector')}
   />
-</div>
+</div>;
 ```
 
 ### Advanced
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
@@ -130,15 +244,16 @@ class AdvancedPopover extends React.Component {
           />
         </div>
 
-        <div style={{ margin: '100px' }}>
+        <div style={{ margin: '50px' }}>
           <Popover
+            aria-label="Advanced popover usages example"
             position={this.state.position}
             hideOnOutsideClick={false}
             isVisible={this.state.show}
             shouldClose={this.shouldClose}
             shouldOpen={this.shouldOpen}
             enableFlip={this.state.keepInViewChecked}
-            appendTo={() => document.getElementById('___gatsby')}
+            appendTo={() => document.body}
             headerContent={<div>Popover Header</div>}
             bodyContent={
               <div>
@@ -147,49 +262,11 @@ class AdvancedPopover extends React.Component {
             }
             footerContent="Popover Footer"
           >
-            <Button onClick={this.handleClick}>Toggle Popover</Button>
+            <Button>Toggle Popover</Button>
           </Popover>
         </div>
       </div>
     );
   }
 }
-```
-
-### Headless
-```js
-import React from 'react';
-import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
-
-<div style={{ margin: '100px' }}>
-  <Popover
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-    aria-label="Headless Popover"
-    closeBtnAriaLabel="Close Headless Popover"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
-</div>
-```
-
-### With Link
-```js
-import React from 'react';
-import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
-
-<div style={{ margin: '100px' }}>
-  <Popover
-    bodyContent={
-      <div><a href="https://www.patternfly.org/" target="_blank">PatternFly</a> is a community project that promotes design commonality and improved user experience. Its offerings include open source code, patterns, style guides, and an active community that helps support it all.</div>
-    }
-    aria-label="Popover with Link"
-    closeBtnAriaLabel="Close Popover with Link"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
-</div>
 ```

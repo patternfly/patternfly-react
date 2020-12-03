@@ -30,8 +30,13 @@ export interface PopoverProps {
   'aria-label'?: string;
   /** The element to append the popover to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
-  /** Body content */
-  bodyContent: React.ReactNode;
+  /**
+   * Body content
+   * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
+   * or you can provide a function which will receive a callback as an argument to hide the popover
+   * i.e. bodyContent={hide => <Button onClick={() => hide()}>Close</Button>}
+   */
+  bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /**
    * The reference element to which the Popover is relatively placed to.
    * If you cannot wrap the reference with the Popover, you can use the reference prop instead.
@@ -67,10 +72,20 @@ export interface PopoverProps {
    * space to the right, so it finally shows the popover on the left.
    */
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
-  /** Footer content */
-  footerContent?: React.ReactNode;
-  /** Header content, leave empty for no header */
-  headerContent?: React.ReactNode;
+  /**
+   * Footer content
+   * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
+   * or you can provide a function which will receive a callback as an argument to hide the popover
+   * i.e. footerContent={hide => <Button onClick={() => hide()}>Close</Button>}
+   */
+  footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  /**
+   * Header content
+   * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
+   * or you can provide a function which will receive a callback as an argument to hide the popover
+   * i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
+   */
+  headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -194,7 +209,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = React.useState(false);
   const [opacity, setOpacity] = React.useState(0);
-  const [focusTrapActive, setFocusTrapActive] = React.useState(false);
+  const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
@@ -221,7 +236,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     showTimerRef.current = setTimeout(() => {
       setVisible(true);
       setOpacity(1);
-      (propWithFocusTrap || withFocusTrap) && setFocusTrapActive(true);
+      propWithFocusTrap !== false && withFocusTrap && setFocusTrapActive(true);
       onShown();
     }, 0);
   };
@@ -343,9 +358,19 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       <PopoverArrow />
       <PopoverContent>
         {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
-        {headerContent && <PopoverHeader id={`popover-${uniqueId}-header`}>{headerContent}</PopoverHeader>}
-        <PopoverBody id={`popover-${uniqueId}-body`}>{bodyContent}</PopoverBody>
-        {footerContent && <PopoverFooter id={`popover-${uniqueId}-footer`}>{footerContent}</PopoverFooter>}
+        {headerContent && (
+          <PopoverHeader id={`popover-${uniqueId}-header`}>
+            {typeof headerContent === 'function' ? headerContent(hide) : headerContent}
+          </PopoverHeader>
+        )}
+        <PopoverBody id={`popover-${uniqueId}-body`}>
+          {typeof bodyContent === 'function' ? bodyContent(hide) : bodyContent}
+        </PopoverBody>
+        {footerContent && (
+          <PopoverFooter id={`popover-${uniqueId}-footer`}>
+            {typeof footerContent === 'function' ? footerContent(hide) : footerContent}
+          </PopoverFooter>
+        )}
       </PopoverContent>
     </FocusTrap>
   );

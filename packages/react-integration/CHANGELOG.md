@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.60.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.3...@patternfly/react-integration@4.60.4) (2020-12-02)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.60.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.2...@patternfly/react-integration@4.60.3) (2020-11-23)
+
+
+### Bug Fixes
+
+* **charts:** replace victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/issues/5179)) ([bef64a5](https://github.com/patternfly/patternfly-react/commit/bef64a5e8f8ba060061df611d028dec5f8e9adf2))
+
+
+
+
+
+## [4.60.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.1...@patternfly/react-integration@4.60.2) (2020-11-23)
+
+
+### Bug Fixes
+
+* **react-charts:** bump victory and move victory dep to demo app ([#5178](https://github.com/patternfly/patternfly-react/issues/5178)) ([45ec687](https://github.com/patternfly/patternfly-react/commit/45ec687506af9c0cb512feb25aa33ca2b73a7ff4))
+
+
+
+
+
 ## [4.60.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.0...@patternfly/react-integration@4.60.1) (2020-11-17)
 
 

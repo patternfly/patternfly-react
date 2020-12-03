@@ -6,15 +6,11 @@ propComponents: ['DatePicker', 'CalendarFormat']
 beta: true
 ---
 
-import { DatePicker, Weekday } from '@patternfly/react-datetime';
-
-Note: DatePicker lives in its own package at [@patternfly/react-datetime](https://www.npmjs.com/package/@patternfly/react-datetime).
-
 ## Examples
 ### Basic
 ```js
 import React from 'react';
-import { DatePicker } from '@patternfly/react-datetime';
+import { DatePicker } from '@patternfly/react-core';
 
 <DatePicker onChange={(str, date) => console.log('onChange', str, date)} />
 ```
@@ -22,7 +18,7 @@ import { DatePicker } from '@patternfly/react-datetime';
 ### American format
 ```js
 import React from 'react';
-import { DatePicker } from '@patternfly/react-datetime';
+import { DatePicker } from '@patternfly/react-core';
 
 AmericanFormat = () => {
   const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -51,7 +47,7 @@ AmericanFormat = () => {
 ### Helper text
 ```js
 import React from 'react';
-import { DatePicker } from '@patternfly/react-datetime';
+import { DatePicker } from '@patternfly/react-core';
 
 <DatePicker value="2020-03-05" helperText="Use the calendar button to select a date." />
 ```
@@ -59,7 +55,7 @@ import { DatePicker } from '@patternfly/react-datetime';
 ### Min and max date
 ```js
 import React from 'react';
-import { DatePicker } from '@patternfly/react-datetime';
+import { DatePicker } from '@patternfly/react-core';
 
 MinMaxDate = () => {
   const minDate = new Date(2020, 2, 16);
@@ -82,7 +78,7 @@ MinMaxDate = () => {
 
 ```js
 import React from 'react';
-import { DatePicker, Weekday } from '@patternfly/react-datetime';
+import { DatePicker, Weekday } from '@patternfly/react-core';
 
 FrenchMinMaxDate = () => {
   const minDate = new Date(2020, 2, 16);
@@ -106,6 +102,29 @@ FrenchMinMaxDate = () => {
       locale="fr"
       weekStart={Weekday.Monday}
     />
+  );
+}
+```
+
+### Controlled
+
+```js
+import React from 'react';
+import { Button, DatePicker } from '@patternfly/react-core';
+
+ControlledDate = () => {
+  const initialValue = '2020-03-17';
+  const [value, setValue] = React.useState(initialValue);
+  return (
+    <React.Fragment>
+      <Button onClick={() => setValue(initialValue)}>
+        Reset date
+      </Button>
+      <DatePicker
+        value={value}
+        onChange={value => setValue(value)}
+      />
+    </React.Fragment>
   );
 }
 ```
