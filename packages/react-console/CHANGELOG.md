@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.1.12...@patternfly/react-console@4.1.13) (2020-12-03)
+
+
+### Bug Fixes
+
+* **VncConsole:** replace novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/issues/5208)) ([6c4c0c2](https://github.com/patternfly/patternfly-react/commit/6c4c0c2e981088e9220b834e2520063fce9d024e)), closes [#5157](https://github.com/patternfly/patternfly-react/issues/5157)
+
+
+
+
+
 ## [4.1.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.1.11...@patternfly/react-console@4.1.12) (2020-12-02)
 
 **Note:** Version bump only for package @patternfly/react-console
