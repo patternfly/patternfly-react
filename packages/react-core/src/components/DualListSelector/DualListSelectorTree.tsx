@@ -60,6 +60,8 @@ export interface DualListSelectorTreeProps {
   id?: string;
   /** Flag indicating this list is the chosen pane. */
   isChosen?: boolean;
+  /** Flag indicating if the list is nested */
+  isNested?: boolean;
   /** Flag indicating if all options should have checkboxes */
   hasChecks?: boolean;
   /** Flag indicating if all options should have badges */
@@ -94,6 +96,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   isChosen,
   hasChecks = false,
   hasBadges = false,
+  isNested = false,
   defaultAllExpanded = false,
   parentItem,
   onOptionSelect,
@@ -102,7 +105,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   selectedOptions = [],
   ...props
 }: DualListSelectorTreeProps) => (
-  <ul className={css(styles.dualListSelectorList)} {...props}>
+  <ul className={css(styles.dualListSelectorList)} role={isNested ? 'group' : 'tree'} {...props}>
     {data.map(item => (
       <DualListSelectorTreeItem
         key={item.text}
@@ -124,6 +127,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
         {...(item.children && {
           children: (
             <DualListSelectorTree
+              isNested
               data={item.children}
               parentItem={item}
               hasChecks={hasChecks}
