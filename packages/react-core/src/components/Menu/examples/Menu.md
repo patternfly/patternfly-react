@@ -2,7 +2,7 @@
 id: Menu
 section: components
 cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction']
+propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput']
 ouia: true
 beta: true
 ---
@@ -154,11 +154,11 @@ class MenuWithFlyout extends React.Component {
 }
 ```
 
-### With filtering
+### Filtering with Text Input
 
 ```js
 import React from 'react';
-import { Menu, MenuList, MenuItem } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem, MenuContent, MenuInput, TextInput } from '@patternfly/react-core';
 
 class MenuWithFiltering extends React.Component {
   constructor(props) {
@@ -174,10 +174,8 @@ class MenuWithFiltering extends React.Component {
       });
     };
 
-    this.onChange = (event, value) => {
-      this.setState({
-        input: value
-      });
+    this.handleTextInputChange = (value, field) => {
+      this.setState({ [field]: value });
     };
   }
 
@@ -186,7 +184,7 @@ class MenuWithFiltering extends React.Component {
     const menuListItemsText = ['Action 1', 'Action 2', 'Action 3'];
 
     const menuListItems = menuListItemsText
-      .filter(item => !input || item.toLowerCase().includes(input.toLowerCase()))
+      .filter(item => !input || item.toLowerCase().includes(input.toString().toLowerCase()))
       .map((currentValue, index) => (
         <MenuItem key={currentValue} itemId={index}>
           {currentValue}
@@ -201,7 +199,77 @@ class MenuWithFiltering extends React.Component {
     }
 
     return (
-      <Menu hasSearchInput onSearchInputChange={this.onChange} onSelect={this.onSelect} activeItemId={activeItem}>
+      <Menu onSelect={this.onSelect} activeItemId={activeItem}>
+        <MenuInput>
+          <TextInput
+            value={input}
+            aria-label="filterable-example-with-text-input"
+            iconVariant="search"
+            type="search"
+            onChange={value => this.handleTextInputChange(value, 'input')}
+          />
+        </MenuInput>
+        <MenuList>{menuListItems}</MenuList>
+      </Menu>
+    );
+  }
+}
+```
+
+### Filtering with Search Input
+
+```js
+import React from 'react';
+import { Menu, MenuList, MenuItem, MenuContent, MenuInput, SearchInput } from '@patternfly/react-core';
+
+class MenuWithFiltering extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 0,
+      input: ''
+    };
+
+    this.onSelect = (event, itemId) => {
+      this.setState({
+        activeItem: itemId
+      });
+    };
+
+    this.onChange = (value, e) => {
+      this.setState({ input: value });
+    };
+  }
+
+  render() {
+    const { activeItem, input } = this.state;
+    const menuListItemsText = ['Action 1', 'Action 2', 'Action 3'];
+
+    const menuListItems = menuListItemsText
+      .filter(item => !input || item.toLowerCase().includes(input.toString().toLowerCase()))
+      .map((currentValue, index) => (
+        <MenuItem key={currentValue} itemId={index}>
+          {currentValue}
+        </MenuItem>
+      ));
+    if (input && menuListItems.length === 0) {
+      menuListItems.push(
+        <MenuItem isDisabled key="no result">
+          No results found
+        </MenuItem>
+      );
+    }
+
+    return (
+      <Menu onSelect={this.onSelect} activeItemId={activeItem}>
+        <MenuInput>
+          <SearchInput
+            value={input}
+            aria-label="filterable-example-with-text-input"
+            onChange={this.onChange}
+            onClear={e => this.onChange('', e)}
+          />
+        </MenuInput>
         <MenuList>{menuListItems}</MenuList>
       </Menu>
     );
@@ -563,13 +631,7 @@ class MenuWithFavorites extends React.Component {
                         isFavorited
                         description={description}
                         itemId={itemId}
-                        actions={
-                          <MenuItemAction
-                            actionId={actionId}
-                            icon={action}
-                            aria-label={actionId}
-                          />
-                        }
+                        actions={<MenuItemAction actionId={actionId} icon={action} aria-label={actionId} />}
                       >
                         {text}
                       </MenuItem>
@@ -591,13 +653,7 @@ class MenuWithFavorites extends React.Component {
                   isFavorited={isFavorited}
                   description={description}
                   itemId={itemId}
-                  actions={
-                    <MenuItemAction
-                      actionId={actionId}
-                      icon={action}
-                      aria-label={actionId}
-                    />
-                  }
+                  actions={<MenuItemAction actionId={actionId} icon={action} aria-label={actionId} />}
                 >
                   {text}
                 </MenuItem>
