@@ -360,6 +360,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         availableTreeOptionsSelected: isChosen ? prevState.availableTreeOptionsSelected : updatedArray
       };
     });
+    const onOptionSelect = this.props.onOptionSelect;
+    if (onOptionSelect) {
+      onOptionSelect(e);
+    }
   };
 
   filterTreeItems = (item: DualListSelectorTreeItemData, inputList: string[]): boolean => {
@@ -496,6 +500,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         this.props.onOptionCheck && this.props.onOptionCheck(evt, itemData.text, updatedChecked);
       }
     );
+    const onOptionSelect = this.props.onOptionSelect;
+    if (onOptionSelect) {
+      onOptionSelect(evt);
+    }
   };
 
   handleKeys = (event: KeyboardEvent) => {

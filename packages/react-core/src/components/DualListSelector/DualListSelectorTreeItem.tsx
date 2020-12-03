@@ -116,7 +116,9 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
             if (children) {
               this.setState({ isExpanded: !this.state.isExpanded });
             }
-            onOptionSelect(e, null, isChosen, text, itemData, parentItem);
+            if (!hasCheck) {
+              onOptionSelect(e, null, isChosen, text, itemData, parentItem);
+            }
           }}
           id={id}
           ref={this.ref}
