@@ -419,6 +419,20 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     return result;
   };
 
+  filterFolders = (tree: DualListSelectorTreeItemData[], subset: string[]): string[] => {
+    let result = [] as string[];
+    tree.forEach(item => {
+      if (item.children) {
+        result = result.concat(this.filterFolders(item.children, subset));
+      } else {
+        if (subset.includes(item.text)) {
+          result.push(item.text);
+        }
+      }
+    });
+    return result;
+  };
+
   flattenTreeWithFolders = (tree: DualListSelectorTreeItemData[]): string[] => {
     let result = [] as string[];
     tree.forEach(item => {
@@ -597,16 +611,16 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     const availableOptionsStatusToDisplay =
       availableOptionsStatus ||
       (isTree
-        ? `${availableTreeOptionsSelected.length} of ${
-            this.flattenTreeWithFolders(availableOptions as DualListSelectorTreeItemData[]).length
-          } items selected`
+        ? `${
+            this.filterFolders(availableOptions as DualListSelectorTreeItemData[], availableTreeOptionsSelected).length
+          } of ${this.flattenTree(availableOptions as DualListSelectorTreeItemData[]).length} items selected`
         : `${availableOptionsSelected.length} of ${availableOptions.length} items selected`);
     const chosenOptionsStatusToDisplay =
       chosenOptionsStatus ||
       (isTree
-        ? `${chosenTreeOptionsSelected.length} of ${
-            this.flattenTreeWithFolders(chosenOptions as DualListSelectorTreeItemData[]).length
-          } items selected`
+        ? `${
+            this.filterFolders(chosenOptions as DualListSelectorTreeItemData[], chosenTreeOptionsSelected).length
+          } of ${this.flattenTree(chosenOptions as DualListSelectorTreeItemData[]).length} items selected`
         : `${chosenOptionsSelected.length} of ${chosenOptions.length} items selected`);
 
     const available = hasChecks
