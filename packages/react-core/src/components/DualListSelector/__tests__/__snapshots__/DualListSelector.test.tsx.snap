@@ -1948,6 +1948,7 @@ exports[`DualListSelector with tree 1`] = `
           >
             <ul
               className="pf-c-dual-list-selector__list"
+              role="tree"
             >
               <DualListSelectorTreeItem
                 defaultExpanded={true}
@@ -2039,6 +2040,7 @@ exports[`DualListSelector with tree 1`] = `
                     hasBadges={false}
                     hasChecks={false}
                     isChosen={false}
+                    isNested={true}
                     onOptionCheck={[Function]}
                     onOptionSelect={[Function]}
                     parentItem={
@@ -2057,6 +2059,7 @@ exports[`DualListSelector with tree 1`] = `
                   >
                     <ul
                       className="pf-c-dual-list-selector__list"
+                      role="group"
                     >
                       <DualListSelectorTreeItem
                         defaultExpanded={false}
@@ -2419,6 +2422,7 @@ exports[`DualListSelector with tree 1`] = `
           >
             <ul
               className="pf-c-dual-list-selector__list"
+              role="tree"
             />
           </DualListSelectorTree>
         </div>
