@@ -2458,10 +2458,29 @@
     webpack-dev-server "^3.11.0"
     xmldoc "^1.1.2"
 
+<<<<<<< HEAD
 "@patternfly/patternfly@4.69.5":
   version "4.69.5"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.69.5.tgz#1d974eb721b932f32b1a008d82992b213550aea5"
   integrity sha512-otObZp9UjktTrh2rx6BjeWP8SKiPqCWk5paeObDjGy8P3gqxLHmMyTq0hcHRjRVUjqZEQ13lQYuBS8YtQ73cVA==
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+"@patternfly/patternfly@4.67.1":
+  version "4.67.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.67.1.tgz#04fb2277066067bf1ed16e681e3b257602909496"
+  integrity sha512-cDkzd1UzJsP1+gBFzNQD6/k8YQQwH+/rqeowQLlBpsbK7cC0HRyxvbTFB1MftQqYKZpjA7m80TCmjL0T5EXg5Q==
+=======
+"@patternfly/patternfly@4.65.6":
+  version "4.65.6"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.65.6.tgz#ca906c6d55ffc3097d0e23d9ad578e95cb866ea3"
+>>>>>>> bump core versions to get css fix
+=======
+"@patternfly/patternfly@4.69.3":
+  version "4.69.3"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.69.3.tgz#921028a8cffcf4dbaf050c38ff38ebe0b7d7e1ee"
+>>>>>>> update core packages
+>>>>>>> update core packages
 
 "@reach/router@^1.2.1", "@reach/router@^1.3.4":
   version "1.3.4"
