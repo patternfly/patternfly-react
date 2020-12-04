@@ -180,7 +180,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
           styles.formControl,
           validated === ValidatedOptions.success && styles.modifiers.success,
           validated === ValidatedOptions.warning && styles.modifiers.warning,
-          (iconVariant !== 'search' || customIconUrl) && styles.modifiers.icon,
+          ((iconVariant && iconVariant !== 'search') || customIconUrl) && styles.modifiers.icon,
           iconVariant && styles.modifiers[iconVariant],
           className
         )}
