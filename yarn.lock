@@ -2979,6 +2979,13 @@
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
 
+<<<<<<< HEAD
+=======
+"@types/novnc-core@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@types/novnc-core/-/novnc-core-0.1.2.tgz#2f20dc578d2e29bb109a59d75624a8fdf74383b6"
+
+>>>>>>> bump core versions to get css fix
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -12617,6 +12624,13 @@ normalize-url@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
 
+<<<<<<< HEAD
+=======
+novnc-core@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/novnc-core/-/novnc-core-0.3.0.tgz#92a5c823727e2154287b239a987f2b1c9dce6e34"
+
+>>>>>>> bump core versions to get css fix
 npm-api@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/npm-api/-/npm-api-1.0.0.tgz#6033c283bb04ddb0185344c1ad07ed4f67c77989"
@@ -14259,10 +14273,16 @@ react-docgen@^5.1.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
+<<<<<<< HEAD
 react-docgen@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.3.1.tgz#940b519646a6c285c2950b96512aed59e8f90934"
   integrity sha512-YG7YujVTwlLslr2Ny8nQiUfbBuEwKsLHJdQTSdEga1eY/nRFh/7LjCWUn6ogYhu2WDKg4z+6W/BJtUi+DPUIlA==
+=======
+react-docgen@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.3.0.tgz#9aabde5e69f1993c8ba839fd9a86696504654589"
+>>>>>>> bump core versions to get css fix
   dependencies:
     "@babel/core" "^7.7.5"
     "@babel/runtime" "^7.7.6"
@@ -16531,10 +16551,16 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
+<<<<<<< HEAD
 theme-patternfly-org@0.2.12:
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.2.12.tgz#93da9b95da28f95233eea80cd3de902df6b4dc46"
   integrity sha512-8Db0LUNizF2HsZdhTClpka0CQjCGr4TzqgjK51VzEyQMfzUhQM+PJeUcE9AfOmRoNUWyCHaPAHR0gm8bJAHytw==
+=======
+theme-patternfly-org@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.2.1.tgz#a54256c66de81921e6df117b302f1f54f786c836"
+>>>>>>> bump core versions to get css fix
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
