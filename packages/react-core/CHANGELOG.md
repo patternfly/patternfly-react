@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.81.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.80.2...@patternfly/react-core@4.81.0) (2020-12-04)
+
+
+### Features
+
+* **Drawer:** add splitter feature ([#5193](https://github.com/patternfly/patternfly-react/issues/5193)) ([7f44e90](https://github.com/patternfly/patternfly-react/commit/7f44e901d225068597c1b0efb6098f7c35a01476))
+
+
+
+
+
 ## [4.80.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.80.1...@patternfly/react-core@4.80.2) (2020-12-03)
 
 **Note:** Version bump only for package @patternfly/react-core
