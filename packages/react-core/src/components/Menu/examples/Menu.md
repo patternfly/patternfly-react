@@ -158,7 +158,7 @@ class MenuWithFlyout extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuList, MenuItem, MenuContent, MenuInput, TextInput } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem, MenuContent, MenuInput, TextInput, Divider } from '@patternfly/react-core';
 
 class MenuWithFiltering extends React.Component {
   constructor(props) {
@@ -209,7 +209,10 @@ class MenuWithFiltering extends React.Component {
             onChange={value => this.handleTextInputChange(value, 'input')}
           />
         </MenuInput>
-        <MenuList>{menuListItems}</MenuList>
+        <Divider />
+        <MenuContent>
+          <MenuList>{menuListItems}</MenuList>
+        </MenuContent>
       </Menu>
     );
   }
@@ -220,7 +223,7 @@ class MenuWithFiltering extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuList, MenuItem, MenuContent, MenuInput, SearchInput } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem, MenuContent, MenuInput, SearchInput, Divider } from '@patternfly/react-core';
 
 class MenuWithFiltering extends React.Component {
   constructor(props) {
@@ -270,7 +273,10 @@ class MenuWithFiltering extends React.Component {
             onClear={e => this.onChange('', e)}
           />
         </MenuInput>
-        <MenuList>{menuListItems}</MenuList>
+        <Divider />
+        <MenuContent>
+          <MenuList>{menuListItems}</MenuList>
+        </MenuContent>
       </Menu>
     );
   }

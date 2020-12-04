@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { MenuContext } from './MenuContext';
-import { MenuContent } from './MenuContent';
 
 export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'>, OUIAProps {
   /** Anything that can be rendered inside of the Menu */
@@ -73,7 +72,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
-          <MenuContent>{children}</MenuContent>
+          {children}
         </div>
       </MenuContext.Provider>
     );
