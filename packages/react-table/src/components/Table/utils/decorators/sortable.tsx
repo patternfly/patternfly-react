@@ -9,6 +9,7 @@ export const sortableFavorites = (sort: any) => () =>
   sortable(<StarIcon aria-hidden />, {
     columnIndex: sort.columnIndex,
     className: styles.modifiers.favorite,
+    ariaLabel: 'Sort favorites',
     column: {
       extraParams: {
         sortBy: sort.sortBy,
@@ -19,7 +20,7 @@ export const sortableFavorites = (sort: any) => () =>
 
 export const sortable: ITransform = (
   label: IFormatterValueType,
-  { columnIndex, column, property, className }: IExtra
+  { columnIndex, column, property, className, ariaLabel }: IExtra
 ) => {
   const {
     extraParams: { sortBy, onSort }
@@ -50,7 +51,12 @@ export const sortable: ITransform = (
     className: css(styles.tableSort, isSortedBy && styles.modifiers.selected, className),
     'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
     children: (
-      <SortColumn isSortedBy={isSortedBy} sortDirection={isSortedBy ? sortBy.direction : ''} onSort={sortClicked}>
+      <SortColumn
+        isSortedBy={isSortedBy}
+        sortDirection={isSortedBy ? sortBy.direction : ''}
+        onSort={sortClicked}
+        aria-label={ariaLabel}
+      >
         {label}
       </SortColumn>
     )

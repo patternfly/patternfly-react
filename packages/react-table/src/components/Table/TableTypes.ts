@@ -113,6 +113,7 @@ export interface IExtraData extends IExtraColumnData, IExtraRowData {}
 export interface IExtra extends IExtraData {
   rowData?: IRowData;
   className?: string;
+  ariaLabel?: string;
 }
 
 export type IFormatterValueType = formatterValueType & {
