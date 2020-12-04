@@ -5,6 +5,7 @@ import { DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { Badge } from '../Badge';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
+import { flattenTree } from './treeUtils';
 
 export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
@@ -155,7 +156,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
             <span className={css(styles.dualListSelectorItemText)}>{text}</span>
             {hasBadge && children && (
               <span className={css(styles.dualListSelectorItemCount)}>
-                <Badge {...badgeProps}>{(children as React.ReactElement).props.data.length}</Badge>
+                <Badge {...badgeProps}>{flattenTree((children as React.ReactElement).props.data).length}</Badge>
               </span>
             )}
           </span>
