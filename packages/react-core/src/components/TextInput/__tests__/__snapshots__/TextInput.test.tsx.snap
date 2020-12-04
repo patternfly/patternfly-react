@@ -4,7 +4,7 @@ exports[`disabled text input 1`] = `
 <input
   aria-invalid={false}
   aria-label="disabled text input"
-  className="pf-c-form-control pf-m-icon"
+  className="pf-c-form-control"
   disabled={true}
   onBlur={[Function]}
   onChange={[Function]}
@@ -19,7 +19,7 @@ exports[`invalid text input 1`] = `
 <input
   aria-invalid={true}
   aria-label="invalid text input"
-  className="pf-c-form-control pf-m-icon"
+  className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
   onChange={[Function]}
@@ -35,7 +35,7 @@ exports[`readonly text input 1`] = `
 <input
   aria-invalid={false}
   aria-label="readonly text input"
-  className="pf-c-form-control pf-m-icon"
+  className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
   onChange={[Function]}
@@ -51,7 +51,7 @@ exports[`simple text input 1`] = `
 <input
   aria-invalid={false}
   aria-label="simple text input"
-  className="pf-c-form-control pf-m-icon"
+  className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
   onChange={[Function]}
@@ -105,7 +105,7 @@ exports[`validated text input success 1`] = `
     <input
       aria-invalid={false}
       aria-label="validated text input"
-      className="pf-c-form-control pf-m-success pf-m-icon"
+      className="pf-c-form-control pf-m-success"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -144,7 +144,7 @@ exports[`validated text input success 2`] = `
     <input
       aria-invalid={false}
       aria-label="validated text input"
-      className="pf-c-form-control pf-m-warning pf-m-icon"
+      className="pf-c-form-control pf-m-warning"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
