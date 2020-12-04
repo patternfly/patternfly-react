@@ -97,8 +97,13 @@ export interface TableProps extends OUIAProps {
   role?: string;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
-  /** Function triggered when a row is favorited/unfavorited */
+  /**
+   * Enables favorites column
+   * Callback triggered when a row is favorited/unfavorited
+   */
   onFavorite?: OnFavorite;
+  /** Along with the onSort prop, enables favorites sorting, defaults to true */
+  canSortFavorites?: boolean;
 }
 
 export class Table extends React.Component<TableProps, {}> {
@@ -122,7 +127,8 @@ export class Table extends React.Component<TableProps, {}> {
     canSelectAll: true,
     selectVariant: 'checkbox',
     ouiaSafe: true,
-    isStickyHeader: false
+    isStickyHeader: false,
+    canSortFavorites: true
   };
   state = {
     ouiaStateId: getDefaultOUIAId(Table.displayName)
@@ -178,6 +184,7 @@ export class Table extends React.Component<TableProps, {}> {
       role,
       borders,
       onFavorite,
+      canSortFavorites,
       ...props
     } = this.props;
 
@@ -204,8 +211,10 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
-      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length,
-      onFavorite
+      onFavorite,
+      canSortFavorites,
+      // order of columns: Collapsible | Selectable | Favoritable
+      firstUserColumnIndex: [onCollapse, onSelect, onFavorite].filter(callback => callback).length
     });
 
     const table = (

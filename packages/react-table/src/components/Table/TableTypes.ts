@@ -62,8 +62,8 @@ export type OnRowEdit = (
 ) => void;
 export type OnFavorite = (
   event: React.MouseEvent,
-  rowIndex: number,
   isFavorited: boolean,
+  rowIndex: number,
   rowData: IRowData,
   extraData: IExtraData
 ) => void;
@@ -112,6 +112,7 @@ export interface IExtraData extends IExtraColumnData, IExtraRowData {}
 
 export interface IExtra extends IExtraData {
   rowData?: IRowData;
+  className?: string;
 }
 
 export type IFormatterValueType = formatterValueType & {
@@ -214,7 +215,6 @@ export interface IRow extends RowType {
   rowCancelBtnAriaLabel?: (idx: number) => string;
   parent?: number;
   compoundParent?: number;
-  props?: any;
   fullWidth?: boolean;
   noPadding?: boolean;
   heightAuto?: boolean;
@@ -228,4 +228,10 @@ export interface IRow extends RowType {
   disableCheckbox?: boolean;
   /** Whether the row checkbox/radio button is disabled */
   disableSelection?: boolean;
+  /** Whether the row is favorited */
+  favorited?: boolean;
+  /** Any additional props forwarded to the favorites cell */
+  favoritesProps?: any;
+  /** any additional row props */
+  props?: any;
 }

@@ -9,7 +9,8 @@ import {
   expandedRow,
   parentId,
   editable,
-  favoritable
+  favoritable,
+  sortableFavorites
 } from './transformers';
 import { defaultTitle } from './formatters';
 import {
@@ -21,7 +22,9 @@ import {
   OnSelect,
   OnCollapse,
   OnRowEdit,
-  OnFavorite
+  OnFavorite,
+  OnSort,
+  ISortBy
 } from '../TableTypes';
 
 /**
@@ -142,6 +145,46 @@ const selectableTransforms = ({ onSelect, canSelectAll }: ISelectTransform) => [
 ];
 
 /**
+ * Function to define favorites cell in first column (or second column if rows are also selectable).
+ *
+ * @param {*} extraObject with onFavorite callback.
+ * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
+ */
+const favoritesTransforms = ({
+  onFavorite,
+  onSort,
+  sortBy,
+  canSortFavorites,
+  firstUserColumnIndex
+}: {
+  onFavorite: OnFavorite;
+  onSort: OnSort;
+  sortBy: ISortBy;
+  canSortFavorites: boolean;
+  firstUserColumnIndex: number;
+}): any => [
+  ...(onFavorite
+    ? [
+        {
+          title: '',
+          transforms:
+            onSort && canSortFavorites
+              ? [
+                  sortableFavorites({
+                    onSort,
+                    // favorites should be just before the first user-defined column
+                    columnIndex: firstUserColumnIndex - 1,
+                    sortBy
+                  })
+                ]
+              : [emptyTD],
+          cellTransforms: [favoritable]
+        }
+      ]
+    : [])
+];
+
+/**
  * Function to define actions in last column.
  *
  * @param {*} extraObject with actions array.
@@ -251,29 +294,6 @@ const rowEditTransforms = ({ onRowEdit }: { onRowEdit: OnRowEdit }) => [
 ];
 
 /**
- * Function to define favorites cell in first column (or second column if rows are also selectable).
- *
- * @param {*} extraObject with onFavorite callback.
- * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
- */
-const favoritesTransforms = ({ onFavorite }: { onFavorite: OnFavorite }): any => {
-  if (onFavorite) {
-    debugger;
-  }
-  return [
-    ...(onFavorite
-      ? [
-          {
-            title: '',
-            // transforms: (canSelectAll && [selectable]) || null,
-            cellTransforms: [favoritable]
-          }
-        ]
-      : [])
-  ];
-};
-
-/**
  * Function to calculate columns based on custom config.
  * It adds some custom cells for collapse, select, if expanded row and actions.
  *
@@ -286,10 +306,10 @@ export const calculateColumns = (headerRows: (ICell | string)[], extra: any) =>
   [
     ...collapsibleTransforms(headerRows, extra),
     ...selectableTransforms(extra),
+    ...favoritesTransforms(extra),
     ...expandContent(headerRows, extra),
     ...rowEditTransforms(extra),
-    ...actionsTransforms(extra),
-    ...favoritesTransforms(extra)
+    ...actionsTransforms(extra)
   ].map((oneCol, key) => ({
     ...mapHeader(oneCol as ICell, extra, key)
   }));

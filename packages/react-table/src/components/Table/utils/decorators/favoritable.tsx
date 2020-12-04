@@ -17,37 +17,35 @@ export const favoritable: ITransform = (
     column,
     property
   };
-  debugger;
 
   // this is a child row which should not display the favorites icon
-//   if (rowData && rowData.hasOwnProperty('parent') && !rowData.fullWidth) {
-//     return {
-//       component: 'td',
-//       isVisible: true
-//     };
-//   }
-//   const rowId = rowIndex !== undefined ? rowIndex : -1;
+  if (rowData && rowData.hasOwnProperty('parent') && !rowData.fullWidth) {
+    return {
+      component: 'td',
+      isVisible: true
+    };
+  }
 
   /**
    * @param {React.MouseEvent} event - Mouse event
    */
   function favoritesClick(event: React.MouseEvent<HTMLButtonElement>) {
     // tslint:disable-next-line:no-unused-expression
-    onFavorite && onFavorite(event, rowIndex, rowData && !rowData.favorited, rowData, extraData);
+    onFavorite && onFavorite(event, rowData && !rowData.favorited, rowIndex, rowData, extraData);
   }
 
+  const additionalProps = rowData.favoritesProps || {};
+
   return {
-    className: css(styles.tableFavorite, rowData.favorited && styles.modifiers.favorited),
-    // isVisible: !rowData.fullWidth,
+    className: css(styles.tableFavorite, rowData && rowData.favorited && styles.modifiers.favorited),
+    isVisible: !rowData || !rowData.fullWidth,
     children: (
       <FavoritesCell
-        // aria-labelledby={`${rowLabeledBy}${rowIndex} ${expandId}${rowIndex}`}
+        rowIndex={rowIndex}
         onFavorite={favoritesClick}
-        // id={expandId + rowIndex}
         isFavorited={rowData && rowData.favorited}
-      >
-        {value}
-      </FavoritesCell>
+        {...additionalProps}
+      />
     )
   };
 };

@@ -27,7 +27,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-import { ToggleGroup, ToggleGroupItem, Popover, Button } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -43,14 +43,13 @@ The `Table` component is a configuration based component that takes a less decla
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem, Popover, Button } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      choice: 'default',
-      isVisible: true
+      choice: 'default'
     };
     this.handleItemClick = this.handleItemClick.bind(this);
   }
@@ -61,42 +60,14 @@ class SimpleTable extends React.Component {
     });
   }
 
-  togglePopover() {
-    this.setState({
-      isVisible: !this.state.isVisible
-    });
-  }
-
   render() {
     const { choice } = this.state;
 
-    const MyPopover = ({ text, children }) => (
-      <Popover
-        isVisible
-        bodyContent={
-          <div>
-            {text}
-            <div>
-              <Button onClick={hide}>Close popover</Button>
-            </div>
-          </div>
-        }
-      >
-        {children}
-      </Popover>
-    );
-
     const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
     const rows = [
-      ['Repository one', 'Branch one', 'PR one', 'Workspace one', {
-        title: <Popover bodyContent={<button onClick={() => {}}>Press to commit 1</button>}><Button>Commit 1</Button></Popover>
-      }],
-      ['Repository two', 'Branch two', 'PR two', 'Workspace two', {
-        title: <Popover bodyContent="b"><Button>Commit 2</Button></Popover>
-      }],
-      ['Repository three', 'Branch three', 'PR three', 'Workspace three', {
-        title: <Popover bodyContent="c"><Button>Commit 3</Button></Popover>
-      }]
+      ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
+      ['Repository two', 'Branch two', 'PR two', 'Workspace two', 'Commit two'],
+      ['Repository three', 'Branch three', 'PR three', 'Workspace three', 'Commit three']
     ];
 
     return (
@@ -449,6 +420,10 @@ class SortableTable extends React.Component {
 
 ### Selectable
 
+To enable row selection, set the `onSelect` callback prop on the Table.
+To control whether a row is selected or not, the Table looks for `selected: true | falsy` on the row definition.
+To disable selection for a row, set `disableSelection: true` on the row definition.
+
 ```js
 import React from 'react';
 import {
@@ -531,122 +506,6 @@ class SelectableTable extends React.Component {
         <Table
           onSelect={this.onSelect}
           canSelectAll={canSelectAll}
-          aria-label="Selectable Table"
-          cells={columns}
-          rows={rows}
-        >
-          <TableHeader />
-          <TableBody />
-        </Table>
-      </div>
-    );
-  }
-}
-```
-
-### Favorites
-
-```js
-import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable
-} from '@patternfly/react-table';
-import { Checkbox } from '@patternfly/react-core';
-
-class FavoritesTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories', cellTransforms: [headerCol()] },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last commit'
-      ],
-      rows: [
-        {
-          favorited: true,
-          cells: ['one', 'two', 'a', 'four', 'five']
-        },
-        {
-          cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true
-        },
-        {
-          cells: ['p', 'two', 'b', 'four', 'five']
-        }
-      ],
-      canSelectAll: true
-    };
-    this.onSelect = this.onSelect.bind(this);
-    this.toggleSelect = this.toggleSelect.bind(this);
-    this.onFavorite = this.onFavorite.bind(this);
-  }
-
-  onSelect(event, isSelected, rowId) {
-    let rows;
-    if (rowId === -1) {
-      rows = this.state.rows.map(oneRow => {
-        oneRow.selected = isSelected;
-        return oneRow;
-      });
-    } else {
-      rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
-    }
-    this.setState({
-      rows
-    });
-  }
-
-  onFavorite(event, isFavorited, rowId) {
-    let rows;
-    if (rowId === -1) {
-      rows = this.state.rows.map(oneRow => {
-        oneRow.favorited = isFavorited;
-        return oneRow;
-      });
-    } else {
-      rows = [...this.state.rows];
-      rows[rowId].favorited = isFavorited;
-    }
-    this.setState({
-      rows
-    });
-  }
-
-  toggleSelect(checked) {
-    this.setState({
-      canSelectAll: checked
-    });
-  }
-
-  render() {
-    const { columns, rows, canSelectAll } = this.state;
-
-    return (
-      <div>
-        <Checkbox
-          label="Can select all"
-          className="pf-u-mb-lg"
-          isChecked={canSelectAll}
-          onChange={this.toggleSelect}
-          aria-label="toggle select all checkbox"
-          id="toggle-select-all"
-          name="toggle-select-all"
-        />
-        <Table
-          onFavorite={this.onFavorite}
-          // onSelect={this.onSelect}
-          // canSelectAll={canSelectAll}
           aria-label="Selectable Table"
           cells={columns}
           rows={rows}
@@ -1091,7 +950,6 @@ class CompoundExpandableTable extends React.Component {
       rows: [
         {
           isOpen: true,
-          selected: true,
           cells: [
             { title: <a href="#">siemur/test-space</a>, props: { component: 'th' } },
             {
@@ -1271,7 +1129,7 @@ class CompoundExpandableTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table aria-label="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns} onSelect={() => {}}>
+      <Table aria-label="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -1953,6 +1811,167 @@ class EditableRowsTable extends React.Component {
         <TableHeader />
         <TableBody />
       </Table>
+    );
+  }
+}
+```
+
+### Favoritable
+
+To enable favoriting of a row, set the `onFavorite` callback prop on the Table.
+To control whether a row is favorited or not, the Table looks for `favorited: true | falsy` on the row definition.
+When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled. If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable
+} from '@patternfly/react-table';
+import { Checkbox } from '@patternfly/react-core';
+
+class FavoritesTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories', transforms: [sortable] },
+        'Branches',
+        'Pull requests',
+        'Workspaces',
+        'Last commit'
+      ],
+      rows: [
+        {
+          favorited: true,
+          // The favorites button has defaults that can be overriden
+          favoritesProps: {
+            'aria-label': 'Favorited', // Defaults to 'Starred' / 'Not starred'
+            id: 'favorites-button-a', // Defaults to `favorites-button-${rowIndex}`
+            'aria-labelledby': 'favorites-button-a repository-1' // Defaults to `favorites-button-${rowIndex}`
+          },
+          cells: [{ title: <span id="repository-1">one</span> }, 'two', 'a', 'four', 'five']
+        },
+        {
+          cells: ['a', 'two', 'k', 'four', 'five'],
+          disableSelection: true
+        },
+        {
+          favorited: true,
+          cells: ['p', 'two', 'b', 'four', 'five']
+        }
+      ],
+      sortBy: {},
+      canSortFavorites: true
+    };
+    this.onSelect = this.onSelect.bind(this);
+    this.onFavorite = this.onFavorite.bind(this);
+    this.onSort = this.onSort.bind(this);
+    this.toggleFavsSort = this.toggleFavsSort.bind(this);
+  }
+
+  onSelect(event, isSelected, rowId) {
+    let rows;
+    if (rowId === -1) {
+      // header row
+      rows = this.state.rows.map(oneRow => {
+        oneRow.selected = isSelected;
+        return oneRow;
+      });
+    } else {
+      // body row
+      rows = [...this.state.rows];
+      rows[rowId].selected = isSelected;
+    }
+    this.setState({
+      rows
+    });
+  }
+
+  onFavorite(event, isFavorited, rowId) {
+    this.setState({
+      rows: this.state.rows.map((row, index) => {
+        if (index === rowId) {
+          row.favorited = isFavorited;
+          row.favoritesProps = {
+            ...row.favoritesProps,
+            // Example of how to override the default aria-label of Starred / Not starred
+            'aria-label': isFavorited ? 'Favorited' : 'Not favorited'
+          };
+        }
+        return row;
+      })
+    });
+  }
+
+  onSort(_event, index, direction) {
+    let sortedRows;
+    if (index === 1) {
+      // favorites column
+      sortedRows = this.state.rows.sort((a, b) => {
+        if (a.favorited && !b.favorited) {
+          return 1;
+        } else if (!a.favorited && b.favorited) {
+          return -1;
+        }
+        return 0;
+      });
+    } else {
+      sortedRows = this.state.rows.sort((a, b) =>
+        a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0
+      );
+    }
+    this.setState({
+      sortBy: {
+        index,
+        direction
+      },
+      rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
+    });
+  }
+
+  toggleFavsSort(checked) {
+    this.setState({
+      canSortFavorites: checked
+    });
+  }
+
+  render() {
+    const { columns, rows, sortBy, canSortFavorites } = this.state;
+
+    return (
+      <div>
+        <Checkbox
+          label="Can sort favorites"
+          isChecked={canSortFavorites}
+          onChange={this.toggleFavsSort}
+          aria-label="toggle select all checkbox"
+          id="toggle-select-all"
+          name="toggle-select-all"
+        />
+        <Table
+          // using this prop enables the favorites column
+          onFavorite={this.onFavorite}
+          // if the onSort prop is detected, favorites can be sorted
+          // if you want to exclude favorites from sorting you can use this prop with a value of `false`
+          canSortFavorites={canSortFavorites}
+          onSelect={this.onSelect}
+          onSort={this.onSort}
+          sortBy={sortBy}
+          aria-label="Favoritable Table"
+          cells={columns}
+          rows={rows}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+      </div>
     );
   }
 }
@@ -2960,6 +2979,84 @@ ComposableTableText = () => {
         {rows.map((row, rowIndex) => (
           <Tr key={rowIndex}>
             {row.map((cell, cellIndex) => (
+              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                {cell}
+              </Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </TableComposable>
+  );
+};
+```
+
+### Composable: Favoritable
+
+```js isBeta
+import React from 'react';
+import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+
+ComposableTableFavoritable = () => {
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+  const [rows, setRows] = React.useState([
+    { favorited: true, cells: ['one', 'two', 'three', 'four', 'five'] },
+    { favorited: false, cells: ['one - 2', null, null, 'four - 2', 'five - 2'] },
+    { favorited: false, cells: ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3'] }
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (a.favorited && !b.favorited) {
+          return 1;
+        } else if (!a.favorited && b.favorited) {
+          return -1;
+        }
+        return 0;
+    });
+    setRows(direction === 'asc' ? updatedRows : updatedRows.reverse());
+  };
+  const sortParams = {
+    sort: {
+      isFavorites: true,
+      sortBy: {
+        index: activeSortIndex,
+        direction: activeSortDirection
+      },
+      onSort,
+      columnIndex: 0
+    }
+  };
+  return (
+    <TableComposable aria-label="Favoritable table" variant={'compact'}>
+      <Thead>
+        <Tr>
+          <Th {...sortParams} />
+          {columns.map((column, columnIndex) => (
+            <Th key={columnIndex}>{column}</Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows.map((row, rowIndex) => (
+          <Tr key={rowIndex}>
+            <Td favorites={{
+              isFavorited: row.favorited,
+              onFavorite: (event, isFavorited) => setRows(rows.map((row, index) => {
+                if (index === rowIndex) {
+                  row.favorited = isFavorited;
+                }
+                return row;
+              })),
+              rowIndex
+            }} />
+            {row.cells.map((cell, cellIndex) => (
               <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
                 {cell}
               </Td>

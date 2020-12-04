@@ -10,11 +10,12 @@ import { cellActions } from '../Table/utils/decorators/cellActions';
 import { selectable } from '../Table/utils/decorators/selectable';
 import { collapsible } from '../Table/utils/decorators/collapsible';
 import { compoundExpand } from '../Table/utils/decorators/compoundExpand';
-import { cellWidth } from './../Table/utils/decorators/cellWidth';
+import { cellWidth } from '../Table/utils/decorators/cellWidth';
 import { Visibility, classNames } from './../Table/utils/decorators/classNames';
+import { favoritable } from '../Table/utils/decorators/favoritable';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { OnSelect, IFormatterValueType, IActions, OnExpand, OnCollapse } from '../Table/TableTypes';
+import { OnSelect, IFormatterValueType, IActions, OnExpand, OnCollapse, OnFavorite } from '../Table/TableTypes';
 
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
@@ -63,6 +64,16 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     /** Callback on toggling of the expansion */
     onToggle?: OnExpand;
   };
+  favorites?: {
+    /** Whether the corresponding row is favorited */
+    isFavorited: boolean;
+    /** Callback on clicking the favorites button */
+    onFavorite?: OnFavorite;
+    /** The row index */
+    rowIndex?: number;
+    /** Additional props forwarded to the FavoritesCell */
+    props?: any;
+  };
   /** True to remove padding */
   noPadding?: boolean;
 }
@@ -82,6 +93,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   width,
   visibility,
   innerRef,
+  favorites = null,
   ...props
 }: TdProps) => {
   const selectParams = select
@@ -95,6 +107,20 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           extraParams: {
             onSelect: select?.onSelect,
             selectVariant: select.variant || 'checkbox'
+          }
+        }
+      })
+    : null;
+  const favoriteParams = favorites
+    ? favoritable(null, {
+        rowIndex: favorites?.rowIndex,
+        rowData: {
+          favorited: favorites.isFavorited,
+          favoritesProps: favorites?.props
+        },
+        column: {
+          extraParams: {
+            onFavorite: favorites?.onFavorite
           }
         }
       })
@@ -156,7 +182,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     expandableParams,
     compoundParams,
     widthParams,
-    visibilityParams
+    visibilityParams,
+    favoriteParams
   );
   const {
     // selectable adds this but we don't want it

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { info } from '../Table/utils/decorators/info';
-import { sortable } from '../Table/utils/decorators/sortable';
+import { sortable, sortableFavorites } from '../Table/utils/decorators/sortable';
 import { selectable } from '../Table/utils/decorators/selectable';
 import { cellWidth } from './../Table/utils/decorators/cellWidth';
 import { Visibility, classNames } from './../Table/utils/decorators/classNames';
@@ -30,6 +30,8 @@ export interface ThProps
     sortBy: ISortBy;
     /** The column index */
     columnIndex: number;
+    /** True to make this a favoritable sorting cell */
+    isFavorites?: boolean;
   };
   /**
    * Tooltip to show on the header cell
@@ -69,8 +71,16 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     }
     onMouseEnterProp(event);
   };
-  const sortParams = sort
-    ? sortable(children as IFormatterValueType, {
+  let sortParams = null;
+  if (sort) {
+    if (sort.isFavorites) {
+      sortParams = sortableFavorites({
+        onSort: sort?.onSort,
+        columnIndex: sort.columnIndex,
+        sortBy: sort.sortBy
+      })();
+    } else {
+      sortParams = sortable(children as IFormatterValueType, {
         columnIndex: sort.columnIndex,
         column: {
           extraParams: {
@@ -78,8 +88,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
             onSort: sort?.onSort
           }
         } as IColumn
-      })
-    : null;
+      });
+    }
+  }
   const selectParams = select
     ? selectable(children as IFormatterValueType, {
         column: {
