@@ -1,12 +1,3 @@
-/*
-cy.visit('http://localhost:3000/table-favorites-demo-nav-link');
-cy.get('#favorites-button-1 path').click();
-cy.get('#favorites-button-1 path').click();
-cy.get('.pf-c-table__text > svg').click();
-cy.get('.pf-c-table__text > svg').click();
-
-*/
-
 describe('Table Favorites Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
