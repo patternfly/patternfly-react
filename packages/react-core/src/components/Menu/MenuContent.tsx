@@ -9,7 +9,7 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   innerRef?: React.Ref<any>;
 }
 
-export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLElement>) => (
+export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => (
   <div {...props} className={css(styles.menuContent, props.className)} ref={ref} />
 ));
 MenuContent.displayName = 'MenuContent';
