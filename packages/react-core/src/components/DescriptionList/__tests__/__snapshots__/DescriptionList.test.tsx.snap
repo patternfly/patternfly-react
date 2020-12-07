@@ -24,6 +24,26 @@ exports[`Description List Auto Column Widths Description List 1`] = `
 />
 `;
 
+exports[`Description List Auto fit Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-auto-fit"
+/>
+`;
+
+exports[`Description List Auto fit with responsive grid Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-auto-fit"
+  style={
+    Object {
+      "--pf-c-description-list--GridTemplateColumns--min-on-2xl": "300px",
+      "--pf-c-description-list--GridTemplateColumns--min-on-lg": "150px",
+      "--pf-c-description-list--GridTemplateColumns--min-on-md": "100px",
+      "--pf-c-description-list--GridTemplateColumns--min-on-xl": "200px",
+    }
+  }
+/>
+`;
+
 exports[`Description List Description 1`] = `
 <dd
   aria-labelledby="description-1"
