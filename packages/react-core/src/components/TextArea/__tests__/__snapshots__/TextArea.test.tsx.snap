@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`disabled text input using disabled 1`] = `
+<TextArea
+  aria-label="disabled textarea"
+  disabled={true}
+  onChange={[MockFunction]}
+  value="test textarea"
+>
+  <TextArea
+    aria-label="disabled textarea"
+    className=""
+    disabled={true}
+    innerRef={null}
+    isDisabled={false}
+    isRequired={false}
+    onChange={[MockFunction]}
+    resizeOrientation="both"
+    validated="default"
+    value="test textarea"
+  >
+    <textarea
+      aria-invalid={false}
+      aria-label="disabled textarea"
+      className="pf-c-form-control"
+      disabled={true}
+      onChange={[Function]}
+      required={false}
+      value="test textarea"
+    />
+  </TextArea>
+</TextArea>
+`;
+
+exports[`disabled text input using isDisabled 1`] = `
+<TextArea
+  aria-label="is disabled textarea"
+  isDisabled={true}
+  onChange={[MockFunction]}
+  value="test textarea"
+>
+  <TextArea
+    aria-label="is disabled textarea"
+    className=""
+    innerRef={null}
+    isDisabled={true}
+    isRequired={false}
+    onChange={[MockFunction]}
+    resizeOrientation="both"
+    validated="default"
+    value="test textarea"
+  >
+    <textarea
+      aria-invalid={false}
+      aria-label="is disabled textarea"
+      className="pf-c-form-control"
+      disabled={true}
+      onChange={[Function]}
+      required={false}
+      value="test textarea"
+    />
+  </TextArea>
+</TextArea>
+`;
+
 exports[`horizontally resizable text area 1`] = `
 <TextArea
   aria-label="horizontal resize textarea"
@@ -13,6 +76,7 @@ exports[`horizontally resizable text area 1`] = `
     aria-label="horizontal resize textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     required={true}
@@ -44,6 +108,7 @@ exports[`invalid text area 1`] = `
     aria-label="invalid textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     required={true}
@@ -63,6 +128,70 @@ exports[`invalid text area 1`] = `
 </TextArea>
 `;
 
+exports[`read only text input using isReadOnly 1`] = `
+<TextArea
+  aria-label="is read only textarea"
+  isReadOnly={true}
+  onChange={[MockFunction]}
+  value="test textarea"
+>
+  <TextArea
+    aria-label="is read only textarea"
+    className=""
+    innerRef={null}
+    isDisabled={false}
+    isReadOnly={true}
+    isRequired={false}
+    onChange={[MockFunction]}
+    resizeOrientation="both"
+    validated="default"
+    value="test textarea"
+  >
+    <textarea
+      aria-invalid={false}
+      aria-label="is read only textarea"
+      className="pf-c-form-control"
+      onChange={[Function]}
+      readOnly={true}
+      required={false}
+      value="test textarea"
+    />
+  </TextArea>
+</TextArea>
+`;
+
+exports[`read only text input using readOnly 1`] = `
+<TextArea
+  aria-label="read only textarea"
+  onChange={[MockFunction]}
+  readOnly={true}
+  value="test textarea"
+>
+  <TextArea
+    aria-label="read only textarea"
+    className=""
+    innerRef={null}
+    isDisabled={false}
+    isRequired={false}
+    onChange={[MockFunction]}
+    readOnly={true}
+    resizeOrientation="both"
+    validated="default"
+    value="test textarea"
+  >
+    <textarea
+      aria-invalid={false}
+      aria-label="read only textarea"
+      className="pf-c-form-control"
+      onChange={[Function]}
+      readOnly={true}
+      required={false}
+      value="test textarea"
+    />
+  </TextArea>
+</TextArea>
+`;
+
 exports[`simple text input 1`] = `
 <TextArea
   aria-label="simple textarea"
@@ -73,6 +202,7 @@ exports[`simple text input 1`] = `
     aria-label="simple textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     resizeOrientation="both"
@@ -103,6 +233,7 @@ exports[`validated text area error 1`] = `
     aria-label="validated textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     required={true}
@@ -134,6 +265,7 @@ exports[`validated text area success 1`] = `
     aria-label="validated textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     required={true}
@@ -165,6 +297,7 @@ exports[`validated text area warning 1`] = `
     aria-label="validated textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     required={true}
@@ -195,6 +328,7 @@ exports[`vertically resizable text area 1`] = `
     aria-label="vertical resize textarea"
     className=""
     innerRef={null}
+    isDisabled={false}
     isRequired={false}
     onChange={[MockFunction]}
     resizeOrientation="vertical"

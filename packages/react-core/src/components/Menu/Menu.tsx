@@ -2,8 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import { SearchInput } from '../SearchInput';
-import { Divider } from '../Divider';
 import { MenuContext } from './MenuContext';
 
 export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'>, OUIAProps {
@@ -57,11 +55,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       onSelect,
       selected = null,
       onActionClick,
-      onSearchInputChange,
       ouiaId,
       ouiaSafe,
       containsFlyout,
-      hasSearchInput,
       activeItemId = null,
       innerRef,
       ...props
@@ -76,25 +72,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
-          {hasSearchInput && (
-            <React.Fragment>
-              <div className={styles.menuSearch}>
-                <SearchInput
-                  value={this.state.searchInputValue}
-                  onChange={(value, event) => {
-                    this.setState({ searchInputValue: value });
-                    onSearchInputChange(event, value);
-                  }}
-                  onClear={event => {
-                    this.setState({ searchInputValue: '' });
-                    onSearchInputChange(event, '');
-                  }}
-                />
-              </div>
-              <Divider />
-            </React.Fragment>
-          )}
-          <div className={css(styles.menuContent)}>{children}</div>
+          {children}
         </div>
       </MenuContext.Provider>
     );

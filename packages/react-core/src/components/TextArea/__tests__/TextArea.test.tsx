@@ -23,6 +23,26 @@ test('simple text input', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('disabled text input using isDisabled', () => {
+  const view = mount(<TextArea {...props} aria-label="is disabled textarea" isDisabled />);
+  expect(view).toMatchSnapshot();
+});
+
+test('disabled text input using disabled', () => {
+  const view = mount(<TextArea {...props} aria-label="disabled textarea" disabled />);
+  expect(view).toMatchSnapshot();
+});
+
+test('read only text input using isReadOnly', () => {
+  const view = mount(<TextArea {...props} aria-label="is read only textarea" isReadOnly />);
+  expect(view).toMatchSnapshot();
+});
+
+test('read only text input using readOnly', () => {
+  const view = mount(<TextArea {...props} aria-label="read only textarea" readOnly />);
+  expect(view).toMatchSnapshot();
+});
+
 test('invalid text area', () => {
   const view = mount(<TextArea {...props} required validated={'error'} aria-label="invalid textarea" />);
   expect(view).toMatchSnapshot();

@@ -40,4 +40,13 @@ describe('Description List Demo Test', () => {
   it('Verify Inline Grid Description List', () => {
     cy.get('.pf-c-description-list[id="inline-grid-description-list"]').should('have.class', 'pf-m-inline-grid');
   });
+
+  it('Verify Auto Fit Description List', () => {
+    cy.get('.pf-c-description-list[id="auto-fit-description-list"]').should('have.class', 'pf-m-auto-fit');
+    cy.get('.pf-c-description-list[id="auto-fit-description-list"]').should(
+      'have.attr',
+      'style',
+      '--pf-c-description-list--GridTemplateColumns--min-on-md:100px; --pf-c-description-list--GridTemplateColumns--min-on-lg:150px; --pf-c-description-list--GridTemplateColumns--min-on-xl:200px; --pf-c-description-list--GridTemplateColumns--min-on-2xl:300px;'
+    );
+  });
 });

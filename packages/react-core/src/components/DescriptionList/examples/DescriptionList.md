@@ -490,3 +490,133 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
   </DescriptionListGroup>
 </DescriptionList>
 ```
+
+## Auto fit
+### Auto-fit basic
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListText,
+  DescriptionListGroup,
+  DescriptionListDescription
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+
+<DescriptionList isAutoFit>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
+```
+
+### Auto-fit, min width modified grid template columns
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListText,
+  DescriptionListGroup,
+  DescriptionListDescription
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+
+<DescriptionList isAutoFit autoFitModifier={{ default: '200px' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
+```
+
+### Auto-fit, min width modified, responsive grid template columns
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListText,
+  DescriptionListGroup,
+  DescriptionListDescription
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+
+<DescriptionList isAutoFit autoFitModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
+```
