@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.82.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.82.0...@patternfly/react-core@4.82.1) (2020-12-07)
+
+
+### Bug Fixes
+
+* **textinput:** remove Button and React.Fragment from the ref example ([#5176](https://github.com/patternfly/patternfly-react/issues/5176)) ([2197f08](https://github.com/patternfly/patternfly-react/commit/2197f08151b94facec91b7fb23fb3e9245f7b10b))
+
+
+
+
+
 # [4.82.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.81.1...@patternfly/react-core@4.82.0) (2020-12-07)
 
 
