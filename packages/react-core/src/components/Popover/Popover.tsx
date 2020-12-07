@@ -30,8 +30,13 @@ export interface PopoverProps {
   'aria-label'?: string;
   /** The element to append the popover to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
-  /** Body content */
-  bodyContent: React.ReactNode;
+  /**
+   * Body content
+   * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
+   * or you can provide a function which will receive a callback as an argument to hide the popover
+   * i.e. bodyContent={hide => <Button onClick={() => hide()}>Close</Button>}
+   */
+  bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /**
    * The reference element to which the Popover is relatively placed to.
    * If you cannot wrap the reference with the Popover, you can use the reference prop instead.
@@ -48,6 +53,8 @@ export interface PopoverProps {
   className?: string;
   /** Aria label for the Close button */
   closeBtnAriaLabel?: string;
+  /** Whether to show the close button */
+  showClose?: boolean;
   /** Distance of the popover to its target, defaults to 25 */
   distance?: number;
   /**
@@ -65,10 +72,20 @@ export interface PopoverProps {
    * space to the right, so it finally shows the popover on the left.
    */
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
-  /** Footer content */
-  footerContent?: React.ReactNode;
-  /** Header content, leave empty for no header */
-  headerContent?: React.ReactNode;
+  /**
+   * Footer content
+   * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
+   * or you can provide a function which will receive a callback as an argument to hide the popover
+   * i.e. footerContent={hide => <Button onClick={() => hide()}>Close</Button>}
+   */
+  footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  /**
+   * Header content
+   * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
+   * or you can provide a function which will receive a callback as an argument to hide the popover
+   * i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
+   */
+  headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -118,18 +135,24 @@ export interface PopoverProps {
    * clicked, Enter key was used on it, or the ESC key is used.
    * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void) => void;
+  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
    * used on the focused trigger
    */
-  shouldOpen?: (showFunction?: () => void) => void;
+  shouldOpen?: (showFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
   /** z-index of the popover */
   zIndex?: number;
   /** CSS fade transition animation duration */
   animationDuration?: number;
   /** id used as part of the various popover elements (popover-${id}-header/body/footer) */
   id?: string;
+  /** Whether to trap focus in the popover */
+  withFocusTrap?: boolean;
+  /** Removes fixed-width and allows width to be defined by contents */
+  hasAutoWidth?: boolean;
+  /** Allows content to touch edges of popover container */
+  hasNoPadding?: boolean;
   /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** @deprecated - no longer used */
@@ -159,14 +182,18 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   minWidth = popoverMinWidth && popoverMinWidth.value,
   maxWidth = popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel = 'Close',
+  showClose = true,
   distance = 25,
   // For every initial starting position, there are 3 escape positions
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
   animationDuration = 300,
   id,
+  withFocusTrap: propWithFocusTrap,
   boundary,
   tippyProps,
   reference,
+  hasNoPadding = false,
+  hasAutoWidth = false,
   ...rest
 }: PopoverProps) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -182,7 +209,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = React.useState(false);
   const [opacity, setOpacity] = React.useState(0);
-  const [focusTrapActive, setFocusTrapActive] = React.useState(false);
+  const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
@@ -209,7 +236,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     showTimerRef.current = setTimeout(() => {
       setVisible(true);
       setOpacity(1);
-      withFocusTrap && setFocusTrapActive(true);
+      propWithFocusTrap !== false && withFocusTrap && setFocusTrapActive(true);
       onShown();
     }, 0);
   };
@@ -238,7 +265,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
       if (triggerManually) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
         hide();
       }
@@ -253,7 +280,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         return;
       }
       if (triggerManually) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
         hide();
       }
@@ -263,25 +290,25 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     if (event.keyCode === KEY_CODES.ENTER) {
       if (!visible) {
         if (triggerManually) {
-          shouldOpen(show);
+          shouldOpen(show, event);
         } else {
           show(true);
         }
       } else {
         if (triggerManually) {
-          shouldClose(null, hide);
+          shouldClose(null, hide, event);
         } else {
           hide();
         }
       }
     }
   };
-  const onTriggerClick = () => {
+  const onTriggerClick = (event: MouseEvent) => {
     if (triggerManually) {
       if (visible) {
-        shouldClose(null, hide);
+        shouldClose(null, hide, event);
       } else {
-        shouldOpen(show);
+        shouldOpen(show, event);
       }
     } else {
       if (visible) {
@@ -299,7 +326,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const closePopover = (event: any) => {
     event.stopPropagation();
     if (triggerManually) {
-      shouldClose(null, hide);
+      shouldClose(null, hide, event);
     } else {
       hide();
     }
@@ -308,7 +335,12 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     <FocusTrap
       active={focusTrapActive}
       focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}
-      className={css(styles.popover, className)}
+      className={css(
+        styles.popover,
+        hasNoPadding && styles.modifiers.noPadding,
+        hasAutoWidth && styles.modifiers.widthAuto,
+        className
+      )}
       role="dialog"
       aria-modal="true"
       aria-label={headerContent ? undefined : ariaLabel}
@@ -325,10 +357,20 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     >
       <PopoverArrow />
       <PopoverContent>
-        <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
-        {headerContent && <PopoverHeader id={`popover-${uniqueId}-header`}>{headerContent}</PopoverHeader>}
-        <PopoverBody id={`popover-${uniqueId}-body`}>{bodyContent}</PopoverBody>
-        {footerContent && <PopoverFooter id={`popover-${uniqueId}-footer`}>{footerContent}</PopoverFooter>}
+        {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
+        {headerContent && (
+          <PopoverHeader id={`popover-${uniqueId}-header`}>
+            {typeof headerContent === 'function' ? headerContent(hide) : headerContent}
+          </PopoverHeader>
+        )}
+        <PopoverBody id={`popover-${uniqueId}-body`}>
+          {typeof bodyContent === 'function' ? bodyContent(hide) : bodyContent}
+        </PopoverBody>
+        {footerContent && (
+          <PopoverFooter id={`popover-${uniqueId}-footer`}>
+            {typeof footerContent === 'function' ? footerContent(hide) : footerContent}
+          </PopoverFooter>
+        )}
       </PopoverContent>
     </FocusTrap>
   );

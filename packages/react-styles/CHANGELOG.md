@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.18...@patternfly/react-styles@4.7.19) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.17...@patternfly/react-styles@4.7.18) (2020-12-03)
+
+
+### Bug Fixes
+
+* **VncConsole:** replace novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/issues/5208)) ([6c4c0c2](https://github.com/patternfly/patternfly-react/commit/6c4c0c2e981088e9220b834e2520063fce9d024e)), closes [#5157](https://github.com/patternfly/patternfly-react/issues/5157)
+
+
+
+
+
+## [4.7.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.16...@patternfly/react-styles@4.7.17) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.15...@patternfly/react-styles@4.7.16) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.14...@patternfly/react-styles@4.7.15) (2020-11-17)
+
+
+### Bug Fixes
+
+* **console:** remove css imports ([#5147](https://github.com/patternfly/patternfly-react/issues/5147)) ([df3e2eb](https://github.com/patternfly/patternfly-react/commit/df3e2ebd1eb478ef7b1e48f3c8237c5cc398df4c))
+
+
+
+
+
+## [4.7.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.13...@patternfly/react-styles@4.7.14) (2020-11-13)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 ## [4.7.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.12...@patternfly/react-styles@4.7.13) (2020-10-28)
 
 **Note:** Version bump only for package @patternfly/react-styles

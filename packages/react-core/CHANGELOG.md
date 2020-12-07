@@ -3,6 +3,188 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.82.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.82.0...@patternfly/react-core@4.82.1) (2020-12-07)
+
+
+### Bug Fixes
+
+* **textinput:** remove Button and React.Fragment from the ref example ([#5176](https://github.com/patternfly/patternfly-react/issues/5176)) ([2197f08](https://github.com/patternfly/patternfly-react/commit/2197f08151b94facec91b7fb23fb3e9245f7b10b))
+
+
+
+
+
+# [4.82.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.81.1...@patternfly/react-core@4.82.0) (2020-12-07)
+
+
+### Features
+
+* **descriptionList:** add suport to auto fit ([#5113](https://github.com/patternfly/patternfly-react/issues/5113)) ([1434f9e](https://github.com/patternfly/patternfly-react/commit/1434f9ee930422532bc70c3bb5fb3dfc4d17eb1c))
+* **textarea:** support isDisabled ([#5107](https://github.com/patternfly/patternfly-react/issues/5107)) ([9ebcfe9](https://github.com/patternfly/patternfly-react/commit/9ebcfe9b7b8719556c7b4430186010dd788744f1))
+
+
+
+
+
+## [4.81.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.81.0...@patternfly/react-core@4.81.1) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.81.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.80.2...@patternfly/react-core@4.81.0) (2020-12-04)
+
+
+### Features
+
+* **Drawer:** add splitter feature ([#5193](https://github.com/patternfly/patternfly-react/issues/5193)) ([7f44e90](https://github.com/patternfly/patternfly-react/commit/7f44e901d225068597c1b0efb6098f7c35a01476))
+
+
+
+
+
+## [4.80.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.80.1...@patternfly/react-core@4.80.2) (2020-12-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.80.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.80.0...@patternfly/react-core@4.80.1) (2020-12-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.80.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.6...@patternfly/react-core@4.80.0) (2020-12-01)
+
+
+### Features
+
+* **react-core:** move react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/issues/5201)) ([a36d5d0](https://github.com/patternfly/patternfly-react/commit/a36d5d05a0a839cef5b8ab2790ef10ccd8b89d30))
+
+
+
+
+
+## [4.79.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.5...@patternfly/react-core@4.79.6) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.79.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.4...@patternfly/react-core@4.79.5) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.79.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.3...@patternfly/react-core@4.79.4) (2020-11-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.79.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.2...@patternfly/react-core@4.79.3) (2020-11-20)
+
+
+### Bug Fixes
+
+* **form-demo:** tidy form demo examples ([#5172](https://github.com/patternfly/patternfly-react/issues/5172)) ([4abb31e](https://github.com/patternfly/patternfly-react/commit/4abb31e457b217ab9b0af74efd74ac869678535f))
+
+
+
+
+
+## [4.79.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.1...@patternfly/react-core@4.79.2) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.79.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.79.0...@patternfly/react-core@4.79.1) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.79.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.78.0...@patternfly/react-core@4.79.0) (2020-11-17)
+
+
+### Bug Fixes
+
+* **navigation:** move Page html demos to Navigation component ([#5109](https://github.com/patternfly/patternfly-react/issues/5109)) ([d37e774](https://github.com/patternfly/patternfly-react/commit/d37e77433a79004ea3d26b34a1dc365c969909f3))
+
+
+### Features
+
+* **DualListSelector:** add new component ([#5120](https://github.com/patternfly/patternfly-react/issues/5120)) ([0ed1c5a](https://github.com/patternfly/patternfly-react/commit/0ed1c5a0d530cbbba7f026660baec51f6fd03559))
+
+
+
+
+
+# [4.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.77.1...@patternfly/react-core@4.78.0) (2020-11-17)
+
+
+### Features
+
+* **menu:** introduces new menu component ([#4847](https://github.com/patternfly/patternfly-react/issues/4847)) ([e867f09](https://github.com/patternfly/patternfly-react/commit/e867f093c5eef175b44cbb88e3ad229376de123f))
+
+
+
+
+
+## [4.77.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.77.0...@patternfly/react-core@4.77.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* **datepicker:** add calendar component ([#5026](https://github.com/patternfly/patternfly-react/issues/5026)) ([198dd0f](https://github.com/patternfly/patternfly-react/commit/198dd0fc202bdfa55ef9c9cc1a6721778f1dd265))
+
+
+
+
+
+# [4.77.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.76.0...@patternfly/react-core@4.77.0) (2020-11-16)
+
+
+### Features
+
+* **Card:** add expandable card, move tests ([#5093](https://github.com/patternfly/patternfly-react/issues/5093)) ([0dd992c](https://github.com/patternfly/patternfly-react/commit/0dd992ca8d3aa998766bc750e6972ab5dab49910))
+* **Touchspin:** add touchspin component ([#5115](https://github.com/patternfly/patternfly-react/issues/5115)) ([9dbe59a](https://github.com/patternfly/patternfly-react/commit/9dbe59acf457910ec8efa8280cbc33c952469724))
+
+
+
+
+
+# [4.76.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.10...@patternfly/react-core@4.76.0) (2020-11-13)
+
+
+### Features
+
+* **demo:** add sticky bottom pagination to the card demo ([#5000](https://github.com/patternfly/patternfly-react/issues/5000)) ([883fbf6](https://github.com/patternfly/patternfly-react/commit/883fbf6d6304e8651d572ec4b7cd2af5a344fc85))
+* **Toolbar:** add flag to match page insets ([#5098](https://github.com/patternfly/patternfly-react/issues/5098)) ([fb40278](https://github.com/patternfly/patternfly-react/commit/fb40278d7c5610cd735ab1a4976f3aea5b0be86a))
+
+
+
+
+
 ## [4.75.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.75.9...@patternfly/react-core@4.75.10) (2020-11-09)
 
 **Note:** Version bump only for package @patternfly/react-core

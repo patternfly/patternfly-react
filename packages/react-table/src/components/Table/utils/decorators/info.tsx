@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { InfoType } from '../../base/types';
 import { HeaderCellInfoWrapper } from '../../HeaderCellInfoWrapper';
-import { IFormatterValueType, ITransform } from '../../Table';
+import { IFormatterValueType, ITransform } from '../../TableTypes';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, ariaLabel }: InfoType) => {

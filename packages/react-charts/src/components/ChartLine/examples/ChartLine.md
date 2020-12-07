@@ -12,7 +12,7 @@ hideDarkMode: true
 ---
 
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
-import { VictoryZoomContainer } from 'victory';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -195,7 +195,7 @@ This demonstrates zoom for the x axis only.
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
-import { VictoryZoomContainer } from 'victory';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 
 class MultiColorChart extends React.Component {
   constructor(props) {

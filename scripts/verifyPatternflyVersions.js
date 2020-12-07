@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const semver = require('semver');
 const Project = require('@lerna/project');
 
@@ -25,7 +26,7 @@ function setDependency(dependencies, package, version) {
 }
 
 async function verifyPatternflyVersions() {
-  const packages = (await new Project(__dirname).getPackages());
+  const packages = await new Project(__dirname).getPackages();
 
   packages.forEach(package => {
     accumulateDependencies(package.name, { [package.name]: `^${package.version}` });
@@ -47,7 +48,7 @@ async function verifyPatternflyVersions() {
   if (process.argv[2] === '--fix') {
     mismatchedVersions.forEach(([dep, versions]) => {
       const highestVersion = Object.keys(versions)
-        .sort(semver.compare)
+        .sort((a, b) => semver.compare(a.replace(/^\^/, ''), b.replace(/^\^/, '')))
         .pop();
       Object.keys(versions)
         .filter(version => version !== highestVersion)

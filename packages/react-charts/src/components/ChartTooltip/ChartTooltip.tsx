@@ -5,7 +5,7 @@ import {
   OrientationTypes,
   StringOrNumberOrCallback,
   TextAnchorType,
-  VictoryNumberCallback,
+  OrientationOrCallback,
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
@@ -154,7 +154,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
    */
-  orientation?: OrientationTypes | VictoryNumberCallback;
+  orientation?: OrientationOrCallback;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.

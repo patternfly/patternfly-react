@@ -79,7 +79,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     if (
       !this.props.isOpen ||
       !Array.from(document.activeElement.classList).find(className =>
-        DropdownMenu.validToggleClasses.includes(className)
+        DropdownMenu.validToggleClasses.concat(this.context.toggleClass).includes(className)
       )
     ) {
       return;
@@ -121,7 +121,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       } else if (!node.getAttribute) {
         // eslint-disable-next-line react/no-find-dom-node
         this.refsCollection[index][innerIndex] = ReactDOM.findDOMNode(node) as HTMLElement;
-      } else if (isDisabled || isSeparator) {
+      } else if (isSeparator) {
         this.refsCollection[index][innerIndex] = null;
       } else {
         this.refsCollection[index][innerIndex] = node;
@@ -245,3 +245,5 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     );
   }
 }
+
+DropdownMenu.contextType = DropdownContext;

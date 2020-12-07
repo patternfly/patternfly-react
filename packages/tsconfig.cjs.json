@@ -11,9 +11,6 @@
       "path": "./react-core/tsconfig.cjs.json"
     },
     {
-      "path": "./react-datetime/tsconfig.cjs.json"
-    },
-    {
       "path": "./react-icons/tsconfig.cjs.json"
     },
     {
@@ -24,6 +21,9 @@
     },
     {
       "path": "./react-table/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-console/tsconfig.cjs.json"
     },
     {
       "path": "./react-topology/tsconfig.cjs.json"

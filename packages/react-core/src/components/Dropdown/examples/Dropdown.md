@@ -62,7 +62,7 @@ class SimpleDropdown extends React.Component {
       <DropdownItem key="action" component="button">
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      <DropdownItem key="disabled link" isDisabled href="www.google.com">
         Disabled Link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">

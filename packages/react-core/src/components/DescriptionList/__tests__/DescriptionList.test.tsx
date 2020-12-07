@@ -41,6 +41,16 @@ describe('Description List', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('Auto fit Description List', () => {
+    const view = shallow(<DescriptionList isAutoFit />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Auto fit with responsive grid Description List', () => {
+    const view = shallow(<DescriptionList isAutoFit autoMinFitModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }} />);
+    expect(view).toMatchSnapshot();
+  });
+
   test('Term default', () => {
     const view = shallow(
       <DescriptionListTerm key="term-id-1" aria-labelledby="term-1">

@@ -8,10 +8,10 @@
       "path": "./react-charts"
     },
     {
-      "path": "./react-core"
+      "path": "./react-console"
     },
     {
-      "path": "./react-datetime"
+      "path": "./react-core"
     },
     {
       "path": "./react-icons"

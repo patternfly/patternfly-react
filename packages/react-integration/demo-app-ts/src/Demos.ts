@@ -21,6 +21,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AccordionDemo
   },
   {
+    id: 'action-list-demo',
+    name: 'Action List Demo',
+    componentType: Examples.ActionListDemo
+  },
+  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo
@@ -169,6 +174,11 @@ export const Demos: DemoInterface[] = [
     id: 'clipboard-copy-expanded-demo',
     name: 'ClipboardCopy Expanded Demo',
     componentType: Examples.ClipboardCopyExpandedDemo
+  },
+  {
+    id: 'consoles-demo',
+    name: 'Consoles Demo',
+    componentType: Examples.ConsolesDemo
   },
   {
     id: 'context-selector-demo',
@@ -327,6 +337,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DropdownDemo
   },
   {
+    id: 'dual-list-selector-basic-demo',
+    name: 'DualListSelector basic Demo',
+    componentType: Examples.DualListSelectorBasicDemo
+  },
+  {
+    id: 'dual-list-selector-with-actions-demo',
+    name: 'DualListSelector with actions Demo',
+    componentType: Examples.DualListSelectorWithActionsDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo
@@ -365,6 +385,11 @@ export const Demos: DemoInterface[] = [
     id: 'hint-demo',
     name: 'Hint Demo',
     componentType: Examples.HintDemo
+  },
+  {
+    id: 'jump-links-demo',
+    name: 'Jump Links Demo',
+    componentType: Examples.JumpLinksDemo
   },
   {
     id: 'input-group-demo',
@@ -425,6 +450,11 @@ export const Demos: DemoInterface[] = [
     id: 'login-page-demo',
     name: 'Login Page Demo',
     componentType: Examples.LoginPageDemo
+  },
+  {
+    id: 'menu-demo',
+    name: 'Menu Demo',
+    componentType: Examples.MenuDemo
   },
   {
     id: 'modal-demo',
@@ -647,6 +677,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableEditableDemo
   },
   {
+    id: 'table-editable-compound-expandable-demo',
+    name: 'Table Editable Compound Expandable Demo',
+    componentType: Examples.TableEditableCompoundExpandableDemo
+  },
+  {
     id: 'table-first-cell-as-header-demo',
     name: 'Table First Cell As Header Demo',
     componentType: Examples.TableFirstCellAsHeaderDemo
@@ -695,6 +730,16 @@ export const Demos: DemoInterface[] = [
     id: 'table-width-modifiers-demo',
     name: 'Table Width Modifers Demo',
     componentType: Examples.TableWidthModifiersDemo
+  },
+  {
+    id: 'table-favorites-demo',
+    name: 'Table Favorites Demo',
+    componentType: Examples.TableFavoritesDemo
+  },
+  {
+    id: 'table-composable-demo',
+    name: 'Table Composable Demo',
+    componentType: Examples.TableComposableDemo
   },
   {
     id: 'tab-string-event-key-demo',
@@ -755,6 +800,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-demo',
     name: 'Topology Demo',
     componentType: Examples.TopologyDemo
+  },
+  {
+    id: 'touchspin-demo',
+    name: 'Touchspin Demo',
+    componentType: Examples.TouchspinDemo
   },
   {
     id: 'treeview-demo',

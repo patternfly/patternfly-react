@@ -1,5 +1,5 @@
 import { calculateColumns, mapOpenedRows } from './headerUtils';
-import { ICell, IRow } from '../Table';
+import { ICell, IRow } from '../TableTypes';
 
 describe('headerUtils', () => {
   describe('calculateColumns', () => {

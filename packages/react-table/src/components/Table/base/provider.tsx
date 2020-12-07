@@ -11,6 +11,8 @@ export interface ProviderProps extends RenderersTypes {
   children?: React.ReactNode;
   role?: string;
   className?: string;
+  variant?: 'compact';
+  borders?: boolean;
 }
 
 export const ProviderContext = React.createContext({

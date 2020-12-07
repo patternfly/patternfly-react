@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Body as BaseBody } from './base';
 import { RowType, RowKeyType } from './base/types';
-import { TableContext, IRow, IRowCell, IExtraRowData } from './Table';
+import { IRow, IRowCell, IExtraRowData } from './TableTypes';
+import { TableContext } from './TableContext';
 import { isRowExpanded } from './utils';
 
 export interface IComputedData {
@@ -114,7 +115,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
               ...mappedCell
             };
           },
-          { id: row.id !== undefined ? row.id : rowKey }
+          { secretTableRowKeyId: row.id !== undefined ? row.id : rowKey }
         ))
     };
   };
@@ -158,7 +159,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 export const TableBody = ({
   className = '' as string,
   children = null as React.ReactNode,
-  rowKey = 'id' as string,
+  rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   onRow = (...args: any) => Object,
   onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>

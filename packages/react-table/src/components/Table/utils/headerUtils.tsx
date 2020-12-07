@@ -8,7 +8,9 @@ import {
   emptyTD,
   expandedRow,
   parentId,
-  editable
+  editable,
+  favoritable,
+  sortableFavorites
 } from './transformers';
 import { defaultTitle } from './formatters';
 import {
@@ -19,8 +21,11 @@ import {
   IAreActionsDisabled,
   OnSelect,
   OnCollapse,
-  OnRowEdit
-} from '../Table';
+  OnRowEdit,
+  OnFavorite,
+  OnSort,
+  ISortBy
+} from '../TableTypes';
 
 /**
  * Generate header with transforms and formatters from custom header object.
@@ -30,17 +35,7 @@ import {
  * @returns {*} header, label, transforms: Array, formatters: Array.
  */
 const generateHeader = (
-  {
-    transforms: origTransforms,
-    formatters: origFormatters,
-    columnTransforms,
-    header
-  }: {
-    transforms?: ICell['transforms'];
-    formatters?: ICell['formatters'];
-    columnTransforms?: ICell['columnTransforms'];
-    header?: ICell;
-  },
+  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header }: ICell,
   title?: string | ICell
 ) => ({
   ...header,
@@ -144,6 +139,46 @@ const selectableTransforms = ({ onSelect, canSelectAll }: ISelectTransform) => [
           title: '',
           transforms: (canSelectAll && [selectable]) || null,
           cellTransforms: [selectable]
+        }
+      ]
+    : [])
+];
+
+/**
+ * Function to define favorites cell in first column (or second column if rows are also selectable).
+ *
+ * @param {*} extraObject with onFavorite callback.
+ * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
+ */
+const favoritesTransforms = ({
+  onFavorite,
+  onSort,
+  sortBy,
+  canSortFavorites,
+  firstUserColumnIndex
+}: {
+  onFavorite: OnFavorite;
+  onSort: OnSort;
+  sortBy: ISortBy;
+  canSortFavorites: boolean;
+  firstUserColumnIndex: number;
+}): any => [
+  ...(onFavorite
+    ? [
+        {
+          title: '',
+          transforms:
+            onSort && canSortFavorites
+              ? [
+                  sortableFavorites({
+                    onSort,
+                    // favorites should be just before the first user-defined column
+                    columnIndex: firstUserColumnIndex - 1,
+                    sortBy
+                  })
+                ]
+              : [emptyTD],
+          cellTransforms: [favoritable]
         }
       ]
     : [])
@@ -271,6 +306,7 @@ export const calculateColumns = (headerRows: (ICell | string)[], extra: any) =>
   [
     ...collapsibleTransforms(headerRows, extra),
     ...selectableTransforms(extra),
+    ...favoritesTransforms(extra),
     ...expandContent(headerRows, extra),
     ...rowEditTransforms(extra),
     ...actionsTransforms(extra)

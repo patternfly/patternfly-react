@@ -15,6 +15,10 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   className?: string;
   /** Flag to show if the TextArea is required. */
   isRequired?: boolean;
+  /** Flag to show if the TextArea is disabled. */
+  isDisabled?: boolean;
+  /** Flag to show if the TextArea is read only. */
+  isReadOnly?: boolean;
   /** Value to indicate if the textarea is modified to show that validation state.
    * If set to success, textarea will be modified to indicate valid state.
    * If set to error, textarea will be modified to indicate error state.
@@ -38,6 +42,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     innerRef: React.createRef<HTMLTextAreaElement>(),
     className: '',
     isRequired: false,
+    isDisabled: false,
     validated: 'default',
     resizeOrientation: 'both',
     'aria-label': null as string
@@ -58,8 +63,21 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
   };
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, value, onChange, validated, isRequired, resizeOrientation, innerRef, ...props } = this.props;
+    const {
+      className,
+      value,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onChange,
+      validated,
+      isRequired,
+      isDisabled,
+      isReadOnly,
+      resizeOrientation,
+      innerRef,
+      readOnly,
+      disabled,
+      ...props
+    } = this.props;
     const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
     return (
       <textarea
@@ -74,6 +92,8 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
         {...(typeof this.props.defaultValue !== 'string' && { value })}
         aria-invalid={validated === ValidatedOptions.error}
         required={isRequired}
+        disabled={isDisabled || disabled}
+        readOnly={isReadOnly || readOnly}
         ref={innerRef}
         {...props}
       />

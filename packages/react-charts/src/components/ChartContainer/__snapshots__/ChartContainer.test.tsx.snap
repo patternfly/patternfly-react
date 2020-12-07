@@ -6,6 +6,7 @@ exports[`ChartContainer 1`] = `
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
+  role="img"
   theme={
     Object {
       "area": Object {
@@ -464,6 +465,7 @@ exports[`ChartContainer 2`] = `
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
+  role="img"
   theme={
     Object {
       "area": Object {
@@ -922,6 +924,7 @@ exports[`renders container via ChartLegend 1`] = `
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
+  role="img"
   theme={
     Object {
       "area": Object {

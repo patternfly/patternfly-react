@@ -3,6 +3,117 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.62.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.61.0...@patternfly/react-integration@4.62.0) (2020-12-07)
+
+
+### Features
+
+* **descriptionList:** add suport to auto fit ([#5113](https://github.com/patternfly/patternfly-react/issues/5113)) ([1434f9e](https://github.com/patternfly/patternfly-react/commit/1434f9ee930422532bc70c3bb5fb3dfc4d17eb1c))
+* **textarea:** support isDisabled ([#5107](https://github.com/patternfly/patternfly-react/issues/5107)) ([9ebcfe9](https://github.com/patternfly/patternfly-react/commit/9ebcfe9b7b8719556c7b4430186010dd788744f1))
+
+
+
+
+
+# [4.61.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.5...@patternfly/react-integration@4.61.0) (2020-12-04)
+
+
+### Features
+
+* **Drawer:** add splitter feature ([#5193](https://github.com/patternfly/patternfly-react/issues/5193)) ([7f44e90](https://github.com/patternfly/patternfly-react/commit/7f44e901d225068597c1b0efb6098f7c35a01476))
+
+
+
+
+
+## [4.60.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.4...@patternfly/react-integration@4.60.5) (2020-12-03)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.60.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.3...@patternfly/react-integration@4.60.4) (2020-12-02)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.60.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.2...@patternfly/react-integration@4.60.3) (2020-11-23)
+
+
+### Bug Fixes
+
+* **charts:** replace victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/issues/5179)) ([bef64a5](https://github.com/patternfly/patternfly-react/commit/bef64a5e8f8ba060061df611d028dec5f8e9adf2))
+
+
+
+
+
+## [4.60.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.1...@patternfly/react-integration@4.60.2) (2020-11-23)
+
+
+### Bug Fixes
+
+* **react-charts:** bump victory and move victory dep to demo app ([#5178](https://github.com/patternfly/patternfly-react/issues/5178)) ([45ec687](https://github.com/patternfly/patternfly-react/commit/45ec687506af9c0cb512feb25aa33ca2b73a7ff4))
+
+
+
+
+
+## [4.60.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.60.0...@patternfly/react-integration@4.60.1) (2020-11-17)
+
+
+### Bug Fixes
+
+* **compound-table:** set button type on compoundExpand transform button ([#5058](https://github.com/patternfly/patternfly-react/issues/5058)) ([5b52b73](https://github.com/patternfly/patternfly-react/commit/5b52b739bc7d5b1fbe8fce464239aca005fdbd71))
+
+
+
+
+
+# [4.60.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.59.0...@patternfly/react-integration@4.60.0) (2020-11-17)
+
+
+### Features
+
+* **DualListSelector:** add new component ([#5120](https://github.com/patternfly/patternfly-react/issues/5120)) ([0ed1c5a](https://github.com/patternfly/patternfly-react/commit/0ed1c5a0d530cbbba7f026660baec51f6fd03559))
+
+
+
+
+
+# [4.59.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.58.6...@patternfly/react-integration@4.59.0) (2020-11-16)
+
+
+### Features
+
+* **Card:** add expandable card, move tests ([#5093](https://github.com/patternfly/patternfly-react/issues/5093)) ([0dd992c](https://github.com/patternfly/patternfly-react/commit/0dd992ca8d3aa998766bc750e6972ab5dab49910))
+* **Touchspin:** add touchspin component ([#5115](https://github.com/patternfly/patternfly-react/issues/5115)) ([9dbe59a](https://github.com/patternfly/patternfly-react/commit/9dbe59acf457910ec8efa8280cbc33c952469724))
+
+
+
+
+
+## [4.58.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.58.5...@patternfly/react-integration@4.58.6) (2020-11-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.58.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.58.4...@patternfly/react-integration@4.58.5) (2020-11-10)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 ## [4.58.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.58.3...@patternfly/react-integration@4.58.4) (2020-11-09)
 
 **Note:** Version bump only for package @patternfly/react-integration

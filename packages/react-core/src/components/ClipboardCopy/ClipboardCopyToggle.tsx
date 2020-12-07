@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import { Button } from '../Button';
 
 export interface ClipboardCopyToggleProps
@@ -30,7 +31,7 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     aria-expanded={isExpanded}
     {...props}
   >
-    <AngleRightIcon aria-hidden="true" />
+    {isExpanded ? <AngleDownIcon aria-hidden="true" /> : <AngleRightIcon aria-hidden="true" />}
   </Button>
 );
 ClipboardCopyToggle.displayName = 'ClipboardCopyToggle';
