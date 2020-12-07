@@ -27,10 +27,9 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
           // The favorites button has defaults that can be overriden
           favoritesProps: {
             'aria-label': 'Favorited', // Defaults to 'Starred' / 'Not starred'
-            id: 'favorites-button-a', // Defaults to `favorites-button-${rowIndex}`
             'aria-labelledby': 'favorites-button-a repository-1' // Defaults to `favorites-button-${rowIndex}`
           },
-          cells: [{ title: <span id="repository-1">one</span> }, 'two', 'a', 'four', 'five']
+          cells: ['one', 'two', 'a', 'four', 'five']
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
@@ -90,15 +89,16 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
       // favorites column
       sortedRows = this.state.rows.sort((a, b) => {
         if (a.favorited && !b.favorited) {
-          return 1;
-        } else if (!a.favorited && b.favorited) {
           return -1;
+        } else if (!a.favorited && b.favorited) {
+          return 1;
         }
         return 0;
       });
     } else {
+      const userIndex = index - 2;
       sortedRows = this.state.rows.sort((a, b) =>
-        a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0
+        a.cells[userIndex] < b.cells[userIndex] ? -1 : a.cells[userIndex] > b.cells[userIndex] ? 1 : 0
       );
     }
     this.setState({
