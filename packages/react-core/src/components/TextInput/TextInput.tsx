@@ -61,7 +61,7 @@ export interface TextInputProps
   /** Callback function when input is blurred (focus leaves) */
   onBlur?: (event?: any) => void;
   /** icon variant */
-  iconVariant?: 'calendar' | 'clock';
+  iconVariant?: 'calendar' | 'clock' | 'search';
   /** Custom icon url to set as the input's background-image */
   customIconUrl?: string;
   /** Dimensions for the custom icon set as the input's background-size */
@@ -180,7 +180,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
           styles.formControl,
           validated === ValidatedOptions.success && styles.modifiers.success,
           validated === ValidatedOptions.warning && styles.modifiers.warning,
-          (iconVariant || customIconUrl) && styles.modifiers.icon,
+          ((iconVariant && iconVariant !== 'search') || customIconUrl) && styles.modifiers.icon,
           iconVariant && styles.modifiers[iconVariant],
           className
         )}
