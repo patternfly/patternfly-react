@@ -23,12 +23,14 @@ export interface DrawerContextProps {
   isExpanded: boolean;
   isStatic: boolean;
   onExpand?: () => void;
+  position?: string;
 }
 
 export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isExpanded: false,
   isStatic: false,
-  onExpand: () => {}
+  onExpand: () => {},
+  position: 'right'
 });
 
 export const Drawer: React.SFC<DrawerProps> = ({
@@ -41,7 +43,7 @@ export const Drawer: React.SFC<DrawerProps> = ({
   onExpand = () => {},
   ...props
 }: DrawerProps) => (
-  <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand }}>
+  <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position }}>
     <div
       className={css(
         styles.drawer,

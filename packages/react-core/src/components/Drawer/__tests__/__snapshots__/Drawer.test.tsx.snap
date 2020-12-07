@@ -134,6 +134,159 @@ exports[`Drawer expands from bottom 1`] = `
 </Drawer>
 `;
 
+exports[`Drawer has resizable css 1`] = `
+<Drawer
+  isExpanded={true}
+  position="left"
+>
+  <div
+    className="pf-c-drawer pf-m-expanded pf-m-panel-left"
+  >
+    <DrawerContent
+      panelContent={
+        <DrawerPanelContent
+          isResizable={true}
+        >
+          <DrawerHead>
+            <span>
+              drawer-panel
+            </span>
+            <DrawerActions>
+              <DrawerCloseButton />
+            </DrawerActions>
+          </DrawerHead>
+          <DrawerPanelBody>
+            drawer-panel
+          </DrawerPanelBody>
+        </DrawerPanelContent>
+      }
+    >
+      <DrawerMain>
+        <div
+          className="pf-c-drawer__main"
+        >
+          <div
+            className="pf-c-drawer__content"
+          >
+            <DrawerContentBody>
+              <div
+                className="pf-c-drawer__body"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.
+              </div>
+            </DrawerContentBody>
+          </div>
+          <DrawerPanelContent
+            isResizable={true}
+          >
+            <div
+              className="pf-c-drawer__panel pf-m-resizable"
+              hidden={false}
+              onTransitionEnd={[Function]}
+            >
+              <div
+                aria-describedby="Press space to begin resizing, and use the arrow keys to grow or shrink the panel. Press enter or escape to finish resizing."
+                aria-label="Resize"
+                aria-orientation="vertical"
+                className="pf-c-drawer__splitter pf-m-vertical"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="separator"
+                tabIndex={0}
+              >
+                <div
+                  aria-hidden={true}
+                  className="pf-c-drawer__splitter-handle"
+                />
+              </div>
+              <DrawerHead>
+                <DrawerPanelBody
+                  hasNoPadding={false}
+                >
+                  <div
+                    className="pf-c-drawer__body"
+                  >
+                    <div
+                      className="pf-c-drawer__head"
+                    >
+                      <span>
+                        drawer-panel
+                      </span>
+                      <DrawerActions>
+                        <div
+                          className="pf-c-drawer__actions"
+                        >
+                          <DrawerCloseButton>
+                            <div
+                              className="pf-c-drawer__close"
+                            >
+                              <Button
+                                aria-label="Close drawer panel"
+                                onClick={[Function]}
+                                variant="plain"
+                              >
+                                <button
+                                  aria-disabled={false}
+                                  aria-label="Close drawer panel"
+                                  className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                                  data-ouia-component-type="PF4/Button"
+                                  data-ouia-safe={true}
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  role={null}
+                                  type="button"
+                                >
+                                  <TimesIcon
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 352 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                      />
+                                    </svg>
+                                  </TimesIcon>
+                                </button>
+                              </Button>
+                            </div>
+                          </DrawerCloseButton>
+                        </div>
+                      </DrawerActions>
+                    </div>
+                  </div>
+                </DrawerPanelBody>
+              </DrawerHead>
+              <DrawerPanelBody>
+                <div
+                  className="pf-c-drawer__body"
+                >
+                  drawer-panel
+                </div>
+              </DrawerPanelBody>
+            </div>
+          </DrawerPanelContent>
+        </div>
+      </DrawerMain>
+    </DrawerContent>
+  </div>
+</Drawer>
+`;
+
 exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`] = `
 <Drawer
   isExpanded={false}
