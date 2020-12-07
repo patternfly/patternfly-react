@@ -246,7 +246,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           label="Display timestamp"
           isChecked={firstSwitchChecked}
           onChange={this.handleFirstSwitchChange}
-          id="switch-mobile-checkbox-1"
+          id="switchMobileCheckbox1"
           name="check1"
         />
       </DropdownItem>,
@@ -255,7 +255,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           label="Wrap lines"
           isChecked={secondSwitchChecked}
           onChange={this.handleSecondSwitchChange}
-          id="switch-mobile-checkbox-2"
+          id="switchMobileCheckbox2"
           name="check2"
         />
       </DropdownItem>
@@ -309,7 +309,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         </ToolbarItem>
         <ToolbarItem className="pf-l-level pf-m-gutter" visibility={{default: 'hidden', xl: 'visible'}}>
           <Switch
-            id="switch-1"
+            id="switch1"
             isChecked={firstSwitchChecked}
             onChange={this.handleFirstSwitchChange}
           />
@@ -317,7 +317,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         </ToolbarItem>
         <ToolbarItem className="pf-l-level pf-m-gutter" visibility={{default: 'hidden', xl: 'visible'}}>
           <Switch
-            id="switch-2"
+            id="switch2"
             isChecked={secondSwitchChecked}
             onChange={this.handleSecondSwitchChange}
           />
