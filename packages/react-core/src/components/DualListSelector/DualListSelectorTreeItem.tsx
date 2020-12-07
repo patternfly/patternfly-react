@@ -4,7 +4,6 @@ import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { Badge } from '../Badge';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import { flattenTree } from './treeUtils';
 
 export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIElement> {
@@ -99,12 +98,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
     const { isExpanded } = this.state;
     return (
       <li
-        className={css(
-          styles.dualListSelectorListItem,
-          className,
-          children && styles.modifiers.expandable,
-          isExpanded && styles.modifiers.expanded
-        )}
+        className={css(styles.dualListSelectorListItem, className, isExpanded && styles.modifiers.expanded)}
         key={orderIndex}
         {...props}
         aria-selected={isSelected}
@@ -112,7 +106,11 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
         {...(isExpanded && { 'aria-expanded': 'true' })}
       >
         <div
-          className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
+          className={css(
+            styles.dualListSelectorItem,
+            isSelected && styles.modifiers.selected,
+            hasCheck && styles.modifiers.check
+          )}
           onClick={e => {
             if (!hasCheck) {
               onOptionSelect(e, null, isChosen, text, itemData, parentItem);
@@ -134,8 +132,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
                 }}
               >
                 <span className={css(styles.dualListSelectorItemToggleIcon)}>
-                  {!isExpanded && <AngleRightIcon aria-hidden />}
-                  {isExpanded && <AngleDownIcon aria-hidden />}
+                  <AngleRightIcon aria-hidden />
                 </span>
               </div>
             )}
