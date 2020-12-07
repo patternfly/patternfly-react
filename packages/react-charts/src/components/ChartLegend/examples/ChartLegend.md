@@ -351,6 +351,25 @@ class InteractiveLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
+
+    this.isDataAvailable = () => {
+      const { hiddenSeries } = this.state;
+      return hiddenSeries.size !== this.series.length;
+    };
+
+    // Note: Container order is important
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
+
+    this.cursorVoronoiContainer = (
+      <CursorVoronoiContainer
+        cursorDimension="x"
+        labels={({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null}
+        labelComponent={<ChartLegendTooltip legendData={this.getLegendData()} title={(datum) => datum.x}/>}
+        mouseFollowTooltips
+        voronoiDimension="x"
+        voronoiPadding={50}
+      />
+    );
   };
 
   componentDidMount() {
@@ -367,13 +386,16 @@ class InteractiveLegendChart extends React.Component {
   // 2. Set domain or tick axis labels to account for when all data series are hidden
   // 3. Omit tooltip for ChartScatter component by checking childName prop
   // 4. Omit tooltip when all data series are hidden
+  // 5. Clone original container to ensure tooltip events are not lost when data series are hidden / shown
   render() {
     const { hiddenSeries, width } = this.state;
 
-    // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
-    const allHidden = hiddenSeries.length === this.series.length;
-    const tooltip = ({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null;
+    const container = React.cloneElement(
+      this.cursorVoronoiContainer, 
+      {
+        disable: !this.isDataAvailable()
+      }
+    );
 
     return (
       <div ref={this.containerRef}>
@@ -381,16 +403,7 @@ class InteractiveLegendChart extends React.Component {
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
-            containerComponent={
-              <CursorVoronoiContainer
-                cursorDimension="x"
-                labels={!allHidden ? tooltip : undefined}
-                labelComponent={<ChartLegendTooltip legendData={this.getLegendData()} title={(datum) => datum.x}/>}
-                mouseFollowTooltips
-                voronoiDimension="x"
-                voronoiPadding={50}
-              />
-            }
+            containerComponent={container}
             events={this.getEvents()}
             height={225}
             legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
