@@ -143,6 +143,7 @@ export * from './TableDemo/TableSimpleDemo';
 export * from './TableDemo/TableStickyHeaderDemo';
 export * from './TableDemo/TableSortableDemo';
 export * from './TableDemo/TableWidthModifiersDemo';
+export * from './TableDemo/TableFavoritesDemo';
 export * from './TableDemo/TableComposableDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TabsDemo/TabsInsetDemo';

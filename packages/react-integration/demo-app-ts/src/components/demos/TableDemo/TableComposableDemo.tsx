@@ -12,7 +12,8 @@ import {
   ExpandableRowContent,
   OnSelect,
   IActions,
-  OnCollapse
+  OnCollapse,
+  OnSort
 } from '@patternfly/react-table';
 import { ToggleGroup, ToggleGroupItem, Stack, StackItem, Checkbox } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -977,6 +978,82 @@ export const TableComposableDemo = () => {
     );
   };
 
+  const ComposableTableFavoritable = () => {
+    const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+    const [rows, setRows] = React.useState([
+      { favorited: true, cells: ['one', 'two', 'three', 'four', 'five'] },
+      { favorited: false, cells: ['one - 2', null, null, 'four - 2', 'five - 2'] },
+      { favorited: false, cells: ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3'] }
+    ]);
+    // index of the currently active column
+    const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+    // sort direction of the currently active column
+    const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+    const onSort: OnSort = (event, index, direction) => {
+      setActiveSortIndex(index);
+      setActiveSortDirection(direction);
+      // sorts the rows
+      const updatedRows = rows.sort((a, b) => {
+        if (a.favorited && !b.favorited) {
+          return 1;
+        } else if (!a.favorited && b.favorited) {
+          return -1;
+        }
+        return 0;
+      });
+      setRows(direction === 'asc' ? updatedRows : updatedRows.reverse());
+    };
+    const sortParams = {
+      sort: {
+        isFavorites: true,
+        sortBy: {
+          index: activeSortIndex,
+          direction: activeSortDirection as 'asc' | 'desc'
+        },
+        onSort,
+        columnIndex: 0
+      }
+    };
+    return (
+      <TableComposable aria-label="Favoritable table" variant={'compact'}>
+        <Thead>
+          <Tr>
+            <Th {...sortParams} />
+            {columns.map((column, columnIndex) => (
+              <Th key={columnIndex}>{column}</Th>
+            ))}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {rows.map((row, rowIndex) => (
+            <Tr key={rowIndex}>
+              <Td
+                favorites={{
+                  isFavorited: row.favorited,
+                  onFavorite: (event, isFavorited) =>
+                    setRows(
+                      rows.map((row, index) => {
+                        if (index === rowIndex) {
+                          row.favorited = isFavorited;
+                        }
+                        return row;
+                      })
+                    ),
+                  rowIndex
+                }}
+              />
+              {row.cells.map((cell, cellIndex) => (
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                  {cell}
+                </Td>
+              ))}
+            </Tr>
+          ))}
+        </Tbody>
+      </TableComposable>
+    );
+  };
+
   return (
     <Stack hasGutter>
       <StackItem>
@@ -1014,6 +1091,9 @@ export const TableComposableDemo = () => {
       </StackItem>
       <StackItem>
         <ComposableTableText />
+      </StackItem>
+      <StackItem>
+        <ComposableTableFavoritable />
       </StackItem>
     </Stack>
   );

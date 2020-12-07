@@ -1,5 +1,5 @@
 export { selectable } from './decorators/selectable';
-export { sortable } from './decorators/sortable';
+export { sortable, sortableFavorites } from './decorators/sortable';
 export { cellActions } from './decorators/cellActions';
 export { cellWidth } from './decorators/cellWidth';
 export { editable } from './decorators/editable';
@@ -10,11 +10,11 @@ export { compoundExpand } from './decorators/compoundExpand';
 export { headerCol } from './decorators/headerCol';
 export { classNames, Visibility } from './decorators/classNames';
 export { info } from './decorators/info';
+export { favoritable } from './decorators/favoritable';
 
 import { IFormatterValueType, IExtra, ITransform } from '../TableTypes';
 
 const emptyTD: ITransform = () => ({
-  scope: '',
   component: 'td'
 });
 

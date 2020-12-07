@@ -732,6 +732,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableWidthModifiersDemo
   },
   {
+    id: 'table-favorites-demo',
+    name: 'Table Favorites Demo',
+    componentType: Examples.TableFavoritesDemo
+  },
+  {
     id: 'table-composable-demo',
     name: 'Table Composable Demo',
     componentType: Examples.TableComposableDemo
