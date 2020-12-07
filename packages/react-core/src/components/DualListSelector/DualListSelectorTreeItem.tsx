@@ -98,7 +98,12 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
     const { isExpanded } = this.state;
     return (
       <li
-        className={css(styles.dualListSelectorListItem, className, isExpanded && styles.modifiers.expanded)}
+        className={css(
+          styles.dualListSelectorListItem,
+          className,
+          children && 'pf-m-expandable',
+          isExpanded && styles.modifiers.expanded
+        )}
         key={orderIndex}
         {...props}
         aria-selected={isSelected}

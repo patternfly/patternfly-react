@@ -1976,7 +1976,7 @@ exports[`DualListSelector with tree 1`] = `
                 <li
                   aria-expanded="true"
                   aria-selected={false}
-                  className="pf-c-dual-list-selector__list-item pf-m-expanded"
+                  className="pf-c-dual-list-selector__list-item pf-m-expandable pf-m-expanded"
                   role="treeitem"
                 >
                   <div
