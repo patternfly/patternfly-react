@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.82.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.81.1...@patternfly/react-core@4.82.0) (2020-12-07)
+
+
+### Features
+
+* **descriptionList:** add suport to auto fit ([#5113](https://github.com/patternfly/patternfly-react/issues/5113)) ([1434f9e](https://github.com/patternfly/patternfly-react/commit/1434f9ee930422532bc70c3bb5fb3dfc4d17eb1c))
+* **textarea:** support isDisabled ([#5107](https://github.com/patternfly/patternfly-react/issues/5107)) ([9ebcfe9](https://github.com/patternfly/patternfly-react/commit/9ebcfe9b7b8719556c7b4430186010dd788744f1))
+
+
+
+
+
 ## [4.81.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.81.0...@patternfly/react-core@4.81.1) (2020-12-07)
 
 **Note:** Version bump only for package @patternfly/react-core
