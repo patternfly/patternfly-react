@@ -1,4 +1,4 @@
-describe('Menu Test', () => {
+xdescribe('Menu Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#menu-demo-nav-item-link').click();
