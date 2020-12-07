@@ -12,7 +12,7 @@ This demo shows JumpLinkItems spying on h2 elements in a scrollable PageGroup. T
 
 When implementing be sure to:
 1. Find the correct scrollableSelector for your page via [Firefox's debugging scrollable overflow](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Debug_Scrollable_Overflow) or by adding `hasOverflowScroll` to a [PageSection](/components/page#pagesection) or [PageGroup](/components/page#pagegroup).
-2. Provide `href`s to your JumpLinksItems which match the `id` of your titles or other components you are scrolling to. If you wish to scroll to a different item than you're linking to use `scrollNode` instead.
+2. Provide `href`s to your JumpLinksItems which match the `id` of elements you want to spy on. If you wish to scroll to a different item than you're linking to use the `node` prop instead.
 
 ```js isFullscreen
 import React from 'react';
