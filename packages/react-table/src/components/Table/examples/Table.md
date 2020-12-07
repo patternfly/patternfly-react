@@ -1856,7 +1856,7 @@ class FavoritesTable extends React.Component {
             id: 'favorites-button-a', // Defaults to `favorites-button-${rowIndex}`
             'aria-labelledby': 'favorites-button-a repository-1' // Defaults to `favorites-button-${rowIndex}`
           },
-          cells: [{ title: <span id="repository-1">one</span> }, 'two', 'a', 'four', 'five']
+          cells: ['c', 'two', 'a', 'four', 'five']
         },
         {
           cells: ['a', 'two', 'k', 'four', 'five'],
@@ -1864,7 +1864,7 @@ class FavoritesTable extends React.Component {
         },
         {
           favorited: true,
-          cells: ['p', 'two', 'b', 'four', 'five']
+          cells: ['b', 'two', 'b', 'four', 'five']
         }
       ],
       sortBy: {},
@@ -1911,20 +1911,24 @@ class FavoritesTable extends React.Component {
   }
 
   onSort(_event, index, direction) {
+    // index 0 === select column
+    // index 1 === favorites column
+    // index 2 === first user defined column
     let sortedRows;
     if (index === 1) {
       // favorites column
       sortedRows = this.state.rows.sort((a, b) => {
         if (a.favorited && !b.favorited) {
-          return 1;
-        } else if (!a.favorited && b.favorited) {
           return -1;
+        } else if (!a.favorited && b.favorited) {
+          return 1;
         }
         return 0;
       });
     } else {
+      const userIndex = index - 2; // subtract for select and favorites column
       sortedRows = this.state.rows.sort((a, b) =>
-        a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0
+        a.cells[userIndex] < b.cells[userIndex] ? -1 : a.cells[userIndex] > b.cells[userIndex] ? 1 : 0
       );
     }
     this.setState({
@@ -3014,11 +3018,11 @@ ComposableTableFavoritable = () => {
     // sorts the rows
     const updatedRows = rows.sort((a, b) => {
       if (a.favorited && !b.favorited) {
-          return 1;
-        } else if (!a.favorited && b.favorited) {
-          return -1;
-        }
-        return 0;
+        return 1;
+      } else if (!a.favorited && b.favorited) {
+        return -1;
+      }
+      return 0;
     });
     setRows(direction === 'asc' ? updatedRows : updatedRows.reverse());
   };
@@ -3046,16 +3050,21 @@ ComposableTableFavoritable = () => {
       <Tbody>
         {rows.map((row, rowIndex) => (
           <Tr key={rowIndex}>
-            <Td favorites={{
-              isFavorited: row.favorited,
-              onFavorite: (event, isFavorited) => setRows(rows.map((row, index) => {
-                if (index === rowIndex) {
-                  row.favorited = isFavorited;
-                }
-                return row;
-              })),
-              rowIndex
-            }} />
+            <Td
+              favorites={{
+                isFavorited: row.favorited,
+                onFavorite: (event, isFavorited) =>
+                  setRows(
+                    rows.map((row, index) => {
+                      if (index === rowIndex) {
+                        row.favorited = isFavorited;
+                      }
+                      return row;
+                    })
+                  ),
+                rowIndex
+              }}
+            />
             {row.cells.map((cell, cellIndex) => (
               <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
                 {cell}
