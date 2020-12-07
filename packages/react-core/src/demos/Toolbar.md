@@ -310,6 +310,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem className="pf-l-level pf-m-gutter" visibility={{default: 'hidden', xl: 'visible'}}>
           <Switch
             id="switch1"
+            aria-label="Timestamp"
             isChecked={firstSwitchChecked}
             onChange={this.handleFirstSwitchChange}
           />
@@ -318,6 +319,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem className="pf-l-level pf-m-gutter" visibility={{default: 'hidden', xl: 'visible'}}>
           <Switch
             id="switch2"
+            aria-label="Wrap lines"
             isChecked={secondSwitchChecked}
             onChange={this.handleSecondSwitchChange}
           />
