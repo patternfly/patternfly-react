@@ -9,11 +9,7 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   innerRef?: React.Ref<any>;
 }
 
-const MenuContentBase: React.FunctionComponent<MenuContentProps> = ({ children }: MenuContentProps) => (
-  <div className={css(styles.menuContent)}>{children}</div>
-);
-
 export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLElement>) => (
-  <MenuContentBase {...props} innerRef={ref} />
+  <div {...props} className={css(styles.menuContent, props.className)} ref={ref} />
 ));
 MenuContent.displayName = 'MenuContent';

@@ -8,11 +8,7 @@ export interface MenuInputProps extends React.HTMLProps<HTMLElement> {
   innerRef?: React.Ref<any>;
 }
 
-const MenuInputBase: React.FunctionComponent<MenuInputProps> = ({ children }: MenuInputProps) => (
-  <div className={styles.menuSearch}>{children}</div>
-);
-
 export const MenuInput = React.forwardRef((props: MenuInputProps, ref: React.Ref<HTMLElement>) => (
-  <MenuInputBase {...props} innerRef={ref} />
+  <div {...props} className={css(styles.menuSearch, props.className)} ref={ref} />
 ));
 MenuInput.displayName = 'MenuInput';
