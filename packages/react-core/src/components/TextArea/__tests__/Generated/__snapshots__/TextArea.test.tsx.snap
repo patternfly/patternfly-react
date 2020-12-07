@@ -5,6 +5,7 @@ exports[`TextArea should match snapshot (auto-generated) 1`] = `
   aria-label="null"
   className="''"
   innerRef={null}
+  isDisabled={false}
   isRequired={false}
   onChange={[Function]}
   resizeOrientation="both"
