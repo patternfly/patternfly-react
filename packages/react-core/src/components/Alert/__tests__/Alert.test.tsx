@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { Alert, AlertVariant } from '../Alert';
 import { AlertActionLink } from '../AlertActionLink';
 import { AlertActionCloseButton } from '../AlertActionCloseButton';
+import { UsersIcon } from '@patternfly/react-icons';
 
 test('default Alert variant is default', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);
@@ -138,6 +139,20 @@ Object.values(AlertVariant).forEach(variant => {
       expect(alert.prop('aria-live')).toBe('assertive');
       expect(alert.prop('aria-relevant')).toBe('all');
       expect(alert.prop('aria-atomic')).toBe('true');
+    });
+
+    test('Custom icon', () => {
+      const view = mount(
+        <Alert
+          customIcon={<UsersIcon />}
+          variant={variant}
+          aria-label={`${variant} custom icon alert`}
+          title="custom icon alert title"
+        >
+          Some noisy alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
     });
   });
 });

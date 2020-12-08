@@ -32,7 +32,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: '1Col' | '2Col' | '3Col';
     '2xl'?: '1Col' | '2Col' | '3Col';
   };
-  autoMinFitModifier?: {
+  autoFitMinModifier?: {
     default?: string;
     md?: string;
     lg?: string;
@@ -41,9 +41,9 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   };
 }
 
-const setAutoFitModifiers = (autoMinFitModifier: AutoFitModifiers) => {
+const setAutoFitMinModifiers = (autoFitMinModifier: AutoFitModifiers) => {
   const prefix = '--pf-c-description-list--GridTemplateColumns--min';
-  const mods = autoMinFitModifier as Partial<{ [k: string]: string }>;
+  const mods = autoFitMinModifier as Partial<{ [k: string]: string }>;
   return Object.keys(mods || {}).reduce(
     (acc, curr) =>
       curr === 'default' ? { ...acc, [prefix]: mods[curr] } : { ...acc, [`${prefix}-on-${curr}`]: mods[curr] },
@@ -59,7 +59,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isAutoFit,
   isInlineGrid,
   columnModifier,
-  autoMinFitModifier,
+  autoFitMinModifier,
   style,
   ...props
 }: DescriptionListProps) => (
@@ -74,8 +74,8 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       className
     )}
     style={
-      autoMinFitModifier || style
-        ? { ...(isAutoFit ? setAutoFitModifiers(autoMinFitModifier) : {}), ...style }
+      autoFitMinModifier || style
+        ? { ...(isAutoFit ? setAutoFitMinModifiers(autoFitMinModifier) : {}), ...style }
         : undefined
     }
     {...props}

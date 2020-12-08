@@ -46,6 +46,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  /** Set a custom icon to the Alert. If not set the icon is set according to the variant */
+  customIcon?: React.ReactNode;
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
@@ -65,6 +67,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   onTimeout,
   truncateTitle = 0,
   tooltipPosition,
+  customIcon,
   ...props
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
@@ -128,7 +131,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
           'aria-atomic': 'false'
         })}
       >
-        <AlertIcon variant={variant} />
+        <AlertIcon variant={variant} customIcon={customIcon} />
         {isTooltipVisible ? (
           <Tooltip content={getHeadingContent} position={tooltipPosition}>
             {Title}
