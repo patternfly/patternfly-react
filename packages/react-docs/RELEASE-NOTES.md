@@ -54,8 +54,7 @@ section: developer-resources
   - Added touchspin component ([#5115](https://github.com/patternfly/patternfly-react/pull/5115))
 
 ### Access console extension
-- Ported react-console from PF3 branch - move to typescript and utilize yarn build
-PF4 components ([#4907](https://github.com/patternfly/patternfly-react/pull/4907))
+- Ported react-console from PF3 branch - move to typescript and utilize PF4 components ([#4907](https://github.com/patternfly/patternfly-react/pull/4907))
 - Removed css imports ([#5147](https://github.com/patternfly/patternfly-react/pull/5147))
 
 ### Catalog view extension
