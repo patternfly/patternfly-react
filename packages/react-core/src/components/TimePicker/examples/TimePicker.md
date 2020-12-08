@@ -12,7 +12,7 @@ import { TimePicker } from '@patternfly/react-core';
 ### Basic 12 hour
 ```js
 import React from 'react';
-import { TimePicker } from '@patternfly/react-datetime';
+import { TimePicker } from '@patternfly/react-core';
 
 SimpleTimePicker = () => {
   const onChange = (time) => {
@@ -30,7 +30,7 @@ SimpleTimePicker = () => {
 ### Basic 24 hour
 ```js
 import React from 'react';
-import { TimePicker } from '@patternfly/react-datetime';
+import { TimePicker } from '@patternfly/react-core';
 
 <TimePicker defaultTime="2020-10-14T18:06:02Z" variant="24hr" />
 
@@ -38,7 +38,7 @@ import { TimePicker } from '@patternfly/react-datetime';
 ### Custom delimiter
 ```js
 import React from 'react';
-import { TimePicker } from '@patternfly/react-datetime';
+import { TimePicker } from '@patternfly/react-core';
 
 <TimePicker defaultTime="2020-10-14T18:06:02Z" variant="24hr" delimiter="h"/>
 

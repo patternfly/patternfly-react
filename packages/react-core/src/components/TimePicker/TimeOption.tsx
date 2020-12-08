@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 
 export interface TimeOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'onSelect' | 'ref' | 'value'> {
@@ -10,8 +9,6 @@ export interface TimeOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'onS
   index?: number;
   /** The value for the option */
   value: string;
-  /** Internal flag indicating if the option is selected */
-  isSelected?: boolean;
   /** Flag forcing the focused state */
   isFocused?: boolean;
   /** Internal callback for ref tracking */
@@ -31,7 +28,6 @@ export class TimeOption extends React.Component<TimeOptionProps> {
     className: '',
     value: '',
     index: 0,
-    isSelected: false,
     onSelect: () => {},
     sendRef: () => {},
     keyHandler: () => {}
@@ -54,7 +50,6 @@ export class TimeOption extends React.Component<TimeOptionProps> {
       value,
       onClick,
       onSelect,
-      isSelected,
       isFocused,
       sendRef,
       keyHandler,
@@ -66,22 +61,16 @@ export class TimeOption extends React.Component<TimeOptionProps> {
       <li role="presentation" className={css(styles.selectMenuWrapper, isFocused && styles.modifiers.focus)}>
         <button
           {...props}
-          className={css(styles.selectMenuItem, isSelected && styles.modifiers.selected, className)}
+          className={css(styles.selectMenuItem, className)}
           onClick={(event: any) => {
             onSelect(value, index);
           }}
           role="option"
-          aria-selected={isSelected || null}
           ref={this.ref}
           type="button"
           id={id}
         >
           {children || value.toString()}
-          {isSelected && (
-            <span className={css(styles.selectMenuItemIcon)}>
-              <CheckIcon aria-hidden />
-            </span>
-          )}
         </button>
       </li>
     );

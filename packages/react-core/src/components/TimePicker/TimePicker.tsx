@@ -4,13 +4,12 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { TimeOption } from './TimeOption';
 import { KeyTypes, SelectDirection } from '../Select';
 import { InputGroup } from '../InputGroup';
+import { TextInput } from '../TextInput';
 
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -56,7 +55,6 @@ interface TimePickerState {
   invalidText: string;
   isOpen: boolean;
   time: string;
-  selectedIndex: number;
   focusedIndex: number;
   scrollIndex: number;
 }
@@ -66,8 +64,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   private parentRef = React.createRef<HTMLDivElement>();
   private toggleRef = React.createRef<HTMLDivElement>();
   private inputRef = React.createRef<HTMLInputElement>();
-  private clearButtonRef = React.createRef<HTMLButtonElement>();
-  private toggleButtonRef = React.createRef<HTMLButtonElement>();
   private menuRef = React.createRef<HTMLUListElement>();
   private refCollection: HTMLElement[] = [];
 
@@ -93,7 +89,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       invalidText: 'Invalid time',
       isOpen: false,
       time: '',
-      selectedIndex: null,
       focusedIndex: null,
       scrollIndex: 0
     };
@@ -131,13 +126,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     // keyboard pressed while focus on toggle
     if (this.inputRef && this.inputRef.current && this.inputRef.current.contains(event.target as Node)) {
       if (isOpen && (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab)) {
-        if (this.clearButtonRef && this.clearButtonRef.current) {
-          this.clearButtonRef.current.focus();
-        } else if (this.toggleButtonRef && this.toggleButtonRef.current) {
-          this.toggleButtonRef.current.focus();
-        }
         this.onToggle(false);
-        event.preventDefault();
       } else if (!isOpen && event.key === KeyTypes.Enter) {
         this.onToggle(true);
         event.preventDefault();
@@ -149,12 +138,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           this.updateFocusedIndex(-1);
           event.preventDefault();
         } else if (event.key === KeyTypes.Enter) {
-          if (this.clearButtonRef && this.clearButtonRef.current) {
-            this.clearButtonRef.current.focus();
-          } else if (this.toggleButtonRef && this.toggleButtonRef.current) {
-            this.toggleButtonRef.current.focus();
-          }
-
           if (focusedIndex !== null) {
             this.onSelect((this.refCollection[focusedIndex] as HTMLElement).innerText, focusedIndex);
             event.stopPropagation();
@@ -291,16 +274,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   onSelect = (selection: string, index: number) => {
-    if (this.clearButtonRef && this.clearButtonRef.current) {
-      this.clearButtonRef.current.focus();
-    } else if (this.toggleButtonRef && this.toggleButtonRef.current) {
-      this.toggleButtonRef.current.focus();
-    }
     this.setState({
       time: selection,
       isInvalid: !this.validTimeFormat(selection),
       isOpen: false,
-      selectedIndex: index,
       focusedIndex: index,
       scrollIndex: index
     });
@@ -309,7 +286,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   clearSelection = () => {
     this.setState({
       time: '',
-      selectedIndex: null,
       focusedIndex: null,
       scrollIndex: 0,
       isOpen: false,
@@ -324,8 +300,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     e.stopPropagation();
   };
 
-  onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const time = event.target.value;
+  onInputChange = (time: string, event: React.FormEvent<HTMLInputElement>) => {
     if (time === '' || this.validTimeFormat(time)) {
       if (this.props.onChange) {
         this.props.onChange(time, event);
@@ -370,27 +345,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       isInvalid: isInvalidProp,
       ...props
     } = this.props;
-    const { time, isOpen, isInvalid, invalidText, selectedIndex, focusedIndex } = this.state;
+    const { time, isOpen, isInvalid, invalidText, focusedIndex } = this.state;
+    const style = { '--pf-c-date-picker__input--c-form-control--Width': '300px' } as React.CSSProperties;
     const options = variant === '12hr' ? times12Hr(delimiter) : times24Hr(delimiter);
     const randomId = id || getUniqueId('time-picker');
-
-    const clearBtn = (
-      <button
-        className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-        // onClick={this.clearSelection}
-        aria-label={clearSelectionsAriaLabel}
-        type="button"
-        disabled={isDisabled}
-        ref={this.clearButtonRef}
-        onKeyDown={event => {
-          if (event.key === 'Enter') {
-            this.clearButtonRef.current.click();
-          }
-        }}
-      >
-        <TimesCircleIcon aria-hidden />
-      </button>
-    );
 
     const menuContainer = (
       <ul
@@ -407,7 +365,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
             sendRef={this.sendRef}
             index={index}
             onSelect={this.onSelect}
-            isSelected={index === selectedIndex}
             isFocused={index === focusedIndex}
             id={`${id}-option-${index}`}
           />
@@ -416,7 +373,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     );
 
     const inputAndToggle = (
-      <div className={css(datePickerStyles.datePickerInput)}>
+      <div className={css(datePickerStyles.datePickerInput)} style={style}>
         <InputGroup>
           <div
             className={css(
@@ -432,46 +389,24 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
               {...props}
               ref={this.toggleRef}
               className={css(styles.selectToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.typeahead)}
+              style={{ paddingLeft: '0' }}
             >
-              <div className={css(styles.selectToggleWrapper)}>
-                <input
-                  className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                  aria-activedescendant={selectedIndex !== null ? `${randomId}-option-${selectedIndex}` : null}
-                  id={`${randomId}-input`}
-                  aria-label={ariaLabel}
-                  aria-invalid={isInvalid}
-                  placeholder={placeholder}
-                  value={time}
-                  type="text"
-                  onFocus={this.onInputFocus}
-                  onChange={this.onInputChange}
-                  onBlur={this.onBlur}
-                  autoComplete="off"
-                  disabled={isDisabled}
-                  ref={this.inputRef}
-                />
-              </div>
-              {time && clearBtn}
-              <button
-                className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
-                aria-labelledby={`${randomId}-input`}
-                onClick={_event => {
-                  _event.stopPropagation();
-                  this.onToggle(!isOpen);
-                }}
-                disabled={isDisabled}
-                ref={this.toggleButtonRef}
-                aria-expanded={isOpen}
-                aria-haspopup="listbox"
-              >
-                <img
-                  height={'16px'}
-                  width={'16px'}
-                  style={{ paddingTop: '6px' }}
-                  aria-labelledby={`${randomId}-input`}
-                  src={`data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%236a6e73' d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z'/%3E%3C/svg%3E`}
-                />
-              </button>
+              <TextInput
+                className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                id={`${randomId}-input`}
+                aria-label={ariaLabel}
+                aria-invalid={isInvalid}
+                placeholder={placeholder}
+                value={time}
+                type="text"
+                iconVariant="clock"
+                onFocus={this.onInputFocus}
+                onChange={this.onInputChange}
+                onBlur={this.onBlur}
+                autoComplete="off"
+                isDisabled={isDisabled}
+                ref={this.inputRef}
+              />
             </div>
             {isOpen && menuAppendTo === 'inline' && menuContainer}
           </div>
