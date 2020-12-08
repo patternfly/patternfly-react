@@ -47,7 +47,7 @@ describe('Description List', () => {
   });
 
   test('Auto fit with responsive grid Description List', () => {
-    const view = shallow(<DescriptionList isAutoFit autoMinFitModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }} />);
+    const view = shallow(<DescriptionList isAutoFit autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }} />);
     expect(view).toMatchSnapshot();
   });
 

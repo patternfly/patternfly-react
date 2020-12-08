@@ -285,7 +285,7 @@ export class DescriptionListDemo extends Component {
         <br />
         <div className="example">
           <DescriptionList
-            autoMinFitModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
+            autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}
             id="auto-fit-description-list"
             isAutoFit
           >
