@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.83.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.82.2...@patternfly/react-core@4.83.0) (2020-12-08)
+
+
+### Bug Fixes
+
+* **descriptionList:** change autoMinFitModifier to autoFitMinModifier ([#5227](https://github.com/patternfly/patternfly-react/issues/5227)) ([fa85c81](https://github.com/patternfly/patternfly-react/commit/fa85c81030f9486335c6a2b9ae23bcaa1ce3ffa2))
+
+
+### Features
+
+* **alert:** add support to custom icon ([#5140](https://github.com/patternfly/patternfly-react/issues/5140)) ([3751cb5](https://github.com/patternfly/patternfly-react/commit/3751cb59d9bfd278ca811551ac8e16a2ebb2e243))
+
+
+
+
+
 ## [4.82.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.82.1...@patternfly/react-core@4.82.2) (2020-12-07)
 
 **Note:** Version bump only for package @patternfly/react-core
