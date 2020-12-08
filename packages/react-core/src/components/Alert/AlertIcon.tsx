@@ -20,13 +20,15 @@ export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
   variant: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** className */
   className?: string;
+  /** A custom icon. If not set the icon is set according to the variant */
+  customIcon?: React.ReactNode;
 }
 
-export const AlertIcon = ({ variant, className = '', ...props }: AlertIconProps) => {
+export const AlertIcon = ({ variant, customIcon, className = '', ...props }: AlertIconProps) => {
   const Icon = variantIcons[variant];
   return (
     <div {...props} className={css(styles.alertIcon, className)}>
-      <Icon />
+      {customIcon || <Icon />}
     </div>
   );
 };

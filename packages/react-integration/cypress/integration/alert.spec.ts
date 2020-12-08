@@ -9,6 +9,14 @@ describe('Alert Demo Test', () => {
     cy.get('#info-alert').should('have.class', 'pf-m-info');
   });
 
+  it('Verify custom icon alert', () => {
+    cy.get('#custom-icon-alert').should('have.class', 'pf-c-alert');
+    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-info');
+    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-success');
+    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-danger');
+    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-warning');
+  });
+
   it('Verify default inline alert', () => {
     cy.get('#default-alert').should('not.have.class', 'pf-m-info');
     cy.get('#default-alert').should('not.have.class', 'pf-success');
