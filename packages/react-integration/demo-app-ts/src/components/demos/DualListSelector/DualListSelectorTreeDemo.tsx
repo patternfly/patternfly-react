@@ -50,7 +50,6 @@ export class DualListSelectorTreeDemo extends React.Component<DualListSelectorPr
         chosenOptions={this.state.chosenOptions}
         onListChange={this.onListChange}
         isTree
-        hasChecks
       />
     );
   }

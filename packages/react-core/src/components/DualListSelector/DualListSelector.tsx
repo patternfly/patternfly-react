@@ -72,8 +72,6 @@ export interface DualListSelectorProps {
   id?: string;
   /* Flag indicating if the dual list selector uses trees instead of simple lists */
   isTree?: boolean;
-  /** Flag indicating if the dual list selector tree options have checkboxes */
-  hasChecks?: boolean;
 }
 
 interface DualListSelectorState {
@@ -501,7 +499,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       onListChange,
       id,
       isTree,
-      hasChecks,
       ...props
     } = this.props;
     const {
@@ -528,10 +525,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           } items selected`
         : `${chosenOptionsSelected.length} of ${chosenOptions.length} items selected`);
 
-    const available = hasChecks
+    const available = isTree
       ? availableOptions.map(item => this.mapChecked(item as DualListSelectorTreeItemData, false))
       : availableOptions;
-    const chosen = hasChecks
+    const chosen = isTree
       ? chosenOptions.map(item => this.mapChecked(item as DualListSelectorTreeItemData, true))
       : chosenOptions;
 
@@ -550,7 +547,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           actions={availableOptionsActions}
           id={`${id}-available-pane`}
           isTree={isTree}
-          hasChecks={hasChecks}
+          hasChecks={isTree}
         />
         <div
           className={css(styles.dualListSelectorControls)}
@@ -621,7 +618,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           actions={chosenOptionsActions}
           id={`${id}-chosen-pane`}
           isTree={isTree}
-          hasChecks={hasChecks}
+          hasChecks={isTree}
         />
       </div>
     );

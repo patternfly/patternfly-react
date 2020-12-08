@@ -280,7 +280,6 @@ class TreeDualListSelector extends React.Component {
         id="basicSelector"
         isSearchable
         isTree
-        hasChecks
       />
     );
   }
