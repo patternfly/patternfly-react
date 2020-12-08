@@ -13,8 +13,6 @@ export interface DualListSelectorPaneProps {
   isChosen?: boolean;
   /* Flag indicating if the dual list selector uses trees instead of simple lists */
   isTree?: boolean;
-  /** Flag indicating if the dual list selector tree options have checkboxes */
-  hasChecks?: boolean;
   /** Status to display above the pane. */
   status?: string;
   /** Title of the pane. */
@@ -167,7 +165,6 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       actions,
       isSearchable,
       isTree,
-      hasChecks,
       searchInputAriaLabel,
       className,
       status,
@@ -264,7 +261,6 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
               onOptionSelect={this.onOptionSelect}
               onOptionCheck={onOptionCheck}
               selectedOptions={selectedOptions as string[]}
-              hasChecks={hasChecks}
             />
           </div>
         )}

@@ -1872,7 +1872,6 @@ exports[`DualListSelector with tree 1`] = `
     id="tree-test"
   >
     <DualListSelectorPane
-      hasChecks={true}
       id="tree-test-available-pane"
       isChosen={false}
       isSearchable={false}
@@ -1959,7 +1958,6 @@ exports[`DualListSelector with tree 1`] = `
                 },
               ]
             }
-            hasChecks={true}
             isChosen={false}
             onOptionCheck={[Function]}
             onOptionSelect={[Function]}
@@ -2075,7 +2073,6 @@ exports[`DualListSelector with tree 1`] = `
                     }
                     defaultAllExpanded={false}
                     hasBadges={false}
-                    hasChecks={true}
                     isChosen={false}
                     isNested={true}
                     onOptionCheck={[Function]}
@@ -2442,7 +2439,6 @@ exports[`DualListSelector with tree 1`] = `
       </div>
     </div>
     <DualListSelectorPane
-      hasChecks={true}
       id="tree-test-chosen-pane"
       isChosen={true}
       isSearchable={false}
@@ -2487,7 +2483,6 @@ exports[`DualListSelector with tree 1`] = `
         >
           <DualListSelectorTree
             data={Array []}
-            hasChecks={true}
             isChosen={true}
             onOptionCheck={[Function]}
             onOptionSelect={[Function]}

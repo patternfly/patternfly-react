@@ -56,8 +56,6 @@ export interface DualListSelectorTreeProps {
   isChosen?: boolean;
   /** Flag indicating if the list is nested */
   isNested?: boolean;
-  /** Flag indicating if all options should have checkboxes */
-  hasChecks?: boolean;
   /** Flag indicating if all options should have badges */
   hasBadges?: boolean;
   /** Sets the default expanded behavior */
@@ -86,7 +84,6 @@ export interface DualListSelectorTreeProps {
 export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeProps> = ({
   data,
   isChosen,
-  hasChecks = false,
   hasBadges = false,
   isNested = false,
   defaultAllExpanded = false,
@@ -107,7 +104,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
         defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
         onOptionSelect={onOptionSelect}
         onOptionCheck={onOptionCheck}
-        hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
+        hasCheck={item.hasCheck !== undefined ? item.hasCheck : true}
         isChecked={item.isChecked}
         checkProps={item.checkProps}
         hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
@@ -120,7 +117,6 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
               isNested
               data={item.children}
               parentItem={item}
-              hasChecks={hasChecks}
               hasBadges={hasBadges}
               isChosen={isChosen}
               defaultAllExpanded={defaultAllExpanded}

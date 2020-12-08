@@ -547,7 +547,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           actions={availableOptionsActions}
           id={`${id}-available-pane`}
           isTree={isTree}
-          hasChecks={isTree}
         />
         <div
           className={css(styles.dualListSelectorControls)}
@@ -618,7 +617,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           actions={chosenOptionsActions}
           id={`${id}-chosen-pane`}
           isTree={isTree}
-          hasChecks={isTree}
         />
       </div>
     );
