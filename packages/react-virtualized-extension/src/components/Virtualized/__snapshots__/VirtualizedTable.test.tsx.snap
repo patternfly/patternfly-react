@@ -763,18 +763,15 @@ exports[`Actions virtualized table 1`] = `
                         "cell": [Function],
                         "row": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Tr",
                           "render": [Function],
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
@@ -797,12 +794,10 @@ exports[`Actions virtualized table 1`] = `
                               "cell": [Function],
                               "row": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Tr",
                                 "render": [Function],
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -2171,18 +2166,15 @@ exports[`Selectable virtualized table 1`] = `
                         "cell": [Function],
                         "row": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Tr",
                           "render": [Function],
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
@@ -2205,12 +2197,10 @@ exports[`Selectable virtualized table 1`] = `
                               "cell": [Function],
                               "row": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Tr",
                                 "render": [Function],
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -3856,18 +3846,15 @@ exports[`Simple Actions table 1`] = `
                         "cell": [Function],
                         "row": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Tr",
                           "render": [Function],
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
@@ -3890,12 +3877,10 @@ exports[`Simple Actions table 1`] = `
                               "cell": [Function],
                               "row": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Tr",
                                 "render": [Function],
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -5276,18 +5261,15 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "cell": [Function],
                         "row": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Tr",
                           "render": [Function],
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
@@ -5310,12 +5292,10 @@ exports[`Simple virtualized table aria-label 1`] = `
                               "cell": [Function],
                               "row": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Tr",
                                 "render": [Function],
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -6440,18 +6420,15 @@ exports[`Simple virtualized table className 1`] = `
                         "cell": [Function],
                         "row": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Tr",
                           "render": [Function],
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
@@ -6474,12 +6451,10 @@ exports[`Simple virtualized table className 1`] = `
                               "cell": [Function],
                               "row": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Tr",
                                 "render": [Function],
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
@@ -7611,18 +7586,15 @@ exports[`Sortable Virtualized Table 1`] = `
                         "cell": [Function],
                         "row": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Tr",
                           "render": [Function],
                         },
                         "wrapper": Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "displayName": "Thead",
                           "render": [Function],
                         },
                       },
                       "table": Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "displayName": "TableComposable",
                         "render": [Function],
                       },
                     }
@@ -7645,12 +7617,10 @@ exports[`Sortable Virtualized Table 1`] = `
                               "cell": [Function],
                               "row": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Tr",
                                 "render": [Function],
                               },
                               "wrapper": Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "displayName": "Thead",
                                 "render": [Function],
                               },
                             }
