@@ -217,49 +217,49 @@ class CheckboxTreeView extends React.Component {
           {
             name: 'Application 1',
             id: 'App1',
-            checkProps: { 'aria-label': 'app-1-check', checked: false },
+            checkProps: { checked: false },
             children: [
               {
                 name: 'Settings',
                 id: 'App1Settings',
-                checkProps: { 'aria-label': 'app-1-settings-check', checked: false }
+                checkProps: { checked: false }
               },
               {
                 name: 'Current',
                 id: 'App1Current',
-                checkProps: { 'aria-label': 'app-1-current-check', checked: false }
+                checkProps: { checked: false }
               }
             ]
           },
           {
             name: 'Application 2',
             id: 'App2',
-            checkProps: { 'aria-label': 'app-2-check', checked: false },
+            checkProps: { checked: false },
             children: [
               {
                 name: 'Settings',
                 id: 'App2Settings',
-                checkProps: { 'aria-label': 'app-2-settings-check', checked: false }
+                checkProps: { checked: false }
               },
               {
                 name: 'Loader',
                 id: 'App2Loader',
-                checkProps: { 'aria-label': 'app-loader-check', checked: false },
+                checkProps: { checked: false },
                 children: [
                   {
                     name: 'Loading App 1',
                     id: 'LoadApp1',
-                    checkProps: { 'aria-label': 'app-1-load-check', checked: false }
+                    checkProps: { checked: false }
                   },
                   {
                     name: 'Loading App 2',
                     id: 'LoadApp2',
-                    checkProps: { 'aria-label': 'app-2-load-check', checked: false }
+                    checkProps: { checked: false }
                   },
                   {
                     name: 'Loading App 3',
                     id: 'LoadApp3',
-                    checkProps: { 'aria-label': 'app-3-load-check', checked: false }
+                    checkProps: { checked: false }
                   }
                 ]
               }
@@ -584,8 +584,7 @@ class BadgesTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem, Button } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import { TreeView, TreeViewDataItem, Button, Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
 import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
 import HamburgerIcon from '@patternfly/react-icons/dist/js/icons/hamburger-icon';
 
@@ -593,25 +592,53 @@ class IconTreeView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeItems: {} };
+    this.state = { activeItems: {}, isOpen: false };
 
     this.onClick = (evt, treeViewItem, parentItem) => {
       this.setState({
         activeItems: [treeViewItem, parentItem]
       });
     };
-  }
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = event => {
+        this.setState({
+          isOpen: !this.state.isOpen
+        });
+    };
+  };
 
   render() {
-    const { activeItems } = this.state;
+    const { activeItems, isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled href="www.google.com">
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>
+    ];
     const options = [
       {
         name: 'ApplicationLauncher',
         id: 'AppLaunch',
         action: (
-          <Button variant="plain" aria-label="Launch app">
-            <EllipsisVIcon />
-          </Button>
+          <Dropdown
+            onSelect={this.onSelect}
+            toggle={<KebabToggle onToggle={this.onToggle} />}
+            isOpen={isOpen}
+            isPlain
+            dropdownItems={dropdownItems}
+          />
         ),
         children: [
           {
@@ -631,7 +658,7 @@ class IconTreeView extends React.Component {
             name: 'Application 2',
             id: 'App2',
             action: (
-              <Button variant="plain" aria-label="Launch app 2">
+              <Button variant="plain" aria-label="Launch app 1">
                 <HamburgerIcon />
               </Button>
             ),

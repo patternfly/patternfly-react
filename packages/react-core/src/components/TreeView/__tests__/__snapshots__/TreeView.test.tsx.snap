@@ -121,13 +121,14 @@ exports[`tree view renders active successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewList
-    isNested={false}
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
     >
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -219,45 +220,54 @@ exports[`tree view renders active successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    ApplicationLauncher
+                  </span>
+                </button>
+              </GenerateId>
             </div>
             <TreeView
               activeItems={
@@ -385,6 +395,7 @@ exports[`tree view renders active successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -491,45 +502,54 @@ exports[`tree view renders active successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node pf-m-current"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 1
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -651,45 +671,54 @@ exports[`tree view renders active successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 2
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -757,45 +786,54 @@ exports[`tree view renders active successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Cost Management
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -854,45 +892,54 @@ exports[`tree view renders active successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Sources
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -945,51 +992,60 @@ exports[`tree view renders active successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;
 
@@ -1115,13 +1171,14 @@ exports[`tree view renders badges successfully 1`] = `
   hasBadges={true}
   onSelect={[MockFunction]}
 >
-  <TreeViewList
-    isNested={false}
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
     >
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -1213,58 +1270,67 @@ exports[`tree view renders badges successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-                <span
-                  className="pf-c-tree-view__node-count"
-                >
-                  <Badge
-                    isRead={true}
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
                     <span
-                      className="pf-c-badge pf-m-read"
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      2
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
                     </span>
-                  </Badge>
-                </span>
-              </button>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    ApplicationLauncher
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-count"
+                  >
+                    <Badge
+                      isRead={true}
+                    >
+                      <span
+                        className="pf-c-badge pf-m-read"
+                      >
+                        2
+                      </span>
+                    </Badge>
+                  </span>
+                </button>
+              </GenerateId>
             </div>
             <TreeView
               activeItems={
@@ -1392,6 +1458,7 @@ exports[`tree view renders badges successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -1498,58 +1565,67 @@ exports[`tree view renders badges successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node pf-m-current"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-count"
-                          >
-                            <Badge
-                              isRead={true}
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
                               <span
-                                className="pf-c-badge pf-m-read"
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                2
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
                               </span>
-                            </Badge>
-                          </span>
-                        </button>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 1
+                            </span>
+                            <span
+                              className="pf-c-tree-view__node-count"
+                            >
+                              <Badge
+                                isRead={true}
+                              >
+                                <span
+                                  className="pf-c-badge pf-m-read"
+                                >
+                                  2
+                                </span>
+                              </Badge>
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -1671,58 +1747,67 @@ exports[`tree view renders badges successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-count"
-                          >
-                            <Badge
-                              isRead={true}
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
                               <span
-                                className="pf-c-badge pf-m-read"
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                2
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
                               </span>
-                            </Badge>
-                          </span>
-                        </button>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 2
+                            </span>
+                            <span
+                              className="pf-c-tree-view__node-count"
+                            >
+                              <Badge
+                                isRead={true}
+                              >
+                                <span
+                                  className="pf-c-badge pf-m-read"
+                                >
+                                  2
+                                </span>
+                              </Badge>
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -1790,58 +1875,67 @@ exports[`tree view renders badges successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-                <span
-                  className="pf-c-tree-view__node-count"
-                >
-                  <Badge
-                    isRead={true}
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
                     <span
-                      className="pf-c-badge pf-m-read"
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      1
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
                     </span>
-                  </Badge>
-                </span>
-              </button>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Cost Management
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-count"
+                  >
+                    <Badge
+                      isRead={true}
+                    >
+                      <span
+                        className="pf-c-badge pf-m-read"
+                      >
+                        1
+                      </span>
+                    </Badge>
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -1900,58 +1994,67 @@ exports[`tree view renders badges successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-                <span
-                  className="pf-c-tree-view__node-count"
-                >
-                  <Badge
-                    isRead={true}
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
                     <span
-                      className="pf-c-badge pf-m-read"
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      1
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
                     </span>
-                  </Badge>
-                </span>
-              </button>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Sources
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-count"
+                  >
+                    <Badge
+                      isRead={true}
+                    >
+                      <span
+                        className="pf-c-badge pf-m-read"
+                      >
+                        1
+                      </span>
+                    </Badge>
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -2004,64 +2107,73 @@ exports[`tree view renders badges successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-                <span
-                  className="pf-c-tree-view__node-count"
-                >
-                  <Badge
-                    isRead={true}
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
                     <span
-                      className="pf-c-badge pf-m-read"
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      1
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
                     </span>
-                  </Badge>
-                </span>
-              </button>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-count"
+                  >
+                    <Badge
+                      isRead={true}
+                    >
+                      <span
+                        className="pf-c-badge pf-m-read"
+                      >
+                        1
+                      </span>
+                    </Badge>
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;
 
@@ -2168,13 +2280,14 @@ exports[`tree view renders basic successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewList
-    isNested={false}
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
     >
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -2248,45 +2361,54 @@ exports[`tree view renders basic successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    ApplicationLauncher
+                  </span>
+                </button>
+              </GenerateId>
             </div>
             <TreeView
               data={
@@ -2396,6 +2518,7 @@ exports[`tree view renders basic successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -2484,45 +2607,54 @@ exports[`tree view renders basic successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 1
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -2626,45 +2758,54 @@ exports[`tree view renders basic successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 2
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -2714,45 +2855,54 @@ exports[`tree view renders basic successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Cost Management
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -2793,45 +2943,54 @@ exports[`tree view renders basic successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Sources
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -2866,51 +3025,60 @@ exports[`tree view renders basic successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;
 
@@ -3036,13 +3204,14 @@ exports[`tree view renders checkboxes successfully 1`] = `
   hasChecks={true}
   onSelect={[MockFunction]}
 >
-  <TreeViewList
-    isNested={false}
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
     >
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -3134,55 +3303,68 @@ exports[`tree view renders checkboxes successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <div
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-check"
-                >
-                  <input
-                    checked={false}
-                    onChange={[Function]}
+                  <button
+                    aria-labelledby="label-checkbox-id18"
+                    className="pf-c-tree-view__node-toggle"
                     onClick={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-              </button>
+                  >
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
+                    >
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </button>
+                  <span
+                    className="pf-c-tree-view__node-check"
+                  >
+                    <input
+                      checked={false}
+                      id="checkbox-id18"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                  </span>
+                  <label
+                    className="pf-c-tree-view__node-text"
+                    htmlFor="checkbox-id18"
+                    id="label-checkbox-id18"
+                  >
+                    ApplicationLauncher
+                  </label>
+                </div>
+              </GenerateId>
             </div>
             <TreeView
               activeItems={
@@ -3310,6 +3492,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -3416,55 +3599,68 @@ exports[`tree view renders checkboxes successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node pf-m-current"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <div
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-check"
-                          >
-                            <input
-                              checked={false}
-                              onChange={[Function]}
+                            <button
+                              aria-labelledby="label-checkbox-id19"
+                              className="pf-c-tree-view__node-toggle"
                               onClick={[Function]}
-                              type="checkbox"
-                            />
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                        </button>
+                            >
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
+                              >
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </button>
+                            <span
+                              className="pf-c-tree-view__node-check"
+                            >
+                              <input
+                                checked={false}
+                                id="checkbox-id19"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="checkbox"
+                              />
+                            </span>
+                            <label
+                              className="pf-c-tree-view__node-text"
+                              htmlFor="checkbox-id19"
+                              id="label-checkbox-id19"
+                            >
+                              Application 1
+                            </label>
+                          </div>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -3586,55 +3782,68 @@ exports[`tree view renders checkboxes successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <div
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-check"
-                          >
-                            <input
-                              checked={false}
-                              onChange={[Function]}
+                            <button
+                              aria-labelledby="label-checkbox-id20"
+                              className="pf-c-tree-view__node-toggle"
                               onClick={[Function]}
-                              type="checkbox"
-                            />
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                        </button>
+                            >
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
+                              >
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </button>
+                            <span
+                              className="pf-c-tree-view__node-check"
+                            >
+                              <input
+                                checked={false}
+                                id="checkbox-id20"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="checkbox"
+                              />
+                            </span>
+                            <label
+                              className="pf-c-tree-view__node-text"
+                              htmlFor="checkbox-id20"
+                              id="label-checkbox-id20"
+                            >
+                              Application 2
+                            </label>
+                          </div>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -3702,55 +3911,68 @@ exports[`tree view renders checkboxes successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <div
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-check"
-                >
-                  <input
-                    checked={false}
-                    onChange={[Function]}
+                  <button
+                    aria-labelledby="label-checkbox-id21"
+                    className="pf-c-tree-view__node-toggle"
                     onClick={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-              </button>
+                  >
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
+                    >
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </button>
+                  <span
+                    className="pf-c-tree-view__node-check"
+                  >
+                    <input
+                      checked={false}
+                      id="checkbox-id21"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                  </span>
+                  <label
+                    className="pf-c-tree-view__node-text"
+                    htmlFor="checkbox-id21"
+                    id="label-checkbox-id21"
+                  >
+                    Cost Management
+                  </label>
+                </div>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -3809,55 +4031,68 @@ exports[`tree view renders checkboxes successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <div
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-check"
-                >
-                  <input
-                    checked={false}
-                    onChange={[Function]}
+                  <button
+                    aria-labelledby="label-checkbox-id22"
+                    className="pf-c-tree-view__node-toggle"
                     onClick={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-              </button>
+                  >
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
+                    >
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </button>
+                  <span
+                    className="pf-c-tree-view__node-check"
+                  >
+                    <input
+                      checked={false}
+                      id="checkbox-id22"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                  </span>
+                  <label
+                    className="pf-c-tree-view__node-text"
+                    htmlFor="checkbox-id22"
+                    id="label-checkbox-id22"
+                  >
+                    Sources
+                  </label>
+                </div>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -3910,61 +4145,74 @@ exports[`tree view renders checkboxes successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <div
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-check"
-                >
-                  <input
-                    checked={false}
-                    onChange={[Function]}
+                  <button
+                    aria-labelledby="label-checkbox-id23"
+                    className="pf-c-tree-view__node-toggle"
                     onClick={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-              </button>
+                  >
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
+                    >
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </button>
+                  <span
+                    className="pf-c-tree-view__node-check"
+                  >
+                    <input
+                      checked={false}
+                      id="checkbox-id23"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                  </span>
+                  <label
+                    className="pf-c-tree-view__node-text"
+                    htmlFor="checkbox-id23"
+                    id="label-checkbox-id23"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </label>
+                </div>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;
 
@@ -4103,13 +4351,14 @@ exports[`tree view renders icons successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewList
-    isNested={false}
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
     >
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -4215,73 +4464,82 @@ exports[`tree view renders icons successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-icon"
-                >
-                  <FolderOpenIcon
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-icon"
                   >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <FolderOpenIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
                     >
-                      <path
-                        d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"
-                      />
-                    </svg>
-                  </FolderOpenIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-              </button>
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"
+                        />
+                      </svg>
+                    </FolderOpenIcon>
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    ApplicationLauncher
+                  </span>
+                </button>
+              </GenerateId>
             </div>
             <TreeView
               activeItems={
@@ -4423,6 +4681,7 @@ exports[`tree view renders icons successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -4543,73 +4802,82 @@ exports[`tree view renders icons successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node pf-m-current"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-icon"
-                          >
-                            <FolderIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-icon"
                             >
-                              <svg
-                                aria-hidden={true}
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 512 512"
-                                width="1em"
+                              <FolderIcon
+                                color="currentColor"
+                                noVerticalAlign={false}
+                                size="sm"
                               >
-                                <path
-                                  d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
-                                />
-                              </svg>
-                            </FolderIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                        </button>
+                                <svg
+                                  aria-hidden={true}
+                                  aria-labelledby={null}
+                                  fill="currentColor"
+                                  height="1em"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
+                                  viewBox="0 0 512 512"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
+                                  />
+                                </svg>
+                              </FolderIcon>
+                            </span>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 1
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -4745,73 +5013,82 @@ exports[`tree view renders icons successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-icon"
-                          >
-                            <FolderIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-icon"
                             >
-                              <svg
-                                aria-hidden={true}
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 512 512"
-                                width="1em"
+                              <FolderIcon
+                                color="currentColor"
+                                noVerticalAlign={false}
+                                size="sm"
                               >
-                                <path
-                                  d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
-                                />
-                              </svg>
-                            </FolderIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                        </button>
+                                <svg
+                                  aria-hidden={true}
+                                  aria-labelledby={null}
+                                  fill="currentColor"
+                                  height="1em"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
+                                  viewBox="0 0 512 512"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
+                                  />
+                                </svg>
+                              </FolderIcon>
+                            </span>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 2
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -4893,73 +5170,82 @@ exports[`tree view renders icons successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-icon"
-                >
-                  <FolderIcon
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-icon"
                   >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 512 512"
-                      width="1em"
+                    <FolderIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
                     >
-                      <path
-                        d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
-                      />
-                    </svg>
-                  </FolderIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-              </button>
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
+                        />
+                      </svg>
+                    </FolderIcon>
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Cost Management
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -5032,73 +5318,82 @@ exports[`tree view renders icons successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-icon"
-                >
-                  <FolderIcon
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-icon"
                   >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 512 512"
-                      width="1em"
+                    <FolderIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
                     >
-                      <path
-                        d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
-                      />
-                    </svg>
-                  </FolderIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-              </button>
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
+                        />
+                      </svg>
+                    </FolderIcon>
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Sources
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -5165,79 +5460,88 @@ exports[`tree view renders icons successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-icon"
-                >
-                  <FolderIcon
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-icon"
                   >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 512 512"
-                      width="1em"
+                    <FolderIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
                     >
-                      <path
-                        d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
-                      />
-                    </svg>
-                  </FolderIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-              </button>
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
+                        />
+                      </svg>
+                    </FolderIcon>
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;
 
@@ -5386,13 +5690,14 @@ exports[`tree view renders individual flag options successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewList
-    isNested={false}
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
     >
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -5511,83 +5816,96 @@ exports[`tree view renders individual flag options successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <div
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-check"
-                >
-                  <input
-                    checked={false}
-                    onChange={[Function]}
+                  <button
+                    aria-labelledby="label-checkbox-id36"
+                    className="pf-c-tree-view__node-toggle"
                     onClick={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="pf-c-tree-view__node-icon"
-                >
-                  <FolderOpenIcon
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
                   >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 576 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"
-                      />
-                    </svg>
-                  </FolderOpenIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </button>
+                  <span
+                    className="pf-c-tree-view__node-check"
+                  >
+                    <input
+                      checked={false}
+                      id="checkbox-id36"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-icon"
+                  >
+                    <FolderOpenIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 576 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"
+                        />
+                      </svg>
+                    </FolderOpenIcon>
+                  </span>
+                  <label
+                    className="pf-c-tree-view__node-text"
+                    htmlFor="checkbox-id36"
+                    id="label-checkbox-id36"
+                  >
+                    ApplicationLauncher
+                  </label>
+                </div>
+              </GenerateId>
             </div>
             <TreeView
               activeItems={
@@ -5730,6 +6048,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -5849,45 +6168,54 @@ exports[`tree view renders individual flag options successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node pf-m-current"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 1
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -6024,58 +6352,67 @@ exports[`tree view renders individual flag options successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-count"
-                          >
-                            <Badge
-                              isRead={true}
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
                               <span
-                                className="pf-c-badge pf-m-read"
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                2
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
                               </span>
-                            </Badge>
-                          </span>
-                        </button>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 2
+                            </span>
+                            <span
+                              className="pf-c-tree-view__node-count"
+                            >
+                              <Badge
+                                isRead={true}
+                              >
+                                <span
+                                  className="pf-c-badge pf-m-read"
+                                >
+                                  2
+                                </span>
+                              </Badge>
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -6166,58 +6503,67 @@ exports[`tree view renders individual flag options successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-                <span
-                  className="pf-c-tree-view__node-count"
-                >
-                  <Badge
-                    isRead={true}
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
                     <span
-                      className="pf-c-badge pf-m-read"
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      1
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
                     </span>
-                  </Badge>
-                </span>
-              </button>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Cost Management
+                  </span>
+                  <span
+                    className="pf-c-tree-view__node-count"
+                  >
+                    <Badge
+                      isRead={true}
+                    >
+                      <span
+                        className="pf-c-badge pf-m-read"
+                      >
+                        1
+                      </span>
+                    </Badge>
+                  </span>
+                </button>
+              </GenerateId>
               <div
                 className="pf-c-tree-view__action"
               >
@@ -6321,45 +6667,54 @@ exports[`tree view renders individual flag options successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Sources
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -6412,51 +6767,60 @@ exports[`tree view renders individual flag options successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;
 
@@ -6589,19 +6953,19 @@ exports[`tree view renders search successfully 1`] = `
     }
   }
 >
-  <TreeViewList
-    isNested={false}
-    onSearch={[MockFunction]}
-    searchProps={
-      Object {
-        "aria-label": "Search input example",
-        "id": "input-search",
-        "name": "search-input",
-      }
-    }
+  <div
+    className="pf-c-tree-view"
   >
-    <div
-      className="pf-c-tree-view"
+    <TreeViewList
+      isNested={false}
+      onSearch={[MockFunction]}
+      searchProps={
+        Object {
+          "aria-label": "Search input example",
+          "id": "input-search",
+          "name": "search-input",
+        }
+      }
     >
       <TreeViewSearch
         aria-label="Search input example"
@@ -6628,6 +6992,7 @@ exports[`tree view renders search successfully 1`] = `
         />
       </Divider>
       <ul
+        className="pf-c-tree-view__list"
         role="tree"
       >
         <TreeViewListItem
@@ -6719,45 +7084,54 @@ exports[`tree view renders search successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleDownIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 320 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      />
-                    </svg>
-                  </AngleDownIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  ApplicationLauncher
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    ApplicationLauncher
+                  </span>
+                </button>
+              </GenerateId>
             </div>
             <TreeView
               activeItems={
@@ -6885,6 +7259,7 @@ exports[`tree view renders search successfully 1`] = `
                 isNested={true}
               >
                 <ul
+                  className="pf-c-tree-view__list"
                   role="group"
                 >
                   <TreeViewListItem
@@ -6991,45 +7366,54 @@ exports[`tree view renders search successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node pf-m-current"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 1
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 1
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -7151,45 +7535,54 @@ exports[`tree view renders search successfully 1`] = `
                       <div
                         className="pf-c-tree-view__content"
                       >
-                        <button
-                          className="pf-c-tree-view__node"
-                          onClick={[Function]}
+                        <GenerateId
+                          prefix="checkbox-id"
                         >
-                          <span
-                            className="pf-c-tree-view__node-toggle-icon"
+                          <button
+                            className="pf-c-tree-view__node"
+                            onClick={[Function]}
                           >
-                            <AngleRightIcon
-                              aria-hidden="true"
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
+                            <div
+                              className="pf-c-tree-view__node-toggle"
+                              onClick={[Function]}
                             >
-                              <svg
-                                aria-hidden="true"
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 256 512"
-                                width="1em"
+                              <span
+                                className="pf-c-tree-view__node-toggle-icon"
                               >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                            </AngleRightIcon>
-                          </span>
-                          <span
-                            className="pf-c-tree-view__node-text"
-                          >
-                            Application 2
-                          </span>
-                        </button>
+                                <AngleRightIcon
+                                  aria-hidden="true"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                    />
+                                  </svg>
+                                </AngleRightIcon>
+                              </span>
+                            </div>
+                            <span
+                              className="pf-c-tree-view__node-text"
+                            >
+                              Application 2
+                            </span>
+                          </button>
+                        </GenerateId>
                       </div>
                     </li>
                   </TreeViewListItem>
@@ -7257,45 +7650,54 @@ exports[`tree view renders search successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Cost Management
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Cost Management
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -7354,45 +7756,54 @@ exports[`tree view renders search successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Sources
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Sources
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
@@ -7445,50 +7856,59 @@ exports[`tree view renders search successfully 1`] = `
             <div
               className="pf-c-tree-view__content"
             >
-              <button
-                className="pf-c-tree-view__node"
-                onClick={[Function]}
+              <GenerateId
+                prefix="checkbox-id"
               >
-                <span
-                  className="pf-c-tree-view__node-toggle-icon"
+                <button
+                  className="pf-c-tree-view__node"
+                  onClick={[Function]}
                 >
-                  <AngleRightIcon
-                    aria-hidden="true"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
+                  <div
+                    className="pf-c-tree-view__node-toggle"
+                    onClick={[Function]}
                   >
-                    <svg
-                      aria-hidden="true"
-                      aria-labelledby={null}
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
-                      }
-                      viewBox="0 0 256 512"
-                      width="1em"
+                    <span
+                      className="pf-c-tree-view__node-toggle-icon"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </AngleRightIcon>
-                </span>
-                <span
-                  className="pf-c-tree-view__node-text"
-                >
-                  Really really really long folder name that overflows the container it is in
-                </span>
-              </button>
+                      <AngleRightIcon
+                        aria-hidden="true"
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
+                  </div>
+                  <span
+                    className="pf-c-tree-view__node-text"
+                  >
+                    Really really really long folder name that overflows the container it is in
+                  </span>
+                </button>
+              </GenerateId>
             </div>
           </li>
         </TreeViewListItem>
       </ul>
-    </div>
-  </TreeViewList>
+    </TreeViewList>
+  </div>
 </TreeView>
 `;

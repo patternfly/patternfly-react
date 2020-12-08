@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { TreeViewList } from './TreeViewList';
 import { TreeViewListItem } from './TreeViewListItem';
 
@@ -76,47 +78,60 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
   ...props
-}: TreeViewProps) => (
-  <TreeViewList isNested={isNested} onSearch={onSearch} searchProps={searchProps} {...props}>
-    {data.map(item => (
-      <TreeViewListItem
-        key={item.name.toString()}
-        name={item.name}
-        id={item.id}
-        defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
-        onSelect={onSelect}
-        onCheck={onCheck}
-        hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
-        checkProps={item.checkProps}
-        hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
-        badgeProps={item.checkProps}
-        activeItems={activeItems}
-        parentItem={parentItem}
-        itemData={item}
-        icon={item.icon !== undefined ? item.icon : icon}
-        expandedIcon={item.expandedIcon !== undefined ? item.expandedIcon : expandedIcon}
-        action={item.action}
-        compareItems={compareItems}
-        {...(item.children && {
-          children: (
-            <TreeView
-              data={item.children}
-              isNested
-              parentItem={item}
-              hasChecks={hasChecks}
-              hasBadges={hasBadges}
-              defaultAllExpanded={defaultAllExpanded}
-              onSelect={onSelect}
-              onCheck={onCheck}
-              activeItems={activeItems}
-              icon={icon}
-              expandedIcon={expandedIcon}
-            />
-          )
-        })}
-      />
-    ))}
-  </TreeViewList>
-);
+}: TreeViewProps) => {
+  const treeViewList = (
+    <TreeViewList isNested={isNested} onSearch={onSearch} searchProps={searchProps}>
+      {data.map(item => (
+        <TreeViewListItem
+          key={item.name.toString()}
+          name={item.name}
+          id={item.id}
+          defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
+          onSelect={onSelect}
+          onCheck={onCheck}
+          hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
+          checkProps={item.checkProps}
+          hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
+          badgeProps={item.checkProps}
+          activeItems={activeItems}
+          parentItem={parentItem}
+          itemData={item}
+          icon={item.icon !== undefined ? item.icon : icon}
+          expandedIcon={item.expandedIcon !== undefined ? item.expandedIcon : expandedIcon}
+          action={item.action}
+          compareItems={compareItems}
+          {...(item.children && {
+            children: (
+              <TreeView
+                data={item.children}
+                isNested
+                parentItem={item}
+                hasChecks={hasChecks}
+                hasBadges={hasBadges}
+                defaultAllExpanded={defaultAllExpanded}
+                onSelect={onSelect}
+                onCheck={onCheck}
+                activeItems={activeItems}
+                icon={icon}
+                expandedIcon={expandedIcon}
+              />
+            )
+          })}
+        />
+      ))}
+    </TreeViewList>
+  );
+  return (
+    <>
+      {parentItem ? (
+        treeViewList
+      ) : (
+        <div className={css(styles.treeView)} {...props}>
+          {treeViewList}
+        </div>
+      )}
+    </>
+  );
+};
 
 TreeView.displayName = 'TreeView';

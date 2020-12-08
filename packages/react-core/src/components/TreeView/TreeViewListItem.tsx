@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 interface CheckProps extends Partial<React.InputHTMLAttributes<HTMLInputElement>> {
   checked?: boolean | null;
@@ -69,6 +69,8 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   compareItems
 }: TreeViewListItemProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+  const Component = hasCheck ? 'div' : 'button';
+  const ToggleComponent = hasCheck ? 'button' : 'div';
   return (
     <li
       id={id}
@@ -78,52 +80,75 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
       tabIndex={0}
     >
       <div className={css(styles.treeViewContent)}>
-        <button
-          className={css(
-            styles.treeViewNode,
-            activeItems &&
-              activeItems.length > 0 &&
-              activeItems.some(item => compareItems && item && compareItems(item, itemData))
-              ? styles.modifiers.current
-              : ''
+        <GenerateId prefix="checkbox-id">
+          {randomId => (
+            <Component
+              className={css(
+                styles.treeViewNode,
+                !children &&
+                  activeItems &&
+                  activeItems.length > 0 &&
+                  activeItems.some(item => compareItems && item && compareItems(item, itemData))
+                  ? styles.modifiers.current
+                  : ''
+              )}
+              onClick={(evt: React.MouseEvent) => {
+                if (!hasCheck) {
+                  if (children) {
+                    setIsExpanded(!isExpanded);
+                  }
+                  onSelect && onSelect(evt, itemData, parentItem);
+                }
+              }}
+            >
+              {children && (
+                <ToggleComponent
+                  className={css(styles.treeViewNodeToggle)}
+                  onClick={() => {
+                    if (hasCheck) {
+                      setIsExpanded(!isExpanded);
+                    }
+                  }}
+                  {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
+                >
+                  <span className={css(styles.treeViewNodeToggleIcon)}>
+                    <AngleRightIcon aria-hidden="true" />
+                  </span>
+                </ToggleComponent>
+              )}
+              {hasCheck && (
+                <span className={css(styles.treeViewNodeCheck)}>
+                  <input
+                    type="checkbox"
+                    onChange={(evt: React.ChangeEvent) => onCheck && onCheck(evt, itemData, parentItem)}
+                    onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+                    ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
+                    {...checkProps}
+                    id={randomId}
+                  />
+                </span>
+              )}
+              {icon && (
+                <span className={css(styles.treeViewNodeIcon)}>
+                  {!isExpanded && icon}
+                  {isExpanded && (expandedIcon || icon)}
+                </span>
+              )}
+              {hasCheck ? (
+                <label className={css(styles.treeViewNodeText)} htmlFor={randomId} id={`label-${randomId}`}>
+                  {name}
+                </label>
+              ) : (
+                <span className={css(styles.treeViewNodeText)}>{name}</span>
+              )}
+              {hasBadge && children && (
+                <span className={css(styles.treeViewNodeCount)}>
+                  <Badge {...badgeProps}>{(children as React.ReactElement).props.data.length}</Badge>
+                </span>
+              )}
+            </Component>
           )}
-          onClick={(evt: React.MouseEvent) => {
-            if (children) {
-              setIsExpanded(!isExpanded);
-            }
-            onSelect && onSelect(evt, itemData, parentItem);
-          }}
-        >
-          {children && (
-            <span className={css(styles.treeViewNodeToggleIcon)}>
-              {!isExpanded && <AngleRightIcon aria-hidden="true" />}
-              {isExpanded && <AngleDownIcon aria-hidden="true" />}
-            </span>
-          )}
-          {hasCheck && (
-            <span className={css(styles.treeViewNodeCheck)}>
-              <input
-                type="checkbox"
-                onChange={(evt: React.ChangeEvent) => onCheck && onCheck(evt, itemData, parentItem)}
-                onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
-                ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
-                {...checkProps}
-              />
-            </span>
-          )}
-          {icon && (
-            <span className={css(styles.treeViewNodeIcon)}>
-              {!isExpanded && icon}
-              {isExpanded && (expandedIcon || icon)}
-            </span>
-          )}
-          <span className={css(styles.treeViewNodeText)}>{name}</span>
-          {hasBadge && children && (
-            <span className={css(styles.treeViewNodeCount)}>
-              <Badge {...badgeProps}>{(children as React.ReactElement).props.data.length}</Badge>
-            </span>
-          )}
-        </button>
+        </GenerateId>
         {action && <div className={css(styles.treeViewAction)}>{action}</div>}
       </div>
       {isExpanded && children}
