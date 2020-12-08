@@ -79,11 +79,13 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
               </Button>
             </span>
           )}
-          <span className="pf-c-search-input__clear">
-            <Button variant={ButtonVariant.plain} aria-label="Clear" onClick={onClear}>
-              <TimesIcon />
-            </Button>
-          </span>
+          {!!onClear && (
+            <span className="pf-c-search-input__clear">
+              <Button variant={ButtonVariant.plain} aria-label="Clear" onClick={onClear}>
+                <TimesIcon />
+              </Button>
+            </span>
+          )}
         </span>
       )}
     </div>
