@@ -15,8 +15,6 @@ export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the time picker. */
   className?: string;
-  /** Flag indicating whether the value of the time picker is invalid. */
-  isInvalid?: boolean;
   /** Accessible label for the time picker */
   'aria-label'?: string;
   /** Flag indicating the date picker is disabled */
@@ -69,7 +67,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   static defaultProps = {
     className: '',
-    isInvalid: false,
     isDisabled: false,
     defaultTime: '',
     variant: '12hr',
@@ -116,8 +113,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       this.menuRef.current.contains &&
       this.menuRef.current.contains(event.target as Node);
     if (this.state.isOpen && !(clickedOnToggle || clickedWithinMenu)) {
+      this.parseTime(this.state.time);
       this.onToggle(false);
-      this.toggleRef.current.focus();
     }
   };
 
@@ -127,9 +124,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     if (this.inputRef && this.inputRef.current && this.inputRef.current.contains(event.target as Node)) {
       if (isOpen && (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab)) {
         this.onToggle(false);
-      } else if (!isOpen && event.key === KeyTypes.Enter) {
+      } else if (!isOpen && event.key !== KeyTypes.Tab) {
         this.onToggle(true);
-        event.preventDefault();
       } else if (isOpen) {
         if (event.key === KeyTypes.ArrowDown) {
           this.updateFocusedIndex(1);
@@ -178,12 +174,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   scrollToSelection = (time: string) => {
-    const splitTime = time.split(this.props.delimiter);
+    let splitTime = time.split(this.props.delimiter);
     let focusedIndex = null;
 
     // build out the rest of the time assuming hh:00 if it's a partial time
     if (splitTime.length < 2) {
       time = `${time}:00`;
+      splitTime = time.split(this.props.delimiter);
     }
 
     // for 12hr variant, autoscroll to pm if it's currently the afternoon, otherwise autoscroll to am
@@ -209,7 +206,16 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     } else if (splitTime.length === 2) {
       // no exact match, scroll to closes match but don't return index for focus
       const minutes = splitTime[1].length === 1 ? splitTime[1] + '0' : '00';
-      const amPm = this.props.variant === '12hr' ? (new Date().getHours() > 11 ? 'pm' : 'am') : '';
+      const amPm =
+        this.props.variant === '12hr'
+          ? splitTime[1].toLowerCase().includes('a')
+            ? 'am'
+            : splitTime[1].toLowerCase().includes('p')
+            ? 'pm'
+            : new Date().getHours() > 11
+            ? 'pm'
+            : 'am'
+          : '';
       time = `${splitTime[0]}${this.props.delimiter}${minutes}${amPm}`;
       scrollIndex = this.refCollection.findIndex(option => option.innerText.includes(time));
       if (scrollIndex !== -1) {
@@ -232,7 +238,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     let valid = true;
 
     const date = new Date(time);
-    if (!isNaN(date.getDate())) {
+    if (!isNaN(date.getDate()) && time.includes('T')) {
       const hours =
         variant === '12hr'
           ? `${variant === '12hr' && date.getHours() > 11 ? date.getHours() - 12 : date.getHours()}`
@@ -247,7 +253,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           variant === '12hr'
             ? new RegExp(`\\b\\d\\d?${delimiter}[0-5]\\d\\s?([AaPp][Mm])?\\b`)
             : new RegExp(`\\b\\d\\d?${delimiter}[0-5]\\d\\b`);
-        valid = time === '' || regexp.test(time);
+        const hours = parseInt(time.split(delimiter)[0]);
+        const validHours = hours >= 0 && hours <= (variant === '12hr' ? '12' : 23);
+        valid = time === '' || (regexp.test(time) && validHours);
       }
       if (
         variant === '12hr' &&
@@ -293,7 +301,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onInputFocus = (e: React.FocusEvent) => {
+  onInputFocus = (e: any) => {
     if (!this.state.isOpen) {
       this.onToggle(true);
     }
@@ -342,11 +350,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       onChange,
       clearSelectionsAriaLabel,
       defaultTime,
-      isInvalid: isInvalidProp,
       ...props
     } = this.props;
     const { time, isOpen, isInvalid, invalidText, focusedIndex } = this.state;
-    const style = { '--pf-c-date-picker__input--c-form-control--Width': '300px' } as React.CSSProperties;
+    const style = { '--pf-c-date-picker__input--c-form-control--Width': '150px' } as React.CSSProperties;
     const options = variant === '12hr' ? times12Hr(delimiter) : times24Hr(delimiter);
     const randomId = id || getUniqueId('time-picker');
 
@@ -356,7 +363,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         className={css(styles.selectMenu)}
         role="listbox"
         aria-labelledby={`${id}-input`}
-        style={{ maxHeight: '300px', overflowY: 'auto' }}
+        style={{ maxHeight: '200px', overflowY: 'auto' }}
       >
         {options.map((option, index) => (
           <TimeOption
@@ -395,11 +402,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                 className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                 id={`${randomId}-input`}
                 aria-label={ariaLabel}
-                aria-invalid={isInvalid}
+                validated={isInvalid ? 'error' : 'default'}
                 placeholder={placeholder}
                 value={time}
                 type="text"
                 iconVariant="clock"
+                onClick={this.onInputFocus}
                 onFocus={this.onInputFocus}
                 onChange={this.onInputChange}
                 onBlur={this.onBlur}

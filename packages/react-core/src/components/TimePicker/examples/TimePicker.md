@@ -21,7 +21,7 @@ SimpleTimePicker = () => {
   
   return (
     <React.Fragment>
-        <TimePicker defaultTime="3:35pm" onChange={onChange}/>
+        <TimePicker defaultTime="3:35am" onChange={onChange}/>
       </React.Fragment>
   );
 }
