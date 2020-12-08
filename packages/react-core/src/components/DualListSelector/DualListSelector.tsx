@@ -22,16 +22,16 @@ export interface DualListSelectorProps {
   className?: string;
   /** Title applied to the available options pane. */
   availableOptionsTitle?: string;
-  /** Options to display in the available options pane. */
-  availableOptions?: React.ReactNode[];
+  /** Options to display in the available options pane. When using trees, the options should be in the DualListSelectorTreeItemData[] format. */
+  availableOptions?: React.ReactNode[] | DualListSelectorTreeItemData[];
   /** Status message to display above the available options pane. */
   availableOptionsStatus?: string;
   /** Actions to be displayed above the available options pane. */
   availableOptionsActions?: React.ReactNode[];
   /** Title applied to the chosen options pane. */
   chosenOptionsTitle?: string;
-  /** Options to display in the chosen options pane. */
-  chosenOptions?: React.ReactNode[];
+  /** Options to display in the chosen options pane. When using trees, the options should be in the DualListSelectorTreeItemData[] format. */
+  chosenOptions?: React.ReactNode[] | DualListSelectorTreeItemData[];
   /** Status message to display above the chosen options pane.*/
   chosenOptionsStatus?: string;
   /** Actions to be displayed above the chosen options pane. */
@@ -209,7 +209,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Get next chosen options from current + new nodes and remap from base
       const currChosen = flattenTree(prevState.chosenOptions as DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(prevState.availableTreeOptionsSelected);
-      const newChosen = this.originalCopy
+      const newChosen = (this.originalCopy as DualListSelectorTreeItemData[])
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextChosenOptions));
 
@@ -262,7 +262,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Get next chosen options from current and remap from base
       const currAvailable = flattenTree(prevState.availableOptions as DualListSelectorTreeItemData[]);
       const nextAvailableOptions = currAvailable.concat(prevState.chosenTreeOptionsSelected);
-      const newAvailable = this.originalCopy
+      const newAvailable = (this.originalCopy as DualListSelectorTreeItemData[])
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextAvailableOptions));
 
