@@ -101,7 +101,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
         className={css(
           styles.dualListSelectorListItem,
           className,
-          children && 'pf-m-expandable',
+          children && styles.modifiers.expandable,
           isExpanded && styles.modifiers.expanded
         )}
         key={orderIndex}
