@@ -13,11 +13,22 @@ export class DualListSelectorTreeDemo extends React.Component<DualListSelectorPr
     super(props);
     this.state = {
       availableOptions: [
-        { text: 'Folder 1', children: [{ text: 'Option 1' }] },
-        { text: 'Option 2' },
+        { id: 'F1', text: 'Folder 1', children: [{ id: 'O1', text: 'Option 1' }] },
+        { id: 'O2', text: 'Option 2' },
         {
+          id: 'F2',
           text: 'Folder 2',
-          children: [{ text: 'Folder 3', children: [{ text: 'Option 3' }, { text: 'Option 4' }] }, { text: 'Option 5' }]
+          children: [
+            {
+              id: 'F3',
+              text: 'Folder 3',
+              children: [
+                { id: 'O3', text: 'Option 3' },
+                { id: 'O4', text: 'Option 4' }
+              ]
+            },
+            { id: 'O5', text: 'Option 5' }
+          ]
         }
       ],
       chosenOptions: []

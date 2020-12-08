@@ -18,18 +18,12 @@ export interface DualListSelectorTreeItemData {
   hasCheck?: boolean;
   /** Flag indicating this option has a badge */
   hasBadge?: boolean;
-  /** Internal callback to pass this ref up to the parent. */
-  sendRef?: (optionRef: React.ReactNode, index: number) => void;
-  /** Internal field used to keep track of the order of filtered options. */
-  filteredIndex?: number;
-  /** Internal field used to keep track of order of unfiltered options. */
-  orderIndex?: number;
   /** Callback fired when an option is selected.  */
   onOptionSelect?: (
     e: React.MouseEvent | React.ChangeEvent,
     index: number,
     isChosen: boolean,
-    text?: string,
+    id?: string,
     itemData?: any,
     parentData?: any
   ) => void;
@@ -43,10 +37,10 @@ export interface DualListSelectorTreeItemData {
   id: string;
   /** Text of the option */
   text: string;
-  /** Checked state of the option */
-  checked: boolean;
   /** Parent item of the option */
   parentItem?: DualListSelectorTreeItem;
+  /** Checked state of the option */
+  isChecked: boolean;
   /** Additional properties to pass to the option checkbox */
   checkProps?: any;
   /** Additional properties to pass to the option badge */
@@ -73,7 +67,7 @@ export interface DualListSelectorTreeProps {
     e: React.MouseEvent | React.ChangeEvent,
     index: number,
     isChosen: boolean,
-    text?: string,
+    id?: string,
     itemData?: any,
     parentData?: any
   ) => void;
@@ -87,8 +81,6 @@ export interface DualListSelectorTreeProps {
   parentItem?: DualListSelectorTreeItemData;
   /** Reference of selected options */
   selectedOptions?: string[];
-  /** Internal callback to pass this ref up to the parent. */
-  sendRef?: (optionRef: React.ReactNode, index: number) => void;
 }
 
 export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeProps> = ({
@@ -101,28 +93,26 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   parentItem,
   onOptionSelect,
   onOptionCheck,
-  sendRef,
   selectedOptions = [],
   ...props
 }: DualListSelectorTreeProps) => (
   <ul className={css(styles.dualListSelectorList)} role={isNested ? 'group' : 'tree'} {...props}>
     {data.map(item => (
       <DualListSelectorTreeItem
-        key={item.text}
+        key={item.id}
         text={item.text}
         id={item.id}
         isChosen={isChosen}
-        isSelected={selectedOptions.includes(item.text)}
+        isSelected={selectedOptions.includes(item.id)}
         defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
         onOptionSelect={onOptionSelect}
         onOptionCheck={onOptionCheck}
         hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
-        checked={item.checked}
+        isChecked={item.isChecked}
         checkProps={item.checkProps}
         hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
         badgeProps={item.badgeProps}
         parentItem={parentItem}
-        sendRef={sendRef}
         itemData={item}
         {...(item.children && {
           children: (
@@ -136,7 +126,6 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
               defaultAllExpanded={defaultAllExpanded}
               onOptionSelect={onOptionSelect}
               onOptionCheck={onOptionCheck}
-              sendRef={sendRef}
               selectedOptions={selectedOptions}
             />
           )

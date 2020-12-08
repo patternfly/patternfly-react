@@ -28,7 +28,10 @@ describe('DualListSelector', () => {
   test('with tree', () => {
     const view = mount(
       <DualListSelector
-        availableOptions={[{ text: 'Opt1', defaultExpanded: true, children: [{ text: 'Opt3' }] }, { text: 'Opt2' }]}
+        availableOptions={[
+          { id: 'O1', text: 'Opt1', defaultExpanded: true, children: [{ id: 'O3', text: 'Opt3' }] },
+          { id: 'O2', text: 'Opt2' }
+        ]}
         availableOptionsStatus="Test status1"
         chosenOptionsStatus="Test status2"
         id="tree-test"

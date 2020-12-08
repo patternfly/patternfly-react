@@ -21,18 +21,12 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   hasCheck?: boolean;
   /** Flag indicating this option has a badge */
   hasBadge?: boolean;
-  /** Internal callback to pass this ref up to the parent. */
-  sendRef?: (optionRef: React.ReactNode, index: number) => void;
-  /** Internal field used to keep track of the order of filtered options. */
-  filteredIndex?: number;
-  /** Internal field used to keep track of order of unfiltered options. */
-  orderIndex?: number;
   /** Callback fired when an option is selected.  */
   onOptionSelect?: (
     e: React.MouseEvent | React.ChangeEvent,
     index: number,
     isChosen: boolean,
-    text?: string,
+    id?: string,
     itemData?: any,
     parentData?: any
   ) => void;
@@ -48,6 +42,8 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   text: string;
   /** Parent item of the option */
   parentItem?: DualListSelectorTreeItemData;
+  /** Flag indicating if this open is checked. */
+  isChecked?: boolean;
   /** Additional properties to pass to the option checkbox */
   checkProps?: any;
   /** Additional properties to pass to the option badge */
@@ -63,21 +59,11 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
     isExpanded: this.props.defaultExpanded || false
   };
 
-  componentDidMount() {
-    this.props.sendRef(this.ref.current, this.props.filteredIndex);
-  }
-
-  componentDidUpdate() {
-    this.props.sendRef(this.ref.current, this.props.filteredIndex);
-  }
-
   render() {
     const {
       onOptionSelect,
       onOptionCheck,
       /* eslint-disable @typescript-eslint/no-unused-vars */
-      sendRef,
-      orderIndex,
       children,
       className,
       id,
@@ -87,8 +73,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
       defaultExpanded,
       hasCheck,
       hasBadge,
-      filteredIndex,
-      checked,
+      isChecked,
       checkProps,
       badgeProps,
       parentItem,
@@ -104,7 +89,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
           children && styles.modifiers.expandable,
           isExpanded && styles.modifiers.expanded
         )}
-        key={orderIndex}
+        id={id}
         {...props}
         aria-selected={isSelected}
         role="treeitem"
@@ -118,10 +103,9 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
           )}
           onClick={e => {
             if (!hasCheck) {
-              onOptionSelect(e, null, isChosen, text, itemData, parentItem);
+              onOptionSelect(e, null, isChosen, id, itemData, parentItem);
             }
           }}
-          id={id}
           ref={this.ref}
           tabIndex={-1}
         >
@@ -149,8 +133,8 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
                     onOptionCheck && onOptionCheck(evt, isChosen, itemData)
                   }
                   onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
-                  ref={elem => elem && (elem.indeterminate = checked === null)}
-                  checked={checked || false}
+                  ref={elem => elem && (elem.indeterminate = isChecked === null)}
+                  checked={isChecked || false}
                   {...checkProps}
                 />
               </span>

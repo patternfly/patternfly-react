@@ -228,31 +228,37 @@ class TreeDualListSelector extends React.Component {
       chosenOptions: [],
       availableOptions: [
         {
+          id: 'F1',
           text: 'Folder 1',
-          checked: false,
+          isChecked: false,
           checkProps: { 'aria-label': 'Folder 1' },
           hasBadge: true,
           badgeProps: { isRead: true },
           children: [
-            { text: 'Option 1', checked: false, checkProps: { 'aria-label': 'Option 1' } },
+            { id: 'O1', text: 'Option 1', isChecked: false, checkProps: { 'aria-label': 'Option 1' } },
             {
+              id: 'F1A',
               text: 'Folder 1A',
-              checked: false,
+              isChecked: false,
               checkProps: { 'aria-label': 'Folder 1A' },
               children: [
-                { text: 'Option 2', checked: false, checkProps: { 'aria-label': 'Option 2' } },
-                { text: 'Option 3', checked: false, checkProps: { 'aria-label': 'Option 3' } }
+                { id: 'O2', text: 'Option 2', isChecked: false, checkProps: { 'aria-label': 'Option 2' } },
+                { id: 'O3', text: 'Option 3', isChecked: false, checkProps: { 'aria-label': 'Option 3' } }
               ]
             },
-            { text: 'Option 4', checked: false, checkProps: { 'aria-label': 'Option 4' } }
+            { id: 'O4', text: 'Option 4', isChecked: false, checkProps: { 'aria-label': 'Option 4' } }
           ]
         },
-        { text: 'Option 5', checked: false, checkProps: { 'aria-label': 'Option 5' } },
+        { id: 'O5', text: 'Option 5', isChecked: false, checkProps: { 'aria-label': 'Option 5' } },
         {
+          id: 'F2',
           text: 'Folder 2',
-          checked: false,
+          isChecked: false,
           checkProps: { 'aria-label': 'Folder 2' },
-          children: [{ text: 'Option 6', checked: false, checkProps: { 'aria-label': 'Option 6' } }]
+          children: [
+            { id: 'O6', text: 'Option 6', isChecked: false, checkProps: { 'aria-label': 'Option 6' } },
+            { id: 'O7', text: 'Option 5', isChecked: false, checkProps: { 'aria-label': 'Option 5 duplicate' } }
+          ]
         }
       ]
     };

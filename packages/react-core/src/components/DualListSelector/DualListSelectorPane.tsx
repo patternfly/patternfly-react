@@ -261,7 +261,6 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
                   : (options as DualListSelectorTreeItemData[])
               }
               isChosen={isChosen}
-              sendRef={this.sendRef}
               onOptionSelect={this.onOptionSelect}
               onOptionCheck={onOptionCheck}
               selectedOptions={selectedOptions as string[]}

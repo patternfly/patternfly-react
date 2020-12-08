@@ -6,7 +6,7 @@ export function flattenTree(tree: DualListSelectorTreeItemData[]): string[] {
     if (item.children) {
       result = result.concat(flattenTree(item.children));
     } else {
-      result.push(item.text);
+      result.push(item.id);
     }
   });
   return result;
@@ -15,7 +15,7 @@ export function flattenTree(tree: DualListSelectorTreeItemData[]): string[] {
 export function flattenTreeWithFolders(tree: DualListSelectorTreeItemData[]): string[] {
   let result = [] as string[];
   tree.forEach(item => {
-    result.push(item.text);
+    result.push(item.id);
     if (item.children) {
       result = result.concat(flattenTreeWithFolders(item.children));
     }
@@ -23,14 +23,14 @@ export function flattenTreeWithFolders(tree: DualListSelectorTreeItemData[]): st
   return result;
 }
 
-export function filterFolders(tree: DualListSelectorTreeItemData[], subset: string[]): string[] {
+export function filterFolders(tree: DualListSelectorTreeItemData[], inputList: string[]): string[] {
   let result = [] as string[];
   tree.forEach(item => {
     if (item.children) {
-      result = result.concat(filterFolders(item.children, subset));
+      result = result.concat(filterFolders(item.children, inputList));
     } else {
-      if (subset.includes(item.text)) {
-        result.push(item.text);
+      if (inputList.includes(item.id)) {
+        result.push(item.id);
       }
     }
   });
@@ -38,7 +38,7 @@ export function filterFolders(tree: DualListSelectorTreeItemData[], subset: stri
 }
 
 export function filterTreeItems(item: DualListSelectorTreeItemData, inputList: string[]): boolean {
-  if (inputList.includes(item.text)) {
+  if (inputList.includes(item.id)) {
     return true;
   }
   if (item.children) {
@@ -59,7 +59,7 @@ export function filterTreeItemsWithoutFolders(item: DualListSelectorTreeItemData
     );
   }
 
-  if (inputList.includes(item.text)) {
+  if (inputList.includes(item.id)) {
     return true;
   }
 }
@@ -73,7 +73,7 @@ export function filterRestTreeItems(item: DualListSelectorTreeItemData, inputLis
     return child;
   }
 
-  if (!inputList.includes(item.text)) {
+  if (!inputList.includes(item.id)) {
     return true;
   }
 }
