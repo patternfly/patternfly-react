@@ -2619,13 +2619,6 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@patternfly/focus-trap@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/focus-trap/-/focus-trap-4.0.0.tgz#c569ab381d1c0f925f930277ef093ca408ee45b9"
-  integrity sha512-HWgZEBLHgQ6GhUVorH9dYobEBLd6U33PwpFUXuN8zwzZRsqLtZLeZlTsMqeVfQVUj3XxWL0wHbEq4ecDE63pkA==
-  dependencies:
-    tabbable "^5.1.4"
-
 "@patternfly/patternfly-a11y@2.0.11":
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-2.0.11.tgz#6e17fa355989e635df8a2c4fdbf31f0ea74feb57"
@@ -9064,6 +9057,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+focus-trap@6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.2.2.tgz#0e6f391415b0697c99da932702dedd13084fa131"
+  integrity sha512-qWovH9+LGoKqREvJaTCzJyO0hphQYGz+ap5Hc4NqXHNhZBdxCi5uBPPcaOUw66fHmzXLVwvETLvFgpwPILqKpg==
+  dependencies:
+    tabbable "^5.1.4"
 
 follow-redirects@1.5.10:
   version "1.5.10"
