@@ -59,7 +59,12 @@ export interface DualListSelectorProps {
   /** Optional callback fired when an option is selected */
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent) => void;
   /** Optional callback fired when an option is checked */
-  onOptionCheck?: (e: React.ChangeEvent<HTMLInputElement>, checkedId: string, newCheckedItems: string[]) => void;
+  onOptionCheck?: (
+    e: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    checkedId: string,
+    newCheckedItems: string[]
+  ) => void;
   /** Flag indicating a search bar should be included above both the available and chosen panes. */
   isSearchable?: boolean;
   /** Accessible label for the search input on the available options pane. */
@@ -385,11 +390,14 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
   };
 
   onTreeOptionCheck = (
-    evt: React.ChangeEvent<HTMLInputElement>,
+    evt: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => {
-    const checked = evt.target.checked;
+    const checked = (evt as React.ChangeEvent<HTMLInputElement>).target.checked
+      ? (evt as React.ChangeEvent<HTMLInputElement>).target.checked
+      : isChecked;
     const panelOptions = isChosen ? this.state.chosenOptions : this.state.availableOptions;
     const checkedOptionTree = panelOptions
       .map(opt => Object.assign({}, opt))
@@ -416,7 +424,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         chosenTreeOptionsSelected: isChosen ? updatedSelected : prevState.chosenTreeOptionsSelected
       }),
       () => {
-        this.props.onOptionCheck && this.props.onOptionCheck(evt, itemData.id, updatedChecked);
+        this.props.onOptionCheck && this.props.onOptionCheck(evt, isChecked, itemData.id, updatedChecked);
       }
     );
 

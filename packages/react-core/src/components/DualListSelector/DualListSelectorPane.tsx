@@ -33,7 +33,8 @@ export interface DualListSelectorPaneProps {
     parentData?: any
   ) => void;
   onOptionCheck?: (
-    evt: React.ChangeEvent<HTMLInputElement>,
+    evt: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;

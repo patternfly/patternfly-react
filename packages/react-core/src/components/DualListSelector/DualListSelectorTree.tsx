@@ -27,7 +27,8 @@ export interface DualListSelectorTreeItemData {
   ) => void;
   /** Callback fired when an option is checked */
   onOptionCheck?: (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
@@ -69,7 +70,8 @@ export interface DualListSelectorTreeProps {
   ) => void;
   /** Callback fired when an option is checked */
   onOptionCheck?: (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;

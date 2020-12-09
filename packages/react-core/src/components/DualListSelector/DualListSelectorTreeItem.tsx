@@ -30,7 +30,8 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   ) => void;
   /** Callback fired when an option is checked */
   onOptionCheck?: (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    isChecked: boolean,
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
@@ -96,6 +97,9 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
           className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected, styles.modifiers.check)}
           ref={this.ref}
           tabIndex={-1}
+          onClick={evt => {
+            onOptionCheck && onOptionCheck(evt, !isChecked, isChosen, itemData);
+          }}
         >
           <span className={css(styles.dualListSelectorItemMain)}>
             {children && (
@@ -117,7 +121,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
               <input
                 type="checkbox"
                 onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
-                  onOptionCheck && onOptionCheck(evt, isChosen, itemData)
+                  onOptionCheck && onOptionCheck(evt, !isChecked, isChosen, itemData)
                 }
                 onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
                 ref={elem => elem && (elem.indeterminate = isChecked === null)}

@@ -2003,6 +2003,7 @@ exports[`DualListSelector with tree 1`] = `
                 >
                   <div
                     className="pf-c-dual-list-selector__item pf-m-check"
+                    onClick={[Function]}
                     tabIndex={-1}
                   >
                     <span
@@ -2138,6 +2139,7 @@ exports[`DualListSelector with tree 1`] = `
                         >
                           <div
                             className="pf-c-dual-list-selector__item pf-m-check"
+                            onClick={[Function]}
                             tabIndex={-1}
                           >
                             <span
@@ -2193,6 +2195,7 @@ exports[`DualListSelector with tree 1`] = `
                 >
                   <div
                     className="pf-c-dual-list-selector__item pf-m-check"
+                    onClick={[Function]}
                     tabIndex={-1}
                   >
                     <span
