@@ -18,7 +18,7 @@ This is an example of toolbar usage in log viewer.
 ```js isFullscreen
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, SearchInput, Select, SelectOption, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, SearchInput, Select, SelectOption, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants, Tooltip } from '@patternfly/react-core';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
@@ -337,7 +337,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           <Dropdown
             toggle={
               <DropdownToggle id='option-toggle-desktop' onToggle={this.onOptionToggle} icon={<CogIcon />}>
-                Option
+                Options
               </DropdownToggle>
             }
             isOpen={optionExpanded}
@@ -356,28 +356,43 @@ class ConsoleLogViewerToolbar extends React.Component {
     const leftAlignedItemsMobile = (
       <React.Fragment>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Select
-            onToggle={this.onContainerToggleMobile}
-            onSelect={this.onContainerSelectMobile}
-            selections={containerSelected}
-            isOpen={containerExpandedMobile}
-            customContent={selectDropdownContent}
-            placeholderText={selectToggleContent({ showText: false })}
-          />
+          <Tooltip
+            position="top"
+            content={<div>Select Pod</div>}
+          >
+            <Select
+              onToggle={this.onContainerToggleMobile}
+              onSelect={this.onContainerSelectMobile}
+              selections={containerSelected}
+              isOpen={containerExpandedMobile}
+              customContent={selectDropdownContent}
+              placeholderText={selectToggleContent({ showText: false })}
+            />
+          </Tooltip>
         </ToolbarItem>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Dropdown
-            toggle={
-              <DropdownToggle id='option-toggle-mobile' onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
-            }
-            isOpen={optionExpandedMobile}
-            dropdownItems={optionDropdownItems}
-          />
+          <Tooltip
+            position="top"
+            content={<div>Options</div>}
+          >
+            <Dropdown
+              toggle={
+                <DropdownToggle id='option-toggle-mobile' onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
+              }
+              isOpen={optionExpandedMobile}
+              dropdownItems={optionDropdownItems}
+            />
+          </Tooltip>
         </ToolbarItem>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Button variant="plain" onClick={this.pauseOrStart}>
-            {this.state.isPaused? <PlayIcon /> : <PauseIcon />}
-          </Button>
+          <Tooltip
+            position="top"
+            content={<div>{isPaused? "Start log" : "Pause log"}</div>}
+          >
+            <Button variant="plain" onClick={this.pauseOrStart}>
+              {isPaused? <PlayIcon /> : <PauseIcon />}
+            </Button>
+          </Tooltip>
         </ToolbarItem>
       </React.Fragment>
     );
@@ -444,25 +459,35 @@ class ConsoleLogViewerToolbar extends React.Component {
     const rightAlignedItemsMobile = (
       <React.Fragment>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Dropdown
-            onSelect={this.onExternalSelectMobile}
-            toggle={
-              <DropdownToggle id='mobile-external-toggle' onToggle={this.onExternalToggleMobile} icon={<ExternalLinkAltIcon />} />
-            }
-            isOpen={externalExpandedMobile}
-            dropdownItems={externalDropdownItems}
-          />
+          <Tooltip
+            position="top"
+            content={<div>External logs</div>}
+          >
+            <Dropdown
+              onSelect={this.onExternalSelectMobile}
+              toggle={
+                <DropdownToggle id='mobile-external-toggle' onToggle={this.onExternalToggleMobile} icon={<ExternalLinkAltIcon />} />
+              }
+              isOpen={externalExpandedMobile}
+              dropdownItems={externalDropdownItems}
+            />
+          </Tooltip>
         </ToolbarItem>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Dropdown
-            onSelect={this.onDownloadSelectMobile}
-            toggle={
-              <DropdownToggle id='mobile-download-toggle' onToggle={this.onDownloadToggleMobile} icon={<DownloadIcon />} />
-            }
-            isOpen={downloadExpandedMobile}
-            position={DropdownPosition.right}
-            dropdownItems={downloadDropdownItems}
-          />
+          <Tooltip
+            position="top"
+            content={<div>Download</div>}
+          >
+            <Dropdown
+              onSelect={this.onDownloadSelectMobile}
+              toggle={
+                <DropdownToggle id='mobile-download-toggle' onToggle={this.onDownloadToggleMobile} icon={<DownloadIcon />} />
+              }
+              isOpen={downloadExpandedMobile}
+              position={DropdownPosition.right}
+              dropdownItems={downloadDropdownItems}
+            />
+          </Tooltip>
         </ToolbarItem>
       </React.Fragment>
     );
