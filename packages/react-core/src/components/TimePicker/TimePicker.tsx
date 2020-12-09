@@ -33,8 +33,10 @@ export interface TimePickerProps
   onChange?: (time: string, e?: any) => void;
   /** Optional validator can be provided to override the internal time validator. */
   validateTime?: (time: string) => boolean;
-  /** Id of the time picker*/
+  /** Id of the time picker */
   id?: string;
+  /** Width of the time picker. */
+  width?: string;
   /** Accessibly label applied to the clear button in the time picker input */
   clearSelectionsAriaLabel?: string;
   /** The container to append the menu to. Defaults to 'inline'
@@ -62,7 +64,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   private toggleRef = React.createRef<HTMLDivElement>();
   private inputRef = React.createRef<HTMLInputElement>();
   private menuRef = React.createRef<HTMLUListElement>();
-  private refCollection: HTMLElement[] = [];
 
   static defaultProps = {
     className: '',
@@ -75,7 +76,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     'aria-label': 'Time picker',
     clearSelectionsAriaLabel: 'Clear all',
     menuAppendTo: 'inline',
-    direction: 'down'
+    direction: 'down',
+    width: 150
   };
 
   constructor(props: TimePickerProps) {
@@ -129,7 +131,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           this.onToggle(false);
         } else if (event.key === KeyTypes.Enter) {
           if (focusedIndex !== null) {
-            this.onSelect((this.refCollection[focusedIndex] as HTMLElement).innerText, focusedIndex);
+            this.onSelect((this.getOptions()[focusedIndex] as HTMLElement).innerText, focusedIndex);
             event.stopPropagation();
           } else {
             this.onToggle(false);
@@ -154,7 +156,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   updateFocusedIndex = (increment: number) => {
     this.setState(prevState => {
-      const maxIndex = this.refCollection.length - 1;
+      const maxIndex = this.getOptions().length - 1;
       let nextIndex = prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex;
       if (nextIndex < 0) {
         nextIndex = maxIndex;
@@ -164,13 +166,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       this.scrollToIndex(nextIndex);
       return {
         focusedIndex: nextIndex,
-        time: this.refCollection[nextIndex].innerText
+        time: this.getOptions()[nextIndex].innerText
       };
     });
   };
 
   scrollToIndex = (index: number) => {
-    this.refCollection[index].offsetParent.scrollTop = this.refCollection[index].offsetTop;
+    this.getOptions()[index].offsetParent.scrollTop = this.getOptions()[index].offsetTop;
   };
 
   scrollToSelection = (time: string) => {
@@ -198,7 +200,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       time = `${time}${new Date().getHours() > 11 ? 'pm' : 'am'}`;
     }
 
-    let scrollIndex = this.refCollection.findIndex(option => option.innerText.includes(time.toLowerCase()));
+    let scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time.toLowerCase()));
 
     // if we found an exact match, scroll to match and return index of match for focus
     if (scrollIndex !== -1) {
@@ -218,7 +220,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
             : 'am'
           : '';
       time = `${splitTime[0]}${delimiter}${minutes}${amPm}`;
-      scrollIndex = this.refCollection.findIndex(option => option.innerText.includes(time));
+      scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time));
       if (scrollIndex !== -1) {
         this.scrollToIndex(scrollIndex);
       }
@@ -229,9 +231,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  sendRef = (optionRef: React.ReactNode, index: number) => {
-    this.refCollection[index] = optionRef as HTMLElement;
-  };
+  getOptions = () =>
+    (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
 
   parseTime = (time: string) => {
     const { delimiter, variant } = this.props;
@@ -329,7 +330,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           ? new RegExp(`\\b\\d\\d?${delimiter}[0-5]\\d\\s?([AaPp][Mm])\\b`)
           : new RegExp(`\\b\\d\\d?${delimiter}[0-5]\\d\\b`);
       const hours = parseInt(time.split(delimiter)[0]);
-      const validHours = hours >= 0 && hours <= (variant === '12hr' ? '12' : 23);
+      const validHours = hours >= 0 && hours <= (variant === '12hr' ? 12 : 23);
       return time === '' || (regexp.test(time) && validHours);
     }
   };
@@ -351,6 +352,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       variant,
       invalidFormatErrorMessage,
       direction,
+      width,
       delimiter,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
@@ -359,7 +361,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       ...props
     } = this.props;
     const { time, isOpen, isInvalid, focusedIndex } = this.state;
-    const style = { '--pf-c-date-picker__input--c-form-control--Width': '150px' } as React.CSSProperties;
+    const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
     const options = variant === '12hr' ? times12Hr(delimiter) : times24Hr(delimiter);
     const randomId = id || getUniqueId('time-picker');
 
@@ -375,7 +377,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           <TimeOption
             key={index}
             value={option}
-            sendRef={this.sendRef}
             index={index}
             onSelect={this.onSelect}
             isFocused={index === focusedIndex}
