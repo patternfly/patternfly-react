@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 
-export interface TimeOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'onSelect' | 'ref' | 'value'> {
+export interface TimeOptionProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onSelect' | 'value'> {
   /** Optional alternate display for the option */
   children?: React.ReactNode;
   /** Internal index of the option */
@@ -58,9 +58,8 @@ export class TimeOption extends React.Component<TimeOptionProps> {
     } = this.props;
 
     return (
-      <li role="presentation" className={css(styles.selectMenuWrapper, isFocused && styles.modifiers.focus)}>
+      <li role="presentation" className={css(styles.selectMenuWrapper, isFocused && styles.modifiers.focus)} {...props}>
         <button
-          {...props}
           className={css(styles.selectMenuItem, className)}
           onClick={(event: any) => {
             onSelect(value, index);

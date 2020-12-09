@@ -16,13 +16,13 @@ import { TimePicker } from '@patternfly/react-core';
 
 SimpleTimePicker = () => {
   const onChange = (time) => {
-    // console.log(time);
+    console.log(time);
   };
   
   return (
     <React.Fragment>
-        <TimePicker defaultTime="3:35am" onChange={onChange}/>
-      </React.Fragment>
+      <TimePicker defaultTime="3:35am" onChange={onChange}/>
+    </React.Fragment>
   );
 }
 ```
@@ -40,6 +40,6 @@ import { TimePicker } from '@patternfly/react-core';
 import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
-<TimePicker defaultTime="2020-10-14T18:06:02Z" variant="24hr" delimiter="h"/>
+<TimePicker variant="24hr" delimiter="h" placeholder=""/>
 
 ```
