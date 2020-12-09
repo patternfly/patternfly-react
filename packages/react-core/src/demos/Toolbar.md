@@ -18,7 +18,7 @@ This is an example of toolbar usage in log viewer.
 ```js isFullscreen
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, KebabToggle, SearchInput, Select, SelectOption, Switch, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, SearchInput, Select, SelectOption, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
@@ -336,7 +336,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Dropdown
             toggle={
-              <DropdownToggle id='option-toggle' onToggle={this.onOptionToggle} icon={<CogIcon />}>
+              <DropdownToggle id='option-toggle-desktop' onToggle={this.onOptionToggle} icon={<CogIcon />}>
                 Option
               </DropdownToggle>
             }
@@ -368,7 +368,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Dropdown
             toggle={
-              <DropdownToggle id='option-toggle' onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
+              <DropdownToggle id='option-toggle-mobile' onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
             }
             isOpen={optionExpandedMobile}
             dropdownItems={optionDropdownItems}
