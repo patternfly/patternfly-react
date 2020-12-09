@@ -1970,7 +1970,6 @@ exports[`DualListSelector with tree 1`] = `
               <DualListSelectorTreeItem
                 defaultExpanded={true}
                 hasBadge={false}
-                hasCheck={true}
                 id="O1"
                 isChecked={false}
                 isChosen={false}
@@ -2004,7 +2003,6 @@ exports[`DualListSelector with tree 1`] = `
                 >
                   <div
                     className="pf-c-dual-list-selector__item pf-m-check"
-                    onClick={[Function]}
                     tabIndex={-1}
                   >
                     <span
@@ -2101,7 +2099,6 @@ exports[`DualListSelector with tree 1`] = `
                       <DualListSelectorTreeItem
                         defaultExpanded={false}
                         hasBadge={false}
-                        hasCheck={true}
                         id="O3"
                         isChecked={false}
                         isChosen={false}
@@ -2141,7 +2138,6 @@ exports[`DualListSelector with tree 1`] = `
                         >
                           <div
                             className="pf-c-dual-list-selector__item pf-m-check"
-                            onClick={[Function]}
                             tabIndex={-1}
                           >
                             <span
@@ -2173,7 +2169,6 @@ exports[`DualListSelector with tree 1`] = `
               <DualListSelectorTreeItem
                 defaultExpanded={false}
                 hasBadge={false}
-                hasCheck={true}
                 id="O2"
                 isChecked={false}
                 isChosen={false}
@@ -2198,7 +2193,6 @@ exports[`DualListSelector with tree 1`] = `
                 >
                   <div
                     className="pf-c-dual-list-selector__item pf-m-check"
-                    onClick={[Function]}
                     tabIndex={-1}
                   >
                     <span

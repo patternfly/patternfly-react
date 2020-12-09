@@ -14,8 +14,6 @@ export interface DualListSelectorTreeItemData {
   isChosen?: boolean;
   /** Flag indicating this option is expanded by default. */
   defaultExpanded?: boolean;
-  /** Flag indicating this option has a checkbox */
-  hasCheck?: boolean;
   /** Flag indicating this option has a badge */
   hasBadge?: boolean;
   /** Callback fired when an option is selected.  */
@@ -104,7 +102,6 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
         defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
         onOptionSelect={onOptionSelect}
         onOptionCheck={onOptionCheck}
-        hasCheck={item.hasCheck !== undefined ? item.hasCheck : true}
         isChecked={item.isChecked}
         checkProps={item.checkProps}
         hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}

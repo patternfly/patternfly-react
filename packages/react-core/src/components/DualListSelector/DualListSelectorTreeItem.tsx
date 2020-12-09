@@ -17,8 +17,6 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   isChosen?: boolean;
   /** Flag indicating this option is expanded by default. */
   defaultExpanded?: boolean;
-  /** Flag indicating this option has a checkbox */
-  hasCheck?: boolean;
   /** Flag indicating this option has a badge */
   hasBadge?: boolean;
   /** Callback fired when an option is selected.  */
@@ -61,9 +59,9 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
 
   render() {
     const {
-      onOptionSelect,
       onOptionCheck,
       /* eslint-disable @typescript-eslint/no-unused-vars */
+      onOptionSelect,
       children,
       className,
       id,
@@ -71,7 +69,6 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
       isSelected,
       isChosen,
       defaultExpanded,
-      hasCheck,
       hasBadge,
       isChecked,
       checkProps,
@@ -96,16 +93,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
         {...(isExpanded && { 'aria-expanded': 'true' })}
       >
         <div
-          className={css(
-            styles.dualListSelectorItem,
-            isSelected && styles.modifiers.selected,
-            hasCheck && styles.modifiers.check
-          )}
-          onClick={e => {
-            if (!hasCheck) {
-              onOptionSelect(e, null, isChosen, id, itemData, parentItem);
-            }
-          }}
+          className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected, styles.modifiers.check)}
           ref={this.ref}
           tabIndex={-1}
         >
@@ -125,20 +113,19 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
                 </span>
               </div>
             )}
-            {hasCheck && (
-              <span className={css(styles.dualListSelectorItemCheck)}>
-                <input
-                  type="checkbox"
-                  onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
-                    onOptionCheck && onOptionCheck(evt, isChosen, itemData)
-                  }
-                  onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
-                  ref={elem => elem && (elem.indeterminate = isChecked === null)}
-                  checked={isChecked || false}
-                  {...checkProps}
-                />
-              </span>
-            )}
+            <span className={css(styles.dualListSelectorItemCheck)}>
+              <input
+                type="checkbox"
+                onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
+                  onOptionCheck && onOptionCheck(evt, isChosen, itemData)
+                }
+                onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+                ref={elem => elem && (elem.indeterminate = isChecked === null)}
+                checked={isChecked || false}
+                {...checkProps}
+              />
+            </span>
+
             <span className={css(styles.dualListSelectorItemText)}>{text}</span>
             {hasBadge && children && (
               <span className={css(styles.dualListSelectorItemCount)}>
