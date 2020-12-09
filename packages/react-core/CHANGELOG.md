@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.83.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.2...@patternfly/react-core@4.83.3) (2020-12-09)
+
+
+### Bug Fixes
+
+* **jumplinks:** add offset prop ([#5233](https://github.com/patternfly/patternfly-react/issues/5233)) ([6dd1d35](https://github.com/patternfly/patternfly-react/commit/6dd1d353bae4173056023c60757550372a2fa672))
+
+
+
+
+
 ## [4.83.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.1...@patternfly/react-core@4.83.2) (2020-12-08)
 
 **Note:** Version bump only for package @patternfly/react-core
