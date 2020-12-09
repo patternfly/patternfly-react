@@ -18,6 +18,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   activeIndex?: number;
   /** Children nodes */
   children?: React.ReactNode;
+  /** Offset to add to `scrollPosition`, potentially for a masthead which content scrolls under. */
+  offset?: number;
 }
 
 const getScrollItems = (children: React.ReactNode, hasScrollSpy: boolean) =>
@@ -42,6 +44,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   'aria-label': ariaLabel = typeof label === 'string' ? label : null,
   scrollableSelector,
   activeIndex: activeIndexProp = 0,
+  offset = 0,
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableSelector);
@@ -58,7 +61,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       }
 
       function scrollSpy() {
-        const scrollPosition = scrollableElement.scrollTop;
+        const scrollPosition = scrollableElement.scrollTop + offset;
         window.requestAnimationFrame(() => {
           let newScrollItems = scrollItems;
           // Items might have rendered after this component. Do a quick refresh.
