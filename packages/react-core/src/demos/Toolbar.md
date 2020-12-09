@@ -8,6 +8,7 @@ import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 
 ## Demos
 ### Console log viewer toolbar demo
@@ -17,12 +18,13 @@ This is an example of toolbar usage in log viewer.
 ```js isFullscreen
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, KebabToggle, SearchInput, Select, SelectOption, Switch, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, KebabToggle, SearchInput, Select, SelectOption, Switch, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 
 class ConsoleLogViewerToolbar extends React.Component {
   constructor(props) {
@@ -35,108 +37,127 @@ class ConsoleLogViewerToolbar extends React.Component {
     };
 
     this.state = {
-      firstExpanded: false,
-      firstExpandedMobile: false,
-      firstSelected: Object.keys(this.firstOptions)[0],
+      containerExpanded: false,
+      containerExpandedMobile: false,
+      containerSelected: Object.keys(this.firstOptions)[0],
+      optionExpanded: false,
+      optionExpandedMobile: false,
       isPaused: false,
       firstSwitchChecked: true,
       secondSwitchChecked: false,
-      searchValue: 'error',
+      searchValue: '',
       searchResultsCount: 3,
       currentSearchResult: 1,
-      secondExpanded: false,
-      secondExpandedMobile: false,
-      thirdExpanded: false,
-      thirdExpandedMobile: false,
-      kebabExpanded: false,
-      mobileView: window.innerWidth >= 768 ? false : true
+      externalExpanded: false,
+      externalExpandedMobile: false,
+      downloadExpanded: false,
+      downloadExpandedMobile: false,
+      mobileView: window.innerWidth >= 1450 ? false : true
     };
 
-    this.onFirstToggle = isExpanded => {
+    this.onContainerToggle = isExpanded => {
       this.setState({
-        firstExpanded: isExpanded
+        containerExpanded: isExpanded
       });
     };
 
-    this.onFirstToggleMobile = isExpanded => {
+    this.onContainerToggleMobile = isExpanded => {
       this.setState({
-        firstExpandedMobile: isExpanded
+        containerExpandedMobile: isExpanded
       });
     };
 
-    this.onFirstSelect = (event, selection) => {
+    this.onContainerSelect = (event, selection) => {
       this.setState({
-        firstSelected: selection,
-        firstExpanded: false
+        containerSelected: selection,
+        containerExpanded: false
       });
     };
 
-    this.onFirstSelectMobile = (event, selection) => {
+    this.onContainerSelectMobile = (event, selection) => {
       this.setState({
-        firstSelected: selection,
-        firstExpandedMobile: false
+        containerSelected: selection,
+        containerExpandedMobile: false
       });
     };
 
-    this.onSecondToggle = isExpanded => {
+    this.onOptionToggle = isExpanded => {
       this.setState({
-        secondExpanded: isExpanded
-      });
-    };
-
-    this.onSecondToggleMobile = isExpanded => {
-      this.setState({
-        secondExpandedMobile: isExpanded
-      });
-    };
-
-    this.onSecondSelect = event => {
-      this.setState({
-        secondExpanded: !this.state.secondExpanded
-      });
-    };
-
-    this.onSecondSelectMobile = event => {
-      this.setState({
-        secondExpandedMobile: !this.state.secondExpandedMobile
+        optionExpanded: isExpanded
       })
     }
 
-    this.onThirdToggle = isExpanded => {
+    this.onOptionToggleMobile = isExpanded => {
       this.setState({
-        thirdExpanded: isExpanded
-      });
-    };
-
-    this.onThirdToggleMobile = isExpanded => {
-      this.setState({
-        thirdExpandedMobile: isExpanded
-      });
-    };
-
-    this.onThirdSelect = event => {
-      this.setState({
-        thirdExpanded: !this.state.thirdExpanded
-      });
-    };
-
-    this.onThirdSelectMobile = event => {
-      this.setState({
-        thirdExpandedMobile: !this.state.thirdExpandedMobile
+        optionExpandedMobile: isExpanded
       })
     }
 
-    this.onKebabToggle = isExpanded => {
+    this.onOptionSelect = event => {
       this.setState({
-        kebabExpanded: isExpanded
+        optionExpanded: !this.state.optionExpanded
       });
     }
 
-    this.onSecondClick = event => {
+    this.onOptionSelectMobile = event => {
+      this.setState({
+        optionExpandedMobile: !this.state.optionExpandedMobile
+      });
+    }
+
+    this.onExternalToggle = isExpanded => {
+      this.setState({
+        externalExpanded: isExpanded
+      });
+    };
+
+    this.onExternalToggleMobile = isExpanded => {
+      this.setState({
+        externalExpandedMobile: isExpanded
+      });
+    };
+
+    this.onExternalSelect = event => {
+      this.setState({
+        externalExpanded: !this.state.externalExpanded
+      });
+    };
+
+    this.onExternalSelectMobile = event => {
+      this.setState({
+        externalExpandedMobile: !this.state.externalExpandedMobile
+      })
+    }
+
+    this.onDownloadToggle = isExpanded => {
+      this.setState({
+        downloadExpanded: isExpanded
+      });
+    };
+
+    this.onDownloadToggleMobile = isExpanded => {
+      this.setState({
+        downloadExpandedMobile: isExpanded
+      });
+    };
+
+    this.onDownloadSelect = event => {
+      this.setState({
+        downloadExpanded: !this.state.downloadExpanded
+      });
+    };
+
+    this.onDownloadSelectMobile = event => {
+      this.setState({
+        downloadExpandedMobile: !this.state.downloadExpandedMobile
+      })
+    }
+
+    this.onExternalClick = event => {
       window.alert('Open external logs!');
     };
 
-    this.onThirdClick = event => {
+    this.onDownloadClick = event => {
       window.alert('Action!');
     };
 
@@ -153,6 +174,13 @@ class ConsoleLogViewerToolbar extends React.Component {
     this.handleSecondSwitchChange = (secondSwitchChecked, event) => {
       this.setState({ secondSwitchChecked })
     };
+
+    this.onClearLogs = event => {
+      this.setState({
+        optionExpanded: false
+      })
+      window.alert('Clear Logs!');
+    }
 
     this.onSearchChange = (value, event) => {
       this.setState({ 
@@ -187,14 +215,14 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onPageResize = ({ mobileView, windowSize }) => {
-      if (mobileView) {
+    this.onPageResize = ({ windowSize }) => {
+      if (windowSize >= 1450) {
         this.setState({
-          mobileView: true
+          mobileView: false
         })
       } else {
         this.setState({
-          mobileView: false
+          mobileView: true
         })
       }
     }
@@ -202,46 +230,48 @@ class ConsoleLogViewerToolbar extends React.Component {
 
   render() {
     const {
-      firstExpanded,
-      firstExpandedMobile,
-      firstSelected,
+      containerExpanded,
+      containerExpandedMobile,
+      containerSelected,
+      optionExpanded,
+      optionExpandedMobile,
       isPaused,
       firstSwitchChecked,
       secondSwitchChecked,
       searchValue,
       searchResultsCount,
       currentSearchResult,
-      secondExpanded,
-      secondExpandedMobile,
-      thirdExpanded,
-      thirdExpandedMobile,
+      externalExpanded,
+      externalExpandedMobile,
+      downloadExpanded,
+      downloadExpandedMobile,
       kebabExpanded,
       mobileView
     } = this.state;
 
-    const firstDropdownItems = [
-      <DropdownItem key="action-1" component="button" onClick={this.onSecondClick}>
+    const externalDropdownItems = [
+      <DropdownItem key="action-1" component="button" onClick={this.onExternalClick}>
         External Logs
       </DropdownItem>,
-      <DropdownItem key="action-2" component="button" onClick={this.onSecondClick}>
+      <DropdownItem key="action-2" component="button" onClick={this.onExternalClick}>
         External Logs
       </DropdownItem>,
-      <DropdownItem key="action-3" component="button" onClick={this.onSecondClick}>
+      <DropdownItem key="action-3" component="button" onClick={this.onExternalClick}>
         External Logs
       </DropdownItem>
     ];
 
-    const secondDropdownItems = [
-      <DropdownItem key="action-4" component="button" onClick={this.onThirdClick}>
+    const downloadDropdownItems = [
+      <DropdownItem key="action-4" component="button" onClick={this.onDownloadClick}>
         Current container logs
       </DropdownItem>,
-      <DropdownItem key="action-5" component="button" onClick={this.onThirdClick}>
+      <DropdownItem key="action-5" component="button" onClick={this.onDownloadClick}>
         All container logs
       </DropdownItem>
     ];
 
-    const mobileDropdownItems = [
-      <DropdownItem key="switch-mobile-1" >
+    const optionDropdownItems = [
+      <DropdownItem key="switch-1">
         <Checkbox
           label="Display timestamp"
           isChecked={firstSwitchChecked}
@@ -250,7 +280,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           name="check1"
         />
       </DropdownItem>,
-      <DropdownItem key="switch-mobile-2">
+      <DropdownItem key="switch-2">
         <Checkbox
           label="Wrap lines"
           isChecked={secondSwitchChecked}
@@ -258,17 +288,19 @@ class ConsoleLogViewerToolbar extends React.Component {
           id="switchMobileCheckbox2"
           name="check2"
         />
-      </DropdownItem>
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="clear-log" onClick={this.onClearLogs}>Clear logs</DropdownItem>
     ];
 
-    const selectedDropdownContent = (
+    const selectDropdownContent = (
       <React.Fragment>
         {Object.entries(this.firstOptions).map(([value, { type }]) => (
           <SelectOption
             key={value}
             value={value}
-            isSelected={firstSelected === value}
-            isChecked={firstSelected === value}
+            isSelected={containerSelected === value}
+            isChecked={containerSelected === value}
           >
             <Badge key={value}>{type}</Badge>
             {` ${value}`}
@@ -278,80 +310,74 @@ class ConsoleLogViewerToolbar extends React.Component {
     );
 
     const selectToggleContent = ({ showText }) => {
-      if (!firstSelected) {
+      if (!containerSelected) {
         return "Select";
       }
       return (
         <React.Fragment>
-         <Badge>{this.firstOptions[firstSelected].type}</Badge>
-         {showText && ` ${firstSelected}`}
+          <Badge>{this.firstOptions[containerSelected].type}</Badge>
+          {showText && ` ${containerSelected}`}
         </React.Fragment>
       );
     };
 
     const leftAlignedItemsDesktop = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'hidden', xl: 'visible'}}>
+        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Select
-            onToggle={this.onFirstToggle}
-            onSelect={this.onFirstSelect}
-            selections={firstSelected}
-            isOpen={firstExpanded}
-            customContent={selectedDropdownContent}
+            onToggle={this.onContainerToggle}
+            onSelect={this.onContainerSelect}
+            selections={containerSelected}
+            isOpen={containerExpanded}
+            customContent={selectDropdownContent}
             placeholderText={selectToggleContent({ showText: true })}
           />
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'hidden', xl: 'visible'}}>
+        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
+          <Dropdown
+            toggle={
+              <DropdownToggle id='option-toggle' onToggle={this.onOptionToggle} icon={<CogIcon />}>
+                Option
+              </DropdownToggle>
+            }
+            isOpen={optionExpanded}
+            dropdownItems={optionDropdownItems}
+          />
+        </ToolbarItem>
+        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Button variant={isPaused? "plain": "link"} onClick={this.pauseOrStart}>
             {isPaused? <PlayIcon /> : <PauseIcon />}
             {` Log Stream`}
           </Button>
-        </ToolbarItem>
-        <ToolbarItem className="pf-l-level pf-m-gutter" visibility={{default: 'hidden', xl: 'visible'}}>
-          <Switch
-            id="switch1"
-            aria-label="Timestamp"
-            isChecked={firstSwitchChecked}
-            onChange={this.handleFirstSwitchChange}
-          />
-          <span>Timestamp</span>
-        </ToolbarItem>
-        <ToolbarItem className="pf-l-level pf-m-gutter" visibility={{default: 'hidden', xl: 'visible'}}>
-          <Switch
-            id="switch2"
-            aria-label="Wrap lines"
-            isChecked={secondSwitchChecked}
-            onChange={this.handleSecondSwitchChange}
-          />
-          <span>Wrap lines</span>
         </ToolbarItem>
       </React.Fragment>
     );
 
     const leftAlignedItemsMobile = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'visible', xl: 'hidden'}}>
+        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Select
-            onToggle={this.onFirstToggleMobile}
-            onSelect={this.onFirstSelectMobile}
-            selections={firstSelected}
-            isOpen={firstExpandedMobile}
-            customContent={selectedDropdownContent}
+            onToggle={this.onContainerToggleMobile}
+            onSelect={this.onContainerSelectMobile}
+            selections={containerSelected}
+            isOpen={containerExpandedMobile}
+            customContent={selectDropdownContent}
             placeholderText={selectToggleContent({ showText: false })}
           />
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'visible', xl: 'hidden'}}>
+        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
+          <Dropdown
+            toggle={
+              <DropdownToggle id='option-toggle' onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
+            }
+            isOpen={optionExpandedMobile}
+            dropdownItems={optionDropdownItems}
+          />
+        </ToolbarItem>
+        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Button variant="plain" onClick={this.pauseOrStart}>
             {this.state.isPaused? <PlayIcon /> : <PauseIcon />}
           </Button>
-        </ToolbarItem>
-        <ToolbarItem visibility={{default: 'visible', xl: 'hidden'}}>
-          <Dropdown
-            toggle={<KebabToggle onToggle={this.onKebabToggle} id="kebab-toggle" />}
-            isOpen={kebabExpanded}
-            isPlain
-            dropdownItems={mobileDropdownItems}
-          />
         </ToolbarItem>
       </React.Fragment>
     );
@@ -365,7 +391,7 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsDesktop = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'hidden', xl: 'visible'}}>
+        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <SearchInput 
             placeholder='find'
             value={searchValue}
@@ -376,40 +402,40 @@ class ConsoleLogViewerToolbar extends React.Component {
             onPreviousClick={this.onSearchPrevious}
           />
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'hidden', xl: 'visible'}}>
+        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Dropdown
-            onSelect={this.onSecondSelect}
+            onSelect={this.onExternalSelect}
             toggle={
               <DropdownToggle
                 splitButtonItems={[
-                  <DropdownToggleAction key="action-7" onClick={this.onSecondClick}>
+                  <DropdownToggleAction key="action-7" onClick={this.onExternalClick}>
                     External Logs
                   </DropdownToggleAction>
                 ]}
                 splitButtonVariant="action"
-                onToggle={this.onSecondToggle}
+                onToggle={this.onExternalToggle}
               />
             }
-            isOpen={secondExpanded}
-            dropdownItems={firstDropdownItems}
+            isOpen={externalExpanded}
+            dropdownItems={externalDropdownItems}
           />
         </ToolbarItem>
-         <ToolbarItem visibility={{default: 'hidden', xl: 'visible'}}>
+        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Dropdown
-            onSelect={this.onThirdSelect}
+            onSelect={this.onDownloadSelect}
             toggle={
               <DropdownToggle
                 splitButtonItems={[
-                  <DropdownToggleAction key="action-8" onClick={this.onThirdClick}>
+                  <DropdownToggleAction key="action-8" onClick={this.onDownloadClick}>
                     Download
                   </DropdownToggleAction>
                 ]}
                 splitButtonVariant="action"
-                onToggle={this.onThirdToggle}
+                onToggle={this.onDownloadToggle}
               />
             }
-            isOpen={thirdExpanded}
-            dropdownItems={secondDropdownItems}
+            isOpen={downloadExpanded}
+            dropdownItems={downloadDropdownItems}
           />
         </ToolbarItem>
       </React.Fragment>
@@ -417,29 +443,25 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsMobile = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'visible', xl: 'hidden'}}>
+        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Dropdown
-            onSelect={this.onSecondSelectMobile}
+            onSelect={this.onExternalSelectMobile}
             toggle={
-              <DropdownToggle id='mobile-external-toggle' onToggle={this.onSecondToggleMobile}>
-                <ExternalLinkAltIcon />
-              </DropdownToggle>
+              <DropdownToggle id='mobile-external-toggle' onToggle={this.onExternalToggleMobile} icon={<ExternalLinkAltIcon />} />
             }
-            isOpen={secondExpandedMobile}
-            dropdownItems={firstDropdownItems}
+            isOpen={externalExpandedMobile}
+            dropdownItems={externalDropdownItems}
           />
         </ToolbarItem>
-         <ToolbarItem visibility={{default: 'visible', xl: 'hidden'}}>
+        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Dropdown
-            onSelect={this.onThirdSelectMobile}
+            onSelect={this.onDownloadSelectMobile}
             toggle={
-              <DropdownToggle id='mobile-download-toggle' onToggle={this.onThirdToggleMobile}>
-                <DownloadIcon />
-              </DropdownToggle>
+              <DropdownToggle id='mobile-download-toggle' onToggle={this.onDownloadToggleMobile} icon={<DownloadIcon />} />
             }
-            isOpen={thirdExpandedMobile}
+            isOpen={downloadExpandedMobile}
             position={DropdownPosition.right}
-            dropdownItems={secondDropdownItems}
+            dropdownItems={downloadDropdownItems}
           />
         </ToolbarItem>
       </React.Fragment>
@@ -465,7 +487,11 @@ class ConsoleLogViewerToolbar extends React.Component {
     );
 
     const toolbar = (
-      <Toolbar id="log-viewer-toolbar">
+      <Toolbar
+        id="log-viewer-toolbar"
+        inset={{
+          default: 'insetNone'
+        }}>
         <ToolbarContent className="align-toolbar-group">{items}</ToolbarContent>
       </Toolbar>
     )
