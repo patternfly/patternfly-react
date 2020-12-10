@@ -657,6 +657,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
             focusTrapOptions={
               Object {
                 "clickOutsideDeactivates": true,
+                "preventScroll": true,
               }
             }
             paused={false}
@@ -1972,6 +1973,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
             focusTrapOptions={
               Object {
                 "clickOutsideDeactivates": true,
+                "preventScroll": true,
               }
             }
             paused={false}
@@ -2495,6 +2497,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             focusTrapOptions={
               Object {
                 "clickOutsideDeactivates": true,
+                "preventScroll": true,
               }
             }
             paused={false}
@@ -3089,6 +3092,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
             focusTrapOptions={
               Object {
                 "clickOutsideDeactivates": true,
+                "preventScroll": true,
               }
             }
             paused={false}
@@ -3717,6 +3721,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
             focusTrapOptions={
               Object {
                 "clickOutsideDeactivates": true,
+                "preventScroll": true,
               }
             }
             paused={false}
