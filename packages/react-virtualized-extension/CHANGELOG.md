@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.167](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.166...@patternfly/react-virtualized-extension@4.5.167) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
 ## [4.5.166](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.165...@patternfly/react-virtualized-extension@4.5.166) (2020-12-09)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

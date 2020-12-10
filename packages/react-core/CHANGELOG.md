@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.84.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.3...@patternfly/react-core@4.84.0) (2020-12-10)
+
+
+### Features
+
+* **DualListSelector:** add support for trees and checkboxes ([#5207](https://github.com/patternfly/patternfly-react/issues/5207)) ([1533ad8](https://github.com/patternfly/patternfly-react/commit/1533ad8cbf99b132e8383c01e94a121023a4c9d7))
+* **TimePicker:** Add basic time picker ([#5216](https://github.com/patternfly/patternfly-react/issues/5216)) ([e5f11a1](https://github.com/patternfly/patternfly-react/commit/e5f11a19b333703319bc55dd76814ae154bae187))
+
+
+
+
+
 ## [4.83.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.2...@patternfly/react-core@4.83.3) (2020-12-09)
 
 

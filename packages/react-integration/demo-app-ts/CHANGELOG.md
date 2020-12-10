@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.64.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.63.4...demo-app-ts@4.64.0) (2020-12-10)
+
+
+### Features
+
+* **DualListSelector:** add support for trees and checkboxes ([#5207](https://github.com/patternfly/patternfly-react/issues/5207)) ([1533ad8](https://github.com/patternfly/patternfly-react/commit/1533ad8cbf99b132e8383c01e94a121023a4c9d7))
+
+
+
+
+
 ## [4.63.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.63.3...demo-app-ts@4.63.4) (2020-12-09)
 
 **Note:** Version bump only for package demo-app-ts
