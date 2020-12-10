@@ -9,6 +9,7 @@ import { TimeOption } from './TimeOption';
 import { KeyTypes, SelectDirection } from '../Select';
 import { InputGroup } from '../InputGroup';
 import { TextInput } from '../TextInput';
+import { parseTime, validateTime, makeTimeOptions } from './TimePickerUtils';
 
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -26,8 +27,8 @@ export interface TimePickerProps
   defaultTime?: string;
   /** Error message to display when the time is provided in an invalid format. */
   invalidFormatErrorMessage?: string;
-  /** The time picker is for 12 hour or 24 hour time*/
-  variant?: '24hr' | '12hr';
+  /** True if the time is 24 hour time. False if the time is 12 hour time */
+  is24Hour?: boolean;
   /** Optional event handler called each time the value in the time picker input changes. */
   onChange?: (time: string, e?: any) => void;
   /** Optional validator can be provided to override the internal time validator. */
@@ -36,8 +37,6 @@ export interface TimePickerProps
   id?: string;
   /** Width of the time picker. */
   width?: string;
-  /** Accessibly label applied to the clear button in the time picker input */
-  clearSelectionsAriaLabel?: string;
   /** The container to append the menu to. Defaults to 'inline'
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
@@ -71,12 +70,11 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     className: '',
     isDisabled: false,
     defaultTime: '',
-    variant: '12hr',
+    is24Hour: false,
     invalidFormatErrorMessage: 'Invalid time format',
     placeholder: 'hh:mm',
     delimiter: ':',
     'aria-label': 'Time picker',
-    clearSelectionsAriaLabel: 'Clear all',
     menuAppendTo: 'inline',
     direction: 'down',
     width: 150,
@@ -86,29 +84,23 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   constructor(props: TimePickerProps) {
     super(props);
 
+    const { is24Hour, delimiter, defaultTime } = this.props;
+    const timeRegex = this.getRegExp();
+
     this.state = {
       isInvalid: false,
       isOpen: false,
-      time: '',
+      time: parseTime(defaultTime, timeRegex, delimiter, !is24Hour),
       focusedIndex: null,
       scrollIndex: 0,
-      timeRegex:
-        this.props.variant === '12hr'
-          ? new RegExp(`\\b\\d\\d?${this.props.delimiter}?[0-5]\\d\\s?([AaPp][Mm])?\\b`)
-          : new RegExp(`\\b\\d\\d?${this.props.delimiter}?[0-5]\\d\\b`)
+      timeRegex
     };
   }
 
   componentDidMount() {
-    const { defaultTime } = this.props;
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.handleGlobalKeys);
-    if (defaultTime !== '') {
-      this.setState({
-        time: this.parseTime(defaultTime)
-      });
-    }
   }
 
   componentWillUnmount() {
@@ -160,22 +152,19 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   componentDidUpdate(prevProps: TimePickerProps, prevState: TimePickerState) {
-    const { time, isOpen, isInvalid } = this.state;
-    const { defaultTime, variant, delimiter } = this.props;
+    const { time, isOpen, isInvalid, timeRegex } = this.state;
+    const { defaultTime, is24Hour, delimiter } = this.props;
     if (isOpen && !prevState.isOpen && time && !isInvalid) {
       this.scrollToSelection(time);
     }
     if (delimiter !== prevProps.delimiter) {
       this.setState({
-        timeRegex:
-          variant === '12hr'
-            ? new RegExp(`\\b\\d\\d?${delimiter}[0-5]\\d\\s?([AaPp][Mm])?\\b`)
-            : new RegExp(`\\b\\d\\d?${delimiter}[0-5]\\d\\b`)
+        timeRegex: this.getRegExp()
       });
     }
     if (defaultTime !== '' && defaultTime !== prevProps.defaultTime) {
       this.setState({
-        time: this.parseTime(defaultTime)
+        time: parseTime(defaultTime, timeRegex, delimiter, !is24Hour)
       });
     }
   }
@@ -202,7 +191,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   scrollToSelection = (time: string) => {
-    const { delimiter, variant } = this.props;
+    const { delimiter, is24Hour } = this.props;
     let splitTime = time.split(this.props.delimiter);
     let focusedIndex = null;
 
@@ -213,11 +202,11 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     }
 
     // for 12hr variant, autoscroll to pm if it's currently the afternoon, otherwise autoscroll to am
-    if (variant === '12hr' && splitTime.length > 1 && splitTime[1].length < 2) {
+    if (!is24Hour && splitTime.length > 1 && splitTime[1].length < 2) {
       const minutes = splitTime[1].length === 0 ? '00' : splitTime[1] + '0';
       time = `${splitTime[0]}${delimiter}${minutes}${new Date().getHours() > 11 ? 'pm' : 'am'}`;
     } else if (
-      variant === '12hr' &&
+      !is24Hour &&
       splitTime.length > 1 &&
       splitTime[1].length === 2 &&
       !time.toLowerCase().includes('am') &&
@@ -235,16 +224,15 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     } else if (splitTime.length === 2) {
       // no exact match, scroll to closes match but don't return index for focus
       const minutes = splitTime[1].length === 1 ? splitTime[1] + '0' : '00';
-      const amPm =
-        variant === '12hr'
-          ? splitTime[1].toLowerCase().includes('a')
-            ? 'am'
-            : splitTime[1].toLowerCase().includes('p')
-            ? 'pm'
-            : new Date().getHours() > 11
-            ? 'pm'
-            : 'am'
-          : '';
+      const amPm = !is24Hour
+        ? splitTime[1].toLowerCase().includes('a')
+          ? 'am'
+          : splitTime[1].toLowerCase().includes('p')
+          ? 'pm'
+          : new Date().getHours() > 11
+          ? 'pm'
+          : 'am'
+        : '';
       time = `${splitTime[0]}${delimiter}${minutes}${amPm}`;
       scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time));
       if (scrollIndex !== -1) {
@@ -257,72 +245,38 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
+  getRegExp = () =>
+    !this.props.is24Hour
+      ? new RegExp(`\\b\\d\\d?${this.props.delimiter}?[0-5]\\d\\s?([AaPp][Mm])?\\b`)
+      : new RegExp(`\\b\\d\\d?${this.props.delimiter}?[0-5]\\d\\b`);
+
   getOptions = () =>
     (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
-
-  parseTime = (time: string) => {
-    const { delimiter, variant } = this.props;
-    const date = new Date(time);
-
-    // if default time is a ISO 8601 formatted date string, we parse it to hh:mm format
-    if (!isNaN(date.getDate()) && time.includes('T')) {
-      const hours =
-        variant === '12hr'
-          ? `${variant === '12hr' && date.getHours() > 11 ? date.getHours() - 12 : date.getHours()}`
-          : `${date.getHours()}`.padStart(2, '0');
-      const minutes = `${date.getMinutes()}`.padStart(2, '0');
-      return `${hours}${delimiter}${minutes}${variant === '12hr' ? (date.getHours() > 11 ? 'pm' : 'am') : ''}`;
-    } else if (
-      variant === '12hr' &&
-      this.validateTime(time) &&
-      time !== '' &&
-      !time.toLowerCase().includes('am') &&
-      !time.toLowerCase().includes('pm')
-    ) {
-      return `${time}${new Date().getHours() > 11 ? 'pm' : 'am'}`;
-    }
-    return time;
-  };
-
-  appendMissingAmPm = (time: string) =>
-    this.props.variant === '12hr' &&
-    this.validateTime(time) &&
-    time !== '' &&
-    !time.toLowerCase().includes('am') &&
-    !time.toLowerCase().includes('pm')
-      ? `${time}${new Date().getHours() > 11 ? 'pm' : 'am'}`
-      : time;
 
   onToggle = (isOpen: boolean) => {
     // on close, parse and validate input
     this.setState(prevState => {
-      const time = this.parseTime(prevState.time);
+      const { timeRegex, isInvalid } = prevState;
+      const { delimiter, is24Hour } = this.props;
+      const time = parseTime(prevState.time, timeRegex, delimiter, !is24Hour);
       return {
         isOpen,
         time,
-        isInvalid: isOpen ? prevState.isInvalid : !this.validateTime(time)
+        isInvalid: isOpen ? isInvalid : !validateTime(time, timeRegex, delimiter, !is24Hour)
       };
     });
   };
 
   onSelect = (selection: string, index: number) => {
-    const time = this.parseTime(selection);
+    const { timeRegex } = this.state;
+    const { delimiter, is24Hour } = this.props;
+    const time = parseTime(selection, timeRegex, delimiter, !is24Hour);
     this.setState({
       time,
-      isInvalid: !this.validateTime(time),
+      isInvalid: !validateTime(time, timeRegex, delimiter, !is24Hour),
       isOpen: false,
       focusedIndex: index,
       scrollIndex: index
-    });
-  };
-
-  clearSelection = () => {
-    this.setState({
-      time: '',
-      focusedIndex: null,
-      scrollIndex: 0,
-      isOpen: false,
-      isInvalid: false
     });
   };
 
@@ -344,59 +298,17 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  validateTime = (time: string) => {
-    const { validateTime, delimiter, variant } = this.props;
-    if (validateTime) {
-      return validateTime(time);
-    } else {
-      // ISO 8601 format is valid
-      const date = new Date(time);
-      if (!isNaN(date.getDate()) && time.includes('T')) {
-        return true;
-      }
-      const hours = parseInt(time.split(delimiter)[0]);
-      const validHours = hours >= 0 && hours <= (variant === '12hr' ? 12 : 23);
-      return time === '' || (this.state.timeRegex.test(time) && validHours);
-    }
-  };
-
   onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const { timeRegex } = this.state;
+    const { delimiter, is24Hour } = this.props;
     this.setState({
-      isInvalid: !this.validateTime(this.parseTime(event.currentTarget.value))
+      isInvalid: !validateTime(
+        parseTime(event.currentTarget.value, timeRegex, delimiter, !is24Hour),
+        timeRegex,
+        delimiter,
+        !is24Hour
+      )
     });
-  };
-
-  makeOptions = (stepMinutes: number, hour12: boolean, delimiter: string) => {
-    const res = [];
-    const iter = new Date(new Date().setHours(0, 0, 0, 0));
-    const iterDay = iter.getDay();
-    while (iter.getDay() === iterDay) {
-      let hour = iter.getHours();
-      let suffix = 'am';
-      if (hour12) {
-        if (hour === 0) {
-          hour = 12; // 12am
-        } else if (hour >= 12) {
-          suffix = 'pm';
-        }
-        if (hour > 12) {
-          hour %= 12;
-        }
-      }
-      res.push(
-        (hour12 ? hour.toString() : hour.toString().padStart(2, '0')) +
-          delimiter +
-          iter
-            .getMinutes()
-            .toString()
-            .padStart(2, '0') +
-          (hour12 ? suffix : '')
-      );
-
-      iter.setMinutes(iter.getMinutes() + stepMinutes);
-    }
-
-    return res;
   };
 
   render() {
@@ -407,7 +319,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       placeholder,
       id,
       menuAppendTo,
-      variant,
+      is24Hour,
       invalidFormatErrorMessage,
       direction,
       stepMinutes,
@@ -415,13 +327,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       delimiter,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
-      clearSelectionsAriaLabel,
       defaultTime,
       ...props
     } = this.props;
     const { time, isOpen, isInvalid, focusedIndex } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
-    const options = this.makeOptions(stepMinutes, variant === '12hr', delimiter);
+    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter);
     const randomId = id || getUniqueId('time-picker');
 
     const menuContainer = (
