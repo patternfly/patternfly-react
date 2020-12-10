@@ -40,7 +40,10 @@ class DefaultTreeView extends React.Component {
           {
             name: 'Application 1',
             id: 'App1',
-            children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
           },
           {
             name: 'Application 2',
@@ -68,7 +71,10 @@ class DefaultTreeView extends React.Component {
           {
             name: 'Application 3',
             id: 'App3',
-            children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
           }
         ]
       },
@@ -106,7 +112,10 @@ class SearchTreeView extends React.Component {
           {
             name: 'Application 1',
             id: 'App1',
-            children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
           },
           {
             name: 'Application 2',
@@ -134,7 +143,10 @@ class SearchTreeView extends React.Component {
           {
             name: 'Application 3',
             id: 'App3',
-            children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
           }
         ]
       },
@@ -335,6 +347,7 @@ class CheckboxTreeView extends React.Component {
         .map(opt => Object.assign({}, opt))
         .filter(item => this.filterItems(item, treeViewItem));
       const flatCheckedItems = this.flattenTree(checkedItemTree);
+      console.log('flat', flatCheckedItems);
 
       this.setState(
         prevState => ({
@@ -447,7 +460,10 @@ class IconTreeView extends React.Component {
           {
             name: 'Application 1',
             id: 'App1',
-            children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
           },
           {
             name: 'Application 2',
@@ -475,7 +491,10 @@ class IconTreeView extends React.Component {
           {
             name: 'Application 3',
             id: 'App3',
-            children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
           }
         ]
       },
@@ -532,7 +551,10 @@ class BadgesTreeView extends React.Component {
           {
             name: 'Application 1',
             id: 'App1',
-            children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
           },
           {
             name: 'Application 2',
@@ -560,7 +582,10 @@ class BadgesTreeView extends React.Component {
           {
             name: 'Application 3',
             id: 'App3',
-            children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
           }
         ]
       },
@@ -652,7 +677,10 @@ class IconTreeView extends React.Component {
             actionProps: {
               'aria-label': 'Launch app 1'
             },
-            children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
           },
           {
             name: 'Application 2',
@@ -685,7 +713,10 @@ class IconTreeView extends React.Component {
           {
             name: 'Application 3',
             id: 'App3',
-            children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
           }
         ]
       },
