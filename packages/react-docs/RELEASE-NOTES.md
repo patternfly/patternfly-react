@@ -15,6 +15,7 @@ section: developer-resources
 - [@patternfly/react-topology@4.6.89](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.89)
 - [@patternfly/react-virtualized-extension@4.5.170](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.170)
 
+### Components
 - **Alert:** 
   - Added support for custom icon ([#5140](https://github.com/patternfly/patternfly-react/pull/5140))
 - **Application launcher:** 
