@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.12.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.10...@patternfly/react-charts@6.12.11) (2020-12-11)
+
+
+### Bug Fixes
+
+* **charts:** tooltip pointerLength error ([#5245](https://github.com/patternfly/patternfly-react/issues/5245)) ([5cdcabb](https://github.com/patternfly/patternfly-react/commit/5cdcabb42bac9d19cf485b9868e297420f44e9f5))
+
+
+
+
+
 ## [6.12.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.9...@patternfly/react-charts@6.12.10) (2020-12-10)
 
 **Note:** Version bump only for package @patternfly/react-charts
