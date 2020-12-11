@@ -19,6 +19,8 @@ section: developer-resources
   - Added support for custom icon ([#5140](https://github.com/patternfly/patternfly-react/pull/5140))
 - **Application launcher:** 
   - Made options menu and application launcher accessible in JAWS ([#5136](https://github.com/patternfly/patternfly-react/pull/5136))
+- **Calendar month:** 
+  - Fixed to rely on base styles from react-core/dist/styles/base.css ([#5251](https://github.com/patternfly/patternfly-react/pull/5251))
 - **Clipboard copy:**
   - Fixed arrow orientation for expanded clipboard copy ([#5191](https://github.com/patternfly/patternfly-react/pull/5191))
 - **Date picker:** 
@@ -64,6 +66,7 @@ section: developer-resources
 - Replaced victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/pull/5179))
 - Fixed interactive legend example tooltips ([#5204](https://github.com/patternfly/patternfly-react/pull/5204))
 - Bumped victory and moved victory dependency to demo app ([#5178](https://github.com/patternfly/patternfly-react/pull/5178))
+- Fixed tooltip pointer length error ([#5245](https://github.com/patternfly/patternfly-react/pull/5245))
 
 ### Table
 - Updated to set button type on compoundExpand transform button ([#5058](https://github.com/patternfly/patternfly-react/pull/5058))
