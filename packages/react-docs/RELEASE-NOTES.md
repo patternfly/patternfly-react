@@ -4,16 +4,16 @@ section: developer-resources
 ---
 
 ## 2020.16 release notes (2020-12-11)
-- [@patternfly/react-catalog-view-extension@4.8.124](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.124)
-- [@patternfly/react-charts@6.12.10](https://www.npmjs.com/package/@patternfly/react-charts/v/6.12.10)
-- [@patternfly/react-core@4.84.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.84.2)
+- [@patternfly/react-catalog-view-extension@4.8.125](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.125)
+- [@patternfly/react-charts@6.12.12](https://www.npmjs.com/package/@patternfly/react-charts/v/6.12.12)
+- [@patternfly/react-core@4.84.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.84.3)
 - [@patternfly/react-icons@4.7.22](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.22)
-- [@patternfly/react-inline-edit-extension@4.5.185](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.185)
-- [@patternfly/react-styles@4.7.21](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.21)
-- [@patternfly/react-table@4.19.43](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.43)
-- [@patternfly/react-tokens@4.9.18](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.18)
-- [@patternfly/react-topology@4.6.88](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.88)
-- [@patternfly/react-virtualized-extension@4.5.169](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.169)
+- [@patternfly/react-inline-edit-extension@4.5.186](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.186)
+- [@patternfly/react-styles@4.7.22](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.22)
+- [@patternfly/react-table@4.19.44](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.44)
+- [@patternfly/react-tokens@4.9.22](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.22)
+- [@patternfly/react-topology@4.6.89](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.89)
+- [@patternfly/react-virtualized-extension@4.5.170](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.170)
 
 - **Alert:** 
   - Added support for custom icon ([#5140](https://github.com/patternfly/patternfly-react/pull/5140))
@@ -59,6 +59,7 @@ section: developer-resources
 ### Access console extension
 - Removed css imports ([#5147](https://github.com/patternfly/patternfly-react/pull/5147))
 - Replaced novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/pull/5208))
+
 ### Chart
 - Replaced victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/pull/5179))
 - Fixed interactive legend example tooltips ([#5204](https://github.com/patternfly/patternfly-react/pull/5204))
@@ -75,7 +76,6 @@ section: developer-resources
   - Fixed @patternfly/react-icons/createIcon import issue ([#5163](https://github.com/patternfly/patternfly-react/pull/5163))
   - Move react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/pull/5201))
   - Updated react-core copyStyles.js ([#5166](https://github.com/patternfly/patternfly-react/pull/5166))
-  - Added react-datetime to promote script ([#5170](https://github.com/patternfly/patternfly-react/pull/5170))
 
 ## 2020.15 release notes (2020-11-17)
 - [@patternfly/react-catalog-view-extension@4.8.105](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.105)
@@ -240,7 +240,7 @@ section: developer-resources
 - **Wizard:** 
   - Updated to export WizardContext  ([#4933](https://github.com/patternfly/patternfly-react/pull/4933))
 
-ç
+### Catalog view extension
 - Fixed example css selectors ([#4966](https://github.com/patternfly/patternfly-react/pull/4966))
 
 ### Chart
