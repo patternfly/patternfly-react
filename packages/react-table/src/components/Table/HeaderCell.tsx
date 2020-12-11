@@ -30,7 +30,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
 }: HeaderCellProps) => (
   <Th
     {...props}
-    scope={scope}
+    scope={component === 'th' && children ? scope : null}
     tooltip={tooltip}
     onMouseEnter={onMouseEnter}
     textCenter={textCenter}
