@@ -248,7 +248,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   theme = getTheme(themeColor, themeVariant),
   centerOffset = getCursorTooltipCenterOffset({ offsetCursorDimensionX: true, theme }),
   pointerOrientation = getCursorTooltipPoniterOrientation({ horizontal: true, theme }),
-  pointerLength = showPointer ? theme.tooltip.pointerLength : 0,
+  pointerLength = showPointer && theme && theme.tooltip ? theme.tooltip.pointerLength : 0,
   pointerWidth = (theme.tooltip as any).pointerWidth,
   ...rest
 }: ChartCursorTooltipProps) => {
@@ -262,7 +262,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   const getFlyoutComponent = () => {
     let _pointerLength = Helpers.evaluateProp(pointerLength);
     if (showPointer && _pointerLength === 0) {
-      _pointerLength = theme.tooltip.pointerLength;
+      _pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
     }
     return React.cloneElement(flyoutComponent, {
       pointerLength: _pointerLength,
