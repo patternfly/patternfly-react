@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.84.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.2...@patternfly/react-core@4.84.3) (2020-12-11)
+
+
+### Bug Fixes
+
+* **calendar-month:** rely on base styles from react-core/dist/styles/base.css ([#5251](https://github.com/patternfly/patternfly-react/issues/5251)) ([337a667](https://github.com/patternfly/patternfly-react/commit/337a667cf12e6b9f4c0eb98ac3176c6268db07b3))
+
+
+
+
+
 ## [4.84.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.1...@patternfly/react-core@4.84.2) (2020-12-10)
 
 **Note:** Version bump only for package @patternfly/react-core
