@@ -43,6 +43,8 @@ class ColaLayout extends BaseLayout implements Layout {
 
   private restartOnEnd: boolean = undefined;
 
+  private addingNodes: boolean = false;
+
   constructor(graph: Graph, options?: Partial<ColaLayoutOptions & LayoutOptions>) {
     super(graph, options);
     this.colaOptions = {
@@ -98,10 +100,23 @@ class ColaLayout extends BaseLayout implements Layout {
             this.startColaLayout(this.restartOnEnd);
             delete this.restartOnEnd;
           }
+        } else if (this.addingNodes) {
+          // One round of simulation to adjust for new nodes
+          this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);
+          this.forceSimulation.restart();
         }
       })();
     });
   }
+
+  protected onSimulationEnd = () => {
+    if (this.addingNodes) {
+      if (!this.options.layoutOnDrag) {
+        this.forceSimulation.stopSimulation();
+      }
+      this.addingNodes = false;
+    }
+  };
 
   destroy(): void {
     super.destroy();
@@ -162,6 +177,7 @@ class ColaLayout extends BaseLayout implements Layout {
     this.simulationRunning = true;
     this.d3Cola.alpha(0.2);
     this.tickCount = 0;
+    this.addingNodes = addingNodes;
     this.d3Cola.start(
       addingNodes ? 0 : this.colaOptions.initialUnconstrainedIterations,
       addingNodes ? 0 : this.colaOptions.initialUserConstraintIterations,

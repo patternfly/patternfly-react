@@ -64,6 +64,7 @@ export class BaseLayout implements Layout {
     this.graph = graph;
     this.options = {
       ...LAYOUT_DEFAULTS,
+      onSimulationEnd: this.onSimulationEnd,
       ...options
     };
 
@@ -77,6 +78,8 @@ export class BaseLayout implements Layout {
     this.forceSimulation = new ForceSimulation(this.options);
     this.startListening();
   }
+
+  protected onSimulationEnd = () => {};
 
   destroy(): void {
     if (this.options.allowDrag) {
