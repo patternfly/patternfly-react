@@ -78,7 +78,7 @@ section: developer-resources
 - **Chore:** 
   - Updated dependency theme-patternfly-org to v0.2.11 ([#5080](https://github.com/patternfly/patternfly-react/pull/5080))
   - Fixed @patternfly/react-icons/createIcon import issue ([#5163](https://github.com/patternfly/patternfly-react/pull/5163))
-  - Move react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/pull/5201))
+  - Moved react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/pull/5201))
   - Updated react-core copyStyles.js ([#5166](https://github.com/patternfly/patternfly-react/pull/5166))
 
 ## 2020.15 release notes (2020-11-17)
