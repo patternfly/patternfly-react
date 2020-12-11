@@ -58,7 +58,7 @@ function generateClassMaps() {
 
   const patternflyCSSFiles = glob.sync('**/*.css', {
     cwd: pfStylesDir,
-    ignore: ['assets/**', '*.css'],
+    ignore: ['assets/**', '*.css', 'base/**'],
     absolute: true
   });
   const srcCSSFiles = glob.sync('src/css/**/*.css');
