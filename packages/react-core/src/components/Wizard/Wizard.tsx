@@ -479,6 +479,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (isOpen !== undefined) {
       return (
         <Modal
+          width={width !== null ? width : undefined}
           isOpen={isOpen}
           variant={ModalVariant.large}
           aria-labelledby={this.titleId}

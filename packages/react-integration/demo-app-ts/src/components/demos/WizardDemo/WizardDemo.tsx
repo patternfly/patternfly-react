@@ -72,6 +72,7 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
           id="modalWizId"
           onClose={this.handleModalToggle}
           isOpen={this.state.isOpen}
+          width={710}
         />
         <Wizard
           title="Wizard title"
