@@ -43,6 +43,14 @@ const DefaultGroup: React.FC<GroupProps> = ({
     // change the box only when not dragging
     boxRef.current = element.getBounds();
   }
+  let fill = '#ededed';
+  if (canDrop && hover) {
+    fill = 'lightgreen';
+  } else if (canDrop && droppable) {
+    fill = 'lightblue';
+  } else if (element.getData()) {
+    fill = element.getData().background;
+  }
 
   if (element.isCollapsed()) {
     const { width, height } = element.getDimensions();
@@ -56,13 +64,7 @@ const DefaultGroup: React.FC<GroupProps> = ({
           height={height}
           rx={5}
           ry={5}
-          fill={
-            canDrop && hover
-              ? 'lightgreen'
-              : canDrop && droppable
-              ? 'lightblue'
-              : `${(element.getData() && element.getData().background) || '#ededed'}`
-          }
+          fill={fill}
           strokeWidth={2}
           stroke={selected ? 'blue' : '#cdcdcd'}
         />
@@ -79,13 +81,7 @@ const DefaultGroup: React.FC<GroupProps> = ({
         y={boxRef.current.y}
         width={boxRef.current.width}
         height={boxRef.current.height}
-        fill={
-          canDrop && hover
-            ? 'lightgreen'
-            : canDrop && droppable
-            ? 'lightblue'
-            : `${(element.getData() && element.getData().background) || '#ededed'}`
-        }
+        fill={fill}
         strokeWidth={2}
         stroke={selected ? 'blue' : '#cdcdcd'}
       />

@@ -406,22 +406,31 @@ export const TableComposableDemo = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {rows.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              ))}
-              <Td
-                key={`${rowIndex}_5`}
-                actions={{
-                  items: rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions,
-                  disable: rowIndex === 3
-                }}
-              />
-            </Tr>
-          ))}
+          {rows.map((row, rowIndex) => {
+            let itemsActions = defaultActions;
+            if (rowIndex === 1) {
+              itemsActions = null;
+            }
+            if (rowIndex === 4) {
+              itemsActions = lastRowActions;
+            }
+            return (
+              <Tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                    {cell}
+                  </Td>
+                ))}
+                <Td
+                  key={`${rowIndex}_5`}
+                  actions={{
+                    items: itemsActions,
+                    disable: rowIndex === 3
+                  }}
+                />
+              </Tr>
+            );
+          })}
         </Tbody>
       </TableComposable>
     );

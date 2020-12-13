@@ -224,15 +224,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     } else if (splitTime.length === 2) {
       // no exact match, scroll to closes match but don't return index for focus
       const minutes = splitTime[1].length === 1 ? splitTime[1] + '0' : '00';
-      const amPm = !is24Hour
-        ? splitTime[1].toLowerCase().includes('a')
-          ? 'am'
-          : splitTime[1].toLowerCase().includes('p')
-          ? 'pm'
-          : new Date().getHours() > 11
-          ? 'pm'
-          : 'am'
-        : '';
+      let amPm = '';
+      if ((!is24Hour && splitTime[1].toLowerCase().includes('p')) || (is24Hour && new Date().getHours() > 11)) {
+        amPm = 'pm';
+      } else if ((!is24Hour && splitTime[1].toLowerCase().includes('a')) || (is24Hour && new Date().getHours() <= 12)) {
+        amPm = 'am';
+      }
       time = `${splitTime[0]}${delimiter}${minutes}${amPm}`;
       scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time));
       if (scrollIndex !== -1) {

@@ -25,14 +25,16 @@ const scaleDimensions = ({
   scale = 1,
   value,
   width
-}: ChartBulletScaleInterface) =>
-  horizontal
-    ? height > defaultSize
-      ? value + (height - defaultSize) * scale
-      : value - (defaultSize - height) * scale
-    : width > defaultSize
-    ? value + (width - defaultSize) * scale
-    : value - (defaultSize - width) * scale;
+}: ChartBulletScaleInterface) => {
+  if (horizontal && height > defaultSize) {
+    return value + (height - defaultSize) * scale;
+  } else if (horizontal) {
+    return value - (defaultSize - height) * scale;
+  } else if (width > defaultSize) {
+    return value + (width - defaultSize) * scale;
+  }
+  return value - (defaultSize - width) * scale;
+};
 
 // Scale bar width per the given size properties
 export const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scaleDimensions(props), 0);

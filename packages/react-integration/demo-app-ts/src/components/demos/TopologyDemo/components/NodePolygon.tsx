@@ -51,16 +51,16 @@ const NodePolygon: React.FC<NodePolygonProps> = ({
     ''
   );
 
-  return (
-    <polygon
-      ref={refs}
-      onClick={onSelect}
-      points={p}
-      fill={canDrop && hover ? 'lightgreen' : canDrop && droppable ? 'lightblue' : selected ? 'blue' : 'grey'}
-      strokeWidth={1}
-      stroke="#333333"
-    />
-  );
+  let fill = 'grey';
+  if (canDrop && hover) {
+    fill = 'lightgreen';
+  } else if (canDrop && droppable) {
+    fill = 'lightblue';
+  } else if (selected) {
+    fill = 'blue';
+  }
+
+  return <polygon ref={refs} onClick={onSelect} points={p} fill={fill} strokeWidth={1} stroke="#333333" />;
 };
 
 export default observer(NodePolygon);

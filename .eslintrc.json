@@ -80,6 +80,7 @@
             1
         ],
         "max-len": "off",
+        "no-nested-ternary": "error",
         "no-bitwise": "error",
         "no-caller": "error",
         "no-cond-assign": "error",

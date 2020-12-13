@@ -70,12 +70,15 @@ export const useDndDrop = <
   React.useEffect(() => {
     const dropTarget: DropTarget = {
       type: spec.accept,
-      dropHint: () =>
-        typeof specRef.current.dropHint === 'string'
-          ? specRef.current.dropHint
-          : typeof specRef.current.dropHint === 'function'
-          ? specRef.current.dropHint(monitor.getItem(), monitor, propsRef.current)
-          : elementRef.current.getType(),
+      dropHint: () => {
+        if (specRef.current.dropHint === 'string') {
+          return specRef.current.dropHint;
+        }
+        if (typeof specRef.current.dropHint === 'function') {
+          return specRef.current.dropHint(monitor.getItem(), monitor, propsRef.current);
+        }
+        return elementRef.current.getType();
+      },
       hitTest: (x: number, y: number) => {
         if (specRef.current.hitTest) {
           return specRef.current.hitTest(x, y, propsRef.current);
@@ -135,18 +138,24 @@ export const useDndDrop = <
       hover: () => {
         specRef.current.hover && specRef.current.hover(monitor.getItem(), monitor, propsRef.current);
       },
-      canDrop: () =>
-        typeof specRef.current.canDrop === 'boolean'
-          ? specRef.current.canDrop
-          : typeof specRef.current.canDrop === 'function'
-          ? specRef.current.canDrop(monitor.getItem(), monitor, propsRef.current)
-          : true,
-      drop: () =>
-        specRef.current.drop
-          ? specRef.current.drop(monitor.getItem(), monitor, propsRef.current)
-          : !monitor.didDrop()
-          ? elementRef.current
-          : undefined
+      canDrop: () => {
+        if (typeof specRef.current.canDrop === 'boolean') {
+          return specRef.current.canDrop;
+        }
+        if (typeof specRef.current.canDrop === 'function') {
+          return specRef.current.canDrop(monitor.getItem(), monitor, propsRef.current);
+        }
+        return true;
+      },
+      drop: () => {
+        if (specRef.current.drop) {
+          return specRef.current.drop(monitor.getItem(), monitor, propsRef.current);
+        }
+        if (!monitor.didDrop()) {
+          return elementRef.current;
+        }
+        return undefined;
+      }
     };
     const [targetId, unregister] = dndManager.registerTarget(dropTarget);
     monitor.receiveHandlerId(targetId);

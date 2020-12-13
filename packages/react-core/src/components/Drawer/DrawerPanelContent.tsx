@@ -65,8 +65,13 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     const panelRect = panel.current.getBoundingClientRect();
     const parentRect = panel.current.parentElement.getBoundingClientRect();
     const min = minSize ? minSize : 0;
-    const max = maxSize ? maxSize : position === 'bottom' ? parentRect.height : parentRect.width;
     const mousePos = position === 'bottom' ? e.clientY : e.clientX;
+    let max = parentRect.width;
+    if (maxSize) {
+      max = maxSize;
+    } else if (position === 'bottom') {
+      max = parentRect.height;
+    }
 
     let newSize = 0;
     if (position === 'right') {
@@ -132,7 +137,12 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (isResizing) {
       const parentRect = panel.current.parentElement.getBoundingClientRect();
       const min = minSize ? minSize : 0;
-      const max = maxSize ? maxSize : position === 'bottom' ? parentRect.height : parentRect.width;
+      let max = parentRect.width;
+      if (maxSize) {
+        max = maxSize;
+      } else if (position === 'bottom') {
+        max = parentRect.height;
+      }
 
       let delta = 0;
       if (key === 'ArrowRight') {
