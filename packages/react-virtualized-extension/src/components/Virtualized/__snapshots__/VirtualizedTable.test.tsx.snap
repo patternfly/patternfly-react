@@ -1366,7 +1366,7 @@ exports[`Actions virtualized table 1`] = `
                                     data-key={5}
                                     data-label=""
                                     onMouseEnter={[Function]}
-                                    scope={null}
+                                    scope=""
                                     textCenter={false}
                                     tooltip=""
                                   >
@@ -1377,7 +1377,7 @@ exports[`Actions virtualized table 1`] = `
                                       data-label=""
                                       innerRef={null}
                                       onMouseEnter={[Function]}
-                                      scope={null}
+                                      scope=""
                                       textCenter={false}
                                       tooltip=""
                                     >
@@ -2526,7 +2526,7 @@ exports[`Selectable virtualized table 1`] = `
                                     data-key={0}
                                     data-label=""
                                     onMouseEnter={[Function]}
-                                    scope={null}
+                                    scope=""
                                     textCenter={false}
                                     tooltip=""
                                   >
@@ -2537,7 +2537,7 @@ exports[`Selectable virtualized table 1`] = `
                                       data-label=""
                                       innerRef={null}
                                       onMouseEnter={[Function]}
-                                      scope={null}
+                                      scope=""
                                       textCenter={false}
                                       tooltip=""
                                     >
@@ -4573,7 +4573,7 @@ exports[`Simple Actions table 1`] = `
                                     data-key={5}
                                     data-label=""
                                     onMouseEnter={[Function]}
-                                    scope={null}
+                                    scope=""
                                     textCenter={false}
                                     tooltip=""
                                   >
@@ -4584,7 +4584,7 @@ exports[`Simple Actions table 1`] = `
                                       data-label=""
                                       innerRef={null}
                                       onMouseEnter={[Function]}
-                                      scope={null}
+                                      scope=""
                                       textCenter={false}
                                       tooltip=""
                                     >
