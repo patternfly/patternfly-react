@@ -3,6 +3,80 @@ id: Release notes
 section: developer-resources
 ---
 
+## 2020.16 release notes (2020-12-11)
+- [@patternfly/react-catalog-view-extension@4.8.125](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.125)
+- [@patternfly/react-charts@6.12.12](https://www.npmjs.com/package/@patternfly/react-charts/v/6.12.12)
+- [@patternfly/react-core@4.84.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.84.3)
+- [@patternfly/react-icons@4.7.22](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.22)
+- [@patternfly/react-inline-edit-extension@4.5.186](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.186)
+- [@patternfly/react-styles@4.7.22](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.22)
+- [@patternfly/react-table@4.19.44](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.44)
+- [@patternfly/react-tokens@4.9.22](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.22)
+- [@patternfly/react-topology@4.6.89](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.89)
+- [@patternfly/react-virtualized-extension@4.5.170](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.170)
+
+### Components
+- **Alert:** 
+  - Added support for custom icon ([#5140](https://github.com/patternfly/patternfly-react/pull/5140))
+- **Application launcher:** 
+  - Made options menu and application launcher accessible in JAWS ([#5136](https://github.com/patternfly/patternfly-react/pull/5136))
+- **Calendar month:** 
+  - Fixed to rely on base styles from react-core/dist/styles/base.css ([#5251](https://github.com/patternfly/patternfly-react/pull/5251))
+- **Clipboard copy:**
+  - Fixed arrow orientation for expanded clipboard copy ([#5191](https://github.com/patternfly/patternfly-react/pull/5191))
+- **Date picker:** 
+  - Fixed bugs and added range picker demo ([#5184](https://github.com/patternfly/patternfly-react/pull/5184))
+  - Updated to Forward popover props ([#5160](https://github.com/patternfly/patternfly-react/pull/5160))
+  - Removed date-fns and allow more customization ([#5161](https://github.com/patternfly/patternfly-react/pull/5161))
+- **Description list:** 
+  - Added support for auto fit ([#5113](https://github.com/patternfly/patternfly-react/pull/5113))
+  - Changed autoMinFitModifier to autoFitMinModifier ([#5227](https://github.com/patternfly/patternfly-react/pull/5227))
+- **Drawer:** 
+  - Added splitter feature ([#5193](https://github.com/patternfly/patternfly-react/pull/5193))
+- **Dual list selector:**
+  - Added support for trees and checkboxes ([#5207](https://github.com/patternfly/patternfly-react/pull/5207))
+- **Form:**
+  - Tidied form examples ([#5172](https://github.com/patternfly/patternfly-react/pull/5172))
+- **Jump links:**
+  - Added offset prop ([#5233](https://github.com/patternfly/patternfly-react/pull/5233))
+- **Menu:**
+  - Added cypress tests and integration demos ([#5202](https://github.com/patternfly/patternfly-react/pull/5202))
+  - Updated cypress tests ([#5225](https://github.com/patternfly/patternfly-react/pull/5225))
+  - Updated to allow consumer to add search input/text input ([#5211](https://github.com/patternfly/patternfly-react/pull/5211))
+- **Popover:**
+  - Updated to allow close from content ([#5173](https://github.com/patternfly/patternfly-react/pull/5173))
+- **Options menu:** 
+  - Made options menu and application launcher accessible in JAWS ([#5136](https://github.com/patternfly/patternfly-react/pull/5136))
+- **Text area:**
+  - Added support for isDisabled ([#5107](https://github.com/patternfly/patternfly-react/pull/5107))
+- **Text input:** 
+  - Removed button and React.Fragment from the ref example ([#5176](https://github.com/patternfly/patternfly-react/pull/5176))
+- **Time picker:** 
+  - Added basic time picker ([#5216](https://github.com/patternfly/patternfly-react/pull/5216))
+- **Tree view:** 
+  - Fixed various bugs ([#5128](https://github.com/patternfly/patternfly-react/pull/5128))
+
+### Access console extension
+- Replaced novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/pull/5208))
+
+### Chart
+- Replaced victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/pull/5179))
+- Fixed interactive legend example tooltips ([#5204](https://github.com/patternfly/patternfly-react/pull/5204))
+- Bumped victory and moved victory dependency to demo app ([#5178](https://github.com/patternfly/patternfly-react/pull/5178))
+- Fixed tooltip pointer length error ([#5245](https://github.com/patternfly/patternfly-react/pull/5245))
+
+### Table
+- Added table favorites feature ([#5213](https://github.com/patternfly/patternfly-react/pull/5213))
+- Added cypress tests for favorites ([#5222](https://github.com/patternfly/patternfly-react/pull/5222))
+
+### Other
+- **Chore:** 
+  - Updated dependency theme-patternfly-org to v0.2.11 ([#5080](https://github.com/patternfly/patternfly-react/pull/5080))
+  - Fixed @patternfly/react-icons/createIcon import issue ([#5163](https://github.com/patternfly/patternfly-react/pull/5163))
+  - Moved react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/pull/5201))
+  - Updated react-core copyStyles.js ([#5166](https://github.com/patternfly/patternfly-react/pull/5166))
+  - Fixed focus trap dependency ([#5236](https://github.com/patternfly/patternfly-react/pull/5236))
+
 ## 2020.15 release notes (2020-11-17)
 - [@patternfly/react-catalog-view-extension@4.8.105](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.105)
 - [@patternfly/react-charts@6.12.2](https://www.npmjs.com/package/@patternfly/react-charts/v/6.12.2)
