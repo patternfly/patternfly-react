@@ -56,6 +56,9 @@ section: developer-resources
 - **Tree view:** 
   - Fixed various bugs ([#5128](https://github.com/patternfly/patternfly-react/pull/5128))
 
+### Access console extension
+- Replaced novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/pull/5208))
+
 ### Chart
 - Replaced victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/pull/5179))
 - Fixed interactive legend example tooltips ([#5204](https://github.com/patternfly/patternfly-react/pull/5204))
