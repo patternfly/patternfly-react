@@ -44,12 +44,15 @@ export interface ThProps
   onMouseEnter?: (event: any) => void;
   /** Adds tooltip/popover info button */
   info?: InfoType;
+  /** Adds scope to the column to associate header cells with data cells*/
+  scope?: string;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
   children,
   className,
   component = 'th',
+  scope = 'col',
   textCenter = false,
   sort = null,
   modifier,
@@ -129,7 +132,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   const cell = (
     <MergedComponent
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
-      scope="col"
+      scope={component === 'th' && children ? scope : null}
       ref={innerRef}
       className={css(
         className,
