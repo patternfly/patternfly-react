@@ -154,7 +154,7 @@ class MenuWithFlyout extends React.Component {
 }
 ```
 
-### Filtering with Text Input
+### Filtering with text input
 
 ```js
 import React from 'react';
