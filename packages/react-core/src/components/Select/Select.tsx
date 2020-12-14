@@ -195,8 +195,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0][0] = this.filterRef.current;
     }
 
-    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent && this.refCollection[0]) {
-      this.refCollection[0][0].focus();
+    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent) {
+      const firstRef = this.refCollection.find(ref => ref !== null);
+      if (firstRef && firstRef[0]) {
+        firstRef[0].focus();
+      }
     }
 
     if (prevProps.children !== this.props.children) {
