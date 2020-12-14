@@ -10,6 +10,7 @@ exports[`basic not selected 1`] = `
     className="pf-c-toggle-group__button"
     id="toggleGroupItem"
     onClick={[Function]}
+    type="button"
   >
     <ToggleGroupItemElement
       variant="text"
@@ -31,6 +32,7 @@ exports[`basic selected 1`] = `
     className="pf-c-toggle-group__button"
     id="toggleGroupItem"
     onClick={[Function]}
+    type="button"
   >
     <ToggleGroupItemElement
       variant="text"
@@ -52,6 +54,7 @@ exports[`icon variant 1`] = `
     className="pf-c-toggle-group__button"
     id="toggleGroupItem"
     onClick={[Function]}
+    type="button"
   >
     <ToggleGroupItemElement
       variant="icon"
@@ -73,6 +76,7 @@ exports[`isDisabled 1`] = `
     disabled={true}
     id="toggleGroupItem"
     onClick={[Function]}
+    type="button"
   >
     <ToggleGroupItemElement
       variant="text"
