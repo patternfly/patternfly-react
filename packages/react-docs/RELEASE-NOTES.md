@@ -56,13 +56,6 @@ section: developer-resources
 - **Tree view:** 
   - Fixed various bugs ([#5128](https://github.com/patternfly/patternfly-react/pull/5128))
 
-### Catalog view extension
-- Fixed typings in FilterSidePanelCategoryItem ([#5145](https://github.com/patternfly/patternfly-react/pull/5145))
-
-### Access console extension
-- Removed css imports ([#5147](https://github.com/patternfly/patternfly-react/pull/5147))
-- Replaced novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/pull/5208))
-
 ### Chart
 - Replaced victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/pull/5179))
 - Fixed interactive legend example tooltips ([#5204](https://github.com/patternfly/patternfly-react/pull/5204))
@@ -70,7 +63,6 @@ section: developer-resources
 - Fixed tooltip pointer length error ([#5245](https://github.com/patternfly/patternfly-react/pull/5245))
 
 ### Table
-- Updated to set button type on compoundExpand transform button ([#5058](https://github.com/patternfly/patternfly-react/pull/5058))
 - Added table favorites feature ([#5213](https://github.com/patternfly/patternfly-react/pull/5213))
 - Added cypress tests for favorites ([#5222](https://github.com/patternfly/patternfly-react/pull/5222))
 
@@ -80,6 +72,7 @@ section: developer-resources
   - Fixed @patternfly/react-icons/createIcon import issue ([#5163](https://github.com/patternfly/patternfly-react/pull/5163))
   - Moved react-datetime to react-core ([#5201](https://github.com/patternfly/patternfly-react/pull/5201))
   - Updated react-core copyStyles.js ([#5166](https://github.com/patternfly/patternfly-react/pull/5166))
+  - Fixed focus trap dependency ([#5236](https://github.com/patternfly/patternfly-react/pull/5236))
 
 ## 2020.15 release notes (2020-11-17)
 - [@patternfly/react-catalog-view-extension@4.8.105](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.105)
