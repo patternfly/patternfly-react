@@ -18,11 +18,12 @@ import {
   OUIAProps,
   getDefaultOUIAId,
   PickOptional,
-  GenerateId
+  GenerateId,
+  createRenderableFavorites,
+  extendItemsWithFavorite
 } from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
-import { createRenderableFavorites, extendItemsWithFavorite } from './favorites';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
