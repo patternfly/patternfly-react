@@ -2,7 +2,7 @@ import * as React from 'react';
 import { DropdownArrowContext } from './dropdownConstants';
 import { InternalDropdownItem } from './InternalDropdownItem';
 import { Divider, DividerVariant } from '../Divider';
-import { useOUIAProps, OUIAProps } from '../../helpers';
+import { useOUIAProps, OUIAProps } from '../../helpers/ouia';
 
 export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement>, OUIAProps {
   /** Classes applied to root element of dropdown item */
