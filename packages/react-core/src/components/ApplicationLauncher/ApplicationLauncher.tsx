@@ -10,7 +10,7 @@ import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
-import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers';
+import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 
 export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
