@@ -32,6 +32,8 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAP
   closeBtnAriaLabel?: string;
   /** Function that is called when clicking on the chip group close button */
   onClick?: (event: React.MouseEvent) => void;
+  /** Function that is called when clicking on the toggle expand/collapse button */
+  onToggleCollapseClick?: (event: React.MouseEvent) => void;
   /** Position of the tooltip which is displayed if the category name text is longer */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
@@ -61,6 +63,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     isClosable: false,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onClick: (_e: React.MouseEvent) => undefined as any,
+    onToggleCollapseClick: (_e: React.MouseEvent) => undefined as any,
     closeBtnAriaLabel: 'Close chip group',
     tooltipPosition: 'top',
     'aria-label': 'Chip group category'
@@ -117,6 +120,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       numChips,
       expandedText,
       collapsedText,
+      onToggleCollapseClick,
       ouiaId,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       defaultIsOpen,
@@ -156,7 +160,14 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
               ))}
               {numChildren > numChips && (
                 <li className={css(styles.chipGroupListItem)}>
-                  <Chip isOverflowChip onClick={this.toggleCollapse} component="button">
+                  <Chip
+                    isOverflowChip
+                    onClick={event => {
+                      this.toggleCollapse();
+                      onToggleCollapseClick(event);
+                    }}
+                    component="button"
+                  >
                     {isOpen ? expandedText : collapsedTextResult}
                   </Chip>
                 </li>
