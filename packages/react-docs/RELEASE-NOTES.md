@@ -4,16 +4,16 @@ section: developer-resources
 ---
 
 ## 2020.16 release notes (2020-12-11)
-- [@patternfly/react-catalog-view-extension@4.8.125](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.125)
+- [@patternfly/react-catalog-view-extension@4.8.126](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.8.126)
 - [@patternfly/react-charts@6.12.12](https://www.npmjs.com/package/@patternfly/react-charts/v/6.12.12)
-- [@patternfly/react-core@4.84.3](https://www.npmjs.com/package/@patternfly/react-core/v/4.84.3)
+- [@patternfly/react-core@4.84.4](https://www.npmjs.com/package/@patternfly/react-core/v/4.84.4)
 - [@patternfly/react-icons@4.7.22](https://www.npmjs.com/package/@patternfly/react-icons/v/4.7.22)
-- [@patternfly/react-inline-edit-extension@4.5.186](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.186)
+- [@patternfly/react-inline-edit-extension@4.5.187](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.187)
 - [@patternfly/react-styles@4.7.22](https://www.npmjs.com/package/@patternfly/react-styles/v/4.7.22)
-- [@patternfly/react-table@4.19.44](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.44)
+- [@patternfly/react-table@4.19.45](https://www.npmjs.com/package/@patternfly/react-table/v/4.19.45)
 - [@patternfly/react-tokens@4.9.22](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.9.22)
-- [@patternfly/react-topology@4.6.89](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.89)
-- [@patternfly/react-virtualized-extension@4.5.170](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.170)
+- [@patternfly/react-topology@4.6.91](https://www.npmjs.com/package/@patternfly/react-topology/v/4.6.91)
+- [@patternfly/react-virtualized-extension@4.5.171](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.5.171)
 
 ### Components
 - **Alert:** 
@@ -68,6 +68,9 @@ section: developer-resources
 ### Table
 - Added table favorites feature ([#5213](https://github.com/patternfly/patternfly-react/pull/5213))
 - Added cypress tests for favorites ([#5222](https://github.com/patternfly/patternfly-react/pull/5222))
+
+### Topology
+- Adjusted topology node layout when new nodes are added ([#5249](https://github.com/patternfly/patternfly-react/pull/5249))
 
 ### Other
 - **Chore:** 
