@@ -70,7 +70,7 @@ section: developer-resources
 - Added cypress tests for favorites ([#5222](https://github.com/patternfly/patternfly-react/pull/5222))
 
 ### Topology
-- Adjust topology node layout when new nodes are added ([#5249](https://github.com/patternfly/patternfly-react/pull/5249))
+- Adjusted topology node layout when new nodes are added ([#5249](https://github.com/patternfly/patternfly-react/pull/5249))
 
 ### Other
 - **Chore:** 
