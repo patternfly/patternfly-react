@@ -5,4 +5,3 @@ export * from './htmlConstants';
 export * from './typeUtils';
 export * from './ouia';
 export * from './util';
-export * from './favorites';
