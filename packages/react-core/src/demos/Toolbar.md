@@ -9,6 +9,8 @@ import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 ## Demos
 ### Console log viewer toolbar demo
@@ -25,6 +27,8 @@ import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 class ConsoleLogViewerToolbar extends React.Component {
   constructor(props) {
@@ -47,6 +51,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       secondSwitchChecked: false,
       searchValue: '',
       searchResultsCount: 3,
+      searchInputExpanded: false,
       currentSearchResult: 1,
       externalExpanded: false,
       externalExpandedMobile: false,
@@ -189,7 +194,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       })
     };
 
-    this.onSearchClear = (event) => {
+    this.onSearchClear = event => {
       this.setState({
         searchValue: '',
         searchResultsCount: 0,
@@ -197,7 +202,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
     
-    this.onSearchNext = (event) => {
+    this.onSearchNext = event => {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentSearchResult + 1;
         return {
@@ -206,7 +211,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
     
-    this.onSearchPrevious = (event) => {
+    this.onSearchPrevious = event => {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentSearchResult - 1;
         return {
@@ -214,6 +219,12 @@ class ConsoleLogViewerToolbar extends React.Component {
         }
       });
     };
+
+    this.onToggleSearchInput = event => {
+      this.setState({
+        searchInputExpanded: !this.state.searchInputExpanded
+      })
+    }
 
     this.onPageResize = ({ windowSize }) => {
       if (windowSize >= 1450) {
@@ -240,6 +251,7 @@ class ConsoleLogViewerToolbar extends React.Component {
       secondSwitchChecked,
       searchValue,
       searchResultsCount,
+      searchInputExpanded,
       currentSearchResult,
       externalExpanded,
       externalExpandedMobile,
@@ -320,6 +332,19 @@ class ConsoleLogViewerToolbar extends React.Component {
         </React.Fragment>
       );
     };
+
+    const LogsSearchInput = (
+      <SearchInput 
+        placeholder='find'
+        value={searchValue}
+        onChange={this.onSearchChange}
+        onClear={this.onSearchClear}
+        resultsCount={`${currentSearchResult} / ${searchResultsCount}`}
+        onNextClick={this.onSearchNext}
+        onPreviousClick={this.onSearchPrevious}
+        style={{flex: 1}}
+      />
+    );
 
     const leftAlignedItemsDesktop = (
       <React.Fragment>
@@ -406,16 +431,8 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsDesktop = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
-          <SearchInput 
-            placeholder='find'
-            value={searchValue}
-            onChange={this.onSearchChange}
-            onClear={this.onSearchClear}
-            resultsCount={`${currentSearchResult} / ${searchResultsCount}`}
-            onNextClick={this.onSearchNext}
-            onPreviousClick={this.onSearchPrevious}
-          />
+        <ToolbarItem visibility={{default: 'hidden', lg: 'visible'}}>
+          {LogsSearchInput}
         </ToolbarItem>
         <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Dropdown
@@ -458,6 +475,16 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsMobile = (
       <React.Fragment>
+        <ToolbarItem visibility={{default: 'visible', lg: 'hidden'}}>
+          <Tooltip
+            position="top"
+            content={<div>search logs</div>}
+          >
+            <Button variant="plain" onClick={this.onToggleSearchInput}>
+              {searchInputExpanded? <TimesIcon /> : <SearchIcon />}
+            </Button>
+          </Tooltip>
+        </ToolbarItem>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Tooltip
             position="top"
@@ -512,13 +539,28 @@ class ConsoleLogViewerToolbar extends React.Component {
     );
 
     const toolbar = (
-      <Toolbar
-        id="log-viewer-toolbar"
-        inset={{
-          default: 'insetNone'
-        }}>
-        <ToolbarContent className="align-toolbar-group">{items}</ToolbarContent>
-      </Toolbar>
+      <React.Fragment>
+        <Toolbar
+          id="log-viewer-toolbar-level-1"
+          inset={{
+            default: 'insetNone'
+          }}
+        >
+          <ToolbarContent>{items}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="log-viewer-toolbar-level-2"
+          inset={{
+            default: 'insetNone'
+          }}
+        >
+          <ToolbarContent>
+            <ToolbarItem visibility={{default: 'visible', lg: 'hidden'}} style={{flex: 1}}>
+              {searchInputExpanded && LogsSearchInput}
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+      </React.Fragment>
     )
 
     const Header = (
