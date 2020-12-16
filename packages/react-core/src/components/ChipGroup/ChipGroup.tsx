@@ -32,7 +32,7 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAP
   closeBtnAriaLabel?: string;
   /** Function that is called when clicking on the chip group close button */
   onClick?: (event: React.MouseEvent) => void;
-  /** Function that is called when clicking on the toggle expand/collapse button */
+  /** Function that is called when clicking on the overflow (expand/collapse) chip button */
   onOverflowChipClick?: (event: React.MouseEvent) => void;
   /** Position of the tooltip which is displayed if the category name text is longer */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
