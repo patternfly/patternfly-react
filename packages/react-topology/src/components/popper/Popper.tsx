@@ -164,7 +164,7 @@ const Popper: React.FC<PopperProps> = ({
         ...popperOptions,
         modifiers: {
           preventOverflow: {
-            boundariesElement: 'window'
+            boundariesElement: 'viewport'
           },
           ...popperOptions.modifiers
         }
