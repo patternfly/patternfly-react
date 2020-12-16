@@ -3,6 +3,11 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
+export interface BreadcrumbItemRenderArgs {
+  className: string;
+  ariaCurrent: 'page' | undefined;
+}
+
 export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the breadcrumb item. */
   children?: React.ReactNode;
@@ -18,33 +23,34 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
   component?: React.ElementType;
+  /** A render function to render the component inside the breadcrumb item. */
+  render?: (props: BreadcrumbItemRenderArgs) => React.ReactNode;
 }
 
 export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   children = null,
-  className = '',
+  className: classNameProp = '',
   to = null,
   isActive = false,
   showDivider,
   target = null,
   component = 'a',
+  render = null,
   ...props
 }: BreadcrumbItemProps) => {
   const Component = component;
+  const ariaCurrent = isActive ? 'page' : undefined;
+  const className = css(styles.breadcrumbLink, isActive && styles.modifiers.current);
   return (
-    <li {...props} className={css(styles.breadcrumbItem, className)}>
+    <li {...props} className={css(styles.breadcrumbItem, classNameProp)}>
       {showDivider && (
         <span className={styles.breadcrumbItemDivider}>
           <AngleRightIcon />
         </span>
       )}
-      {to && (
-        <Component
-          href={to}
-          target={target}
-          className={css(styles.breadcrumbLink, isActive && styles.modifiers.current)}
-          aria-current={isActive ? 'page' : undefined}
-        >
+      {render && render({ className, ariaCurrent })}
+      {to && !render && (
+        <Component href={to} target={target} className={className} aria-current={ariaCurrent}>
           {children}
         </Component>
       )}
