@@ -335,7 +335,7 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const LogsSearchInput = (
       <SearchInput 
-        placeholder='find'
+        placeholder='Search logs'
         value={searchValue}
         onChange={this.onSearchChange}
         onClear={this.onSearchClear}
@@ -371,8 +371,8 @@ class ConsoleLogViewerToolbar extends React.Component {
         </ToolbarItem>
         <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Button variant={isPaused? "plain": "link"} onClick={this.pauseOrStart}>
-            {isPaused? <PlayIcon /> : <PauseIcon />}
-            {` Log Stream`}
+            {isPaused ? <PlayIcon /> : <PauseIcon />}
+            {isPaused ? ` Resume Log` : ` Pause Log`}
           </Button>
         </ToolbarItem>
       </React.Fragment>
@@ -383,7 +383,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Tooltip
             position="top"
-            content={<div>Select Pod</div>}
+            content={<div>Select Container</div>}
           >
             <Select
               onToggle={this.onContainerToggleMobile}
@@ -412,7 +412,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Tooltip
             position="top"
-            content={<div>{isPaused? "Start log" : "Pause log"}</div>}
+            content={<div>{isPaused? "Resume Log" : "Pause Log"}</div>}
           >
             <Button variant="plain" onClick={this.pauseOrStart}>
               {isPaused? <PlayIcon /> : <PauseIcon />}
@@ -438,15 +438,9 @@ class ConsoleLogViewerToolbar extends React.Component {
           <Dropdown
             onSelect={this.onExternalSelect}
             toggle={
-              <DropdownToggle
-                splitButtonItems={[
-                  <DropdownToggleAction key="action-7" onClick={this.onExternalClick}>
-                    External Logs
-                  </DropdownToggleAction>
-                ]}
-                splitButtonVariant="action"
-                onToggle={this.onExternalToggle}
-              />
+              <DropdownToggle id='external-toggle' onToggle={this.onExternalToggle}>
+                External Logs
+              </DropdownToggle>
             }
             isOpen={externalExpanded}
             dropdownItems={externalDropdownItems}
@@ -456,15 +450,9 @@ class ConsoleLogViewerToolbar extends React.Component {
           <Dropdown
             onSelect={this.onDownloadSelect}
             toggle={
-              <DropdownToggle
-                splitButtonItems={[
-                  <DropdownToggleAction key="action-8" onClick={this.onDownloadClick}>
-                    Download
-                  </DropdownToggleAction>
-                ]}
-                splitButtonVariant="action"
-                onToggle={this.onDownloadToggle}
-              />
+              <DropdownToggle id='download-toggle' onToggle={this.onDownloadToggle}>
+                Download
+              </DropdownToggle>
             }
             isOpen={downloadExpanded}
             dropdownItems={downloadDropdownItems}
@@ -478,7 +466,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{default: 'visible', lg: 'hidden'}}>
           <Tooltip
             position="top"
-            content={<div>search logs</div>}
+            content={<div>Search Logs</div>}
           >
             <Button variant="plain" onClick={this.onToggleSearchInput}>
               {searchInputExpanded? <TimesIcon /> : <SearchIcon />}
@@ -488,7 +476,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Tooltip
             position="top"
-            content={<div>External logs</div>}
+            content={<div>External Logs</div>}
           >
             <Dropdown
               onSelect={this.onExternalSelectMobile}
@@ -524,9 +512,14 @@ class ConsoleLogViewerToolbar extends React.Component {
         {rightAlignedItemsDesktop}
         {rightAlignedItemsMobile}
         <ToolbarItem>
-          <Button variant="plain" aria-label="expand">
-            <ExpandIcon />
-          </Button>
+          <Tooltip
+            position="top"
+            content={<div>Expand</div>}
+          >
+            <Button variant="plain" aria-label="expand">
+              <ExpandIcon />
+            </Button>
+          </Tooltip>
         </ToolbarItem>
       </React.Fragment>
     )
