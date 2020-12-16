@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.65.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.64.0...@patternfly/react-integration@4.65.0) (2020-12-16)
+
+
+### Features
+
+* **breadcrumb:** add render prop to breadcrumb item ([#5189](https://github.com/patternfly/patternfly-react/issues/5189)) ([492a950](https://github.com/patternfly/patternfly-react/commit/492a950c1fa6448e96a7beaa31dd3084d9a306e3))
+
+
+
+
+
 # [4.64.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.63.2...@patternfly/react-integration@4.64.0) (2020-12-10)
 
 

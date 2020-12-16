@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.65.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.64.4...demo-app-ts@4.65.0) (2020-12-16)
+
+
+### Features
+
+* **breadcrumb:** add render prop to breadcrumb item ([#5189](https://github.com/patternfly/patternfly-react/issues/5189)) ([492a950](https://github.com/patternfly/patternfly-react/commit/492a950c1fa6448e96a7beaa31dd3084d9a306e3))
+
+
+
+
+
 ## [4.64.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.64.3...demo-app-ts@4.64.4) (2020-12-15)
 
 **Note:** Version bump only for package demo-app-ts
