@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.85.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.85.0...@patternfly/react-core@4.85.1) (2020-12-16)
+
+
+### Bug Fixes
+
+* **DualListSelector:** Add type=button to DualListSelectorListItem buttons ([#5266](https://github.com/patternfly/patternfly-react/issues/5266)) ([c251687](https://github.com/patternfly/patternfly-react/commit/c251687aa472e0138e213b95ce219c4267a38216))
+* **Select:** fix crash when opened using Enter with disabled options ([#5258](https://github.com/patternfly/patternfly-react/issues/5258)) ([06f977f](https://github.com/patternfly/patternfly-react/commit/06f977fe363b3bd3c695c39fd96716167b403bc0)), closes [#5257](https://github.com/patternfly/patternfly-react/issues/5257)
+
+
+
+
+
 # [4.85.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.4...@patternfly/react-core@4.85.0) (2020-12-16)
 
 

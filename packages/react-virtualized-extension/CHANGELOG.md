@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.173](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.172...@patternfly/react-virtualized-extension@4.5.173) (2020-12-16)
+
+
+### Bug Fixes
+
+* **Table:** scope axe issue ([#5253](https://github.com/patternfly/patternfly-react/issues/5253)) ([1c2ff14](https://github.com/patternfly/patternfly-react/commit/1c2ff142b9687d5555fcaf4c53141ea10c7e6eac))
+
+
+
+
+
 ## [4.5.172](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.171...@patternfly/react-virtualized-extension@4.5.172) (2020-12-16)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
