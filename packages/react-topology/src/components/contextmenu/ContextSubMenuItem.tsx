@@ -81,7 +81,7 @@ const ContextSubMenuItem: React.FC<ContextSubMenuItemProps> = ({ label, children
             }
           }}
         >
-          <DropdownMenu className="pf-c-dropdown__menu" autoFocus>
+          <DropdownMenu className="pf-topology-context-menu__c-dropdown__menu" autoFocus>
             {children}
           </DropdownMenu>
         </div>

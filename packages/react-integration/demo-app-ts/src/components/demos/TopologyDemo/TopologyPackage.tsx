@@ -16,6 +16,10 @@ import {
   withPanZoom,
   GraphComponent,
   withDragNode,
+  withContextMenu,
+  ContextMenuItem,
+  ContextSubMenuItem,
+  ContextMenuSeparator,
   VisualizationSurface,
   SELECTION_EVENT,
   SelectionEventListener,
@@ -46,6 +50,39 @@ import '@patternfly/patternfly/patternfly-addons.css';
 
 const GRAPH_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'layout', 'scale', 'scaleExtent', 'layers'];
 const NODE_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'collapsed', 'width', 'height', 'shape'];
+
+const contextMenuItem = (label: string, i: number): React.ReactElement => {
+  if (label === '-') {
+    return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
+  }
+  if (label.includes('->')) {
+    const parent = label.slice(0, label.indexOf('->'));
+    const children = label.slice(label.indexOf('->') + 2).split(',');
+
+    return (
+      <ContextSubMenuItem label={parent} key={parent}>
+        {children.map((child, j) => contextMenuItem(child.trim(), j))}
+      </ContextSubMenuItem>
+    );
+  }
+  return (
+    // eslint-disable-next-line no-alert
+    <ContextMenuItem key={label} onClick={() => alert(`Selected: ${label}`)}>
+      {label}
+    </ContextMenuItem>
+  );
+};
+
+const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
+
+const defaultMenu = createContextMenuItems(
+  'First',
+  'Second',
+  'Third',
+  '-',
+  'Fourth',
+  'Sub Menu-> Child1, Child2, Child3, -, Child4'
+);
 
 const getModel = (layout: string): Model => {
   // create nodes from data
@@ -108,7 +145,7 @@ const getVisualization = (model: Model): Visualization => {
   vis.registerLayoutFactory(defaultLayoutFactory);
   vis.registerComponentFactory(defaultComponentFactory);
 
-  // support pan zoom, drag, and selection
+  // support pan zoom, drag, context menus, and selection
   vis.registerComponentFactory((kind, type) => {
     if (kind === ModelKind.graph) {
       return withPanZoom()(GraphComponent);
@@ -120,7 +157,7 @@ const getVisualization = (model: Model): Visualization => {
       return withDragNode({ canCancel: false })(Group);
     }
     if (kind === ModelKind.node) {
-      return withDragNode({ canCancel: false })(withSelection()(Node));
+      return withDragNode({ canCancel: false })(withSelection()(withContextMenu(() => defaultMenu)(Node)));
     }
     return undefined;
   });
