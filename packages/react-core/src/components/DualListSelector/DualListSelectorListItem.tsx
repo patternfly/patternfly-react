@@ -64,6 +64,7 @@ export class DualListSelectorListItem extends React.Component<DualListSelectorLi
           id={id}
           ref={this.ref}
           tabIndex={-1}
+          type="button"
         >
           <span className={css(styles.dualListSelectorItemMain)}>
             <span className={css(styles.dualListSelectorItemText)}>{children}</span>
