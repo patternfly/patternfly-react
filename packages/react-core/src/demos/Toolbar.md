@@ -51,7 +51,6 @@ class ConsoleLogViewerToolbar extends React.Component {
       secondSwitchChecked: false,
       searchValue: '',
       searchResultsCount: 3,
-      searchInputExpanded: false,
       currentSearchResult: 1,
       externalExpanded: false,
       externalExpandedMobile: false,
@@ -220,12 +219,6 @@ class ConsoleLogViewerToolbar extends React.Component {
       });
     };
 
-    this.onToggleSearchInput = event => {
-      this.setState({
-        searchInputExpanded: !this.state.searchInputExpanded
-      })
-    }
-
     this.onPageResize = ({ windowSize }) => {
       if (windowSize >= 1450) {
         this.setState({
@@ -251,7 +244,6 @@ class ConsoleLogViewerToolbar extends React.Component {
       secondSwitchChecked,
       searchValue,
       searchResultsCount,
-      searchInputExpanded,
       currentSearchResult,
       externalExpanded,
       externalExpandedMobile,
@@ -344,7 +336,6 @@ class ConsoleLogViewerToolbar extends React.Component {
             resultsCount={`${currentSearchResult} / ${searchResultsCount}`}
             onNextClick={this.onSearchNext}
             onPreviousClick={this.onSearchPrevious}
-            style={{flex: 1}}
           />
         </ToolbarItem>
       </ToolbarToggleGroup>
