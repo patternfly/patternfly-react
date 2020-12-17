@@ -526,28 +526,14 @@ class ConsoleLogViewerToolbar extends React.Component {
     );
 
     const toolbar = (
-      <React.Fragment>
-        <Toolbar
-          id="log-viewer-toolbar-level-1"
-          inset={{
-            default: 'insetNone'
-          }}
-        >
-          <ToolbarContent>{items}</ToolbarContent>
-        </Toolbar>
-        <Toolbar
-          id="log-viewer-toolbar-level-2"
-          inset={{
-            default: 'insetNone'
-          }}
-        >
-          <ToolbarContent>
-            <ToolbarItem visibility={{default: 'visible', lg: 'hidden'}} style={{flex: 1}}>
-              {searchInputExpanded && LogsSearchInput}
-            </ToolbarItem>
-          </ToolbarContent>
-        </Toolbar>
-      </React.Fragment>
+      <Toolbar
+        id="log-viewer-toolbar"
+        inset={{
+          default: 'insetNone'
+        }}
+      >
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
     )
 
     const Header = (
