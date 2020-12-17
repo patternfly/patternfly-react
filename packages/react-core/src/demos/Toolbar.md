@@ -19,7 +19,7 @@ This is an example of toolbar usage in log viewer.
 
 ```js isFullscreen
 import React from 'react';
-import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem, ToolbarToggleGroup } from '@patternfly/react-core';
 import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, SearchInput, Select, SelectOption, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants, Tooltip } from '@patternfly/react-core';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
@@ -334,16 +334,20 @@ class ConsoleLogViewerToolbar extends React.Component {
     };
 
     const LogsSearchInput = (
-      <SearchInput 
-        placeholder='Search logs'
-        value={searchValue}
-        onChange={this.onSearchChange}
-        onClear={this.onSearchClear}
-        resultsCount={`${currentSearchResult} / ${searchResultsCount}`}
-        onNextClick={this.onSearchNext}
-        onPreviousClick={this.onSearchPrevious}
-        style={{flex: 1}}
-      />
+      <ToolbarToggleGroup toggleIcon={<SearchIcon />} breakpoint="lg">
+        <ToolbarItem>
+          <SearchInput 
+            placeholder='Search logs'
+            value={searchValue}
+            onChange={this.onSearchChange}
+            onClear={this.onSearchClear}
+            resultsCount={`${currentSearchResult} / ${searchResultsCount}`}
+            onNextClick={this.onSearchNext}
+            onPreviousClick={this.onSearchPrevious}
+            style={{flex: 1}}
+          />
+        </ToolbarItem>
+      </ToolbarToggleGroup>
     );
 
     const leftAlignedItemsDesktop = (
@@ -431,9 +435,6 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsDesktop = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'hidden', lg: 'visible'}}>
-          {LogsSearchInput}
-        </ToolbarItem>
         <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
           <Dropdown
             onSelect={this.onExternalSelect}
@@ -463,16 +464,6 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsMobile = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'visible', lg: 'hidden'}}>
-          <Tooltip
-            position="top"
-            content={<div>Search Logs</div>}
-          >
-            <Button variant="plain" onClick={this.onToggleSearchInput}>
-              {searchInputExpanded? <TimesIcon /> : <SearchIcon />}
-            </Button>
-          </Tooltip>
-        </ToolbarItem>
         <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
           <Tooltip
             position="top"
@@ -509,6 +500,9 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItems = (
       <React.Fragment>
+        <ToolbarItem>
+          {LogsSearchInput}
+        </ToolbarItem>
         {rightAlignedItemsDesktop}
         {rightAlignedItemsMobile}
         <ToolbarItem>
