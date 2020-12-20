@@ -126,6 +126,7 @@ class BulkSelectTableDemo extends React.Component {
         return { isDropDownOpen: !prevState.isDropDownOpen };
       });
     };
+
   }
 
   fetch(page, perPage) {
@@ -1408,21 +1409,13 @@ class FilterTableDemo extends React.Component {
           })
         : rows;
 
-    return (
-      <React.Fragment>
-        {this.renderToolbar()}
-        {!loading && filteredRows.length > 0 && (
-          <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
-            <TableHeader />
-            <TableBody />
-          </Table>
-        )}
-        {!loading && filteredRows.length === 0 && (
-          <React.Fragment>
-            <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
-              <TableHeader />
-              <TableBody />
-            </Table>
+    let tableRows = filteredRows;
+    if (!loading && filteredRows.length === 0) {
+      tableRows = [{
+        heightAuto: true,
+        cells: [{
+          props: { colSpan: 8 },
+          title: (
             <Bullseye>
               <EmptyState>
                 <EmptyStateIcon icon={SearchIcon} />
@@ -1433,21 +1426,36 @@ class FilterTableDemo extends React.Component {
                   No results match this filter criteria. Remove all filters or clear all filters to show results.
                 </EmptyStateBody>
                 <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => this.onDelete(null)}>
+                  <Button variant="link" onClick={() => { this.onDelete(null); }}>
                     Clear all filters
                   </Button>
                 </EmptyStateSecondaryActions>
               </EmptyState>
             </Bullseye>
-          </React.Fragment>
-        )}
-        {loading && (
-          <center>
+          )
+        }]
+      }]
+    } else if (loading) {
+      tableRows = [{
+        heightAuto: true,
+        cells: [{
+          props: { colSpan: 8 },
+          title: (
             <Title headingLevel="h2" size="3xl">
               Please wait while loading data
             </Title>
-          </center>
-        )}
+          )
+        }]
+      }]
+    }
+
+    return (
+      <React.Fragment>
+        {this.renderToolbar()}
+        <Table cells={columns} rows={tableRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
+          <TableHeader />
+          <TableBody />
+        </Table>
       </React.Fragment>
     );
   }
@@ -1996,29 +2004,34 @@ class EmptyStateDemo extends React.Component {
       { title: 'Location' }
     ];
 
-    const rows = [];
+    const rows = [{
+      heightAuto: true,
+      cells: [{
+        props: { colSpan: 8 },
+        title: (
+          <EmptyState>
+            <EmptyStateIcon icon={SearchIcon} />
+            <Title headingLevel="h5" size="lg">
+              No results found
+            </Title>
+            <EmptyStateBody>
+              No results match this filter criteria. Remove all filters or clear all filters to show results.
+            </EmptyStateBody>
+            <EmptyStateSecondaryActions>
+              <Button variant="link" onClick={() => {}}>
+                Clear all filters
+              </Button>
+            </EmptyStateSecondaryActions>
+          </EmptyState>
+        )
+      }]
+    }];
 
     return (
-      <React.Fragment>
-        <Table cells={columns} rows={rows} aria-label="Empty state demo">
-          <TableHeader />
-          <TableBody />
-        </Table>
-        <EmptyState>
-          <EmptyStateIcon icon={SearchIcon} />
-          <Title headingLevel="h5" size="lg">
-            No results found
-          </Title>
-          <EmptyStateBody>
-            No results match this filter criteria. Remove all filters or clear all filters to show results.
-          </EmptyStateBody>
-          <EmptyStateSecondaryActions>
-            <Button variant="link" onClick={() => {}}>
-              Clear all filters
-            </Button>
-          </EmptyStateSecondaryActions>
-        </EmptyState>
-      </React.Fragment>
+      <Table cells={columns} rows={rows} aria-label="Empty state demo">
+        <TableHeader />
+        <TableBody />
+      </Table>
     );
   }
 }
@@ -2048,9 +2061,9 @@ class LoadingStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <center>
+              <Bullseye>
                 <Spinner size="xl" />
-              </center>
+              </Bullseye>
             )
           }
         ]
