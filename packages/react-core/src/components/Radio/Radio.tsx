@@ -78,6 +78,10 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
       ouiaSafe = true,
       ...props
     } = this.props;
+    if (!props.id) {
+      // eslint-disable-next-line no-console
+      console.error('Radio:', 'id is required to make input accessible');
+    }
 
     const inputRendered = (
       <input
