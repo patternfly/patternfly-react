@@ -36,7 +36,7 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
 export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   className = '',
   logo = null as React.ReactNode,
-  logoProps = null as object,
+  logoProps = { href: '/' },
   logoComponent = 'a',
   headerTools = null as React.ReactNode,
   topNav = null as React.ReactNode,
