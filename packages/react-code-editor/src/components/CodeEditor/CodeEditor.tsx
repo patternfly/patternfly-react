@@ -50,7 +50,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isReadOnly?: boolean;
   /** Height of code editor. Defaults to 100% */
   height?: string;
-  /** */
+  /** Function which fires each time the code changes in the code editor */
   onChange?: (value?: string) => void;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
   loading?: React.ReactNode;
@@ -58,16 +58,20 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   emptyState?: React.ReactNode;
   /** Name of the file if user downloads code to local file */
   downloadFileName?: string;
-  /** */
+  /** Flag to add upload button to code editor actions. Also makes the code editor accept a file using drag and drop*/
   isAllowUpload?: boolean;
-  /** */
+  /** Flag to add download button to code editor actions*/
   isAllowDownload?: boolean;
-  /** */
+  /** Flag to add copy button to code editor actions*/
   isAllowCopy?: boolean;
-  /** */
+  /** Accessibly label for the copy button*/
   copyButtonAriaLabel?: string;
-  /** */
+  /** Text to display after code copied to clipboard*/
   copyButtonSuccessTooltipText?: string;
+  /** Accessible label for the upload button */
+  uploadButtonAriaLabel?: string;
+  /** Accessible label for the download button */
+  downloadButtonAriaLabel?: string;
 }
 
 interface CodeEditorState {
@@ -96,6 +100,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     isAllowDownload: false,
     isAllowCopy: false,
     copyButtonAriaLabel: 'Copy code to clipboard',
+    uploadButtonAriaLabel: 'Upload code',
+    downloadButtonAriaLabel: 'Download code',
     copyButtonSuccessTooltipText: 'Content added to clipboard'
   };
 
@@ -229,6 +235,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       isReadOnly,
       isAllowUpload,
       copyButtonAriaLabel,
+      uploadButtonAriaLabel,
+      downloadButtonAriaLabel,
       isLineNumbers,
       isAllowDownload,
       language,
@@ -285,12 +293,12 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     </Tooltip>
                   )}
                   {isAllowUpload && (
-                    <Button onClick={open} variant="control">
+                    <Button onClick={open} variant="control" aria-label={uploadButtonAriaLabel}>
                       <UploadIcon />
                     </Button>
                   )}
                   {isAllowDownload && (!showEmptyState || !!value) && (
-                    <Button onClick={this.download} variant="control">
+                    <Button onClick={this.download} variant="control" aria-label={downloadButtonAriaLabel}>
                       <DownloadIcon />
                     </Button>
                   )}
