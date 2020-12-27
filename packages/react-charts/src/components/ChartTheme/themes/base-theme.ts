@@ -99,8 +99,11 @@ import chart_voronoi_flyout_stroke_Fill from '@patternfly/react-tokens/dist/js/c
 // Note: Values must be in pixles
 
 // Typography
-const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var;
-const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.var;
+//
+// Note: Victory's approximateTextSize function uses specific character widths and does not work with font variables
+// See https://github.com/patternfly/patternfly-react/issues/5300
+const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.value.replace(/ /g, '');
+const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.value;
 const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
 // Labels
