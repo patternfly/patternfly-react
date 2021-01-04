@@ -15,20 +15,20 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 ```js
 import React from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox , Divider } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.options = [
-       <SelectOption key={0} value="Choose..." isPlaceholder/>,
-        <SelectOption key={1} value="Mr" />,
-        <SelectOption key={2} value="Miss" />,
-        <SelectOption key={3} value="Mrs" />,
-        <SelectOption key={4} value="Ms" />,
-        <Divider component="li" key={5} />,
-        <SelectOption key={6} value="Dr" />,
-        <SelectOption key={7} value="Other" />
+      <SelectOption key={0} value="Choose..." isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <Divider component="li" key={5} />,
+      <SelectOption key={6} value="Dr" />,
+      <SelectOption key={7} value="Other" />
     ];
 
     this.state = {
@@ -1031,7 +1031,7 @@ class GroupedTypeaheadSelectInput extends React.Component {
           <SelectOption key={3} value="Degraded" />
           <SelectOption key={4} value="Needs Maintenence" />
         </SelectGroup>,
-        <Divider key="divider"/>,
+        <Divider key="divider" />,
         <SelectGroup label="Vendor Names" key="group2">
           <SelectOption key={5} value="Dell" />
           <SelectOption key={6} value="Samsung" isDisabled />
@@ -1370,7 +1370,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
         { value: 'North Carolina', disabled: false }
       ],
       isOpen: false,
-      selected: [],
+      selected: []
     };
 
     this.onToggle = isOpen => {
@@ -1412,7 +1412,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
           Select a state
         </span>
         <Select
-          chipGroupProps={{numChips:1, expandedText: "Hide", collapsedText: "Show ${remaining}"}}
+          chipGroupProps={{ numChips: 1, expandedText: 'Hide', collapsedText: 'Show ${remaining}' }}
           variant={SelectVariant.typeaheadMulti}
           typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
@@ -1458,7 +1458,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
         { value: 'North Carolina', disabled: false }
       ],
       isOpen: false,
-      selected: [],
+      selected: []
     };
 
     this.onToggle = isOpen => {
@@ -1489,16 +1489,20 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
       });
     };
     this.chipGroupComponent = () => {
-        const { selected } = this.state;
+      const { selected } = this.state;
       return (
-          <ChipGroup>
-        {(selected || []).map((currentChip, index) => (
-          <Chip isReadOnly={index === 0 ? true : false} key={currentChip} onClick={(event) => this.onSelect(event, currentChip)}>
-            {currentChip}
-          </Chip>
-        ))}
-      </ChipGroup>
-      )
+        <ChipGroup>
+          {(selected || []).map((currentChip, index) => (
+            <Chip
+              isReadOnly={index === 0 ? true : false}
+              key={currentChip}
+              onClick={event => this.onSelect(event, currentChip)}
+            >
+              {currentChip}
+            </Chip>
+          ))}
+        </ChipGroup>
+      );
     };
   }
 
@@ -1512,7 +1516,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
           Select a state
         </span>
         <Select
-          chipGroupProps={{numChips:1, expandedText: "Hide", collapsedText: "Show ${remaining}"}}
+          chipGroupProps={{ numChips: 1, expandedText: 'Hide', collapsedText: 'Show ${remaining}' }}
           variant={SelectVariant.typeaheadMulti}
           typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
@@ -1890,6 +1894,7 @@ class SelectMenuDocumentBody extends React.Component {
 ```
 
 ### Favorites
+
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
@@ -1940,16 +1945,16 @@ class FavoritesSelect extends React.Component {
 
     this.options = [
       <SelectGroup label="Status" key="group1">
-        <SelectOption id={"option-1"} key={0} value="Running" description="This is a description." />
-        <SelectOption id={"option-2"} key={1} value="Stopped" />
-        <SelectOption id={"option-3"} key={2} value="Down (disabled)" isDisabled/>
-        <SelectOption id={"option-4"} key={3} value="Degraded" />
-          <SelectOption id={"option-5"} key={4} value="Needs Maintenence" />
+        <SelectOption id={'option-1'} key={0} value="Running" description="This is a description." />
+        <SelectOption id={'option-2'} key={1} value="Stopped" />
+        <SelectOption id={'option-3'} key={2} value="Down (disabled)" isDisabled />
+        <SelectOption id={'option-4'} key={3} value="Degraded" />
+        <SelectOption id={'option-5'} key={4} value="Needs Maintenence" />
       </SelectGroup>,
       <SelectGroup label="Vendor Names" key="group2">
-        <SelectOption id={"option-6"} key={5} value="Dell" />
-        <SelectOption id={"option-7"} key={6} value="Samsung" description="This is a description." />
-        <SelectOption id={"option-8"} key={7} value="Hewlett-Packard" />
+        <SelectOption id={'option-6'} key={5} value="Dell" />
+        <SelectOption id={'option-7'} key={6} value="Samsung" description="This is a description." />
+        <SelectOption id={'option-8'} key={7} value="Hewlett-Packard" />
       </SelectGroup>
     ];
   }
@@ -1958,22 +1963,22 @@ class FavoritesSelect extends React.Component {
     const { isOpen, selected, favorites } = this.state;
     const titleId = 'grouped-single-select-id';
     return (
-        <Select
-          variant={SelectVariant.typeahead}
-          typeAheadAriaLabel="Select value"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isOpen={isOpen}
-          placeholderText="Favorites"
-          aria-labelledby={titleId}
-          isGrouped
-          onFavorite={this.onFavorite}
-          favorites={favorites}
-          onClear={this.clearSelection}
-        >
-          {this.options}
-        </Select>
+      <Select
+        variant={SelectVariant.typeahead}
+        typeAheadAriaLabel="Select value"
+        onToggle={this.onToggle}
+        onSelect={this.onSelect}
+        selections={selected}
+        isOpen={isOpen}
+        placeholderText="Favorites"
+        aria-labelledby={titleId}
+        isGrouped
+        onFavorite={this.onFavorite}
+        favorites={favorites}
+        onClear={this.clearSelection}
+      >
+        {this.options}
+      </Select>
     );
   }
 }
