@@ -8,7 +8,11 @@ beta: true
 
 ### Scrollspy h2 elements
 
-This demo shows JumpLinkItems spying on h2 elements on the scrollable body of a page. The titles are given a tab index to allow the jump links to focus them.
+This demo shows JumpLinkItems spying on h2 elements in a scrollable PageGroup. The titles are given a tab index to allow the jump links to focus them.
+
+When implementing be sure to:
+1. Find the correct scrollableSelector for your page via [Firefox's debugging scrollable overflow](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Debug_Scrollable_Overflow) or by adding `hasOverflowScroll` to a [PageSection](/components/page#pagesection) or [PageGroup](/components/page#pagegroup).
+2. Provide `href`s to your JumpLinksItems which match the `id` of elements you want to spy on. If you wish to scroll to a different item than you're linking to use the `node` prop instead.
 
 ```js isFullscreen
 import React from 'react';
