@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.12.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.13...@patternfly/react-charts@6.12.14) (2021-01-04)
+
+
+### Bug Fixes
+
+* **charts:** Incorrect colorScale prop type ([#5303](https://github.com/patternfly/patternfly-react/issues/5303)) ([8c930fb](https://github.com/patternfly/patternfly-react/commit/8c930fb0a87fdd779618e83c7276a83dd3b45262))
+* **charts:** theme font must use token value ([#5301](https://github.com/patternfly/patternfly-react/issues/5301)) ([876c17d](https://github.com/patternfly/patternfly-react/commit/876c17dad92a2ce2e33e30e0de517738091d97e9))
+
+
+
+
+
 ## [6.12.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.12...@patternfly/react-charts@6.12.13) (2020-12-16)
 
 **Note:** Version bump only for package @patternfly/react-charts

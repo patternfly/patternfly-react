@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.85.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.85.1...@patternfly/react-core@4.85.2) (2021-01-04)
+
+
+### Bug Fixes
+
+* **dualListSelector:** do not pass custom handlers to root div ([#5308](https://github.com/patternfly/patternfly-react/issues/5308)) ([577dc02](https://github.com/patternfly/patternfly-react/commit/577dc02d24b2c9b6fff86407f5b22bf9c9c54923))
+
+
+
+
+
 ## [4.85.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.85.0...@patternfly/react-core@4.85.1) (2020-12-16)
 
 
