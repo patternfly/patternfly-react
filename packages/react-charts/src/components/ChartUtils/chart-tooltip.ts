@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
-import { ColorScalePropType, Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
+import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLegendDimensions } from './chart-legend';
@@ -26,7 +26,7 @@ interface ChartLegendTooltipFlyoutInterface {
 
 interface ChartLegendTooltipVisibleDataInterface {
   activePoints?: any[];
-  colorScale?: ColorScalePropType;
+  colorScale?: string[];
   legendData: any;
   text?: StringOrNumberOrCallback | string[] | number[];
   textAsLegendData?: boolean;
