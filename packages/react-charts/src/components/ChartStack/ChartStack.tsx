@@ -3,7 +3,6 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
-  ColorScalePropType,
   D3Scale,
   DomainPropType,
   DomainPaddingPropType,
@@ -75,7 +74,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * values from this color scale to the bars unless colors are explicitly provided in the
    * `dataAttributes` prop.
    */
-  colorScale?: ColorScalePropType;
+  colorScale?: string[];
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.

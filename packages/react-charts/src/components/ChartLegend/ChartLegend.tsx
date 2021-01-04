@@ -2,7 +2,6 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   BlockProps,
-  ColorScalePropType,
   EventCallbackInterface,
   EventPropTypeInterface,
   OrientationTypes,
@@ -74,13 +73,10 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The colorScale prop defines a color scale to be applied to each data
    * symbol in ChartLegend. This prop should be given as an array of CSS
    * colors, or as a string corresponding to one of the built in color
-   * scales: "grayscale", "qualitative", "heatmap", "warm", "cool", "red",
-   * "green", "blue". ChartLegend will assign a color to each symbol by
-   * index, unless they are explicitly specified in the data object.
-   * Colors will repeat when there are more symbols than colors in the
+   * scales. Colors will repeat when there are more symbols than colors in the
    * provided colorScale.
    */
-  colorScale?: ColorScalePropType;
+  colorScale?: string[];
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.

@@ -3,7 +3,6 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
-  ColorScalePropType,
   DataGetterPropType,
   EventCallbackInterface,
   EventPropTypeInterface,
@@ -96,7 +95,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * values from this color scale to the pie slices unless colors are explicitly provided in the
    * data object
    */
-  colorScale?: ColorScalePropType;
+  colorScale?: string[];
   /**
    * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
    * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
