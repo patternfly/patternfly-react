@@ -1,6 +1,5 @@
 import * as React from 'react';
-import createFocusTrap from 'focus-trap';
-import { Options as FocusTrapOptions, FocusTrap as IFocusTrap } from 'focus-trap';
+import { createFocusTrap, Options as FocusTrapOptions, FocusTrap as IFocusTrap } from 'focus-trap';
 
 interface FocusTrapProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;

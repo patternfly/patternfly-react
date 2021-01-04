@@ -3,6 +3,103 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.85.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.85.0...@patternfly/react-core@4.85.1) (2020-12-16)
+
+
+### Bug Fixes
+
+* **DualListSelector:** Add type=button to DualListSelectorListItem buttons ([#5266](https://github.com/patternfly/patternfly-react/issues/5266)) ([c251687](https://github.com/patternfly/patternfly-react/commit/c251687aa472e0138e213b95ce219c4267a38216))
+* **Select:** fix crash when opened using Enter with disabled options ([#5258](https://github.com/patternfly/patternfly-react/issues/5258)) ([06f977f](https://github.com/patternfly/patternfly-react/commit/06f977fe363b3bd3c695c39fd96716167b403bc0)), closes [#5257](https://github.com/patternfly/patternfly-react/issues/5257)
+
+
+
+
+
+# [4.85.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.4...@patternfly/react-core@4.85.0) (2020-12-16)
+
+
+### Features
+
+* **breadcrumb:** add render prop to breadcrumb item ([#5189](https://github.com/patternfly/patternfly-react/issues/5189)) ([492a950](https://github.com/patternfly/patternfly-react/commit/492a950c1fa6448e96a7beaa31dd3084d9a306e3))
+
+
+
+
+
+## [4.84.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.3...@patternfly/react-core@4.84.4) (2020-12-15)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.84.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.2...@patternfly/react-core@4.84.3) (2020-12-11)
+
+
+### Bug Fixes
+
+* **calendar-month:** rely on base styles from react-core/dist/styles/base.css ([#5251](https://github.com/patternfly/patternfly-react/issues/5251)) ([337a667](https://github.com/patternfly/patternfly-react/commit/337a667cf12e6b9f4c0eb98ac3176c6268db07b3))
+
+
+
+
+
+## [4.84.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.1...@patternfly/react-core@4.84.2) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.84.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.84.0...@patternfly/react-core@4.84.1) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.84.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.3...@patternfly/react-core@4.84.0) (2020-12-10)
+
+
+### Features
+
+* **DualListSelector:** add support for trees and checkboxes ([#5207](https://github.com/patternfly/patternfly-react/issues/5207)) ([1533ad8](https://github.com/patternfly/patternfly-react/commit/1533ad8cbf99b132e8383c01e94a121023a4c9d7))
+* **TimePicker:** Add basic time picker ([#5216](https://github.com/patternfly/patternfly-react/issues/5216)) ([e5f11a1](https://github.com/patternfly/patternfly-react/commit/e5f11a19b333703319bc55dd76814ae154bae187))
+
+
+
+
+
+## [4.83.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.2...@patternfly/react-core@4.83.3) (2020-12-09)
+
+
+### Bug Fixes
+
+* **jumplinks:** add offset prop ([#5233](https://github.com/patternfly/patternfly-react/issues/5233)) ([6dd1d35](https://github.com/patternfly/patternfly-react/commit/6dd1d353bae4173056023c60757550372a2fa672))
+
+
+
+
+
+## [4.83.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.1...@patternfly/react-core@4.83.2) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.83.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.83.0...@patternfly/react-core@4.83.1) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.83.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.82.2...@patternfly/react-core@4.83.0) (2020-12-08)
 
 

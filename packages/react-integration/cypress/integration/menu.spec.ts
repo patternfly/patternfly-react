@@ -39,7 +39,7 @@ xdescribe('Menu Test', () => {
       .first()
       .should('have.class', 'pf-c-menu__search');
 
-    cy.get('.pf-c-search-input__text-input').type('Action 1');
+    cy.get('.pf-c-form-control.pf-m-search').type('Action 1');
 
     cy.get('#filtered-items.pf-c-menu__list-item')
       .last()
@@ -56,7 +56,7 @@ xdescribe('Menu Test', () => {
   });
 
   it('Verify Menu with Separator', () => {
-    cy.get('#menu-with-separators.pf-c-menu > div > ul > li')
+    cy.get('#menu-with-separators.pf-c-menu > ul > li')
       .eq(2)
       .should('have.attr', 'id', 'separator');
   });
@@ -83,7 +83,7 @@ xdescribe('Menu Test', () => {
       .first()
       .click();
 
-    cy.get('#favorites-menu.pf-c-menu > div > section')
+    cy.get('#favorites-menu.pf-c-menu > section')
       .first()
       .should('contain', 'Favorites');
   });

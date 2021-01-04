@@ -6,7 +6,6 @@ import ArrowLeftIcon from '@patternfly/react-icons/dist/js/icons/arrow-left-icon
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
-import commonStyles from '@patternfly/react-styles/css/base/patternfly-common';
 import { getUniqueId } from '../../helpers/util';
 
 export enum Weekday {
@@ -261,7 +260,7 @@ export const CalendarMonth = ({
           <tr>
             {calendar[0].map(({ date }, index) => (
               <th key={index} className={styles.calendarMonthDay} scope="col">
-                <span className={commonStyles.screenReader}>{longWeekdayFormat(date)}</span>
+                <span className="pf-screen-reader">{longWeekdayFormat(date)}</span>
                 <span aria-hidden>{weekdayFormat(date)}</span>
               </th>
             ))}

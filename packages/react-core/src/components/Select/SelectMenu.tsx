@@ -228,7 +228,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 </div>
               ))}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
-              <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+              <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true, preventScroll: true }}>
                 <div
                   ref={innerRef}
                   className={css(styles.selectMenu, className)}

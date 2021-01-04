@@ -9,7 +9,10 @@ import {
   StackItem,
   Title,
   Divider,
-  MenuItemAction
+  MenuItemAction,
+  MenuContent,
+  MenuInput,
+  TextInput
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -94,6 +97,10 @@ export class MenuDemo extends Component {
     this.setState({
       input: value
     });
+  };
+
+  handleTextInputChange = (value: string, field: any) => {
+    this.setState({ [field]: value });
   };
 
   renderBasicMenu() {
@@ -201,14 +208,20 @@ export class MenuDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Filterable Menu
         </Title>
-        <Menu
-          hasSearchInput
-          onSearchInputChange={this.onChange}
-          onSelect={this.onSimpleSelect}
-          activeItemId={activeItem}
-          id="filterable-menu"
-        >
-          <MenuList>{menuListItems}</MenuList>
+        <Menu onSelect={this.onSimpleSelect} activeItemId={activeItem} id="filterable-menu">
+          <MenuInput>
+            <TextInput
+              value={input}
+              aria-label="filterable-example-with-text-input"
+              iconVariant="search"
+              type="search"
+              onChange={value => this.handleTextInputChange(value, 'input')}
+            />
+          </MenuInput>
+          <Divider />
+          <MenuContent>
+            <MenuList>{menuListItems}</MenuList>
+          </MenuContent>
         </Menu>
       </StackItem>
     );

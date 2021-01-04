@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
+  Helpers,
   NumberOrCallback,
   OrientationOrCallback,
   StringOrNumberOrCallback,
@@ -19,7 +20,6 @@ import {
   getLegendTooltipVisibleText,
   getTheme
 } from '../ChartUtils';
-import { isFunction } from 'lodash';
 
 /**
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
@@ -294,12 +294,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartLegendTooltipProps) => {
-  const pointerLength =
-    theme && theme.tooltip
-      ? isFunction(theme.tooltip.pointerLength)
-        ? theme.tooltip.pointerLength({ index: rest.index || 0, datum, ...rest })
-        : Number(theme.tooltip.pointerLength)
-      : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
   const legendTooltipProps = {
     legendData: getLegendTooltipVisibleData({ activePoints, legendData, text, theme }),
     legendProps: getLegendTooltipDataProps(labelComponent.props.legendComponent),

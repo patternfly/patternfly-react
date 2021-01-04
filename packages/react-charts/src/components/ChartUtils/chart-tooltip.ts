@@ -1,10 +1,9 @@
 /* eslint-disable camelcase */
 import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
-import { isFunction } from 'lodash';
 import { ColorScalePropType, Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getLegendDimensions, getTextSizeWorkAround } from './chart-legend';
+import { getLegendDimensions } from './chart-legend';
 
 interface ChartCursorTooltipCenterOffsetInterface {
   offsetCursorDimensionX?: boolean; // Adjust the tooltip to appear to the right of the vertical cursor
@@ -50,12 +49,7 @@ export const getCursorTooltipCenterOffset = ({
   offsetCursorDimensionY = false,
   theme
 }: ChartCursorTooltipCenterOffsetInterface) => {
-  const pointerLength =
-    theme && theme.tooltip
-      ? isFunction(theme.tooltip.pointerLength)
-        ? theme.tooltip.pointerLength({ index: 0 })
-        : Number(theme.tooltip.pointerLength)
-      : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
   const offsetX = ({ center, flyoutWidth, width }: any) => {
     const offset = flyoutWidth / 2 + pointerLength;
     return width > center.x + flyoutWidth + pointerLength ? offset : -offset;
@@ -79,7 +73,7 @@ export const getCursorTooltipPoniterOrientation = ({
   horizontal = true,
   theme
 }: ChartCursorTooltipPoniterOrientationInterface): ((props: any) => OrientationTypes) => {
-  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
   const orientationX = ({ center, flyoutWidth, width }: any): OrientationTypes =>
     width > center.x + flyoutWidth + pointerLength ? 'left' : 'right';
   const orientationY = ({ center, flyoutHeight, height }: any): OrientationTypes =>
@@ -183,14 +177,10 @@ export const getLegendTooltipSize = ({
     legendProps,
     theme
   });
-  const textSizeWorkAround = getTextSizeWorkAround({
-    legendData: data,
-    legendOrientation,
-    theme
-  });
+
   return {
     height: heightDimensions.height,
-    width: widthDimensions.width - textSizeWorkAround > 0 ? widthDimensions.width - textSizeWorkAround : 0
+    width: widthDimensions.width > 0 ? widthDimensions.width : 0
   };
 };
 
