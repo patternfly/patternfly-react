@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.12.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.14...@patternfly/react-charts@6.12.15) (2021-01-04)
+
+
+### Bug Fixes
+
+* **charts:** ChartLegendTooltip shown with no data ([#5296](https://github.com/patternfly/patternfly-react/issues/5296)) ([bf05071](https://github.com/patternfly/patternfly-react/commit/bf0507184f6beb3e0d96db4f62f7303cba6cb4d4))
+
+
+
+
+
 ## [6.12.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.13...@patternfly/react-charts@6.12.14) (2021-01-04)
 
 
