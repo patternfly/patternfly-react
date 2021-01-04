@@ -11,7 +11,7 @@ test(`CodeEditor with all flags`, () => {
   const view = shallow(
     <CodeEditor
       isReadOnly
-      isDarkMode
+      isDarkTheme
       isLineNumbers={false}
       isAllowUpload
       isAllowDownload
