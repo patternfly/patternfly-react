@@ -505,6 +505,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       removeAll,
       addSelected,
       onListChange,
+      onOptionSelect,
+      onOptionCheck,
       id,
       isTree,
       ...props
