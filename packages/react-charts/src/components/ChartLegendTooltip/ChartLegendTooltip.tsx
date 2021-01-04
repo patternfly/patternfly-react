@@ -274,6 +274,11 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   y?: number;
 }
 
+interface FlyoutProps {
+  height: number; // legend height
+  width: number; // legend width
+}
+
 export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
   activePoints,
   datum,
@@ -295,28 +300,28 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   ...rest
 }: ChartLegendTooltipProps) => {
   const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
-  const legendTooltipProps = {
+  const legendTooltipProps = () => ({
     legendData: getLegendTooltipVisibleData({ activePoints, legendData, text, theme }),
     legendProps: getLegendTooltipDataProps(labelComponent.props.legendComponent),
     text: getLegendTooltipVisibleText({ activePoints, legendData, text }),
     theme
-  };
+  });
 
   // Returns flyout height based on legend size
-  const getFlyoutHeight = () => {
-    const _flyoutHeight = getLegendTooltipSize(legendTooltipProps).height + ChartLegendTooltipStyles.flyout.padding;
+  const getFlyoutHeight = ({ height }: FlyoutProps) => {
+    const _flyoutHeight = height + ChartLegendTooltipStyles.flyout.padding;
     return title ? _flyoutHeight : _flyoutHeight - 10;
   };
 
   // Returns flyout width based on legend size
-  const getFlyoutWidth = () => getLegendTooltipSize(legendTooltipProps).width + ChartLegendTooltipStyles.flyout.padding;
+  const getFlyoutWidth = ({ width }: FlyoutProps) => width + ChartLegendTooltipStyles.flyout.padding;
 
   // Returns the tooltip content component
-  const getTooltipContentComponent = () =>
+  const getTooltipContentComponent = (props: FlyoutProps) =>
     React.cloneElement(labelComponent, {
       center,
-      flyoutHeight: flyoutHeight || getFlyoutHeight(),
-      flyoutWidth: flyoutWidth || getFlyoutWidth(),
+      flyoutHeight: flyoutHeight || getFlyoutHeight(props),
+      flyoutWidth: flyoutWidth || getFlyoutWidth(props),
       height,
       legendData,
       title,
@@ -326,16 +331,21 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   // Returns the tooltip component
   const getTooltipComponent = () => {
-    const _flyoutWidth = getFlyoutWidth();
+    // There must be at least one active, visible item or else this will return zero for height & width.
+    const legendSize = getLegendTooltipSize(legendTooltipProps());
+    if (legendSize.height === 0 && legendSize.width === 0) {
+      return null;
+    }
+    const _flyoutWidth = getFlyoutWidth(legendSize);
     const tooltipComponent = isCursorTooltip ? <ChartCursorTooltip /> : <ChartTooltip />;
     return React.cloneElement(tooltipComponent, {
       activePoints,
       center,
       datum,
-      flyoutHeight: flyoutHeight || getFlyoutHeight(),
-      flyoutWidth: flyoutWidth || getFlyoutWidth(),
+      flyoutHeight: flyoutHeight || getFlyoutHeight(legendSize),
+      flyoutWidth: flyoutWidth || getFlyoutWidth(legendSize),
       height,
-      labelComponent: getTooltipContentComponent(),
+      labelComponent: getTooltipContentComponent(legendSize),
       ...(flyoutWidth === undefined && {
         showPointer: width > _flyoutWidth + center.x + pointerLength || center.x > _flyoutWidth + pointerLength
       }),

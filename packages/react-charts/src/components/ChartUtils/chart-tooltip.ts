@@ -130,26 +130,31 @@ export const getLegendTooltipSize = ({
     }
   });
 
+  // Set length to ensure minimum spacing between label and value
   let maxLength = maxDataLength + maxTextLength;
-  maxLength += maxDataLength > 10 ? 2 : 4;
+  if (maxDataLength < 20) {
+    maxLength += 2;
+  }
 
-  // Adds spacing to help align legend labels and text values
-  const getSpacer = (legendLabel: string, textLabel: string) => {
-    let spacer = '';
+  // Get spacing to help align legend labels and text values
+  const spacer = 'x';
+  const getSpacing = (legendLabel: string, textLabel: string) => {
+    let spacing = '';
     if (maxLength === 0) {
-      return spacer;
+      return spacing;
     }
     const legendLabelChars = legendLabel ? legendLabel.length : 0;
     const textLabelChars = textLabel ? textLabel.length : 0;
     const maxChars = legendLabelChars + textLabelChars;
 
-    while (spacer.length < maxLength - maxChars) {
-      spacer = ` ${spacer}`;
+    // Add spacer
+    while (spacing.length < maxLength - maxChars) {
+      spacing += spacer;
     }
-    return spacer;
+    return spacing;
   };
 
-  // Format all text (as shown below) to help determine overall legend length.
+  // Format all text (similar to below) to help determine overall width.
   //
   // {name: "Cats   no data"}
   // {name: "Dogs         1"}
@@ -157,15 +162,21 @@ export const getLegendTooltipSize = ({
   // {name: "Mice         3"}
   const data = _text.map((label: string, index: number) => {
     const hasData = legendData && legendData[index] && legendData[index].name;
-    const spacer = hasData ? getSpacer(legendData[index].name, label) : '';
+    const spacing = hasData ? getSpacing(legendData[index].name, label) : '';
+
     return {
-      name: `${hasData ? legendData[index].name : ''}${spacer}${label}`
+      name: `${hasData ? legendData[index].name : ''}${spacing}${label}`
     };
   });
 
+  // Replace whitespace with spacer char for consistency in width
+  const formattedData = data.map(val => ({
+    name: val.name.replace(/ /g, spacer)
+  }));
+
   // This should include both legend data and text
   const widthDimensions = getLegendDimensions({
-    legendData: data,
+    legendData: formattedData,
     legendOrientation,
     legendProps,
     theme
@@ -177,7 +188,6 @@ export const getLegendTooltipSize = ({
     legendProps,
     theme
   });
-
   return {
     height: heightDimensions.height,
     width: widthDimensions.width > 0 ? widthDimensions.width : 0
