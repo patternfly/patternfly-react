@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ApplicationLauncherSeparator } from '../ApplicationLauncher/ApplicationLauncherSeparator';
-import { Divider } from '../Divider/Divider';
+import { ApplicationLauncherSeparator } from '../components/ApplicationLauncher/ApplicationLauncherSeparator';
+import { Divider } from '../components/Divider/Divider';
 
 /**
  * This function is a helper for creating an array of renderable favorite items for the Application launcher or Select

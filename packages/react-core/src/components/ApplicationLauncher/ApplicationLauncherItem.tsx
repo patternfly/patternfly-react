@@ -6,6 +6,7 @@ import { ApplicationLauncherContent } from './ApplicationLauncherContent';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { ApplicationLauncherItemContext } from './ApplicationLauncherItemContext';
 import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import { getUniqueId } from '../../helpers/util';
 
 export interface ApplicationLauncherItemProps {
   /** Icon rendered before the text */
@@ -74,7 +75,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
                 className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
                 aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
                 onClick={() => {
-                  onFavorite(id, isFavorite);
+                  onFavorite((id || getUniqueId('app-launcher-option')).replace('favorite-', ''), isFavorite);
                 }}
               >
                 <StarIcon />

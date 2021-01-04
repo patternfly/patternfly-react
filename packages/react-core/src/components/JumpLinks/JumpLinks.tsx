@@ -26,7 +26,12 @@ const getScrollItems = (children: React.ReactNode, hasScrollSpy: boolean) =>
   React.Children.toArray(children).map((child: any) => {
     if (hasScrollSpy && typeof document !== 'undefined' && child.type === JumpLinksItem) {
       const scrollNode = child.props.node || child.props.href;
-      if (typeof scrollNode === 'string' && typeof document !== 'undefined') {
+      if (typeof scrollNode === 'string') {
+        if (scrollNode.startsWith('#')) {
+          // Allow spaces and other special characters as `id`s
+          // https://stackoverflow.com/questions/70579/what-are-valid-values-for-the-id-attribute-in-html
+          return document.getElementById(scrollNode.substr(1)) as HTMLElement;
+        }
         return document.querySelector(scrollNode) as HTMLElement;
       } else if (scrollNode instanceof HTMLElement) {
         return scrollNode;

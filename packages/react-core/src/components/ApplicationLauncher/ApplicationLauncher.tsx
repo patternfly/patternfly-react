@@ -10,6 +10,7 @@ import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
+import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 
 export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
@@ -94,45 +95,6 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     );
   };
 
-  createRenderableFavorites = () => {
-    const { items, isGrouped, favorites } = this.props;
-    if (isGrouped) {
-      const favoriteItems: React.ReactNode[] = [];
-      (items as React.ReactElement[]).forEach(group =>
-        (group.props.children as React.ReactElement[])
-          .filter(item => favorites.includes(item.props.id))
-          .map(item => favoriteItems.push(React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true })))
-      );
-      return favoriteItems;
-    }
-    return (items as React.ReactElement[])
-      .filter(item => favorites.includes(item.props.id))
-      .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true }));
-  };
-
-  extendItemsWithFavorite = () => {
-    const { items, isGrouped, favorites } = this.props;
-    if (isGrouped) {
-      return (items as React.ReactElement[]).map(group =>
-        React.cloneElement(group, {
-          children: React.Children.map(group.props.children as React.ReactElement[], item => {
-            if (item.type === ApplicationLauncherSeparator) {
-              return item;
-            }
-            return React.cloneElement(item, {
-              isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
-            });
-          })
-        })
-      );
-    }
-    return (items as React.ReactElement[]).map(item =>
-      React.cloneElement(item, {
-        isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
-      })
-    );
-  };
-
   render() {
     const {
       'aria-label': ariaLabel,
@@ -164,7 +126,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       let favoritesGroup: React.ReactNode[] = [];
       let renderableFavorites: React.ReactNode[] = [];
       if (favorites.length > 0) {
-        renderableFavorites = this.createRenderableFavorites();
+        renderableFavorites = createRenderableFavorites(items, isGrouped, favorites, true);
         favoritesGroup = [
           <ApplicationLauncherGroup key="favorites" label={favoritesLabel}>
             {renderableFavorites}
@@ -173,13 +135,14 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
         ];
       }
       if (renderableFavorites.length > 0) {
-        renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
+        renderableItems = favoritesGroup.concat(extendItemsWithFavorite(items, isGrouped, favorites));
       } else {
-        renderableItems = this.extendItemsWithFavorite();
+        renderableItems = extendItemsWithFavorite(items, isGrouped, favorites);
       }
     } else {
       renderableItems = items;
     }
+
     if (items.length === 0) {
       renderableItems = [
         <ApplicationLauncherGroup key="no-results-group">

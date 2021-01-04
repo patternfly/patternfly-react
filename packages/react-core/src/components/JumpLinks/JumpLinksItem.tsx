@@ -18,6 +18,8 @@ export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>,
 export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   isActive,
   href,
+  // eslint-disable-next-line
+  node,
   children,
   onClick,
   ...props

@@ -13,10 +13,10 @@ import pfIcon from './pf-logo-small.svg';
 Note: Application launcher is built on Dropdown, for extended API go to [Dropdown](/documentation/react/components/dropdown) documentation.
 To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [Tooltip](/documentation/react/components/tooltip).
 
-
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -60,6 +60,7 @@ class SimpleApplicationLauncher extends React.Component {
 ```
 
 ### Router link
+
 ```js
 import React from 'react';
 import { Link } from '@reach/router';
@@ -127,6 +128,7 @@ class SimpleApplicationLauncher extends React.Component {
 ```
 
 ### Disabled
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -176,6 +178,7 @@ class SimpleApplicationLauncher extends React.Component {
 ```
 
 ### Aligned right
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -228,6 +231,7 @@ class SimpleApplicationLauncher extends React.Component {
 ```
 
 ### Aligned top
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -278,6 +282,7 @@ class SimpleApplicationLauncher extends React.Component {
 ```
 
 ### With tooltip
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -333,6 +338,7 @@ class TooltipApplicationLauncher extends React.Component {
 ```
 
 ### With sections and icons
+
 ```js
 import React from 'react';
 import {
@@ -405,6 +411,7 @@ class ApplicationLauncherSections extends React.Component {
 ```
 
 ### With favorites and search
+
 ```js
 import React from 'react';
 import {
@@ -526,6 +533,7 @@ class ApplicationLauncherFavorites extends React.Component {
 ```
 
 ### With custom icon
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -576,6 +584,7 @@ class ApplicationLauncheIcon extends React.Component {
 ```
 
 ### Basic with menu appended to document body
+
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -612,11 +621,11 @@ class ApplicationLauncherDocumentBody extends React.Component {
       </ApplicationLauncherItem>
     ];
     return (
-      <ApplicationLauncher 
-        menuAppendTo={() => document.body} 
-        onSelect={this.onSelect} 
-        onToggle={this.onToggle} 
-        isOpen={isOpen} 
+      <ApplicationLauncher
+        menuAppendTo={() => document.body}
+        onSelect={this.onSelect}
+        onToggle={this.onToggle}
+        isOpen={isOpen}
         items={appLauncherItems}
       />
     );
