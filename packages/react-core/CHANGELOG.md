@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.86.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.85.2...@patternfly/react-core@4.86.0) (2021-01-04)
+
+
+### Features
+
+* **ApplicationLauncher:** use favorites util, move util to helpers ([#5267](https://github.com/patternfly/patternfly-react/issues/5267)) ([5dfbc6b](https://github.com/patternfly/patternfly-react/commit/5dfbc6bd668629f9a17e21f2f47213b9e2e8fa2a))
+
+
+
+
+
 ## [4.85.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.85.1...@patternfly/react-core@4.85.2) (2021-01-04)
 
 
