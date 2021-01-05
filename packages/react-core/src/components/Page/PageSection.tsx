@@ -12,7 +12,8 @@ export enum PageSectionVariants {
 
 export enum PageSectionTypes {
   default = 'default',
-  nav = 'nav'
+  nav = 'nav',
+  wizard = 'wizard'
 }
 
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
@@ -23,7 +24,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Section background color variant */
   variant?: 'default' | 'light' | 'dark' | 'darker';
   /** Section type variant */
-  type?: 'default' | 'nav';
+  type?: 'default' | 'nav' | 'wizard';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
   /** Limits the width of the section */
@@ -49,7 +50,8 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
 
 const variantType = {
   [PageSectionTypes.default]: styles.pageMainSection,
-  [PageSectionTypes.nav]: styles.pageMainNav
+  [PageSectionTypes.nav]: styles.pageMainNav,
+  [PageSectionTypes.wizard]: styles.pageMainWizard
 };
 
 const variantStyle = {
