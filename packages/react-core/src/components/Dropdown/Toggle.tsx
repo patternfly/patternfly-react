@@ -63,13 +63,13 @@ export class Toggle extends React.Component<ToggleProps> {
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
-    document.addEventListener('keydown', this.onEscPress);
+    document.addEventListener('keydown', this.onEscPress, { capture: true });
   };
 
   componentWillUnmount = () => {
     document.removeEventListener('mousedown', this.onDocClick);
     document.removeEventListener('touchstart', this.onDocClick);
-    document.removeEventListener('keydown', this.onEscPress);
+    document.removeEventListener('keydown', this.onEscPress, { capture: true });
   };
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
