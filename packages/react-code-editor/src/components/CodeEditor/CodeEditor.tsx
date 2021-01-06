@@ -66,12 +66,26 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isAllowCopy?: boolean;
   /** Accessibly label for the copy button*/
   copyButtonAriaLabel?: string;
+  /** */
+  copyButtonToolTipText?: string;
   /** Text to display after code copied to clipboard*/
   copyButtonSuccessTooltipText?: string;
   /** Accessible label for the upload button */
   uploadButtonAriaLabel?: string;
+  /** */
+  uploadButtonToolTipText?: string;
   /** Accessible label for the download button */
   downloadButtonAriaLabel?: string;
+  /** */
+  downloadButtonToolTipText?: string;
+  /** */
+  toolTipExitDelay: number;
+  /** */
+  toolTipEntryDelay: number;
+  /** */
+  toolTipMaxWidth: string;
+  /** */
+  toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 interface CodeEditorState {
@@ -79,11 +93,13 @@ interface CodeEditorState {
   filename: string;
   isLoading: boolean;
   showEmptyState: boolean;
+  copied: boolean;
 }
 
 export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
   private editor: any = null;
+  timer = null as number;
   static defaultProps: CodeEditorProps = {
     className: '',
     code: '',
@@ -102,7 +118,14 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     copyButtonAriaLabel: 'Copy code to clipboard',
     uploadButtonAriaLabel: 'Upload code',
     downloadButtonAriaLabel: 'Download code',
-    copyButtonSuccessTooltipText: 'Content added to clipboard'
+    copyButtonToolTipText: 'Copy to clipboard',
+    uploadButtonToolTipText: 'Upload',
+    downloadButtonToolTipText: 'Download',
+    copyButtonSuccessTooltipText: 'Content added to clipboard',
+    toolTipExitDelay: 1600,
+    toolTipEntryDelay: 100,
+    toolTipMaxWidth: '100px',
+    toolTipPosition: 'top'
   };
 
   static getLanguageFromExtension(extension: string) {
@@ -141,7 +164,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       value: this.props.code,
       filename: '',
       isLoading: false,
-      showEmptyState: true
+      showEmptyState: true,
+      copied: false
     };
   }
 
@@ -205,8 +229,18 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   };
 
   copyCode = () => {
+    if (this.timer) {
+      window.clearTimeout(this.timer);
+      this.setState({ copied: false });
+    }
     this.editor.focus();
     document.execCommand('copy');
+    this.setState({ copied: true }, () => {
+      this.timer = window.setTimeout(() => {
+        this.setState({ copied: false });
+        this.timer = null;
+      }, 2500);
+    });
   };
 
   download = () => {
@@ -224,7 +258,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   };
 
   render() {
-    const { value, isLoading, showEmptyState } = this.state;
+    const { value, isLoading, showEmptyState, copied } = this.state;
     const {
       isDarkTheme,
       height,
@@ -235,8 +269,15 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       isReadOnly,
       isAllowUpload,
       copyButtonAriaLabel,
+      copyButtonToolTipText,
       uploadButtonAriaLabel,
+      uploadButtonToolTipText,
       downloadButtonAriaLabel,
+      downloadButtonToolTipText,
+      toolTipEntryDelay,
+      toolTipExitDelay,
+      toolTipMaxWidth,
+      toolTipPosition,
       isLineNumbers,
       isAllowDownload,
       language,
@@ -286,21 +327,46 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               {(isAllowUpload || isAllowDownload || isAllowUpload) && (
                 <div className={css(styles.codeEditorControls)}>
                   {isAllowCopy && (!showEmptyState || !!value) && (
-                    <Tooltip trigger="click" content={<div>{copyButtonSuccessTooltipText}</div>}>
+                    <Tooltip
+                      trigger="mouseenter"
+                      content={<div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>}
+                      exitDelay={toolTipExitDelay}
+                      entryDelay={toolTipEntryDelay}
+                      maxWidth={toolTipMaxWidth}
+                      position={toolTipPosition}
+                    >
                       <Button onClick={this.copyCode} variant="control" aria-label={copyButtonAriaLabel}>
                         <CopyIcon />
                       </Button>
                     </Tooltip>
                   )}
                   {isAllowUpload && (
-                    <Button onClick={open} variant="control" aria-label={uploadButtonAriaLabel}>
-                      <UploadIcon />
-                    </Button>
+                    <Tooltip
+                      trigger="mouseenter focus click"
+                      content={<div>{uploadButtonToolTipText}</div>}
+                      exitDelay={toolTipExitDelay}
+                      entryDelay={toolTipEntryDelay}
+                      maxWidth={toolTipMaxWidth}
+                      position={toolTipPosition}
+                    >
+                      <Button onClick={open} variant="control" aria-label={uploadButtonAriaLabel}>
+                        <UploadIcon />
+                      </Button>
+                    </Tooltip>
                   )}
                   {isAllowDownload && (!showEmptyState || !!value) && (
-                    <Button onClick={this.download} variant="control" aria-label={downloadButtonAriaLabel}>
-                      <DownloadIcon />
-                    </Button>
+                    <Tooltip
+                      trigger="mouseenter focus click"
+                      content={<div>{downloadButtonToolTipText}</div>}
+                      exitDelay={toolTipExitDelay}
+                      entryDelay={toolTipEntryDelay}
+                      maxWidth={toolTipMaxWidth}
+                      position={toolTipPosition}
+                    >
+                      <Button onClick={this.download} variant="control" aria-label={downloadButtonAriaLabel}>
+                        <DownloadIcon />
+                      </Button>
+                    </Tooltip>
                   )}
                 </div>
               )}
