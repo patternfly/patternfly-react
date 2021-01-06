@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.15...@patternfly/react-charts@6.13.0) (2021-01-06)
+
+
+### Features
+
+* **packages:** use react 17 ([#5111](https://github.com/patternfly/patternfly-react/issues/5111)) ([7fbafcc](https://github.com/patternfly/patternfly-react/commit/7fbafcc947c95d2bda2f4fad8f7737cf7dd3fca6))
+
+
+
+
+
 ## [6.12.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.14...@patternfly/react-charts@6.12.15) (2021-01-04)
 
 

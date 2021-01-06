@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.87.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.86.1...@patternfly/react-core@4.87.0) (2021-01-06)
+
+
+### Features
+
+* **packages:** use react 17 ([#5111](https://github.com/patternfly/patternfly-react/issues/5111)) ([7fbafcc](https://github.com/patternfly/patternfly-react/commit/7fbafcc947c95d2bda2f4fad8f7737cf7dd3fca6))
+
+
+
+
+
 ## [4.86.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.86.0...@patternfly/react-core@4.86.1) (2021-01-04)
 
 
