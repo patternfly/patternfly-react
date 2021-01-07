@@ -17,8 +17,10 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   isResizable?: boolean;
   /** Callback for resize end. */
   onResize?: (width: number, id: string) => void;
-  /** The minimum size of a resizable drawer, in pixels. Defaults to the starting width of the drawer. */
+  /** The minimum size of a resizable drawer, in pixels. Defaults to 0. */
   minSize?: number;
+  /** The starting size of a resizable drawer, in pixels. Defaults to minSize. */
+  defaultSize?: number;
   /** The maximum size of a resizable drawer, in pixels. Defaults to the max width of the parent container. */
   maxSize?: number;
   /** The increment amount for keyboard drawer resizing, in pixels. */
@@ -27,7 +29,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   resizeAriaLabel?: string;
   /** Aria described by label for the resizable drawer splitter. */
   resizeAriaDescribedBy?: string;
-  /** Width for drawer panel at various breakpoints */
+  /** Width for drawer panel at various breakpoints. Overriden by resizable drawer minSize and defaultSize. */
   widths?: {
     default?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
     lg?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
@@ -46,6 +48,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   isResizable = false,
   onResize,
   minSize = 0,
+  defaultSize = minSize,
   maxSize,
   increment = 5,
   resizeAriaLabel = 'Resize',
@@ -214,6 +217,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         }
       }}
       hidden={hidden}
+      {...(defaultSize && { style: { '--pf-c-drawer__panel--FlexBasis': defaultSize + 'px' } as React.CSSProperties })}
       {...props}
     >
       <React.Fragment>
