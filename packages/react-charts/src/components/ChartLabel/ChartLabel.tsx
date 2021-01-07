@@ -43,11 +43,18 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
    * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
    * unitless number, it is assumed to be ems.
+   *
+   * @propType number | string | Function
    */
   capHeight?: StringOrNumberOrCallback;
   /**
    * The children of this component define the content of the label. This makes using the component similar to normal
    * HTML spans or labels. strings, numbers, and functions of data / value are supported.
+   *
+   * Note: This prop should not be set manually.
+   *
+   * @propType number | string | Function
+   * @hide
    */
   children?: StringOrNumberOrCallback;
   /**
@@ -75,11 +82,15 @@ export interface ChartLabelProps extends VictoryLabelProps {
   direction?: 'rtl' | 'ltr' | 'inherit';
   /**
    * The dx prop defines a horizontal shift from the `x` coordinate.
+   *
+   * @propType number | string | Function
    */
   dx?: StringOrNumberOrCallback;
   /**
    * The dy prop defines a vertical shift from the `y` coordinate. Since this component already accounts for
    * `capHeight`, `lineHeight`, and `verticalAnchor`, this will usually not be necessary.
+   *
+   * @propType number | string | Function
    */
   dy?: StringOrNumberOrCallback;
   /**
@@ -88,7 +99,11 @@ export interface ChartLabelProps extends VictoryLabelProps {
    */
   events?: React.DOMAttributes<any>;
   /**
-   * The index prop represents the index of the datum in the data array. This prop should not be set manually.
+   * The index prop represents the index of the datum in the data array.
+   *
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   index?: string | number;
   /**
@@ -102,6 +117,8 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * charts, where it may be desireable to position a label either parallel or perpendicular to its corresponding angle.
    * When this prop is not set, perpendicular label placement will be used for polar charts, and vertical label
    * placement will be used for cartesian charts.
+   *
+   * @propType string
    */
   labelPlacement?: LabelOrientationType;
   /**
@@ -110,18 +127,24 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * but the result is similar: a roughly equal amount of extra space is distributed above and below the line of text.
    * The value should ideally use the same units as `capHeight` and `dy`, preferably ems.
    * If given a unitless number, it is assumed to be ems.
+   *
+   * @propType number | string | Function
    */
   lineHeight?: StringOrNumberOrCallback;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
-   * **This prop should not be set manually.**
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   polar?: boolean;
   /**
@@ -131,7 +154,11 @@ export interface ChartLabelProps extends VictoryLabelProps {
   renderInPortal?: boolean;
   /**
    * Victory components can pass a scale prop to their label component. This can be used to calculate the position of
-   * label elements from datum. This prop should not be set manually.
+   * label elements from datum.
+   *
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   scale?: { x?: any; y?: any };
   /**
@@ -143,11 +170,15 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * of datum, or an array of any of these. Strings may include newline characters, which ChartLabel will split into
    * separate <tspan/> elements. When text is given as an array, separate <tspan/> elements will be created for each
    * element in the array.
+   *
+   * @propType number | string | Function | string[]
    */
   text?: string[] | StringOrNumberOrCallback;
   /**
    * The textAnchor prop defines how the text is horizontally positioned relative to the given `x` and `y` coordinates.
    * Options are "start", "middle" and "end". Note that this overrides the style prop.
+   *
+   * @propType string | Function
    */
   textAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
@@ -158,13 +189,17 @@ export interface ChartLabelProps extends VictoryLabelProps {
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y`
    * coordinates. Options are "start", "middle" and "end".
+   *
+   * @propType string
    */
   verticalAnchor?: VerticalAnchorType | (() => VerticalAnchorType);
   /**
    * This props refers to the width of the svg that VictoryLabel is rendered within. This prop is passed from parents
    * of VictoryLabel.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   width?: number;
   /**

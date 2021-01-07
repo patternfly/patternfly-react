@@ -68,8 +68,8 @@ export interface ChartDonutProps extends ChartPieProps {
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    *
-   * @example
-   * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
+   * @propType boolean | object
+   * @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: boolean | AnimatePropTypeInterface;
   /**
@@ -91,6 +91,8 @@ export interface ChartDonutProps extends ChartPieProps {
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
    * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
    * unitless number, it is assumed to be ems.
+   *
+   * @propType number | string | Function
    */
   capHeight?: StringOrNumberOrCallback;
   /**
@@ -99,6 +101,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    *
+   * @propType string[] | { x: string[], y: string[] }
    * @example ["dogs", "cats", "mice"]
    */
   categories?: CategoryPropType;
@@ -134,6 +137,8 @@ export interface ChartDonutProps extends ChartPieProps {
   containerComponent?: React.ReactElement<any>;
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut
+   *
+   * @propType number | Function
    */
   cornerRadius?: SliceNumberOrCallback<SliceProps, 'cornerRadius'>;
   /**
@@ -144,7 +149,9 @@ export interface ChartDonutProps extends ChartPieProps {
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
    *
-   * @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]],
+   * @example
+   *
+   * [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]],
    * [[{x: "a", y: 1}, {x: "b", y: 2}], [{x: "a", y: 2}, {x: "b", y: 3}]]
    */
   data?: any[];
@@ -166,6 +173,8 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * @propType number | string | Function
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -183,6 +192,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
    *
+   * @propType object[]
    * @example
    * events={[
    *   {
@@ -212,6 +222,8 @@ export interface ChartDonutProps extends ChartPieProps {
   events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonut uses the standard externalEventMutations prop.
+   *
+   * @propType object[]
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
@@ -240,6 +252,8 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
+   *
+   * @propType number | Function
    */
   innerRadius?: NumberOrCallback;
   /**
@@ -257,11 +271,15 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * When this prop is not given, the label will be positioned at the centroid of each slice.
+   *
+   * @propType string | Function
    */
   labelPosition?: VictorySliceLabelPositionType | ((props: SliceProps) => VictorySliceLabelPositionType);
   /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
+   *
+   * @propType number | Function
    */
   labelRadius?: number | ((props: SliceProps) => number);
   /**
@@ -326,12 +344,16 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
-   * **This prop should not be set manually.**
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
+   *
+   * @propType number | Function
    */
   padAngle?: NumberOrCallback;
   /**
@@ -339,27 +361,37 @@ export interface ChartDonutProps extends ChartPieProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
+   *
+   * @propType number | Function
    */
   radius?: NumberOrCallback;
   /**
    * The sharedEvents prop is used internally to coordinate events between components.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
+   *
+   * @propType number | string | Function | string[]
    */
   sortKey?: DataGetterPropType;
   /**
    * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+   *
+   * @propType string
    */
   sortOrder?: SortOrderPropType;
   /**
@@ -378,6 +410,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    *
+   * @propType { parent: object, data: object, labels: object }
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
   style?: VictoryStyleInterface;
@@ -411,6 +444,8 @@ export interface ChartDonutProps extends ChartPieProps {
    * When using ChartDonut as a solo component, implement the theme directly on
    * ChartDonut. If you are wrapping ChartDonut in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -487,6 +522,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    */
   x?: DataGetterPropType;
@@ -499,6 +535,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;

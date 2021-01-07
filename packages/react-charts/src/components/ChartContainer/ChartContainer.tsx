@@ -13,8 +13,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
   /**
    * The children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
-   *
-   * **This prop should not be set manually.**
    */
   children?: React.ReactElement | React.ReactElement[];
   /**
@@ -49,7 +47,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * applicable. Use the invert method to convert event coordinate information to
    * data. `scale.x.invert(evt.offsetX)`.
    *
-   * @example {{ onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}}
+   * @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}
    */
   events?: React.DOMAttributes<any>;
   /**
@@ -65,13 +63,17 @@ export interface ChartContainerProps extends VictoryContainerProps {
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
-   * **This prop should not be set manually.**
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   polar?: boolean;
   /**
@@ -109,6 +111,8 @@ export interface ChartContainerProps extends VictoryContainerProps {
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**

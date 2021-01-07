@@ -15,7 +15,9 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * he children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   children?: React.ReactElement | React.ReactElement[];
   /**
@@ -43,6 +45,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * The cursorLabel prop defines the label that will appear next to the cursor. A label will only appear if cursorLabel
    * is set. This prop should be given as a function of a point (an Object with x and y properties).
    *
+   * @propType Function
    * example: cursorLabel={(point) => point.x}
    */
   cursorLabel?: (point: CoordinatesPropType) => any | void;
@@ -55,6 +58,8 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   /**
    * The cursorLabelOffset prop determines the pixel offset of the cursor label from the cursor point. This prop should
    * be an Object with x and y properties, or a number to be used for both dimensions.
+   *
+   * @propType number | { x: number, y: number }
    */
   cursorLabelOffset?: number | CoordinatesPropType;
   /**
@@ -62,7 +67,8 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * displayed, use the defaultCursorValue prop to set the default value. The prop should be a point (an Object with x
    * and y properties) for 2-dimensional cursors, or a number for 1-dimensional cursors.
    *
-   * examples: defaultCursorValue={{x: 1, y: 1}}, defaultCursorValue={0}
+   * @propType number | { x: number, y: number }
+   * @example defaultCursorValue={{x: 1, y: 1}}, defaultCursorValue={0}
    */
   defaultCursorValue?: number | CoordinatesPropType;
   /**
@@ -86,7 +92,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * applicable. Use the invert method to convert event coordinate information to
    * data. `scale.x.invert(evt.offsetX)`.
    *
-   * @example {{ onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}}
+   * @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}
    */
   events?: React.DOMAttributes<any>;
   /**
@@ -104,19 +110,24 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * called with value (the updated cursor value) and props (the props used by ChartCursorContainer). A common use for
    * onCursorChange is to save the cursor value to state and use it in another part of the view.
    *
+   * @propType Function
    * example: onCursorChange={(value, props) => this.setState({cursorValue: value})}
    */
   onCursorChange?: (value: CoordinatesPropType, props: VictoryCursorContainerProps) => void;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
-   * **This prop should not be set manually.**
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   polar?: boolean;
   /**
@@ -156,6 +167,8 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
