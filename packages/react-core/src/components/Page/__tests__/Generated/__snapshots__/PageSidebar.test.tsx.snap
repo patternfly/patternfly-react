@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageSidebar should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ContextProvider
+  value={
+    Object {
+      "isNavOpen": true,
+    }
+  }
+>
+  <ContextConsumer>
+    <Component />
+  </ContextConsumer>
+</ContextProvider>
 `;
