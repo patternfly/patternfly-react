@@ -66,6 +66,9 @@ ScrollspyH2 = () => {
               </p>
             </div>
           )}
+          <div style={{ marginBottom: '100vh' }}>
+            Lots of marginBottom.
+          </div>
         </PageSection>
       </PageGroup>
     </Page>
@@ -75,7 +78,7 @@ ScrollspyH2 = () => {
 
 ### Vertical scrollspy with subsections
 
-This demo expands on the previous to show the JumpLinks in a vertical layout with subsections.
+This demo expands on the previous to show the JumpLinks in a vertical layout with subsections. It scrolls the [Page](/components/page)'s `mainContainerId` with an `offset` of 76px for the masthead.
 
 ```js isFullscreen
 import React from 'react';

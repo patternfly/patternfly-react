@@ -23,36 +23,28 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   offset?: number;
 }
 
-function flatDeep(arr: any[], d = 1): any[] {
-  return d > 0
-    ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
-    : arr.slice();
-}
-
-const getScrollItems = (children: React.ReactNode): HTMLElement[] =>
-  flatDeep(
-    React.Children.toArray(children).map((child: any) => {
-      if (typeof document !== 'undefined' && child.type === JumpLinksItem) {
-        const scrollNode = child.props.node || child.props.href;
-        if (typeof scrollNode === 'string') {
-          if (scrollNode.startsWith('#')) {
-            // Allow spaces and other special characters as `id`s
-            // https://stackoverflow.com/questions/70579/what-are-valid-values-for-the-id-attribute-in-html
-            return document.getElementById(scrollNode.substr(1)) as HTMLElement;
-          }
-          return document.querySelector(scrollNode) as HTMLElement;
-        } else if (scrollNode instanceof HTMLElement) {
-          return scrollNode;
+// Recursively find JumpLinkItems and return an array of all their scrollNodes
+const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
+  React.Children.forEach(children, (child: any) => {
+    if (typeof document !== 'undefined' && child.type === JumpLinksItem) {
+      const scrollNode = child.props.node || child.props.href;
+      if (typeof scrollNode === 'string') {
+        if (scrollNode.startsWith('#')) {
+          // Allow spaces and other special characters as `id`s to be nicer to consumers
+          // https://stackoverflow.com/questions/70579/what-are-valid-values-for-the-id-attribute-in-html
+          res.push(document.getElementById(scrollNode.substr(1)) as HTMLElement);
         }
+        return document.querySelector(scrollNode) as HTMLElement;
+      } else if (scrollNode instanceof HTMLElement) {
+        res.push(scrollNode);
       }
-      if (child.type === React.Fragment || child.type === JumpLinksList) {
-        return getScrollItems(child.props.children);
-      }
-
-      return null;
-    }),
-    10
-  );
+    }
+    if (child.type === React.Fragment || child.type === JumpLinksList) {
+      getScrollItems(child.props.children, res);
+    }
+  });
+  return res;
+};
 
 export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   isCentered,
@@ -66,7 +58,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableSelector);
-  const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children) : []);
+  const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
   if (hasScrollSpy) {
     React.useEffect(() => {
@@ -84,7 +76,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           let newScrollItems = scrollItems;
           // Items might have rendered after this component. Do a quick refresh.
           if (!newScrollItems[0]) {
-            newScrollItems = getScrollItems(children);
+            newScrollItems = getScrollItems(children, []);
             setScrollItems(newScrollItems);
           }
           const scrollElements = newScrollItems
@@ -123,7 +115,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 // Items might have rendered after this component. Do a quick refresh.
                 let newScrollItems;
                 if (!scrollItem) {
-                  newScrollItems = getScrollItems(children);
+                  newScrollItems = getScrollItems(children, []);
                   setScrollItems(newScrollItems);
                 }
                 const newScrollItem = scrollItem || newScrollItems[i];
