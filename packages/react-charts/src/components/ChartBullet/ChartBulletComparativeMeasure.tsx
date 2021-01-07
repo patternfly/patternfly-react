@@ -40,6 +40,8 @@ export interface ChartBulletComparativeMeasureProps {
    * a function, it will be evaluated with the arguments datum, and active. When this value
    * is not given, a default value will be calculated based on the overall dimensions of
    * the chart, and the number of bars.
+   *
+   * @propType number | Function
    */
   barWidth?: NumberOrCallback;
   /**
@@ -64,9 +66,12 @@ export interface ChartBulletComparativeMeasureProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    *
-   * @example {x: [0, 2], y: [0, 100]}
-   *
    * Note: The x domain is expected to be `x: [0, 2]` in order to position all measures properly
+   *
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high], { x: [low, high], y: [low, high] }
+   *
+   * {x: [0, 2], y: [0, 100]}
    */
   domain?: DomainPropType;
   /**
@@ -111,6 +116,8 @@ export interface ChartBulletComparativeMeasureProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
@@ -125,6 +132,8 @@ export interface ChartBulletComparativeMeasureProps {
    * When using ChartLine as a solo component, implement the theme directly on
    * ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -157,6 +166,7 @@ export interface ChartBulletComparativeMeasureProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;

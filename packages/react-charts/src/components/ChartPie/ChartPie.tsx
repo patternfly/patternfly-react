@@ -61,6 +61,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    *
+   * @propType boolean | object
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -85,6 +86,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    *
+   * @propType string[] | { x: string[], y: string[] }
    * @example ["dogs", "cats", "mice"]
    */
   categories?: CategoryPropType;
@@ -120,6 +122,8 @@ export interface ChartPieProps extends VictoryPieProps {
   containerComponent?: React.ReactElement<any>;
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartPie
+   *
+   * @propType number | Function
    */
   cornerRadius?: SliceNumberOrCallback<SliceProps, 'cornerRadius'>;
   /**
@@ -152,6 +156,8 @@ export interface ChartPieProps extends VictoryPieProps {
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * @propType number | string | Function
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -169,6 +175,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
    *
+   * @propType object[]
    * @example
    * events={[
    *   {
@@ -198,6 +205,8 @@ export interface ChartPieProps extends VictoryPieProps {
   events?: EventPropTypeInterface<VictorySliceTTargetType, StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartPie uses the standard externalEventMutations prop.
+   *
+   * @propType object[]
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
@@ -227,6 +236,8 @@ export interface ChartPieProps extends VictoryPieProps {
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge. When this prop is set to zero
    * a regular pie chart is rendered.
+   *
+   * @propType number | Function
    */
   innerRadius?: NumberOrCallback;
   /**
@@ -243,12 +254,17 @@ export interface ChartPieProps extends VictoryPieProps {
   labelComponent?: React.ReactElement<any>;
   /**
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
-   * When this prop is not given, the label will be positioned at the centroid of each slice.
+   * This prop should be given as "startAngle", "endAngle", "centroid", or as a function that returns one of these
+   * values. When this prop is not given, the label will be positioned at the centroid of each slice.
+   *
+   * @propType string | Function
    */
   labelPosition?: VictorySliceLabelPositionType | ((props: SliceProps) => VictorySliceLabelPositionType);
   /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
+   *
+   * @propType number | Function
    */
   labelRadius?: number | ((props: SliceProps) => number);
   /**
@@ -312,11 +328,17 @@ export interface ChartPieProps extends VictoryPieProps {
   name?: string;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
+   *
+   * @propType number | Function
    */
   padAngle?: NumberOrCallback;
   /**
@@ -324,26 +346,36 @@ export interface ChartPieProps extends VictoryPieProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
+   *
+   * @propType number | Function
    */
   radius?: NumberOrCallback;
   /**
    * The sharedEvents prop is used internally to coordinate events between components.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the final dataset.
+   *
+   * @propType number | string | Function | string[]
    */
   sortKey?: DataGetterPropType;
   /**
    * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+   *
+   * @propType string
    */
   sortOrder?: SortOrderPropType;
   /**
@@ -362,6 +394,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    *
+   * @propType { parent: object, data: object, labels: object }
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
   style?: VictoryStyleInterface;
@@ -371,6 +404,8 @@ export interface ChartPieProps extends VictoryPieProps {
    * When using ChartPie as a solo component, implement the theme directly on
    * ChartPie. If you are wrapping ChartPie in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -407,6 +442,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    */
   x?: DataGetterPropType;
@@ -419,6 +455,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;

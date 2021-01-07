@@ -29,8 +29,8 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    *
-   * @example
-   * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
+   * @propType boolean | object
+   * @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: boolean | AnimatePropTypeInterface;
   /**
@@ -88,7 +88,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * given as a array of the minimum and maximum expected values for your axis.
    * If this value is not given it will be calculated based on the scale or tickValues.
    *
-   * @example [-1, 1]
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high], { x: [low, high], y: [low, high] }
+   *
+   * [-1, 1], {x: [0, 100], y: [0, 1]}
    */
   domain?: DomainPropType;
   /**
@@ -96,6 +99,11 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
+   *
+   * @propType number | number[] | { x: number[], y: number[] }
+   * @example [left, right], { x: [left, right], y: [bottom, top] }
+   *
+   * {x: [10, -10], y: 5}
    */
   domainPadding?: DomainPaddingPropType;
   /**
@@ -114,6 +122,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * element (i.e. a single tick), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
    *
+   * @propType object[]
    * @example
    * events={[
    *   {
@@ -141,6 +150,8 @@ export interface ChartAxisProps extends VictoryAxisProps {
   events?: EventPropTypeInterface<VictoryAxisTTargetType, number | string>[];
   /**
    * ChartAxis uses the standard externalEventMutations prop.
+   *
+   * @propType object[]
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
@@ -197,7 +208,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
-   * examples:
+   * @example
    *
    * maxDomain={0}
    * maxDomain={{ y: 0 }}
@@ -212,7 +223,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
-   * examples:
+   * @example
    *
    * minDomain={0}
    * minDomain={{ y: 0 }}
@@ -237,6 +248,8 @@ export interface ChartAxisProps extends VictoryAxisProps {
   /**
    * The orientation prop specifies the position and orientation of your axis.
    * Valid values are 'top', 'bottom', 'left' and 'right'.
+   *
+   * @propType string
    */
   orientation?: OrientationTypes;
   /**
@@ -244,6 +257,8 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
@@ -254,7 +269,8 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or
    * ChartGroup will have no effect. This prop is usually not set manually.
    *
-   * examples:
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high] | { x: [low, high], y: [low, high] }
    *
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
@@ -265,6 +281,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    *
+   * @propType string | { x: string, y: string }
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
   scale?:
@@ -277,7 +294,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
   /**
    * The sharedEvents prop is used internally to coordinate events between components.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
@@ -296,7 +315,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable
    * will corresponds to the y axis.
    *
-   * examples:
+   * @example
    *
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
@@ -319,7 +338,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * <svg> element with standalone={false} parent styles will be applied to the enclosing <g> tag.
    * Many styles that can be applied to a parent <svg> will not be expressed when applied to a <g>.
    *
-   * note: custom angle and verticalAnchor properties may be included in labels styles.
+   * Note: custom angle and verticalAnchor properties may be included in labels styles.
+   *
+   * @propType { axis: object, axisLabel: object, grid: object, ticks: object, tickLabels: object }
    */
   style?: {
     parent?: {
@@ -347,6 +368,8 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * When using ChartAxis as a solo component, implement the theme directly on
    * ChartAxis. If you are wrapping ChartAxis in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**

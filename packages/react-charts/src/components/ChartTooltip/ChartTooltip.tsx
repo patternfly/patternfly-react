@@ -43,6 +43,8 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * pointer. This prop should be given as an object of x and y, where each is either a numeric offset value or a
    * function that returns a numeric value. When this prop is set, non-zero pointerLength values will no longer be
    * respected.
+   *
+   * @propType { x: number | Function, y: number | Function }
    */
   centerOffset?: {
     x?: NumberOrCallback;
@@ -57,6 +59,8 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * The cornerRadius prop determines corner radius of the flyout container. This prop may be given as a positive number
    * or a function of datum.
+   *
+   * @propType number | Function
    */
   cornerRadius?: NumberOrCallback;
   /**
@@ -71,17 +75,23 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   datum?: {};
   /**
    * The dx prop defines a horizontal shift from the x coordinate.
+   *
+   * @propType number | Function
    */
   dx?: NumberOrCallback;
   /**
    * The dy prop defines a vertical shift from the y coordinate.
+   *
+   * @propType number | Function
    */
   dy?: NumberOrCallback;
   /**
    * The events prop attaches arbitrary event handlers to the label component. This prop should be given as an object of
    * event names and corresponding event handlers. When events are provided via Victory’s event system, event handlers
    * will be called with the event, the props of the component is attached to, and an eventKey.
-   * Examples: events={{onClick: (evt) => alert("x: " + evt.clientX)}}
+   *
+   * @propType object
+   * @example events={{onClick: (evt) => alert("x: " + evt.clientX)}}
    */
   events?: { [key: string]: (event: React.SyntheticEvent<any>) => void };
   /**
@@ -91,24 +101,31 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within
    * the custom component itself. If flyoutComponent is omitted, a default Flyout component will be created with props
    * described above.
-   * Examples: flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
+   *
+   * @example flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
    */
   flyoutComponent?: React.ReactElement<any>;
   /**
    * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
    * text and style props provided to ChartTooltip.
+   *
+   * @propType number | Function
    */
   flyoutHeight?: NumberOrCallback;
   /**
    * The style prop applies SVG style properties to the rendered flyout container. These props will be passed to the
    * flyoutComponent.
+   *
+   * @propType number | Function
    */
   flyoutStyle?: VictoryStyleObject;
   /**
    * The flyoutWidth prop defines the width of the tooltip flyout. This prop may be given as a positive number or a
    * function of datum. If this prop is not set, flyoutWidth will be determined based on an approximate text size
    * calculated from the text and style props provided to VictoryTooltip.
+   *
+   * @propType number | Function
    */
   flyoutWidth?: NumberOrCallback;
   /**
@@ -121,7 +138,9 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
    * tooltip flyout. Please use flyoutHeight instead
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   height?: number;
   /**
@@ -140,12 +159,15 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * verticalAnchor, textAnchor, style, text, and events. Any of these props may be overridden by passing in props to
    * the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a
    * new ChartLabel will be created with the props described above.
-   * Examples: labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
+   *
+   * @example labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
    */
   labelComponent?: React.ReactElement<any>;
   /**
    * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
    * values are 'start', 'middle', 'end', and 'inherit'.
+   *
+   * @propType string | Function
    */
   labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
@@ -153,22 +175,30 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
+   *
+   * @propType string | Function
    */
   orientation?: OrientationOrCallback;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
+   *
+   * @propType number | Function
    */
   pointerLength?: NumberOrCallback;
   /**
    * This prop determines which side of the tooltip flyout the pointer should originate on. When this prop is not set,
    * it will be determined based on the overall orientation of the flyout in relation to its data point, and any center
    * or centerOffset values. Valid values are 'top', 'bottom', 'left' and 'right.
+   *
+   * @propType string | Function
    */
   pointerOrientation?: OrientationTypes | ((...args: any[]) => OrientationTypes);
   /**
    * The pointerWidth prop determines the width of the base of the triangular pointer extending from
    * the flyout. This prop may be given as a positive number or a function of datum.
+   *
+   * @propType number | Function
    */
   pointerWidth?: NumberOrCallback;
   /**
@@ -184,11 +214,15 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
    * ChartLabel will split in to separate <tspan/> elements.
+   *
+   * @propType number | string | Function | string[] | number[]
    */
   text?: StringOrNumberOrCallback | string[] | number[];
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -212,7 +246,9 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the width of the
    * tooltip flyout. Please use flyoutWidth instead
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   width?: number;
   /**

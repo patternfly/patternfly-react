@@ -22,7 +22,9 @@ export interface ChartLegendTooltipContentProps {
   /**
    * The activePoints prop specifies the active data
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   activePoints?: any[];
   /**
@@ -40,22 +42,30 @@ export interface ChartLegendTooltipContentProps {
   datum?: {};
   /**
    * The dx prop defines a horizontal shift from the x coordinate.
+   *
+   * @propType number | Function
    */
   dx?: NumberOrCallback;
   /**
    * The dy prop defines a horizontal shift from the y coordinate.
+   *
+   * @propType number | Function
    */
   dy?: NumberOrCallback;
   /**
    * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
    * text and style props provided to ChartTooltip.
+   *
+   * @propType number | Function
    */
   flyoutHeight?: NumberOrCallback;
   /**
    * The flyoutWidth prop defines the width of the tooltip flyout. This prop may be given as a positive number or a
    * function of datum. If this prop is not set, flyoutWidth will be determined based on an approximate text size
    * calculated from the text and style props provided to VictoryTooltip.
+   *
+   * @propType number | Function
    */
   flyoutWidth?: NumberOrCallback;
   /**
@@ -90,8 +100,10 @@ export interface ChartLegendTooltipContentProps {
    *
    * The data prop must be given as an array.
    *
-   * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
-   * @example legendData={[{ childName: `cats`, name: `Total cats` }, { childName: `dogs`, name: 'Total dogs' }]}
+   * @example
+   *
+   * legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   * legendData={[{ childName: `cats`, name: `Total cats` }, { childName: `dogs`, name: 'Total dogs' }]}
    */
   legendData?: {
     childName?: string;
@@ -108,6 +120,8 @@ export interface ChartLegendTooltipContentProps {
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
    * ChartLabel will split in to separate <tspan/> elements.
+   *
+   * @propType number | string | Function | string[] | number[]
    */
   text?: StringOrNumberOrCallback | string[] | number[];
   /**
@@ -116,6 +130,8 @@ export interface ChartLegendTooltipContentProps {
    * When using ChartLegend as a solo component, implement the theme directly on
    * ChartLegend. If you are wrapping ChartLegend in ChartChart or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**

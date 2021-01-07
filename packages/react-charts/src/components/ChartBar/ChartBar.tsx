@@ -33,6 +33,8 @@ export interface ChartBarProps extends VictoryBarProps {
    * The alignment prop specifies how bars should be aligned relative to their data points.
    * This prop may be given as “start”, “middle” or “end”. When this prop is not specified,
    * bars will have “middle” alignment relative to their data points.
+   *
+   * @propType string
    */
   alignment?: VictoryBarAlignmentType;
   /**
@@ -40,8 +42,8 @@ export interface ChartBarProps extends VictoryBarProps {
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    *
-   * @example
-   * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
+   * @propType boolean | object
+   * @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: boolean | AnimatePropTypeInterface;
   /**
@@ -57,6 +59,8 @@ export interface ChartBarProps extends VictoryBarProps {
    * a function, it will be evaluated with the arguments datum, and active. When this value
    * is not given, a default value will be calculated based on the overall dimensions of
    * the chart, and the number of bars.
+   *
+   * @propType number | Function
    */
   barWidth?: NumberOrCallback;
   /**
@@ -65,6 +69,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    *
+   * @propType string[] | { x: string[], y: string[] }
    * @example ["dogs", "cats", "mice"]
    */
   categories?: CategoryPropType;
@@ -88,6 +93,9 @@ export interface ChartBarProps extends VictoryBarProps {
    * The cornerRadius prop specifies a radius to apply to each bar.
    * If this prop is given as a single number, the radius will only be applied to the top of each bar.
    * When this prop is given as a function, it will be evaluated with the arguments datum, and active.
+   *
+   * @propType Function | number | { top, bottom, topLeft, topRight, bottomLeft, bottomRight }
+   * @example {topLeft: ({ datum }) => datum.x * 4}
    */
   cornerRadius?:
     | NumberOrCallback
@@ -105,7 +113,9 @@ export interface ChartBarProps extends VictoryBarProps {
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
    *
-   * @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]],
+   * @example
+   *
+   * [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]],
    * [[{x: "a", y: 1}, {x: "b", y: 2}], [{x: "a", y: 2}, {x: "b", y: 3}]]
    */
   data?: any[];
@@ -126,7 +136,10 @@ export interface ChartBarProps extends VictoryBarProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    *
-   * @example [-1, 1], {x: [0, 100], y: [0, 1]}
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high], { x: [low, high], y: [low, high] }
+   *
+   * [-1, 1], {x: [0, 100], y: [0, 1]}
    */
   domain?: DomainPropType;
   /**
@@ -134,11 +147,18 @@ export interface ChartBarProps extends VictoryBarProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
+   *
+   * @propType number | number[] | { x: number[], y: number[] }
+   * @example [left, right], { x: [left, right], y: [bottom, top] }
+   *
+   * {x: [10, -10], y: 5}
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * @propType number | string | Function
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -156,6 +176,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
    *
+   * @propType object[]
    * @example
    * events={[
    *   {
@@ -185,6 +206,8 @@ export interface ChartBarProps extends VictoryBarProps {
   events?: EventPropTypeInterface<VictoryBarTTargetType, number | string | number[] | string[]>[];
   /**
    * ChartBar uses the standard externalEventMutations prop.
+   *
+   * @propType object[]
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
@@ -235,7 +258,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
-   * examples:
+   * @example
    *
    * maxDomain={0}
    * maxDomain={{ y: 0 }}
@@ -250,7 +273,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
-   * examples:
+   * @example
    *
    * minDomain={0}
    * minDomain={{ y: 0 }}
@@ -263,7 +286,9 @@ export interface ChartBarProps extends VictoryBarProps {
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
-   * **This prop should not be set manually.**
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
@@ -271,12 +296,16 @@ export interface ChartBarProps extends VictoryBarProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   polar?: boolean;
   /**
@@ -287,7 +316,8 @@ export interface ChartBarProps extends VictoryBarProps {
    * chart must share the same range, so setting this prop on children nested within Chart or
    * ChartGroup will have no effect. This prop is usually not set manually.
    *
-   * examples:
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high] | { x: [low, high], y: [low, high] }
    *
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
@@ -303,6 +333,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    *
+   * @propType string | { x: string, y: string }
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
   scale?:
@@ -315,7 +346,9 @@ export interface ChartBarProps extends VictoryBarProps {
   /**
    * The sharedEvents prop is used internally to coordinate events between components.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
@@ -330,7 +363,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable
    * will corresponds to the y axis.
    *
-   * examples:
+   * @example
    *
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
@@ -340,10 +373,14 @@ export interface ChartBarProps extends VictoryBarProps {
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
+   *
+   * @propType number | string | Function | string[]
    */
   sortKey?: DataGetterPropType;
   /**
    * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+   *
+   * @propType string
    */
   sortOrder?: SortOrderPropType;
   /**
@@ -358,6 +395,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
    *
+   * @propType { parent: object, data: object, labels: object }
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
    */
   style?: VictoryStyleInterface;
@@ -367,6 +405,8 @@ export interface ChartBarProps extends VictoryBarProps {
    * When using ChartBar as a solo component, implement the theme directly on
    * ChartBar. If you are wrapping ChartBar in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -399,6 +439,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    */
   x?: DataGetterPropType;
@@ -411,6 +452,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;
@@ -419,6 +461,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * This prop is useful for defining custom baselines for components like ChartBar.
    * This prop may be given in a variety of formats.
    *
+   * @propType number | string | Function | string[]
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
