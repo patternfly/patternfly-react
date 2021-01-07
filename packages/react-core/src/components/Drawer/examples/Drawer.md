@@ -954,31 +954,60 @@ import {
   DrawerPanelBody,
   DrawerHead,
   DrawerActions,
-  DrawerCloseButton
+  DrawerCloseButton,
+  Button
 } from '@patternfly/react-core';
 
-StaticDrawer = () => {
-  const panelContent = (
-    <DrawerPanelContent>
-      <DrawerHead>
-        <span>drawer-panel</span>
-        <DrawerActions>
-          <DrawerCloseButton onClick={this.onClick} />
-        </DrawerActions>
-      </DrawerHead>
-    </DrawerPanelContent>
-  );
+class StaticDrawer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    };
 
-  const drawerContent =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
+    this.onClick = () => {
+      const isExpanded = !this.state.isExpanded;
+      this.setState({
+        isExpanded
+      });
+    };
 
-  return (
-    <Drawer isStatic>
-      <DrawerContent panelContent={panelContent}>
-        <DrawerContentBody>{drawerContent}</DrawerContentBody>
-      </DrawerContent>
-    </Drawer>
-  );
+    this.onCloseClick = () => {
+      this.setState({
+        isExpanded: false
+      });
+    };
+  }
+
+  render() {
+    const { isExpanded } = this.state;
+    const panelContent = (
+      <DrawerPanelContent>
+        <DrawerHead>
+          <span>drawer-panel</span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const drawerContent =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
+    
+    return (
+      <React.Fragment>
+        <Button className='pf-u-hidden-on-md' aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
+        <Drawer isStatic isExpanded={isExpanded} onExpand={this.onExpand}>
+          <DrawerContent panelContent={panelContent}>
+            <DrawerContentBody>{drawerContent}</DrawerContentBody>
+          </DrawerContent>
+        </Drawer>
+      </React.Fragment>
+    );
+  }
 };
 ```
 
