@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
+import { PageSidebarContext } from '../Page/PageSidebar';
+import { PageContextConsumer, PageContextProps } from '../Page';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
@@ -43,19 +45,27 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ...props
 }: NavItemProps) => {
   const Component = component as any;
-
+  const { isNavOpen } = React.useContext(PageSidebarContext);
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
-      <Component
-        href={to}
-        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(styles.navLink, isActive && styles.modifiers.current, className)}
-        aria-current={isActive ? 'page' : null}
-        {...props}
-      >
-        {children}
-      </Component>
+      <PageContextConsumer>
+        {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageContextProps) => {
+          const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+          return (
+            <Component
+              href={to}
+              onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+              className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+              aria-current={isActive ? 'page' : null}
+              tabindex={navOpen ? null : '-1'}
+              {...props}
+            >
+              {children}
+            </Component>
+          );
+        }}
+      </PageContextConsumer>
     );
   };
 
