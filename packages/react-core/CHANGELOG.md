@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.87.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.2...@patternfly/react-core@4.87.3) (2021-01-07)
+
+
+### Bug Fixes
+
+* **Toolbar:** add log viewer toolbar example ([#5196](https://github.com/patternfly/patternfly-react/issues/5196)) ([d951adc](https://github.com/patternfly/patternfly-react/commit/d951adce83ea6316a7a271a3e8ccb345b6cf73f5))
+
+
+
+
+
 ## [4.87.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.1...@patternfly/react-core@4.87.2) (2021-01-07)
 
 
