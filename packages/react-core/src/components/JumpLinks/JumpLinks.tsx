@@ -131,9 +131,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
               },
               isActive: isActiveProp || activeIndex === jumpLinkIndex++
             });
-          }
-          if (child.type === React.Fragment || child.type === JumpLinksList) {
+          } else if (child.type === React.Fragment) {
             return cloneChildren(child.props.children);
+          } else if (child.type === JumpLinksList) {
+            return React.cloneElement(child, { children: cloneChildren(child.props.children) });
           }
           return child;
         });
