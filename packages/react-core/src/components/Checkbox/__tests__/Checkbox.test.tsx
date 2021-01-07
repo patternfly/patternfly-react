@@ -69,3 +69,10 @@ test('checkbox passes value and event to onChange handler', () => {
   view.find('input').simulate('change', event);
   expect(props.onChange).toBeCalledWith(newValue, event);
 });
+
+test('should throw console error when no id is given', () => {
+  const myMock = jest.fn();
+  global.console = { ...global.console, error: myMock };
+  shallow(<Checkbox {...props} />);
+  expect(myMock).toBeCalled();
+});

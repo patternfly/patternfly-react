@@ -78,4 +78,11 @@ describe('Radio check component', () => {
     expect(descriptionEl.length).toBe(1);
     expect(descriptionEl.text()).toBe('Text description...');
   });
+
+test('should throw console error when no id is given', () => {
+  const myMock = jest.fn();
+  global.console = { ...global.console, error: myMock };
+  shallow(<Radio name="check" aria-label="check" description="Text description..." />);
+  expect(myMock).toBeCalled();
+});
 });

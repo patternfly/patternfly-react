@@ -61,6 +61,10 @@ export class Checkbox extends React.Component<CheckboxProps> {
       description,
       ...props
     } = this.props;
+    if (!props.id) {
+      // eslint-disable-next-line no-console
+      console.error('Checkbox:', 'id is required to make input accessible');
+    }
     const checkedProps: { checked?: boolean; defaultChecked?: boolean } = {};
     if ([true, false].includes(checked) || isChecked === true) {
       checkedProps.checked = checked || isChecked;
