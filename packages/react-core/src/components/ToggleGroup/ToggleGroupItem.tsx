@@ -48,6 +48,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   return (
     <div className={css(styles.toggleGroupItem, className)} {...props}>
       <button
+        type="button"
         className={css(
           styles.toggleGroupButton,
           toggleGroupContext.variant === 'light' && styles.modifiers.light,
