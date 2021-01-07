@@ -4,6 +4,7 @@ import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
+import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
 const hash: {
   [key: string]: string;
@@ -236,7 +237,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       },
       {
         name: 'hide',
-        enabled: false
+        enabled: true
       },
       {
         name: 'flip',

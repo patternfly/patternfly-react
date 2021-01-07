@@ -4,6 +4,7 @@ import '@patternfly/react-styles/src/css/components/Topology/topology-controlbar
 import '@patternfly/react-styles/src/css/components/Topology/topology-side-bar.css';
 import '@patternfly/react-styles/src/css/components/Topology/topology-view.css';
 import '@patternfly/react-styles/src/css/layouts/Toolbar/toolbar.css';
+import '@patternfly/react-styles/src/css/components/Popper/Popper.css';
 
 import '@patternfly/react-styles/src/css/components/Consoles/AccessConsoles.css';
 import '@patternfly/react-styles/src/css/components/Consoles/DesktopViewer.css';

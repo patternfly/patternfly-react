@@ -36,7 +36,7 @@ export interface PopoverProps {
    * or you can provide a function which will receive a callback as an argument to hide the popover
    * i.e. bodyContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
-  bodyContent: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  bodyContent: React.ReactNode | ((hide: (returnFocusOnClose?: boolean) => void) => React.ReactNode);
   /**
    * The reference element to which the Popover is relatively placed to.
    * If you cannot wrap the reference with the Popover, you can use the reference prop instead.
@@ -78,14 +78,14 @@ export interface PopoverProps {
    * or you can provide a function which will receive a callback as an argument to hide the popover
    * i.e. footerContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
-  footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  footerContent?: React.ReactNode | ((hide: (returnFocusOnClose?: boolean) => void) => React.ReactNode);
   /**
    * Header content
    * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
    * or you can provide a function which will receive a callback as an argument to hide the popover
    * i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
-  headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  headerContent?: React.ReactNode | ((hide: (returnFocusOnClose?: boolean) => void) => React.ReactNode);
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -135,7 +135,11 @@ export interface PopoverProps {
    * clicked, Enter key was used on it, or the ESC key is used.
    * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void, event?: MouseEvent | KeyboardEvent) => void;
+  shouldClose?: (
+    tip?: TippyInstance,
+    hideFunction?: (returnFocusOnClose?: boolean) => void,
+    event?: MouseEvent | KeyboardEvent
+  ) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
    * used on the focused trigger
@@ -210,6 +214,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const [visible, setVisible] = React.useState(false);
   const [opacity, setOpacity] = React.useState(0);
   const [focusTrapActive, setFocusTrapActive] = React.useState(Boolean(propWithFocusTrap));
+  const [returnFocusOnDeactivate, setReturnFocusOnDeactivate] = React.useState(true);
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
@@ -240,13 +245,14 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       onShown();
     }, 0);
   };
-  const hide = () => {
+  const hide = (returnFocusOnClose: boolean = false) => {
     onHide();
     if (showTimerRef.current) {
       clearTimeout(showTimerRef.current);
     }
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
+      setReturnFocusOnDeactivate(returnFocusOnClose);
       setFocusTrapActive(false);
       transitionTimerRef.current = setTimeout(() => {
         setVisible(false);
@@ -267,7 +273,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       if (triggerManually) {
         shouldClose(null, hide, event);
       } else {
-        hide();
+        hide(event.detail === 0);
       }
     }
   };
@@ -298,7 +304,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         if (triggerManually) {
           shouldClose(null, hide, event);
         } else {
-          hide();
+          hide(true);
         }
       }
     }
@@ -328,13 +334,14 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     if (triggerManually) {
       shouldClose(null, hide, event);
     } else {
-      hide();
+      // keypress close (event.detail === 0) should re-focus the trigger, mouse shouldn't
+      hide(event.detail === 0);
     }
   };
   const content = (
     <FocusTrap
       active={focusTrapActive}
-      focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}
+      focusTrapOptions={{ returnFocusOnDeactivate, clickOutsideDeactivates: true }}
       className={css(
         styles.popover,
         hasNoPadding && styles.modifiers.noPadding,
