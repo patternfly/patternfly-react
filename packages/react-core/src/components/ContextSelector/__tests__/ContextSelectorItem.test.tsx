@@ -13,7 +13,7 @@ test('Renders ContextSelectorItem', () => {
 
 test('Renders ContextSelectorItem disabled and hovered', () => {
   const view = shallow(
-    <ContextSelectorItem isDisabled isHovered sendRef={jest.fn()} index={0}>
+    <ContextSelectorItem isDisabled sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
@@ -23,7 +23,7 @@ test('Renders ContextSelectorItem disabled and hovered', () => {
 test('Verify onClick is called ', () => {
   const mockfn = jest.fn();
   const view = mount(
-    <ContextSelectorItem isHovered onClick={mockfn} sendRef={jest.fn()} index={0}>
+    <ContextSelectorItem onClick={mockfn} sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
