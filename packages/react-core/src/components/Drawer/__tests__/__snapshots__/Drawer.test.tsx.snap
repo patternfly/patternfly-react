@@ -303,7 +303,10 @@ exports[`Drawer has resizable css 1`] = `
     <DrawerContent
       panelContent={
         <DrawerPanelContent
+          defaultSize={300}
           isResizable={true}
+          maxSize={400}
+          minSize={200}
         >
           <DrawerHead>
             <span>
@@ -335,12 +338,20 @@ exports[`Drawer has resizable css 1`] = `
             </DrawerContentBody>
           </div>
           <DrawerPanelContent
+            defaultSize={300}
             isResizable={true}
+            maxSize={400}
+            minSize={200}
           >
             <div
               className="pf-c-drawer__panel pf-m-resizable"
               hidden={false}
               onTransitionEnd={[Function]}
+              style={
+                Object {
+                  "--pf-c-drawer__panel--FlexBasis": "300px",
+                }
+              }
             >
               <div
                 aria-describedby="Press space to begin resizing, and use the arrow keys to grow or shrink the panel. Press enter or escape to finish resizing."
