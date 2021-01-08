@@ -236,6 +236,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         enabled: false
       },
       {
+        // adds attribute [data-popper-reference-hidden] to the popper element which can be used to hide it using CSS
         name: 'hide',
         enabled: true
       },
