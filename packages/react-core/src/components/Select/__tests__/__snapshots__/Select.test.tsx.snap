@@ -661,6 +661,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
               }
             }
             paused={false}
+            preventScrollOnDeactivate={false}
           >
             <div>
               <div
@@ -1977,6 +1978,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
               }
             }
             paused={false}
+            preventScrollOnDeactivate={false}
           >
             <div>
               <div
@@ -2501,6 +2503,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
               }
             }
             paused={false}
+            preventScrollOnDeactivate={false}
           >
             <div>
               <div
@@ -3096,6 +3099,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
               }
             }
             paused={false}
+            preventScrollOnDeactivate={false}
           >
             <div>
               <div
@@ -3725,6 +3729,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
               }
             }
             paused={false}
+            preventScrollOnDeactivate={false}
           >
             <div>
               <div
