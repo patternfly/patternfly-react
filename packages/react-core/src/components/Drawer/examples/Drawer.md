@@ -944,6 +944,8 @@ class DrawerWithSection extends React.Component {
 
 ### Static drawer
 
+**Note:** For mobile viewports, all drawer variants behave the same way. At the `md` breakpoint, or where `.pf-m-static{-on-[lg, xl, 2xl]}` is applied, the `static drawer` variant’s `close button` is automatically hidden because the drawer panel doesn’t close by design.
+
 ```js
 import React from 'react';
 import {
