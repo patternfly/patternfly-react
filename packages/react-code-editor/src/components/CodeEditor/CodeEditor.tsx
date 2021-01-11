@@ -12,11 +12,13 @@ import {
   Tooltip
 } from '@patternfly/react-core';
 import { ControlledEditor } from '@monaco-editor/react';
+// import { KeyCode } from 'monaco-editor';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/js/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import Dropzone from 'react-dropzone';
+import { CodeEditorContext } from './CodeEditorUtils';
 
 export enum Language {
   javascript = 'javascript',
@@ -51,7 +53,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Height of code editor. Defaults to 100% */
   height?: string;
   /** Function which fires each time the code changes in the code editor */
-  onChange?: (value?: string) => void;
+  onChange?: (value?: string, event?: any) => void;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
   loading?: React.ReactNode;
   /** Content to display in space of the code editor when there is no code to display */
@@ -79,13 +81,15 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** */
   downloadButtonToolTipText?: string;
   /** */
-  toolTipExitDelay: number;
+  toolTipCopyExitDelay: number;
   /** */
   toolTipEntryDelay: number;
   /** */
   toolTipMaxWidth: string;
   /** */
   toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  /** */
+  customControls?: React.ReactNode | React.ReactNode[];
 }
 
 interface CodeEditorState {
@@ -103,6 +107,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   static defaultProps: CodeEditorProps = {
     className: '',
     code: '',
+    onChange: () => {},
     language: Language.text,
     isDarkTheme: false,
     height: '',
@@ -122,10 +127,11 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     uploadButtonToolTipText: 'Upload',
     downloadButtonToolTipText: 'Download',
     copyButtonSuccessTooltipText: 'Content added to clipboard',
-    toolTipExitDelay: 1600,
+    toolTipCopyExitDelay: 1600,
     toolTipEntryDelay: 100,
     toolTipMaxWidth: '100px',
-    toolTipPosition: 'top'
+    toolTipPosition: 'top',
+    customControls: null
   };
 
   static getLanguageFromExtension(extension: string) {
@@ -171,13 +177,16 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
   onChange = (event: any, value: string) => {
     if (this.props.onChange) {
-      this.props.onChange(value);
+      this.props.onChange(value, event);
     }
     this.setState({ value });
   };
 
   editorDidMount = (getEditorValue: () => string, editor: any) => {
     this.editor = editor;
+    // console.log(KeyCode.Escape);
+    // this.editor.addCommand(KeyCode.Shift | KeyCode.Escape, () => console.log("test"));
+    // console.log(typeof this.editor);
   };
 
   handleFileChange = (value: string, filename: string) => {
@@ -275,13 +284,14 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       downloadButtonAriaLabel,
       downloadButtonToolTipText,
       toolTipEntryDelay,
-      toolTipExitDelay,
+      toolTipCopyExitDelay,
       toolTipMaxWidth,
       toolTipPosition,
       isLineNumbers,
       isAllowDownload,
       language,
-      emptyState: providedEmptyState
+      emptyState: providedEmptyState,
+      customControls
     } = this.props;
     const options = {
       readOnly: isReadOnly,
@@ -330,7 +340,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     <Tooltip
                       trigger="mouseenter"
                       content={<div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>}
-                      exitDelay={toolTipExitDelay}
+                      exitDelay={toolTipCopyExitDelay}
                       entryDelay={toolTipEntryDelay}
                       maxWidth={toolTipMaxWidth}
                       position={toolTipPosition}
@@ -344,7 +354,6 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     <Tooltip
                       trigger="mouseenter focus click"
                       content={<div>{uploadButtonToolTipText}</div>}
-                      exitDelay={toolTipExitDelay}
                       entryDelay={toolTipEntryDelay}
                       maxWidth={toolTipMaxWidth}
                       position={toolTipPosition}
@@ -358,7 +367,6 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     <Tooltip
                       trigger="mouseenter focus click"
                       content={<div>{downloadButtonToolTipText}</div>}
-                      exitDelay={toolTipExitDelay}
                       entryDelay={toolTipEntryDelay}
                       maxWidth={toolTipMaxWidth}
                       position={toolTipPosition}
@@ -367,6 +375,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                         <DownloadIcon />
                       </Button>
                     </Tooltip>
+                  )}
+                  {customControls && (
+                    <CodeEditorContext.Provider value={{ code: value }}>{customControls}</CodeEditorContext.Provider>
                   )}
                 </div>
               )}

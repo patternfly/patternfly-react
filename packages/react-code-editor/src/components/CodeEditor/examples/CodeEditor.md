@@ -8,7 +8,8 @@ beta: true
 
 Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor)!
 
-import { CodeEditor } from '@patternfly/react-code-editor';
+import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
+import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 
 ## Examples
 ### Basic
@@ -41,6 +42,10 @@ class BasicCodeEditor extends React.Component {
         isReadOnly: checked
       });
     };
+    
+    this.onChange = code => {
+      console.log(code);
+    }
   }
   
   render() {
@@ -76,6 +81,8 @@ class BasicCodeEditor extends React.Component {
           isDarkTheme={isDarkTheme}
           isLineNumbers={isLineNumbers}
           isReadOnly={isReadOnly}
+          code="Some example content"
+          onChange={this.onChange}
           height='400px'
         />
       </>
@@ -95,4 +102,51 @@ import { CodeEditor } from '@patternfly/react-code-editor';
   isAllowCopy
   height='400px'
 />
+```
+
+### With custom control
+```js
+import React from 'react';
+import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
+import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+
+class customControlExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      code: ''
+    };
+    
+    this.onChange = (code) => {
+      this.setState({code});
+    };
+    
+    this.onExecuteCode = (code) => {
+      console.log(code);
+    };
+  }
+ 
+  render() {
+    const customControl = (
+      <CodeEditorControl 
+        icon={<PlayIcon/>}
+        toolTipText="Execute code"
+        onClick={this.onExecuteCode}
+        isVisible={this.state.code !== ''}
+      />);
+    
+    return (
+      <>
+        <CodeEditor
+          isAllowDownload
+          isAllowCopy
+          height='400px'
+          customControls={customControl}
+          code={this.state.code}
+          onChange={this.onChange}
+        />
+      </>
+    );
+  }
+}
 ```
