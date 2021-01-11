@@ -20,17 +20,11 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export interface PageSidebarContextProps {
-  className: string;
-  nav: React.ReactNode;
   isNavOpen: boolean;
-  theme: string;
 }
 
 export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>({
-  className: '',
-  nav: null,
-  isNavOpen: true,
-  theme: 'dark'
+  isNavOpen: true
 });
 
 export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
@@ -40,28 +34,29 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   theme = 'dark',
   ...props
 }: PageSidebarProps) => (
-  <PageSidebarContext.Provider value={{ isNavOpen }}>
-    <PageContextConsumer>
-      {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageSidebarProps) => {
-        const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+  <PageContextConsumer>
+    {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageSidebarProps) => {
+      const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
-        return (
-          <div
-            id="page-sidebar"
-            className={css(
-              styles.pageSidebar,
-              theme === 'light' && styles.modifiers.light,
-              navOpen && styles.modifiers.expanded,
-              !navOpen && styles.modifiers.collapsed,
-              className
-            )}
-            {...props}
-          >
-            <div className={css(styles.pageSidebarBody)}>{nav}</div>
+      return (
+        <div
+          id="page-sidebar"
+          className={css(
+            styles.pageSidebar,
+            theme === 'light' && styles.modifiers.light,
+            navOpen && styles.modifiers.expanded,
+            !navOpen && styles.modifiers.collapsed,
+            className
+          )}
+          aria-hidden={!navOpen}
+          {...props}
+        >
+          <div className={css(styles.pageSidebarBody)}>
+            <PageSidebarContext.Provider value={{ isNavOpen: navOpen }}>{nav}</PageSidebarContext.Provider>
           </div>
-        );
-      }}
-    </PageContextConsumer>
-  </PageSidebarContext.Provider>
+        </div>
+      );
+    }}
+  </PageContextConsumer>
 );
 PageSidebar.displayName = 'PageSidebar';

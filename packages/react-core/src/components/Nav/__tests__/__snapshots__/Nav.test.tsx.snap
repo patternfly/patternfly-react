@@ -392,6 +392,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
               id="grp-1"
               onClick={[Function]}
               onMouseDown={[Function]}
+              tabIndex={null}
             >
               Section 1
               <span
@@ -574,6 +575,7 @@ exports[`Expandable Nav List 1`] = `
               id="grp-1"
               onClick={[Function]}
               onMouseDown={[Function]}
+              tabIndex={null}
             >
               Section 1
               <span
@@ -757,6 +759,7 @@ exports[`Expandable Nav List with aria label 1`] = `
               id={null}
               onClick={[Function]}
               onMouseDown={[Function]}
+              tabIndex={null}
             >
               Section 1
               <span

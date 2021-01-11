@@ -58,6 +58,7 @@ exports[`Check dark page against snapshot 1`] = `
       theme="dark"
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -172,6 +173,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -284,6 +286,7 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -564,6 +567,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -843,6 +847,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -1056,6 +1061,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                       className="pf-c-nav__scroll-button"
                       disabled={true}
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       <AngleLeftIcon
                         color="currentColor"
@@ -1188,6 +1194,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                       className="pf-c-nav__scroll-button"
                       disabled={true}
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       <AngleRightIcon
                         color="currentColor"
@@ -1396,6 +1403,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -1442,6 +1450,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                     className="pf-c-nav__scroll-button"
                     disabled={true}
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     <AngleLeftIcon
                       color="currentColor"
@@ -1574,6 +1583,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                     className="pf-c-nav__scroll-button"
                     disabled={true}
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     <AngleRightIcon
                       color="currentColor"
@@ -1877,6 +1887,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -1917,6 +1928,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                   className="pf-c-nav__scroll-button"
                   disabled={true}
                   onClick={[Function]}
+                  tabIndex={null}
                 >
                   <AngleLeftIcon
                     color="currentColor"
@@ -2049,6 +2061,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                   className="pf-c-nav__scroll-button"
                   disabled={true}
                   onClick={[Function]}
+                  tabIndex={null}
                 >
                   <AngleRightIcon
                     color="currentColor"
@@ -2223,6 +2236,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
       isNavOpen={true}
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
@@ -2498,6 +2512,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     >
       <div
+        aria-hidden={false}
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
