@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
@@ -38,6 +39,8 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isSelected?: boolean;
   /** Flyout menu */
   flyoutMenu?: React.ReactNode;
+  /** Drilldown menu */
+  direction?: 'down' | 'up';
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** Accessibility label */
@@ -54,6 +57,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   isActive = null,
   isFavorited = null,
   flyoutMenu,
+  direction,
   description = null as string,
   onClick = () => {},
   component,
@@ -119,7 +123,12 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           {...(isDisabled && { disabled: true })}
           {...additionalProps}
         >
-          <div className={css(styles.menuItemMain)}>
+          <span className={css(styles.menuItemMain)}>
+            {direction === 'up' && (
+              <span className={css(styles.menuItemToggleIcon)}>
+                <AngleLeftIcon aria-hidden />
+              </span>
+            )}
             {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
             <span className={css(styles.menuItemText)}>{children}</span>
             {isExternalLink && (
@@ -127,7 +136,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                 <ExternalLinkAltIcon aria-hidden />
               </span>
             )}
-            {flyoutMenu && (
+            {(flyoutMenu || direction === 'down') && (
               <span className={css(styles.menuItemToggleIcon)}>
                 <AngleRightIcon aria-hidden />
               </span>
@@ -137,11 +146,11 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                 <CheckIcon aria-hidden />
               </span>
             )}
-          </div>
+          </span>
           {description && (
-            <div className={css(styles.menuItemDescription)}>
+            <span className={css(styles.menuItemDescription)}>
               <span>{description}</span>
-            </div>
+            </span>
           )}
         </Component>
         {flyoutVisible && flyoutMenu}
@@ -154,6 +163,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}
       onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
       onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
+      // onClick={drilldownMenu !== undefined ? () => showDrilldown() : undefined}
       ref={innerRef}
       {...props}
     >
