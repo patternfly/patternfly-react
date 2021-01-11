@@ -9,6 +9,8 @@ interface ChipGroupWithOverflowChipEventHandlerState {
 }
 
 export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGroupWithOverflowChipEventHandlerState> {
+  deleteItem: (id: string) => void;
+
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -31,6 +33,17 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
       ],
       shouldShowAdditionalText: false
     };
+
+    this.deleteItem = (id: string) => {
+      const copyOfChipArray = this.state.chipArray;
+      const index = copyOfChipArray.findIndex(chipObj => chipObj.name === id);
+
+      if (index !== -1) {
+        copyOfChipArray.splice(index, 1);
+        this.setState({ chipArray: copyOfChipArray });
+      }
+    };
+
     this.handleOverflowChipClick = this.handleOverflowChipClick.bind(this);
   }
 
@@ -48,7 +61,9 @@ export class ChipGroupWithOverflowChipEventHandler extends Component<{}, ChipGro
       <>
         <ChipGroup onOverflowChipClick={() => this.handleOverflowChipClick()}>
           {chipArray.map(chip => (
-            <Chip key={chip.name}>{chip.name}</Chip>
+            <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
+              {chip.name}
+            </Chip>
           ))}
         </ChipGroup>
         {this.state.shouldShowAdditionalText && (
