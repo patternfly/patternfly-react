@@ -26,6 +26,10 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   'aria-label'?: string;
   /** Indicates if menu contains a flyout menu */
   containsFlyout?: boolean;
+  /** Indicates if menu contains a drilldown menu */
+  containsDrilldown?: boolean;
+  /** Indicates if a menu is a drilldown menu */
+  isDrilldown?: boolean;
   /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: any;
   /** Forwarded ref */
@@ -58,6 +62,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       ouiaId,
       ouiaSafe,
       containsFlyout,
+      containsDrilldown,
+      isDrilldown,
       activeItemId = null,
       innerRef,
       ...props
@@ -66,7 +72,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     return (
       <MenuContext.Provider value={{ onSelect, onActionClick, activeItemId, selected }}>
         <div
-          className={css(styles.menu, containsFlyout && styles.modifiers.flyout, className)}
+          className={css(
+            styles.menu,
+            containsFlyout && styles.modifiers.flyout,
+            containsDrilldown && styles.modifiers.drilldown,
+            isDrilldown && styles.modifiers.drilledIn,
+            className
+          )}
           aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
           ref={innerRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
