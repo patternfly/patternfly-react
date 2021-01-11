@@ -44,7 +44,12 @@ const LayerDelegate: React.FC<LayerDelegateProps> = observer(({ id, children, or
 
   const element = React.useContext(ElementContext);
   const nodeRef = React.useRef<SVGGElement | null>(null);
-  const order = id ? (orderKey != null ? orderKey : element.getOrderKey()) : undefined;
+  let order: unknown;
+  if (id && orderKey == null) {
+    order = element.getOrderKey();
+  } else if (id) {
+    order = orderKey;
+  }
 
   React.useEffect(() => {
     // TODO use bisection search

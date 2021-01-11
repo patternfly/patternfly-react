@@ -253,18 +253,24 @@ export const useDndDrag = <
   React.useEffect(() => {
     const dragSource: DragSource = {
       type: spec.item.type,
-      canCancel: () =>
-        typeof specRef.current.canCancel === 'boolean'
-          ? specRef.current.canCancel
-          : typeof specRef.current.canCancel === 'function'
-          ? specRef.current.canCancel(monitor, propsRef.current)
-          : true,
-      canDrag: () =>
-        typeof specRef.current.canDrag === 'boolean'
-          ? specRef.current.canDrag
-          : typeof specRef.current.canDrag === 'function'
-          ? specRef.current.canDrag(monitor, propsRef.current)
-          : true,
+      canCancel: () => {
+        if (typeof specRef.current.canCancel === 'boolean') {
+          return specRef.current.canCancel;
+        }
+        if (typeof specRef.current.canCancel === 'function') {
+          return specRef.current.canCancel(monitor, propsRef.current);
+        }
+        return true;
+      },
+      canDrag: () => {
+        if (typeof specRef.current.canDrag === 'boolean') {
+          return specRef.current.canDrag;
+        }
+        if (typeof specRef.current.canDrag === 'function') {
+          return specRef.current.canDrag(monitor, propsRef.current);
+        }
+        return true;
+      },
       beginDrag: () => (specRef.current.begin ? specRef.current.begin(monitor, propsRef.current) : undefined),
       drag: () => {
         if (specRef.current.drag) {

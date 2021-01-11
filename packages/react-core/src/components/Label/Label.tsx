@@ -101,6 +101,32 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </>
   );
 
+  let labelComponentChild = (
+    <Component className={css(styles.labelContent)} {...(href && { href })}>
+      {content}
+    </Component>
+  );
+  if (render) {
+    labelComponentChild = (
+      <>
+        {isTooltipVisible && <Tooltip reference={componentRef} content={children} position={tooltipPosition} />}
+        {render({
+          className: styles.labelContent,
+          content,
+          componentRef
+        })}
+      </>
+    );
+  } else if (isTooltipVisible) {
+    labelComponentChild = (
+      <Tooltip content={children} position={tooltipPosition}>
+        <Component className={css(styles.labelContent)} {...(href && { href })}>
+          {content}
+        </Component>
+      </Tooltip>
+    );
+  }
+
   return (
     <LabelComponent
       {...props}
@@ -112,26 +138,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className
       )}
     >
-      {render ? (
-        <>
-          {isTooltipVisible && <Tooltip reference={componentRef} content={children} position={tooltipPosition} />}
-          {render({
-            className: styles.labelContent,
-            content,
-            componentRef
-          })}
-        </>
-      ) : isTooltipVisible ? (
-        <Tooltip content={children} position={tooltipPosition}>
-          <Component className={css(styles.labelContent)} {...(href && { href })}>
-            {content}
-          </Component>
-        </Tooltip>
-      ) : (
-        <Component className={css(styles.labelContent)} {...(href && { href })}>
-          {content}
-        </Component>
-      )}
+      {labelComponentChild}
       {onClose && button}
     </LabelComponent>
   );

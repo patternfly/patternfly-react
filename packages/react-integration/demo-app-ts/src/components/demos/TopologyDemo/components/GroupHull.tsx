@@ -47,6 +47,15 @@ const GroupHull: React.FC<GroupHullProps> = ({
   const refs = useCombineRefs<SVGPathElement | SVGRectElement>(dragNodeRef, dndDragRef, dndDropRef);
   useAnchor(RectAnchor);
 
+  let fill = '#ededed';
+  if (canDrop && hover) {
+    fill = 'lightgreen';
+  } else if (canDrop && droppable) {
+    fill = 'lightblue';
+  } else if (element.getData()) {
+    fill = element.getData().background;
+  }
+
   if (element.isCollapsed()) {
     const { width, height } = element.getBounds();
     return (
@@ -59,13 +68,7 @@ const GroupHull: React.FC<GroupHullProps> = ({
           height={height}
           rx={5}
           ry={5}
-          fill={
-            canDrop && hover
-              ? 'lightgreen'
-              : canDrop && droppable
-              ? 'lightblue'
-              : `${(element.getData() && element.getData().background) || '#ededed'}`
-          }
+          fill={fill}
           strokeWidth={2}
           stroke={selected ? 'blue' : '#cdcdcd'}
         />
@@ -112,13 +115,7 @@ const GroupHull: React.FC<GroupHullProps> = ({
         ref={refs}
         onClick={onSelect}
         d={pathRef.current}
-        fill={
-          canDrop && hover
-            ? 'lightgreen'
-            : canDrop && droppable
-            ? 'lightblue'
-            : `${(element.getData() && element.getData().background) || '#ededed'}`
-        }
+        fill={fill}
         strokeWidth={2}
         stroke={selected ? 'blue' : '#cdcdcd'}
       />

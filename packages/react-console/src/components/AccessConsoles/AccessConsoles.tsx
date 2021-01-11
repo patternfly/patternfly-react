@@ -12,12 +12,14 @@ const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, DESKTOP_VIEWER_CONSOLE
 const getChildTypeName = (child: any) =>
   child && child.props && child.props.type ? child.props.type : (child && child.type && child.type.displayName) || null;
 
-const isChildOfType = (child: any, type: string) =>
-  child && child.props && child.props.type
-    ? child.props.type === type
-    : child && child.type
-    ? child.type.displayName === type
-    : false;
+const isChildOfType = (child: any, type: string) => {
+  if (child && child.props && child.props.type) {
+    return child.props.type === type;
+  } else if (child && child.type) {
+    return child.type.displayName === type;
+  }
+  return false;
+};
 
 export interface AccessConsolesProps {
   /**

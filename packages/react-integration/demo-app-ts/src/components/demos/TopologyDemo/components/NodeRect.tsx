@@ -35,6 +35,15 @@ const NodeRect: React.FC<NodeRectProps> = ({
   const refs = useCombineRefs<SVGRectElement>(dragNodeRef, dndDragRef, dndDropRef, anchorRef);
   const { width, height } = element.getDimensions();
 
+  let fill = 'grey';
+  if (canDrop && hover) {
+    fill = 'lightgreen';
+  } else if (canDrop && droppable) {
+    fill = 'lightblue';
+  } else if (selected) {
+    fill = 'blue';
+  }
+
   return (
     <rect
       ref={refs}
@@ -43,7 +52,7 @@ const NodeRect: React.FC<NodeRectProps> = ({
       y={0}
       width={Math.max(0, width) - 2}
       height={Math.max(0, height) - 2}
-      fill={canDrop && hover ? 'lightgreen' : canDrop && droppable ? 'lightblue' : selected ? 'blue' : 'grey'}
+      fill={fill}
       strokeWidth={1}
       stroke="#333333"
     />

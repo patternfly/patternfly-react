@@ -97,9 +97,15 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
       });
     } else {
       const userIndex = index - 2;
-      sortedRows = this.state.rows.sort((a, b) =>
-        a.cells[userIndex] < b.cells[userIndex] ? -1 : a.cells[userIndex] > b.cells[userIndex] ? 1 : 0
-      );
+      sortedRows = this.state.rows.sort((a, b) => {
+        if (a.cells[userIndex] < b.cells[userIndex]) {
+          return -1;
+        }
+        if (a.cells[userIndex] > b.cells[userIndex]) {
+          return 1;
+        }
+        return 0;
+      });
     }
     this.setState({
       sortBy: {

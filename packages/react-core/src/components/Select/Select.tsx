@@ -442,15 +442,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       ? (this.refCollection[nextIndex][0].firstElementChild as HTMLElement)
       : this.refCollection[nextIndex][0];
 
+    let typeaheadInputValue = '';
+    if (isCreatable && optionTextElm.innerText.includes(createText)) {
+      typeaheadInputValue = this.state.creatableValue;
+    } else if (optionTextElm) {
+      typeaheadInputValue = optionTextElm.innerText;
+    }
     this.setState(prevState => ({
       typeaheadCurrIndex: updateCurrentIndex ? nextIndex : prevState.typeaheadCurrIndex,
       typeaheadStoredIndex: nextIndex,
-      typeaheadInputValue:
-        isCreatable && optionTextElm.innerText.includes(createText)
-          ? this.state.creatableValue
-          : optionTextElm
-          ? optionTextElm.innerText
-          : ''
+      typeaheadInputValue
     }));
   };
 
@@ -475,8 +476,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } else if (position === 'tab') {
         if (onFavorite) {
           if (this.inputRef.current === document.activeElement) {
-            const indexForFocus =
-              typeaheadCurrIndex !== -1 ? typeaheadCurrIndex : typeaheadStoredIndex !== -1 ? typeaheadStoredIndex : 0;
+            let indexForFocus = 0;
+            if (typeaheadCurrIndex !== -1) {
+              indexForFocus = typeaheadCurrIndex;
+            } else if (typeaheadStoredIndex !== -1) {
+              indexForFocus = typeaheadStoredIndex;
+            }
 
             if (this.refCollection[indexForFocus] !== null && this.refCollection[indexForFocus][0] !== null) {
               this.refCollection[indexForFocus][0].focus();
@@ -639,12 +644,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     let renderableItems: React.ReactNode[] = [];
     if (onFavorite) {
       // if variant is type-ahead call the extendTypeaheadChildren before adding favorites
-      const tempExtendedChildren =
-        variant === 'typeahead' || variant === 'typeaheadmulti'
-          ? this.extendTypeaheadChildren(typeaheadCurrIndex, favoritesGroup)
-          : onFavorite
-          ? favoritesGroup.concat(children)
-          : children;
+      let tempExtendedChildren: (React.ReactElement | React.ReactNode | {})[] = children;
+      if (variant === 'typeahead' || variant === 'typeaheadmulti') {
+        tempExtendedChildren = this.extendTypeaheadChildren(typeaheadCurrIndex, favoritesGroup);
+      } else if (onFavorite) {
+        tempExtendedChildren = favoritesGroup.concat(children);
+      }
       // mark items that are favorited with isFavorite
       renderableItems = extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites);
     } else {
