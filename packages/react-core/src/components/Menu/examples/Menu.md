@@ -159,7 +159,7 @@ class MenuWithFlyout extends React.Component {
 
 ```js
 import React from 'react';
-import { Menu, MenuList, MenuItem, Divider } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem, Divider } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
@@ -170,11 +170,13 @@ class MenuWithDrilldown extends React.Component {
     super(props);
     this.state = {
       activeItem: null,
-      menuStack: []
+      menuStack: [],
+      menuDrilledIn: [],
+      drilldownPath: []
     };
     this.onSelect = (event, itemId) => {
-      if (!itemId) {
-        console.log(`selected sub-menu`);
+      if (itemId.startsWith('group:')) {
+        console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
       } else {
         console.log(`selected: ${itemId}`);
         this.setState({
@@ -182,124 +184,166 @@ class MenuWithDrilldown extends React.Component {
         });
       }
     };
-    this.setConnection = (prevMenu, nextMenu, Item) => {
-      if (Item) {
-        const stack = this.state.menuStack.length === 0 ? [prevMenu()] : this.state.menuStack;
-        this.setState({
-          menuStack: [
-            ...stack,
-            nextMenu(<Item direction="up" onClick={() => this.setConnection(prevMenu, nextMenu)} />)
-          ]
-        });
-      } else {
-        // remove last item
-        const menusSansLast = this.state.menuStack.slice(0, this.state.menuStack.length - 1);
-        this.setState({
-          menuStack: menusSansLast
-        });
-      }
-    }
+    this.drillIn = (menuId, pathId) => {
+      this.setState({
+        menuDrilledIn: [...this.state.menuDrilledIn, menuId],
+        drilldownPath: [...this.state.drilldownPath, pathId]
+      });
+    };
+    this.drillOut = (menuId, pathId) => {
+      const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, this.state.menuDrilledIn.length - 1);
+      const pathSansLast = this.state.drilldownPath.slice(0, this.state.drilldownPath.length - 1);
+      this.setState({
+        menuDrilledIn: menuDrilledInSansLast,
+        drilldownPath: pathSansLast
+      });
+    };
   }
 
   render() {
-    const { activeItem, menuStack } = this.state;
+    const { activeItem, menuDrilledIn, drilldownPath } = this.state;
+
+    // We wrap the menu items that contain drilldown menus to keep things DRY since they're used to drill into, as well as drill out of the next menu
 
     // rootMenu -> drilldownMenu1
     const MenuItemStartRollout = ({ direction, onClick, ...rest }) => (
-      <MenuItem direction={direction} onClick={onClick}>
+      <MenuItem itemId="group:start_rollout" direction={direction} onClick={onClick} {...rest}>
         Start rollout
       </MenuItem>
     );
     // rootMenu -> drilldownMenu1
     const MenuItemPauseRollout = ({ direction, onClick, ...rest }) => (
-      <MenuItem direction={direction} onClick={onClick}>
+      <MenuItem itemId="group:pause_rollout" direction={direction} onClick={onClick} {...rest}>
         Pause rollouts
       </MenuItem>
     );
     // rootMenu -> drilldownMenuStorage
     const MenuItemStorage = ({ direction, onClick, ...rest }) => (
-      <MenuItem icon={<StorageDomainIcon aria-hidden />} direction={direction} onClick={onClick}>
+      <MenuItem
+        itemId="group:storage"
+        icon={<StorageDomainIcon aria-hidden />}
+        direction={direction}
+        onClick={onClick}
+        {...rest}
+      >
         Add storage
       </MenuItem>
     );
-    // drilldownMenu1 -> drilldownMenu2
+    // drilldownMenu1 -> drilldownMenuGrouping
     const MenuItemAppGrouping = ({ direction, onClick, ...rest }) => (
-      <MenuItem description="Groups A-C" direction={direction} onClick={onClick}>
+      <MenuItem itemId="group:app_grouping" description="Groups A-C" direction={direction} onClick={onClick} {...rest}>
         Application Grouping
       </MenuItem>
     );
     // drilldownMenu1 -> drilldownMenuLabels
     const MenuItemLabels = ({ direction, onClick, ...rest }) => (
-      <MenuItem direction={direction} onClick={onClick}>
+      <MenuItem itemId="group:labels" direction={direction} onClick={onClick} {...rest}>
         Labels
       </MenuItem>
     );
 
     // Menus
     const rootMenu = () => (
-      <Menu containsDrilldown onSelect={this.onSelect}>
-        <MenuList>
-          <MenuItemStartRollout direction="down" onClick={() => this.setConnection(rootMenu, drilldownMenu1, MenuItemStartRollout)} />
-          <MenuItemPauseRollout direction="down" onClick={() => this.setConnection(rootMenu, drilldownMenu1, MenuItemPauseRollout)} />
-          <MenuItemStorage direction="down" onClick={() => this.setConnection(rootMenu, drilldownMenuStorage, MenuItemStorage)} />
-          <MenuItem itemId="edit">Edit</MenuItem>
-          <MenuItem itemId="delete_deployment">Delete deployment config</MenuItem>
-        </MenuList>
+      <Menu containsDrilldown drilledIn={menuDrilledIn.includes('rootMenu')} onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            <MenuItemStartRollout
+              direction="down"
+              onPath={drilldownPath.includes('MenuItemStartRollout')}
+              drilldownMenu={drilldownMenu1(<MenuItemStartRollout direction="up" onClick={() => this.drillOut()} />)}
+              onClick={() => this.drillIn('rootMenu', 'MenuItemStartRollout')}
+            />
+            <MenuItemPauseRollout
+              direction="down"
+              onPath={drilldownPath.includes('MenuItemPauseRollout')}
+              drilldownMenu={drilldownMenu1(<MenuItemPauseRollout direction="up" onClick={() => this.drillOut()} />)}
+              onClick={() => this.drillIn('rootMenu', 'MenuItemPauseRollout')}
+            />
+            <MenuItemStorage
+              direction="down"
+              onPath={drilldownPath.includes('MenuItemStorage')}
+              drilldownMenu={drilldownMenuStorage(<MenuItemStorage direction="up" onClick={() => this.drillOut()} />)}
+              onClick={() => this.drillIn('rootMenu', 'MenuItemStorage')}
+            />
+            <MenuItem itemId="edit">Edit</MenuItem>
+            <MenuItem itemId="delete_deployment">Delete deployment config</MenuItem>
+          </MenuList>
+        </MenuContent>
       </Menu>
     );
-    const drilldownMenuStorage = (previousItem) => (
-      <Menu isDrilldown onSelect={this.onSelect}>
-        <MenuList>
-          {previousItem}
-          <Divider component="li" />
-          <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
-            From Git
-          </MenuItem>
-          <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
-            Container Image
-          </MenuItem>
-          <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
-            Docker File
-          </MenuItem>
-        </MenuList>
+    const drilldownMenu1 = previousItem => (
+      <Menu drilledIn={menuDrilledIn.includes('drilldownMenu1')} onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            {previousItem}
+            <Divider component="li" />
+            <MenuItemAppGrouping
+              direction="down"
+              onPath={drilldownPath.includes('MenuItemAppGrouping')}
+              drilldownMenu={drilldownMenuGrouping(
+                <MenuItemAppGrouping direction="up" onClick={() => this.drillOut()} />
+              )}
+              onClick={() => this.drillIn('drilldownMenu1', 'MenuItemAppGrouping')}
+            />
+            <MenuItem itemId="count">Count</MenuItem>
+            <MenuItemLabels
+              direction="down"
+              onPath={drilldownPath.includes('MenuItemLabels')}
+              drilldownMenu={drilldownMenuLabels(<MenuItemLabels direction="up" onClick={() => this.drillOut()} />)}
+              onClick={() => this.drillIn('drilldownMenu1', 'MenuItemLabels')}
+            />
+            <MenuItem itemId="annotations">Annotations</MenuItem>
+          </MenuList>
+        </MenuContent>
       </Menu>
     );
-    const drilldownMenu1 = (previousItem) => (
-      <Menu isDrilldown onSelect={this.onSelect}>
-        <MenuList>
-          {previousItem}
-          <Divider component="li" />
-          <MenuItemAppGrouping direction="down" onClick={() => this.setConnection(drilldownMenu1, drilldownMenuGrouping, MenuItemAppGrouping)} />
-          <MenuItem itemId="count">Count</MenuItem>
-          <MenuItemLabels direction="down" onClick={() => this.setConnection(drilldownMenu1, drilldownMenuLabels, MenuItemLabels)} />
-          <MenuItem itemId="annotations">Annotations</MenuItem>
-        </MenuList>
+    const drilldownMenuStorage = previousItem => (
+      <Menu onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            {previousItem}
+            <Divider component="li" />
+            <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
+              From Git
+            </MenuItem>
+            <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
+              Container Image
+            </MenuItem>
+            <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
+              Docker File
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
       </Menu>
     );
-    const drilldownMenuGrouping = (previousItem) => (
-      <Menu isDrilldown onSelect={this.onSelect}>
-        <MenuList>
-          {previousItem}
-          <Divider component="li" />
-          <MenuItem itemId="group_a">Group A</MenuItem>
-          <MenuItem itemId="group_b">Group B</MenuItem>
-          <MenuItem itemId="group_c">Group C</MenuItem>
-        </MenuList>
+    const drilldownMenuGrouping = previousItem => (
+      <Menu onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            {previousItem}
+            <Divider component="li" />
+            <MenuItem itemId="group_a">Group A</MenuItem>
+            <MenuItem itemId="group_b">Group B</MenuItem>
+            <MenuItem itemId="group_c">Group C</MenuItem>
+          </MenuList>
+        </MenuContent>
       </Menu>
     );
-    const drilldownMenuLabels = (previousItem) => (
-      <Menu isDrilldown onSelect={this.onSelect}>
-        <MenuList>
-          {previousItem}
-          <Divider component="li" />
-          <MenuItem itemId="label_1">Label 1</MenuItem>
-          <MenuItem itemId="label_2">Label 2</MenuItem>
-          <MenuItem itemId="label_3">Label 3</MenuItem>
-        </MenuList>
+    const drilldownMenuLabels = previousItem => (
+      <Menu onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            {previousItem}
+            <Divider component="li" />
+            <MenuItem itemId="label_1">Label 1</MenuItem>
+            <MenuItem itemId="label_2">Label 2</MenuItem>
+            <MenuItem itemId="label_3">Label 3</MenuItem>
+          </MenuList>
+        </MenuContent>
       </Menu>
     );
 
-    return menuStack[menuStack.length - 1] || rootMenu();
+    return rootMenu();
   }
 }
 ```
