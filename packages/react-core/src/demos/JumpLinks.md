@@ -109,16 +109,14 @@ ScrollspyH2 = () => {
             style={{ position: 'absolute' }}
           >
             {headings.map(i => 
-              <React.Fragment key={i}>
-                <JumpLinksItem href={`#heading-${i}`}>
-                  {`Heading ${i}`}
-                </JumpLinksItem>
+              <JumpLinksItem key={i} href={`#heading-${i}`}>
+                {`Heading ${i}`}
                 <JumpLinksList>
                   <JumpLinksItem href={`#subheading-${i}`}>
                     {`Subheading ${i}`}
                   </JumpLinksItem>
                 </JumpLinksList>
-              </React.Fragment>
+              </JumpLinksItem>
             )}
           </JumpLinks>
         </PageSection>

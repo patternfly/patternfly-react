@@ -33,13 +33,14 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
           // Allow spaces and other special characters as `id`s to be nicer to consumers
           // https://stackoverflow.com/questions/70579/what-are-valid-values-for-the-id-attribute-in-html
           res.push(document.getElementById(scrollNode.substr(1)) as HTMLElement);
+        } else {
+          res.push(document.querySelector(scrollNode) as HTMLElement);
         }
-        return document.querySelector(scrollNode) as HTMLElement;
       } else if (scrollNode instanceof HTMLElement) {
         res.push(scrollNode);
       }
     }
-    if (child.type === React.Fragment || child.type === JumpLinksList) {
+    if ([React.Fragment, JumpLinksList, JumpLinksItem].includes(child.type)) {
       getScrollItems(child.props.children, res);
     }
   });
@@ -129,7 +130,8 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                   onClickProp(ev);
                 }
               },
-              isActive: isActiveProp || activeIndex === jumpLinkIndex++
+              isActive: isActiveProp || activeIndex === jumpLinkIndex++,
+              children: cloneChildren(child.props.children)
             });
           } else if (child.type === React.Fragment) {
             return cloneChildren(child.props.children);

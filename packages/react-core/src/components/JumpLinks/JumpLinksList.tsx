@@ -14,10 +14,8 @@ export const JumpLinksList: React.FunctionComponent<JumpLinksListProps> = ({
   className,
   ...props
 }: JumpLinksListProps) => (
-  <li className={css(styles.jumpLinksItem)}>
-    <ul className={css(styles.jumpLinksList, className)} {...props}>
-      {children}
-    </ul>
-  </li>
+  <ul className={css(styles.jumpLinksList, className)} {...props}>
+    {children}
+  </ul>
 );
 JumpLinksList.displayName = 'JumpLinksList';
