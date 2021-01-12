@@ -8,7 +8,7 @@ import { PageContextConsumer, PageContextProps } from './Page';
 
 interface LogoProps {
   href?: string;
-  ['key']: any;
+  [key: string]: any;
 }
 
 export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
