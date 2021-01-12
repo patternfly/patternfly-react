@@ -14,7 +14,7 @@ export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, '
     ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
     props: SimpleListItemProps
   ) => void;
-  /** Indicates whether component is controlled by its internal state (by default it's true) */
+  /** Indicates whether component is controlled by its internal state */
   isControlled?: boolean;
 }
 
