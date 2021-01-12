@@ -43,12 +43,11 @@ exports[`Check dark page against snapshot 1`] = `
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         PageHeaderTools | Avatar
       </header>
@@ -155,12 +154,11 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -268,12 +266,11 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -549,12 +546,11 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -829,12 +825,11 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -1378,12 +1373,11 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -1855,12 +1849,11 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -2197,12 +2190,11 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         <div
           className="pf-c-page__header-nav"
@@ -2477,12 +2469,11 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         <div
           className="pf-c-page__header-brand"
         >
-          <a
+          <span
             className="pf-c-page__header-brand-link"
-            href="/"
           >
             Logo
-          </a>
+          </span>
         </div>
         PageHeaderTools | Avatar
       </header>

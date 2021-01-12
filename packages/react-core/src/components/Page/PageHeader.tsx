@@ -6,13 +6,18 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Button, ButtonVariant } from '../../components/Button';
 import { PageContextConsumer, PageContextProps } from './Page';
 
+interface LogoProps {
+  href?: string;
+  ['key']: any;
+}
+
 export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page header */
   className?: string;
   /** Component to render the logo/brand, use <Brand /> */
   logo?: React.ReactNode;
   /** Additional props passed to the logo anchor container */
-  logoProps?: object;
+  logoProps?: LogoProps;
   /** Component to use to wrap the passed <logo> */
   logoComponent?: React.ReactNode;
   /** Component to render the header tools, use <PageHeaderTools />  */
@@ -36,7 +41,7 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
 export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   className = '',
   logo = null as React.ReactNode,
-  logoProps = { href: '/' },
+  logoProps = null as LogoProps,
   logoComponent = 'a',
   headerTools = null as React.ReactNode,
   topNav = null as React.ReactNode,
@@ -49,7 +54,12 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   'aria-controls': ariaControls = null,
   ...props
 }: PageHeaderProps) => {
-  const LogoComponent = logoComponent as any;
+  let detectedLogoComponent = logoComponent;
+  if (logoComponent === 'a' && !logoProps?.href) {
+    detectedLogoComponent = 'span';
+  }
+  const LogoComponent = detectedLogoComponent as any;
+
   if ([false, true].includes(deprecatedIsManagedSidebar)) {
     console.warn(
       'isManagedSidebar is deprecated in the PageHeader component. To make the sidebar toggle uncontrolled, pass this prop in the Page component'

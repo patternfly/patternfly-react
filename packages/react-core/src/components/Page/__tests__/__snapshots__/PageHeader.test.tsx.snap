@@ -12,12 +12,11 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <div
       className="pf-c-page__header-brand"
     >
-      <a
+      <span
         className="pf-c-page__header-brand-link"
-        href="/"
       >
         Logo
-      </a>
+      </span>
     </div>
     PageHeaderTools | Avatar
   </header>
