@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.87.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.4...@patternfly/react-core@4.87.5) (2021-01-12)
+
+
+### Bug Fixes
+
+* **primary-detail-demo:** enable static drawer open on mobile view ([#5311](https://github.com/patternfly/patternfly-react/issues/5311)) ([538a678](https://github.com/patternfly/patternfly-react/commit/538a6783f98cbc1a40bcf3300f6c0fc2a0057c7d))
+
+
+
+
+
 ## [4.87.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.3...@patternfly/react-core@4.87.4) (2021-01-11)
 
 **Note:** Version bump only for package @patternfly/react-core
