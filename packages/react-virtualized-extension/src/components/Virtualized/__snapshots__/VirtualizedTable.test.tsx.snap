@@ -1386,7 +1386,7 @@ exports[`Actions virtualized table 1`] = `
                                         data-key={5}
                                         data-label=""
                                         onMouseEnter={[Function]}
-                                        scope=""
+                                        scope={null}
                                       />
                                     </ThBase>
                                   </Th>
@@ -2546,7 +2546,7 @@ exports[`Selectable virtualized table 1`] = `
                                         data-key={0}
                                         data-label=""
                                         onMouseEnter={[Function]}
-                                        scope=""
+                                        scope={null}
                                       >
                                         <SelectColumn
                                           aria-label="Select all rows"
@@ -4593,7 +4593,7 @@ exports[`Simple Actions table 1`] = `
                                         data-key={5}
                                         data-label=""
                                         onMouseEnter={[Function]}
-                                        scope=""
+                                        scope={null}
                                       />
                                     </ThBase>
                                   </Th>
