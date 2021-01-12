@@ -7,6 +7,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
+import { MenuProps } from './Menu';
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -39,10 +40,14 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isSelected?: boolean;
   /** Flyout menu */
   flyoutMenu?: React.ReactNode;
-  /** Drilldown menu */
-  direction?: 'down' | 'up';
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
+  /** Drilldown menu */
+  drilldownMenu?: MenuProps;
+  /** Sub menu direction */
+  direction?: 'down' | 'up';
+  /** True if item is on current selection path */
+  onPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
   /** Forwarded ref */
@@ -68,6 +73,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   actions,
   onShowFlyout,
   innerRef,
+  drilldownMenu,
+  onPath,
   ...props
 }: MenuItemProps) => {
   const Component = component || to ? 'a' : 'button';
@@ -86,14 +93,21 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   };
 
   const renderItem = (onSelect: any, activeItemId: any, selected: any | any[]): React.ReactNode => {
-    const additionalProps =
-      Component === 'a'
-        ? {
-            href: to,
-            'aria-disabled': isDisabled ? true : null,
-            tabIndex: isDisabled ? -1 : null
-          }
-        : {};
+    let additionalProps = {};
+    if (Component === 'a') {
+      additionalProps = {
+        href: to,
+        'aria-disabled': isDisabled ? true : null,
+        tabIndex: isDisabled ? -1 : null
+      };
+    } else if (Component === 'button') {
+      additionalProps = {
+        type: 'button'
+      };
+    }
+    if (onPath) {
+      (additionalProps as any)['aria-expanded'] = true;
+    }
     const getAriaCurrent = () => {
       if (isActive !== null) {
         if (isActive) {
@@ -154,13 +168,19 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           )}
         </Component>
         {flyoutVisible && flyoutMenu}
+        {drilldownMenu}
       </>
     );
   };
 
   return (
     <li
-      className={css(styles.menuListItem, isDisabled && styles.modifiers.disabled, className)}
+      className={css(
+        styles.menuListItem,
+        isDisabled && styles.modifiers.disabled,
+        onPath && styles.modifiers.currentPath,
+        className
+      )}
       onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
       onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
       // onClick={drilldownMenu !== undefined ? () => showDrilldown() : undefined}
