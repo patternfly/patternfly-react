@@ -45,7 +45,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   hasNoBorder = false,
   isResizable = false,
   onResize,
-  minSize,
+  minSize = 0,
   maxSize,
   increment = 5,
   resizeAriaLabel = 'Resize',
@@ -56,6 +56,14 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const panel = React.useRef<HTMLDivElement>();
   const { position, isExpanded, isStatic, onExpand } = React.useContext(DrawerContext);
   let currWidth: number = 0;
+  let panelRect: DOMRect;
+  let parentRect: DOMRect;
+  let min: number;
+  let max: number;
+  let right: number;
+  let left: number;
+  let bottom: number;
+  let setInitialVals: boolean = true;
 
   const handleMousedown = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -63,33 +71,41 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     document.addEventListener('mousemove', callbackMouseMove);
     document.addEventListener('mouseup', callbackMouseUp);
     isResizing = true;
+    setInitialVals = true;
   };
 
   const handleMousemove = (e: MouseEvent) => {
     if (!isResizing) {
       return;
     }
-    const panelRect = panel.current.getBoundingClientRect();
-    const parentRect = panel.current.parentElement.getBoundingClientRect();
-    const min = minSize ? minSize : 0;
-    const mousePos = position === 'bottom' ? e.clientY : e.clientX;
-    let max = parentRect.width;
-    if (maxSize) {
-      max = maxSize;
-    } else if (position === 'bottom') {
-      max = parentRect.height;
-    }
 
+    if (setInitialVals) {
+      panelRect = panel.current.getBoundingClientRect();
+      parentRect = panel.current.parentElement.getBoundingClientRect();
+      min = minSize;
+      max = parentRect.width;
+      if (maxSize) {
+        max = maxSize;
+      } else if (position === 'bottom') {
+        max = parentRect.height;
+      }
+      right = panelRect.right;
+      left = panelRect.left;
+      bottom = panelRect.bottom;
+      setInitialVals = false;
+    }
+    const mousePos = position === 'bottom' ? e.clientY : e.clientX;
     let newSize = 0;
     if (position === 'right') {
-      newSize = panelRect.right - mousePos;
+      newSize = right - mousePos;
     } else if (position === 'left') {
-      newSize = mousePos - panelRect.left;
+      newSize = mousePos - left;
     } else {
-      newSize = panelRect.bottom - mousePos;
+      newSize = bottom - mousePos;
     }
 
     if (newSize >= min && newSize <= max) {
+      panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
       if (position === 'bottom') {
         panel.current.style.overflowAnchor = 'none';
       }
@@ -108,6 +124,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     }
     isResizing = false;
     onResize && onResize(currWidth, id);
+    setInitialVals = true;
     document.removeEventListener('mousemove', callbackMouseMove);
     document.removeEventListener('mouseup', callbackMouseUp);
   };
@@ -166,6 +183,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       }
       if (newSize + delta >= min && newSize + delta <= max) {
         newSize = newSize + delta;
+        panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
         if (position === 'bottom') {
           panel.current.style.overflowAnchor = 'none';
         }
