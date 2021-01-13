@@ -8,6 +8,9 @@ import { PageContextConsumer, PageContextProps } from './Page';
 
 interface LogoProps {
   href?: string;
+  onClick?: any;
+  name?: string;
+  download?: string;
   [key: string]: any;
 }
 
@@ -55,9 +58,12 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   ...props
 }: PageHeaderProps) => {
   let detectedLogoComponent = logoComponent;
-  if (logoComponent === 'a' && !logoProps?.href) {
-    detectedLogoComponent = 'span';
+  if (logoComponent === 'a') {
+    if (!logoProps?.href && !logoProps?.name && !logoProps?.onClick && !logoProps?.target) {
+      detectedLogoComponent = 'span';
+    }
   }
+
   const LogoComponent = detectedLogoComponent as any;
 
   if ([false, true].includes(deprecatedIsManagedSidebar)) {
