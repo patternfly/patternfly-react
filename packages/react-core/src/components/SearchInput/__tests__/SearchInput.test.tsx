@@ -50,5 +50,13 @@ test('navigable search results', () => {
   expect(props.onClear).toBeCalled();
 });
 
+test('hide clear button', () => {
+  const { onClear, ...testProps } = props;
+  const view = mount(
+    <SearchInput {...testProps} resultsCount='3' aria-label="simple text input without on clear" />
+  );
+  expect(view.find('.pf-c-search-input__clear').length).toBe(0);
+})
+
 
 
