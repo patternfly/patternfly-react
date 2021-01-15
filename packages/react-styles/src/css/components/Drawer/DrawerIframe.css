@@ -1,0 +1,3 @@
+.pf-m-drawer-resizing iframe {
+  pointer-events: none !important;
+}

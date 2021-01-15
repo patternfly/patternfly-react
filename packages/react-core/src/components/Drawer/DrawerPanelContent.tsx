@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
+import '@patternfly/react-styles/css/components/Drawer/DrawerIframe';
 import { css } from '@patternfly/react-styles';
 import { DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -55,6 +56,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     e.preventDefault();
     document.addEventListener('mousemove', callbackMouseMove);
     document.addEventListener('mouseup', callbackMouseUp);
+    panel.current.parentElement.classList.add('pf-m-drawer-resizing');
     isResizing = true;
   };
 
@@ -98,6 +100,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (!isResizing) {
       return;
     }
+    panel.current.parentElement.classList.remove('pf-m-drawer-resizing');
     isResizing = false;
     document.removeEventListener('mousemove', callbackMouseMove);
     document.removeEventListener('mouseup', callbackMouseUp);
