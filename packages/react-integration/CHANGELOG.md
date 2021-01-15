@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.67.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.66.1...@patternfly/react-integration@4.67.0) (2021-01-15)
+
+
+### Bug Fixes
+
+* **Wizard:** set a custom width to the wizard modal ([#5256](https://github.com/patternfly/patternfly-react/issues/5256)) ([22dd8f6](https://github.com/patternfly/patternfly-react/commit/22dd8f6518b37e45fec646b64bb9d58f188a7707))
+
+
+### Features
+
+* **ChipGroup:** Add event handler prop for overflow-chip click  ([#5272](https://github.com/patternfly/patternfly-react/issues/5272)) ([c4af7f1](https://github.com/patternfly/patternfly-react/commit/c4af7f17be30dbf86f4a9caf41acc29001b395db))
+
+
+
+
+
 ## [4.66.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.66.0...@patternfly/react-integration@4.66.1) (2021-01-11)
 
 **Note:** Version bump only for package @patternfly/react-integration
