@@ -429,12 +429,17 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       activeStep
     };
 
+    const divStyles = {
+      ...(height ? { height } : {}),
+      ...(width ? { width } : {})
+    };
+
     const wizard = (
       <WizardContextProvider value={context}>
         <div
           {...rest}
           className={css(styles.wizard, activeStep && activeStep.isFinishedStep && 'pf-m-finished', className)}
-          {...(height && { style: { height } })}
+          style={Object.keys(divStyles).length ? divStyles : undefined}
         >
           {title && (
             <WizardHeader
@@ -479,6 +484,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (isOpen !== undefined) {
       return (
         <Modal
+          width={width !== null ? width : undefined}
           isOpen={isOpen}
           variant={ModalVariant.large}
           aria-labelledby={this.titleId}
