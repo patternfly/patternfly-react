@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.87.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.5...@patternfly/react-core@4.87.6) (2021-01-15)
+
+
+### Bug Fixes
+
+* **SearchInput:** hide clear button when onClear function is not set ([#5230](https://github.com/patternfly/patternfly-react/issues/5230)) ([df2e5e6](https://github.com/patternfly/patternfly-react/commit/df2e5e6011aae2205038027ced4de880c5cab71d))
+
+
+
+
+
 ## [4.87.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.4...@patternfly/react-core@4.87.5) (2021-01-12)
 
 
