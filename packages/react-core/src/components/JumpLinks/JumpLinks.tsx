@@ -107,10 +107,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const cloneChildren = (children: React.ReactNode): React.ReactNode =>
     !hasScrollSpy
       ? children
-      : React.Children.map(children, (child: any, i: number) => {
+      : React.Children.map(children, (child: any) => {
           if (child.type === JumpLinksItem) {
             const { onClick: onClickProp, isActive: isActiveProp } = child.props;
-            const scrollItem = scrollItems[i];
+            const itemIndex = jumpLinkIndex++;
+            const scrollItem = scrollItems[itemIndex];
             return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
               onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
                 // Items might have rendered after this component. Do a quick refresh.
@@ -119,7 +120,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                   newScrollItems = getScrollItems(children, []);
                   setScrollItems(newScrollItems);
                 }
-                const newScrollItem = scrollItem || newScrollItems[i];
+                const newScrollItem = scrollItem || newScrollItems[itemIndex];
 
                 if (newScrollItem) {
                   newScrollItem.scrollIntoView();
@@ -130,7 +131,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                   onClickProp(ev);
                 }
               },
-              isActive: isActiveProp || activeIndex === jumpLinkIndex++,
+              isActive: isActiveProp || activeIndex === itemIndex,
               children: cloneChildren(child.props.children)
             });
           } else if (child.type === React.Fragment) {
