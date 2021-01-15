@@ -11,6 +11,7 @@ exports[`ChipGroup chip group default 1`] = `
   isClosable={false}
   numChips={3}
   onClick={[Function]}
+  onOverflowChipClick={[Function]}
   tooltipPosition="top"
 >
   <GenerateId
@@ -129,6 +130,7 @@ exports[`ChipGroup chip group with category 1`] = `
   isClosable={false}
   numChips={3}
   onClick={[Function]}
+  onOverflowChipClick={[Function]}
   tooltipPosition="top"
 >
   <GenerateId
@@ -254,6 +256,7 @@ exports[`ChipGroup chip group with category and tooltip 1`] = `
   isClosable={false}
   numChips={3}
   onClick={[Function]}
+  onOverflowChipClick={[Function]}
   tooltipPosition="top"
 >
   <GenerateId
@@ -379,6 +382,7 @@ exports[`ChipGroup chip group with closable category 1`] = `
   isClosable={true}
   numChips={3}
   onClick={[Function]}
+  onOverflowChipClick={[Function]}
   tooltipPosition="top"
 >
   <GenerateId

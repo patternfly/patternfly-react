@@ -166,6 +166,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ChipWithCategoryGroupDemo
   },
   {
+    id: 'chipgroup-with-overflow-chip-event-handler-demo',
+    name: 'ChipGroup With Overflow Event Handler',
+    componentType: Examples.ChipGroupWithOverflowChipEventHandler
+  },
+  {
     id: 'clipboard-copy-demo',
     name: 'ClipboardCopy Demo',
     componentType: Examples.ClipboardCopyDemo

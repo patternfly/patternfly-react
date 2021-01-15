@@ -28,6 +28,7 @@ export * from './CheckboxDemo/CheckboxDemo';
 export * from './ChipGroupDemo/ChipGroupDefaultIsOpenDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ChipGroupDemo/ChipGroupWithCategoryDemo';
+export * from './ChipGroupDemo/ChipGroupWithOverflowChipEventHandler';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ConsolesDemo/ConsolesDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';

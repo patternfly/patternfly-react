@@ -10174,6 +10174,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isClosable={false}
               numChips={3}
               onClick={[Function]}
+              onOverflowChipClick={[Function]}
               tooltipPosition="top"
             >
               <GenerateId
