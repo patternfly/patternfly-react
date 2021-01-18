@@ -65,7 +65,7 @@ exports[`numberInput disables lower threshold 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={0}
       />
       <Button
@@ -186,7 +186,7 @@ exports[`numberInput disables upper threshold 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={100}
       />
       <Button
@@ -321,7 +321,7 @@ exports[`numberInput passes button props successfully 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -446,7 +446,7 @@ exports[`numberInput passes input props successfully 1`] = `
         className="pf-c-form-control"
         name="test-name"
         onChange={[MockFunction]}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -572,7 +572,7 @@ exports[`numberInput renders custom width 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -694,7 +694,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={0}
       />
       <Button
@@ -817,7 +817,7 @@ exports[`numberInput renders disabled 1`] = `
         className="pf-c-form-control"
         disabled={true}
         readOnly={true}
-        type="text"
+        type="number"
         value={90}
       />
       <Button
@@ -945,7 +945,7 @@ exports[`numberInput renders unit & position 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -1067,7 +1067,7 @@ exports[`numberInput renders unit 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -1192,7 +1192,7 @@ exports[`numberInput renders value 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={90}
       />
       <Button

@@ -92,7 +92,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         </Button>
         <input
           className={css(styles.formControl)}
-          type="text"
+          type="number"
           value={value}
           name={inputName}
           aria-label={inputAriaLabel}
