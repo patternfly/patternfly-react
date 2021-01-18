@@ -11,8 +11,7 @@ import {
   Title,
   Tooltip
 } from '@patternfly/react-core';
-import { ControlledEditor } from '@monaco-editor/react';
-// import { KeyCode } from 'monaco-editor';
+import { monaco, ControlledEditor, EditorDidMount } from '@monaco-editor/react';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/js/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
@@ -66,6 +65,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isAllowDownload?: boolean;
   /** Flag to add copy button to code editor actions*/
   isAllowCopy?: boolean;
+  /** */
+  isLanguageLabel?: boolean;
   /** Accessibly label for the copy button*/
   copyButtonAriaLabel?: string;
   /** */
@@ -90,6 +91,10 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** */
   customControls?: React.ReactNode | React.ReactNode[];
+  /** Callback for the section ref */
+  innerRef?: React.Ref<any>;
+  /** */
+  onEditorDidMount?: (getEditorValue: () => string, editor: any) => void;
 }
 
 interface CodeEditorState {
@@ -103,17 +108,20 @@ interface CodeEditorState {
 export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
   private editor: any = null;
+  private wrapperRef = React.createRef<HTMLDivElement>();
   timer = null as number;
+
   static defaultProps: CodeEditorProps = {
     className: '',
     code: '',
-    onChange: () => {},
+    onEditorDidMount: () => {},
     language: Language.text,
     isDarkTheme: false,
     height: '',
     width: '',
     isLineNumbers: true,
     isReadOnly: false,
+    isLanguageLabel: false,
     loading: '',
     emptyState: '',
     downloadFileName: Date.now().toString(),
@@ -133,21 +141,6 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipPosition: 'top',
     customControls: null
   };
-
-  static getLanguageFromExtension(extension: string) {
-    switch (extension) {
-      case 'js':
-        return Language.javascript;
-      case 'ts':
-        return Language.typescript;
-      case 'md':
-        return Language.markdown;
-      case 'txt':
-        return Language.text;
-      default:
-        return Language[extension as keyof typeof Language];
-    }
-  }
 
   static getExtensionFromLanguage(language: Language) {
     switch (language) {
@@ -182,21 +175,38 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     this.setState({ value });
   };
 
-  editorDidMount = (getEditorValue: () => string, editor: any) => {
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleGlobalKeys);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleGlobalKeys);
+  }
+
+  handleGlobalKeys = (event: KeyboardEvent) => {
+    if (this.wrapperRef.current === document.activeElement && (event.key === 'ArrowDown' || event.key === ' ')) {
+      this.editor.focus();
+      event.preventDefault();
+    }
+  };
+
+  editorDidMount: EditorDidMount = (getEditorValue: () => string, editor: any) => {
+    monaco.init().then(monacoInstance => {
+      // eslint-disable-next-line no-bitwise
+      editor.addCommand(monacoInstance.KeyMod.Shift | monacoInstance.KeyCode.Tab, () =>
+        this.wrapperRef.current.focus()
+      );
+    });
+
     this.editor = editor;
-    // console.log(KeyCode.Escape);
-    // this.editor.addCommand(KeyCode.Shift | KeyCode.Escape, () => console.log("test"));
-    // console.log(typeof this.editor);
+    this.props.onEditorDidMount(getEditorValue, editor);
   };
 
   handleFileChange = (value: string, filename: string) => {
-    const extension = filename.split('.').pop();
-    if (CodeEditor.getLanguageFromExtension(extension) === this.props.language) {
-      this.setState({
-        value,
-        filename
-      });
-    }
+    this.setState({
+      value,
+      filename
+    });
   };
 
   handleFileReadStarted = () => this.setState({ isLoading: true });
@@ -277,6 +287,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       copyButtonSuccessTooltipText,
       isReadOnly,
       isAllowUpload,
+      isLanguageLabel,
       copyButtonAriaLabel,
       copyButtonToolTipText,
       uploadButtonAriaLabel,
@@ -296,7 +307,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     const options = {
       readOnly: isReadOnly,
       cursorStyle: 'line' as any,
-      lineNumbers: (isLineNumbers ? 'on' : 'off') as any
+      lineNumbers: (isLineNumbers ? 'on' : 'off') as any,
+      tabIndex: -1
     };
 
     return (
@@ -381,17 +393,19 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   )}
                 </div>
               )}
-              <div className={css(styles.codeEditorTab)}>
-                <span className={css(styles.codeEditorTabIcon)}>
-                  <CodeIcon />
-                </span>
-                <span className={css(styles.codeEditorTabText)}>{language.toUpperCase()}</span>
-              </div>
+              {isLanguageLabel && (
+                <div className={css(styles.codeEditorTab)}>
+                  <span className={css(styles.codeEditorTabIcon)}>
+                    <CodeIcon />
+                  </span>
+                  <span className={css(styles.codeEditorTabText)}>{language.toUpperCase()}</span>
+                </div>
+              )}
             </div>
           );
 
           const editor = (
-            <div className={css(styles.codeEditorCode)}>
+            <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0}>
               <ControlledEditor
                 height={height}
                 width={width}

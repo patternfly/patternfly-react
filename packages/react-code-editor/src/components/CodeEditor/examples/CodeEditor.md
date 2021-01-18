@@ -43,9 +43,13 @@ class BasicCodeEditor extends React.Component {
       });
     };
     
-    this.onChange = code => {
-      console.log(code);
-    }
+    this.onEditorDidMount = getEditorValue => {
+      console.log(getEditorValue());
+    };
+    
+    this.onChange = value => {
+      console.log(value);
+    };
   }
   
   render() {
@@ -83,6 +87,7 @@ class BasicCodeEditor extends React.Component {
           isReadOnly={isReadOnly}
           code="Some example content"
           onChange={this.onChange}
+          onEditorDidMount={this.onEditorDidMount}
           height='400px'
         />
       </>
@@ -100,6 +105,7 @@ import { CodeEditor } from '@patternfly/react-code-editor';
   isAllowUpload
   isAllowDownload
   isAllowCopy
+  isLanguageLabel
   height='400px'
 />
 ```
@@ -117,9 +123,9 @@ class customControlExample extends React.Component {
       code: ''
     };
     
-    this.onChange = (code) => {
-      this.setState({code});
-    };
+    this.onChange = value => {
+      console.log(value);
+    }
     
     this.onExecuteCode = (code) => {
       console.log(code);
