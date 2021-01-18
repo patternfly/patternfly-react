@@ -30,7 +30,7 @@ describe('NumberInput Demo Test', () => {
 
   it('can be manually set with input', () => {
     cy.get('#input1')
-      .clear()
+      .type('{selectall}')
       .type('1');
     cy.get('#input1').should('have.value', 1);
     cy.get('#minus-button').should('not.be.disabled');
