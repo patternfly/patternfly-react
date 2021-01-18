@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "@monaco-editor/react": "3.7.2",
-    "@patternfly/react-core": "^4.87.3",
+    "@patternfly/react-core": "^4.88.0",
     "@patternfly/react-icons": "^4.8.0",
-    "@patternfly/react-styles": "^4.7.23",
+    "@patternfly/react-styles": "^4.7.24",
     "monaco-editor": "0.21.2",
     "react-dropzone": "9.0.0",
     "tslib": "1.13.0"
