@@ -2619,10 +2619,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@patternfly/patternfly-a11y@2.0.11":
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-2.0.11.tgz#6e17fa355989e635df8a2c4fdbf31f0ea74feb57"
-  integrity sha512-pl1mPt4i4ld1/QwVfRNpXIOwhHlmoH+aKyMnxuVv45a7futOTg/i5RD9mXcvlNMzktrc97zMwY5ykY/s3zNBKQ==
+"@patternfly/patternfly-a11y@2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-2.0.12.tgz#28aad4ce2b088a71ecb0128a718aa6069930b994"
+  integrity sha512-/RbsCV4JPA8WPoSCcENvTqTmNC6JU7+kaPYBHMrS0j4KMxiQce7ah3gl84z8bSWl2qZqufYY4dIL3qPjvHzQfQ==
   dependencies:
     "@patternfly/react-charts" "^6.9.8"
     "@patternfly/react-core" "^4.50.2"
