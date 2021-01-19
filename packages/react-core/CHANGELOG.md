@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.88.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.88.0...@patternfly/react-core@4.88.1) (2021-01-19)
+
+
+### Bug Fixes
+
+* **Nav:** Make nav items keyboard and screen reader accessible ([#5312](https://github.com/patternfly/patternfly-react/issues/5312)) ([da90ef8](https://github.com/patternfly/patternfly-react/commit/da90ef8a8d5e653fd657decdddb795772e8b5309))
+
+
+
+
+
 # [4.88.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.87.6...@patternfly/react-core@4.88.0) (2021-01-15)
 
 
