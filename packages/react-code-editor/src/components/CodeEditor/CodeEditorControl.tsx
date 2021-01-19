@@ -9,7 +9,7 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   className?: string;
   /** accessible label for the code editor control */
   'aria-label'?: string;
-  /** */
+  /** Text to display in the tooltip*/
   toolTipText: React.ReactNode;
   /** Copy button popover position. */
   position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
@@ -19,9 +19,9 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   exitDelay?: number;
   /** Delay in ms before the tooltip appears. */
   entryDelay?: number;
-  /** */
+  /** Event handler for the click of the button */
   onClick: (code: string, event?: any) => void;
-  /** */
+  /** Flag indicating that the button is visible above the code editor */
   isVisible?: boolean;
 }
 

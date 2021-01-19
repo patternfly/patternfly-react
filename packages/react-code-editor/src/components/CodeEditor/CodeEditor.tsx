@@ -65,36 +65,37 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isAllowDownload?: boolean;
   /** Flag to add copy button to code editor actions*/
   isAllowCopy?: boolean;
-  /** */
+  /** Flag to include a label indicating the currently configured editor language */
   isLanguageLabel?: boolean;
   /** Accessibly label for the copy button*/
   copyButtonAriaLabel?: string;
-  /** */
+  /** Text to display in the tooltip on the copy button before text is copied */
   copyButtonToolTipText?: string;
-  /** Text to display after code copied to clipboard*/
+  /** Text to display in the tooltip on the copy button after code copied to clipboard*/
   copyButtonSuccessTooltipText?: string;
   /** Accessible label for the upload button */
   uploadButtonAriaLabel?: string;
-  /** */
+  /** Text to display in the tooltip on the upload button */
   uploadButtonToolTipText?: string;
   /** Accessible label for the download button */
   downloadButtonAriaLabel?: string;
-  /** */
+  /** Text to display in the tooltip on the download button */
   downloadButtonToolTipText?: string;
-  /** */
+  /** The delay before tooltip fades after code copied */
   toolTipCopyExitDelay: number;
-  /** */
-  toolTipEntryDelay: number;
-  /** */
+  /** The entry and exit delay for all tooltips */
+  toolTipDelay: number;
+  /** The max width of the tooltips on all button */
   toolTipMaxWidth: string;
-  /** */
+  /** The position of tooltips on all buttons */
   toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  /** */
+  /** A single node or array of nodes - ideally CodeEditorControls - to display above code editor */
   customControls?: React.ReactNode | React.ReactNode[];
-  /** Callback for the section ref */
-  innerRef?: React.Ref<any>;
-  /** */
-  onEditorDidMount?: (getEditorValue: () => string, editor: any) => void;
+  /** Callback which fires after the code editor is mounted containing callback to get the code
+   * in the editor and a reference to the monaco editor */
+  onEditorDidMount?: (getEditorValue: () => string, editor: any, monaco: any) => void;
+  /** Flag to add the minimap to the code editor */
+  isDisplayMinimap?: boolean;
 }
 
 interface CodeEditorState {
@@ -136,10 +137,11 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     downloadButtonToolTipText: 'Download',
     copyButtonSuccessTooltipText: 'Content added to clipboard',
     toolTipCopyExitDelay: 1600,
-    toolTipEntryDelay: 100,
+    toolTipDelay: 100,
     toolTipMaxWidth: '100px',
     toolTipPosition: 'top',
-    customControls: null
+    customControls: null,
+    isDisplayMinimap: false
   };
 
   static getExtensionFromLanguage(language: Language) {
@@ -196,10 +198,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       editor.addCommand(monacoInstance.KeyMod.Shift | monacoInstance.KeyCode.Tab, () =>
         this.wrapperRef.current.focus()
       );
+      this.props.onEditorDidMount(getEditorValue, editor, monacoInstance);
     });
-
     this.editor = editor;
-    this.props.onEditorDidMount(getEditorValue, editor);
   };
 
   handleFileChange = (value: string, filename: string) => {
@@ -294,7 +295,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       uploadButtonToolTipText,
       downloadButtonAriaLabel,
       downloadButtonToolTipText,
-      toolTipEntryDelay,
+      toolTipDelay,
       toolTipCopyExitDelay,
       toolTipMaxWidth,
       toolTipPosition,
@@ -302,13 +303,17 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       isAllowDownload,
       language,
       emptyState: providedEmptyState,
-      customControls
+      customControls,
+      isDisplayMinimap
     } = this.props;
     const options = {
       readOnly: isReadOnly,
       cursorStyle: 'line' as any,
       lineNumbers: (isLineNumbers ? 'on' : 'off') as any,
-      tabIndex: -1
+      tabIndex: -1,
+      minimap: {
+        enabled: isDisplayMinimap
+      }
     };
 
     return (
@@ -352,8 +357,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     <Tooltip
                       trigger="mouseenter"
                       content={<div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>}
-                      exitDelay={toolTipCopyExitDelay}
-                      entryDelay={toolTipEntryDelay}
+                      exitDelay={copied ? toolTipCopyExitDelay : toolTipDelay}
+                      entryDelay={toolTipDelay}
                       maxWidth={toolTipMaxWidth}
                       position={toolTipPosition}
                     >
@@ -366,7 +371,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     <Tooltip
                       trigger="mouseenter focus click"
                       content={<div>{uploadButtonToolTipText}</div>}
-                      entryDelay={toolTipEntryDelay}
+                      entryDelay={toolTipDelay}
+                      exitDelay={toolTipDelay}
                       maxWidth={toolTipMaxWidth}
                       position={toolTipPosition}
                     >
@@ -379,7 +385,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                     <Tooltip
                       trigger="mouseenter focus click"
                       content={<div>{downloadButtonToolTipText}</div>}
-                      entryDelay={toolTipEntryDelay}
+                      entryDelay={toolTipDelay}
+                      exitDelay={toolTipDelay}
                       maxWidth={toolTipMaxWidth}
                       position={toolTipPosition}
                     >

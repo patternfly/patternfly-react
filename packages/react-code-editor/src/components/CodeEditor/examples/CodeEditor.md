@@ -24,7 +24,8 @@ class BasicCodeEditor extends React.Component {
     this.state = {
       isDarkTheme: false,
       isLineNumbers: true,
-      isReadOnly: false
+      isReadOnly: false,
+      isDisplayMinimap: true
     };
     
     this.toggleDarkTheme = checked => {
@@ -42,9 +43,17 @@ class BasicCodeEditor extends React.Component {
         isReadOnly: checked
       });
     };
+    this.toggleMinimap = checked => {
+      this.setState({
+        isDisplayMinimap: checked
+      })
+    };
     
-    this.onEditorDidMount = getEditorValue => {
+    this.onEditorDidMount = (getEditorValue, editor, monaco) => {
       console.log(getEditorValue());
+      editor.layout();
+      editor.focus();
+      monaco.editor.getModels()[0].updateOptions({ tabSize: 2 });
     };
     
     this.onChange = value => {
@@ -53,7 +62,7 @@ class BasicCodeEditor extends React.Component {
   }
   
   render() {
-    const { isDarkTheme, isLineNumbers, isReadOnly } = this.state;
+    const { isDarkTheme, isLineNumbers, isReadOnly, isDisplayMinimap } = this.state;
     
     return (
       <>
@@ -81,10 +90,19 @@ class BasicCodeEditor extends React.Component {
           id="toggle-read-only"
           name="toggle-read-only"
         />
+        <Checkbox
+          label="Display Minimap"
+          isChecked={isDisplayMinimap}
+          onChange={this.toggleMinimap}
+          aria-label="display minimap checkbox"
+          id="toggle-minimap"
+          name="toggle-minimap"
+        />
         <CodeEditor
           isDarkTheme={isDarkTheme}
           isLineNumbers={isLineNumbers}
           isReadOnly={isReadOnly}
+          isDisplayMinimap={isDisplayMinimap}
           code="Some example content"
           onChange={this.onChange}
           onEditorDidMount={this.onEditorDidMount}
