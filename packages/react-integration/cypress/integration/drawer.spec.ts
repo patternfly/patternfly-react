@@ -23,23 +23,23 @@ describe('Drawer Demo Test', () => {
     cy.get('.pf-c-drawer').should('have.class', 'pf-m-panel-bottom');
   });
 
-  xit('Verify panel widths', () => {
+  it('Verify panel widths', () => {
     // Large viewport
     const $drawerPanel = cy.get('.pf-c-drawer__panel');
     $drawerPanel.should('have.class', 'pf-m-width-100');
     $drawerPanel.should('have.class', 'pf-m-width-50-on-lg');
     $drawerPanel.should('have.class', 'pf-m-width-33-on-xl');
     $drawerPanel.should('have.class', 'pf-m-width-25-on-2xl');
-    $drawerPanel.should('have.css', 'flex-basis', '33%');
+    $drawerPanel.should('have.css', 'flex-basis', 'max(0% + 9px, 33% + 0px)');
     // Medium viewport
     cy.viewport(800, 660);
-    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '100%');
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 9px, 100% + 0px)');
     // Xl viewport
     cy.viewport(1200, 660);
-    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '33%');
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 9px, 33% + 0px)');
     // 2Xl viewport
     cy.viewport(1450, 660);
-    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '25%');
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 9px, 25% + 0px)');
   });
 
   it('Verify that focus gets sent to drawer', () => {
