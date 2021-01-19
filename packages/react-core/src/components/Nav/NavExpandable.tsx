@@ -5,6 +5,7 @@ import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
+import { PageSidebarContext } from '../Page/PageSidebar';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
@@ -131,20 +132,25 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
-            <button
-              className={styles.navLink}
-              id={srText ? null : this.id}
-              onClick={onClick}
-              onMouseDown={e => e.preventDefault()}
-              aria-expanded={expandedState}
-            >
-              {title}
-              <span className={css(styles.navToggle)}>
-                <span className={css(styles.navToggleIcon)}>
-                  <AngleRightIcon aria-hidden="true" />
-                </span>
-              </span>
-            </button>
+            <PageSidebarContext.Consumer>
+              {({ isNavOpen }) => (
+                <button
+                  className={styles.navLink}
+                  id={srText ? null : this.id}
+                  onClick={onClick}
+                  onMouseDown={e => e.preventDefault()}
+                  aria-expanded={expandedState}
+                  tabIndex={isNavOpen ? null : -1}
+                >
+                  {title}
+                  <span className={css(styles.navToggle)}>
+                    <span className={css(styles.navToggleIcon)}>
+                      <AngleRightIcon aria-hidden="true" />
+                    </span>
+                  </span>
+                </button>
+              )}
+            </PageSidebarContext.Consumer>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
               {srText && (
                 <h2 className={css(a11yStyles.screenReader)} id={this.id}>

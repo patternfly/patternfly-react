@@ -5,6 +5,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { isElementInView } from '../../helpers/util';
 import { NavContext } from './Nav';
+import { PageSidebarContext } from '../Page/PageSidebar';
 
 export interface NavListProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
@@ -104,36 +105,42 @@ export class NavList extends React.Component<NavListProps> {
     return (
       <NavContext.Consumer>
         {({ isHorizontal }) => (
-          <React.Fragment>
-            {isHorizontal && (
-              <button
-                className={css(styles.navScrollButton)}
-                aria-label={ariaLeftScroll}
-                onClick={this.scrollLeft}
-                disabled={scrollViewAtStart}
-              >
-                <AngleLeftIcon />
-              </button>
+          <PageSidebarContext.Consumer>
+            {({ isNavOpen }) => (
+              <React.Fragment>
+                {isHorizontal && (
+                  <button
+                    className={css(styles.navScrollButton)}
+                    aria-label={ariaLeftScroll}
+                    onClick={this.scrollLeft}
+                    disabled={scrollViewAtStart}
+                    tabIndex={isNavOpen ? null : -1}
+                  >
+                    <AngleLeftIcon />
+                  </button>
+                )}
+                <ul
+                  ref={this.navList}
+                  className={css(styles.navList, className)}
+                  onScroll={this.handleScrollButtons}
+                  {...props}
+                >
+                  {children}
+                </ul>
+                {isHorizontal && (
+                  <button
+                    className={css(styles.navScrollButton)}
+                    aria-label={ariaRightScroll}
+                    onClick={this.scrollRight}
+                    disabled={scrollViewAtEnd}
+                    tabIndex={isNavOpen ? null : -1}
+                  >
+                    <AngleRightIcon />
+                  </button>
+                )}
+              </React.Fragment>
             )}
-            <ul
-              ref={this.navList}
-              className={css(styles.navList, className)}
-              onScroll={this.handleScrollButtons}
-              {...props}
-            >
-              {children}
-            </ul>
-            {isHorizontal && (
-              <button
-                className={css(styles.navScrollButton)}
-                aria-label={ariaRightScroll}
-                onClick={this.scrollRight}
-                disabled={scrollViewAtEnd}
-              >
-                <AngleRightIcon />
-              </button>
-            )}
-          </React.Fragment>
+          </PageSidebarContext.Consumer>
         )}
       </NavContext.Consumer>
     );

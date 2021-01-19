@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
+import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
@@ -43,7 +44,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ...props
 }: NavItemProps) => {
   const Component = component as any;
-
+  const { isNavOpen } = React.useContext(PageSidebarContext);
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
@@ -52,6 +53,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
         className={css(styles.navLink, isActive && styles.modifiers.current, className)}
         aria-current={isActive ? 'page' : null}
+        tabindex={isNavOpen ? null : '-1'}
         {...props}
       >
         {children}
