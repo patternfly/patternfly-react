@@ -1,8 +1,8 @@
-describe('Touchspin Demo Test', () => {
-  it('Navigate to touchspin section', () => {
+describe('NumberInput Demo Test', () => {
+  it('Navigate to numberInput section', () => {
     cy.visit('http://localhost:3000/');
-    cy.get('#touchspin-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/touchspin-demo-nav-link');
+    cy.get('#numberInput-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/numberInput-demo-nav-link');
   });
 
   it('has initial value of 0 & shows min threshold', () => {
@@ -30,7 +30,7 @@ describe('Touchspin Demo Test', () => {
 
   it('can be manually set with input', () => {
     cy.get('#input1')
-      .clear()
+      .type('{selectall}')
       .type('1');
     cy.get('#input1').should('have.value', 1);
     cy.get('#minus-button').should('not.be.disabled');
@@ -44,19 +44,19 @@ describe('Touchspin Demo Test', () => {
   });
 
   it('can have different unit positions', () => {
-    cy.get('#touchspin1')
+    cy.get('#numberInput1')
       .children()
       .first()
       .should('have.class', 'pf-c-input-group');
-    cy.get('#touchspin1')
+    cy.get('#numberInput1')
       .children()
       .last()
-      .should('have.class', 'pf-c-touchspin__unit');
-    cy.get('#touchspin2')
+      .should('have.class', 'pf-c-number-input__unit');
+    cy.get('#numberInput2')
       .children()
       .first()
-      .should('have.class', 'pf-c-touchspin__unit');
-    cy.get('#touchspin2')
+      .should('have.class', 'pf-c-number-input__unit');
+    cy.get('#numberInput2')
       .children()
       .last()
       .should('have.class', 'pf-c-input-group');

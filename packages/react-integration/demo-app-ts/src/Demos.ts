@@ -812,9 +812,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TopologyDemo
   },
   {
-    id: 'touchspin-demo',
-    name: 'Touchspin Demo',
-    componentType: Examples.TouchspinDemo
+    id: 'numberInput-demo',
+    name: 'Number Input Demo',
+    componentType: Examples.NumberInputDemo
   },
   {
     id: 'treeview-demo',

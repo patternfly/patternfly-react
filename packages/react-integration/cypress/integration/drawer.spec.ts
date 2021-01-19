@@ -23,7 +23,7 @@ describe('Drawer Demo Test', () => {
     cy.get('.pf-c-drawer').should('have.class', 'pf-m-panel-bottom');
   });
 
-  it('Verify panel widths', () => {
+  xit('Verify panel widths', () => {
     // Large viewport
     const $drawerPanel = cy.get('.pf-c-drawer__panel');
     $drawerPanel.should('have.class', 'pf-m-width-100');
