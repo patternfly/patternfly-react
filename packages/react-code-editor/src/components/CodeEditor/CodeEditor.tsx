@@ -11,7 +11,7 @@ import {
   Title,
   Tooltip
 } from '@patternfly/react-core';
-import { monaco, ControlledEditor, EditorDidMount } from '@monaco-editor/react';
+import MonacoEditor from 'react-monaco-editor';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/js/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
@@ -91,9 +91,9 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** A single node or array of nodes - ideally CodeEditorControls - to display above code editor */
   customControls?: React.ReactNode | React.ReactNode[];
-  /** Callback which fires after the code editor is mounted containing callback to get the code
-   * in the editor and a reference to the monaco editor */
-  onEditorDidMount?: (getEditorValue: () => string, editor: any, monaco: any) => void;
+  /** Callback which fires after the code editor is mounted containing
+   * a reference to the monaco editor and the monaco instance */
+  onEditorDidMount?: (editor: any, monaco: any) => void;
   /** Flag to add the minimap to the code editor */
   isDisplayMinimap?: boolean;
 }
@@ -170,7 +170,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     };
   }
 
-  onChange = (event: any, value: string) => {
+  onChange = (value: string, event: any) => {
     if (this.props.onChange) {
       this.props.onChange(value, event);
     }
@@ -192,14 +192,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     }
   };
 
-  editorDidMount: EditorDidMount = (getEditorValue: () => string, editor: any) => {
-    monaco.init().then(monacoInstance => {
-      // eslint-disable-next-line no-bitwise
-      editor.addCommand(monacoInstance.KeyMod.Shift | monacoInstance.KeyCode.Tab, () =>
-        this.wrapperRef.current.focus()
-      );
-      this.props.onEditorDidMount(getEditorValue, editor, monacoInstance);
-    });
+  editorDidMount = (editor: any, monaco: any) => {
+    // eslint-disable-next-line no-bitwise
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => this.wrapperRef.current.focus());
+    this.props.onEditorDidMount(editor, monaco);
     this.editor = editor;
   };
 
@@ -234,7 +230,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
         })
         .catch(error => {
           // eslint-disable-next-line no-console
-          console.log('error', error);
+          console.error('error', error);
           this.handleFileReadFinished();
           this.handleFileChange('', ''); // Clear the filename field on a failure
         });
@@ -244,7 +240,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   onDropRejected = (rejectedFiles: File[]) => {
     if (rejectedFiles.length > 0) {
       // eslint-disable-next-line no-console
-      console.log('There was an error - i need and error state'); // TODO
+      console.error('There was an error accepting that dropped file'); // TODO
     }
   };
 
@@ -413,7 +409,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editor = (
             <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0}>
-              <ControlledEditor
+              <MonacoEditor
                 height={height}
                 width={width}
                 language={language}
@@ -421,7 +417,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 options={options}
                 onChange={this.onChange}
                 editorDidMount={this.editorDidMount}
-                theme={isDarkTheme ? 'dark' : 'light'}
+                theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
               />
             </div>
           );

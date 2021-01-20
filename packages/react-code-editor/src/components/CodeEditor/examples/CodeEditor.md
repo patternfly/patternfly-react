@@ -8,14 +8,14 @@ beta: true
 
 Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor)!
 
-import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
+import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-editor';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 
 ## Examples
 ### Basic
 ```js
 import React from 'react';
-import { CodeEditor } from '@patternfly/react-code-editor';
+import { CodeEditor, Language } from '@patternfly/react-code-editor';
 import { Checkbox } from '@patternfly/react-core';
 
 class BasicCodeEditor extends React.Component {
@@ -49,11 +49,11 @@ class BasicCodeEditor extends React.Component {
       })
     };
     
-    this.onEditorDidMount = (getEditorValue, editor, monaco) => {
-      console.log(getEditorValue());
+    this.onEditorDidMount = (editor, monaco) => {
+      console.log(editor.getValue());
       editor.layout();
       editor.focus();
-      monaco.editor.getModels()[0].updateOptions({ tabSize: 2 });
+      monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });
     };
     
     this.onChange = value => {
@@ -103,8 +103,10 @@ class BasicCodeEditor extends React.Component {
           isLineNumbers={isLineNumbers}
           isReadOnly={isReadOnly}
           isDisplayMinimap={isDisplayMinimap}
+          isLanguageLabel
           code="Some example content"
           onChange={this.onChange}
+          language={Language.javascript}
           onEditorDidMount={this.onEditorDidMount}
           height='400px'
         />
@@ -141,9 +143,9 @@ class customControlExample extends React.Component {
       code: ''
     };
     
-    this.onChange = value => {
-      console.log(value);
-    }
+    this.onChange = code => {
+      this.setState({ code })
+    };
     
     this.onExecuteCode = (code) => {
       console.log(code);
