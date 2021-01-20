@@ -216,7 +216,6 @@ class FullPageWizard extends React.Component {
               navAriaLabel={`${title} steps`}
               mainAriaLabel={`${title} content`}
               steps={steps}
-              height={400}
             />
           </PageSection>
         </Page>
