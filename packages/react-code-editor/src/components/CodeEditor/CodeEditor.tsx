@@ -195,6 +195,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   editorDidMount = (editor: any, monaco: any) => {
     // eslint-disable-next-line no-bitwise
     editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => this.wrapperRef.current.focus());
+    Array.from(document.getElementsByClassName('monaco-editor')).forEach(editorElement =>
+      editorElement.removeAttribute('role')
+    );
     this.props.onEditorDidMount(editor, monaco);
     this.editor = editor;
   };
