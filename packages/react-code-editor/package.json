@@ -30,18 +30,18 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.88.0",
+    "@patternfly/react-core": "^4.88.1",
     "@patternfly/react-icons": "^4.8.0",
-    "@patternfly/react-styles": "^4.7.24",
+    "@patternfly/react-styles": "^4.7.25",
     "react-dropzone": "9.0.0",
     "tslib": "1.13.0"
   },
   "peerDependencies": {
+    "monaco-editor": "^0.21.3",
+    "monaco-editor-webpack-plugin": "^2.1.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "monaco-editor-webpack-plugin": "^2.1.0",
-    "react-monaco-editor": "^0.41.2",
-    "monaco-editor": "^0.21.3"
+    "react-monaco-editor": "^0.41.2"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
