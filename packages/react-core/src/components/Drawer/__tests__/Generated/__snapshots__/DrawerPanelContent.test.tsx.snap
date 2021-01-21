@@ -6,5 +6,9 @@ exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
   hasNoPadding={false}
   hidden={true}
   onTransitionEnd={[Function]}
-/>
+>
+  <div>
+    ReactNode
+  </div>
+</div>
 `;

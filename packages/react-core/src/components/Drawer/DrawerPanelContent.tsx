@@ -186,25 +186,23 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       hidden={hidden}
       {...props}
     >
-      {!hidden && (
-        <React.Fragment>
-          {isResizable && (
-            <div
-              className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
-              role="separator"
-              tabIndex={0}
-              aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
-              aria-label={resizeAriaLabel}
-              aria-describedby={resizeAriaDescribedBy}
-              onMouseDown={handleMousedown}
-              onKeyDown={handleKeys}
-            >
-              <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
-            </div>
-          )}
-          {children}
-        </React.Fragment>
-      )}
+      <React.Fragment>
+        {isResizable && (
+          <div
+            className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
+            role="separator"
+            tabIndex={0}
+            aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
+            aria-label={resizeAriaLabel}
+            aria-describedby={resizeAriaDescribedBy}
+            onMouseDown={handleMousedown}
+            onKeyDown={handleKeys}
+          >
+            <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
+          </div>
+        )}
+        {children}
+      </React.Fragment>
     </div>
   );
 };
