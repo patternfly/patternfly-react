@@ -14,6 +14,7 @@ test(`CodeEditor with all flags`, () => {
       isDarkTheme
       isLineNumbers={false}
       isAllowUpload
+      isLanguageLabel
       isAllowDownload
       isAllowCopy
       height="400px"
