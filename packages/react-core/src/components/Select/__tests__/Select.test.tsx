@@ -138,8 +138,8 @@ test('renders select with favorites successfully', () => {
   const view = mount(
     <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen isGrouped onFavorite={jest.fn()}
     favorites={["option-1"]}>
-      <SelectGroup label="group 1">{selectOptionsFavorites}</SelectGroup>
-      <SelectGroup label="group 2">{selectOptionsFavorites}</SelectGroup>
+      <SelectGroup key="group-1" label="group 1">{selectOptionsFavorites}</SelectGroup>
+      <SelectGroup key="group-2" label="group 2">{selectOptionsFavorites}</SelectGroup>
     </Select>
   );
   expect(view).toMatchSnapshot();
@@ -395,6 +395,7 @@ describe('API', () => {
     expect(myMock).not.toBeCalled();
   });
 });
+
 
 describe('toggle icon', () => {
   const ToggleIcon = <div>Icon</div>;
