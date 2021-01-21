@@ -5,7 +5,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { SimpleList } from '../../SimpleList';
 // any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import { SimpleListItemProps } from '../..';
 
 it('SimpleList should match snapshot (auto-generated)', () => {
   const view = shallow(
