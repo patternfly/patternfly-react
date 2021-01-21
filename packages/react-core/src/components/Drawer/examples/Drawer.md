@@ -1111,7 +1111,8 @@ class ResizableDrawer extends React.Component {
     super(props);
     this.state = {
       isExpanded: false,
-      isResizing: false
+      isResizing: false,
+      panelWidth: 200
     };
     this.drawerRef = React.createRef();
 
@@ -1126,6 +1127,15 @@ class ResizableDrawer extends React.Component {
       });
     };
 
+    this.onResize = (newWidth, id) => {
+      this.setState(
+        {
+          panelWidth: newWidth
+        },
+        () => console.log(`${id} has new width of: ${newWidth}`)
+      );
+    };
+
     this.onCloseClick = () => {
       this.setState({
         isExpanded: false
@@ -1136,7 +1146,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable>
+      <DrawerPanelContent isResizable onResize={this.onResize} id="right-resize-panel">
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel

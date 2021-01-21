@@ -14,20 +14,31 @@ import {
 
 export interface DrawerDemoState {
   isExpanded: boolean;
+  panelWidth: number;
 }
 
 export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   static displayName = 'DrawerDemo';
-  constructor(props: DrawerProps) {
-    super(props);
-    this.state = {
-      isExpanded: false
-    };
-  }
+  state = {
+    isExpanded: false,
+    panelWidth: 200
+  };
+
   drawerRef = React.createRef<HTMLButtonElement>();
 
   onExpand = () => {
     this.drawerRef.current && this.drawerRef.current.focus();
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onResize = (newWidth: number, id: string) => {
+    this.setState(
+      {
+        panelWidth: newWidth
+      },
+      // eslint-disable-next-line no-console
+      () => console.log(`${id} has new width: ${newWidth}`)
+    );
   };
 
   onClick = () => {
@@ -55,6 +66,8 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
         }}
         isResizable
         increment={50}
+        onResize={this.onResize}
+        id="panel"
       >
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>

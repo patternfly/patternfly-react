@@ -7,12 +7,16 @@ import { formatBreakpointMods } from '../../helpers/util';
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer. */
   className?: string;
+  /** ID of the drawer panel */
+  id?: string;
   /** Content to be rendered in the drawer panel. */
   children?: React.ReactNode;
   /** Flag indicating that the drawer panel should not have a border. */
   hasNoBorder?: boolean;
   /** Flag indicating that the drawer panel should be resizable. */
   isResizable?: boolean;
+  /** Callback for resize end. */
+  onResize?: (width: number, id: string) => void;
   /** The minimum size of a resizable drawer, in pixels. Defaults to the starting width of the drawer. */
   minSize?: number;
   /** The maximum size of a resizable drawer, in pixels. Defaults to the max width of the parent container. */
@@ -36,9 +40,11 @@ let newSize: number = 0;
 
 export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps> = ({
   className = '',
+  id,
   children,
   hasNoBorder = false,
   isResizable = false,
+  onResize,
   minSize,
   maxSize,
   increment = 5,
@@ -49,6 +55,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
 }: DrawerPanelContentProps) => {
   const panel = React.useRef<HTMLDivElement>();
   const { position, isExpanded, isStatic, onExpand } = React.useContext(DrawerContext);
+  let currWidth: number = 0;
 
   const handleMousedown = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -91,6 +98,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       } else {
         panel.current.style.setProperty('--pf-c-drawer__panel--FlexBasis', (newSize / max) * 100 + '%');
       }
+      currWidth = newSize;
     }
   };
 
@@ -99,6 +107,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
     isResizing = false;
+    onResize && onResize(currWidth, id);
     document.removeEventListener('mousemove', callbackMouseMove);
     document.removeEventListener('mouseup', callbackMouseUp);
   };
@@ -129,6 +138,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         isResizing = true;
       } else {
         isResizing = false;
+        onResize && onResize(currWidth, id);
       }
       const panelRect = panel.current.getBoundingClientRect();
       newSize = position === 'bottom' ? panelRect.height : panelRect.width;
@@ -164,12 +174,14 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         } else {
           panel.current.style.setProperty('--pf-c-drawer__panel--FlexBasis', (newSize / max) * 100 + '%');
         }
+        currWidth = newSize;
       }
     }
   };
   const hidden = isStatic ? false : !isExpanded;
   return (
     <div
+      id={id}
       className={css(
         styles.drawerPanel,
         isResizable && styles.modifiers.resizable,
