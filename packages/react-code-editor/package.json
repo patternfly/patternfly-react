@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@patternfly/react-core": "^4.88.1",
-    "@patternfly/react-icons": "^4.8.0",
+    "@patternfly/react-icons": "^4.8.1",
     "@patternfly/react-styles": "^4.7.25",
     "react-dropzone": "9.0.0",
     "tslib": "1.13.0"
