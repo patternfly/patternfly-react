@@ -19,7 +19,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   onResize?: (width: number, id: string) => void;
   /** The minimum size of a resizable drawer, in pixels. Defaults to 0. */
   minSize?: number;
-  /** The starting size of a resizable drawer, in pixels. Defaults to minSize. */
+  /** The starting size of a resizable drawer, in pixels. */
   defaultSize?: number;
   /** The maximum size of a resizable drawer, in pixels. Defaults to the max width of the parent container. */
   maxSize?: number;
@@ -48,7 +48,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   isResizable = false,
   onResize,
   minSize = 0,
-  defaultSize = minSize,
+  defaultSize,
   maxSize,
   increment = 5,
   resizeAriaLabel = 'Resize',
@@ -217,7 +217,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         }
       }}
       hidden={hidden}
-      {...(defaultSize && { style: { '--pf-c-drawer__panel--FlexBasis': defaultSize + 'px' } as React.CSSProperties })}
+      {...(defaultSize !== undefined && {
+        style: { '--pf-c-drawer__panel--FlexBasis': defaultSize + 'px' } as React.CSSProperties
+      })}
       {...props}
     >
       <React.Fragment>
