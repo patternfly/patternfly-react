@@ -205,23 +205,29 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       return;
     }
     e.preventDefault();
-    let newValue;
+    let newValue: number = value;
     if (isDiscrete) {
       const stepIndex = steps.findIndex(step => step.value === value);
       if (key === 'ArrowRight') {
-        newValue = steps[stepIndex + 1].value;
+        if (stepIndex + 1 < steps.length) {
+          {
+            newValue = steps[stepIndex + 1].value;
+          }
+        }
       } else if (key === 'ArrowLeft') {
-        newValue = steps[stepIndex - 1].value;
+        if (stepIndex - 1 >= 0) {
+          newValue = steps[stepIndex - 1].value;
+        }
       }
     } else {
       if (key === 'ArrowRight') {
-        newValue = value + 1;
+        newValue = value + 1 <= 100 ? value + 1 : 100;
       } else if (key === 'ArrowLeft') {
-        newValue = value - 1;
+        newValue = value - 1 >= 0 ? value - 1 : 0;
       }
     }
 
-    if (newValue) {
+    if (newValue !== value) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${newValue}%`);
       setValue(newValue);
       if (onValueChange) {

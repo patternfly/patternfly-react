@@ -40,11 +40,9 @@ class DiscreteInput extends React.Component {
     ];
 
     this.onValueChange = value => {
-      if (value) {
         this.setState({
           value
         });
-      }
     };
   }
 
@@ -75,11 +73,9 @@ class ContinuousInput extends React.Component {
     };
 
     this.onValueChange = value => {
-      if (value) {
         this.setState({
-          value: Math.floor(value)
+          value: value
         });
-      }
     };
   }
 
@@ -141,7 +137,6 @@ class ValueInput extends React.Component {
     ];
 
     this.onValueChangeDiscrete = value => {
-      if (value) {
         const step = this.stepsDiscrete.find(step => step.value === value);
         let inputValue = step ? step.label : undefined;
         inputValue = Number(inputValue);
@@ -149,11 +144,9 @@ class ValueInput extends React.Component {
           valueDiscrete: value,
           inputValueDiscrete: inputValue
         });
-      }
     };
 
     this.onValueChangePercent = value => {
-      if (value) {
         const step = this.stepsPercent.find(step => step.value === value);
         let inputValue = step ? step.label.slice(0, -1) : undefined;
         inputValue = Number(inputValue);
@@ -161,14 +154,12 @@ class ValueInput extends React.Component {
           valuePercent: value,
           inputValuePercent: inputValue
         });
-      }
     };
 
     this.onValueChangeContinuous = value => {
-      const newValue = Math.floor(value);
       this.setState({
-        inputValueContinuous: newValue,
-        valueContinuous: newValue
+        inputValueContinuous: value,
+        valueContinuous: value
       });
     };
 
@@ -196,10 +187,11 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangeContinuous = value => {
+    this.onChangeContinuous = value => { 
+      const newValue = value > 100 ? 100 : Math.floor(value);
       this.setState({
-        inputValueContinuous: value,
-        valueContinuous: value
+        inputValueContinuous: newValue,
+        valueContinuous: newValue
       });
     };
   }
@@ -257,17 +249,17 @@ class ThumbValueInput extends React.Component {
     };
 
     this.onChangeValue = value => {
-      const newValue = Math.floor(value);
       this.setState({
-        value: newValue,
-        inputValue: newValue
+        value: value,
+        inputValue: value
       });
     };
 
     this.onChange = value => {
+      const newValue = value > 100 ? 100 : Math.floor(value);
       this.setState({
-        value,
-        inputValue: value
+        value: newValue,
+        inputValue: newValue
       });
     };
   }
@@ -281,7 +273,7 @@ class ThumbValueInput extends React.Component {
         inputLabel="%"
         inputPosition="aboveThumb"
         onChange={this.onChange}
-        onValueChange={this.onChangeValue}
+        onValueChange={this.onValueChange}
       />
     );
   }
@@ -308,25 +300,25 @@ class SliderActions extends React.Component {
       isDisabled: false
     };
 
-    this.onChangeValue1 = value => {
+    this.onValueChange1 = value => {
       const newValue = Math.floor(value);
       this.setState({
         value1: newValue
       });
     };
 
-    this.onChangeValue2 = value => {
-      const newValue = Math.floor(value);
+    this.onValueChange2 = value => {
       this.setState({
-        value2: newValue,
-        inputValue: newValue
+        value2: value,
+        inputValue: value
       });
     };
 
     this.onChange = value => {
+      const newValue = value > 100 ? 100 : Math.floor(value);
       this.setState({
-        value2,
-        inputValue: value
+        value2: newValue,
+        inputValue: newValue
       });
     };
 
@@ -373,7 +365,7 @@ class SliderActions extends React.Component {
         <Text component={TextVariants.h3}>Slider Value is: {this.state.value1}</Text>
         <Slider
           currentValue={this.state.value1}
-          onValueChange={this.onChangeValue1}
+          onValueChange={this.onValueChange1}
           leftActions={
             <Button variant="plain" aria-label="Minus" onClick={this.onMinusClick}>
               <MinusIcon />
@@ -390,7 +382,7 @@ class SliderActions extends React.Component {
         <Slider
           currentValue={this.state.value2}
           inputValue={this.state.inputValue}
-          onValueChange={this.onChangeValue2}
+          onValueChange={this.onValueChange2}
           onChange={this.onChange}
           inputLabel="%"
           isInputVisible
