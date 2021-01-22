@@ -12,20 +12,35 @@ import {
   DrawerProps
 } from '@patternfly/react-core';
 
-export interface DrawerDemoState {
+export interface DrawerResizeDemoState {
   isExpanded: boolean;
+  panelWidth: number;
 }
 
-export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
+export class DrawerResizeDemo extends React.Component<DrawerProps, DrawerResizeDemoState> {
   static displayName = 'DrawerDemo';
-  state = {
-    isExpanded: false
-  };
-
+  constructor(props: DrawerProps) {
+    super(props);
+    this.state = {
+      isExpanded: false,
+      panelWidth: 200
+    };
+  }
   drawerRef = React.createRef<HTMLButtonElement>();
 
   onExpand = () => {
     this.drawerRef.current && this.drawerRef.current.focus();
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onResize = (newWidth: number, id: string) => {
+    this.setState(
+      {
+        panelWidth: newWidth
+      },
+      // eslint-disable-next-line no-console
+      () => console.log(`${id} has new width: ${newWidth}`)
+    );
   };
 
   onClick = () => {
@@ -44,14 +59,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent
-        widths={{
-          default: 'width_100',
-          lg: 'width_50',
-          xl: 'width_33',
-          '2xl': 'width_25'
-        }}
-      >
+      <DrawerPanelContent isResizable increment={50} onResize={this.onResize} id="panel" defaultSize={'200px'}>
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
             drawer-panel

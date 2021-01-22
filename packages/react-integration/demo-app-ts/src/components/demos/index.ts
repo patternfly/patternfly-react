@@ -66,6 +66,7 @@ export * from './DonutUtilizationChartDemo/DonutUtilizationStaticDemo';
 export * from './DonutUtilizationChartDemo/DonutUtilizationStaticRightDemo';
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo';
 export * from './DrawerDemo/DrawerDemo';
+export * from './DrawerDemo/DrawerResizeDemo';
 export * from './DropdownDemo/DropdownDemo';
 export * from './DualListSelector/DualListSelectorBasicDemo';
 export * from './DualListSelector/DualListSelectorTreeDemo';

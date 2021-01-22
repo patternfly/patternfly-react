@@ -204,85 +204,89 @@ exports[`Drawer has resizable callback and id 1`] = `
                   className="pf-c-drawer__splitter-handle"
                 />
               </div>
-              <DrawerHead>
-                <DrawerPanelBody
-                  hasNoPadding={false}
-                >
+              <div
+                className="pf-c-drawer__panel-main"
+              >
+                <DrawerHead>
+                  <DrawerPanelBody
+                    hasNoPadding={false}
+                  >
+                    <div
+                      className="pf-c-drawer__body"
+                    >
+                      <div
+                        className="pf-c-drawer__head"
+                      >
+                        <span>
+                          drawer-panel
+                        </span>
+                        <DrawerActions>
+                          <div
+                            className="pf-c-drawer__actions"
+                          >
+                            <DrawerCloseButton>
+                              <div
+                                className="pf-c-drawer__close"
+                              >
+                                <Button
+                                  aria-label="Close drawer panel"
+                                  onClick={[Function]}
+                                  variant="plain"
+                                >
+                                  <button
+                                    aria-disabled={false}
+                                    aria-label="Close drawer panel"
+                                    className="pf-c-button pf-m-plain"
+                                    data-ouia-component-id="OUIA-Generated-Button-plain-8"
+                                    data-ouia-component-type="PF4/Button"
+                                    data-ouia-safe={true}
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    role={null}
+                                    type="button"
+                                  >
+                                    <TimesIcon
+                                      color="currentColor"
+                                      noVerticalAlign={false}
+                                      size="sm"
+                                    >
+                                      <svg
+                                        aria-hidden={true}
+                                        aria-labelledby={null}
+                                        fill="currentColor"
+                                        height="1em"
+                                        role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
+                                        viewBox="0 0 352 512"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                        />
+                                      </svg>
+                                    </TimesIcon>
+                                  </button>
+                                </Button>
+                              </div>
+                            </DrawerCloseButton>
+                          </div>
+                        </DrawerActions>
+                      </div>
+                    </div>
+                  </DrawerPanelBody>
+                </DrawerHead>
+                <DrawerPanelBody>
                   <div
                     className="pf-c-drawer__body"
                   >
-                    <div
-                      className="pf-c-drawer__head"
-                    >
-                      <span>
-                        drawer-panel
-                      </span>
-                      <DrawerActions>
-                        <div
-                          className="pf-c-drawer__actions"
-                        >
-                          <DrawerCloseButton>
-                            <div
-                              className="pf-c-drawer__close"
-                            >
-                              <Button
-                                aria-label="Close drawer panel"
-                                onClick={[Function]}
-                                variant="plain"
-                              >
-                                <button
-                                  aria-disabled={false}
-                                  aria-label="Close drawer panel"
-                                  className="pf-c-button pf-m-plain"
-                                  data-ouia-component-id="OUIA-Generated-Button-plain-8"
-                                  data-ouia-component-type="PF4/Button"
-                                  data-ouia-safe={true}
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  role={null}
-                                  type="button"
-                                >
-                                  <TimesIcon
-                                    color="currentColor"
-                                    noVerticalAlign={false}
-                                    size="sm"
-                                  >
-                                    <svg
-                                      aria-hidden={true}
-                                      aria-labelledby={null}
-                                      fill="currentColor"
-                                      height="1em"
-                                      role="img"
-                                      style={
-                                        Object {
-                                          "verticalAlign": "-0.125em",
-                                        }
-                                      }
-                                      viewBox="0 0 352 512"
-                                      width="1em"
-                                    >
-                                      <path
-                                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                                      />
-                                    </svg>
-                                  </TimesIcon>
-                                </button>
-                              </Button>
-                            </div>
-                          </DrawerCloseButton>
-                        </div>
-                      </DrawerActions>
-                    </div>
+                    drawer-panel
                   </div>
                 </DrawerPanelBody>
-              </DrawerHead>
-              <DrawerPanelBody>
-                <div
-                  className="pf-c-drawer__body"
-                >
-                  drawer-panel
-                </div>
-              </DrawerPanelBody>
+              </div>
             </div>
           </DrawerPanelContent>
         </div>
@@ -303,7 +307,10 @@ exports[`Drawer has resizable css 1`] = `
     <DrawerContent
       panelContent={
         <DrawerPanelContent
+          defaultSize="300px"
           isResizable={true}
+          maxSize="400px"
+          minSize="200px"
         >
           <DrawerHead>
             <span>
@@ -335,12 +342,22 @@ exports[`Drawer has resizable css 1`] = `
             </DrawerContentBody>
           </div>
           <DrawerPanelContent
+            defaultSize="300px"
             isResizable={true}
+            maxSize="400px"
+            minSize="200px"
           >
             <div
               className="pf-c-drawer__panel pf-m-resizable"
               hidden={false}
               onTransitionEnd={[Function]}
+              style={
+                Object {
+                  "--pf-c-drawer__panel--md--FlexBasis": "300px",
+                  "--pf-c-drawer__panel--md--FlexBasis--max": "400px",
+                  "--pf-c-drawer__panel--md--FlexBasis--min": "200px",
+                }
+              }
             >
               <div
                 aria-describedby="Press space to begin resizing, and use the arrow keys to grow or shrink the panel. Press enter or escape to finish resizing."
@@ -357,85 +374,89 @@ exports[`Drawer has resizable css 1`] = `
                   className="pf-c-drawer__splitter-handle"
                 />
               </div>
-              <DrawerHead>
-                <DrawerPanelBody
-                  hasNoPadding={false}
-                >
+              <div
+                className="pf-c-drawer__panel-main"
+              >
+                <DrawerHead>
+                  <DrawerPanelBody
+                    hasNoPadding={false}
+                  >
+                    <div
+                      className="pf-c-drawer__body"
+                    >
+                      <div
+                        className="pf-c-drawer__head"
+                      >
+                        <span>
+                          drawer-panel
+                        </span>
+                        <DrawerActions>
+                          <div
+                            className="pf-c-drawer__actions"
+                          >
+                            <DrawerCloseButton>
+                              <div
+                                className="pf-c-drawer__close"
+                              >
+                                <Button
+                                  aria-label="Close drawer panel"
+                                  onClick={[Function]}
+                                  variant="plain"
+                                >
+                                  <button
+                                    aria-disabled={false}
+                                    aria-label="Close drawer panel"
+                                    className="pf-c-button pf-m-plain"
+                                    data-ouia-component-id="OUIA-Generated-Button-plain-7"
+                                    data-ouia-component-type="PF4/Button"
+                                    data-ouia-safe={true}
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    role={null}
+                                    type="button"
+                                  >
+                                    <TimesIcon
+                                      color="currentColor"
+                                      noVerticalAlign={false}
+                                      size="sm"
+                                    >
+                                      <svg
+                                        aria-hidden={true}
+                                        aria-labelledby={null}
+                                        fill="currentColor"
+                                        height="1em"
+                                        role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
+                                        viewBox="0 0 352 512"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                        />
+                                      </svg>
+                                    </TimesIcon>
+                                  </button>
+                                </Button>
+                              </div>
+                            </DrawerCloseButton>
+                          </div>
+                        </DrawerActions>
+                      </div>
+                    </div>
+                  </DrawerPanelBody>
+                </DrawerHead>
+                <DrawerPanelBody>
                   <div
                     className="pf-c-drawer__body"
                   >
-                    <div
-                      className="pf-c-drawer__head"
-                    >
-                      <span>
-                        drawer-panel
-                      </span>
-                      <DrawerActions>
-                        <div
-                          className="pf-c-drawer__actions"
-                        >
-                          <DrawerCloseButton>
-                            <div
-                              className="pf-c-drawer__close"
-                            >
-                              <Button
-                                aria-label="Close drawer panel"
-                                onClick={[Function]}
-                                variant="plain"
-                              >
-                                <button
-                                  aria-disabled={false}
-                                  aria-label="Close drawer panel"
-                                  className="pf-c-button pf-m-plain"
-                                  data-ouia-component-id="OUIA-Generated-Button-plain-7"
-                                  data-ouia-component-type="PF4/Button"
-                                  data-ouia-safe={true}
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  role={null}
-                                  type="button"
-                                >
-                                  <TimesIcon
-                                    color="currentColor"
-                                    noVerticalAlign={false}
-                                    size="sm"
-                                  >
-                                    <svg
-                                      aria-hidden={true}
-                                      aria-labelledby={null}
-                                      fill="currentColor"
-                                      height="1em"
-                                      role="img"
-                                      style={
-                                        Object {
-                                          "verticalAlign": "-0.125em",
-                                        }
-                                      }
-                                      viewBox="0 0 352 512"
-                                      width="1em"
-                                    >
-                                      <path
-                                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                                      />
-                                    </svg>
-                                  </TimesIcon>
-                                </button>
-                              </Button>
-                            </div>
-                          </DrawerCloseButton>
-                        </div>
-                      </DrawerActions>
-                    </div>
+                    drawer-panel
                   </div>
                 </DrawerPanelBody>
-              </DrawerHead>
-              <DrawerPanelBody>
-                <div
-                  className="pf-c-drawer__body"
-                >
-                  drawer-panel
-                </div>
-              </DrawerPanelBody>
+              </div>
             </div>
           </DrawerPanelContent>
         </div>
