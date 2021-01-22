@@ -140,6 +140,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
     isResizing = false;
+    onResize && onResize(currWidth, id);
     document.removeEventListener('touchmove', callbackTouchMove);
     document.removeEventListener('touchend', callbackTouchEnd);
   };

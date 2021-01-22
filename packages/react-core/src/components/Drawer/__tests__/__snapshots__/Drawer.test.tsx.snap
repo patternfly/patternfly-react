@@ -76,7 +76,7 @@ exports[`Drawer expands from bottom 1`] = `
                                   aria-disabled={false}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
-                                  data-ouia-component-id="OUIA-Generated-Button-plain-6"
+                                  data-ouia-component-id="OUIA-Generated-Button-plain-8"
                                   data-ouia-component-type="PF4/Button"
                                   data-ouia-safe={true}
                                   disabled={false}
@@ -196,6 +196,7 @@ exports[`Drawer has resizable callback and id 1`] = `
                 className="pf-c-drawer__splitter pf-m-vertical"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
+                onTouchStart={[Function]}
                 role="separator"
                 tabIndex={0}
               >
