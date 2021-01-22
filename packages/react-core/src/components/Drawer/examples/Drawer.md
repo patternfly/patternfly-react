@@ -1146,7 +1146,13 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable onResize={this.onResize} id="right-resize-panel" defaultSize={500} minSize={150}>
+      <DrawerPanelContent
+        isResizable
+        onResize={this.onResize}
+        id="right-resize-panel"
+        defaultSize={'500px'}
+        minSize={'150px'}
+      >
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1224,7 +1230,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable defaultSize={500} minSize={200}>
+      <DrawerPanelContent isResizable defaultSize={'500px'} minSize={'200px'}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1302,7 +1308,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable defaultSize={200} minSize={100}>
+      <DrawerPanelContent isResizable defaultSize={'200px'} minSize={'100px'}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1382,7 +1388,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable defaultSize={500} minSize={150}>
+      <DrawerPanelContent isResizable defaultSize={'500px'} minSize={'150px'}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel

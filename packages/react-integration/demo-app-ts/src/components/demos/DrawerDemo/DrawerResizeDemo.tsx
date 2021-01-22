@@ -59,7 +59,7 @@ export class DrawerResizeDemo extends React.Component<DrawerProps, DrawerResizeD
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable increment={50} onResize={this.onResize} id="panel" defaultSize={200}>
+      <DrawerPanelContent isResizable increment={50} onResize={this.onResize} id="panel" defaultSize={'200px'}>
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
             drawer-panel

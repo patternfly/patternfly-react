@@ -17,12 +17,12 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   isResizable?: boolean;
   /** Callback for resize end. */
   onResize?: (width: number, id: string) => void;
-  /** The minimum size of a drawer, in pixels. */
-  minSize?: number;
-  /** The starting size of a resizable drawer, in pixels. */
-  defaultSize?: number;
-  /** The maximum size of a drawer, in pixels. */
-  maxSize?: number;
+  /** The minimum size of a drawer, in either pixels or percentage. */
+  minSize?: string;
+  /** The starting size of a resizable drawer, in either pixels or percentage. */
+  defaultSize?: string;
+  /** The maximum size of a drawer, in either pixels or percentage. */
+  maxSize?: string;
   /** The increment amount for keyboard drawer resizing, in pixels. */
   increment?: number;
   /** Aria label for the resizable drawer splitter. */
@@ -60,9 +60,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const { position, isExpanded, isStatic, onExpand } = React.useContext(DrawerContext);
   let currWidth: number = 0;
   let panelRect: DOMRect;
-  let parentRect: DOMRect;
-  let min: number;
-  let max: number;
   let right: number;
   let left: number;
   let bottom: number;
@@ -84,14 +81,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
 
     if (setInitialVals) {
       panelRect = panel.current.getBoundingClientRect();
-      parentRect = panel.current.parentElement.getBoundingClientRect();
-      min = minSize;
-      max = parentRect.width;
-      if (maxSize) {
-        max = maxSize;
-      } else if (position === 'bottom') {
-        max = parentRect.height;
-      }
       right = panelRect.right;
       left = panelRect.left;
       bottom = panelRect.bottom;
@@ -107,18 +96,12 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       newSize = bottom - mousePos;
     }
 
-    if (newSize >= min && newSize <= max) {
-      panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
-      if (position === 'bottom') {
-        panel.current.style.overflowAnchor = 'none';
-      }
-      if (maxSize) {
-        panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
-      } else {
-        panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', (newSize / max) * 100 + '%');
-      }
-      currWidth = newSize;
+    if (position === 'bottom') {
+      panel.current.style.overflowAnchor = 'none';
     }
+    panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
+    panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
+    currWidth = newSize;
   };
 
   const handleMouseup = () => {
@@ -165,15 +148,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     }
 
     if (isResizing) {
-      const parentRect = panel.current.parentElement.getBoundingClientRect();
-      const min = minSize ? minSize : 0;
-      let max = parentRect.width;
-      if (maxSize) {
-        max = maxSize;
-      } else if (position === 'bottom') {
-        max = parentRect.height;
-      }
-
       let delta = 0;
       if (key === 'ArrowRight') {
         delta = position === 'left' ? increment : -increment;
@@ -184,31 +158,25 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       } else if (key === 'ArrowDown') {
         delta = -increment;
       }
-      if (newSize + delta >= min && newSize + delta <= max) {
-        newSize = newSize + delta;
-        panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
-        if (position === 'bottom') {
-          panel.current.style.overflowAnchor = 'none';
-        }
-        if (maxSize) {
-          panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
-        } else {
-          panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', (newSize / max) * 100 + '%');
-        }
-        currWidth = newSize;
+      newSize = newSize + delta;
+      if (position === 'bottom') {
+        panel.current.style.overflowAnchor = 'none';
       }
+      panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
+      panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
+      currWidth = newSize;
     }
   };
   const hidden = isStatic ? false : !isExpanded;
   const boundaryCssVars: any = {};
-  if (defaultSize !== undefined) {
-    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis'] = defaultSize + 'px';
+  if (defaultSize) {
+    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis'] = defaultSize;
   }
-  if (minSize !== undefined) {
-    boundaryCssVars['--pf-c-drawer__panel--FlexBasis--min'] = minSize + 'px';
+  if (minSize) {
+    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis--min'] = minSize;
   }
-  if (maxSize !== undefined) {
-    boundaryCssVars['--pf-c-drawer__panel--FlexBasis--max'] = maxSize + 'px';
+  if (maxSize) {
+    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis--max'] = maxSize;
   }
   return (
     <div
@@ -227,7 +195,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         }
       }}
       hidden={hidden}
-      {...((defaultSize !== undefined || minSize !== undefined || maxSize !== undefined) && {
+      {...((defaultSize || minSize || maxSize) && {
         style: boundaryCssVars as React.CSSProperties
       })}
       {...props}

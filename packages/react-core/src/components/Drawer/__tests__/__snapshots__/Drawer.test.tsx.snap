@@ -307,10 +307,10 @@ exports[`Drawer has resizable css 1`] = `
     <DrawerContent
       panelContent={
         <DrawerPanelContent
-          defaultSize={300}
+          defaultSize="300px"
           isResizable={true}
-          maxSize={400}
-          minSize={200}
+          maxSize="400px"
+          minSize="200px"
         >
           <DrawerHead>
             <span>
@@ -342,10 +342,10 @@ exports[`Drawer has resizable css 1`] = `
             </DrawerContentBody>
           </div>
           <DrawerPanelContent
-            defaultSize={300}
+            defaultSize="300px"
             isResizable={true}
-            maxSize={400}
-            minSize={200}
+            maxSize="400px"
+            minSize="200px"
           >
             <div
               className="pf-c-drawer__panel pf-m-resizable"
@@ -353,9 +353,9 @@ exports[`Drawer has resizable css 1`] = `
               onTransitionEnd={[Function]}
               style={
                 Object {
-                  "--pf-c-drawer__panel--FlexBasis--max": "400px",
-                  "--pf-c-drawer__panel--FlexBasis--min": "200px",
                   "--pf-c-drawer__panel--md--FlexBasis": "300px",
+                  "--pf-c-drawer__panel--md--FlexBasis--max": "400px",
+                  "--pf-c-drawer__panel--md--FlexBasis--min": "200px",
                 }
               }
             >

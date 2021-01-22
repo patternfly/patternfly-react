@@ -70,7 +70,7 @@ test(`Drawer expands from bottom`, () => {
 
 test(`Drawer has resizable css`, () => {
   const panelContent = (
-    <DrawerPanelContent isResizable minSize={200} defaultSize={300} maxSize={400}>
+    <DrawerPanelContent isResizable minSize={'200px'} defaultSize={'300px'} maxSize={'400px'}>
       <DrawerHead>
         <span>drawer-panel</span>
         <DrawerActions>
