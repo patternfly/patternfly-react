@@ -82,7 +82,7 @@ class ContinuousInput extends React.Component {
   render() {
     return (
       <>
-        <Text component={TextVariants.h3}>Slider Value is: {this.state.value}</Text>
+        <Text component={TextVariants.h3}>Slider Value is: {this.state.value.toFixed(2)}</Text>
         <Slider currentValue={this.state.value} onValueChange={this.onValueChange} />
         <br />
         <Slider
@@ -167,8 +167,15 @@ class ValueInput extends React.Component {
       let newValue = this.state.valueDiscrete;
       let newInputValue = this.state.inputValueDiscrete;
       const step = this.stepsDiscrete.find(step => step.label === value.toString());
+      if (step) {
+        newValue = step.value;
+        newInputValue = Number(step.label)
+      } else {
+        //find closest step to the value 
+      }
       newValue = step ? step.value : this.state.valueDiscrete;
       newInputValue = step ? Number(step.label) : this.state.inputValueDiscrete;
+
       this.setState({
         inputValueDiscrete: newInputValue,
         valueDiscrete: newValue
