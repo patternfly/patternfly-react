@@ -106,6 +106,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     thumbRef.current.focus();
   };
 
+  
+
   const onBlur = () => {
     if (onChange) {
       onChange(localInputValue);
@@ -144,7 +146,18 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     document.addEventListener('mouseup', callbackMouseUp);
   };
 
-  const handleMousemove = (e: MouseEvent) => {
+  const onSliderRailClick = (e: any) => {
+    handleMousemove(e);
+    if (snapValue && isDiscrete && steps) {
+      thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
+      setValue(snapValue);
+      if (onValueChange) {
+        onValueChange(snapValue);
+      }
+    }
+  };
+
+  const handleMousemove = (e: any) => {
     let newPosition = e.clientX - diff - sliderRailRef.current.getBoundingClientRect().left;
 
     const end = sliderRailRef.current.offsetWidth - thumbRef.current.offsetWidth;
@@ -241,7 +254,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     <div className={css(styles.slider, className)} style={style} {...props}>
       {leftActions && <div className={css(styles.sliderActions)}>{leftActions}</div>}
       <div className={css(styles.sliderMain)}>
-        <div className={css(styles.sliderRail)} ref={sliderRailRef}>
+        <div className={css(styles.sliderRail)} ref={sliderRailRef} onClick={onSliderRailClick}>
           <div className={css(styles.sliderRailTrack)} />
         </div>
         {steps && (

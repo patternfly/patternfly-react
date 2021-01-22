@@ -19,6 +19,7 @@ exports[`slider renders continuous slider 1`] = `
     >
       <div
         className="pf-c-slider__rail"
+        onClick={[Function]}
       >
         <div
           className="pf-c-slider__rail-track"
@@ -104,6 +105,7 @@ exports[`slider renders discrete slider 1`] = `
     >
       <div
         className="pf-c-slider__rail"
+        onClick={[Function]}
       >
         <div
           className="pf-c-slider__rail-track"
@@ -265,6 +267,7 @@ exports[`slider renders slider with input 1`] = `
     >
       <div
         className="pf-c-slider__rail"
+        onClick={[Function]}
       >
         <div
           className="pf-c-slider__rail-track"
@@ -332,6 +335,7 @@ exports[`slider renders slider with input above thumb 1`] = `
     >
       <div
         className="pf-c-slider__rail"
+        onClick={[Function]}
       >
         <div
           className="pf-c-slider__rail-track"
@@ -431,6 +435,7 @@ exports[`slider renders slider with input actions 1`] = `
     >
       <div
         className="pf-c-slider__rail"
+        onClick={[Function]}
       >
         <div
           className="pf-c-slider__rail-track"
