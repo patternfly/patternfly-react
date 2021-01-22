@@ -31,6 +31,9 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   'aria-label'?: string;
   /** Id to use for Modal Box descriptor */
   'aria-describedby'?: string;
+  /** Flag to disable the close button in the header area of the modal.
+   * When set pressing of the Escape key will not close the modal either */
+  isCloseDisabled?: boolean;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
   /** Custom footer */
@@ -87,6 +90,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     titleIconVariant: null,
     titleLabel: '',
     'aria-label': '',
+    isCloseDisabled: false,
     showClose: true,
     'aria-describedby': '',
     'aria-labelledby': '',
@@ -116,7 +120,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
 
   handleEscKeyClick = (event: KeyboardEvent): void => {
     const { onEscapePress } = this.props;
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
+    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen && !this.props.isCloseDisabled) {
       onEscapePress ? onEscapePress(event) : this.props.onClose();
     }
   };

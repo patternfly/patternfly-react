@@ -23,6 +23,7 @@ exports[`Modal Content Test description 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -70,6 +71,7 @@ exports[`Modal Content Test isOpen 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -112,6 +114,7 @@ exports[`Modal Content Test only body 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -154,6 +157,7 @@ exports[`Modal Content Test with footer 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -199,6 +203,7 @@ exports[`Modal Content Test with onclose 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -246,6 +251,7 @@ exports[`Modal Content test without footer 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -288,6 +294,7 @@ exports[`Modal Test with custom footer 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader
@@ -339,6 +346,7 @@ exports[`Modal Test with custom header 1`] = `
       variant="default"
     >
       <ModalBoxCloseButton
+        isDisabled={false}
         onClose={[Function]}
       />
       <ModalBoxHeader

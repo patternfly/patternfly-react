@@ -9,6 +9,7 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
   aria-labelledby="string"
   className=""
   hasNoBodyWrapper={true}
+  isCloseDisabled={false}
   isOpen={true}
   onClose={[Function]}
   ouiaSafe={true}

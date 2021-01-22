@@ -4,6 +4,7 @@ exports[`ModalBoxCloseButton should match snapshot (auto-generated) 1`] = `
 <Button
   aria-label="Close"
   className="''"
+  isDisabled={false}
   onClick={[Function]}
   variant="plain"
 >

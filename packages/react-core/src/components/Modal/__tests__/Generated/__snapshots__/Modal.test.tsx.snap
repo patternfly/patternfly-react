@@ -30,6 +30,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
       </div>
     }
     id="string"
+    isCloseDisabled={false}
     isOpen={false}
     labelId="pf-modal-part-1"
     onClose={[Function]}

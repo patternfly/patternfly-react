@@ -47,6 +47,9 @@ export interface ModalContentProps extends OUIAProps {
   'aria-label'?: string;
   /** Id of Modal Box description */
   'aria-describedby'?: string;
+  /** Flag to disable the close button in the header area of the modal.
+   * When set pressing of the Escape key will not close the modal either */
+  isCloseDisabled?: boolean;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
   /** Default width of the content. */
@@ -82,6 +85,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   'aria-label': ariaLabel = '',
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
+  isCloseDisabled = false,
   showClose = true,
   footer = null,
   actions = [],
@@ -162,7 +166,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
     >
-      {showClose && <ModalBoxCloseButton onClose={onClose} />}
+      {showClose && <ModalBoxCloseButton onClose={onClose} isDisabled={isCloseDisabled} />}
       {modalBoxHeader}
       {modalBody}
       {modalBoxFooter}

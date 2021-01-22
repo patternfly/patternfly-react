@@ -4,6 +4,7 @@ exports[`ModalBoxCloseButton Test 1`] = `
 <Button
   aria-label="Close"
   className="test-box-close-button-class"
+  isDisabled={false}
   onClick={[MockFunction]}
   variant="plain"
 >

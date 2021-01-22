@@ -863,3 +863,54 @@ class HelpModal extends React.Component {
   }
 }
 ```
+
+### Disabled Close
+
+```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
+class SimpleModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
+
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Modal
+          title="Simple modal header"
+          isOpen={isModalOpen}
+          isCloseDisabled
+          onClose={this.handleModalToggle}
+          actions={[
+            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+              Confirm
+            </Button>,
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
+              Cancel
+            </Button>
+          ]}
+        >
+        In real world scenarios one would probably want to disable both Cancel and [x] button at the same time,
+        ex. when an non-cancellable operation is in progress after submitting the modal.
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
