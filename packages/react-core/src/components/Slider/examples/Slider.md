@@ -164,17 +164,28 @@ class ValueInput extends React.Component {
     };
 
     this.onChangeDiscrete = value => {
-      let newValue = this.state.valueDiscrete;
-      let newInputValue = this.state.inputValueDiscrete;
-      const step = this.stepsDiscrete.find(step => step.label === value.toString());
-      if (step) {
-        newValue = step.value;
-        newInputValue = Number(step.label)
+      let newValue;
+      let newInputValue;
+
+      const maxValue =  Number(this.stepsDiscrete[this.stepsDiscrete.length -1].label);
+      if (value > maxValue) {
+         newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length -1].value);
+         newInputValue =  maxValue
       } else {
-        //find closest step to the value 
+        const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= value);
+        if (Number(this.stepsDiscrete[stepIndex].label) === value) {
+          newValue = this.stepsDiscrete[stepIndex].value;
+        } else {
+          const midpoint = (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
+          if (midpoint > value) {
+            newValue = this.stepsDiscrete[stepIndex - 1].value;
+            newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
+          } else {
+            newValue = this.stepsDiscrete[stepIndex].value;
+            newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+          }
+        }
       }
-      newValue = step ? step.value : this.state.valueDiscrete;
-      newInputValue = step ? Number(step.label) : this.state.inputValueDiscrete;
 
       this.setState({
         inputValueDiscrete: newInputValue,
@@ -183,11 +194,29 @@ class ValueInput extends React.Component {
     };
 
     this.onChangePercent = value => {
-      let newValue = this.state.valuePercent;
-      let newInputValue = this.state.inputValuePercent;
-      const step = this.stepsPercent.find(step => step.label === value.toString() + '%');
-      newValue = step ? step.value : this.state.valuePercent;
-      newInputValue = step ? Number(step.label.slice(0, -1)) : this.state.inputValuePercent;
+      let newValue;
+      let newInputValue;
+
+      const maxValue =  Number(this.stepsPercent[this.stepsPercent.length -1].label.slice(0, -1));
+      if (value > maxValue) {
+         newValue = Number(this.stepsPercent[this.stepsPercent.length -1].value);
+         newInputValue =  maxValue
+      } else {
+        const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= value);
+        if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === value) {
+          newValue = this.stepsPercent[stepIndex].value;
+        } else {
+          const midpoint = (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) + Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) / 2;
+          if (midpoint > value) {
+            newValue = this.stepsPercent[stepIndex - 1].value;
+            newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
+          } else {
+            newValue = this.stepsPercent[stepIndex].value;
+            newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+          }
+        }
+      }
+      
       this.setState({
         inputValuePercent: newInputValue,
         valuePercent: newValue
