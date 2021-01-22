@@ -17,11 +17,11 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   isResizable?: boolean;
   /** Callback for resize end. */
   onResize?: (width: number, id: string) => void;
-  /** The minimum size of a resizable drawer, in pixels. Defaults to 0. */
+  /** The minimum size of a drawer, in pixels. */
   minSize?: number;
   /** The starting size of a resizable drawer, in pixels. */
   defaultSize?: number;
-  /** The maximum size of a resizable drawer, in pixels. Defaults to the max width of the parent container. */
+  /** The maximum size of a drawer, in pixels. */
   maxSize?: number;
   /** The increment amount for keyboard drawer resizing, in pixels. */
   increment?: number;
@@ -47,7 +47,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   hasNoBorder = false,
   isResizable = false,
   onResize,
-  minSize = 0,
+  minSize,
   defaultSize,
   maxSize,
   increment = 5,
@@ -113,9 +113,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         panel.current.style.overflowAnchor = 'none';
       }
       if (maxSize) {
-        panel.current.style.setProperty('--pf-c-drawer__panel--FlexBasis', newSize + 'px');
+        panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
       } else {
-        panel.current.style.setProperty('--pf-c-drawer__panel--FlexBasis', (newSize / max) * 100 + '%');
+        panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', (newSize / max) * 100 + '%');
       }
       currWidth = newSize;
     }
@@ -191,15 +191,25 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
           panel.current.style.overflowAnchor = 'none';
         }
         if (maxSize) {
-          panel.current.style.setProperty('--pf-c-drawer__panel--FlexBasis', newSize + 'px');
+          panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
         } else {
-          panel.current.style.setProperty('--pf-c-drawer__panel--FlexBasis', (newSize / max) * 100 + '%');
+          panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', (newSize / max) * 100 + '%');
         }
         currWidth = newSize;
       }
     }
   };
   const hidden = isStatic ? false : !isExpanded;
+  const boundaryCssVars: any = {};
+  if (defaultSize !== undefined) {
+    boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis'] = defaultSize + 'px';
+  }
+  if (minSize !== undefined) {
+    boundaryCssVars['--pf-c-drawer__panel--FlexBasis--min'] = minSize + 'px';
+  }
+  if (maxSize !== undefined) {
+    boundaryCssVars['--pf-c-drawer__panel--FlexBasis--max'] = maxSize + 'px';
+  }
   return (
     <div
       id={id}
@@ -217,27 +227,30 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         }
       }}
       hidden={hidden}
-      {...(defaultSize !== undefined && {
-        style: { '--pf-c-drawer__panel--FlexBasis': defaultSize + 'px' } as React.CSSProperties
+      {...((defaultSize !== undefined || minSize !== undefined || maxSize !== undefined) && {
+        style: boundaryCssVars as React.CSSProperties
       })}
       {...props}
     >
       <React.Fragment>
         {isResizable && (
-          <div
-            className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
-            role="separator"
-            tabIndex={0}
-            aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
-            aria-label={resizeAriaLabel}
-            aria-describedby={resizeAriaDescribedBy}
-            onMouseDown={handleMousedown}
-            onKeyDown={handleKeys}
-          >
-            <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
-          </div>
+          <React.Fragment>
+            <div
+              className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
+              role="separator"
+              tabIndex={0}
+              aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
+              aria-label={resizeAriaLabel}
+              aria-describedby={resizeAriaDescribedBy}
+              onMouseDown={handleMousedown}
+              onKeyDown={handleKeys}
+            >
+              <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
+            </div>
+            <div className={css(styles.drawerPanelMain)}>{children}</div>
+          </React.Fragment>
         )}
-        {children}
+        {!isResizable && children}
       </React.Fragment>
     </div>
   );
