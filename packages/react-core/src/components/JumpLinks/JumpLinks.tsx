@@ -3,6 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
+import { formatBreakpointMods } from '../../helpers/util';
+import { Button } from '../Button';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -11,6 +14,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   isVertical?: boolean;
   /** Label to add to nav element. */
   label?: React.ReactNode;
+  /** Flag to always show the label when using `expandable` */
+  alwaysShowLabel?: boolean;
   /** Aria-label to add to nav element. Defaults to label. */
   'aria-label'?: string;
   /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
@@ -21,6 +26,15 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   children?: React.ReactNode;
   /** Offset to add to `scrollPosition`, potentially for a masthead which content scrolls under. */
   offset?: number;
+  /** When to collapse/expand at different breakpoints */
+  expandable?: {
+    default?: 'expandable' | 'nonExpandable';
+    sm?: 'expandable' | 'nonExpandable';
+    md?: 'expandable' | 'nonExpandable';
+    lg?: 'expandable' | 'nonExpandable';
+    xl?: 'expandable' | 'nonExpandable';
+    '2xl'?: 'expandable' | 'nonExpandable';
+  };
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
@@ -56,11 +70,14 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   scrollableSelector,
   activeIndex: activeIndexProp = 0,
   offset = 0,
+  expandable,
+  alwaysShowLabel,
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableSelector);
   const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
+  const [isExpanded, setIsExpanded] = React.useState(true);
   if (hasScrollSpy) {
     React.useEffect(() => {
       if (typeof window === 'undefined') {
@@ -144,12 +161,33 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
   return (
     <nav
-      className={css(styles.jumpLinks, isCentered && styles.modifiers.center, isVertical && styles.modifiers.vertical)}
+      className={css(
+        styles.jumpLinks,
+        isCentered && styles.modifiers.center,
+        isVertical && styles.modifiers.vertical,
+        formatBreakpointMods(expandable, styles),
+        isExpanded && styles.modifiers.expanded
+      )}
       aria-label={ariaLabel}
       {...props}
     >
       <div className={styles.jumpLinksMain}>
-        {label && <div className={styles.jumpLinksLabel}>{label}</div>}
+        <div className={styles.jumpLinksHeader}>
+          {expandable && (
+            <div className={styles.jumpLinksToggle}>
+              <Button variant="plain" onClick={() => setIsExpanded(!isExpanded)}>
+                <span className={styles.jumpLinksToggleIcon}>
+                  <AngleRightIcon />
+                </span>
+              </Button>
+            </div>
+          )}
+          {label && (
+            <div className={css(styles.jumpLinksLabel, expandable && !alwaysShowLabel && styles.modifiers.toggle)}>
+              {label}
+            </div>
+          )}
+        </div>
         <ul className={styles.jumpLinksList}>{cloneChildren(children)}</ul>
       </div>
     </nav>

@@ -52,6 +52,7 @@ export * from './Progress';
 export * from './Radio';
 export * from './SearchInput';
 export * from './Select';
+export * from './Sidebar';
 export * from './SimpleList';
 export * from './Skeleton';
 export * from './SkipToContent';
