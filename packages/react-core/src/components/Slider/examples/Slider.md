@@ -164,7 +164,7 @@ class ValueInput extends React.Component {
       }
     };
 
-    this.onChangeValueContinuous = value => {
+    this.onValueChangeContinuous = value => {
       const newValue = Math.floor(value);
       this.setState({
         inputValueContinuous: newValue,
@@ -233,7 +233,7 @@ class ValueInput extends React.Component {
           isInputVisible
           inputValue={this.state.inputValueContinuous}
           inputLabel="%"
-          onValueChange={this.onChangeValueContinuous}
+          onValueChange={this.onValueChangeContinuous}
           onChange={this.onChangeContinuous}
         />
       </>

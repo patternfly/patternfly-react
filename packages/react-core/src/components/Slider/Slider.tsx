@@ -106,8 +106,6 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     thumbRef.current.focus();
   };
 
-  
-
   const onBlur = () => {
     if (onChange) {
       onChange(localInputValue);

@@ -8,6 +8,5 @@ describe('Slider Demo Test', () => {
   it('renders the discrete sliders', () => {
     cy.get('#discrete-slider').should('exist');
     cy.get('#discrete-slider').should('have.attr', 'style', '--pf-c-slider--value:62.5%;');
-
   });
 });
