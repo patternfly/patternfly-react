@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.14.0...@patternfly/react-docs@5.14.1) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
 # [5.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.13.9...@patternfly/react-docs@5.14.0) (2021-01-22)
 
 
