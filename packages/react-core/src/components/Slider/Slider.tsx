@@ -102,6 +102,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     e.stopPropagation();
   };
 
+  const onThumbClick = () => {
+    thumbRef.current.focus();
+  };
+
   const onBlur = () => {
     if (onChange) {
       onChange(localInputValue);
@@ -265,6 +269,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           aria-label={thumbAriaLabel}
           onMouseDown={handleMousedown}
           onKeyDown={handleThumbKeys}
+          onClick={onThumbClick}
         />
         {isInputVisible && inputPosition === 'aboveThumb' && (
           <div className={css(styles.sliderValue, styles.modifiers.floating)}>
