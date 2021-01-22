@@ -1333,23 +1333,36 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 EmptyStateTable = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [];
+  const rows = [
+    {
+      heightAuto: true,
+      cells: [
+        {
+          props: { colSpan: 8 },
+          title: (
+            <Bullseye>
+              <EmptyState variant={EmptyStateVariant.small}>
+                <EmptyStateIcon icon={SearchIcon} />
+                <Title headingLevel="h2" size="lg">
+                  No results found
+                </Title>
+                <EmptyStateBody>
+                  No results match the filter criteria. Remove all filters or clear all filters to show results.
+                </EmptyStateBody>
+                <Button variant="link">Clear all filters</Button>
+              </EmptyState>
+            </Bullseye>
+          )
+        }
+      ]
+    }
+  ];
   return (
     <React.Fragment>
       <Table caption="Empty State Table Example" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
-      <EmptyState variant={EmptyStateVariant.small}>
-        <EmptyStateIcon icon={SearchIcon} />
-        <Title headingLevel="h2" size="lg">
-          No results found
-        </Title>
-        <EmptyStateBody>
-          No results match the filter criteria. Remove all filters or clear all filters to show results.
-        </EmptyStateBody>
-        <Button variant="link">Clear all filters</Button>
-      </EmptyState>
     </React.Fragment>
   );
 };
