@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.89.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.88.1...@patternfly/react-core@4.89.0) (2021-01-22)
+
+
+### Features
+
+* **Drawer:** improve cursor responsiveness ([#5328](https://github.com/patternfly/patternfly-react/issues/5328)) ([e1c44c7](https://github.com/patternfly/patternfly-react/commit/e1c44c74cb8d016b62782eb24d80abedb124365a))
+* **SimpleList:** Uncontrolled Simple list support ([#5134](https://github.com/patternfly/patternfly-react/issues/5134)) ([690cf90](https://github.com/patternfly/patternfly-react/commit/690cf9090444edc3a5d3bb470edf25633b031f65))
+
+
+
+
+
 ## [4.88.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.88.0...@patternfly/react-core@4.88.1) (2021-01-19)
 
 

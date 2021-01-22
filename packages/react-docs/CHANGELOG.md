@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.13.9...@patternfly/react-docs@5.14.0) (2021-01-22)
+
+
+### Features
+
+* **SimpleList:** Uncontrolled Simple list support ([#5134](https://github.com/patternfly/patternfly-react/issues/5134)) ([690cf90](https://github.com/patternfly/patternfly-react/commit/690cf9090444edc3a5d3bb470edf25633b031f65))
+
+
+
+
+
 ## [5.13.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.13.8...@patternfly/react-docs@5.13.9) (2021-01-19)
 
 **Note:** Version bump only for package @patternfly/react-docs

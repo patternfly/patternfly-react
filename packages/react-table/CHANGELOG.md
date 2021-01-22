@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.20.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.20.8...@patternfly/react-table@4.20.9) (2021-01-22)
+
+
+### Bug Fixes
+
+* **table:** empty state should be consistent across demos and examples ([#5298](https://github.com/patternfly/patternfly-react/issues/5298)) ([6d25554](https://github.com/patternfly/patternfly-react/commit/6d25554d67e0d35a207dde13d797ceace1b7d0cb))
+
+
+
+
+
 ## [4.20.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.20.7...@patternfly/react-table@4.20.8) (2021-01-19)
 
 **Note:** Version bump only for package @patternfly/react-table
