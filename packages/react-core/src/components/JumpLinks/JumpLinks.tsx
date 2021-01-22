@@ -35,6 +35,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
     xl?: 'expandable' | 'nonExpandable';
     '2xl'?: 'expandable' | 'nonExpandable';
   };
+  /** Aria label for expandable toggle */
+  toggleAriaLabel?: string;
 }
 
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
@@ -72,6 +74,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   offset = 0,
   expandable,
   alwaysShowLabel,
+  toggleAriaLabel = 'Toggle jump links',
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableSelector);
@@ -175,7 +178,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         <div className={styles.jumpLinksHeader}>
           {expandable && (
             <div className={styles.jumpLinksToggle}>
-              <Button variant="plain" onClick={() => setIsExpanded(!isExpanded)}>
+              <Button variant="plain" onClick={() => setIsExpanded(!isExpanded)} aria-label={toggleAriaLabel}>
                 <span className={styles.jumpLinksToggleIcon}>
                   <AngleRightIcon />
                 </span>
