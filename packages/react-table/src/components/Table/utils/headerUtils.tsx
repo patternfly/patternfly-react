@@ -11,7 +11,7 @@ import {
   editable,
   favoritable,
   sortableFavorites
-} from './transformers';
+} from './';
 import { defaultTitle } from './formatters';
 import {
   ICell,
