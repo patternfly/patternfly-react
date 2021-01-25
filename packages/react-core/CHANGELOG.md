@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.89.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.1...@patternfly/react-core@4.89.2) (2021-01-25)
+
+
+### Bug Fixes
+
+* **Wizard:** add wizard demos to match core ([#5325](https://github.com/patternfly/patternfly-react/issues/5325)) ([85c354e](https://github.com/patternfly/patternfly-react/commit/85c354ede81155f6d336d0cd6b99de0cde05e59e))
+
+
+
+
+
 ## [4.89.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.0...@patternfly/react-core@4.89.1) (2021-01-22)
 
 
