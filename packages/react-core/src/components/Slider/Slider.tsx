@@ -3,6 +3,8 @@ import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Slider/slider';
 import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
+import { InputGroup, InputGroupText } from '../InputGroup';
+import { TextInput } from '../TextInput';
 
 export interface SliderStepObject {
   /** Value of the step. This value is a percentage of the slider where the  tick is drawn. */
@@ -33,7 +35,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   /** Label that is place after the input field */
   inputLabel?: string | number;
   /** Position of the input */
-  inputPosition?: 'aboveThumb' | 'left';
+  inputPosition?: 'aboveThumb' | 'right';
   /** Flag indicating input is disabled */
   isInputDisabled?: boolean;
   /** Value input callback.  Called when enter is hit while in input filed or focus shifts from input field */
@@ -54,11 +56,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   steps,
   isDiscrete = false,
   isInputVisible = false,
-  inputValue,
+  inputValue = 0,
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
-  inputPosition = 'left',
+  inputPosition = 'right',
   isInputDisabled,
   onChange,
   onValueChange,
@@ -85,8 +87,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   const style = { '--pf-c-slider--value': `${value}%` } as React.CSSProperties;
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setLocalInputValue(Number(event.currentTarget.value));
+  const onChangeHandler = (value: string) => {
+    setLocalInputValue(Number(value));
   };
 
   const handleKeyPressOnInput = (event: React.KeyboardEvent) => {
@@ -236,11 +238,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
-  const inputGroup = (
-    <div className={css(styles.inputGroup)}>
-      <input
+  const displayInput = () => {
+    const textInput = (
+      <TextInput
         className={css(styles.formControl)}
-        disabled={isInputDisabled}
+        isDisabled={isInputDisabled}
         type="number"
         value={localInputValue}
         aria-label={inputAriaLabel}
@@ -250,9 +252,18 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         onFocus={onInputFocus}
         onBlur={onBlur}
       />
-      {inputLabel && <span className={css(styles.inputGroupText, 'pf-m-plain')}>{inputLabel}</span>}
-    </div>
-  );
+    );
+    if (inputLabel) {
+      return (
+        <InputGroup>
+          {textInput}
+          <InputGroupText className={css('pf-m-plain')}>{inputLabel}</InputGroupText>
+        </InputGroup>
+      );
+    } else {
+      return textInput;
+    }
+  };
 
   return (
     <div className={css(styles.slider, className)} style={style} {...props}>
@@ -289,12 +300,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           onClick={onThumbClick}
         />
         {isInputVisible && inputPosition === 'aboveThumb' && (
-          <div className={css(styles.sliderValue, styles.modifiers.floating)}>
-            <div className={css(styles.inputGroup)}>{inputGroup}</div>
-          </div>
+          <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>
         )}
       </div>
-      {isInputVisible && inputPosition === 'left' && <div className={css(styles.sliderValue)}>{inputGroup}</div>}
+      {isInputVisible && inputPosition === 'right' && <div className={css(styles.sliderValue)}>{displayInput()}</div>}
       {rightActions && <div className={css(styles.sliderActions)}>{rightActions}</div>}
     </div>
   );

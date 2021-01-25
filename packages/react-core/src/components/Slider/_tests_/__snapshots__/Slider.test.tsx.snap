@@ -41,21 +41,51 @@ exports[`slider renders continuous slider 1`] = `
     <div
       className="pf-c-slider__value"
     >
-      <div
-        className="pf-c-input-group"
+      <TextInput
+        aria-label="Slider value input"
+        className="pf-c-form-control"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        type="number"
+        value={50}
       >
-        <input
+        <TextInputBase
           aria-label="Slider value input"
           className="pf-c-form-control"
+          innerRef={null}
+          isDisabled={false}
+          isLeftTruncated={false}
+          isReadOnly={false}
+          isRequired={false}
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           type="number"
+          validated="default"
           value={50}
-        />
-      </div>
+        >
+          <input
+            aria-invalid={false}
+            aria-label="Slider value input"
+            className="pf-c-form-control pf-c-form-control"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            required={false}
+            type="number"
+            value={50}
+          />
+        </TextInputBase>
+      </TextInput>
     </div>
   </div>
 </Slider>
@@ -286,30 +316,6 @@ exports[`slider renders slider with input 1`] = `
         tabIndex={0}
       />
     </div>
-    <div
-      className="pf-c-slider__value"
-    >
-      <div
-        className="pf-c-input-group"
-      >
-        <input
-          aria-label="Slider value input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          type="number"
-          value={50}
-        />
-        <span
-          className="pf-c-input-group__text pf-m-plain"
-        >
-          %
-        </span>
-      </div>
-    </div>
   </div>
 </Slider>
 `;
@@ -356,13 +362,11 @@ exports[`slider renders slider with input above thumb 1`] = `
       <div
         className="pf-c-slider__value pf-m-floating"
       >
-        <div
-          className="pf-c-input-group"
-        >
+        <InputGroup>
           <div
             className="pf-c-input-group"
           >
-            <input
+            <TextInput
               aria-label="Slider value input"
               className="pf-c-form-control"
               onBlur={[Function]}
@@ -372,14 +376,52 @@ exports[`slider renders slider with input above thumb 1`] = `
               onKeyDown={[Function]}
               type="number"
               value={50}
-            />
-            <span
-              className="pf-c-input-group__text pf-m-plain"
             >
-              %
-            </span>
+              <TextInputBase
+                aria-label="Slider value input"
+                className="pf-c-form-control"
+                innerRef={null}
+                isDisabled={false}
+                isLeftTruncated={false}
+                isReadOnly={false}
+                isRequired={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                type="number"
+                validated="default"
+                value={50}
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="Slider value input"
+                  className="pf-c-form-control pf-c-form-control"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={false}
+                  required={false}
+                  type="number"
+                  value={50}
+                />
+              </TextInputBase>
+            </TextInput>
+            <InputGroupText
+              className="pf-m-plain"
+            >
+              <span
+                className="pf-c-input-group__text pf-m-plain"
+              >
+                %
+              </span>
+            </InputGroupText>
           </div>
-        </div>
+        </InputGroup>
       </div>
     </div>
   </div>

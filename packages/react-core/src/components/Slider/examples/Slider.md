@@ -48,7 +48,7 @@ class DiscreteInput extends React.Component {
 
   render() {
     const step = this.steps.find(step => step.value === this.state.value);
-    const displayValue = step ? step.label : undefined;
+    const displayValue = step ? step.label : 0;
     return (
       <>
         <Text component={TextVariants.h3}>Slider Value is: {displayValue}</Text>
@@ -138,7 +138,7 @@ class ValueInput extends React.Component {
 
     this.onValueChangeDiscrete = value => {
         const step = this.stepsDiscrete.find(step => step.value === value);
-        let inputValue = step ? step.label : undefined;
+        let inputValue = step ? step.label : 0;
         inputValue = Number(inputValue);
         this.setState({
           valueDiscrete: value,
@@ -148,7 +148,7 @@ class ValueInput extends React.Component {
 
     this.onValueChangePercent = value => {
         const step = this.stepsPercent.find(step => step.value === value);
-        let inputValue = step ? step.label.slice(0, -1) : undefined;
+        let inputValue = step ? step.label.slice(0, -1) : 0;
         inputValue = Number(inputValue);
         this.setState({
           valuePercent: value,
