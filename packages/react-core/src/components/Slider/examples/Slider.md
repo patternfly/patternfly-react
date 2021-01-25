@@ -339,14 +339,14 @@ class SliderActions extends React.Component {
     };
 
     this.onValueChange1 = value => {
-      const newValue = Number(value).toFixed(2);
+      const newValue = Math.floor(Number(value));
       this.setState({
         value1: newValue
       });
     };
 
     this.onValueChange2 = value => {
-      const newValue = Number(value).toFixed(2);
+      const newValue = Math.floor(Number(value));
       this.setState({
         value2: newValue,
         inputValue: newValue
@@ -354,7 +354,7 @@ class SliderActions extends React.Component {
     };
 
     this.onChange = value => {
-      const newValue = value > 100 ? 100 : Number(value).toFixed(2);
+      const newValue = value > 100 ? 100 : Math.floor(Number(value));
       this.setState({
         value2: newValue,
         inputValue: newValue
