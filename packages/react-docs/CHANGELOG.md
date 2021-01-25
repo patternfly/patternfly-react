@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.15.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.15.0...@patternfly/react-docs@5.15.1) (2021-01-25)
+
+
+### Bug Fixes
+
+* **drawer:** fix dragging problem on iframe when resizing drawer ([#5331](https://github.com/patternfly/patternfly-react/issues/5331)) ([746d43c](https://github.com/patternfly/patternfly-react/commit/746d43c3fee0600663489dfec6bcdde9076f9826))
+
+
+
+
+
 # [5.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.14.2...@patternfly/react-docs@5.15.0) (2021-01-25)
 
 
