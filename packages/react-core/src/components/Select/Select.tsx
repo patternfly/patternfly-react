@@ -91,6 +91,8 @@ export interface SelectProps
   onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
   /** Optional callback for newly created options */
   onCreateOption?: (newOptionValue: string) => void;
+  /** Optional event handler called each time the value in the typeahead input changes. */
+  onTypeaheadInputChanged?: (value: string) => void;
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
@@ -163,6 +165,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
     onFilter: null,
+    onTypeaheadInputChanged: null,
     customContent: null,
     hasInlineFilter: false,
     inlineFilterPlaceholderText: null,
@@ -249,11 +252,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children, isGrouped } = this.props;
+    const {
+      onFilter,
+      onTypeaheadInputChanged,
+      isCreatable,
+      onCreateOption,
+      createText,
+      noResultsFoundText,
+      children,
+      isGrouped
+    } = this.props;
     let typeaheadFilteredChildren: any;
 
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
       this.props.onToggle(true);
+    }
+
+    if (onTypeaheadInputChanged) {
+      onTypeaheadInputChanged(e.target.value.toString());
     }
 
     if (onFilter) {
@@ -613,6 +629,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       inlineFilterPlaceholderText,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onFilter,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onTypeaheadInputChanged,
       onCreateOption,
       isCreatable,
       createText,
