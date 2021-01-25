@@ -22,7 +22,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   currentValue?: number;
   /** Flag indicating if the slider is is discrete */
   isDiscrete?: boolean;
-  /** Array of slider step objects (value and label of each step) for the slider. If this is provided, the numSteps prop will be ignored.*/
+  /** Array of slider step objects (value and label of each step) for the slider. */
   steps?: SliderStepObject[];
   /** Flag to show value input field */
   isInputVisible?: boolean;
