@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.3...@patternfly/react-core@4.90.0) (2021-01-25)
+
+
+### Features
+
+* **Slider:** Added new slider component ([#5358](https://github.com/patternfly/patternfly-react/issues/5358)) ([90df385](https://github.com/patternfly/patternfly-react/commit/90df3850a0a602d14538faba98314405b12a786b))
+
+
+
+
+
 ## [4.89.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.2...@patternfly/react-core@4.89.3) (2021-01-25)
 
 
