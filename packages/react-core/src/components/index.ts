@@ -55,6 +55,7 @@ export * from './Select';
 export * from './SimpleList';
 export * from './Skeleton';
 export * from './SkipToContent';
+export * from './Slider';
 export * from './Spinner';
 export * from './Switch';
 export * from './Tabs';

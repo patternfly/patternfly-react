@@ -120,6 +120,7 @@ export * from './SelectDemo/SelectFavoritesDemo';
 export * from './SimpleList/SimpleListDemo';
 export * from './SkeletonDemo/SkeletonDemo';
 export * from './SpinnerDemo/SpinnerDemo';
+export * from './SliderDemo/SliderDemo';
 export * from './SplitDemo/SplitDemo';
 export * from './StackChartDemo/StackedAreaDemo';
 export * from './StackChartDemo/StackBlueDemo';
