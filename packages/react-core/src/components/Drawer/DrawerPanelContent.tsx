@@ -94,6 +94,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   };
 
   const handleControlMove = (e: MouseEvent | TouchEvent, controlPosition: number) => {
+    e.stopPropagation();
     if (!isResizing) {
       return;
     }
@@ -135,7 +136,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     document.removeEventListener('mouseup', callbackMouseUp);
   };
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: TouchEvent) => {
+    e.stopPropagation();
     if (!isResizing) {
       return;
     }
