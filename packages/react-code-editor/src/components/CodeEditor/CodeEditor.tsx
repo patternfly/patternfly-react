@@ -45,9 +45,9 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isDarkTheme?: boolean;
   /** Width of code editor. Defaults to 100% */
   width?: string;
-  /** Flag indicating the editor is displaying line numbers*/
-  isLineNumbers?: boolean;
-  /** Flag indicating the editor is read only*/
+  /** Flag indicating the editor is displaying line numbers */
+  isLineNumbersVisible?: boolean;
+  /** Flag indicating the editor is read only */
   isReadOnly?: boolean;
   /** Height of code editor. Defaults to 100% */
   height?: string;
@@ -59,19 +59,19 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   emptyState?: React.ReactNode;
   /** Name of the file if user downloads code to local file */
   downloadFileName?: string;
-  /** Flag to add upload button to code editor actions. Also makes the code editor accept a file using drag and drop*/
-  isAllowUpload?: boolean;
-  /** Flag to add download button to code editor actions*/
-  isAllowDownload?: boolean;
-  /** Flag to add copy button to code editor actions*/
-  isAllowCopy?: boolean;
+  /** Flag to add upload button to code editor actions. Also makes the code editor accept a file using drag and drop */
+  isUploadEnabled?: boolean;
+  /** Flag to add download button to code editor actions */
+  isDownloadEnabled?: boolean;
+  /** Flag to add copy button to code editor actions */
+  isCopyEnabled?: boolean;
   /** Flag to include a label indicating the currently configured editor language */
-  isLanguageLabel?: boolean;
-  /** Accessibly label for the copy button*/
+  isLanguageLabelVisible?: boolean;
+  /** Accessibly label for the copy button */
   copyButtonAriaLabel?: string;
   /** Text to display in the tooltip on the copy button before text is copied */
   copyButtonToolTipText?: string;
-  /** Text to display in the tooltip on the copy button after code copied to clipboard*/
+  /** Text to display in the tooltip on the copy button after code copied to clipboard */
   copyButtonSuccessTooltipText?: string;
   /** Accessible label for the upload button */
   uploadButtonAriaLabel?: string;
@@ -95,7 +95,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
    * a reference to the monaco editor and the monaco instance */
   onEditorDidMount?: (editor: any, monaco: any) => void;
   /** Flag to add the minimap to the code editor */
-  isDisplayMinimap?: boolean;
+  isMinimapVisible?: boolean;
 }
 
 interface CodeEditorState {
@@ -120,15 +120,15 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     isDarkTheme: false,
     height: '',
     width: '',
-    isLineNumbers: true,
+    isLineNumbersVisible: true,
     isReadOnly: false,
-    isLanguageLabel: false,
+    isLanguageLabelVisible: false,
     loading: '',
     emptyState: '',
     downloadFileName: Date.now().toString(),
-    isAllowUpload: false,
-    isAllowDownload: false,
-    isAllowCopy: false,
+    isUploadEnabled: false,
+    isDownloadEnabled: false,
+    isCopyEnabled: false,
     copyButtonAriaLabel: 'Copy code to clipboard',
     uploadButtonAriaLabel: 'Upload code',
     downloadButtonAriaLabel: 'Download code',
@@ -141,7 +141,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipMaxWidth: '100px',
     toolTipPosition: 'top',
     customControls: null,
-    isDisplayMinimap: false
+    isMinimapVisible: false
   };
 
   static getExtensionFromLanguage(language: Language) {
@@ -283,11 +283,11 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       height,
       width,
       className,
-      isAllowCopy,
+      isCopyEnabled,
       copyButtonSuccessTooltipText,
       isReadOnly,
-      isAllowUpload,
-      isLanguageLabel,
+      isUploadEnabled,
+      isLanguageLabelVisible,
       copyButtonAriaLabel,
       copyButtonToolTipText,
       uploadButtonAriaLabel,
@@ -298,20 +298,20 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       toolTipCopyExitDelay,
       toolTipMaxWidth,
       toolTipPosition,
-      isLineNumbers,
-      isAllowDownload,
+      isLineNumbersVisible,
+      isDownloadEnabled,
       language,
       emptyState: providedEmptyState,
       customControls,
-      isDisplayMinimap
+      isMinimapVisible
     } = this.props;
     const options = {
       readOnly: isReadOnly,
       cursorStyle: 'line' as any,
-      lineNumbers: (isLineNumbers ? 'on' : 'off') as any,
+      lineNumbers: (isLineNumbersVisible ? 'on' : 'off') as any,
       tabIndex: -1,
       minimap: {
-        enabled: isDisplayMinimap
+        enabled: isMinimapVisible
       }
     };
 
@@ -320,7 +320,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
         {({ getRootProps, getInputProps, isDragActive, open }) => {
           const emptyState =
             providedEmptyState ||
-            (isAllowUpload ? (
+            (isUploadEnabled ? (
               <EmptyState variant={EmptyStateVariant.small}>
                 <EmptyStateIcon icon={CodeIcon} />
                 <Title headingLevel="h4" size="lg">
@@ -350,9 +350,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
-              {(isAllowUpload || isAllowDownload || isAllowUpload) && (
+              {(isUploadEnabled || isDownloadEnabled || isUploadEnabled) && (
                 <div className={css(styles.codeEditorControls)}>
-                  {isAllowCopy && (!showEmptyState || !!value) && (
+                  {isCopyEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
                       trigger="mouseenter"
                       content={<div>{copied ? copyButtonSuccessTooltipText : copyButtonToolTipText}</div>}
@@ -366,7 +366,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                       </Button>
                     </Tooltip>
                   )}
-                  {isAllowUpload && (
+                  {isUploadEnabled && (
                     <Tooltip
                       trigger="mouseenter focus click"
                       content={<div>{uploadButtonToolTipText}</div>}
@@ -380,7 +380,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                       </Button>
                     </Tooltip>
                   )}
-                  {isAllowDownload && (!showEmptyState || !!value) && (
+                  {isDownloadEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
                       trigger="mouseenter focus click"
                       content={<div>{downloadButtonToolTipText}</div>}
@@ -399,7 +399,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   )}
                 </div>
               )}
-              {isLanguageLabel && (
+              {isLanguageLabelVisible && (
                 <div className={css(styles.codeEditorTab)}>
                   <span className={css(styles.codeEditorTabIcon)}>
                     <CodeIcon />
@@ -427,7 +427,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           return (
             <div className={css(styles.codeEditor, isReadOnly && styles.modifiers.readOnly, className)}>
-              {isAllowUpload ? (
+              {isUploadEnabled ? (
                 <div
                   {...getRootProps({
                     onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog

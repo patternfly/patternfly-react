@@ -12,11 +12,11 @@ test(`CodeEditor with all flags`, () => {
     <CodeEditor
       isReadOnly
       isDarkTheme
-      isLineNumbers={false}
-      isAllowUpload
-      isLanguageLabel
-      isAllowDownload
-      isAllowCopy
+      isLineNumbersVisible={false}
+      isUploadEnabled
+      isLanguageLabelVisible
+      isDownloadEnabled
+      isCopyEnabled
       height="400px"
       code={'test'}
       language={Language.javascript}

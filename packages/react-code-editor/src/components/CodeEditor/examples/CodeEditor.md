@@ -24,9 +24,9 @@ class BasicCodeEditor extends React.Component {
     super(props);
     this.state = {
       isDarkTheme: false,
-      isLineNumbers: true,
+      isLineNumbersVisible: true,
       isReadOnly: false,
-      isDisplayMinimap: true
+      isMinimapVisible: true
     };
     
     this.toggleDarkTheme = checked => {
@@ -36,7 +36,7 @@ class BasicCodeEditor extends React.Component {
     };
     this.toggleLineNumbers = checked => {
       this.setState({
-        isLineNumbers: checked
+        isLineNumbersVisible: checked
       });
     };
     this.toggleReadOnly = checked => {
@@ -46,7 +46,7 @@ class BasicCodeEditor extends React.Component {
     };
     this.toggleMinimap = checked => {
       this.setState({
-        isDisplayMinimap: checked
+        isMinimapVisible: checked
       })
     };
     
@@ -63,7 +63,7 @@ class BasicCodeEditor extends React.Component {
   }
   
   render() {
-    const { isDarkTheme, isLineNumbers, isReadOnly, isDisplayMinimap } = this.state;
+    const { isDarkTheme, isLineNumbersVisible, isReadOnly, isMinimapVisible } = this.state;
     
     return (
       <>
@@ -77,7 +77,7 @@ class BasicCodeEditor extends React.Component {
         />
         <Checkbox
           label="Line numbers"
-          isChecked={isLineNumbers}
+          isChecked={isLineNumbersVisible}
           onChange={this.toggleLineNumbers}
           aria-label="line numbers checkbox"
           id="toggle-line-numbers"
@@ -93,7 +93,7 @@ class BasicCodeEditor extends React.Component {
         />
         <Checkbox
           label="Display Minimap"
-          isChecked={isDisplayMinimap}
+          isChecked={isMinimapVisible}
           onChange={this.toggleMinimap}
           aria-label="display minimap checkbox"
           id="toggle-minimap"
@@ -101,10 +101,10 @@ class BasicCodeEditor extends React.Component {
         />
         <CodeEditor
           isDarkTheme={isDarkTheme}
-          isLineNumbers={isLineNumbers}
+          isLineNumbersVisible={isLineNumbersVisible}
           isReadOnly={isReadOnly}
-          isDisplayMinimap={isDisplayMinimap}
-          isLanguageLabel
+          isMinimapVisible={isMinimapVisible}
+          isLanguageLabelVisible
           code="Some example content"
           onChange={this.onChange}
           language={Language.javascript}
@@ -123,10 +123,10 @@ import React from 'react';
 import { CodeEditor } from '@patternfly/react-code-editor';
 
 <CodeEditor
-  isAllowUpload
-  isAllowDownload
-  isAllowCopy
-  isLanguageLabel
+  isUploadEnabled
+  isDownloadEnabled
+  isCopyEnabled
+  isLanguageLabelVisible
   height='400px'
 />
 ```
@@ -166,8 +166,8 @@ class customControlExample extends React.Component {
     return (
       <>
         <CodeEditor
-          isAllowDownload
-          isAllowCopy
+          isDownloadEnabled
+          isCopyEnabled
           height='400px'
           customControls={customControl}
           code={this.state.code}
