@@ -157,9 +157,10 @@ class ValueInput extends React.Component {
     };
 
     this.onValueChangeContinuous = value => {
+      const newValue = Math.floor(value);
       this.setState({
-        inputValueContinuous: value,
-        valueContinuous: value
+        inputValueContinuous: newValue,
+        valueContinuous: newValue
       });
     };
 
@@ -284,10 +285,11 @@ class ThumbValueInput extends React.Component {
       inputValue: 50
     };
 
-    this.onChangeValue = value => {
+    this.onValueChange = value => {
+      const newValue = Number(value).toFixed(2);
       this.setState({
-        value: value,
-        inputValue: value
+        value: newValue,
+        inputValue: newValue
       });
     };
 
@@ -337,21 +339,22 @@ class SliderActions extends React.Component {
     };
 
     this.onValueChange1 = value => {
-      const newValue = Math.floor(value);
+      const newValue = Number(value).toFixed(2);
       this.setState({
         value1: newValue
       });
     };
 
     this.onValueChange2 = value => {
+      const newValue = Number(value).toFixed(2);
       this.setState({
-        value2: value,
-        inputValue: value
+        value2: newValue,
+        inputValue: newValue
       });
     };
 
     this.onChange = value => {
-      const newValue = value > 100 ? 100 : Math.floor(value);
+      const newValue = value > 100 ? 100 : Number(value).toFixed(2);
       this.setState({
         value2: newValue,
         inputValue: newValue
