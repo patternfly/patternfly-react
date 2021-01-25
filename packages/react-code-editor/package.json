@@ -30,9 +30,9 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.88.1",
-    "@patternfly/react-icons": "^4.8.1",
-    "@patternfly/react-styles": "^4.7.25",
+    "@patternfly/react-core": "^4.89.1",
+    "@patternfly/react-icons": "^4.8.3",
+    "@patternfly/react-styles": "^4.7.27",
     "react-dropzone": "9.0.0",
     "tslib": "1.13.0"
   },
