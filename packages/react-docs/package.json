@@ -25,6 +25,7 @@
     "@patternfly/patternfly": "4.80.2",
     "@patternfly/react-catalog-view-extension": "^4.9.11",
     "@patternfly/react-charts": "^6.13.6",
+    "@patternfly/react-code-editor": "^4.0.0",
     "@patternfly/react-core": "^4.89.2",
     "@patternfly/react-icons": "^4.8.3",
     "@patternfly/react-inline-edit-extension": "^4.6.11",
@@ -43,7 +44,7 @@
     "rimraf": "^2.6.3",
     "serve": "^11.3.2",
     "shx": "^0.3.2",
-    "theme-patternfly-org": "0.3.5"
+    "theme-patternfly-org": "0.4.1"
   },
   "keywords": [
     "gatsby"

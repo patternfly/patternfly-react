@@ -10,20 +10,14 @@ module.exports = {
   ],
   roots: ['<rootDir>/packages'],
   setupFiles: ['<rootDir>/jest.env.js'],
-  snapshotSerializers: [
-    'enzyme-to-json/serializer',
-  ],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|@popperjs|lodash)'],
-  testPathIgnorePatterns: [
-    '<rootDir>/packages/react-integration/'
-  ],
-  coveragePathIgnorePatterns: [
-    '/dist/'
-  ],
+  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|@popperjs|lodash|monaco-editor|react-monaco-editor)'],
+  testPathIgnorePatterns: ['<rootDir>/packages/react-integration/'],
+  coveragePathIgnorePatterns: ['/dist/'],
   moduleNameMapper: {
-    "\\.(css|less)$": "<rootDir>/packages/react-styles/__mocks__/styleMock.js"
+    '\\.(css|less)$': '<rootDir>/packages/react-styles/__mocks__/styleMock.js'
   }
 };
