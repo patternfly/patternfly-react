@@ -1106,7 +1106,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                             aria-current="page"
                             className="pf-c-nav__link pf-m-current"
                             onClick={[Function]}
-                            tabindex={null}
+                            tabIndex={null}
                           >
                             System Panel
                           </a>
@@ -1125,7 +1125,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                             aria-current={null}
                             className="pf-c-nav__link"
                             onClick={[Function]}
-                            tabindex={null}
+                            tabIndex={null}
                           >
                             Policy
                           </a>
@@ -1144,7 +1144,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                             aria-current={null}
                             className="pf-c-nav__link"
                             onClick={[Function]}
-                            tabindex={null}
+                            tabIndex={null}
                           >
                             Authentication
                           </a>
@@ -1163,7 +1163,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                             aria-current={null}
                             className="pf-c-nav__link"
                             onClick={[Function]}
-                            tabindex={null}
+                            tabIndex={null}
                           >
                             Network Services
                           </a>
@@ -1182,7 +1182,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                             aria-current={null}
                             className="pf-c-nav__link"
                             onClick={[Function]}
-                            tabindex={null}
+                            tabIndex={null}
                           >
                             Server
                           </a>
@@ -1495,7 +1495,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           aria-current="page"
                           className="pf-c-nav__link pf-m-current"
                           onClick={[Function]}
-                          tabindex={null}
+                          tabIndex={null}
                         >
                           System Panel
                         </a>
@@ -1514,7 +1514,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           aria-current={null}
                           className="pf-c-nav__link"
                           onClick={[Function]}
-                          tabindex={null}
+                          tabIndex={null}
                         >
                           Policy
                         </a>
@@ -1533,7 +1533,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           aria-current={null}
                           className="pf-c-nav__link"
                           onClick={[Function]}
-                          tabindex={null}
+                          tabIndex={null}
                         >
                           Authentication
                         </a>
@@ -1552,7 +1552,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           aria-current={null}
                           className="pf-c-nav__link"
                           onClick={[Function]}
-                          tabindex={null}
+                          tabIndex={null}
                         >
                           Network Services
                         </a>
@@ -1571,7 +1571,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           aria-current={null}
                           className="pf-c-nav__link"
                           onClick={[Function]}
-                          tabindex={null}
+                          tabIndex={null}
                         >
                           Server
                         </a>
@@ -1973,7 +1973,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                         aria-current="page"
                         className="pf-c-nav__link pf-m-current"
                         onClick={[Function]}
-                        tabindex={null}
+                        tabIndex={null}
                       >
                         System Panel
                       </a>
@@ -1992,7 +1992,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                         aria-current={null}
                         className="pf-c-nav__link"
                         onClick={[Function]}
-                        tabindex={null}
+                        tabIndex={null}
                       >
                         Policy
                       </a>
@@ -2011,7 +2011,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                         aria-current={null}
                         className="pf-c-nav__link"
                         onClick={[Function]}
-                        tabindex={null}
+                        tabIndex={null}
                       >
                         Authentication
                       </a>
@@ -2030,7 +2030,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                         aria-current={null}
                         className="pf-c-nav__link"
                         onClick={[Function]}
-                        tabindex={null}
+                        tabIndex={null}
                       >
                         Network Services
                       </a>
@@ -2049,7 +2049,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                         aria-current={null}
                         className="pf-c-nav__link"
                         onClick={[Function]}
-                        tabindex={null}
+                        tabIndex={null}
                       >
                         Server
                       </a>
