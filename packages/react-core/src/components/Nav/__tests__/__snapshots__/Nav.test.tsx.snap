@@ -40,7 +40,7 @@ exports[`Dark Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link1"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -62,7 +62,7 @@ exports[`Dark Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link2"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -84,7 +84,7 @@ exports[`Dark Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link3"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -106,7 +106,7 @@ exports[`Dark Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link4"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -155,7 +155,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -176,7 +176,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -197,7 +197,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -218,7 +218,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -270,7 +270,7 @@ exports[`Default Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link1"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -292,7 +292,7 @@ exports[`Default Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link2"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -314,7 +314,7 @@ exports[`Default Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link3"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -336,7 +336,7 @@ exports[`Default Nav List 1`] = `
               className="pf-c-nav__link test-nav-item-class"
               href="#link4"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -452,7 +452,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       className="pf-c-nav__link"
                       href="#link1"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 1
                     </a>
@@ -473,7 +473,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       className="pf-c-nav__link"
                       href="#link2"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 2
                     </a>
@@ -494,7 +494,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       className="pf-c-nav__link"
                       href="#link3"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 3
                     </a>
@@ -515,7 +515,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       className="pf-c-nav__link"
                       href="#link4"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 4
                     </a>
@@ -635,7 +635,7 @@ exports[`Expandable Nav List 1`] = `
                       className="pf-c-nav__link"
                       href="#link1"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 1
                     </a>
@@ -656,7 +656,7 @@ exports[`Expandable Nav List 1`] = `
                       className="pf-c-nav__link"
                       href="#link2"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 2
                     </a>
@@ -677,7 +677,7 @@ exports[`Expandable Nav List 1`] = `
                       className="pf-c-nav__link"
                       href="#link3"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 3
                     </a>
@@ -698,7 +698,7 @@ exports[`Expandable Nav List 1`] = `
                       className="pf-c-nav__link"
                       href="#link4"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 4
                     </a>
@@ -825,7 +825,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                       className="pf-c-nav__link"
                       href="#link1"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 1
                     </a>
@@ -846,7 +846,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                       className="pf-c-nav__link"
                       href="#link2"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 2
                     </a>
@@ -867,7 +867,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                       className="pf-c-nav__link"
                       href="#link3"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 3
                     </a>
@@ -888,7 +888,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                       className="pf-c-nav__link"
                       href="#link4"
                       onClick={[Function]}
-                      tabindex={null}
+                      tabIndex={null}
                     >
                       Link 4
                     </a>
@@ -943,7 +943,7 @@ exports[`Horizontal Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -964,7 +964,7 @@ exports[`Horizontal Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -985,7 +985,7 @@ exports[`Horizontal Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -1006,7 +1006,7 @@ exports[`Horizontal Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -1070,7 +1070,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link1"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 1
                   </a>
@@ -1091,7 +1091,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link2"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 2
                   </a>
@@ -1112,7 +1112,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link3"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 3
                   </a>
@@ -1133,7 +1133,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link4"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 4
                   </a>
@@ -1182,7 +1182,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link1"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 1
                   </a>
@@ -1203,7 +1203,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link2"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 2
                   </a>
@@ -1224,7 +1224,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link3"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 3
                   </a>
@@ -1245,7 +1245,7 @@ exports[`Nav Grouped List 1`] = `
                     className="pf-c-nav__link"
                     href="#link4"
                     onClick={[Function]}
-                    tabindex={null}
+                    tabIndex={null}
                   >
                     Link 4
                   </a>
@@ -1348,7 +1348,7 @@ exports[`Simple Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -1369,7 +1369,7 @@ exports[`Simple Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -1390,7 +1390,7 @@ exports[`Simple Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -1411,7 +1411,7 @@ exports[`Simple Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -1462,7 +1462,7 @@ exports[`Tertiary Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -1483,7 +1483,7 @@ exports[`Tertiary Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -1504,7 +1504,7 @@ exports[`Tertiary Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -1525,7 +1525,7 @@ exports[`Tertiary Nav List 1`] = `
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
-              tabindex={null}
+              tabIndex={null}
             >
               Link 4
             </a>

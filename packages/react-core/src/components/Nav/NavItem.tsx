@@ -53,7 +53,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
         className={css(styles.navLink, isActive && styles.modifiers.current, className)}
         aria-current={isActive ? 'page' : null}
-        tabindex={isNavOpen ? null : '-1'}
+        tabIndex={isNavOpen ? null : '-1'}
         {...props}
       >
         {children}
