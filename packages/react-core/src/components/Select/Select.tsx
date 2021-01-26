@@ -206,9 +206,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     if (prevProps.children !== this.props.children) {
-      this.setState({
-        typeaheadFilteredChildren: React.Children.toArray(this.props.children)
-      });
+      this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
     if (
@@ -252,41 +250,43 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      onFilter,
-      onTypeaheadInputChanged,
-      isCreatable,
-      onCreateOption,
-      createText,
-      noResultsFoundText,
-      children,
-      isGrouped
-    } = this.props;
-    let typeaheadFilteredChildren: any;
-
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
       this.props.onToggle(true);
     }
 
-    if (onTypeaheadInputChanged) {
-      onTypeaheadInputChanged(e.target.value.toString());
+    if (this.props.onTypeaheadInputChanged) {
+      this.props.onTypeaheadInputChanged(e.target.value.toString());
     }
+
+    this.setState({
+      typeaheadCurrIndex: -1,
+      typeaheadInputValue: e.target.value,
+      creatableValue: e.target.value
+    });
+    this.updateTypeAheadFilteredChildren(e.target.value.toString(), e);
+    this.refCollection = [[]];
+  };
+
+  updateTypeAheadFilteredChildren = (typeaheadInputValue: string, e: React.ChangeEvent<HTMLInputElement> | null) => {
+    let typeaheadFilteredChildren: any;
+
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children, isGrouped } = this.props;
 
     if (onFilter) {
       typeaheadFilteredChildren = onFilter(e) || children;
     } else {
       let input: RegExp;
       try {
-        input = new RegExp(e.target.value.toString(), 'i');
+        input = new RegExp(typeaheadInputValue.toString(), 'i');
       } catch (err) {
-        input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        input = new RegExp(typeaheadInputValue.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
       const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
       if (isGrouped) {
         const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
           child.props.value && this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
-          e.target.value.toString() !== ''
+          typeaheadInputValue.toString() !== ''
             ? React.Children.map(children, group => {
                 if (group.type === SelectGroup) {
                   const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
@@ -305,7 +305,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             : childrenArray;
       } else {
         typeaheadFilteredChildren =
-          e.target.value.toString() !== ''
+          typeaheadInputValue.toString() !== ''
             ? childrenArray.filter(child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0)
             : childrenArray;
       }
@@ -319,8 +319,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           <SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />
         );
     }
-    if (isCreatable && e.target.value !== '') {
-      const newValue = e.target.value;
+    if (isCreatable && typeaheadInputValue !== '') {
+      const newValue = typeaheadInputValue;
       typeaheadFilteredChildren.push(
         <SelectOption key={0} value={newValue} onClick={() => onCreateOption && onCreateOption(newValue)}>
           {createText} "{newValue}"
@@ -329,12 +329,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     this.setState({
-      typeaheadInputValue: e.target.value,
-      typeaheadCurrIndex: -1,
-      typeaheadFilteredChildren,
-      creatableValue: e.target.value
+      typeaheadFilteredChildren
     });
-    this.refCollection = [[]];
   };
 
   onClick = (e: React.MouseEvent) => {
