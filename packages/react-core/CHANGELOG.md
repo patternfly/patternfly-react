@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.90.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.0...@patternfly/react-core@4.90.1) (2021-01-26)
+
+
+### Bug Fixes
+
+* **nav:** fix navitem tabindex casing ([#5376](https://github.com/patternfly/patternfly-react/issues/5376)) ([515fdb5](https://github.com/patternfly/patternfly-react/commit/515fdb534a0fd5a9d0b4a44f4bb73403b65477f0))
+
+
+
+
+
 # [4.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.3...@patternfly/react-core@4.90.0) (2021-01-25)
 
 
