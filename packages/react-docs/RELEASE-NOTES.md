@@ -39,15 +39,15 @@ section: developer-resources
   - Improved cursor responsiveness ([#5328](https://github.com/patternfly/patternfly-react/pull/5328))
   - Fixed initial width not respecting min/max widths ([#5313](https://github.com/patternfly/patternfly-react/pull/5313))
   - Fixed to stop panel content unmounting before collapse ([#5330](https://github.com/patternfly/patternfly-react/pull/5330))
-- **DualListSelector:** 
+- **Dual list selector:** 
   - Added type=button to DualListSelectorListItem button ([#5266](https://github.com/patternfly/patternfly-react/pull/5266))
   - Fixed to not pass custom handlers to root div ([#5308](https://github.com/patternfly/patternfly-react/pull/5308))
 - **Empty state** 
   - Cleaned up errors in tests ([#5302](https://github.com/patternfly/patternfly-react/pull/5302))
 - **Jumplinks:** 
   - Updated to allow hrefs with spaces ([#5223](https://github.com/patternfly/patternfly-react/pull/5223))
-  - **Menu:** 
-    - Fixed sentence case for menu example ([#5262](https://github.com/patternfly/patternfly-react/pull/5262))
+- **Menu:** 
+  - Fixed sentence case for menu example ([#5262](https://github.com/patternfly/patternfly-react/pull/5262))
 - **Navigation:** 
   - Made nav items keyboard and screen reader accessible ([#5312](https://github.com/patternfly/patternfly-react/pull/5312))
 - **Number input:**
@@ -68,7 +68,7 @@ section: developer-resources
 - **Toggle group:** 
   - Fixed bug with ToggleGroupItem button being clicked in form in modal closing modal ([#5259](https://github.com/patternfly/patternfly-react/pull/5259))
 - **Toolbar:** 
-  - Added log viewer toolbar example ([#5196](https://github.com/patternfly/patternfly-react/pull/5196)
+  - Added log viewer toolbar example ([#5196](https://github.com/patternfly/patternfly-react/pull/5196))
 - **Wizard:** 
   - Updated to allow setting a custom width to the wizard modal ([#5256](https://github.com/patternfly/patternfly-react/pull/5256))
 
@@ -94,7 +94,7 @@ section: developer-resources
 - **Chore:** 
   - Added linting rule to disallow nested ternaries ([#5255](https://github.com/patternfly/patternfly-react/pull/5255))
 - **Demos:** 
-  - Enable dstatic drawer open on mobile view in primary detail demo ([#5311](https://github.com/patternfly/patternfly-react/pull/5311))
+  - Enabled static drawer open on mobile view in primary detail demo ([#5311](https://github.com/patternfly/patternfly-react/pull/5311))
   - Added wizard demos to match core ([#5325](https://github.com/patternfly/patternfly-react/pull/5325))
 - **Deps:**
   - Updated dependency theme-patternfly-org to v0.3.5 ([#5228](https://github.com/patternfly/patternfly-react/pull/5228))
