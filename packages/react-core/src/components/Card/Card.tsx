@@ -22,6 +22,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isSelected?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
+  /** Modifies the card to include rounded styling */
+  isRounded?: boolean;
+  /** Modifies the card to be large */
+  isLarge?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
 }
@@ -47,6 +51,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelected = false,
   isFlat = false,
   isExpanded = false,
+  isRounded = false,
+  isLarge = false,
   ouiaId,
   ouiaSafe = true,
   ...props
@@ -70,6 +76,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
           isSelected && isSelectable && styles.modifiers.selected,
           isExpanded && styles.modifiers.expanded,
           isFlat && styles.modifiers.flat,
+          isRounded && styles.modifiers.rounded,
+          isLarge && styles.modifiers.displayLg,
           className
         )}
         tabIndex={isSelectable ? '0' : undefined}
