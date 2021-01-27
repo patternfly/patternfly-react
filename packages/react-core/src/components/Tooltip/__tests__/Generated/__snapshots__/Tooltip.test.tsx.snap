@@ -58,9 +58,7 @@ exports[`Tooltip should match snapshot (auto-generated) 1`] = `
     }
   }
   trigger={
-    <p
-      aria-describedby="''"
-    >
+    <p>
       ReactElement
     </p>
   }
