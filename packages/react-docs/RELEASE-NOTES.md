@@ -83,12 +83,12 @@ section: developer-resources
 - Fixed tooltip pointerLength error ([#5245](https://github.com/patternfly/patternfly-react/pull/5245))
 
 ### Table
-  - Updated to make empty state consistent across demos and examples ([#5298](https://github.com/patternfly/patternfly-react/pull/5298))
-  - Fixed scope axe issue ([#5253](https://github.com/patternfly/patternfly-react/pull/5253))
+- Updated to make empty state consistent across demos and examples ([#5298](https://github.com/patternfly/patternfly-react/pull/5298))
+- Fixed scope axe issue ([#5253](https://github.com/patternfly/patternfly-react/pull/5253))
 
 ### Topology
-  - Adjusted topology node layout when new nodes are added ([#5249](https://github.com/patternfly/patternfly-react/pull/5249))
-  - Prevented context sub menus from overflowing viewport ([#5271](https://github.com/patternfly/patternfly-react/pull/5271))
+- Adjusted topology node layout when new nodes are added ([#5249](https://github.com/patternfly/patternfly-react/pull/5249))
+- Prevented context sub menus from overflowing viewport ([#5271](https://github.com/patternfly/patternfly-react/pull/5271))
 
 ### Other
 - **Chore:** 
