@@ -88,7 +88,7 @@ section: developer-resources
 
 ### Topology
   - Adjusted topology node layout when new nodes are added ([#5249](https://github.com/patternfly/patternfly-react/pull/5249))
- - Prevented context sub menus from overflowing viewport ([#5271](https://github.com/patternfly/patternfly-react/pull/5271))
+  - Prevented context sub menus from overflowing viewport ([#5271](https://github.com/patternfly/patternfly-react/pull/5271))
 
 ### Other
 - **Chore:** 
