@@ -80,7 +80,7 @@ section: developer-resources
 - Fixed chart legend tooltip shown with no data ([#5296](https://github.com/patternfly/patternfly-react/pull/5296))
 - Fixed incorrect colorScale prop type ([#5303](https://github.com/patternfly/patternfly-react/pull/5303))
 - Updated so theme font must use token value ([#5301](https://github.com/patternfly/patternfly-react/pull/5301))
--  Fixed tooltip pointerLength error ([#5245](https://github.com/patternfly/patternfly-react/pull/5245))
+- Fixed tooltip pointerLength error ([#5245](https://github.com/patternfly/patternfly-react/pull/5245))
 
 ### Table
   - Updated to make empty state consistent across demos and examples ([#5298](https://github.com/patternfly/patternfly-react/pull/5298))
