@@ -23,6 +23,9 @@
       "path": "./react-inline-edit-extension"
     },
     {
+      "path": "./react-log-viewer"
+    },
+    {
       "path": "./react-styles"
     },
     {

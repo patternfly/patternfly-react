@@ -1,0 +1,12 @@
+.ins-c-logger {
+    background: var(--ins-c-logger--BackgroundColor);
+    width: 1200px;
+    border-bottom: 1px solid var(--ins-c-logger--index-BorderColor);
+}
+
+.logger__grid {
+    border: none;
+}
+
+
+
