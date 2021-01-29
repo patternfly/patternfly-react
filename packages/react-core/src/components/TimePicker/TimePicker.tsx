@@ -135,7 +135,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           this.onToggle(false);
         } else if (event.key === KeyTypes.Enter) {
           if (focusedIndex !== null) {
-            this.onSelect((this.getOptions()[focusedIndex] as HTMLElement).innerText, focusedIndex);
+            this.onSelect((this.getOptions()[focusedIndex] as HTMLElement).innerText, event as any);
             event.stopPropagation();
           } else {
             this.onToggle(false);
@@ -180,8 +180,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       }
       this.scrollToIndex(nextIndex);
       return {
-        focusedIndex: nextIndex,
-        time: this.getOptions()[nextIndex].innerText
+        focusedIndex: nextIndex
       };
     });
   };
@@ -264,16 +263,15 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onSelect = (selection: string, index: number) => {
+  onSelect = (selection: string, event: React.MouseEvent | React.KeyboardEvent) => {
     const { timeRegex } = this.state;
     const { delimiter, is24Hour } = this.props;
     const time = parseTime(selection, timeRegex, delimiter, !is24Hour);
+    if (time !== this.state.time) {
+      this.onInputChange(time, event);
+    }
     this.setState({
-      time,
-      isInvalid: !validateTime(time, timeRegex, delimiter, !is24Hour),
-      isOpen: false,
-      focusedIndex: index,
-      scrollIndex: index
+      isOpen: false
     });
   };
 
@@ -284,7 +282,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     e.stopPropagation();
   };
 
-  onInputChange = (time: string, event: React.FormEvent<HTMLInputElement>) => {
+  onInputChange = (
+    time: string,
+    event?: React.FormEvent<HTMLInputElement> | React.MouseEvent | React.KeyboardEvent
+  ) => {
     if (this.props.onChange) {
       this.props.onChange(time, event);
     }
