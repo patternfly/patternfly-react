@@ -244,7 +244,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
 
   return (
     <Popper
-      trigger={aria !== 'none' ? addAriaToTrigger() : children}
+      trigger={aria !== 'none' && visible ? addAriaToTrigger() : children}
       reference={reference}
       popper={content}
       popperMatchesTriggerWidth={false}
