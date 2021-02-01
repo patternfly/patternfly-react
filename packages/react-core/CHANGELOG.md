@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.90.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.2...@patternfly/react-core@4.90.3) (2021-02-01)
+
+
+### Bug Fixes
+
+* **Select:** adjust Select component so that it also works with children changes while it's mounted ([#5375](https://github.com/patternfly/patternfly-react/issues/5375)) ([227da1d](https://github.com/patternfly/patternfly-react/commit/227da1dca3fdd108d411bb42c5021f0af3540fe9)), closes [#5365](https://github.com/patternfly/patternfly-react/issues/5365) [#5374](https://github.com/patternfly/patternfly-react/issues/5374)
+
+
+
+
+
 ## [4.90.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.1...@patternfly/react-core@4.90.2) (2021-01-27)
 
 **Note:** Version bump only for package @patternfly/react-core

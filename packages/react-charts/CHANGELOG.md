@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.13.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.8...@patternfly/react-charts@6.13.9) (2021-02-01)
+
+
+### Bug Fixes
+
+* **charts:** Bar chart remains muted with interactive legend ([#5378](https://github.com/patternfly/patternfly-react/issues/5378)) ([b83995c](https://github.com/patternfly/patternfly-react/commit/b83995c1cb47ea3641f4f65de63361764ff23a17))
+
+
+
+
+
 ## [6.13.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.7...@patternfly/react-charts@6.13.8) (2021-01-27)
 
 **Note:** Version bump only for package @patternfly/react-charts
