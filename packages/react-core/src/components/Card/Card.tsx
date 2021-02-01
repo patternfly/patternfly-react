@@ -59,6 +59,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
 }: CardProps) => {
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
+  if (isCompact && isLarge) {
+    console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
+    isLarge = false;
+  }
   return (
     <CardContext.Provider
       value={{
