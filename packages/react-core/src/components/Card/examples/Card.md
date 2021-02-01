@@ -34,8 +34,6 @@ CardModifiers = () => {
   const mods = [
     'isHoverable',
     'isCompact',
-    'isSelectable',
-    'isSelected',
     'isFlat',
     'isRounded',
     'isLarge',
