@@ -60,6 +60,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
   if (isCompact && isLarge) {
+    // eslint-disable-next-line no-console
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
     isLarge = false;
   }
