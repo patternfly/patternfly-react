@@ -27,7 +27,7 @@ import { Spinner } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-### Custom size (SVG only)
+### Custom size
 ```js
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
