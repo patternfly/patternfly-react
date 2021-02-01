@@ -14,7 +14,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   component?: keyof JSX.IntrinsicElements;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
-  /** Modifies the card to include compact styling */
+  /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
@@ -24,7 +24,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isFlat?: boolean;
   /** Modifies the card to include rounded styling */
   isRounded?: boolean;
-  /** Modifies the card to be large */
+  /** Modifies the card to be large. Should not be used with isCompact. */
   isLarge?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
