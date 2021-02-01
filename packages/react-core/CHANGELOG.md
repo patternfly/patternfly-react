@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.90.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.3...@patternfly/react-core@4.90.4) (2021-02-01)
+
+
+### Bug Fixes
+
+* **Tooltip:** only add aria when tooltip is visible/in the DOM ([#5382](https://github.com/patternfly/patternfly-react/issues/5382)) ([10263d9](https://github.com/patternfly/patternfly-react/commit/10263d993ea781a1bf681816eeddce9fa7657670))
+
+
+
+
+
 ## [4.90.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.2...@patternfly/react-core@4.90.3) (2021-02-01)
 
 

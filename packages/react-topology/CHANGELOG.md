@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.7.16...@patternfly/react-topology@4.7.17) (2021-02-01)
+
+
+### Bug Fixes
+
+* **Tooltip:** only add aria when tooltip is visible/in the DOM ([#5382](https://github.com/patternfly/patternfly-react/issues/5382)) ([10263d9](https://github.com/patternfly/patternfly-react/commit/10263d993ea781a1bf681816eeddce9fa7657670))
+
+
+
+
+
 ## [4.7.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.7.15...@patternfly/react-topology@4.7.16) (2021-02-01)
 
 **Note:** Version bump only for package @patternfly/react-topology
