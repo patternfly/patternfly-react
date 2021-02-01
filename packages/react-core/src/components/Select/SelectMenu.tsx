@@ -99,12 +99,11 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     valueToCheck: string | SelectOptionObject,
     options: string | SelectOptionObject | (string | SelectOptionObject)[]
   ) {
-    if (!options) {
+    if (!options || !valueToCheck) {
       return false;
     }
 
     const isSelectOptionObject =
-      valueToCheck !== undefined &&
       typeof valueToCheck !== 'string' &&
       (valueToCheck as SelectOptionObject).toString &&
       (valueToCheck as SelectOptionObject).compareTo;
