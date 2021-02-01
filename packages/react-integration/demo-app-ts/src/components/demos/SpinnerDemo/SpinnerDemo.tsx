@@ -10,7 +10,7 @@ export class SpinnerDemo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Spinner isSVG />
+        <Spinner isSVG diameter="40px" id="spinner40" />
         <span>
           <div>Size variations</div>
           <Spinner isSVG size="sm" />
