@@ -18,7 +18,7 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
   'aria-valuetext'?: string;
   /** Whether to use an SVG (new) rather than a span (old) */
   isSVG?: boolean;
-  /** Diameter to set for SVG spinner */
+  /** Diameter of spinner set as CSS variable */
   diameter?: string;
 }
 
@@ -39,7 +39,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
       role="progressbar"
       aria-valuetext={ariaValueText}
       {...(isSVG && { viewBox: '0 0 100 100' })}
-      {...(isSVG && diameter && { style: { '--pf-c-spinner--diameter': diameter } })}
+      {...(diameter && { style: { '--pf-c-spinner--diameter': diameter } })}
       {...props}
     >
       {isSVG ? (
