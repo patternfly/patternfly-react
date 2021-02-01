@@ -18,6 +18,8 @@ describe('Spinner Demo Test', () => {
   });
   it('Verify diameter', () => {
     // The width changes since the circle rotates.
-    cy.get('#spinner40').invoke('outerWidth').should('be.gte', 40);
+    cy.get('#spinner40')
+      .invoke('outerWidth')
+      .should('be.gte', 40);
   });
 });
