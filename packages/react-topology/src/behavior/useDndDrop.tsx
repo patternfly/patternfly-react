@@ -71,7 +71,7 @@ export const useDndDrop = <
     const dropTarget: DropTarget = {
       type: spec.accept,
       dropHint: () => {
-        if (specRef.current.dropHint === 'string') {
+        if (typeof specRef.current.dropHint === 'string') {
           return specRef.current.dropHint;
         }
         if (typeof specRef.current.dropHint === 'function') {
