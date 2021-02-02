@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.1.7...@patternfly/react-code-editor@4.1.8) (2021-02-02)
+
+
+### Bug Fixes
+
+* **codeeditor:** copy to clipboard button can now be enabled solo 🥰 ([#5411](https://github.com/patternfly/patternfly-react/issues/5411)) ([c409239](https://github.com/patternfly/patternfly-react/commit/c409239f408f57dbd2cef7ac8482321de1abf947))
+
+
+
+
+
 ## [4.1.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.1.6...@patternfly/react-code-editor@4.1.7) (2021-02-02)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
