@@ -41,10 +41,16 @@ export interface DatePickerProps
   validators?: ((date: Date) => string)[];
 }
 
+export const yyyyMMddFormat = (date: Date) =>
+  `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date
+    .getDate()
+    .toString()
+    .padStart(2, '0')}`;
+
 export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   className,
   locale = undefined,
-  dateFormat = (date: Date) => date.toISOString().substring(0, 10),
+  dateFormat = yyyyMMddFormat,
   dateParse = (val: string) => new Date(`${val}T00:00:00`),
   isDisabled = false,
   placeholder = 'yyyy-MM-dd',
