@@ -68,3 +68,22 @@ test('card with isExpanded applied', () => {
   const view = shallow(<Card isExpanded />).dive();
   expect(view.prop('className')).toMatch(/m-expanded/);
 });
+
+test('card with isRounded applied', () => {
+  const view = shallow(<Card isRounded />).dive();
+  expect(view.prop('className')).toMatch(/m-rounded/);
+});
+
+test('card with isLarge applied', () => {
+  const view = shallow(<Card isLarge />).dive();
+  expect(view.prop('className')).toMatch(/m-display-lg/);
+});
+
+test('card warns when isLarge and isCompact', () => {
+  const consoleWarnMock = jest.fn();
+  global.console = { warn: consoleWarnMock } as any;
+  shallow(<Card isLarge isCompact />);
+  expect(consoleWarnMock).toBeCalled();
+});
+
+
