@@ -23,13 +23,17 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </Button>
-  <Button
-    onClick="any"
-    variant="link"
+  <div
+    className="pf-c-wizard__footer-cancel"
   >
-    <div>
-      ReactNode
-    </div>
-  </Button>
+    <Button
+      onClick="any"
+      variant="link"
+    >
+      <div>
+        ReactNode
+      </div>
+    </Button>
+  </div>
 </footer>
 `;
