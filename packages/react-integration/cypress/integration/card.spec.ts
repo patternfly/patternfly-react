@@ -40,6 +40,14 @@ describe('Card Demo Test', () => {
     cy.get('#flatCard').should('have.class', 'pf-m-flat');
   });
 
+  it('Verify card is rounded', () => {
+    cy.get('#roundedCard').should('have.class', 'pf-m-rounded');
+  });
+
+  it('Verify card is large', () => {
+    cy.get('#largeCard').should('have.class', 'pf-m-display-lg');
+  });
+
   it('Verify that selectable card can be selected and unselected with keyboard input', () => {
     cy.get('#selectableCard').focus();
     cy.focused().should('have.class', 'pf-m-selectable');

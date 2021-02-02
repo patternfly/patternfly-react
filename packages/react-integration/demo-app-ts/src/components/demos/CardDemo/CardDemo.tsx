@@ -69,6 +69,16 @@ export class CardDemo extends React.Component {
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
+        <Card id="roundedCard" isRounded>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <Card id="largeCard" isLarge>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
 
         <Card
           id="selectableCard"

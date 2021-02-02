@@ -24,6 +24,48 @@ import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 </Card>;
 ```
 
+### Modifiers
+
+```js
+import React from 'react';
+import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
+
+CardModifiers = () => {
+  const mods = [
+    'isHoverable',
+    'isCompact',
+    'isFlat',
+    'isRounded',
+    'isLarge',
+  ];
+  const [modifiers, setModifiers] = React.useState({});
+
+  return (
+    <React.Fragment>
+      <div style={{ marginBottom: '12px' }}>
+        {mods.map(mod => 
+          <Checkbox
+            id={mod}
+            key={mod}
+            label={mod}
+            isChecked={modifiers[mod]}
+            onChange={checked => {
+              modifiers[mod] = checked;
+              setModifiers({...modifiers});
+            }}
+          />
+        )}
+      </div>
+      <Card {...modifiers}>
+        <CardTitle>Header</CardTitle>
+        <CardBody>Body</CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
+    </React.Fragment>
+  );
+}
+```
+
 ### With image and actions
 
 ```js
@@ -391,32 +433,6 @@ import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 </Card>;
 ```
 
-### Hover
-
-```js
-import React from 'react';
-import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
-
-<Card isHoverable>
-  <CardTitle>Header</CardTitle>
-  <CardBody>Body</CardBody>
-  <CardFooter>Footer</CardFooter>
-</Card>;
-```
-
-### Compact
-
-```js
-import React from 'react';
-import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
-
-<Card isCompact>
-  <CardTitle>Header</CardTitle>
-  <CardBody>Body</CardBody>
-  <CardFooter>Footer</CardFooter>
-</Card>;
-```
-
 ### Selectable and selected
 
 ```js
@@ -528,19 +544,6 @@ class SelectableCard extends React.Component {
     );
   }
 }
-```
-
-### Flat
-
-```js
-import React from 'react';
-import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
-
-<Card isFlat>
-  <CardTitle>Header</CardTitle>
-  <CardBody>Body</CardBody>
-  <CardFooter>Footer</CardFooter>
-</Card>;
 ```
 
 ### With heading element
