@@ -350,7 +350,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
-              {(isUploadEnabled || isDownloadEnabled || isUploadEnabled) && (
+              {(isCopyEnabled || isDownloadEnabled || isUploadEnabled) && (
                 <div className={css(styles.codeEditorControls)}>
                   {isCopyEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
