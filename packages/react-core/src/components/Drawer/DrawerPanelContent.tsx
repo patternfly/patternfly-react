@@ -68,7 +68,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
 
   const handleTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation();
-    document.addEventListener('touchmove', callbackTouchMove);
+    document.addEventListener('touchmove', callbackTouchMove, { passive: false });
     document.addEventListener('touchend', callbackTouchEnd);
     isResizing = true;
   };
@@ -89,6 +89,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   };
 
   const handleTouchMove = (e: TouchEvent) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
     const touchPos = position === 'bottom' ? e.touches[0].clientY : e.touches[0].clientX;
     handleControlMove(e, touchPos);
   };
