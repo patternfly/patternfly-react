@@ -1,17 +1,13 @@
+import { scopeColTransformer, emptyCol, mapProps, emptyTD, parentId } from './transformers';
 import {
-  scopeColTransformer,
   selectable,
   cellActions,
-  emptyCol,
-  mapProps,
   collapsible,
-  emptyTD,
   expandedRow,
-  parentId,
   editable,
   favoritable,
   sortableFavorites
-} from './transformers';
+} from './decorators';
 import { defaultTitle } from './formatters';
 import {
   ICell,
