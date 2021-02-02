@@ -16,6 +16,11 @@ import { OnSelect, IFormatterValueType, IColumn, ISortBy, OnSort } from '../Tabl
 export interface ThProps
   extends BaseCellProps,
     Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
+  /**
+   * The column header the cell corresponds to. Applicable when this component is used as a direct child to <Tr>.
+   * This attribute replaces table header in mobile viewport. It is rendered by ::before pseudo element.
+   */
+  dataLabel?: string;
   /** Renders a checkbox select so that all row checkboxes can be selected/deselected */
   select?: {
     /** Callback on select */
@@ -52,6 +57,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   children,
   className,
   component = 'th',
+  dataLabel,
   scope = 'col',
   textCenter = false,
   sort = null,
@@ -131,6 +137,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
   const cell = (
     <MergedComponent
+      data-label={dataLabel}
       onMouseEnter={tooltip !== null ? onMouseEnter : onMouseEnterProp}
       scope={component === 'th' && children ? scope : null}
       ref={innerRef}
