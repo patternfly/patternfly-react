@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.70.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.69.4...demo-app-ts@4.70.0) (2021-02-02)
+
+
+### Features
+
+* **card:** add pf-m-display-lg and pf-m-rounded ([#5389](https://github.com/patternfly/patternfly-react/issues/5389)) ([2adb463](https://github.com/patternfly/patternfly-react/commit/2adb4630ef23035f90f3ea8cdb79e0c19c57b2d0))
+* **spinner:** add isSVG ([#5390](https://github.com/patternfly/patternfly-react/issues/5390)) ([0114531](https://github.com/patternfly/patternfly-react/commit/01145311c6e50732691e3a43bc5dcc6b47026bc1))
+
+
+
+
+
 ## [4.69.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.69.3...demo-app-ts@4.69.4) (2021-02-01)
 
 **Note:** Version bump only for package demo-app-ts

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.91.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.4...@patternfly/react-core@4.91.0) (2021-02-02)
+
+
+### Bug Fixes
+
+* **datepicker:** don't rely on toISOString ([#5369](https://github.com/patternfly/patternfly-react/issues/5369)) ([e7cf59d](https://github.com/patternfly/patternfly-react/commit/e7cf59dfe990e4b701e446a48b13f560b352607d))
+* **wizard:** add cancel button class ([#5391](https://github.com/patternfly/patternfly-react/issues/5391)) ([8e2cc70](https://github.com/patternfly/patternfly-react/commit/8e2cc70f22010dbed3fb4b35e6345dfbb9d60c7e))
+
+
+### Features
+
+* **card:** add pf-m-display-lg and pf-m-rounded ([#5389](https://github.com/patternfly/patternfly-react/issues/5389)) ([2adb463](https://github.com/patternfly/patternfly-react/commit/2adb4630ef23035f90f3ea8cdb79e0c19c57b2d0))
+* **spinner:** add isSVG ([#5390](https://github.com/patternfly/patternfly-react/issues/5390)) ([0114531](https://github.com/patternfly/patternfly-react/commit/01145311c6e50732691e3a43bc5dcc6b47026bc1))
+
+
+
+
+
 ## [4.90.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.3...@patternfly/react-core@4.90.4) (2021-02-01)
 
 

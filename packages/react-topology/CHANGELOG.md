@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.7.17...@patternfly/react-topology@4.7.18) (2021-02-02)
+
+
+### Bug Fixes
+
+* **topology:** fix if statement ([#5409](https://github.com/patternfly/patternfly-react/issues/5409)) ([7e1e802](https://github.com/patternfly/patternfly-react/commit/7e1e8027aa6ac19939d06dc35d1f78e2790f9f05))
+
+
+
+
+
 ## [4.7.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.7.16...@patternfly/react-topology@4.7.17) (2021-02-01)
 
 
