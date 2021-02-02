@@ -80,7 +80,6 @@ export class CardDemo extends React.Component {
           <CardFooter>Footer</CardFooter>
         </Card>
 
-
         <Card
           id="selectableCard"
           isSelectable
