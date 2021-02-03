@@ -427,7 +427,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           return (
             <div className={css(styles.codeEditor, isReadOnly && styles.modifiers.readOnly, className)}>
-              {isUploadEnabled ? (
+              {isUploadEnabled || providedEmptyState ? (
                 <div
                   {...getRootProps({
                     onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog
@@ -437,7 +437,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   {editorHeader}
                   <div className={css(styles.codeEditorMain)}>
                     <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
-                    {showEmptyState && !value ? emptyState : editor}
+                    {(showEmptyState || providedEmptyState) && !value ? emptyState : editor}
                   </div>
                 </div>
               ) : (
