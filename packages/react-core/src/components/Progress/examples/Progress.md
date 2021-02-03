@@ -101,7 +101,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
-<Progress value={33} measureLocation={ProgressMeasureLocation.outside} />
+<Progress value={33} measureLocation={ProgressMeasureLocation.outside} aria-label="Title"/>
 ```
 
 ### Without measure

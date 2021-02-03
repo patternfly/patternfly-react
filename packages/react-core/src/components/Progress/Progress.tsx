@@ -38,6 +38,9 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   isTitleTruncated?: boolean;
   /** Position of the tooltip which is displayed if title is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  /** Adds accessible text to the ProgressBar. Required when title not used */
+
+  'aria-label'?: string;
 }
 
 export class Progress extends React.Component<ProgressProps> {
@@ -55,7 +58,8 @@ export class Progress extends React.Component<ProgressProps> {
     value: 0,
     valueText: null as string,
     isTitleTruncated: false,
-    tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right'
+    tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
+    'aria-label': null as string
   };
 
   id = this.props.id || getUniqueId();
@@ -77,11 +81,13 @@ export class Progress extends React.Component<ProgressProps> {
       valueText,
       isTitleTruncated,
       tooltipPosition,
+      'aria-label': ariaLabel,
       ...props
     } = this.props;
 
     const progressBarAriaProps: AriaProps = {
-      'aria-labelledby': `${this.id}-description`,
+      'aria-labelledby': title ? `${this.id}-description` : null,
+      'aria-label': ariaLabel ? ariaLabel : null,
       'aria-valuemin': min,
       'aria-valuenow': value,
       'aria-valuemax': max
@@ -89,6 +95,11 @@ export class Progress extends React.Component<ProgressProps> {
 
     if (valueText) {
       progressBarAriaProps['aria-valuetext'] = valueText;
+    }
+
+    if (!title && !'aria-label') {
+      /* eslint-disable no-console */
+      console.warn('An accessible aria-label is required when using the progress component without a title.');
     }
 
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
