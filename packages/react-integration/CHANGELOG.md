@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.70.0...@patternfly/react-integration@4.71.0) (2021-02-03)
+
+
+### Features
+
+* **searchInput:** add support to passing a ref ([#5215](https://github.com/patternfly/patternfly-react/issues/5215)) ([41af5d3](https://github.com/patternfly/patternfly-react/commit/41af5d34d5c80afade3c1c9ace9e07877b141149))
+
+
+
+
+
 # [4.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.69.0...@patternfly/react-integration@4.70.0) (2021-02-02)
 
 

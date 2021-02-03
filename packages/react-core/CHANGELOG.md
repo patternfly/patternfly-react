@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.92.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.91.0...@patternfly/react-core@4.92.0) (2021-02-03)
+
+
+### Bug Fixes
+
+* **datalist:** use drag-over modifier instead of css style ([#5119](https://github.com/patternfly/patternfly-react/issues/5119)) ([f7c5c27](https://github.com/patternfly/patternfly-react/commit/f7c5c2738aefe995bef7b60c77560da825830433))
+* **Drawer:** enable touch controls for resizable drawer ([#5357](https://github.com/patternfly/patternfly-react/issues/5357)) ([27c539c](https://github.com/patternfly/patternfly-react/commit/27c539cf90d0c6cd818e0aad6a6df5741df66d90))
+* **timepicker:** fix issue when clicking dropdown menu does not trigger onchange function ([#5399](https://github.com/patternfly/patternfly-react/issues/5399)) ([38db41e](https://github.com/patternfly/patternfly-react/commit/38db41e62fbbf8513a446e2d4de3b3d29c1e13dd))
+
+
+### Features
+
+* **searchInput:** add support to passing a ref ([#5215](https://github.com/patternfly/patternfly-react/issues/5215)) ([41af5d3](https://github.com/patternfly/patternfly-react/commit/41af5d34d5c80afade3c1c9ace9e07877b141149))
+
+
+
+
+
 # [4.91.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.4...@patternfly/react-core@4.91.0) (2021-02-02)
 
 
