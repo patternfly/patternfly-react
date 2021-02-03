@@ -39,7 +39,6 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Position of the tooltip which is displayed if title is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Adds accessible text to the ProgressBar. Required when title not used */
-
   'aria-label'?: string;
 }
 
@@ -97,7 +96,7 @@ export class Progress extends React.Component<ProgressProps> {
       progressBarAriaProps['aria-valuetext'] = valueText;
     }
 
-    if (!title && !'aria-label') {
+    if (!title && !this.props['aria-label']) {
       /* eslint-disable no-console */
       console.warn('An accessible aria-label is required when using the progress component without a title.');
     }
