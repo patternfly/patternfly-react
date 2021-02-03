@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
@@ -69,6 +69,11 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   compareItems
 }: TreeViewListItemProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+
+  useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
+
   const Component = hasCheck ? 'div' : 'button';
   const ToggleComponent = hasCheck ? 'button' : 'div';
   return (

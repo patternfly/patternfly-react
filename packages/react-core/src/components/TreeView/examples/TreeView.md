@@ -162,7 +162,7 @@ class SearchTreeView extends React.Component {
       }
     ];
 
-    this.state = { activeItems: {}, filteredItems: this.options };
+    this.state = { activeItems: {}, filteredItems: this.options, isFiltered: false };
 
     this.onClick = (evt, treeViewItem, parentItem) => {
       this.setState({
@@ -173,10 +173,10 @@ class SearchTreeView extends React.Component {
     this.onChange = evt => {
       const input = evt.target.value;
       if (input === '') {
-        this.setState({ filteredItems: this.options });
+        this.setState({ filteredItems: this.options, isFiltered: false });
       } else {
         const filtered = this.options.map(opt => Object.assign({}, opt)).filter(item => this.filterItems(item, input));
-        this.setState({ filteredItems: filtered });
+        this.setState({ filteredItems: filtered, isFiltered: true });
       }
     };
 
@@ -196,7 +196,7 @@ class SearchTreeView extends React.Component {
   }
 
   render() {
-    const { activeItems, filteredItems } = this.state;
+    const { activeItems, filteredItems, isFiltered } = this.state;
 
     return (
       <TreeView
@@ -205,6 +205,7 @@ class SearchTreeView extends React.Component {
         onSelect={this.onClick}
         onSearch={this.onChange}
         searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
+        defaultAllExpanded={isFiltered}
       />
     );
   }
@@ -632,11 +633,11 @@ class IconTreeView extends React.Component {
     };
 
     this.onSelect = event => {
-        this.setState({
-          isOpen: !this.state.isOpen
-        });
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
     };
-  };
+  }
 
   render() {
     const { activeItems, isOpen } = this.state;
