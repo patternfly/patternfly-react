@@ -8,7 +8,7 @@ import AngleUpIcon from '@patternfly/react-icons/dist/js/icons/angle-up-icon';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
-export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results'> {
+export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
   /** Additional classes added to the banner */
   className?: string;
   /** Value of the search input */
@@ -28,9 +28,11 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** Function called when user clicks to navigate to previous result */
   onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** A reference object to attach to the input box. */
+  innerRef?: React.RefObject<any>;
 }
 
-export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
+export const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   className,
   value = '',
   placeholder,
@@ -39,6 +41,7 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
   resultsCount,
   onNextClick,
   onPreviousClick,
+  innerRef,
   'aria-label': ariaLabel = 'Search input',
   ...props
 }: SearchInputProps) => {
@@ -55,6 +58,7 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
           <SearchIcon />
         </span>
         <input
+          ref={innerRef}
           className={css(styles.searchInputTextInput)}
           value={value}
           placeholder={placeholder}
@@ -91,4 +95,9 @@ export const SearchInput: React.FunctionComponent<SearchInputProps> = ({
     </div>
   );
 };
+SearchInputBase.displayName = 'SearchInputBase';
+
+export const SearchInput = React.forwardRef((props: SearchInputProps, ref: React.Ref<HTMLInputElement>) => (
+  <SearchInputBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+));
 SearchInput.displayName = 'SearchInput';

@@ -5,6 +5,14 @@ describe('Search Input Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/search-input-demo-nav-link');
   });
 
+  it('Verify search input ref by clicking focus button', () => {
+    cy.get('#focus_button')
+      .first()
+      .click();
+    cy.focused().should('have.attr', 'placeholder', 'Find by name');
+    cy.focused().blur();
+  });
+
   it('Verify search input and its handlers work', () => {
     cy.get('.pf-c-search-input__count').should('not.exist');
     cy.get('.pf-c-search-input__clear').should('not.exist');
