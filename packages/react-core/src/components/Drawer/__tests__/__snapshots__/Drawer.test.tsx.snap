@@ -196,6 +196,7 @@ exports[`Drawer has resizable callback and id 1`] = `
                 className="pf-c-drawer__splitter pf-m-vertical"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
+                onTouchStart={[Function]}
                 role="separator"
                 tabIndex={0}
               >
@@ -366,6 +367,7 @@ exports[`Drawer has resizable css 1`] = `
                 className="pf-c-drawer__splitter pf-m-vertical"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
+                onTouchStart={[Function]}
                 role="separator"
                 tabIndex={0}
               >

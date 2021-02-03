@@ -66,6 +66,13 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   let bottom: number;
   let setInitialVals: boolean = true;
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.stopPropagation();
+    document.addEventListener('touchmove', callbackTouchMove, { passive: false });
+    document.addEventListener('touchend', callbackTouchEnd);
+    isResizing = true;
+  };
+
   const handleMousedown = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
@@ -76,7 +83,20 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     setInitialVals = true;
   };
 
-  const handleMousemove = (e: MouseEvent) => {
+  const handleMouseMove = (e: MouseEvent) => {
+    const mousePos = position === 'bottom' ? e.clientY : e.clientX;
+    handleControlMove(e, mousePos);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    const touchPos = position === 'bottom' ? e.touches[0].clientY : e.touches[0].clientX;
+    handleControlMove(e, touchPos);
+  };
+
+  const handleControlMove = (e: MouseEvent | TouchEvent, controlPosition: number) => {
+    e.stopPropagation();
     if (!isResizing) {
       return;
     }
@@ -88,7 +108,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       bottom = panelRect.bottom;
       setInitialVals = false;
     }
-    const mousePos = position === 'bottom' ? e.clientY : e.clientX;
+    const mousePos = controlPosition;
     let newSize = 0;
     if (position === 'right') {
       newSize = right - mousePos;
@@ -118,7 +138,20 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     document.removeEventListener('mouseup', callbackMouseUp);
   };
 
-  const callbackMouseMove = React.useCallback(handleMousemove, []);
+  const handleTouchEnd = (e: TouchEvent) => {
+    e.stopPropagation();
+    if (!isResizing) {
+      return;
+    }
+    isResizing = false;
+    onResize && onResize(currWidth, id);
+    document.removeEventListener('touchmove', callbackTouchMove);
+    document.removeEventListener('touchend', callbackTouchEnd);
+  };
+
+  const callbackMouseMove = React.useCallback(handleMouseMove, []);
+  const callbackTouchEnd = React.useCallback(handleTouchEnd, []);
+  const callbackTouchMove = React.useCallback(handleTouchMove, []);
   const callbackMouseUp = React.useCallback(handleMouseup, []);
 
   const handleKeys = (e: React.KeyboardEvent) => {
@@ -215,6 +248,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
               aria-describedby={resizeAriaDescribedBy}
               onMouseDown={handleMousedown}
               onKeyDown={handleKeys}
+              onTouchStart={handleTouchStart}
             >
               <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
             </div>
