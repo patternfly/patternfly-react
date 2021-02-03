@@ -18,3 +18,4 @@ export * from './utils';
 export * from './TableTypes';
 export * from './TableContext';
 export * from './FavoritesCell';
+export * from './TreeRowWrapper';

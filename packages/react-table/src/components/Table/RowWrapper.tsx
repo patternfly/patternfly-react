@@ -2,6 +2,7 @@ import * as React from 'react';
 import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/OUIA/ouia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
 import { Tr } from '../TableComposable/Tr';
+import { IRow } from './TableTypes';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
@@ -15,7 +16,7 @@ export interface RowWrapperProps extends OUIAProps {
   className?: string;
   onScroll?: React.UIEventHandler;
   onResize?: React.UIEventHandler;
-  row?: RowWrapperRow;
+  row?: IRow;
   rowProps?: {
     rowIndex: number;
     rowKey: string;
@@ -31,7 +32,7 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
       isExpanded: undefined as boolean,
       isHeightAuto: undefined as boolean,
       isEditable: undefined as boolean
-    } as RowWrapperRow,
+    } as IRow,
     rowProps: null as any
   };
   _unmounted: boolean;

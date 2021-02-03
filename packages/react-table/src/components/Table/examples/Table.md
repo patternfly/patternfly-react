@@ -1994,6 +1994,144 @@ class FavoritesTable extends React.Component {
 }
 ```
 
+### Tree Table
+
+```js
+import React from 'react';
+import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Table/table';
+
+class TreeTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {
+          repositories: 'Repositories one',
+          branches: 'Branch one',
+          pullRequests: 'Pull request one',
+          workspaces: 'Workplace one',
+          children: [
+            {
+              repositories: 'Repositories two',
+              branches: 'Branch two',
+              pullRequests: 'Pull request two',
+              workspaces: 'Workplace two',
+              children: [
+                {
+                  repositories: 'Repositories three',
+                  branches: 'Branch three',
+                  pullRequests: 'Pull request three',
+                  workspaces: 'Workplace three',
+                }
+              ]
+            },
+            {
+              repositories: 'Repositories four',
+              branches: 'Branch four',
+              pullRequests: 'Pull request four',
+              workspaces: 'Workplace four',
+            },
+            {
+              repositories: 'Repositories five',
+              branches: 'Branch five',
+              pullRequests: 'Pull request five',
+              workspaces: 'Workplace five',
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories six',
+          branches: 'Branch six',
+          pullRequests: 'Pull request six',
+          workspaces: 'Workplace six',
+          children: [
+            {
+              repositories: 'Repositories seven',
+              branches: 'Branch seven',
+              pullRequests: 'Pull request seven',
+              workspaces: 'Workplace seven'
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories eight',
+          branches: 'Branch eight',
+          pullRequests: 'Pull request eight',
+          workspaces: 'Workplace eight'
+        }
+      ],
+      expandedRows: ['Repositories one', 'Repositories six'],
+      checkedRows: []
+    };
+    
+    this.buildRows = ([x, ...xs], level, posinset, isHidden = false) => {
+      if (x) {
+        const isExpanded = this.state.expandedRows.includes(x.repositories);
+        const isChecked = this.state.checkedRows.includes(x.repositories);
+        return [
+          {
+            cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
+            props: {
+              isExpanded: isExpanded,
+              isHidden,
+              level: level,
+              posinset: posinset,
+              setsize: x.children ? x.children.length : 0,
+              isChecked: isChecked
+            }
+          },
+          ...(x.children && x.children.length) ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : [],
+          ...this.buildRows(xs, level, posinset + 1, isHidden)
+        ]
+      } 
+      return [];
+    };
+    
+    this.onCollapse = (event, rowIndex, title) => {
+      this.setState(prevState => {
+        const { expandedRows } = prevState;
+        const openedIndex = expandedRows.indexOf(title);
+        const newExpandedRows = openedIndex === -1 ? [...expandedRows, title] : expandedRows.filter(o => o !== title);
+        return {
+          expandedRows: newExpandedRows
+        }
+      });
+    };
+    
+    this.onCheckChange = (event, checked, rowIndex, title) => {
+      this.setState(prevState => {
+        const { checkedRows } = prevState;
+        const checkedIndex = checkedRows.indexOf(title);
+        const newCheckedRows = checkedIndex === -1 ? [...checkedRows, title] : checkedRows.filter(o => o !== title);
+        return {
+          checkedRows: newCheckedRows
+        }
+      });
+    }
+  }
+
+  render() {
+    return (
+      <Table
+        isTreeTable
+        aria-label="Tree Table"
+        cells={[
+          { title: 'Repositories', cellTransforms: [headerCol(), treeRow(this.onCollapse, this.onCheckChange)] }, 
+          'Branches', 
+          { title: 'Pull requests' }, 
+          'Workspaces']}
+        rows={this.buildRows(this.state.data, 1, 1)}        
+      >
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
 ## TableComposable examples
 
 ### Composable: Basic
@@ -3089,4 +3227,155 @@ ComposableTableFavoritable = () => {
     </TableComposable>
   );
 };
+```
+
+### Composable: Tree Table
+```js isBeta
+import React from 'react';
+import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+
+class TreeTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {
+          repositories: 'Repositories one',
+          branches: 'Branch one',
+          pullRequests: 'Pull request one',
+          workspaces: 'Workplace one',
+          children: [
+            {
+              repositories: 'Repositories two',
+              branches: 'Branch two',
+              pullRequests: 'Pull request two',
+              workspaces: 'Workplace two',
+              children: [
+                {
+                  repositories: 'Repositories three',
+                  branches: 'Branch three',
+                  pullRequests: 'Pull request three',
+                  workspaces: 'Workplace three',
+                }
+              ]
+            },
+            {
+              repositories: 'Repositories four',
+              branches: 'Branch four',
+              pullRequests: 'Pull request four',
+              workspaces: 'Workplace four',
+            },
+            {
+              repositories: 'Repositories five',
+              branches: 'Branch five',
+              pullRequests: 'Pull request five',
+              workspaces: 'Workplace five',
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories six',
+          branches: 'Branch six',
+          pullRequests: 'Pull request six',
+          workspaces: 'Workplace six',
+          children: [
+            {
+              repositories: 'Repositories seven',
+              branches: 'Branch seven',
+              pullRequests: 'Pull request seven',
+              workspaces: 'Workplace seven'
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories eight',
+          branches: 'Branch eight',
+          pullRequests: 'Pull request eight',
+          workspaces: 'Workplace eight'
+        }
+      ],
+      expandedRows: ['Repositories one', 'Repositories six'],
+      checkedRows: []
+    };
+    
+    this.buildRows = ([x, ...xs], level, posinset, isHidden = false) => {
+      if (x) {
+        const isExpanded = this.state.expandedRows.includes(x.repositories);
+        const isChecked = this.state.checkedRows.includes(x.repositories);
+        return [
+          {
+            cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
+            props: {
+              isExpanded: isExpanded,
+              isHidden,
+              level: level,
+              posinset: posinset,
+              setsize: x.children ? x.children.length : 0,
+              isChecked: isChecked
+            }
+          },
+          ...(x.children && x.children.length) ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : [],
+          ...this.buildRows(xs, level, posinset + 1, isHidden)
+        ]
+      } 
+      return [];
+    };
+    
+    this.onCollapse = (event, rowIndex, title) => {
+      this.setState(prevState => {
+        const { expandedRows } = prevState;
+        const openedIndex = expandedRows.indexOf(title);
+        const newExpandedRows = openedIndex === -1 ? [...expandedRows, title] : expandedRows.filter(o => o !== title);
+        return {
+          expandedRows: newExpandedRows
+        }
+      });
+    };
+    
+    this.onCheckChange = (event, checked, rowIndex, title) => {
+      this.setState(prevState => {
+        const { checkedRows } = prevState;
+        const checkedIndex = checkedRows.indexOf(title);
+        const newCheckedRows = checkedIndex === -1 ? [...checkedRows, title] : checkedRows.filter(o => o !== title);
+        return {
+          checkedRows: newCheckedRows
+        }
+      });
+    }
+  }
+
+  render() {
+  
+    const columns = ['Repositories', 'Branches', 'Pull Requests', 'Workspaces'];
+    return (
+      <TableComposable isTreeTable aria-label="Tree Table">
+        <Thead>
+          <Tr>
+            {columns.map((column, columnIndex) => (
+              <Th key={columnIndex}>{column}</Th>
+            ))}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {this.buildRows(this.state.data, 1, 1).map((row, rowIndex) => (
+            <TreeRowWrapper row={row} key={rowIndex}>
+              {row.cells.map((cell, cellIndex) => cellIndex === 0 ? (
+                <Td key={cellIndex} treeRow={{
+                  onCollapse: this.onCollapse, 
+                  onCheckChange: this.onCheckChange,
+                  props: row.props
+                }}>
+                  {cell}
+                </Td>
+              ) : (
+                <Td key={cellIndex}>{cell}</Td>
+              ))}
+            </TreeRowWrapper>
+          ))}
+        </Tbody>
+      </TableComposable>
+    );
+  }
+}
 ```

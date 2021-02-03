@@ -13,10 +13,20 @@ import { compoundExpand } from '../Table/utils/decorators/compoundExpand';
 import { cellWidth } from '../Table/utils/decorators/cellWidth';
 import { Visibility, classNames } from './../Table/utils/decorators/classNames';
 import { favoritable } from '../Table/utils/decorators/favoritable';
+import { treeRow } from '../Table/utils/decorators/treeRow';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { OnSelect, IFormatterValueType, IActions, OnExpand, OnCollapse, OnFavorite } from '../Table/TableTypes';
-
+import {
+  OnSelect,
+  IFormatterValueType,
+  IActions,
+  OnExpand,
+  OnCollapse,
+  OnFavorite,
+  OnCheckChange,
+  OnTreeRowCollapse,
+  IExtra
+} from '../Table/TableTypes';
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to.
@@ -74,6 +84,16 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     /** Additional props forwarded to the FavoritesCell */
     props?: any;
   };
+  treeRow?: {
+    /** */
+    onCollapse: OnTreeRowCollapse;
+    /** */
+    onCheckChange: OnCheckChange;
+    /** The row index */
+    rowIndex?: number;
+    /** */
+    props?: any;
+  };
   /** True to remove padding */
   noPadding?: boolean;
 }
@@ -88,6 +108,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   select = null,
   actions = null,
   expand = null,
+  treeRow: treeRowProp = null,
   compoundExpand: compoundExpandProp = null,
   noPadding,
   width,
@@ -176,6 +197,20 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   const visibilityParams = visibility
     ? classNames(...visibility.map((vis: keyof IVisibility) => Visibility[vis]))()
     : null;
+  const treeRowParams =
+    treeRowProp !== null
+      ? treeRow(treeRowProp.onCollapse, treeRowProp.onCheckChange)(
+          {
+            title: children
+          } as IFormatterValueType,
+          {
+            rowIndex: treeRowProp.rowIndex,
+            rowData: {
+              props: treeRowProp.props
+            }
+          } as IExtra
+        )
+      : null;
   const merged = mergeProps(
     selectParams,
     actionParams,
@@ -183,7 +218,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     compoundParams,
     widthParams,
     visibilityParams,
-    favoriteParams
+    favoriteParams,
+    treeRowParams
   );
   const {
     // selectable adds this but we don't want it

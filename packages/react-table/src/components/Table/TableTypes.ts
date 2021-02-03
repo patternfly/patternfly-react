@@ -5,6 +5,7 @@ import {
   DropdownDirection,
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+import * as React from 'react';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -66,6 +67,19 @@ export type OnFavorite = (
   rowIndex: number,
   rowData: IRowData,
   extraData: IExtraData
+) => void;
+export type OnTreeRowCollapse = (
+  event: any,
+  rowIndex: number,
+  title: string | React.ReactNode,
+  rowData: IRowData
+) => void;
+export type OnCheckChange = (
+  event: React.FormEvent<HTMLInputElement>,
+  isChecked: boolean,
+  rowIndex: number,
+  title: string | React.ReactNode,
+  rowData: IRowData
 ) => void;
 
 // Todo: Update type with next breaking change release

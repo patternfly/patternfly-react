@@ -52,6 +52,8 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isStickyHeader?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** */
+  isTreeTable?: boolean;
 }
 
 const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
@@ -66,6 +68,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   innerRef,
   ouiaId,
   ouiaSafe = true,
+  isTreeTable = false,
   ...props
 }: TableComposableProps) => {
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
@@ -81,9 +84,11 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         ],
         styles.modifiers[variant],
         !borders && styles.modifiers.noBorderRows,
-        isStickyHeader && styles.modifiers.stickyHeader
+        isStickyHeader && styles.modifiers.stickyHeader,
+        isTreeTable && 'pf-m-tree-view'
       )}
       ref={innerRef}
+      {...(isTreeTable && { role: 'treegrid' })}
       {...ouiaProps}
       {...props}
     >
