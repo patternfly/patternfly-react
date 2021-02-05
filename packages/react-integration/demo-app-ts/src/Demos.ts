@@ -340,10 +340,11 @@ export const Demos: DemoInterface[] = [
     id: 'drawer-resize-demo',
     name: 'Drawer Resize Demo',
     componentType: Examples.DrawerResizeDemo
-  },{
+  },
+  {
     id: 'drawer-in-drawer-demo',
     name: 'Drawer in Drawer Demo',
-    componentType: Examples.DrawerInDrawerDemo
+    componentType: Examples.NestedDrawerDemo
   },
   {
     id: 'dropdown-demo',
