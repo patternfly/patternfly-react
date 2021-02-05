@@ -53,45 +53,47 @@ export const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   return (
     <div className={css(className, styles.searchInput)} {...props}>
-      <span className={css(styles.searchInputText)}>
-        <span className={css(styles.searchInputIcon)}>
-          <SearchIcon />
+      <div className={styles.searchInputBar}>
+        <span className={css(styles.searchInputText)}>
+          <span className={css(styles.searchInputIcon)}>
+            <SearchIcon />
+          </span>
+          <input
+            ref={innerRef}
+            className={css(styles.searchInputTextInput)}
+            value={value}
+            placeholder={placeholder}
+            aria-label={ariaLabel}
+            onChange={onChangeHandler}
+          />
         </span>
-        <input
-          ref={innerRef}
-          className={css(styles.searchInputTextInput)}
-          value={value}
-          placeholder={placeholder}
-          aria-label={ariaLabel}
-          onChange={onChangeHandler}
-        />
-      </span>
-      {value && (
-        <span className={css(styles.searchInputUtilities)}>
-          {resultsCount && (
-            <span className={css(styles.searchInputCount)}>
-              <Badge isRead>{resultsCount}</Badge>
-            </span>
-          )}
-          {!!onNextClick && !!onPreviousClick && (
-            <span className={css(styles.searchInputNav)}>
-              <Button variant={ButtonVariant.plain} aria-label="Previous" onClick={onPreviousClick}>
-                <AngleUpIcon />
-              </Button>
-              <Button variant={ButtonVariant.plain} aria-label="Next" onClick={onNextClick}>
-                <AngleDownIcon />
-              </Button>
-            </span>
-          )}
-          {!!onClear && (
-            <span className="pf-c-search-input__clear">
-              <Button variant={ButtonVariant.plain} aria-label="Clear" onClick={onClear}>
-                <TimesIcon />
-              </Button>
-            </span>
-          )}
-        </span>
-      )}
+        {value && (
+          <span className={css(styles.searchInputUtilities)}>
+            {resultsCount && (
+              <span className={css(styles.searchInputCount)}>
+                <Badge isRead>{resultsCount}</Badge>
+              </span>
+            )}
+            {!!onNextClick && !!onPreviousClick && (
+              <span className={css(styles.searchInputNav)}>
+                <Button variant={ButtonVariant.plain} aria-label="Previous" onClick={onPreviousClick}>
+                  <AngleUpIcon />
+                </Button>
+                <Button variant={ButtonVariant.plain} aria-label="Next" onClick={onNextClick}>
+                  <AngleDownIcon />
+                </Button>
+              </span>
+            )}
+            {!!onClear && (
+              <span className="pf-c-search-input__clear">
+                <Button variant={ButtonVariant.plain} aria-label="Clear" onClick={onClear}>
+                  <TimesIcon />
+                </Button>
+              </span>
+            )}
+          </span>
+        )}
+      </div>
     </div>
   );
 };
