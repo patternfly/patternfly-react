@@ -169,3 +169,44 @@ TextInputSelectAll = () => {
   );
 };
 ```
+
+### Advanced
+```js
+import React from 'react';
+import { SearchInput } from '@patternfly/react-core';
+
+class AdvancedSearchInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'username:player firstname:john'
+    };
+
+    this.onChange = (value) => {
+      this.setState({
+        value: value
+      });
+    };
+    
+    this.onSearch = (value, event, attrValueMap) => {
+      this.setState({
+        value: value
+      });
+      console.log(attrValueMap);
+    }
+  }
+
+  render() {
+    return (
+      <SearchInput
+        attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+        value={this.state.value}
+        onChange={this.onChange}
+        onSearch={this.onSearch}
+        onClear={(evt) => this.onChange('', evt)}
+      />
+    );
+  }
+}
+
+```
