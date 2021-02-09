@@ -101,10 +101,20 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     );
   }
 
-  onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any) => {
+  onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any, isCheckbox?: boolean) => {
     const { index, keyHandler } = this.props;
     if (event.key === KeyTypes.Tab) {
-      keyHandler(index, innerIndex, 'tab');
+      // More modal-like experience for checkboxes
+      if (isCheckbox) {
+        if (event.shiftKey) {
+          keyHandler(index, innerIndex, 'up');
+        } else {
+          keyHandler(index, innerIndex, 'down');
+        }
+        event.stopPropagation();
+      } else {
+        keyHandler(index, innerIndex, 'tab');
+      }
     }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
@@ -120,9 +130,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         onEnter();
       } else {
         this.ref.current.click();
-        if (this.context.variant === SelectVariant.checkbox) {
-          this.ref.current.focus();
-        }
       }
     }
   };
@@ -169,7 +176,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
           onFavorite(generatedId.replace('favorite-', ''), isFavorite);
         }}
         onKeyDown={event => {
-          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
+          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', '')));
         }}
         ref={this.favoriteRef}
       >
@@ -257,7 +264,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   className
                 )}
                 onKeyDown={(event: React.KeyboardEvent) => {
-                  this.onKeyDown(event, 0);
+                  this.onKeyDown(event, 0, undefined, true);
                 }}
               >
                 <input
@@ -293,7 +300,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   role="option"
                   aria-selected={isSelected || null}
                   ref={this.ref}
-                  onKeyDown={this.onKeyDown}
+                  onKeyDown={(event: React.KeyboardEvent) => {
+                    this.onKeyDown(event, 0, undefined, true);
+                  }}
                   type="button"
                 >
                   {children || value.toString()}
