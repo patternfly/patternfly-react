@@ -780,7 +780,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           variantProps = {
             checked: selections,
             isGrouped,
-            hasInlineFilter
+            hasInlineFilter,
+            openedOnEnter
           };
           variantChildren = filterWithChildren;
           break;
