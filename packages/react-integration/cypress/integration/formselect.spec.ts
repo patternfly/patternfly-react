@@ -24,6 +24,7 @@ describe('Form Select Demo Test', () => {
   it('Verify validated  select', () => {
     cy.get('#validated-select');
     cy.get('#validated-select.pf-m-success').should('not.exist');
+    cy.get('#validated-select.pf-m-placeholder').should('exist');
     cy.get('#validated-select').then(select => {
       expect(select.attr('aria-invalid')).to.be.equal('false');
     });
@@ -34,6 +35,7 @@ describe('Form Select Demo Test', () => {
     cy.get('#validated-select').then(select => {
       expect(select.attr('aria-invalid')).to.be.equal('true');
     });
+    cy.get('#validated-select.pf-m-placeholder').should('not.exist');
     // Select value of 3 so it is valid
     cy.get('#validated-select')
       .select('3')
