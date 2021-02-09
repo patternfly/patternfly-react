@@ -908,8 +908,10 @@ class ColumnManagementAction extends React.Component {
                 aria-labelledby="table-column-management-item1"
                 isChecked={this.state.check1}
                 name="check1"
+                id="check1"
                 onChange={this.handleChange}
               />
+              <label htmlFor="check1">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item1" key="table-column-management-item1">
@@ -917,6 +919,7 @@ class ColumnManagementAction extends React.Component {
                   </DataListCell>
                 ]}
               />
+              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item2">
@@ -925,8 +928,10 @@ class ColumnManagementAction extends React.Component {
                 aria-labelledby="table-column-management-item2"
                 isChecked={this.state.check2}
                 name="check2"
+                id="check2"
                 onChange={this.handleChange}
               />
+              <label htmlFor="check2">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item2" key="table-column-management-item2">
@@ -934,6 +939,7 @@ class ColumnManagementAction extends React.Component {
                   </DataListCell>
                 ]}
               />
+              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item3">
@@ -942,8 +948,10 @@ class ColumnManagementAction extends React.Component {
                 aria-labelledby="table-column-management-item3"
                 isChecked={this.state.check3}
                 name="check3"
+                id="check3"
                 onChange={this.handleChange}
               />
+              <label htmlFor="check3">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item3" key="table-column-management-item3">
@@ -951,6 +959,7 @@ class ColumnManagementAction extends React.Component {
                   </DataListCell>
                 ]}
               />
+              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item4">
@@ -959,8 +968,10 @@ class ColumnManagementAction extends React.Component {
                 aria-labelledby="table-column-management-item4"
                 isChecked={this.state.check4}
                 name="check4"
+                id="check4"
                 onChange={this.handleChange}
               />
+              <label htmlFor="check4">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item4" key="table-column-management-item4">
@@ -968,6 +979,7 @@ class ColumnManagementAction extends React.Component {
                   </DataListCell>
                 ]}
               />
+              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item5">
@@ -976,8 +988,10 @@ class ColumnManagementAction extends React.Component {
                 aria-labelledby="table-column-management-item5"
                 isChecked={this.state.check5}
                 name="check5"
+                id="check5"
                 onChange={this.handleChange}
               />
+              <label htmlFor="check5">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item5" key="table-column-management-item5">
@@ -985,6 +999,7 @@ class ColumnManagementAction extends React.Component {
                   </DataListCell>
                 ]}
               />
+              </label>
             </DataListItemRow>
           </DataListItem>
         </DataList>
