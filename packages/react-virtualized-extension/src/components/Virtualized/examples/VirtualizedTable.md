@@ -126,7 +126,7 @@ class VirtualizedExample extends React.Component {
         <AutoSizer disableHeight>
           {({ width }) => (
             <VirtualTableBody
-              className="pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -217,7 +217,7 @@ ComposableTableVirtualized = () => {
       <AutoSizer disableHeight>
         {({ width }) => (
           <VirtualTableBody
-            className="pf-c-virtualized pf-c-window-scroller"
+            className="pf-c-table pf-c-virtualized pf-c-window-scroller"
             deferredMeasurementCache={measurementCache}
             rowHeight={measurementCache.rowHeight}
             height={400}
@@ -369,7 +369,7 @@ class SortableExample extends React.Component {
           {({ width }) => (
             <VirtualTableBody
               ref={ref => (this.sortableVirtualBody = ref)}
-              className="pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -527,7 +527,7 @@ class SelectableExample extends React.Component {
           {({ width }) => (
             <VirtualTableBody
               ref={ref => (this.selectableVirtualBody = ref)}
-              className="pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -680,7 +680,7 @@ class ActionsExample extends React.Component {
           {({ width }) => (
             <VirtualTableBody
               ref={ref => (this.actionsVirtualBody = ref)}
-              className="pf-c-virtualized pf-c-window-scroller"
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -1161,7 +1161,7 @@ class FilterExample extends React.Component {
                           <VirtualTableBody
                             ref={ref => (this.actionsVirtualBody = ref)}
                             autoHeight
-                            className="pf-c-virtualized pf-c-window-scroller"
+                            className="pf-c-table pf-c-virtualized pf-c-window-scroller"
                             deferredMeasurementCache={measurementCache}
                             rowHeight={measurementCache.rowHeight}
                             height={height || 0}
