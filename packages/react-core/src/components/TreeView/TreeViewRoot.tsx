@@ -5,6 +5,8 @@ import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 export interface TreeViewRootProps {
   /** Child nodes of the tree view */
   children: React.ReactNode;
+  /** Flag indicating if the tree view has checkboxes */
+  hasChecks?: boolean;
 }
 
 export class TreeViewRoot extends React.Component<TreeViewRootProps> {
@@ -12,11 +14,11 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   private treeRef = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeys);
+    window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeys);
+    window.removeEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
   }
 
   handleKeys = (event: KeyboardEvent) => {
@@ -84,8 +86,79 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     }
   };
 
+  handleKeysCheckbox = (event: KeyboardEvent) => {
+    if (this.treeRef.current !== (event.target as HTMLElement).closest('.pf-c-tree-view')) {
+      return;
+    }
+    const activeElement = document.activeElement;
+    const key = event.key;
+    let moveFocus = false;
+    let currentIndex = -1;
+    let innerIndex = -1;
+    const treeItems = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle'));
+    const checkItems = Array.from(this.treeRef.current.getElementsByTagName('INPUT'));
+    const mappedItems = checkItems.map((item, index) => [treeItems[index], item]);
+
+    if (key === 'Space') {
+      (document.activeElement as HTMLElement).click();
+      event.preventDefault();
+    }
+
+    if (['ArrowUp', 'ArrowDown'].includes(key)) {
+      mappedItems.forEach((treeItem, treeItemIndex) => {
+        treeItem.forEach((element, index) => {
+          if (activeElement === element) {
+            const increment = key === 'ArrowUp' ? -1 : 1;
+            innerIndex = index;
+            currentIndex = treeItemIndex + increment;
+            while (
+              currentIndex < mappedItems.length &&
+              currentIndex >= 0 &&
+              mappedItems[currentIndex][index].classList.contains('pf-m-disabled')
+            ) {
+              currentIndex = currentIndex + increment;
+            }
+            moveFocus = true;
+            event.preventDefault();
+          }
+        });
+      });
+
+      if (moveFocus && mappedItems[currentIndex] && mappedItems[currentIndex][innerIndex]) {
+        (mappedItems[currentIndex][innerIndex] as HTMLElement).focus();
+      }
+    }
+
+    if (['ArrowLeft', 'ArrowRight'].includes(key)) {
+      if (key === 'ArrowLeft') {
+        if (activeElement.tagName === 'INPUT') {
+          activeElement.parentElement.previousSibling &&
+            (activeElement.parentElement.previousSibling as HTMLElement).focus();
+        } else if (activeElement.previousSibling) {
+          if (activeElement.previousElementSibling.tagName === 'SPAN') {
+            (activeElement.previousSibling.firstChild as HTMLElement).focus();
+          } else {
+            (activeElement.previousSibling as HTMLElement).focus();
+          }
+        }
+      } else {
+        if (activeElement.tagName === 'INPUT') {
+          activeElement.parentElement.nextSibling && (activeElement.parentElement.nextSibling as HTMLElement).focus();
+        } else if (activeElement.nextSibling) {
+          if (activeElement.nextElementSibling.tagName === 'SPAN') {
+            (activeElement.nextSibling.firstChild as HTMLElement).focus();
+          } else {
+            (activeElement.nextSibling as HTMLElement).focus();
+          }
+        }
+      }
+      event.preventDefault();
+    }
+  };
+
   render() {
-    const { children, ...props } = this.props;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { children, hasChecks, ...props } = this.props;
     return (
       <div className={css(styles.treeView)} ref={this.treeRef} {...props}>
         {children}

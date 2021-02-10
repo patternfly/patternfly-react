@@ -120,7 +120,17 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       ))}
     </TreeViewList>
   );
-  return <>{parentItem ? treeViewList : <TreeViewRoot {...props}>{treeViewList}</TreeViewRoot>}</>;
+  return (
+    <>
+      {parentItem ? (
+        treeViewList
+      ) : (
+        <TreeViewRoot hasChecks={hasChecks} {...props}>
+          {treeViewList}
+        </TreeViewRoot>
+      )}
+    </>
+  );
 };
 
 TreeView.displayName = 'TreeView';
