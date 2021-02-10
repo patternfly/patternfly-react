@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.93.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.3...@patternfly/react-core@4.93.0) (2021-02-10)
+
+
+### Features
+
+* **Progress:** Add warning when title and aria-label not present ([#5415](https://github.com/patternfly/patternfly-react/issues/5415)) ([c2cb799](https://github.com/patternfly/patternfly-react/commit/c2cb799b19094c383bc103e63c91bcd6e27f1afb))
+
+
+
+
+
 ## [4.92.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.2...@patternfly/react-core@4.92.3) (2021-02-10)
 
 
