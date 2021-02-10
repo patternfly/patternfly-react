@@ -6,7 +6,6 @@ import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 
-import { FocusTrap } from '../../helpers';
 import { SelectGroup } from './SelectGroup';
 import { Divider } from '../Divider/Divider';
 
@@ -227,26 +226,24 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 </div>
               ))}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
-              <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true, preventScroll: true }}>
-                <div
-                  ref={innerRef}
-                  className={css(styles.selectMenu, className)}
-                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+              <div
+                ref={innerRef}
+                className={css(styles.selectMenu, className)}
+                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+              >
+                <fieldset
+                  {...props}
+                  aria-label={ariaLabel}
+                  aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+                  className={css(formStyles.formFieldset)}
                 >
-                  <fieldset
-                    {...props}
-                    aria-label={ariaLabel}
-                    aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-                    className={css(formStyles.formFieldset)}
-                  >
-                    {hasInlineFilter && [
-                      (children as React.ReactElement[]).shift(),
-                      ...this.extendCheckboxChildren(children as React.ReactElement[])
-                    ]}
-                    {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
-                  </fieldset>
-                </div>
-              </FocusTrap>
+                  {hasInlineFilter && [
+                    (children as React.ReactElement[]).shift(),
+                    ...this.extendCheckboxChildren(children as React.ReactElement[])
+                  ]}
+                  {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
+                </fieldset>
+              </div>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
               <div

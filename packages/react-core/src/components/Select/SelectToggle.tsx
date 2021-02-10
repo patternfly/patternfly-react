@@ -101,9 +101,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
 
   handleGlobalKeys = (event: KeyboardEvent) => {
     const { parentRef, menuRef, isOpen, variant, onToggle, onClose } = this.props;
-    if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
-      return;
-    }
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -147,7 +144,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     if (
       variant === SelectVariant.typeahead ||
       variant === SelectVariant.typeaheadMulti ||
-      (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
       (event.key === KeyTypes.Tab && !isOpen) ||
       (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space)
     ) {

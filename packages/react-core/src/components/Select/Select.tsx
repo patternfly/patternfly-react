@@ -743,6 +743,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   this.handleMenuKeys(0, 0, 'left');
                 } else if (event.key === KeyTypes.ArrowRight) {
                   this.handleMenuKeys(0, 0, 'right');
+                } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
+                  // More modal-like experience for checkboxes
+                  // Let SelectOption handle this
+                  if (event.shiftKey) {
+                    this.handleMenuKeys(0, 0, 'up');
+                  } else {
+                    this.handleMenuKeys(0, 0, 'down');
+                  }
+                  event.stopPropagation();
+                  event.preventDefault();
                 }
               }}
               ref={this.filterRef}
@@ -780,7 +790,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           variantProps = {
             checked: selections,
             isGrouped,
-            hasInlineFilter
+            hasInlineFilter,
+            openedOnEnter
           };
           variantChildren = filterWithChildren;
           break;
