@@ -64,7 +64,7 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
 
   render() {
     const { children, className, value, validated, isDisabled, isRequired, ouiaId, ouiaSafe, ...props } = this.props;
-    /* find sekected option and get placeholder flag */
+    /* find selected option and get placeholder flag */
     const selectedOption = React.Children.toArray(children).find((option: any) => option.props.value === value) as any;
     const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
     return (
