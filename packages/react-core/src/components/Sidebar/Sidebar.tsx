@@ -12,7 +12,7 @@ export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
 
 export const Sidebar: React.FunctionComponent<SidebarProps> = ({
   children,
-  orientation = 'stack',
+  orientation,
   isPanelRight = false,
   hasGutter,
   hasNoBackground,
