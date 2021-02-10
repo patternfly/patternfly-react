@@ -5,6 +5,7 @@ exports[`SimpleList should match snapshot (auto-generated) 1`] = `
   value={
     Object {
       "currentRef": null,
+      "isControlled": true,
       "updateCurrentRef": [Function],
     }
   }

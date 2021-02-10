@@ -6,7 +6,8 @@ import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 
-import { FocusTrap } from '../../helpers';
+import { SelectGroup } from './SelectGroup';
+import { Divider } from '../Divider/Divider';
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */
@@ -32,9 +33,9 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Inner prop passed from parent */
   createText?: string;
   /** Internal callback for ref tracking */
-  sendRef?: (ref: React.ReactNode, index: number) => void;
+  sendRef?: (ref: React.ReactNode, favoriteRef: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler?: (index: number, position: string) => void;
+  keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Flag indicating select has an inline text input for filtering */
   hasInlineFilter?: boolean;
   innerRef?: any;
@@ -59,14 +60,19 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     const { children, isGrouped } = this.props;
     const childrenArray: React.ReactElement[] = children as React.ReactElement[];
     if (isGrouped) {
-      return React.Children.map(childrenArray, (group: React.ReactElement, index: number) =>
-        React.cloneElement(group, {
-          titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-          children: group.props.children.map((option: React.ReactElement) =>
-            this.cloneOption(option, index++, randomId)
-          )
-        })
-      );
+      let index = 0;
+      return React.Children.map(childrenArray, (group: React.ReactElement) => {
+        if (group.type === SelectGroup) {
+          return React.cloneElement(group, {
+            titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+            children: React.Children.map(group.props.children, (option: React.ReactElement) =>
+              this.cloneOption(option, index++, randomId)
+            )
+          });
+        } else {
+          return this.cloneOption(group, index++, randomId);
+        }
+      });
     }
     return React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
       this.cloneOption(child, index, randomId)
@@ -75,13 +81,12 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
 
   cloneOption(child: React.ReactElement, index: number, randomId: string) {
     const { selected, sendRef, keyHandler } = this.props;
-    const isSelected =
-      selected && selected.constructor === Array
-        ? selected && Array.isArray(selected) && selected.includes(child.props.value)
-        : selected === child.props.value;
+    const isSelected = this.checkForValue(child.props.value, selected);
+    if (child.type === Divider) {
+      return child;
+    }
     return React.cloneElement(child, {
       inputId: `${randomId}-${index}`,
-      id: `${child.props.id ? child.props.id : randomId}-${index}`,
       isSelected,
       sendRef,
       keyHandler,
@@ -89,12 +94,40 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     });
   }
 
+  checkForValue(
+    valueToCheck: string | SelectOptionObject,
+    options: string | SelectOptionObject | (string | SelectOptionObject)[]
+  ) {
+    if (!options || !valueToCheck) {
+      return false;
+    }
+
+    const isSelectOptionObject =
+      typeof valueToCheck !== 'string' &&
+      (valueToCheck as SelectOptionObject).toString &&
+      (valueToCheck as SelectOptionObject).compareTo;
+
+    if (Array.isArray(options)) {
+      if (isSelectOptionObject) {
+        return options.some(option => (option as SelectOptionObject).compareTo(valueToCheck));
+      } else {
+        return options.includes(valueToCheck);
+      }
+    } else {
+      if (isSelectOptionObject) {
+        return (options as SelectOptionObject).compareTo(valueToCheck);
+      } else {
+        return options === valueToCheck;
+      }
+    }
+  }
+
   extendCheckboxChildren(children: React.ReactElement[]) {
     const { isGrouped, checked, sendRef, keyHandler, hasInlineFilter } = this.props;
     let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
       return React.Children.map(children, (group: React.ReactElement) => {
-        if (group.type === SelectOption) {
+        if (group.type === SelectOption || group.type === Divider) {
           return group;
         }
         return React.cloneElement(group, {
@@ -105,12 +138,14 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
               className={css(styles.selectMenuFieldset)}
             >
               {React.Children.map(group.props.children, (option: React.ReactElement) =>
-                React.cloneElement(option, {
-                  isChecked: checked && checked.includes(option.props.value),
-                  sendRef,
-                  keyHandler,
-                  index: index++
-                })
+                option.type === Divider
+                  ? option
+                  : React.cloneElement(option, {
+                      isChecked: this.checkForValue(option.props.value, checked),
+                      sendRef,
+                      keyHandler,
+                      index: index++
+                    })
               )}
             </fieldset>
           )
@@ -118,12 +153,14 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       });
     }
     return React.Children.map(children, (child: React.ReactElement) =>
-      React.cloneElement(child, {
-        isChecked: checked && checked.includes(child.props.value),
-        sendRef,
-        keyHandler,
-        index: index++
-      })
+      child.type === Divider
+        ? child
+        : React.cloneElement(child, {
+            isChecked: this.checkForValue(child.props.value, checked),
+            sendRef,
+            keyHandler,
+            index: index++
+          })
     );
   }
 
@@ -164,38 +201,49 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 {children}
               </div>
             )}
-            {variant !== SelectVariant.checkbox && !isCustomContent && (
-              <ul
-                ref={innerRef}
-                className={css(styles.selectMenu, className)}
-                role="listbox"
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                {...props}
-              >
-                {this.extendChildren(inputIdPrefix)}
-              </ul>
-            )}
-            {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
-              <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+            {variant !== SelectVariant.checkbox &&
+              !isCustomContent &&
+              (!isGrouped ? (
+                <ul
+                  ref={innerRef}
+                  className={css(styles.selectMenu, className)}
+                  role="listbox"
+                  aria-label={ariaLabel}
+                  aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                  {...props}
+                >
+                  {this.extendChildren(inputIdPrefix)}
+                </ul>
+              ) : (
                 <div
                   ref={innerRef}
                   className={css(styles.selectMenu, className)}
                   {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                  {...props}
                 >
-                  <fieldset
-                    {...props}
-                    aria-label={ariaLabel}
-                    aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-                    className={css(formStyles.formFieldset)}
-                  >
-                    {hasInlineFilter && [
-                      (children as React.ReactElement[]).shift(),
-                      ...this.extendCheckboxChildren(children as React.ReactElement[])
-                    ]}
-                    {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
-                  </fieldset>
+                  {this.extendChildren(inputIdPrefix)}
                 </div>
-              </FocusTrap>
+              ))}
+            {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
+              <div
+                ref={innerRef}
+                className={css(styles.selectMenu, className)}
+                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+              >
+                <fieldset
+                  {...props}
+                  aria-label={ariaLabel}
+                  aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+                  className={css(formStyles.formFieldset)}
+                >
+                  {hasInlineFilter && [
+                    (children as React.ReactElement[]).shift(),
+                    ...this.extendCheckboxChildren(children as React.ReactElement[])
+                  ]}
+                  {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
+                </fieldset>
+              </div>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
               <div

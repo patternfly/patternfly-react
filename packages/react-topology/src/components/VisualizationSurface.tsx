@@ -4,10 +4,8 @@ import { action } from 'mobx';
 // https://github.com/mobxjs/mobx-react#observer-batching
 import 'mobx-react/batchingForReactDom';
 import { observer } from 'mobx-react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore-next-line
 import ReactMeasure from 'react-measure';
-import { State, Controller } from '../types';
+import { State } from '../types';
 import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
 import Dimensions from '../geom/Dimensions';
@@ -16,7 +14,6 @@ import useVisualizationController from '../hooks/useVisualizationController';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 
 interface VisualizationSurfaceProps {
-  visualization?: Controller;
   state?: State;
   children?: React.ReactNode;
 }

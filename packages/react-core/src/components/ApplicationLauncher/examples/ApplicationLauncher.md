@@ -1,24 +1,23 @@
 ---
-title: 'Application launcher'
+id: Application launcher
 section: components
-cssPrefix: 'pf-c-app-launcher'
+cssPrefix: pf-c-app-launcher
 propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem']
-typescript: true
 ouia: true
 ---
 
-import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator, Text } from '@patternfly/react-core';
-import { HelpIcon, StarIcon } from '@patternfly/react-icons';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import { Link } from '@reach/router';
 import pfIcon from './pf-logo-small.svg';
 
 Note: Application launcher is built on Dropdown, for extended API go to [Dropdown](/documentation/react/components/dropdown) documentation.
 To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [Tooltip](/documentation/react/components/tooltip).
 
-
 ## Examples
 
-```js title=Basic
+### Basic
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -60,7 +59,9 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Router-link
+### Router link
+
+```js
 import React from 'react';
 import { Link } from '@reach/router';
 import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent, Text } from '@patternfly/react-core';
@@ -126,7 +127,9 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -174,7 +177,9 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Aligned-right
+### Aligned right
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { DropdownPosition } from '../Dropdown';
@@ -225,7 +230,9 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Aligned-top
+### Aligned top
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { DropdownDirection } from '../Dropdown';
@@ -274,7 +281,9 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=With-tooltip
+### With tooltip
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -328,7 +337,9 @@ class TooltipApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=With-sections-and-icons
+### With sections and icons
+
+```js
 import React from 'react';
 import {
   ApplicationLauncher,
@@ -399,7 +410,9 @@ class ApplicationLauncherSections extends React.Component {
 }
 ```
 
-```js title=With-favorites-and-search
+### With favorites and search
+
+```js
 import React from 'react';
 import {
   ApplicationLauncher,
@@ -519,10 +532,12 @@ class ApplicationLauncherFavorites extends React.Component {
 }
 ```
 
-```js title=With-custom-icon
+### With custom icon
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
-import { HelpIcon } from '@patternfly/react-icons';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 class ApplicationLauncheIcon extends React.Component {
   constructor(props) {
@@ -568,7 +583,9 @@ class ApplicationLauncheIcon extends React.Component {
 }
 ```
 
-```js title=Basic-with-menu-appended-to-document-body
+### Basic with menu appended to document body
+
+```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -604,11 +621,11 @@ class ApplicationLauncherDocumentBody extends React.Component {
       </ApplicationLauncherItem>
     ];
     return (
-      <ApplicationLauncher 
-        menuAppendTo={() => document.body} 
-        onSelect={this.onSelect} 
-        onToggle={this.onToggle} 
-        isOpen={isOpen} 
+      <ApplicationLauncher
+        menuAppendTo={() => document.body}
+        onSelect={this.onSelect}
+        onToggle={this.onToggle}
+        isOpen={isOpen}
         items={appLauncherItems}
       />
     );

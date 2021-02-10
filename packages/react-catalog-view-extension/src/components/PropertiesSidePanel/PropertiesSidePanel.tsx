@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface PropertySidePanelProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional css classes for the Property Item */
@@ -13,7 +13,7 @@ export const PropertiesSidePanel: React.FunctionComponent<PropertySidePanelProps
   children = null,
   ...props
 }: PropertySidePanelProps) => {
-  const classes = classNames('properties-side-panel-pf', className);
+  const classes = css('properties-side-panel-pf', className);
 
   return (
     <div className={classes} {...props}>

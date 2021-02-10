@@ -37,6 +37,14 @@ class ColaLayout extends BaseLayout implements Layout {
 
   private destroyed = false;
 
+  private simulationRunning = false;
+
+  private simulationStopped = false;
+
+  private restartOnEnd: boolean = undefined;
+
+  private addingNodes: boolean = false;
+
   constructor(graph: Graph, options?: Partial<ColaLayoutOptions & LayoutOptions>) {
     super(graph, options);
     this.colaOptions = {
@@ -72,20 +80,43 @@ class ColaLayout extends BaseLayout implements Layout {
     });
     this.d3Cola.on('end', () => {
       this.tickCount = 0;
+      this.simulationRunning = false;
       action(() => {
         if (this.destroyed) {
           return;
         }
         this.nodes.forEach(d => {
-          d.update();
-          (d as ColaNode).fixed = 0;
+          if (!this.simulationStopped) {
+            d.update();
+          }
+          d.setFixed(false);
         });
         if (this.options.layoutOnDrag) {
           this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);
         }
+        if (this.simulationStopped) {
+          this.simulationStopped = false;
+          if (this.restartOnEnd !== undefined) {
+            this.startColaLayout(this.restartOnEnd);
+            delete this.restartOnEnd;
+          }
+        } else if (this.addingNodes) {
+          // One round of simulation to adjust for new nodes
+          this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);
+          this.forceSimulation.restart();
+        }
       })();
     });
   }
+
+  protected onSimulationEnd = () => {
+    if (this.addingNodes) {
+      if (!this.options.layoutOnDrag) {
+        this.forceSimulation.stopSimulation();
+      }
+      this.addingNodes = false;
+    }
+  };
 
   destroy(): void {
     super.destroy();
@@ -102,6 +133,14 @@ class ColaLayout extends BaseLayout implements Layout {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected getConstraints(nodes: ColaNode[], groups: ColaGroup[], edges: ColaLink[]): any[] {
     return [];
+  }
+
+  protected stopSimulation(): void {
+    if (this.simulationRunning) {
+      this.simulationStopped = true;
+      this.d3Cola.stop();
+    }
+    super.stopSimulation();
   }
 
   protected createLayoutNode(node: Node, nodeDistance: number, index: number) {
@@ -134,10 +173,11 @@ class ColaLayout extends BaseLayout implements Layout {
     });
   }
 
-  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
-    // start the layout
+  private startColaLayout(addingNodes: boolean): void {
+    this.simulationRunning = true;
     this.d3Cola.alpha(0.2);
     this.tickCount = 0;
+    this.addingNodes = addingNodes;
     this.d3Cola.start(
       addingNodes ? 0 : this.colaOptions.initialUnconstrainedIterations,
       addingNodes ? 0 : this.colaOptions.initialUserConstraintIterations,
@@ -146,6 +186,14 @@ class ColaLayout extends BaseLayout implements Layout {
       true,
       !addingNodes
     );
+  }
+
+  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
+    if (!this.simulationStopped) {
+      this.startColaLayout(addingNodes);
+    } else {
+      this.restartOnEnd = addingNodes;
+    }
   }
 }
 

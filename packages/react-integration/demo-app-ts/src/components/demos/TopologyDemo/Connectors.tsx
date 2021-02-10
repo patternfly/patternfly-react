@@ -1,7 +1,5 @@
 import * as React from 'react';
 import {
-  Visualization,
-  VisualizationSurface,
   Model,
   ModelKind,
   Edge,
@@ -141,7 +139,10 @@ export const Reconnect = withTopologySetup(() => {
             type: 'edge',
             source: 'n1',
             target: 'n2',
-            bendpoints: [[50, 30], [110, 10]]
+            bendpoints: [
+              [50, 30],
+              [110, 10]
+            ]
           },
           {
             id: 'e2',
@@ -218,7 +219,10 @@ export const CreateConnector = withTopologySetup(() => {
               choice: ColorChoice | undefined
             ): ColorChoice[] | void => {
               if (!choice) {
-                return [{ label: 'Create Annotation', color: 'red' }, { label: 'Create Binding', color: 'green' }];
+                return [
+                  { label: 'Create Annotation', color: 'red' },
+                  { label: 'Create Binding', color: 'green' }
+                ];
               }
 
               let targetId;

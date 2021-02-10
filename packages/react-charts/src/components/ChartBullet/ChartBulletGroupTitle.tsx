@@ -34,6 +34,8 @@ export interface ChartBulletGroupTitleProps {
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
    * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
    * unitless number, it is assumed to be ems.
+   *
+   * @propType number | string | Function
    */
   capHeight?: StringOrNumberOrCallback;
   /**
@@ -52,6 +54,8 @@ export interface ChartBulletGroupTitleProps {
    * and right.
    *
    * Note: The bottom padding property is unused
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
@@ -76,6 +80,8 @@ export interface ChartBulletGroupTitleProps {
    * When using ChartLine as a solo component, implement the theme directly on
    * ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -137,10 +143,10 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   };
 
   const labelPadding = {
-    bottom: getPaddingForSide('bottom', padding, Number(theme.legend.style.labels.padding)),
-    left: getPaddingForSide('left', padding, Number(theme.legend.style.labels.padding)),
-    right: getPaddingForSide('right', padding, Number(theme.legend.style.labels.padding)),
-    top: getPaddingForSide('top', padding, Number(theme.legend.style.labels.padding))
+    bottom: getPaddingForSide('bottom', padding, Number((theme.legend.style.labels as any).padding)),
+    left: getPaddingForSide('left', padding, Number((theme.legend.style.labels as any).padding)),
+    right: getPaddingForSide('right', padding, Number((theme.legend.style.labels as any).padding)),
+    top: getPaddingForSide('top', padding, Number((theme.legend.style.labels as any).padding))
   };
 
   // Horizontal divider to render under the group title

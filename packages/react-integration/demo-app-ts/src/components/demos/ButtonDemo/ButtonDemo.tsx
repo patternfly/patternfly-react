@@ -44,6 +44,12 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
     target: '_blank'
   };
 
+  spanLink: ButtonProps = {
+    component: 'span',
+    variant: 'link',
+    isInline: true
+  };
+
   myButtonProps: ButtonProps = {
     component: 'button',
     href,
@@ -99,7 +105,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.normalButton} id="normal-btn-10" tabIndex={2}>
           Button with tabindex set to 2
         </Button>
-        <Tooltip content="This tooltip content is available to the aria-disabled button">
+        <Tooltip id="button-with-tooltip-1" content="This tooltip content is available to the aria-disabled button">
           <Button
             {...this.normalButton}
             id="normal-btn-11"
@@ -113,6 +119,18 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         </Tooltip>
         <Button {...this.normalButton} id="normal-btn-12" isSmall>
           Small button
+        </Button>
+        <Button {...this.normalButton} id="normal-btn-13" isLarge>
+          Large button
+        </Button>
+        <Button {...this.normalButton} id="normal-btn-14" variant="warning">
+          Warning
+        </Button>
+        <Button {...this.normalButton} id="normal-btn-15" isLoading>
+          Loading button
+        </Button>
+        <Button {...this.normalButton} id="normal-btn-16" isLoading={false}>
+          Loader button
         </Button>
 
         <Button
@@ -157,11 +175,38 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.linkAsButton} id="link-as-btn-4" tabIndex={4}>
           Link as button with tabindex set to 4
         </Button>
-        <Tooltip content="This tooltip content is available to the aria-disabled link as button">
+        <Tooltip
+          id="button-with-tooltip-2"
+          content="This tooltip content is available to the aria-disabled link as button"
+        >
           <Button {...this.linkAsButton} id="link-as-btn-5" isAriaDisabled>
             Aria-disabled link as button with tooltip
           </Button>
         </Tooltip>
+
+        <hr className="pf-u-m-md" />
+        <Button {...this.spanLink} id="span-link-btn-1">
+          Span wrapping link
+        </Button>
+        <br />
+        <Button isDisabled {...this.spanLink} id="span-link-btn-2">
+          Disabled span wrapping link
+        </Button>
+        <hr className="pf-u-m-md" />
+        <div id="tabstop-test" tabIndex={0}>
+          <Button className="pf-u-m-sm" id="tabstop-test-01">
+            First tab stop
+          </Button>
+          <Button className="pf-u-m-sm" id="tabstop-test-02">
+            Second tab stop
+          </Button>
+          <Button className="pf-u-m-sm" id="tabstop-test-03">
+            Third tab stop
+          </Button>
+          <Button className="pf-u-m-sm" id="tabstop-test-04">
+            Fourth tab stop
+          </Button>
+        </div>
       </div>
     );
   }

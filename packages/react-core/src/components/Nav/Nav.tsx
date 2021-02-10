@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export type NavSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
@@ -57,7 +57,7 @@ export const NavContext = React.createContext<{
   isHorizontal?: boolean;
 }>({});
 
-export class Nav extends React.Component<NavProps> {
+export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouiaStateId: string }> {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
@@ -67,7 +67,8 @@ export class Nav extends React.Component<NavProps> {
   };
 
   state = {
-    isScrollable: false
+    isScrollable: false,
+    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant)
   };
 
   // Callback from NavItem
@@ -147,8 +148,8 @@ export class Nav extends React.Component<NavProps> {
             this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
-          aria-label={ariaLabel || variant === 'tertiary' ? 'Local' : 'Global'}
-          {...getOUIAProps(Nav.displayName, ouiaId, ouiaSafe)}
+          aria-label={ariaLabel || (variant === 'tertiary' ? 'Local' : 'Global')}
+          {...getOUIAProps(Nav.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
           {children}

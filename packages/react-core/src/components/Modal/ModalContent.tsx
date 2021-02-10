@@ -12,7 +12,7 @@ import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
 import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxHeader } from './ModalBoxHeader';
-import { ModalBoxTitle } from './ModalBoxTitle';
+import { ModalBoxTitle, isVariantIcon } from './ModalBoxTitle';
 
 export interface ModalContentProps extends OUIAProps {
   /** Content rendered inside the Modal. */
@@ -20,15 +20,27 @@ export interface ModalContentProps extends OUIAProps {
   /** Additional classes added to the button */
   className?: string;
   /** Variant of the modal */
-  variant?: 'small' | 'large' | 'default';
+  variant?: 'small' | 'medium' | 'large' | 'default';
+  /** Alternate position of the modal */
+  position?: 'top';
+  /** Offset from alternate position. Can be any valid CSS length/percentage */
+  positionOffset?: string;
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
+  /** Optional help section for the Modal Header */
+  help?: React.ReactNode;
   /** Description of the modal */
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
+  /** Optional alert icon (or other) to show before the title of the Modal Header
+   * When the predefined alert types are used the default styling
+   * will be automatically applied */
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  /** Optional title label text for screen readers */
+  titleLabel?: string;
   /** Id of Modal Box label */
   'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
@@ -62,8 +74,11 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   className = '',
   isOpen = false,
   header = null,
+  help = null,
   description = null,
   title = '',
+  titleIconVariant = null,
+  titleLabel = '',
   'aria-label': ariaLabel = '',
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
@@ -72,6 +87,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   actions = [],
   onClose = () => undefined as any,
   variant = 'default',
+  position,
+  positionOffset,
   width = -1,
   boxId,
   labelId,
@@ -87,11 +104,11 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   }
 
   const modalBoxHeader = header ? (
-    <ModalBoxHeader>{header}</ModalBoxHeader>
+    <ModalBoxHeader help={help}>{header}</ModalBoxHeader>
   ) : (
     title && (
-      <ModalBoxHeader>
-        <ModalBoxTitle title={title} id={labelId} className={css(modalStyles.modalBoxTitle)} />
+      <ModalBoxHeader help={help}>
+        <ModalBoxTitle title={title} titleIconVariant={titleIconVariant} titleLabel={titleLabel} id={labelId} />
         {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
       </ModalBoxHeader>
     )
@@ -132,8 +149,14 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBox
       id={boxId}
       style={boxStyle}
-      className={className}
+      className={css(
+        className,
+        isVariantIcon(titleIconVariant) &&
+          modalStyles.modifiers[titleIconVariant as 'success' | 'warning' | 'info' | 'danger' | 'default']
+      )}
       variant={variant}
+      position={position}
+      positionOffset={positionOffset}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledbyFormatted()}
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}

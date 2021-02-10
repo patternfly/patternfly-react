@@ -1,11 +1,11 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
+  Helpers,
   NumberOrCallback,
-  OrientationTypes,
+  OrientationOrCallback,
   StringOrNumberOrCallback,
   TextAnchorType,
-  VictoryNumberCallback,
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
@@ -40,7 +40,9 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   /**
    * The activePoints prop specifies the active data
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   activePoints?: any[];
   /**
@@ -60,6 +62,8 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * pointer. This prop should be given as an object of x and y, where each is either a numeric offset value or a
    * function that returns a numeric value. When this prop is set, non-zero pointerLength values will no longer be
    * respected.
+   *
+   * @propType { x: number | Function, y: number | Function }
    */
   centerOffset?: {
     x?: NumberOrCallback;
@@ -74,6 +78,8 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   /**
    * The cornerRadius prop determines corner radius of the flyout container. This prop may be given as a positive number
    * or a function of datum.
+   *
+   * @propType number | Function
    */
   cornerRadius?: NumberOrCallback;
   /**
@@ -88,17 +94,23 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   datum?: {};
   /**
    * The dx prop defines a horizontal shift from the x coordinate.
+   *
+   * @propType number | Function
    */
   dx?: NumberOrCallback;
   /**
    * The dy prop defines a vertical shift from the y coordinate.
+   *
+   * @propType number | Function
    */
   dy?: NumberOrCallback;
   /**
    * The events prop attaches arbitrary event handlers to the label component. This prop should be given as an object of
    * event names and corresponding event handlers. When events are provided via Victory’s event system, event handlers
    * will be called with the event, the props of the component is attached to, and an eventKey.
-   * Examples: events={{onClick: (evt) => alert("x: " + evt.clientX)}}
+   *
+   * @propType object
+   * @example events={{onClick: (evt) => alert("x: " + evt.clientX)}}
    */
   events?: { [key: string]: (event: React.SyntheticEvent<any>) => void };
   /**
@@ -108,24 +120,31 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within
    * the custom component itself. If flyoutComponent is omitted, a default Flyout component will be created with props
    * described above.
-   * Examples: flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
+   *
+   * @example flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
    */
   flyoutComponent?: React.ReactElement<any>;
   /**
    * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
    * text and style props provided to ChartTooltip.
+   *
+   * @propType number | Function
    */
   flyoutHeight?: NumberOrCallback;
   /**
    * The style prop applies SVG style properties to the rendered flyout container. These props will be passed to the
    * flyoutComponent.
+   *
+   * @propType number | Function
    */
   flyoutStyle?: VictoryStyleObject;
   /**
    * The flyoutWidth prop defines the width of the tooltip flyout. This prop may be given as a positive number or a
    * function of datum. If this prop is not set, flyoutWidth will be determined based on an approximate text size
    * calculated from the text and style props provided to VictoryTooltip.
+   *
+   * @propType number | Function
    */
   flyoutWidth?: NumberOrCallback;
   /**
@@ -138,7 +157,9 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * parents of ChartLegendTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to
    * the height of the tooltip flyout. Please use flyoutHeight instead
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   height?: number;
   /**
@@ -162,12 +183,15 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * verticalAnchor, textAnchor, style, text, and events. Any of these props may be overridden by passing in props to
    * the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a
    * new ChartLabel will be created with the props described above.
-   * Examples: labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
+   *
+   * @example labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
    */
   labelComponent?: React.ReactElement<any>;
   /**
    * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
    * values are 'start', 'middle', 'end', and 'inherit'.
+   *
+   * @propType string | Function
    */
   labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
@@ -176,8 +200,10 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * The data prop must be given as an array.
    *
-   * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
-   * @example legendData={[{ childName: `cats`, name: `Total cats` }, { childName: `dogs`, name: 'Total dogs' }]}
+   * @example
+   *
+   * legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   * legendData={[{ childName: `cats`, name: `Total cats` }, { childName: `dogs`, name: 'Total dogs' }]}
    */
   legendData?: {
     childName?: string;
@@ -195,22 +221,30 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
+   *
+   * @propType string | Function
    */
-  orientation?: OrientationTypes | VictoryNumberCallback;
+  orientation?: OrientationOrCallback;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
+   *
+   * @propType number | Function
    */
   pointerLength?: NumberOrCallback;
   /**
    * This prop determines which side of the tooltip flyout the pointer should originate on. When this prop is not set,
    * it will be determined based on the overall orientation of the flyout in relation to its data point, and any center
    * or centerOffset values. Valid values are 'top', 'bottom', 'left' and 'right.
+   *
+   * @propType string | Function
    */
-  pointerOrientation?: OrientationTypes | ((...args: any[]) => OrientationTypes);
+  pointerOrientation?: OrientationOrCallback;
   /**
    * The pointerWidth prop determines the width of the base of the triangular pointer extending from
    * the flyout. This prop may be given as a positive number or a function of datum.
+   *
+   * @propType number | Function
    */
   pointerWidth?: NumberOrCallback;
   /**
@@ -226,11 +260,15 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
    * ChartLabel will split in to separate <tspan/> elements.
+   *
+   * @propType number | string | Function | string[] | number[]
    */
   text?: StringOrNumberOrCallback | string[] | number[];
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -261,7 +299,9 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * parents of ChartLegendTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the
    * width of the tooltip flyout. Please use flyoutWidth instead
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   width?: number;
   /**
@@ -272,6 +312,11 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * The y prop defines the y coordinate to use as a basis for vertical positioning.
    */
   y?: number;
+}
+
+interface FlyoutProps {
+  height: number; // legend height
+  width: number; // legend width
 }
 
 export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
@@ -294,29 +339,29 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartLegendTooltipProps) => {
-  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
-  const legendTooltipProps = {
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
+  const legendTooltipProps = () => ({
     legendData: getLegendTooltipVisibleData({ activePoints, legendData, text, theme }),
     legendProps: getLegendTooltipDataProps(labelComponent.props.legendComponent),
     text: getLegendTooltipVisibleText({ activePoints, legendData, text }),
     theme
-  };
+  });
 
   // Returns flyout height based on legend size
-  const getFlyoutHeight = () => {
-    const _flyoutHeight = getLegendTooltipSize(legendTooltipProps).height + ChartLegendTooltipStyles.flyout.padding;
+  const getFlyoutHeight = ({ height }: FlyoutProps) => {
+    const _flyoutHeight = height + ChartLegendTooltipStyles.flyout.padding;
     return title ? _flyoutHeight : _flyoutHeight - 10;
   };
 
   // Returns flyout width based on legend size
-  const getFlyoutWidth = () => getLegendTooltipSize(legendTooltipProps).width + ChartLegendTooltipStyles.flyout.padding;
+  const getFlyoutWidth = ({ width }: FlyoutProps) => width + ChartLegendTooltipStyles.flyout.padding;
 
   // Returns the tooltip content component
-  const getTooltipContentComponent = () =>
+  const getTooltipContentComponent = (props: FlyoutProps) =>
     React.cloneElement(labelComponent, {
       center,
-      flyoutHeight: flyoutHeight || getFlyoutHeight(),
-      flyoutWidth: flyoutWidth || getFlyoutWidth(),
+      flyoutHeight: flyoutHeight || getFlyoutHeight(props),
+      flyoutWidth: flyoutWidth || getFlyoutWidth(props),
       height,
       legendData,
       title,
@@ -326,16 +371,21 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   // Returns the tooltip component
   const getTooltipComponent = () => {
-    const _flyoutWidth = getFlyoutWidth();
+    // There must be at least one active, visible item or else this will return zero for height & width.
+    const legendSize = getLegendTooltipSize(legendTooltipProps());
+    if (legendSize.height === 0 && legendSize.width === 0) {
+      return null;
+    }
+    const _flyoutWidth = getFlyoutWidth(legendSize);
     const tooltipComponent = isCursorTooltip ? <ChartCursorTooltip /> : <ChartTooltip />;
     return React.cloneElement(tooltipComponent, {
       activePoints,
       center,
       datum,
-      flyoutHeight: flyoutHeight || getFlyoutHeight(),
-      flyoutWidth: flyoutWidth || getFlyoutWidth(),
+      flyoutHeight: flyoutHeight || getFlyoutHeight(legendSize),
+      flyoutWidth: flyoutWidth || getFlyoutWidth(legendSize),
       height,
-      labelComponent: getTooltipContentComponent(),
+      labelComponent: getTooltipContentComponent(legendSize),
       ...(flyoutWidth === undefined && {
         showPointer: width > _flyoutWidth + center.x + pointerLength || center.x > _flyoutWidth + pointerLength
       }),

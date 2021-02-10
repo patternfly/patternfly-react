@@ -1,5 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NotificationBadge count 1`] = `
+<Button
+  variant="plain"
+>
+  <span
+    className="pf-c-notification-badge pf-m-read"
+  >
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+    <span
+      className="pf-c-notification-badge__count"
+    >
+      3
+    </span>
+  </span>
+</Button>
+`;
+
 exports[`false NotificationBadge 1`] = `
 <Button
   variant="plain"
@@ -7,7 +28,23 @@ exports[`false NotificationBadge 1`] = `
   <span
     className="pf-c-notification-badge pf-m-unread"
   >
-    unread
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+</Button>
+`;
+
+exports[`false NotificationBadge needs attention 1`] = `
+<Button
+  variant="plain"
+>
+  <span
+    className="pf-c-notification-badge pf-m-attention"
+  >
+    does not need attention
      Badge
   </span>
 </Button>
@@ -20,7 +57,23 @@ exports[`true NotificationBadge 1`] = `
   <span
     className="pf-c-notification-badge pf-m-read"
   >
-    read
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+</Button>
+`;
+
+exports[`true NotificationBadge needs attention 1`] = `
+<Button
+  variant="plain"
+>
+  <span
+    className="pf-c-notification-badge pf-m-attention"
+  >
+    needs attention
      Badge
   </span>
 </Button>

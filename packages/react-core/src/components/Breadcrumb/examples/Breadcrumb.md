@@ -1,59 +1,54 @@
 ---
-title: 'Breadcrumb'
+id: Breadcrumb
 section: components
-cssPrefix: 'pf-c-breadcrumb'
-typescript: true
+cssPrefix: pf-c-breadcrumb
 propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ouia: true
 ---
-import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
-SimpleBreadcrumbs = () => (
-  <Breadcrumb>
-    <BreadcrumbItem to="#">Section home</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#" isActive>
-      Section Landing
-    </BreadcrumbItem>
-  </Breadcrumb>
-);
+<Breadcrumb>
+  <BreadcrumbItem to="#">Section home</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#" isActive>
+    Section Landing
+  </BreadcrumbItem>
+</Breadcrumb>
 ```
 
-```js title=Without-home-link
+### Without home link
+```js
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
-WithoutLinkBreadcrumbs = () => (
-  <Breadcrumb>
-    <BreadcrumbItem>Section Home</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#" isActive>
-      Section Landing
-    </BreadcrumbItem>
-  </Breadcrumb>
-);
+<Breadcrumb>
+  <BreadcrumbItem>Section Home</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#" isActive>
+    Section Landing
+  </BreadcrumbItem>
+</Breadcrumb>
 ```
 
-```js title=With-heading
+### With heading
+```js
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
-HeadingBreadcrumbs = () => (
-  <Breadcrumb>
-    <BreadcrumbItem to="#">Section home</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-    <BreadcrumbHeading to="#">Section title</BreadcrumbHeading>
-  </Breadcrumb>
-);
+<Breadcrumb>
+  <BreadcrumbItem to="#">Section home</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+  <BreadcrumbHeading to="#">Section title</BreadcrumbHeading>
+</Breadcrumb>
 ```

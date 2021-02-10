@@ -43,6 +43,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Flag indicating if select toggle has an clear button */
   hasClearButton?: boolean;
+  /** Internal callback for handling focus when typeahead toggle button clicked. */
+  onClickTypeaheadToggleButton?: () => void;
 }
 
 export class SelectToggle extends React.Component<SelectToggleProps> {
@@ -62,7 +64,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     type: 'button',
     onToggle: () => {},
     onEnter: () => {},
-    onClose: () => {}
+    onClose: () => {},
+    onClickTypeaheadToggleButton: () => {}
   };
 
   constructor(props: SelectToggleProps) {
@@ -75,13 +78,13 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   componentDidMount() {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
-    document.addEventListener('keydown', this.onEscPress);
+    document.addEventListener('keydown', this.handleGlobalKeys);
   }
 
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.onDocClick);
     document.removeEventListener('touchstart', this.onDocClick);
-    document.removeEventListener('keydown', this.onEscPress);
+    document.removeEventListener('keydown', this.handleGlobalKeys);
   }
 
   onDocClick = (event: Event) => {
@@ -96,14 +99,21 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     }
   };
 
-  onEscPress = (event: KeyboardEvent) => {
+  handleGlobalKeys = (event: KeyboardEvent) => {
     const { parentRef, menuRef, isOpen, variant, onToggle, onClose } = this.props;
-    if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
-      return;
-    }
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
+    if (
+      isOpen &&
+      event.key === KeyTypes.Tab &&
+      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
+    ) {
+      this.props.handleTypeaheadKeys('tab');
+      event.preventDefault();
+      return;
+    }
+
     if (
       isOpen &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
@@ -117,29 +127,25 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
 
   onKeyDown = (event: React.KeyboardEvent) => {
     const { isOpen, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
-    if (
-      (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) &&
-      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
-    ) {
-      handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
-    }
-    if (
-      event.key === KeyTypes.Enter &&
-      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
-    ) {
-      if (isOpen) {
-        handleTypeaheadKeys('enter');
-      } else {
-        onToggle(!isOpen);
+
+    if (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) {
+      if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
+        handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
+        event.preventDefault();
+      } else if (event.key === KeyTypes.Enter) {
+        if (isOpen) {
+          handleTypeaheadKeys('enter');
+        } else {
+          onToggle(!isOpen);
+        }
       }
     }
 
     if (
-      (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
+      variant === SelectVariant.typeahead ||
+      variant === SelectVariant.typeaheadMulti ||
       (event.key === KeyTypes.Tab && !isOpen) ||
-      (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) ||
-      ((event.key === KeyTypes.Space || event.key === KeyTypes.Enter) &&
-        (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti))
+      (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space)
     ) {
       return;
     }
@@ -167,6 +173,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle,
       onEnter,
       onClose,
+      onClickTypeaheadToggleButton,
       handleTypeaheadKeys,
       parentRef,
       menuRef,
@@ -253,7 +260,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
                 if (isOpen) {
                   onClose();
                 }
+                onClickTypeaheadToggleButton();
               }}
+              {...((variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) && {
+                tabIndex: -1
+              })}
               disabled={isDisabled}
             >
               <CaretDownIcon className={css(styles.selectToggleArrow)} />

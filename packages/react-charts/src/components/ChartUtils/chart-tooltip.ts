@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
-import { ColorScalePropType, Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
+import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getLegendDimensions, getTextSizeWorkAround } from './chart-legend';
+import { getLegendDimensions } from './chart-legend';
 
 interface ChartCursorTooltipCenterOffsetInterface {
   offsetCursorDimensionX?: boolean; // Adjust the tooltip to appear to the right of the vertical cursor
@@ -26,7 +26,7 @@ interface ChartLegendTooltipFlyoutInterface {
 
 interface ChartLegendTooltipVisibleDataInterface {
   activePoints?: any[];
-  colorScale?: ColorScalePropType;
+  colorScale?: string[];
   legendData: any;
   text?: StringOrNumberOrCallback | string[] | number[];
   textAsLegendData?: boolean;
@@ -49,7 +49,7 @@ export const getCursorTooltipCenterOffset = ({
   offsetCursorDimensionY = false,
   theme
 }: ChartCursorTooltipCenterOffsetInterface) => {
-  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
   const offsetX = ({ center, flyoutWidth, width }: any) => {
     const offset = flyoutWidth / 2 + pointerLength;
     return width > center.x + flyoutWidth + pointerLength ? offset : -offset;
@@ -73,7 +73,7 @@ export const getCursorTooltipPoniterOrientation = ({
   horizontal = true,
   theme
 }: ChartCursorTooltipPoniterOrientationInterface): ((props: any) => OrientationTypes) => {
-  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
+  const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
   const orientationX = ({ center, flyoutWidth, width }: any): OrientationTypes =>
     width > center.x + flyoutWidth + pointerLength ? 'left' : 'right';
   const orientationY = ({ center, flyoutHeight, height }: any): OrientationTypes =>
@@ -130,26 +130,31 @@ export const getLegendTooltipSize = ({
     }
   });
 
+  // Set length to ensure minimum spacing between label and value
   let maxLength = maxDataLength + maxTextLength;
-  maxLength += maxDataLength > 10 ? 2 : 4;
+  if (maxDataLength < 20) {
+    maxLength += 2;
+  }
 
-  // Adds spacing to help align legend labels and text values
-  const getSpacer = (legendLabel: string, textLabel: string) => {
-    let spacer = '';
+  // Get spacing to help align legend labels and text values
+  const spacer = 'x';
+  const getSpacing = (legendLabel: string, textLabel: string) => {
+    let spacing = '';
     if (maxLength === 0) {
-      return spacer;
+      return spacing;
     }
     const legendLabelChars = legendLabel ? legendLabel.length : 0;
     const textLabelChars = textLabel ? textLabel.length : 0;
     const maxChars = legendLabelChars + textLabelChars;
 
-    while (spacer.length < maxLength - maxChars) {
-      spacer = ` ${spacer}`;
+    // Add spacer
+    while (spacing.length < maxLength - maxChars) {
+      spacing += spacer;
     }
-    return spacer;
+    return spacing;
   };
 
-  // Format all text (as shown below) to help determine overall legend length.
+  // Format all text (similar to below) to help determine overall width.
   //
   // {name: "Cats   no data"}
   // {name: "Dogs         1"}
@@ -157,15 +162,21 @@ export const getLegendTooltipSize = ({
   // {name: "Mice         3"}
   const data = _text.map((label: string, index: number) => {
     const hasData = legendData && legendData[index] && legendData[index].name;
-    const spacer = hasData ? getSpacer(legendData[index].name, label) : '';
+    const spacing = hasData ? getSpacing(legendData[index].name, label) : '';
+
     return {
-      name: `${hasData ? legendData[index].name : ''}${spacer}${label}`
+      name: `${hasData ? legendData[index].name : ''}${spacing}${label}`
     };
   });
 
+  // Replace whitespace with spacer char for consistency in width
+  const formattedData = data.map(val => ({
+    name: val.name.replace(/ /g, spacer)
+  }));
+
   // This should include both legend data and text
   const widthDimensions = getLegendDimensions({
-    legendData: data,
+    legendData: formattedData,
     legendOrientation,
     legendProps,
     theme
@@ -177,14 +188,9 @@ export const getLegendTooltipSize = ({
     legendProps,
     theme
   });
-  const textSizeWorkAround = getTextSizeWorkAround({
-    legendData: data,
-    legendOrientation,
-    theme
-  });
   return {
     height: heightDimensions.height,
-    width: widthDimensions.width - textSizeWorkAround > 0 ? widthDimensions.width - textSizeWorkAround : 0
+    width: widthDimensions.width > 0 ? widthDimensions.width : 0
   };
 };
 

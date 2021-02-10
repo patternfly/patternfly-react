@@ -1,12 +1,9 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { getOUIAProps, OUIAProps } from '@patternfly/react-core';
+import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import {
   DropdownDirection,
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
-import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { Provider } from './base';
@@ -14,234 +11,26 @@ import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';
 import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
-import { toCamel } from './utils';
 import { calculateColumns } from './utils/headerUtils';
-import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
-
-export enum TableGridBreakpoint {
-  none = '',
-  grid = 'grid',
-  gridMd = 'grid-md',
-  gridLg = 'grid-lg',
-  gridXl = 'grid-xl',
-  grid2xl = 'grid-2xl'
-}
-
-export enum TableVariant {
-  compact = 'compact'
-}
-
-export type RowEditType = 'save' | 'cancel' | 'edit';
-
-export interface RowErrors {
-  [name: string]: string[];
-}
-
-export type OnSort = (
-  event: React.MouseEvent,
-  columnIndex: number,
-  sortByDirection: SortByDirection,
-  extraData: IExtraColumnData
-) => void;
-export type OnCollapse = (
-  event: React.MouseEvent,
-  rowIndex: number,
-  isOpen: boolean,
-  rowData: IRowData,
-  extraData: IExtraData
-) => void;
-export type OnExpand = (
-  event: React.MouseEvent,
-  rowIndex: number,
-  colIndex: number,
-  isOpen: boolean,
-  rowData: IRowData,
-  extraData: IExtraData
-) => void;
-export type OnSelect = (
-  event: React.FormEvent<HTMLInputElement>,
-  isSelected: boolean,
-  rowIndex: number,
-  rowData: IRowData,
-  extraData: IExtraData
-) => void;
-export type OnRowEdit = (
-  event: React.MouseEvent<HTMLButtonElement>,
-  type: RowEditType,
-  isEditable?: boolean,
-  rowIndex?: number,
-  validationErrors?: RowErrors
-) => void;
-
-export enum SortByDirection {
-  asc = 'asc',
-  desc = 'desc'
-}
-
-// Todo: Update type with next breaking change release
-// export type IHeaderRow = ColumnType;
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix, @typescript-eslint/no-empty-interface
-export interface IHeaderRow extends ColumnType {}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IRowData extends IRow {
-  disableActions?: boolean;
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IColumn {
-  extraParams: {
-    sortBy?: ISortBy;
-    onSort?: OnSort;
-    onCollapse?: OnCollapse;
-    onExpand?: OnExpand;
-    onSelect?: OnSelect;
-    onRowEdit?: OnRowEdit;
-    rowLabeledBy?: string;
-    expandId?: string;
-    contentId?: string;
-    dropdownPosition?: DropdownPosition;
-    dropdownDirection?: DropdownDirection;
-    allRowsSelected?: boolean;
-  };
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IExtraRowData {
-  rowIndex?: number;
-  rowKey?: RowKeyType;
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IExtraColumnData {
-  columnIndex?: number;
-  column?: IColumn;
-  property?: string;
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IExtraData extends IExtraColumnData, IExtraRowData {}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IExtra extends IExtraData {
-  rowData?: IRowData;
-}
-
-export type IFormatterValueType = formatterValueType & {
-  title?: string | React.ReactNode;
-  props?: any;
-};
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface ISortBy {
-  index?: number;
-  direction?: 'asc' | 'desc';
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
-  isSeparator?: boolean;
-  itemKey?: string;
-  title?: string | React.ReactNode;
-  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface ISeparator extends IAction {
-  isSeparator: boolean;
-}
-
-export type IActions = (IAction | ISeparator)[];
-export type IActionsResolver = (rowData: IRowData, extraData: IExtraData) => (IAction | ISeparator)[];
-export type IAreActionsDisabled = (rowData: IRowData, extraData: IExtraData) => boolean;
-
-// to be removed in future, this interface is no longer accurate
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IDecorator extends React.HTMLProps<HTMLElement> {
-  isVisible: boolean;
-  children?: React.ReactNode;
-}
-
-// eslint-disable-next-line @typescript-eslint/class-name-casing
-export interface decoratorReturnType {
-  className?: string;
-  'aria-sort'?: string;
-  children?: React.ReactNode;
-  textCenter?: boolean;
-  component?: string;
-  isVisible?: boolean;
-  title?: string | React.ReactNode;
-  props?: any;
-  scope?: string;
-  parentId?: number;
-  colSpan?: number;
-  id?: React.ReactText;
-}
-
-export type ITransform = (label?: IFormatterValueType, extra?: IExtra) => decoratorReturnType;
-
-export type IFormatter = (data?: IFormatterValueType, extra?: IExtra) => formatterValueType & decoratorReturnType;
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface ICell {
-  title?: string | React.ReactNode;
-  transforms?: ITransform[];
-  cellTransforms?: ITransform[];
-  columnTransforms?: ITransform[];
-  formatters?: IFormatter[];
-  cellFormatters?: IFormatter[];
-  props?: any;
-  data?: any;
-  header?: any;
-  cell?: any;
-  dataLabel?: string;
-}
-
-export type RowCellContent = (value?: string, rowIndex?: number, cellIndex?: number, props?: any) => void;
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IRowCell {
-  title?: string | React.ReactNode | RowCellContent;
-  props?: any;
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IValidatorDef {
-  validator: (value: string) => boolean;
-  errorText: string;
-  name: string;
-}
-
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IRow extends RowType {
-  cells?: (React.ReactNode | IRowCell)[];
-  isOpen?: boolean;
-  isEditable?: boolean;
-  isValid?: boolean;
-  /** An array of validation functions to run against every cell for a given row */
-  rowEditValidationRules?: IValidatorDef[];
-  /** Aria label for edit button in inline edit */
-  rowEditBtnAriaLabel?: (idx: number) => string;
-  /** Aria label for save button in inline edit */
-  rowSaveBtnAriaLabel?: (idx: number) => string;
-  /** Aria label for cancel button in inline edit */
-  rowCancelBtnAriaLabel?: (idx: number) => string;
-  parent?: number;
-  compoundParent?: number;
-  props?: any;
-  fullWidth?: boolean;
-  noPadding?: boolean;
-  heightAuto?: boolean;
-  showSelect?: boolean;
-  isExpanded?: boolean;
-  isFirstVisible?: boolean;
-  isLastVisible?: boolean;
-  /* Whether the row checkbox is selected */
-  selected?: boolean;
-  /* Whether the row checkbox is disabled */
-  disableCheckbox?: boolean;
-}
+import { RowSelectVariant } from './SelectColumn';
+import { TableContext } from './TableContext';
+import {
+  ISortBy,
+  OnCollapse,
+  OnExpand,
+  OnSelect,
+  OnRowEdit,
+  OnSort,
+  IActions,
+  IActionsResolver,
+  IAreActionsDisabled,
+  IRow,
+  ICell,
+  TableVariant,
+  TableGridBreakpoint,
+  IHeaderRow,
+  OnFavorite
+} from './TableTypes';
 
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
@@ -252,7 +41,11 @@ export interface TableProps extends OUIAProps {
   className?: string;
   /** Style variant for the Table  */
   variant?: 'compact';
-  /** Render borders  */
+  /**
+   * Render borders
+   * Borders can only currently be disabled if the variant is set to 'compact'
+   * https://github.com/patternfly/patternfly/issues/3650
+   */
   borders?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
@@ -262,14 +55,14 @@ export interface TableProps extends OUIAProps {
   onCollapse?: OnCollapse;
   /** Function triggered when a compound expandable item is clicked */
   onExpand?: OnExpand;
-  /** Function triggered when a row's checkbox is selected. When this is used, one checkbox will be positioned in the first or second cell of a non-expandable row */
+  /** Function triggered when a row's checkbox is selected. When this is used, one checkbox/radio button will be positioned in the first or second cell of a non-expandable row */
   onSelect?: OnSelect;
-  /** Enables or Disables the ability to select all  */
+  /** Enables or Disables the ability to select all - this is mutually exclusive with radio button select variant */
   canSelectAll?: boolean;
-  /* eslint-disable jsdoc/check-tag-names */
+  /** Specifies the type of the select element variant - can be one of checkbox or radio button */
+  selectVariant?: 'checkbox' | 'radio';
   /** @beta Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
   onRowEdit?: OnRowEdit;
-  /* eslint-enable jsdoc/check-tag-names */
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
   /** Actions to add to the Table */
@@ -294,7 +87,7 @@ export interface TableProps extends OUIAProps {
   dropdownDirection?: 'up' | 'down';
   /** Row data */
   rows: (IRow | string[])[];
-  /** Cell data */
+  /** Cell/column data */
   cells: (ICell | string)[];
   /** Wrapper for the body  */
   bodyWrapper?: Function;
@@ -304,13 +97,14 @@ export interface TableProps extends OUIAProps {
   role?: string;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
+  /**
+   * Enables favorites column
+   * Callback triggered when a row is favorited/unfavorited
+   */
+  onFavorite?: OnFavorite;
+  /** Along with the onSort prop, enables favorites sorting, defaults to true */
+  canSortFavorites?: boolean;
 }
-
-export const TableContext = React.createContext({
-  headerData: null as ColumnsType,
-  headerRows: null as IHeaderRow[],
-  rows: [] as (IRow | string[])[]
-});
 
 export class Table extends React.Component<TableProps, {}> {
   static displayName = 'Table';
@@ -331,8 +125,13 @@ export class Table extends React.Component<TableProps, {}> {
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true,
+    selectVariant: 'checkbox',
     ouiaSafe: true,
-    isStickyHeader: false
+    isStickyHeader: false,
+    canSortFavorites: true
+  };
+  state = {
+    ouiaStateId: getDefaultOUIAId(Table.displayName)
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -360,10 +159,10 @@ export class Table extends React.Component<TableProps, {}> {
       caption,
       header,
       className,
-      gridBreakPoint,
       onSort,
       onSelect,
       canSelectAll,
+      selectVariant,
       sortBy,
       children,
       actions,
@@ -382,11 +181,10 @@ export class Table extends React.Component<TableProps, {}> {
       cells,
       bodyWrapper,
       rowWrapper,
-      borders,
       role,
-      ouiaId,
-      ouiaSafe,
-      isStickyHeader,
+      borders,
+      onFavorite,
+      canSortFavorites,
       ...props
     } = this.props;
 
@@ -399,7 +197,8 @@ export class Table extends React.Component<TableProps, {}> {
       sortBy,
       onSort,
       onSelect,
-      canSelectAll,
+      canSelectAll: selectVariant === RowSelectVariant.radio ? false : canSelectAll,
+      selectVariant,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
       actions,
       actionResolver,
@@ -412,7 +211,10 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
-      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
+      onFavorite,
+      canSortFavorites,
+      // order of columns: Collapsible | Selectable | Favoritable
+      firstUserColumnIndex: [onCollapse, onSelect, onFavorite].filter(callback => callback).length
     });
 
     const table = (
@@ -439,19 +241,9 @@ export class Table extends React.Component<TableProps, {}> {
           }}
           columns={headerData}
           role={role}
-          className={css(
-            styles.table,
-            gridBreakPoint &&
-              stylesGrid.modifiers[
-                toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
-              ],
-            styles.modifiers[variant],
-            ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
-            variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
-            isStickyHeader && styles.modifiers.stickyHeader,
-            className
-          )}
-          {...getOUIAProps(Table.displayName, ouiaId, ouiaSafe)}
+          variant={variant}
+          borders={borders}
+          className={className}
         >
           {caption && <caption>{caption}</caption>}
           {children}

@@ -32,9 +32,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -61,9 +61,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 1,
               },
               "axisLabel": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 40,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -77,9 +77,9 @@ exports[`Chart 1`] = `
               },
               "tickLabels": Object {
                 "fill": "#4f5255",
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -113,9 +113,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -140,9 +140,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 1,
               },
               "maxLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -152,9 +152,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 1,
               },
               "medianLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -164,9 +164,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 1,
               },
               "minLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -175,9 +175,9 @@ exports[`Chart 1`] = `
                 "padding": 8,
               },
               "q1Labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -186,9 +186,9 @@ exports[`Chart 1`] = `
                 "padding": 8,
               },
               "q3Labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -215,9 +215,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -256,9 +256,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -293,16 +293,16 @@ exports[`Chart 1`] = `
                 "type": "square",
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "title": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 2,
                 "stroke": "transparent",
               },
@@ -327,9 +327,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -354,9 +354,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 8,
                 "stroke": "transparent",
               },
@@ -381,9 +381,9 @@ exports[`Chart 1`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -410,6 +410,7 @@ exports[`Chart 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 8,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -421,7 +422,6 @@ exports[`Chart 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -449,9 +449,9 @@ exports[`Chart 1`] = `
               },
               "labels": Object {
                 "fill": "#f0f0f0",
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 8,
                 "pointerEvents": "none",
                 "stroke": "transparent",
@@ -492,6 +492,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -530,7 +531,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -561,7 +562,7 @@ exports[`Chart 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -575,7 +576,7 @@ exports[`Chart 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -609,7 +610,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -639,10 +640,10 @@ exports[`Chart 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -652,10 +653,10 @@ exports[`Chart 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -665,10 +666,10 @@ exports[`Chart 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -677,10 +678,10 @@ exports[`Chart 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -689,10 +690,10 @@ exports[`Chart 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -721,10 +722,10 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -765,7 +766,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -808,7 +809,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -835,7 +836,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -843,7 +844,7 @@ exports[`Chart 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -872,7 +873,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -901,7 +902,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -930,7 +931,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -955,6 +956,7 @@ exports[`Chart 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -964,10 +966,10 @@ exports[`Chart 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -998,7 +1000,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -1056,6 +1058,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -1093,7 +1096,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1124,7 +1127,7 @@ exports[`Chart 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -1138,7 +1141,7 @@ exports[`Chart 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1172,7 +1175,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1202,10 +1205,10 @@ exports[`Chart 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -1215,10 +1218,10 @@ exports[`Chart 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -1228,10 +1231,10 @@ exports[`Chart 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -1240,10 +1243,10 @@ exports[`Chart 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -1252,10 +1255,10 @@ exports[`Chart 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -1284,10 +1287,10 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -1328,7 +1331,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1371,7 +1374,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1398,7 +1401,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1406,7 +1409,7 @@ exports[`Chart 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -1435,7 +1438,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1464,7 +1467,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -1493,7 +1496,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1518,6 +1521,7 @@ exports[`Chart 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -1527,10 +1531,10 @@ exports[`Chart 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -1561,7 +1565,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -1639,6 +1643,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -1679,7 +1684,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1710,7 +1715,7 @@ exports[`Chart 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -1724,7 +1729,7 @@ exports[`Chart 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1758,7 +1763,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1788,10 +1793,10 @@ exports[`Chart 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -1801,10 +1806,10 @@ exports[`Chart 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -1814,10 +1819,10 @@ exports[`Chart 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -1826,10 +1831,10 @@ exports[`Chart 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -1838,10 +1843,10 @@ exports[`Chart 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -1870,10 +1875,10 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -1914,7 +1919,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1957,7 +1962,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1984,7 +1989,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -1992,7 +1997,7 @@ exports[`Chart 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -2021,7 +2026,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2050,7 +2055,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -2079,7 +2084,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2104,6 +2109,7 @@ exports[`Chart 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -2113,10 +2119,10 @@ exports[`Chart 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -2147,7 +2153,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -2221,6 +2227,7 @@ exports[`Chart 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}
@@ -2260,7 +2267,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2291,7 +2298,7 @@ exports[`Chart 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -2305,7 +2312,7 @@ exports[`Chart 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2339,7 +2346,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2369,10 +2376,10 @@ exports[`Chart 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -2382,10 +2389,10 @@ exports[`Chart 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -2395,10 +2402,10 @@ exports[`Chart 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -2407,10 +2414,10 @@ exports[`Chart 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -2419,10 +2426,10 @@ exports[`Chart 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -2451,10 +2458,10 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -2495,7 +2502,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2538,7 +2545,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2565,7 +2572,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2573,7 +2580,7 @@ exports[`Chart 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -2602,7 +2609,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2631,7 +2638,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -2660,7 +2667,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -2685,6 +2692,7 @@ exports[`Chart 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -2694,10 +2702,10 @@ exports[`Chart 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -2728,7 +2736,7 @@ exports[`Chart 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -2792,9 +2800,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -2821,9 +2829,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 40,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -2837,9 +2845,9 @@ exports[`Chart 1`] = `
           },
           "tickLabels": Object {
             "fill": "#4f5255",
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2873,9 +2881,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2900,9 +2908,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2912,9 +2920,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2924,9 +2932,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2935,9 +2943,9 @@ exports[`Chart 1`] = `
             "padding": 8,
           },
           "q1Labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2946,9 +2954,9 @@ exports[`Chart 1`] = `
             "padding": 8,
           },
           "q3Labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -2975,9 +2983,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -3016,9 +3024,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -3053,16 +3061,16 @@ exports[`Chart 1`] = `
             "type": "square",
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
           "title": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 2,
             "stroke": "transparent",
           },
@@ -3087,9 +3095,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -3114,9 +3122,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 8,
             "stroke": "transparent",
           },
@@ -3141,9 +3149,9 @@ exports[`Chart 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -3170,6 +3178,7 @@ exports[`Chart 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -3181,7 +3190,6 @@ exports[`Chart 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -3209,9 +3217,9 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#f0f0f0",
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 8,
             "pointerEvents": "none",
             "stroke": "transparent",
@@ -3258,9 +3266,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -3287,9 +3295,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 1,
               },
               "axisLabel": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 40,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -3303,9 +3311,9 @@ exports[`Chart 2`] = `
               },
               "tickLabels": Object {
                 "fill": "#4f5255",
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3339,9 +3347,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3366,9 +3374,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 1,
               },
               "maxLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3378,9 +3386,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 1,
               },
               "medianLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3390,9 +3398,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 1,
               },
               "minLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3401,9 +3409,9 @@ exports[`Chart 2`] = `
                 "padding": 8,
               },
               "q1Labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3412,9 +3420,9 @@ exports[`Chart 2`] = `
                 "padding": 8,
               },
               "q3Labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -3441,9 +3449,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -3482,9 +3490,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -3519,16 +3527,16 @@ exports[`Chart 2`] = `
                 "type": "square",
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "title": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 2,
                 "stroke": "transparent",
               },
@@ -3553,9 +3561,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -3580,9 +3588,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 8,
                 "stroke": "transparent",
               },
@@ -3607,9 +3615,9 @@ exports[`Chart 2`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -3636,6 +3644,7 @@ exports[`Chart 2`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 8,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -3647,7 +3656,6 @@ exports[`Chart 2`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -3675,9 +3683,9 @@ exports[`Chart 2`] = `
               },
               "labels": Object {
                 "fill": "#f0f0f0",
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 8,
                 "pointerEvents": "none",
                 "stroke": "transparent",
@@ -3718,6 +3726,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -3756,7 +3765,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3787,7 +3796,7 @@ exports[`Chart 2`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -3801,7 +3810,7 @@ exports[`Chart 2`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3835,7 +3844,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -3865,10 +3874,10 @@ exports[`Chart 2`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -3878,10 +3887,10 @@ exports[`Chart 2`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -3891,10 +3900,10 @@ exports[`Chart 2`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -3903,10 +3912,10 @@ exports[`Chart 2`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -3915,10 +3924,10 @@ exports[`Chart 2`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -3947,10 +3956,10 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -3991,7 +4000,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4034,7 +4043,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4061,7 +4070,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4069,7 +4078,7 @@ exports[`Chart 2`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -4098,7 +4107,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4127,7 +4136,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -4156,7 +4165,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4181,6 +4190,7 @@ exports[`Chart 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -4190,10 +4200,10 @@ exports[`Chart 2`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -4224,7 +4234,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -4282,6 +4292,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -4319,7 +4330,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4350,7 +4361,7 @@ exports[`Chart 2`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -4364,7 +4375,7 @@ exports[`Chart 2`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4398,7 +4409,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4428,10 +4439,10 @@ exports[`Chart 2`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -4441,10 +4452,10 @@ exports[`Chart 2`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -4454,10 +4465,10 @@ exports[`Chart 2`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -4466,10 +4477,10 @@ exports[`Chart 2`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -4478,10 +4489,10 @@ exports[`Chart 2`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -4510,10 +4521,10 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -4554,7 +4565,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4597,7 +4608,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4624,7 +4635,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4632,7 +4643,7 @@ exports[`Chart 2`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -4661,7 +4672,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4690,7 +4701,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -4719,7 +4730,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4744,6 +4755,7 @@ exports[`Chart 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -4753,10 +4765,10 @@ exports[`Chart 2`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -4787,7 +4799,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -4865,6 +4877,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -4905,7 +4918,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4936,7 +4949,7 @@ exports[`Chart 2`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -4950,7 +4963,7 @@ exports[`Chart 2`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -4984,7 +4997,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5014,10 +5027,10 @@ exports[`Chart 2`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -5027,10 +5040,10 @@ exports[`Chart 2`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -5040,10 +5053,10 @@ exports[`Chart 2`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -5052,10 +5065,10 @@ exports[`Chart 2`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -5064,10 +5077,10 @@ exports[`Chart 2`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -5096,10 +5109,10 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -5140,7 +5153,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5183,7 +5196,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5210,7 +5223,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5218,7 +5231,7 @@ exports[`Chart 2`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -5247,7 +5260,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5276,7 +5289,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -5305,7 +5318,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5330,6 +5343,7 @@ exports[`Chart 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -5339,10 +5353,10 @@ exports[`Chart 2`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -5373,7 +5387,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -5447,6 +5461,7 @@ exports[`Chart 2`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}
@@ -5486,7 +5501,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5517,7 +5532,7 @@ exports[`Chart 2`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -5531,7 +5546,7 @@ exports[`Chart 2`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5565,7 +5580,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5595,10 +5610,10 @@ exports[`Chart 2`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -5608,10 +5623,10 @@ exports[`Chart 2`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -5621,10 +5636,10 @@ exports[`Chart 2`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -5633,10 +5648,10 @@ exports[`Chart 2`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -5645,10 +5660,10 @@ exports[`Chart 2`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -5677,10 +5692,10 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -5721,7 +5736,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5764,7 +5779,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5791,7 +5806,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5799,7 +5814,7 @@ exports[`Chart 2`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -5828,7 +5843,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5857,7 +5872,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -5886,7 +5901,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -5911,6 +5926,7 @@ exports[`Chart 2`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -5920,10 +5936,10 @@ exports[`Chart 2`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -5954,7 +5970,7 @@ exports[`Chart 2`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -6018,9 +6034,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -6047,9 +6063,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 40,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -6063,9 +6079,9 @@ exports[`Chart 2`] = `
           },
           "tickLabels": Object {
             "fill": "#4f5255",
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6099,9 +6115,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6126,9 +6142,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6138,9 +6154,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6150,9 +6166,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6161,9 +6177,9 @@ exports[`Chart 2`] = `
             "padding": 8,
           },
           "q1Labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6172,9 +6188,9 @@ exports[`Chart 2`] = `
             "padding": 8,
           },
           "q3Labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -6201,9 +6217,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -6242,9 +6258,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -6279,16 +6295,16 @@ exports[`Chart 2`] = `
             "type": "square",
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
           "title": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 2,
             "stroke": "transparent",
           },
@@ -6313,9 +6329,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -6340,9 +6356,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 8,
             "stroke": "transparent",
           },
@@ -6367,9 +6383,9 @@ exports[`Chart 2`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -6396,6 +6412,7 @@ exports[`Chart 2`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -6407,7 +6424,6 @@ exports[`Chart 2`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -6435,9 +6451,9 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#f0f0f0",
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 8,
             "pointerEvents": "none",
             "stroke": "transparent",
@@ -6484,9 +6500,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -6513,9 +6529,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 1,
               },
               "axisLabel": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 40,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -6529,9 +6545,9 @@ exports[`renders axis and component children 1`] = `
               },
               "tickLabels": Object {
                 "fill": "#4f5255",
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6565,9 +6581,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6592,9 +6608,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 1,
               },
               "maxLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6604,9 +6620,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 1,
               },
               "medianLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6616,9 +6632,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 1,
               },
               "minLabels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6627,9 +6643,9 @@ exports[`renders axis and component children 1`] = `
                 "padding": 8,
               },
               "q1Labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6638,9 +6654,9 @@ exports[`renders axis and component children 1`] = `
                 "padding": 8,
               },
               "q3Labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -6667,9 +6683,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -6708,9 +6724,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -6745,16 +6761,16 @@ exports[`renders axis and component children 1`] = `
                 "type": "square",
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "title": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 2,
                 "stroke": "transparent",
               },
@@ -6779,9 +6795,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -6806,9 +6822,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 8,
                 "stroke": "transparent",
               },
@@ -6833,9 +6849,9 @@ exports[`renders axis and component children 1`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -6862,6 +6878,7 @@ exports[`renders axis and component children 1`] = `
           },
           "tooltip": Object {
             "cornerRadius": 0,
+            "flyoutPadding": 8,
             "flyoutStyle": Object {
               "cornerRadius": 0,
               "fill": "#151515",
@@ -6873,7 +6890,6 @@ exports[`renders axis and component children 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#f0f0f0",
-              "padding": 16,
               "pointerEvents": "none",
             },
           },
@@ -6901,9 +6917,9 @@ exports[`renders axis and component children 1`] = `
               },
               "labels": Object {
                 "fill": "#f0f0f0",
-                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
                 "fontSize": 14,
-                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "letterSpacing": "normal",
                 "padding": 8,
                 "pointerEvents": "none",
                 "stroke": "transparent",
@@ -6944,6 +6960,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -6982,7 +6999,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7013,7 +7030,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -7027,7 +7044,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7061,7 +7078,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7091,10 +7108,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -7104,10 +7121,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -7117,10 +7134,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -7129,10 +7146,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -7141,10 +7158,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -7173,10 +7190,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -7217,7 +7234,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7260,7 +7277,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7287,7 +7304,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7295,7 +7312,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -7324,7 +7341,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7353,7 +7370,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -7382,7 +7399,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7407,6 +7424,7 @@ exports[`renders axis and component children 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -7416,10 +7434,10 @@ exports[`renders axis and component children 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -7450,7 +7468,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -7508,6 +7526,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         fixLabelOverlap={false}
@@ -7545,7 +7564,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7576,7 +7595,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -7590,7 +7609,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7624,7 +7643,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7654,10 +7673,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -7667,10 +7686,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -7680,10 +7699,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -7692,10 +7711,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -7704,10 +7723,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -7736,10 +7755,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -7780,7 +7799,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7823,7 +7842,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7850,7 +7869,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7858,7 +7877,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -7887,7 +7906,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7916,7 +7935,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -7945,7 +7964,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -7970,6 +7989,7 @@ exports[`renders axis and component children 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -7979,10 +7999,10 @@ exports[`renders axis and component children 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -8013,7 +8033,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -8091,6 +8111,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         dependentAxis={true}
@@ -8131,7 +8152,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8162,7 +8183,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -8176,7 +8197,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8210,7 +8231,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8240,10 +8261,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -8253,10 +8274,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -8266,10 +8287,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -8278,10 +8299,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -8290,10 +8311,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -8322,10 +8343,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -8366,7 +8387,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8409,7 +8430,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8436,7 +8457,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8444,7 +8465,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -8473,7 +8494,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8502,7 +8523,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -8531,7 +8552,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8556,6 +8577,7 @@ exports[`renders axis and component children 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -8565,10 +8587,10 @@ exports[`renders axis and component children 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -8599,7 +8621,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -8673,6 +8695,7 @@ exports[`renders axis and component children 1`] = `
             portalComponent={<Portal />}
             portalZIndex={99}
             responsive={true}
+            role="img"
           />
         }
         endAngle={360}
@@ -8712,7 +8735,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8743,7 +8766,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "axisLabel": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -8757,7 +8780,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "tickLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8791,7 +8814,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8821,10 +8844,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "maxLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "median": Object {
@@ -8834,10 +8857,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "medianLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "min": Object {
@@ -8847,10 +8870,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "minLabels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q1": Object {
@@ -8859,10 +8882,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q1Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
                 "q3": Object {
@@ -8871,10 +8894,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "q3Labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 3,
                   "stroke": "transparent",
                 },
               },
@@ -8903,10 +8926,10 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
-                  "padding": 10,
+                  "padding": 5,
                   "stroke": "transparent",
                 },
               },
@@ -8947,7 +8970,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -8990,7 +9013,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -9017,7 +9040,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -9025,7 +9048,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "title": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -9054,7 +9077,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -9083,7 +9106,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 20,
@@ -9112,7 +9135,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 10,
@@ -9137,6 +9160,7 @@ exports[`renders axis and component children 1`] = `
             },
             "tooltip": Object {
               "cornerRadius": 5,
+              "flyoutPadding": 5,
               "flyoutStyle": Object {
                 "fill": "#f0f0f0",
                 "pointerEvents": "none",
@@ -9146,10 +9170,10 @@ exports[`renders axis and component children 1`] = `
               "pointerLength": 10,
               "style": Object {
                 "fill": "#252525",
-                "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                 "fontSize": 14,
                 "letterSpacing": "normal",
-                "padding": 5,
+                "padding": 0,
                 "pointerEvents": "none",
                 "stroke": "transparent",
               },
@@ -9180,7 +9204,7 @@ exports[`renders axis and component children 1`] = `
                 },
                 "labels": Object {
                   "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontFamily": "'Gill Sans', 'Seravek', 'Trebuchet MS', sans-serif",
                   "fontSize": 14,
                   "letterSpacing": "normal",
                   "padding": 5,
@@ -9249,9 +9273,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -9278,9 +9302,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 40,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -9294,9 +9318,9 @@ exports[`renders axis and component children 1`] = `
           },
           "tickLabels": Object {
             "fill": "#4f5255",
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9330,9 +9354,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9357,9 +9381,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9369,9 +9393,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9381,9 +9405,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9392,9 +9416,9 @@ exports[`renders axis and component children 1`] = `
             "padding": 8,
           },
           "q1Labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9403,9 +9427,9 @@ exports[`renders axis and component children 1`] = `
             "padding": 8,
           },
           "q3Labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -9432,9 +9456,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -9473,9 +9497,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -9510,16 +9534,16 @@ exports[`renders axis and component children 1`] = `
             "type": "square",
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
           },
           "title": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 2,
             "stroke": "transparent",
           },
@@ -9544,9 +9568,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -9571,9 +9595,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 8,
             "stroke": "transparent",
           },
@@ -9598,9 +9622,9 @@ exports[`renders axis and component children 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -9627,6 +9651,7 @@ exports[`renders axis and component children 1`] = `
       },
       "tooltip": Object {
         "cornerRadius": 0,
+        "flyoutPadding": 8,
         "flyoutStyle": Object {
           "cornerRadius": 0,
           "fill": "#151515",
@@ -9638,7 +9663,6 @@ exports[`renders axis and component children 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#f0f0f0",
-          "padding": 16,
           "pointerEvents": "none",
         },
       },
@@ -9666,9 +9690,9 @@ exports[`renders axis and component children 1`] = `
           },
           "labels": Object {
             "fill": "#f0f0f0",
-            "fontFamily": "var(--pf-chart-global--FontFamily)",
+            "fontFamily": "\\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif",
             "fontSize": 14,
-            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "letterSpacing": "normal",
             "padding": 8,
             "pointerEvents": "none",
             "stroke": "transparent",

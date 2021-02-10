@@ -2,15 +2,14 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   BlockProps,
-  ColorScalePropType,
   EventCallbackInterface,
   EventPropTypeInterface,
   OrientationTypes,
   PaddingProps,
   StringOrNumberOrCallback,
   StringOrNumberOrList,
-  VictoryStyleInterface,
-  VictoryStyleObject
+  VictoryLabelStyleObject,
+  VictoryStyleInterface
 } from 'victory-core';
 import {
   VictoryLegend,
@@ -64,6 +63,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * a number, or asanobject with values specified for top, bottom, left, and right.
    * Please note that the default width and height calculated for the border
    * component is based on approximated text measurements, so padding may need to be adjusted.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   borderPadding?: PaddingProps;
   /**
@@ -74,13 +75,10 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The colorScale prop defines a color scale to be applied to each data
    * symbol in ChartLegend. This prop should be given as an array of CSS
    * colors, or as a string corresponding to one of the built in color
-   * scales: "grayscale", "qualitative", "heatmap", "warm", "cool", "red",
-   * "green", "blue". ChartLegend will assign a color to each symbol by
-   * index, unless they are explicitly specified in the data object.
-   * Colors will repeat when there are more symbols than colors in the
+   * scales. Colors will repeat when there are more symbols than colors in the
    * provided colorScale.
    */
-  colorScale?: ColorScalePropType;
+  colorScale?: string[];
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
@@ -127,14 +125,20 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * ChartLegend uses the standard eventKey prop to specify how event targets
    * are addressed. This prop is not commonly used.
+   *
+   * @propType number | string | Function | string[]
    */
   eventKey?: StringOrNumberOrCallback | string[];
   /**
    * ChartLegend uses the standard events prop.
+   *
+   * @propType object[]
    */
   events?: EventPropTypeInterface<VictoryLegendTTargetType, StringOrNumberOrCallback>[];
   /**
    * ChartLegend uses the standard externalEventMutations prop.
+   *
+   * @propType object[]
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
@@ -184,6 +188,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * and text-wrapping is not currently supported, so "vertical"
    * orientation is both the default setting and recommended for
    * displaying many series of data.
+   *
+   * @propType string
    */
   orientation?: VictoryLegendOrientationType;
   /**
@@ -191,6 +197,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
@@ -207,12 +215,17 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * This prop may be given as a number, or as an object with values
    * specified for “top” and “bottom” gutters. To set spacing between columns,
    * use the gutter prop.
+   *
+   * @propType number | { top: number, bottom: number }
+   * @example { top: 0, bottom: 10 }
    */
   rowGutter?: number | Omit<BlockProps, 'left' | 'right'>;
   /**
    * The sharedEvents prop is used internally to coordinate events between components.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
@@ -226,9 +239,10 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    *
+   * @propType { border: object, data: object, labels: object, parent: object, title: object }
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
-  style?: VictoryStyleInterface & { title?: VictoryStyleObject };
+  style?: VictoryStyleInterface & { title?: VictoryLabelStyleObject | VictoryLabelStyleObject[] };
   /**
    * The symbolSpacer prop defines the number of pixels between data
    * components and label components.
@@ -240,6 +254,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * When using ChartLegend as a solo component, implement the theme directly on
    * ChartLegend. If you are wrapping ChartLegend in ChartChart or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -277,6 +293,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The titleOrientation prop specifies where the a title should be rendered
    * in relation to the rest of the legend. Possible values
    * for this prop are “top”, “bottom”, “left”, and “right”.
+   *
+   * @propType string
    */
   titleOrientation?: OrientationTypes;
   /**
@@ -335,9 +353,7 @@ ChartLegend.displayName = 'ChartLegend';
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-ChartLegend.getBaseProps = props => {
+(ChartLegend as any).getBaseProps = (props: any) => {
   const theme = getTheme(null, null);
   return (VictoryLegend as any).getBaseProps(
     {

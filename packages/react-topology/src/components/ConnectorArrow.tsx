@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 import * as _ from 'lodash';
 import Point from '../geom/Point';
 import { ConnectDragSource } from '../behavior/dnd-types';
@@ -41,10 +41,19 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
     prevPoint[1] + (arrowEndPoint[1] - prevPoint[1]) * ratio
   ];
 
-  const arrowPoints: [number, number][] = [[0, size / 2], [0, -size / 2], [size, 0]];
+  const arrowPoints: [number, number][] = [
+    [0, size / 2],
+    [0, -size / 2],
+    [size, 0]
+  ];
   const padding = Math.max(size, 8);
   const deltaY = padding / 2;
-  const boundingBox: [number, number][] = [[0, -deltaY], [padding, -deltaY], [padding, deltaY], [0, deltaY]];
+  const boundingBox: [number, number][] = [
+    [0, -deltaY],
+    [padding, -deltaY],
+    [padding, deltaY],
+    [0, deltaY]
+  ];
 
   const angleDeg = 180 - (Math.atan2(arrowEndPoint[1] - prevPoint[1], prevPoint[0] - arrowEndPoint[0]) * 180) / Math.PI;
 
@@ -52,7 +61,7 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
     <g
       transform={`translate(${arrowStartPoint[0]}, ${arrowStartPoint[1]}) rotate(${angleDeg})`}
       ref={dragRef}
-      className={classNames('pf-topology-connector-arrow', className)}
+      className={css('pf-topology-connector-arrow', className)}
     >
       <polygon points={pointsStringFromPoints(arrowPoints)} />
       <polygon points={pointsStringFromPoints(boundingBox)} fillOpacity={0} strokeWidth={0} />

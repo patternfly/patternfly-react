@@ -3,6 +3,1613 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.22...@patternfly/react-virtualized-extension@4.6.23) (2021-02-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.21...@patternfly/react-virtualized-extension@4.6.22) (2021-02-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.20...@patternfly/react-virtualized-extension@4.6.21) (2021-02-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.19...@patternfly/react-virtualized-extension@4.6.20) (2021-02-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.18...@patternfly/react-virtualized-extension@4.6.19) (2021-02-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.17...@patternfly/react-virtualized-extension@4.6.18) (2021-02-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.16...@patternfly/react-virtualized-extension@4.6.17) (2021-02-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.15...@patternfly/react-virtualized-extension@4.6.16) (2021-02-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.14...@patternfly/react-virtualized-extension@4.6.15) (2021-01-27)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.13...@patternfly/react-virtualized-extension@4.6.14) (2021-01-26)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.12...@patternfly/react-virtualized-extension@4.6.13) (2021-01-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.11...@patternfly/react-virtualized-extension@4.6.12) (2021-01-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.10...@patternfly/react-virtualized-extension@4.6.11) (2021-01-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.9...@patternfly/react-virtualized-extension@4.6.10) (2021-01-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.8...@patternfly/react-virtualized-extension@4.6.9) (2021-01-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.7...@patternfly/react-virtualized-extension@4.6.8) (2021-01-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.6...@patternfly/react-virtualized-extension@4.6.7) (2021-01-15)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.5...@patternfly/react-virtualized-extension@4.6.6) (2021-01-15)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.4...@patternfly/react-virtualized-extension@4.6.5) (2021-01-12)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.3...@patternfly/react-virtualized-extension@4.6.4) (2021-01-11)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.2...@patternfly/react-virtualized-extension@4.6.3) (2021-01-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.1...@patternfly/react-virtualized-extension@4.6.2) (2021-01-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.0...@patternfly/react-virtualized-extension@4.6.1) (2021-01-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.176...@patternfly/react-virtualized-extension@4.6.0) (2021-01-06)
+
+
+### Features
+
+* **packages:** use react 17 ([#5111](https://github.com/patternfly/patternfly-react/issues/5111)) ([7fbafcc](https://github.com/patternfly/patternfly-react/commit/7fbafcc947c95d2bda2f4fad8f7737cf7dd3fca6))
+
+
+
+
+
+## [4.5.176](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.175...@patternfly/react-virtualized-extension@4.5.176) (2021-01-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.175](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.174...@patternfly/react-virtualized-extension@4.5.175) (2021-01-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.174](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.173...@patternfly/react-virtualized-extension@4.5.174) (2021-01-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.173](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.172...@patternfly/react-virtualized-extension@4.5.173) (2020-12-16)
+
+
+### Bug Fixes
+
+* **Table:** scope axe issue ([#5253](https://github.com/patternfly/patternfly-react/issues/5253)) ([1c2ff14](https://github.com/patternfly/patternfly-react/commit/1c2ff142b9687d5555fcaf4c53141ea10c7e6eac))
+
+
+
+
+
+## [4.5.172](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.171...@patternfly/react-virtualized-extension@4.5.172) (2020-12-16)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.171](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.170...@patternfly/react-virtualized-extension@4.5.171) (2020-12-15)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.170](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.169...@patternfly/react-virtualized-extension@4.5.170) (2020-12-11)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.169](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.168...@patternfly/react-virtualized-extension@4.5.169) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.168](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.167...@patternfly/react-virtualized-extension@4.5.168) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.167](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.166...@patternfly/react-virtualized-extension@4.5.167) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.166](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.165...@patternfly/react-virtualized-extension@4.5.166) (2020-12-09)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.165](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.164...@patternfly/react-virtualized-extension@4.5.165) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.164](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.163...@patternfly/react-virtualized-extension@4.5.164) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.163](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.162...@patternfly/react-virtualized-extension@4.5.163) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.162](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.161...@patternfly/react-virtualized-extension@4.5.162) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.161](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.160...@patternfly/react-virtualized-extension@4.5.161) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.160](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.159...@patternfly/react-virtualized-extension@4.5.160) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.159](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.158...@patternfly/react-virtualized-extension@4.5.159) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.158](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.157...@patternfly/react-virtualized-extension@4.5.158) (2020-12-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.157](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.156...@patternfly/react-virtualized-extension@4.5.157) (2020-12-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.156](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.155...@patternfly/react-virtualized-extension@4.5.156) (2020-12-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.155](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.154...@patternfly/react-virtualized-extension@4.5.155) (2020-12-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.154](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.153...@patternfly/react-virtualized-extension@4.5.154) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.153](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.152...@patternfly/react-virtualized-extension@4.5.153) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.152](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.151...@patternfly/react-virtualized-extension@4.5.152) (2020-11-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.151](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.150...@patternfly/react-virtualized-extension@4.5.151) (2020-11-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.150](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.149...@patternfly/react-virtualized-extension@4.5.150) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.149](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.148...@patternfly/react-virtualized-extension@4.5.149) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.148](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.147...@patternfly/react-virtualized-extension@4.5.148) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.147](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.146...@patternfly/react-virtualized-extension@4.5.147) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.146](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.145...@patternfly/react-virtualized-extension@4.5.146) (2020-11-16)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.145](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.144...@patternfly/react-virtualized-extension@4.5.145) (2020-11-16)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.144](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.143...@patternfly/react-virtualized-extension@4.5.144) (2020-11-13)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.143](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.142...@patternfly/react-virtualized-extension@4.5.143) (2020-11-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.142](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.141...@patternfly/react-virtualized-extension@4.5.142) (2020-11-09)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.141](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.140...@patternfly/react-virtualized-extension@4.5.141) (2020-11-05)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.140](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.139...@patternfly/react-virtualized-extension@4.5.140) (2020-11-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.139](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.138...@patternfly/react-virtualized-extension@4.5.139) (2020-10-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.138](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.137...@patternfly/react-virtualized-extension@4.5.138) (2020-10-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.137](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.136...@patternfly/react-virtualized-extension@4.5.137) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.136](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.135...@patternfly/react-virtualized-extension@4.5.136) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.135](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.134...@patternfly/react-virtualized-extension@4.5.135) (2020-10-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.134](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.133...@patternfly/react-virtualized-extension@4.5.134) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.133](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.132...@patternfly/react-virtualized-extension@4.5.133) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.132](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.131...@patternfly/react-virtualized-extension@4.5.132) (2020-10-26)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.131](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.130...@patternfly/react-virtualized-extension@4.5.131) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.130](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.129...@patternfly/react-virtualized-extension@4.5.130) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.129](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.128...@patternfly/react-virtualized-extension@4.5.129) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.128](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.127...@patternfly/react-virtualized-extension@4.5.128) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.127](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.126...@patternfly/react-virtualized-extension@4.5.127) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.126](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.125...@patternfly/react-virtualized-extension@4.5.126) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.125](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.124...@patternfly/react-virtualized-extension@4.5.125) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.124](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.123...@patternfly/react-virtualized-extension@4.5.124) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.123](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.122...@patternfly/react-virtualized-extension@4.5.123) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.122](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.121...@patternfly/react-virtualized-extension@4.5.122) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.121](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.120...@patternfly/react-virtualized-extension@4.5.121) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.120](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.119...@patternfly/react-virtualized-extension@4.5.120) (2020-10-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.119](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.118...@patternfly/react-virtualized-extension@4.5.119) (2020-10-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.118](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.117...@patternfly/react-virtualized-extension@4.5.118) (2020-10-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.117](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.116...@patternfly/react-virtualized-extension@4.5.117) (2020-10-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.116](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.115...@patternfly/react-virtualized-extension@4.5.116) (2020-10-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.115](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.114...@patternfly/react-virtualized-extension@4.5.115) (2020-10-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.114](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.113...@patternfly/react-virtualized-extension@4.5.114) (2020-10-14)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.113](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.112...@patternfly/react-virtualized-extension@4.5.113) (2020-10-13)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.112](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.111...@patternfly/react-virtualized-extension@4.5.112) (2020-10-12)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.111](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.110...@patternfly/react-virtualized-extension@4.5.111) (2020-10-12)
+
+
+### Bug Fixes
+
+* **inputgroup:** allow string children ([#4963](https://github.com/patternfly/patternfly-react/issues/4963)) ([2f90073](https://github.com/patternfly/patternfly-react/commit/2f90073111e01c4c5597d04b2a337707881a33ec))
+
+
+
+
+
+## [4.5.110](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.109...@patternfly/react-virtualized-extension@4.5.110) (2020-10-12)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.109](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.108...@patternfly/react-virtualized-extension@4.5.109) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.108](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.107...@patternfly/react-virtualized-extension@4.5.108) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.107](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.106...@patternfly/react-virtualized-extension@4.5.107) (2020-10-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.106](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.105...@patternfly/react-virtualized-extension@4.5.106) (2020-10-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.105](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.104...@patternfly/react-virtualized-extension@4.5.105) (2020-10-06)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.104](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.103...@patternfly/react-virtualized-extension@4.5.104) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.103](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.102...@patternfly/react-virtualized-extension@4.5.103) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.102](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.101...@patternfly/react-virtualized-extension@4.5.102) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.101](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.100...@patternfly/react-virtualized-extension@4.5.101) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.100](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.99...@patternfly/react-virtualized-extension@4.5.100) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.99](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.98...@patternfly/react-virtualized-extension@4.5.99) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.98](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.97...@patternfly/react-virtualized-extension@4.5.98) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.97](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.96...@patternfly/react-virtualized-extension@4.5.97) (2020-10-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.96](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.95...@patternfly/react-virtualized-extension@4.5.96) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.95](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.94...@patternfly/react-virtualized-extension@4.5.95) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.93...@patternfly/react-virtualized-extension@4.5.94) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.93](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.92...@patternfly/react-virtualized-extension@4.5.93) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.92](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.91...@patternfly/react-virtualized-extension@4.5.92) (2020-09-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.91](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.90...@patternfly/react-virtualized-extension@4.5.91) (2020-09-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.90](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.89...@patternfly/react-virtualized-extension@4.5.90) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.89](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.88...@patternfly/react-virtualized-extension@4.5.89) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.87...@patternfly/react-virtualized-extension@4.5.88) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.87](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.86...@patternfly/react-virtualized-extension@4.5.87) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.85...@patternfly/react-virtualized-extension@4.5.86) (2020-09-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.84...@patternfly/react-virtualized-extension@4.5.85) (2020-09-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.84](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.83...@patternfly/react-virtualized-extension@4.5.84) (2020-09-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.82...@patternfly/react-virtualized-extension@4.5.83) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.81...@patternfly/react-virtualized-extension@4.5.82) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.80...@patternfly/react-virtualized-extension@4.5.81) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.79...@patternfly/react-virtualized-extension@4.5.80) (2020-09-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.78...@patternfly/react-virtualized-extension@4.5.79) (2020-09-21)
+
+
+### Bug Fixes
+
+* **charts,table:** replace or use exact lodash imports ([#4830](https://github.com/patternfly/patternfly-react/issues/4830)) ([63a8259](https://github.com/patternfly/patternfly-react/commit/63a8259c49f0eddbc699febb5f72cc5a2defb9eb))
+
+
+
+
+
+## [4.5.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.77...@patternfly/react-virtualized-extension@4.5.78) (2020-09-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.76...@patternfly/react-virtualized-extension@4.5.77) (2020-09-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.75...@patternfly/react-virtualized-extension@4.5.76) (2020-09-18)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.74...@patternfly/react-virtualized-extension@4.5.75) (2020-09-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.73...@patternfly/react-virtualized-extension@4.5.74) (2020-09-16)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.72...@patternfly/react-virtualized-extension@4.5.73) (2020-09-15)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.71...@patternfly/react-virtualized-extension@4.5.72) (2020-09-14)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.70...@patternfly/react-virtualized-extension@4.5.71) (2020-09-11)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.69...@patternfly/react-virtualized-extension@4.5.70) (2020-09-11)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.68...@patternfly/react-virtualized-extension@4.5.69) (2020-09-11)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.67...@patternfly/react-virtualized-extension@4.5.68) (2020-09-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.67](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.66...@patternfly/react-virtualized-extension@4.5.67) (2020-09-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.65...@patternfly/react-virtualized-extension@4.5.66) (2020-09-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.64...@patternfly/react-virtualized-extension@4.5.65) (2020-09-02)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.63...@patternfly/react-virtualized-extension@4.5.64) (2020-08-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.62...@patternfly/react-virtualized-extension@4.5.63) (2020-08-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.61...@patternfly/react-virtualized-extension@4.5.62) (2020-08-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.60...@patternfly/react-virtualized-extension@4.5.61) (2020-08-25)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.60](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.59...@patternfly/react-virtualized-extension@4.5.60) (2020-08-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.59](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.58...@patternfly/react-virtualized-extension@4.5.59) (2020-08-24)
+
+
+### Bug Fixes
+
+* **docs:** use ids and h3s ([#4720](https://github.com/patternfly/patternfly-react/issues/4720)) ([a3f684f](https://github.com/patternfly/patternfly-react/commit/a3f684fa23cfce3d8e79b86206773292790cec5c))
+
+
+
+
+
+## [4.5.58](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.57...@patternfly/react-virtualized-extension@4.5.58) (2020-08-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.57](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.56...@patternfly/react-virtualized-extension@4.5.57) (2020-08-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.55...@patternfly/react-virtualized-extension@4.5.56) (2020-08-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.54...@patternfly/react-virtualized-extension@4.5.55) (2020-08-24)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.53...@patternfly/react-virtualized-extension@4.5.54) (2020-08-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.53](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.52...@patternfly/react-virtualized-extension@4.5.53) (2020-08-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.52](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.51...@patternfly/react-virtualized-extension@4.5.52) (2020-08-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.50...@patternfly/react-virtualized-extension@4.5.51) (2020-08-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.49...@patternfly/react-virtualized-extension@4.5.50) (2020-08-12)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.48...@patternfly/react-virtualized-extension@4.5.49) (2020-08-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.47...@patternfly/react-virtualized-extension@4.5.48) (2020-08-06)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.46...@patternfly/react-virtualized-extension@4.5.47) (2020-08-05)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.45...@patternfly/react-virtualized-extension@4.5.46) (2020-08-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.44...@patternfly/react-virtualized-extension@4.5.45) (2020-08-04)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.43...@patternfly/react-virtualized-extension@4.5.44) (2020-08-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.42...@patternfly/react-virtualized-extension@4.5.43) (2020-08-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.41...@patternfly/react-virtualized-extension@4.5.42) (2020-08-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.40...@patternfly/react-virtualized-extension@4.5.41) (2020-07-31)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.39...@patternfly/react-virtualized-extension@4.5.40) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.38...@patternfly/react-virtualized-extension@4.5.39) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.37...@patternfly/react-virtualized-extension@4.5.38) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.36...@patternfly/react-virtualized-extension@4.5.37) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.35...@patternfly/react-virtualized-extension@4.5.36) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.34...@patternfly/react-virtualized-extension@4.5.35) (2020-07-29)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.33...@patternfly/react-virtualized-extension@4.5.34) (2020-07-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.32...@patternfly/react-virtualized-extension@4.5.33) (2020-07-28)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.31...@patternfly/react-virtualized-extension@4.5.32) (2020-07-27)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.30...@patternfly/react-virtualized-extension@4.5.31) (2020-07-27)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.29...@patternfly/react-virtualized-extension@4.5.30) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.28...@patternfly/react-virtualized-extension@4.5.29) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.27...@patternfly/react-virtualized-extension@4.5.28) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.26...@patternfly/react-virtualized-extension@4.5.27) (2020-07-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.25...@patternfly/react-virtualized-extension@4.5.26) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.24...@patternfly/react-virtualized-extension@4.5.25) (2020-07-21)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.23...@patternfly/react-virtualized-extension@4.5.24) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.22...@patternfly/react-virtualized-extension@4.5.23) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.21...@patternfly/react-virtualized-extension@4.5.22) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.20...@patternfly/react-virtualized-extension@4.5.21) (2020-07-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.19...@patternfly/react-virtualized-extension@4.5.20) (2020-07-16)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.18...@patternfly/react-virtualized-extension@4.5.19) (2020-07-16)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.17...@patternfly/react-virtualized-extension@4.5.18) (2020-07-15)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.16...@patternfly/react-virtualized-extension@4.5.17) (2020-07-14)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.15...@patternfly/react-virtualized-extension@4.5.16) (2020-07-14)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.14...@patternfly/react-virtualized-extension@4.5.15) (2020-07-13)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.13...@patternfly/react-virtualized-extension@4.5.14) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.12...@patternfly/react-virtualized-extension@4.5.13) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.11...@patternfly/react-virtualized-extension@4.5.12) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.10...@patternfly/react-virtualized-extension@4.5.11) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.9...@patternfly/react-virtualized-extension@4.5.10) (2020-07-09)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.8...@patternfly/react-virtualized-extension@4.5.9) (2020-07-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.7...@patternfly/react-virtualized-extension@4.5.8) (2020-07-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.6...@patternfly/react-virtualized-extension@4.5.7) (2020-07-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.5...@patternfly/react-virtualized-extension@4.5.6) (2020-07-08)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.4...@patternfly/react-virtualized-extension@4.5.5) (2020-07-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.3...@patternfly/react-virtualized-extension@4.5.4) (2020-07-07)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.2...@patternfly/react-virtualized-extension@4.5.3) (2020-07-06)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.1...@patternfly/react-virtualized-extension@4.5.2) (2020-07-06)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
 ## [4.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.5.0...@patternfly/react-virtualized-extension@4.5.1) (2020-07-02)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

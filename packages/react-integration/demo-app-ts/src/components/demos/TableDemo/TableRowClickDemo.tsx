@@ -10,7 +10,6 @@ import {
   ICell
 } from '@patternfly/react-table';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ITableRowClickDemoState {
   rows: IRow[];
   columns: (ICell | string)[];

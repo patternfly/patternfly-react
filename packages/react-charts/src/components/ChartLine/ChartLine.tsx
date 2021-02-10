@@ -39,6 +39,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    *
+   * @propType boolean | object
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -49,6 +50,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    *
+   * @propType string[] | { x: string[], y: string[] }
    * @example ["dogs", "cats", "mice"]
    */
   categories?: CategoryPropType;
@@ -95,7 +97,10 @@ export interface ChartLineProps extends VictoryLineProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    *
-   * @example [-1, 1], {x: [0, 100], y: [0, 1]}
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high], { x: [low, high], y: [low, high] }
+   *
+   * [-1, 1], {x: [0, 100], y: [0, 1]}
    */
   domain?: DomainPropType;
   /**
@@ -103,11 +108,18 @@ export interface ChartLineProps extends VictoryLineProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
+   *
+   * @propType number | number[] | { x: number[], y: number[] }
+   * @example [left, right], { x: [left, right], y: [bottom, top] }
+   *
+   * {x: [10, -10], y: 5}
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * @propType number | string | Function
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -125,6 +137,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * element (i.e. a line), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
    *
+   * @propType object[]
    * @example
    * events={[
    *   {
@@ -151,6 +164,8 @@ export interface ChartLineProps extends VictoryLineProps {
   events?: EventPropTypeInterface<VictoryLineTTargetType, number | string>[];
   /**
    * ChartLine uses the standard externalEventMutations prop.
+   *
+   * @propType object[]
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
@@ -171,7 +186,12 @@ export interface ChartLineProps extends VictoryLineProps {
    */
   horizontal?: boolean;
   /**
-   * The interpolation prop determines how data points should be connected when plotting a line
+   * The interpolation prop determines how data points should be connected when plotting a line.
+   * Polar area charts may use the following interpolation options: "basis", "cardinal", "catmullRom", "linear".
+   * Cartesian area charts may use the following interpolation options: "basis", "cardinal", "catmullRom", "linear",
+   * "monotoneX", "monotoneY", "natural", "step", "stepAfter", "stepBefore".
+   *
+   * @propType string | Function
    */
   interpolation?: InterpolationPropType;
   /**
@@ -205,7 +225,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
-   * examples:
+   * @example
    *
    * maxDomain={0}
    * maxDomain={{ y: 0 }}
@@ -220,7 +240,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
-   * examples:
+   * @example
    *
    * minDomain={0}
    * minDomain={{ y: 0 }}
@@ -233,7 +253,9 @@ export interface ChartLineProps extends VictoryLineProps {
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
-   * **This prop should not be set manually.**
+   * Note: It will not typically be necessary to set an origin prop manually
+   *
+   * @propType { x: number, y: number }
    */
   origin?: OriginType;
   /**
@@ -241,12 +263,16 @@ export interface ChartLineProps extends VictoryLineProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   polar?: boolean;
   /**
@@ -257,7 +283,8 @@ export interface ChartLineProps extends VictoryLineProps {
    * chart must share the same range, so setting this prop on children nested within Chart or
    * ChartGroup will have no effect. This prop is usually not set manually.
    *
-   * examples:
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high] | { x: [low, high], y: [low, high] }
    *
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
@@ -273,6 +300,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    *
+   * @propType string | { x: string, y: string }
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
   scale?:
@@ -285,7 +313,9 @@ export interface ChartLineProps extends VictoryLineProps {
   /**
    * The sharedEvents prop is used internally to coordinate events between components.
    *
-   * **This prop should not be set manually.**
+   * Note: This prop should not be set manually.
+   *
+   * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
@@ -300,7 +330,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable
    * will corresponds to the y axis.
    *
-   * examples:
+   * @example
    *
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
@@ -314,6 +344,8 @@ export interface ChartLineProps extends VictoryLineProps {
   sortKey?: string | string[] | Function;
   /**
    * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+   *
+   * @propType string
    */
   sortOrder?: SortOrderPropType;
   /**
@@ -328,6 +360,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
    *
+   * @propType { parent: object, data: object, labels: object }
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
    */
   style?: VictoryStyleInterface;
@@ -337,6 +370,8 @@ export interface ChartLineProps extends VictoryLineProps {
    * When using ChartLine as a solo component, implement the theme directly on
    * ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -369,6 +404,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    */
   x?: DataGetterPropType;
@@ -381,6 +417,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;
@@ -389,6 +426,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * This prop is useful for defining custom baselines for components like ChartLine.
    * This prop may be given in a variety of formats.
    *
+   * @propType number | string | Function | string[]
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface VerticalTabsProps extends React.HTMLProps<HTMLUListElement> {
   /** Children nodes */
@@ -19,7 +19,7 @@ export const VerticalTabs: React.FunctionComponent<VerticalTabsProps> = ({
   activeTab = false,
   ...props
 }: VerticalTabsProps) => {
-  const classes = classNames('vertical-tabs-pf', { 'restrict-tabs': restrictTabs, 'active-tab': activeTab }, className);
+  const classes = css('vertical-tabs-pf', { 'restrict-tabs': restrictTabs, 'active-tab': activeTab }, className);
   return (
     <ul className={classes} {...props}>
       {children}

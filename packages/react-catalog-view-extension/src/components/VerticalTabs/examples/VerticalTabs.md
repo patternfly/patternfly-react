@@ -1,8 +1,7 @@
 ---
-title: 'Catalog view vertical tabs'
-section: 'extensions'
+id: Catalog view vertical tabs
+section: extensions
 propComponents: ['VerticalTabs', 'VerticalTabsTab']
-typescript: true
 ---
 
 import { VerticalTabs, VerticalTabsTab } from '@patternfly/react-catalog-view-extension';
@@ -14,7 +13,8 @@ Note: Vertical tabs lives in its own package at [`@patternfly/react-catalog-view
 This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { VerticalTabs, VerticalTabsTab } from '@patternfly/react-catalog-view-extension';
 

@@ -9,6 +9,7 @@ import { evaluateFormatters } from './evaluate-formatters';
 import { evaluateTransforms } from './evaluate-transforms';
 import { mergeProps } from './merge-props';
 import { createElementType, ColumnType, HeaderType, RowsType, RendererType } from './types';
+import { HeaderCellInfoWrapper } from '../HeaderCellInfoWrapper';
 
 export interface HeaderRowProps {
   rowData: RowsType;
@@ -29,7 +30,7 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
     (rowData as []).map((column: ColumnType, columnIndex: number) => {
       const { property, header = {} as HeaderType, props = {} } = column;
       const evaluatedProperty = property || (header && header.property);
-      const { label, transforms = [], formatters = [] } = header;
+      const { label, transforms = [], formatters = [], info = {} } = header;
       const extraParameters = {
         columnIndex,
         property: evaluatedProperty,
@@ -42,13 +43,71 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
         console.warn('Table.Header - Failed to receive a transformed result'); // eslint-disable-line max-len, no-console
       }
 
+      let cellNode;
+      const { tooltip, tooltipProps, popover, popoverProps, ariaLabel, className } = info;
+      // consumer can specify header cell tooltip/popover in two ways, but the transforms approach is preferred,
+      // especially for sorting tables that use `transforms: [sortable]`
+      // {
+      //   title: 'Repositories',
+      //   header: {
+      //     info: {
+      //       tooltip: 'More information about repositories',
+      //       className: 'repositories-info-tip',
+      //       tooltipProps: {
+      //         isContentLeftAligned: true
+      //       }
+      //     }
+      //   }
+      // }
+      //
+      // {
+      //   title: 'Repositories',
+      //   transforms: [
+      //     info({
+      //       tooltip: 'More information about repositories',
+      //       className: 'repositories-info-tip',
+      //       tooltipProps: {
+      //         isContentLeftAligned: true
+      //       }
+      //     }),
+      //     sortable
+      //   ]
+      // },
+      if (tooltip) {
+        cellNode = (
+          <HeaderCellInfoWrapper
+            variant="tooltip"
+            info={tooltip}
+            tooltipProps={tooltipProps}
+            ariaLabel={ariaLabel}
+            className={className}
+          >
+            {transformedProps.children || evaluateFormatters(formatters)(label, extraParameters)}
+          </HeaderCellInfoWrapper>
+        );
+      } else if (popover) {
+        cellNode = (
+          <HeaderCellInfoWrapper
+            variant="popover"
+            info={popover}
+            popoverProps={popoverProps}
+            ariaLabel={ariaLabel}
+            className={className}
+          >
+            {transformedProps.children || evaluateFormatters(formatters)(label, extraParameters)}
+          </HeaderCellInfoWrapper>
+        );
+      } else {
+        cellNode = transformedProps.children || evaluateFormatters(formatters)(label, extraParameters);
+      }
+
       return React.createElement(
         renderers.cell as createElementType,
         {
           key: `${columnIndex}-header`,
           ...mergeProps(props, header && header.props, transformedProps)
         },
-        transformedProps.children || evaluateFormatters(formatters)(label, extraParameters)
+        cellNode
       );
     })
   );

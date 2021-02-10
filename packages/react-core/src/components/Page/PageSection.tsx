@@ -12,7 +12,8 @@ export enum PageSectionVariants {
 
 export enum PageSectionTypes {
   default = 'default',
-  nav = 'nav'
+  nav = 'nav',
+  wizard = 'wizard'
 }
 
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
@@ -23,9 +24,11 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Section background color variant */
   variant?: 'default' | 'light' | 'dark' | 'darker';
   /** Section type variant */
-  type?: 'default' | 'nav';
+  type?: 'default' | 'nav' | 'wizard';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
+  /** Limits the width of the section */
+  isWidthLimited?: boolean;
   /** Padding at various breakpoints. */
   padding?: {
     default?: 'padding' | 'noPadding';
@@ -35,11 +38,20 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'padding' | 'noPadding';
     '2xl'?: 'padding' | 'noPadding';
   };
+  /** Modifier indicating if PageSection is sticky to the top or bottom */
+  sticky?: 'top' | 'bottom';
+  /** Modifier indicating if PageSection should have a shadow at the top */
+  hasShadowTop?: boolean;
+  /** Modifier indicating if PageSection should have a shadow at the bottom */
+  hasShadowBottom?: boolean;
+  /** Flag indicating if the PageSection has a scrolling overflow */
+  hasOverflowScroll?: boolean;
 }
 
 const variantType = {
   [PageSectionTypes.default]: styles.pageMainSection,
-  [PageSectionTypes.nav]: styles.pageMainNav
+  [PageSectionTypes.nav]: styles.pageMainNav,
+  [PageSectionTypes.wizard]: styles.pageMainWizard
 };
 
 const variantStyle = {
@@ -56,6 +68,11 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   type = 'default',
   padding,
   isFilled,
+  isWidthLimited = false,
+  sticky,
+  hasShadowTop = false,
+  hasShadowBottom = false,
+  hasOverflowScroll = false,
   ...props
 }: PageSectionProps) => (
   <section
@@ -66,10 +83,17 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
+      isWidthLimited && styles.modifiers.limitWidth,
+      sticky === 'top' && styles.modifiers.stickyTop,
+      sticky === 'bottom' && styles.modifiers.stickyBottom,
+      hasShadowTop && styles.modifiers.shadowTop,
+      hasShadowBottom && styles.modifiers.shadowBottom,
+      hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
   >
-    {children}
+    {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
+    {!isWidthLimited && children}
   </section>
 );
 PageSection.displayName = 'PageSection';

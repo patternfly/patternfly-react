@@ -1,11 +1,14 @@
 ---
-title: 'Input group'
+id: Input group
 section: components
 cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
-typescript: true
 ---
-import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import AtIcon from '@patternfly/react-icons/dist/js/icons/at-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import DollarSignIcon from '@patternfly/react-icons/dist/js/icons/dollar-sign-icon';
+import CalendarAltIcon from '@patternfly/react-icons/dist/js/icons/calendar-alt-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
 import {
   Button,
   ButtonVariant,
@@ -21,9 +24,11 @@ import {
 } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
-import { AtIcon, SearchIcon } from '@patternfly/react-icons';
+import AtIcon from '@patternfly/react-icons/dist/js/icons/at-icon';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import {
   Button,
   InputGroup,
@@ -64,7 +69,8 @@ class SimpleInputGroups extends React.Component {
 }
 ```
 
-```js title=With-textarea
+### With textarea
+```js
 import React from 'react';
 import {
   Button,
@@ -92,7 +98,8 @@ class SimpleInputGroups extends React.Component {
 }
 ```
 
-```js title=With-dropdown
+### With dropdown
+```js
 import React from 'react';
 import {
   Button,
@@ -156,38 +163,10 @@ class SimpleInputGroups extends React.Component {
 }
 ```
 
-```js title=With-datepicker
+### With popover
+```js
 import React from 'react';
-import { CalendarAltIcon } from '@patternfly/react-icons';
-import {
-  InputGroup,
-  InputGroupText,
-  TextInput
-} from '@patternfly/react-core';
-
-class SimpleInputGroups extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <InputGroup>
-          <InputGroupText component="label" htmlFor="textInput9">
-            <CalendarAltIcon />
-          </InputGroupText>
-          <TextInput name="textInput9" id="textInput9" type="date" aria-label="Date input example" />
-        </InputGroup>
-      </React.Fragment>
-    );
-  }
-}
-```
-
-```js title=With-popover
-import React from 'react';
-import { QuestionCircleIcon } from '@patternfly/react-icons';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
 import {
   Button,
   InputGroup,
@@ -236,9 +215,10 @@ class SimpleInputGroups extends React.Component {
 ```
 
 
-```js title=With-multiple-group-siblings
+### With multiple group siblings
+```js
 import React from 'react';
-import { DollarSignIcon } from '@patternfly/react-icons';
+import DollarSignIcon from '@patternfly/react-icons/dist/js/icons/dollar-sign-icon';
 import {
   Button,
   TextArea,

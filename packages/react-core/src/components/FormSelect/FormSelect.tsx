@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/FormControl/form-con
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface FormSelectProps
   extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>,
@@ -18,7 +18,7 @@ export interface FormSelectProps
    * If set to success, select will be modified to indicate valid state.
    * If set to error, select will be modified to indicate error state.
    */
-  validated?: 'success' | 'error' | 'default';
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;
   /** Sets the FormSelectrequired. */
@@ -33,7 +33,7 @@ export interface FormSelectProps
   'aria-label'?: string;
 }
 
-export class FormSelect extends React.Component<FormSelectProps> {
+export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: string }> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
@@ -41,6 +41,9 @@ export class FormSelect extends React.Component<FormSelectProps> {
       // eslint-disable-next-line no-console
       console.error('FormSelect requires either an id or aria-label to be specified');
     }
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(FormSelect.displayName, props.validated)
+    };
   }
 
   static defaultProps: PickOptional<FormSelectProps> = {
@@ -67,10 +70,11 @@ export class FormSelect extends React.Component<FormSelectProps> {
         className={css(
           styles.formControl,
           className,
-          validated === ValidatedOptions.success && styles.modifiers.success
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning
         )}
         aria-invalid={validated === ValidatedOptions.error}
-        {...getOUIAProps(FormSelect.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(FormSelect.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         onChange={this.handleChange}
         disabled={isDisabled}
         required={isRequired}

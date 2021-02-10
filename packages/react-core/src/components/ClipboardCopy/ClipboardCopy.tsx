@@ -12,7 +12,7 @@ import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 
 export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
   const clipboard = event.currentTarget.parentElement;
-  const el = document.createElement('input');
+  const el = document.createElement('textarea');
   el.value = text.toString();
   clipboard.appendChild(el);
   el.select();

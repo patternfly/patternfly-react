@@ -17,7 +17,11 @@ export class TableCompactDemo extends React.Component<TableProps, TableState> {
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         '' // deliberately empty
       ],
-      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
+      rows: [
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four'],
+        ['one', 'two', 'three', 'four']
+      ]
     };
   }
 

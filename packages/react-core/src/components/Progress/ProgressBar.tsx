@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 
 export interface AriaProps {
   'aria-labelledby'?: string;
+  'aria-label'?: string;
   'aria-valuemin'?: number;
   'aria-valuenow'?: number;
   'aria-valuemax'?: number;

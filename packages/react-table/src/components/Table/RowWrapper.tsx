@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { getOUIAProps, OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
+import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import { Tr } from '../TableComposable/Tr';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
@@ -24,7 +22,7 @@ export interface RowWrapperProps extends OUIAProps {
   };
 }
 
-export class RowWrapper extends React.Component<RowWrapperProps, {}> {
+export class RowWrapper extends React.Component<RowWrapperProps> {
   static displayName = 'RowWrapper';
   static defaultProps = {
     className: '' as string,
@@ -98,17 +96,13 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
     } = this.props;
 
     return (
-      <tr
+      <Tr
         {...props}
         ref={trRef as React.Ref<any>}
-        className={css(
-          className,
-          isExpanded !== undefined && styles.tableExpandableRow,
-          isExpanded && styles.modifiers.expanded,
-          isEditable && inlineStyles.modifiers.inlineEditable
-        )}
-        hidden={isExpanded !== undefined && !isExpanded}
-        {...getOUIAProps('TableRow', ouiaId)}
+        isExpanded={isExpanded}
+        isEditable={isEditable}
+        className={className}
+        ouiaId={ouiaId}
       />
     );
   }

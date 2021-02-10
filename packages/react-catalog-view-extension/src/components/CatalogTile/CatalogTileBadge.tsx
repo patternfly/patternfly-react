@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface CatalogTileBadgeProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Children (typically an Icon) */
@@ -20,7 +20,7 @@ export const CatalogTileBadge: React.FunctionComponent<CatalogTileBadgeProps> = 
   title = null,
   ...props
 }: CatalogTileBadgeProps) => {
-  const classes = classNames('catalog-tile-pf-badge', className);
+  const classes = css('catalog-tile-pf-badge', className);
 
   if (title) {
     return (

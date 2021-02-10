@@ -2,11 +2,13 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
+import { PageSidebarContext } from '../Page/PageSidebar';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
-  /** Content rendered inside the nav item */
+export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
+  /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
-  /** Whether to add className to children */
+  /** Whether to set className on children when React.isValidElement(children) */
   styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
@@ -37,10 +39,12 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   preventDefault = false,
   onClick = null as NavSelectClickHandler,
   component = 'a',
+  ouiaId,
+  ouiaSafe,
   ...props
 }: NavItemProps) => {
   const Component = component as any;
-
+  const { isNavOpen } = React.useContext(PageSidebarContext);
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
@@ -49,6 +53,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
         className={css(styles.navLink, isActive && styles.modifiers.current, className)}
         aria-current={isActive ? 'page' : null}
+        tabIndex={isNavOpen ? null : '-1'}
         {...props}
       >
         {children}
@@ -56,22 +61,21 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     );
   };
 
-  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode => {
-    const childClass = child.props && child.props.className;
-    const childClassName = styleChildren
-      ? css(styles.navLink, isActive && styles.modifiers.current, childClass)
-      : childClass;
-    return React.cloneElement(child, {
+  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode =>
+    React.cloneElement(child, {
       onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-      className: childClassName,
-      'aria-current': isActive ? 'page' : null
+      'aria-current': isActive ? 'page' : null,
+      ...(styleChildren && {
+        className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
+      })
     });
-  };
+
+  const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
 
   return (
-    <li className={css(styles.navItem, className)}>
+    <li className={css(styles.navItem, className)} {...ouiaProps}>
       <NavContext.Consumer>
-        {(context: any) =>
+        {context =>
           React.isValidElement(children)
             ? renderClonedChild(context, children as React.ReactElement)
             : renderDefaultLink(context)

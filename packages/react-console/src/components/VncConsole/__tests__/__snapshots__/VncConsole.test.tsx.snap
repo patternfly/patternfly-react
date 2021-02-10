@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`placeholder render test 1`] = `
+<Fragment>
+  <div
+    className="pf-c-console__vnc"
+  >
+    <div>
+      <EmptyState>
+        <EmptyStateIcon
+          component={[Function]}
+          variant="container"
+        />
+        <EmptyStateBody>
+          Connecting
+        </EmptyStateBody>
+      </EmptyState>
+      <div />
+    </div>
+  </div>
+</Fragment>
+`;

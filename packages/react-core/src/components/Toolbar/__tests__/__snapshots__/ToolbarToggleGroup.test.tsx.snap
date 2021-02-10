@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar should render inset 1`] = `
+<Toolbar
+  id="toolbar"
+  inset={
+    Object {
+      "2xl": "insetLg",
+      "default": "insetNone",
+      "md": "insetSm",
+      "xl": "inset2xl",
+    }
+  }
+>
+  <div
+    className="pf-c-toolbar pf-m-inset-none pf-m-inset-sm-on-md pf-m-inset-2xl-on-xl pf-m-inset-lg-on-2xl"
+    id="toolbar"
+  >
+    <ToolbarContent
+      isExpanded={false}
+      showClearFiltersButton={false}
+    >
+      <div
+        className="pf-c-toolbar__content"
+      >
+        <div
+          className="pf-c-toolbar__content-section"
+        >
+          <ToolbarItem>
+            <div
+              className="pf-c-toolbar__item"
+            >
+              Test
+            </div>
+          </ToolbarItem>
+          <ToolbarItem>
+            <div
+              className="pf-c-toolbar__item"
+            >
+              Test 2
+            </div>
+          </ToolbarItem>
+          <ToolbarItem
+            variant="separator"
+          >
+            <Divider
+              className="pf-m-vertical"
+            >
+              <hr
+                className="pf-c-divider pf-m-vertical"
+              />
+            </Divider>
+          </ToolbarItem>
+          <ToolbarItem>
+            <div
+              className="pf-c-toolbar__item"
+            >
+              Test 3 
+            </div>
+          </ToolbarItem>
+        </div>
+        <ToolbarExpandableContent
+          chipContainerRef={
+            Object {
+              "current": null,
+            }
+          }
+          clearFiltersButtonText="Clear all filters"
+          expandableContentRef={
+            Object {
+              "current": <div
+                class="pf-c-toolbar__expandable-content"
+                id="toolbar-expandable-content-0"
+              >
+                <div
+                  class="pf-c-toolbar__group"
+                />
+              </div>,
+            }
+          }
+          id="toolbar-expandable-content-0"
+          isExpanded={false}
+          showClearFiltersButton={false}
+        >
+          <div
+            className="pf-c-toolbar__expandable-content"
+            id="toolbar-expandable-content-0"
+          >
+            <ForwardRef>
+              <ToolbarGroupWithRef
+                innerRef={null}
+              >
+                <div
+                  className="pf-c-toolbar__group"
+                />
+              </ToolbarGroupWithRef>
+            </ForwardRef>
+          </div>
+        </ToolbarExpandableContent>
+      </div>
+    </ToolbarContent>
+    <ToolbarChipGroupContent
+      chipGroupContentRef={
+        Object {
+          "current": <div
+            class="pf-c-toolbar__content pf-m-hidden"
+            hidden=""
+          >
+            <div
+              class="pf-c-toolbar__group"
+            />
+          </div>,
+        }
+      }
+      clearFiltersButtonText="Clear all filters"
+      collapseListedFiltersBreakpoint="lg"
+      isExpanded={false}
+      numberOfFilters={0}
+      showClearFiltersButton={false}
+    >
+      <div
+        className="pf-c-toolbar__content pf-m-hidden"
+        hidden={true}
+      >
+        <ForwardRef
+          className=""
+        >
+          <ToolbarGroupWithRef
+            className=""
+            innerRef={null}
+          >
+            <div
+              className="pf-c-toolbar__group"
+            />
+          </ToolbarGroupWithRef>
+        </ForwardRef>
+      </div>
+    </ToolbarChipGroupContent>
+  </div>
+</Toolbar>
+`;
+
+exports[`Toolbar should render with page inset flag 1`] = `
+<Toolbar
+  id="toolbar"
+  usePageInsets={true}
+>
+  <div
+    className="pf-c-toolbar pf-m-page-insets"
+    id="toolbar"
+  >
+    <ToolbarContent
+      isExpanded={false}
+      showClearFiltersButton={false}
+    >
+      <div
+        className="pf-c-toolbar__content"
+      >
+        <div
+          className="pf-c-toolbar__content-section"
+        >
+          <ToolbarItem>
+            <div
+              className="pf-c-toolbar__item"
+            >
+              Test
+            </div>
+          </ToolbarItem>
+          <ToolbarItem>
+            <div
+              className="pf-c-toolbar__item"
+            >
+              Test 2
+            </div>
+          </ToolbarItem>
+          <ToolbarItem
+            variant="separator"
+          >
+            <Divider
+              className="pf-m-vertical"
+            >
+              <hr
+                className="pf-c-divider pf-m-vertical"
+              />
+            </Divider>
+          </ToolbarItem>
+          <ToolbarItem>
+            <div
+              className="pf-c-toolbar__item"
+            >
+              Test 3 
+            </div>
+          </ToolbarItem>
+        </div>
+        <ToolbarExpandableContent
+          chipContainerRef={
+            Object {
+              "current": null,
+            }
+          }
+          clearFiltersButtonText="Clear all filters"
+          expandableContentRef={
+            Object {
+              "current": <div
+                class="pf-c-toolbar__expandable-content"
+                id="toolbar-expandable-content-1"
+              >
+                <div
+                  class="pf-c-toolbar__group"
+                />
+              </div>,
+            }
+          }
+          id="toolbar-expandable-content-1"
+          isExpanded={false}
+          showClearFiltersButton={false}
+        >
+          <div
+            className="pf-c-toolbar__expandable-content"
+            id="toolbar-expandable-content-1"
+          >
+            <ForwardRef>
+              <ToolbarGroupWithRef
+                innerRef={null}
+              >
+                <div
+                  className="pf-c-toolbar__group"
+                />
+              </ToolbarGroupWithRef>
+            </ForwardRef>
+          </div>
+        </ToolbarExpandableContent>
+      </div>
+    </ToolbarContent>
+    <ToolbarChipGroupContent
+      chipGroupContentRef={
+        Object {
+          "current": <div
+            class="pf-c-toolbar__content pf-m-hidden"
+            hidden=""
+          >
+            <div
+              class="pf-c-toolbar__group"
+            />
+          </div>,
+        }
+      }
+      clearFiltersButtonText="Clear all filters"
+      collapseListedFiltersBreakpoint="lg"
+      isExpanded={false}
+      numberOfFilters={0}
+      showClearFiltersButton={false}
+    >
+      <div
+        className="pf-c-toolbar__content pf-m-hidden"
+        hidden={true}
+      >
+        <ForwardRef
+          className=""
+        >
+          <ToolbarGroupWithRef
+            className=""
+            innerRef={null}
+          >
+            <div
+              className="pf-c-toolbar__group"
+            />
+          </ToolbarGroupWithRef>
+        </ForwardRef>
+      </div>
+    </ToolbarChipGroupContent>
+  </div>
+</Toolbar>
+`;

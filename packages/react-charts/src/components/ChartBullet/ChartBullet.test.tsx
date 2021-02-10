@@ -18,7 +18,10 @@ test('renders component data', () => {
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{ y: 100 }}
       primarySegmentedMeasureData={[{ name: 'Measure', y: 50 }]}
-      qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
+      qualitativeRangeData={[
+        { name: 'Range', y: 50 },
+        { name: 'Range', y: 75 }
+      ]}
       width={450}
     />
   );

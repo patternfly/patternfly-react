@@ -8,6 +8,7 @@ export interface SelectContextInterface {
     isPlaceholder?: boolean
   ) => void;
   onClose: () => void;
+  onFavorite: (itemId: string, isFavorite: boolean) => void;
   variant: string;
   inputIdPrefix: string;
 }
@@ -36,5 +37,7 @@ export const KeyTypes = {
   Escape: 'Escape',
   Enter: 'Enter',
   ArrowUp: 'ArrowUp',
-  ArrowDown: 'ArrowDown'
+  ArrowDown: 'ArrowDown',
+  ArrowLeft: 'ArrowLeft',
+  ArrowRight: 'ArrowRight'
 };

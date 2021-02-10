@@ -3,12 +3,20 @@
 exports[`card with isCompact applied  1`] = `
 <article
   className="pf-c-card pf-m-compact"
+  data-ouia-component-id="OUIA-Generated-Card-7"
+  data-ouia-component-type="PF4/Card"
+  data-ouia-safe={true}
+  id=""
 />
 `;
 
 exports[`card with isHoverable applied  1`] = `
 <article
   className="pf-c-card pf-m-hoverable"
+  data-ouia-component-id="OUIA-Generated-Card-6"
+  data-ouia-component-type="PF4/Card"
+  data-ouia-safe={true}
+  id=""
 />
 `;
 
@@ -17,5 +25,9 @@ exports[`className is added to the root element 1`] = `"pf-c-card extra-class"`;
 exports[`renders with PatternFly Core styles 1`] = `
 <article
   className="pf-c-card"
+  data-ouia-component-id="OUIA-Generated-Card-1"
+  data-ouia-component-type="PF4/Card"
+  data-ouia-safe={true}
+  id=""
 />
 `;

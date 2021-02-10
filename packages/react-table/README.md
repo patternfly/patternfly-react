@@ -33,14 +33,13 @@ npm install @patternfly/react-table --save
 
 It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
 
-```javascript
+```js
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
 #### Example Component Usage
 
-```javascript
-import React from 'react';
+```js
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class SimpleTable extends React.Component {
@@ -80,7 +79,7 @@ If you want to add custom transformators to show some special column (collapsibl
 
 Example of such transformator can be:
 
-```JSX
+```jsx
 function someTransform(value) {
   return {
     isVisible: true,

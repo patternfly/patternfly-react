@@ -19,7 +19,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Where the measure percent will be located. */
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Status variant of progress. */
-  variant?: 'danger' | 'success';
+  variant?: 'danger' | 'success' | 'warning';
   /** Title above progress. */
   title?: string;
   /** Text description of current progress value to display instead of percentage. */
@@ -34,6 +34,12 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   max?: number;
   /** Accessible text description of current progress value, for when value is not a percentage. Use with label. */
   valueText?: string;
+  /** Indicate whether to truncate the title */
+  isTitleTruncated?: boolean;
+  /** Position of the tooltip which is displayed if title is truncated */
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  /** Adds accessible text to the ProgressBar. Required when title not used */
+  'aria-label'?: string;
 }
 
 export class Progress extends React.Component<ProgressProps> {
@@ -49,7 +55,10 @@ export class Progress extends React.Component<ProgressProps> {
     size: null as ProgressSize,
     label: null as React.ReactNode,
     value: 0,
-    valueText: null as string
+    valueText: null as string,
+    isTitleTruncated: false,
+    tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
+    'aria-label': null as string
   };
 
   id = this.props.id || getUniqueId();
@@ -69,11 +78,15 @@ export class Progress extends React.Component<ProgressProps> {
       min,
       max,
       valueText,
+      isTitleTruncated,
+      tooltipPosition,
+      'aria-label': ariaLabel,
       ...props
     } = this.props;
 
     const progressBarAriaProps: AriaProps = {
-      'aria-labelledby': `${this.id}-description`,
+      'aria-labelledby': title ? `${this.id}-description` : null,
+      'aria-label': ariaLabel ? ariaLabel : null,
       'aria-valuemin': min,
       'aria-valuenow': value,
       'aria-valuemax': max
@@ -81,6 +94,11 @@ export class Progress extends React.Component<ProgressProps> {
 
     if (valueText) {
       progressBarAriaProps['aria-valuetext'] = valueText;
+    }
+
+    if (!title && !this.props['aria-label']) {
+      /* eslint-disable no-console */
+      console.warn('An accessible aria-label is required when using the progress component without a title.');
     }
 
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
@@ -105,6 +123,8 @@ export class Progress extends React.Component<ProgressProps> {
           variant={variant}
           measureLocation={measureLocation}
           progressBarAriaProps={progressBarAriaProps}
+          isTitleTruncated={isTitleTruncated}
+          tooltipPosition={tooltipPosition}
         />
       </div>
     );

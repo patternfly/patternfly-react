@@ -14,7 +14,11 @@ export class DonutSmallBottomAlignedLegend extends React.Component {
             ariaDesc="Average number of pets"
             ariaTitle="Donut chart example"
             constrainToVisibleArea
-            data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+            data={[
+              { x: 'Cats', y: 35 },
+              { x: 'Dogs', y: 55 },
+              { x: 'Birds', y: 10 }
+            ]}
             height={200}
             labels={({ datum }) => `${datum.x}: ${datum.y}%`}
             legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}

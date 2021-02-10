@@ -6,15 +6,28 @@ describe('Empty State Demo Test', () => {
   });
 
   it('Verify large empty state', () => {
-    cy.get('.pf-c-empty-state').contains('Large Empty State');
+    cy.get('#large-empty-state').should('have.class', 'pf-m-lg');
   });
 
   it('Verify full empty state', () => {
-    cy.get('.pf-c-empty-state').contains('Full Empty State');
+    cy.get('#full-empty-state')
+      .contains('Full Empty State')
+      .and('not.have.class', 'pf-m-large')
+      .and('not.have.class', 'pf-m-small')
+      .and('not.have.class', 'pf-m-xl')
+      .and('not.have.class', 'pf-m-xs');
   });
 
   it('Verify small empty state', () => {
-    cy.get('.pf-c-empty-state').contains('Small Empty State');
+    cy.get('#small-empty-state').should('have.class', 'pf-m-sm');
+  });
+
+  it('Verify extra large empty state', () => {
+    cy.get('#xl-empty-state').should('have.class', 'pf-m-xl');
+  });
+
+  it('Verify extra small empty state', () => {
+    cy.get('#xs-empty-state').should('have.class', 'pf-m-xs');
   });
 
   it('Verify full height example carries modifier class', () => {

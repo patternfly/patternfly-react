@@ -26,10 +26,14 @@ describe('Tab Demo Test', () => {
   });
 
   it('Verify tabs mount on enter when specified', () => {
+    cy.get('#pf-tab-0-mountOnEnter').should('have.attr', 'aria-controls', 'pf-tab-section-0-mountOnEnter');
     cy.get('#pf-tab-section-0-mountOnEnter').should('exist');
+    cy.get('#pf-tab-1-mountOnEnter').should('not.have.have.attr', 'aria-controls', 'pf-tab-section-1-mountOnEnter');
     cy.get('#pf-tab-section-1-mountOnEnter').should('not.exist');
     cy.get('#pf-tab-1-mountOnEnter').click();
+    cy.get('#pf-tab-0-mountOnEnter').should('not.have.attr', 'aria-controls', 'pf-tab-section-0-mountOnEnter');
     cy.get('#pf-tab-section-0-mountOnEnter').should('exist');
+    cy.get('#pf-tab-1-mountOnEnter').should('have.have.attr', 'aria-controls', 'pf-tab-section-1-mountOnEnter');
     cy.get('#pf-tab-section-1-mountOnEnter').should('exist');
   });
 
@@ -51,5 +55,14 @@ describe('Tab Demo Test', () => {
 
   it('Verify filled tabs', () => {
     cy.get('#filledTabs.pf-m-fill').should('exist');
+  });
+
+  it('Verify light variant box tabs', () => {
+    cy.get('#boxLightVariantTabs.pf-m-box.pf-m-color-scheme--light-300').should('exist');
+  });
+
+  it('Verify className in tabs', () => {
+    cy.get('.custom-tab-1').should('have.length', 1);
+    cy.get('.custom-tab-2').should('have.length', 1);
   });
 });

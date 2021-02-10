@@ -40,6 +40,8 @@ export interface ChartBulletQualitativeRangeProps {
    * a function, it will be evaluated with the arguments datum, and active. When this value
    * is not given, a default value will be calculated based on the overall dimensions of
    * the chart, and the number of bars.
+   *
+   * @propType number | Function
    */
   barWidth?: NumberOrCallback;
   /**
@@ -64,9 +66,12 @@ export interface ChartBulletQualitativeRangeProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    *
-   * @example {x: [0, 2], y: [0, 100]}
-   *
    * Note: The x domain is expected to be `x: [0, 2]` in order to position all measures properly
+   *
+   * @propType number[] | { x: number[], y: number[] }
+   * @example [low, high], { x: [low, high], y: [low, high] }
+   *
+   * {x: [0, 2], y: [0, 100]}
    */
   domain?: DomainPropType;
   /**
@@ -115,6 +120,8 @@ export interface ChartBulletQualitativeRangeProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
   /**
@@ -129,6 +136,8 @@ export interface ChartBulletQualitativeRangeProps {
    * When using ChartBar as a solo component, implement the theme directly on
    * ChartBar. If you are wrapping ChartBar in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
+   *
+   * @propType object
    */
   theme?: ChartThemeDefinition;
   /**
@@ -161,6 +170,7 @@ export interface ChartBulletQualitativeRangeProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    *
+   * @propType number | string | Function | string[]
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;
@@ -169,6 +179,7 @@ export interface ChartBulletQualitativeRangeProps {
    * This prop is useful for defining custom baselines for components like ChartBar.
    * This prop may be given in a variety of formats.
    *
+   * @propType number | string | Function | string[]
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;

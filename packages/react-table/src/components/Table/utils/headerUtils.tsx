@@ -1,15 +1,13 @@
+import { scopeColTransformer, emptyCol, mapProps, emptyTD, parentId } from './transformers';
 import {
-  scopeColTransformer,
   selectable,
   cellActions,
-  emptyCol,
-  mapProps,
   collapsible,
-  emptyTD,
   expandedRow,
-  parentId,
-  editable
-} from './transformers';
+  editable,
+  favoritable,
+  sortableFavorites
+} from './decorators';
 import { defaultTitle } from './formatters';
 import {
   ICell,
@@ -19,8 +17,11 @@ import {
   IAreActionsDisabled,
   OnSelect,
   OnCollapse,
-  OnRowEdit
-} from '../Table';
+  OnRowEdit,
+  OnFavorite,
+  OnSort,
+  ISortBy
+} from '../TableTypes';
 
 /**
  * Generate header with transforms and formatters from custom header object.
@@ -30,17 +31,7 @@ import {
  * @returns {*} header, label, transforms: Array, formatters: Array.
  */
 const generateHeader = (
-  {
-    transforms: origTransforms,
-    formatters: origFormatters,
-    columnTransforms,
-    header
-  }: {
-    transforms?: ICell['transforms'];
-    formatters?: ICell['formatters'];
-    columnTransforms?: ICell['columnTransforms'];
-    header?: ICell;
-  },
+  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header }: ICell,
   title?: string | ICell
 ) => ({
   ...header,
@@ -55,7 +46,6 @@ const generateHeader = (
   formatters: [...(origFormatters || []), ...(header && header.hasOwnProperty('formatters') ? header.formatters : [])]
 });
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ICustomCell {
   cellFormatters?: ICell['cellFormatters'];
   cellTransforms?: ICell['cellTransforms'];
@@ -101,11 +91,12 @@ const generateCell = (
  */
 const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   const title = (column.hasOwnProperty('title') ? column.title : column) as string | ICell;
-  const dataLabel = (column.hasOwnProperty('dataLabel')
-    ? column.dataLabel
-    : typeof title === 'string'
-    ? title
-    : `column-${key}`) as string | ICell;
+  let dataLabel: string | ICell = `column-${key}`;
+  if (column.hasOwnProperty('dataLabel')) {
+    dataLabel = column.dataLabel;
+  } else if (typeof title === 'string') {
+    dataLabel = title;
+  }
   return {
     property:
       (typeof title === 'string' &&
@@ -127,7 +118,6 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ISelectTransform {
   onSelect: OnSelect;
   canSelectAll: boolean;
@@ -146,6 +136,46 @@ const selectableTransforms = ({ onSelect, canSelectAll }: ISelectTransform) => [
           title: '',
           transforms: (canSelectAll && [selectable]) || null,
           cellTransforms: [selectable]
+        }
+      ]
+    : [])
+];
+
+/**
+ * Function to define favorites cell in first column (or second column if rows are also selectable).
+ *
+ * @param {*} extraObject with onFavorite callback.
+ * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
+ */
+const favoritesTransforms = ({
+  onFavorite,
+  onSort,
+  sortBy,
+  canSortFavorites,
+  firstUserColumnIndex
+}: {
+  onFavorite: OnFavorite;
+  onSort: OnSort;
+  sortBy: ISortBy;
+  canSortFavorites: boolean;
+  firstUserColumnIndex: number;
+}): any => [
+  ...(onFavorite
+    ? [
+        {
+          title: '',
+          transforms:
+            onSort && canSortFavorites
+              ? [
+                  sortableFavorites({
+                    onSort,
+                    // favorites should be just before the first user-defined column
+                    columnIndex: firstUserColumnIndex - 1,
+                    sortBy
+                  })
+                ]
+              : [emptyTD],
+          cellTransforms: [favoritable]
         }
       ]
     : [])
@@ -180,16 +210,17 @@ const actionsTransforms = ({
 /**
  * Function to define collapsible in first column.
  *
+ * @param {*} header info with cellTransforms.
  * @param {*}  extraObject with onCollapse callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const collapsibleTransfroms = ({ onCollapse }: { onCollapse: OnCollapse }) => [
+const collapsibleTransforms = (header: (ICell | string)[], { onCollapse }: { onCollapse: OnCollapse }) => [
   ...(onCollapse
     ? [
         {
           title: '',
           transforms: [emptyTD],
-          cellTransforms: [collapsible]
+          cellTransforms: [collapsible, expandedRow(header.length)]
         }
       ]
     : [])
@@ -211,16 +242,15 @@ const addAdditionalCellTranforms = (cell: ICell, additional: any) => ({
  * Function to change expanded row with additional transforms.
  *
  * @param {*} header info with cellTransforms.
- * @param {*} extraObject with onCollapse function.
+ * @param {*} extra object with onCollapse/onExpand function.
  */
-const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse: OnCollapse }) => {
-  if (!onCollapse) {
+const expandContent = (header: (ICell | string)[], extra: any) => {
+  if (!extra.onCollapse && !extra.onExpand) {
     return header;
   }
-
-  return header.map((cell: ICell | string, key: number) => {
+  return header.map((cell: ICell | string) => {
     const parentIdCell = addAdditionalCellTranforms(cell as ICell, parentId);
-    return key === 0 ? addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length)) : parentIdCell;
+    return addAdditionalCellTranforms(parentIdCell as ICell, expandedRow(header.length));
   });
 };
 
@@ -271,8 +301,9 @@ const rowEditTransforms = ({ onRowEdit }: { onRowEdit: OnRowEdit }) => [
 export const calculateColumns = (headerRows: (ICell | string)[], extra: any) =>
   headerRows &&
   [
-    ...collapsibleTransfroms(extra),
+    ...collapsibleTransforms(headerRows, extra),
     ...selectableTransforms(extra),
+    ...favoritesTransforms(extra),
     ...expandContent(headerRows, extra),
     ...rowEditTransforms(extra),
     ...actionsTransforms(extra)

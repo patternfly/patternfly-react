@@ -29,6 +29,6 @@ test('drawer header with title applied', () => {
 });
 
 test('drawer header with custom unread text applied', () => {
-  const view = shallow(<NotificationDrawerHeader unreadText="unread alerts" />);
+  const view = shallow(<NotificationDrawerHeader customText="2 unread alerts" />);
   expect(view).toMatchSnapshot();
 });

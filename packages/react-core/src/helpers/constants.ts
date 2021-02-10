@@ -7,5 +7,6 @@ export const KEYHANDLER_DIRECTION = { UP: 'up', DOWN: 'down', RIGHT: 'right', LE
 export enum ValidatedOptions {
   success = 'success',
   error = 'error',
+  warning = 'warning',
   default = 'default'
 }

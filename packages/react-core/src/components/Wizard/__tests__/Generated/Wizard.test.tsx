@@ -12,7 +12,7 @@ it('Wizard should match snapshot (auto-generated)', () => {
     <Wizard
       width={null}
       height={null}
-      title={"''"}
+      title={'null'}
       titleId={'string'}
       descriptionId={'string'}
       description={''}
@@ -22,7 +22,10 @@ it('Wizard should match snapshot (auto-generated)', () => {
       className={"''"}
       steps={[]}
       startAtStep={1}
-      navAriaLabel={"'Steps'"}
+      navAriaLabel={'null'}
+      navAriaLabelledBy={'null'}
+      mainAriaLabel={'null'}
+      mainAriaLabelledBy={'null'}
       hasNoBodyPadding={false}
       footer={null}
       onSave={() => undefined as void}

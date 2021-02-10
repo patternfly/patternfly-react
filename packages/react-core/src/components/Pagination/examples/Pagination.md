@@ -1,17 +1,18 @@
 ---
-title: "Pagination"
+id: Pagination
 section: components
 cssPrefix: null
-propComponents: ["Pagination"]
-typescript: true
+propComponents: ['Pagination']
 ouia: true
 ---
-import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 ## Examples
-```js title=Top
-import React from "react";
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+
+### Top
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -49,9 +50,11 @@ class PaginationTop extends React.Component {
 }
 ```
 
-```js title=Bottom
-import React from "react";
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+### Bottom
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationBottom extends React.Component {
   constructor(props) {
@@ -87,9 +90,11 @@ class PaginationBottom extends React.Component {
 }
 ```
 
-```js title=Disabled
-import React from "react";
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+### Disabled
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationDisabled extends React.Component {
   constructor(props) {
@@ -128,9 +133,11 @@ class PaginationDisabled extends React.Component {
 }
 ```
 
-```js title=No-items
-import React from "react";
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+### No items
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -168,9 +175,11 @@ class PaginationTop extends React.Component {
 }
 ```
 
-```js title=One-page
-import React from "react";
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+### One page
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -208,9 +217,11 @@ class PaginationTop extends React.Component {
 }
 ```
 
-```js title=Compact
-import React from "react";
-import { Pagination, PaginationVariant } from "@patternfly/react-core";
+### Compact
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
@@ -244,6 +255,98 @@ class PaginationTop extends React.Component {
         onPerPageSelect={this.onPerPageSelect}
         isCompact
       />
+    );
+  }
+}
+```
+
+### Sticky
+
+```js isFullscreen
+import React from 'react';
+import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
+
+class PaginationSticky extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 1,
+      perPage: 20,
+      isTopSticky: true
+    };
+
+    this.onToggleSticky = () => {
+      this.setState({
+        isTopSticky: !this.state.isTopSticky
+      });
+    };
+
+    this.onSetPage = (_event, pageNumber) => {
+      this.setState({
+        page: pageNumber
+      });
+    };
+
+    this.onPerPageSelect = (_event, perPage) => {
+      this.setState({
+        perPage
+      });
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.isTopSticky && (
+          <React.Fragment>
+            <Pagination
+              itemCount={523}
+              perPage={this.state.perPage}
+              page={this.state.page}
+              onSetPage={this.onSetPage}
+              widgetId="pagination-options-menu-top"
+              onPerPageSelect={this.onPerPageSelect}
+              isSticky
+            >
+              <button onClick={this.onToggleSticky}>Toggle to bottom position</button>
+            </Pagination>
+            <Gallery hasGutter>
+              {Array.apply(0, Array(40)).map((x, i) => (
+                <GalleryItem key={i}>
+                  <Card>
+                    <CardBody>This is a card</CardBody>
+                  </Card>
+                </GalleryItem>
+              ))}
+            </Gallery>
+          </React.Fragment>
+        )}
+        {!this.state.isTopSticky && (
+          <React.Fragment>
+            <Gallery hasGutter>
+              {Array.apply(0, Array(40)).map((x, i) => (
+                <GalleryItem key={i}>
+                  <Card>
+                    <CardBody>This is a card</CardBody>
+                  </Card>
+                </GalleryItem>
+              ))}
+            </Gallery>
+            <Pagination
+              itemCount={523}
+              perPage={this.state.perPage}
+              page={this.state.page}
+              onSetPage={this.onSetPage}
+              widgetId="pagination-options-menu-top"
+              onPerPageSelect={this.onPerPageSelect}
+              isSticky
+              variant={PaginationVariant.bottom}
+            >
+              <button onClick={this.onToggleSticky}>Toggle to top position</button>
+            </Pagination>
+          </React.Fragment>
+        )}
+      </div>
     );
   }
 }

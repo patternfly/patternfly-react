@@ -35,7 +35,10 @@ export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { 
       <div>
         <div style={{ backgroundColor: 'white', height: '350px', width: '230px', margin: '0 auto' }}>
           <ChartDonutThreshold
-            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+            data={[
+              { x: 'Warning at 60%', y: 60 },
+              { x: 'Danger at 90%', y: 90 }
+            ]}
             height={350}
             labels={({ datum }) => (datum.x ? datum.x : null)}
             legendPosition="bottom"

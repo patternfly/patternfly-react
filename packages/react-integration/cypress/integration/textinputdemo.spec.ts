@@ -18,6 +18,10 @@ describe('Text Input Demo Test', () => {
     cy.get('#text-read-only').should('have.attr', 'readonly');
   });
 
+  it('Verify left-truncated input', () => {
+    cy.get('#text-truncated-on-left').should('exist');
+  });
+
   it('Verify Text input can be validated using validated prop', () => {
     cy.get('#text-validated.pf-m-success').should('not.exist');
     cy.get('#text-validated').then(textinput => {
@@ -39,11 +43,12 @@ describe('Text Input Demo Test', () => {
     cy.get('#text-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
-    // Clear text input and verify it is invalid
+    // Clear text input and verify it is warning
     cy.get('#text-validated')
       .clear()
       .then(textarea => {
-        expect(textarea.attr('aria-invalid')).to.be.equal('true');
+        expect(textarea.attr('aria-invalid')).to.be.equal('false');
       });
+    cy.get('#text-validated.pf-m-warning').should('exist');
   });
 });

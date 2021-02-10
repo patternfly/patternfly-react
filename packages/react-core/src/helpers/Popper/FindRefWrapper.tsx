@@ -23,6 +23,6 @@ export class FindRefWrapper extends React.Component<FindRefWrapperProps> {
   }
 
   render() {
-    return this.props.children;
+    return this.props.children || null;
   }
 }

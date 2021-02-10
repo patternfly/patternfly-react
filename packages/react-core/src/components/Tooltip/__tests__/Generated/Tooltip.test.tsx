@@ -12,7 +12,6 @@ it('Tooltip should match snapshot (auto-generated)', () => {
     <Tooltip
       appendTo={() => document.body}
       aria={'describedby'}
-      boundary={'window'}
       children={<p>ReactElement</p>}
       className={"''"}
       content={<div>ReactNode</div>}
@@ -21,14 +20,12 @@ it('Tooltip should match snapshot (auto-generated)', () => {
       entryDelay={500}
       exitDelay={500}
       flipBehavior={['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']}
-      isAppLauncher={false}
       maxWidth={'string'}
       position={'top'}
       trigger={"'mouseenter focus'"}
       isContentLeftAligned={false}
       isVisible={false}
       zIndex={9999}
-      tippyProps={undefined}
       id={"''"}
     />
   );

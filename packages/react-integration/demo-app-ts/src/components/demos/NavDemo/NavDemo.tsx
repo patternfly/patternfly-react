@@ -25,6 +25,7 @@ export class NavDemo extends Component {
     expandableActiveGroup: 'grp-1',
     expandableActiveItem: 'itm-1-1',
     horizontalActiveItem: 0,
+    tertiaryActiveItem: 0,
     expandableClickedGroup: '',
     expandableClickedItem: ''
   };
@@ -59,7 +60,7 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Default Nav
         </Title>
-        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)' }}>
+        <div className="example" style={{ backgroundColor: '#212427', border: '1px solid rgb(114, 118, 123)' }}>
           <Nav onSelect={this.onDefaultSelect} id="nav-primary-default">
             <NavList>
               <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={defaultActiveItem === 0}>
@@ -124,7 +125,7 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Expandable Nav
         </Title>
-        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)' }}>
+        <div className="example" style={{ backgroundColor: '#212427', border: '1px solid rgb(114, 118, 123)' }}>
           <Nav onSelect={this.onExpandableSelect} id="nav-primary-expandable">
             <NavList>
               <NavExpandable
@@ -263,6 +264,44 @@ export class NavDemo extends Component {
     );
   }
 
+  onTertiarySelect = (result: SelectedItem) => {
+    this.setState({ tertiaryActiveItem: result.itemId });
+  };
+
+  renderTertiaryNav() {
+    const { tertiaryActiveItem } = this.state;
+
+    return (
+      <StackItem>
+        <Title headingLevel="h2" size="2xl">
+          Tertiary Nav
+        </Title>
+        <div
+          style={{
+            borderStyle: 'solid',
+            borderWidth: '0.2px',
+            borderColor: '#292e34',
+            padding: '1rem'
+          }}
+        >
+          <Nav onSelect={this.onTertiarySelect} id="nav-primary-tertiary" variant="tertiary">
+            <NavList>
+              <NavItem id="tertiary-link1" preventDefault itemId={0} isActive={tertiaryActiveItem === 0}>
+                Item 1
+              </NavItem>
+              <NavItem id="tertiary-link2" preventDefault itemId={1} isActive={tertiaryActiveItem === 1}>
+                Item 2
+              </NavItem>
+              <NavItem id="tertiary-link3" preventDefault itemId={2} isActive={tertiaryActiveItem === 2}>
+                Item 3
+              </NavItem>
+            </NavList>
+          </Nav>
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
     // Nav onToggle and onSelect should be optional
     // https://github.com/patternfly/patternfly-react/issues/1234
@@ -271,6 +310,7 @@ export class NavDemo extends Component {
         {this.renderDefaultNav()}
         {this.renderExpandableNav()}
         {this.renderHorizontalNav()}
+        {this.renderTertiaryNav()}
       </Stack>
     );
   }

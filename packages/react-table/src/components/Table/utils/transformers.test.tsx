@@ -15,7 +15,7 @@ import {
   expandedRow,
   wrappable,
   textCenter
-} from './transformers';
+} from './';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
 import {
   IAction,
@@ -26,7 +26,7 @@ import {
   IExtraData,
   IRowData,
   ISeparator
-} from '../Table';
+} from '../TableTypes';
 
 const testCellActions = ({
   actions,
@@ -43,7 +43,11 @@ const testCellActions = ({
   extraData?: IExtraData;
   expectDisabled?: boolean;
 }) => {
-  const returnedData = cellActions(actions, actionResolver, areActionsDisabled)('', {
+  const returnedData = cellActions(
+    actions,
+    actionResolver,
+    areActionsDisabled
+  )('', {
     rowIndex: 0,
     rowData,
     column: {

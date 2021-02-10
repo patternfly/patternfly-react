@@ -22,6 +22,22 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
+  describe('DataList variants', () => {
+    ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach(oneBreakpoint => {
+      test(`Breakpoint - ${oneBreakpoint}`, () => {
+        const view = mount(
+          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint} />
+        );
+        expect(view).toMatchSnapshot();
+      });
+    });
+  });
+
+  test('List draggable', () => {
+    const view = shallow(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
+    expect(view).toMatchSnapshot();
+  });
+
   test('List', () => {
     const view = shallow(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
     expect(view).toMatchSnapshot();
@@ -99,6 +115,24 @@ describe('DataList', () => {
     });
   });
 
+  test('Cell with text modifiers', () => {
+    [
+      { wrapModifier: null as const, class: '' },
+      { wrapModifier: 'breakWord' as const, class: 'pf-m-break-word' },
+      { wrapModifier: 'nowrap' as const, class: 'pf-m-nowrap' },
+      { wrapModifier: 'truncate' as const, class: 'pf-m-truncate' },
+    ].forEach(testCase => {
+      const view = shallow(
+        <DataListCell wrapModifier={testCase.wrapModifier} key="list-id-1" id="primary-item">
+          Primary Id
+        </DataListCell>
+      );
+      testCase.class === ''
+        ? expect(view.props().className).toBe('pf-c-data-list__cell')
+        : expect(view.props().className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+    });
+  });
+
   test('Toggle default with aria label', () => {
     const view = shallow(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
 
@@ -116,7 +150,7 @@ describe('DataList', () => {
 
   test('DataListAction dropdown', () => {
     const view = shallow(
-      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
         <Dropdown
           isPlain
           position={DropdownPosition.right}

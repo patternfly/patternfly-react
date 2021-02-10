@@ -28,7 +28,7 @@ Add eslint-plugin-patternfly-react to your `.eslintrc.json` or `.eslintrc.js`.
 
 .eslintrc.js:
 
-```javascript
+```js
 module.exports = {
   root: true,
   extends: ['plugin:patternfly-react/recommended']

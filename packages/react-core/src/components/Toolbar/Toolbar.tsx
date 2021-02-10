@@ -4,6 +4,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
+import { formatBreakpointMods } from '../../helpers/util';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -11,7 +12,7 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Text to display in the clear all filters button */
   clearFiltersButtonText?: string;
   /** The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */
-  collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
+  collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
   isExpanded?: boolean;
   /** A callback for setting the isExpanded flag */
@@ -22,6 +23,17 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Id of the data toolbar */
   id?: string;
+  /** Flag indicating the toolbar should use the Page insets */
+  usePageInsets?: boolean;
+  /** Insets at various breakpoints. */
+  inset?: {
+    default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    sm?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    md?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    lg?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+  };
 }
 
 export interface ToolbarState {
@@ -92,6 +104,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       toggleIsExpanded,
       className,
       children,
+      inset,
+      usePageInsets,
       ...props
     } = this.props;
 
@@ -103,7 +117,16 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const showClearFiltersButton = numberOfFilters > 0;
 
     return (
-      <div className={css(styles.toolbar, className)} id={randomId} {...props}>
+      <div
+        className={css(
+          styles.toolbar,
+          usePageInsets && styles.modifiers.pageInsets,
+          formatBreakpointMods(inset, styles),
+          className
+        )}
+        id={randomId}
+        {...props}
+      >
         <ToolbarContext.Provider
           value={{
             isExpanded,

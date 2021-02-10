@@ -1,37 +1,33 @@
 ---
-title: 'Split'
-cssPrefix: 'pf-l-split'
-section: 'layouts'
+id: Split
+cssPrefix: pf-l-split
+section: layouts
 propComponents: ['Split', 'SplitItem']
-typescript: true
 ---
 
-import { Split, SplitItem } from '@patternfly/react-core';
 import './split.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-SplitBasicExample = () => (
-  <Split>
-    <SplitItem>content</SplitItem>
-    <SplitItem isFilled>pf-m-fill</SplitItem>
-    <SplitItem>content</SplitItem>
-  </Split>
-);
+<Split>
+  <SplitItem>content</SplitItem>
+  <SplitItem isFilled>pf-m-fill</SplitItem>
+  <SplitItem>content</SplitItem>
+</Split>
 ```
 
-```js title=With-gutter
+### With gutter
+```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-SplitWithGutterExample = () => (
-  <Split hasGutter>
-    <SplitItem>content</SplitItem>
-    <SplitItem isFilled>pf-m-fill</SplitItem>
-    <SplitItem>content</SplitItem>
-  </Split>
-);
+<Split hasGutter>
+  <SplitItem>content</SplitItem>
+  <SplitItem isFilled>pf-m-fill</SplitItem>
+  <SplitItem>content</SplitItem>
+</Split>
 ```

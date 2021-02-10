@@ -250,6 +250,18 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
     }
   }
 
+  toModel(): ElementModel {
+    return {
+      id: this.getId(),
+      type: this.getType(),
+      label: this.getLabel(),
+      visible: this.isVisible(),
+      children: this.getChildren().map(c => c.getId()),
+      data: this.getData(),
+      style: this.getStyle()
+    };
+  }
+
   raise(): void {
     const { parent } = this;
     if (parent) {

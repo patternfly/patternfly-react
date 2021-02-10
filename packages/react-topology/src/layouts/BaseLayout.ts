@@ -31,7 +31,7 @@ import { LayoutGroup } from './LayoutGroup';
 import { LayoutLink } from './LayoutLink';
 import { LayoutOptions } from './LayoutOptions';
 
-const LAYOUT_DEFAULTS: LayoutOptions = {
+export const LAYOUT_DEFAULTS: LayoutOptions = {
   linkDistance: 60,
   nodeDistance: 35,
   groupDistance: 35,
@@ -41,7 +41,7 @@ const LAYOUT_DEFAULTS: LayoutOptions = {
   allowDrag: true,
   layoutOnDrag: true
 };
-class BaseLayout implements Layout {
+export class BaseLayout implements Layout {
   private graph: Graph;
 
   protected forceSimulation: ForceSimulation;
@@ -64,6 +64,7 @@ class BaseLayout implements Layout {
     this.graph = graph;
     this.options = {
       ...LAYOUT_DEFAULTS,
+      onSimulationEnd: this.onSimulationEnd,
       ...options
     };
 
@@ -75,7 +76,10 @@ class BaseLayout implements Layout {
     }
 
     this.forceSimulation = new ForceSimulation(this.options);
+    this.startListening();
   }
+
+  protected onSimulationEnd = () => {};
 
   destroy(): void {
     if (this.options.allowDrag) {
@@ -176,6 +180,10 @@ class BaseLayout implements Layout {
       controller.addEventListener(ELEMENT_VISIBILITY_CHANGE_EVENT, this.handleElementVisibilityChange);
       controller.addEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
     }
+  }
+
+  stop(): void {
+    this.stopSimulation();
   }
 
   private stopListening(): void {
@@ -359,15 +367,17 @@ class BaseLayout implements Layout {
     return layoutGroups;
   }
 
-  protected initializeNodePositions(newNodes: LayoutNode[], graph: Graph, force: boolean = false): void {
+  protected initializeNodePositions(nodes: LayoutNode[], graph: Graph, force: boolean): void {
     const { width, height } = graph.getBounds();
     const cx = width / 2;
     const cy = height / 2;
-    newNodes.forEach((node: LayoutNode) => {
-      // only init position for nodes that are still at 0, 0
-      const { x, y } = node.element.getPosition();
-      if (force || (x === 0 && y === 0)) {
+
+    nodes.forEach((node: LayoutNode) => {
+      // only init position for nodes that have not been positioned
+      if (force || !node.element.isPositioned()) {
         node.setPosition(cx, cy);
+      } else {
+        node.setFixed(true);
       }
     });
   }
@@ -378,12 +388,6 @@ class BaseLayout implements Layout {
     edges: LayoutLink[], // eslint-disable-line @typescript-eslint/no-unused-vars
     groups: LayoutGroup[] // eslint-disable-line @typescript-eslint/no-unused-vars
   ): void {}
-
-  protected updateExistingNodes(existingNodes: LayoutNode[]): void {
-    existingNodes.forEach(n => {
-      (n as LayoutNode).isFixed = true;
-    });
-  }
 
   protected stopSimulation(): void {
     this.forceSimulation.haltForceSimulation();
@@ -439,7 +443,7 @@ class BaseLayout implements Layout {
     this.edges = this.getLinks(this.graph.getEdges());
 
     // initialize new node positions
-    this.initializeNodePositions(newNodes, this.graph, initialRun);
+    this.initializeNodePositions(this.nodes, this.graph, initialRun);
 
     // re-create the nodes map
     this.nodesMap = this.nodes.reduce((acc, n) => {
@@ -452,8 +456,6 @@ class BaseLayout implements Layout {
 
     this.setupLayout(this.graph, this.nodes, this.edges, this.groups);
 
-    this.updateExistingNodes(this.nodes.filter(n => !newNodes.includes(n)));
-
     if (initialRun || addingNodes) {
       // Reset the force simulation
       this.stopSimulation();
@@ -465,5 +467,3 @@ class BaseLayout implements Layout {
     this.graph.getController().fireEvent(GRAPH_LAYOUT_END_EVENT, { graph: this.graph });
   }
 }
-
-export { BaseLayout, LayoutNode, LayoutGroup, LayoutLink, LayoutOptions, LAYOUT_DEFAULTS };

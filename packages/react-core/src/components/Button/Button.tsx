@@ -1,13 +1,15 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { Spinner, spinnerSize } from '../Spinner';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum ButtonVariant {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',
   danger = 'danger',
+  warning = 'warning',
   link = 'link',
   plain = 'plain',
   control = 'control'
@@ -34,6 +36,10 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   isDisabled?: boolean;
   /** @beta Adds disabled styling and communicates that the button is disabled using the aria-disabled html attribute */
   isAriaDisabled?: boolean;
+  /** Adds progress styling to button */
+  isLoading?: boolean;
+  /** Aria-valuetext for the loading spinner */
+  spinnerAriaValueText?: string;
   /** @beta Events to prevent when the button is in an aria-disabled state */
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
@@ -41,7 +47,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' | 'control';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control';
   /** Sets position of the link icon */
   iconPosition?: 'left' | 'right';
   /** Adds accessible text to the button. */
@@ -52,6 +58,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   tabIndex?: number;
   /** Adds small styling to the button */
   isSmall?: boolean;
+  /** Adds large styling to the button */
+  isLarge?: boolean;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
@@ -62,7 +70,10 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   isBlock = false,
   isDisabled = false,
   isAriaDisabled = false,
+  isLoading = null,
+  spinnerAriaValueText,
   isSmall = false,
+  isLarge = false,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
@@ -75,8 +86,10 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   tabIndex = null,
   ...props
 }: ButtonProps) => {
+  const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
   const Component = component as any;
   const isButtonElement = Component === 'button';
+  const isInlineSpan = isInline && Component === 'span';
 
   if (isAriaDisabled && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
@@ -100,6 +113,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       return isButtonElement ? null : -1;
     } else if (isAriaDisabled) {
       return null;
+    } else if (isInlineSpan) {
+      return 0;
     }
   };
 
@@ -117,14 +132,23 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        isLoading !== null && styles.modifiers.progress,
+        isLoading && styles.modifiers.inProgress,
         isSmall && styles.modifiers.small,
+        isLarge && styles.modifiers.displayLg,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
-      type={isButtonElement ? type : null}
-      {...getOUIAProps(Button.displayName, ouiaId, ouiaSafe)}
+      type={isButtonElement || isInlineSpan ? type : null}
+      role={isInlineSpan ? 'button' : null}
+      {...ouiaProps}
     >
+      {isLoading && (
+        <span className={css(styles.buttonProgress)}>
+          <Spinner size={spinnerSize.md} aria-valuetext={spinnerAriaValueText} />
+        </span>
+      )}
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}

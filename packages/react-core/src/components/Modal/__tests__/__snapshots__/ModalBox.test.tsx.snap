@@ -14,6 +14,36 @@ exports[`ModalBox Test 1`] = `
 </div>
 `;
 
+exports[`ModalBox Test alert variant 1`] = `
+<div
+  aria-label={null}
+  aria-labelledby={null}
+  aria-modal="true"
+  className="pf-c-modal-box"
+  id="boxId"
+  role="dialog"
+  title="Test Modal Box"
+  titleIconVariant="warning"
+>
+  This is a ModalBox
+</div>
+`;
+
+exports[`ModalBox Test custom icon variant 1`] = `
+<div
+  aria-label={null}
+  aria-labelledby={null}
+  aria-modal="true"
+  className="pf-c-modal-box"
+  id="boxId"
+  role="dialog"
+  title="Test Modal Box"
+  titleIconVariant={[Function]}
+>
+  This is a ModalBox
+</div>
+`;
+
 exports[`ModalBox Test isLarge 1`] = `
 <div
   aria-label={null}
@@ -38,6 +68,39 @@ exports[`ModalBox Test isSmall 1`] = `
   id="boxId"
   isSmall={true}
   role="dialog"
+  title="Test Modal Box"
+>
+  This is a ModalBox
+</div>
+`;
+
+exports[`ModalBox Test top aligned 1`] = `
+<div
+  aria-label={null}
+  aria-labelledby={null}
+  aria-modal="true"
+  className="pf-c-modal-box pf-m-align-top"
+  id="boxId"
+  role="dialog"
+  title="Test Modal Box"
+>
+  This is a ModalBox
+</div>
+`;
+
+exports[`ModalBox Test top aligned distance 1`] = `
+<div
+  aria-label={null}
+  aria-labelledby={null}
+  aria-modal="true"
+  className="pf-c-modal-box pf-m-align-top"
+  id="boxId"
+  role="dialog"
+  style={
+    Object {
+      "--pf-c-modal-box--m-align-top--spacer": "50px",
+    }
+  }
   title="Test Modal Box"
 >
   This is a ModalBox

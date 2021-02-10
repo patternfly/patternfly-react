@@ -151,7 +151,7 @@ export const Performance: React.FC = withTopologySetup(() => {
       const widget = defaultComponentFactory(kind, type);
       if (kind === ModelKind.node || kind === ModelKind.graph) {
         // TODO fix any type
-        return withSelection({ multiSelect: true, controlled: false })(widget as any);
+        return withSelection({ multiSelect: true, controlled: false, raiseOnSelect: false })(widget as any);
       }
       return widget;
     }, [])

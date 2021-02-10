@@ -1,18 +1,24 @@
 ---
-title: 'Tabs'
+id: Tabs
 section: components
-cssPrefix: 'pf-c-tabs'
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
-typescript: true
+cssPrefix: pf-c-tabs
+propComponents: ['Tabs', 'TabProps', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
 ouia: true
 ---
-import { Tabs, Tab, TabsComponent, TabContent, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
-import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+import ProjectDiagramIcon from '@patternfly/react-icons/dist/js/icons/project-diagram-icon';
 
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
+The Tabs items background can be also toggled with 'Tab light variation' checkbox.
+Similarly the 'Tab content light variation' checkbox affects the TabContent background.
 
 ## Examples
-```js title=Default
+### Default
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -21,7 +27,7 @@ class SimpleTabs extends React.Component {
     super(props);
     this.state = {
       activeTabKey: 0,
-      isBox: false
+      isBox: false,
     };
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
@@ -38,7 +44,8 @@ class SimpleTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const {activeTabKey, isBox } = this.state;
+
     return (
       <div>
         <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
@@ -77,7 +84,75 @@ class SimpleTabs extends React.Component {
 }
 ```
 
-```js title=Default-overflow
+### Box light variation
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
+
+class SimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isTabsLightScheme: true,
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleScheme = checked => {
+      this.setState({
+        isTabsLightScheme: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox, isTabsLightScheme } = this.state;
+
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} variant={isTabsLightScheme ? 'light300' : 'default'} isBox>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+              label="Tabs light variation"
+              isChecked={isTabsLightScheme}
+              onChange={this.toggleScheme}
+              aria-label="show light scheme variation checkbox"
+              id="toggle-scheme"
+              name="toggle-scheme"
+            />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+### Default overflow
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -158,7 +233,8 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 }
 ```
 
-```js title=Vertical
+### Vertical
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -223,7 +299,8 @@ class VerticalTabs extends React.Component {
 }
 ```
 
-```js title=Inset
+### Inset
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -294,10 +371,16 @@ class InsetTabs extends React.Component {
 }
 ```
 
-```js title=Icons-and-text
+### Icons and text
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
-import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+import ProjectDiagramIcon from '@patternfly/react-icons/dist/js/icons/project-diagram-icon';
 
 class IconAndTextTabs extends React.Component {
   constructor(props) {
@@ -340,7 +423,8 @@ class IconAndTextTabs extends React.Component {
 }
 ```
 
-```js title=Tabs-with-sub-tabs
+### Tabs with sub tabs
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -379,28 +463,28 @@ class SecondaryTabs extends React.Component {
       <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
           <Tabs activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
-            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>} >
+            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
               Secondary tab item 1 item section
             </Tab>
-            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>>
+            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>
               Secondary tab item 2 section
             </Tab>
-            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>>
+            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>
               Secondary tab item 3 section
             </Tab>
-            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>>
+            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>
               Secondary tab item 4 section
             </Tab>
-            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>>
+            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>
               Secondary tab item 5 section
             </Tab>
-            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>>
+            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>
               Secondary tab item 6 section
             </Tab>
-            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>>
+            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>
               Secondary tab item 7 section
             </Tab>
-            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>>
+            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>
               Secondary tab item 8 section
             </Tab>
           </Tabs>
@@ -452,7 +536,8 @@ class SecondaryTabs extends React.Component {
 }
 ```
 
-```js title=Filled
+### Filled
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -508,10 +593,13 @@ class FilledTabs extends React.Component {
 }
 ```
 
-```js title=Filled-with-icons
+### Filled with icons
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
-import { UsersIcon,  BoxIcon, DatabaseIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
 
 class FilledTabsWithIcons extends React.Component {
   constructor(props) {
@@ -565,7 +653,8 @@ class FilledTabsWithIcons extends React.Component {
 }
 ```
 
-```js title=Using-the-nav-element
+### Using the nav element
+```js
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
@@ -617,7 +706,8 @@ class TabsNav extends React.Component {
 ```
 
 
-```js title=Sub-nav-using-the-nav-element
+### Sub nav using the nav element
+```js
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
@@ -701,7 +791,8 @@ class SecondaryTabsNav extends React.Component {
 }
 ```
 
-```js title=Separate-content
+### Separate content
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabContent } from '@patternfly/react-core';
 
@@ -749,7 +840,8 @@ class SeparateTabContent extends React.Component {
 }
 ```
 
-```js title=Children-mounting-on-click
+### Children mounting on click
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
@@ -785,7 +877,8 @@ class MountingSimpleTabs extends React.Component {
 }
 ```
 
-```js title=Unmounting-invisible-children
+### Unmounting invisible children
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
@@ -821,9 +914,10 @@ class UnmountingSimpleTabs extends React.Component {
 }
 ```
 
-```js title=Toggled-separate-content
+### Toggled separate content
+```js
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent, Button, Divider } from '@patternfly/react-core';
+import { Tabs, Tab, TabContent, Button, Divider } from '@patternfly/react-core';
 
 class ToggledSeparateContent extends React.Component {
   constructor(props) {

@@ -2,9 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface RadioProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'> {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
+    OUIAProps {
   /** Additional classes added to the radio. */
   className?: string;
   /** Id of the radio. */
@@ -33,7 +35,7 @@ export interface RadioProps
   description?: React.ReactNode;
 }
 
-export class Radio extends React.Component<RadioProps> {
+export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
   static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',
@@ -48,6 +50,9 @@ export class Radio extends React.Component<RadioProps> {
       // eslint-disable-next-line no-console
       console.error('Radio:', 'Radio requires an aria-label to be specified');
     }
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(Radio.displayName)
+    };
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -69,8 +74,14 @@ export class Radio extends React.Component<RadioProps> {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
       description,
+      ouiaId,
+      ouiaSafe = true,
       ...props
     } = this.props;
+    if (!props.id) {
+      // eslint-disable-next-line no-console
+      console.error('Radio:', 'id is required to make input accessible');
+    }
 
     const inputRendered = (
       <input
@@ -83,15 +94,20 @@ export class Radio extends React.Component<RadioProps> {
         checked={checked || isChecked}
         {...(checked === undefined && { defaultChecked })}
         {...(!label && { 'aria-label': ariaLabel })}
+        {...getOUIAProps(Radio.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       />
     );
-    const labelRendered = !label ? null : isLabelWrapped ? (
-      <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>
-    ) : (
-      <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
-        {label}
-      </label>
-    );
+
+    let labelRendered: React.ReactNode = null;
+    if (label && isLabelWrapped) {
+      labelRendered = <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>;
+    } else if (label) {
+      labelRendered = (
+        <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
+          {label}
+        </label>
+      );
+    }
 
     const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
     const childrenRendered = isLabelBeforeButton ? (

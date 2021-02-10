@@ -1,15 +1,13 @@
 ---
-title: 'Text area'
+id: Text area
 section: components
-cssPrefix: 'pf-c-form-control'
+cssPrefix: pf-c-form-control
 propComponents: ['TextArea']
-typescript: true
 ---
 
-import { TextArea } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
@@ -33,7 +31,8 @@ class SimpleTextArea extends React.Component {
 }
 ```
 
-```js title=Invalid
+### Invalid
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
@@ -65,7 +64,8 @@ class InvalidTextArea extends React.Component {
 }
 ```
 
-```js title=Validated
+### Validated
+```js
 import React from 'react';
 import { Form, FormGroup, TextArea } from '@patternfly/react-core';
 
@@ -92,14 +92,14 @@ class InvalidTextArea extends React.Component {
       },
         this.simulateNetworkCall(() => {
           if (value && value.length > 0) {
-            if (value.length > 10) {
+            if (value.length >= 10) {
               this.setState({validated: 'success', helperText: 'Thanks for your comments!'});
             } else {
               this.setState({validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
             }
           }
           else {
-            this.setState({validated: 'error', invalidText: 'You must have something to say'});
+            this.setState({validated: 'warning', helperText: 'You must have something to say'});
           }
         })
       );
@@ -133,7 +133,8 @@ class InvalidTextArea extends React.Component {
 }
 ```
 
-```js title=Vertically-resizable-text-area
+### Vertically resizable text area
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
@@ -157,11 +158,12 @@ class VerticalResizeTextArea extends React.Component {
 }
 ```
 
-```js title=Horizontally-resizable-text-area
+### Horizontally resizable text area
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-class horizontalResizeTextArea extends React.Component {
+class HorizontalResizeTextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -181,11 +183,18 @@ class horizontalResizeTextArea extends React.Component {
 }
 ```
 
-```js title=Uncontrolled
+### Uncontrolled
+```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
-UncontrolledTextArea = () => (
-  <TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
-)
+<TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
+```
+
+### Disabled
+```js
+import React from 'react';
+import { TextArea } from '@patternfly/react-core';
+
+<TextArea aria-label="disabled text area example" isDisabled />
 ```

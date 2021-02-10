@@ -49,7 +49,7 @@
 
 .pf-topology-context-sub-menu {
   position: relative;
-  padding-right: var(--pf-global--spacer--lg);
+  padding-right: var(--pf-global--spacer--lg) !important;
 }
 
 .pf-topology-context-sub-menu__arrow {

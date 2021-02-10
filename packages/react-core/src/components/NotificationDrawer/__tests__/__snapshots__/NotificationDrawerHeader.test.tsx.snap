@@ -30,6 +30,11 @@ exports[`drawer header with custom unread text applied 1`] = `
   >
     Notifications
   </Text>
+  <span
+    className="pf-c-notification-drawer__header-status"
+  >
+    2 unread alerts
+  </span>
 </div>
 `;
 

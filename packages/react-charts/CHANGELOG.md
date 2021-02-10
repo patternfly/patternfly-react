@@ -3,6 +3,586 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.13.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.10...@patternfly/react-charts@6.13.11) (2021-02-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.9...@patternfly/react-charts@6.13.10) (2021-02-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.8...@patternfly/react-charts@6.13.9) (2021-02-01)
+
+
+### Bug Fixes
+
+* **charts:** Bar chart remains muted with interactive legend ([#5378](https://github.com/patternfly/patternfly-react/issues/5378)) ([b83995c](https://github.com/patternfly/patternfly-react/commit/b83995c1cb47ea3641f4f65de63361764ff23a17))
+
+
+
+
+
+## [6.13.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.7...@patternfly/react-charts@6.13.8) (2021-01-27)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.6...@patternfly/react-charts@6.13.7) (2021-01-25)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.5...@patternfly/react-charts@6.13.6) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+## [6.13.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.4...@patternfly/react-charts@6.13.5) (2021-01-22)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.3...@patternfly/react-charts@6.13.4) (2021-01-19)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.2...@patternfly/react-charts@6.13.3) (2021-01-12)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.1...@patternfly/react-charts@6.13.2) (2021-01-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.13.0...@patternfly/react-charts@6.13.1) (2021-01-07)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.15...@patternfly/react-charts@6.13.0) (2021-01-06)
+
+
+### Features
+
+* **packages:** use react 17 ([#5111](https://github.com/patternfly/patternfly-react/issues/5111)) ([7fbafcc](https://github.com/patternfly/patternfly-react/commit/7fbafcc947c95d2bda2f4fad8f7737cf7dd3fca6))
+
+
+
+
+
+## [6.12.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.14...@patternfly/react-charts@6.12.15) (2021-01-04)
+
+
+### Bug Fixes
+
+* **charts:** ChartLegendTooltip shown with no data ([#5296](https://github.com/patternfly/patternfly-react/issues/5296)) ([bf05071](https://github.com/patternfly/patternfly-react/commit/bf0507184f6beb3e0d96db4f62f7303cba6cb4d4))
+
+
+
+
+
+## [6.12.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.13...@patternfly/react-charts@6.12.14) (2021-01-04)
+
+
+### Bug Fixes
+
+* **charts:** Incorrect colorScale prop type ([#5303](https://github.com/patternfly/patternfly-react/issues/5303)) ([8c930fb](https://github.com/patternfly/patternfly-react/commit/8c930fb0a87fdd779618e83c7276a83dd3b45262))
+* **charts:** theme font must use token value ([#5301](https://github.com/patternfly/patternfly-react/issues/5301)) ([876c17d](https://github.com/patternfly/patternfly-react/commit/876c17dad92a2ce2e33e30e0de517738091d97e9))
+
+
+
+
+
+## [6.12.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.12...@patternfly/react-charts@6.12.13) (2020-12-16)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.11...@patternfly/react-charts@6.12.12) (2020-12-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.10...@patternfly/react-charts@6.12.11) (2020-12-11)
+
+
+### Bug Fixes
+
+* **charts:** tooltip pointerLength error ([#5245](https://github.com/patternfly/patternfly-react/issues/5245)) ([5cdcabb](https://github.com/patternfly/patternfly-react/commit/5cdcabb42bac9d19cf485b9868e297420f44e9f5))
+
+
+
+
+
+## [6.12.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.9...@patternfly/react-charts@6.12.10) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.8...@patternfly/react-charts@6.12.9) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.7...@patternfly/react-charts@6.12.8) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.6...@patternfly/react-charts@6.12.7) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.5...@patternfly/react-charts@6.12.6) (2020-12-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.4...@patternfly/react-charts@6.12.5) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.3...@patternfly/react-charts@6.12.4) (2020-11-23)
+
+
+### Bug Fixes
+
+* **charts:** replace victory with victory-zoom-container ([#5179](https://github.com/patternfly/patternfly-react/issues/5179)) ([bef64a5](https://github.com/patternfly/patternfly-react/commit/bef64a5e8f8ba060061df611d028dec5f8e9adf2))
+
+
+
+
+
+## [6.12.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.2...@patternfly/react-charts@6.12.3) (2020-11-23)
+
+
+### Bug Fixes
+
+* **react-charts:** bump victory and move victory dep to demo app ([#5178](https://github.com/patternfly/patternfly-react/issues/5178)) ([45ec687](https://github.com/patternfly/patternfly-react/commit/45ec687506af9c0cb512feb25aa33ca2b73a7ff4))
+
+
+
+
+
+## [6.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.1...@patternfly/react-charts@6.12.2) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.12.0...@patternfly/react-charts@6.12.1) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.9...@patternfly/react-charts@6.12.0) (2020-11-13)
+
+
+### Features
+
+* **packages:** bump Victory package ([#5116](https://github.com/patternfly/patternfly-react/issues/5116)) ([a4645a2](https://github.com/patternfly/patternfly-react/commit/a4645a2fa14b2742e8957b1ae579f4350e3ddbd4))
+
+
+
+
+
+## [6.11.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.8...@patternfly/react-charts@6.11.9) (2020-10-29)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.7...@patternfly/react-charts@6.11.8) (2020-10-28)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.6...@patternfly/react-charts@6.11.7) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.5...@patternfly/react-charts@6.11.6) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.4...@patternfly/react-charts@6.11.5) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.3...@patternfly/react-charts@6.11.4) (2020-10-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.2...@patternfly/react-charts@6.11.3) (2020-10-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.1...@patternfly/react-charts@6.11.2) (2020-10-13)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.11.0...@patternfly/react-charts@6.11.1) (2020-10-12)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.10.5...@patternfly/react-charts@6.11.0) (2020-10-09)
+
+
+### Features
+
+* **charts:** bumped Victory pkgs from 35.0.8 to 35.2.0 ([#4992](https://github.com/patternfly/patternfly-react/issues/4992)) ([6eed4b1](https://github.com/patternfly/patternfly-react/commit/6eed4b11ef9ed495d18a46ec8082db2b40217e8d))
+
+
+
+
+
+## [6.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.10.4...@patternfly/react-charts@6.10.5) (2020-10-09)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.10.3...@patternfly/react-charts@6.10.4) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.10.2...@patternfly/react-charts@6.10.3) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.10.1...@patternfly/react-charts@6.10.2) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.10.0...@patternfly/react-charts@6.10.1) (2020-09-23)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.9...@patternfly/react-charts@6.10.0) (2020-09-22)
+
+
+### Features
+
+* **workspace:** use new doc theme ([#4840](https://github.com/patternfly/patternfly-react/issues/4840)) ([7bf451d](https://github.com/patternfly/patternfly-react/commit/7bf451d468538cc0b301fb68f0c1a8108600c24f))
+
+
+
+
+
+## [6.9.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.8...@patternfly/react-charts@6.9.9) (2020-09-21)
+
+
+### Bug Fixes
+
+* **charts,table:** replace or use exact lodash imports ([#4830](https://github.com/patternfly/patternfly-react/issues/4830)) ([63a8259](https://github.com/patternfly/patternfly-react/commit/63a8259c49f0eddbc699febb5f72cc5a2defb9eb))
+
+
+
+
+
+## [6.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.7...@patternfly/react-charts@6.9.8) (2020-09-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.6...@patternfly/react-charts@6.9.7) (2020-09-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.9.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.5...@patternfly/react-charts@6.9.6) (2020-08-24)
+
+
+### Bug Fixes
+
+* **docs:** use ids and h3s ([#4720](https://github.com/patternfly/patternfly-react/issues/4720)) ([a3f684f](https://github.com/patternfly/patternfly-react/commit/a3f684fa23cfce3d8e79b86206773292790cec5c))
+
+
+
+
+
+## [6.9.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.4...@patternfly/react-charts@6.9.5) (2020-08-21)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.9.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.3...@patternfly/react-charts@6.9.4) (2020-08-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.2...@patternfly/react-charts@6.9.3) (2020-08-12)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.1...@patternfly/react-charts@6.9.2) (2020-08-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.9.0...@patternfly/react-charts@6.9.1) (2020-08-06)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.8.1...@patternfly/react-charts@6.9.0) (2020-08-04)
+
+
+### Features
+
+* **NotificationDrawer:** Add notification drawer demo ([#4640](https://github.com/patternfly/patternfly-react/issues/4640)) ([3b9231d](https://github.com/patternfly/patternfly-react/commit/3b9231dab2fd92eb40e38d3a38ffb83562e1dbc2))
+
+
+
+
+
+## [6.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.8.0...@patternfly/react-charts@6.8.1) (2020-08-04)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.7.1...@patternfly/react-charts@6.8.0) (2020-08-03)
+
+
+### Features
+
+* **NotificationBadge:** add needs attention state and count ([#4516](https://github.com/patternfly/patternfly-react/issues/4516)) ([63c7cbf](https://github.com/patternfly/patternfly-react/commit/63c7cbf0beed5497ca7addf7fc6663229f37ab81))
+
+
+
+
+
+## [6.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.7.0...@patternfly/react-charts@6.7.1) (2020-08-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.3...@patternfly/react-charts@6.7.0) (2020-07-30)
+
+
+### Features
+
+* **charts:** update Victory packages to support OUIA props ([#4633](https://github.com/patternfly/patternfly-react/issues/4633)) ([8674066](https://github.com/patternfly/patternfly-react/commit/8674066337651f5acdf6018fa4e5cd72d37290c0))
+
+
+
+
+
+## [6.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.2...@patternfly/react-charts@6.6.3) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.1...@patternfly/react-charts@6.6.2) (2020-07-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.6.0...@patternfly/react-charts@6.6.1) (2020-07-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.8...@patternfly/react-charts@6.6.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
+## [6.5.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.7...@patternfly/react-charts@6.5.8) (2020-07-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.5.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.6...@patternfly/react-charts@6.5.7) (2020-07-13)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.5...@patternfly/react-charts@6.5.6) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.4...@patternfly/react-charts@6.5.5) (2020-07-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## [6.5.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.3...@patternfly/react-charts@6.5.4) (2020-06-24)
 
 **Note:** Version bump only for package @patternfly/react-charts

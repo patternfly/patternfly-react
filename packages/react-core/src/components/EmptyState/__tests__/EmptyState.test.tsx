@@ -48,6 +48,15 @@ describe('EmptyState', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('Main variant xs', () => {
+    const view = shallow(
+      <EmptyState variant={EmptyStateVariant.xs}>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
+      </EmptyState>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('Body', () => {
     const view = shallow(<EmptyStateBody className="custom-empty-state-body" id="empty-state-1" />);
     expect(view.props().className).toBe('pf-c-empty-state__body custom-empty-state-body');

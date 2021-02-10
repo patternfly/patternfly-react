@@ -12,7 +12,7 @@ import { KEY_CODES } from '../../helpers/constants';
 import { FocusTrap } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -43,9 +43,11 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** Footer of the context selector */
+  footer?: React.ReactNode;
 }
 
-export class ContextSelector extends React.Component<ContextSelectorProps> {
+export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
   static displayName = 'ContextSelector';
   static defaultProps: ContextSelectorProps = {
     children: null as React.ReactNode,
@@ -61,8 +63,15 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     searchInputPlaceholder: 'Search',
     onSearchButtonClick: () => undefined as any,
     menuAppendTo: 'inline',
-    ouiaSafe: true
+    ouiaSafe: true,
+    footer: null as React.ReactNode
   };
+  constructor(props: ContextSelectorProps) {
+    super(props);
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(ContextSelector.displayName)
+    };
+  }
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
 
@@ -92,6 +101,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       menuAppendTo,
       ouiaId,
       ouiaSafe,
+      footer,
       ...props
     } = this.props;
     const menuContainer = (
@@ -121,6 +131,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
             <ContextSelectorContext.Provider value={{ onSelect }}>
               <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
             </ContextSelectorContext.Provider>
+            {footer}
           </FocusTrap>
         )}
       </div>
@@ -138,7 +149,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       <div
         className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
         ref={this.parentRef}
-        {...getOUIAProps(ContextSelector.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(ContextSelector.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...props}
       >
         {screenReaderLabel && (

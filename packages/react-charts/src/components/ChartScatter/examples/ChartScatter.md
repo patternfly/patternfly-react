@@ -1,7 +1,6 @@
 ---
-title: 'Scatter chart'
-section: 'charts'
-typescript: true
+id: Scatter chart
+section: charts
 propComponents: [
   'Chart',
   'ChartArea',
@@ -13,8 +12,16 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
-import { Button, Tooltip } from '@patternfly/react-core';
+import {
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartGroup,
+  ChartLine,
+  ChartScatter,
+  ChartThemeColor,
+  ChartVoronoiContainer
+} from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -22,7 +29,11 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Examples
-```js title=Area-chart
+### Area chart
+
+This demonstrates how to add interactive data points to an area chart.
+
+```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
@@ -86,7 +97,6 @@ class ScatterAreaChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <p>This demonstrates how to add interactive data points to an area chart</p>
         <div style={{ height: '250px' }}>
           <Chart
             ariaDesc="Average number of pets"
@@ -137,7 +147,11 @@ class ScatterAreaChart extends React.Component {
 }
 ```
 
-```js title=Line-chart
+### Line chart
+
+This demonstrates how to add interactive data points to a line chart.
+
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -212,7 +226,6 @@ class ScatterLineChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <p>This demonstrates how to add interactive data points to a line chart</p>
         <div style={{ height: '275px' }}>
           <Chart
             ariaDesc="Average number of pets"

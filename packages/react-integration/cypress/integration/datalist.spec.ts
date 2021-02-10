@@ -30,6 +30,19 @@ describe('Data List Demo Test', () => {
     cy.get('#row1.pf-m-selected').should('not.be.visible');
     cy.get('#row2.pf-m-selected').should('be.visible');
   });
+
+  it('Verify actions ', () => {
+    cy.get('#dropdown button')
+      .last()
+      .click();
+    cy.get('#dropdown').should('have.class', 'pf-m-expanded');
+    cy.get('#toggle-id').click();
+    cy.get('#action-dropdown').should('not.have.class', 'pf-m-expanded');
+  });
+
+  it('Verify row truncates', () => {
+    cy.get('#truncate-content').should('have.class', 'pf-m-truncate');
+  });
 });
 
 describe('Data List Compact Demo Test', () => {
@@ -63,5 +76,23 @@ describe('Data List Compact Demo Test', () => {
     cy.get('#row2').click();
     cy.get('#row1.pf-m-selected').should('not.be.visible');
     cy.get('#row2.pf-m-selected').should('be.visible');
+  });
+});
+
+describe('Data List Draggable Demo Test', () => {
+  it('Navigate to demo section', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('#data-list-draggable-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/data-list-draggable-demo-nav-link');
+  });
+
+  it('Verify drag', () => {
+    cy.get('#data1').contains('Item 1');
+    cy.get('#drag1').type(' ');
+    cy.get('#drag1').type('{downarrow}');
+    cy.get('#data1').should('have.class', 'pf-m-ghost-row');
+    cy.get('#drag1').type('{downarrow}');
+    cy.get('#drag1').type('{enter}');
+    cy.get('#data1').should('not.have.class', 'pf-m-ghost-row');
   });
 });

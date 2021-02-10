@@ -4,7 +4,7 @@ import { FormSelect, FormSelectOption, FormSelectOptionGroup, Text, ValidatedOpt
 interface FormSelectState {
   value: string;
   validatedValue: string;
-  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.warning | ValidatedOptions.success;
 }
 
 interface FormSelectOption {
@@ -71,7 +71,12 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onChangeValidatedSelect = (value: string, _event: any) => {
-    const validated = value === '3' ? ValidatedOptions.success : ValidatedOptions.error;
+    let validated = ValidatedOptions.default;
+    if (value === '2') {
+      validated = ValidatedOptions.warning;
+    } else {
+      validated = value === '3' ? ValidatedOptions.success : ValidatedOptions.error;
+    }
     this.setState({ validatedValue: value, validated });
   };
 

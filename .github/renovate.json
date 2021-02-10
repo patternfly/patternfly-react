@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": ["npm"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "excludePackagePatterns": [
+        "@patternfly/patternfly",
+        "@patternfly/patternfly-a11y",
+        "theme-patternfly-org"
+      ],
+      "enabled": false
+    },
+    {
+      "datasources": ["npm"],
+      "packageNames": [
+        "@patternfly/patternfly-a11y",
+        "theme-patternfly-org"
+      ]
+    },
+    {
+      "datasources": ["npm"],
+      "packageNames": [
+        "@patternfly/patternfly"
+      ],
+      "followTag": "prerelease"
+    }
+  ]
+}

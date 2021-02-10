@@ -1,5 +1,5 @@
-describe('Drawer Lightweight Demo Test', () => {
-  it('Navigate to the drawer lightweight demo', () => {
+describe('Notification Drawer Lightweight Demo Test', () => {
+  it('Navigate to the notification drawer lightweight demo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#notification-drawer-lightweight-demo-nav-item-link').click();
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-lightweight-demo-nav-link');
@@ -10,7 +10,7 @@ describe('Drawer Lightweight Demo Test', () => {
   });
 
   it('Verify text in header status', () => {
-    cy.get('.pf-c-notification-drawer__header-status').should('not.exist');
+    cy.get('.pf-c-notification-drawer__header-status').contains('2 unread alerts');
   });
 
   it('Verify 3 groups exist', () => {

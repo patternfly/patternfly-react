@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IExtra, IFormatterValueType, ITransform } from '../../Table';
+import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { TableText } from '../../TableText';
 
 export const compoundExpand: ITransform = (
@@ -33,6 +33,7 @@ export const compoundExpand: ITransform = (
     className: css(styles.tableCompoundExpansionToggle, props.isOpen && styles.modifiers.expanded),
     children: props.isOpen !== undefined && (
       <button
+        type="button"
         className={css(styles.tableButton)}
         onClick={onToggle}
         aria-expanded={props.isOpen}

@@ -43,7 +43,10 @@ exports[`Wizard should match snapshot 1`] = `
           }
         }
         hasNoBodyPadding={false}
+        isInPage={true}
         isNavOpen={false}
+        mainAriaLabel={null}
+        mainAriaLabelledBy="pf-wizard-title-0"
         nav={[Function]}
         onNavToggle={[Function]}
         steps={

@@ -9,7 +9,7 @@ const removeSnake = s =>
     .toUpperCase()
     .replace('-', '')
     .replace('_', '');
-const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])/gi, removeSnake)}`;
+const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
 
 const writeCJSExport = (fname, jsName, icon) => {
   outputFileSync(
@@ -23,7 +23,6 @@ exports.${jsName}Config = {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
 };
 exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
 exports["default"] = exports.${jsName};
@@ -43,7 +42,6 @@ export const ${jsName}Config = {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
 };
 
 export const ${jsName} = createIcon(${jsName}Config);
@@ -65,7 +63,6 @@ export declare const ${jsName}Config: {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
 };
 export declare const ${jsName}: React.ComponentClass<SVGIconProps>;
 export default ${jsName};

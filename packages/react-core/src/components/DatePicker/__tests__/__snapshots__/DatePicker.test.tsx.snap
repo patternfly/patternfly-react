@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`disabled date picker 1`] = `
+<input
+  aria-invalid={false}
+  aria-label="disabled date picker"
+  className="pf-c-form-control"
+  disabled={true}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  onKeyPress={[Function]}
+  placeholder="yyyy-MM-dd"
+  readOnly={false}
+  required={false}
+  type="text"
+  value="2020-11-20"
+/>
+`;

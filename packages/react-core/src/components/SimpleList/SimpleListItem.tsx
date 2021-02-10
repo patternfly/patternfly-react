@@ -4,6 +4,8 @@ import styles from '@patternfly/react-styles/css/components/SimpleList/simple-li
 import { SimpleListContext } from './SimpleList';
 
 export interface SimpleListItemProps {
+  /** id for the item. */
+  itemId?: number | string;
   /** Content rendered inside the SimpleList item */
   children?: React.ReactNode;
   /** Additional classes added to the SimpleList <li> */
@@ -15,6 +17,8 @@ export interface SimpleListItemProps {
   /** Additional props added to the SimpleList <a> or <button> */
   componentProps?: any;
   /** Indicates if the link is current/highlighted */
+  isActive?: boolean;
+  /** @deprecated please use isActive instead */
   isCurrent?: boolean;
   /** OnClick callback for the SimpleList item */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
@@ -30,6 +34,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
   static defaultProps: SimpleListItemProps = {
     children: null,
     className: '',
+    isActive: false,
     isCurrent: false,
     component: 'button',
     componentClassName: '',
@@ -42,6 +47,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
     const {
       children,
       isCurrent,
+      isActive,
       className,
       component: Component,
       componentClassName,
@@ -49,14 +55,16 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
       onClick,
       type,
       href,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      itemId,
       ...props
     } = this.props;
-
     return (
       <SimpleListContext.Consumer>
-        {({ currentRef, updateCurrentRef }) => {
+        {({ currentRef, updateCurrentRef, isControlled }) => {
           const isButton = Component === 'button';
-          const isCurrentItem = this.ref && currentRef ? currentRef.current === this.ref.current : isCurrent;
+          const isCurrentItem =
+            this.ref && currentRef && isControlled ? currentRef.current === this.ref.current : isActive || isCurrent;
 
           const additionalComponentProps = isButton
             ? {

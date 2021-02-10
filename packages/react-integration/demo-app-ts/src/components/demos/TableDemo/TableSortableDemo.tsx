@@ -26,14 +26,26 @@ export class TableSortableDemo extends React.Component<
         'Workspaces',
         'Last Commit'
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
   }
 
   onSort(_event: React.MouseEvent, index: number, direction: SortByDirection) {
-    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
+    const sortedRows = this.state.rows.sort((a, b) => {
+      if (a[index] < b[index]) {
+        return -1;
+      }
+      if (a[index] > b[index]) {
+        return 1;
+      }
+      return 0;
+    });
     this.setState({
       sortBy: {
         index,

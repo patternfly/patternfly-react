@@ -1,5 +1,4 @@
 const { join, resolve } = require('path');
-const { pascalCase } = require('change-case');
 const { ADD_TO_BARREL_FILE } = require('../actionTypes');
 
 const templatesDir = resolve(__dirname, './templates');
@@ -28,7 +27,7 @@ function setPF4Generators(plop) {
       const typeValue = componentTypes.get(type);
       const data = {
         typeDir: typeValue,
-        componentName: pascalCase(name)
+        componentName: name
       };
       return [
         {

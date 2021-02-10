@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Body as BaseBody } from './base';
 import { RowType, RowKeyType } from './base/types';
-import { TableContext, IRow, IRowCell, IExtraRowData } from './Table';
+import { IRow, IRowCell, IExtraRowData } from './TableTypes';
+import { TableContext } from './TableContext';
 import { isRowExpanded } from './utils';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IComputedData {
   isInput: boolean;
   isButton: boolean;
@@ -42,7 +42,6 @@ const flagVisibility = (rows: IRow[]) => {
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface IMappedCell {
   [name: string]: IRowCell;
 }
@@ -69,23 +68,39 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   };
 
   mapCells = (headerData: IRow[], row: IRow, rowKey: number) => {
-    // column indexes start after generated optional columns
-    let additionalColsIndexShift = headerData[0].extraParams.firstUserColumnIndex;
-
+    // column indexes start after generated optional columns like collapsible or select column(s)
+    const { firstUserColumnIndex } = headerData[0].extraParams;
+    const isFullWidth = row && row.fullWidth;
+    // typically you'd want to map each cell to its column header, but in the case of fullWidth
+    // the first column could be the Select and/or Expandable column
+    let additionalColsIndexShift = isFullWidth ? 0 : firstUserColumnIndex;
     return {
       ...(row &&
         (row.cells || row).reduce(
           (acc: object, cell: IRowCell, cellIndex: number) => {
             const isCellObject = cell === Object(cell);
             const isCellFunction = cell && typeof cell.title === 'function';
-
+            let formatters: any = [];
+            if (isCellObject && cell.formatters) {
+              // give priority to formatters specified on the cell object
+              // expandable example:
+              // rows: [{ parent: 0, fullWidth: true, cells: [{ title: 'fullWidth, child - a', formatters: [expandable]}] }]
+              formatters = cell.formatters;
+            } else if (isFullWidth && cellIndex < firstUserColumnIndex) {
+              // for backwards compatibility, map the cells that are not under user columns (like Select/Expandable)
+              // to the first user column's header formatters
+              formatters = headerData[firstUserColumnIndex].cell.formatters;
+            }
+            let mappedCellTitle: IRowCell | Function | IRowCell['title'] = cell;
+            if (isCellObject && isCellFunction) {
+              mappedCellTitle = (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props);
+            } else if (isCellObject) {
+              mappedCellTitle = cell.title;
+            }
             const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
-                title: isCellObject
-                  ? isCellFunction
-                    ? (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props)
-                    : cell.title
-                  : cell,
+                title: mappedCellTitle,
+                formatters,
                 props: {
                   isVisible: true,
                   ...(isCellObject ? cell.props : null)
@@ -102,7 +117,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
               ...mappedCell
             };
           },
-          { id: row.id !== undefined ? row.id : rowKey }
+          { secretTableRowKeyId: row.id !== undefined ? row.id : rowKey }
         ))
     };
   };
@@ -146,7 +161,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 export const TableBody = ({
   className = '' as string,
   children = null as React.ReactNode,
-  rowKey = 'id' as string,
+  rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   onRow = (...args: any) => Object,
   onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>

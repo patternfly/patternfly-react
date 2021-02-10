@@ -1,7 +1,8 @@
 {
   "plugins": [
     "markdown",
-    "react"
+    "react",
+    "patternfly-react"
   ],
   "parserOptions": {
     "ecmaVersion": 9,
@@ -20,6 +21,7 @@
     "spaced-comment": 2,
     "no-unused-vars": 0,
     "no-this-before-super": 2,
+    "patternfly-react/import-tokens-icons": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/no-unknown-property": 2,

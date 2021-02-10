@@ -13,8 +13,13 @@ describe('Spinner Demo Test', () => {
   it('Verify large spinner', () => {
     cy.get('.pf-c-spinner.pf-m-lg').should('exist');
   });
-
   it('Verify extra large spinner', () => {
     cy.get('.pf-c-spinner.pf-m-xl').should('exist');
+  });
+  it('Verify diameter', () => {
+    // The width changes since the circle rotates.
+    cy.get('#spinner40')
+      .invoke('outerWidth')
+      .should('be.gte', 40);
   });
 });

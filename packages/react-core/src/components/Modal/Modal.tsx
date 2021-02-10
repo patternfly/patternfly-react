@@ -4,7 +4,7 @@ import { canUseDOM, KEY_CODES, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
-import { OUIAProps } from '../../helpers';
+import { OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Content rendered inside the Modal. */
@@ -15,8 +15,16 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
+  /** Optional help section for the Modal Header */
+  help?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
+  /** Optional alert icon (or other) to show before the title of the Modal Header
+   * When the predefined alert types are used the default styling
+   * will be automatically applied */
+  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  /** Optional title label text for screen readers */
+  titleLabel?: string;
   /** Id to use for Modal Box label */
   'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
@@ -40,7 +48,11 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Description of the modal */
   description?: React.ReactNode;
   /** Variant of the modal */
-  variant?: 'small' | 'large' | 'default';
+  variant?: 'small' | 'medium' | 'large' | 'default';
+  /** Alternate position of the modal */
+  position?: 'top';
+  /** Offset from alternate position. Can be any valid CSS length/percentage */
+  positionOffset?: string;
   /** Flag indicating if modal content should be placed in a modal box body wrapper */
   hasNoBodyWrapper?: boolean;
   /** An ID to use for the ModalBox container */
@@ -51,12 +63,14 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
 
 export enum ModalVariant {
   small = 'small',
+  medium = 'medium',
   large = 'large',
   default = 'default'
 }
 
 interface ModalState {
   container: HTMLElement;
+  ouiaStateId: string;
 }
 
 export class Modal extends React.Component<ModalProps, ModalState> {
@@ -70,6 +84,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     className: '',
     isOpen: false,
     title: '',
+    titleIconVariant: null,
+    titleLabel: '',
     'aria-label': '',
     showClose: true,
     'aria-describedby': '',
@@ -79,7 +95,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     onClose: () => undefined as any,
     variant: 'default',
     hasNoBodyWrapper: false,
-    appendTo: (typeof document !== 'undefined' && document.body) || null,
+    appendTo: () => document.body,
     ouiaSafe: true
   };
 
@@ -93,7 +109,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     this.descriptorId = `pf-modal-part-${descriptorIdNum}`;
 
     this.state = {
-      container: undefined
+      container: undefined,
+      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
     };
   }
 
@@ -105,13 +122,10 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
-    let target: HTMLElement;
     if (typeof appendTo === 'function') {
-      target = appendTo();
-    } else {
-      target = appendTo;
+      return appendTo();
     }
-    return target;
+    return appendTo || document.body;
   };
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
@@ -193,6 +207,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedby,
       title,
+      titleIconVariant,
+      titleLabel,
       ouiaId,
       ouiaSafe,
       ...props
@@ -210,10 +226,12 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         labelId={this.labelId}
         descriptorId={this.descriptorId}
         title={title}
+        titleIconVariant={titleIconVariant}
+        titleLabel={titleLabel}
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
-        ouiaId={ouiaId}
+        ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
         ouiaSafe={ouiaSafe}
       />,
       container

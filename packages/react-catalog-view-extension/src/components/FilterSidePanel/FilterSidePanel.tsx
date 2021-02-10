@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface FilterSidePanelProps extends React.HTMLProps<HTMLDivElement> {
   /** Children nodes */
@@ -13,7 +13,7 @@ export const FilterSidePanel: React.FunctionComponent<FilterSidePanelProps> = ({
   className = '',
   ...props
 }: FilterSidePanelProps) => {
-  const classes = classNames('filter-panel-pf', className);
+  const classes = css('filter-panel-pf', className);
   return (
     <div className={classes} {...props}>
       {children}

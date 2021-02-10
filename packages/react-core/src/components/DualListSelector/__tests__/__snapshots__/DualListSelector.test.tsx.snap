@@ -1,0 +1,2508 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DualListSelector basic 1`] = `
+<DualListSelector
+  addAllAriaLabel="Add all"
+  addSelectedAriaLabel="Add selected"
+  availableOptions={
+    Array [
+      "Option 1",
+      "Option 2",
+    ]
+  }
+  availableOptionsSearchAriaLabel="Available search input"
+  availableOptionsTitle="Available options"
+  chosenOptions={Array []}
+  chosenOptionsSearchAriaLabel="Chosen search input"
+  chosenOptionsTitle="Chosen options"
+  controlsAriaLabel="Selector controls"
+  id="firstTest"
+  removeAllAriaLabel="Remove all"
+  removeSelectedAriaLabel="Remove selected"
+>
+  <div
+    className="pf-c-dual-list-selector"
+    id="firstTest"
+  >
+    <DualListSelectorPane
+      id="firstTest-available-pane"
+      isChosen={false}
+      isSearchable={false}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={
+        Array [
+          "Option 1",
+          "Option 2",
+        ]
+      }
+      searchInputAriaLabel="Available search input"
+      selectedOptions={Array []}
+      status="0 of 2 items selected"
+      title="Available options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-available"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Available options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="firstTest-available-pane-status"
+          >
+            0 of 2 items selected
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="firstTest-available-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          >
+            <DualListSelectorListItem
+              filteredIndex={0}
+              id="firstTest-available-pane-option-0"
+              isChosen={false}
+              isSelected={false}
+              key="0"
+              onOptionSelect={[Function]}
+              orderIndex={0}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="0"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="firstTest-available-pane-option-0"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 1
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+            <DualListSelectorListItem
+              filteredIndex={1}
+              id="firstTest-available-pane-option-1"
+              isChosen={false}
+              isSelected={false}
+              key="1"
+              onOptionSelect={[Function]}
+              orderIndex={1}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="1"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="firstTest-available-pane-option-1"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 2
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+          </ul>
+        </div>
+      </div>
+    </DualListSelectorPane>
+    <div
+      aria-label="Selector controls"
+      className="pf-c-dual-list-selector__controls"
+      tabIndex={0}
+    >
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={false}
+          aria-label="Add all"
+          isDisabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Add all"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Add selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-2"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-3"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove all"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove all"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-4"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+      </div>
+    </div>
+    <DualListSelectorPane
+      id="firstTest-chosen-pane"
+      isChosen={true}
+      isSearchable={false}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={Array []}
+      searchInputAriaLabel="Chosen search input"
+      selectedOptions={Array []}
+      status="0 of 0 items selected"
+      title="Chosen options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-chosen"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Chosen options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="firstTest-chosen-pane-status"
+          >
+            0 of 0 items selected
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="firstTest-chosen-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          />
+        </div>
+      </div>
+    </DualListSelectorPane>
+  </div>
+</DualListSelector>
+`;
+
+exports[`DualListSelector with actions 1`] = `
+<DualListSelector
+  addAllAriaLabel="Add all"
+  addSelectedAriaLabel="Add selected"
+  availableOptions={
+    Array [
+      "Option 1",
+      "Option 2",
+    ]
+  }
+  availableOptionsActions={
+    Array [
+      <span>
+        TestNode1
+      </span>,
+    ]
+  }
+  availableOptionsSearchAriaLabel="Available search input"
+  availableOptionsTitle="Available options"
+  chosenOptions={
+    Array [
+      "Option 3",
+      "Option 4",
+    ]
+  }
+  chosenOptionsActions={
+    Array [
+      <span>
+        TestNode2
+      </span>,
+    ]
+  }
+  chosenOptionsSearchAriaLabel="Chosen search input"
+  chosenOptionsTitle="Chosen options"
+  controlsAriaLabel="Selector controls"
+  id="fourthTest"
+  removeAllAriaLabel="Remove all"
+  removeSelectedAriaLabel="Remove selected"
+>
+  <div
+    className="pf-c-dual-list-selector"
+    id="fourthTest"
+  >
+    <DualListSelectorPane
+      actions={
+        Array [
+          <span>
+            TestNode1
+          </span>,
+        ]
+      }
+      id="fourthTest-available-pane"
+      isChosen={false}
+      isSearchable={false}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={
+        Array [
+          "Option 1",
+          "Option 2",
+        ]
+      }
+      searchInputAriaLabel="Available search input"
+      selectedOptions={Array []}
+      status="0 of 2 items selected"
+      title="Available options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-available"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Available options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__tools"
+        >
+          <div
+            className="pf-c-dual-list-selector__tools-actions"
+          >
+            <span
+              key="1"
+            >
+              TestNode1
+            </span>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="fourthTest-available-pane-status"
+          >
+            0 of 2 items selected
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="fourthTest-available-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          >
+            <DualListSelectorListItem
+              filteredIndex={0}
+              id="fourthTest-available-pane-option-0"
+              isChosen={false}
+              isSelected={false}
+              key="0"
+              onOptionSelect={[Function]}
+              orderIndex={0}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="0"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="fourthTest-available-pane-option-0"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 1
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+            <DualListSelectorListItem
+              filteredIndex={1}
+              id="fourthTest-available-pane-option-1"
+              isChosen={false}
+              isSelected={false}
+              key="1"
+              onOptionSelect={[Function]}
+              orderIndex={1}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="1"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="fourthTest-available-pane-option-1"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 2
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+          </ul>
+        </div>
+      </div>
+    </DualListSelectorPane>
+    <div
+      aria-label="Selector controls"
+      className="pf-c-dual-list-selector__controls"
+      tabIndex={0}
+    >
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={false}
+          aria-label="Add all"
+          isDisabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Add all"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-17"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Add selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-18"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-19"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={false}
+          aria-label="Remove all"
+          isDisabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Remove all"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-20"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+      </div>
+    </div>
+    <DualListSelectorPane
+      actions={
+        Array [
+          <span>
+            TestNode2
+          </span>,
+        ]
+      }
+      id="fourthTest-chosen-pane"
+      isChosen={true}
+      isSearchable={false}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={
+        Array [
+          "Option 3",
+          "Option 4",
+        ]
+      }
+      searchInputAriaLabel="Chosen search input"
+      selectedOptions={Array []}
+      status="0 of 2 items selected"
+      title="Chosen options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-chosen"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Chosen options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__tools"
+        >
+          <div
+            className="pf-c-dual-list-selector__tools-actions"
+          >
+            <span
+              key="2"
+            >
+              TestNode2
+            </span>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="fourthTest-chosen-pane-status"
+          >
+            0 of 2 items selected
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="fourthTest-chosen-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          >
+            <DualListSelectorListItem
+              filteredIndex={0}
+              id="fourthTest-chosen-pane-option-0"
+              isChosen={true}
+              isSelected={false}
+              key="0"
+              onOptionSelect={[Function]}
+              orderIndex={0}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="0"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="fourthTest-chosen-pane-option-0"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 3
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+            <DualListSelectorListItem
+              filteredIndex={1}
+              id="fourthTest-chosen-pane-option-1"
+              isChosen={true}
+              isSelected={false}
+              key="1"
+              onOptionSelect={[Function]}
+              orderIndex={1}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="1"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="fourthTest-chosen-pane-option-1"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 4
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+          </ul>
+        </div>
+      </div>
+    </DualListSelectorPane>
+  </div>
+</DualListSelector>
+`;
+
+exports[`DualListSelector with custom status 1`] = `
+<DualListSelector
+  addAllAriaLabel="Add all"
+  addSelectedAriaLabel="Add selected"
+  availableOptions={
+    Array [
+      "Option 1",
+      "Option 2",
+    ]
+  }
+  availableOptionsSearchAriaLabel="Available search input"
+  availableOptionsStatus="Test status1"
+  availableOptionsTitle="Available options"
+  chosenOptions={Array []}
+  chosenOptionsSearchAriaLabel="Chosen search input"
+  chosenOptionsStatus="Test status2"
+  chosenOptionsTitle="Chosen options"
+  controlsAriaLabel="Selector controls"
+  id="thirdTest"
+  removeAllAriaLabel="Remove all"
+  removeSelectedAriaLabel="Remove selected"
+>
+  <div
+    className="pf-c-dual-list-selector"
+    id="thirdTest"
+  >
+    <DualListSelectorPane
+      id="thirdTest-available-pane"
+      isChosen={false}
+      isSearchable={false}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={
+        Array [
+          "Option 1",
+          "Option 2",
+        ]
+      }
+      searchInputAriaLabel="Available search input"
+      selectedOptions={Array []}
+      status="Test status1"
+      title="Available options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-available"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Available options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="thirdTest-available-pane-status"
+          >
+            Test status1
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="thirdTest-available-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          >
+            <DualListSelectorListItem
+              filteredIndex={0}
+              id="thirdTest-available-pane-option-0"
+              isChosen={false}
+              isSelected={false}
+              key="0"
+              onOptionSelect={[Function]}
+              orderIndex={0}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="0"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="thirdTest-available-pane-option-0"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 1
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+            <DualListSelectorListItem
+              filteredIndex={1}
+              id="thirdTest-available-pane-option-1"
+              isChosen={false}
+              isSelected={false}
+              key="1"
+              onOptionSelect={[Function]}
+              orderIndex={1}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="1"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="thirdTest-available-pane-option-1"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 2
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+          </ul>
+        </div>
+      </div>
+    </DualListSelectorPane>
+    <div
+      aria-label="Selector controls"
+      className="pf-c-dual-list-selector__controls"
+      tabIndex={0}
+    >
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={false}
+          aria-label="Add all"
+          isDisabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Add all"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-9"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Add selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-10"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-11"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove all"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove all"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-12"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+      </div>
+    </div>
+    <DualListSelectorPane
+      id="thirdTest-chosen-pane"
+      isChosen={true}
+      isSearchable={false}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={Array []}
+      searchInputAriaLabel="Chosen search input"
+      selectedOptions={Array []}
+      status="Test status2"
+      title="Chosen options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-chosen"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Chosen options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="thirdTest-chosen-pane-status"
+          >
+            Test status2
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="thirdTest-chosen-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          />
+        </div>
+      </div>
+    </DualListSelectorPane>
+  </div>
+</DualListSelector>
+`;
+
+exports[`DualListSelector with search inputs 1`] = `
+<DualListSelector
+  addAllAriaLabel="Add all"
+  addSelectedAriaLabel="Add selected"
+  availableOptions={
+    Array [
+      "Option 1",
+      "Option 2",
+    ]
+  }
+  availableOptionsSearchAriaLabel="Available search input"
+  availableOptionsTitle="Available options"
+  chosenOptions={Array []}
+  chosenOptionsSearchAriaLabel="Chosen search input"
+  chosenOptionsTitle="Chosen options"
+  controlsAriaLabel="Selector controls"
+  id="secondTest"
+  isSearchable={true}
+  removeAllAriaLabel="Remove all"
+  removeSelectedAriaLabel="Remove selected"
+>
+  <div
+    className="pf-c-dual-list-selector"
+    id="secondTest"
+  >
+    <DualListSelectorPane
+      id="secondTest-available-pane"
+      isChosen={false}
+      isSearchable={true}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={
+        Array [
+          "Option 1",
+          "Option 2",
+        ]
+      }
+      searchInputAriaLabel="Available search input"
+      selectedOptions={Array []}
+      status="0 of 2 items selected"
+      title="Available options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-available"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Available options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__tools"
+        >
+          <div
+            className="pf-c-dual-list-selector__tools-filter"
+          >
+            <input
+              aria-label="Available search input"
+              className="pf-c-form-control pf-m-search"
+              onChange={[Function]}
+              type="search"
+            />
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="secondTest-available-pane-status"
+          >
+            0 of 2 items selected
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="secondTest-available-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          >
+            <DualListSelectorListItem
+              filteredIndex={0}
+              id="secondTest-available-pane-option-0"
+              isChosen={false}
+              isSelected={false}
+              key="0"
+              onOptionSelect={[Function]}
+              orderIndex={0}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="0"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="secondTest-available-pane-option-0"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 1
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+            <DualListSelectorListItem
+              filteredIndex={1}
+              id="secondTest-available-pane-option-1"
+              isChosen={false}
+              isSelected={false}
+              key="1"
+              onOptionSelect={[Function]}
+              orderIndex={1}
+              sendRef={[Function]}
+            >
+              <li
+                aria-selected={false}
+                className="pf-c-dual-list-selector__list-item"
+                key="1"
+                role="option"
+              >
+                <button
+                  className="pf-c-dual-list-selector__item"
+                  id="secondTest-available-pane-option-1"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-dual-list-selector__item-main"
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-text"
+                    >
+                      Option 2
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </DualListSelectorListItem>
+          </ul>
+        </div>
+      </div>
+    </DualListSelectorPane>
+    <div
+      aria-label="Selector controls"
+      className="pf-c-dual-list-selector__controls"
+      tabIndex={0}
+    >
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={false}
+          aria-label="Add all"
+          isDisabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Add all"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-5"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Add selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-6"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-7"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove all"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove all"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-8"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+      </div>
+    </div>
+    <DualListSelectorPane
+      id="secondTest-chosen-pane"
+      isChosen={true}
+      isSearchable={true}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={Array []}
+      searchInputAriaLabel="Chosen search input"
+      selectedOptions={Array []}
+      status="0 of 0 items selected"
+      title="Chosen options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-chosen"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Chosen options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__tools"
+        >
+          <div
+            className="pf-c-dual-list-selector__tools-filter"
+          >
+            <input
+              aria-label="Chosen search input"
+              className="pf-c-form-control pf-m-search"
+              onChange={[Function]}
+              type="search"
+            />
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="secondTest-chosen-pane-status"
+          >
+            0 of 0 items selected
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <ul
+            aria-activedescendant={null}
+            aria-labelledby="secondTest-chosen-pane-status"
+            aria-multiselectable="true"
+            className="pf-c-dual-list-selector__list"
+            role="listbox"
+          />
+        </div>
+      </div>
+    </DualListSelectorPane>
+  </div>
+</DualListSelector>
+`;
+
+exports[`DualListSelector with tree 1`] = `
+<DualListSelector
+  addAllAriaLabel="Add all"
+  addSelectedAriaLabel="Add selected"
+  availableOptions={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "id": "O3",
+            "isChecked": false,
+            "text": "Opt3",
+          },
+        ],
+        "defaultExpanded": true,
+        "id": "O1",
+        "isChecked": false,
+        "text": "Opt1",
+      },
+      Object {
+        "id": "O2",
+        "isChecked": false,
+        "text": "Opt2",
+      },
+    ]
+  }
+  availableOptionsSearchAriaLabel="Available search input"
+  availableOptionsStatus="Test status1"
+  availableOptionsTitle="Available options"
+  chosenOptions={Array []}
+  chosenOptionsSearchAriaLabel="Chosen search input"
+  chosenOptionsStatus="Test status2"
+  chosenOptionsTitle="Chosen options"
+  controlsAriaLabel="Selector controls"
+  id="tree-test"
+  isTree={true}
+  removeAllAriaLabel="Remove all"
+  removeSelectedAriaLabel="Remove selected"
+>
+  <div
+    className="pf-c-dual-list-selector"
+    id="tree-test"
+  >
+    <DualListSelectorPane
+      id="tree-test-available-pane"
+      isChosen={false}
+      isSearchable={false}
+      isTree={true}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={
+        Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "O3",
+                "isChecked": false,
+                "text": "Opt3",
+              },
+            ],
+            "defaultExpanded": true,
+            "id": "O1",
+            "isChecked": false,
+            "text": "Opt1",
+          },
+          Object {
+            "id": "O2",
+            "isChecked": false,
+            "text": "Opt2",
+          },
+        ]
+      }
+      searchInputAriaLabel="Available search input"
+      selectedOptions={Array []}
+      status="Test status1"
+      title="Available options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-available"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Available options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="tree-test-available-pane-status"
+          >
+            Test status1
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <DualListSelectorTree
+            data={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "O3",
+                      "isChecked": false,
+                      "text": "Opt3",
+                    },
+                  ],
+                  "defaultExpanded": true,
+                  "id": "O1",
+                  "isChecked": false,
+                  "text": "Opt1",
+                },
+                Object {
+                  "id": "O2",
+                  "isChecked": false,
+                  "text": "Opt2",
+                },
+              ]
+            }
+            isChosen={false}
+            onOptionCheck={[Function]}
+            onOptionSelect={[Function]}
+            selectedOptions={Array []}
+          >
+            <ul
+              className="pf-c-dual-list-selector__list"
+              role="tree"
+            >
+              <DualListSelectorTreeItem
+                defaultExpanded={true}
+                hasBadge={false}
+                id="O1"
+                isChecked={false}
+                isChosen={false}
+                isSelected={false}
+                itemData={
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "O3",
+                        "isChecked": false,
+                        "text": "Opt3",
+                      },
+                    ],
+                    "defaultExpanded": true,
+                    "id": "O1",
+                    "isChecked": false,
+                    "text": "Opt1",
+                  }
+                }
+                key="O1"
+                onOptionCheck={[Function]}
+                onOptionSelect={[Function]}
+                text="Opt1"
+              >
+                <li
+                  aria-expanded="true"
+                  aria-selected={false}
+                  className="pf-c-dual-list-selector__list-item pf-m-expandable pf-m-expanded"
+                  id="O1"
+                  role="treeitem"
+                >
+                  <div
+                    className="pf-c-dual-list-selector__item pf-m-check"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-main"
+                    >
+                      <div
+                        className="pf-c-dual-list-selector__item-toggle"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="pf-c-dual-list-selector__item-toggle-icon"
+                        >
+                          <AngleRightIcon
+                            aria-hidden={true}
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 256 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              />
+                            </svg>
+                          </AngleRightIcon>
+                        </span>
+                      </div>
+                      <span
+                        className="pf-c-dual-list-selector__item-check"
+                      >
+                        <input
+                          checked={false}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="checkbox"
+                        />
+                      </span>
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Opt1
+                      </span>
+                    </span>
+                  </div>
+                  <DualListSelectorTree
+                    data={
+                      Array [
+                        Object {
+                          "id": "O3",
+                          "isChecked": false,
+                          "text": "Opt3",
+                        },
+                      ]
+                    }
+                    defaultAllExpanded={false}
+                    hasBadges={false}
+                    isChosen={false}
+                    isNested={true}
+                    onOptionCheck={[Function]}
+                    onOptionSelect={[Function]}
+                    parentItem={
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "O3",
+                            "isChecked": false,
+                            "text": "Opt3",
+                          },
+                        ],
+                        "defaultExpanded": true,
+                        "id": "O1",
+                        "isChecked": false,
+                        "text": "Opt1",
+                      }
+                    }
+                    selectedOptions={Array []}
+                  >
+                    <ul
+                      className="pf-c-dual-list-selector__list"
+                      role="group"
+                    >
+                      <DualListSelectorTreeItem
+                        defaultExpanded={false}
+                        hasBadge={false}
+                        id="O3"
+                        isChecked={false}
+                        isChosen={false}
+                        isSelected={false}
+                        itemData={
+                          Object {
+                            "id": "O3",
+                            "isChecked": false,
+                            "text": "Opt3",
+                          }
+                        }
+                        key="O3"
+                        onOptionCheck={[Function]}
+                        onOptionSelect={[Function]}
+                        parentItem={
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "O3",
+                                "isChecked": false,
+                                "text": "Opt3",
+                              },
+                            ],
+                            "defaultExpanded": true,
+                            "id": "O1",
+                            "isChecked": false,
+                            "text": "Opt1",
+                          }
+                        }
+                        text="Opt3"
+                      >
+                        <li
+                          aria-selected={false}
+                          className="pf-c-dual-list-selector__list-item"
+                          id="O3"
+                          role="treeitem"
+                        >
+                          <div
+                            className="pf-c-dual-list-selector__item pf-m-check"
+                            onClick={[Function]}
+                            tabIndex={-1}
+                          >
+                            <span
+                              className="pf-c-dual-list-selector__item-main"
+                            >
+                              <span
+                                className="pf-c-dual-list-selector__item-check"
+                              >
+                                <input
+                                  checked={false}
+                                  onChange={[Function]}
+                                  onClick={[Function]}
+                                  type="checkbox"
+                                />
+                              </span>
+                              <span
+                                className="pf-c-dual-list-selector__item-text"
+                              >
+                                Opt3
+                              </span>
+                            </span>
+                          </div>
+                        </li>
+                      </DualListSelectorTreeItem>
+                    </ul>
+                  </DualListSelectorTree>
+                </li>
+              </DualListSelectorTreeItem>
+              <DualListSelectorTreeItem
+                defaultExpanded={false}
+                hasBadge={false}
+                id="O2"
+                isChecked={false}
+                isChosen={false}
+                isSelected={false}
+                itemData={
+                  Object {
+                    "id": "O2",
+                    "isChecked": false,
+                    "text": "Opt2",
+                  }
+                }
+                key="O2"
+                onOptionCheck={[Function]}
+                onOptionSelect={[Function]}
+                text="Opt2"
+              >
+                <li
+                  aria-selected={false}
+                  className="pf-c-dual-list-selector__list-item"
+                  id="O2"
+                  role="treeitem"
+                >
+                  <div
+                    className="pf-c-dual-list-selector__item pf-m-check"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <span
+                      className="pf-c-dual-list-selector__item-main"
+                    >
+                      <span
+                        className="pf-c-dual-list-selector__item-check"
+                      >
+                        <input
+                          checked={false}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="checkbox"
+                        />
+                      </span>
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Opt2
+                      </span>
+                    </span>
+                  </div>
+                </li>
+              </DualListSelectorTreeItem>
+            </ul>
+          </DualListSelectorTree>
+        </div>
+      </div>
+    </DualListSelectorPane>
+    <div
+      aria-label="Selector controls"
+      className="pf-c-dual-list-selector__controls"
+      tabIndex={0}
+    >
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={false}
+          aria-label="Add all"
+          isDisabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Add all"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-13"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Add selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-14"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove selected"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-15"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove all"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <button
+            aria-disabled={true}
+            aria-label="Remove all"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-ouia-component-id="OUIA-Generated-Button-plain-16"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={true}
+            onClick={[Function]}
+            role={null}
+            tabIndex={-1}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+      </div>
+    </div>
+    <DualListSelectorPane
+      id="tree-test-chosen-pane"
+      isChosen={true}
+      isSearchable={false}
+      isTree={true}
+      onOptionCheck={[Function]}
+      onOptionSelect={[Function]}
+      options={Array []}
+      searchInputAriaLabel="Chosen search input"
+      selectedOptions={Array []}
+      status="Test status2"
+      title="Chosen options"
+    >
+      <div
+        className="pf-c-dual-list-selector__pane pf-m-chosen"
+      >
+        <div
+          className="pf-c-dual-list-selector__header"
+        >
+          <div
+            className="pf-c-dual-list-selector__title"
+          >
+            <div
+              className="pf-c-dual-list-selector__title-text"
+            >
+              Chosen options
+            </div>
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__status"
+        >
+          <div
+            className="pf-c-dual-list-selector__status-text"
+            id="tree-test-chosen-pane-status"
+          >
+            Test status2
+          </div>
+        </div>
+        <div
+          className="pf-c-dual-list-selector__menu"
+          tabIndex={0}
+        >
+          <DualListSelectorTree
+            data={Array []}
+            isChosen={true}
+            onOptionCheck={[Function]}
+            onOptionSelect={[Function]}
+            selectedOptions={Array []}
+          >
+            <ul
+              className="pf-c-dual-list-selector__list"
+              role="tree"
+            />
+          </DualListSelectorTree>
+        </div>
+      </div>
+    </DualListSelectorPane>
+  </div>
+</DualListSelector>
+`;

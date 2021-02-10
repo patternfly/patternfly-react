@@ -11,7 +11,7 @@ exports[`Dark Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav test=nav-class"
-    data-ouia-component-id={3}
+    data-ouia-component-id="OUIA-Generated-Nav-2"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -31,12 +31,16 @@ exports[`Dark Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-5"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link1"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -49,12 +53,16 @@ exports[`Dark Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-6"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link2"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -67,12 +75,16 @@ exports[`Dark Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-7"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link3"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -85,12 +97,16 @@ exports[`Dark Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-8"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link4"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -112,7 +128,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={5}
+    data-ouia-component-id="OUIA-Generated-Nav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -130,12 +146,16 @@ exports[`Default Nav List - Trigger item active update 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-1"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -147,12 +167,16 @@ exports[`Default Nav List - Trigger item active update 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-2"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -164,12 +188,16 @@ exports[`Default Nav List - Trigger item active update 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-3"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -181,12 +209,16 @@ exports[`Default Nav List - Trigger item active update 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-4"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -209,7 +241,7 @@ exports[`Default Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav test=nav-class"
-    data-ouia-component-id={1}
+    data-ouia-component-id="OUIA-Generated-Nav-1"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -229,12 +261,16 @@ exports[`Default Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-1"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link1"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -247,12 +283,16 @@ exports[`Default Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-2"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link2"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -265,12 +305,16 @@ exports[`Default Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-3"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link3"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -283,12 +327,16 @@ exports[`Default Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-4"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link test-nav-item-class"
               href="#link4"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -310,7 +358,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={11}
+    data-ouia-component-id="OUIA-Generated-Nav-2"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -333,15 +381,18 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
         >
           <li
             className="pf-c-nav__item pf-m-expandable pf-m-expanded expandable-group"
+            data-ouia-component-id="OUIA-Generated-NavExpandable-1"
+            data-ouia-component-type="PF4/NavExpandable"
+            data-ouia-safe={true}
             onClick={[Function]}
           >
-            <a
+            <button
               aria-expanded={true}
               className="pf-c-nav__link"
-              href="#"
               id="grp-1"
               onClick={[Function]}
               onMouseDown={[Function]}
+              tabIndex={null}
             >
               Section 1
               <span
@@ -372,13 +423,12 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     >
                       <path
                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        transform=""
                       />
                     </svg>
                   </AngleRightIcon>
                 </span>
               </span>
-            </a>
+            </button>
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"
@@ -393,12 +443,16 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-5"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link1"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 1
                     </a>
@@ -410,12 +464,16 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-6"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link2"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 2
                     </a>
@@ -427,12 +485,16 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-7"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link3"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 3
                     </a>
@@ -444,12 +506,16 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-8"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link4"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 4
                     </a>
@@ -475,7 +541,7 @@ exports[`Expandable Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={9}
+    data-ouia-component-id="OUIA-Generated-Nav-4"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -498,15 +564,18 @@ exports[`Expandable Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item pf-m-expandable"
+            data-ouia-component-id="OUIA-Generated-NavExpandable-1"
+            data-ouia-component-type="PF4/NavExpandable"
+            data-ouia-safe={true}
             onClick={[Function]}
           >
-            <a
+            <button
               aria-expanded={false}
               className="pf-c-nav__link"
-              href="#"
               id="grp-1"
               onClick={[Function]}
               onMouseDown={[Function]}
+              tabIndex={null}
             >
               Section 1
               <span
@@ -537,13 +606,12 @@ exports[`Expandable Nav List 1`] = `
                     >
                       <path
                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        transform=""
                       />
                     </svg>
                   </AngleRightIcon>
                 </span>
               </span>
-            </a>
+            </button>
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"
@@ -558,12 +626,16 @@ exports[`Expandable Nav List 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-13"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link1"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 1
                     </a>
@@ -575,12 +647,16 @@ exports[`Expandable Nav List 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-14"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link2"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 2
                     </a>
@@ -592,12 +668,16 @@ exports[`Expandable Nav List 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-15"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link3"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 3
                     </a>
@@ -609,12 +689,16 @@ exports[`Expandable Nav List 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-16"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link4"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 4
                     </a>
@@ -639,9 +723,9 @@ exports[`Expandable Nav List with aria label 1`] = `
   theme="dark"
 >
   <nav
-    aria-label="Local"
+    aria-label="Test"
     className="pf-c-nav"
-    data-ouia-component-id={13}
+    data-ouia-component-id="OUIA-Generated-Nav-5"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -664,15 +748,18 @@ exports[`Expandable Nav List with aria label 1`] = `
         >
           <li
             className="pf-c-nav__item pf-m-expandable"
+            data-ouia-component-id="OUIA-Generated-NavExpandable-2"
+            data-ouia-component-type="PF4/NavExpandable"
+            data-ouia-safe={true}
             onClick={[Function]}
           >
-            <a
+            <button
               aria-expanded={false}
               className="pf-c-nav__link"
-              href="#"
               id={null}
               onClick={[Function]}
               onMouseDown={[Function]}
+              tabIndex={null}
             >
               Section 1
               <span
@@ -703,13 +790,12 @@ exports[`Expandable Nav List with aria label 1`] = `
                     >
                       <path
                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        transform=""
                       />
                     </svg>
                   </AngleRightIcon>
                 </span>
               </span>
-            </a>
+            </button>
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"
@@ -730,12 +816,16 @@ exports[`Expandable Nav List with aria label 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-17"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link1"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 1
                     </a>
@@ -747,12 +837,16 @@ exports[`Expandable Nav List with aria label 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-18"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link2"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 2
                     </a>
@@ -764,12 +858,16 @@ exports[`Expandable Nav List with aria label 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-19"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link3"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 3
                     </a>
@@ -781,12 +879,16 @@ exports[`Expandable Nav List with aria label 1`] = `
                 >
                   <li
                     className="pf-c-nav__item"
+                    data-ouia-component-id="OUIA-Generated-NavItem-20"
+                    data-ouia-component-type="PF4/NavItem"
+                    data-ouia-safe={true}
                   >
                     <a
                       aria-current={null}
                       className="pf-c-nav__link"
                       href="#link4"
                       onClick={[Function]}
+                      tabIndex={null}
                     >
                       Link 4
                     </a>
@@ -812,7 +914,7 @@ exports[`Horizontal Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={17}
+    data-ouia-component-id="OUIA-Generated-Nav-7"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -832,12 +934,16 @@ exports[`Horizontal Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-29"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -849,12 +955,16 @@ exports[`Horizontal Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-30"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -866,12 +976,16 @@ exports[`Horizontal Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-31"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -883,12 +997,16 @@ exports[`Horizontal Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-32"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -910,7 +1028,7 @@ exports[`Nav Grouped List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={15}
+    data-ouia-component-id="OUIA-Generated-Nav-6"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -943,12 +1061,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-21"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link1"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 1
                   </a>
@@ -960,12 +1082,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-22"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link2"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 2
                   </a>
@@ -977,12 +1103,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-23"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link3"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 3
                   </a>
@@ -994,12 +1124,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-24"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link4"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 4
                   </a>
@@ -1039,12 +1173,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-25"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link1"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 1
                   </a>
@@ -1056,12 +1194,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-26"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link2"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 2
                   </a>
@@ -1073,12 +1215,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-27"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link3"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 3
                   </a>
@@ -1090,12 +1236,16 @@ exports[`Nav Grouped List 1`] = `
               >
                 <li
                   className="pf-c-nav__item"
+                  data-ouia-component-id="OUIA-Generated-NavItem-28"
+                  data-ouia-component-type="PF4/NavItem"
+                  data-ouia-safe={true}
                 >
                   <a
                     aria-current={null}
                     className="pf-c-nav__link"
                     href="#link4"
                     onClick={[Function]}
+                    tabIndex={null}
                   >
                     Link 4
                   </a>
@@ -1120,7 +1270,7 @@ exports[`Nav List with custom item nodes 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={21}
+    data-ouia-component-id="OUIA-Generated-Nav-9"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1140,6 +1290,9 @@ exports[`Nav List with custom item nodes 1`] = `
         >
           <li
             className="pf-c-nav__item test-nav-item-class"
+            data-ouia-component-id="OUIA-Generated-NavItem-37"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <div
               aria-current={null}
@@ -1166,7 +1319,7 @@ exports[`Simple Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={7}
+    data-ouia-component-id="OUIA-Generated-Nav-3"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1186,12 +1339,16 @@ exports[`Simple Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-9"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -1203,12 +1360,16 @@ exports[`Simple Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-10"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -1220,12 +1381,16 @@ exports[`Simple Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-11"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -1237,12 +1402,16 @@ exports[`Simple Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-12"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 4
             </a>
@@ -1264,7 +1433,7 @@ exports[`Tertiary Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={19}
+    data-ouia-component-id="OUIA-Generated-Nav-8"
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1284,12 +1453,16 @@ exports[`Tertiary Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-33"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link1"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 1
             </a>
@@ -1301,12 +1474,16 @@ exports[`Tertiary Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-34"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link2"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 2
             </a>
@@ -1318,12 +1495,16 @@ exports[`Tertiary Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-35"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link3"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 3
             </a>
@@ -1335,12 +1516,16 @@ exports[`Tertiary Nav List 1`] = `
         >
           <li
             className="pf-c-nav__item"
+            data-ouia-component-id="OUIA-Generated-NavItem-36"
+            data-ouia-component-type="PF4/NavItem"
+            data-ouia-safe={true}
           >
             <a
               aria-current={null}
               className="pf-c-nav__link"
               href="#link4"
               onClick={[Function]}
+              tabIndex={null}
             >
               Link 4
             </a>

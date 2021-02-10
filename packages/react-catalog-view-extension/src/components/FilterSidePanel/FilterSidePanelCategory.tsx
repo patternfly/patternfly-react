@@ -1,5 +1,4 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import { Button } from '@patternfly/react-core';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
@@ -39,7 +38,7 @@ export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCat
   hideText = null,
   ...props
 }: FilterSidePanelCategoryProps) => {
-  const classes = classNames('filter-panel-pf-category', className);
+  const classes = css('filter-panel-pf-category', className);
   const childrenArray = childrenToArray(children);
   const itemCount = childrenArray.length;
   const hiddenCount = itemCount - maxShowCount;

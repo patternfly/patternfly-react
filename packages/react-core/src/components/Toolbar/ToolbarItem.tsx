@@ -12,7 +12,8 @@ export enum ToolbarItemVariant {
   pagination = 'pagination',
   'search-filter' = 'search-filter',
   label = 'label',
-  'chip-group' = 'chip-group'
+  'chip-group' = 'chip-group',
+  'expand-all' = 'expand-all'
 }
 
 export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -27,8 +28,17 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'search-filter'
     | 'label'
     | 'chip-group'
-    | 'separator';
+    | 'separator'
+    | 'expand-all';
   /** Visibility at various breakpoints. */
+  visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Deprecated: prop misspelled */
   visiblity?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
@@ -54,6 +64,8 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** id for this data toolbar item */
   id?: string;
+  /** Flag indicating if the expand-all variant is expanded or not */
+  isAllExpanded?: boolean;
   /** Content to be rendered inside the data toolbar item */
   children?: React.ReactNode;
 }
@@ -61,15 +73,25 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
+  visibility,
   visiblity,
   alignment,
   spacer,
   id,
   children,
+  isAllExpanded,
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
     return <Divider className={css(styles.modifiers.vertical, className)} {...props} />;
+  }
+
+  if (visiblity !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The ToolbarItem visiblity prop has been deprecated. ' +
+        'Please use the correctly spelled visibility prop instead.'
+    );
   }
 
   return (
@@ -80,7 +102,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           styles.modifiers[
             toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
           ],
-        formatBreakpointMods(visiblity, styles),
+        isAllExpanded && styles.modifiers.expanded,
+        formatBreakpointMods(visibility || visiblity, styles),
         formatBreakpointMods(alignment, styles),
         formatBreakpointMods(spacer, styles),
         className

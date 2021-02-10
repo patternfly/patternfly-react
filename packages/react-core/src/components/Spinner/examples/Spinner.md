@@ -1,34 +1,37 @@
 ---
-title: 'Spinner'
+id: Spinner
 section: components
-cssPrefix: 'pf-c-spinner'
-typescript: true
+cssPrefix: pf-c-spinner
 propComponents: ['Spinner']
 ---
 
-import { Spinner } from '@patternfly/react-core';
-import { Alert } from '@patternfly/react-core';
-
-## Spinner
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
-SpinnerBasic = () => (<Spinner/>);
+<Spinner isSVG />
 ```
 
-```js title=Size-variations
+### Size variations
+```js
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
-SpinnerSizeVariations = () => (
 <React.Fragment>
-    <Spinner size="sm"/>
-    <Spinner size="md"/>
-    <Spinner size="lg"/>
-    <Spinner size="xl"/>
+  <Spinner isSVG size="sm"/>
+  <Spinner isSVG size="md"/>
+  <Spinner isSVG size="lg"/>
+  <Spinner isSVG size="xl"/>
 </React.Fragment>
-);
 ```
+
+### Custom size
+```js
+import React from 'react';
+import { Spinner } from '@patternfly/react-core';
+
+<Spinner isSVG diameter="80px" />
+```
+

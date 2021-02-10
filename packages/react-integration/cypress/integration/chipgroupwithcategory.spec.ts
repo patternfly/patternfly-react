@@ -17,12 +17,12 @@ describe('Chip Group with Category Demo Test', () => {
     cy.get('.pf-c-chip-group__label')
       .last()
       .then((tooltipLink: JQuery<HTMLHeadingElement>) => {
-        cy.get('.tippy-popper').should('not.exist');
+        cy.get('.pf-c-tooltip').should('not.exist');
         cy.wrap(tooltipLink)
           .trigger('mouseenter')
-          .get('.tippy-popper')
+          .get('.pf-c-tooltip')
           .should('exist')
-          .get('.tippy-popper')
+          .get('.pf-c-tooltip')
           .contains('Category 3 has a very long name');
       });
   });

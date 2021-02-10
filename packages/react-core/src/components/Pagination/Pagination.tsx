@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Pagination/paginatio
 import { css } from '@patternfly/react-styles';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import widthChars from '@patternfly/react-tokens/dist/js/c_pagination__nav_page_select_c_form_control_width_chars';
 import { PickOptional } from '../../helpers';
 
@@ -80,8 +80,10 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact */
   isCompact?: boolean;
-  /** Flag indicating if pagination is not sticky */
+  /** Flag indicating if pagination should not be sticky on mobile */
   isStatic?: boolean;
+  /** Flag indicating if pagination should stick to its position (based on variant) */
+  isSticky?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
@@ -135,7 +137,7 @@ const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
 };
 
 let paginationId = 0;
-export class Pagination extends React.Component<PaginationProps> {
+export class Pagination extends React.Component<PaginationProps, { ouiaStateId: string }> {
   static displayName = 'Pagination';
   paginationRef = React.createRef<HTMLDivElement>();
   static defaultProps: PickOptional<PaginationProps> = {
@@ -144,6 +146,7 @@ export class Pagination extends React.Component<PaginationProps> {
     variant: PaginationVariant.top,
     isDisabled: false,
     isCompact: false,
+    isSticky: false,
     perPage: defaultPerPageOptions[0].value,
     titles: {
       items: '',
@@ -177,6 +180,10 @@ export class Pagination extends React.Component<PaginationProps> {
     ouiaSafe: true
   };
 
+  state = {
+    ouiaStateId: getDefaultOUIAId(Pagination.displayName, this.props.variant)
+  };
+
   getLastPage() {
     const { itemCount, perPage } = this.props;
     return Math.ceil(itemCount / perPage) || 0;
@@ -201,6 +208,7 @@ export class Pagination extends React.Component<PaginationProps> {
       isDisabled,
       isCompact,
       isStatic,
+      isSticky,
       perPage,
       titles,
       firstPage,
@@ -255,10 +263,11 @@ export class Pagination extends React.Component<PaginationProps> {
           variant === PaginationVariant.bottom && styles.modifiers.bottom,
           isCompact && styles.modifiers.compact,
           isStatic && styles.modifiers.static,
+          isSticky && styles.modifiers.sticky,
           className
         )}
         id={`${widgetId}-${paginationId++}`}
-        {...getOUIAProps(Pagination.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(Pagination.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...props}
       >
         {variant === PaginationVariant.top && (

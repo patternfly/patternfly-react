@@ -7,4 +7,5 @@ export interface LayoutOptions {
   chargeStrength: number;
   allowDrag: boolean;
   layoutOnDrag: boolean;
+  onSimulationEnd?: () => void;
 }

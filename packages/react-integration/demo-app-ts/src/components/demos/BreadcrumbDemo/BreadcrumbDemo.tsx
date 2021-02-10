@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading, BreadcrumbItemRenderArgs } from '@patternfly/react-core';
 
 export class BreadcrumbDemo extends React.Component {
   static displayName = 'BreadcrumbDemo';
@@ -11,6 +11,19 @@ export class BreadcrumbDemo extends React.Component {
     return (
       <Breadcrumb>
         <BreadcrumbItem to="/">Section Home</BreadcrumbItem>
+        <BreadcrumbItem
+          render={({ ariaCurrent, className }: BreadcrumbItemRenderArgs) => (
+            <span
+              aria-current={ariaCurrent}
+              role="link"
+              data-href="/hello"
+              className={className}
+              style={{ cursor: 'pointer' }}
+            >
+              Fake Section Title
+            </span>
+          )}
+        />
         <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
         <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
         <BreadcrumbItem to="#">Section Title</BreadcrumbItem>

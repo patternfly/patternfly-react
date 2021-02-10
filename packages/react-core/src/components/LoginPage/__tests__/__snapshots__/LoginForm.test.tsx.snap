@@ -15,7 +15,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     label="Username"
     validated="default"
   >
-    <ForwardRef
+    <TextInput
       autoFocus={true}
       id="pf-login-username-id"
       isRequired={true}
@@ -32,7 +32,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     label="Password"
     validated="default"
   >
-    <ForwardRef
+    <TextInput
       id="pf-login-password-id"
       isRequired={true}
       name="pf-login-password-id"
@@ -84,7 +84,7 @@ exports[`should render Login form 1`] = `
     label="Username"
     validated="default"
   >
-    <ForwardRef
+    <TextInput
       autoFocus={true}
       id="pf-login-username-id"
       isRequired={true}
@@ -101,7 +101,7 @@ exports[`should render Login form 1`] = `
     label="Password"
     validated="default"
   >
-    <ForwardRef
+    <TextInput
       id="pf-login-password-id"
       isRequired={true}
       name="pf-login-password-id"

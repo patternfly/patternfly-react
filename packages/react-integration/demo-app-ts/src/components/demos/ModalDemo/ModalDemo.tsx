@@ -5,12 +5,15 @@ import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-t
 interface ModalDemoState {
   isModalOpen: boolean;
   isModalDescriptionOpen: boolean;
+  isHelpModalOpen: boolean;
   isSmallModalOpen: boolean;
+  isMediumModalOpen: boolean;
   isLargeModalOpen: boolean;
   isHalfWidthModalOpen: boolean;
   isCustomHeaderFooterModalOpen: boolean;
   isNoHeaderModalOpen: boolean;
   isModalCustomEscapeOpen: boolean;
+  isModalAlertVariantOpen: boolean;
   customEscapePressed: boolean;
 }
 
@@ -19,12 +22,15 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   state = {
     isModalOpen: false,
     isModalDescriptionOpen: false,
+    isHelpModalOpen: false,
     isSmallModalOpen: false,
+    isMediumModalOpen: false,
     isLargeModalOpen: false,
     isHalfWidthModalOpen: false,
     isCustomHeaderFooterModalOpen: false,
     isNoHeaderModalOpen: false,
     isModalCustomEscapeOpen: false,
+    isModalAlertVariantOpen: false,
     customEscapePressed: false
   };
 
@@ -43,6 +49,18 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   handleSmallModalToggle = () => {
     this.setState(({ isSmallModalOpen }) => ({
       isSmallModalOpen: !isSmallModalOpen
+    }));
+  };
+
+  handleHelpModalToggle = () => {
+    this.setState(({ isHelpModalOpen }) => ({
+      isHelpModalOpen: !isHelpModalOpen
+    }));
+  };
+
+  handleMediumModalToggle = () => {
+    this.setState(({ isMediumModalOpen }) => ({
+      isMediumModalOpen: !isMediumModalOpen
     }));
   };
 
@@ -77,6 +95,13 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     }));
   };
 
+  handleModalAlertVariantToggle = (event?: any, customEscapePressed?: boolean) => {
+    this.setState(({ isModalAlertVariantOpen }) => ({
+      isModalAlertVariantOpen: !isModalAlertVariantOpen,
+      customEscapePressed
+    }));
+  };
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -90,10 +115,10 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isModalOpen}
         onClose={this.handleModalToggle}
         actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+          <Button key="cancel" data-id="modal-01-cancel-btn" variant="secondary" onClick={this.handleModalToggle}>
             Cancel
           </Button>,
-          <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+          <Button key="confirm" data-id="modal-01-confirm-btn" variant="primary" onClick={this.handleModalToggle}>
             Confirm
           </Button>
         ]}
@@ -141,6 +166,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         variant={ModalVariant.small}
+        position="top"
         title="Modal Header"
         isOpen={isSmallModalOpen}
         onClose={this.handleSmallModalToggle}
@@ -149,6 +175,33 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             Cancel
           </Button>,
           <Button key="confirm" variant="primary" onClick={this.handleSmallModalToggle}>
+            Confirm
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
+  renderMediumModal() {
+    const { isMediumModalOpen } = this.state;
+
+    return (
+      <Modal
+        variant={'medium'}
+        title="Modal Header"
+        isOpen={isMediumModalOpen}
+        onClose={this.handleMediumModalToggle}
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleMediumModalToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleMediumModalToggle}>
             Confirm
           </Button>
         ]}
@@ -243,6 +296,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isCustomHeaderFooterModalOpen}
         header={header}
         title="custom header example"
+        aria-labelledby="customHeaderTitle"
         aria-describedby="custom-header-example"
         onClose={this.handleCustomHeaderFooterModalToggle}
         footer={footer}
@@ -315,6 +369,63 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     );
   }
 
+  renderModalWithAlertVariant() {
+    const { isModalAlertVariantOpen } = this.state;
+
+    return (
+      <Modal
+        title="Modal Header"
+        titleIconVariant="warning"
+        isOpen={isModalAlertVariantOpen}
+        onClose={this.handleModalAlertVariantToggle}
+        aria-describedby="custom-escape-example"
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleModalAlertVariantToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleModalAlertVariantToggle}>
+            Confirm
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
+  renderHelpModal() {
+    const { isHelpModalOpen } = this.state;
+
+    return (
+      <Modal
+        variant={ModalVariant.small}
+        help={<Button variant="plain">Help</Button>}
+        position="top"
+        title="Modal Header"
+        isOpen={isHelpModalOpen}
+        onClose={this.handleHelpModalToggle}
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleHelpModalToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleHelpModalToggle}>
+            Confirm
+          </Button>
+        ]}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
   render() {
     const buttonStyle = {
       marginRight: 20,
@@ -323,12 +434,20 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <React.Fragment>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+        <div id="tabstop-test" tabIndex={0} style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
           <Button style={buttonStyle} variant="primary" onClick={this.handleModalToggle} id="showDefaultModalButton">
             Show Modal
           </Button>
           <Button style={buttonStyle} variant="primary" onClick={this.handleSmallModalToggle} id="showSmallModalButton">
             Show Small Modal
+          </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleMediumModalToggle}
+            id="showMediumModalButton"
+          >
+            Show Medium Modal
           </Button>
           <Button style={buttonStyle} variant="primary" onClick={this.handleLargeModalToggle} id="showLargeModalButton">
             Show Large Modal
@@ -374,15 +493,30 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           >
             Show Modal with custom escape button behavior
           </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleModalAlertVariantToggle}
+            id="showCustomEscapeModalButton"
+            className={this.state.customEscapePressed ? 'customEscapePressed' : ''}
+          >
+            Show Modal with alert variant
+          </Button>
+          <Button style={buttonStyle} variant="primary" onClick={this.handleHelpModalToggle} id="showHelpModalButton">
+            Show Help Modal
+          </Button>
         </div>
         {this.renderModal()}
         {this.renderSmallModal()}
+        {this.renderMediumModal()}
         {this.renderLargeModal()}
         {this.renderHalfWidthModal()}
         {this.renderCustomHeaderFooterModal()}
         {this.renderNoHeaderModal()}
         {this.renderModalWithDescription()}
         {this.renderModalWithCustomEscape()}
+        {this.renderModalWithAlertVariant()}
+        {this.renderHelpModal()}
       </React.Fragment>
     );
   }

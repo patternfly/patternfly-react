@@ -5,6 +5,7 @@ import { Popover, PopoverPosition } from '../Popover';
 test('popover renders close-button, header and body', () => {
   const view = shallow(
     <Popover
+      id="test"
       position="top"
       isVisible
       hideOnOutsideClick
@@ -24,6 +25,7 @@ test('popover renders close-button, header and body', () => {
 test('popover can have a custom minimum width', () => {
   const view = shallow(
     <Popover
+      id="test"
       position="top"
       isVisible
       minWidth="600px"
@@ -44,6 +46,7 @@ test('popover can have a custom minimum width', () => {
 test('popover can specify position as object value', () => {
   const view = shallow(
     <Popover
+      id="test"
       position={PopoverPosition.right}
       isVisible
       hideOnOutsideClick
@@ -60,24 +63,29 @@ test('popover can specify position as object value', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('popover passes along values to tippy.js', () => {
+test('popover can close from content (uncontrolled)', () => {
   const view = shallow(
     <Popover
-      position={PopoverPosition.right}
+      id="test"
+      aria-label="Popover with button in the body that can close it"
       isVisible
-      hideOnOutsideClick
-      headerContent={<div>Popover Header</div>}
-      bodyContent={
+      headerContent={<div>Popover header</div>}
+      bodyContent={hide => (
         <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          <div>
+            All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
+            component passes the hide function to which can be used to close the Popover after some user interaction.
+          </div>
+          <div>
+            <button id="uncontrolled-close" onClick={hide}>
+              Close popover
+            </button>
+          </div>
         </div>
-      }
-      tippyProps={{
-        duration: [200, 200],
-        offset: 20
-      }}
+      )}
+      footerContent="Popover footer"
     >
-      <div>Tippy Props Test</div>
+      <button id="uncontrolled-toggle">Toggle Popover</button>
     </Popover>
   );
   expect(view).toMatchSnapshot();

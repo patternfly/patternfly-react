@@ -16,11 +16,13 @@ interface DefaultRemoveConnectorProps {
  */
 function computeTooltipPosition(startPoint: Point, endPoint: Point): TooltipPosition {
   const angle = Math.abs((Math.atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x) * 180) / Math.PI);
-  return angle < 135 && angle > 90
-    ? TooltipPosition.left
-    : angle > 45 && angle <= 90
-    ? TooltipPosition.right
-    : TooltipPosition.top;
+  if (angle < 135 && angle > 90) {
+    return TooltipPosition.left;
+  }
+  if (angle > 45 && angle <= 90) {
+    return TooltipPosition.right;
+  }
+  return TooltipPosition.top;
 }
 
 const DefaultRemoveConnector: React.FC<DefaultRemoveConnectorProps> = ({
@@ -40,7 +42,7 @@ const DefaultRemoveConnector: React.FC<DefaultRemoveConnectorProps> = ({
     >
       <circle className="topology-connector__remove-bg" cx={0} cy={0} r={size} />
       <g transform={`translate(-${size / 2}, -${size / 2})`}>
-        <TrashIcon className="topology-connector__remove-icon" style={{ fontSize: size }} alt="Delete Connector" />
+        <TrashIcon className="topology-connector__remove-icon" style={{ fontSize: size }} />
       </g>
     </g>
   </Tooltip>

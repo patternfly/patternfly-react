@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 export interface CatalogItemHeaderProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Additional css classes */
@@ -22,7 +22,7 @@ export const CatalogItemHeader: React.FunctionComponent<CatalogItemHeaderProps> 
   vendor = null,
   ...props
 }: CatalogItemHeaderProps) => (
-  <header className={classNames('catalog-item-header-pf', className)} {...props}>
+  <header className={css('catalog-item-header-pf', className)} {...props}>
     {iconImg && <img className="catalog-item-header-pf-icon" src={iconImg} alt="" />}
     {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
     <div className="catalog-item-header-pf-text">

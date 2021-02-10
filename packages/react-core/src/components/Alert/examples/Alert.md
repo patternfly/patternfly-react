@@ -1,18 +1,22 @@
 ---
-title: 'Alert'
+id: Alert
 section: components
-cssPrefix: 'pf-c-alert'
-typescript: true
+cssPrefix: pf-c-alert
 propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 ouia: true
 ---
 
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 import './alert.css';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
 
 ## Examples
 
-```js title=Types
+### Types
+```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -31,7 +35,8 @@ class AlertTypes extends React.Component {
 }
 ```
 
-```js title=Variations
+### Variations
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
@@ -77,7 +82,8 @@ class AlertVariations extends React.Component {
 }
 ```
 
-```js title=Inline-types
+### Inline types
+```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -96,7 +102,8 @@ class InlineAlert extends React.Component {
 }
 ```
 
-```js title=Inline-variations
+### Inline variations
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
@@ -149,7 +156,8 @@ class InlineAlertVariations extends React.Component {
 }
 ```
 
-```js title=Static-live-region-alert
+### Static live region alert
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -183,7 +191,8 @@ class StaticLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Dynamic-live-region-alert
+### Dynamic live region alert
+```js
 import React from 'react';
 import { Alert, InputGroup } from '@patternfly/react-core';
 
@@ -259,7 +268,8 @@ class DynamicLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Async-live-region-alert
+### Async live region alert
+```js
 import React from 'react';
 import { Alert, InputGroup } from '@patternfly/react-core';
 
@@ -307,6 +317,88 @@ class AsyncLiveRegionAlert extends React.Component {
         {this.state.alerts.map(({ title, variant, isLiveRegion, key }) => (
           <Alert variant={variant} title={title} isLiveRegion={isLiveRegion} key={key} />
         ))}
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Alert timeout
+```js
+import React from 'react';
+import { Alert, Button } from '@patternfly/react-core';
+
+class AlertTimeout extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false
+    };
+    this.onClick = () => {
+      this.setState({isOpen:true})
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const buttonText = !isOpen ? "Show 2 alerts" : "0 alerts to show";
+    return (
+      <React.Fragment>
+        <Button variant="secondary" onClick={this.onClick} isDisabled={isOpen} >{buttonText} </Button>
+        {this.state.isOpen &&
+        <React.Fragment>
+          <Alert title="Default timeout Alert" timeout={true}>This alert will dismiss after 8 seconds </Alert>
+          <Alert title="Custom timeout Alert" timeout={16000}>This alert will dismiss after 16 seconds </Alert>
+        </React.Fragment>
+        }
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Truncate
+```js
+import React from 'react';
+import { Alert } from '@patternfly/react-core';
+class AlertTypes extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert variant="info" truncateTitle={1} title={`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
+        `} />
+        <Alert variant="warning" truncateTitle={2} title={`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
+        `} />
+        <Alert variant="danger" truncateTitle={3} title={`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
+        `} />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Custom icons
+```js
+import React from 'react';
+import { Alert } from '@patternfly/react-core';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+
+class AlertTypes extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert customIcon={<UsersIcon />} title="Default alert title" />
+        <Alert customIcon={<BoxIcon />} variant="info" title="Info alert title" />
+        <Alert customIcon={<DatabaseIcon />} variant="success" title="Success alert title" />
+        <Alert customIcon={<ServerIcon />} variant="warning" title="Warning alert title" />
+        <Alert customIcon={<LaptopIcon />} variant="danger" title="Danger alert title" />
       </React.Fragment>
     );
   }

@@ -11,7 +11,7 @@ interface TextAreaState {
   requiredIsValid: boolean;
   horizontalIsValid: boolean;
   verticalIsValid: boolean;
-  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success | ValidatedOptions.warning;
 }
 
 export class TextAreaDemo extends React.Component<{}, TextAreaState> {
@@ -52,8 +52,13 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     this.setState({ resizeVerticalTextArea: value, verticalIsValid });
   };
   handleChangeValidated = (value: string) => {
-    // If the text area contains less than 5 characters, set validated to error
-    const validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    // If the text area contains less than 5 characters, set validated to error. If empty set to warning.
+    let validated = ValidatedOptions.default;
+    if (value.length === 0) {
+      validated = ValidatedOptions.warning;
+    } else {
+      validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    }
     this.setState({ validatedTextArea: value, validated });
   };
 
@@ -119,6 +124,12 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           validated={validated}
           aria-label="text area example 5"
         />
+        <Text>Disabled text area </Text>
+        <TextArea id="textarea6-a" value={'disabled text area'} aria-label="text area example 6 a" disabled />
+        <TextArea id="textarea6-b" value={'isDisabled text area'} aria-label="text area example 6 b" isDisabled />
+        <Text>Read only text area </Text>
+        <TextArea id="textarea7-a" value={'readOnly text area'} aria-label="text area example 7 a" readOnly />
+        <TextArea id="textarea7-b" value={'isReadOnly text area'} aria-label="text area example 7 b" isReadOnly />
       </React.Fragment>
     );
   }

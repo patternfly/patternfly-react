@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
-import styles from '@patternfly/react-styles/css/components/Table/table';
 import { SelectProps } from '@patternfly/react-core';
+import { Td } from '../TableComposable/Td';
 
 export interface BodyCellProps {
   'data-label'?: string;
@@ -51,34 +50,42 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {
-  const mappedProps = {
-    ...(dataLabel && !parentId ? { 'data-label': dataLabel } : {}),
-    ...props
-  };
-
   const [tooltip, setTooltip] = React.useState('');
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
-      setTooltip(tooltipProp || event.target.innerHTML);
+      if (tooltipProp) {
+        setTooltip(tooltipProp);
+      } else if (typeof children === 'string') {
+        setTooltip(children);
+      }
     } else {
       setTooltip('');
     }
     onMouseEnterProp(event);
   };
 
-  const Component = component as any;
   const cell = (
-    <Component
-      {...mappedProps}
+    <Td
+      className={className}
+      component={component}
+      dataLabel={dataLabel && !parentId ? dataLabel : null}
       onMouseEnter={onMouseEnter}
-      className={css(className, textCenter && styles.modifiers.center)}
+      textCenter={textCenter}
       colSpan={colSpan}
+      {...props}
     >
       {children}
-    </Component>
+    </Td>
   );
 
-  const bodyCell = tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
+  const bodyCell =
+    tooltip !== '' ? (
+      <Tooltip content={tooltip} isVisible>
+        {cell}
+      </Tooltip>
+    ) : (
+      cell
+    );
 
   return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : bodyCell;
 };

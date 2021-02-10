@@ -7,6 +7,8 @@ export interface WizardNavProps {
   children?: any;
   /** Aria-label applied to the nav element */
   'aria-label'?: string;
+  /** Sets the aria-labelledby attribute on the nav element */
+  'aria-labelledby'?: string;
   /** Whether the nav is expanded */
   isOpen?: boolean;
   /** True to return the inner list without the wrapping nav element */
@@ -16,6 +18,7 @@ export interface WizardNavProps {
 export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   children,
   'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
   isOpen = false,
   returnList = false
 }: WizardNavProps) => {
@@ -26,7 +29,11 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   }
 
   return (
-    <nav className={css(styles.wizardNav, isOpen && 'pf-m-expanded')} aria-label={ariaLabel}>
+    <nav
+      className={css(styles.wizardNav, isOpen && styles.modifiers.expanded)}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+    >
       <ol className={css(styles.wizardNavList)}>{children}</ol>
     </nav>
   );

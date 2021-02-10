@@ -1,7 +1,9 @@
+import * as d3 from 'd3';
 import { Node, NodeStyle } from '../types';
 import { Rect } from '../geom';
 import { LayoutGroup } from './LayoutGroup';
-export class LayoutNode {
+
+export class LayoutNode implements d3.SimulationNodeDatum {
   protected readonly node: Node;
   protected xx?: number;
   protected yy?: number;
@@ -59,6 +61,9 @@ export class LayoutNode {
         .setCenter(x, y)
     );
   }
+  setFixed(fixed: boolean): void {
+    this.isFixed = fixed;
+  }
   get nodeBounds(): Rect {
     const { padding } = this.node.getStyle<NodeStyle>();
     // Currently non-group nodes do not include their padding in the bounds
@@ -77,7 +82,7 @@ export class LayoutNode {
     return this.nodeHeight;
   }
   update() {
-    if (this.xx != null && this.yy != null) {
+    if (!this.isFixed && this.xx != null && this.yy != null) {
       this.node.setBounds(
         this.node
           .getBounds()

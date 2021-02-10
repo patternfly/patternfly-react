@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import * as React from 'react';
 import { action } from 'mobx';
 import * as _ from 'lodash';
@@ -12,10 +11,15 @@ import {
   Model,
   ModelKind,
   NodeModel,
+  Controller,
   Visualization,
   withPanZoom,
   GraphComponent,
   withDragNode,
+  withContextMenu,
+  ContextMenuItem,
+  ContextSubMenuItem,
+  ContextMenuSeparator,
   VisualizationSurface,
   SELECTION_EVENT,
   SelectionEventListener,
@@ -24,15 +28,15 @@ import {
   useEventListener
 } from '@patternfly/react-topology';
 import {
-  Toolbar,
-  ToolbarGroup,
   ToolbarItem,
   Split,
   SplitItem,
   Dropdown,
   DropdownItem,
   DropdownToggle,
-  DropdownPosition
+  DropdownPosition,
+  Button,
+  Tooltip
 } from '@patternfly/react-core';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import data from './data/reasonable';
@@ -43,6 +47,42 @@ import defaultComponentFactory from './components/defaultComponentFactory';
 
 import '@patternfly/patternfly/patternfly.css';
 import '@patternfly/patternfly/patternfly-addons.css';
+
+const GRAPH_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'layout', 'scale', 'scaleExtent', 'layers'];
+const NODE_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'collapsed', 'width', 'height', 'shape'];
+
+const contextMenuItem = (label: string, i: number): React.ReactElement => {
+  if (label === '-') {
+    return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
+  }
+  if (label.includes('->')) {
+    const parent = label.slice(0, label.indexOf('->'));
+    const children = label.slice(label.indexOf('->') + 2).split(',');
+
+    return (
+      <ContextSubMenuItem label={parent} key={parent}>
+        {children.map((child, j) => contextMenuItem(child.trim(), j))}
+      </ContextSubMenuItem>
+    );
+  }
+  return (
+    // eslint-disable-next-line no-alert
+    <ContextMenuItem key={label} onClick={() => alert(`Selected: ${label}`)}>
+      {label}
+    </ContextMenuItem>
+  );
+};
+
+const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
+
+const defaultMenu = createContextMenuItems(
+  'First',
+  'Second',
+  'Third',
+  '-',
+  'Fourth',
+  'Sub Menu-> Child1, Child2, Child3, -, Child4'
+);
 
 const getModel = (layout: string): Model => {
   // create nodes from data
@@ -55,23 +95,24 @@ const getModel = (layout: string): Model => {
       type: 'node',
       width,
       height,
-      x: 0,
-      y: 0,
       data: d
     };
   });
 
   // create groups from data
-  const groupNodes: NodeModel[] = _.map(_.groupBy(nodes, n => n.data.group), (v, k) => ({
-    type: 'group-hull',
-    id: k,
-    group: true,
-    children: v.map((n: NodeModel) => n.id),
-    label: `group-${k}`,
-    style: {
-      padding: 10
-    }
-  }));
+  const groupNodes: NodeModel[] = _.map(
+    _.groupBy(nodes, n => n.data.group),
+    (v, k) => ({
+      type: 'group-hull',
+      id: k,
+      group: true,
+      children: v.map((n: NodeModel) => n.id),
+      label: `group-${k}`,
+      style: {
+        padding: 10
+      }
+    })
+  );
 
   // create links from data
   const edges = data.links.map(
@@ -104,7 +145,7 @@ const getVisualization = (model: Model): Visualization => {
   vis.registerLayoutFactory(defaultLayoutFactory);
   vis.registerComponentFactory(defaultComponentFactory);
 
-  // support pan zoom, drag, and selection
+  // support pan zoom, drag, context menus, and selection
   vis.registerComponentFactory((kind, type) => {
     if (kind === ModelKind.graph) {
       return withPanZoom()(GraphComponent);
@@ -116,7 +157,7 @@ const getVisualization = (model: Model): Visualization => {
       return withDragNode({ canCancel: false })(Group);
     }
     if (kind === ModelKind.node) {
-      return withDragNode({ canCancel: false })(withSelection()(Node));
+      return withDragNode({ canCancel: false })(withSelection()(withContextMenu(() => defaultMenu)(Node)));
     }
     return undefined;
   });
@@ -126,7 +167,7 @@ const getVisualization = (model: Model): Visualization => {
 };
 
 interface TopologyViewComponentProps {
-  vis: Visualization;
+  vis: Controller;
   useSidebar: boolean;
 }
 
@@ -134,6 +175,9 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
   const [layout, setLayout] = React.useState('Force');
+  const [savedModel, setSavedModel] = React.useState<Model>();
+  const [modelSaved, setModelSaved] = React.useState<boolean>(false);
+  const newNodeCount = React.useRef(0);
 
   useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
@@ -149,6 +193,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
     // FIXME reset followed by layout causes a flash of the reset prior to the layout
     vis.getGraph().reset();
     vis.getGraph().setLayout(newLayout);
+    vis.getGraph().layout();
     setLayout(newLayout);
     setLayoutDropdownOpen(false);
   };
@@ -172,18 +217,116 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
             </DropdownItem>,
             <DropdownItem key={3} onClick={() => updateLayout('Cola')}>
               Cola
+            </DropdownItem>,
+            <DropdownItem key={3} onClick={() => updateLayout('ColaNoForce')}>
+              ColaNoForce
             </DropdownItem>
           ]}
         />
       </SplitItem>
     </Split>
   );
+
+  const saveModel = () => {
+    setSavedModel(vis.toModel());
+    setModelSaved(true);
+    window.setTimeout(() => {
+      setModelSaved(false);
+    }, 2000);
+  };
+
+  const restoreLayout = () => {
+    if (savedModel) {
+      const currentModel = vis.toModel();
+      currentModel.graph = {
+        ...currentModel.graph,
+        ..._.pick(savedModel.graph, GRAPH_LAYOUT_OPTIONS)
+      };
+      currentModel.nodes = currentModel.nodes.map(n => {
+        const savedNode = savedModel.nodes.find(sn => sn.id === n.id);
+        if (!savedNode) {
+          return n;
+        }
+        return {
+          ...n,
+          ..._.pick(savedNode, NODE_LAYOUT_OPTIONS)
+        };
+      });
+      vis.fromModel(currentModel, false);
+
+      if (savedModel.graph.layout !== layout) {
+        setLayout(savedModel.graph.layout);
+      }
+    }
+  };
+
+  const addNode = () => {
+    const newNode = {
+      id: `new-node-${newNodeCount.current++}`,
+      type: 'node',
+      width: 100,
+      height: 100,
+      data: {}
+    };
+    const currentModel = vis.toModel();
+    currentModel.nodes.push(newNode);
+    vis.fromModel(currentModel);
+  };
+
+  const removeSelectedNode = () => {
+    const currentModel = vis.toModel();
+    const selectedIndex = currentModel.nodes.findIndex(n => n.id === selectedIds[0]);
+    currentModel.nodes = [
+      ...currentModel.nodes.slice(0, selectedIndex),
+      ...currentModel.nodes.slice(selectedIndex + 1)
+    ];
+    const effectedEdges = currentModel.edges.filter(e => e.source === selectedIds[0] || e.target === selectedIds[0]);
+    effectedEdges.forEach(e => {
+      const effectedIndex = currentModel.edges.findIndex(edge => edge.id === e.id);
+      currentModel.edges = [
+        ...currentModel.edges.slice(0, effectedIndex),
+        ...currentModel.edges.slice(effectedIndex + 1)
+      ];
+    });
+    currentModel.nodes
+      .filter(n => n.group)
+      .forEach(g => {
+        const childIndex = g.children.findIndex(c => c === selectedIds[0]);
+        if (childIndex) {
+          g.children = [...g.children.slice(0, childIndex), ...g.children.slice(childIndex + 1)];
+        }
+      });
+
+    vis.fromModel(currentModel);
+    setSelectedIds([]);
+  };
+
   const viewToolbar = (
-    <Toolbar className="pf-u-mx-md pf-u-my-md">
-      <ToolbarGroup>
-        <ToolbarItem>{layoutDropdown}</ToolbarItem>
-      </ToolbarGroup>
-    </Toolbar>
+    <>
+      <ToolbarItem>{layoutDropdown}</ToolbarItem>
+      <ToolbarItem>
+        <Tooltip content="Layout info saved" trigger="manual" isVisible={modelSaved}>
+          <Button variant="secondary" onClick={saveModel}>
+            Save Layout Info
+          </Button>
+        </Tooltip>
+      </ToolbarItem>
+      <ToolbarItem>
+        <Button variant="secondary" onClick={restoreLayout}>
+          Restore Layout Info
+        </Button>
+      </ToolbarItem>
+      <ToolbarItem>
+        <Button variant="secondary" onClick={addNode}>
+          Add Node
+        </Button>
+      </ToolbarItem>
+      <ToolbarItem>
+        <Button variant="secondary" onClick={removeSelectedNode} isDisabled={!selectedIds || selectedIds.length === 0}>
+          Remove Node
+        </Button>
+      </ToolbarItem>
+    </>
   );
 
   return (

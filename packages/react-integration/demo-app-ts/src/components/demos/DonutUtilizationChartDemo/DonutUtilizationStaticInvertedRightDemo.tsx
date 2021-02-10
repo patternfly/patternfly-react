@@ -35,7 +35,10 @@ export class DonutUtilizationStaticInvertedRightDemo extends React.Component<{},
       <div>
         <div style={{ backgroundColor: 'white', height: '230px', width: '500px' }}>
           <ChartDonutThreshold
-            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
+            data={[
+              { x: 'Warning at 60%', y: 60 },
+              { x: 'Danger at 20%', y: 20 }
+            ]}
             invert
             labels={({ datum }) => (datum.x ? datum.x : null)}
             width={500}

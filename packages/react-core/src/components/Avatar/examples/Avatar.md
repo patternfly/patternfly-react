@@ -1,25 +1,18 @@
 ---
-title: 'Avatar'
+id: Avatar
 section: components
-cssPrefix: 'pf-c-avatar'
-typescript: true
+cssPrefix: pf-c-avatar
 propComponents: ['Avatar']
 ---
 
-import { Avatar } from '@patternfly/react-core';
 import avatarImg from './avatarImg.svg';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from './examples/avatarImg.svg';
 
-class AvatarExample extends React.Component {
-  render() {
-    return (
-      <Avatar src={avatarImg} alt="avatar"></Avatar>
-    );
-  }
-}
+<Avatar src={avatarImg} alt="avatar" />
 ```

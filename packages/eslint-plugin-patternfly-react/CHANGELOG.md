@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.5](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.4...eslint-plugin-patternfly-react@4.1.5) (2020-11-20)
+
+
+### Bug Fixes
+
+* **eslint:** fix @patternfly/react-icons/createIcon differently ([#5163](https://github.com/patternfly/patternfly-react/issues/5163)) ([271464d](https://github.com/patternfly/patternfly-react/commit/271464d3293704b29a24e5a4f140deb2b3985cda))
+
+
+
+
+
+## [4.1.4](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.3...eslint-plugin-patternfly-react@4.1.4) (2020-09-22)
+
+
+### Bug Fixes
+
+* **eslint-plugin:** upgrade react-hooks ([#4857](https://github.com/patternfly/patternfly-react/issues/4857)) ([8c89cc1](https://github.com/patternfly/patternfly-react/commit/8c89cc130bf195fb892946a5a8f6730a7af1c3a2))
+
+
+
+
+
+## [4.1.3](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.2...eslint-plugin-patternfly-react@4.1.3) (2020-08-24)
+
+
+### Bug Fixes
+
+* **docs:** use ids and h3s ([#4720](https://github.com/patternfly/patternfly-react/issues/4720)) ([a3f684f](https://github.com/patternfly/patternfly-react/commit/a3f684fa23cfce3d8e79b86206773292790cec5c))
+
+
+
+
+
+## [4.1.2](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.1...eslint-plugin-patternfly-react@4.1.2) (2020-07-17)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
 ## [4.1.1](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.0...eslint-plugin-patternfly-react@4.1.1) (2020-06-15)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react

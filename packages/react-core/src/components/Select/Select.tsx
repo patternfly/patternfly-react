@@ -7,12 +7,22 @@ import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
+import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
-import { Chip, ChipGroup } from '../ChipGroup';
-import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional, GenerateId } from '../../helpers';
+import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
+import {
+  keyHandler,
+  getNextIndex,
+  getOUIAProps,
+  OUIAProps,
+  getDefaultOUIAId,
+  PickOptional,
+  GenerateId
+} from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
+import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -21,7 +31,7 @@ export interface SelectProps
   extends ToggleMenuBaseProps,
     Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
-  /** Content rendered inside the Select */
+  /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
   children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
@@ -61,6 +71,12 @@ export interface SelectProps
   toggleAriaLabel?: string;
   /** Label for remove chip button of multiple type ahead select variant */
   removeSelectionAriaLabel?: string;
+  /** ID list of favorited select items */
+  favorites?: string[];
+  /** Label for the favorites group */
+  favoritesLabel?: string;
+  /** Enables favorites. Callback called when a select options's favorite button is clicked */
+  onFavorite?: (itemId: string, isFavorite: boolean) => void;
   /** Callback for selection behavior */
   onSelect?: (
     event: React.MouseEvent | React.ChangeEvent,
@@ -75,6 +91,8 @@ export interface SelectProps
   onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
   /** Optional callback for newly created options */
   onCreateOption?: (newOptionValue: string) => void;
+  /** Optional event handler called each time the value in the typeahead input changes. */
+  onTypeaheadInputChanged?: (value: string) => void;
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
@@ -93,15 +111,22 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
+  /** Optional props to pass to the chip group in the typeaheadmulti variant */
+  chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
+  /** Optional props to render custom chip group in the typeaheadmulti variant */
+  chipGroupComponent?: React.ReactNode;
 }
 
 export interface SelectState {
   openedOnEnter: boolean;
   typeaheadInputValue: string | null;
-  typeaheadActiveChild?: HTMLElement;
   typeaheadFilteredChildren: React.ReactNode[];
+  favoritesGroup: React.ReactNode[];
   typeaheadCurrIndex: number;
   creatableValue: string;
+  tabbedIntoFavoritesMenu: boolean;
+  typeaheadStoredIndex: number;
+  ouiaStateId: string;
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
@@ -110,7 +135,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   private menuComponentRef = React.createRef<HTMLElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private clearRef = React.createRef<HTMLButtonElement>();
-  private refCollection: HTMLElement[] = [];
+  private inputRef = React.createRef<HTMLInputElement>();
+  private refCollection: HTMLElement[][] = [[]];
+  private optionContainerRefCollection: HTMLElement[] = [];
 
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
@@ -138,43 +165,73 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
     onFilter: null,
+    onTypeaheadInputChanged: null,
     customContent: null,
     hasInlineFilter: false,
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
     inputIdPrefix: '',
     menuAppendTo: 'inline',
-    ouiaSafe: true
+    favorites: [] as string[],
+    favoritesLabel: 'Favorites',
+    ouiaSafe: true,
+    chipGroupComponent: null
   };
 
   state: SelectState = {
     openedOnEnter: false,
     typeaheadInputValue: null,
-    typeaheadActiveChild: null as HTMLElement,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
+    favoritesGroup: [] as React.ReactNode[],
     typeaheadCurrIndex: -1,
-    creatableValue: ''
+    typeaheadStoredIndex: -1,
+    creatableValue: '',
+    tabbedIntoFavoritesMenu: false,
+    ouiaStateId: getDefaultOUIAId(Select.displayName, this.props.variant)
   };
+
+  getTypeaheadActiveChild = (typeaheadCurrIndex: number) =>
+    this.refCollection[typeaheadCurrIndex] ? this.refCollection[typeaheadCurrIndex][0] : null;
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
     if (this.props.hasInlineFilter) {
-      this.refCollection[0] = this.filterRef.current;
+      this.refCollection[0][0] = this.filterRef.current;
     }
 
     if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent) {
-      this.refCollection[0].focus();
+      const firstRef = this.refCollection.find(ref => ref !== null);
+      if (firstRef && firstRef[0]) {
+        firstRef[0].focus();
+      }
     }
 
     if (prevProps.children !== this.props.children) {
-      this.setState({
-        typeaheadFilteredChildren: React.Children.toArray(this.props.children)
-      });
+      this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
-    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
-      this.setState({
-        typeaheadInputValue: this.props.selections as string
-      });
+    if (
+      this.props.onFavorite &&
+      (this.props.favorites.length !== prevProps.favorites.length ||
+        this.state.typeaheadFilteredChildren !== prevState.typeaheadFilteredChildren)
+    ) {
+      const tempRenderableChildren =
+        this.props.variant === 'typeahead' || this.props.variant === 'typeaheadmulti'
+          ? this.state.typeaheadFilteredChildren
+          : this.props.children;
+      const renderableFavorites = createRenderableFavorites(
+        tempRenderableChildren,
+        this.props.isGrouped,
+        this.props.favorites
+      );
+      const favoritesGroup = renderableFavorites.length
+        ? [
+            <SelectGroup key="favorites" label={this.props.favoritesLabel}>
+              {renderableFavorites}
+            </SelectGroup>,
+            <Divider key="favorites-group-divider" />
+          ]
+        : [];
+      this.setState({ favoritesGroup });
     }
   };
 
@@ -186,30 +243,72 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.setState({
       openedOnEnter: false,
       typeaheadInputValue: null,
-      typeaheadActiveChild: null,
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
-      typeaheadCurrIndex: -1
+      typeaheadCurrIndex: -1,
+      tabbedIntoFavoritesMenu: false
     });
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children } = this.props;
+    if (e.target.value.toString() !== '' && !this.props.isOpen) {
+      this.props.onToggle(true);
+    }
+
+    if (this.props.onTypeaheadInputChanged) {
+      this.props.onTypeaheadInputChanged(e.target.value.toString());
+    }
+
+    this.setState({
+      typeaheadCurrIndex: -1,
+      typeaheadInputValue: e.target.value,
+      creatableValue: e.target.value
+    });
+    this.updateTypeAheadFilteredChildren(e.target.value.toString(), e);
+    this.refCollection = [[]];
+  };
+
+  updateTypeAheadFilteredChildren = (typeaheadInputValue: string, e: React.ChangeEvent<HTMLInputElement> | null) => {
     let typeaheadFilteredChildren: any;
+
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children, isGrouped } = this.props;
+
     if (onFilter) {
       typeaheadFilteredChildren = onFilter(e) || children;
     } else {
       let input: RegExp;
       try {
-        input = new RegExp(e.target.value.toString(), 'i');
+        input = new RegExp(typeaheadInputValue.toString(), 'i');
       } catch (err) {
-        input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        input = new RegExp(typeaheadInputValue.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
-      typeaheadFilteredChildren =
-        e.target.value.toString() !== ''
-          ? React.Children.toArray<React.ReactElement>(this.props.children).filter(
-              child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
-            )
-          : React.Children.toArray(this.props.children);
+      const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
+      if (isGrouped) {
+        const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
+          child.props.value && this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
+        typeaheadFilteredChildren =
+          typeaheadInputValue.toString() !== ''
+            ? React.Children.map(children, group => {
+                if (group.type === SelectGroup) {
+                  const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
+                    SelectGroupProps
+                  >[]).filter(childFilter);
+                  if (filteredGroupChildren.length > 0) {
+                    return React.cloneElement(group, {
+                      titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+                      children: filteredGroupChildren as any
+                    });
+                  }
+                } else {
+                  return (React.Children.toArray(group) as React.ReactElement<SelectGroupProps>[]).filter(childFilter);
+                }
+              })
+            : childrenArray;
+      } else {
+        typeaheadFilteredChildren =
+          typeaheadInputValue.toString() !== ''
+            ? childrenArray.filter(child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0)
+            : childrenArray;
+      }
     }
     if (!typeaheadFilteredChildren) {
       typeaheadFilteredChildren = [];
@@ -220,8 +319,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           <SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />
         );
     }
-    if (isCreatable && e.target.value !== '') {
-      const newValue = e.target.value;
+    if (isCreatable && typeaheadInputValue !== '') {
+      const newValue = typeaheadInputValue;
       typeaheadFilteredChildren.push(
         <SelectOption key={0} value={newValue} onClick={() => onCreateOption && onCreateOption(newValue)}>
           {createText} "{newValue}"
@@ -230,16 +329,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     this.setState({
-      typeaheadInputValue: e.target.value,
-      typeaheadCurrIndex: -1,
-      typeaheadFilteredChildren,
-      typeaheadActiveChild: null,
-      creatableValue: e.target.value
+      typeaheadFilteredChildren
     });
-    this.refCollection = [];
   };
 
   onClick = (e: React.MouseEvent) => {
+    if (!this.props.isOpen) {
+      this.props.onToggle(true);
+    }
     e.stopPropagation();
   };
 
@@ -247,71 +344,201 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     e.stopPropagation();
     this.setState({
       typeaheadInputValue: null,
-      typeaheadActiveChild: null,
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
       typeaheadCurrIndex: -1
     });
   };
 
-  extendTypeaheadChildren(typeaheadActiveChild: HTMLElement) {
-    return this.state.typeaheadFilteredChildren.map((child: React.ReactNode) =>
-      React.cloneElement(child as React.ReactElement, {
-        isFocused:
-          typeaheadActiveChild &&
-          (typeaheadActiveChild.innerText ===
-            this.getDisplay((child as React.ReactElement).props.value.toString(), 'text') ||
-            (this.props.isCreatable &&
-              typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
-      })
-    );
+  extendTypeaheadChildren(typeaheadCurrIndex: number, favoritesGroup?: React.ReactNode[]) {
+    const { isGrouped, onFavorite } = this.props;
+    const typeaheadChildren = favoritesGroup
+      ? favoritesGroup.concat(this.state.typeaheadFilteredChildren)
+      : this.state.typeaheadFilteredChildren;
+    const activeElement = this.optionContainerRefCollection[typeaheadCurrIndex];
+
+    let typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
+    if (typeaheadActiveChild && typeaheadActiveChild.classList.contains('pf-m-description')) {
+      typeaheadActiveChild = typeaheadActiveChild.firstElementChild as HTMLElement;
+    }
+
+    this.refCollection = [[]];
+    this.optionContainerRefCollection = [];
+    if (isGrouped) {
+      return React.Children.map(typeaheadChildren as React.ReactElement[], (group: React.ReactElement) => {
+        if (group.type === Divider) {
+          return group;
+        } else if (group.type === SelectGroup && onFavorite) {
+          return React.cloneElement(group, {
+            titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+            children: React.Children.map(group.props.children, (child: React.ReactElement) =>
+              child.type === Divider
+                ? child
+                : React.cloneElement(child as React.ReactElement, {
+                    isFocused:
+                      activeElement &&
+                      (activeElement.id === (child as React.ReactElement).props.id ||
+                        (this.props.isCreatable &&
+                          typeaheadActiveChild.innerText ===
+                            `{createText} "${(group as React.ReactElement).props.value}"`))
+                  })
+            )
+          });
+        } else if (group.type === SelectGroup) {
+          return React.cloneElement(group, {
+            titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
+            children: React.Children.map(group.props.children, (child: React.ReactElement) =>
+              child.type === Divider
+                ? child
+                : React.cloneElement(child as React.ReactElement, {
+                    isFocused:
+                      typeaheadActiveChild &&
+                      (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
+                        (this.props.isCreatable &&
+                          typeaheadActiveChild.innerText ===
+                            `{createText} "${(child as React.ReactElement).props.value}"`))
+                  })
+            )
+          });
+        } else {
+          // group has been filtered down to SelectOption
+          return React.cloneElement(group as React.ReactElement, {
+            isFocused:
+              typeaheadActiveChild &&
+              (typeaheadActiveChild.innerText === group.props.value.toString() ||
+                (this.props.isCreatable && typeaheadActiveChild.innerText === `{createText} "${group.props.value}"`))
+          });
+        }
+      });
+    }
+
+    return typeaheadChildren.map((child: React.ReactNode) => {
+      const childElement = child as any;
+      return childElement.type.displayName === 'Divider'
+        ? child
+        : React.cloneElement(child as React.ReactElement, {
+            isFocused:
+              typeaheadActiveChild &&
+              (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
+                (this.props.isCreatable &&
+                  typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
+          });
+    });
   }
 
-  sendRef = (ref: React.ReactNode, index: number) => {
-    this.refCollection[index] = ref as HTMLElement;
+  sendRef = (
+    optionRef: React.ReactNode,
+    favoriteRef: React.ReactNode,
+    optionContainerRef: React.ReactNode,
+    index: number
+  ) => {
+    this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
+    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;
   };
 
-  handleArrowKeys = (index: number, position: string) => {
-    keyHandler(index, 0, position, this.refCollection, this.refCollection);
-  };
-
-  handleFocus = () => {
-    if (!this.props.isOpen) {
-      this.props.onToggle(true);
+  handleMenuKeys = (index: number, innerIndex: number, position: string) => {
+    keyHandler(index, innerIndex, position, this.refCollection, this.refCollection);
+    if (this.props.variant === SelectVariant.typeahead || this.props.variant === SelectVariant.typeaheadMulti) {
+      if (position !== 'tab') {
+        this.handleTypeaheadKeys(position);
+      }
     }
   };
 
+  moveFocus = (nextIndex: number, updateCurrentIndex: boolean = true) => {
+    const { isCreatable, createText } = this.props;
+
+    const hasDescriptionElm = Boolean(
+      this.refCollection[nextIndex][0] && this.refCollection[nextIndex][0].classList.contains('pf-m-description')
+    );
+    const optionTextElm = hasDescriptionElm
+      ? (this.refCollection[nextIndex][0].firstElementChild as HTMLElement)
+      : this.refCollection[nextIndex][0];
+
+    let typeaheadInputValue = '';
+    if (isCreatable && optionTextElm.innerText.includes(createText)) {
+      typeaheadInputValue = this.state.creatableValue;
+    } else if (optionTextElm) {
+      typeaheadInputValue = optionTextElm.innerText;
+    }
+    this.setState(prevState => ({
+      typeaheadCurrIndex: updateCurrentIndex ? nextIndex : prevState.typeaheadCurrIndex,
+      typeaheadStoredIndex: nextIndex,
+      typeaheadInputValue
+    }));
+  };
+
   handleTypeaheadKeys = (position: string) => {
-    const { isOpen, isCreatable, createText } = this.props;
-    const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
+    const { isOpen, onFavorite } = this.props;
+    const { typeaheadCurrIndex, tabbedIntoFavoritesMenu, typeaheadStoredIndex } = this.state;
+    const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
+
     if (isOpen) {
-      if (position === 'enter' && (typeaheadActiveChild || this.refCollection[0])) {
-        this.setState({
-          typeaheadInputValue:
-            (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
-        });
-        if (typeaheadActiveChild) {
-          typeaheadActiveChild.click();
-        } else {
-          this.refCollection[0].click();
+      if (position === 'enter') {
+        if (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0])) {
+          this.setState({
+            typeaheadInputValue:
+              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
+          });
+          if (typeaheadActiveChild) {
+            typeaheadActiveChild.click();
+          } else {
+            this.refCollection[0][0].click();
+          }
         }
-      } else {
+      } else if (position === 'tab') {
+        if (onFavorite) {
+          if (this.inputRef.current === document.activeElement) {
+            let indexForFocus = 0;
+            if (typeaheadCurrIndex !== -1) {
+              indexForFocus = typeaheadCurrIndex;
+            } else if (typeaheadStoredIndex !== -1) {
+              indexForFocus = typeaheadStoredIndex;
+            }
+
+            if (this.refCollection[indexForFocus] !== null && this.refCollection[indexForFocus][0] !== null) {
+              this.refCollection[indexForFocus][0].focus();
+            } else {
+              this.clearRef.current.focus();
+            }
+
+            this.setState({
+              tabbedIntoFavoritesMenu: true,
+              typeaheadCurrIndex: -1
+            });
+          } else {
+            this.inputRef.current.focus();
+            this.setState({ tabbedIntoFavoritesMenu: false });
+          }
+        } else {
+          this.props.onToggle(false);
+        }
+      } else if (!tabbedIntoFavoritesMenu) {
         let nextIndex;
         if (typeaheadCurrIndex === -1 && position === 'down') {
           nextIndex = 0;
         } else if (typeaheadCurrIndex === -1 && position === 'up') {
           nextIndex = this.refCollection.length - 1;
-        } else {
+        } else if (position !== 'left' && position !== 'right') {
           nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
+        } else {
+          nextIndex = typeaheadCurrIndex;
         }
-        this.setState({
-          typeaheadCurrIndex: nextIndex,
-          typeaheadActiveChild: this.refCollection[nextIndex],
-          typeaheadInputValue:
-            isCreatable && this.refCollection[nextIndex].innerText.includes(createText)
-              ? this.state.creatableValue
-              : this.refCollection[nextIndex].innerText
-        });
+        if (this.refCollection[nextIndex] === null) {
+          return;
+        }
+        this.moveFocus(nextIndex);
+      } else {
+        const nextIndex = this.refCollection.findIndex(
+          ref => ref !== undefined && (ref[0] === document.activeElement || ref[1] === document.activeElement)
+        );
+        this.moveFocus(nextIndex);
       }
+    }
+  };
+
+  onClickTypeaheadToggleButton = () => {
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus();
     }
   };
 
@@ -320,11 +547,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       return;
     }
     const item = this.props.isGrouped
-      ? React.Children.toArray<React.ReactElement>(this.props.children)
+      ? (React.Children.toArray(this.props.children) as React.ReactElement[])
           .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
           .find(child => child.props.value.toString() === value.toString())
-      : React.Children.toArray<React.ReactElement>(this.props.children).find(
-          child => child.props.value.toString() === value.toString()
+      : React.Children.toArray(this.props.children).find(
+          child =>
+            (child as React.ReactElement).props.value &&
+            (child as React.ReactElement).props.value.toString() === value.toString()
         );
     if (item) {
       if (item && item.props.children) {
@@ -335,24 +564,19 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
       return item.props.value.toString();
     }
-    return value;
+    return value.toString();
   };
 
-  findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
-    if (!item.props || !item.props.children) {
-      if (typeof item !== 'string') {
-        return '';
-      }
+  findText = (item: React.ReactNode) => {
+    if (typeof item === 'string') {
       return item;
+    } else if (!React.isValidElement(item)) {
+      return '';
+    } else {
+      const multi: string[] = [];
+      React.Children.toArray(item.props.children).forEach(child => multi.push(this.findText(child)));
+      return multi.join('');
     }
-    if (typeof item.props.children === 'string') {
-      return item.props.children;
-    }
-    const multi: string[] = [];
-    React.Children.toArray(item.props.children).forEach((child: React.ReactElement) =>
-      multi.push(this.findText(child))
-    );
-    return multi.join('');
   };
 
   generateSelectedBadge = () => {
@@ -369,6 +593,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   render() {
     const {
       children,
+      chipGroupProps,
+      chipGroupComponent,
       className,
       customContent,
       variant,
@@ -399,6 +625,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       inlineFilterPlaceholderText,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onFilter,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onTypeaheadInputChanged,
       onCreateOption,
       isCreatable,
       createText,
@@ -407,13 +635,41 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       inputIdPrefix,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
+      favorites,
+      onFavorite,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      favoritesLabel,
       ...props
     } = this.props;
-    const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
-    const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
+    const {
+      openedOnEnter,
+      typeaheadCurrIndex,
+      typeaheadInputValue,
+      typeaheadFilteredChildren,
+      favoritesGroup
+    } = this.state;
+    const selectToggleId = toggleId || `pf-select-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
+    const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
     let childPlaceholderText = null as string;
+
+    // If onFavorites is set,  add isFavorite prop to children and add a Favorites group to the SelectMenu
+    let renderableItems: React.ReactNode[] = [];
+    if (onFavorite) {
+      // if variant is type-ahead call the extendTypeaheadChildren before adding favorites
+      let tempExtendedChildren: (React.ReactElement | React.ReactNode | {})[] = children;
+      if (variant === 'typeahead' || variant === 'typeaheadmulti') {
+        tempExtendedChildren = this.extendTypeaheadChildren(typeaheadCurrIndex, favoritesGroup);
+      } else if (onFavorite) {
+        tempExtendedChildren = favoritesGroup.concat(children);
+      }
+      // mark items that are favorited with isFavorite
+      renderableItems = extendItemsWithFavorite(tempExtendedChildren, isGrouped, favorites);
+    } else {
+      renderableItems = children;
+    }
+
     if (!customContent) {
       if (!hasAnySelections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
@@ -449,8 +705,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
-      selectedChips = (
-        <ChipGroup>
+      selectedChips = chipGroupComponent ? (
+        chipGroupComponent
+      ) : (
+        <ChipGroup {...chipGroupProps}>
           {selections &&
             (selections as string[]).map(item => (
               <Chip
@@ -478,19 +736,33 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               placeholder={inlineFilterPlaceholderText}
               onKeyDown={event => {
                 if (event.key === KeyTypes.ArrowUp) {
-                  this.handleArrowKeys(0, 'up');
+                  this.handleMenuKeys(0, 0, 'up');
                 } else if (event.key === KeyTypes.ArrowDown) {
-                  this.handleArrowKeys(0, 'down');
+                  this.handleMenuKeys(0, 0, 'down');
+                } else if (event.key === KeyTypes.ArrowLeft) {
+                  this.handleMenuKeys(0, 0, 'left');
+                } else if (event.key === KeyTypes.ArrowRight) {
+                  this.handleMenuKeys(0, 0, 'right');
+                } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
+                  // More modal-like experience for checkboxes
+                  // Let SelectOption handle this
+                  if (event.shiftKey) {
+                    this.handleMenuKeys(0, 0, 'up');
+                  } else {
+                    this.handleMenuKeys(0, 0, 'down');
+                  }
+                  event.stopPropagation();
+                  event.preventDefault();
                 }
               }}
               ref={this.filterRef}
               autoComplete="off"
-            ></input>
+            />
           </div>
           <Divider key="inline-filter-divider" />
         </React.Fragment>
       );
-      this.refCollection[0] = this.filterRef.current;
+      this.refCollection[0][0] = this.filterRef.current;
       filterWithChildren = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
         React.cloneElement(option, { key: index })
       );
@@ -512,13 +784,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             selected: selections[0],
             openedOnEnter
           };
-          variantChildren = children;
+          variantChildren = renderableItems;
           break;
         case 'checkbox':
           variantProps = {
             checked: selections,
             isGrouped,
-            hasInlineFilter
+            hasInlineFilter,
+            openedOnEnter
           };
           variantChildren = filterWithChildren;
           break;
@@ -527,14 +800,20 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             selected: selections[0],
             openedOnEnter
           };
-          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
         case 'typeaheadmulti':
           variantProps = {
             selected: selections,
             openedOnEnter
           };
-          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          variantChildren = onFavorite ? renderableItems : this.extendTypeaheadChildren(typeaheadCurrIndex);
+          if (variantChildren.length === 0) {
+            variantChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />);
+          }
           break;
       }
     }
@@ -549,7 +828,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         sendRef={this.sendRef}
-        keyHandler={this.handleArrowKeys}
+        keyHandler={this.handleMenuKeys}
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
       >
@@ -565,6 +844,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
+        {...(width && { style: { width } })}
       >
         {isOpen && menuContainer}
       </div>
@@ -579,7 +859,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         ref={this.parentRef}
-        {...getOUIAProps(Select.displayName, ouiaId, ouiaSafe)}
+        {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
+        {...(width && { style: { width } })}
       >
         <SelectToggle
           id={selectToggleId}
@@ -596,6 +877,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           handleTypeaheadKeys={this.handleTypeaheadKeys}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
+          onClickTypeaheadToggleButton={this.onClickTypeaheadToggleButton}
         >
           {customContent && (
             <div className={css(styles.selectToggleWrapper)}>
@@ -648,12 +930,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
-              {(selections[0] || typeaheadInputValue) && clearBtn}
+              {hasOnClear && (selections[0] || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
           {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -671,12 +953,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  onFocus={this.handleFocus}
                   autoComplete="off"
                   disabled={isDisabled}
+                  ref={this.inputRef}
                 />
               </div>
-              {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
+              {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
         </SelectToggle>
@@ -695,7 +977,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       <GenerateId>
         {randomId => (
           <SelectContext.Provider
-            value={{ onSelect, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
+            value={{ onSelect, onFavorite, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
           >
             {menuAppendTo === 'inline' ? (
               mainContainer

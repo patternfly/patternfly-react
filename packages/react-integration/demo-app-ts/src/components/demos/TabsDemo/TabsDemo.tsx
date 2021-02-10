@@ -64,6 +64,7 @@ export class TabDemo extends Component {
         </Button>
         <Tabs id="unconnectedChildren" activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab
+            className="custom-tab-1"
             id="demoTab1"
             eventKey={0}
             title={<TabTitleText>Tab item 1</TabTitleText>}
@@ -71,6 +72,7 @@ export class TabDemo extends Component {
             tabContentRef={this.contentRef1}
           />
           <Tab
+            className="custom-tab-2"
             id="demoTab2"
             eventKey={1}
             title={<TabTitleText>Tab item 2</TabTitleText>}
@@ -156,6 +158,23 @@ export class TabDemo extends Component {
           </Tab>
         </Tabs>
         <Tabs id="filledTabs" activeKey={this.state.activeTabKey4} onSelect={this.handleTabClick4} isFilled>
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Tab item </TabTitleText>}>
+            Tab 3 section
+          </Tab>
+        </Tabs>
+        <Tabs
+          id="boxLightVariantTabs"
+          activeKey={this.state.activeTabKey4}
+          onSelect={this.handleTabClick4}
+          isBox
+          variant="light300"
+        >
           <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
             Tab 1 section
           </Tab>

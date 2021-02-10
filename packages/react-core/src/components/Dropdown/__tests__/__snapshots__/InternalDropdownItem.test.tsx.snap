@@ -12,6 +12,18 @@ exports[`dropdown items button 1`] = `
 </ContextConsumer>
 `;
 
+exports[`dropdown items description a 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`dropdown items description button 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`dropdown items disabled a 1`] = `
 <ContextConsumer>
   <Component />

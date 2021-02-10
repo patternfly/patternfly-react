@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from 'mobx';
+import { runInAction } from 'mobx';
 import { observer } from 'mobx-react';
 import { isNode, Anchor, Node, AnchorEnd } from '../types';
 import ElementContext from '../utils/ElementContext';
@@ -16,12 +16,12 @@ export const useAnchor = (
     throw new Error('useAnchor must be used within the scope of a Node');
   }
   React.useEffect(() => {
-    action(() => {
+    runInAction(() => {
       const anchor = anchorCallback.prototype ? new (anchorCallback as any)(element) : (anchorCallback as any)(element);
       if (anchor) {
         element.setAnchor(anchor, end, type);
       }
-    })();
+    });
   }, [anchorCallback, element, end, type]);
 };
 
@@ -29,7 +29,11 @@ export const withAnchor = <P extends {} = {}>(anchor: Anchor, end?: AnchorEnd, t
   WrappedComponent: React.ComponentType<P>
 ) => {
   const Component: React.FC<P> = props => {
-    useAnchor(React.useCallback(() => anchor, []), end, type);
+    useAnchor(
+      React.useCallback(() => anchor, []),
+      end,
+      type
+    );
     return <WrappedComponent {...props} />;
   };
   return observer(Component);

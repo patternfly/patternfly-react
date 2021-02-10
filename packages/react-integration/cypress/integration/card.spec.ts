@@ -32,9 +32,35 @@ describe('Card Demo Test', () => {
       .should('have.class', 'pf-m-selectable');
   });
 
+  it('Verify card is heading element', () => {
+    cy.get('h4').should('have.id', 'heading-card');
+  });
+
   it('Verify card is flat', () => {
-    cy.get('article')
-      .last()
-      .should('have.class', 'pf-m-flat');
+    cy.get('#flatCard').should('have.class', 'pf-m-flat');
+  });
+
+  it('Verify card is rounded', () => {
+    cy.get('#roundedCard').should('have.class', 'pf-m-rounded');
+  });
+
+  it('Verify card is large', () => {
+    cy.get('#largeCard').should('have.class', 'pf-m-display-lg');
+  });
+
+  it('Verify that selectable card can be selected and unselected with keyboard input', () => {
+    cy.get('#selectableCard').focus();
+    cy.focused().should('have.class', 'pf-m-selectable');
+    cy.focused().should('not.have.class', 'pf-m-selected');
+    cy.focused().type('{enter}');
+    cy.focused().should('have.class', 'pf-m-selected');
+    cy.focused().type('{enter}');
+    cy.focused().should('not.have.class', 'pf-m-selected');
+  });
+
+  it('Verify card is expandable', () => {
+    cy.get('#expand-card').should('not.have.class', 'pf-m-expanded');
+    cy.get('.pf-c-card__header-toggle .pf-c-button').click();
+    cy.get('#expand-card').should('have.class', 'pf-m-expanded');
   });
 });

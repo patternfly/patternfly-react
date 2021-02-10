@@ -3,18 +3,17 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import { UserIcon } from '@patternfly/react-icons'
 import { EmptyStateIcon } from '../../EmptyStateIcon';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
-
 it('EmptyStateIcon should match snapshot (auto-generated)', () => {
   const view = shallow(
     <EmptyStateIcon
       color={'string'}
-      size={'sm'}
       title={'string'}
       className={"''"}
-      icon={'div'}
+      icon={UserIcon}
       component={null}
       variant={'icon'}
     />
@@ -26,11 +25,10 @@ it('EmptyStateIcon should match snapshot for variant container', () => {
   const view = shallow(
     <EmptyStateIcon
       color={'string'}
-      size={'sm'}
       title={'string'}
       className={"''"}
-      icon={'div'}
-      component={null}
+      icon={null}
+      component={() => <div>Component</div>}
       variant={'container'}
     />
   );

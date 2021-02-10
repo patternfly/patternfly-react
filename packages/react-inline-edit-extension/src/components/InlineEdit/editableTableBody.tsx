@@ -3,7 +3,6 @@ import { TableContext } from '@patternfly/react-table';
 import { TableBody, IExtraRowData } from '@patternfly/react-table';
 import { Body } from '../Body';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IEditedCellData extends IExtraRowData {
   columnIndex: number;
   elementId?: string;

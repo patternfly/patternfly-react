@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import { css } from '@patternfly/react-styles';
 
 import { Text, TextVariants } from '@patternfly/react-core';
 
@@ -18,7 +18,7 @@ export const PropertyItem: React.FunctionComponent<PropertyItemProps> = ({
   value = null,
   ...props
 }: PropertyItemProps) => {
-  const classes = classNames('properties-side-panel-pf-property', className);
+  const classes = css('properties-side-panel-pf-property', className);
   return (
     <div className={classes} {...props}>
       <Text component={TextVariants.h5} className="properties-side-panel-pf-property-label">

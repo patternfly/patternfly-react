@@ -2,19 +2,27 @@ import * as React from 'react';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 import { Text, TextVariants } from '../Text';
+import { Button, ButtonVariant } from '../Button';
 
 export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /**  Content rendered inside the drawer */
   children?: React.ReactNode;
   /**  Additional classes for notification drawer header. */
   className?: string;
+  /** Adds custom accessible text to the notification drawer close button. */
+  closeButtonAriaLabel?: string;
   /**  Notification drawer heading count */
   count?: number;
+  /**  Notification drawer heading custom text which can be used instead of providing count/unreadText */
+  customText?: string;
+  /**  Callback for when close button is clicked */
+  onClose?: () => void;
   /**  Notification drawer heading title */
   title?: string;
-  /**  Notification drawer heading unread custom text */
+  /**  Notification drawer heading unread text used in combination with a count */
   unreadText?: string;
 }
 
@@ -22,6 +30,9 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
   children,
   className = '',
   count,
+  closeButtonAriaLabel = 'Close',
+  customText,
+  onClose,
   title = 'Notifications',
   unreadText = 'unread',
   ...props
@@ -30,8 +41,21 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
     <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
       {title}
     </Text>
-    {count && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unreadText}`}</span>}
-    {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
+    {(customText !== undefined || count !== undefined) && (
+      <span className={css(styles.notificationDrawerHeaderStatus)}>{customText || `${count} ${unreadText}`}</span>
+    )}
+    {children && (
+      <div className={css(styles.notificationDrawerHeaderAction)}>
+        {children}
+        {onClose && (
+          <div>
+            <Button variant={ButtonVariant.plain} aria-label={closeButtonAriaLabel} onClick={onClose}>
+              <TimesIcon aria-hidden="true" />
+            </Button>
+          </div>
+        )}
+      </div>
+    )}
   </div>
 );
 NotificationDrawerHeader.displayName = 'NotificationDrawerHeader';

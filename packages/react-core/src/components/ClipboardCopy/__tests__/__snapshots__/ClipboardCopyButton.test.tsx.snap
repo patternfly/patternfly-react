@@ -2,39 +2,16 @@
 
 exports[`copy button render 1`] = `
 <Tooltip
-  appendTo={[Function]}
-  aria="describedby"
-  boundary="window"
-  className=""
   content={
     <div>
       Copy Me
     </div>
   }
-  distance={15}
-  enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}
-  flipBehavior={
-    Array [
-      "top",
-      "right",
-      "bottom",
-      "left",
-      "top",
-      "right",
-      "bottom",
-    ]
-  }
-  id=""
-  isAppLauncher={false}
-  isContentLeftAligned={false}
-  isVisible={false}
   maxWidth="500px"
   position="right"
-  tippyProps={Object {}}
   trigger="mouseenter focus click"
-  zIndex={9999}
 >
   <Button
     aria-label="click this button to copy text"

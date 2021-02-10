@@ -21,6 +21,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AccordionDemo
   },
   {
+    id: 'action-list-demo',
+    name: 'Action List Demo',
+    componentType: Examples.ActionListDemo
+  },
+  {
+    id: 'alert-timeout-close-button-demo',
+    name: 'Alert Timeout Close Button Demo',
+    componentType: Examples.AlertTimeoutCloseButtonDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo
@@ -29,6 +39,16 @@ export const Demos: DemoInterface[] = [
     id: 'alert-group-demo',
     name: 'Alert Group Demo',
     componentType: Examples.AlertGroupDemo
+  },
+  {
+    id: 'alert-custom-timeout-demo',
+    name: 'Alert Custom Timeout Demo',
+    componentType: Examples.AlertCustomTimeoutDemo
+  },
+  {
+    id: 'alert-default-timeout-demo',
+    name: 'Alert Default Timeout Demo',
+    componentType: Examples.AlertDefaultTimeoutDemo
   },
   {
     id: 'application-launcher-demo',
@@ -146,6 +166,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ChipWithCategoryGroupDemo
   },
   {
+    id: 'chipgroup-with-overflow-chip-event-handler-demo',
+    name: 'ChipGroup With Overflow Event Handler',
+    componentType: Examples.ChipGroupWithOverflowChipEventHandler
+  },
+  {
     id: 'clipboard-copy-demo',
     name: 'ClipboardCopy Demo',
     componentType: Examples.ClipboardCopyDemo
@@ -154,6 +179,11 @@ export const Demos: DemoInterface[] = [
     id: 'clipboard-copy-expanded-demo',
     name: 'ClipboardCopy Expanded Demo',
     componentType: Examples.ClipboardCopyExpandedDemo
+  },
+  {
+    id: 'consoles-demo',
+    name: 'Consoles Demo',
+    componentType: Examples.ConsolesDemo
   },
   {
     id: 'context-selector-demo',
@@ -166,9 +196,24 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListDemo
   },
   {
+    id: 'data-list-draggable-demo',
+    name: 'Data List Draggable Demo',
+    componentType: Examples.DataListDraggableDemo
+  },
+  {
     id: 'data-list-compact-demo',
     name: 'Data List Compact Demo',
     componentType: Examples.DataListCompactDemo
+  },
+  {
+    id: 'description-list-demo',
+    name: 'Description List Demo',
+    componentType: Examples.DescriptionListDemo
+  },
+  {
+    id: 'description-list-breakpoints-demo',
+    name: 'Description List Breakpoints Demo',
+    componentType: Examples.DescriptionListBreakpointsDemo
   },
   {
     id: 'divider-demo',
@@ -292,9 +337,29 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DrawerDemo
   },
   {
+    id: 'drawer-resize-demo',
+    name: 'Drawer Resize Demo',
+    componentType: Examples.DrawerResizeDemo
+  },
+  {
     id: 'dropdown-demo',
     name: 'Dropdown Demo',
     componentType: Examples.DropdownDemo
+  },
+  {
+    id: 'dual-list-selector-basic-demo',
+    name: 'DualListSelector basic Demo',
+    componentType: Examples.DualListSelectorBasicDemo
+  },
+  {
+    id: 'dual-list-selector-tree-demo',
+    name: 'DualListSelector Tree Demo',
+    componentType: Examples.DualListSelectorTreeDemo
+  },
+  {
+    id: 'dual-list-selector-with-actions-demo',
+    name: 'DualListSelector with actions Demo',
+    componentType: Examples.DualListSelectorWithActionsDemo
   },
   {
     id: 'empty-state-demo',
@@ -332,6 +397,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GridDemo
   },
   {
+    id: 'hint-demo',
+    name: 'Hint Demo',
+    componentType: Examples.HintDemo
+  },
+  {
+    id: 'jump-links-demo',
+    name: 'Jump Links Demo',
+    componentType: Examples.JumpLinksDemo
+  },
+  {
     id: 'input-group-demo',
     name: 'Input Group Demo',
     componentType: Examples.InputGroupDemo
@@ -340,6 +415,26 @@ export const Demos: DemoInterface[] = [
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
+  },
+  {
+    id: 'labelgroup-demo',
+    name: 'LabelGroup Demo',
+    componentType: Examples.LabelGroupDemo
+  },
+  {
+    id: 'labelgroup-default-is-open-demo',
+    name: 'LabelGroup Default is Open Demo',
+    componentType: Examples.LabelGroupDefaultIsOpenDemo
+  },
+  {
+    id: 'labelgroup-vertical-demo',
+    name: 'LabelGroup Vertical Demo',
+    componentType: Examples.LabelGroupVerticalDemo
+  },
+  {
+    id: 'labelgroup-with-category-demo',
+    name: 'LabelGroup With Category Demo',
+    componentType: Examples.LabelGroupWithCategoryDemo
   },
   {
     id: 'level-demo',
@@ -372,6 +467,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LoginPageDemo
   },
   {
+    id: 'menu-demo',
+    name: 'Menu Demo',
+    componentType: Examples.MenuDemo
+  },
+  {
     id: 'modal-demo',
     name: 'Modal Demo',
     componentType: Examples.ModalDemo
@@ -402,6 +502,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GroupsNotificationDrawerDemo
   },
   {
+    id: 'numberInput-demo',
+    name: 'Number Input Demo',
+    componentType: Examples.NumberInputDemo
+  },
+  {
     id: 'options-menu-demo',
     name: 'Options Menu Demo',
     componentType: Examples.OptionsMenuDemo
@@ -420,6 +525,11 @@ export const Demos: DemoInterface[] = [
     id: 'page-demo',
     name: 'Page Demo',
     componentType: Examples.PageDemo
+  },
+  {
+    id: 'page-breadcrumb-and-tertiary-nav-demo',
+    name: 'Page Breadcrumb and Tertiary Nav Demo',
+    componentType: Examples.PageBreadcrumbAndTertiaryNavDemo
   },
   {
     id: 'page-managed-sidebar-demo',
@@ -467,6 +577,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.RadioDemo
   },
   {
+    id: 'search-input-demo',
+    name: 'Search Input Demo',
+    componentType: Examples.SearchInputDemo
+  },
+  {
     id: 'select-demo',
     name: 'Select Demo',
     componentType: Examples.SelectDemo
@@ -477,9 +592,24 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FilteringSelectDemo
   },
   {
+    id: 'select-favorites-demo',
+    name: 'Select Favorites Demo',
+    componentType: Examples.SelectFavoritesDemo
+  },
+  {
     id: 'simple-list-demo',
     name: 'Simple List Demo',
     componentType: Examples.SimpleListDemo
+  },
+  {
+    id: 'skeleton-demo',
+    name: 'Skeleton Demo',
+    componentType: Examples.SkeletonDemo
+  },
+  {
+    id: 'slider-demo',
+    name: 'Slider Demo',
+    componentType: Examples.SliderDemo
   },
   {
     id: 'spinner-demo',
@@ -572,6 +702,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableEditableDemo
   },
   {
+    id: 'table-editable-compound-expandable-demo',
+    name: 'Table Editable Compound Expandable Demo',
+    componentType: Examples.TableEditableCompoundExpandableDemo
+  },
+  {
     id: 'table-first-cell-as-header-demo',
     name: 'Table First Cell As Header Demo',
     componentType: Examples.TableFirstCellAsHeaderDemo
@@ -622,6 +757,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableWidthModifiersDemo
   },
   {
+    id: 'table-favorites-demo',
+    name: 'Table Favorites Demo',
+    componentType: Examples.TableFavoritesDemo
+  },
+  {
+    id: 'table-composable-demo',
+    name: 'Table Composable Demo',
+    componentType: Examples.TableComposableDemo
+  },
+  {
     id: 'tab-string-event-key-demo',
     name: 'Tab String Event Key Demo',
     componentType: Examples.TabsStringEventKeyDemo
@@ -642,14 +787,34 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TextInputDemo
   },
   {
+    id: 'tile-demo',
+    name: 'Tile Demo',
+    componentType: Examples.TileDemo
+  },
+  {
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo
   },
   {
+    id: 'toggle-group-demo',
+    name: 'Toggle Group Demo',
+    componentType: Examples.ToggleGroupDemo
+  },
+  {
     id: 'toolbar-demo',
     name: 'Toolbar Demo',
     componentType: Examples.ToolbarDemo
+  },
+  {
+    id: 'toolbar-visibility-demo',
+    name: 'Toolbar Visibility Demo',
+    componentType: Examples.ToolbarVisibilityDemo
+  },
+  {
+    id: 'toolbar-visiblity-demo',
+    name: 'Toolbar Visiblity Demo (Deprecated)',
+    componentType: Examples.ToolbarVisiblityDemo
   },
   {
     id: 'tooltip-demo',
@@ -660,6 +825,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-demo',
     name: 'Topology Demo',
     componentType: Examples.TopologyDemo
+  },
+  {
+    id: 'treeview-demo',
+    name: 'Tree View Demo',
+    componentType: Examples.TreeViewDemo
   },
   {
     id: 'wizard-demo',

@@ -58,13 +58,18 @@ function generateClassMaps() {
 
   const patternflyCSSFiles = glob.sync('**/*.css', {
     cwd: pfStylesDir,
-    ignore: ['assets/**', '*.css'],
+    ignore: ['assets/**', '*.css', 'base/**'],
     absolute: true
   });
   const srcCSSFiles = glob.sync('src/css/**/*.css');
 
   const res = {};
-  [...patternflyCSSFiles, ...srcCSSFiles].forEach(file => (res[file] = getClassMaps(fs.readFileSync(file, 'utf8'))));
+  patternflyCSSFiles
+    .concat(srcCSSFiles)
+    .map(file => path.resolve(file)) // Normalize path for Windows
+    .forEach(file => {
+      res[file] = getClassMaps(fs.readFileSync(file, 'utf8'));
+    });
 
   return res;
 }

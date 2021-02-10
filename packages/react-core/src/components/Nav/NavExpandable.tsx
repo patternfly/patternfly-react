@@ -5,10 +5,13 @@ import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
+import { PageSidebarContext } from '../Page/PageSidebar';
 import { PickOptional } from '../../helpers/typeUtils';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface NavExpandableProps
-  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
+    OUIAProps {
   /** Title shown for the expandable list */
   title: string;
   /** If defined, screen readers will read this text instead of the list title */
@@ -31,6 +34,7 @@ export interface NavExpandableProps
 
 interface NavExpandableState {
   expandedState: boolean;
+  ouiaStateId: string;
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
@@ -49,7 +53,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   id = this.props.id || getUniqueId();
 
   state = {
-    expandedState: this.props.isExpanded
+    expandedState: this.props.isExpanded,
+    ouiaStateId: getDefaultOUIAId(NavExpandable.displayName)
   };
 
   componentDidMount() {
@@ -90,9 +95,27 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   };
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
-    const { expandedState } = this.state;
+    const {
+      title,
+      srText,
+      children,
+      className,
+      isActive,
+      ouiaId,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      groupId,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      id,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isExpanded,
+      ...props
+    } = this.props;
+
+    const { expandedState, ouiaStateId } = this.state;
+
+    const onClick = () => {
+      this.setState(prevState => ({ expandedState: !prevState.expandedState }));
+    };
 
     return (
       <NavContext.Consumer>
@@ -105,25 +128,29 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               isActive && styles.modifiers.current,
               className
             )}
+            {...getOUIAProps(NavExpandable.displayName, ouiaId !== undefined ? ouiaId : ouiaStateId)}
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
-            <a
-              ref={this.expandableRef}
-              className={styles.navLink}
-              id={srText ? null : this.id}
-              href="#"
-              onClick={e => e.preventDefault()}
-              onMouseDown={e => e.preventDefault()}
-              aria-expanded={expandedState}
-            >
-              {title}
-              <span className={css(styles.navToggle)}>
-                <span className={css(styles.navToggleIcon)}>
-                  <AngleRightIcon aria-hidden="true" />
-                </span>
-              </span>
-            </a>
+            <PageSidebarContext.Consumer>
+              {({ isNavOpen }) => (
+                <button
+                  className={styles.navLink}
+                  id={srText ? null : this.id}
+                  onClick={onClick}
+                  onMouseDown={e => e.preventDefault()}
+                  aria-expanded={expandedState}
+                  tabIndex={isNavOpen ? null : -1}
+                >
+                  {title}
+                  <span className={css(styles.navToggle)}>
+                    <span className={css(styles.navToggleIcon)}>
+                      <AngleRightIcon aria-hidden="true" />
+                    </span>
+                  </span>
+                </button>
+              )}
+            </PageSidebarContext.Consumer>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
               {srText && (
                 <h2 className={css(a11yStyles.screenReader)} id={this.id}>

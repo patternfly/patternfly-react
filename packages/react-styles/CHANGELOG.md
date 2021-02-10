@@ -3,6 +3,356 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.30...@patternfly/react-styles@4.7.31) (2021-02-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.29...@patternfly/react-styles@4.7.30) (2021-02-03)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.28...@patternfly/react-styles@4.7.29) (2021-01-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.27...@patternfly/react-styles@4.7.28) (2021-01-25)
+
+
+### Bug Fixes
+
+* **drawer:** fix dragging problem on iframe when resizing drawer ([#5331](https://github.com/patternfly/patternfly-react/issues/5331)) ([746d43c](https://github.com/patternfly/patternfly-react/commit/746d43c3fee0600663489dfec6bcdde9076f9826))
+
+
+
+
+
+## [4.7.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.26...@patternfly/react-styles@4.7.27) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+## [4.7.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.25...@patternfly/react-styles@4.7.26) (2021-01-22)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.24...@patternfly/react-styles@4.7.25) (2021-01-19)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.23...@patternfly/react-styles@4.7.24) (2021-01-12)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.22...@patternfly/react-styles@4.7.23) (2020-12-16)
+
+
+### Bug Fixes
+
+* **topology:** Prevent context sub menus from overflowing viewport ([#5271](https://github.com/patternfly/patternfly-react/issues/5271)) ([12cd470](https://github.com/patternfly/patternfly-react/commit/12cd470f138df8b0eaa8f768bef8a86d448a6590))
+
+
+
+
+
+## [4.7.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.21...@patternfly/react-styles@4.7.22) (2020-12-11)
+
+
+### Bug Fixes
+
+* **calendar-month:** rely on base styles from react-core/dist/styles/base.css ([#5251](https://github.com/patternfly/patternfly-react/issues/5251)) ([337a667](https://github.com/patternfly/patternfly-react/commit/337a667cf12e6b9f4c0eb98ac3176c6268db07b3))
+
+
+
+
+
+## [4.7.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.20...@patternfly/react-styles@4.7.21) (2020-12-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.19...@patternfly/react-styles@4.7.20) (2020-12-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.18...@patternfly/react-styles@4.7.19) (2020-12-07)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.17...@patternfly/react-styles@4.7.18) (2020-12-03)
+
+
+### Bug Fixes
+
+* **VncConsole:** replace novnc-core usage with the original @novnc/novnc ([#5208](https://github.com/patternfly/patternfly-react/issues/5208)) ([6c4c0c2](https://github.com/patternfly/patternfly-react/commit/6c4c0c2e981088e9220b834e2520063fce9d024e)), closes [#5157](https://github.com/patternfly/patternfly-react/issues/5157)
+
+
+
+
+
+## [4.7.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.16...@patternfly/react-styles@4.7.17) (2020-11-30)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.15...@patternfly/react-styles@4.7.16) (2020-11-17)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.14...@patternfly/react-styles@4.7.15) (2020-11-17)
+
+
+### Bug Fixes
+
+* **console:** remove css imports ([#5147](https://github.com/patternfly/patternfly-react/issues/5147)) ([df3e2eb](https://github.com/patternfly/patternfly-react/commit/df3e2ebd1eb478ef7b1e48f3c8237c5cc398df4c))
+
+
+
+
+
+## [4.7.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.13...@patternfly/react-styles@4.7.14) (2020-11-13)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.12...@patternfly/react-styles@4.7.13) (2020-10-28)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.11...@patternfly/react-styles@4.7.12) (2020-10-23)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.10...@patternfly/react-styles@4.7.11) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.9...@patternfly/react-styles@4.7.10) (2020-10-22)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.8...@patternfly/react-styles@4.7.9) (2020-10-20)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.7...@patternfly/react-styles@4.7.8) (2020-10-05)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.6...@patternfly/react-styles@4.7.7) (2020-10-01)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.5...@patternfly/react-styles@4.7.6) (2020-09-28)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.4...@patternfly/react-styles@4.7.5) (2020-09-17)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.3...@patternfly/react-styles@4.7.4) (2020-09-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.2...@patternfly/react-styles@4.7.3) (2020-08-21)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.1...@patternfly/react-styles@4.7.2) (2020-08-17)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.0...@patternfly/react-styles@4.7.1) (2020-08-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.6.1...@patternfly/react-styles@4.7.0) (2020-08-04)
+
+
+### Features
+
+* **NotificationDrawer:** Add notification drawer demo ([#4640](https://github.com/patternfly/patternfly-react/issues/4640)) ([3b9231d](https://github.com/patternfly/patternfly-react/commit/3b9231dab2fd92eb40e38d3a38ffb83562e1dbc2))
+
+
+
+
+
+## [4.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.6.0...@patternfly/react-styles@4.6.1) (2020-08-04)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.5.1...@patternfly/react-styles@4.6.0) (2020-08-03)
+
+
+### Features
+
+* **NotificationBadge:** add needs attention state and count ([#4516](https://github.com/patternfly/patternfly-react/issues/4516)) ([63c7cbf](https://github.com/patternfly/patternfly-react/commit/63c7cbf0beed5497ca7addf7fc6663229f37ab81))
+
+
+
+
+
+## [4.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.5.0...@patternfly/react-styles@4.5.1) (2020-07-23)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.6...@patternfly/react-styles@4.5.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
+## [4.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.5...@patternfly/react-styles@4.4.6) (2020-07-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.4...@patternfly/react-styles@4.4.5) (2020-07-13)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.3...@patternfly/react-styles@4.4.4) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.2...@patternfly/react-styles@4.4.3) (2020-07-08)
+
+
+### Bug Fixes
+
+* **windows:** fix build on windows ([#4475](https://github.com/patternfly/patternfly-react/issues/4475)) ([fdde7aa](https://github.com/patternfly/patternfly-react/commit/fdde7aa9aa7d0bff79b02d1605bfa95d46997a45))
+
+
+
+
+
 ## [4.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.1...@patternfly/react-styles@4.4.2) (2020-06-24)
 
 **Note:** Version bump only for package @patternfly/react-styles

@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { Alert, AlertVariant } from '../Alert';
 import { AlertActionLink } from '../AlertActionLink';
 import { AlertActionCloseButton } from '../AlertActionCloseButton';
+import { UsersIcon } from '@patternfly/react-icons';
 
 test('default Alert variant is default', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);
@@ -37,7 +38,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Action Link', () => {
       const view = mount(
-        <Alert variant={variant} actionLinks={[<AlertActionLink>test</AlertActionLink>]} title="">
+        <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="">
           Some alert
         </Alert>
       );
@@ -62,7 +63,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Action and Title', () => {
       const view = mount(
-        <Alert variant={variant} actionLinks={[<AlertActionLink>test</AlertActionLink>]} title="Some title">
+        <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="Some title">
           Some alert
         </Alert>
       );
@@ -74,7 +75,7 @@ Object.values(AlertVariant).forEach(variant => {
         <Alert
           variant={variant}
           aria-label={`Custom aria label for ${variant}`}
-          actionLinks={[<AlertActionLink>test</AlertActionLink>]}
+          actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]}
           title="Some title"
         >
           Some alert
@@ -139,5 +140,29 @@ Object.values(AlertVariant).forEach(variant => {
       expect(alert.prop('aria-relevant')).toBe('all');
       expect(alert.prop('aria-atomic')).toBe('true');
     });
+
+    test('Custom icon', () => {
+      const view = mount(
+        <Alert
+          customIcon={<UsersIcon />}
+          variant={variant}
+          aria-label={`${variant} custom icon alert`}
+          title="custom icon alert title"
+        >
+          Some noisy alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+    });
   });
+});
+
+
+test('Alert truncate title', () => {
+  const view = mount(<Alert truncateTitle={1} title="this is a test">Alert testing</Alert>);
+  expect(
+    view
+      .find('h4')
+      .prop('className')
+  ).toContain('pf-m-truncate');
 });

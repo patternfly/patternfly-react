@@ -1,3 +1,26 @@
+/**
+ * @param specifier module specifier
+ * @param moduleName module name (@patternfly/react-tokens or @patternfly/react-icons)
+ * @returns string of non-treeshaken import
+ */
+function makeImport(specifier, moduleName) {
+  if (moduleName.endsWith('createIcon') && moduleName.startsWith('@patternfly/react-icons')) {
+    return `import { ${specifier.local.name} } from '@patternfly/react-icons/dist/js/createIcon';`;
+  }
+  let res = `import ${specifier.local.name} from '`;
+  res += moduleName.replace(/\/dist\/(js|esm)/, '');
+  res += '/dist/js';
+  if (moduleName.includes('icon')) {
+    res += '/icons/';
+    res += specifier.imported.name.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`).replace(/^-/, '');
+  } else {
+    res += `/${specifier.imported.name}`;
+  }
+  res += "';";
+
+  return res;
+}
+
 module.exports = {
   meta: {
     docs: {
@@ -18,7 +41,14 @@ module.exports = {
     return {
       ImportDeclaration(node) {
         if (/@patternfly\/react-(tokens|icons)(\/dist\/(js|esm))?/.test(node.source.value)) {
-          const esmSpecifiers = node.specifiers.filter(specifier => specifier.type === 'ImportSpecifier');
+          const esmSpecifiers = node.specifiers.filter(
+            specifier =>
+              specifier.type === 'ImportSpecifier' &&
+              !(
+                node.source.value.startsWith('@patternfly/react-icons') &&
+                node.source.value.endsWith('/dist/js/createIcon')
+              )
+          );
           if (esmSpecifiers.length > 0) {
             context.report({
               node,
@@ -26,15 +56,7 @@ module.exports = {
               fix(fixer) {
                 return fixer.replaceText(
                   node,
-                  esmSpecifiers
-                    .map(
-                      specifier =>
-                        `import ${specifier.local.name} from '${node.source.value.replace(
-                          /\/dist\/(js|esm)/,
-                          ''
-                        )}/dist/js/${specifier.imported.name}';`
-                    )
-                    .join('\n')
+                  esmSpecifiers.map(spec => makeImport(spec, node.source.value)).join('\n')
                 );
               }
             });

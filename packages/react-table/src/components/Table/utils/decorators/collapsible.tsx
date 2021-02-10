@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { CollapseColumn } from '../../CollapseColumn';
 import { ExpandableRowContent } from '../../ExpandableRowContent';
-import { IExtra, IFormatterValueType, IFormatter, decoratorReturnType } from '../../Table';
+import { IExtra, IFormatterValueType, IFormatter, decoratorReturnType } from '../../TableTypes';
 
 export const collapsible: IFormatter = (
   value: IFormatterValueType,
@@ -44,12 +44,13 @@ export const collapsible: IFormatter = (
 };
 
 export const expandable: IFormatter = (value: IFormatterValueType, { rowData }: IExtra) =>
-  rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
+  rowData && rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
 
-export const expandedRow = (colSpan: number) => {
+export const expandedRow = (colSpan?: number) => {
   const expandedRowFormatter = (
     value: IFormatterValueType,
     {
+      columnIndex,
       rowIndex,
       rowData,
       column: {
@@ -57,10 +58,11 @@ export const expandedRow = (colSpan: number) => {
       }
     }: IExtra
   ): decoratorReturnType =>
+    value &&
     rowData.hasOwnProperty('parent') && {
       // todo: rewrite this logic, it is not type safe
-      colSpan: colSpan + (!!rowData.fullWidth as any),
-      id: contentId + rowIndex,
+      colSpan: !rowData.cells || rowData.cells.length === 1 ? colSpan + (!!rowData.fullWidth as any) : 1,
+      id: contentId + rowIndex + (columnIndex ? '-' + columnIndex : ''),
       className: rowData.noPadding && css(styles.modifiers.noPadding)
     };
   return expandedRowFormatter;

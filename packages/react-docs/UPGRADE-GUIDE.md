@@ -1,6 +1,6 @@
 ---
-title: Upgrade guide
-section: overview
+id: Upgrade guide
+section: developer-resources
 ---
 
 Hey, Flyers! We’ve been busy for the past 12 weeks keeping up with changes to PatternFly’s HTML and CSS. We’ve replaced `babel` with `tsc` as our compiler of choice and removed prop-types in favor of using our `.d.ts` types, which are supported in most editors.
@@ -231,9 +231,9 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
   - The old Toolbar component that is normally used in the PageHeader has been removed in favor of `PageHeaderTools` [(#4223)](https://github.com/patternfly/patternfly-react/pull/4223)
   - Removed separator variant [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
 - **ToolbarItem:**
-  - Removed `breakpointMods` prop in favor of `visiblity`, `alignment`, and `spacer` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+  - Removed `breakpointMods` prop in favor of `visibility`, `alignment`, and `spacer` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
 - **ToolbarToggleGroup:**
-  - Removed `breakpointMods` prop in favor of `visiblity`, `alignment`, `spacer`, and `spaceItems` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+  - Removed `breakpointMods` prop in favor of `visibility`, `alignment`, `spacer`, and `spaceItems` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
 
 ### Wizard
 - **Wizard**

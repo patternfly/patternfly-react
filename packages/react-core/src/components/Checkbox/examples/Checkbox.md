@@ -1,16 +1,15 @@
 ---
-title: 'Checkbox'
+id: Checkbox
 section: components
-cssPrefix: 'pf-c-check'
-typescript: true
+cssPrefix: pf-c-check
 propComponents: ['Checkbox']
 ---
 
-import { Checkbox } from '@patternfly/react-core';
 import './checkbox.css';
 
 ## Examples
-```js title=Controlled
+### Controlled
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -89,41 +88,38 @@ class ControlledCheckbox extends React.Component {
 }
 ```
 
-```js title=Uncontrolled
+### Uncontrolled
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-UncontrolledCheckbox = () => (
-  <React.Fragment>
-    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-5" />
-    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-6" />
-  </React.Fragment>
-);
+<React.Fragment>
+  <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-5" />
+  <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-6" />
+</React.Fragment>
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-DisabledCheckbox = () => (
-  <React.Fragment>
-    <Checkbox
-      id="check-7"
-      label="Disabled CheckBox"
-      aria-label="disabled checked checkbox example"
-      defaultChecked
-      isDisabled
-    />{' '}
-    <Checkbox id="check-8" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
-  </React.Fragment>
-);
+<React.Fragment>
+  <Checkbox
+    id="check-7"
+    label="Disabled CheckBox"
+    aria-label="disabled checked checkbox example"
+    defaultChecked
+    isDisabled
+  />{' '}
+  <Checkbox id="check-8" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
+</React.Fragment>
 ```
 
-```js title=Checkbox-with-description
+### Checkbox with description
+```js
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-DisabledCheckbox = () => (
-  <Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
-);
+<Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
 ```

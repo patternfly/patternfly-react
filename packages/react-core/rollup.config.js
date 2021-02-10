@@ -1,30 +1,7 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import scss from 'rollup-plugin-scss';
-import replace from '@rollup/plugin-replace';
-import { terser } from 'rollup-plugin-terser';
+const { name } = require('./package.json');
+const baseConfig = require('../rollup.base');
 
-const isProduction = process.env.IS_PRODUCTION;
-
-module.exports = {
-  input: 'dist/esm/index.js',
-  output: {
-    file: `dist/umd/react-core${isProduction ? '.min' : ''}.js`,
-    format: 'umd',
-    name: 'PatternFlyReact',
-    globals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-    }
-  },
-  external: ['react', 'react-dom'],
-  plugins: [
-    replace({
-      'process.env.NODE_ENV': `'${isProduction ? 'production' : 'development'}'`
-    }),
-    resolve(),
-    commonjs(),
-    scss(),
-    isProduction && terser()
-  ]
-};
+module.exports = baseConfig({
+  packageName: name.replace('@patternfly/', ''),
+  name: 'PatternFlyReact'
+});

@@ -6,14 +6,15 @@ describe('Tooltip Demo Test', () => {
   });
 
   it('Display Tooltip', () => {
-    cy.get('div[id="tooltipTarget"]').then((tooltipLink: JQuery<HTMLDivElement>) => {
-      cy.get('.tippy-popper').should('not.exist');
-      cy.wrap(tooltipLink)
-        .trigger('mouseenter')
-        .get('.tippy-popper')
-        .should('exist')
-        .get('.tippy-popper')
-        .contains('World');
+    ['tooltipTarget', 'tooltip-selector', 'tooltip-ref'].forEach(id => {
+      cy.get(`[id="${id}"]`).then((tooltipLink: JQuery<HTMLDivElement>) => {
+        cy.get('.pf-c-tooltip').should('not.exist');
+        cy.wrap(tooltipLink)
+          .trigger('mouseenter')
+          .get('.pf-c-tooltip')
+          .should('exist');
+      });
+      cy.get(`[id="${id}"]`).trigger('mouseleave');
     });
   });
 });

@@ -16,7 +16,7 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   /**  Tab index for the list item */
   tabIndex?: number;
   /**  Variant indicates the severity level */
-  variant?: 'success' | 'danger' | 'warning' | 'info';
+  variant?: 'default' | 'success' | 'danger' | 'warning' | 'info';
 }
 
 export const NotificationDrawerListItem: React.FunctionComponent<NotificationDrawerListItemProps> = ({
@@ -27,22 +27,31 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick = (event: React.MouseEvent) => undefined as any,
   tabIndex = 0,
-  variant,
+  variant = 'default',
   ...props
-}: NotificationDrawerListItemProps) => (
-  <li
-    {...props}
-    className={css(
-      styles.notificationDrawerListItem,
-      isHoverable && styles.modifiers.hoverable,
-      styles.modifiers[variant],
-      isRead && styles.modifiers.read,
-      className
-    )}
-    tabIndex={tabIndex}
-    onClick={e => onClick(e)}
-  >
-    {children}
-  </li>
-);
+}: NotificationDrawerListItemProps) => {
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    // Accessibility function. Click on the list item when pressing Enter or Space on it.
+    if (event.key === 'Enter' || event.key === ' ') {
+      (event.target as HTMLElement).click();
+    }
+  };
+  return (
+    <li
+      {...props}
+      className={css(
+        styles.notificationDrawerListItem,
+        isHoverable && styles.modifiers.hoverable,
+        styles.modifiers[variant],
+        isRead && styles.modifiers.read,
+        className
+      )}
+      tabIndex={tabIndex}
+      onClick={e => onClick(e)}
+      onKeyDown={onKeyDown}
+    >
+      {children}
+    </li>
+  );
+};
 NotificationDrawerListItem.displayName = 'NotificationDrawerListItem';

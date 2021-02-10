@@ -186,7 +186,6 @@ Please ensure that all React UI components contributed meet the following guidel
   the `index.js` file should be in a subfolder named `InnerComponents`
 - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
   See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
-- When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
 
   **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**
@@ -238,20 +237,9 @@ $ yarn test
 
 Ensure no lint errors are introduced in `yarn-error.log` after running this command.
 
-5.  Add a commit using `yarn commit`:
+5.  Add a commit using `git commit`:
 
 This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
-
-You can use `commitizen` to help you to follow [the convention][3].
-
-Once you are ready to commit the changes, please use the below commands:
-
-```text
-$ git add <files to be committed>
-$ yarn commit
-```
-
-... and follow the instruction of the interactive prompt.
 
 6.  Rebase
 
@@ -342,6 +330,6 @@ The process for revoking someone's maintainer status is a discussion limited to 
 - Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
 - Do not merge if the build is failing. Wait until tests are green to merge.
 
-[1]: http://contributor-covenant.org/version/1/4/code_of_conduct.md
+[1]: http://contributor-covenant.org/version/1/4/code-of-conduct.md
 [2]: mailto:patternfly@redhat.com
 [3]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type

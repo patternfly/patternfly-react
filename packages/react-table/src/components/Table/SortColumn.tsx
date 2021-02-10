@@ -4,8 +4,12 @@ import LongArrowAltDownIcon from '@patternfly/react-icons/dist/js/icons/long-arr
 import ArrowsAltVIcon from '@patternfly/react-icons/dist/js/icons/arrows-alt-v-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { SortByDirection } from './Table';
 import { TableText } from './TableText';
+
+export enum SortByDirection {
+  asc = 'asc',
+  desc = 'desc'
+}
 
 export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;

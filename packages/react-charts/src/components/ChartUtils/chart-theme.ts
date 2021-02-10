@@ -1,4 +1,5 @@
-import { cloneDeep, merge } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import merge from 'lodash/merge';
 import { DarkBlueColorTheme } from '../ChartTheme/themes/dark/blue-color-theme';
 import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
 import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';
@@ -112,7 +113,7 @@ export const getDonutThresholdStaticTheme = (
   invert?: boolean
 ): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
-  if (invert) {
+  if (invert && staticTheme.pie.colorScale instanceof Array) {
     staticTheme.pie.colorScale = staticTheme.pie.colorScale.reverse();
   }
   return getCustomTheme(themeColor, themeVariant, staticTheme);

@@ -47,19 +47,19 @@ export class LightweightNotificationDrawerDemo extends React.Component<
     }
   };
 
-  toggleFirstDrawer = (event: any, value: boolean) => {
+  toggleFirstDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       firstGroupIsOpen: value
     });
   };
 
-  toggleSecondDrawer = (event: any, value: boolean) => {
+  toggleSecondDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       secondGroupIsOpen: value
     });
   };
 
-  toggleThirdDrawer = (event: any, value: boolean) => {
+  toggleThirdDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       thirdGroupIsOpen: value
     });
@@ -74,7 +74,7 @@ export class LightweightNotificationDrawerDemo extends React.Component<
 
     return (
       <NotificationDrawer>
-        <NotificationDrawerHeader />
+        <NotificationDrawerHeader customText="2 unread alerts" />
         <NotificationDrawerBody>
           <NotificationDrawerGroupList>
             <NotificationDrawerGroup

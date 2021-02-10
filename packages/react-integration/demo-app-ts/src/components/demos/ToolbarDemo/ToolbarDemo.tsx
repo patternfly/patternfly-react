@@ -280,15 +280,119 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     );
 
     return (
-      <Toolbar
-        id="toolbar-filter-demo"
-        clearAllFilters={this.onDelete}
-        className="pf-m-toggle-group-container"
-        collapseListedFiltersBreakpoint="xl"
-        clearFiltersButtonText="Clear filters"
-      >
-        <ToolbarContent>{toolbarItems}</ToolbarContent>
-      </Toolbar>
+      <React.Fragment>
+        <Toolbar
+          id="toolbar-filter-demo"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-no-inset"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+          inset={{
+            default: 'insetNone',
+            sm: 'insetNone',
+            md: 'insetNone',
+            lg: 'insetNone',
+            xl: 'insetNone',
+            '2xl': 'insetNone'
+          }}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-sm-inset"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+          inset={{
+            default: 'insetSm',
+            sm: 'insetSm',
+            md: 'insetSm',
+            lg: 'insetSm',
+            xl: 'insetSm',
+            '2xl': 'insetSm'
+          }}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-md-inset"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+          inset={{
+            default: 'insetMd',
+            sm: 'insetMd',
+            md: 'insetMd',
+            lg: 'insetMd',
+            xl: 'insetMd',
+            '2xl': 'insetMd'
+          }}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-lg-inset"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+          inset={{
+            default: 'insetLg',
+            sm: 'insetLg',
+            md: 'insetLg',
+            lg: 'insetLg',
+            xl: 'insetLg',
+            '2xl': 'insetLg'
+          }}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-xl-inset"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+          inset={{
+            default: 'insetXl',
+            sm: 'insetXl',
+            md: 'insetXl',
+            lg: 'insetXl',
+            xl: 'insetXl',
+            '2xl': 'insetXl'
+          }}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-2xl-inset"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+          inset={{
+            default: 'inset2xl',
+            sm: 'inset2xl',
+            md: 'inset2xl',
+            lg: 'inset2xl',
+            xl: 'inset2xl',
+            '2xl': 'inset2xl'
+          }}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+      </React.Fragment>
     );
   }
 }

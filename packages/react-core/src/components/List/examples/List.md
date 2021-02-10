@@ -1,49 +1,43 @@
 ---
-title: 'List'
+id: List
 section: components
-cssPrefix: 'pf-c-list'
-typescript: true
+cssPrefix: pf-c-list
 propComponents: ['List', 'ListItem']
 ---
 
-import { List, ListItem, ListVariant, ListComponent, OrderType } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
-SimpleList = (
-  <List>
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-  </List>
-);
+<List>
+  <ListItem>First</ListItem>
+  <ListItem>Second</ListItem>
+  <ListItem>Third</ListItem>
+</List>
 ```
 
-```js title=Inline
+### Inline
+```js
 import React from 'react';
 import { List, ListItem, ListVariant } from '@patternfly/react-core';
 
-InlineList = (
-  <List variant={ListVariant.inline}>
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-  </List>
-);
+<List variant={ListVariant.inline}>
+  <ListItem>First</ListItem>
+  <ListItem>Second</ListItem>
+  <ListItem>Third</ListItem>
+</List>
 ```
 
-```js title=Ordered
+### Ordered
+```js
 import React from 'react';
 import { List, ListItem, ListComponent, OrderType } from '@patternfly/react-core';
 
-OrderedList = (
-  <List component={ListComponent.ol} type={OrderType.number}>
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-  </List>
-);
+<List component={ListComponent.ol} type={OrderType.number}>
+  <ListItem>First</ListItem>
+  <ListItem>Second</ListItem>
+  <ListItem>Third</ListItem>
+</List>
 ```

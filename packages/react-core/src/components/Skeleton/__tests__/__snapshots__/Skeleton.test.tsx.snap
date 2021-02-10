@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`skeleton circle skeleton 1`] = `
+<div
+  className="pf-c-skeleton pf-m-circle"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton default 1`] = `
+<div
+  className="pf-c-skeleton"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 2xl font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-2xl"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 3xl font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-3xl"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 4xl font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-4xl"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 25% height 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "25%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 25% width 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "25%",
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 33% height 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "33%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 33% width 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "33%",
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 50% height 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "50%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 50% width 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "50%",
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 66% height 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "66%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 66% width 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "66%",
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 75% height 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "75%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 75% width 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": undefined,
+      "--pf-c-skeleton--Width": "75%",
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with 100% height 1`] = `
+<div
+  className="pf-c-skeleton"
+  style={
+    Object {
+      "--pf-c-skeleton--Height": "100%",
+      "--pf-c-skeleton--Width": undefined,
+    }
+  }
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with lg font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-lg"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with md font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-md"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with sm font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-sm"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton skeleton with xl font size 1`] = `
+<div
+  className="pf-c-skeleton pf-m-text-xl"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;
+
+exports[`skeleton square skeleton 1`] = `
+<div
+  className="pf-c-skeleton pf-m-square"
+>
+  <span
+    className="pf-u-screen-reader"
+  />
+</div>
+`;

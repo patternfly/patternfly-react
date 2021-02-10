@@ -19,7 +19,11 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
       isChecked: true
     },
     table: {
-      data: [{ id: 'id1', isChecked: false }, { id: 'id2', isChecked: false }, { id: 'id3', isChecked: false }],
+      data: [
+        { id: 'id1', isChecked: false },
+        { id: 'id2', isChecked: false },
+        { id: 'id3', isChecked: false }
+      ],
       all: true
     }
   };

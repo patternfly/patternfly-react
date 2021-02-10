@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { OUIAProps } from '../../helpers';
 
-export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'> {
+export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'>, OUIAProps {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode;
   /** additional classes added to the Tab */
@@ -19,5 +20,6 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   isHidden?: boolean;
 }
 
-export const Tab: React.FunctionComponent<TabProps> = () => null;
+/** The parent <Tabs> component accecesses this component's propeties directly in order to present each Tab */
+export const Tab: React.FunctionComponent<TabProps> = (_props: TabProps) => null;
 Tab.displayName = 'Tab';

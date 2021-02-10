@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic not selected 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+>
+  <button
+    aria-label="basic not selected"
+    aria-pressed={false}
+    className="pf-c-toggle-group__button"
+    id="toggleGroupItem"
+    onClick={[Function]}
+    type="button"
+  >
+    <ToggleGroupItemElement
+      variant="text"
+    >
+      test
+    </ToggleGroupItemElement>
+  </button>
+</div>
+`;
+
+exports[`basic selected 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+  selected={true}
+>
+  <button
+    aria-label="basic selected"
+    aria-pressed={false}
+    className="pf-c-toggle-group__button"
+    id="toggleGroupItem"
+    onClick={[Function]}
+    type="button"
+  >
+    <ToggleGroupItemElement
+      variant="text"
+    >
+      test
+    </ToggleGroupItemElement>
+  </button>
+</div>
+`;
+
+exports[`icon variant 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+  selected={true}
+>
+  <button
+    aria-label="icon variant"
+    aria-pressed={false}
+    className="pf-c-toggle-group__button"
+    id="toggleGroupItem"
+    onClick={[Function]}
+    type="button"
+  >
+    <ToggleGroupItemElement
+      variant="icon"
+    >
+      icon
+    </ToggleGroupItemElement>
+  </button>
+</div>
+`;
+
+exports[`isDisabled 1`] = `
+<div
+  className="pf-c-toggle-group__item"
+>
+  <button
+    aria-label="isDisabled"
+    aria-pressed={false}
+    className="pf-c-toggle-group__button"
+    disabled={true}
+    id="toggleGroupItem"
+    onClick={[Function]}
+    type="button"
+  >
+    <ToggleGroupItemElement
+      variant="text"
+    >
+      test
+    </ToggleGroupItemElement>
+  </button>
+</div>
+`;
+
+exports[`light theme 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "variant": "light",
+    }
+  }
+>
+  <div
+    className="pf-c-toggle-group"
+    role="group"
+  >
+    <ToggleGroupItem
+      text="Test"
+    />
+    <Divider
+      component="div"
+      isVertical={true}
+      key="0 divider"
+    />
+    <ToggleGroupItem
+      text="Test"
+    />
+  </div>
+</ContextProvider>
+`;

@@ -6,6 +6,7 @@ import {
   TableBody,
   TableGridBreakpoint,
   TableVariant,
+  RowSelectVariant,
   cellWidth,
   headerCol,
   sortable,
@@ -180,13 +181,25 @@ test('Collapsible table', () => {
 
 test('Compound Expandable table', () => {
   const compoundColumns: ColumnsType = [
-    { title: 'col1', cell: { transforms: [compoundExpand] } },
-    { title: 'col2', cell: { transforms: [compoundExpand] } }
+    { title: 'col1', cellTransforms: [compoundExpand] },
+    { title: 'col2', cellTransforms: [compoundExpand] }
   ];
   const compoundRows: IRow[] = [
-    { isOpen: true, cells: [{ title: '1', props: { isOpen: true } }, { title: '2', props: { isOpen: false } }] },
+    {
+      isOpen: true,
+      cells: [
+        { title: '1', props: { isOpen: true } },
+        { title: '2', props: { isOpen: false } }
+      ]
+    },
     { parent: 0, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] },
-    { isOpen: false, cells: [{ title: '3', props: { isOpen: false } }, { title: '4', props: { isOpen: false } }] },
+    {
+      isOpen: false,
+      cells: [
+        { title: '3', props: { isOpen: false } },
+        { title: '4', props: { isOpen: false } }
+      ]
+    },
     { parent: 2, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] }
   ];
   const onExpand: OnExpand = () => undefined;
@@ -224,6 +237,23 @@ test('Selectable table', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Selectable table with Radio', () => {
+  const onSelect: OnSelect = () => undefined;
+  const view = mount(
+    <Table
+      aria-label="Aria labeled"
+      selectVariant={RowSelectVariant.radio}
+      onSelect={onSelect}
+      cells={columns}
+      rows={rows}
+    >
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('Control text table', () => {
   const controlTextColumns: ICell[] = [
     { ...(columns[0] as object), transforms: [nowrap] },
@@ -245,7 +275,7 @@ test('Control text table', () => {
 test('Header width table', () => {
   columns[0] = { ...(columns[0] as object), transforms: [cellWidth(10)] };
   columns[2] = { ...(columns[2] as object), transforms: [cellWidth(30)] };
-  columns[4] = { ...(columns[4] as object), transforms: [cellWidth('max')] };
+  columns[4] = { ...(columns[4] as object), transforms: [cellWidth(100)] };
   const view = mount(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
       <TableHeader />

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SerialConsole in the CONNECTED state 1`] = `
+Array [
+  <div
+    class="pf-c-console__actions-serial"
+  >
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      My text for Disconnect
+    </button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      Reset
+    </button>
+  </div>,
+  <div
+    class="pf-c-console__serial"
+  >
+    <div
+      class="pf-c-console__xterm"
+      role="list"
+    />
+  </div>,
+]
+`;
+
+exports[`SerialConsole in the CONNECTED state 1`] = `
+<SerialConsoleBase
+  cols={33}
+  id="myidprefix"
+  innerRef={null}
+  onConnect={[MockFunction]}
+  onDisconnect={[MockFunction]}
+  rows={44}
+  status="connected"
+  textDisconnect="My text for Disconnect"
+  textReconnect="My text for Reconnect"
+/>
+`;
+
+exports[`SerialConsole in the DISCONNECTED state 1`] = `
+<SerialConsoleBase
+  id="myidprefix"
+  innerRef={null}
+  onConnect={[MockFunction]}
+  onDisconnect={[MockFunction]}
+  status="disconnected"
+  textConnect="My text for Connect"
+  textDisconnected="My text for Disconnected"
+  textDisconnectedTitle="My title for Disconnected"
+/>
+`;
+
+exports[`SerialConsole in the LOADING state 1`] = `
+<SerialConsoleBase
+  innerRef={null}
+  onConnect={[MockFunction]}
+  onDisconnect={[MockFunction]}
+  status="loading"
+  textLoading="My text for Loading"
+/>
+`;

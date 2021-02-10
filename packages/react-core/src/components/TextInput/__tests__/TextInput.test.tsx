@@ -46,6 +46,15 @@ test('validated text input success', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('validated text input success', () => {
+  const view = mount(
+    <TextInput {...props} required validated={ValidatedOptions.warning} aria-label="validated text input" />
+  );
+  expect(view.find('.pf-c-form-control.pf-m-warning').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
+
 test('validated text input', () => {
   const view = shallow(
     <TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />

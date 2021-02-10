@@ -16,6 +16,7 @@ import {
 import accessibilityOverscanIndicesGetter from './accessibilityOverscanIndicesGetter';
 import { VirtualGrid, VirtualGridProps } from './VirtualGrid';
 import { css } from '@patternfly/react-styles';
+import { TableComposable, Tbody } from '@patternfly/react-table';
 
 /**
  * It is inefficient to create and manage a large list of DOM elements within a scrolling container
@@ -26,27 +27,26 @@ import { css } from '@patternfly/react-styles';
  * This component renders a virtualized list of elements with either fixed or dynamic heights.
  */
 
-interface VirtualTableBodyProps extends Omit<
-  VirtualGridProps,
-  | 'style'
-  | 'containerStyle'
-  | 'aria-label'
-  | 'aria-readonly'
-  | 'tabIndex'
-  | 'role'
-  | 'autoContainerWidth'
-  | 'cellRenderer'
-  | 'className'
-  | 'columnWidth'
-  | 'columnCount'
-  | 'noContentRenderer'
-  | 'onScroll'
-  | 'onSectionRendered'
-  | 'ref'
-  | 'scrollToRow'
-  | 'scrollContainerComponent'
-  | 'innerScrollContainerComponent'
-> {
+interface VirtualTableBodyProps
+  extends Omit<
+    VirtualGridProps,
+    | 'style'
+    | 'containerStyle'
+    | 'aria-label'
+    | 'aria-readonly'
+    | 'tabIndex'
+    | 'role'
+    | 'autoContainerWidth'
+    | 'cellRenderer'
+    | 'className'
+    | 'columnWidth'
+    | 'columnCount'
+    | 'noContentRenderer'
+    | 'onScroll'
+    | 'onSectionRendered'
+    | 'ref'
+    | 'scrollToRow'
+  > {
   'aria-label'?: string;
 
   /**
@@ -133,7 +133,9 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
     overscanRowCount: 10,
     scrollToAlignment: 'auto',
     scrollToIndex: -1,
-    style: {}
+    style: {},
+    scrollContainerComponent: 'table',
+    innerScrollContainerComponent: 'tbody'
   };
 
   VirtualGrid: any;
@@ -213,7 +215,17 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
   }
 
   render() {
-    const { className, noRowsRenderer, scrollToIndex, width, columns, columnCount, style } = this.props;
+    const {
+      className,
+      noRowsRenderer,
+      scrollToIndex,
+      width,
+      columns,
+      columnCount,
+      style,
+      scrollContainerComponent,
+      innerScrollContainerComponent
+    } = this.props;
 
     const classNames = css('ReactVirtualized__List', className);
 
@@ -234,7 +246,6 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
         aria-label={null}
         aria-readonly={null}
         tabIndex={null}
-        role="presentation"
         autoContainerWidth
         cellRenderer={this._cellRenderer}
         className={classNames}
@@ -245,8 +256,8 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
         onSectionRendered={this._onSectionRendered}
         ref={this._setRef}
         scrollToRow={scrollToIndex}
-        scrollContainerComponent="table"
-        innerScrollContainerComponent="tbody"
+        scrollContainerComponent={scrollContainerComponent}
+        innerScrollContainerComponent={innerScrollContainerComponent}
       />
     );
   }

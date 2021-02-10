@@ -19,14 +19,16 @@ describe('Page Demo Test', () => {
       cy.get('div[class="pf-c-page__header-brand-link"]')
         .invoke('text')
         .should('eq', "Logo that's a <div>");
-      cy.get('.pf-c-page__header-tools')
-        .invoke('text')
-        .should('contain', 'PageHeaderTools | Avatar');
       cy.get('.pf-c-page__main-section.pf-m-dark-100').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-dark-200').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-light').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-no-padding').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-no-padding-on-md').should('exist');
+      cy.get('.pf-c-page__header-tools-item[id="kebab-dropdown"]').should('have.class', 'pf-m-hidden-on-lg');
+      cy.get('.pf-c-page__header-tools-item[id="user-dropdown"]').should(
+        'have.class',
+        'pf-m-hidden pf-m-visible-on-md pf-m-visible-on-lg pf-m-visible-on-xl pf-m-visible-on-2xl'
+      );
     });
   });
 });

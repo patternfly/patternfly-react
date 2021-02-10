@@ -9,8 +9,11 @@ exports[`NotificationDrawerGroup should match snapshot (auto-generated) 1`] = `
       aria-expanded={true}
       className="pf-c-notification-drawer__group-toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
-      <div>
+      <div
+        className="pf-c-notification-drawer__group-toggle-title"
+      >
         string
       </div>
       <div

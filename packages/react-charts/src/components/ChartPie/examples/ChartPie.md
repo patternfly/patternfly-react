@@ -1,7 +1,6 @@
 ---
-title: 'Pie chart'
-section: 'charts'
-typescript: true
+id: Pie chart
+section: charts
 propComponents: ['ChartPie']
 hideDarkMode: true
 ---
@@ -18,89 +17,86 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/react-charts/pie-chart)
 
 ## Examples
-```js title=Basic-with-right-aligned-legend
+### Basic with right aligned legend
+```js
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
-BasicRightAlignedLegend = (
-  <div style={{ height: '230px', width: '350px' }}>
-    <ChartPie
-      ariaDesc="Average number of pets"
-      ariaTitle="Pie chart example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      height={230}
-      labels={({ datum }) => `${datum.x}: ${datum.y}`}
-      legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-      legendOrientation="vertical"
-      legendPosition="right"
-      padding={{
-        bottom: 20,
-        left: 20,
-        right: 140, // Adjusted to accommodate legend
-        top: 20
-      }}
-      width={350}
-    />
-  </div>
-)
+<div style={{ height: '230px', width: '350px' }}>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    height={230}
+    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    padding={{
+      bottom: 20,
+      left: 20,
+      right: 140, // Adjusted to accommodate legend
+      top: 20
+    }}
+    width={350}
+  />
+</div>
 ```
 
-```js title=Orange-with-right-aligned-legend
+### Orange with right aligned legend
+```js
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
-OrangeLegendRight = (
-  <div style={{ height: '230px', width: '350px' }}>
-    <ChartPie
-      ariaDesc="Average number of pets"
-      ariaTitle="Pie chart example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      height={230}
-      labels={({ datum }) => `${datum.x}: ${datum.y}`}
-      legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-      legendOrientation="vertical"
-      legendPosition="right"
-      padding={{
-        bottom: 20,
-        left: 20,
-        right: 140, // Adjusted to accommodate legend
-        top: 20
-      }}
-      themeColor={ChartThemeColor.orange}
-      width={350}
-    />
-  </div>
-)
+<div style={{ height: '230px', width: '350px' }}>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    height={230}
+    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    padding={{
+      bottom: 20,
+      left: 20,
+      right: 140, // Adjusted to accommodate legend
+      top: 20
+    }}
+    themeColor={ChartThemeColor.orange}
+    width={350}
+  />
+</div>
 ```
 
-```js title=Multi--color-(ordered)-with-bottom-aligned-legend
+### Multi-color (ordered) with bottom aligned legend
+```js
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
-MultiColor = (
-  <div style={{ height: '275px', width: '300px' }}>
-    <ChartPie
-      ariaDesc="Average number of pets"
-      ariaTitle="Pie chart example"
-      constrainToVisibleArea={true}
-      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      height={275}
-      labels={({ datum }) => `${datum.x}: ${datum.y}`}
-      legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-      legendPosition="bottom"
-      padding={{
-        bottom: 65,
-        left: 20,
-        right: 20,
-        top: 20
-      }}
-      themeColor={ChartThemeColor.multiOrdered}
-      width={300}
-    />
-  </div>
-)
+<div style={{ height: '275px', width: '300px' }}>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    constrainToVisibleArea={true}
+    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    height={275}
+    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+    legendPosition="bottom"
+    padding={{
+      bottom: 65,
+      left: 20,
+      right: 20,
+      top: 20
+    }}
+    themeColor={ChartThemeColor.multiOrdered}
+    width={300}
+  />
+</div>
 ```
 
 ## Documentation

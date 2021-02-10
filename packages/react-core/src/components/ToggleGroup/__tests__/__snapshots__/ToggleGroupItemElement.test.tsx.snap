@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty 1`] = `
+<span
+  className=""
+/>
+`;
+
+exports[`icon variant 1`] = `
+<span
+  className="pf-c-toggle-group__icon"
+>
+  ICON
+</span>
+`;
+
+exports[`text variant 1`] = `
+<span
+  className="pf-c-toggle-group__text"
+>
+  Test
+</span>
+`;

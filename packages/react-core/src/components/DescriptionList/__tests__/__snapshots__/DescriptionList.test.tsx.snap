@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description List 1 col on all breakpoints 1`] = `
+<dl
+  className="pf-c-description-list pf-m-1-col pf-m-1-col-on-md pf-m-1-col-on-lg pf-m-1-col-on-xl pf-m-1-col-on-2xl"
+/>
+`;
+
+exports[`Description List 2 col on all breakpoints 1`] = `
+<dl
+  className="pf-c-description-list pf-m-2-col pf-m-2-col-on-md pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-2-col-on-2xl"
+/>
+`;
+
+exports[`Description List 3 col on all breakpoints 1`] = `
+<dl
+  className="pf-c-description-list pf-m-3-col pf-m-3-col-on-md pf-m-3-col-on-lg pf-m-3-col-on-xl pf-m-3-col-on-2xl"
+/>
+`;
+
+exports[`Description List Auto Column Widths Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-auto-column-widths"
+/>
+`;
+
+exports[`Description List Auto fit Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-auto-fit"
+/>
+`;
+
+exports[`Description List Auto fit with responsive grid Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-auto-fit"
+  style={
+    Object {
+      "--pf-c-description-list--GridTemplateColumns--min-on-2xl": "300px",
+      "--pf-c-description-list--GridTemplateColumns--min-on-lg": "150px",
+      "--pf-c-description-list--GridTemplateColumns--min-on-md": "100px",
+      "--pf-c-description-list--GridTemplateColumns--min-on-xl": "200px",
+    }
+  }
+/>
+`;
+
+exports[`Description List Description 1`] = `
+<dd
+  aria-labelledby="description-1"
+  className="pf-c-description-list__description custom-description-list-description"
+>
+  <div
+    className="pf-c-description-list__text"
+  >
+    test
+  </div>
+</dd>
+`;
+
+exports[`Description List Group 1`] = `
+<div
+  className="pf-c-description-list__group custom-description-list-group"
+>
+  test
+</div>
+`;
+
+exports[`Description List Horizontal Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-horizontal"
+/>
+`;
+
+exports[`Description List Inline Grid Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-inline-grid"
+/>
+`;
+
+exports[`Description List Term default 1`] = `
+<dt
+  aria-labelledby="term-1"
+  className="pf-c-description-list__term"
+>
+  <span
+    className="pf-c-description-list__text"
+  >
+    test
+  </span>
+</dt>
+`;
+
+exports[`Description List default 1`] = `
+<dl
+  className="pf-c-description-list"
+/>
+`;

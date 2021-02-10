@@ -1,15 +1,13 @@
 ---
-title: 'Expandable section'
+id: Expandable section
 section: components
-cssPrefix: 'pf-c-expandable-section'
-typescript: true
+cssPrefix: pf-c-expandable-section
 propComponents: ['ExpandableSection']
 ---
 
-import { ExpandableSection } from '@patternfly/react-core';
-
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
@@ -19,9 +17,9 @@ class SimpleExpandableSection extends React.Component {
     this.state = {
       isExpanded: false
     };
-    this.onToggle = () => {
+    this.onToggle = (isExpanded) => {
       this.setState({
-        isExpanded: !this.state.isExpanded
+        isExpanded
       });
     };
   }
@@ -37,26 +35,24 @@ class SimpleExpandableSection extends React.Component {
 }
 ```
 
-```js title=Uncontrolled
+### Uncontrolled
+```js
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 
-UncontrolledExpandable = () => (
-  <ExpandableSection toggleText="Show More">
-    This content is visible only when the component is expanded.
+<ExpandableSection toggleText="Show More">
+  This content is visible only when the component is expanded.
 </ExpandableSection>
-)
 ```
 
-```js title=Uncontrolled-with-dynamic-toggle-text
+### Uncontrolled with dynamic toggle text
+```js
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 
-UncontrolledWithToggleExpandable = () => (
-  <ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
-    This content is visible only when the component is expanded.
-  </ExpandableSection>
-)
+<ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+  This content is visible only when the component is expanded.
+</ExpandableSection>
 ```

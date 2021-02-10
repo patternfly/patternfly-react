@@ -1,4 +1,5 @@
 import {
+  Button,
   Select,
   SelectOption,
   SelectVariant,
@@ -8,7 +9,8 @@ import {
   SelectOptionObject,
   Checkbox,
   SelectDirection,
-  Form
+  Form,
+  Divider
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/js/icons/cart-arrow-down-icon';
@@ -23,10 +25,14 @@ interface TypeAheadOption {
 export interface SelectDemoState {
   singleisOpen: boolean;
   singleSelected: string;
+  singleDescisOpen: boolean;
+  singleDescSelected: string;
   disabledSingleisOpen: boolean;
   disabledSingleSelected: string;
   customSingleisOpen: boolean;
   customSingleSelected: string | SelectOptionObject;
+  dividerisOpen: boolean;
+  dividerSelected: string;
   checkisOpen: boolean;
   checkSelected: string[];
   typeaheadisOpen: boolean;
@@ -49,16 +55,22 @@ export interface SelectDemoState {
   noBadgeCheckSelected: string[];
   menuDocumentBodyisOpen: boolean;
   menuDocumentBodySelected: string[];
+  lbltypeaheadSelected: string;
+  lbltypeaheadisOpen: boolean;
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
   state = {
     singleisOpen: false,
     singleSelected: '',
+    singleDescisOpen: false,
+    singleDescSelected: '',
     disabledSingleisOpen: false,
     disabledSingleSelected: '',
     customSingleisOpen: false,
     customSingleSelected: '',
+    dividerisOpen: false,
+    dividerSelected: '',
     checkisOpen: false,
     checkSelected: [''],
     typeaheadisOpen: false,
@@ -68,7 +80,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadMultiisOpen: false,
     typeaheadMultiSelected: [''],
     cdtypeaheadMultiisOpen: false,
-    cdtypeaheadMultiSelected: [''],
+    cdtypeaheadMultiSelected: [] as string[],
+    lbltypeaheadSelected: '',
+    lbltypeaheadisOpen: false,
     plainTypeaheadMultiisOpen: false,
     plainTypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsPlain: true,
@@ -82,6 +96,13 @@ export class SelectDemo extends Component<SelectDemoState> {
       { value: 'New Jersey', disabled: false },
       { value: 'Texas', disabled: false }
     ],
+    typeaheadLabelOptions: [
+      { label: 'Alabama', value: 'AL', disabled: false },
+      { label: 'New York', value: 'NY', disabled: false },
+      { label: 'Florida', value: 'FL', disabled: false },
+      { label: 'New Jersey', value: 'NJ', disabled: false },
+      { label: 'North Carolina', value: 'NC', disabled: false }
+    ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
     customContentisOpen: false,
@@ -90,25 +111,27 @@ export class SelectDemo extends Component<SelectDemoState> {
   };
 
   singleOptions = [
-    { value: 'Choose...', disabled: false, isPlaceholder: true },
-    { value: 'Mr', disabled: false },
-    { value: 'Miss', disabled: false },
-    { value: 'Mrs', disabled: false },
-    { value: 'Ms', disabled: false },
-    { value: 'Dr', disabled: false },
-    { value: 'Other', disabled: false }
+    { value: 'Choose...', disabled: false, isPlaceholder: true, id: 'single-select-opt-1' },
+    { value: 'Mr', disabled: false, id: 'single-select-opt-2' },
+    { value: 'Miss', disabled: false, id: 'single-select-opt-3' },
+    { value: 'Mrs', disabled: false, id: 'single-select-opt-4' },
+    { value: 'Ms', disabled: false, id: 'single-select-opt-5' },
+    { value: 'Dr', disabled: false, id: 'single-select-opt-6' },
+    { value: 'Other', disabled: false, id: 'single-select-opt-7' }
   ];
 
   checkboxOptions = [
-    <SelectOption key={0} value="Active" inputId="Active" />,
+    <SelectOption key={0} value="Active" inputId="Active" id="Active" />,
     <SelectOption
       key={1}
       value={{ numericValue: 0, toString: () => 'Cancelled' } as SelectOptionObject}
       inputId="Cancelled"
+      id="Cancelled"
     />,
-    <SelectOption key={2} value="Paused" inputId="Paused" />,
-    <SelectOption key={3} value="Warning" inputId="Warning" />,
-    <SelectOption key={4} value="Restarted" inputId="Restarted" />
+    <SelectOption key={2} value="Paused" inputId="Paused" id="Paused" />,
+    <Divider key={3} />,
+    <SelectOption key={4} value="Warning" inputId="Warning" id="Warning" />,
+    <SelectOption key={5} value="Restarted" inputId="Restarted" id="Restarted" />
   ];
 
   customTypeaheadOptions = [
@@ -156,6 +179,18 @@ export class SelectDemo extends Component<SelectDemoState> {
   singleOnToggle = (singleisOpen: boolean) => {
     this.setState({
       singleisOpen
+    });
+  };
+
+  singleDescOnToggle = (singleDescisOpen: boolean) => {
+    this.setState({
+      singleDescisOpen
+    });
+  };
+
+  dividerOnToggle = (dividerisOpen: boolean) => {
+    this.setState({
+      dividerisOpen
     });
   };
 
@@ -207,6 +242,10 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  lbtypaheadToggle = (lbltypeaheadisOpen: boolean) => {
+    this.setState({ lbltypeaheadisOpen });
+  };
+
   plainTypeaheadMultiOnToggle = (plainTypeaheadMultiisOpen: boolean) => {
     this.setState({
       plainTypeaheadMultiisOpen
@@ -236,6 +275,38 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleSelected: selection,
         singleisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  singleDescOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        singleDescSelected: selection,
+        singleDescisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  dividerOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        dividerSelected: selection,
+        dividerisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -378,6 +449,24 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
+  lbltypeaheadSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+      return;
+    }
+    this.setState(
+      {
+        lbltypeaheadSelected: selection,
+        lbltypeaheadisOpen: false
+      },
+      () => console.log('selections: ', this.state.lbltypeaheadSelected)
+    );
+  };
+
   plainTypeaheadMultiOnSelect = (
     event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject
@@ -445,7 +534,9 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadMultiSelected: [''],
       typeaheadMultiisOpen: false,
       cdtypeaheadMultiisOpen: false,
-      cdtypeaheadMultiSelected: [''],
+      cdtypeaheadMultiSelected: [],
+      lbltypeaheadSelected: '',
+      lbltypeaheadisOpen: false,
       plainTypeaheadMultiSelected: [''],
       plainTypeaheadMultiisOpen: false,
       customTypeaheadMultiSelected: [''],
@@ -479,6 +570,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           >
             {this.singleOptions.map((option, index) => (
               <SelectOption
+                id={option.value}
                 isDisabled={option.disabled}
                 key={index}
                 value={option.value}
@@ -495,6 +587,85 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-direction"
           name="toggle-direction"
         />
+      </StackItem>
+    );
+  }
+
+  renderSelectWithDivider() {
+    const { dividerisOpen, dividerSelected } = this.state;
+    const titleId = 'select-with-divider-title-id';
+    const options = this.singleOptions.reduce((acc, option, index) => {
+      const selectOpt = (
+        <SelectOption id={option.value} isDisabled={option.disabled} key={index} value={option.value} />
+      );
+      if (index === 2) {
+        return [...acc, <Divider component="li" key={`divider-${index}`} />, selectOpt];
+      }
+      return [...acc, selectOpt];
+    }, []);
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Select with a divider
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="single-select-with-divider"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.dividerOnToggle}
+            onSelect={this.dividerOnSelect}
+            selections={dividerSelected}
+            isOpen={dividerisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select with divider"
+            maxHeight={200}
+          >
+            {options}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
+  renderDescriptionSelect() {
+    const { singleDescisOpen, singleDescSelected } = this.state;
+    const titleId = 'title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Select with descriptions
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="single-select-with-descriptions"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.singleDescOnToggle}
+            onSelect={this.singleDescOnSelect}
+            selections={singleDescSelected}
+            isOpen={singleDescisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select with descriptions"
+            maxHeight={200}
+          >
+            {this.singleOptions.map((option, index) => (
+              <SelectOption
+                id={option.value}
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                description="This is a description"
+              />
+            ))}
+          </Select>
+        </div>
       </StackItem>
     );
   }
@@ -524,6 +695,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           >
             {this.singleOptions.map((option, index) => (
               <SelectOption
+                id={option.value}
                 isDisabled={option.disabled}
                 key={index}
                 value={option.value}
@@ -558,32 +730,32 @@ export class SelectDemo extends Component<SelectDemoState> {
             isOpen={customSingleisOpen}
             aria-labelledby={titleId}
           >
-            <SelectOption key={0} value="Choose..." isPlaceholder>
+            <SelectOption key={0} value="Choose..." isPlaceholder id="Choose...">
               Choose...
             </SelectOption>
-            <SelectOption key={1} value="Mr">
+            <SelectOption key={1} value="Mr" id="Mr">
               <div>div-Mr</div>
               <CartArrowDownIcon />
             </SelectOption>
-            <SelectOption key={2} value="Miss">
+            <SelectOption key={2} value="Miss" id="Miss">
               text-Miss
             </SelectOption>
-            <SelectOption key={3} value="Mrs">
+            <SelectOption key={3} value="Mrs" id="Mrs">
               <div>div-Mrs</div>
               <CartArrowDownIcon />
             </SelectOption>
-            <SelectOption key={4} value="Ms">
+            <SelectOption key={4} value="Ms" id="Ms">
               <div>
                 <span>nested-Ms</span>
               </div>
             </SelectOption>
-            <SelectOption key={5} value="Dr">
+            <SelectOption key={5} value="Dr" id="Dr">
               <div>one</div>
               <div>
                 two<div>nested-three-dr</div>
               </div>
             </SelectOption>
-            <SelectOption key={6} value="Other">
+            <SelectOption key={6} value="Other" id="Other">
               <div>single-Other</div>
             </SelectOption>
           </Select>
@@ -688,7 +860,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             noResultsFoundText="Item not found"
           >
             {typeaheadOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value} />
             ))}
           </Select>
         </div>
@@ -708,6 +880,47 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
         />
+      </StackItem>
+    );
+  }
+
+  renderLabelTypeaheadSelect() {
+    const { typeaheadLabelOptions, lbltypeaheadisOpen, lbltypeaheadSelected } = this.state;
+    const titleId = 'typeahead-select-labels-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Typeahead Select with labelled options
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Select a state
+          </span>
+          <Select
+            toggleId="typeahead-select-label"
+            variant={SelectVariant.typeahead}
+            aria-label="Select a state"
+            onToggle={this.lbtypaheadToggle}
+            onSelect={this.lbltypeaheadSelect}
+            onClear={this.clearSelection}
+            selections={lbltypeaheadSelected}
+            isOpen={lbltypeaheadisOpen}
+            aria-labelledby={titleId}
+            placeholderText="Select a state"
+          >
+            {typeaheadLabelOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value}>
+                {option.label}
+              </SelectOption>
+            ))}
+          </Select>
+          <Button
+            id="button-typeahead-labels"
+            onClick={() => this.lbltypeaheadSelect(null, typeaheadLabelOptions[1].value)}
+          >
+            Select {typeaheadLabelOptions[1].label}
+          </Button>
+        </div>
       </StackItem>
     );
   }
@@ -738,7 +951,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
           >
             {this.state.typeaheadOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value} />
             ))}
           </Select>
         </div>
@@ -760,6 +973,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             Select a state
           </span>
           <Select
+            chipGroupProps={{ numChips: 1 }}
             toggleId="custom-data-typeahead-multi-select"
             variant={SelectVariant.typeaheadMulti}
             aria-label="Select a state"
@@ -772,7 +986,12 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
           >
             {this.customTypeaheadOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+              <SelectOption
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                id={option.value.toString()}
+              />
             ))}
           </Select>
         </div>
@@ -806,7 +1025,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
           >
             {this.state.typeaheadOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value}>
                 <div>
                   div-{option.value.toString()}
                   <span>-test_span</span>
@@ -847,7 +1066,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
           >
             {this.state.typeaheadOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value}>
                 <div>
                   div-{option.value.toString()}
                   <span>-test_span</span>
@@ -917,8 +1136,8 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-labelledby={titleId}
             placeholderText="Select a state"
           >
-            <SelectOption value={'option1'} />
-            <SelectOption value={'option2'} />
+            <SelectOption value={'option1'} id="option1" />
+            <SelectOption value={'option2'} id="option1" />
           </Select>
         </Form>
       </StackItem>
@@ -973,6 +1192,9 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderSelectCustomContent()}
         {this.renderTypeaheadSelectInForm()}
         {this.renderMenuOnDocumentBodySelect()}
+        {this.renderDescriptionSelect()}
+        {this.renderSelectWithDivider()}
+        {this.renderLabelTypeaheadSelect()}
       </Stack>
     );
   }

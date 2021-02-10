@@ -48,4 +48,23 @@ describe('dropdown items', () => {
       expect(view).toMatchSnapshot();
     });
   });
+
+  describe('description', () => {
+    test('a', () => {
+      const view = shallow(
+        <InternalDropdownItem description="Something's link description">
+          Something
+        </InternalDropdownItem>
+      );
+      expect(view).toMatchSnapshot();
+    });
+    test('button', () => {
+      const view = shallow(
+        <InternalDropdownItem description="Something's button description" component="button">
+          Something
+        </InternalDropdownItem>
+      );
+      expect(view).toMatchSnapshot();
+    });
+  })
 });

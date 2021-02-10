@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Header } from './base';
-import { IHeaderRow, TableContext } from './Table';
+import { IHeaderRow } from './TableTypes';
+import { TableContext } from './TableContext';
 import { ColumnsType } from './base/types';
 
 interface ContextHeaderProps {

@@ -1,7 +1,6 @@
 ---
-title: 'Stack chart'
-section: 'charts'
-typescript: true
+id: Stack chart
+section: charts
 propComponents: [
   'Chart',
   'ChartArea',
@@ -12,7 +11,18 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartBar, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartTooltip, createContainer } from '@patternfly/react-charts';
+import {
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartBar,
+  ChartStack,
+  ChartLegendTooltip,
+  ChartThemeColor,
+  ChartTooltip,
+  ChartVoronoiContainer,
+  createContainer
+} from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -24,149 +34,147 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 [Start course](https://katacoda.com/patternfly/courses/react-charts/stack-chart)
 
 ## Examples
-```js title=Basic-with-right-aligned-legend
+### Basic with right aligned legend
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-BasicRightAlignedLegend = (
-  <div style={{ height: '250px', width: '600px' }}>
-    <Chart
-      ariaDesc="Average number of pets"
-      ariaTitle="Stack chart example"
-      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-      domainPadding={{ x: [30, 25] }}
-      legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-      legendOrientation="vertical"
-      legendPosition="right"
-      height={250}
-      padding={{
-        bottom: 50,
-        left: 50,
-        right: 200, // Adjusted to accommodate legend
-        top: 50
-      }}
-      width={600}
-    >
-      <ChartAxis />
-      <ChartAxis dependentAxis showGrid />
-      <ChartStack>
-        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-      </ChartStack>
-    </Chart>
-  </div>
-)
+<div style={{ height: '250px', width: '600px' }}>
+  <Chart
+    ariaDesc="Average number of pets"
+    ariaTitle="Stack chart example"
+    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    domainPadding={{ x: [30, 25] }}
+    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    height={250}
+    padding={{
+      bottom: 50,
+      left: 50,
+      right: 200, // Adjusted to accommodate legend
+      top: 50
+    }}
+    width={600}
+  >
+    <ChartAxis />
+    <ChartAxis dependentAxis showGrid />
+    <ChartStack>
+      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
+    </ChartStack>
+  </Chart>
+</div>
 ```
 
-```js title=Horizontal-with-bottom-aligned-legend
+### Horizontal with bottom aligned legend
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-Horizontal = (
-  <div style={{ height: '275px', width: '450px' }}>
-    <Chart
-      ariaDesc="Average number of pets"
-      ariaTitle="Stack chart example"
-      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-      domainPadding={{ x: [30, 25] }}
-      legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-      legendPosition="bottom"
-      height={275}
-      padding={{
-        bottom: 75, // Adjusted to accommodate legend
-        left: 50,
-        right: 50, 
-        top: 50
-      }}
-      themeColor={ChartThemeColor.gold}
-      width={450}
-    >
-      <ChartAxis />
-      <ChartAxis dependentAxis showGrid />
-      <ChartStack>
-        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-      </ChartStack>
-    </Chart>
-  </div>
-)
+<div style={{ height: '275px', width: '450px' }}>
+  <Chart
+    ariaDesc="Average number of pets"
+    ariaTitle="Stack chart example"
+    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    domainPadding={{ x: [30, 25] }}
+    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+    legendPosition="bottom"
+    height={275}
+    padding={{
+      bottom: 75, // Adjusted to accommodate legend
+      left: 50,
+      right: 50, 
+      top: 50
+    }}
+    themeColor={ChartThemeColor.gold}
+    width={450}
+  >
+    <ChartAxis />
+    <ChartAxis dependentAxis showGrid />
+    <ChartStack>
+      <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+      <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+      <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+      <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
+    </ChartStack>
+  </Chart>
+</div>
 ```
 
-```js title=Multi--color-(ordered)-horizontal-with-bottom-aligned-legend
+### Multi-color (ordered) horizontal with bottom aligned legend
+
+This demonstrates an alternate way of applying tooltips using data labels.
+
+```js
 import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
-MultiColorHorizontal = (
-  <div>
-    <p>This demonstrates an alternate way of applying tooltips using data labels</p>
-    <div style={{ height: '275px', width: '450px' }}>
-      <Chart
-        ariaDesc="Average number of pets"
-        ariaTitle="Stack chart example"
-        domainPadding={{ x: [30, 25] }}
-        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-        legendPosition="bottom-left"
-        height={275}
-        padding={{
-          bottom: 75, // Adjusted to accommodate legend
-          left: 50,
-          right: 50, 
-          top: 50
-        }}
-        themeColor={ChartThemeColor.multiOrdered}
-        width={450}
-      >
-        <ChartAxis />
-        <ChartAxis dependentAxis showGrid />
-        <ChartStack horizontal>
-          <ChartBar 
-            data={[
-              { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
-              { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
-              { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
-              { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
-            ]} 
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-          <ChartBar 
-            data={[
-              { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
-              { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
-              { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
-              { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
-            ]}
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-          <ChartBar 
-            data={[
-              { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
-              { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
-              { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
-              { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
-            ]}
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-          <ChartBar 
-            data={[
-              { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
-              { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
-              { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
-              { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
-            ]}
-            labelComponent={<ChartTooltip constrainToVisibleArea />}
-          />
-        </ChartStack>
-      </Chart>
-    </div>
-  </div>
-)
+<div style={{ height: '275px', width: '450px' }}>
+  <Chart
+    ariaDesc="Average number of pets"
+    ariaTitle="Stack chart example"
+    domainPadding={{ x: [30, 25] }}
+    legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+    legendPosition="bottom-left"
+    height={275}
+    padding={{
+      bottom: 75, // Adjusted to accommodate legend
+      left: 50,
+      right: 50, 
+      top: 50
+    }}
+    themeColor={ChartThemeColor.multiOrdered}
+    width={450}
+  >
+    <ChartAxis />
+    <ChartAxis dependentAxis showGrid />
+    <ChartStack horizontal>
+      <ChartBar 
+        data={[
+          { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
+          { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
+          { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
+          { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
+        ]} 
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+      <ChartBar 
+        data={[
+          { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
+          { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
+          { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
+          { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
+        ]}
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+      <ChartBar 
+        data={[
+          { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
+          { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
+          { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
+          { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
+        ]}
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+      <ChartBar 
+        data={[
+          { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
+          { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
+          { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
+          { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
+        ]}
+        labelComponent={<ChartTooltip constrainToVisibleArea />}
+      />
+    </ChartStack>
+  </Chart>
+</div>
 ```
 
-```js title=Monthly-data-with-responsive-container
+### Monthly data with responsive container
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
@@ -250,7 +258,6 @@ class MonthlyResponsiveStack extends React.Component {
     const { width } = this.state;
     return (
       <div ref={this.containerRef}>
-        <p>This demonstrates monthly data with a bottom aligned legend and responsiveness for mobile</p>
         <div style={{ height: '225px' }}>
           <Chart
             ariaDesc="Stack Chart with monthly metric data"
@@ -258,7 +265,7 @@ class MonthlyResponsiveStack extends React.Component {
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
-            height={275}
+            height={225}
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
@@ -282,7 +289,11 @@ class MonthlyResponsiveStack extends React.Component {
 }
 ```
 
-```js title=Multi--color-(unordered)-responsive-container
+### Multi-color (unordered) responsive container
+
+This demonstrates monthly data with a bottom aligned legend and responsiveness for mobile.
+
+```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
@@ -313,7 +324,7 @@ class MultiColorChart extends React.Component {
     const { width } = this.state;
     
     // Note: Container order is important
-    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const CursorVoronoiContainer = createContainer("voronoi", "cursor");
     const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs' }, { childName: 'birds', name: 'Birds' }];
     
     return (
