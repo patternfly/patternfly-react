@@ -1,0 +1,7 @@
+.pf-m-drawer-resizing {
+  pointer-events: none !important;
+}
+
+.pf-m-drawer-resizing .pf-c-drawer__splitter {
+  pointer-events: auto !important;
+}

@@ -15,7 +15,7 @@ import {
   expandedRow,
   wrappable,
   textCenter
-} from './transformers';
+} from './';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
 import {
   IAction,

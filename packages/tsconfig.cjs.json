@@ -8,6 +8,9 @@
       "path": "./react-charts/tsconfig.cjs.json"
     },
     {
+      "path": "./react-code-editor/tsconfig.cjs.json"
+    },
+    {
       "path": "./react-core/tsconfig.cjs.json"
     },
     {

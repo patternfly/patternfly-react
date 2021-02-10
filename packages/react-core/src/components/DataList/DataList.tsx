@@ -157,6 +157,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     this.move(this.props.itemOrder);
     Array.from(this.ref.current.children).forEach(el => {
       el.classList.remove(styles.modifiers.ghostRow);
+      el.classList.remove(styles.modifiers.dragOver);
       el.setAttribute('aria-pressed', 'false');
     });
     this.setState({
@@ -182,7 +183,13 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   dragEnd0 = (el: HTMLElement) => {
     el.classList.remove(styles.modifiers.ghostRow);
+    el.classList.remove(styles.modifiers.dragOver);
     el.setAttribute('aria-pressed', 'false');
+    this.setState({
+      draggedItemId: null,
+      draggingToItemIndex: null,
+      dragging: false
+    });
     this.props.onDragFinish(this.state.tempItemOrder);
   };
 
@@ -326,12 +333,10 @@ export class DataList extends React.Component<DataListProps, DataListState> {
             isCompact && styles.modifiers.compact,
             gridBreakpointClasses[gridBreakpoint],
             wrapModifier && styles.modifiers[wrapModifier],
+            dragging && styles.modifiers.dragOver,
             className
           )}
-          style={{
-            ...(dragging && { overflowAnchor: 'none' }),
-            ...props.style
-          }}
+          style={props.style}
           {...props}
           {...dragProps}
           ref={this.ref}

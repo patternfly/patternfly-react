@@ -37,9 +37,11 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
       </Button>
     )}
     {!activeStep.hideCancelButton && (
-      <Button variant={ButtonVariant.link} onClick={onClose}>
-        {cancelButtonText}
-      </Button>
+      <div className={styles.wizardFooterCancel}>
+        <Button variant={ButtonVariant.link} onClick={onClose}>
+          {cancelButtonText}
+        </Button>
+      </div>
     )}
   </footer>
 );

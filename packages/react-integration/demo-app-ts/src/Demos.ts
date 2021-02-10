@@ -337,6 +337,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DrawerDemo
   },
   {
+    id: 'drawer-resize-demo',
+    name: 'Drawer Resize Demo',
+    componentType: Examples.DrawerResizeDemo
+  },
+  {
     id: 'dropdown-demo',
     name: 'Dropdown Demo',
     componentType: Examples.DropdownDemo
@@ -497,6 +502,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GroupsNotificationDrawerDemo
   },
   {
+    id: 'numberInput-demo',
+    name: 'Number Input Demo',
+    componentType: Examples.NumberInputDemo
+  },
+  {
     id: 'options-menu-demo',
     name: 'Options Menu Demo',
     componentType: Examples.OptionsMenuDemo
@@ -595,6 +605,11 @@ export const Demos: DemoInterface[] = [
     id: 'skeleton-demo',
     name: 'Skeleton Demo',
     componentType: Examples.SkeletonDemo
+  },
+  {
+    id: 'slider-demo',
+    name: 'Slider Demo',
+    componentType: Examples.SliderDemo
   },
   {
     id: 'spinner-demo',
@@ -810,11 +825,6 @@ export const Demos: DemoInterface[] = [
     id: 'topology-demo',
     name: 'Topology Demo',
     componentType: Examples.TopologyDemo
-  },
-  {
-    id: 'numberInput-demo',
-    name: 'Number Input Demo',
-    componentType: Examples.NumberInputDemo
   },
   {
     id: 'treeview-demo',

@@ -41,7 +41,6 @@ exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-2xl"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -58,7 +57,6 @@ exports[`DataList DataList variants Breakpoint - always 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -75,7 +73,6 @@ exports[`DataList DataList variants Breakpoint - lg 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-lg"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -92,7 +89,6 @@ exports[`DataList DataList variants Breakpoint - md 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-md"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -109,7 +105,6 @@ exports[`DataList DataList variants Breakpoint - none 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-none"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -126,7 +121,6 @@ exports[`DataList DataList variants Breakpoint - sm 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-sm"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -143,7 +137,6 @@ exports[`DataList DataList variants Breakpoint - xl 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-xl"
-    style={Object {}}
   />
 </DataList>
 `;
@@ -251,7 +244,6 @@ exports[`DataList List 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-md data-list-custom"
-    style={Object {}}
   />
 </ContextProvider>
 `;
@@ -273,7 +265,6 @@ exports[`DataList List compact 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-compact pf-m-grid-md"
-    style={Object {}}
   />
 </ContextProvider>
 `;
@@ -295,7 +286,6 @@ exports[`DataList List default 1`] = `
   <ul
     aria-label="this is a simple list"
     className="pf-c-data-list pf-m-grid-md"
-    style={Object {}}
   />
 </ContextProvider>
 `;
@@ -320,7 +310,6 @@ exports[`DataList List draggable 1`] = `
     onDragLeave={[Function]}
     onDragOver={[Function]}
     onDrop={[Function]}
-    style={Object {}}
   />
 </ContextProvider>
 `;

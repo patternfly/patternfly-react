@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SearchInput, SearchInputProps } from '@patternfly/react-core';
+import { SearchInput, SearchInputProps, Button } from '@patternfly/react-core';
 
 interface SearchInputState {
   value: string;
@@ -9,8 +9,10 @@ interface SearchInputState {
 
 export class SearchInputDemo extends React.Component<SearchInputProps, SearchInputState> {
   static displayName = 'SearchInputDemo';
+  inputRef: React.RefObject<HTMLInputElement> = null;
   constructor(props: SearchInputProps) {
     super(props);
+    this.inputRef = React.createRef();
     this.state = {
       value: '',
       resultsCount: 0,
@@ -51,17 +53,29 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
     });
   };
 
+  onInputFocus = () => {
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus();
+    }
+  };
+
   render() {
     return (
-      <SearchInput
-        placeholder="Find by name"
-        value={this.state.value}
-        onChange={this.onChange}
-        onClear={this.onClear}
-        resultsCount={`${this.state.currentResult} / ${this.state.resultsCount}`}
-        onNextClick={this.onNext}
-        onPreviousClick={this.onPrevious}
-      />
+      <React.Fragment>
+        <SearchInput
+          ref={this.inputRef}
+          placeholder="Find by name"
+          value={this.state.value}
+          onChange={this.onChange}
+          onClear={this.onClear}
+          resultsCount={`${this.state.currentResult} / ${this.state.resultsCount}`}
+          onNextClick={this.onNext}
+          onPreviousClick={this.onPrevious}
+        />
+        <Button id="focus_button" onClick={this.onInputFocus}>
+          Focus on search
+        </Button>
+      </React.Fragment>
     );
   }
 }

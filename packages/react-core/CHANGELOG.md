@@ -3,6 +3,180 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.93.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.3...@patternfly/react-core@4.93.0) (2021-02-10)
+
+
+### Features
+
+* **Progress:** Add warning when title and aria-label not present ([#5415](https://github.com/patternfly/patternfly-react/issues/5415)) ([c2cb799](https://github.com/patternfly/patternfly-react/commit/c2cb799b19094c383bc103e63c91bcd6e27f1afb))
+
+
+
+
+
+## [4.92.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.2...@patternfly/react-core@4.92.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* **searchinput:** add bar class ([#5425](https://github.com/patternfly/patternfly-react/issues/5425)) ([1ac88c1](https://github.com/patternfly/patternfly-react/commit/1ac88c154bcf6b04ff9b692f8ebecb68e15d5c37))
+
+
+
+
+
+## [4.92.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.1...@patternfly/react-core@4.92.2) (2021-02-10)
+
+
+### Bug Fixes
+
+* **selectmenu:** don't use focus trap when no tabbable children ([#5427](https://github.com/patternfly/patternfly-react/issues/5427)) ([ec98e73](https://github.com/patternfly/patternfly-react/commit/ec98e734b37bba933522fb363b0c48aa81ad3d61))
+
+
+
+
+
+## [4.92.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.0...@patternfly/react-core@4.92.1) (2021-02-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.92.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.91.0...@patternfly/react-core@4.92.0) (2021-02-03)
+
+
+### Bug Fixes
+
+* **datalist:** use drag-over modifier instead of css style ([#5119](https://github.com/patternfly/patternfly-react/issues/5119)) ([f7c5c27](https://github.com/patternfly/patternfly-react/commit/f7c5c2738aefe995bef7b60c77560da825830433))
+* **Drawer:** enable touch controls for resizable drawer ([#5357](https://github.com/patternfly/patternfly-react/issues/5357)) ([27c539c](https://github.com/patternfly/patternfly-react/commit/27c539cf90d0c6cd818e0aad6a6df5741df66d90))
+* **timepicker:** fix issue when clicking dropdown menu does not trigger onchange function ([#5399](https://github.com/patternfly/patternfly-react/issues/5399)) ([38db41e](https://github.com/patternfly/patternfly-react/commit/38db41e62fbbf8513a446e2d4de3b3d29c1e13dd))
+
+
+### Features
+
+* **searchInput:** add support to passing a ref ([#5215](https://github.com/patternfly/patternfly-react/issues/5215)) ([41af5d3](https://github.com/patternfly/patternfly-react/commit/41af5d34d5c80afade3c1c9ace9e07877b141149))
+
+
+
+
+
+# [4.91.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.4...@patternfly/react-core@4.91.0) (2021-02-02)
+
+
+### Bug Fixes
+
+* **datepicker:** don't rely on toISOString ([#5369](https://github.com/patternfly/patternfly-react/issues/5369)) ([e7cf59d](https://github.com/patternfly/patternfly-react/commit/e7cf59dfe990e4b701e446a48b13f560b352607d))
+* **wizard:** add cancel button class ([#5391](https://github.com/patternfly/patternfly-react/issues/5391)) ([8e2cc70](https://github.com/patternfly/patternfly-react/commit/8e2cc70f22010dbed3fb4b35e6345dfbb9d60c7e))
+
+
+### Features
+
+* **card:** add pf-m-display-lg and pf-m-rounded ([#5389](https://github.com/patternfly/patternfly-react/issues/5389)) ([2adb463](https://github.com/patternfly/patternfly-react/commit/2adb4630ef23035f90f3ea8cdb79e0c19c57b2d0))
+* **spinner:** add isSVG ([#5390](https://github.com/patternfly/patternfly-react/issues/5390)) ([0114531](https://github.com/patternfly/patternfly-react/commit/01145311c6e50732691e3a43bc5dcc6b47026bc1))
+
+
+
+
+
+## [4.90.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.3...@patternfly/react-core@4.90.4) (2021-02-01)
+
+
+### Bug Fixes
+
+* **Tooltip:** only add aria when tooltip is visible/in the DOM ([#5382](https://github.com/patternfly/patternfly-react/issues/5382)) ([10263d9](https://github.com/patternfly/patternfly-react/commit/10263d993ea781a1bf681816eeddce9fa7657670))
+
+
+
+
+
+## [4.90.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.2...@patternfly/react-core@4.90.3) (2021-02-01)
+
+
+### Bug Fixes
+
+* **Select:** adjust Select component so that it also works with children changes while it's mounted ([#5375](https://github.com/patternfly/patternfly-react/issues/5375)) ([227da1d](https://github.com/patternfly/patternfly-react/commit/227da1dca3fdd108d411bb42c5021f0af3540fe9)), closes [#5365](https://github.com/patternfly/patternfly-react/issues/5365) [#5374](https://github.com/patternfly/patternfly-react/issues/5374)
+
+
+
+
+
+## [4.90.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.1...@patternfly/react-core@4.90.2) (2021-01-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.90.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.90.0...@patternfly/react-core@4.90.1) (2021-01-26)
+
+
+### Bug Fixes
+
+* **nav:** fix navitem tabindex casing ([#5376](https://github.com/patternfly/patternfly-react/issues/5376)) ([515fdb5](https://github.com/patternfly/patternfly-react/commit/515fdb534a0fd5a9d0b4a44f4bb73403b65477f0))
+
+
+
+
+
+# [4.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.3...@patternfly/react-core@4.90.0) (2021-01-25)
+
+
+### Features
+
+* **Slider:** Added new slider component ([#5358](https://github.com/patternfly/patternfly-react/issues/5358)) ([90df385](https://github.com/patternfly/patternfly-react/commit/90df3850a0a602d14538faba98314405b12a786b))
+
+
+
+
+
+## [4.89.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.2...@patternfly/react-core@4.89.3) (2021-01-25)
+
+
+### Bug Fixes
+
+* **drawer:** fix dragging problem on iframe when resizing drawer ([#5331](https://github.com/patternfly/patternfly-react/issues/5331)) ([746d43c](https://github.com/patternfly/patternfly-react/commit/746d43c3fee0600663489dfec6bcdde9076f9826))
+
+
+
+
+
+## [4.89.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.1...@patternfly/react-core@4.89.2) (2021-01-25)
+
+
+### Bug Fixes
+
+* **Wizard:** add wizard demos to match core ([#5325](https://github.com/patternfly/patternfly-react/issues/5325)) ([85c354e](https://github.com/patternfly/patternfly-react/commit/85c354ede81155f6d336d0cd6b99de0cde05e59e))
+
+
+
+
+
+## [4.89.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.89.0...@patternfly/react-core@4.89.1) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+# [4.89.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.88.1...@patternfly/react-core@4.89.0) (2021-01-22)
+
+
+### Features
+
+* **Drawer:** improve cursor responsiveness ([#5328](https://github.com/patternfly/patternfly-react/issues/5328)) ([e1c44c7](https://github.com/patternfly/patternfly-react/commit/e1c44c74cb8d016b62782eb24d80abedb124365a))
+* **SimpleList:** Uncontrolled Simple list support ([#5134](https://github.com/patternfly/patternfly-react/issues/5134)) ([690cf90](https://github.com/patternfly/patternfly-react/commit/690cf9090444edc3a5d3bb470edf25633b031f65))
+
+
+
+
+
 ## [4.88.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.88.0...@patternfly/react-core@4.88.1) (2021-01-19)
 
 

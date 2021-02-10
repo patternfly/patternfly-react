@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeEditor 1`] = `
+<t
+  disabled={false}
+  getDataTransferItems={[Function]}
+  maxSize={Infinity}
+  minSize={0}
+  multiple={false}
+  onDropAccepted={[Function]}
+  onDropRejected={[Function]}
+  preventDropOnDocument={true}
+>
+  <Component />
+</t>
+`;
+
+exports[`CodeEditor with all flags 1`] = `
+<t
+  disabled={false}
+  getDataTransferItems={[Function]}
+  maxSize={Infinity}
+  minSize={0}
+  multiple={false}
+  onDropAccepted={[Function]}
+  onDropRejected={[Function]}
+  preventDropOnDocument={true}
+>
+  <Component />
+</t>
+`;

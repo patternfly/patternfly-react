@@ -996,10 +996,10 @@ class StaticDrawer extends React.Component {
 
     const drawerContent =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
-    
+
     return (
       <React.Fragment>
-        <Button className='pf-u-hidden-on-md' aria-expanded={isExpanded} onClick={this.onClick}>
+        <Button className="pf-u-hidden-on-md" aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
         <Drawer isStatic isExpanded={isExpanded} onExpand={this.onExpand}>
@@ -1010,7 +1010,7 @@ class StaticDrawer extends React.Component {
       </React.Fragment>
     );
   }
-};
+}
 ```
 
 ### Breakpoint
@@ -1146,7 +1146,13 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable onResize={this.onResize} id="right-resize-panel">
+      <DrawerPanelContent
+        isResizable
+        onResize={this.onResize}
+        id="right-resize-panel"
+        defaultSize={'500px'}
+        minSize={'150px'}
+      >
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1224,7 +1230,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable>
+      <DrawerPanelContent isResizable defaultSize={'500px'} minSize={'200px'}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1302,7 +1308,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable>
+      <DrawerPanelContent isResizable defaultSize={'200px'} minSize={'100px'}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1382,7 +1388,7 @@ class ResizableDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent isResizable>
+      <DrawerPanelContent isResizable defaultSize={'500px'} minSize={'150px'}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel

@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.70.0...@patternfly/react-integration@4.71.0) (2021-02-03)
+
+
+### Features
+
+* **searchInput:** add support to passing a ref ([#5215](https://github.com/patternfly/patternfly-react/issues/5215)) ([41af5d3](https://github.com/patternfly/patternfly-react/commit/41af5d34d5c80afade3c1c9ace9e07877b141149))
+
+
+
+
+
+# [4.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.69.0...@patternfly/react-integration@4.70.0) (2021-02-02)
+
+
+### Features
+
+* **card:** add pf-m-display-lg and pf-m-rounded ([#5389](https://github.com/patternfly/patternfly-react/issues/5389)) ([2adb463](https://github.com/patternfly/patternfly-react/commit/2adb4630ef23035f90f3ea8cdb79e0c19c57b2d0))
+* **spinner:** add isSVG ([#5390](https://github.com/patternfly/patternfly-react/issues/5390)) ([0114531](https://github.com/patternfly/patternfly-react/commit/01145311c6e50732691e3a43bc5dcc6b47026bc1))
+
+
+
+
+
+# [4.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.68.1...@patternfly/react-integration@4.69.0) (2021-01-25)
+
+
+### Features
+
+* **Slider:** Added new slider component ([#5358](https://github.com/patternfly/patternfly-react/issues/5358)) ([90df385](https://github.com/patternfly/patternfly-react/commit/90df3850a0a602d14538faba98314405b12a786b))
+
+
+
+
+
+## [4.68.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.68.0...@patternfly/react-integration@4.68.1) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+# [4.68.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.67.1...@patternfly/react-integration@4.68.0) (2021-01-22)
+
+
+### Features
+
+* **SimpleList:** Uncontrolled Simple list support ([#5134](https://github.com/patternfly/patternfly-react/issues/5134)) ([690cf90](https://github.com/patternfly/patternfly-react/commit/690cf9090444edc3a5d3bb470edf25633b031f65))
+
+
+
+
+
 ## [4.67.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.67.0...@patternfly/react-integration@4.67.1) (2021-01-19)
 
 **Note:** Version bump only for package @patternfly/react-integration

@@ -14,7 +14,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   component?: keyof JSX.IntrinsicElements;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
-  /** Modifies the card to include compact styling */
+  /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
@@ -22,6 +22,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isSelected?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
+  /** Modifies the card to include rounded styling */
+  isRounded?: boolean;
+  /** Modifies the card to be large. Should not be used with isCompact. */
+  isLarge?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
 }
@@ -47,12 +51,19 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelected = false,
   isFlat = false,
   isExpanded = false,
+  isRounded = false,
+  isLarge = false,
   ouiaId,
   ouiaSafe = true,
   ...props
 }: CardProps) => {
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
+  if (isCompact && isLarge) {
+    // eslint-disable-next-line no-console
+    console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
+    isLarge = false;
+  }
   return (
     <CardContext.Provider
       value={{
@@ -70,6 +81,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
           isSelected && isSelectable && styles.modifiers.selected,
           isExpanded && styles.modifiers.expanded,
           isFlat && styles.modifiers.flat,
+          isRounded && styles.modifiers.rounded,
+          isLarge && styles.modifiers.displayLg,
           className
         )}
         tabIndex={isSelectable ? '0' : undefined}

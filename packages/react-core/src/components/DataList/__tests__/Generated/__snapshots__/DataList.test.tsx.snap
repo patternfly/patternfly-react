@@ -17,7 +17,6 @@ exports[`DataList should match snapshot (auto-generated) 1`] = `
   <ul
     aria-label="string"
     className="pf-c-data-list pf-m-grid-md ''"
-    style={Object {}}
   >
     ReactNode
   </ul>

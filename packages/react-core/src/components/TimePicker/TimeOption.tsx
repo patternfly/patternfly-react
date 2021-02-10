@@ -14,7 +14,7 @@ export interface TimeOptionProps extends Omit<React.HTMLProps<HTMLLIElement>, 'o
   /** Flag forcing the focused state */
   isFocused?: boolean;
   /** Optional callback for click event */
-  onSelect?: (value: string, index: number) => void;
+  onSelect?: (value: string, event: React.MouseEvent) => void;
   /** ID of the item. Required for tracking favorites */
   id?: string;
 }
@@ -22,7 +22,6 @@ export interface TimeOptionProps extends Omit<React.HTMLProps<HTMLLIElement>, 'o
 export const TimeOption: React.FunctionComponent<TimeOptionProps> = ({
   className = '',
   value = '',
-  index = 0,
   onSelect = () => {},
   children,
   id,
@@ -36,8 +35,8 @@ export const TimeOption: React.FunctionComponent<TimeOptionProps> = ({
   >
     <button
       className={css(styles.selectMenuItem)}
-      onClick={() => {
-        onSelect(value, index);
+      onClick={event => {
+        onSelect(value, event);
       }}
       role="option"
       type="button"

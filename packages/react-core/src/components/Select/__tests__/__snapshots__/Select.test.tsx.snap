@@ -28,6 +28,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -260,160 +261,158 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                   </svg>
                 </span>
               </button>
-              <div>
-                <div
-                  class="pf-c-select__menu"
+              <div
+                class="pf-c-select__menu"
+              >
+                <fieldset
+                  aria-label=""
+                  class="pf-c-form__fieldset"
                 >
-                  <fieldset
-                    aria-label=""
-                    class="pf-c-form__fieldset"
+                  <div
+                    class="pf-c-select__menu-group"
                   >
                     <div
-                      class="pf-c-select__menu-group"
+                      aria-hidden="true"
+                      class="pf-c-select__menu-group-title"
+                      id="group-1"
                     >
-                      <div
-                        aria-hidden="true"
-                        class="pf-c-select__menu-group-title"
-                        id="group-1"
-                      >
-                        group 1
-                      </div>
-                      <fieldset
-                        aria-labelledby="group-1"
-                        class="pf-c-select__menu-fieldset"
-                      >
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Mr"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Mr
-                          </span>
-                        </label>
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Mrs"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Mrs
-                          </span>
-                        </label>
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Ms"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Ms
-                          </span>
-                        </label>
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Other"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Other
-                          </span>
-                        </label>
-                      </fieldset>
+                      group 1
                     </div>
+                    <fieldset
+                      aria-labelledby="group-1"
+                      class="pf-c-select__menu-fieldset"
+                    >
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Mr"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Mr
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Mrs"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Mrs
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Ms"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Ms
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Other"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Other
+                        </span>
+                      </label>
+                    </fieldset>
+                  </div>
+                  <div
+                    class="pf-c-select__menu-group"
+                  >
                     <div
-                      class="pf-c-select__menu-group"
+                      aria-hidden="true"
+                      class="pf-c-select__menu-group-title"
+                      id="group-2"
                     >
-                      <div
-                        aria-hidden="true"
-                        class="pf-c-select__menu-group-title"
-                        id="group-2"
-                      >
-                        group 2
-                      </div>
-                      <fieldset
-                        aria-labelledby="group-2"
-                        class="pf-c-select__menu-fieldset"
-                      >
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Mr"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Mr
-                          </span>
-                        </label>
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Mrs"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Mrs
-                          </span>
-                        </label>
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Ms"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Ms
-                          </span>
-                        </label>
-                        <label
-                          class="pf-c-check pf-c-select__menu-item"
-                        >
-                          <input
-                            class="pf-c-check__input"
-                            id="pf-random-id-15-Other"
-                            type="checkbox"
-                          />
-                          <span
-                            class="pf-c-check__label"
-                          >
-                            Other
-                          </span>
-                        </label>
-                      </fieldset>
+                      group 2
                     </div>
-                  </fieldset>
-                </div>
+                    <fieldset
+                      aria-labelledby="group-2"
+                      class="pf-c-select__menu-fieldset"
+                    >
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Mr"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Mr
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Mrs"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Mrs
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Ms"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Ms
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="pf-random-id-15-Other"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Other
+                        </span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </fieldset>
               </div>
             </div>,
           }
@@ -652,370 +651,356 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           selected={Array []}
           sendRef={[Function]}
         >
-          <FocusTrap
-            active={true}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "preventScroll": true,
-              }
-            }
-            paused={false}
-            preventScrollOnDeactivate={false}
+          <div
+            className="pf-c-select__menu"
           >
-            <div>
-              <div
-                className="pf-c-select__menu"
+            <fieldset
+              aria-label=""
+              aria-labelledby={null}
+              className="pf-c-form__fieldset"
+            >
+              <SelectGroup
+                key=".0"
+                label="group 1"
+                titleId="group-1"
               >
-                <fieldset
-                  aria-label=""
-                  aria-labelledby={null}
-                  className="pf-c-form__fieldset"
+                <div
+                  className="pf-c-select__menu-group"
                 >
-                  <SelectGroup
-                    key=".0"
-                    label="group 1"
-                    titleId="group-1"
+                  <div
+                    aria-hidden={true}
+                    className="pf-c-select__menu-group-title"
+                    id="group-1"
                   >
-                    <div
-                      className="pf-c-select__menu-group"
-                    >
-                      <div
-                        aria-hidden={true}
-                        className="pf-c-select__menu-group-title"
-                        id="group-1"
-                      >
-                        group 1
-                      </div>
-                      <fieldset
-                        aria-labelledby="group-1"
-                        className="pf-c-select__menu-fieldset"
-                      >
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-1"
-                          index={0}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$00"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Mr"
-                        >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Mr"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Mr
-                            </span>
-                          </label>
-                        </SelectOption>
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-2"
-                          index={1}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$01"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Mrs"
-                        >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Mrs"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Mrs
-                            </span>
-                          </label>
-                        </SelectOption>
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-3"
-                          index={2}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$02"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Ms"
-                        >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Ms"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Ms
-                            </span>
-                          </label>
-                        </SelectOption>
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-4"
-                          index={3}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$03"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Other"
-                        >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Other"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Other
-                            </span>
-                          </label>
-                        </SelectOption>
-                      </fieldset>
-                    </div>
-                  </SelectGroup>
-                  <SelectGroup
-                    key=".1"
-                    label="group 2"
-                    titleId="group-2"
+                    group 1
+                  </div>
+                  <fieldset
+                    aria-labelledby="group-1"
+                    className="pf-c-select__menu-fieldset"
                   >
-                    <div
-                      className="pf-c-select__menu-group"
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-1"
+                      index={0}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$00"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Mr"
                     >
-                      <div
-                        aria-hidden={true}
-                        className="pf-c-select__menu-group-title"
-                        id="group-2"
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
                       >
-                        group 2
-                      </div>
-                      <fieldset
-                        aria-labelledby="group-2"
-                        className="pf-c-select__menu-fieldset"
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Mr"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
+                        >
+                          Mr
+                        </span>
+                      </label>
+                    </SelectOption>
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-2"
+                      index={1}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$01"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Mrs"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
                       >
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-1"
-                          index={4}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$00"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Mr"
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Mrs"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
                         >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Mr"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Mr
-                            </span>
-                          </label>
-                        </SelectOption>
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-2"
-                          index={5}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$01"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Mrs"
+                          Mrs
+                        </span>
+                      </label>
+                    </SelectOption>
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-3"
+                      index={2}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$02"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Ms"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
+                      >
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Ms"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
                         >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Mrs"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Mrs
-                            </span>
-                          </label>
-                        </SelectOption>
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-3"
-                          index={6}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$02"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Ms"
+                          Ms
+                        </span>
+                      </label>
+                    </SelectOption>
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-4"
+                      index={3}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$03"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Other"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
+                      >
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Other"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
                         >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Ms"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Ms
-                            </span>
-                          </label>
-                        </SelectOption>
-                        <SelectOption
-                          className=""
-                          component="button"
-                          id="option-4"
-                          index={7}
-                          inputId=""
-                          isChecked={false}
-                          isDisabled={false}
-                          isFavorite={null}
-                          isNoResultsOption={false}
-                          isPlaceholder={false}
-                          isSelected={false}
-                          key=".$03"
-                          keyHandler={[Function]}
-                          onClick={[Function]}
-                          sendRef={[Function]}
-                          value="Other"
+                          Other
+                        </span>
+                      </label>
+                    </SelectOption>
+                  </fieldset>
+                </div>
+              </SelectGroup>
+              <SelectGroup
+                key=".1"
+                label="group 2"
+                titleId="group-2"
+              >
+                <div
+                  className="pf-c-select__menu-group"
+                >
+                  <div
+                    aria-hidden={true}
+                    className="pf-c-select__menu-group-title"
+                    id="group-2"
+                  >
+                    group 2
+                  </div>
+                  <fieldset
+                    aria-labelledby="group-2"
+                    className="pf-c-select__menu-fieldset"
+                  >
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-1"
+                      index={4}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$00"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Mr"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
+                      >
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Mr"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
                         >
-                          <label
-                            className="pf-c-check pf-c-select__menu-item"
-                            onKeyDown={[Function]}
-                          >
-                            <input
-                              checked={false}
-                              className="pf-c-check__input"
-                              disabled={false}
-                              id="pf-random-id-15-Other"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                            <span
-                              className="pf-c-check__label"
-                            >
-                              Other
-                            </span>
-                          </label>
-                        </SelectOption>
-                      </fieldset>
-                    </div>
-                  </SelectGroup>
-                </fieldset>
-              </div>
-            </div>
-          </FocusTrap>
+                          Mr
+                        </span>
+                      </label>
+                    </SelectOption>
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-2"
+                      index={5}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$01"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Mrs"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
+                      >
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Mrs"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
+                        >
+                          Mrs
+                        </span>
+                      </label>
+                    </SelectOption>
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-3"
+                      index={6}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$02"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Ms"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
+                      >
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Ms"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
+                        >
+                          Ms
+                        </span>
+                      </label>
+                    </SelectOption>
+                    <SelectOption
+                      className=""
+                      component="button"
+                      id="option-4"
+                      index={7}
+                      inputId=""
+                      isChecked={false}
+                      isDisabled={false}
+                      isFavorite={null}
+                      isNoResultsOption={false}
+                      isPlaceholder={false}
+                      isSelected={false}
+                      key=".$03"
+                      keyHandler={[Function]}
+                      onClick={[Function]}
+                      sendRef={[Function]}
+                      value="Other"
+                    >
+                      <label
+                        className="pf-c-check pf-c-select__menu-item"
+                        onKeyDown={[Function]}
+                      >
+                        <input
+                          checked={false}
+                          className="pf-c-check__input"
+                          disabled={false}
+                          id="pf-random-id-15-Other"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="pf-c-check__label"
+                        >
+                          Other
+                        </span>
+                      </label>
+                    </SelectOption>
+                  </fieldset>
+                </div>
+              </SelectGroup>
+            </fieldset>
+          </div>
         </SelectMenu>
       </ForwardRef>
     </div>
@@ -1050,6 +1035,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -1255,6 +1241,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -1442,6 +1429,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -1609,6 +1597,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -1753,72 +1742,70 @@ exports[`checkbox select renders expanded successfully 1`] = `
                   </svg>
                 </span>
               </button>
-              <div>
-                <div
-                  class="pf-c-select__menu"
+              <div
+                class="pf-c-select__menu"
+              >
+                <fieldset
+                  aria-label=""
+                  class="pf-c-form__fieldset"
                 >
-                  <fieldset
-                    aria-label=""
-                    class="pf-c-form__fieldset"
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
                   >
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-11-Mr"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-11-Mr"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mr
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mr
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-11-Mrs"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-11-Mrs"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mrs
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mrs
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-11-Ms"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-11-Ms"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Ms
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-11-Other"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-11-Other"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </fieldset>
-                </div>
+                      Other
+                    </span>
+                  </label>
+                </fieldset>
               </div>
             </div>,
           }
@@ -1969,178 +1956,164 @@ exports[`checkbox select renders expanded successfully 1`] = `
           selected={Array []}
           sendRef={[Function]}
         >
-          <FocusTrap
-            active={true}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "preventScroll": true,
-              }
-            }
-            paused={false}
-            preventScrollOnDeactivate={false}
+          <div
+            className="pf-c-select__menu"
           >
-            <div>
-              <div
-                className="pf-c-select__menu"
+            <fieldset
+              aria-label=""
+              aria-labelledby={null}
+              className="pf-c-form__fieldset"
+            >
+              <SelectOption
+                className=""
+                component="button"
+                id="option-1"
+                index={0}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$00"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Mr"
               >
-                <fieldset
-                  aria-label=""
-                  aria-labelledby={null}
-                  className="pf-c-form__fieldset"
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
                 >
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-1"
-                    index={0}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$00"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Mr"
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-11-Mr"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-11-Mr"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mr
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-2"
-                    index={1}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$01"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Mrs"
+                    Mr
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-2"
+                index={1}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$01"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Mrs"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-11-Mrs"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-11-Mrs"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mrs
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-3"
-                    index={2}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$02"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Ms"
+                    Mrs
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-3"
+                index={2}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$02"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Ms"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-11-Ms"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-11-Ms"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-4"
-                    index={3}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$03"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Other"
+                    Ms
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-4"
+                index={3}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$03"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Other"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-11-Other"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-11-Other"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </SelectOption>
-                </fieldset>
-              </div>
-            </div>
-          </FocusTrap>
+                    Other
+                  </span>
+                </label>
+              </SelectOption>
+            </fieldset>
+          </div>
         </SelectMenu>
       </ForwardRef>
     </div>
@@ -2176,6 +2149,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -2306,58 +2280,56 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                   </svg>
                 </span>
               </button>
-              <div>
-                <div
-                  class="pf-c-select__menu"
+              <div
+                class="pf-c-select__menu"
+              >
+                <fieldset
+                  aria-label=""
+                  class="pf-c-form__fieldset"
                 >
-                  <fieldset
-                    aria-label=""
-                    class="pf-c-form__fieldset"
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
                   >
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-14-Mr: User One"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-14-Mr: User One"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mr: User One
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mr: User One
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-14-Mrs: New User"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-14-Mrs: New User"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mrs: New User
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mrs: New User
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-14-Ms: Test Three"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-14-Ms: Test Three"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Ms: Test Three
-                      </span>
-                    </label>
-                  </fieldset>
-                </div>
+                      Ms: Test Three
+                    </span>
+                  </label>
+                </fieldset>
               </div>
             </div>,
           }
@@ -2494,165 +2466,151 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           selected={Array []}
           sendRef={[Function]}
         >
-          <FocusTrap
-            active={true}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "preventScroll": true,
-              }
-            }
-            paused={false}
-            preventScrollOnDeactivate={false}
+          <div
+            className="pf-c-select__menu"
           >
-            <div>
-              <div
-                className="pf-c-select__menu"
+            <fieldset
+              aria-label=""
+              aria-labelledby={null}
+              className="pf-c-form__fieldset"
+            >
+              <SelectOption
+                className=""
+                component="button"
+                id="option-1"
+                index={0}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$0"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value={
+                  User {
+                    "compareTo": [Function],
+                    "firstName": "User",
+                    "lastName": "One",
+                    "title": "Mr",
+                    "toString": [Function],
+                  }
+                }
               >
-                <fieldset
-                  aria-label=""
-                  aria-labelledby={null}
-                  className="pf-c-form__fieldset"
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
                 >
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-1"
-                    index={0}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$0"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value={
-                      User {
-                        "compareTo": [Function],
-                        "firstName": "User",
-                        "lastName": "One",
-                        "title": "Mr",
-                        "toString": [Function],
-                      }
-                    }
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-14-Mr: User One"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-14-Mr: User One"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mr: User One
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-2"
-                    index={1}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$1"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value={
-                      User {
-                        "compareTo": [Function],
-                        "firstName": "New",
-                        "lastName": "User",
-                        "title": "Mrs",
-                        "toString": [Function],
-                      }
-                    }
+                    Mr: User One
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-2"
+                index={1}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$1"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value={
+                  User {
+                    "compareTo": [Function],
+                    "firstName": "New",
+                    "lastName": "User",
+                    "title": "Mrs",
+                    "toString": [Function],
+                  }
+                }
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-14-Mrs: New User"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-14-Mrs: New User"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mrs: New User
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-3"
-                    index={2}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$2"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value={
-                      User {
-                        "compareTo": [Function],
-                        "firstName": "Test",
-                        "lastName": "Three",
-                        "title": "Ms",
-                        "toString": [Function],
-                      }
-                    }
+                    Mrs: New User
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-3"
+                index={2}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$2"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value={
+                  User {
+                    "compareTo": [Function],
+                    "firstName": "Test",
+                    "lastName": "Three",
+                    "title": "Ms",
+                    "toString": [Function],
+                  }
+                }
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-14-Ms: Test Three"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
                   >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-14-Ms: Test Three"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Ms: Test Three
-                      </span>
-                    </label>
-                  </SelectOption>
-                </fieldset>
-              </div>
-            </div>
-          </FocusTrap>
+                    Ms: Test Three
+                  </span>
+                </label>
+              </SelectOption>
+            </fieldset>
+          </div>
         </SelectMenu>
       </ForwardRef>
     </div>
@@ -2688,6 +2646,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -2846,84 +2805,82 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                   </svg>
                 </button>
               </div>
-              <div>
-                <div
-                  class="pf-c-select__menu"
+              <div
+                class="pf-c-select__menu"
+              >
+                <fieldset
+                  aria-label=""
+                  class="pf-c-form__fieldset"
                 >
-                  <fieldset
-                    aria-label=""
-                    class="pf-c-form__fieldset"
+                  <div
+                    class="pf-c-select__menu-search"
                   >
-                    <div
-                      class="pf-c-select__menu-search"
-                    >
-                      <input
-                        autocomplete="off"
-                        class="pf-c-form-control pf-m-search"
-                        type="search"
-                      />
-                    </div>
-                    <hr
-                      class="pf-c-divider"
+                    <input
+                      autocomplete="off"
+                      class="pf-c-form-control pf-m-search"
+                      type="search"
                     />
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                  </div>
+                  <hr
+                    class="pf-c-divider"
+                  />
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-12-Mr"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-12-Mr"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mr
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mr
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-12-Mrs"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-12-Mrs"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mrs
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mrs
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-12-Ms"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-12-Ms"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Ms
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-12-Other"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-12-Other"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </fieldset>
-                </div>
+                      Other
+                    </span>
+                  </label>
+                </fieldset>
               </div>
             </div>,
           }
@@ -3090,199 +3047,185 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           selected={Array []}
           sendRef={[Function]}
         >
-          <FocusTrap
-            active={true}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "preventScroll": true,
-              }
-            }
-            paused={false}
-            preventScrollOnDeactivate={false}
+          <div
+            className="pf-c-select__menu"
           >
-            <div>
+            <fieldset
+              aria-label=""
+              aria-labelledby={null}
+              className="pf-c-form__fieldset"
+            >
               <div
-                className="pf-c-select__menu"
+                className="pf-c-select__menu-search"
+                key="inline-filter"
               >
-                <fieldset
-                  aria-label=""
-                  aria-labelledby={null}
-                  className="pf-c-form__fieldset"
-                >
-                  <div
-                    className="pf-c-select__menu-search"
-                    key="inline-filter"
-                  >
-                    <input
-                      autoComplete="off"
-                      className="pf-c-form-control pf-m-search"
-                      key="inline-filter-input"
-                      onChange={[Function]}
-                      onKeyDown={[Function]}
-                      placeholder={null}
-                      type="search"
-                    />
-                  </div>
-                  <Divider
-                    key="inline-filter-divider"
-                  >
-                    <hr
-                      className="pf-c-divider"
-                    />
-                  </Divider>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-1"
-                    index={1}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$1"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Mr"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-12-Mr"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mr
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-2"
-                    index={2}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$2"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Mrs"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-12-Mrs"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mrs
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-3"
-                    index={3}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$3"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Ms"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-12-Ms"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-4"
-                    index={4}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$4"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Other"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-12-Other"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </SelectOption>
-                </fieldset>
+                <input
+                  autoComplete="off"
+                  className="pf-c-form-control pf-m-search"
+                  key="inline-filter-input"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder={null}
+                  type="search"
+                />
               </div>
-            </div>
-          </FocusTrap>
+              <Divider
+                key="inline-filter-divider"
+              >
+                <hr
+                  className="pf-c-divider"
+                />
+              </Divider>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-1"
+                index={1}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$1"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Mr"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-12-Mr"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Mr
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-2"
+                index={2}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$2"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Mrs"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-12-Mrs"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Mrs
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-3"
+                index={3}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$3"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Ms"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-12-Ms"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Ms
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-4"
+                index={4}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$4"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Other"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-12-Other"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Other
+                  </span>
+                </label>
+              </SelectOption>
+            </fieldset>
+          </div>
         </SelectMenu>
       </ForwardRef>
     </div>
@@ -3318,6 +3261,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -3476,84 +3420,82 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                   </svg>
                 </button>
               </div>
-              <div>
-                <div
-                  class="pf-c-select__menu"
+              <div
+                class="pf-c-select__menu"
+              >
+                <fieldset
+                  aria-label=""
+                  class="pf-c-form__fieldset"
                 >
-                  <fieldset
-                    aria-label=""
-                    class="pf-c-form__fieldset"
+                  <div
+                    class="pf-c-select__menu-search"
                   >
-                    <div
-                      class="pf-c-select__menu-search"
-                    >
-                      <input
-                        autocomplete="off"
-                        class="pf-c-form-control pf-m-search"
-                        type="search"
-                      />
-                    </div>
-                    <hr
-                      class="pf-c-divider"
+                    <input
+                      autocomplete="off"
+                      class="pf-c-form-control pf-m-search"
+                      type="search"
                     />
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                  </div>
+                  <hr
+                    class="pf-c-divider"
+                  />
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-13-Mr"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-13-Mr"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mr
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mr
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-13-Mrs"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-13-Mrs"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Mrs
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Mrs
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-13-Ms"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-13-Ms"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                    <label
-                      class="pf-c-check pf-c-select__menu-item"
+                      Ms
+                    </span>
+                  </label>
+                  <label
+                    class="pf-c-check pf-c-select__menu-item"
+                  >
+                    <input
+                      class="pf-c-check__input"
+                      id="pf-random-id-13-Other"
+                      type="checkbox"
+                    />
+                    <span
+                      class="pf-c-check__label"
                     >
-                      <input
-                        class="pf-c-check__input"
-                        id="pf-random-id-13-Other"
-                        type="checkbox"
-                      />
-                      <span
-                        class="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </fieldset>
-                </div>
+                      Other
+                    </span>
+                  </label>
+                </fieldset>
               </div>
             </div>,
           }
@@ -3720,199 +3662,185 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
           selected={Array []}
           sendRef={[Function]}
         >
-          <FocusTrap
-            active={true}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "preventScroll": true,
-              }
-            }
-            paused={false}
-            preventScrollOnDeactivate={false}
+          <div
+            className="pf-c-select__menu"
           >
-            <div>
+            <fieldset
+              aria-label=""
+              aria-labelledby={null}
+              className="pf-c-form__fieldset"
+            >
               <div
-                className="pf-c-select__menu"
+                className="pf-c-select__menu-search"
+                key="inline-filter"
               >
-                <fieldset
-                  aria-label=""
-                  aria-labelledby={null}
-                  className="pf-c-form__fieldset"
-                >
-                  <div
-                    className="pf-c-select__menu-search"
-                    key="inline-filter"
-                  >
-                    <input
-                      autoComplete="off"
-                      className="pf-c-form-control pf-m-search"
-                      key="inline-filter-input"
-                      onChange={[Function]}
-                      onKeyDown={[Function]}
-                      placeholder={null}
-                      type="search"
-                    />
-                  </div>
-                  <Divider
-                    key="inline-filter-divider"
-                  >
-                    <hr
-                      className="pf-c-divider"
-                    />
-                  </Divider>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-1"
-                    index={1}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$1"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Mr"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-13-Mr"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mr
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-2"
-                    index={2}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$2"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Mrs"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-13-Mrs"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Mrs
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-3"
-                    index={3}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$3"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Ms"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-13-Ms"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Ms
-                      </span>
-                    </label>
-                  </SelectOption>
-                  <SelectOption
-                    className=""
-                    component="button"
-                    id="option-4"
-                    index={4}
-                    inputId=""
-                    isChecked={false}
-                    isDisabled={false}
-                    isFavorite={null}
-                    isNoResultsOption={false}
-                    isPlaceholder={false}
-                    isSelected={false}
-                    key=".$4"
-                    keyHandler={[Function]}
-                    onClick={[Function]}
-                    sendRef={[Function]}
-                    value="Other"
-                  >
-                    <label
-                      className="pf-c-check pf-c-select__menu-item"
-                      onKeyDown={[Function]}
-                    >
-                      <input
-                        checked={false}
-                        className="pf-c-check__input"
-                        disabled={false}
-                        id="pf-random-id-13-Other"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <span
-                        className="pf-c-check__label"
-                      >
-                        Other
-                      </span>
-                    </label>
-                  </SelectOption>
-                </fieldset>
+                <input
+                  autoComplete="off"
+                  className="pf-c-form-control pf-m-search"
+                  key="inline-filter-input"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder={null}
+                  type="search"
+                />
               </div>
-            </div>
-          </FocusTrap>
+              <Divider
+                key="inline-filter-divider"
+              >
+                <hr
+                  className="pf-c-divider"
+                />
+              </Divider>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-1"
+                index={1}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$1"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Mr"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-13-Mr"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Mr
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-2"
+                index={2}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$2"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Mrs"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-13-Mrs"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Mrs
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-3"
+                index={3}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$3"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Ms"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-13-Ms"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Ms
+                  </span>
+                </label>
+              </SelectOption>
+              <SelectOption
+                className=""
+                component="button"
+                id="option-4"
+                index={4}
+                inputId=""
+                isChecked={false}
+                isDisabled={false}
+                isFavorite={null}
+                isNoResultsOption={false}
+                isPlaceholder={false}
+                isSelected={false}
+                key=".$4"
+                keyHandler={[Function]}
+                onClick={[Function]}
+                sendRef={[Function]}
+                value="Other"
+              >
+                <label
+                  className="pf-c-check pf-c-select__menu-item"
+                  onKeyDown={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="pf-c-check__input"
+                    disabled={false}
+                    id="pf-random-id-13-Other"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <span
+                    className="pf-c-check__label"
+                  >
+                    Other
+                  </span>
+                </label>
+              </SelectOption>
+            </fieldset>
+          </div>
         </SelectMenu>
       </ForwardRef>
     </div>
@@ -3953,6 +3881,7 @@ exports[`renders select with favorites successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -5696,6 +5625,7 @@ exports[`select custom select filter filters properly 1`] = `
   onFilter={[Function]}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -6165,6 +6095,7 @@ exports[`select renders select groups successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -7100,6 +7031,7 @@ exports[`select renders up direction successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -7272,6 +7204,7 @@ exports[`select single select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -7444,6 +7377,7 @@ exports[`select single select renders disabled successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -7617,6 +7551,7 @@ exports[`select single select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -8137,6 +8072,7 @@ exports[`select single select renders expanded successfully with custom objects 
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -8606,6 +8542,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -8773,6 +8710,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -8795,11 +8733,11 @@ exports[`select with custom content renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-16"
+        aria-labelledby=" pf-select-toggle-id-17"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-16"
+        id="pf-select-toggle-id-17"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -8828,9 +8766,9 @@ exports[`select with custom content renders expanded successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
-                aria-labelledby=" pf-select-toggle-id-16"
+                aria-labelledby=" pf-select-toggle-id-17"
                 class="pf-c-select__toggle"
-                id="pf-select-toggle-id-16"
+                id="pf-select-toggle-id-17"
                 type="button"
               >
                 <div
@@ -8872,10 +8810,10 @@ exports[`select with custom content renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
-          aria-labelledby=" pf-select-toggle-id-16"
+          aria-labelledby=" pf-select-toggle-id-17"
           className="pf-c-select__toggle"
           disabled={false}
-          id="pf-select-toggle-id-16"
+          id="pf-select-toggle-id-17"
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"
@@ -9030,6 +8968,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -9222,6 +9161,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -9244,11 +9184,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-12"
+        aria-labelledby=" pf-select-toggle-id-13"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-12"
+        id="pf-select-toggle-id-13"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -9337,7 +9277,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-12-select-multi-typeahead-typeahead"
+                    id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
                     placeholder=""
                     type="text"
                     value=""
@@ -9347,9 +9287,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-12"
+                  aria-labelledby=" pf-select-toggle-id-13"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-12"
+                  id="pf-select-toggle-id-13"
                   tabindex="-1"
                   type="button"
                 >
@@ -9447,7 +9387,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-12-select-multi-typeahead-typeahead"
+              id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -9459,10 +9399,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-12"
+            aria-labelledby=" pf-select-toggle-id-13"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-12"
+            id="pf-select-toggle-id-13"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
@@ -9767,6 +9707,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -10792,6 +10733,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -10984,6 +10926,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -11528,6 +11471,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -12155,6 +12099,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
@@ -12177,11 +12122,11 @@ exports[`typeahead select test select existing option on a non-creatable select 
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-11"
+        aria-labelledby=" pf-select-toggle-id-12"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-11"
+        id="pf-select-toggle-id-12"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -12231,7 +12176,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-11-select-typeahead"
+                    id="pf-select-toggle-id-12-select-typeahead"
                     placeholder=""
                     type="text"
                     value="Oth"
@@ -12241,9 +12186,9 @@ exports[`typeahead select test select existing option on a non-creatable select 
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-11"
+                  aria-labelledby=" pf-select-toggle-id-12"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-11"
+                  id="pf-select-toggle-id-12"
                   tabindex="-1"
                   type="button"
                 >
@@ -12302,7 +12247,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
-              id="pf-select-toggle-id-11-select-typeahead"
+              id="pf-select-toggle-id-12-select-typeahead"
               onChange={[Function]}
               onClick={[Function]}
               placeholder=""
@@ -12314,10 +12259,10 @@ exports[`typeahead select test select existing option on a non-creatable select 
             aria-expanded={true}
             aria-haspopup="listbox"
             aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-11"
+            aria-labelledby=" pf-select-toggle-id-12"
             className="pf-c-button pf-c-select__toggle-button pf-m-plain"
             disabled={false}
-            id="pf-select-toggle-id-11"
+            id="pf-select-toggle-id-12"
             onClick={[Function]}
             tabIndex={-1}
             type="button"
