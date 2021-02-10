@@ -82,7 +82,7 @@ This demo expands on the previous to show the JumpLinks in a vertical layout wit
 
 ```js isFullscreen
 import React from 'react';
-import { PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, JumpLinks, JumpLinksItem, JumpLinksList, PageGroup, Sidebar, SidebarContent, SidebarPanel, TextContent } from '@patternfly/react-core';
+import { PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, JumpLinks, JumpLinksItem, JumpLinksList, PageGroup, Sidebar, SidebarContent, SidebarPanel, Title, TextContent } from '@patternfly/react-core';
 
 ScrollspyH2 = () => {
   const headings = [1,2,3,4,5];
