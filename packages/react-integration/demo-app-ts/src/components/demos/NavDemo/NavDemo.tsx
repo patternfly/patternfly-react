@@ -174,6 +174,7 @@ export class NavDemo extends Component {
                 groupId="grp-2"
                 isActive={expandableActiveGroup === 'grp-2'}
                 isExpanded
+                buttonProps={{ 'aria-label': 'group 2' }}
               >
                 <NavItem
                   id="itm-2-1"
