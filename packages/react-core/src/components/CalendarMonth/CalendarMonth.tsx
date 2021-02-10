@@ -308,6 +308,7 @@ export const CalendarMonth = ({
                         isRangeEnd && styles.modifiers.hover,
                         !isValid && styles.modifiers.disabled
                       )}
+                      type="button"
                       onClick={() => onChange(date)}
                       onMouseOver={() => setHoveredDate(date)}
                       tabIndex={isFocused ? 0 : -1}
