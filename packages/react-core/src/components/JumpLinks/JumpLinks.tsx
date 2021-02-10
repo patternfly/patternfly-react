@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
+import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
 import { formatBreakpointMods } from '../../helpers/util';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -63,6 +65,11 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
   return res;
 };
 
+function isSticky() {
+  const breakpointWidth = Number(mdBreakpoint.value.replace('px', ''));
+  return window.innerWidth < breakpointWidth;
+}
+
 export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   isCentered,
   isVertical,
@@ -81,6 +88,8 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
   const [isExpanded, setIsExpanded] = React.useState(true);
+  const navRef = React.useRef<HTMLElement>();
+
   if (hasScrollSpy) {
     React.useEffect(() => {
       if (typeof window === 'undefined') {
@@ -92,7 +101,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       }
 
       function scrollSpy() {
-        const scrollPosition = scrollableElement.scrollTop + offset;
+        const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
         window.requestAnimationFrame(() => {
           let newScrollItems = scrollItems;
           // Items might have rendered after this component. Do a quick refresh.
@@ -143,7 +152,25 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 const newScrollItem = scrollItem || newScrollItems[itemIndex];
 
                 if (newScrollItem) {
-                  newScrollItem.scrollIntoView();
+                  // we have to support scrolling to an offset due to sticky sidebar
+                  const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+                  if (scrollableElement instanceof HTMLElement) {
+                    if (isSticky()) {
+                      // Remove class immediately so we can get collapsed height
+                      if (navRef.current) {
+                        navRef.current.classList.remove(styles.modifiers.expanded);
+                      }
+                      setIsExpanded(false);
+                      let stickyParent = navRef.current.parentElement;
+                      while (stickyParent && !stickyParent.classList.contains(sidebarStyles.modifiers.sticky)) {
+                        stickyParent = stickyParent.parentElement;
+                      }
+                      if (stickyParent) {
+                        offset += stickyParent.scrollHeight;
+                      }
+                    }
+                    scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
+                  }
                   newScrollItem.focus();
                   ev.preventDefault();
                 }
@@ -172,6 +199,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         isExpanded && styles.modifiers.expanded
       )}
       aria-label={ariaLabel}
+      ref={navRef}
       {...props}
     >
       <div className={styles.jumpLinksMain}>
