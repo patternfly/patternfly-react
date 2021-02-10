@@ -3,15 +3,17 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 
 export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
-  children: React.ReactNode;
-  variant: 'default' | 'stack' | 'split' | 'panelRight';
-  hasGutter: boolean;
-  hasNoBackground: boolean;
+  children?: React.ReactNode;
+  orientation?: 'stack' | 'split';
+  isPanelRight?: boolean;
+  hasGutter?: boolean;
+  hasNoBackground?: boolean;
 }
 
 export const Sidebar: React.FunctionComponent<SidebarProps> = ({
   children,
-  variant = 'default',
+  orientation = 'stack',
+  isPanelRight = false,
   hasGutter,
   hasNoBackground,
   ...props
@@ -21,7 +23,8 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = ({
       styles.sidebar,
       hasGutter && styles.modifiers.gutter,
       hasNoBackground && styles.modifiers.noBackground,
-      variant !== 'default' && styles.modifiers[variant]
+      isPanelRight && styles.modifiers.panelRight,
+      styles.modifiers[orientation]
     )}
     {...props}
   >

@@ -110,10 +110,10 @@ ScrollspyH2 = () => {
               <JumpLinks
                 isVertical
                 label="Jump to section"
-                alwaysShowLabel
                 scrollableSelector="#scrollable-element"
                 offset={76} // for masthead
                 expandable={{ default: 'expandable', md: 'nonExpandable' }}
+                isExpanded
               >
                 {headings.map(i => 
                   <JumpLinksItem key={i} href={`#heading-${i}`}>

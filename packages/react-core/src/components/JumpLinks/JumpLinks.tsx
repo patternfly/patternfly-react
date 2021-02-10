@@ -7,7 +7,7 @@ import { JumpLinksList } from './JumpLinksList';
 import { formatBreakpointMods } from '../../helpers/util';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import cssToggleDisplayVar from '@patternfly/react-tokens/dist/js/c_jump_links__toggle_Display';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -37,6 +37,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
     xl?: 'expandable' | 'nonExpandable';
     '2xl'?: 'expandable' | 'nonExpandable';
   };
+  /** On mobile whether or not the JumpLinks starts out expanded */
+  isExpanded?: boolean;
   /** Aria label for expandable toggle */
   toggleAriaLabel?: string;
 }
@@ -65,9 +67,14 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
   return res;
 };
 
-function isSticky() {
-  const breakpointWidth = Number(mdBreakpoint.value.replace('px', ''));
-  return window.innerWidth < breakpointWidth;
+function isResponsive(jumpLinks: HTMLElement) {
+  // https://github.com/patternfly/patternfly/blob/master/src/patternfly/components/JumpLinks/jump-links.scss#L103
+  return (
+    jumpLinks &&
+    getComputedStyle(jumpLinks)
+      .getPropertyValue(cssToggleDisplayVar.name)
+      .includes('block')
+  );
 }
 
 export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
@@ -80,14 +87,17 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   activeIndex: activeIndexProp = 0,
   offset = 0,
   expandable,
-  alwaysShowLabel,
+  isExpanded: isExpandedProp = false,
+  alwaysShowLabel = true,
   toggleAriaLabel = 'Toggle jump links',
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableSelector);
   const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
-  const [isExpanded, setIsExpanded] = React.useState(true);
+  const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
+  // Allow expanding to be controlled for a niche use case
+  React.useEffect(() => setIsExpanded(isExpandedProp), [isExpandedProp]);
   const navRef = React.useRef<HTMLElement>();
 
   if (hasScrollSpy) {
@@ -155,16 +165,16 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                   // we have to support scrolling to an offset due to sticky sidebar
                   const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
                   if (scrollableElement instanceof HTMLElement) {
-                    if (isSticky()) {
+                    if (isResponsive(navRef.current)) {
                       // Remove class immediately so we can get collapsed height
                       if (navRef.current) {
                         navRef.current.classList.remove(styles.modifiers.expanded);
                       }
-                      setIsExpanded(false);
-                      let stickyParent = navRef.current.parentElement;
+                      let stickyParent = navRef.current && navRef.current.parentElement;
                       while (stickyParent && !stickyParent.classList.contains(sidebarStyles.modifiers.sticky)) {
                         stickyParent = stickyParent.parentElement;
                       }
+                      setIsExpanded(false);
                       if (stickyParent) {
                         offset += stickyParent.scrollHeight;
                       }
