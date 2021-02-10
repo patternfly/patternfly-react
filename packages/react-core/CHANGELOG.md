@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.92.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.2...@patternfly/react-core@4.92.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* **searchinput:** add bar class ([#5425](https://github.com/patternfly/patternfly-react/issues/5425)) ([1ac88c1](https://github.com/patternfly/patternfly-react/commit/1ac88c154bcf6b04ff9b692f8ebecb68e15d5c37))
+
+
+
+
+
 ## [4.92.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.1...@patternfly/react-core@4.92.2) (2021-02-10)
 
 
