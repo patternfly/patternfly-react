@@ -20,7 +20,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   }
 
   handleKeys = (event: KeyboardEvent) => {
-    event.stopImmediatePropagation();
+    if (this.treeRef.current !== (event.target as HTMLElement).closest('.pf-c-tree-view')) {
+      return;
+    }
     const activeElement = document.activeElement;
     const key = event.key;
     let moveFocus = false;
