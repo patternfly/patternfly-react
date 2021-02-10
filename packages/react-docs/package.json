@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "5.15.14",
+  "version": "5.15.15",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease-v4"
@@ -33,7 +33,7 @@
     "@patternfly/react-table": "^4.20.21",
     "@patternfly/react-tokens": "^4.9.28",
     "@patternfly/react-topology": "^4.7.20",
-    "@patternfly/react-virtualized-extension": "^4.6.20"
+    "@patternfly/react-virtualized-extension": "^4.6.21"
   },
   "devDependencies": {
     "@patternfly/patternfly-a11y": "2.0.12",
