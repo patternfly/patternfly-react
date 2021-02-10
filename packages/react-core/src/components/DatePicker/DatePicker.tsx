@@ -189,6 +189,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
               ref={buttonRef}
               className={css(buttonStyles.button, buttonStyles.modifiers.control)}
               aria-label={buttonAriaLabel}
+              type="button"
               onClick={() => setPopoverOpen(!popoverOpen)}
               disabled={isDisabled}
             >
