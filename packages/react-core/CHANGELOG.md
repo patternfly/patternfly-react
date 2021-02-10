@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.92.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.1...@patternfly/react-core@4.92.2) (2021-02-10)
+
+
+### Bug Fixes
+
+* **selectmenu:** don't use focus trap when no tabbable children ([#5427](https://github.com/patternfly/patternfly-react/issues/5427)) ([ec98e73](https://github.com/patternfly/patternfly-react/commit/ec98e734b37bba933522fb363b0c48aa81ad3d61))
+
+
+
+
+
 ## [4.92.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.92.0...@patternfly/react-core@4.92.1) (2021-02-08)
 
 **Note:** Version bump only for package @patternfly/react-core
