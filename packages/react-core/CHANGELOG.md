@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.95.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.94.1...@patternfly/react-core@4.95.0) (2021-02-11)
+
+
+### Features
+
+* **Navigation:** Added support for spreading props to the NaveExpand… ([#5438](https://github.com/patternfly/patternfly-react/issues/5438)) ([e462fb8](https://github.com/patternfly/patternfly-react/commit/e462fb81dee60652027a985a4098a238a38a613a))
+
+
+
+
+
 ## [4.94.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.94.0...@patternfly/react-core@4.94.1) (2021-02-11)
 
 **Note:** Version bump only for package @patternfly/react-core
