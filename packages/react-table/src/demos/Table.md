@@ -911,15 +911,15 @@ class ColumnManagementAction extends React.Component {
                 id="check1"
                 onChange={this.handleChange}
               />
-              <label htmlFor="check1">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                    Repositories
+                    <label htmlFor="check1">
+                      Repositories
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item2">
@@ -931,15 +931,15 @@ class ColumnManagementAction extends React.Component {
                 id="check2"
                 onChange={this.handleChange}
               />
-              <label htmlFor="check2">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                    Branches
+                    <label htmlFor="check2">
+                      Branches
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
           </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item3">
@@ -951,15 +951,15 @@ class ColumnManagementAction extends React.Component {
                 id="check3"
                 onChange={this.handleChange}
               />
-              <label htmlFor="check3">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                    Pull requests
+                    <label htmlFor="check3">
+                      Pull requests
+                    </label>            
                   </DataListCell>
                 ]}
               />
-              </label>            
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item4">
@@ -971,15 +971,15 @@ class ColumnManagementAction extends React.Component {
                 id="check4"
                 onChange={this.handleChange}
               />
-              <label htmlFor="check4">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    Workspaces
+                    <label htmlFor="check4">
+                      Workspaces
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item5">
@@ -991,15 +991,15 @@ class ColumnManagementAction extends React.Component {
                 id="check5"
                 onChange={this.handleChange}
               />
-              <label htmlFor="check5">
               <DataListItemCells
                 dataListCells={[
-                  <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                    Last commit
-                  </DataListCell>
+                    <DataListCell id="table-column-management-item5" key="table-column-management-item5">
+                      <label htmlFor="check5">
+                        Last commit
+                      </label>
+                    </DataListCell>
                 ]}
               />
-              </label>
             </DataListItemRow>
           </DataListItem>
         </DataList>
@@ -1650,15 +1650,15 @@ class ColumnManagementAction extends React.Component {
                     otherControls
                   />
                 </DataListControl>
-              <label htmlFor="check1">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                    Repositories
+                    <label htmlFor="check1">                  
+                      Repositories
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item2" id="data2">
@@ -1679,15 +1679,15 @@ class ColumnManagementAction extends React.Component {
                 otherControls
               />
               </DataListControl>
-              <label htmlFor="check2">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                    Branches
+                    <label htmlFor="check2">
+                      Branches
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
           </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item3" id="data3">
@@ -1708,15 +1708,15 @@ class ColumnManagementAction extends React.Component {
                 otherControls
               />
               </DataListControl>
-              <label htmlFor="check3">
               <DataListItemCells
                 dataListCells={[
-                  <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                    Pull requests
-                  </DataListCell>
+                    <DataListCell id="table-column-management-item3" key="table-column-management-item3">
+                      <label htmlFor="check3">
+                        Pull requests
+                      </label>            
+                    </DataListCell>
                 ]}
               />
-              </label>            
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item4" id="data4">
@@ -1737,15 +1737,15 @@ class ColumnManagementAction extends React.Component {
                 otherControls
               />
               </DataListControl>
-              <label htmlFor="check4">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    Workspaces
+                    <label htmlFor="check4">
+                      Workspaces
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
             </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item5" id="data5">
@@ -1766,15 +1766,15 @@ class ColumnManagementAction extends React.Component {
                 otherControls
               />
               </DataListControl>
-              <label htmlFor="check5">
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                    Last commit
+                    <label htmlFor="check5">
+                      Last commit
+                    </label>
                   </DataListCell>
                 ]}
               />
-              </label>
             </DataListItemRow>
           </DataListItem>
         </DataList>
