@@ -1509,9 +1509,30 @@ class ColumnManagementAction extends React.Component {
       }));
     };
     this.onSave = () => {
+      const orderedColumns = this.state.itemOrder.map(item => this.matchDataListNameToColumn(item));
+      // concat empty string at the end for actions column
+      const filteredOrderedColumns = orderedColumns.filter(col => this.state.filteredColumns.indexOf(col) > -1).concat(['']);
+      const orderedRows = [];
+      this.state.filteredRows.forEach(row => {
+        const updatedCells = row.cells.sort((cellA, cellB) => {
+          const indexA = filteredOrderedColumns.indexOf(cellA.props.column);
+          const indexB = filteredOrderedColumns.indexOf(cellB.props.column);
+          if (indexA < indexB) {
+            return -1;
+          }
+          if (indexA > indexB) {
+            return 1;
+          }
+          // a must be equal to b
+          return 0;
+        });
+        orderedRows.push({
+          cells: updatedCells
+        });
+      });
       this.setState(({ filteredColumns, filteredRows, isModalOpen }) => ({
-        columns: filteredColumns,
-        rows: filteredRows,
+        columns: filteredOrderedColumns,
+        rows: orderedRows,
         isModalOpen: !isModalOpen
       }));
     };
