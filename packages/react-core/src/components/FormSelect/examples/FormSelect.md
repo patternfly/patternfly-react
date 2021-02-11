@@ -63,10 +63,10 @@ class FormSelectInputInvalid extends React.Component {
       this.setState({ value, validated });
     };
     this.options = [
-      { value: '', label: 'Choose a number', disabled: false },
-      { value: '1', label: 'One', disabled: false },
-      { value: '2', label: 'Two', disabled: false },
-      { value: '3', label: 'Three', disabled: false }
+      { value: '', label: 'Choose a number', disabled: false, isPlaceholder: true },
+      { value: '1', label: 'One', disabled: false, isPlaceholder: false },
+      { value: '2', label: 'Two', disabled: false, isPlaceholder: false  },
+      { value: '3', label: 'Three', disabled: false, isPlaceholder: false  }
     ];
   }
 
@@ -81,7 +81,7 @@ class FormSelectInputInvalid extends React.Component {
         aria-label="FormSelect Input"
       >
         {this.options.map((option, index) => (
-          <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+          <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} isPlaceholder={option.isPlaceholder} />
         ))}
       </FormSelect>
     );
@@ -124,10 +124,10 @@ class FormSelectInputInvalid extends React.Component {
     };
 
     this.options = [
-      { value: '', label: 'Choose a number', disabled: false },
-      { value: '1', label: 'One', disabled: false },
-      { value: '2', label: 'Two', disabled: false },
-      { value: '3', label: 'Three - the only valid option', disabled: false }
+      { value: '', label: 'Choose a number', disabled: false, isPlaceholder: true  },
+      { value: '1', label: 'One', disabled: false, isPlaceholder: false  },
+      { value: '2', label: 'Two', disabled: false, isPlaceholder: false  },
+      { value: '3', label: 'Three - the only valid option', disabled: false, isPlaceholder: false  }
     ];
   }
 
@@ -151,7 +151,7 @@ class FormSelectInputInvalid extends React.Component {
             aria-label="FormSelect Input"
           >
             {this.options.map((option, index) => (
-              <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+              <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} isPlaceholder={option.isPlaceholder} />
             ))}
           </FormSelect>
         </FormGroup>

@@ -9,6 +9,8 @@ export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionEl
   label: string;
   /** flag indicating if the option is disabled */
   isDisabled?: boolean;
+  /* flag indicating if option will have placeholder styling applied when selected */
+  isPlaceholder?: boolean;
 }
 
 export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = ({
@@ -16,6 +18,8 @@ export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = 
   value = '',
   isDisabled = false,
   label,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  isPlaceholder = false,
   ...props
 }: FormSelectOptionProps) => (
   <option {...props} className={className} value={value} disabled={isDisabled}>
