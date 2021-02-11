@@ -6,7 +6,10 @@ import {
   DropdownItem,
   DualListSelector,
   DualListSelectorProps,
-  KebabToggle
+  KebabToggle,
+  Text,
+  TextContent,
+  TextVariants
 } from '@patternfly/react-core';
 import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-desc-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
@@ -32,10 +35,22 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
     super(props);
     this.state = {
       availableOptions: [
-        <span key={1}>Option 1</span>,
-        <span key={2}>Option 2</span>,
-        <span key={3}>Option 3</span>,
-        <span key={4}>Option 4</span>
+        <TextContent key={1}>
+          <span className="pf-c-dual-list-selector__item-text">Option 1</span>
+          <Text component={TextVariants.small}>Description 1</Text>
+        </TextContent>,
+        <TextContent key={2}>
+          <span className="pf-c-dual-list-selector__item-text">Option 2</span>
+          <Text component={TextVariants.small}>Description 2</Text>
+        </TextContent>,
+        <TextContent key={3}>
+          <span className="pf-c-dual-list-selector__item-text">Option 3</span>
+          <Text component={TextVariants.small}>Description 3</Text>
+        </TextContent>,
+        <TextContent key={4}>
+          <span className="pf-c-dual-list-selector__item-text">Option 4</span>
+          <Text component={TextVariants.small}>Description 4</Text>
+        </TextContent>
       ],
       chosenOptions: [],
       isAvailableKebabOpen: false,
@@ -49,10 +64,10 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
         this.setState(prevState => {
           const available = prevState.availableOptions.sort((a: any, b: any) => {
             let returnValue = 0;
-            if (a.props.children > b.props.children) {
+            if (a.props.children[0].props.children > b.props.children[0].props.children) {
               returnValue = 1;
             }
-            if (a.props.children < b.props.children) {
+            if (a.props.children[0].props.children < b.props.children[0].props.children) {
               returnValue = -1;
             }
             if (prevState.availableDescending) {
@@ -71,10 +86,10 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
         this.setState(prevState => {
           const chosen = prevState.chosenOptions.sort((a: any, b: any) => {
             let returnValue = 0;
-            if (a.props.children > b.props.children) {
+            if (a.props.children[0].props.children > b.props.children[0].props.children) {
               returnValue = 1;
             }
-            if (a.props.children < b.props.children) {
+            if (a.props.children[0].props.children < b.props.children[0].props.children) {
               returnValue = -1;
             }
             if (prevState.chosenDescending) {
@@ -104,7 +119,9 @@ export class DualListSelectorWithActionsDemo extends React.Component<DualListSel
       }));
     };
 
-    this.filterOption = (option: any, input: string) => option.props.children.includes(input);
+    this.filterOption = (option: any, input: string) =>
+      option.props.children[0].props.children.includes(input) ||
+      option.props.children[1].props.children.includes(input);
 
     this.onOptionSelect = (e: React.MouseEvent | React.ChangeEvent) => {
       // eslint-disable-next-line no-console

@@ -85,28 +85,50 @@ class BasicDualListSelectorWithSearch extends React.Component {
 
 ```js
 import React from 'react';
-import { Button, ButtonVariant, Dropdown, DropdownItem, DualListSelector, KebabToggle } from '@patternfly/react-core';
+import { Button, ButtonVariant, Dropdown, DropdownItem, DualListSelector, KebabToggle, Text, TextContent } from '@patternfly/react-core';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
 
 class ComplexDualListSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      availableOptions: [<span>Option 1</span>, <span>Option 3</span>, <span>Option 4</span>, <span>Option 2</span>],
+      availableOptions: [
+        <TextContent key={1}>
+          <span className="pf-c-dual-list-selector__item-text">Option 1</span>
+          <Text component={TextVariants.small}>Description 1</Text>
+        </TextContent>,
+        <TextContent key={2}>
+          <span className="pf-c-dual-list-selector__item-text">Option 2</span>
+          <Text component={TextVariants.small}>Description 2</Text>
+        </TextContent>,
+        <TextContent key={3}>
+          <span className="pf-c-dual-list-selector__item-text">Option 3</span>
+          <Text component={TextVariants.small}>Description 3</Text>
+        </TextContent>,
+        <TextContent key={4}>
+          <span className="pf-c-dual-list-selector__item-text">Option 4</span>
+          <Text component={TextVariants.small}>Description 4</Text>
+        </TextContent>
+      ],
       chosenOptions: [],
       isAvailableKebabOpen: false,
       isChosenKebabOpen: false
     };
 
     this.onSort = panel => {
+      const customSort = (a, b) => {
+        let returnValue = 0;
+        if (a.props.children[0].props.children > b.props.children[0].props.children) {
+          returnValue = 1;
+        }
+        if (a.props.children[0].props.children < b.props.children[0].props.children) {
+          returnValue = -1;
+        }
+        return returnValue;
+      }
       if (panel === 'available') {
         this.setState(prevState => {
-          const available = prevState.availableOptions.sort((a, b) => {
-            let returnValue = 0;
-            if (a.props.children > b.props.children) returnValue = 1;
-            if (a.props.children < b.props.children) returnValue = -1;
-            return returnValue;
-          });
+          const available = prevState.availableOptions.sort(customSort);
           return {
             availableOptions: available
           };
@@ -115,12 +137,7 @@ class ComplexDualListSelector extends React.Component {
 
       if (panel === 'chosen') {
         this.setState(prevState => {
-          const chosen = prevState.chosenOptions.sort((a, b) => {
-            let returnValue = 0;
-            if (a.props.children > b.props.children) returnValue = 1;
-            if (a.props.children < b.props.children) returnValue = -1;
-            return returnValue;
-          });
+          const chosen = prevState.chosenOptions.sort(customSort);
           return {
             chosenOptions: chosen
           };
@@ -144,9 +161,9 @@ class ComplexDualListSelector extends React.Component {
       });
     };
 
-    this.filterOption = (option, input) => {
-      return option.props.children.includes(input);
-    };
+    this.filterOption = (option, input) =>
+      option.props.children[0].props.children.includes(input) ||
+      option.props.children[1].props.children.includes(input);
   }
 
   render() {
