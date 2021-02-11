@@ -75,6 +75,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
             { attr: 'firstname', display: 'First name' }
           ]}
           placeholder="Find by name"
+          advancedSearchDelimiter=":"
           value={this.state.value}
           onChange={this.onChange}
           onSearch={this.onSearch}
