@@ -121,7 +121,9 @@ exports[`tree view renders active successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={false}
+  >
     <div
       className="pf-c-tree-view"
     >
@@ -1173,7 +1175,9 @@ exports[`tree view renders badges successfully 1`] = `
   hasBadges={true}
   onSelect={[MockFunction]}
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={false}
+  >
     <div
       className="pf-c-tree-view"
     >
@@ -2284,7 +2288,9 @@ exports[`tree view renders basic successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={false}
+  >
     <div
       className="pf-c-tree-view"
     >
@@ -3210,7 +3216,9 @@ exports[`tree view renders checkboxes successfully 1`] = `
   hasChecks={true}
   onSelect={[MockFunction]}
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={true}
+  >
     <div
       className="pf-c-tree-view"
     >
@@ -4359,7 +4367,9 @@ exports[`tree view renders icons successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={false}
+  >
     <div
       className="pf-c-tree-view"
     >
@@ -5700,7 +5710,9 @@ exports[`tree view renders individual flag options successfully 1`] = `
   }
   onSelect={[MockFunction]}
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={false}
+  >
     <div
       className="pf-c-tree-view"
     >
@@ -6965,7 +6977,9 @@ exports[`tree view renders search successfully 1`] = `
     }
   }
 >
-  <TreeViewRoot>
+  <TreeViewRoot
+    hasChecks={false}
+  >
     <div
       className="pf-c-tree-view"
     >
