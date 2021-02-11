@@ -75,3 +75,24 @@ import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
   <JumpLinksItem>Inactive section</JumpLinksItem>
 </JumpLinks>
 ```
+
+### Expandable vertical with subsection
+```js
+import React from 'react';
+import { JumpLinks, JumpLinksItem, JumpLinksList } from '@patternfly/react-core';
+
+<JumpLinks isVertical label="Jump to section" expandable={{ default: 'expandable' }}>
+  <JumpLinksItem>Inactive section</JumpLinksItem>
+  <JumpLinksItem>
+    Section with active subsection
+    <JumpLinksList>
+      <JumpLinksItem isActive>Active subsection</JumpLinksItem>
+      <JumpLinksItem>Inactive subsection</JumpLinksItem>
+      <JumpLinksItem>Inactive subsection</JumpLinksItem>
+    </JumpLinksList>
+  </JumpLinksItem>
+  <JumpLinksItem>Inactive section</JumpLinksItem>
+  <JumpLinksItem>Inactive section</JumpLinksItem>
+</JumpLinks>
+```
+
