@@ -140,7 +140,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     document.removeEventListener('touchcancel', callbackThumbUp);
   };
 
-  const handleMousedown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
 
@@ -173,6 +173,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   const handleThumbMove = (e: any) => {
     if (e.type === 'touchmove') {
+      e.preventDefault();
       e.stopImmediatePropagation();
     }
 
@@ -315,7 +316,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           aria-valuenow={value}
           aria-valuetext={findAriaTextValue()}
           aria-label={thumbAriaLabel}
-          onMouseDown={handleMousedown}
+          onMouseDown={handleMouseDown}
           onTouchStart={handleToucheStart}
           onKeyDown={handleThumbKeys}
           onClick={onThumbClick}
