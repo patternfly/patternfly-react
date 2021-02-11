@@ -30,6 +30,8 @@ export interface NavExpandableProps
   id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally */
   onExpand?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => void;
+  /** Additional props added to the NavExpandable <button> */
+  buttonProps?: any;
 }
 
 interface NavExpandableState {
@@ -108,6 +110,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
       id,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isExpanded,
+      buttonProps,
       ...props
     } = this.props;
 
@@ -141,6 +144,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   onMouseDown={e => e.preventDefault()}
                   aria-expanded={expandedState}
                   tabIndex={isNavOpen ? null : -1}
+                  {...buttonProps}
                 >
                   {title}
                   <span className={css(styles.navToggle)}>
