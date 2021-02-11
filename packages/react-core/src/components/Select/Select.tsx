@@ -306,7 +306,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } else {
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
-            ? childrenArray.filter(child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0)
+            ? childrenArray.filter(
+                child => child.props.value && this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
+              )
             : childrenArray;
       }
     }
