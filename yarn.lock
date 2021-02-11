@@ -2458,10 +2458,10 @@
     webpack-dev-server "^3.11.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.83.0":
-  version "4.83.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.83.0.tgz#f49a9de89c84367efcd1fc0bd5a84ea865abd1d8"
-  integrity sha512-kSVf0gipBDtcxIm6D9uyLUVFupPJfSkJ48NXJWgtFKoU9dRI2213BdLkH1J41aNfgjsjSs9OliheF4Q6W2Ozlw==
+"@patternfly/patternfly@4.86.0":
+  version "4.86.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.86.0.tgz#269dbc98efed3e97958a17f67d9b65ab745d787d"
+  integrity sha512-OawpQfKuxtFNt/fdIZkGYCTGTQ/oSnw0+uGUP59K/3daJN7g6T7BVqYsMSozx4pRpXQfr0Z7754n+4NKwM018g==
 
 "@reach/router@^1.2.1", "@reach/router@^1.3.4":
   version "1.3.4"
