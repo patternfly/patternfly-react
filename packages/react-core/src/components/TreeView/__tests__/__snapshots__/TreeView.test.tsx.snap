@@ -218,7 +218,7 @@ exports[`tree view renders active successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -229,10 +229,12 @@ exports[`tree view renders active successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -500,7 +502,7 @@ exports[`tree view renders active successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -511,10 +513,12 @@ exports[`tree view renders active successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -669,7 +673,7 @@ exports[`tree view renders active successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -680,10 +684,12 @@ exports[`tree view renders active successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -784,7 +790,7 @@ exports[`tree view renders active successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -795,10 +801,12 @@ exports[`tree view renders active successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -890,7 +898,7 @@ exports[`tree view renders active successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -901,10 +909,12 @@ exports[`tree view renders active successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -990,7 +1000,7 @@ exports[`tree view renders active successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -1001,10 +1011,12 @@ exports[`tree view renders active successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -1272,7 +1284,7 @@ exports[`tree view renders badges successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -1283,10 +1295,12 @@ exports[`tree view renders badges successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -1567,7 +1581,7 @@ exports[`tree view renders badges successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -1578,10 +1592,12 @@ exports[`tree view renders badges successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -1749,7 +1765,7 @@ exports[`tree view renders badges successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -1760,10 +1776,12 @@ exports[`tree view renders badges successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -1877,7 +1895,7 @@ exports[`tree view renders badges successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -1888,10 +1906,12 @@ exports[`tree view renders badges successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -1996,7 +2016,7 @@ exports[`tree view renders badges successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -2007,10 +2027,12 @@ exports[`tree view renders badges successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -2109,7 +2131,7 @@ exports[`tree view renders badges successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -2120,10 +2142,12 @@ exports[`tree view renders badges successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -2367,7 +2391,7 @@ exports[`tree view renders basic successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -2378,10 +2402,12 @@ exports[`tree view renders basic successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -2613,7 +2639,7 @@ exports[`tree view renders basic successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -2624,10 +2650,12 @@ exports[`tree view renders basic successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -2764,7 +2792,7 @@ exports[`tree view renders basic successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -2775,10 +2803,12 @@ exports[`tree view renders basic successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -2861,7 +2891,7 @@ exports[`tree view renders basic successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -2872,10 +2902,12 @@ exports[`tree view renders basic successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -2949,7 +2981,7 @@ exports[`tree view renders basic successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -2960,10 +2992,12 @@ exports[`tree view renders basic successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -3031,7 +3065,7 @@ exports[`tree view renders basic successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -3042,10 +3076,12 @@ exports[`tree view renders basic successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -3313,7 +3349,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -3324,11 +3360,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <div
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <button
                       aria-labelledby="label-checkbox-id18"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -3368,6 +3406,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         id="checkbox-id18"
                         onChange={[Function]}
                         onClick={[Function]}
+                        tabIndex={-1}
                         type="checkbox"
                       />
                     </span>
@@ -3609,7 +3648,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -3620,11 +3659,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                             <div
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <button
                                 aria-labelledby="label-checkbox-id19"
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -3664,6 +3705,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                                   id="checkbox-id19"
                                   onChange={[Function]}
                                   onClick={[Function]}
+                                  tabIndex={-1}
                                   type="checkbox"
                                 />
                               </span>
@@ -3792,7 +3834,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -3803,11 +3845,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                             <div
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <button
                                 aria-labelledby="label-checkbox-id20"
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -3847,6 +3891,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                                   id="checkbox-id20"
                                   onChange={[Function]}
                                   onClick={[Function]}
+                                  tabIndex={-1}
                                   type="checkbox"
                                 />
                               </span>
@@ -3921,7 +3966,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -3932,11 +3977,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <div
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <button
                       aria-labelledby="label-checkbox-id21"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -3976,6 +4023,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         id="checkbox-id21"
                         onChange={[Function]}
                         onClick={[Function]}
+                        tabIndex={-1}
                         type="checkbox"
                       />
                     </span>
@@ -4041,7 +4089,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -4052,11 +4100,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <div
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <button
                       aria-labelledby="label-checkbox-id22"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -4096,6 +4146,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         id="checkbox-id22"
                         onChange={[Function]}
                         onClick={[Function]}
+                        tabIndex={-1}
                         type="checkbox"
                       />
                     </span>
@@ -4155,7 +4206,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -4166,11 +4217,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <div
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <button
                       aria-labelledby="label-checkbox-id23"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -4210,6 +4263,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                         id="checkbox-id23"
                         onChange={[Function]}
                         onClick={[Function]}
+                        tabIndex={-1}
                         type="checkbox"
                       />
                     </span>
@@ -4478,7 +4532,7 @@ exports[`tree view renders icons successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -4489,10 +4543,12 @@ exports[`tree view renders icons successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -4816,7 +4872,7 @@ exports[`tree view renders icons successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -4827,10 +4883,12 @@ exports[`tree view renders icons successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -5027,7 +5085,7 @@ exports[`tree view renders icons successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -5038,10 +5096,12 @@ exports[`tree view renders icons successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -5184,7 +5244,7 @@ exports[`tree view renders icons successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -5195,10 +5255,12 @@ exports[`tree view renders icons successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -5332,7 +5394,7 @@ exports[`tree view renders icons successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -5343,10 +5405,12 @@ exports[`tree view renders icons successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -5474,7 +5538,7 @@ exports[`tree view renders icons successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -5485,10 +5549,12 @@ exports[`tree view renders icons successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -5834,7 +5900,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -5845,11 +5911,13 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   <div
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <button
                       aria-labelledby="label-checkbox-id36"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -5889,6 +5957,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                         id="checkbox-id36"
                         onChange={[Function]}
                         onClick={[Function]}
+                        tabIndex={-1}
                         type="checkbox"
                       />
                     </span>
@@ -6186,7 +6255,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -6197,10 +6266,12 @@ exports[`tree view renders individual flag options successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -6370,7 +6441,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -6381,10 +6452,12 @@ exports[`tree view renders individual flag options successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -6521,7 +6594,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -6532,10 +6605,12 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -6685,7 +6760,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -6696,10 +6771,12 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -6785,7 +6862,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -6796,10 +6873,12 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -7106,7 +7185,7 @@ exports[`tree view renders search successfully 1`] = `
               className="pf-c-tree-view__list-item pf-m-expanded"
               id="AppLaunch"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -7117,10 +7196,12 @@ exports[`tree view renders search successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -7388,7 +7469,7 @@ exports[`tree view renders search successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App1"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -7399,10 +7480,12 @@ exports[`tree view renders search successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -7557,7 +7640,7 @@ exports[`tree view renders search successfully 1`] = `
                         className="pf-c-tree-view__list-item"
                         id="App2"
                         role="treeitem"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           className="pf-c-tree-view__content"
@@ -7568,10 +7651,12 @@ exports[`tree view renders search successfully 1`] = `
                             <button
                               className="pf-c-tree-view__node"
                               onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <div
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
+                                tabIndex={-1}
                               >
                                 <span
                                   className="pf-c-tree-view__node-toggle-icon"
@@ -7672,7 +7757,7 @@ exports[`tree view renders search successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Cost"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -7683,10 +7768,12 @@ exports[`tree view renders search successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -7778,7 +7865,7 @@ exports[`tree view renders search successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Sources"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -7789,10 +7876,12 @@ exports[`tree view renders search successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"
@@ -7878,7 +7967,7 @@ exports[`tree view renders search successfully 1`] = `
               className="pf-c-tree-view__list-item"
               id="Long"
               role="treeitem"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <div
                 className="pf-c-tree-view__content"
@@ -7889,10 +7978,12 @@ exports[`tree view renders search successfully 1`] = `
                   <button
                     className="pf-c-tree-view__node"
                     onClick={[Function]}
+                    tabIndex={-1}
                   >
                     <div
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
                         className="pf-c-tree-view__node-toggle-icon"

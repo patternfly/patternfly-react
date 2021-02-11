@@ -15,6 +15,12 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   componentDidMount() {
     window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+    if (this.props.hasChecks) {
+      (this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement).tabIndex = 0;
+      (this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement).tabIndex = 0;
+    } else {
+      (this.treeRef.current.getElementsByClassName('pf-c-tree-view__node')[0] as HTMLElement).tabIndex = 0;
+    }
   }
 
   componentWillUnmount() {
@@ -54,6 +60,8 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       });
 
       if (moveFocus && treeItems[currentIndex]) {
+        (activeElement as HTMLElement).tabIndex = -1;
+        (treeItems[currentIndex] as HTMLElement).tabIndex = 0;
         (treeItems[currentIndex] as HTMLElement).focus();
       }
     }
@@ -68,18 +76,21 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
           const parentList = activeElement.closest('ul').parentElement;
           if (parentList.tagName !== 'DIV') {
             const parentButton = parentList.querySelector('button');
+            (activeElement as HTMLElement).tabIndex = -1;
+            parentButton.tabIndex = 0;
             parentButton.focus();
-            (parentButton as HTMLElement).click();
           }
         }
       } else {
         if (isExpandable && !isExpanded) {
+          (activeElement as HTMLElement).tabIndex = -1;
           (activeElement as HTMLElement).click();
-          activeElement
+          const childElement = activeElement
             .closest('li')
             .querySelector('ul > li')
-            .querySelector('button')
-            .focus();
+            .querySelector('button');
+          childElement.tabIndex = 0;
+          childElement.focus();
         }
       }
       event.preventDefault();
@@ -95,9 +106,17 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     let moveFocus = false;
     let currentIndex = -1;
     let innerIndex = -1;
-    const treeItems = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle'));
-    const checkItems = Array.from(this.treeRef.current.getElementsByTagName('INPUT'));
-    const mappedItems = checkItems.map((item, index) => [treeItems[index], item]);
+    let previousIndex = -1;
+    const treeNodes = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node'));
+    const mappedItems = treeNodes.map(item => {
+      const itemChildren = item.childNodes;
+      const firstItem = itemChildren[0];
+      if ((firstItem as HTMLElement).tagName === 'SPAN') {
+        return [null as HTMLElement, firstItem.firstChild as HTMLElement];
+      } else {
+        return [itemChildren[0] as HTMLElement, itemChildren[1].firstChild as HTMLElement];
+      }
+    });
 
     if (key === 'Space') {
       (document.activeElement as HTMLElement).click();
@@ -110,11 +129,13 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
           if (activeElement === element) {
             const increment = key === 'ArrowUp' ? -1 : 1;
             innerIndex = index;
+            previousIndex = treeItemIndex;
             currentIndex = treeItemIndex + increment;
             while (
               currentIndex < mappedItems.length &&
               currentIndex >= 0 &&
-              mappedItems[currentIndex][index].classList.contains('pf-m-disabled')
+              (!mappedItems[currentIndex][index] ||
+                mappedItems[currentIndex][index].classList.contains('pf-m-disabled'))
             ) {
               currentIndex = currentIndex + increment;
             }
@@ -125,6 +146,14 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       });
 
       if (moveFocus && mappedItems[currentIndex] && mappedItems[currentIndex][innerIndex]) {
+        if (mappedItems[previousIndex][0]) {
+          (mappedItems[previousIndex][0] as HTMLElement).tabIndex = -1;
+        }
+        (mappedItems[previousIndex][1] as HTMLElement).tabIndex = -1;
+        if (mappedItems[currentIndex][0]) {
+          (mappedItems[currentIndex][0] as HTMLElement).tabIndex = 0;
+        }
+        (mappedItems[currentIndex][1] as HTMLElement).tabIndex = 0;
         (mappedItems[currentIndex][innerIndex] as HTMLElement).focus();
       }
     }
