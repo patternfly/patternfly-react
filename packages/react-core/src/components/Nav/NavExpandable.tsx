@@ -30,7 +30,7 @@ export interface NavExpandableProps
   id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally */
   onExpand?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => void;
-  /** Additional props added to the NaveExpandable <button> */
+  /** Additional props added to the NavExpandable <button> */
   buttonProps?: any;
 }
 
