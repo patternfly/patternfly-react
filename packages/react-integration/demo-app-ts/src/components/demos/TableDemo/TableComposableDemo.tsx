@@ -15,7 +15,16 @@ import {
   OnCollapse,
   OnSort
 } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem, Stack, StackItem, Checkbox } from '@patternfly/react-core';
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
+  Stack,
+  StackItem,
+  Checkbox
+} from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -28,28 +37,54 @@ export const TableComposableDemo = () => {
       ['one - 2', null, null, 'four - 2', 'five - 2'],
       ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
     ];
+    const [hasFirstColumnHeader, setHasFirstColumnHeader] = React.useState(false);
+
     return (
-      <TableComposable aria-label="Simple table using composable components">
-        <Caption>Simple table using composable components</Caption>
-        <Thead>
-          <Tr>
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex}>{column}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {rows.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
+      <>
+        <Toolbar>
+          <ToolbarContent>
+            <ToolbarItem>
+              <Checkbox
+                id="has-first-column-header"
+                label="First column cell is header"
+                isChecked={hasFirstColumnHeader}
+                onChange={setHasFirstColumnHeader}
+              />
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+        <TableComposable aria-label="Simple table using composable components">
+          <Caption>Simple table using composable components</Caption>
+          <Thead>
+            <Tr>
+              {columns.map((column, columnIndex) => (
+                <Th key={columnIndex}>{column}</Th>
               ))}
             </Tr>
-          ))}
-        </Tbody>
-      </TableComposable>
+          </Thead>
+          <Tbody>
+            {rows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                {row.map((cell, cellIndex) => {
+                  if (hasFirstColumnHeader && !cellIndex) {
+                    return (
+                      <Th key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                        {cell}
+                      </Th>
+                    );
+                  } else {
+                    return (
+                      <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                        {cell}
+                      </Td>
+                    );
+                  }
+                })}
+              </Tr>
+            ))}
+          </Tbody>
+        </TableComposable>
+      </>
     );
   };
 
