@@ -172,6 +172,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   const handleThumbMove = (e: any) => {
+    if (e.type === 'touchmove') {
+      e.stopImmediatePropagation();
+    }
+
     const clientPosition = e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
 
     let newPosition = clientPosition - diff - sliderRailRef.current.getBoundingClientRect().left;
