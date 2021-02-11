@@ -11,6 +11,7 @@ interface FormSelectOption {
   value: string;
   label: string;
   disabled: boolean;
+  isPlaceholder: boolean;
 }
 
 interface FormSelectGroup {
@@ -34,33 +35,33 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
         groupLabel: 'Group1',
         disabled: false,
         options: [
-          { value: '1', label: 'The First Option', disabled: false },
-          { value: '2', label: 'Second option is selected by default', disabled: false }
+          { value: '1', label: 'The First Option', disabled: false, isPlaceholder: false },
+          { value: '2', label: 'Second option is selected by default', disabled: false, isPlaceholder: false }
         ]
       },
       {
         groupLabel: 'Group2',
         disabled: false,
         options: [
-          { value: '3', label: 'The Third Option', disabled: false },
-          { value: '4', label: 'The Fourth option', disabled: false }
+          { value: '3', label: 'The Third Option', disabled: false, isPlaceholder: false },
+          { value: '4', label: 'The Fourth option', disabled: false, isPlaceholder: false }
         ]
       },
       {
         groupLabel: 'Group3',
         disabled: true,
         options: [
-          { value: '5', label: 'The Fifth Option', disabled: false },
-          { value: '6', label: 'The Sixth option', disabled: false }
+          { value: '5', label: 'The Fifth Option', disabled: false, isPlaceholder: false },
+          { value: '6', label: 'The Sixth option', disabled: false, isPlaceholder: false }
         ]
       }
     ];
 
     this.validatedSelectOptions = [
-      { value: '', label: 'Choose a number', disabled: false },
-      { value: '1', label: 'One', disabled: false },
-      { value: '2', label: 'Two', disabled: false },
-      { value: '3', label: 'Three - the only valid option', disabled: false }
+      { value: '', label: 'Choose a number', disabled: false, isPlaceholder: true },
+      { value: '1', label: 'One', disabled: false, isPlaceholder: false },
+      { value: '2', label: 'Two', disabled: false, isPlaceholder: false },
+      { value: '3', label: 'Three - the only valid option', disabled: false, isPlaceholder: false }
     ];
   }
 
@@ -96,7 +97,13 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
           {this.groups.map((group, index) => (
             <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
               {group.options.map((option: FormSelectOption, i: number) => (
-                <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
+                <FormSelectOption
+                  isDisabled={option.disabled}
+                  key={i}
+                  value={option.value}
+                  label={option.label}
+                  isPlaceholder={option.isPlaceholder}
+                />
               ))}
             </FormSelectOptionGroup>
           ))}
@@ -110,7 +117,13 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
           validated={this.state.validated}
         >
           {this.validatedSelectOptions.map((option, index) => (
-            <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+            <FormSelectOption
+              isDisabled={option.disabled}
+              key={index}
+              value={option.value}
+              label={option.label}
+              isPlaceholder={option.isPlaceholder}
+            />
           ))}
         </FormSelect>
       </React.Fragment>
