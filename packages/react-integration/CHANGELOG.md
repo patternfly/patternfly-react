@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.72.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.71.0...@patternfly/react-integration@4.72.0) (2021-02-11)
+
+
+### Features
+
+* **FormSelect:** added support for placeholder styled option ([#5428](https://github.com/patternfly/patternfly-react/issues/5428)) ([22217e9](https://github.com/patternfly/patternfly-react/commit/22217e9982f68dee541c3c9eb1138b4e2f369689))
+
+
+
+
+
 # [4.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.70.0...@patternfly/react-integration@4.71.0) (2021-02-03)
 
 

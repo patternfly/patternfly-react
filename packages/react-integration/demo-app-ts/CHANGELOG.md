@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.72.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.71.7...demo-app-ts@4.72.0) (2021-02-11)
+
+
+### Features
+
+* **FormSelect:** added support for placeholder styled option ([#5428](https://github.com/patternfly/patternfly-react/issues/5428)) ([22217e9](https://github.com/patternfly/patternfly-react/commit/22217e9982f68dee541c3c9eb1138b4e2f369689))
+
+
+
+
+
 ## [4.71.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.71.6...demo-app-ts@4.71.7) (2021-02-11)
 
 **Note:** Version bump only for package demo-app-ts
