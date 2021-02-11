@@ -8,7 +8,8 @@ const props = {
   value: 'test input',
   onNextClick: jest.fn(),
   onPreviousClick: jest.fn(),
-  onClear: jest.fn()
+  onClear: jest.fn(),
+  onSearch: jest.fn()
 };
 
 test('simple search input', () => {
@@ -45,7 +46,22 @@ test('hide clear button', () => {
     <SearchInput {...testProps} resultsCount='3' aria-label="simple text input without on clear" />
   );
   expect(view.find('.pf-c-search-input__clear').length).toBe(0);
-})
+});
+
+test('advanced search', () => {
+  const view = mount(
+    <SearchInput
+      attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+      value='username:player firstname:john'
+      onChange={props.onChange}
+      onSearch={props.onSearch}
+      onClear={props.onClear}
+    />
+  );
+  view.find('.pf-c-button').at(2).simulate('click', {});
+  expect(props.onSearch).toBeCalled();
+  expect(view.find('input')).toMatchSnapshot();
+});
 
 
 

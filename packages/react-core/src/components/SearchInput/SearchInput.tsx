@@ -66,7 +66,7 @@ export const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   value = '',
   attributes = [] as string[],
   hasWordsAttrLabel = 'Has words',
-  advancedSearchDelimiter = ':',
+  advancedSearchDelimiter,
   placeholder,
   onChange,
   onSearch,
@@ -88,6 +88,15 @@ export const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   React.useEffect(() => {
     setSearchValue(value);
   }, [value]);
+
+  React.useEffect(() => {
+    if (attributes.length > 0 && !advancedSearchDelimiter) {
+      // eslint-disable-next-line no-console
+      console.error(
+        'An advancedSearchDelimiter prop is required when advanced search attributes are provided using the attributes prop'
+      );
+    }
+  });
 
   React.useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
@@ -145,20 +154,21 @@ export const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   const getValue = (attribute: string) => {
-    const formattedAttribute = attribute.replace(' ', '').toLowerCase();
     const map = getAttrValueMap();
-    return map.hasOwnProperty(formattedAttribute) ? map[formattedAttribute] : '';
+    return map.hasOwnProperty(attribute) ? map[attribute] : '';
   };
 
   const handleValueChange = (attribute: string, newValue: string, event: React.FormEvent<HTMLInputElement>) => {
     const newMap = getAttrValueMap();
-    newMap[attribute.replace(' ', '').toLowerCase()] = newValue;
+    newMap[attribute] = newValue;
     let updatedValue = '';
     Object.entries(newMap).forEach(([k, v]) => {
-      if (k !== hasWordsAttrLabel.replace(' ', '').toLowerCase()) {
-        updatedValue = `${updatedValue} ${k}${advancedSearchDelimiter}${v}`;
-      } else {
-        updatedValue = `${updatedValue} ${v}`;
+      if (v.trim() !== '') {
+        if (k !== hasWordsAttrLabel.replace(' ', '').toLowerCase()) {
+          updatedValue = `${updatedValue} ${k}${advancedSearchDelimiter}${v}`;
+        } else {
+          updatedValue = `${updatedValue} ${v}`;
+        }
       }
     });
     updatedValue = updatedValue.replace(/^\s+/g, '');
