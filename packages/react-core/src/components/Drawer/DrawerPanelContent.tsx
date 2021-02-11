@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
-import '@patternfly/react-styles/css/components/Drawer/DrawerIframe';
 import { css } from '@patternfly/react-styles';
 import { DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -58,13 +57,20 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   ...props
 }: DrawerPanelContentProps) => {
   const panel = React.useRef<HTMLDivElement>();
-  const { position, isExpanded, isStatic, onExpand } = React.useContext(DrawerContext);
+  const [panelIsClosed, setPanelIsClosed] = React.useState(false);
+  const { position, isExpanded, isStatic, onExpand, drawerRef } = React.useContext(DrawerContext);
   let currWidth: number = 0;
   let panelRect: DOMRect;
   let right: number;
   let left: number;
   let bottom: number;
   let setInitialVals: boolean = true;
+
+  React.useEffect(() => {
+    if (!isStatic && isExpanded) {
+      setPanelIsClosed(!isExpanded);
+    }
+  }, [isStatic, isExpanded]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation();
@@ -78,7 +84,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     e.preventDefault();
     document.addEventListener('mousemove', callbackMouseMove);
     document.addEventListener('mouseup', callbackMouseUp);
-    panel.current.parentElement.classList.add('pf-m-drawer-resizing');
+    drawerRef.current.classList.add(css(styles.modifiers.resizing));
     isResizing = true;
     setInitialVals = true;
   };
@@ -121,7 +127,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
-    panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
     panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
     currWidth = newSize;
   };
@@ -130,7 +135,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     if (!isResizing) {
       return;
     }
-    panel.current.parentElement.classList.remove('pf-m-drawer-resizing');
+    drawerRef.current.classList.remove(css(styles.modifiers.resizing));
     isResizing = false;
     onResize && onResize(currWidth, id);
     setInitialVals = true;
@@ -198,7 +203,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       if (position === 'bottom') {
         panel.current.style.overflowAnchor = 'none';
       }
-      panel.current.style.setProperty('transition', 'transform 5ms cubic-bezier(0.4, 0, 1, 1) 0ms');
       panel.current.style.setProperty('--pf-c-drawer__panel--md--FlexBasis', newSize + 'px');
       currWidth = newSize;
     }
@@ -229,6 +233,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         if (!hidden && ev.nativeEvent.propertyName === 'transform') {
           onExpand();
         }
+        setPanelIsClosed(hidden);
       }}
       hidden={hidden}
       {...((defaultSize || minSize || maxSize) && {
@@ -236,27 +241,29 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       })}
       {...props}
     >
-      <React.Fragment>
-        {isResizable && (
-          <React.Fragment>
-            <div
-              className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
-              role="separator"
-              tabIndex={0}
-              aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
-              aria-label={resizeAriaLabel}
-              aria-describedby={resizeAriaDescribedBy}
-              onMouseDown={handleMousedown}
-              onKeyDown={handleKeys}
-              onTouchStart={handleTouchStart}
-            >
-              <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
-            </div>
-            <div className={css(styles.drawerPanelMain)}>{children}</div>
-          </React.Fragment>
-        )}
-        {!isResizable && children}
-      </React.Fragment>
+      {!panelIsClosed && (
+        <React.Fragment>
+          {isResizable && (
+            <React.Fragment>
+              <div
+                className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
+                role="separator"
+                tabIndex={0}
+                aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
+                aria-label={resizeAriaLabel}
+                aria-describedby={resizeAriaDescribedBy}
+                onMouseDown={handleMousedown}
+                onKeyDown={handleKeys}
+                onTouchStart={handleTouchStart}
+              >
+                <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
+              </div>
+              <div className={css(styles.drawerPanelMain)}>{children}</div>
+            </React.Fragment>
+          )}
+          {!isResizable && children}
+        </React.Fragment>
+      )}
     </div>
   );
 };

@@ -4,6 +4,9 @@ exports[`Drawer should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "drawerRef": Object {
+        "current": undefined,
+      },
       "isExpanded": false,
       "isStatic": false,
       "onExpand": [Function],
