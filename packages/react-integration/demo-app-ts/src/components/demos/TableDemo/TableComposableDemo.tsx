@@ -487,26 +487,32 @@ export const TableComposableDemo = () => {
     };
     return (
       <React.Fragment>
-        <ToggleGroup aria-label="Default with single selectable">
-          <ToggleGroupItem
-            text="Default"
-            buttonId="default"
-            isSelected={choice === 'default'}
-            onChange={handleItemClick}
-          />
-          <ToggleGroupItem
-            text="Compact"
-            buttonId="compact"
-            isSelected={choice === 'compact'}
-            onChange={handleItemClick}
-          />
-          <ToggleGroupItem
-            text="Compact borderless"
-            buttonId="compactBorderless"
-            isSelected={choice === 'compactBorderless'}
-            onChange={handleItemClick}
-          />
-        </ToggleGroup>
+        <Toolbar>
+          <ToolbarContent>
+            <ToolbarItem>
+              <ToggleGroup aria-label="Default with single selectable">
+                <ToggleGroupItem
+                  text="Default"
+                  buttonId="default"
+                  isSelected={choice === 'default'}
+                  onChange={handleItemClick}
+                />
+                <ToggleGroupItem
+                  text="Compact"
+                  buttonId="compact"
+                  isSelected={choice === 'compact'}
+                  onChange={handleItemClick}
+                />
+                <ToggleGroupItem
+                  text="Compact borderless"
+                  buttonId="compactBorderless"
+                  isSelected={choice === 'compactBorderless'}
+                  onChange={handleItemClick}
+                />
+              </ToggleGroup>
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
         <TableComposable
           aria-label="Compact Table"
           variant={choice !== 'default' ? 'compact' : null}
@@ -591,14 +597,20 @@ export const TableComposableDemo = () => {
     let rowIndex = -1;
     return (
       <React.Fragment>
-        <Checkbox
-          label="Compact"
-          isChecked={compact}
-          onChange={toggleCompact}
-          aria-label="toggle compact variation"
-          id="toggle-compact"
-          name="toggle-compact"
-        />
+        <Toolbar>
+          <ToolbarContent>
+            <ToolbarItem>
+              <Checkbox
+                label="Compact"
+                isChecked={compact}
+                onChange={toggleCompact}
+                aria-label="toggle compact variation"
+                id="toggle-compact"
+                name="toggle-compact"
+              />
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
         <TableComposable aria-label="Expandable Table" variant={compact ? 'compact' : null}>
           <Thead>
             <Tr>
