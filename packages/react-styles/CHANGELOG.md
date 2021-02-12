@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.33...@patternfly/react-styles@4.8.0) (2021-02-12)
+
+
+### Features
+
+* **Slider:** Added touch support ([#5453](https://github.com/patternfly/patternfly-react/issues/5453)) ([32ce723](https://github.com/patternfly/patternfly-react/commit/32ce7238d8743f6d4a5f7b128b1293e855d012ca))
+
+
+
+
+
 ## [4.7.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.32...@patternfly/react-styles@4.7.33) (2021-02-11)
 
 **Note:** Version bump only for package @patternfly/react-styles

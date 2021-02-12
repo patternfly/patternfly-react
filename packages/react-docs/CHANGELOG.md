@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.15.28...@patternfly/react-docs@5.16.0) (2021-02-12)
+
+
+### Features
+
+* **Slider:** Added touch support ([#5453](https://github.com/patternfly/patternfly-react/issues/5453)) ([32ce723](https://github.com/patternfly/patternfly-react/commit/32ce7238d8743f6d4a5f7b128b1293e855d012ca))
+
+
+
+
+
 ## [5.15.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.15.27...@patternfly/react-docs@5.15.28) (2021-02-12)
 
 **Note:** Version bump only for package @patternfly/react-docs

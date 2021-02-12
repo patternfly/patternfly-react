@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.22.0...@patternfly/react-table@4.23.0) (2021-02-12)
+
+
+### Features
+
+* **Slider:** Added touch support ([#5453](https://github.com/patternfly/patternfly-react/issues/5453)) ([32ce723](https://github.com/patternfly/patternfly-react/commit/32ce7238d8743f6d4a5f7b128b1293e855d012ca))
+
+
+
+
+
 # [4.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.21.0...@patternfly/react-table@4.22.0) (2021-02-12)
 
 

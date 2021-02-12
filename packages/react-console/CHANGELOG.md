@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.2.31...@patternfly/react-console@4.3.0) (2021-02-12)
+
+
+### Features
+
+* **Slider:** Added touch support ([#5453](https://github.com/patternfly/patternfly-react/issues/5453)) ([32ce723](https://github.com/patternfly/patternfly-react/commit/32ce7238d8743f6d4a5f7b128b1293e855d012ca))
+
+
+
+
+
 ## [4.2.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.2.30...@patternfly/react-console@4.2.31) (2021-02-12)
 
 **Note:** Version bump only for package @patternfly/react-console

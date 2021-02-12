@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.75.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.74.1...demo-app-ts@4.75.0) (2021-02-12)
+
+
+### Features
+
+* **SearchInput:** add advanced search feature ([#5454](https://github.com/patternfly/patternfly-react/issues/5454)) ([7099da1](https://github.com/patternfly/patternfly-react/commit/7099da1cb31fb9f5fb537b082365eabc42c2b95e))
+
+
+
+
+
 ## [4.74.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.74.0...demo-app-ts@4.74.1) (2021-02-12)
 
 **Note:** Version bump only for package demo-app-ts
