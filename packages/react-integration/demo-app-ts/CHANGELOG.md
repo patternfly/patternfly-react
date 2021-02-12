@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.74.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.73.1...demo-app-ts@4.74.0) (2021-02-12)
+
+
+### Features
+
+* **TableComposable:** add dataLabel property ([#5406](https://github.com/patternfly/patternfly-react/issues/5406)) ([daefa3f](https://github.com/patternfly/patternfly-react/commit/daefa3fb604679208908a5a995b3087a62073559)), closes [#5405](https://github.com/patternfly/patternfly-react/issues/5405)
+
+
+
+
+
 ## [4.73.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.73.0...demo-app-ts@4.73.1) (2021-02-11)
 
 **Note:** Version bump only for package demo-app-ts

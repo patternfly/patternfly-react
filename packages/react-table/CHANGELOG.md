@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.20.31...@patternfly/react-table@4.21.0) (2021-02-12)
+
+
+### Features
+
+* **TableComposable:** add dataLabel property ([#5406](https://github.com/patternfly/patternfly-react/issues/5406)) ([daefa3f](https://github.com/patternfly/patternfly-react/commit/daefa3fb604679208908a5a995b3087a62073559)), closes [#5405](https://github.com/patternfly/patternfly-react/issues/5405)
+
+
+
+
+
 ## [4.20.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.20.30...@patternfly/react-table@4.20.31) (2021-02-11)
 
 **Note:** Version bump only for package @patternfly/react-table
