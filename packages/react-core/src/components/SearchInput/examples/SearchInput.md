@@ -2,7 +2,7 @@
 id: 'Search input'
 section: components
 cssPrefix: 'pf-c-search-input'
-propComponents: ['SearchInput']
+propComponents: ['SearchInput', 'SearchAttribute']
 beta: true
 ---
 import { SearchInput } from '@patternfly/react-core';
@@ -173,7 +173,7 @@ TextInputSelectAll = () => {
 ### Advanced
 ```js
 import React from 'react';
-import { Checkbox, SearchInput, Stack, StackItem } from '@patternfly/react-core';
+import { Checkbox, SearchInput } from '@patternfly/react-core';
 
 class AdvancedSearchInput extends React.Component {
   constructor(props) {
