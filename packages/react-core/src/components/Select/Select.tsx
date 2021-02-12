@@ -306,7 +306,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       } else {
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
-            ? childrenArray.filter(child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0)
+            ? childrenArray.filter(child => {
+                const valueToCheck = child.props.value;
+                // Dividers don't have value and should not be filtered
+                if (!valueToCheck) {
+                  return true;
+                }
+
+                const isSelectOptionObject =
+                  typeof valueToCheck !== 'string' &&
+                  (valueToCheck as SelectOptionObject).toString &&
+                  (valueToCheck as SelectOptionObject).compareTo;
+
+                if (isSelectOptionObject) {
+                  return (valueToCheck as SelectOptionObject).compareTo(typeaheadInputValue);
+                } else {
+                  return this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
+                }
+              })
             : childrenArray;
       }
     }
