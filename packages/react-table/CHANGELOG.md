@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.21.0...@patternfly/react-table@4.22.0) (2021-02-12)
+
+
+### Features
+
+* **Table:** update column management demo to include label ([#5431](https://github.com/patternfly/patternfly-react/issues/5431)) ([9bf23bb](https://github.com/patternfly/patternfly-react/commit/9bf23bb92aff967211c97e1fefd7c84b52d352fe))
+
+
+
+
+
 # [4.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.20.31...@patternfly/react-table@4.21.0) (2021-02-12)
 
 

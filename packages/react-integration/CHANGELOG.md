@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.74.0...@patternfly/react-integration@4.75.0) (2021-02-12)
+
+
+### Features
+
+* **TreeView:** add keyboard interaction ([#5439](https://github.com/patternfly/patternfly-react/issues/5439)) ([fc094b9](https://github.com/patternfly/patternfly-react/commit/fc094b910517e6a42f2d88175557675572e89ae5))
+
+
+
+
+
 # [4.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.73.0...@patternfly/react-integration@4.74.0) (2021-02-12)
 
 

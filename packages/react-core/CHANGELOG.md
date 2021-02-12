@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.96.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.95.1...@patternfly/react-core@4.96.0) (2021-02-12)
+
+
+### Bug Fixes
+
+* **Select:** fix typeahead variant not using the compareTo property for custom objects ([#5450](https://github.com/patternfly/patternfly-react/issues/5450)) ([5e1d81d](https://github.com/patternfly/patternfly-react/commit/5e1d81dfcb1a55ae93c209b8c1a7de05b7ed2f85)), closes [issue#4361](https://github.com/issue/issues/4361) [issue#5449](https://github.com/issue/issues/5449) [#5449](https://github.com/patternfly/patternfly-react/issues/5449) [#4361](https://github.com/patternfly/patternfly-react/issues/4361)
+
+
+### Features
+
+* **TreeView:** add keyboard interaction ([#5439](https://github.com/patternfly/patternfly-react/issues/5439)) ([fc094b9](https://github.com/patternfly/patternfly-react/commit/fc094b910517e6a42f2d88175557675572e89ae5))
+
+
+
+
+
 ## [4.95.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.95.0...@patternfly/react-core@4.95.1) (2021-02-11)
 
 **Note:** Version bump only for package @patternfly/react-core
