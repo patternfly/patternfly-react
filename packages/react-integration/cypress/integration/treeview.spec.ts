@@ -25,7 +25,7 @@ describe('TreeView Demo Test', () => {
     cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{rightArrow}');
     cy.get('#App1Settings').should('exist');
     cy.get('#App1Current').should('exist');
-    cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{downArrow}{leftArrow}');
+    cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{downArrow}{leftArrow}{leftArrow}');
     cy.get('#App1Settings').should('not.exist');
     cy.get('#App1Current').should('not.exist');
     cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{upArrow}');
