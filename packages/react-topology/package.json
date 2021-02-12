@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@patternfly/react-core": "^4.96.0",
-    "@patternfly/react-icons": "^4.8.7",
+    "@patternfly/react-icons": "^4.8.6",
     "@patternfly/react-styles": "^4.7.33",
     "@types/d3": "^5.7.2",
     "@types/d3-force": "^1.2.1",
