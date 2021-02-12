@@ -81,8 +81,8 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
       id={id}
       className={css(styles.treeViewListItem, isExpanded && styles.modifiers.expanded)}
       {...(isExpanded && { 'aria-expanded': 'true' })}
-      role="treeitem"
-      tabIndex={0}
+      role={children ? 'treeitem' : 'none'}
+      tabIndex={-1}
     >
       <div className={css(styles.treeViewContent)}>
         <GenerateId prefix="checkbox-id">
@@ -105,6 +105,8 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                   onSelect && onSelect(evt, itemData, parentItem);
                 }
               }}
+              {...(!children && { role: 'treeitem' })}
+              tabIndex={-1}
             >
               {children && (
                 <ToggleComponent
@@ -115,6 +117,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                     }
                   }}
                   {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
+                  tabIndex={-1}
                 >
                   <span className={css(styles.treeViewNodeToggleIcon)}>
                     <AngleRightIcon aria-hidden="true" />
@@ -130,6 +133,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                     ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
                     {...checkProps}
                     id={randomId}
+                    tabIndex={-1}
                   />
                 </span>
               )}

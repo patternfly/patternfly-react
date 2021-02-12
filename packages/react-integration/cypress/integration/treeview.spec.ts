@@ -17,4 +17,17 @@ describe('TreeView Demo Test', () => {
     cy.get('#Sources').should('exist');
     cy.get('#mixed').should('exist');
   });
+
+  it('Verify treeview keyboard interactions', () => {
+    cy.get('#input-search').type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
+    cy.get('#basic').should('exist');
+    cy.get('#App1').should('exist');
+    cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{rightArrow}');
+    cy.get('#App1Settings').should('exist');
+    cy.get('#App1Current').should('exist');
+    cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{downArrow}{leftArrow}{leftArrow}');
+    cy.get('#App1Settings').should('not.exist');
+    cy.get('#App1Current').should('not.exist');
+    cy.get('#App1 > .pf-c-tree-view__content > .pf-c-tree-view__node').type('{upArrow}');
+  });
 });
