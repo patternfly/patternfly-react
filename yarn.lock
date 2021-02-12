@@ -2431,7 +2431,6 @@
 "@patternfly/patternfly-a11y@2.0.12":
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-2.0.12.tgz#28aad4ce2b088a71ecb0128a718aa6069930b994"
-  integrity sha512-/RbsCV4JPA8WPoSCcENvTqTmNC6JU7+kaPYBHMrS0j4KMxiQce7ah3gl84z8bSWl2qZqufYY4dIL3qPjvHzQfQ==
   dependencies:
     "@patternfly/react-charts" "^6.9.8"
     "@patternfly/react-core" "^4.50.2"
@@ -2458,10 +2457,9 @@
     webpack-dev-server "^3.11.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.83.0":
-  version "4.83.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.83.0.tgz#f49a9de89c84367efcd1fc0bd5a84ea865abd1d8"
-  integrity sha512-kSVf0gipBDtcxIm6D9uyLUVFupPJfSkJ48NXJWgtFKoU9dRI2213BdLkH1J41aNfgjsjSs9OliheF4Q6W2Ozlw==
+"@patternfly/patternfly@4.87.0":
+  version "4.87.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.87.0.tgz#072dffb7988d88056d055adb8dd3875b79ef6ca4"
 
 "@reach/router@^1.2.1", "@reach/router@^1.3.4":
   version "1.3.4"
@@ -12202,14 +12200,12 @@ moment@^2.27.0:
 monaco-editor-webpack-plugin@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/monaco-editor-webpack-plugin/-/monaco-editor-webpack-plugin-2.1.0.tgz#216bd35512a282beac7befd2fcdc5adb110403ff"
-  integrity sha512-DG7Dpo/ItWEOl/BG2egc/UIiHoCbHjq0EOF0E6eJQT+6QNZBOfSVU4GxaXG+kQJXB8rauxli96Xp1ITnNLZtSw==
   dependencies:
     loader-utils "^2.0.0"
 
 monaco-editor@*:
   version "0.21.3"
   resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.21.3.tgz#3381b66614b64d1c5e3b77dd5564ad496d1b4e5d"
-  integrity sha512-9N7wATLpi+googstvtm6IKg97vPQ77FDYEpkow5tLriM/VJ0DaTRyUP4UVzcoH7KlPDX+e/rE7/imcOUeGkT6g==
 
 moniker@0.1.2:
   version "0.1.2"
@@ -14329,7 +14325,6 @@ react-measure@^2.3.0:
 react-monaco-editor@^0.41.2:
   version "0.41.2"
   resolved "https://registry.yarnpkg.com/react-monaco-editor/-/react-monaco-editor-0.41.2.tgz#7ec9cadc101d73003a908fca61c50011f237d2b5"
-  integrity sha512-0nNqkkSLtUQDHtcCASv3ccYukD+P2uvFzcFZGh6iWg9RZF3Rj9/+jqsTNo2cl4avkX8JVGC/qnZr/g7hxXTBTQ==
   dependencies:
     monaco-editor "*"
     prop-types "^15.7.2"
@@ -16541,7 +16536,6 @@ textextensions@^2.5.0:
 theme-patternfly-org@0.4.11:
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.4.11.tgz#559212d7cb85a173969656659702eaf1f2488f00"
-  integrity sha512-rKhCXKB0s7M1LanvviSy9BTAu706Jeg16nBGhiqQKQh8rt0VUCP+YpZhpJ9ULsr02J4+n9z/tVXY58+IHVOeug==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
