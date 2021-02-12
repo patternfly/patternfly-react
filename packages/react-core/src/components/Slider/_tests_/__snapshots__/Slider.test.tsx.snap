@@ -34,6 +34,7 @@ exports[`slider renders continuous slider 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onTouchStart={[Function]}
         role="slider"
         tabIndex={0}
       />
@@ -268,6 +269,7 @@ exports[`slider renders discrete slider 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onTouchStart={[Function]}
         role="slider"
         tabIndex={0}
       />
@@ -312,6 +314,7 @@ exports[`slider renders slider with input 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onTouchStart={[Function]}
         role="slider"
         tabIndex={0}
       />
@@ -356,6 +359,7 @@ exports[`slider renders slider with input above thumb 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onTouchStart={[Function]}
         role="slider"
         tabIndex={0}
       />
@@ -492,6 +496,7 @@ exports[`slider renders slider with input actions 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onTouchStart={[Function]}
         role="slider"
         tabIndex={0}
       />

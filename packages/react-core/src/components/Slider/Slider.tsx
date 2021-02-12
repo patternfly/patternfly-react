@@ -124,7 +124,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     return undefined;
   };
 
-  const handleMouseup = () => {
+  const handleThumbDragEnd = () => {
     if (snapValue && isDiscrete && steps) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
@@ -133,21 +133,35 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       }
     }
 
-    document.removeEventListener('mousemove', callbackMouseMove);
-    document.removeEventListener('mouseup', callbackMouseUp);
+    document.removeEventListener('mousemove', callbackThumbMove);
+    document.removeEventListener('mouseup', callbackThumbUp);
+    document.removeEventListener('touchmove', callbackThumbMove);
+    document.removeEventListener('touchend', callbackThumbUp);
+    document.removeEventListener('touchcancel', callbackThumbUp);
   };
 
-  const handleMousedown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
+
     diff = e.clientX - thumbRef.current.getBoundingClientRect().left;
 
-    document.addEventListener('mousemove', callbackMouseMove);
-    document.addEventListener('mouseup', callbackMouseUp);
+    document.addEventListener('mousemove', callbackThumbMove);
+    document.addEventListener('mouseup', callbackThumbUp);
+  };
+
+  const handleToucheStart = (e: React.TouchEvent) => {
+    e.stopPropagation();
+
+    diff = e.touches[0].clientX - thumbRef.current.getBoundingClientRect().left;
+
+    document.addEventListener('touchmove', callbackThumbMove, { passive: false });
+    document.addEventListener('touchend', callbackThumbUp);
+    document.addEventListener('touchcancel', callbackThumbUp);
   };
 
   const onSliderRailClick = (e: any) => {
-    handleMousemove(e);
+    handleThumbMove(e);
     if (snapValue && isDiscrete && steps) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
@@ -157,8 +171,15 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
-  const handleMousemove = (e: any) => {
-    let newPosition = e.clientX - diff - sliderRailRef.current.getBoundingClientRect().left;
+  const handleThumbMove = (e: any) => {
+    if (e.type === 'touchmove') {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+
+    const clientPosition = e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
+
+    let newPosition = clientPosition - diff - sliderRailRef.current.getBoundingClientRect().left;
 
     const end = sliderRailRef.current.offsetWidth - thumbRef.current.offsetWidth;
 
@@ -198,8 +219,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
-  const callbackMouseMove = React.useCallback(handleMousemove, []);
-  const callbackMouseUp = React.useCallback(handleMouseup, []);
+  const callbackThumbMove = React.useCallback(handleThumbMove, []);
+  const callbackThumbUp = React.useCallback(handleThumbDragEnd, []);
 
   const handleThumbKeys = (e: React.KeyboardEvent) => {
     const key = e.key;
@@ -295,7 +316,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           aria-valuenow={value}
           aria-valuetext={findAriaTextValue()}
           aria-label={thumbAriaLabel}
-          onMouseDown={handleMousedown}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleToucheStart}
           onKeyDown={handleThumbKeys}
           onClick={onThumbClick}
         />
