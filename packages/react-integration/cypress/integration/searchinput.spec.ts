@@ -42,4 +42,45 @@ describe('Search Input Demo Test', () => {
     cy.get('.pf-c-search-input__clear').should('not.exist');
     cy.get('.pf-c-search-input__nav').should('not.exist');
   });
+
+  it('Verify advanced search and its handlers work', () => {
+    cy.get('.pf-c-search-input__menu').should('not.exist');
+    cy.get('.pf-c-search-input button')
+      .eq(0)
+      .click();
+    cy.get('.pf-c-search-input__menu').should('be.visible');
+
+    cy.get('.pf-c-search-input__menu input')
+      .eq(0)
+      .type('test');
+    cy.get('.pf-c-search-input__text-input').should('have.value', 'username:test');
+
+    cy.get('.pf-c-search-input__text-input').type(' firstname:hi another test');
+    cy.get('.pf-c-search-input__menu input')
+      .eq(1)
+      .should('have.value', 'hi');
+    cy.get('.pf-c-search-input__menu input')
+      .eq(2)
+      .should('have.value', 'another test');
+
+    cy.get('.pf-c-form__actions button')
+      .eq(1)
+      .click();
+    cy.get('.pf-c-search-input__text-input').should('have.value', '');
+    cy.get('.pf-c-search-input__menu input')
+      .eq(1)
+      .should('have.value', '');
+    cy.get('.pf-c-search-input__menu input')
+      .eq(2)
+      .should('have.value', '');
+
+    cy.get('.pf-c-search-input__menu input')
+      .eq(0)
+      .type('test');
+    cy.get('.pf-c-form__actions button')
+      .eq(0)
+      .click();
+    cy.get('.pf-c-search-input__menu').should('not.be.visible');
+    cy.get('.pf-c-search-input__text-input').should('have.value', 'username:test');
+  });
 });

@@ -59,14 +59,26 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
     }
   };
 
+  onSearch = (value: string) => {
+    this.setState({
+      value
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
         <SearchInput
           ref={this.inputRef}
+          attributes={[
+            { attr: 'username', display: 'Username' },
+            { attr: 'firstname', display: 'First name' }
+          ]}
           placeholder="Find by name"
+          advancedSearchDelimiter=":"
           value={this.state.value}
           onChange={this.onChange}
+          onSearch={this.onSearch}
           onClear={this.onClear}
           resultsCount={`${this.state.currentResult} / ${this.state.resultsCount}`}
           onNextClick={this.onNext}
