@@ -36,7 +36,7 @@ section: developer-resources
 - **Jumplinks:**
   - Added jumplinks subsections ([#5314](https://github.com/patternfly/patternfly-react/pull/5314))
 - **Navigation:**
-  - Added support for spreading props to the NaveExpandable button ([#5438](https://github.com/patternfly/patternfly-react/pull/5438))
+  - Added support for spreading props to the NavExpandable button ([#5438](https://github.com/patternfly/patternfly-react/pull/5438))
 - **Progress:**
   - Added warning when title and aria-label are not present ([#5415](https://github.com/patternfly/patternfly-react/pull/5415))
 - **Search input:**
@@ -76,7 +76,6 @@ section: developer-resources
 
 ### Other
 - **Deps:**
-  - Updated dependency theme-patternfly-org to v0.4.11 ([#5371](https://github.com/patternfly/patternfly-react/pull/5371))
   - Updated dependency theme-patternfly-org to v0.4.12 ([#5457](https://github.com/patternfly/patternfly-react/pull/5457))
 
 ## 2021.01 release notes (2021-01-27)
