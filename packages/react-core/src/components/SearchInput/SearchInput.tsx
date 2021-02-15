@@ -63,6 +63,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   submitSearchButtonLabel?: string;
   /** Label for the button which opens the advanced search form menu */
   openMenuButtonAriaLabel?: string;
+  /** Flag indicating if search input is disabled */
+  isDisabled?: boolean;
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
@@ -83,11 +85,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   resetButtonLabel = 'Reset',
   openMenuButtonAriaLabel = 'Open advanced search',
   submitSearchButtonLabel = 'Search',
+  isDisabled = false,
   ...props
 }: SearchInputProps) => {
   const [showSearchMenu, setShowSearchMenu] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState(value);
+  const firstAttrRef = React.useRef(null);
   const searchInputRef = React.useRef(null);
+  const searchInputInputRef = innerRef || React.useRef(null);
 
   React.useEffect(() => {
     setSearchValue(value);
@@ -101,6 +106,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       );
     }
   });
+
+  React.useEffect(() => {
+    if (showSearchMenu && firstAttrRef && firstAttrRef.current) {
+      firstAttrRef.current.focus();
+    } else if (!showSearchMenu && searchInputRef && searchInputRef.current) {
+      searchInputInputRef.current.focus();
+    }
+  }, [showSearchMenu]);
 
   React.useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
@@ -189,16 +202,30 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     attributes.forEach((attribute: string | SearchAttribute, index: number) => {
       const display = typeof attribute === 'string' ? attribute : attribute.display;
       const queryAttr = typeof attribute === 'string' ? attribute : attribute.attr;
-      formGroups.push(
-        <FormGroup label={display} fieldId={`${queryAttr}_${index}`} key={`${attribute}_${index}`}>
-          <TextInput
-            type="text"
-            id={`${queryAttr}_${index}`}
-            value={getValue(queryAttr)}
-            onChange={(value, evt) => handleValueChange(queryAttr, value, evt)}
-          />
-        </FormGroup>
-      );
+      if (index === 0) {
+        formGroups.push(
+          <FormGroup label={display} fieldId={`${queryAttr}_${index}`} key={`${attribute}_${index}`}>
+            <TextInput
+              ref={firstAttrRef}
+              type="text"
+              id={`${queryAttr}_${index}`}
+              value={getValue(queryAttr)}
+              onChange={(value, evt) => handleValueChange(queryAttr, value, evt)}
+            />
+          </FormGroup>
+        );
+      } else {
+        formGroups.push(
+          <FormGroup label={display} fieldId={`${queryAttr}_${index}`} key={`${attribute}_${index}`}>
+            <TextInput
+              type="text"
+              id={`${queryAttr}_${index}`}
+              value={getValue(queryAttr)}
+              onChange={(value, evt) => handleValueChange(queryAttr, value, evt)}
+            />
+          </FormGroup>
+        );
+      }
     });
     formGroups.push(
       <GenerateId key={'hasWords'}>
@@ -226,12 +253,13 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               <SearchIcon />
             </span>
             <input
-              ref={innerRef}
+              ref={searchInputInputRef}
               className={css(styles.searchInputTextInput)}
               value={searchValue}
               placeholder={placeholder}
               aria-label={ariaLabel}
               onChange={onChangeHandler}
+              disabled={isDisabled}
             />
           </span>
           {value && (
@@ -243,17 +271,27 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               )}
               {!!onNextClick && !!onPreviousClick && (
                 <span className={css(styles.searchInputNav)}>
-                  <Button variant={ButtonVariant.plain} aria-label="Previous" onClick={onPreviousClick}>
+                  <Button
+                    variant={ButtonVariant.plain}
+                    aria-label="Previous"
+                    isDisabled={isDisabled}
+                    onClick={onPreviousClick}
+                  >
                     <AngleUpIcon />
                   </Button>
-                  <Button variant={ButtonVariant.plain} aria-label="Next" onClick={onNextClick}>
+                  <Button variant={ButtonVariant.plain} aria-label="Next" isDisabled={isDisabled} onClick={onNextClick}>
                     <AngleDownIcon />
                   </Button>
                 </span>
               )}
               {!!onClear && (
                 <span className="pf-c-search-input__clear">
-                  <Button variant={ButtonVariant.plain} aria-label={resetButtonLabel} onClick={onClear}>
+                  <Button
+                    variant={ButtonVariant.plain}
+                    isDisabled={isDisabled}
+                    aria-label={resetButtonLabel}
+                    onClick={onClear}
+                  >
                     <TimesIcon />
                   </Button>
                 </span>
@@ -268,6 +306,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               variant={ButtonVariant.control}
               aria-label={openMenuButtonAriaLabel}
               onClick={onToggle}
+              isDisabled={isDisabled}
               aria-expanded={showSearchMenu}
             >
               <CaretDownIcon />
@@ -278,6 +317,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
                 variant={ButtonVariant.control}
                 aria-label={submitSearchButtonLabel}
                 onClick={onSearchHandler}
+                isDisabled={isDisabled}
               >
                 <ArrowRightIcon />
               </Button>
