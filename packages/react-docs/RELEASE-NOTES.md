@@ -4,7 +4,7 @@ section: developer-resources
 ---
 
 ## 2021.02 release notes (2021-02-17)
-- [@patternfly/react-catalog-view-extension@4.10.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.10.0])
+- [@patternfly/react-catalog-view-extension@4.10.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.10.0)
 - [@patternfly/react-charts@6.14.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.0)
 - [@patternfly/react-code-editor@4.1.23](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.1.23)
 - [@patternfly/react-core@4.97.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.97.0)
