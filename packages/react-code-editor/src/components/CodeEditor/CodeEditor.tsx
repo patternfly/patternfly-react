@@ -177,6 +177,13 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     this.setState({ value });
   };
 
+  componentDidUpdate(prevProps: CodeEditorProps) {
+    const { code } = this.props;
+    if (prevProps.code !== code) {
+      this.setState({ value: code });
+    }
+  }
+
   componentDidMount() {
     document.addEventListener('keydown', this.handleGlobalKeys);
   }
