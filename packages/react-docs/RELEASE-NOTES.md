@@ -52,7 +52,7 @@ section: developer-resources
 - **Spinner:**
   - Added isSVG prop ([#5390](https://github.com/patternfly/patternfly-react/pull/5390))
 - **Time picker:**
-  - Fixed issue when clicking dropdown menu does not trigger onchange function ([#5399](https://github.com/patternfly/patternfly-react/pull/5399))
+  - Fixed issue when clicking dropdown menu does not trigger onChange function ([#5399](https://github.com/patternfly/patternfly-react/pull/5399))
 - **Tooltip:**
   - Updated to only add aria when tooltip is visible/in the DOM ([#5382](https://github.com/patternfly/patternfly-react/pull/5382))
 - **TreeView:**
