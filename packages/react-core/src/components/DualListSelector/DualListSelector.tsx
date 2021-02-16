@@ -69,8 +69,12 @@ export interface DualListSelectorProps {
   isSearchable?: boolean;
   /** Accessible label for the search input on the available options pane. */
   availableOptionsSearchAriaLabel?: string;
+  /** A callback for when the search input value for available options changes. */
+  onAvailableOptionsSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Accessible label for the search input on the chosen options pane. */
   chosenOptionsSearchAriaLabel?: string;
+  /** A callback for when the search input value for chosen options changes. */
+  onChosenOptionsSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Optional filter function for custom filtering based on search string. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** Id of the dual list selector. */
@@ -505,6 +509,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       removeAll,
       addSelected,
       onListChange,
+      onAvailableOptionsSearchInputChanged,
+      onChosenOptionsSearchInputChanged,
       onOptionSelect,
       onOptionCheck,
       id,
@@ -548,6 +554,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           isSearchable={isSearchable}
           searchInputAriaLabel={availableOptionsSearchAriaLabel}
           filterOption={filterOption}
+          onSearchInputChanged={onAvailableOptionsSearchInputChanged}
           status={availableOptionsStatusToDisplay}
           title={availableOptionsTitle}
           options={available}
@@ -618,6 +625,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           isSearchable={isSearchable}
           searchInputAriaLabel={chosenOptionsSearchAriaLabel}
           filterOption={filterOption}
+          onSearchInputChanged={onChosenOptionsSearchInputChanged}
           title={chosenOptionsTitle}
           status={chosenOptionsStatusToDisplay}
           options={chosen}
