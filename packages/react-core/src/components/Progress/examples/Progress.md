@@ -149,3 +149,23 @@ import { Progress } from '@patternfly/react-core';
 
 <Progress value={33} title="Very very very very very very very very very very very long title which should be truncated if it does not fit onto one line above the progress bar" isTitleTruncated />
 ```
+
+### Title outside of progress bar
+```js
+import React from 'react';
+import {
+    DescriptionList, DescriptionListGroup, DescriptionListTerm, DescriptionListDescription,
+    Progress, ProgressMeasureLocation, ProgressVariant,
+} from '@patternfly/react-core';
+
+<DescriptionList>
+  <DescriptionListGroup>
+    <DescriptionListTerm id="progress-label">
+        Title outside of progress bar
+    </DescriptionListTerm>
+    <DescriptionListDescription>
+      <Progress value={33} measureLocation={ProgressMeasureLocation.outside} aria-labelledby="progress-label"/>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>
+```
