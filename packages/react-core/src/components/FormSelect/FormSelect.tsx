@@ -21,7 +21,7 @@ export interface FormSelectProps
   validated?: 'success' | 'warning' | 'error' | 'default';
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;
-  /** Sets the FormSelectrequired. */
+  /** Sets the FormSelect required. */
   isRequired?: boolean;
   /** Optional callback for updating when selection loses focus */
   onBlur?: (event: React.FormEvent<HTMLSelectElement>) => void;
@@ -64,6 +64,9 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
 
   render() {
     const { children, className, value, validated, isDisabled, isRequired, ouiaId, ouiaSafe, ...props } = this.props;
+    /* find selected option and get placeholder flag */
+    const selectedOption = React.Children.toArray(children).find((option: any) => option.props.value === value) as any;
+    const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
     return (
       <select
         {...props}
@@ -71,7 +74,8 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
           styles.formControl,
           className,
           validated === ValidatedOptions.success && styles.modifiers.success,
-          validated === ValidatedOptions.warning && styles.modifiers.warning
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
+          isSelectedPlaceholder && styles.modifiers.placeholder
         )}
         aria-invalid={validated === ValidatedOptions.error}
         {...getOUIAProps(FormSelect.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}

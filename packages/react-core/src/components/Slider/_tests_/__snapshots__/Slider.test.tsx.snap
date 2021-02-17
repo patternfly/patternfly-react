@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`slider renders continuous slider 1`] = `
+<Slider
+  currentValue={50}
+  inputValue={50}
+  isInputVisible={true}
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </div>
+    <div
+      className="pf-c-slider__value"
+    >
+      <TextInput
+        aria-label="Slider value input"
+        className="pf-c-form-control"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        type="number"
+        value={50}
+      >
+        <TextInputBase
+          aria-label="Slider value input"
+          className="pf-c-form-control"
+          innerRef={null}
+          isDisabled={false}
+          isLeftTruncated={false}
+          isReadOnly={false}
+          isRequired={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="number"
+          validated="default"
+          value={50}
+        >
+          <input
+            aria-invalid={false}
+            aria-label="Slider value input"
+            className="pf-c-form-control pf-c-form-control"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            required={false}
+            type="number"
+            value={50}
+          />
+        </TextInputBase>
+      </TextInput>
+    </div>
+  </div>
+</Slider>
+`;
+
+exports[`slider renders discrete slider 1`] = `
+<Slider
+  currentValue={50}
+  isDiscrete={true}
+  steps={
+    Array [
+      Object {
+        "label": "0%",
+        "value": 0,
+      },
+      Object {
+        "isLabelHidden": true,
+        "label": "25%",
+        "value": 25,
+      },
+      Object {
+        "label": "50%",
+        "value": 50,
+      },
+      Object {
+        "isLabelHidden": true,
+        "label": "75%",
+        "value": 75,
+      },
+      Object {
+        "label": "100%",
+        "value": 100,
+      },
+    ]
+  }
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pf-c-slider__steps"
+      >
+        <SliderStep
+          isActive={true}
+          key="0"
+          label="0%"
+          value={0}
+        >
+          <div
+            className="pf-c-slider__step pf-m-active"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "0%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+            <div
+              className="pf-c-slider__step-label"
+            >
+              0%
+            </div>
+          </div>
+        </SliderStep>
+        <SliderStep
+          isActive={true}
+          isLabelHidden={true}
+          key="25"
+          label="25%"
+          value={25}
+        >
+          <div
+            className="pf-c-slider__step pf-m-active"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "25%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+          </div>
+        </SliderStep>
+        <SliderStep
+          isActive={true}
+          key="50"
+          label="50%"
+          value={50}
+        >
+          <div
+            className="pf-c-slider__step pf-m-active"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "50%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+            <div
+              className="pf-c-slider__step-label"
+            >
+              50%
+            </div>
+          </div>
+        </SliderStep>
+        <SliderStep
+          isActive={false}
+          isLabelHidden={true}
+          key="75"
+          label="75%"
+          value={75}
+        >
+          <div
+            className="pf-c-slider__step"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "75%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+          </div>
+        </SliderStep>
+        <SliderStep
+          isActive={false}
+          key="100"
+          label="100%"
+          value={100}
+        >
+          <div
+            className="pf-c-slider__step"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "100%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+            <div
+              className="pf-c-slider__step-label"
+            >
+              100%
+            </div>
+          </div>
+        </SliderStep>
+      </div>
+      <div
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        aria-valuetext="50%"
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </div>
+  </div>
+</Slider>
+`;
+
+exports[`slider renders slider with input 1`] = `
+<Slider
+  currentValue={50}
+  inputLabel="%"
+  inputPosition="left"
+  inputValue={50}
+  isInputVisible={true}
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </div>
+  </div>
+</Slider>
+`;
+
+exports[`slider renders slider with input above thumb 1`] = `
+<Slider
+  currentValue={50}
+  inputLabel="%"
+  inputPosition="aboveThumb"
+  inputValue={50}
+  isInputVisible={true}
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+      <div
+        className="pf-c-slider__value pf-m-floating"
+      >
+        <InputGroup>
+          <div
+            className="pf-c-input-group"
+          >
+            <TextInput
+              aria-label="Slider value input"
+              className="pf-c-form-control"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="number"
+              value={50}
+            >
+              <TextInputBase
+                aria-label="Slider value input"
+                className="pf-c-form-control"
+                innerRef={null}
+                isDisabled={false}
+                isLeftTruncated={false}
+                isReadOnly={false}
+                isRequired={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                type="number"
+                validated="default"
+                value={50}
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="Slider value input"
+                  className="pf-c-form-control pf-c-form-control"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={false}
+                  required={false}
+                  type="number"
+                  value={50}
+                />
+              </TextInputBase>
+            </TextInput>
+            <InputGroupText
+              className="pf-m-plain"
+            >
+              <span
+                className="pf-c-input-group__text pf-m-plain"
+              >
+                %
+              </span>
+            </InputGroupText>
+          </div>
+        </InputGroup>
+      </div>
+    </div>
+  </div>
+</Slider>
+`;
+
+exports[`slider renders slider with input actions 1`] = `
+<Slider
+  currentValue={50}
+  leftActions={
+    <Button
+      aria-label="Minus"
+      variant="plain"
+    />
+  }
+  rightActions={
+    <Button
+      aria-label="Plus"
+      variant="plain"
+    />
+  }
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__actions"
+    >
+      <Button
+        aria-label="Minus"
+        variant="plain"
+      >
+        <button
+          aria-disabled={false}
+          aria-label="Minus"
+          className="pf-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-1"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe={true}
+          disabled={false}
+          role={null}
+          type="button"
+        />
+      </Button>
+    </div>
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </div>
+    <div
+      className="pf-c-slider__actions"
+    >
+      <Button
+        aria-label="Plus"
+        variant="plain"
+      >
+        <button
+          aria-disabled={false}
+          aria-label="Plus"
+          className="pf-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-2"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe={true}
+          disabled={false}
+          role={null}
+          type="button"
+        />
+      </Button>
+    </div>
+  </div>
+</Slider>
+`;

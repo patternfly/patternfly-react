@@ -37,7 +37,15 @@ export class TableSortableDemo extends React.Component<
   }
 
   onSort(_event: React.MouseEvent, index: number, direction: SortByDirection) {
-    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
+    const sortedRows = this.state.rows.sort((a, b) => {
+      if (a[index] < b[index]) {
+        return -1;
+      }
+      if (a[index] > b[index]) {
+        return 1;
+      }
+      return 0;
+    });
     this.setState({
       sortBy: {
         index,

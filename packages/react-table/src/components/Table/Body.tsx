@@ -91,13 +91,15 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
               // to the first user column's header formatters
               formatters = headerData[firstUserColumnIndex].cell.formatters;
             }
+            let mappedCellTitle: IRowCell | Function | IRowCell['title'] = cell;
+            if (isCellObject && isCellFunction) {
+              mappedCellTitle = (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props);
+            } else if (isCellObject) {
+              mappedCellTitle = cell.title;
+            }
             const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
-                title: isCellObject
-                  ? isCellFunction
-                    ? (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props)
-                    : cell.title
-                  : cell,
+                title: mappedCellTitle,
                 formatters,
                 props: {
                   isVisible: true,

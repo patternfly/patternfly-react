@@ -4,6 +4,7 @@ import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
+import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
 const hash: {
   [key: string]: string;
@@ -235,8 +236,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         enabled: false
       },
       {
+        // adds attribute [data-popper-reference-hidden] to the popper element which can be used to hide it using CSS
         name: 'hide',
-        enabled: false
+        enabled: true
       },
       {
         name: 'flip',

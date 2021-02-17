@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { SearchInput } from '../SearchInput';
 
 
@@ -8,19 +8,9 @@ const props = {
   value: 'test input',
   onNextClick: jest.fn(),
   onPreviousClick: jest.fn(),
-  onClear: jest.fn()
+  onClear: jest.fn(),
+  onSearch: jest.fn()
 };
-
-test('input passes value and event to onChange handler', () => {
-  const newValue = 'new test input';
-  const event = {
-    currentTarget: { value: newValue }
-  };
-  const view = shallow(<SearchInput {...props} aria-label="test input" />);
-
-  view.find('input').simulate('change', event);
-  expect(props.onChange).toBeCalledWith(newValue, event);
-});
 
 test('simple search input', () => {
   const view = mount(<SearchInput {...props} aria-label="simple text input" />);
@@ -48,6 +38,29 @@ test('navigable search results', () => {
   expect(props.onNextClick).toBeCalled();
   view.find('.pf-c-button').at(2).simulate('click', {});
   expect(props.onClear).toBeCalled();
+});
+
+test('hide clear button', () => {
+  const { onClear, ...testProps } = props;
+  const view = mount(
+    <SearchInput {...testProps} resultsCount='3' aria-label="simple text input without on clear" />
+  );
+  expect(view.find('.pf-c-search-input__clear').length).toBe(0);
+});
+
+test('advanced search', () => {
+  const view = mount(
+    <SearchInput
+      attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+      value='username:player firstname:john'
+      onChange={props.onChange}
+      onSearch={props.onSearch}
+      onClear={props.onClear}
+    />
+  );
+  view.find('.pf-c-button').at(2).simulate('click', {});
+  expect(props.onSearch).toBeCalled();
+  expect(view.find('input')).toMatchSnapshot();
 });
 
 

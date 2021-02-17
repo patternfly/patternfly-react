@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { TreeViewList } from './TreeViewList';
 import { TreeViewListItem } from './TreeViewListItem';
+import { TreeViewRoot } from './TreeViewRoot';
 
 export interface TreeViewDataItem {
   /** Internal content of a tree view item */
@@ -126,9 +125,9 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       {parentItem ? (
         treeViewList
       ) : (
-        <div className={css(styles.treeView)} {...props}>
+        <TreeViewRoot hasChecks={hasChecks} {...props}>
           {treeViewList}
-        </div>
+        </TreeViewRoot>
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Spinner, SpinnerProps } from '@patternfly/react-core';
+import { Spinner } from '@patternfly/react-core';
 
-export class SpinnerDemo extends React.Component<SpinnerProps> {
+export class SpinnerDemo extends React.Component {
   static displayName = 'SpinnerDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -10,13 +10,13 @@ export class SpinnerDemo extends React.Component<SpinnerProps> {
   render() {
     return (
       <React.Fragment>
-        <Spinner />
+        <Spinner isSVG diameter="40px" id="spinner40" />
         <span>
           <div>Size variations</div>
-          <Spinner size="sm" />
-          <Spinner size="md" />
-          <Spinner size="lg" />
-          <Spinner size="xl" />
+          <Spinner isSVG size="sm" />
+          <Spinner isSVG size="md" />
+          <Spinner isSVG size="lg" />
+          <Spinner isSVG size="xl" />
         </span>
       </React.Fragment>
     );

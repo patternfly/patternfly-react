@@ -97,13 +97,17 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
         {...getOUIAProps(Radio.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       />
     );
-    const labelRendered = !label ? null : isLabelWrapped ? (
-      <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>
-    ) : (
-      <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
-        {label}
-      </label>
-    );
+
+    let labelRendered: React.ReactNode = null;
+    if (label && isLabelWrapped) {
+      labelRendered = <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>;
+    } else if (label) {
+      labelRendered = (
+        <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
+          {label}
+        </label>
+      );
+    }
 
     const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
     const childrenRendered = isLabelBeforeButton ? (

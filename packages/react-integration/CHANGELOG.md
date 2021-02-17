@@ -3,6 +3,149 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.76.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.75.0...@patternfly/react-integration@4.76.0) (2021-02-12)
+
+
+### Features
+
+* **SearchInput:** add advanced search feature ([#5454](https://github.com/patternfly/patternfly-react/issues/5454)) ([7099da1](https://github.com/patternfly/patternfly-react/commit/7099da1cb31fb9f5fb537b082365eabc42c2b95e))
+
+
+
+
+
+# [4.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.74.0...@patternfly/react-integration@4.75.0) (2021-02-12)
+
+
+### Features
+
+* **TreeView:** add keyboard interaction ([#5439](https://github.com/patternfly/patternfly-react/issues/5439)) ([fc094b9](https://github.com/patternfly/patternfly-react/commit/fc094b910517e6a42f2d88175557675572e89ae5))
+
+
+
+
+
+# [4.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.73.0...@patternfly/react-integration@4.74.0) (2021-02-12)
+
+
+### Features
+
+* **TableComposable:** add dataLabel property ([#5406](https://github.com/patternfly/patternfly-react/issues/5406)) ([daefa3f](https://github.com/patternfly/patternfly-react/commit/daefa3fb604679208908a5a995b3087a62073559)), closes [#5405](https://github.com/patternfly/patternfly-react/issues/5405)
+
+
+
+
+
+# [4.73.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.72.0...@patternfly/react-integration@4.73.0) (2021-02-11)
+
+
+### Features
+
+* **Navigation:** Added support for spreading props to the NaveExpand… ([#5438](https://github.com/patternfly/patternfly-react/issues/5438)) ([e462fb8](https://github.com/patternfly/patternfly-react/commit/e462fb81dee60652027a985a4098a238a38a613a))
+
+
+
+
+
+# [4.72.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.71.0...@patternfly/react-integration@4.72.0) (2021-02-11)
+
+
+### Features
+
+* **FormSelect:** added support for placeholder styled option ([#5428](https://github.com/patternfly/patternfly-react/issues/5428)) ([22217e9](https://github.com/patternfly/patternfly-react/commit/22217e9982f68dee541c3c9eb1138b4e2f369689))
+
+
+
+
+
+# [4.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.70.0...@patternfly/react-integration@4.71.0) (2021-02-03)
+
+
+### Features
+
+* **searchInput:** add support to passing a ref ([#5215](https://github.com/patternfly/patternfly-react/issues/5215)) ([41af5d3](https://github.com/patternfly/patternfly-react/commit/41af5d34d5c80afade3c1c9ace9e07877b141149))
+
+
+
+
+
+# [4.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.69.0...@patternfly/react-integration@4.70.0) (2021-02-02)
+
+
+### Features
+
+* **card:** add pf-m-display-lg and pf-m-rounded ([#5389](https://github.com/patternfly/patternfly-react/issues/5389)) ([2adb463](https://github.com/patternfly/patternfly-react/commit/2adb4630ef23035f90f3ea8cdb79e0c19c57b2d0))
+* **spinner:** add isSVG ([#5390](https://github.com/patternfly/patternfly-react/issues/5390)) ([0114531](https://github.com/patternfly/patternfly-react/commit/01145311c6e50732691e3a43bc5dcc6b47026bc1))
+
+
+
+
+
+# [4.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.68.1...@patternfly/react-integration@4.69.0) (2021-01-25)
+
+
+### Features
+
+* **Slider:** Added new slider component ([#5358](https://github.com/patternfly/patternfly-react/issues/5358)) ([90df385](https://github.com/patternfly/patternfly-react/commit/90df3850a0a602d14538faba98314405b12a786b))
+
+
+
+
+
+## [4.68.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.68.0...@patternfly/react-integration@4.68.1) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+# [4.68.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.67.1...@patternfly/react-integration@4.68.0) (2021-01-22)
+
+
+### Features
+
+* **SimpleList:** Uncontrolled Simple list support ([#5134](https://github.com/patternfly/patternfly-react/issues/5134)) ([690cf90](https://github.com/patternfly/patternfly-react/commit/690cf9090444edc3a5d3bb470edf25633b031f65))
+
+
+
+
+
+## [4.67.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.67.0...@patternfly/react-integration@4.67.1) (2021-01-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.67.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.66.1...@patternfly/react-integration@4.67.0) (2021-01-15)
+
+
+### Bug Fixes
+
+* **Wizard:** set a custom width to the wizard modal ([#5256](https://github.com/patternfly/patternfly-react/issues/5256)) ([22dd8f6](https://github.com/patternfly/patternfly-react/commit/22dd8f6518b37e45fec646b64bb9d58f188a7707))
+
+
+### Features
+
+* **ChipGroup:** Add event handler prop for overflow-chip click  ([#5272](https://github.com/patternfly/patternfly-react/issues/5272)) ([c4af7f1](https://github.com/patternfly/patternfly-react/commit/c4af7f17be30dbf86f4a9caf41acc29001b395db))
+
+
+
+
+
+## [4.66.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.66.0...@patternfly/react-integration@4.66.1) (2021-01-11)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 # [4.66.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.65.1...@patternfly/react-integration@4.66.0) (2021-01-06)
 
 

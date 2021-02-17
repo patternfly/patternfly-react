@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`touchspin disables lower threshold 1`] = `
-<Touchspin
+exports[`numberInput disables lower threshold 1`] = `
+<NumberInput
   min={0}
   value={0}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -31,7 +31,7 @@ exports[`touchspin disables lower threshold 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -65,7 +65,7 @@ exports[`touchspin disables lower threshold 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={0}
       />
       <Button
@@ -87,7 +87,7 @@ exports[`touchspin disables lower threshold 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -119,16 +119,16 @@ exports[`touchspin disables lower threshold 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin disables upper threshold 1`] = `
-<Touchspin
+exports[`numberInput disables upper threshold 1`] = `
+<NumberInput
   max={100}
   value={100}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -152,7 +152,7 @@ exports[`touchspin disables upper threshold 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -186,7 +186,7 @@ exports[`touchspin disables upper threshold 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={100}
       />
       <Button
@@ -209,7 +209,7 @@ exports[`touchspin disables upper threshold 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -241,11 +241,11 @@ exports[`touchspin disables upper threshold 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin passes button props successfully 1`] = `
-<Touchspin
+exports[`numberInput passes button props successfully 1`] = `
+<NumberInput
   minusBtnProps={
     Object {
       "id": "minus-id",
@@ -261,7 +261,7 @@ exports[`touchspin passes button props successfully 1`] = `
   value={5}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -287,7 +287,7 @@ exports[`touchspin passes button props successfully 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -321,7 +321,7 @@ exports[`touchspin passes button props successfully 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -345,7 +345,7 @@ exports[`touchspin passes button props successfully 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -377,17 +377,17 @@ exports[`touchspin passes button props successfully 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin passes input props successfully 1`] = `
-<Touchspin
+exports[`numberInput passes input props successfully 1`] = `
+<NumberInput
   inputName="test-name"
   onChange={[MockFunction]}
   value={5}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -411,7 +411,7 @@ exports[`touchspin passes input props successfully 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -446,7 +446,7 @@ exports[`touchspin passes input props successfully 1`] = `
         className="pf-c-form-control"
         name="test-name"
         onChange={[MockFunction]}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -468,7 +468,7 @@ exports[`touchspin passes input props successfully 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -500,19 +500,19 @@ exports[`touchspin passes input props successfully 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin renders custom width 1`] = `
-<Touchspin
+exports[`numberInput renders custom width 1`] = `
+<NumberInput
   value={5}
   widthChars="10"
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
     style={
       Object {
-        "--pf-c-touchspin--c-form-control--width-chars": "10",
+        "--pf-c-number-input--c-form-control--width-chars": "10",
       }
     }
   >
@@ -538,7 +538,7 @@ exports[`touchspin renders custom width 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -572,7 +572,7 @@ exports[`touchspin renders custom width 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -594,7 +594,7 @@ exports[`touchspin renders custom width 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -626,17 +626,17 @@ exports[`touchspin renders custom width 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin renders defaults & extra props 1`] = `
-<Touchspin
+exports[`numberInput renders defaults & extra props 1`] = `
+<NumberInput
   className="custom"
-  id="touchspin1"
+  id="numberInput1"
 >
   <div
-    className="pf-c-touchspin custom"
-    id="touchspin1"
+    className="pf-c-number-input custom"
+    id="numberInput1"
   >
     <div
       className="pf-c-input-group"
@@ -660,7 +660,7 @@ exports[`touchspin renders defaults & extra props 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -694,7 +694,7 @@ exports[`touchspin renders defaults & extra props 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={0}
       />
       <Button
@@ -716,7 +716,7 @@ exports[`touchspin renders defaults & extra props 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -748,16 +748,16 @@ exports[`touchspin renders defaults & extra props 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin renders disabled 1`] = `
-<Touchspin
+exports[`numberInput renders disabled 1`] = `
+<NumberInput
   isDisabled={true}
   value={90}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -782,7 +782,7 @@ exports[`touchspin renders disabled 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -817,7 +817,7 @@ exports[`touchspin renders disabled 1`] = `
         className="pf-c-form-control"
         disabled={true}
         readOnly={true}
-        type="text"
+        type="number"
         value={90}
       />
       <Button
@@ -840,7 +840,7 @@ exports[`touchspin renders disabled 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -872,20 +872,20 @@ exports[`touchspin renders disabled 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin renders unit & position 1`] = `
-<Touchspin
+exports[`numberInput renders unit & position 1`] = `
+<NumberInput
   unit="$"
   unitPosition="before"
   value={5}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
-      className="pf-c-touchspin__unit"
+      className="pf-c-number-input__unit"
     >
       $
     </div>
@@ -911,7 +911,7 @@ exports[`touchspin renders unit & position 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -945,7 +945,7 @@ exports[`touchspin renders unit & position 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -967,7 +967,7 @@ exports[`touchspin renders unit & position 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -999,17 +999,17 @@ exports[`touchspin renders unit & position 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin renders unit 1`] = `
-<Touchspin
+exports[`numberInput renders unit 1`] = `
+<NumberInput
   unit="%"
   unitPosition="after"
   value={5}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -1033,7 +1033,7 @@ exports[`touchspin renders unit 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -1067,7 +1067,7 @@ exports[`touchspin renders unit 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={5}
       />
       <Button
@@ -1089,7 +1089,7 @@ exports[`touchspin renders unit 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -1121,20 +1121,20 @@ exports[`touchspin renders unit 1`] = `
       </Button>
     </div>
     <div
-      className="pf-c-touchspin__unit"
+      className="pf-c-number-input__unit"
     >
       %
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;
 
-exports[`touchspin renders value 1`] = `
-<Touchspin
+exports[`numberInput renders value 1`] = `
+<NumberInput
   value={90}
 >
   <div
-    className="pf-c-touchspin"
+    className="pf-c-number-input"
   >
     <div
       className="pf-c-input-group"
@@ -1158,7 +1158,7 @@ exports[`touchspin renders value 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <MinusIcon
               aria-hidden="true"
@@ -1192,7 +1192,7 @@ exports[`touchspin renders value 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         readOnly={true}
-        type="text"
+        type="number"
         value={90}
       />
       <Button
@@ -1214,7 +1214,7 @@ exports[`touchspin renders value 1`] = `
           type="button"
         >
           <span
-            className="pf-c-touchspin__icon"
+            className="pf-c-number-input__icon"
           >
             <PlusIcon
               aria-hidden="true"
@@ -1246,5 +1246,5 @@ exports[`touchspin renders value 1`] = `
       </Button>
     </div>
   </div>
-</Touchspin>
+</NumberInput>
 `;

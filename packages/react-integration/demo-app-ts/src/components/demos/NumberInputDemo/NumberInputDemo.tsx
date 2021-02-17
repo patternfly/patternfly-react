@@ -1,12 +1,12 @@
-import { Touchspin } from '@patternfly/react-core';
+import { NumberInput } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
-export interface TouchspinDemoState {
+export interface NumberInputDemoState {
   value: number;
 }
 
-export class TouchspinDemo extends Component<TouchspinDemoState> {
-  static displayName = 'TouchspinDemo';
+export class NumberInputDemo extends Component<NumberInputDemoState> {
+  static displayName = 'NumberInputDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -40,8 +40,8 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
 
     return (
       <React.Fragment>
-        <Touchspin
-          id="touchspin1"
+        <NumberInput
+          id="numberInput1"
           value={value}
           min={minValue}
           max={maxValue}
@@ -49,7 +49,7 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input"
-          inputAriaLabel="touchspint input"
+          inputAriaLabel="number input"
           minusBtnAriaLabel="minus"
           plusBtnAriaLabel="plus"
           inputProps={{ id: 'input1' }}
@@ -60,8 +60,8 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
         />
         <br />
         <br />
-        <Touchspin
-          id="touchspin2"
+        <NumberInput
+          id="numberInput2"
           value={value}
           min={minValue}
           max={maxValue}
@@ -69,7 +69,7 @@ export class TouchspinDemo extends Component<TouchspinDemoState> {
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input 2"
-          inputAriaLabel="touchspint input 2"
+          inputAriaLabel="number input 2"
           minusBtnAriaLabel="minus"
           plusBtnAriaLabel="plus"
           inputProps={{ id: 'input2' }}

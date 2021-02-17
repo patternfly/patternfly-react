@@ -35,13 +35,22 @@ const NodePath: React.FC<NodePathProps> = ({
   const refs = useCombineRefs<SVGPathElement>(dragNodeRef, dndDragRef, dndDropRef, anchorRef);
   const { width, height } = element.getDimensions();
 
+  let fill = 'grey';
+  if (canDrop && hover) {
+    fill = 'lightgreen';
+  } else if (canDrop && droppable) {
+    fill = 'lightblue';
+  } else if (selected) {
+    fill = 'blue';
+  }
+
   return (
     <path
       ref={refs}
       onClick={onSelect}
       d={`M0 0 L${width / 2} ${height / 4} L${width} 0 L${width} ${height} L${width / 2} ${height -
         height / 4} L0 ${height} Z`}
-      fill={canDrop && hover ? 'lightgreen' : canDrop && droppable ? 'lightblue' : selected ? 'blue' : 'grey'}
+      fill={fill}
       strokeWidth={1}
       stroke="#333333"
     />

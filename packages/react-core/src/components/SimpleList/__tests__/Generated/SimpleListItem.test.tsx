@@ -15,7 +15,7 @@ it('SimpleListItem should match snapshot (auto-generated)', () => {
       component={'button'}
       componentClassName={"''"}
       componentProps={'any'}
-      isCurrent={false}
+      isActive={false}
       onClick={() => {}}
       type={'button'}
       href={"''"}

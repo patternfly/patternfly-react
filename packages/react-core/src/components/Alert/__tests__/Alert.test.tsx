@@ -38,7 +38,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Action Link', () => {
       const view = mount(
-        <Alert variant={variant} actionLinks={[<AlertActionLink>test</AlertActionLink>]} title="">
+        <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="">
           Some alert
         </Alert>
       );
@@ -63,7 +63,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Action and Title', () => {
       const view = mount(
-        <Alert variant={variant} actionLinks={[<AlertActionLink>test</AlertActionLink>]} title="Some title">
+        <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="Some title">
           Some alert
         </Alert>
       );
@@ -75,7 +75,7 @@ Object.values(AlertVariant).forEach(variant => {
         <Alert
           variant={variant}
           aria-label={`Custom aria label for ${variant}`}
-          actionLinks={[<AlertActionLink>test</AlertActionLink>]}
+          actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]}
           title="Some title"
         >
           Some alert

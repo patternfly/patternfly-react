@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`advanced search 1`] = `
+<input
+  aria-label="Search input"
+  className="pf-c-search-input__text-input"
+  onChange={[Function]}
+  value="username:player firstname:john"
+/>
+`;
+
 exports[`navigable search results 1`] = `
 <span
   className="pf-c-search-input__nav"

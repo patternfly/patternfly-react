@@ -175,7 +175,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-5"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -199,7 +198,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-5"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -208,7 +206,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-5"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
@@ -301,7 +298,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-6"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -327,7 +323,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-6"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -336,7 +331,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-6"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
@@ -450,7 +444,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-7"
                                 aria-disabled={true}
                                 className="pf-topology-control-bar__button pf-m-disabled"
                                 disabled={true}
@@ -476,7 +469,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-7"
                                 aria-disabled={true}
                                 className="pf-topology-control-bar__button pf-m-disabled"
                                 disabled={true}
@@ -485,7 +477,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-7"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
@@ -808,7 +799,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-1"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -834,7 +824,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-1"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -843,7 +832,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-1"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
@@ -957,7 +945,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-2"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -983,7 +970,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-2"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -992,7 +978,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-2"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
@@ -1106,7 +1091,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-3"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1132,7 +1116,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-3"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1141,7 +1124,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-3"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
@@ -1255,7 +1237,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             }
                             trigger={
                               <Button
-                                aria-describedby="pf-tooltip-4"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1281,7 +1262,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               onFoundRef={[Function]}
                             >
                               <Button
-                                aria-describedby="pf-tooltip-4"
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1290,7 +1270,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 variant="tertiary"
                               >
                                 <button
-                                  aria-describedby="pf-tooltip-4"
                                   aria-disabled={false}
                                   aria-label={null}
                                   className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"

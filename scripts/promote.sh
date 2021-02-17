@@ -3,6 +3,7 @@ packages=(
   @patternfly/patternfly
   @patternfly/react-catalog-view-extension
   @patternfly/react-charts
+  @patternfly/react-code-editor
   @patternfly/react-core
   @patternfly/react-icons
   @patternfly/react-inline-edit-extension

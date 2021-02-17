@@ -7,6 +7,8 @@ interface FocusTrapProps extends React.HTMLProps<HTMLDivElement> {
   active?: boolean;
   paused?: boolean;
   focusTrapOptions?: FocusTrapOptions;
+  /** Prevent from scrolling to the previously focused element on deactivation */
+  preventScrollOnDeactivate?: boolean;
 }
 
 export class FocusTrap extends React.Component<FocusTrapProps> {
@@ -18,7 +20,8 @@ export class FocusTrap extends React.Component<FocusTrapProps> {
   static defaultProps = {
     active: true,
     paused: false,
-    focusTrapOptions: {}
+    focusTrapOptions: {},
+    preventScrollOnDeactivate: false
   };
 
   constructor(props: FocusTrapProps) {
@@ -68,13 +71,13 @@ export class FocusTrap extends React.Component<FocusTrapProps> {
       this.previouslyFocusedElement &&
       this.previouslyFocusedElement.focus
     ) {
-      this.previouslyFocusedElement.focus();
+      this.previouslyFocusedElement.focus({ preventScroll: this.props.preventScrollOnDeactivate });
     }
   }
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, className, focusTrapOptions, active, paused, ...rest } = this.props;
+    const { children, className, focusTrapOptions, active, paused, preventScrollOnDeactivate, ...rest } = this.props;
     return (
       <div ref={this.divRef} className={className} {...rest}>
         {children}

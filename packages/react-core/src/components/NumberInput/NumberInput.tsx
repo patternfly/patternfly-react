@@ -1,18 +1,18 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Touchspin/touchspin';
+import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
 import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
 import { Button, ButtonProps } from '../Button';
 
-export interface TouchspinProps extends React.HTMLProps<HTMLDivElement> {
-  /** Value of the touchspin */
+export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
+  /** Value of the number input */
   value?: number;
-  /** Additional classes added to the touchspin */
+  /** Additional classes added to the number input */
   className?: string;
-  /** Sets the width of the touchspin to a number of characters */
+  /** Sets the width of the number input to a number of characters */
   widthChars?: number;
-  /** Indicates the whole touchspin should be disabled */
+  /** Indicates the whole number input should be disabled */
   isDisabled?: boolean;
   /** Callback for the minus button */
   onMinus?: (event: React.MouseEvent, name?: string) => void;
@@ -20,13 +20,13 @@ export interface TouchspinProps extends React.HTMLProps<HTMLDivElement> {
   onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
   /** Callback for the plus button */
   onPlus?: (event: React.MouseEvent, name?: string) => void;
-  /** Adds the given touchspin unit to the touchspin */
+  /** Adds the given unit to the number input */
   unit?: React.ReactNode;
-  /** Position of the touchspin unit in relation to the touchspin */
+  /** Position of the number input unit in relation to the number input */
   unitPosition?: 'before' | 'after';
-  /** Minimum value of the touchspin, disabling the minus button when reached */
+  /** Minimum value of the number input, disabling the minus button when reached */
   min?: number;
-  /** Maximum value of the touchspin, disabling the plus button when reached */
+  /** Maximum value of the number input, disabling the plus button when reached */
   max?: number;
   /** Name of the input */
   inputName?: string;
@@ -36,7 +36,7 @@ export interface TouchspinProps extends React.HTMLProps<HTMLDivElement> {
   minusBtnAriaLabel?: string;
   /** Aria label of the plus button */
   plusBtnAriaLabel?: string;
-  /** Additional properties added to the touchspin text input */
+  /** Additional properties added to the text input */
   inputProps?: any;
   /** Additional properties added to the minus button */
   minusBtnProps?: ButtonProps;
@@ -44,7 +44,7 @@ export interface TouchspinProps extends React.HTMLProps<HTMLDivElement> {
   plusBtnProps?: ButtonProps;
 }
 
-export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
+export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   value = 0,
   className,
   widthChars,
@@ -64,20 +64,20 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
   minusBtnProps,
   plusBtnProps,
   ...props
-}: TouchspinProps) => {
-  const touchspinUnit = <div className={css(styles.touchspinUnit)}>{unit}</div>;
+}: NumberInputProps) => {
+  const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   return (
     <div
-      className={css(styles.touchspin, className)}
+      className={css(styles.numberInput, className)}
       {...(widthChars && {
         style: {
-          '--pf-c-touchspin--c-form-control--width-chars': widthChars,
+          '--pf-c-number-input--c-form-control--width-chars': widthChars,
           ...props.style
         } as React.CSSProperties
       })}
       {...props}
     >
-      {unit && unitPosition === 'before' && touchspinUnit}
+      {unit && unitPosition === 'before' && numberInputUnit}
       <div className={css(styles.inputGroup)}>
         <Button
           variant="control"
@@ -86,13 +86,13 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
           onClick={evt => onMinus(evt, inputName)}
           {...minusBtnProps}
         >
-          <span className={css(styles.touchspinIcon)}>
+          <span className={css(styles.numberInputIcon)}>
             <MinusIcon aria-hidden="true" />
           </span>
         </Button>
         <input
           className={css(styles.formControl)}
-          type="text"
+          type="number"
           value={value}
           name={inputName}
           aria-label={inputAriaLabel}
@@ -108,13 +108,13 @@ export const Touchspin: React.FunctionComponent<TouchspinProps> = ({
           onClick={evt => onPlus(evt, inputName)}
           {...plusBtnProps}
         >
-          <span className={css(styles.touchspinIcon)}>
+          <span className={css(styles.numberInputIcon)}>
             <PlusIcon aria-hidden="true" />
           </span>
         </Button>
       </div>
-      {unit && unitPosition === 'after' && touchspinUnit}
+      {unit && unitPosition === 'after' && numberInputUnit}
     </div>
   );
 };
-Touchspin.displayName = 'Touchspin';
+NumberInput.displayName = 'NumberInput';

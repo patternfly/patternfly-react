@@ -3,6 +3,7 @@
 exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 <SimpleList
   className=""
+  isControlled={true}
   onSelect={
     [MockFunction] {
       "calls": Array [
@@ -22,6 +23,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
             "component": "a",
             "componentClassName": "",
             "href": "",
+            "isActive": false,
             "isCurrent": false,
             "onClick": [Function],
             "type": "button",
@@ -46,6 +48,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
         component="a"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i1"
         onClick={[Function]}
@@ -69,6 +72,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
         component="a"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i2"
         onClick={[Function]}
@@ -92,6 +96,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
         component="a"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i3"
         onClick={[Function]}
@@ -118,6 +123,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 exports[`SimpleList onSelect is called when item is selected 1`] = `
 <SimpleList
   className=""
+  isControlled={true}
   onSelect={
     [MockFunction] {
       "calls": Array [
@@ -136,6 +142,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
             "component": "button",
             "componentClassName": "",
             "href": "",
+            "isActive": false,
             "isCurrent": false,
             "onClick": [Function],
             "type": "button",
@@ -160,6 +167,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i1"
         onClick={[Function]}
@@ -182,6 +190,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i2"
         onClick={[Function]}
@@ -204,6 +213,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i3"
         onClick={[Function]}
@@ -229,6 +239,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
 exports[`SimpleList renders anchor content 1`] = `
 <SimpleList
   className=""
+  isControlled={true}
 >
   <div
     className="pf-c-simple-list"
@@ -239,6 +250,7 @@ exports[`SimpleList renders anchor content 1`] = `
         component="a"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i1"
         onClick={[Function]}
@@ -262,6 +274,7 @@ exports[`SimpleList renders anchor content 1`] = `
         component="a"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i2"
         onClick={[Function]}
@@ -285,6 +298,7 @@ exports[`SimpleList renders anchor content 1`] = `
         component="a"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i3"
         onClick={[Function]}
@@ -311,6 +325,7 @@ exports[`SimpleList renders anchor content 1`] = `
 exports[`SimpleList renders content 1`] = `
 <SimpleList
   className=""
+  isControlled={true}
 >
   <div
     className="pf-c-simple-list"
@@ -321,6 +336,7 @@ exports[`SimpleList renders content 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i1"
         onClick={[Function]}
@@ -343,6 +359,7 @@ exports[`SimpleList renders content 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i2"
         onClick={[Function]}
@@ -365,6 +382,7 @@ exports[`SimpleList renders content 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i3"
         onClick={[Function]}
@@ -390,6 +408,7 @@ exports[`SimpleList renders content 1`] = `
 exports[`SimpleList renders grouped content 1`] = `
 <SimpleList
   className=""
+  isControlled={true}
 >
   <div
     className="pf-c-simple-list"
@@ -417,6 +436,7 @@ exports[`SimpleList renders grouped content 1`] = `
             component="button"
             componentClassName=""
             href=""
+            isActive={false}
             isCurrent={false}
             key="i1"
             onClick={[Function]}
@@ -439,6 +459,7 @@ exports[`SimpleList renders grouped content 1`] = `
             component="button"
             componentClassName=""
             href=""
+            isActive={false}
             isCurrent={false}
             key="i2"
             onClick={[Function]}
@@ -461,6 +482,7 @@ exports[`SimpleList renders grouped content 1`] = `
             component="button"
             componentClassName=""
             href=""
+            isActive={false}
             isCurrent={false}
             key="i3"
             onClick={[Function]}
@@ -508,6 +530,7 @@ exports[`SimpleListGroup renders content 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i1"
         onClick={[Function]}
@@ -530,6 +553,7 @@ exports[`SimpleListGroup renders content 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i2"
         onClick={[Function]}
@@ -552,6 +576,7 @@ exports[`SimpleListGroup renders content 1`] = `
         component="button"
         componentClassName=""
         href=""
+        isActive={false}
         isCurrent={false}
         key="i3"
         onClick={[Function]}
@@ -580,6 +605,7 @@ exports[`SimpleListItem renders anchor 1`] = `
   component="a"
   componentClassName=""
   href=""
+  isActive={false}
   isCurrent={false}
   onClick={[Function]}
   type="button"
@@ -605,6 +631,7 @@ exports[`SimpleListItem renders content 1`] = `
   component="button"
   componentClassName=""
   href=""
+  isActive={false}
   isCurrent={false}
   onClick={[Function]}
   type="button"

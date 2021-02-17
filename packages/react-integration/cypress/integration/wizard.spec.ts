@@ -5,9 +5,10 @@ describe('Wizard Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/wizard-demo-nav-link');
   });
 
-  it('Verify wizard in modal launches in a dialog', () => {
+  it('Verify wizard in modal launches in a dialog and has a custom width', () => {
     cy.get('#launchWiz').click();
     cy.get('#modalWizId.pf-c-wizard').should('exist');
+    cy.get('.pf-c-modal-box').should('have.attr', 'style', 'width: 710px;');
     cy.focused().click();
   });
 

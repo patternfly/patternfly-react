@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.8.0...@patternfly/react-styles@4.8.1) (2021-02-16)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.33...@patternfly/react-styles@4.8.0) (2021-02-12)
+
+
+### Features
+
+* **Slider:** Added touch support ([#5453](https://github.com/patternfly/patternfly-react/issues/5453)) ([32ce723](https://github.com/patternfly/patternfly-react/commit/32ce7238d8743f6d4a5f7b128b1293e855d012ca))
+
+
+
+
+
+## [4.7.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.32...@patternfly/react-styles@4.7.33) (2021-02-11)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.31...@patternfly/react-styles@4.7.32) (2021-02-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.30...@patternfly/react-styles@4.7.31) (2021-02-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.29...@patternfly/react-styles@4.7.30) (2021-02-03)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.28...@patternfly/react-styles@4.7.29) (2021-01-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.27...@patternfly/react-styles@4.7.28) (2021-01-25)
+
+
+### Bug Fixes
+
+* **drawer:** fix dragging problem on iframe when resizing drawer ([#5331](https://github.com/patternfly/patternfly-react/issues/5331)) ([746d43c](https://github.com/patternfly/patternfly-react/commit/746d43c3fee0600663489dfec6bcdde9076f9826))
+
+
+
+
+
+## [4.7.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.26...@patternfly/react-styles@4.7.27) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+## [4.7.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.25...@patternfly/react-styles@4.7.26) (2021-01-22)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.24...@patternfly/react-styles@4.7.25) (2021-01-19)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [4.7.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.23...@patternfly/react-styles@4.7.24) (2021-01-12)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 ## [4.7.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.7.22...@patternfly/react-styles@4.7.23) (2020-12-16)
 
 

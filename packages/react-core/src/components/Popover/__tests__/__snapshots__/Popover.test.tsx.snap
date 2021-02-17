@@ -32,11 +32,13 @@ exports[`popover can close from content (uncontrolled) 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "fallbackFocus": [Function],
           "returnFocusOnDeactivate": true,
         }
       }
       onMouseDown={[Function]}
       paused={false}
+      preventScrollOnDeactivate={true}
       role="dialog"
       style={
         Object {
@@ -137,11 +139,13 @@ exports[`popover can have a custom minimum width 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "fallbackFocus": [Function],
           "returnFocusOnDeactivate": true,
         }
       }
       onMouseDown={[Function]}
       paused={false}
+      preventScrollOnDeactivate={true}
       role="dialog"
       style={
         Object {
@@ -225,11 +229,13 @@ exports[`popover can specify position as object value 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "fallbackFocus": [Function],
           "returnFocusOnDeactivate": true,
         }
       }
       onMouseDown={[Function]}
       paused={false}
+      preventScrollOnDeactivate={true}
       role="dialog"
       style={
         Object {
@@ -313,11 +319,13 @@ exports[`popover renders close-button, header and body 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "fallbackFocus": [Function],
           "returnFocusOnDeactivate": true,
         }
       }
       onMouseDown={[Function]}
       paused={false}
+      preventScrollOnDeactivate={true}
       role="dialog"
       style={
         Object {

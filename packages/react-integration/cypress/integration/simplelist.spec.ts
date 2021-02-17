@@ -14,4 +14,13 @@ describe('Select Test', () => {
     cy.get('#simple-list-demo > ul > :nth-child(1) > button').should('not.have.class', 'pf-m-current');
     cy.get('#simple-list-demo > ul > :nth-child(2) > button').should('have.class', 'pf-m-current');
   });
+  it('Select second item (uncontrolled)', () => {
+    cy.get('#simple-list-demo-uncontrolled > ul > :nth-child(1) > button').should('have.class', 'pf-m-current');
+    cy.get('#simple-list-demo-uncontrolled > ul > :nth-child(2) > button').should('not.have.class', 'pf-m-current');
+
+    cy.get('#simple-list-demo-uncontrolled > ul > :nth-child(2) > button').click();
+
+    cy.get('#simple-list-demo-uncontrolled > ul > :nth-child(1) > button').should('not.have.class', 'pf-m-current');
+    cy.get('#simple-list-demo-uncontrolled > ul > :nth-child(2) > button').should('have.class', 'pf-m-current');
+  });
 });

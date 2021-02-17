@@ -2,6 +2,7 @@
 
 exports[`Progress measure location inside 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="inside-progress"
   isTitleTruncated={false}
@@ -27,7 +28,8 @@ exports[`Progress measure location inside 1`] = `
       parentId="inside-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "inside-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -51,7 +53,8 @@ exports[`Progress measure location inside 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "inside-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -61,7 +64,8 @@ exports[`Progress measure location inside 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="inside-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -91,6 +95,7 @@ exports[`Progress measure location inside 1`] = `
 
 exports[`Progress measure location inside and small should render large 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="large-progress"
   isTitleTruncated={false}
@@ -116,7 +121,8 @@ exports[`Progress measure location inside and small should render large 1`] = `
       parentId="large-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "large-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -140,7 +146,8 @@ exports[`Progress measure location inside and small should render large 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "large-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -150,7 +157,8 @@ exports[`Progress measure location inside and small should render large 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="large-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -180,6 +188,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
 
 exports[`Progress measure location none 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="none-progress"
   isTitleTruncated={false}
@@ -205,7 +214,8 @@ exports[`Progress measure location none 1`] = `
       parentId="none-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "none-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -229,7 +239,8 @@ exports[`Progress measure location none 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "none-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -239,7 +250,8 @@ exports[`Progress measure location none 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="none-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -267,6 +279,7 @@ exports[`Progress measure location none 1`] = `
 
 exports[`Progress measure location outside 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="outside-progress"
   isTitleTruncated={false}
@@ -292,7 +305,8 @@ exports[`Progress measure location outside 1`] = `
       parentId="outside-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "outside-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -322,7 +336,8 @@ exports[`Progress measure location outside 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "outside-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -332,7 +347,8 @@ exports[`Progress measure location outside 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="outside-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -360,6 +376,7 @@ exports[`Progress measure location outside 1`] = `
 
 exports[`Progress measure location top 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="top-progress"
   isTitleTruncated={false}
@@ -385,7 +402,8 @@ exports[`Progress measure location top 1`] = `
       parentId="top-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "top-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -415,7 +433,8 @@ exports[`Progress measure location top 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "top-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -425,7 +444,8 @@ exports[`Progress measure location top 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="top-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -453,6 +473,7 @@ exports[`Progress measure location top 1`] = `
 
 exports[`Progress size lg 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="lg-progress"
   isTitleTruncated={false}
@@ -478,7 +499,8 @@ exports[`Progress size lg 1`] = `
       parentId="lg-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "lg-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -508,7 +530,8 @@ exports[`Progress size lg 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "lg-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -518,7 +541,8 @@ exports[`Progress size lg 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="lg-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -546,6 +570,7 @@ exports[`Progress size lg 1`] = `
 
 exports[`Progress size md 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="md-progress"
   isTitleTruncated={false}
@@ -571,7 +596,8 @@ exports[`Progress size md 1`] = `
       parentId="md-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "md-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -601,7 +627,8 @@ exports[`Progress size md 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "md-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -611,7 +638,8 @@ exports[`Progress size md 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="md-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -639,6 +667,7 @@ exports[`Progress size md 1`] = `
 
 exports[`Progress size sm 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="sm-progress"
   isTitleTruncated={false}
@@ -664,7 +693,8 @@ exports[`Progress size sm 1`] = `
       parentId="sm-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "sm-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -694,7 +724,8 @@ exports[`Progress size sm 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "sm-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -704,7 +735,8 @@ exports[`Progress size sm 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="sm-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -732,6 +764,7 @@ exports[`Progress size sm 1`] = `
 
 exports[`Progress variant danger 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="danger-progress"
   isTitleTruncated={false}
@@ -757,7 +790,8 @@ exports[`Progress variant danger 1`] = `
       parentId="danger-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "danger-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -815,7 +849,8 @@ exports[`Progress variant danger 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "danger-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -825,7 +860,8 @@ exports[`Progress variant danger 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="danger-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -853,6 +889,7 @@ exports[`Progress variant danger 1`] = `
 
 exports[`Progress variant success 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="success-progress"
   isTitleTruncated={false}
@@ -878,7 +915,8 @@ exports[`Progress variant success 1`] = `
       parentId="success-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "success-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -936,7 +974,8 @@ exports[`Progress variant success 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "success-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -946,7 +985,8 @@ exports[`Progress variant success 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="success-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -974,6 +1014,7 @@ exports[`Progress variant success 1`] = `
 
 exports[`Progress variant warning 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="warning-progress"
   isTitleTruncated={false}
@@ -999,7 +1040,8 @@ exports[`Progress variant warning 1`] = `
       parentId="warning-progress"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "warning-progress-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -1057,7 +1099,8 @@ exports[`Progress variant warning 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "warning-progress-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -1067,7 +1110,8 @@ exports[`Progress variant warning 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="warning-progress-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -1095,6 +1139,7 @@ exports[`Progress variant warning 1`] = `
 
 exports[`Progress with aria-valuetext 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="progress-aria-valuetext"
   isTitleTruncated={false}
@@ -1120,7 +1165,8 @@ exports[`Progress with aria-valuetext 1`] = `
       parentId="progress-aria-valuetext"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "progress-aria-valuetext-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -1151,7 +1197,8 @@ exports[`Progress with aria-valuetext 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "progress-aria-valuetext-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -1162,7 +1209,8 @@ exports[`Progress with aria-valuetext 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="progress-aria-valuetext-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -1191,6 +1239,7 @@ exports[`Progress with aria-valuetext 1`] = `
 
 exports[`Simple progress 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="progress-simple-example"
   isTitleTruncated={false}
@@ -1216,7 +1265,8 @@ exports[`Simple progress 1`] = `
       parentId="progress-simple-example"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "progress-simple-example-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -1246,7 +1296,8 @@ exports[`Simple progress 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "progress-simple-example-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -1256,7 +1307,8 @@ exports[`Simple progress 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="progress-simple-example-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -1284,6 +1336,7 @@ exports[`Simple progress 1`] = `
 
 exports[`additional label 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="additional-label"
   isTitleTruncated={false}
@@ -1309,7 +1362,8 @@ exports[`additional label 1`] = `
       parentId="additional-label"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "additional-label-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 33,
@@ -1339,7 +1393,8 @@ exports[`additional label 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "additional-label-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 33,
@@ -1349,7 +1404,8 @@ exports[`additional label 1`] = `
         value={33}
       >
         <div
-          aria-labelledby="additional-label-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={33}
@@ -1377,6 +1433,7 @@ exports[`additional label 1`] = `
 
 exports[`no value specified 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="no-value"
   isTitleTruncated={false}
@@ -1402,7 +1459,8 @@ exports[`no value specified 1`] = `
       parentId="no-value"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "no-value-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 0,
           "aria-valuenow": 0,
@@ -1432,7 +1490,8 @@ exports[`no value specified 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "no-value-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 0,
             "aria-valuenow": 0,
@@ -1442,7 +1501,8 @@ exports[`no value specified 1`] = `
         value={0}
       >
         <div
-          aria-labelledby="no-value-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={0}
@@ -1470,6 +1530,7 @@ exports[`no value specified 1`] = `
 
 exports[`value higher than maxValue 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="higher-max-value"
   isTitleTruncated={false}
@@ -1495,7 +1556,8 @@ exports[`value higher than maxValue 1`] = `
       parentId="higher-max-value"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "higher-max-value-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 60,
           "aria-valuemin": 0,
           "aria-valuenow": 77,
@@ -1525,7 +1587,8 @@ exports[`value higher than maxValue 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "higher-max-value-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 60,
             "aria-valuemin": 0,
             "aria-valuenow": 77,
@@ -1535,7 +1598,8 @@ exports[`value higher than maxValue 1`] = `
         value={100}
       >
         <div
-          aria-labelledby="higher-max-value-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={60}
           aria-valuemin={0}
           aria-valuenow={77}
@@ -1563,6 +1627,7 @@ exports[`value higher than maxValue 1`] = `
 
 exports[`value lower than minValue 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="lower-min-value"
   isTitleTruncated={false}
@@ -1588,7 +1653,8 @@ exports[`value lower than minValue 1`] = `
       parentId="lower-min-value"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "lower-min-value-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 40,
           "aria-valuenow": 33,
@@ -1618,7 +1684,8 @@ exports[`value lower than minValue 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "lower-min-value-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 40,
             "aria-valuenow": 33,
@@ -1628,7 +1695,8 @@ exports[`value lower than minValue 1`] = `
         value={0}
       >
         <div
-          aria-labelledby="lower-min-value-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={40}
           aria-valuenow={33}
@@ -1656,6 +1724,7 @@ exports[`value lower than minValue 1`] = `
 
 exports[`value scaled between minValue and maxValue 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="scaled-range-value"
   isTitleTruncated={false}
@@ -1681,7 +1750,8 @@ exports[`value scaled between minValue and maxValue 1`] = `
       parentId="scaled-range-value"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "scaled-range-value-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 80,
           "aria-valuemin": 10,
           "aria-valuenow": 50,
@@ -1711,7 +1781,8 @@ exports[`value scaled between minValue and maxValue 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "scaled-range-value-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 80,
             "aria-valuemin": 10,
             "aria-valuenow": 50,
@@ -1721,7 +1792,8 @@ exports[`value scaled between minValue and maxValue 1`] = `
         value={57}
       >
         <div
-          aria-labelledby="scaled-range-value-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={80}
           aria-valuemin={10}
           aria-valuenow={50}
@@ -1749,6 +1821,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
 
 exports[`value scaled with maxValue 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="scaled-max-value"
   isTitleTruncated={false}
@@ -1774,7 +1847,8 @@ exports[`value scaled with maxValue 1`] = `
       parentId="scaled-max-value"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "scaled-max-value-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 80,
           "aria-valuemin": 0,
           "aria-valuenow": 50,
@@ -1804,7 +1878,8 @@ exports[`value scaled with maxValue 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "scaled-max-value-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 80,
             "aria-valuemin": 0,
             "aria-valuenow": 50,
@@ -1814,7 +1889,8 @@ exports[`value scaled with maxValue 1`] = `
         value={62}
       >
         <div
-          aria-labelledby="scaled-max-value-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={80}
           aria-valuemin={0}
           aria-valuenow={50}
@@ -1842,6 +1918,7 @@ exports[`value scaled with maxValue 1`] = `
 
 exports[`value scaled with minValue 1`] = `
 <Progress
+  aria-label={null}
   className=""
   id="scaled-min-value"
   isTitleTruncated={false}
@@ -1867,7 +1944,8 @@ exports[`value scaled with minValue 1`] = `
       parentId="scaled-min-value"
       progressBarAriaProps={
         Object {
-          "aria-labelledby": "scaled-min-value-description",
+          "aria-label": null,
+          "aria-labelledby": null,
           "aria-valuemax": 100,
           "aria-valuemin": 10,
           "aria-valuenow": 50,
@@ -1897,7 +1975,8 @@ exports[`value scaled with minValue 1`] = `
       <ProgressBar
         progressBarAriaProps={
           Object {
-            "aria-labelledby": "scaled-min-value-description",
+            "aria-label": null,
+            "aria-labelledby": null,
             "aria-valuemax": 100,
             "aria-valuemin": 10,
             "aria-valuenow": 50,
@@ -1907,7 +1986,8 @@ exports[`value scaled with minValue 1`] = `
         value={44}
       >
         <div
-          aria-labelledby="scaled-min-value-description"
+          aria-label={null}
+          aria-labelledby={null}
           aria-valuemax={100}
           aria-valuemin={10}
           aria-valuenow={50}

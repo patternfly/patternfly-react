@@ -1610,14 +1610,6 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         isOpen: false
       });
     };
-
-    this.customFilter = e => {
-      console.log(e);
-      const input = e.target.value.toString();
-      let typeaheadFilteredChildren =
-        input !== '' ? this.options.filter(option => option.props.value.compareTo(input)) : this.options;
-      return typeaheadFilteredChildren;
-    };
   }
 
   render() {

@@ -189,7 +189,9 @@ exports[`Alert - danger Action Link 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -284,7 +286,9 @@ exports[`Alert - danger Action and Title 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -380,7 +384,9 @@ exports[`Alert - danger Custom aria label 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -929,7 +935,9 @@ exports[`Alert - default Action Link 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -1024,7 +1032,9 @@ exports[`Alert - default Action and Title 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -1120,7 +1130,9 @@ exports[`Alert - default Custom aria label 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -1669,7 +1681,9 @@ exports[`Alert - info Action Link 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -1764,7 +1778,9 @@ exports[`Alert - info Action and Title 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -1860,7 +1876,9 @@ exports[`Alert - info Custom aria label 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -2409,7 +2427,9 @@ exports[`Alert - success Action Link 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -2504,7 +2524,9 @@ exports[`Alert - success Action and Title 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -2600,7 +2622,9 @@ exports[`Alert - success Custom aria label 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -3149,7 +3173,9 @@ exports[`Alert - warning Action Link 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -3244,7 +3270,9 @@ exports[`Alert - warning Action and Title 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}
@@ -3340,7 +3368,9 @@ exports[`Alert - warning Custom aria label 1`] = `
     <div
       className="pf-c-alert__action-group"
     >
-      <AlertActionLink>
+      <AlertActionLink
+        key="action-1"
+      >
         <Button
           className=""
           isInline={true}

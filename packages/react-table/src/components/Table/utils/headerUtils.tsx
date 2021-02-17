@@ -1,17 +1,13 @@
+import { scopeColTransformer, emptyCol, mapProps, emptyTD, parentId } from './transformers';
 import {
-  scopeColTransformer,
   selectable,
   cellActions,
-  emptyCol,
-  mapProps,
   collapsible,
-  emptyTD,
   expandedRow,
-  parentId,
   editable,
   favoritable,
   sortableFavorites
-} from './transformers';
+} from './decorators';
 import { defaultTitle } from './formatters';
 import {
   ICell,
@@ -95,11 +91,12 @@ const generateCell = (
  */
 const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   const title = (column.hasOwnProperty('title') ? column.title : column) as string | ICell;
-  const dataLabel = (column.hasOwnProperty('dataLabel')
-    ? column.dataLabel
-    : typeof title === 'string'
-    ? title
-    : `column-${key}`) as string | ICell;
+  let dataLabel: string | ICell = `column-${key}`;
+  if (column.hasOwnProperty('dataLabel')) {
+    dataLabel = column.dataLabel;
+  } else if (typeof title === 'string') {
+    dataLabel = title;
+  }
   return {
     property:
       (typeof title === 'string' &&

@@ -32,11 +32,13 @@ exports[`Popover should match snapshot (auto-generated) 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "fallbackFocus": [Function],
           "returnFocusOnDeactivate": true,
         }
       }
       onMouseDown={[Function]}
       paused={false}
+      preventScrollOnDeactivate={true}
       role="dialog"
       style={
         Object {

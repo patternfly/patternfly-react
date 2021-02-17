@@ -10,7 +10,7 @@ section: components
 Intended to be used as a filter. After selecting a start date the next day is automatically selected.
 
 ```js
-import { Split, SplitItem, DatePicker, isValidDate } from '@patternfly/react-core';
+import { Split, SplitItem, DatePicker, isValidDate, yyyyMMddFormat } from '@patternfly/react-core';
 
 DateRangePicker = () => {
   const [from, setFrom] = React.useState();
@@ -21,7 +21,7 @@ DateRangePicker = () => {
     setFrom(new Date(date));
     if (isValidDate(date)) {
       date.setDate(date.getDate() + 1);
-      setTo(date.toISOString().substring(0, 10));
+      setTo(yyyyMMddFormat(date));
     }
     else {
       setTo('');

@@ -58,9 +58,7 @@ exports[`tooltip renders 1`] = `
     }
   }
   trigger={
-    <div
-      aria-describedby="pf-tooltip-1"
-    >
+    <div>
       Toggle tooltip
     </div>
   }

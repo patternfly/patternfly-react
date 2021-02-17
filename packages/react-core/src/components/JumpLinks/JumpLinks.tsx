@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
+import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
+import { JumpLinksList } from './JumpLinksList';
+import { formatBreakpointMods } from '../../helpers/util';
+import { Button } from '../Button';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import cssToggleDisplayVar from '@patternfly/react-tokens/dist/js/c_jump_links__toggle_Display';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -10,6 +16,8 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   isVertical?: boolean;
   /** Label to add to nav element. */
   label?: React.ReactNode;
+  /** Flag to always show the label when using `expandable` */
+  alwaysShowLabel?: boolean;
   /** Aria-label to add to nav element. Defaults to label. */
   'aria-label'?: string;
   /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
@@ -20,26 +28,54 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
   children?: React.ReactNode;
   /** Offset to add to `scrollPosition`, potentially for a masthead which content scrolls under. */
   offset?: number;
+  /** When to collapse/expand at different breakpoints */
+  expandable?: {
+    default?: 'expandable' | 'nonExpandable';
+    sm?: 'expandable' | 'nonExpandable';
+    md?: 'expandable' | 'nonExpandable';
+    lg?: 'expandable' | 'nonExpandable';
+    xl?: 'expandable' | 'nonExpandable';
+    '2xl'?: 'expandable' | 'nonExpandable';
+  };
+  /** On mobile whether or not the JumpLinks starts out expanded */
+  isExpanded?: boolean;
+  /** Aria label for expandable toggle */
+  toggleAriaLabel?: string;
 }
 
-const getScrollItems = (children: React.ReactNode, hasScrollSpy: boolean) =>
-  React.Children.toArray(children).map((child: any) => {
-    if (hasScrollSpy && typeof document !== 'undefined' && child.type === JumpLinksItem) {
+// Recursively find JumpLinkItems and return an array of all their scrollNodes
+const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
+  React.Children.forEach(children, (child: any) => {
+    if (typeof document !== 'undefined' && child.type === JumpLinksItem) {
       const scrollNode = child.props.node || child.props.href;
       if (typeof scrollNode === 'string') {
         if (scrollNode.startsWith('#')) {
-          // Allow spaces and other special characters as `id`s
+          // Allow spaces and other special characters as `id`s to be nicer to consumers
           // https://stackoverflow.com/questions/70579/what-are-valid-values-for-the-id-attribute-in-html
-          return document.getElementById(scrollNode.substr(1)) as HTMLElement;
+          res.push(document.getElementById(scrollNode.substr(1)) as HTMLElement);
+        } else {
+          res.push(document.querySelector(scrollNode) as HTMLElement);
         }
-        return document.querySelector(scrollNode) as HTMLElement;
       } else if (scrollNode instanceof HTMLElement) {
-        return scrollNode;
+        res.push(scrollNode);
       }
     }
-
-    return null;
+    if ([React.Fragment, JumpLinksList, JumpLinksItem].includes(child.type)) {
+      getScrollItems(child.props.children, res);
+    }
   });
+  return res;
+};
+
+function isResponsive(jumpLinks: HTMLElement) {
+  // https://github.com/patternfly/patternfly/blob/master/src/patternfly/components/JumpLinks/jump-links.scss#L103
+  return (
+    jumpLinks &&
+    getComputedStyle(jumpLinks)
+      .getPropertyValue(cssToggleDisplayVar.name)
+      .includes('block')
+  );
+}
 
 export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   isCentered,
@@ -50,11 +86,20 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   scrollableSelector,
   activeIndex: activeIndexProp = 0,
   offset = 0,
+  expandable,
+  isExpanded: isExpandedProp = false,
+  alwaysShowLabel = true,
+  toggleAriaLabel = 'Toggle jump links',
   ...props
 }: JumpLinksProps) => {
   const hasScrollSpy = Boolean(scrollableSelector);
-  const [scrollItems, setScrollItems] = React.useState(getScrollItems(children, hasScrollSpy));
+  const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
+  const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
+  // Allow expanding to be controlled for a niche use case
+  React.useEffect(() => setIsExpanded(isExpandedProp), [isExpandedProp]);
+  const navRef = React.useRef<HTMLElement>();
+
   if (hasScrollSpy) {
     React.useEffect(() => {
       if (typeof window === 'undefined') {
@@ -66,12 +111,12 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       }
 
       function scrollSpy() {
-        const scrollPosition = scrollableElement.scrollTop + offset;
+        const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
         window.requestAnimationFrame(() => {
           let newScrollItems = scrollItems;
           // Items might have rendered after this component. Do a quick refresh.
           if (!newScrollItems[0]) {
-            newScrollItems = getScrollItems(children, hasScrollSpy);
+            newScrollItems = getScrollItems(children, []);
             setScrollItems(newScrollItems);
           }
           const scrollElements = newScrollItems
@@ -97,44 +142,99 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
     }, [scrollItems, hasScrollSpy]);
   }
 
+  let jumpLinkIndex = 0;
+  const cloneChildren = (children: React.ReactNode): React.ReactNode =>
+    !hasScrollSpy
+      ? children
+      : React.Children.map(children, (child: any) => {
+          if (child.type === JumpLinksItem) {
+            const { onClick: onClickProp, isActive: isActiveProp } = child.props;
+            const itemIndex = jumpLinkIndex++;
+            const scrollItem = scrollItems[itemIndex];
+            return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
+              onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
+                // Items might have rendered after this component. Do a quick refresh.
+                let newScrollItems;
+                if (!scrollItem) {
+                  newScrollItems = getScrollItems(children, []);
+                  setScrollItems(newScrollItems);
+                }
+                const newScrollItem = scrollItem || newScrollItems[itemIndex];
+
+                if (newScrollItem) {
+                  // we have to support scrolling to an offset due to sticky sidebar
+                  const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+                  if (scrollableElement instanceof HTMLElement) {
+                    if (isResponsive(navRef.current)) {
+                      // Remove class immediately so we can get collapsed height
+                      if (navRef.current) {
+                        navRef.current.classList.remove(styles.modifiers.expanded);
+                      }
+                      let stickyParent = navRef.current && navRef.current.parentElement;
+                      while (stickyParent && !stickyParent.classList.contains(sidebarStyles.modifiers.sticky)) {
+                        stickyParent = stickyParent.parentElement;
+                      }
+                      setIsExpanded(false);
+                      if (stickyParent) {
+                        offset += stickyParent.scrollHeight;
+                      }
+                    }
+                    scrollableElement.scrollTo(0, newScrollItem.offsetTop - offset);
+                  }
+                  newScrollItem.focus();
+                  ev.preventDefault();
+                }
+                if (onClickProp) {
+                  onClickProp(ev);
+                }
+              },
+              isActive: isActiveProp || activeIndex === itemIndex,
+              children: cloneChildren(child.props.children)
+            });
+          } else if (child.type === React.Fragment) {
+            return cloneChildren(child.props.children);
+          } else if (child.type === JumpLinksList) {
+            return React.cloneElement(child, { children: cloneChildren(child.props.children) });
+          }
+          return child;
+        });
+
   return (
     <nav
-      className={css(styles.jumpLinks, isCentered && styles.modifiers.center, isVertical && styles.modifiers.vertical)}
+      className={css(
+        styles.jumpLinks,
+        isCentered && styles.modifiers.center,
+        isVertical && styles.modifiers.vertical,
+        formatBreakpointMods(expandable, styles),
+        isExpanded && styles.modifiers.expanded
+      )}
       aria-label={ariaLabel}
+      ref={navRef}
       {...props}
     >
       <div className={styles.jumpLinksMain}>
-        {label && <div className={styles.jumpLinksLabel}>{label}</div>}
-        <ul className={styles.jumpLinksList}>
-          {React.Children.map(children, (child: any, i: number) => {
-            if (hasScrollSpy && child.type === JumpLinksItem) {
-              const { onClick: onClickProp, isActive: isActiveProp } = child.props;
-              const scrollItem = scrollItems[i];
-              return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
-                onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
-                  // Items might have rendered after this component. Do a quick refresh.
-                  let newScrollItems;
-                  if (!scrollItem) {
-                    newScrollItems = getScrollItems(children, hasScrollSpy);
-                    setScrollItems(newScrollItems);
-                  }
-                  const newScrollItem = scrollItem || newScrollItems[i];
-
-                  if (newScrollItem) {
-                    newScrollItem.scrollIntoView();
-                    newScrollItem.focus();
-                    ev.preventDefault();
-                  }
-                  if (onClickProp) {
-                    onClickProp(ev);
-                  }
-                },
-                isActive: isActiveProp || activeIndex === i
-              });
-            }
-            return child;
-          })}
-        </ul>
+        <div className={styles.jumpLinksHeader}>
+          {expandable && (
+            <div className={styles.jumpLinksToggle}>
+              <Button
+                variant="plain"
+                onClick={() => setIsExpanded(!isExpanded)}
+                aria-label={toggleAriaLabel}
+                aria-expanded={isExpanded}
+              >
+                <span className={styles.jumpLinksToggleIcon}>
+                  <AngleRightIcon />
+                </span>
+              </Button>
+            </div>
+          )}
+          {label && (
+            <div className={css(styles.jumpLinksLabel, expandable && !alwaysShowLabel && styles.modifiers.toggle)}>
+              {label}
+            </div>
+          )}
+        </div>
+        <ul className={styles.jumpLinksList}>{cloneChildren(children)}</ul>
       </div>
     </nav>
   );

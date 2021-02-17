@@ -39,12 +39,20 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   icon = <BellIcon />,
   className,
   ...props
-}: NotificationBadgeProps) => (
-  <Button variant={ButtonVariant.plain} className={className} {...props}>
-    <span className={css(styles.notificationBadge, styles.modifiers[variant])}>
-      {children !== undefined ? children : variant === NotificationBadgeVariant.attention ? attentionIcon : icon}
-      {count > 0 && <span className={css(styles.notificationBadgeCount)}>{count}</span>}
-    </span>
-  </Button>
-);
+}: NotificationBadgeProps) => {
+  let notificationChild = icon;
+  if (children !== undefined) {
+    notificationChild = children;
+  } else if (variant === NotificationBadgeVariant.attention) {
+    notificationChild = attentionIcon;
+  }
+  return (
+    <Button variant={ButtonVariant.plain} className={className} {...props}>
+      <span className={css(styles.notificationBadge, styles.modifiers[variant])}>
+        {notificationChild}
+        {count > 0 && <span className={css(styles.notificationBadgeCount)}>{count}</span>}
+      </span>
+    </Button>
+  );
+};
 NotificationBadge.displayName = 'NotificationBadge';

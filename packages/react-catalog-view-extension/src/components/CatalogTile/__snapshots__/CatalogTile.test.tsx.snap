@@ -219,7 +219,6 @@ exports[`CatalogTile renders properly 1`] = `
                           }
                           trigger={
                             <span
-                              aria-describedby="certified"
                               className="catalog-tile-pf-badge"
                             >
                               <CogIcon
@@ -240,7 +239,6 @@ exports[`CatalogTile renders properly 1`] = `
                             onFoundRef={[Function]}
                           >
                             <span
-                              aria-describedby="certified"
                               className="catalog-tile-pf-badge"
                             >
                               <CogIcon
@@ -500,7 +498,6 @@ exports[`CatalogTile renders properly 1`] = `
                           }
                           trigger={
                             <span
-                              aria-describedby="certified"
                               className="catalog-tile-pf-badge"
                             >
                               <CogIcon
@@ -521,7 +518,6 @@ exports[`CatalogTile renders properly 1`] = `
                             onFoundRef={[Function]}
                           >
                             <span
-                              aria-describedby="certified"
                               className="catalog-tile-pf-badge"
                             >
                               <CogIcon
@@ -627,7 +623,6 @@ exports[`CatalogTile renders properly 1`] = `
                           }
                           trigger={
                             <span
-                              aria-describedby="approved"
                               className="catalog-tile-pf-badge"
                             >
                               <OutlinedCheckCircleIcon
@@ -648,7 +643,6 @@ exports[`CatalogTile renders properly 1`] = `
                             onFoundRef={[Function]}
                           >
                             <span
-                              aria-describedby="approved"
                               className="catalog-tile-pf-badge"
                             >
                               <OutlinedCheckCircleIcon
@@ -857,7 +851,6 @@ exports[`CatalogTile renders properly 1`] = `
                           }
                           trigger={
                             <span
-                              aria-describedby="approved"
                               className="catalog-tile-pf-badge"
                             >
                               <OutlinedCheckCircleIcon
@@ -878,7 +871,6 @@ exports[`CatalogTile renders properly 1`] = `
                             onFoundRef={[Function]}
                           >
                             <span
-                              aria-describedby="approved"
                               className="catalog-tile-pf-badge"
                             >
                               <OutlinedCheckCircleIcon
@@ -1093,7 +1085,6 @@ exports[`CatalogTile renders properly 1`] = `
                           }
                           trigger={
                             <span
-                              aria-describedby="certified"
                               className="catalog-tile-pf-badge"
                             >
                               <CogIcon
@@ -1114,7 +1105,6 @@ exports[`CatalogTile renders properly 1`] = `
                             onFoundRef={[Function]}
                           >
                             <span
-                              aria-describedby="certified"
                               className="catalog-tile-pf-badge"
                             >
                               <CogIcon

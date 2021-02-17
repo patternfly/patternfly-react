@@ -88,3 +88,14 @@ describe('Progress measure location', () => {
     expect(view).toMatchSnapshot();
   });
 });
+
+test('progress component generates console warning when no accessible name is provided', () => {
+  const consoleWarnMock = jest.fn();
+  global.console = { warn: consoleWarnMock } as any;
+  mount(
+    <Progress
+      value={33}
+    />
+  );
+  expect(consoleWarnMock).toBeCalled();
+});

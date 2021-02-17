@@ -38,6 +38,9 @@ describe('Nav Test', () => {
       expect(expandableGroup.attr('aria-expanded')).to.be.equal('true');
     });
 
+    // button props get spread
+    cy.get('#grp-2.pf-c-nav__link').should('have.attr', 'aria-label', 'group 2');
+
     // Verify close and open of group 1
     cy.get('#grp-1').then((group1Link: JQuery<HTMLAnchorElement>) => {
       cy.wrap(group1Link).click();

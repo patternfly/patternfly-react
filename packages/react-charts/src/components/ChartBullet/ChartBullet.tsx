@@ -752,17 +752,21 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
     // Adjust for padding
     if (legendPosition === ChartLegendPosition.bottom) {
-      dy = horizontal
-        ? defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25
-        : title
-        ? -defaultPadding.bottom + 60
-        : -defaultPadding.bottom;
+      if (horizontal) {
+        dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
+      } else if (title) {
+        dy = -defaultPadding.bottom + 60;
+      } else {
+        dy = -defaultPadding.bottom;
+      }
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {
-      dy = horizontal
-        ? defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25
-        : title
-        ? -defaultPadding.bottom + 60
-        : -defaultPadding.bottom;
+      if (horizontal) {
+        dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25;
+      } else if (title) {
+        dy = -defaultPadding.bottom + 60;
+      } else {
+        dy = -defaultPadding.bottom;
+      }
       dx = -10;
     }
     return getComputedLegend({
@@ -782,12 +786,19 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Returns comparative zero measure
   const getComparativeZeroMeasure = () => {
     const _domain: any = domain;
-    const low = Array.isArray(_domain) ? _domain[0] : _domain.y && Array.isArray(_domain.y) ? _domain.y[0] : 0;
-    const high = Array.isArray(_domain)
-      ? _domain[_domain.length - 1]
-      : _domain.y && Array.isArray(_domain.y)
-      ? _domain.y[_domain.y.length - 1]
-      : 0;
+    let low = 0;
+    if (Array.isArray(_domain)) {
+      low = _domain[0];
+    } else if (_domain.y && Array.isArray(_domain.y)) {
+      low = _domain.y[0];
+    }
+
+    let high = 0;
+    if (Array.isArray(_domain)) {
+      high = _domain[_domain.length - 1];
+    } else if (_domain.y && Array.isArray(_domain.y)) {
+      high = _domain.y[_domain.y.length - 1];
+    }
 
     if (low < 0 && high > 0) {
       return comparativeZeroMeasure;

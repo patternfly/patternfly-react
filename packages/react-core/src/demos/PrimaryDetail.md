@@ -1777,19 +1777,27 @@ class PrimaryDetailSimpleListInCard extends React.Component {
       drawerPanelBodyContent: 1,
       activeItem: 0,
       isKebabDropdownOpen: false,
-      isDropdownOpen: false
+      isDropdownOpen: false,
+      isExpanded: false
     };
 
     this.onSelectListItem = (listItem, listItemProps) => {
       const id = listItemProps.id;
       this.setState({
-        drawerPanelBodyContent: id.charAt(id.length - 1)
+        drawerPanelBodyContent: id.charAt(id.length - 1),
+        isExpanded: true
       });
     };
+
+    this.onClose = () => {
+      this.setState({
+        isExpanded: false
+      })
+    }
   }
 
   render() {
-    const { drawerPanelBodyContent, selectedListItemId, activeItem } = this.state;
+    const { drawerPanelBodyContent, selectedListItemId, activeItem, isExpanded } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -1842,8 +1850,11 @@ class PrimaryDetailSimpleListInCard extends React.Component {
       <DrawerPanelContent widthOnXl={75}>
         <DrawerHead>
           <Title headingLevel="h2" size="xl">
-            List item {drawerPanelBodyContent} details
+            {`List item ${drawerPanelBodyContent} details`}
           </Title>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onClose} />
+          </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
@@ -1925,7 +1936,7 @@ class PrimaryDetailSimpleListInCard extends React.Component {
           <Divider component="div" />
           <PageSection>
             <Card>
-              <Drawer isStatic>
+              <Drawer isStatic isExpanded={isExpanded}>
                 <DrawerContent panelContent={panelContent}>
                   <DrawerContentBody>{drawerContent}</DrawerContentBody>
                 </DrawerContent>
@@ -2010,7 +2021,8 @@ class PrimaryDetailDataListInCard extends React.Component {
       activeItem: 0,
       isKebabDropdownOpen: false,
       isDropdownOpen: false,
-      selectedDataListItemId: 'dataListItem1'
+      selectedDataListItemId: 'dataListItem1',
+      isExpanded: false
     };
 
     this.onDropdownToggle = isOpen => {
@@ -2028,13 +2040,18 @@ class PrimaryDetailDataListInCard extends React.Component {
       const element = document.getElementById('toggle-id');
       element.focus();
     };
-
     this.onSelectDataListItem = id => {
       this.setState({
         selectedDataListItemId: id,
-        drawerPanelBodyContent: id.charAt(id.length - 1)
+        drawerPanelBodyContent: id.charAt(id.length - 1),
+        isExpanded: true
       });
     };
+    this.onClose = () => {
+      this.setState({
+        isExpanded: false
+      })
+    }
   }
 
   render() {
@@ -2043,7 +2060,8 @@ class PrimaryDetailDataListInCard extends React.Component {
       selectedListItemId,
       activeItem,
       isDropdownOpen,
-      selectedDataListItemId
+      selectedDataListItemId,
+      isExpanded
     } = this.state;
 
     const PageNav = (
@@ -2099,6 +2117,9 @@ class PrimaryDetailDataListInCard extends React.Component {
           <Title size="lg" headingLevel="h2">
             Patternfly-elements
           </Title>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onClose} />
+          </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
@@ -2238,7 +2259,7 @@ class PrimaryDetailDataListInCard extends React.Component {
           <Divider component="div" />
           <PageSection>
             <Card>
-              <Drawer isStatic>
+              <Drawer isStatic isExpanded={isExpanded}>
                 <DrawerContent panelContent={panelContent}>
                   <DrawerContentBody>{drawerContent}</DrawerContentBody>
                 </DrawerContent>

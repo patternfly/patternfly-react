@@ -19,6 +19,14 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   theme?: 'dark' | 'light';
 }
 
+export interface PageSidebarContextProps {
+  isNavOpen: boolean;
+}
+
+export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>({
+  isNavOpen: true
+});
+
 export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   className = '',
   nav,
@@ -40,9 +48,12 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
             !navOpen && styles.modifiers.collapsed,
             className
           )}
+          aria-hidden={!navOpen}
           {...props}
         >
-          <div className={css(styles.pageSidebarBody)}>{nav}</div>
+          <div className={css(styles.pageSidebarBody)}>
+            <PageSidebarContext.Provider value={{ isNavOpen: navOpen }}>{nav}</PageSidebarContext.Provider>
+          </div>
         </div>
       );
     }}

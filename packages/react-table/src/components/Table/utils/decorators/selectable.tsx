@@ -51,8 +51,12 @@ export const selectable: ITransform = (
         className: checkStyles.checkInput
       })
   };
-  const selectName =
-    rowId !== -1 ? (selectVariant === RowSelectVariant.checkbox ? `checkrow${rowIndex}` : 'radioGroup') : 'check-all';
+  let selectName = 'check-all';
+  if (rowId !== -1 && selectVariant === RowSelectVariant.checkbox) {
+    selectName = `checkrow${rowIndex}`;
+  } else if (rowId !== -1) {
+    selectName = 'radioGroup';
+  }
 
   return {
     className: css(styles.tableCheck),

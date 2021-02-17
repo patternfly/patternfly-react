@@ -3,6 +3,84 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.10.0...@patternfly/react-tokens@4.10.1) (2021-02-16)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+# [4.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.29...@patternfly/react-tokens@4.10.0) (2021-02-12)
+
+
+### Features
+
+* **Slider:** Added touch support ([#5453](https://github.com/patternfly/patternfly-react/issues/5453)) ([32ce723](https://github.com/patternfly/patternfly-react/commit/32ce7238d8743f6d4a5f7b128b1293e855d012ca))
+
+
+
+
+
+## [4.9.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.28...@patternfly/react-tokens@4.9.29) (2021-02-10)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.9.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.27...@patternfly/react-tokens@4.9.28) (2021-02-08)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.9.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.26...@patternfly/react-tokens@4.9.27) (2021-02-03)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.9.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.25...@patternfly/react-tokens@4.9.26) (2021-01-27)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.9.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.24...@patternfly/react-tokens@4.9.25) (2021-01-22)
+
+
+### Bug Fixes
+
+* **Drawer:** initial width doesn't respect min/max widths ([#5313](https://github.com/patternfly/patternfly-react/issues/5313)) ([4f199c4](https://github.com/patternfly/patternfly-react/commit/4f199c4db5c3cb493d2947d871f687cc5527517c))
+
+
+
+
+
+## [4.9.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.23...@patternfly/react-tokens@4.9.24) (2021-01-22)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.9.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.22...@patternfly/react-tokens@4.9.23) (2021-01-19)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## [4.9.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.9.21...@patternfly/react-tokens@4.9.22) (2020-12-10)
 
 **Note:** Version bump only for package @patternfly/react-tokens

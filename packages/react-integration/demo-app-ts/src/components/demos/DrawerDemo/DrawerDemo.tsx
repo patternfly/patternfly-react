@@ -18,12 +18,10 @@ export interface DrawerDemoState {
 
 export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   static displayName = 'DrawerDemo';
-  constructor(props: DrawerProps) {
-    super(props);
-    this.state = {
-      isExpanded: false
-    };
-  }
+  state = {
+    isExpanded: false
+  };
+
   drawerRef = React.createRef<HTMLButtonElement>();
 
   onExpand = () => {
@@ -53,8 +51,6 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           xl: 'width_33',
           '2xl': 'width_25'
         }}
-        isResizable
-        increment={50}
       >
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>

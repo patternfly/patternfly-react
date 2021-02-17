@@ -31,7 +31,7 @@ export class ChipGroupDefaultIsOpenDemo extends Component<{}, BadgeChipState> {
           count: 3
         },
         {
-          name: 'grapfruit',
+          name: 'grapefruit',
           isRead: true,
           count: 1
         }

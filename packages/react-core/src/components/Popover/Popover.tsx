@@ -334,7 +334,22 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const content = (
     <FocusTrap
       active={focusTrapActive}
-      focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}
+      focusTrapOptions={{
+        returnFocusOnDeactivate: true,
+        clickOutsideDeactivates: true,
+        fallbackFocus: () => {
+          // If the popover's trigger is focused but scrolled out of view,
+          // FocusTrap will throw an error when the Enter button is used on the trigger.
+          // That is because the Popover is hidden when its trigger is out of view.
+          // Provide a fallback in that case.
+          let node = null;
+          if (document && document.activeElement) {
+            node = document.activeElement as HTMLElement;
+          }
+          return node;
+        }
+      }}
+      preventScrollOnDeactivate
       className={css(
         styles.popover,
         hasNoPadding && styles.modifiers.noPadding,

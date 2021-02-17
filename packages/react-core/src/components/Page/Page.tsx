@@ -212,25 +212,27 @@ export class Page extends React.Component<PageProps, PageState> {
       isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
     };
 
-    const nav = tertiaryNav ? (
-      isTertiaryNavWidthLimited ? (
+    let nav = null;
+    if (tertiaryNav && isTertiaryNavWidthLimited) {
+      nav = (
         <div className={css(styles.pageMainNav, styles.modifiers.limitWidth)}>
           <div className={css(styles.pageMainBody)}>{tertiaryNav}</div>
         </div>
-      ) : (
-        <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>
-      )
-    ) : null;
+      );
+    } else if (tertiaryNav) {
+      nav = <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>;
+    }
 
-    const crumb = breadcrumb ? (
-      isBreadcrumbWidthLimited ? (
+    let crumb = null;
+    if (breadcrumb && isBreadcrumbWidthLimited) {
+      crumb = (
         <section className={css(styles.pageMainBreadcrumb, styles.modifiers.limitWidth)}>
           <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
         </section>
-      ) : (
-        <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>
-      )
-    ) : null;
+      );
+    } else if (breadcrumb) {
+      crumb = <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>;
+    }
 
     const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 

@@ -43,6 +43,15 @@ const DefaultNode: React.FC<NodeProps> = ({
   const refs = useCombineRefs<SVGEllipseElement>(dragNodeRef, dndDragRef, dndDropRef);
   const { width, height } = element.getDimensions();
 
+  let fill = 'grey';
+  if (canDrop && hover) {
+    fill = 'lightgreen';
+  } else if (canDrop && droppable) {
+    fill = 'lightblue';
+  } else if (selected) {
+    fill = 'blue';
+  }
+
   return (
     <ellipse
       onMouseEnter={onShowCreateConnector}
@@ -54,7 +63,7 @@ const DefaultNode: React.FC<NodeProps> = ({
       cy={height / 2}
       rx={Math.max(0, width / 2 - 1)}
       ry={Math.max(0, height / 2 - 1)}
-      fill={canDrop && hover ? 'lightgreen' : canDrop && droppable ? 'lightblue' : selected ? 'blue' : 'grey'}
+      fill={fill}
       strokeWidth={1}
       stroke="#333333"
     />

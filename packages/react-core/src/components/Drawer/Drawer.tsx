@@ -24,16 +24,18 @@ export interface DrawerContextProps {
   isStatic: boolean;
   onExpand?: () => void;
   position?: string;
+  drawerRef?: React.RefObject<HTMLDivElement>;
 }
 
 export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isExpanded: false,
   isStatic: false,
   onExpand: () => {},
-  position: 'right'
+  position: 'right',
+  drawerRef: null
 });
 
-export const Drawer: React.SFC<DrawerProps> = ({
+export const Drawer: React.FunctionComponent<DrawerProps> = ({
   className = '',
   children,
   isExpanded = false,
@@ -42,22 +44,26 @@ export const Drawer: React.SFC<DrawerProps> = ({
   position = 'right',
   onExpand = () => {},
   ...props
-}: DrawerProps) => (
-  <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position }}>
-    <div
-      className={css(
-        styles.drawer,
-        isExpanded && styles.modifiers.expanded,
-        isInline && styles.modifiers.inline,
-        isStatic && styles.modifiers.static,
-        position === 'left' && styles.modifiers.panelLeft,
-        position === 'bottom' && styles.modifiers.panelBottom,
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  </DrawerContext.Provider>
-);
+}: DrawerProps) => {
+  const drawerRef = React.useRef<HTMLDivElement>();
+  return (
+    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef }}>
+      <div
+        className={css(
+          styles.drawer,
+          isExpanded && styles.modifiers.expanded,
+          isInline && styles.modifiers.inline,
+          isStatic && styles.modifiers.static,
+          position === 'left' && styles.modifiers.panelLeft,
+          position === 'bottom' && styles.modifiers.panelBottom,
+          className
+        )}
+        ref={drawerRef}
+        {...props}
+      >
+        {children}
+      </div>
+    </DrawerContext.Provider>
+  );
+};
 Drawer.displayName = 'Drawer';

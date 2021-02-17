@@ -40,7 +40,13 @@ export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is
       ? `${date.getHours() > 11 ? date.getHours() - 12 : date.getHours()}`
       : `${date.getHours()}`.padStart(2, '0');
     const minutes = `${date.getMinutes()}`.padStart(2, '0');
-    return `${hours}${delimiter}${minutes}${is12Hour ? (date.getHours() > 11 ? 'pm' : 'am') : ''}`;
+    let ampm = '';
+    if (is12Hour && date.getHours() > 11) {
+      ampm = 'pm';
+    } else if (is12Hour) {
+      ampm = 'am';
+    }
+    return `${hours}${delimiter}${minutes}${ampm}`;
   } else if (
     // if this 12 hour time is missing am/pm but otherwise valid, append am/pm
     is12Hour &&

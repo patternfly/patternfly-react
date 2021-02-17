@@ -1,8 +1,8 @@
 ---
-id: Touchspin
+id: Number input
 section: components
-cssPrefix: pf-c-touchspin
-propComponents: ['Touchspin']
+cssPrefix: pf-c-number-input
+propComponents: ['NumberInput']
 beta: true
 ---
 
@@ -12,9 +12,9 @@ beta: true
 
 ```js
 import React from 'react';
-import { Touchspin } from '@patternfly/react-core';
+import { NumberInput } from '@patternfly/react-core';
 
-class BasicTouchspin extends React.Component {
+class BasicNumberInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,13 +43,13 @@ class BasicTouchspin extends React.Component {
   render() {
     const { value } = this.state;
     return (
-      <Touchspin
+      <NumberInput
         value={value}
         onMinus={this.onMinus}
         onChange={this.onChange}
         onPlus={this.onPlus}
         inputName="input"
-        inputAriaLabel="touchspin input"
+        inputAriaLabel="number input"
         minusBtnAriaLabel="minus"
         plusBtnAriaLabel="plus"
       />
@@ -62,9 +62,9 @@ class BasicTouchspin extends React.Component {
 
 ```js
 import React from 'react';
-import { Touchspin } from '@patternfly/react-core';
+import { NumberInput } from '@patternfly/react-core';
 
-class UnitTouchspin extends React.Component {
+class UnitNumberInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -114,26 +114,26 @@ class UnitTouchspin extends React.Component {
     const { value1, value2 } = this.state;
     return (
       <React.Fragment>
-        <Touchspin
+        <NumberInput
           value={value1}
           onMinus={this.onMinus1}
           onChange={this.onChange1}
           onPlus={this.onPlus1}
           inputName="input 1"
-          inputAriaLabel="touchspin input 1"
+          inputAriaLabel="number input 1"
           minusBtnAriaLabel="minus 1"
           plusBtnAriaLabel="plus 1"
           unit="%"
         />
         <br />
         <br />
-        <Touchspin
+        <NumberInput
           value={value2}
           onMinus={this.onMinus2}
           onChange={this.onChange2}
           onPlus={this.onPlus2}
           inputName="input 2"
-          inputAriaLabel="touchspin input 2"
+          inputAriaLabel="number input 2"
           minusBtnAriaLabel="minus 0.01"
           plusBtnAriaLabel="plus 0.01"
           unit="$"
@@ -149,9 +149,9 @@ class UnitTouchspin extends React.Component {
 
 ```js
 import React from 'react';
-import { Touchspin } from '@patternfly/react-core';
+import { NumberInput } from '@patternfly/react-core';
 
-class UnitThresholdTouchspin extends React.Component {
+class UnitThresholdNumberInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -187,7 +187,7 @@ class UnitThresholdTouchspin extends React.Component {
       <React.Fragment>
         With a minimum value of 0 and maximum value of 10
         <br />
-        <Touchspin
+        <NumberInput
           value={value}
           min={this.minValue}
           max={this.maxValue}
@@ -195,7 +195,7 @@ class UnitThresholdTouchspin extends React.Component {
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input"
-          inputAriaLabel="touchspin input"
+          inputAriaLabel="number input"
           minusBtnAriaLabel="minus"
           plusBtnAriaLabel="plus"
           unit="%"
@@ -210,9 +210,9 @@ class UnitThresholdTouchspin extends React.Component {
 
 ```js
 import React from 'react';
-import { Touchspin } from '@patternfly/react-core';
+import { NumberInput } from '@patternfly/react-core';
 
-class DisabledTouchspin extends React.Component {
+class DisabledNumberInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -244,7 +244,7 @@ class DisabledTouchspin extends React.Component {
     const maxValue = 100;
 
     return (
-      <Touchspin
+      <NumberInput
         value={value}
         min={minValue}
         max={maxValue}
@@ -252,7 +252,7 @@ class DisabledTouchspin extends React.Component {
         onChange={this.onChange}
         onPlus={this.onPlus}
         inputName="input"
-        inputAriaLabel="touchspin input"
+        inputAriaLabel="number input"
         minusBtnAriaLabel="minus"
         plusBtnAriaLabel="plus"
         unit="%"
@@ -267,9 +267,9 @@ class DisabledTouchspin extends React.Component {
 
 ```js
 import React from 'react';
-import { Touchspin } from '@patternfly/react-core';
+import { NumberInput } from '@patternfly/react-core';
 
-class TouchspinSizes extends React.Component {
+class NumberInputSizes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -303,52 +303,52 @@ class TouchspinSizes extends React.Component {
 
     return (
       <React.Fragment>
-        <Touchspin
+        <NumberInput
           value={input1Value}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input1"
-          inputAriaLabel="touchspin input 1"
+          inputAriaLabel="number input 1"
           minusBtnAriaLabel="input 2 minus"
           plusBtnAriaLabel="input 2 plus"
           widthChars={1}
         />
         <br />
         <br />
-        <Touchspin
+        <NumberInput
           value={input2Value}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input2"
-          inputAriaLabel="touchspin input 2"
+          inputAriaLabel="number input 2"
           minusBtnAriaLabel="input 2 minus"
           plusBtnAriaLabel="input 2 plus"
           widthChars={10}
         />
         <br />
         <br />
-        <Touchspin
+        <NumberInput
           value={input3Value}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input3"
-          inputAriaLabel="touchspin input 3"
+          inputAriaLabel="number input 3"
           minusBtnAriaLabel="input 3 minus"
           plusBtnAriaLabel="input 3 plus"
           widthChars={5}
         />
         <br />
         <br />
-        <Touchspin
+        <NumberInput
           value={input4Value}
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
           inputName="input4"
-          inputAriaLabel="touchspin input 4"
+          inputAriaLabel="number input 4"
           minusBtnAriaLabel="input 4 minus"
           plusBtnAriaLabel="input 4 plus"
           widthChars={5}

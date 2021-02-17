@@ -8,6 +8,7 @@ interface ChartInteractiveLegendInterface {
   // [ area-1, area-2, area-3 ]
   // [ [area-1, scatter-1], [area-2, scatter-2], [area-3, scatter-3] ]
   chartNames: [string | string[]];
+  isDataHidden?: (data: any) => boolean; // Returns true if given data is hidden -- helpful when bar charts are hidden
   isHidden?: (index: number) => boolean; // Returns true if given index, associated with the legend item, is hidden
   legendName: string; // The name property associated with the legend
   onLegendClick?: (props: any) => void; // Called when legend item is clicked
@@ -67,6 +68,7 @@ export const getInteractiveLegendItemStyles = (hidden = false) =>
 // Returns targeted events for legend 'data' or 'labels'
 const getInteractiveLegendTargetEvents = ({
   chartNames,
+  isDataHidden = () => false,
   isHidden = () => false,
   legendName,
   onLegendClick = () => null,
@@ -110,16 +112,19 @@ const getInteractiveLegendTargetEvents = ({
                   target: 'data',
                   eventKey: 'all',
                   mutation: (props: any) =>
-                    ({
-                      style: {
-                        ...props.style,
-                        opacity: chart_area_Opacity.value
-                      }
-                    } as any)
+                    isDataHidden(props.data)
+                      ? null
+                      : ({
+                          // Skip if hidden
+                          style: {
+                            ...props.style,
+                            opacity: chart_area_Opacity.value
+                          }
+                        } as any)
                 },
                 {
                   // Mute all legend item symbols, except the symbol associated with this event
-                  childName: 'legend',
+                  childName: legendName,
                   target: 'data',
                   eventKey: legendItems,
                   mutation: (props: any) =>
@@ -135,7 +140,7 @@ const getInteractiveLegendTargetEvents = ({
                 },
                 {
                   // Mute all legend item labels, except the label associated with this event
-                  childName: 'legend',
+                  childName: legendName,
                   target: 'labels',
                   eventKey: legendItems,
                   mutation: (props: any) => {
@@ -155,7 +160,7 @@ const getInteractiveLegendTargetEvents = ({
         onMouseOut: () => [
           {
             // Restore all data series associated with this event
-            childName: childNames,
+            childName: 'all',
             target: 'data',
             eventKey: 'all',
             mutation: () => null as any

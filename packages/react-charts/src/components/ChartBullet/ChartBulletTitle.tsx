@@ -166,13 +166,33 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
       labelPosition = titlePosition;
     }
 
+    let textAnchor = 'middle';
+    if (labelPosition === 'top-left') {
+      textAnchor = 'start';
+    } else if (horizontal) {
+      textAnchor = 'end';
+    }
+    // Adjust for padding
+    let dy = ChartCommonStyles.legend.margin * 2 - defaultPadding.bottom;
+    if (labelPosition === 'top-left') {
+      const offsetLabelPosition = showBoth ? 0 : 1;
+      dy =
+        defaultPadding.top * 0.5 +
+        (defaultPadding.bottom * 0.5 - defaultPadding.bottom) +
+        58 -
+        ChartCommonStyles.legend.margin +
+        offsetLabelPosition;
+    } else if (horizontal) {
+      dy = defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom);
+    }
+
     // The x and y calculations below are used to adjust the position of the title, based on padding and scale.
     // This ensures that when padding is adjusted, the title moves along with the chart's position.
     return React.cloneElement(titleComponent, {
       ...(showBoth && { capHeight }),
       style: [ChartBulletStyles.label.title, ChartBulletStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
-      textAnchor: labelPosition === 'top-left' ? 'start' : horizontal ? 'end' : 'middle',
+      textAnchor,
       verticalAnchor: labelPosition === 'top-left' ? 'end' : 'middle',
       // Adjust for padding
       x: horizontal
@@ -191,17 +211,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
           ChartBulletStyles.qualitativeRangeWidth / 2,
       y: getBulletLabelY({
         chartHeight: chartSize.height,
-        // Adjust for padding
-        dy:
-          labelPosition === 'top-left'
-            ? defaultPadding.top * 0.5 +
-              (defaultPadding.bottom * 0.5 - defaultPadding.bottom) +
-              58 -
-              ChartCommonStyles.legend.margin +
-              (showBoth ? 0 : 1)
-            : horizontal
-            ? defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom)
-            : ChartCommonStyles.legend.margin * 2 - defaultPadding.bottom,
+        dy,
         labelPosition
       }),
       ...titleComponent.props
