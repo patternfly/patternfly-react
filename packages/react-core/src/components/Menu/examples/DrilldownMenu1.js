@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem, Divider } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList } from '@patternfly/react-core';
 
 export default class DrilldownMenu1 extends React.Component {
   constructor(props) {
@@ -18,17 +18,12 @@ export default class DrilldownMenu1 extends React.Component {
       }
     };
   }
-
-  shouldComponentUpdate(nextProps) {
-    console.log(this.props, nextProps);
-    return true;
-  }
   render() {
     const { id, activeMenu, drilledIn, getHeight, children } = this.props;
 
     return (
-      <Menu id={id} activeMenu={activeMenu} drilledIn={drilledIn} onSelect={this.onSelect} getHeight={getHeight}>
-        <MenuContent>
+      <Menu id={id} activeMenu={activeMenu} drilledIn={drilledIn} onSelect={this.onSelect}>
+        <MenuContent getHeight={getHeight}>
           <MenuList>{children}</MenuList>
         </MenuContent>
       </Menu>

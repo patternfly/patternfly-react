@@ -32,7 +32,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   drilledIn?: boolean;
   /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: any;
-  getHeight?: any;
   activeMenu?: any;
   id?: any;
   /** Forwarded ref */
@@ -54,52 +53,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     searchInputValue: ''
   };
 
-  // menuRef = React.createRef<HTMLDivElement>();
-  refCallback = (element: any) => {
-    if (element) {
-      // console.log(element);
-      // console.log(element.clientHeight);
-      this.props.getHeight && this.props.getHeight(element.clientHeight);
-      if (this.props.id === 'rootMenu') {
-        debugger;
-      }
-      // if (this.props.drilledIn) {
-      //   element.classList.add(css(styles.modifiers.drilledIn));
-      // } else {
-      //   element.classList.remove(css(styles.modifiers.drilledIn));
-      // }
-    }
-  };
-
-  shouldComponentUpdate(nextProps: any, nextState: any) {
-    // const getCircularReplacer = () => {
-    //   const seen = new WeakSet();
-    //   return (key: any, value: any) => {
-    //     if (typeof value === 'object' && value !== null) {
-    //       if (seen.has(value)) {
-    //         return;
-    //       }
-    //       seen.add(value);
-    //     }
-    //     return value;
-    //   };
-    // };
-    // if (JSON.stringify(this.props, getCircularReplacer()) === JSON.stringify(nextProps, getCircularReplacer())) {
-    //   return false;
-    // }
-    console.log(this.props, nextProps);
-    // if (this.props.drilledIn !== nextProps.drilledIn) {
-    //   console.log(`re-render ${nextProps.id}`);
-    //   return true;
-    // }
-    // if (this.props.activeMenu.includes(this.props.id)) {
-    //   console.log(`update ${this.props.id}`);
-    //   return true;
-    // }
-    return true;
-    // return false;
-  }
-
   render() {
     console.log(`rendering ${this.props.id}`);
     const {
@@ -117,8 +70,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       activeItemId = null,
       innerRef,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      getHeight,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       activeMenu,
       ...props
     } = this.props;
@@ -130,11 +81,11 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             styles.menu,
             containsFlyout && styles.modifiers.flyout,
             containsDrilldown && styles.modifiers.drilldown,
-            // drilledIn && styles.modifiers.drilledIn,
+            drilledIn && styles.modifiers.drilledIn,
             className
           )}
           aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
-          ref={innerRef || this.refCallback}
+          ref={innerRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >

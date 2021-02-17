@@ -7,9 +7,22 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  getHeight?: any;
 }
 
-export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => (
-  <div {...props} className={css(styles.menuContent, props.className)} ref={ref} />
-));
+export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {
+  const { getHeight, children, ...rest } = props;
+  const menuContentRef = React.createRef<HTMLDivElement>();
+  const refCallback = (element: any) => {
+    if (element) {
+      getHeight && getHeight(element.clientHeight);
+    }
+    return ref || menuContentRef;
+  };
+  return (
+    <div {...rest} className={css(styles.menuContent, props.className)} ref={refCallback}>
+      {children}
+    </div>
+  );
+});
 MenuContent.displayName = 'MenuContent';
