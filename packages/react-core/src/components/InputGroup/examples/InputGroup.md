@@ -66,7 +66,7 @@ class SimpleInputGroups extends React.Component {
         </InputGroup>
         <br />
         <InputGroup>
-          <TextInput id="textInput11" type="text" aria-label="percentage" />
+          <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
           <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>%</InputGroupText>
         </InputGroup>
       </React.Fragment>
