@@ -33,3 +33,8 @@ test('LoginForm with rememberMeLabel', () => {
   const view = shallow(<LoginForm rememberMeLabel="remember me" />);
   expect(view).toMatchSnapshot();
 });
+
+test('LoginForm with show password', () => {
+  const view = shallow(<LoginForm isShowPasswordEnabled />);
+  expect(view).toMatchSnapshot();
+});
