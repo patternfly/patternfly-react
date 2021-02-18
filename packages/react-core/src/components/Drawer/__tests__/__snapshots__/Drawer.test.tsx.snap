@@ -297,7 +297,7 @@ exports[`Drawer has resizable callback and id 1`] = `
 </Drawer>
 `;
 
-exports[`Drawer has resizable css 1`] = `
+exports[`Drawer has resizable css and color variants 1`] = `
 <Drawer
   isExpanded={true}
   position="left"
@@ -308,6 +308,7 @@ exports[`Drawer has resizable css 1`] = `
     <DrawerContent
       panelContent={
         <DrawerPanelContent
+          colorVariant="light-200"
           defaultSize="300px"
           isResizable={true}
           maxSize="400px"
@@ -343,13 +344,14 @@ exports[`Drawer has resizable css 1`] = `
             </DrawerContentBody>
           </div>
           <DrawerPanelContent
+            colorVariant="light-200"
             defaultSize="300px"
             isResizable={true}
             maxSize="400px"
             minSize="200px"
           >
             <div
-              className="pf-c-drawer__panel pf-m-resizable"
+              className="pf-c-drawer__panel pf-m-resizable pf-m-light-200"
               hidden={false}
               onTransitionEnd={[Function]}
               style={
