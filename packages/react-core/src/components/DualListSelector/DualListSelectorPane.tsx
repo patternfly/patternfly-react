@@ -40,6 +40,8 @@ export interface DualListSelectorPaneProps {
   ) => void;
   /** Actions to place above the pane. */
   actions?: React.ReactNode[];
+  /** A callback for when the search input value for changes. */
+  onSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Filter function for custom filtering based on search string. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
   /** Flag indicating a search bar should be included above the pane. */
@@ -79,6 +81,9 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ input: e.target.value });
+    if (this.props.onSearchInputChanged) {
+      this.props.onSearchInputChanged(e.target.value, e);
+    }
     this.optionsRefs = [];
   };
 
@@ -172,6 +177,8 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       selectedOptions,
       options,
       id,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onSearchInputChanged,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       filterOption,
       onOptionSelect,
