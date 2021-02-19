@@ -6,7 +6,7 @@ import {
   DrawerContentBody,
   DrawerHead,
   DrawerPanelBody,
-  DrawerPanelColorVariant,
+  DrawerColorVariant,
   DrawerPanelContent
 } from '../';
 import React from 'react';
@@ -71,7 +71,7 @@ test(`Drawer expands from bottom`, () => {
 
 test(`Drawer has resizable css and color variants`, () => {
   const panelContent = (
-    <DrawerPanelContent isResizable minSize={'200px'} defaultSize={'300px'} maxSize={'400px'} colorVariant={DrawerPanelColorVariant.light200}>
+    <DrawerPanelContent isResizable minSize={'200px'} defaultSize={'300px'} maxSize={'400px'} colorVariant={DrawerColorVariant.light200}>
       <DrawerHead>
         <span>drawer-panel</span>
         <DrawerActions>
