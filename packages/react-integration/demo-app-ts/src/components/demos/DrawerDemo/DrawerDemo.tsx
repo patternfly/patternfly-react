@@ -74,8 +74,8 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           Toggle Drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
-          <DrawerSection>drawer-section</DrawerSection>
-          <DrawerContent panelContent={panelContent}>
+          <DrawerSection colorVariant={DrawerPanelColorVariant.default}>drawer-section</DrawerSection>
+          <DrawerContent colorVariant={DrawerPanelColorVariant.default} panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>

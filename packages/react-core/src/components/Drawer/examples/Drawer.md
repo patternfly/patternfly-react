@@ -12,7 +12,7 @@ propComponents:
     DrawerHead,
     DrawerActions,
     DrawerCloseButton,
-    DrawerPanelColorVariant
+    DrawerColorVariant
   ]
 section: components
 beta: true
@@ -1424,6 +1424,7 @@ class ResizableDrawer extends React.Component {
 ```js
 import React from 'react';
 import {
+  Checkbox,
   Drawer,
   DrawerPanelContent,
   DrawerContent,
@@ -1431,15 +1432,19 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
+  DrawerSection,
   Button,
-  DrawerPanelColorVariant
+  DrawerColorVariant
 } from '@patternfly/react-core';
 
 class LightGrayDrawer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false
+      isExpanded: false,
+      sectionGray: false,
+      panelGray: true,
+      contentGray: false
     };
     this.drawerRef = React.createRef();
 
@@ -1459,12 +1464,30 @@ class LightGrayDrawer extends React.Component {
         isExpanded: false
       });
     };
+    
+    this.togglePanelGray = (checked) => {
+      this.setState({
+        panelGray: checked
+      })
+    };
+    
+    this.toggleSectionGray = (checked) => {
+      this.setState({
+        sectionGray: checked
+      })
+    };
+    
+    this.toggleContentGray = (checked) => {
+      this.setState({
+        contentGray: checked
+      })
+    };
   }
 
   render() {
-    const { isExpanded } = this.state;
+    const { isExpanded, panelGray, sectionGray, contentGray } = this.state;
     const panelContent = (
-      <DrawerPanelContent colorVariant={DrawerPanelColorVariant.light200}>
+      <DrawerPanelContent colorVariant={panelGray ? DrawerColorVariant.light200 : DrawerColorVariant.default}>
         <DrawerHead>
           <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel
@@ -1481,11 +1504,39 @@ class LightGrayDrawer extends React.Component {
 
     return (
       <React.Fragment>
+        <Checkbox
+          label="Gray panel"
+          isChecked={this.state.panelGray}
+          onChange={this.togglePanelGray}
+          aria-label="Gray panel checkbox"
+          id="toggle-gray-panel"
+          name="toggle-gray-panel"
+        />
+        <Checkbox
+          label="Gray content"
+          isChecked={this.state.contentGray}
+          onChange={this.toggleContentGray}
+          aria-label="Gray content checkbox"
+          id="toggle-gray-content"
+          name="toggle-gray-content"
+        />
+        <Checkbox
+          label="Gray section"
+          isChecked={this.state.sectionGray}
+          onChange={this.toggleSectionGray}
+          aria-label="Gray section checkbox"
+          id="toggle-gray-section"
+          name="toggle-gray-section"
+        />
+        <br />
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
-          <DrawerContent panelContent={panelContent}>
+          <DrawerSection colorVariant={sectionGray ? DrawerColorVariant.light200 : DrawerColorVariant.default}>
+            drawer-section
+          </DrawerSection>
+          <DrawerContent colorVariant={contentGray ? DrawerColorVariant.light200 : DrawerColorVariant.default} panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
