@@ -7,7 +7,7 @@ import {
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
-  DrawerPanelColorVariant,
+  DrawerColorVariant,
   DrawerPanelContent,
   DrawerProps,
   DrawerSection
@@ -52,7 +52,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           xl: 'width_33',
           '2xl': 'width_25'
         }}
-        colorVariant={DrawerPanelColorVariant.light200}
+        colorVariant={DrawerColorVariant.light200}
       >
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
@@ -74,8 +74,8 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           Toggle Drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
-          <DrawerSection colorVariant={DrawerPanelColorVariant.default}>drawer-section</DrawerSection>
-          <DrawerContent colorVariant={DrawerPanelColorVariant.default} panelContent={panelContent}>
+          <DrawerSection colorVariant={DrawerColorVariant.default}>drawer-section</DrawerSection>
+          <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
