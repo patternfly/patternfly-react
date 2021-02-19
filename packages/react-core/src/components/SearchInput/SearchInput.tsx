@@ -12,7 +12,7 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-ic
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { InputGroup } from '../InputGroup';
 import { TextInput } from '../TextInput';
-import { GenerateId } from '../../helpers';
+import { GenerateId, KEY_CODES } from '../../helpers';
 
 export interface SearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
@@ -118,21 +118,36 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   React.useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
     document.addEventListener('touchstart', onDocClick);
+    document.addEventListener('keydown', onEscPress);
 
     return function cleanup() {
       document.removeEventListener('mousedown', onDocClick);
       document.removeEventListener('touchstart', onDocClick);
+      document.removeEventListener('keydown', onEscPress);
     };
   });
 
   const onDocClick = (event: Event) => {
     const clickedWithinSearchInput =
-      searchInputRef &&
-      searchInputRef.current &&
-      searchInputRef.current.contains &&
-      searchInputRef.current.contains(event.target as Node);
+      searchInputRef && searchInputRef.current && searchInputRef.current.contains(event.target as Node);
     if (showSearchMenu && !clickedWithinSearchInput) {
       setShowSearchMenu(false);
+    }
+  };
+
+  const onEscPress = (event: KeyboardEvent) => {
+    const keyCode = event.keyCode || event.which;
+    if (
+      showSearchMenu &&
+      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+      searchInputRef &&
+      searchInputRef.current &&
+      searchInputRef.current.contains(event.target as Node)
+    ) {
+      setShowSearchMenu(false);
+      if (searchInputInputRef && searchInputInputRef.current) {
+        searchInputInputRef.current.focus();
+      }
     }
   };
 
