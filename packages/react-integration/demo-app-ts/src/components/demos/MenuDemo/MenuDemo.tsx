@@ -22,13 +22,6 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 
-interface SelectedItem {
-  groupId: number | string;
-  itemId: number | string;
-  to: string;
-  event: React.FormEvent<HTMLInputElement>;
-}
-
 export class MenuDemo extends Component {
   state = {
     activeItem: 0,
@@ -39,8 +32,8 @@ export class MenuDemo extends Component {
     favorites: [] as string[]
   };
 
-  onSimpleSelect = (result: SelectedItem) => {
-    this.setState({ activeItem: result.itemId });
+  onSimpleSelect = (event: React.MouseEvent, itemId: string) => {
+    this.setState({ activeItem: itemId });
   };
 
   onActionSelect = (event: any, itemId: number) => {

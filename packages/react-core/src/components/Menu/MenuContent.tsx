@@ -8,7 +8,7 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Return the height of the menu content */
-  getHeight?: any;
+  getHeight?: (height: string) => void;
 }
 
 export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {

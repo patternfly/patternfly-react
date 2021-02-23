@@ -10,7 +10,7 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** Additional classes added to the Menu */
   className?: string;
   /** Callback for updating when item selection changes. You can also specify onClick on the MenuItem. */
-  onSelect?: (event?: any, itemId?: any) => void;
+  onSelect?: (event?: React.MouseEvent, itemId?: string | number) => void;
   /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the MenuItem. */
   selected?: any | any[];
   /** Callback called when an MenuItems's action button is clicked. You can also specify it within a MenuItemAction. */
@@ -32,8 +32,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   isMenuDrilledIn?: boolean;
   /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: any;
-  /** ID of the active menu */
-  activeMenu?: any;
   /** ID of the menu */
   id?: any;
   /** Forwarded ref */
@@ -70,8 +68,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       isMenuDrilledIn,
       activeItemId = null,
       innerRef,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      activeMenu,
       ...props
     } = this.props;
 
