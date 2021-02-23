@@ -196,7 +196,7 @@ class MenuWithDrilldown extends React.Component {
                 <DrilldownMenu1
                   id="drilldownMenu1"
                   activeMenu={menuDrilledIn.concat([activeMenu])}
-                  drilledIn={menuDrilledIn.includes('drilldownMenu1')}
+                  isMenuDrilledIn={menuDrilledIn.includes('drilldownMenu1')}
                   getHeight={height => this.setHeight('drilldownMenu1', height)}
                 >
                   <MenuItemPauseRollout direction="up" onClick={() => this.drillOut('rootMenu')} />

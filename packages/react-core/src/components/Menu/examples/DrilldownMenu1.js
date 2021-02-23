@@ -20,9 +20,9 @@ export default class DrilldownMenu1 extends React.Component {
     };
   }
   render() {
-    const { id, activeMenu, drilledIn, getHeight, children } = this.props;
+    const { id, activeMenu, isMenuDrilledIn, getHeight, children } = this.props;
     return (
-      <Menu id={id} activeMenu={activeMenu} isMenuDrilledIn={drilledIn} onSelect={this.onSelect}>
+      <Menu id={id} activeMenu={activeMenu} isMenuDrilledIn={isMenuDrilledIn} onSelect={this.onSelect}>
         <MenuContent getHeight={getHeight}>
           <MenuList>{children}</MenuList>
         </MenuContent>
