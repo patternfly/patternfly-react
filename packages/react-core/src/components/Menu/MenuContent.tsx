@@ -7,6 +7,7 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Return the height of the menu content */
   getHeight?: any;
 }
 

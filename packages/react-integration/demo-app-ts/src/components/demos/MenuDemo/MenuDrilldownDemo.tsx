@@ -1,28 +1,4 @@
----
-id: Menu
-section: components
-cssPrefix: pf-c-menu
-propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput']
-ouia: true
-beta: true
----
-
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import DrilldownMenu1 from './DrilldownMenu1';
-
-## Examples
-
-### With drilldown
-
-```js
-import React from 'react';
+import React, { Component, CSSProperties } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -30,74 +6,73 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-ic
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import DrilldownMenu1 from './DrilldownMenu1';
 
-class MenuWithDrilldown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: null,
-      menuDrilledIn: [],
-      drilldownPath: [],
-      menuHeights: {},
-      activeMenu: 'rootMenu'
-    };
-    this.onSelect = (event, itemId) => {
-      if (itemId.startsWith('group:')) {
-        console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
-      } else {
-        console.log(`selected: ${itemId}`);
-        this.setState({
-          activeItem: itemId
-        });
-      }
-    };
-    this.drillIn = (fromMenuId, toMenuId, pathId) => {
-      // console.log('drilling in', fromMenuId, toMenuId, pathId);
+/* eslint-disable no-console */
+export class MenuDrilldownDemo extends Component {
+  displayName = 'MenuDrilldownDemo';
+  state = {
+    activeItem: null as string,
+    menuDrilledIn: [] as string[],
+    drilldownPath: [] as string[],
+    menuHeights: {} as any,
+    activeMenu: 'rootMenu'
+  };
+
+  onSelect = (event: MouseEvent, itemId: string) => {
+    if (itemId.startsWith('group:')) {
+      console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
+    } else {
+      console.log(`selected: ${itemId}`);
       this.setState({
-        menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
-        drilldownPath: [...this.state.drilldownPath, pathId],
-        activeMenu: toMenuId
+        activeItem: itemId
       });
-    };
-    this.drillOut = toMenuId => {
-      const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, this.state.menuDrilledIn.length - 1);
-      const pathSansLast = this.state.drilldownPath.slice(0, this.state.drilldownPath.length - 1);
+    }
+  };
+  drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
+    this.setState({
+      menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
+      drilldownPath: [...this.state.drilldownPath, pathId],
+      activeMenu: toMenuId
+    });
+  };
+  drillOut = (toMenuId: string) => {
+    const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, this.state.menuDrilledIn.length - 1);
+    const pathSansLast = this.state.drilldownPath.slice(0, this.state.drilldownPath.length - 1);
+    this.setState({
+      menuDrilledIn: menuDrilledInSansLast,
+      drilldownPath: pathSansLast,
+      activeMenu: toMenuId
+    });
+  };
+  setHeight = (menuId: string, height: string) => {
+    if (!this.state.menuHeights[menuId]) {
       this.setState({
-        menuDrilledIn: menuDrilledInSansLast,
-        drilldownPath: pathSansLast,
-        activeMenu: toMenuId
+        menuHeights: {
+          ...this.state.menuHeights,
+          [menuId]: height
+        }
       });
-    };
-    this.setHeight = (menuId, height) => {
-      if (!this.state.menuHeights[menuId]) {
-        this.setState({
-          menuHeights: {
-            ...this.state.menuHeights,
-            [menuId]: height
-          }
-        });
-      }
-    };
-  }
+    }
+  };
 
   render() {
-    const { activeItem, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
-    console.log('drilled in path: ', menuDrilledIn);
+    const { menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
+
     // We wrap the menu items that contain drilldown menus to keep things DRY since they're used to drill into, as well as drill out of the next menu
 
     // rootMenu -> drilldownMenu1
-    const MenuItemStartRollout = ({ direction, onClick, ...rest }) => (
+    const MenuItemStartRollout = ({ direction, onClick, ...rest }: any) => (
       <MenuItem itemId="group:start_rollout" direction={direction} onClick={onClick} {...rest}>
         Start rollout
       </MenuItem>
     );
     // rootMenu -> drilldownMenu1
-    const MenuItemPauseRollout = ({ direction, onClick, ...rest }) => (
+    const MenuItemPauseRollout = ({ direction, onClick, ...rest }: any) => (
       <MenuItem itemId="group:pause_rollout" direction={direction} onClick={onClick} {...rest}>
         Pause rollouts
       </MenuItem>
     );
     // rootMenu -> drilldownMenuStorage
-    const MenuItemStorage = ({ direction, onClick, ...rest }) => (
+    const MenuItemStorage = ({ direction, onClick, ...rest }: any) => (
       <MenuItem
         itemId="group:storage"
         icon={<StorageDomainIcon aria-hidden />}
@@ -109,13 +84,13 @@ class MenuWithDrilldown extends React.Component {
       </MenuItem>
     );
     // drilldownMenu1 -> drilldownMenuGrouping
-    const MenuItemAppGrouping = ({ direction, onClick, ...rest }) => (
+    const MenuItemAppGrouping = ({ direction, onClick, ...rest }: any) => (
       <MenuItem itemId="group:app_grouping" description="Groups A-C" direction={direction} onClick={onClick} {...rest}>
         Application Grouping
       </MenuItem>
     );
     // drilldownMenu1 -> drilldownMenuLabels
-    const MenuItemLabels = ({ direction, onClick, ...rest }) => (
+    const MenuItemLabels = ({ direction, onClick, ...rest }: any) => (
       <MenuItem itemId="group:labels" direction={direction} onClick={onClick} {...rest}>
         Labels
       </MenuItem>
@@ -131,8 +106,8 @@ class MenuWithDrilldown extends React.Component {
         onSelect={this.onSelect}
       >
         <MenuContent
-          getHeight={height => this.setHeight('rootMenu', height)}
-          style={{ '--pf-c-menu__content--Height': `${menuHeights[activeMenu]}px` }}
+          getHeight={(height: string) => this.setHeight('rootMenu', height)}
+          style={{ '--pf-c-menu__content--Height': `${menuHeights[activeMenu]}px` } as CSSProperties}
         >
           <MenuList>
             <MenuItemStartRollout
@@ -143,7 +118,7 @@ class MenuWithDrilldown extends React.Component {
                   id="drilldownMenu1"
                   activeMenu={menuDrilledIn.concat([activeMenu])}
                   isMenuDrilledIn={menuDrilledIn.includes('drilldownMenu1')}
-                  getHeight={height => this.setHeight('drilldownMenu1', height)}
+                  getHeight={(height: string) => this.setHeight('drilldownMenu1', height)}
                 >
                   <MenuItemStartRollout direction="up" onClick={() => this.drillOut('rootMenu')} />
                   <Divider component="li" />
@@ -154,7 +129,7 @@ class MenuWithDrilldown extends React.Component {
                       <DrilldownMenu1
                         id="drilldownMenuGrouping"
                         activeMenu={menuDrilledIn.concat([activeMenu])}
-                        getHeight={height => this.setHeight('drilldownMenuGrouping', height)}
+                        getHeight={(height: string) => this.setHeight('drilldownMenuGrouping', height)}
                       >
                         <MenuItemAppGrouping direction="up" onClick={() => this.drillOut('drilldownMenu1')} />
                         <Divider component="li" />
@@ -173,7 +148,7 @@ class MenuWithDrilldown extends React.Component {
                       <DrilldownMenu1
                         id="drilldownMenuLabels"
                         activeMenu={menuDrilledIn.concat([activeMenu])}
-                        getHeight={height => this.setHeight('drilldownMenuLabels', height)}
+                        getHeight={(height: string) => this.setHeight('drilldownMenuLabels', height)}
                       >
                         <MenuItemLabels direction="up" onClick={() => this.drillOut('drilldownMenu1')} />
                         <Divider component="li" />
@@ -197,7 +172,7 @@ class MenuWithDrilldown extends React.Component {
                   id="drilldownMenu1"
                   activeMenu={menuDrilledIn.concat([activeMenu])}
                   drilledIn={menuDrilledIn.includes('drilldownMenu1')}
-                  getHeight={height => this.setHeight('drilldownMenu1', height)}
+                  getHeight={(height: string) => this.setHeight('drilldownMenu1', height)}
                 >
                   <MenuItemPauseRollout direction="up" onClick={() => this.drillOut('rootMenu')} />
                   <Divider component="li" />
@@ -208,7 +183,7 @@ class MenuWithDrilldown extends React.Component {
                       <DrilldownMenu1
                         id="drilldownMenuGrouping"
                         activeMenu={menuDrilledIn.concat([activeMenu])}
-                        getHeight={height => this.setHeight('drilldownMenuGrouping', height)}
+                        getHeight={(height: string) => this.setHeight('drilldownMenuGrouping', height)}
                       >
                         <MenuItemAppGrouping direction="up" onClick={() => this.drillOut('drilldownMenu1')} />
                         <Divider component="li" />
@@ -227,7 +202,7 @@ class MenuWithDrilldown extends React.Component {
                       <DrilldownMenu1
                         id="drilldownMenuLabels"
                         activeMenu={menuDrilledIn.concat([activeMenu])}
-                        getHeight={height => this.setHeight('drilldownMenuLabels', height)}
+                        getHeight={(height: string) => this.setHeight('drilldownMenuLabels', height)}
                       >
                         <MenuItemLabels direction="up" onClick={() => this.drillOut('drilldownMenu1')} />
                         <Divider component="li" />
@@ -250,7 +225,7 @@ class MenuWithDrilldown extends React.Component {
                 <DrilldownMenu1
                   id="drilldownMenuStorage"
                   activeMenu={menuDrilledIn.concat([activeMenu])}
-                  getHeight={height => this.setHeight('drilldownMenuStorage', height)}
+                  getHeight={(height: string) => this.setHeight('drilldownMenuStorage', height)}
                 >
                   <MenuItemStorage direction="up" onClick={() => this.drillOut('rootMenu')} />
                   <Divider component="li" />
@@ -273,8 +248,7 @@ class MenuWithDrilldown extends React.Component {
         </MenuContent>
       </Menu>
     );
-    console.log(this.state.drilldownPath);
+
     return rootMenu();
   }
 }
-```

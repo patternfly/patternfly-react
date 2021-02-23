@@ -47,7 +47,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Sub menu direction */
   direction?: 'down' | 'up';
   /** True if item is on current selection path */
-  onPath?: boolean;
+  isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
   /** Forwarded ref */
@@ -74,7 +74,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   onShowFlyout,
   innerRef,
   drilldownMenu,
-  onPath,
+  isOnPath,
   ...props
 }: MenuItemProps) => {
   const Component = component || to ? 'a' : 'button';
@@ -105,7 +105,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         type: 'button'
       };
     }
-    if (onPath) {
+    if (isOnPath) {
       (additionalProps as any)['aria-expanded'] = true;
     }
     const getAriaCurrent = () => {
@@ -161,7 +161,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
               </span>
             )}
           </span>
-          {description && (
+          {description && direction !== 'up' && (
             <span className={css(styles.menuItemDescription)}>
               <span>{description}</span>
             </span>
@@ -178,7 +178,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       className={css(
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
-        onPath && styles.modifiers.currentPath,
+        isOnPath && styles.modifiers.currentPath,
         className
       )}
       onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
