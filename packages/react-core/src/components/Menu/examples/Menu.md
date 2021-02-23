@@ -51,7 +51,6 @@ class MenuWithDrilldown extends React.Component {
       }
     };
     this.drillIn = (fromMenuId, toMenuId, pathId) => {
-      // console.log('drilling in', fromMenuId, toMenuId, pathId);
       this.setState({
         menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
         drilldownPath: [...this.state.drilldownPath, pathId],
@@ -81,7 +80,6 @@ class MenuWithDrilldown extends React.Component {
 
   render() {
     const { activeItem, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
-    console.log('drilled in path: ', menuDrilledIn);
     // We wrap the menu items that contain drilldown menus to keep things DRY since they're used to drill into, as well as drill out of the next menu
 
     // rootMenu -> drilldownMenu1
