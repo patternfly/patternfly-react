@@ -60,13 +60,13 @@ export class MenuDrilldownDemo extends Component {
 
     // rootMenu -> drilldownMenu1
     const MenuItemStartRollout = ({ direction, onClick, ...rest }: any) => (
-      <MenuItem itemId="group:start_rollout" direction={direction} onClick={onClick} {...rest}>
+      <MenuItem id="start" itemId="group:start_rollout" direction={direction} onClick={onClick} {...rest}>
         Start rollout
       </MenuItem>
     );
     // rootMenu -> drilldownMenu1
     const MenuItemPauseRollout = ({ direction, onClick, ...rest }: any) => (
-      <MenuItem itemId="group:pause_rollout" direction={direction} onClick={onClick} {...rest}>
+      <MenuItem id="pause" itemId="group:pause_rollout" direction={direction} onClick={onClick} {...rest}>
         Pause rollouts
       </MenuItem>
     );
@@ -122,6 +122,7 @@ export class MenuDrilldownDemo extends Component {
                   <Divider component="li" />
                   <MenuItemAppGrouping
                     direction="down"
+                    id="app-group-start"
                     isOnPath={drilldownPath.includes('MenuItemAppGrouping')}
                     drilldownMenu={
                       <DrilldownMenu

@@ -1,4 +1,4 @@
-xdescribe('Menu Test', () => {
+describe('Menu Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#menu-demo-nav-item-link').click();
@@ -67,7 +67,7 @@ xdescribe('Menu Test', () => {
   });
 
   it('Verify Menu with Description', () => {
-    cy.get('#description-item-1.pf-c-menu__list-item > button > div')
+    cy.get('#description-item-1 > .pf-c-menu__item')
       .last()
       .should('contain', 'Description');
   });
@@ -110,5 +110,20 @@ xdescribe('Menu Test', () => {
       .should('have.class', 'pf-m-selected');
 
     cy.get('#multi-select-item-3.pf-c-menu__list-item > button').should('have.class', 'pf-m-selected');
+  });
+
+  it('Navigate to drilldown demo section', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('#menu-drilldown-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/menu-drilldown-demo-nav-link');
+  });
+
+  it('Verify Drilldown Menu', () => {
+    cy.get('#app-group-start').should('not.be.visible');
+    cy.get('#start').click();
+    cy.get('#app-group-start').should('be.visible');
+    cy.get('#start').should('be.visible');
+    cy.get('#app-group-start').click();
+    cy.get('#start').should('not.be.visible');
   });
 });
