@@ -144,12 +144,12 @@ class MenuWithDrilldown extends React.Component {
                   <Divider component="li" />
                   <MenuItemAppGrouping
                     direction="down"
-                    isOnPath={drilldownPath.includes('MenuItemAppGrouping')}
+                    isOnPath={drilldownPath.includes('MenuItemAppStartGrouping')}
                     drilldownMenu={
                       <DrilldownMenu
-                        id="drilldownMenuGrouping"
+                        id="drilldownMenuStartGrouping"
                         onSelect={this.onSelect}
-                        getHeight={height => this.setHeight('drilldownMenuGrouping', height)}
+                        getHeight={height => this.setHeight('drilldownMenuStartGrouping', height)}
                       >
                         <MenuItemAppGrouping direction="up" onClick={() => this.drillOut('drilldownMenuStart')} />
                         <Divider component="li" />
@@ -158,17 +158,19 @@ class MenuWithDrilldown extends React.Component {
                         <MenuItem itemId="group_c">Group C</MenuItem>
                       </DrilldownMenu>
                     }
-                    onClick={() => this.drillIn('drilldownMenuStart', 'drilldownMenuGrouping', 'MenuItemAppGrouping')}
+                    onClick={() =>
+                      this.drillIn('drilldownMenuStart', 'drilldownMenuStartGrouping', 'MenuItemAppStartGrouping')
+                    }
                   />
                   <MenuItem itemId="count">Count</MenuItem>
                   <MenuItemLabels
                     direction="down"
-                    isOnPath={drilldownPath.includes('MenuItemLabels')}
+                    isOnPath={drilldownPath.includes('MenuItemStartLabels')}
                     drilldownMenu={
                       <DrilldownMenu
-                        id="drilldownMenuLabels"
+                        id="drilldownMenuStartLabels"
                         onSelect={this.onSelect}
-                        getHeight={height => this.setHeight('drilldownMenuLabels', height)}
+                        getHeight={height => this.setHeight('drilldownMenuStartLabels', height)}
                       >
                         <MenuItemLabels direction="up" onClick={() => this.drillOut('drilldownMenuStart')} />
                         <Divider component="li" />
@@ -177,7 +179,9 @@ class MenuWithDrilldown extends React.Component {
                         <MenuItem itemId="label_3">Label 3</MenuItem>
                       </DrilldownMenu>
                     }
-                    onClick={() => this.drillIn('drilldownMenuStart', 'drilldownMenuLabels', 'MenuItemLabels')}
+                    onClick={() =>
+                      this.drillIn('drilldownMenuStart', 'drilldownMenuStartLabels', 'MenuItemStartLabels')
+                    }
                   />
                   <MenuItem itemId="annotations">Annotations</MenuItem>
                 </DrilldownMenu>
