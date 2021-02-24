@@ -199,7 +199,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
         </div>
       </Popover>
       {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
-      {errorText && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>}
+      {errorText.trim() && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>}
     </div>
   );
 };
