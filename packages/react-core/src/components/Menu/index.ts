@@ -6,3 +6,4 @@ export * from './MenuItem';
 export * from './MenuList';
 export * from './MenuItemAction';
 export * from './DrilldownMenu';
+export * from './MenuBreadcrumb';

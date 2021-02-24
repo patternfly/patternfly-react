@@ -15,6 +15,13 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
+import {
+MenuItemStartRollout,
+MenuItemPauseRollout,
+MenuItemStorage,
+MenuItemAppGrouping,
+MenuItemLabels
+} from './Submenus.js';
 
 ## Examples
 
@@ -703,6 +710,13 @@ import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-dom
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import {
+  MenuItemStartRollout,
+  MenuItemPauseRollout,
+  MenuItemStorage,
+  MenuItemAppGrouping,
+  MenuItemLabels
+} from './Submenus.js';
 
 class MenuWithDrilldown extends React.Component {
   constructor(props) {
@@ -754,44 +768,6 @@ class MenuWithDrilldown extends React.Component {
 
   render() {
     const { activeItem, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
-    // We wrap the menu items that contain drilldown menus to keep things DRY since they're used to drill into, as well as drill out of the next menu
-
-    // rootMenu -> drilldownMenuStart
-    const MenuItemStartRollout = ({ direction, onClick, ...rest }) => (
-      <MenuItem itemId="group:start_rollout" direction={direction} onClick={onClick} {...rest}>
-        Start rollout
-      </MenuItem>
-    );
-    // rootMenu -> drilldownMenuPause
-    const MenuItemPauseRollout = ({ direction, onClick, ...rest }) => (
-      <MenuItem itemId="group:pause_rollout" direction={direction} onClick={onClick} {...rest}>
-        Pause rollouts
-      </MenuItem>
-    );
-    // rootMenu -> drilldownMenuStorage
-    const MenuItemStorage = ({ direction, onClick, ...rest }) => (
-      <MenuItem
-        itemId="group:storage"
-        icon={<StorageDomainIcon aria-hidden />}
-        direction={direction}
-        onClick={onClick}
-        {...rest}
-      >
-        Add storage
-      </MenuItem>
-    );
-    // drilldown menu parent -> drilldownMenuGrouping
-    const MenuItemAppGrouping = ({ direction, onClick, ...rest }) => (
-      <MenuItem itemId="group:app_grouping" description="Groups A-C" direction={direction} onClick={onClick} {...rest}>
-        Application Grouping
-      </MenuItem>
-    );
-    // drilldown menu parent -> drilldownMenuLabels
-    const MenuItemLabels = ({ direction, onClick, ...rest }) => (
-      <MenuItem itemId="group:labels" direction={direction} onClick={onClick} {...rest}>
-        Labels
-      </MenuItem>
-    );
 
     // Menus
     const rootMenu = () => (
@@ -928,6 +904,309 @@ class MenuWithDrilldown extends React.Component {
                   getHeight={height => this.setHeight('drilldownMenuStorage', height)}
                 >
                   <MenuItemStorage direction="up" onClick={() => this.drillOut('rootMenu')} />
+                  <Divider component="li" />
+                  <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
+                    From Git
+                  </MenuItem>
+                  <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
+                    Container Image
+                  </MenuItem>
+                  <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
+                    Docker File
+                  </MenuItem>
+                </DrilldownMenu>
+              }
+              onClick={() => this.drillIn('rootMenu', 'drilldownMenuStorage', 'MenuItemStorage')}
+            />
+            <MenuItem itemId="edit">Edit</MenuItem>
+            <MenuItem itemId="delete_deployment">Delete deployment config</MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+    return rootMenu();
+  }
+}
+```
+
+### With drilldown breadcrumbs
+
+```js
+import React from 'react';
+import {
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem,
+  Divider,
+  DrilldownMenu,
+  Breadcrumb,
+  BreadcrumbItem,
+  MenuBreadcrumb,
+  Dropdown,
+  DropdownToggle
+} from '@patternfly/react-core';
+import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import {
+  MenuItemStartRollout,
+  MenuItemPauseRollout,
+  MenuItemStorage,
+  MenuItemAppGrouping,
+  MenuItemLabels
+} from './Submenus.js';
+
+class MenuWithDrilldown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: null,
+      menuDrilledIn: [],
+      drilldownPath: [],
+      menuHeights: {},
+      activeMenu: 'rootMenu'
+    };
+    this.onSelect = (event, itemId) => {
+      if (itemId.startsWith('group:')) {
+        console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
+      } else {
+        console.log(`selected: ${itemId}`);
+        this.setState({
+          activeItem: itemId
+        });
+      }
+    };
+    this.drillIn = (fromMenuId, toMenuId, pathId) => {
+      this.setState({
+        menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
+        drilldownPath: [...this.state.drilldownPath, pathId],
+        activeMenu: toMenuId
+      });
+    };
+    this.drillOut = toMenuId => {
+      const indexOfMenuId = this.state.menuDrilledIn.indexOf(toMenuId);
+      const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, indexOfMenuId);
+      const indexOfMenuIdPath = this.state.drilldownPath.indexOf(toMenuId);
+      const pathSansLast = this.state.drilldownPath.slice(0, indexOfMenuIdPath);
+      this.setState({
+        menuDrilledIn: menuDrilledInSansLast,
+        drilldownPath: pathSansLast,
+        activeMenu: toMenuId
+      });
+    };
+    this.setHeight = (menuId, height) => {
+      if (!this.state.menuHeights[menuId]) {
+        this.setState({
+          menuHeights: {
+            ...this.state.menuHeights,
+            [menuId]: height
+          }
+        });
+      }
+    };
+  }
+
+  render() {
+    const { activeItem, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
+
+    // Menus
+    const rootMenu = () => (
+      <Menu
+        id="rootMenu"
+        containsDrilldown
+        isMenuDrilledIn={menuDrilledIn.includes('rootMenu')}
+        onSelect={this.onSelect}
+      >
+        <MenuContent
+          getHeight={height => this.setHeight('rootMenu', height)}
+          style={{ '--pf-c-menu__content--Height': `${menuHeights[activeMenu]}px` }}
+        >
+          <MenuList>
+            <MenuItemStartRollout
+              direction="down"
+              isOnPath={drilldownPath.includes('MenuItemStartRollout')}
+              drilldownMenu={
+                <DrilldownMenu
+                  id="drilldownMenuStart"
+                  onSelect={this.onSelect}
+                  isMenuDrilledIn={menuDrilledIn.includes('drilldownMenuStart')}
+                  getHeight={height => this.setHeight('drilldownMenuStart', height)}
+                >
+                  <MenuBreadcrumb>
+                    <Breadcrumb>
+                      <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                        Root
+                      </BreadcrumbItem>
+                      <BreadcrumbItem>Start rollout</BreadcrumbItem>
+                    </Breadcrumb>
+                  </MenuBreadcrumb>
+                  <Divider component="li" />
+                  <MenuItemAppGrouping
+                    direction="down"
+                    isOnPath={drilldownPath.includes('MenuItemAppStartGrouping')}
+                    drilldownMenu={
+                      <DrilldownMenu
+                        id="drilldownMenuStartGrouping"
+                        onSelect={this.onSelect}
+                        getHeight={height => this.setHeight('drilldownMenuStartGrouping', height)}
+                      >
+                        <MenuBreadcrumb>
+                          <Breadcrumb>
+                            <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                              Root
+                            </BreadcrumbItem>
+                            <BreadcrumbItem onClick={() => this.drillOut('drilldownMenuStart')} showDivider>
+                              Start rollout
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>Application Grouping</BreadcrumbItem>
+                          </Breadcrumb>
+                        </MenuBreadcrumb>
+                        <Divider component="li" />
+                        <MenuItem itemId="group_a">Group A</MenuItem>
+                        <MenuItem itemId="group_b">Group B</MenuItem>
+                        <MenuItem itemId="group_c">Group C</MenuItem>
+                      </DrilldownMenu>
+                    }
+                    onClick={() =>
+                      this.drillIn('drilldownMenuStart', 'drilldownMenuStartGrouping', 'MenuItemAppStartGrouping')
+                    }
+                  />
+                  <MenuItem itemId="count">Count</MenuItem>
+                  <MenuItemLabels
+                    direction="down"
+                    isOnPath={drilldownPath.includes('MenuItemStartLabels')}
+                    drilldownMenu={
+                      <DrilldownMenu
+                        id="drilldownMenuStartLabels"
+                        onSelect={this.onSelect}
+                        getHeight={height => this.setHeight('drilldownMenuStartLabels', height)}
+                      >
+                        <MenuBreadcrumb>
+                          <Breadcrumb>
+                            <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                              Root
+                            </BreadcrumbItem>
+                            <BreadcrumbItem onClick={() => this.drillOut('drilldownMenuStart')} showDivider>
+                              Start rollout
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>Labels</BreadcrumbItem>
+                          </Breadcrumb>
+                        </MenuBreadcrumb>
+                        <Divider component="li" />
+                        <MenuItem itemId="label_1">Label 1</MenuItem>
+                        <MenuItem itemId="label_2">Label 2</MenuItem>
+                        <MenuItem itemId="label_3">Label 3</MenuItem>
+                      </DrilldownMenu>
+                    }
+                    onClick={() =>
+                      this.drillIn('drilldownMenuStart', 'drilldownMenuStartLabels', 'MenuItemStartLabels')
+                    }
+                  />
+                  <MenuItem itemId="annotations">Annotations</MenuItem>
+                </DrilldownMenu>
+              }
+              onClick={() => this.drillIn('rootMenu', 'drilldownMenuStart', 'MenuItemStartRollout')}
+            />
+            <MenuItemPauseRollout
+              direction="down"
+              isOnPath={drilldownPath.includes('MenuItemPauseRollout')}
+              drilldownMenu={
+                <DrilldownMenu
+                  id="drilldownMenuPause"
+                  onSelect={this.onSelect}
+                  isMenuDrilledIn={menuDrilledIn.includes('drilldownMenuPause')}
+                  getHeight={height => this.setHeight('drilldownMenuPause', height)}
+                >
+                  <MenuBreadcrumb>
+                    <Breadcrumb>
+                      <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                        Root
+                      </BreadcrumbItem>
+                      <BreadcrumbItem>Pause rollouts</BreadcrumbItem>
+                    </Breadcrumb>
+                  </MenuBreadcrumb>
+                  <Divider component="li" />
+                  <MenuItemAppGrouping
+                    direction="down"
+                    isOnPath={drilldownPath.includes('MenuItemAppGrouping')}
+                    drilldownMenu={
+                      <DrilldownMenu
+                        id="drilldownMenuGrouping"
+                        onSelect={this.onSelect}
+                        getHeight={height => this.setHeight('drilldownMenuGrouping', height)}
+                      >
+                        <MenuBreadcrumb>
+                          <Breadcrumb>
+                            <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                              Root
+                            </BreadcrumbItem>
+                            <BreadcrumbItem onClick={() => this.drillOut('drilldownMenuPause')} showDivider>
+                              Pause rollouts
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>Application Grouping</BreadcrumbItem>
+                          </Breadcrumb>
+                        </MenuBreadcrumb>
+                        <Divider component="li" />
+                        <MenuItem itemId="group_a">Group A</MenuItem>
+                        <MenuItem itemId="group_b">Group B</MenuItem>
+                        <MenuItem itemId="group_c">Group C</MenuItem>
+                      </DrilldownMenu>
+                    }
+                    onClick={() => this.drillIn('drilldownMenuPause', 'drilldownMenuGrouping', 'MenuItemAppGrouping')}
+                  />
+                  <MenuItem itemId="count">Count</MenuItem>
+                  <MenuItemLabels
+                    direction="down"
+                    isOnPath={drilldownPath.includes('MenuItemLabels')}
+                    drilldownMenu={
+                      <DrilldownMenu
+                        id="drilldownMenuLabels"
+                        onSelect={this.onSelect}
+                        getHeight={height => this.setHeight('drilldownMenuLabels', height)}
+                      >
+                        <MenuBreadcrumb>
+                          <Breadcrumb>
+                            <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                              Root
+                            </BreadcrumbItem>
+                            <BreadcrumbItem onClick={() => this.drillOut('drilldownMenuPause')} showDivider>
+                              Pause rollouts
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>Labels</BreadcrumbItem>
+                          </Breadcrumb>
+                        </MenuBreadcrumb>
+                        <Divider component="li" />
+                        <MenuItem itemId="label_1">Label 1</MenuItem>
+                        <MenuItem itemId="label_2">Label 2</MenuItem>
+                        <MenuItem itemId="label_3">Label 3</MenuItem>
+                      </DrilldownMenu>
+                    }
+                    onClick={() => this.drillIn('drilldownMenuPause', 'drilldownMenuLabels', 'MenuItemLabels')}
+                  />
+                  <MenuItem itemId="annotations">Annotations</MenuItem>
+                </DrilldownMenu>
+              }
+              onClick={() => this.drillIn('rootMenu', 'drilldownMenuPause', 'MenuItemPauseRollout')}
+            />
+            <MenuItemStorage
+              direction="down"
+              isOnPath={drilldownPath.includes('MenuItemStorage')}
+              drilldownMenu={
+                <DrilldownMenu
+                  id="drilldownMenuStorage"
+                  onSelect={this.onSelect}
+                  getHeight={height => this.setHeight('drilldownMenuStorage', height)}
+                >
+                  <MenuBreadcrumb>
+                    <Breadcrumb>
+                      <BreadcrumbItem onClick={() => this.drillOut('rootMenu')} showDivider>
+                        Root
+                      </BreadcrumbItem>
+                      <BreadcrumbItem>Add storage</BreadcrumbItem>
+                    </Breadcrumb>
+                  </MenuBreadcrumb>
                   <Divider component="li" />
                   <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
                     From Git
