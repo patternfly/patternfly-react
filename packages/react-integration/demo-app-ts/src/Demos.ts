@@ -181,6 +181,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ClipboardCopyExpandedDemo
   },
   {
+    id: 'code-editor-demo',
+    name: 'CodeEditor Demo',
+    componentType: Examples.CodeEditorDemo
+  },
+  {
     id: 'consoles-demo',
     name: 'Consoles Demo',
     componentType: Examples.ConsolesDemo
