@@ -15,6 +15,8 @@ export interface TreeViewListItemProps {
   name: React.ReactNode;
   /** ID of a tree view item */
   id?: string;
+  /** Flag indicating if the node is expanded, overrides internal state */
+  isExpanded?: boolean;
   /** Flag indicating if node is expanded by default */
   defaultExpanded?: boolean;
   /** Child nodes of a tree view item */
@@ -50,6 +52,7 @@ export interface TreeViewListItemProps {
 export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = ({
   name,
   id,
+  isExpanded,
   defaultExpanded = false,
   children = null,
   onSelect,
@@ -68,19 +71,21 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   action,
   compareItems
 }: TreeViewListItemProps) => {
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+  const [internalIsExpanded, setIsExpanded] = useState(defaultExpanded);
 
   useEffect(() => {
-    setIsExpanded(defaultExpanded);
-  }, [defaultExpanded]);
+    if (isExpanded !== undefined && isExpanded !== null) {
+      setIsExpanded(isExpanded);
+    }
+  }, [isExpanded]);
 
   const Component = hasCheck ? 'div' : 'button';
   const ToggleComponent = hasCheck ? 'button' : 'div';
   return (
     <li
       id={id}
-      className={css(styles.treeViewListItem, isExpanded && styles.modifiers.expanded)}
-      {...(isExpanded && { 'aria-expanded': 'true' })}
+      className={css(styles.treeViewListItem, internalIsExpanded && styles.modifiers.expanded)}
+      {...(internalIsExpanded && { 'aria-expanded': 'true' })}
       role={children ? 'treeitem' : 'none'}
       tabIndex={-1}
     >
@@ -100,7 +105,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheck) {
                   if (children) {
-                    setIsExpanded(!isExpanded);
+                    setIsExpanded(!internalIsExpanded);
                   }
                   onSelect && onSelect(evt, itemData, parentItem);
                 }
@@ -113,7 +118,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                   className={css(styles.treeViewNodeToggle)}
                   onClick={() => {
                     if (hasCheck) {
-                      setIsExpanded(!isExpanded);
+                      setIsExpanded(!internalIsExpanded);
                     }
                   }}
                   {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
@@ -139,8 +144,8 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
               )}
               {icon && (
                 <span className={css(styles.treeViewNodeIcon)}>
-                  {!isExpanded && icon}
-                  {isExpanded && (expandedIcon || icon)}
+                  {!internalIsExpanded && icon}
+                  {internalIsExpanded && (expandedIcon || icon)}
                 </span>
               )}
               {hasCheck ? (
@@ -160,7 +165,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
         </GenerateId>
         {action && <div className={css(styles.treeViewAction)}>{action}</div>}
       </div>
-      {isExpanded && children}
+      {internalIsExpanded && children}
     </li>
   );
 };
