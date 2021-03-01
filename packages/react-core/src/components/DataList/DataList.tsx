@@ -63,6 +63,7 @@ interface DataListContextProps {
   isDraggable: boolean;
   dragStart: (e: React.DragEvent) => void;
   dragEnd: (e: React.DragEvent) => void;
+  drop: (e: React.DragEvent) => void;
   dragKeyHandler: (e: React.KeyboardEvent) => void;
 }
 
@@ -190,7 +191,10 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       draggingToItemIndex: null,
       dragging: false
     });
-    this.props.onDragFinish(this.state.tempItemOrder);
+  };
+
+  dragEnd = (evt: React.DragEvent) => {
+    this.dragEnd0(evt.target as HTMLElement);
   };
 
   isValidDrop = (evt: React.DragEvent) => {
@@ -203,9 +207,9 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     );
   };
 
-  dragEnd = (evt: React.DragEvent) => {
+  drop = (evt: React.DragEvent) => {
     if (this.isValidDrop(evt)) {
-      this.dragEnd0(evt.currentTarget as HTMLElement);
+      this.props.onDragFinish(this.state.tempItemOrder);
     } else {
       this.onDragCancel();
     }
@@ -264,6 +268,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
         this.dragFinished = true;
         if (evt.key === 'Enter') {
           this.dragEnd0(dragItem);
+          this.props.onDragFinish(this.state.tempItemOrder);
         } else {
           this.onDragCancel();
         }
@@ -324,6 +329,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           isDraggable,
           dragStart: this.dragStart,
           dragEnd: this.dragEnd,
+          drop: this.drop,
           dragKeyHandler: this.handleDragButtonKeys
         }}
       >

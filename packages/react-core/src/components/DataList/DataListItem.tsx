@@ -55,7 +55,15 @@ export class DataListItem extends React.Component<DataListItemProps> {
     const { children, isExpanded, className, id, 'aria-labelledby': ariaLabelledBy, ...props } = this.props;
     return (
       <DataListContext.Consumer>
-        {({ isSelectable, selectedDataListItemId, updateSelectedDataListItem, isDraggable, dragStart, dragEnd }) => {
+        {({
+          isSelectable,
+          selectedDataListItemId,
+          updateSelectedDataListItem,
+          isDraggable,
+          dragStart,
+          dragEnd,
+          drop
+        }) => {
           const selectDataListItem = (event: React.MouseEvent) => {
             let target: any = event.target;
             while (event.currentTarget !== target) {
@@ -85,6 +93,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
           const dragButton = findDataListDragButton(children);
           const dragProps = isDraggable && {
             draggable: dragButton ? !dragButton.props.isDisabled : true,
+            onDrop: drop,
             onDragEnd: dragEnd,
             onDragStart: dragStart
           };
