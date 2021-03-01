@@ -147,8 +147,8 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         passwordLabel="Password"
         passwordValue={this.state.passwordValue}
         isShowPasswordEnabled
-        showPasswordLabel="Test show password"
-        hidePasswordLabel="Test hide password"
+        showPasswordAriaLabel="Test show password"
+        hidePasswordAriaLabel="Test hide password"
         onChangePassword={this.handlePasswordChange}
         isValidPassword={this.state.isValidPassword}
         rememberMeLabel="Keep me logged in for 30 days."

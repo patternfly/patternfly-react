@@ -37,10 +37,10 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   isValidPassword?: boolean;
   /** Flag indicating if the user can toggle hiding the password */
   isShowPasswordEnabled?: boolean;
-  /** Label for the show password button */
-  showPasswordLabel?: string;
-  /** Label for the hide password button */
-  hidePasswordLabel?: string;
+  /** Accessible label for the show password button */
+  showPasswordAriaLabel?: string;
+  /** Accessible label for the hide password button */
+  hidePasswordAriaLabel?: string;
   /** Label for the Log in Button Input */
   loginButtonLabel?: string;
   /** Flag indicating if the Login Button is disabled */
@@ -69,8 +69,8 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   passwordValue = '',
   onChangePassword = () => undefined as any,
   isShowPasswordEnabled = false,
-  hidePasswordLabel = 'Hide password',
-  showPasswordLabel = 'Show password',
+  hidePasswordAriaLabel = 'Hide password',
+  showPasswordAriaLabel = 'Show password',
   isValidPassword = true,
   loginButtonLabel = 'Log In',
   isLoginButtonDisabled = false,
@@ -81,6 +81,19 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   ...props
 }: LoginFormProps) => {
   const [passwordHidden, setPasswordHidden] = React.useState(true);
+
+  const passwordInput = (
+    <TextInput
+      isRequired
+      type={passwordHidden ? 'password' : 'text'}
+      id="pf-login-password-id"
+      name="pf-login-password-id"
+      validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
+      value={passwordValue}
+      onChange={onChangePassword}
+    />
+  );
+
   return (
     <Form className={className} {...props}>
       <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
@@ -111,35 +124,17 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       >
         {isShowPasswordEnabled && (
           <InputGroup>
-            <TextInput
-              isRequired
-              type={passwordHidden ? 'password' : 'text'}
-              id="pf-login-password-id"
-              name="pf-login-password-id"
-              validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
-              value={passwordValue}
-              onChange={onChangePassword}
-            />
+            {passwordInput}
             <Button
               variant="control"
               onClick={() => setPasswordHidden(!passwordHidden)}
-              aria-label={passwordHidden ? showPasswordLabel : hidePasswordLabel}
+              aria-label={passwordHidden ? showPasswordAriaLabel : hidePasswordAriaLabel}
             >
               {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
             </Button>
           </InputGroup>
         )}
-        {!isShowPasswordEnabled && (
-          <TextInput
-            isRequired
-            type="password"
-            id="pf-login-password-id"
-            name="pf-login-password-id"
-            validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
-            value={passwordValue}
-            onChange={onChangePassword}
-          />
-        )}
+        {!isShowPasswordEnabled && passwordInput}
       </FormGroup>
       {rememberMeLabel.length > 0 && (
         <FormGroup fieldId="pf-login-remember-me-id">
