@@ -1,15 +1,18 @@
+const amSuffix = ' AM';
+const pmSuffix = ' PM';
+
 export const makeTimeOptions = (stepMinutes: number, hour12: boolean, delimiter: string) => {
   const res = [];
   const iter = new Date(new Date().setHours(0, 0, 0, 0));
   const iterDay = iter.getDay();
   while (iter.getDay() === iterDay) {
     let hour = iter.getHours();
-    let suffix = 'am';
+    let suffix = amSuffix;
     if (hour12) {
       if (hour === 0) {
         hour = 12; // 12am
       } else if (hour >= 12) {
-        suffix = 'pm';
+        suffix = pmSuffix;
       }
       if (hour > 12) {
         hour %= 12;
@@ -42,9 +45,9 @@ export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is
     const minutes = `${date.getMinutes()}`.padStart(2, '0');
     let ampm = '';
     if (is12Hour && date.getHours() > 11) {
-      ampm = 'pm';
+      ampm = pmSuffix;
     } else if (is12Hour) {
-      ampm = 'am';
+      ampm = amSuffix;
     }
     return `${hours}${delimiter}${minutes}${ampm}`;
   } else if (
@@ -52,10 +55,10 @@ export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is
     is12Hour &&
     validateTime(time, timeRegex, delimiter, is12Hour) &&
     time !== '' &&
-    !time.toLowerCase().includes('am') &&
-    !time.toLowerCase().includes('pm')
+    !time.toUpperCase().includes(amSuffix.trim()) &&
+    !time.toUpperCase().includes(pmSuffix.trim())
   ) {
-    return `${time}${new Date().getHours() > 11 ? 'pm' : 'am'}`; // if currently morning append am, otherwise pm
+    return `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`; // if currently morning append am, otherwise pm
   }
   return time;
 };
