@@ -708,21 +708,10 @@ class MenuWithDrilldown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: null,
       menuDrilledIn: [],
       drilldownPath: [],
       menuHeights: {},
       activeMenu: 'rootMenu'
-    };
-    this.onSelect = (event, itemId) => {
-      if (itemId.startsWith('group:')) {
-        console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
-      } else {
-        console.log(`selected: ${itemId}`);
-        this.setState({
-          activeItem: itemId
-        });
-      }
     };
     this.drillIn = (fromMenuId, toMenuId, pathId) => {
       this.setState({
@@ -753,7 +742,7 @@ class MenuWithDrilldown extends React.Component {
   }
 
   render() {
-    const { activeItem, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
+    const { menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
     return (
       <Menu
         id="rootMenu"
@@ -763,7 +752,6 @@ class MenuWithDrilldown extends React.Component {
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}
         onGetMenuHeight={this.setHeight}
-        onSelect={this.onSelect}
       >
         <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
           <MenuList>
@@ -930,21 +918,10 @@ class MenuWithDrilldown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: null,
       menuDrilledIn: [],
       drilldownPath: [],
       menuHeights: {},
       activeMenu: 'rootMenu'
-    };
-    this.onSelect = (event, itemId) => {
-      if (itemId.startsWith('group:')) {
-        console.log(`selected sub-menu: ${itemId.split('group:')[1]}`);
-      } else {
-        console.log(`selected: ${itemId}`);
-        this.setState({
-          activeItem: itemId
-        });
-      }
     };
     this.drillIn = (fromMenuId, toMenuId, pathId) => {
       this.setState({
@@ -977,7 +954,7 @@ class MenuWithDrilldown extends React.Component {
   }
 
   render() {
-    const { activeItem, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
+    const { menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
     return (
       <Menu
         id="rootMenu"
@@ -987,7 +964,6 @@ class MenuWithDrilldown extends React.Component {
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}
         onGetMenuHeight={this.setHeight}
-        onSelect={this.onSelect}
       >
         <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
           <MenuList>
