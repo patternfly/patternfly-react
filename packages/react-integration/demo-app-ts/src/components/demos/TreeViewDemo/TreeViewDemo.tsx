@@ -67,6 +67,7 @@ export class TreeViewDemo extends Component {
   ];
 
   state = {
+    allExpanded: null as boolean,
     activeItems: [] as TreeViewDataItem[],
     activeItems2: [] as TreeViewDataItem[],
     filteredItems: this.options
@@ -115,8 +116,15 @@ export class TreeViewDemo extends Component {
     }
   };
 
+  onToggle = () => {
+    const { allExpanded } = this.state;
+    this.setState({
+      allExpanded: allExpanded !== undefined ? !allExpanded : true
+    });
+  };
+
   render() {
-    const { activeItems, activeItems2, filteredItems } = this.state;
+    const { activeItems, activeItems2, filteredItems, allExpanded } = this.state;
     const flagOptions: TreeViewDataItem[] = [
       {
         name: 'ApplicationLauncher',
@@ -186,8 +194,13 @@ export class TreeViewDemo extends Component {
     ];
     return (
       <React.Fragment>
+        <Button id="expand" variant="link" onClick={this.onToggle}>
+          {allExpanded && 'Collapse all'}
+          {!allExpanded && 'Expand all'}
+        </Button>
         <TreeView
           id="basic"
+          allExpanded={allExpanded}
           data={filteredItems}
           activeItems={activeItems}
           onSelect={this.onClick}
