@@ -35,6 +35,7 @@ export const makeTimeOptions = (stepMinutes: number, hour12: boolean, delimiter:
 };
 
 export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is12Hour: boolean) => {
+  time = time.trim();
   const date = new Date(time);
 
   // if default time is a ISO 8601 formatted date string, we parse it to hh:mm(am/pm) format
@@ -50,15 +51,27 @@ export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is
       ampm = amSuffix;
     }
     return `${hours}${delimiter}${minutes}${ampm}`;
-  } else if (
-    // if this 12 hour time is missing am/pm but otherwise valid, append am/pm
-    is12Hour &&
-    validateTime(time, timeRegex, delimiter, is12Hour) &&
-    time !== '' &&
-    !time.toUpperCase().includes(amSuffix.trim()) &&
-    !time.toUpperCase().includes(pmSuffix.trim())
-  ) {
-    return `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`; // if currently morning append am, otherwise pm
+  } else if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
+    // Format AM/PM according to design
+    let ampm = '';
+    if (time.toLowerCase().includes(amSuffix.toLowerCase().trim())) {
+      time = time
+        .toLowerCase()
+        .replace(amSuffix.toLowerCase().trim(), '')
+        .trim();
+      ampm = amSuffix;
+    } else if (time.toLowerCase().includes(pmSuffix.toLowerCase().trim())) {
+      time = time
+        .toLowerCase()
+        .replace(pmSuffix.toLowerCase().trim(), '')
+        .trim();
+      ampm = pmSuffix;
+    } else {
+      // if this 12 hour time is missing am/pm but otherwise valid,
+      // append am/pm depending on time of day
+      ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+    }
+    return `${time}${ampm}`;
   }
   return time;
 };
@@ -72,6 +85,7 @@ export const validateTime = (time: string, timeRegex: RegExp, delimiter: string,
   // hours only valid if they are [0-23] or [0-12]
   const hours = parseInt(time.split(delimiter)[0]);
   const validHours = hours >= 0 && hours <= (is12Hour ? 12 : 23);
+  // minutes verified by timeRegex
 
   // empty string is valid
   return time === '' || (timeRegex.test(time) && validHours);
