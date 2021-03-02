@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.76.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.75.4...demo-app-ts@4.76.0) (2021-03-02)
+
+
+### Features
+
+* **LoginPage:** enable show or hide password ([#5481](https://github.com/patternfly/patternfly-react/issues/5481)) ([72317be](https://github.com/patternfly/patternfly-react/commit/72317be761ce61fd3cdd4d02536e5d4ea43e3604))
+
+
+
+
+
 ## [4.75.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.75.3...demo-app-ts@4.75.4) (2021-02-24)
 
 **Note:** Version bump only for package demo-app-ts
