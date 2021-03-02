@@ -747,7 +747,7 @@ class MenuWithDrilldown extends React.Component {
       <Menu
         id="rootMenu"
         containsDrilldown
-        drilldownPath={drilldownPath}
+        drilldownItemPath={drilldownPath}
         drilledInMenus={menuDrilledIn}
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}
@@ -959,7 +959,7 @@ class MenuWithDrilldown extends React.Component {
       <Menu
         id="rootMenu"
         containsDrilldown
-        drilldownPath={drilldownPath}
+        drilldownItemPath={drilldownPath}
         drilledInMenus={menuDrilledIn}
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}

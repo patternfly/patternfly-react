@@ -32,9 +32,9 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   containsDrilldown?: boolean;
   /** Indicates if a menu is drilled into */
   isMenuDrilledIn?: boolean;
-  /** Indicates the drilldown path of menu itemIds */
-  drilldownPath?: string[];
-  /** Indicates the menus that are drilled in */
+  /** Indicates the path of drilled in menu itemIds */
+  drilldownItemPath?: string[];
+  /** Array of menus that are drilled in */
   drilledInMenus?: string[];
   /** Callback for drilling into a submenu */
   onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
@@ -79,7 +79,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       containsFlyout,
       containsDrilldown,
       isMenuDrilledIn,
-      drilldownPath,
+      drilldownItemPath,
       drilledInMenus,
       onDrillIn,
       onDrillOut,
@@ -101,7 +101,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           activeItemId,
           selected,
           drilledInMenus,
-          drilldownPath,
+          drilldownItemPath,
           onDrillIn,
           onDrillOut,
           onGetMenuHeight

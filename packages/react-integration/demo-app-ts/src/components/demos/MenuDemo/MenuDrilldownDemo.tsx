@@ -58,7 +58,7 @@ export class MenuDrilldownDemo extends Component {
       <Menu
         id="rootMenu"
         containsDrilldown
-        drilldownPath={drilldownPath}
+        drilldownItemPath={drilldownPath}
         drilledInMenus={menuDrilledIn}
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}

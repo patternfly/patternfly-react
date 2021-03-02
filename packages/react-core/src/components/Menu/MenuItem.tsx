@@ -190,11 +190,11 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         onActionClick,
         activeItemId,
         selected,
-        drilldownPath,
+        drilldownItemPath,
         onDrillIn,
         onDrillOut
       }) => {
-        const _isOnPath = (isOnPath && isOnPath) || (drilldownPath && drilldownPath.includes(itemId)) || false;
+        const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
         let _drill: () => void;
         if (direction) {
           if (direction === 'down') {
