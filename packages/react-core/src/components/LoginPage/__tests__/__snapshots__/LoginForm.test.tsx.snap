@@ -69,6 +69,75 @@ exports[`LoginForm with rememberMeLabel 1`] = `
 </Form>
 `;
 
+exports[`LoginForm with show password 1`] = `
+<Form
+  className=""
+>
+  <FormHelperText
+    icon={null}
+    isError={false}
+    isHidden={true}
+  />
+  <FormGroup
+    fieldId="pf-login-username-id"
+    isRequired={true}
+    label="Username"
+    validated="default"
+  >
+    <TextInput
+      autoFocus={true}
+      id="pf-login-username-id"
+      isRequired={true}
+      name="pf-login-username-id"
+      onChange={[Function]}
+      type="text"
+      validated="default"
+      value=""
+    />
+  </FormGroup>
+  <FormGroup
+    fieldId="pf-login-password-id"
+    isRequired={true}
+    label="Password"
+    validated="default"
+  >
+    <InputGroup>
+      <TextInput
+        id="pf-login-password-id"
+        isRequired={true}
+        name="pf-login-password-id"
+        onChange={[Function]}
+        type="password"
+        validated="default"
+        value=""
+      />
+      <Button
+        aria-label="Show password"
+        onClick={[Function]}
+        variant="control"
+      >
+        <EyeIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+        />
+      </Button>
+    </InputGroup>
+  </FormGroup>
+  <ActionGroup>
+    <Button
+      isBlock={true}
+      isDisabled={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      Log In
+    </Button>
+  </ActionGroup>
+</Form>
+`;
+
 exports[`should render Login form 1`] = `
 <Form
   className=""

@@ -4,6 +4,9 @@ import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { ValidatedOptions } from '../../helpers/constants';
+import { InputGroup } from '../InputGroup';
+import EyeSlashIcon from '@patternfly/react-icons/dist/js/icons/eye-slash-icon';
+import EyeIcon from '@patternfly/react-icons/dist/js/icons/eye-icon';
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */
@@ -32,6 +35,12 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   onChangePassword?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Flag indicating if the Password is valid */
   isValidPassword?: boolean;
+  /** Flag indicating if the user can toggle hiding the password */
+  isShowPasswordEnabled?: boolean;
+  /** Accessible label for the show password button */
+  showPasswordAriaLabel?: string;
+  /** Accessible label for the hide password button */
+  hidePasswordAriaLabel?: string;
   /** Label for the Log in Button Input */
   loginButtonLabel?: string;
   /** Flag indicating if the Login Button is disabled */
@@ -59,6 +68,9 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   passwordLabel = 'Password',
   passwordValue = '',
   onChangePassword = () => undefined as any,
+  isShowPasswordEnabled = false,
+  hidePasswordAriaLabel = 'Hide password',
+  showPasswordAriaLabel = 'Show password',
   isValidPassword = true,
   loginButtonLabel = 'Log In',
   isLoginButtonDisabled = false,
@@ -67,59 +79,79 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   isRememberMeChecked = false,
   onChangeRememberMe = () => undefined as any,
   ...props
-}: LoginFormProps) => (
-  <Form className={className} {...props}>
-    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
-      {helperText}
-    </FormHelperText>
-    <FormGroup
-      label={usernameLabel}
+}: LoginFormProps) => {
+  const [passwordHidden, setPasswordHidden] = React.useState(true);
+
+  const passwordInput = (
+    <TextInput
       isRequired
-      validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
-      fieldId="pf-login-username-id"
-    >
-      <TextInput
-        autoFocus={!noAutoFocus}
-        id="pf-login-username-id"
+      type={passwordHidden ? 'password' : 'text'}
+      id="pf-login-password-id"
+      name="pf-login-password-id"
+      validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
+      value={passwordValue}
+      onChange={onChangePassword}
+    />
+  );
+
+  return (
+    <Form className={className} {...props}>
+      <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
+        {helperText}
+      </FormHelperText>
+      <FormGroup
+        label={usernameLabel}
         isRequired
         validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
-        type="text"
-        name="pf-login-username-id"
-        value={usernameValue}
-        onChange={onChangeUsername}
-      />
-    </FormGroup>
-    <FormGroup
-      label={passwordLabel}
-      isRequired
-      validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
-      fieldId="pf-login-password-id"
-    >
-      <TextInput
-        isRequired
-        type="password"
-        id="pf-login-password-id"
-        name="pf-login-password-id"
-        validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
-        value={passwordValue}
-        onChange={onChangePassword}
-      />
-    </FormGroup>
-    {rememberMeLabel.length > 0 && (
-      <FormGroup fieldId="pf-login-remember-me-id">
-        <Checkbox
-          id="pf-login-remember-me-id"
-          label={rememberMeLabel}
-          isChecked={isRememberMeChecked}
-          onChange={onChangeRememberMe}
+        fieldId="pf-login-username-id"
+      >
+        <TextInput
+          autoFocus={!noAutoFocus}
+          id="pf-login-username-id"
+          isRequired
+          validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
+          type="text"
+          name="pf-login-username-id"
+          value={usernameValue}
+          onChange={onChangeUsername}
         />
       </FormGroup>
-    )}
-    <ActionGroup>
-      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
-        {loginButtonLabel}
-      </Button>
-    </ActionGroup>
-  </Form>
-);
+      <FormGroup
+        label={passwordLabel}
+        isRequired
+        validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
+        fieldId="pf-login-password-id"
+      >
+        {isShowPasswordEnabled && (
+          <InputGroup>
+            {passwordInput}
+            <Button
+              variant="control"
+              onClick={() => setPasswordHidden(!passwordHidden)}
+              aria-label={passwordHidden ? showPasswordAriaLabel : hidePasswordAriaLabel}
+            >
+              {passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
+            </Button>
+          </InputGroup>
+        )}
+        {!isShowPasswordEnabled && passwordInput}
+      </FormGroup>
+      {rememberMeLabel.length > 0 && (
+        <FormGroup fieldId="pf-login-remember-me-id">
+          <Checkbox
+            id="pf-login-remember-me-id"
+            label={rememberMeLabel}
+            isChecked={isRememberMeChecked}
+            onChange={onChangeRememberMe}
+          />
+        </FormGroup>
+      )}
+      <ActionGroup>
+        <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
+          {loginButtonLabel}
+        </Button>
+      </ActionGroup>
+    </Form>
+  );
+};
 LoginForm.displayName = 'LoginForm';
