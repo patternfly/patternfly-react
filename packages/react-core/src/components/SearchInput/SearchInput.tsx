@@ -139,7 +139,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     const keyCode = event.keyCode || event.which;
     if (
       showSearchMenu &&
-      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+      keyCode === KEY_CODES.ESCAPE_KEY &&
       searchInputRef &&
       searchInputRef.current &&
       searchInputRef.current.contains(event.target as Node)
