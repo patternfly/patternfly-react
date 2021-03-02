@@ -59,7 +59,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
           {children}
         </Component>
       )}
-      {!to && component !== 'button' && <React.Fragment>{children}</React.Fragment>}
+      {!to && component !== 'button' && children}
     </li>
   );
 };

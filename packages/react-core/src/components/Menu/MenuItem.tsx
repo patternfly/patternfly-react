@@ -7,7 +7,6 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
-import { MenuProps } from './Menu';
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -42,8 +41,8 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   flyoutMenu?: React.ReactNode;
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
-  /** Drilldown menu */
-  drilldownMenu?: MenuProps;
+  /** Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
+  drilldownMenu?: React.ReactNode;
   /** Sub menu direction */
   direction?: 'down' | 'up';
   /** True if item is on current selection path */
@@ -92,7 +91,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     onClick && onClick(event);
   };
 
-  const renderItem = (onSelect: any, activeItemId: any, selected: any | any[]): React.ReactNode => {
+  const renderItem = (
+    onSelect: any,
+    activeItemId: any,
+    selected: any | any[],
+    isOnPath: boolean,
+    drill: () => void
+  ): React.ReactNode => {
     let additionalProps = {};
     if (Component === 'a') {
       additionalProps = {
@@ -131,7 +136,10 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     return (
       <>
         <Component
-          onClick={(event: any) => onItemSelect(event, onSelect)}
+          onClick={(event: any) => {
+            onItemSelect(event, onSelect);
+            drill && drill();
+          }}
           className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
           aria-current={getAriaCurrent()}
           {...(isDisabled && { disabled: true })}
@@ -174,23 +182,41 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   };
 
   return (
-    <li
-      className={css(
-        styles.menuListItem,
-        isDisabled && styles.modifiers.disabled,
-        isOnPath && styles.modifiers.currentPath,
-        className
-      )}
-      onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
-      onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
-      // onClick={drilldownMenu !== undefined ? () => showDrilldown() : undefined}
-      ref={innerRef}
-      {...props}
-    >
-      <MenuContext.Consumer>
-        {({ onSelect, onActionClick, activeItemId, selected }) => (
-          <>
-            {renderItem(onSelect, activeItemId, selected)}
+    <MenuContext.Consumer>
+      {({
+        menuId,
+        parentMenu,
+        onSelect,
+        onActionClick,
+        activeItemId,
+        selected,
+        drilldownPath,
+        onDrillIn,
+        onDrillOut
+      }) => {
+        const _isOnPath = (isOnPath && isOnPath) || (drilldownPath && drilldownPath.includes(itemId)) || false;
+        let _drill: () => void;
+        if (direction) {
+          if (direction === 'down') {
+            _drill = () => onDrillIn && onDrillIn(menuId, (drilldownMenu as React.ReactElement).props.id, itemId);
+          } else {
+            _drill = () => onDrillOut && onDrillOut(parentMenu);
+          }
+        }
+        return (
+          <li
+            className={css(
+              styles.menuListItem,
+              isDisabled && styles.modifiers.disabled,
+              _isOnPath && styles.modifiers.currentPath,
+              className
+            )}
+            onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
+            onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
+            ref={innerRef}
+            {...props}
+          >
+            {renderItem(onSelect, activeItemId, selected, _isOnPath, _drill)}
             <MenuItemContext.Provider value={{ itemId, isDisabled }}>
               {actions}
               {isFavorited !== null && (
@@ -203,10 +229,10 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                 />
               )}
             </MenuItemContext.Provider>
-          </>
-        )}
-      </MenuContext.Consumer>
-    </li>
+          </li>
+        );
+      }}
+    </MenuContext.Consumer>
   );
 };
 

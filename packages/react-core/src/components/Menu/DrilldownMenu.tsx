@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu } from './Menu';
 import { MenuContent } from './MenuContent';
 import { MenuList } from './MenuList';
+import { MenuContext } from './MenuContext';
 
 export interface DrilldownMenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'> {
   /** Items within drilldown sub-menu */
@@ -10,10 +11,8 @@ export interface DrilldownMenuProps extends Omit<React.HTMLAttributes<HTMLDivEle
   id?: string;
   /** Flag indicating whether the menu is drilled in */
   isMenuDrilledIn?: boolean;
-  /** Callback to get the height of the sub menu */
+  /** Optional callback to get the height of the sub menu */
   getHeight?: (height: string) => void;
-  /** Callback for the selection of the sub menu */
-  onSelect?: (event?: React.MouseEvent, itemId?: string | number) => void;
 }
 
 export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
@@ -21,14 +20,26 @@ export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
   id,
   isMenuDrilledIn = false,
   getHeight,
-  onSelect,
   ...props
 }: DrilldownMenuProps) => (
-  <Menu id={id} isMenuDrilledIn={isMenuDrilledIn} onSelect={onSelect} {...props} ref={React.createRef()}>
-    <MenuContent getHeight={getHeight}>
-      <MenuList>{children}</MenuList>
-    </MenuContent>
-  </Menu>
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  <MenuContext.Consumer>
+    {({ menuId, parentMenu, ...context }) => (
+      <Menu
+        id={id}
+        parentMenu={menuId}
+        isMenuDrilledIn={isMenuDrilledIn}
+        {...props}
+        {...context}
+        ref={React.createRef()}
+      >
+        <MenuContent getHeight={getHeight}>
+          <MenuList>{children}</MenuList>
+        </MenuContent>
+      </Menu>
+    )}
+  </MenuContext.Consumer>
+  /* eslint-enable @typescript-eslint/no-unused-vars */
 );
 
 DrilldownMenu.displayName = 'DrilldownMenu';
