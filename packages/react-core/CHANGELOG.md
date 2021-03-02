@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.99.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.98.0...@patternfly/react-core@4.99.0) (2021-03-02)
+
+
+### Features
+
+* **TreeView:** add flag for expand/collapse all ([#5503](https://github.com/patternfly/patternfly-react/issues/5503)) ([b529adc](https://github.com/patternfly/patternfly-react/commit/b529adca780d185bc740056efe2f5b6826c0285b))
+
+
+
+
+
 # [4.98.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.97.4...@patternfly/react-core@4.98.0) (2021-03-02)
 
 
