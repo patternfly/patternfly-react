@@ -29,9 +29,9 @@ export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
         id={id}
         parentMenu={menuId}
         isMenuDrilledIn={isMenuDrilledIn}
-        {...props}
-        {...context}
         ref={React.createRef()}
+        {...context}
+        {...props}
       >
         <MenuContent getHeight={getHeight}>
           <MenuList>{children}</MenuList>
