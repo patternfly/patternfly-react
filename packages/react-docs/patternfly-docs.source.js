@@ -57,4 +57,7 @@ module.exports = (sourceMD, sourceProps) => {
 
   // Upgrade guide
   sourceMD(require.resolve('@patternfly/react-docs/UPGRADE-GUIDE.md'), 'react');
+
+  // OUIA MD
+  sourceMD(path.join(reactCorePath, 'helpers/OUIA/OUIA.md'), 'react');
 };
