@@ -286,20 +286,22 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         )}
       </InputGroup>
       {attributes.length > 0 && showSearchMenu && (
-        <div className={css(styles.searchInputMenu)}>
-          <Form>
-            {buildFormGroups()}
-            <ActionGroup>
-              <Button variant="primary" type="submit" onClick={onSearchHandler}>
-                {submitSearchButtonLabel}
-              </Button>
-              {!!onClear && (
-                <Button variant="link" type="reset" onClick={onClear}>
-                  {resetButtonLabel}
+        <div className={styles.searchInputMenu}>
+          <div className={styles.searchInputMenuBody}>
+            <Form>
+              {buildFormGroups()}
+              <ActionGroup>
+                <Button variant="primary" type="submit" onClick={onSearchHandler}>
+                  {submitSearchButtonLabel}
                 </Button>
-              )}
-            </ActionGroup>
-          </Form>
+                {!!onClear && (
+                  <Button variant="link" type="reset" onClick={onClear}>
+                    {resetButtonLabel}
+                  </Button>
+                )}
+              </ActionGroup>
+            </Form>
+          </div>
         </div>
       )}
     </div>
