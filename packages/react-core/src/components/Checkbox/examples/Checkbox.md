@@ -123,3 +123,11 @@ import { Checkbox } from '@patternfly/react-core';
 
 <Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
 ```
+
+### Standalone input
+```js
+import React from 'react';
+import { Checkbox } from '@patternfly/react-core';
+
+<Checkbox id="check-standalone-input" name="check-standalone-input" aria-label="Standalone input"/>
+```

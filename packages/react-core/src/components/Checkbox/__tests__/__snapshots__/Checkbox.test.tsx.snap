@@ -2,7 +2,7 @@
 
 exports[`controlled - 3rd state 1`] = `
 <div
-  className="pf-c-check"
+  className="pf-c-check pf-m-standalone"
 >
   <input
     aria-invalid={false}
@@ -18,7 +18,7 @@ exports[`controlled - 3rd state 1`] = `
 
 exports[`controlled 1`] = `
 <div
-  className="pf-c-check"
+  className="pf-c-check pf-m-standalone"
 >
   <input
     aria-invalid={false}
@@ -35,7 +35,7 @@ exports[`controlled 1`] = `
 
 exports[`isDisabled 1`] = `
 <div
-  className="pf-c-check"
+  className="pf-c-check pf-m-standalone"
 >
   <input
     aria-invalid={false}
@@ -171,7 +171,7 @@ exports[`passing class 1`] = `
 
 exports[`uncontrolled 1`] = `
 <div
-  className="pf-c-check"
+  className="pf-c-check pf-m-standalone"
 >
   <input
     aria-invalid={false}

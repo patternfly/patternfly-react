@@ -26,4 +26,13 @@ describe('Checkbox Demo Test', () => {
   it('Verify default label', () => {
     cy.get('label').contains('Controlled CheckBox');
   });
+
+  it('Verify standalone checkbox input', () => {
+    cy.get('#standalone-container').within(() => {
+      cy.get('div.pf-c-check.pf-m-standalone').should('exist');
+    });
+    cy.get('#not-standalone-container').within(() => {
+      cy.get('div.pf-c-check.pf-m-standalone').should('not.exist');
+    });
+  });
 });
