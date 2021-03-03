@@ -152,11 +152,25 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
         return React.cloneElement(group, props);
       });
     }
-    return React.Children.map(children, (child, index) =>
-      React.cloneElement(child as React.ReactElement, {
-        index
-      })
-    );
+    return this.recursiveMap(children);
+  }
+
+  recursiveMap(children: any) {
+    return React.Children.map(children, (child, index) => {
+      if (!React.isValidElement(child)) {
+        return child;
+      }
+
+      if ((child.props as any).children) {
+        const obj = {
+          children: this.recursiveMap((child.props as any).children),
+          index
+        };
+        child = React.cloneElement(child, obj);
+      }
+
+      return child;
+    });
   }
 
   render() {

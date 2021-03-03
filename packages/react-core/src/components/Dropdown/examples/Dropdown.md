@@ -59,9 +59,11 @@ class SimpleDropdown extends React.Component {
     const { isOpen } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
+      <React.Fragment>
+        <DropdownItem key="action" component="button">
+          Action
+        </DropdownItem>
+      </React.Fragment>,
       <DropdownItem key="disabled link" isDisabled href="www.google.com">
         Disabled Link
       </DropdownItem>,
