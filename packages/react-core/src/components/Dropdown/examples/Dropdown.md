@@ -64,10 +64,10 @@ class SimpleDropdown extends React.Component {
           Action
         </DropdownItem>
       </React.Fragment>,
-      <DropdownItem key="disabled link" isDisabled href="www.google.com">
+      <DropdownItem key="disabled link" href="www.google.com">
         Disabled Link
       </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      <DropdownItem key="disabled action" component="button">
         Disabled Action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
