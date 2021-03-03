@@ -1,5 +1,5 @@
-const amSuffix = ' AM';
-const pmSuffix = ' PM';
+export const amSuffix = ' AM';
+export const pmSuffix = ' PM';
 
 export const makeTimeOptions = (stepMinutes: number, hour12: boolean, delimiter: string) => {
   const res = [];
