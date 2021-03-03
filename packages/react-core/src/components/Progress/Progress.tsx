@@ -38,8 +38,10 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   isTitleTruncated?: boolean;
   /** Position of the tooltip which is displayed if title is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  /** Adds accessible text to the ProgressBar. Required when title not used */
+  /** Adds accessible text to the ProgressBar. Required when title not used and there is not any label associated with the progress bar */
   'aria-label'?: string;
+  /** Associates the ProgressBar with it's label for accessibility purposes. Required when title not used */
+  'aria-labelledby'?: string;
 }
 
 export class Progress extends React.Component<ProgressProps> {
@@ -58,7 +60,8 @@ export class Progress extends React.Component<ProgressProps> {
     valueText: null as string,
     isTitleTruncated: false,
     tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
-    'aria-label': null as string
+    'aria-label': null as string,
+    'aria-labelledby': null as string
   };
 
   id = this.props.id || getUniqueId();
@@ -81,24 +84,33 @@ export class Progress extends React.Component<ProgressProps> {
       isTitleTruncated,
       tooltipPosition,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       ...props
     } = this.props;
 
     const progressBarAriaProps: AriaProps = {
-      'aria-labelledby': title ? `${this.id}-description` : null,
-      'aria-label': ariaLabel ? ariaLabel : null,
       'aria-valuemin': min,
       'aria-valuenow': value,
       'aria-valuemax': max
     };
 
+    if (title || ariaLabelledBy) {
+      progressBarAriaProps['aria-labelledby'] = title ? `${this.id}-description` : ariaLabelledBy;
+    }
+
+    if (ariaLabel) {
+      progressBarAriaProps['aria-label'] = ariaLabel;
+    }
+
     if (valueText) {
       progressBarAriaProps['aria-valuetext'] = valueText;
     }
 
-    if (!title && !this.props['aria-label']) {
+    if (!title && !ariaLabelledBy && !ariaLabel) {
       /* eslint-disable no-console */
-      console.warn('An accessible aria-label is required when using the progress component without a title.');
+      console.warn(
+        'One of aria-label or aria-labelledby properties should be passed when using the progress component without a title.'
+      );
     }
 
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
