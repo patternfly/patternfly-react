@@ -84,3 +84,11 @@ import { Radio } from '@patternfly/react-core';
 
 <Radio id="radio-with-description" label="Radio with description example" description="Description" />
 ```
+
+### Standalone input
+```js
+import React from 'react';
+import { Radio } from '@patternfly/react-core';
+
+<Radio id="radio-standalone" aria-label="Standalone input" name="exampleRadioStandalone"/>
+```

@@ -129,7 +129,7 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
         {childrenRendered}
       </label>
     ) : (
-      <div className={css(styles.radio, className)}>{childrenRendered}</div>
+      <div className={css(styles.radio, !label && styles.modifiers.standalone, className)}>{childrenRendered}</div>
     );
   }
 }

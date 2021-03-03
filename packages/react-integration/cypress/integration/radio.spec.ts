@@ -23,4 +23,13 @@ describe('Radio Demo Test', () => {
     cy.get('#radio-6').should('not.be.checked');
     cy.get('#radio-6').should('be.disabled');
   });
+
+  it('Verify standalone radio input', () => {
+    cy.get('#standalone-container').within(() => {
+      cy.get('div.pf-c-radio.pf-m-standalone').should('exist');
+    });
+    cy.get('#not-standalone-container').within(() => {
+      cy.get('div.pf-c-radio.pf-m-standalone').should('not.exist');
+    });
+  });
 });
