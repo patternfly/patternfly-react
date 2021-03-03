@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.99.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.99.0...@patternfly/react-core@4.99.1) (2021-03-03)
+
+
+### Bug Fixes
+
+* **timepicker:** use different am/pm suffixes ([#5504](https://github.com/patternfly/patternfly-react/issues/5504)) ([7f0feee](https://github.com/patternfly/patternfly-react/commit/7f0feee330a23e11f950e5e3d521e1c7ea61b58a))
+
+
+
+
+
 # [4.99.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.98.0...@patternfly/react-core@4.99.0) (2021-03-02)
 
 
