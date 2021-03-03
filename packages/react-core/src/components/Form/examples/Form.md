@@ -687,3 +687,86 @@ class FormSections extends React.Component {
   }
 }
 ```
+
+### Grid form
+```js
+import React from 'react';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  Button,
+  Grid, GridItem,
+} from '@patternfly/react-core';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+
+class SimpleForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value1: '',
+      value2: '',
+      value3: ''
+    };
+    this.handleTextInputChange1 = value1 => {
+      this.setState({ value1 });
+    };
+    this.handleTextInputChange2 = value2 => {
+      this.setState({ value2 });
+    };
+    this.handleTextInputChange3 = value3 => {
+      this.setState({ value3 });
+    };
+  }
+
+  render() {
+    const { value1, value2, value3 } = this.state;
+
+    return (
+      <Form>
+        <Grid hasGutter md={6}>
+          <GridItem span={12}>
+            <FormGroup
+              label="Name"
+              isRequired
+              fieldId="simple-form-name-01"
+              helperText="Please provide your full name"
+            >
+              <TextInput
+                isRequired
+                type="text"
+                id="simple-form-name-01"
+                name="simple-form-name-01"
+                aria-describedby="simple-form-name-01-helper"
+                value={value1}
+                onChange={this.handleTextInputChange1}
+              />
+            </FormGroup>
+          </GridItem>
+          <FormGroup label="Email" isRequired fieldId="simple-form-email-01">
+            <TextInput
+              isRequired
+              type="email"
+              id="simple-form-email-01"
+              name="simple-form-email-01"
+              value={value2}
+              onChange={this.handleTextInputChange2}
+            />
+          </FormGroup>
+          <FormGroup label="Phone number" isRequired fieldId="simple-form-number-01">
+            <TextInput
+              isRequired
+              type="tel"
+              id="simple-form-number-01"
+              placeholder="555-555-5555"
+              name="simple-form-number-01"
+              value={value3}
+              onChange={this.handleTextInputChange3}
+            />
+          </FormGroup>
+        </Grid>
+      </Form>
+    );
+  }
+}
+```
