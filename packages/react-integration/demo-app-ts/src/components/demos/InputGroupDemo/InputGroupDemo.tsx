@@ -10,6 +10,7 @@ import {
   TextArea,
   InputGroup,
   InputGroupText,
+  InputGroupTextVariant,
   TextInput,
   Dropdown,
   DropdownToggle,
@@ -160,6 +161,14 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
               <QuestionCircleIcon />
             </Button>
           </Popover>
+        </InputGroup>
+        <br />
+        <br />
+        <InputGroup>
+          <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
+          <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
+            %
+          </InputGroupText>
         </InputGroup>
       </React.Fragment>
     );
