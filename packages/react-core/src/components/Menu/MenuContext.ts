@@ -10,7 +10,7 @@ export const MenuContext = React.createContext<{
   drilldownItemPath?: string[];
   drilledInMenus?: string[];
   onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
-  onDrillOut?: (toItemId: string) => void;
+  onDrillOut?: (toItemId: string, itemId: string) => void;
   onGetMenuHeight?: (menuId: string, height: number) => void;
 }>({
   menuId: null,

@@ -930,10 +930,10 @@ class MenuWithDrilldown extends React.Component {
         activeMenu: toMenuId
       });
     };
-    this.drillOut = toMenuId => {
+    this.drillOut = (toMenuId, fromPathId) => {
       const indexOfMenuId = this.state.menuDrilledIn.indexOf(toMenuId);
       const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, indexOfMenuId);
-      const indexOfMenuIdPath = this.state.drilldownPath.indexOf(toMenuId);
+      const indexOfMenuIdPath = this.state.drilldownPath.indexOf(fromPathId);
       const pathSansLast = this.state.drilldownPath.slice(0, indexOfMenuIdPath);
       this.setState({
         menuDrilledIn: menuDrilledInSansLast,
@@ -974,7 +974,10 @@ class MenuWithDrilldown extends React.Component {
                 <DrilldownMenu id="drilldownMenuStart">
                   <MenuBreadcrumb>
                     <Breadcrumb>
-                      <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                      <BreadcrumbItem
+                        component="button"
+                        onClick={() => this.drillOut('rootMenu', 'group:start_rollout')}
+                      >
                         Root
                       </BreadcrumbItem>
                       <BreadcrumbHeading component="button">Start rollout</BreadcrumbHeading>
@@ -982,17 +985,23 @@ class MenuWithDrilldown extends React.Component {
                   </MenuBreadcrumb>
                   <Divider component="li" />
                   <MenuItem
-                    itemId="group:app_grouping"
+                    itemId="group:app_grouping_start"
                     description="Groups A-C"
                     direction="down"
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuStartGrouping">
                         <MenuBreadcrumb>
                           <Breadcrumb>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('rootMenu', 'group:start_rollout')}
+                            >
                               Root
                             </BreadcrumbItem>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuStart')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('drilldownMenuStart', 'group:app_grouping_start')}
+                            >
                               Start rollout
                             </BreadcrumbItem>
                             <BreadcrumbHeading component="button">Application Grouping</BreadcrumbHeading>
@@ -1009,16 +1018,22 @@ class MenuWithDrilldown extends React.Component {
                   </MenuItem>
                   <MenuItem itemId="count">Count</MenuItem>
                   <MenuItem
-                    itemId="group:labels"
+                    itemId="group:labels_start"
                     direction="down"
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuStartLabels">
                         <MenuBreadcrumb>
                           <Breadcrumb>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('rootMenu', 'group:start_rollout')}
+                            >
                               Root
                             </BreadcrumbItem>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuStart')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('drilldownMenuStart', 'group:labels_start')}
+                            >
                               Start rollout
                             </BreadcrumbItem>
                             <BreadcrumbHeading component="button">Labels</BreadcrumbHeading>
@@ -1046,7 +1061,10 @@ class MenuWithDrilldown extends React.Component {
                 <DrilldownMenu id="drilldownMenuPause">
                   <MenuBreadcrumb>
                     <Breadcrumb>
-                      <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                      <BreadcrumbItem
+                        component="button"
+                        onClick={() => this.drillOut('rootMenu', 'group:pause_rollout')}
+                      >
                         Root
                       </BreadcrumbItem>
                       <BreadcrumbHeading component="button">Pause rollouts</BreadcrumbHeading>
@@ -1061,10 +1079,16 @@ class MenuWithDrilldown extends React.Component {
                       <DrilldownMenu id="drilldownMenuGrouping">
                         <MenuBreadcrumb>
                           <Breadcrumb>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('rootMenu', 'group:pause_rollout')}
+                            >
                               Root
                             </BreadcrumbItem>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuPause')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('drilldownMenuPause', 'group:app_grouping')}
+                            >
                               Pause rollouts
                             </BreadcrumbItem>
                             <BreadcrumbHeading component="button">Application Grouping</BreadcrumbHeading>
@@ -1087,10 +1111,16 @@ class MenuWithDrilldown extends React.Component {
                       <DrilldownMenu id="drilldownMenuLabels">
                         <MenuBreadcrumb>
                           <Breadcrumb>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('rootMenu', 'group:pause_rollout')}
+                            >
                               Root
                             </BreadcrumbItem>
-                            <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuPause')}>
+                            <BreadcrumbItem
+                              component="button"
+                              onClick={() => this.drillOut('drilldownMenuPause', 'group:labels')}
+                            >
                               Pause rollouts
                             </BreadcrumbItem>
                             <BreadcrumbHeading component="button">Labels</BreadcrumbHeading>
@@ -1119,7 +1149,7 @@ class MenuWithDrilldown extends React.Component {
                 <DrilldownMenu id="drilldownMenuStorage">
                   <MenuBreadcrumb>
                     <Breadcrumb>
-                      <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
+                      <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu', 'group:storage')}>
                         Root
                       </BreadcrumbItem>
                       <BreadcrumbHeading component="button">Add storage</BreadcrumbHeading>

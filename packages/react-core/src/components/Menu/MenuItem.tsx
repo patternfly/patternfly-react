@@ -200,7 +200,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           if (direction === 'down') {
             _drill = () => onDrillIn && onDrillIn(menuId, (drilldownMenu as React.ReactElement).props.id, itemId);
           } else {
-            _drill = () => onDrillOut && onDrillOut(parentMenu);
+            _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
           }
         }
         return (

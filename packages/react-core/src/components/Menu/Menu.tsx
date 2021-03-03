@@ -39,7 +39,7 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** Callback for drilling into a submenu */
   onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
   /** Callback for drilling out of a submenu */
-  onDrillOut?: (toItemId: string) => void;
+  onDrillOut?: (toItemId: string, itemId: string) => void;
   /** Callback for collecting menu heights */
   onGetMenuHeight?: (menuId: string, height: number) => void;
   /** ID of parent menu for drilldown menus */

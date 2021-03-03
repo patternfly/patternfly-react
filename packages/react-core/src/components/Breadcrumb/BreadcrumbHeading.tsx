@@ -37,7 +37,7 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
           </span>
         )}
         {!to && component === 'button' && (
-          <button className={(styles.breadcrumbLink, styles.modifiers.current)} aria-current type="button">
+          <button className={css(styles.breadcrumbLink, styles.modifiers.current)} aria-current type="button">
             {children}
           </button>
         )}
