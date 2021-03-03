@@ -22,6 +22,8 @@ export interface TreeViewDataItem {
   checkProps?: any;
   /** Flag indicating if a tree view item has a badge */
   hasBadge?: boolean;
+  /** Optional prop for custom badge */
+  customBadgeContent?: React.ReactNode;
   /** Additional properties of the tree view item badge */
   badgeProps?: any;
   /** Action of a tree view item, can be a Button or Dropdown */
@@ -95,6 +97,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           hasCheck={item.hasCheck !== undefined ? item.hasCheck : hasChecks}
           checkProps={item.checkProps}
           hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
+          customBadgeContent={item.customBadgeContent}
           badgeProps={item.badgeProps}
           activeItems={activeItems}
           parentItem={parentItem}

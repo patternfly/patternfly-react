@@ -31,6 +31,8 @@ export interface TreeViewListItemProps {
   checkProps?: CheckProps;
   /** Flag indicating if a tree view item has a badge */
   hasBadge?: boolean;
+  /** Optional prop for custom badge */
+  customBadgeContent?: React.ReactNode;
   /** Additional properties of the tree view item badge */
   badgeProps?: any;
   /** Active items of tree view */
@@ -62,6 +64,7 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
     checked: false
   },
   hasBadge = false,
+  customBadgeContent,
   badgeProps = { isRead: true },
   activeItems = [],
   itemData,
@@ -157,7 +160,9 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
               )}
               {hasBadge && children && (
                 <span className={css(styles.treeViewNodeCount)}>
-                  <Badge {...badgeProps}>{(children as React.ReactElement).props.data.length}</Badge>
+                  <Badge {...badgeProps}>
+                    {customBadgeContent ? customBadgeContent : (children as React.ReactElement).props.data.length}
+                  </Badge>
                 </span>
               )}
             </Component>
