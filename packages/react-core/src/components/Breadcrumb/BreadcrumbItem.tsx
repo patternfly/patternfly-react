@@ -49,7 +49,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
         </span>
       )}
       {component === 'button' && (
-        <button className={className} aria-current={ariaCurrent}>
+        <button className={className} aria-current={ariaCurrent} type="button">
           {children}
         </button>
       )}

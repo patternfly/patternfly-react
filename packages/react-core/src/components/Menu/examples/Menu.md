@@ -977,7 +977,7 @@ class MenuWithDrilldown extends React.Component {
                       <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
                         Root
                       </BreadcrumbItem>
-                      <BreadcrumbHeading>Start rollout</BreadcrumbHeading>
+                      <BreadcrumbHeading component="button">Start rollout</BreadcrumbHeading>
                     </Breadcrumb>
                   </MenuBreadcrumb>
                   <Divider component="li" />
@@ -995,7 +995,7 @@ class MenuWithDrilldown extends React.Component {
                             <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuStart')}>
                               Start rollout
                             </BreadcrumbItem>
-                            <BreadcrumbHeading>Application Grouping</BreadcrumbHeading>
+                            <BreadcrumbHeading component="button">Application Grouping</BreadcrumbHeading>
                           </Breadcrumb>
                         </MenuBreadcrumb>
                         <Divider component="li" />
@@ -1021,7 +1021,7 @@ class MenuWithDrilldown extends React.Component {
                             <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuStart')}>
                               Start rollout
                             </BreadcrumbItem>
-                            <BreadcrumbHeading>Labels</BreadcrumbHeading>
+                            <BreadcrumbHeading component="button">Labels</BreadcrumbHeading>
                           </Breadcrumb>
                         </MenuBreadcrumb>
                         <Divider component="li" />
@@ -1049,7 +1049,7 @@ class MenuWithDrilldown extends React.Component {
                       <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
                         Root
                       </BreadcrumbItem>
-                      <BreadcrumbHeading>Pause rollouts</BreadcrumbHeading>
+                      <BreadcrumbHeading component="button">Pause rollouts</BreadcrumbHeading>
                     </Breadcrumb>
                   </MenuBreadcrumb>
                   <Divider component="li" />
@@ -1067,7 +1067,7 @@ class MenuWithDrilldown extends React.Component {
                             <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuPause')}>
                               Pause rollouts
                             </BreadcrumbItem>
-                            <BreadcrumbHeading>Application Grouping</BreadcrumbHeading>
+                            <BreadcrumbHeading component="button">Application Grouping</BreadcrumbHeading>
                           </Breadcrumb>
                         </MenuBreadcrumb>
                         <Divider component="li" />
@@ -1093,7 +1093,7 @@ class MenuWithDrilldown extends React.Component {
                             <BreadcrumbItem component="button" onClick={() => this.drillOut('drilldownMenuPause')}>
                               Pause rollouts
                             </BreadcrumbItem>
-                            <BreadcrumbHeading>Labels</BreadcrumbHeading>
+                            <BreadcrumbHeading component="button">Labels</BreadcrumbHeading>
                           </Breadcrumb>
                         </MenuBreadcrumb>
                         <Divider component="li" />
@@ -1122,7 +1122,7 @@ class MenuWithDrilldown extends React.Component {
                       <BreadcrumbItem component="button" onClick={() => this.drillOut('rootMenu')}>
                         Root
                       </BreadcrumbItem>
-                      <BreadcrumbHeading>Add storage</BreadcrumbHeading>
+                      <BreadcrumbHeading component="button">Add storage</BreadcrumbHeading>
                     </Breadcrumb>
                   </MenuBreadcrumb>
                   <Divider component="li" />
