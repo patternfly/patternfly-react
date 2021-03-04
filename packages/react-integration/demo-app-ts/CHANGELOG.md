@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.79.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.78.1...demo-app-ts@4.79.0) (2021-03-04)
+
+
+### Features
+
+* **SearchInput:** add isDisabled and clean up focus handling ([#5468](https://github.com/patternfly/patternfly-react/issues/5468)) ([05b1b3a](https://github.com/patternfly/patternfly-react/commit/05b1b3a803c053150966e89a635120474c12c300))
+
+
+
+
+
 ## [4.78.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.78.0...demo-app-ts@4.78.1) (2021-03-04)
 
 **Note:** Version bump only for package demo-app-ts

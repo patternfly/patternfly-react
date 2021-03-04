@@ -69,6 +69,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
     return (
       <React.Fragment>
         <SearchInput
+          id="enabled-search"
           ref={this.inputRef}
           attributes={[
             { attr: 'username', display: 'Username' },
@@ -87,6 +88,19 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
         <Button id="focus_button" onClick={this.onInputFocus}>
           Focus on search
         </Button>
+        <SearchInput
+          id="disabled-search"
+          attributes={[
+            { attr: 'username', display: 'Username' },
+            { attr: 'firstname', display: 'First name' }
+          ]}
+          placeholder="Find by name"
+          advancedSearchDelimiter=":"
+          onChange={this.onChange}
+          onSearch={this.onSearch}
+          onClear={this.onClear}
+          isDisabled
+        />
       </React.Fragment>
     );
   }

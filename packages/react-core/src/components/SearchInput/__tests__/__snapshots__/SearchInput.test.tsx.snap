@@ -4,6 +4,7 @@ exports[`advanced search 1`] = `
 <input
   aria-label="Search input"
   className="pf-c-search-input__text-input"
+  disabled={false}
   onChange={[Function]}
   value="username:player firstname:john"
 />
@@ -15,6 +16,7 @@ exports[`navigable search results 1`] = `
 >
   <Button
     aria-label="Previous"
+    isDisabled={false}
     onClick={[MockFunction]}
     variant="plain"
   >
@@ -58,6 +60,7 @@ exports[`navigable search results 1`] = `
   </Button>
   <Button
     aria-label="Next"
+    isDisabled={false}
     onClick={[MockFunction]}
     variant="plain"
   >
@@ -122,6 +125,7 @@ exports[`simple search input 1`] = `
 <input
   aria-label="simple text input"
   className="pf-c-search-input__text-input"
+  disabled={false}
   onChange={[Function]}
   value="test input"
 />

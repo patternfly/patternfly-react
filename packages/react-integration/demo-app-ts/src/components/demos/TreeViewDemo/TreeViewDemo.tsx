@@ -165,6 +165,7 @@ export class TreeViewDemo extends Component {
         name: 'Cost Management',
         id: 'FCost',
         hasBadge: true,
+        customBadgeContent: 'custom badge',
         action: (
           <Button variant="plain" aria-label="Folder action">
             <FolderIcon />
