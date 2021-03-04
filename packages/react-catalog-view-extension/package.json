@@ -34,6 +34,7 @@
     "copy:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass",
     "clean": "rimraf dist"
   },
+  "dependencies": {
     "@patternfly/patternfly": "4.90.3",
     "@patternfly/react-core": "^4.101.0",
     "@patternfly/react-styles": "^4.8.3",
