@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.23.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.23.8...@patternfly/react-table@4.23.9) (2021-03-04)
+
+
+### Bug Fixes
+
+* **searchinput:** add searchInputMenuBody class ([#5518](https://github.com/patternfly/patternfly-react/issues/5518)) ([99f0512](https://github.com/patternfly/patternfly-react/commit/99f05123d28a7be887efd1921733fc2dc0bddd6d))
+
+
+
+
+
 ## [4.23.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.23.7...@patternfly/react-table@4.23.8) (2021-03-03)
 
 **Note:** Version bump only for package @patternfly/react-table

@@ -41,7 +41,7 @@ class DefaultTreeView extends React.Component {
 
     const options = [
       {
-        name: 'ApplicationLauncher',
+        name: 'Application launcher',
         id: 'AppLaunch',
         children: [
           {
@@ -72,7 +72,7 @@ class DefaultTreeView extends React.Component {
         defaultExpanded: true
       },
       {
-        name: 'Cost Management',
+        name: 'Cost management',
         id: 'Cost',
         children: [
           {
@@ -122,7 +122,7 @@ class SearchTreeView extends React.Component {
 
     this.options = [
       {
-        name: 'ApplicationLauncher',
+        name: 'Application launcher',
         id: 'AppLaunch',
         children: [
           {
@@ -153,7 +153,7 @@ class SearchTreeView extends React.Component {
         defaultExpanded: true
       },
       {
-        name: 'Cost Management',
+        name: 'Cost management',
         id: 'Cost',
         children: [
           {
@@ -239,7 +239,7 @@ class CheckboxTreeView extends React.Component {
     super(props);
     this.options = [
       {
-        name: 'ApplicationLauncher',
+        name: 'Application launcher',
         id: 'AppLaunch',
         checkProps: { 'aria-label': 'app-launcher-check', checked: false },
         children: [
@@ -298,7 +298,7 @@ class CheckboxTreeView extends React.Component {
         defaultExpanded: true
       },
       {
-        name: 'Cost Management',
+        name: 'Cost management',
         id: 'Cost',
         checkProps: { 'aria-label': 'cost-check', checked: false },
         children: [
@@ -471,7 +471,7 @@ class IconTreeView extends React.Component {
     const { activeItems } = this.state;
     const options = [
       {
-        name: 'ApplicationLauncher',
+        name: 'Application launcher',
         id: 'AppLaunch',
         children: [
           {
@@ -502,7 +502,7 @@ class IconTreeView extends React.Component {
         defaultExpanded: true
       },
       {
-        name: 'Cost Management',
+        name: 'Cost management',
         id: 'Cost',
         children: [
           {
@@ -562,7 +562,7 @@ class BadgesTreeView extends React.Component {
     const { activeItems } = this.state;
     const options = [
       {
-        name: 'ApplicationLauncher',
+        name: 'Application launcher',
         id: 'AppLaunch',
         children: [
           {
@@ -593,7 +593,7 @@ class BadgesTreeView extends React.Component {
         defaultExpanded: true
       },
       {
-        name: 'Cost Management',
+        name: 'Cost management',
         id: 'Cost',
         children: [
           {
@@ -614,6 +614,97 @@ class BadgesTreeView extends React.Component {
       {
         name: 'Really really really long folder name that overflows the container it is in',
         id: 'Long',
+        children: [{ name: 'Application 5', id: 'App5' }]
+      }
+    ];
+    return <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} hasBadges />;
+  }
+}
+```
+
+### With custom badges
+
+```js
+import React from 'react';
+import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+
+class CustomBadgesTreeView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { activeItems: {} };
+
+    this.onClick = (evt, treeViewItem, parentItem) => {
+      this.setState({
+        activeItems: [treeViewItem, parentItem]
+      });
+    };
+  }
+
+  render() {
+    const { activeItems } = this.state;
+    const options = [
+      {
+        name: 'Application launcher',
+        id: 'AppLaunch',
+        customBadgeContent: '2 applications',
+        children: [
+          {
+            name: 'Application 1',
+            id: 'App1',
+            customBadgeContent: '2 children',
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
+          },
+          {
+            name: 'Application 2',
+            id: 'App2',
+            customBadgeContent: '2 children',
+            children: [
+              { name: 'Settings', id: 'App2Settings' },
+              {
+                name: 'Loader',
+                id: 'App2Loader',
+                customBadgeContent: '3 loading apps',
+                children: [
+                  { name: 'Loading app 1', id: 'LoadApp1' },
+                  { name: 'Loading app 2', id: 'LoadApp2' },
+                  { name: 'Loading app 3', id: 'LoadApp3' }
+                ]
+              }
+            ]
+          }
+        ],
+        defaultExpanded: true
+      },
+      {
+        name: 'Cost management',
+        id: 'Cost',
+        customBadgeContent: '1 applications',
+        children: [
+          {
+            name: 'Application 3',
+            id: 'App3',
+            customBadgeContent: '2 children',
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Sources',
+        id: 'Sources',
+        customBadgeContent: '1 source',
+        children: [{ name: 'Application 4', id: 'App4', customBadgeContent: '1 child', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+      },
+      {
+        name: 'Really really really long folder name that overflows the container it is in',
+        id: 'Long',
+        customBadgeContent: '1 application',
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
@@ -671,7 +762,7 @@ class IconTreeView extends React.Component {
     ];
     const options = [
       {
-        name: 'ApplicationLauncher',
+        name: 'Application launcher',
         id: 'AppLaunch',
         action: (
           <Dropdown
@@ -724,7 +815,7 @@ class IconTreeView extends React.Component {
         defaultExpanded: true
       },
       {
-        name: 'Cost Management',
+        name: 'Cost management',
         id: 'Cost',
         children: [
           {
