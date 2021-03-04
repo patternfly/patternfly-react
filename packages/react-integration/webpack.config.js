@@ -1,4 +1,6 @@
 const path = require('path');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: './cypress/plugins/index.js',
@@ -20,5 +22,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx']
-  }
+  },
+  plugins: [new MonacoWebpackPlugin(), new ForkTsCheckerWebpackPlugin()]
 };
