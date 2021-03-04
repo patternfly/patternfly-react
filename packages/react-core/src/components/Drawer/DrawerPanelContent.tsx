@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
-import { DrawerContext } from './Drawer';
+import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -36,6 +36,8 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
     xl?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
+  /** Color variant of the background of the drawer panel */
+  colorVariant?: DrawerColorVariant | 'light-200' | 'default';
 }
 let isResizing: boolean = null;
 let newSize: number = 0;
@@ -54,6 +56,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   resizeAriaLabel = 'Resize',
   resizeAriaDescribedBy = 'Press space to begin resizing, and use the arrow keys to grow or shrink the panel. Press enter or escape to finish resizing.',
   widths,
+  colorVariant = DrawerColorVariant.default,
   ...props
 }: DrawerPanelContentProps) => {
   const panel = React.useRef<HTMLDivElement>();
@@ -226,6 +229,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         isResizable && styles.modifiers.resizable,
         hasNoBorder && styles.modifiers.noBorder,
         formatBreakpointMods(widths, styles),
+        colorVariant === DrawerColorVariant.light200 && styles.modifiers.light_200,
         className
       )}
       ref={panel}

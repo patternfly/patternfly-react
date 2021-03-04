@@ -5,6 +5,15 @@ describe('TreeView Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/treeview-demo-nav-link');
   });
 
+  it('Verify expand/collapse all', () => {
+    cy.get('#App1').should('exist');
+    cy.get('#expand').click();
+    cy.get('#expand').click();
+    cy.get('#App1').should('not.exist');
+    cy.get('#expand').click();
+    cy.get('#App1').should('exist');
+  });
+
   it('Verify treeview', () => {
     cy.get('#basic').should('exist');
     cy.get('#App1').should('exist');

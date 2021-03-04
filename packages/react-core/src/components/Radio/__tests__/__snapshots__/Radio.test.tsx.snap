@@ -2,7 +2,7 @@
 
 exports[`Radio check component controlled 1`] = `
 <div
-  className="pf-c-radio"
+  className="pf-c-radio pf-m-standalone"
 >
   <input
     aria-invalid={false}
@@ -23,7 +23,7 @@ exports[`Radio check component controlled 1`] = `
 
 exports[`Radio check component isDisabled 1`] = `
 <div
-  className="pf-c-radio"
+  className="pf-c-radio pf-m-standalone"
 >
   <input
     aria-invalid={false}
@@ -228,7 +228,7 @@ exports[`Radio check component passing class 1`] = `
 
 exports[`Radio check component uncontrolled 1`] = `
 <div
-  className="pf-c-radio"
+  className="pf-c-radio pf-m-standalone"
 >
   <input
     aria-invalid={false}

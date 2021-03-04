@@ -43,6 +43,8 @@ export interface TreeViewProps {
   icon?: React.ReactNode;
   /** Icon for all expanded node items */
   expandedIcon?: React.ReactNode;
+  /** Sets the expanded state on all tree nodes, overriding default behavior and current internal state */
+  allExpanded?: boolean;
   /** Sets the default expanded behavior */
   defaultAllExpanded?: boolean;
   /** Callback for item selection */
@@ -67,6 +69,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   hasChecks = false,
   hasBadges = false,
   defaultAllExpanded = false,
+  allExpanded,
   icon,
   expandedIcon,
   parentItem,
@@ -85,6 +88,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           key={item.name.toString()}
           name={item.name}
           id={item.id}
+          isExpanded={allExpanded}
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
@@ -107,6 +111,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 parentItem={item}
                 hasChecks={hasChecks}
                 hasBadges={hasBadges}
+                allExpanded={allExpanded}
                 defaultAllExpanded={defaultAllExpanded}
                 onSelect={onSelect}
                 onCheck={onCheck}

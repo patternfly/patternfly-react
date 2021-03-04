@@ -78,7 +78,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
 
     checkedProps.checked = checkedProps.checked === null ? false : checkedProps.checked;
     return (
-      <div className={css(styles.check, className)}>
+      <div className={css(styles.check, !label && styles.modifiers.standalone, className)}>
         <input
           {...props}
           className={css(styles.checkInput)}

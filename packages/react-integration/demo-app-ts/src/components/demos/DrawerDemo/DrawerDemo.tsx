@@ -2,14 +2,15 @@ import React from 'react';
 import {
   Button,
   Drawer,
-  DrawerPanelContent,
-  DrawerContent,
-  DrawerContentBody,
-  DrawerSection,
-  DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  DrawerProps
+  DrawerContent,
+  DrawerContentBody,
+  DrawerHead,
+  DrawerColorVariant,
+  DrawerPanelContent,
+  DrawerProps,
+  DrawerSection
 } from '@patternfly/react-core';
 
 export interface DrawerDemoState {
@@ -51,6 +52,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           xl: 'width_33',
           '2xl': 'width_25'
         }}
+        colorVariant={DrawerColorVariant.light200}
       >
         <DrawerHead>
           <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
@@ -72,8 +74,8 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
           Toggle Drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
-          <DrawerSection>drawer-section</DrawerSection>
-          <DrawerContent panelContent={panelContent}>
+          <DrawerSection colorVariant={DrawerColorVariant.default}>drawer-section</DrawerSection>
+          <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>

@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.100.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.100.0...@patternfly/react-core@4.100.1) (2021-03-04)
+
+
+### Bug Fixes
+
+* **searchinput:** add searchInputMenuBody class ([#5518](https://github.com/patternfly/patternfly-react/issues/5518)) ([99f0512](https://github.com/patternfly/patternfly-react/commit/99f05123d28a7be887efd1921733fc2dc0bddd6d))
+
+
+
+
+
+# [4.100.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.99.1...@patternfly/react-core@4.100.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* **CalendarMonth:** fix selecting month in Popover for React 17 ([#5517](https://github.com/patternfly/patternfly-react/issues/5517)) ([508e0eb](https://github.com/patternfly/patternfly-react/commit/508e0ebea256f7e1554ee307b9d7aedcf0749e93))
+* **datalist:** fix dragging in firefox ([#5505](https://github.com/patternfly/patternfly-react/issues/5505)) ([bfb6ec7](https://github.com/patternfly/patternfly-react/commit/bfb6ec7088929bbb1a4c3a3aeb21dfd9dc6fa24d))
+* **Progress:** make proper usage of accessibility properties      ([#5470](https://github.com/patternfly/patternfly-react/issues/5470)) ([99709b4](https://github.com/patternfly/patternfly-react/commit/99709b418330d7cd32fe0affa70cf3f0e3d1cb27))
+* **Radio, Checkbox:** Added standalone modifier when no label is provided ([#5513](https://github.com/patternfly/patternfly-react/issues/5513)) ([4e6273d](https://github.com/patternfly/patternfly-react/commit/4e6273db2cbf5e7a4f2a1fcfca3d706889ded5fe))
+
+
+### Features
+
+* **Drawer:** add gray and white panel background variants ([#5479](https://github.com/patternfly/patternfly-react/issues/5479)) ([2cddcb9](https://github.com/patternfly/patternfly-react/commit/2cddcb9d861c130d44c73f42eb93610d5dd5cfb2))
+* **InputGroup:** add plain input group text variant ([#5478](https://github.com/patternfly/patternfly-react/issues/5478)) ([6f6d772](https://github.com/patternfly/patternfly-react/commit/6f6d7722604445d41b5361e99a14474e578851e9))
+
+
+
+
+
+## [4.99.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.99.0...@patternfly/react-core@4.99.1) (2021-03-03)
+
+
+### Bug Fixes
+
+* **timepicker:** use different am/pm suffixes ([#5504](https://github.com/patternfly/patternfly-react/issues/5504)) ([7f0feee](https://github.com/patternfly/patternfly-react/commit/7f0feee330a23e11f950e5e3d521e1c7ea61b58a))
+
+
+
+
+
+# [4.99.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.98.0...@patternfly/react-core@4.99.0) (2021-03-02)
+
+
+### Features
+
+* **TreeView:** add flag for expand/collapse all ([#5503](https://github.com/patternfly/patternfly-react/issues/5503)) ([b529adc](https://github.com/patternfly/patternfly-react/commit/b529adca780d185bc740056efe2f5b6826c0285b))
+
+
+
+
+
 # [4.98.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.97.4...@patternfly/react-core@4.98.0) (2021-03-02)
 
 

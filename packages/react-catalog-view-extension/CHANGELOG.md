@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.10.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.8...@patternfly/react-catalog-view-extension@4.10.9) (2021-03-04)
+
+
+### Bug Fixes
+
+* **searchinput:** add searchInputMenuBody class ([#5518](https://github.com/patternfly/patternfly-react/issues/5518)) ([99f0512](https://github.com/patternfly/patternfly-react/commit/99f05123d28a7be887efd1921733fc2dc0bddd6d))
+
+
+
+
+
+## [4.10.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.7...@patternfly/react-catalog-view-extension@4.10.8) (2021-03-03)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.10.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.6...@patternfly/react-catalog-view-extension@4.10.7) (2021-03-03)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.10.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.5...@patternfly/react-catalog-view-extension@4.10.6) (2021-03-02)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [4.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.4...@patternfly/react-catalog-view-extension@4.10.5) (2021-03-02)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

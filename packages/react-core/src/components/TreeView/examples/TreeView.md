@@ -14,23 +14,30 @@ import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView, TreeViewDataItem, Button } from '@patternfly/react-core';
 
 class DefaultTreeView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeItems: {} };
+    this.state = { activeItems: {}, allExpanded: null };
 
     this.onClick = (evt, treeViewItem, parentItem) => {
       this.setState({
         activeItems: [treeViewItem, parentItem]
       });
     };
+
+    this.onToggle = evt => {
+      const { allExpanded } = this.state;
+      this.setState({
+        allExpanded: allExpanded !== undefined ? !allExpanded : true
+      });
+    };
   }
 
   render() {
-    const { activeItems } = this.state;
+    const { activeItems, allExpanded } = this.state;
 
     const options = [
       {
@@ -89,7 +96,16 @@ class DefaultTreeView extends React.Component {
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
-    return <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} />;
+    console.log('All expand?', allExpanded);
+    return (
+      <React.Fragment>
+        <Button variant="link" onClick={this.onToggle}>
+          {allExpanded && 'Collapse all'}
+          {!allExpanded && 'Expand all'}
+        </Button>
+        <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} allExpanded={allExpanded} />
+      </React.Fragment>
+    );
   }
 }
 ```
@@ -162,7 +178,7 @@ class SearchTreeView extends React.Component {
       }
     ];
 
-    this.state = { activeItems: {}, filteredItems: this.options, isFiltered: false };
+    this.state = { activeItems: {}, filteredItems: this.options, isFiltered: null };
 
     this.onClick = (evt, treeViewItem, parentItem) => {
       this.setState({
@@ -205,7 +221,7 @@ class SearchTreeView extends React.Component {
         onSelect={this.onClick}
         onSearch={this.onChange}
         searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
-        defaultAllExpanded={isFiltered}
+        allExpanded={isFiltered}
       />
     );
   }

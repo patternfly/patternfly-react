@@ -9,7 +9,7 @@ import { TimeOption } from './TimeOption';
 import { KeyTypes, SelectDirection } from '../Select';
 import { InputGroup } from '../InputGroup';
 import { TextInput } from '../TextInput';
-import { parseTime, validateTime, makeTimeOptions } from './TimePickerUtils';
+import { parseTime, validateTime, makeTimeOptions, amSuffix, pmSuffix } from './TimePickerUtils';
 
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -203,15 +203,15 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     // for 12hr variant, autoscroll to pm if it's currently the afternoon, otherwise autoscroll to am
     if (!is24Hour && splitTime.length > 1 && splitTime[1].length < 2) {
       const minutes = splitTime[1].length === 0 ? '00' : splitTime[1] + '0';
-      time = `${splitTime[0]}${delimiter}${minutes}${new Date().getHours() > 11 ? 'pm' : 'am'}`;
+      time = `${splitTime[0]}${delimiter}${minutes}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     } else if (
       !is24Hour &&
       splitTime.length > 1 &&
       splitTime[1].length === 2 &&
-      !time.toLowerCase().includes('am') &&
-      !time.toLowerCase().includes('pm')
+      !time.toLowerCase().includes(amSuffix.toLowerCase().trim()) &&
+      !time.toLowerCase().includes(pmSuffix.toLowerCase().trim())
     ) {
-      time = `${time}${new Date().getHours() > 11 ? 'pm' : 'am'}`;
+      time = `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     }
 
     let scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time.toLowerCase()));
@@ -225,9 +225,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       const minutes = splitTime[1].length === 1 ? splitTime[1] + '0' : '00';
       let amPm = '';
       if ((!is24Hour && splitTime[1].toLowerCase().includes('p')) || (is24Hour && new Date().getHours() > 11)) {
-        amPm = 'pm';
+        amPm = pmSuffix;
       } else if ((!is24Hour && splitTime[1].toLowerCase().includes('a')) || (is24Hour && new Date().getHours() <= 12)) {
-        amPm = 'am';
+        amPm = amSuffix;
       }
       time = `${splitTime[0]}${delimiter}${minutes}${amPm}`;
       scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time));
@@ -242,9 +242,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   getRegExp = () =>
-    !this.props.is24Hour
-      ? new RegExp(`\\b\\d\\d?${this.props.delimiter}?[0-5]\\d\\s?([AaPp][Mm])?\\b`)
-      : new RegExp(`\\b\\d\\d?${this.props.delimiter}?[0-5]\\d\\b`);
+    this.props.is24Hour
+      ? new RegExp(`^\\s*\\d\\d?${this.props.delimiter}[0-5]\\d\\s*$`)
+      : new RegExp(`^\\s*\\d\\d?${this.props.delimiter}[0-5]\\d\\s*([AaPp][Mm])?\\s*$`);
 
   getOptions = () =>
     (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];

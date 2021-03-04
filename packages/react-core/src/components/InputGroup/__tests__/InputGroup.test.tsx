@@ -1,19 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { InputGroup } from '../InputGroup';
-import { InputGroupText } from '../InputGroupText';
+import { InputGroupText, InputGroupTextVariant } from '../InputGroupText';
 import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 
 test('InputGroupText', () => {
   const view = shallow(
-    <InputGroupText className="inpt-grp-text" id="email-npt-grp">
+    <InputGroupText className="inpt-grp-text" variant={InputGroupTextVariant.plain} id="email-npt-grp">
       @
     </InputGroupText>
   );
   expect(view.find('span')).toHaveLength(1);
   const spanProps = view.find('span').props();
   expect(spanProps.className).toEqual(expect.stringContaining('inpt-grp-text'));
+  expect(spanProps.className).toEqual(expect.stringContaining('pf-m-plain'));
   expect(spanProps.id).toBe('email-npt-grp');
   expect(view.text()).toBe('@');
 });
