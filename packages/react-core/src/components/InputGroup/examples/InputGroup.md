@@ -33,6 +33,7 @@ import {
   Button,
   InputGroup,
   InputGroupText,
+  InputGroupTextVariant,
   TextInput,
   ValidatedOptions
 } from '@patternfly/react-core';
@@ -62,6 +63,11 @@ class SimpleInputGroups extends React.Component {
           <Button variant="control" aria-label="search button for search input">
             <SearchIcon />
           </Button>
+        </InputGroup>
+        <br />
+        <InputGroup>
+          <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
+          <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>%</InputGroupText>
         </InputGroup>
       </React.Fragment>
     );

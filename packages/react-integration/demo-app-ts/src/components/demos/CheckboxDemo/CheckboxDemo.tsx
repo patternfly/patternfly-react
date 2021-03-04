@@ -43,14 +43,19 @@ export class CheckboxDemo extends React.Component<{}, CheckboxState> {
           name="check1"
           description="This is the description of checkbox #1"
         />
-        <Checkbox
-          label="Controlled CheckBox"
-          isChecked={this.state.check2}
-          onChange={this.handleChange}
-          aria-label="controlled checkbox example"
-          id="check-2"
-          name="check2"
-        />
+        <div id="not-standalone-container">
+          <Checkbox
+            label="Controlled CheckBox"
+            isChecked={this.state.check2}
+            onChange={this.handleChange}
+            aria-label="controlled checkbox example"
+            id="check-2"
+            name="check2"
+          />
+        </div>
+        <div id="standalone-container">
+          <Checkbox aria-label="standalone input'" id="check-standalone" name="checkStandalone" />
+        </div>
       </React.Fragment>
     );
   }

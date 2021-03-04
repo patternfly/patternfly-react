@@ -190,7 +190,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       React.cloneElement(element, {
         ...(styleChildren && {
           className: css(element.props.className, classes)
-        })
+        }),
+        ref: this.ref
       });
 
     const renderDefaultComponent = (tag: string) => {

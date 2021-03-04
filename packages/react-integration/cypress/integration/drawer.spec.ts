@@ -19,8 +19,9 @@ describe('Drawer Demo Test', () => {
     cy.get('#toggleButton').click();
   });
 
-  it('Verify bottom drawer', () => {
+  it('Verify bottom drawer with background variant', () => {
     cy.get('.pf-c-drawer').should('have.class', 'pf-m-panel-bottom');
+    cy.get('.pf-c-drawer__panel').should('have.class', 'pf-m-light-200');
   });
 
   it('Verify panel widths', () => {

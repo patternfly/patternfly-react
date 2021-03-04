@@ -55,6 +55,11 @@ export class RadioDemo extends Component {
     ),
     name: 'disabled-2'
   };
+  myStandaloneRadioProps: RadioProps = {
+    id: 'standalone-1',
+    name: 'Standalone',
+    'aria-label': 'Standalone input'
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -102,12 +107,21 @@ export class RadioDemo extends Component {
           label={this.myUncheckedDisabledRadioProps.label}
           name={this.myUncheckedDisabledRadioProps.name}
         />
-        <Radio
-          id={this.myUncheckedDescriptionRadioProps.id}
-          label={this.myUncheckedDescriptionRadioProps.label}
-          name={this.myUncheckedDescriptionRadioProps.name}
-          description={this.myUncheckedDescriptionRadioProps.description}
-        />
+        <div id="not-standalone-container">
+          <Radio
+            id={this.myUncheckedDescriptionRadioProps.id}
+            label={this.myUncheckedDescriptionRadioProps.label}
+            name={this.myUncheckedDescriptionRadioProps.name}
+            description={this.myUncheckedDescriptionRadioProps.description}
+          />
+        </div>
+        <div id="standalone-container">
+          <Radio
+            id={this.myStandaloneRadioProps.id}
+            name={this.myStandaloneRadioProps.name}
+            aria-label={this.myStandaloneRadioProps['aria-label']}
+          />
+        </div>
       </React.Fragment>
     );
   }

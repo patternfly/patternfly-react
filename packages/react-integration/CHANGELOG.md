@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.79.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.78.0...@patternfly/react-integration@4.79.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* **Radio, Checkbox:** Added standalone modifier when no label is provided ([#5513](https://github.com/patternfly/patternfly-react/issues/5513)) ([4e6273d](https://github.com/patternfly/patternfly-react/commit/4e6273db2cbf5e7a4f2a1fcfca3d706889ded5fe))
+
+
+### Features
+
+* **Drawer:** add gray and white panel background variants ([#5479](https://github.com/patternfly/patternfly-react/issues/5479)) ([2cddcb9](https://github.com/patternfly/patternfly-react/commit/2cddcb9d861c130d44c73f42eb93610d5dd5cfb2))
+* **InputGroup:** add plain input group text variant ([#5478](https://github.com/patternfly/patternfly-react/issues/5478)) ([6f6d772](https://github.com/patternfly/patternfly-react/commit/6f6d7722604445d41b5361e99a14474e578851e9))
+
+
+
+
+
 # [4.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.77.0...@patternfly/react-integration@4.78.0) (2021-03-02)
 
 

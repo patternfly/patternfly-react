@@ -2,6 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 
+export enum DrawerColorVariant {
+  default = 'default',
+  light200 = 'light-200'
+}
+
 export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
   className?: string;
