@@ -30,6 +30,7 @@
     "build:umd": "rollup -c && rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist"
   },
+  "dependencies": {
     "@patternfly/patternfly": "4.90.3",
     "@patternfly/react-core": "^4.101.0",
     "@patternfly/react-icons": "^4.9.3",
