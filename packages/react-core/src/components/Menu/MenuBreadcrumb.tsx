@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 
 export interface MenuBreadcrumbProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'> {
-  /** Items within drilldown sub-menu */
+  /** Items within breadcrumb menu container */
   children?: React.ReactNode;
 }
 
