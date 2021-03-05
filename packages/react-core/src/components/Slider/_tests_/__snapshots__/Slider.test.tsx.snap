@@ -46,6 +46,7 @@ exports[`slider renders continuous slider 1`] = `
       <TextInput
         aria-label="Slider value input"
         className="pf-c-form-control"
+        isDisabled={false}
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -129,7 +130,7 @@ exports[`slider renders disabled slider 1`] = `
         onMouseDown={null}
         onTouchStart={null}
         role="slider"
-        tabIndex={0}
+        tabIndex={-1}
       />
     </div>
   </div>
@@ -420,6 +421,7 @@ exports[`slider renders slider with input above thumb 1`] = `
             <TextInput
               aria-label="Slider value input"
               className="pf-c-form-control"
+              isDisabled={false}
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
