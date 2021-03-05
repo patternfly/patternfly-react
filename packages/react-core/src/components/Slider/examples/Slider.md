@@ -388,13 +388,13 @@ class SliderActions extends React.Component {
 
   render() {
     const disabledAction = (
-      <Button variant="plain" aria-label="Plus" onClick={this.onClick}>
+      <Button variant="plain" aria-label="Lock" onClick={this.onClick}>
         <LockIcon />
       </Button>
     );
 
     const enabledAction = (
-      <Button variant="plain" aria-label="Plus" onClick={this.onClick}>
+      <Button variant="plain" aria-label="Unlock" onClick={this.onClick}>
         <LockOpenIcon />
       </Button>
     );
