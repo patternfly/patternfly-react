@@ -22,7 +22,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   currentValue?: number;
   /** Flag indicating if the slider is is discrete */
   isDiscrete?: boolean;
-  /** Adds disabled styling and disables the slider */
+  /** Adds disabled styling and disables the slider and the input component is present */
   isDisabled?: boolean;
   /** Array of slider step objects (value and label of each step) for the slider. */
   steps?: SliderStepObject[];
@@ -38,8 +38,6 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   inputLabel?: string | number;
   /** Position of the input */
   inputPosition?: 'aboveThumb' | 'right';
-  /** Flag indicating input is disabled */
-  isInputDisabled?: boolean;
   /** Value input callback.  Called when enter is hit while in input filed or focus shifts from input field */
   onChange?: (value: number) => void;
   /** Value change callback. This is called when the slider value changes */
@@ -64,7 +62,6 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
   inputPosition = 'right',
-  isInputDisabled,
   onChange,
   onValueChange,
   leftActions,
@@ -266,7 +263,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const textInput = (
       <TextInput
         className={css(styles.formControl)}
-        isDisabled={isInputDisabled}
+        isDisabled={isDisabled}
         type="number"
         value={localInputValue}
         aria-label={inputAriaLabel}

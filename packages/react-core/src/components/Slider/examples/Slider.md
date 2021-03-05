@@ -426,7 +426,6 @@ class SliderActions extends React.Component {
           inputLabel="%"
           isInputVisible
           isDisabled={this.state.isDisabled}
-          isInputDisabled={this.state.isDisabled}
           rightActions={this.state.isDisabled ? disabledAction : enabledAction}
         />
       </>
