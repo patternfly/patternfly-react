@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.81.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.80.0...@patternfly/react-integration@4.81.0) (2021-03-05)
+
+
+### Features
+
+* **CodeEditor:** Make 'code' prop controlled ([#5465](https://github.com/patternfly/patternfly-react/issues/5465)) ([613dec6](https://github.com/patternfly/patternfly-react/commit/613dec6d46ed0c08bc9e445a0a16bf6b6bb56bd1))
+
+
+
+
+
 # [4.80.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.79.0...@patternfly/react-integration@4.80.0) (2021-03-04)
 
 
