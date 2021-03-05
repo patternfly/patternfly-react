@@ -477,6 +477,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.MenuDemo
   },
   {
+    id: 'menu-drilldown-demo',
+    name: 'Menu Drilldown Demo',
+    componentType: Examples.MenuDrilldownDemo
+  },
+  {
     id: 'modal-demo',
     name: 'Modal Demo',
     componentType: Examples.ModalDemo

@@ -36,6 +36,11 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
             <AngleRightIcon />
           </span>
         )}
+        {!to && component === 'button' && (
+          <button className={css(styles.breadcrumbLink, styles.modifiers.current)} aria-current type="button">
+            {children}
+          </button>
+        )}
         {to && (
           <Component
             href={to}
@@ -46,7 +51,7 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
             {children}
           </Component>
         )}
-        {!to && <React.Fragment>{children}</React.Fragment>}
+        {!to && component !== 'button' && <React.Fragment>{children}</React.Fragment>}
       </h1>
     </li>
   );

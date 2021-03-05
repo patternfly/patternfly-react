@@ -93,6 +93,7 @@ export * from './LineChartDemo/LineChartSimpleDemo';
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
 export * from './MenuDemo/MenuDemo';
+export * from './MenuDemo/MenuDrilldownDemo';
 export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
 export * from './NotificationBadgeDemo/NotificationBadgeDemo';

@@ -48,13 +48,18 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
           <AngleRightIcon />
         </span>
       )}
+      {component === 'button' && (
+        <button className={className} aria-current={ariaCurrent} type="button">
+          {children}
+        </button>
+      )}
       {render && render({ className, ariaCurrent })}
       {to && !render && (
         <Component href={to} target={target} className={className} aria-current={ariaCurrent}>
           {children}
         </Component>
       )}
-      {!to && <React.Fragment>{children}</React.Fragment>}
+      {!to && component !== 'button' && children}
     </li>
   );
 };
