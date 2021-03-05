@@ -48,4 +48,9 @@ describe('slider', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('renders disabled slider', () => {
+    const view = mount(<Slider currentValue={50} isDisabled />);
+    expect(view).toMatchSnapshot();
+  });
 });
