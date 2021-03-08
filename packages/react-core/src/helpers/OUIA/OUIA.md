@@ -35,7 +35,7 @@ compliant.
 ### Usage
 
 PatternFly 4 generates `data-ouia-component-type` attribute for selected components automatically
-based on the name. For example, for [`Button`](/components/button) `data-ouia-component-type` is
+based on the name. For example, the `data-ouia-component-type` attribute for the [button component]((/components/button) is
 `PF4/Button`. The id of `data-ouia-component-id` attribute is random by default. To specify the
 concrete id you should add an `ouiaId` prop to the component.
 
