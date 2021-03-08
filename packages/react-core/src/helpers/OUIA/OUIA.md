@@ -24,7 +24,7 @@ UI automation.
 The following blocks exist in the specification:
 
 * `OUIA:Component` - components and component frameworks
-* `OUIA:Page` - page identification;
+* `OUIA:Page` - page identification
 * `OUIA:PageSafe` - interaction safety.
 
 You can find the complete description on the [OUIA website](https://ouia.readthedocs.io).
