@@ -27,7 +27,7 @@ The following blocks exist in the specification:
 * `OUIA:Page` - page identification;
 * `OUIA:PageSafe` - interaction safety.
 
-The complete description you can find in [https://ouia.readthedocs.io](https://ouia.readthedocs.io).
+You can find the complete description on the [OUIA website](https://ouia.readthedocs.io).
 
 [Selected](#list-of-ouia-compliant-components) PatternFly 4 components are `OUIA:Component`
 compliant.
