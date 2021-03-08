@@ -11,7 +11,7 @@ maintain automated testing environments. OUIA standardizes some HTML attributes 
 behavior. It helps to create trivial and unambiguous locators of the elements in the DOM for
 various automated test suites.
 
-### Why not to use `id`, `ARIA` etc.?
+### Why not use `id` or `ARIA`?
 
 `ARIA` is designed as an accessibility specification and it doesn't account aspects that are crucial
 for automation such as a component type. `id` attribute might be reserved by some front-end code and
@@ -25,7 +25,7 @@ The following blocks exist in the specification:
 
 * `OUIA:Component` - components and component frameworks
 * `OUIA:Page` - page identification
-* `OUIA:PageSafe` - interaction safety 
+* `OUIA:PageSafe` - interaction safety
 
 You can find the complete description on the [OUIA website](https://ouia.readthedocs.io).
 
@@ -35,9 +35,10 @@ compliant.
 ### Usage
 
 PatternFly 4 generates a `data-ouia-component-type` attribute for selected components automatically
-based on the name. For example, the `data-ouia-component-type` attribute for the [button component]((/components/button) is
-`PF4/Button`. The id of `data-ouia-component-id` attribute is random by default. To specify the
-concrete id, you should add an `ouiaId` prop to the component.
+based on the name. For example, the `data-ouia-component-type` attribute for the
+[button component](/components/button) is `PF4/Button`. The id of `data-ouia-component-id`
+attribute is random by default. To specify the concrete id, you should add an `ouiaId` prop to the
+component.
 
 ### Example
 
