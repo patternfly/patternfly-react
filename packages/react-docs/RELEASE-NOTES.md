@@ -34,7 +34,7 @@ section: developer-resources
 - **Dual list selector:**
   - Added onAvailableOptionsSelectInputChanged and onChosenOptionsSelectInputChanged ([#5469](https://github.com/patternfly/patternfly-react/pull/5469))
 - **Form:**
-    - Added grid form example ([#5495](https://github.com/patternfly/patternfly-react/pull/5495))
+  - Added grid form example ([#5495](https://github.com/patternfly/patternfly-react/pull/5495))
 - **Input group:**
   - Added plain input group text variant ([#5478](https://github.com/patternfly/patternfly-react/pull/5478))
 - **Login page:**
