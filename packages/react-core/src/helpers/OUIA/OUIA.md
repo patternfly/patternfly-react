@@ -14,7 +14,7 @@ various automated test suites.
 ### Why not to use `id`, `ARIA` etc.?
 
 `ARIA` is designed as an accessibility specification and it doesn't account aspects that are crucial
-for automation such as a component type. `id` attribute might be reserved by some frontend code and
+for automation such as a component type. `id` attribute might be reserved by some front-end code and
 there might be restrictions of changing it. Having a separate id attribute makes it application and
 framework independent. Developers and testers have a contract that these attributes are designed for
 UI automation.
