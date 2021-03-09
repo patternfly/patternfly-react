@@ -10,6 +10,7 @@ describe('Context Selector Demo Test', () => {
       .first()
       .then(code => expect(code).to.have.text('test'));
     cy.get('#reset-code').click();
+    cy.wait(100);
     cy.get('.view-lines')
       .first()
       .then(code => expect(code).to.have.text('resetcode'));
