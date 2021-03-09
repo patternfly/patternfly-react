@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.81.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.81.1...@patternfly/react-integration@4.81.2) (2021-03-09)
+
+
+### Bug Fixes
+
+* **CodeEditor:** fix flaky integration test ([#5531](https://github.com/patternfly/patternfly-react/issues/5531)) ([bf65fe6](https://github.com/patternfly/patternfly-react/commit/bf65fe6721651f06c67add7d3e4cdd0333a023dd))
+
+
+
+
+
 ## [4.81.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.81.0...@patternfly/react-integration@4.81.1) (2021-03-05)
 
 **Note:** Version bump only for package @patternfly/react-integration
