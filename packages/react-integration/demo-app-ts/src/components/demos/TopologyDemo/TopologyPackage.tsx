@@ -355,6 +355,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
       viewToolbar={viewToolbar}
       sideBar={useSidebar && topologySideBar}
       sideBarOpen={useSidebar && _.size(selectedIds) > 0}
+      sideBarResizable
     >
       <VisualizationSurface state={{ selectedIds }} />
     </TopologyView>

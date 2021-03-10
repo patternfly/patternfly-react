@@ -1,5 +1,17 @@
 import * as React from 'react';
-import { Toolbar, ToolbarContent, ToolbarGroup, Divider, GenerateId, Stack, StackItem } from '@patternfly/react-core';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelContent,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  Divider,
+  GenerateId,
+  Stack,
+  StackItem
+} from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-view.css';
 
 export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
@@ -15,7 +27,18 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   controlBar?: React.ReactNode;
   /** Topology side bar (typically a TopologySideBar), used to display information for elements in graph */
   sideBar?: React.ReactNode;
+  /** Flag if side bar is open */
   sideBarOpen?: boolean;
+  /** Flag if side bar is resizable, default false */
+  sideBarResizable?: boolean;
+  /** The starting size of the side bar, in either pixels or percentage. */
+  defaultSideBarSize?: string;
+  /** The minimum size of the side bar, in either pixels or percentage. */
+  minSideBarSize?: string;
+  /** The maximum size of the side bar, in either pixels or percentage. */
+  maxSideBarSize?: string;
+  /** Callback for side bar resize end. */
+  onSideBarResize?: (width: number, id: string) => void;
 }
 
 export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
@@ -25,13 +48,26 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   children = null,
   controlBar = null,
   sideBar = null,
+  sideBarResizable = false,
   sideBarOpen = false,
+  defaultSideBarSize = '500px',
+  minSideBarSize = '150px',
+  maxSideBarSize = '100%',
+  onSideBarResize,
   ...props
 }: TopologyViewProps) => {
-  const containerClasses =
-    'pf-topology-container' +
-    `${sideBar ? ' pf-topology-container__with-sidebar' : ''}` +
-    `${sideBarOpen ? ' pf-topology-container__with-sidebar--open' : ''}`;
+  const drawPanelContent = (
+    <DrawerPanelContent
+      isResizable={sideBarResizable}
+      id="topology-resize-panel"
+      defaultSize={defaultSideBarSize}
+      minSize={minSideBarSize}
+      maxSize={maxSideBarSize}
+      onResize={onSideBarResize}
+    >
+      {sideBar}
+    </DrawerPanelContent>
+  );
 
   return (
     <Stack className={className} {...props}>
@@ -54,12 +90,17 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
           )}
         </GenerateId>
       </StackItem>
-      <StackItem isFilled className={containerClasses}>
-        <div className="pf-topology-content">
-          {children}
-          {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
-        </div>
-        {sideBar}
+      <StackItem isFilled className="pf-topology-container">
+        <Drawer isExpanded={sideBarOpen} isInline>
+          <DrawerContent panelContent={drawPanelContent}>
+            <DrawerContentBody>
+              <div className="pf-topology-content">
+                {children}
+                {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
+              </div>
+            </DrawerContentBody>
+          </DrawerContent>
+        </Drawer>
       </StackItem>
     </Stack>
   );
