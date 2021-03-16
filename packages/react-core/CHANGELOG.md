@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.101.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.101.4...@patternfly/react-core@4.101.5) (2021-03-16)
+
+
+### Bug Fixes
+
+* **Switch:** fix error message regarding accessibility usage ([#5522](https://github.com/patternfly/patternfly-react/issues/5522)) ([ebf99fb](https://github.com/patternfly/patternfly-react/commit/ebf99fb3d027306133aa06cd422eaee1232780c5)), closes [#5521](https://github.com/patternfly/patternfly-react/issues/5521)
+
+
+
+
+
 ## [4.101.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.101.3...@patternfly/react-core@4.101.4) (2021-03-16)
 
 **Note:** Version bump only for package @patternfly/react-core
