@@ -55,7 +55,8 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
     return '';
   };
 
-  const filterId = `patternfly-background-image-filter-overlay${filterCounter++}`;
+  const filterNum = React.useMemo(() => filterCounter++, []);
+  const filterId = `patternfly-background-image-filter-overlay${filterNum}`;
   const style = {
     [cssVar.name]: getUrlValue('xs'),
     [cssVarName2x.name]: getUrlValue('xs2x'),
