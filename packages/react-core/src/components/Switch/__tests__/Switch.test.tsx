@@ -67,3 +67,24 @@ test('switch passes value and event to onChange handler', () => {
   input.simulate('change', { target: { checked: true } });
   expect(props.onChange.mock.calls[0][0]).toBe(true);
 });
+
+test('should throw console error when no aria-label or label is given', () => {
+  const myMock = jest.fn();
+  global.console = { ...global.console, error: myMock };
+  mount(<Switch {...props} />);
+  expect(myMock).toBeCalled();
+});
+
+test('should not throw console error when label is given but no aria-label', () => {
+  const myMock = jest.fn();
+  global.console = { ...global.console, error: myMock };
+  mount(<Switch {...props} label="test switch" />);
+  expect(myMock).not.toBeCalled();
+});
+
+test('should not throw console error when aria-label is given but no label', () => {
+  const myMock = jest.fn();
+  global.console = { ...global.console, error: myMock };
+  mount(<Switch {...props} aria-label="test switch" />);
+  expect(myMock).not.toBeCalled();
+});

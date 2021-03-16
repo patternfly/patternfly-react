@@ -39,10 +39,11 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
 
   constructor(props: SwitchProps & OUIAProps) {
     super(props);
-    if (!props.id && !props['aria-label']) {
+    if (!props.label && !props['aria-label']) {
       // eslint-disable-next-line no-console
-      console.error('Switch: Switch requires either an id or aria-label to be specified');
+      console.error('Switch: Switch requires either a label or an aria-label to be specified');
     }
+
     this.id = props.id || getUniqueId();
     this.state = {
       ouiaStateId: getDefaultOUIAId(Switch.displayName)
