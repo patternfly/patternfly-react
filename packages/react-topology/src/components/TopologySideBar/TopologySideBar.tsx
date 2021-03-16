@@ -4,12 +4,12 @@ import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import { Button } from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 
-export interface TopologySideBarProps extends React.HTMLProps<HTMLDivElement> {
+export interface TopologySideBarProps {
   /** Additional classes added to the sidebar */
   className?: string;
   /** Contents for the sidebar */
   children?: React.ReactNode;
-  /** Flag if sidebar is open */
+  /** @deprecated - no longer used */
   show?: boolean;
   /** A callback for closing the sidebar, if provided the close button will be displayed in the sidebar */
   onClose?: () => void;
@@ -17,71 +17,32 @@ export interface TopologySideBarProps extends React.HTMLProps<HTMLDivElement> {
   header?: React.ReactNode;
 }
 
-interface TopologySideBarState {
-  isIn: boolean;
-}
-
-export class TopologySideBar extends React.Component<TopologySideBarProps, TopologySideBarState> {
-  static displayName = 'TopologySideBar';
-  timer: any = null;
-
-  constructor(props: TopologySideBarProps) {
-    super(props);
-    this.state = { isIn: false };
+export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
+  className = '',
+  show,
+  onClose = null,
+  header,
+  children = null,
+  ...otherProps
+}) => {
+  if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    show !== undefined && console.warn('The TopologySideBar show prop has been deprecated and is no longer used.');
   }
 
-  componentWillUnmount() {
-    this.clearTimer();
-  }
-
-  updateForTransitions = () => {
-    this.setState({ isIn: this.props.show });
-  };
-
-  startTimer = () => {
-    this.clearTimer();
-    this.timer = setTimeout(this.updateForTransitions, 150);
-  };
-
-  clearTimer = () => {
-    if (this.timer) {
-      clearTimeout(this.timer);
-      this.timer = null;
-    }
-  };
-
-  render() {
-    const { className = '', show = false, onClose = null, header, children = null, ...otherProps } = this.props;
-    const { isIn } = this.state;
-
-    if (isIn !== show) {
-      this.clearTimer();
-      this.startTimer();
-    }
-
-    return (
-      <div
-        {...otherProps}
-        role="dialog"
-        className={`pf-topology-side-bar fade ${className}${show ? ' shown' : ''}${isIn ? ' in' : ''}`}
-      >
-        {show && (
-          <React.Fragment>
-            {onClose && (
-              <Button
-                className="pf-topology-side-bar__dismiss"
-                variant="plain"
-                onClick={onClose as any}
-                aria-label="Close"
-              >
-                <TimesIcon />
-              </Button>
-            )}
-            {header && <div className="pf-topology-side-bar__header">{header}</div>}
-            <div className="pf-topology-side-bar__body">{children}</div>
-          </React.Fragment>
+  return (
+    <div {...otherProps} role="dialog" className={`pf-topology-side-bar ${className}`}>
+      <React.Fragment>
+        {onClose && (
+          <Button className="pf-topology-side-bar__dismiss" variant="plain" onClick={onClose as any} aria-label="Close">
+            <TimesIcon />
+          </Button>
         )}
-      </div>
-    );
-  }
-}
+        {header && <div className="pf-topology-side-bar__header">{header}</div>}
+        <div className="pf-topology-side-bar__body">{children}</div>
+      </React.Fragment>
+    </div>
+  );
+};
+
+TopologySideBar.displayName = 'TopologySideBar';

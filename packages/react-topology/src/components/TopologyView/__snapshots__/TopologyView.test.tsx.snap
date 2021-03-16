@@ -83,9 +83,67 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
         <div
           className="pf-l-stack__item pf-m-fill pf-topology-container"
         >
-          <div
-            className="pf-topology-content"
-          />
+          <Drawer
+            isExpanded={false}
+            isInline={true}
+          >
+            <div
+              className="pf-c-drawer pf-m-inline"
+            >
+              <DrawerContent
+                panelContent={
+                  <DrawerPanelContent
+                    defaultSize="500px"
+                    id="topology-resize-panel"
+                    isResizable={false}
+                    maxSize="100%"
+                    minSize="150px"
+                  />
+                }
+              >
+                <DrawerMain>
+                  <div
+                    className="pf-c-drawer__main"
+                  >
+                    <div
+                      className="pf-c-drawer__content"
+                    >
+                      <DrawerContentBody>
+                        <div
+                          className="pf-c-drawer__body"
+                        >
+                          <div
+                            className="pf-topology-content"
+                          />
+                        </div>
+                      </DrawerContentBody>
+                    </div>
+                    <DrawerPanelContent
+                      defaultSize="500px"
+                      id="topology-resize-panel"
+                      isResizable={false}
+                      maxSize="100%"
+                      minSize="150px"
+                    >
+                      <div
+                        className="pf-c-drawer__panel"
+                        hidden={true}
+                        id="topology-resize-panel"
+                        onTransitionEnd={[Function]}
+                        style={
+                          Object {
+                            "--pf-c-drawer__panel--md--FlexBasis": "500px",
+                            "--pf-c-drawer__panel--md--FlexBasis--max": "100%",
+                            "--pf-c-drawer__panel--md--FlexBasis--min": "150px",
+                          }
+                        }
+                      />
+                    </DrawerPanelContent>
+                  </div>
+                </DrawerMain>
+              </DrawerContent>
+            </div>
+          </Drawer>
         </div>
       </StackItem>
     </div>
@@ -325,20 +383,78 @@ exports[`TopologyView should display topology correctly 1`] = `
         <div
           className="pf-l-stack__item pf-m-fill pf-topology-container"
         >
-          <div
-            className="pf-topology-content"
+          <Drawer
+            isExpanded={false}
+            isInline={true}
           >
             <div
-              id="test-canvas"
-            />
-            <span
-              className="pf-topology-control-bar"
+              className="pf-c-drawer pf-m-inline"
             >
-              <div
-                id="test-control-bar"
-              />
-            </span>
-          </div>
+              <DrawerContent
+                panelContent={
+                  <DrawerPanelContent
+                    defaultSize="500px"
+                    id="topology-resize-panel"
+                    isResizable={false}
+                    maxSize="100%"
+                    minSize="150px"
+                  />
+                }
+              >
+                <DrawerMain>
+                  <div
+                    className="pf-c-drawer__main"
+                  >
+                    <div
+                      className="pf-c-drawer__content"
+                    >
+                      <DrawerContentBody>
+                        <div
+                          className="pf-c-drawer__body"
+                        >
+                          <div
+                            className="pf-topology-content"
+                          >
+                            <div
+                              id="test-canvas"
+                            />
+                            <span
+                              className="pf-topology-control-bar"
+                            >
+                              <div
+                                id="test-control-bar"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                      </DrawerContentBody>
+                    </div>
+                    <DrawerPanelContent
+                      defaultSize="500px"
+                      id="topology-resize-panel"
+                      isResizable={false}
+                      maxSize="100%"
+                      minSize="150px"
+                    >
+                      <div
+                        className="pf-c-drawer__panel"
+                        hidden={true}
+                        id="topology-resize-panel"
+                        onTransitionEnd={[Function]}
+                        style={
+                          Object {
+                            "--pf-c-drawer__panel--md--FlexBasis": "500px",
+                            "--pf-c-drawer__panel--md--FlexBasis--max": "100%",
+                            "--pf-c-drawer__panel--md--FlexBasis--min": "150px",
+                          }
+                        }
+                      />
+                    </DrawerPanelContent>
+                  </div>
+                </DrawerMain>
+              </DrawerContent>
+            </div>
+          </Drawer>
         </div>
       </StackItem>
     </div>
@@ -578,29 +694,92 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className="pf-topology-container pf-topology-container__with-sidebar"
+        className="pf-topology-container"
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill pf-topology-container pf-topology-container__with-sidebar"
+          className="pf-l-stack__item pf-m-fill pf-topology-container"
         >
-          <div
-            className="pf-topology-content"
+          <Drawer
+            isExpanded={false}
+            isInline={true}
           >
             <div
-              id="test-canvas"
-            />
-            <span
-              className="pf-topology-control-bar"
+              className="pf-c-drawer pf-m-inline"
             >
-              <div
-                id="test-control-bar"
-              />
-            </span>
-          </div>
-          <div>
-            Test SideBar
-          </div>
+              <DrawerContent
+                panelContent={
+                  <DrawerPanelContent
+                    defaultSize="500px"
+                    id="topology-resize-panel"
+                    isResizable={false}
+                    maxSize="100%"
+                    minSize="150px"
+                  >
+                    <div>
+                      Test SideBar
+                    </div>
+                  </DrawerPanelContent>
+                }
+              >
+                <DrawerMain>
+                  <div
+                    className="pf-c-drawer__main"
+                  >
+                    <div
+                      className="pf-c-drawer__content"
+                    >
+                      <DrawerContentBody>
+                        <div
+                          className="pf-c-drawer__body"
+                        >
+                          <div
+                            className="pf-topology-content"
+                          >
+                            <div
+                              id="test-canvas"
+                            />
+                            <span
+                              className="pf-topology-control-bar"
+                            >
+                              <div
+                                id="test-control-bar"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                      </DrawerContentBody>
+                    </div>
+                    <DrawerPanelContent
+                      defaultSize="500px"
+                      id="topology-resize-panel"
+                      isResizable={false}
+                      maxSize="100%"
+                      minSize="150px"
+                    >
+                      <div
+                        className="pf-c-drawer__panel"
+                        hidden={true}
+                        id="topology-resize-panel"
+                        onTransitionEnd={[Function]}
+                        style={
+                          Object {
+                            "--pf-c-drawer__panel--md--FlexBasis": "500px",
+                            "--pf-c-drawer__panel--md--FlexBasis--max": "100%",
+                            "--pf-c-drawer__panel--md--FlexBasis--min": "150px",
+                          }
+                        }
+                      >
+                        <div>
+                          Test SideBar
+                        </div>
+                      </div>
+                    </DrawerPanelContent>
+                  </div>
+                </DrawerMain>
+              </DrawerContent>
+            </div>
+          </Drawer>
         </div>
       </StackItem>
     </div>
@@ -840,29 +1019,92 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className="pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
+        className="pf-topology-container"
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
+          className="pf-l-stack__item pf-m-fill pf-topology-container"
         >
-          <div
-            className="pf-topology-content"
+          <Drawer
+            isExpanded={true}
+            isInline={true}
           >
             <div
-              id="test-canvas"
-            />
-            <span
-              className="pf-topology-control-bar"
+              className="pf-c-drawer pf-m-expanded pf-m-inline"
             >
-              <div
-                id="test-control-bar"
-              />
-            </span>
-          </div>
-          <div>
-            Test SideBar
-          </div>
+              <DrawerContent
+                panelContent={
+                  <DrawerPanelContent
+                    defaultSize="500px"
+                    id="topology-resize-panel"
+                    isResizable={false}
+                    maxSize="100%"
+                    minSize="150px"
+                  >
+                    <div>
+                      Test SideBar
+                    </div>
+                  </DrawerPanelContent>
+                }
+              >
+                <DrawerMain>
+                  <div
+                    className="pf-c-drawer__main"
+                  >
+                    <div
+                      className="pf-c-drawer__content"
+                    >
+                      <DrawerContentBody>
+                        <div
+                          className="pf-c-drawer__body"
+                        >
+                          <div
+                            className="pf-topology-content"
+                          >
+                            <div
+                              id="test-canvas"
+                            />
+                            <span
+                              className="pf-topology-control-bar"
+                            >
+                              <div
+                                id="test-control-bar"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                      </DrawerContentBody>
+                    </div>
+                    <DrawerPanelContent
+                      defaultSize="500px"
+                      id="topology-resize-panel"
+                      isResizable={false}
+                      maxSize="100%"
+                      minSize="150px"
+                    >
+                      <div
+                        className="pf-c-drawer__panel"
+                        hidden={false}
+                        id="topology-resize-panel"
+                        onTransitionEnd={[Function]}
+                        style={
+                          Object {
+                            "--pf-c-drawer__panel--md--FlexBasis": "500px",
+                            "--pf-c-drawer__panel--md--FlexBasis--max": "100%",
+                            "--pf-c-drawer__panel--md--FlexBasis--min": "150px",
+                          }
+                        }
+                      >
+                        <div>
+                          Test SideBar
+                        </div>
+                      </div>
+                    </DrawerPanelContent>
+                  </div>
+                </DrawerMain>
+              </DrawerContent>
+            </div>
+          </Drawer>
         </div>
       </StackItem>
     </div>

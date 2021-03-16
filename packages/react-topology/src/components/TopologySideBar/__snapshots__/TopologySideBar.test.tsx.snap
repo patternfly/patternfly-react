@@ -13,7 +13,7 @@ exports[`TopologySideBar should display topology sidebar correctly 1`] = `
   show={true}
 >
   <div
-    className="pf-topology-side-bar fade my-test-class shown"
+    className="pf-topology-side-bar my-test-class"
     role="dialog"
   >
     <div
@@ -43,7 +43,7 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
   show={true}
 >
   <div
-    className="pf-topology-side-bar fade my-test-class shown"
+    className="pf-topology-side-bar my-test-class"
     role="dialog"
   >
     <Button
@@ -98,24 +98,5 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
       />
     </div>
   </div>
-</TopologySideBar>
-`;
-
-exports[`TopologySideBar should hide the sidebar correctly 1`] = `
-<TopologySideBar
-  className="my-test-class"
-  header={
-    <span
-      id="test-header-id"
-    >
-      Header
-    </span>
-  }
-  show={false}
->
-  <div
-    className="pf-topology-side-bar fade my-test-class"
-    role="dialog"
-  />
 </TopologySideBar>
 `;
