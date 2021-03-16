@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.8.5...@patternfly/react-styles@4.9.0) (2021-03-16)
+
+
+### Bug Fixes
+
+* **topology:** Use disabled background for control buttons when disabled ([#5538](https://github.com/patternfly/patternfly-react/issues/5538)) ([641105f](https://github.com/patternfly/patternfly-react/commit/641105f5f72e5a7af7bbdc173aa2cb29f5b74385))
+
+
+### Features
+
+* **topology:** Use Drawer for topology side panel and allow resizing ([#5533](https://github.com/patternfly/patternfly-react/issues/5533)) ([301c6a0](https://github.com/patternfly/patternfly-react/commit/301c6a0ce13755b3e6f12a243043d67e1b63990b))
+
+
+
+
+
 ## [4.8.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.8.4...@patternfly/react-styles@4.8.5) (2021-03-09)
 
 **Note:** Version bump only for package @patternfly/react-styles

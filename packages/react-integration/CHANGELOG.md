@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.82.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.81.2...@patternfly/react-integration@4.82.0) (2021-03-16)
+
+
+### Features
+
+* **topology:** Use Drawer for topology side panel and allow resizing ([#5533](https://github.com/patternfly/patternfly-react/issues/5533)) ([301c6a0](https://github.com/patternfly/patternfly-react/commit/301c6a0ce13755b3e6f12a243043d67e1b63990b))
+
+
+
+
+
 ## [4.81.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.81.1...@patternfly/react-integration@4.81.2) (2021-03-09)
 
 
