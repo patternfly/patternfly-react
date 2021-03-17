@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.8.1...@patternfly/react-topology@4.8.2) (2021-03-17)
+
+
+### Bug Fixes
+
+* **drawer:** dont initially render DrawerPanelContent ([#5543](https://github.com/patternfly/patternfly-react/issues/5543)) ([d07235d](https://github.com/patternfly/patternfly-react/commit/d07235de20d9c750fa6d8b6383bb14589f9276c7))
+
+
+
+
+
 ## [4.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.8.0...@patternfly/react-topology@4.8.1) (2021-03-16)
 
 **Note:** Version bump only for package @patternfly/react-topology
