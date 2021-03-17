@@ -60,8 +60,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   ...props
 }: DrawerPanelContentProps) => {
   const panel = React.useRef<HTMLDivElement>();
-  const [panelIsClosed, setPanelIsClosed] = React.useState(false);
   const { position, isExpanded, isStatic, onExpand, drawerRef } = React.useContext(DrawerContext);
+  const hidden = isStatic ? false : !isExpanded;
+  const [isExpandedInternal, setIsExpandedInternal] = React.useState(!hidden);
   let currWidth: number = 0;
   let panelRect: DOMRect;
   let right: number;
@@ -71,7 +72,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
 
   React.useEffect(() => {
     if (!isStatic && isExpanded) {
-      setPanelIsClosed(!isExpanded);
+      setIsExpandedInternal(isExpanded);
     }
   }, [isStatic, isExpanded]);
 
@@ -210,7 +211,6 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       currWidth = newSize;
     }
   };
-  const hidden = isStatic ? false : !isExpanded;
   const boundaryCssVars: any = {};
   if (defaultSize) {
     boundaryCssVars['--pf-c-drawer__panel--md--FlexBasis'] = defaultSize;
@@ -237,7 +237,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         if (!hidden && ev.nativeEvent.propertyName === 'transform') {
           onExpand();
         }
-        setPanelIsClosed(hidden);
+        setIsExpandedInternal(!hidden);
       }}
       hidden={hidden}
       {...((defaultSize || minSize || maxSize) && {
@@ -245,7 +245,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       })}
       {...props}
     >
-      {!panelIsClosed && (
+      {isExpandedInternal && (
         <React.Fragment>
           {isResizable && (
             <React.Fragment>
