@@ -15,7 +15,7 @@ various automated test suites.
 
 `ARIA` is designed as an accessibility specification, and it doesn't account for aspects that are crucial
 for automation such as a component type. `id` attribute might be reserved by some front-end code, and
-there might be restrictions of changing it. Having a separate id attribute makes it application and
+there might be restrictions on changing it. Having a separate id attribute makes it application and
 framework independent. Developers and testers have a contract that these attributes are designed for
 UI automation.
 
