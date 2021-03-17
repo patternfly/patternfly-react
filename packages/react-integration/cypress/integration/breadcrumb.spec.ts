@@ -14,6 +14,10 @@ describe('Breadcrumb Demo Test', () => {
       .should('not.equal', null);
   });
 
+  it('Verify dropdown breadcrumb item', () => {
+    cy.get('#badge-dropdown div').should('have.class', 'pf-c-dropdown');
+  });
+
   it('Verify default section home content', () => {
     cy.get('.pf-c-breadcrumb__link')
       .first()
