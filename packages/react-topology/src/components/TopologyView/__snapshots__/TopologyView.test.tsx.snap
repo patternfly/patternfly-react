@@ -769,11 +769,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                             "--pf-c-drawer__panel--md--FlexBasis--min": "150px",
                           }
                         }
-                      >
-                        <div>
-                          Test SideBar
-                        </div>
-                      </div>
+                      />
                     </DrawerPanelContent>
                   </div>
                 </DrawerMain>
