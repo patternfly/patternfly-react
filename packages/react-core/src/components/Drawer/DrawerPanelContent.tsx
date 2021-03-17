@@ -245,7 +245,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       })}
       {...props}
     >
-      {!panelIsClosed && (
+      {!panelIsClosed && !hidden && (
         <React.Fragment>
           {isResizable && (
             <React.Fragment>
