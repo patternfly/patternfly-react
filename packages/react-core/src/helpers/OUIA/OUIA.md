@@ -6,8 +6,8 @@ section: developer-resources
 ## About Open UI Automation
 
 Open UI Automation (OUIA) is a specification of certain key guidelines to follow when creating a new
-web framework or application. The goal is to ease the burden of individuals wishing to create and
-maintain automated testing environments. OUIA standardizes some HTML attributes and web page
+web framework or application. The goal is to ease the burden of creating and maintaining automated
+testing environments. OUIA standardizes some HTML attributes and web page
 behavior. It helps to create trivial and unambiguous locators of the elements in the DOM for
 various automated test suites.
 
@@ -28,9 +28,6 @@ The following blocks exist in the specification:
 * `OUIA:PageSafe` - interaction safety
 
 You can find the complete description on the [OUIA website](https://ouia.readthedocs.io).
-
-[Selected](#list-of-ouia-compliant-components) PatternFly 4 components are `OUIA:Component`
-compliant.
 
 ### Usage
 
@@ -54,7 +51,7 @@ import { Button } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-## List of OUIA compliant components
+## OUIA-compliant PatternFly 4 components
 
 ### react-core package
 
