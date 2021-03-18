@@ -14,6 +14,8 @@ export interface JumpLinksItemProps extends Omit<React.HTMLProps<HTMLLIElement>,
   children?: React.ReactNode;
   /** Click handler for anchor tag. Parent JumpLinks components tap into this. */
   onClick?: (ev: React.MouseEvent<HTMLAnchorElement>) => void;
+  /** Class to add to li */
+  className?: string;
 }
 
 export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
@@ -23,6 +25,7 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   node,
   children,
   onClick,
+  className,
   ...props
 }: JumpLinksItemProps) => {
   const childrenArr = React.Children.toArray(children) as any[];
@@ -30,7 +33,7 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   children = childrenArr.filter(child => child.type !== JumpLinksList);
 
   return (
-    <li className={css(styles.jumpLinksItem, isActive && styles.modifiers.current)} {...props}>
+    <li className={css(styles.jumpLinksItem, isActive && styles.modifiers.current, className)} {...props}>
       <a className={styles.jumpLinksLink} href={href} onClick={onClick}>
         <span className={styles.jumpLinksLinkText}>{children}</span>
       </a>
