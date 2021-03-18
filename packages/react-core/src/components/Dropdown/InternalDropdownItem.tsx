@@ -139,6 +139,19 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     });
   }
 
+  componentRef = (element: HTMLLIElement) => {
+    (this.ref as React.MutableRefObject<any>).current = element;
+    const { component } = this.props;
+    const ref = (component as any).ref;
+    if (ref) {
+      if (typeof ref === 'function') {
+        ref(element);
+      } else {
+        (ref as React.MutableRefObject<any>).current = element;
+      }
+    }
+  };
+
   render() {
     /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
@@ -191,7 +204,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
         ...(styleChildren && {
           className: css(element.props.className, classes)
         }),
-        ref: this.ref
+        ref: this.componentRef
       });
 
     const renderDefaultComponent = (tag: string) => {
