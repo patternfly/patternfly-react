@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.81.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.81.2...demo-app-ts@4.81.3) (2021-03-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.81.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.81.1...demo-app-ts@4.81.2) (2021-03-17)
 
 **Note:** Version bump only for package demo-app-ts
