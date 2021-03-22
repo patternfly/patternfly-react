@@ -16,6 +16,7 @@ exports[`Pagination should match snapshot (auto-generated) 1`] = `
       itemCount={42}
       itemsTitle=""
       lastIndex={42}
+      ofWord="of"
     />
   </div>
   <PaginationOptionsMenu
@@ -64,6 +65,7 @@ exports[`Pagination should match snapshot (auto-generated) 1`] = `
     isCompact={false}
     isDisabled={false}
     lastPage={1}
+    ofWord="of"
     onFirstClick={[Function]}
     onLastClick={[Function]}
     onNextClick={[Function]}

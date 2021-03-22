@@ -49,6 +49,7 @@ export interface PaginationTitles {
   optionsToggle?: string;
   currPage?: string;
   paginationTitle?: string;
+  ofWord?: string;
 }
 
 export type OnSetPage = (
@@ -159,7 +160,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       toNextPage: 'Go to next page',
       optionsToggle: 'Items per page',
       currPage: 'Current page',
-      paginationTitle: 'Pagination'
+      paginationTitle: 'Pagination',
+      ofWord: 'of'
     },
     firstPage: 1,
     page: 0,
@@ -277,6 +279,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
               lastIndex={lastIndex}
               itemCount={itemCount}
               itemsTitle={titles.items}
+              ofWord={titles.ofWord}
             />
           </div>
         )}
@@ -307,6 +310,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           toFirstPage={titles.toFirstPage}
           currPage={titles.currPage}
           paginationTitle={titles.paginationTitle}
+          ofWord={titles.ofWord}
           page={itemCount <= 0 ? 0 : page}
           perPage={perPage}
           firstPage={itemsStart !== null ? itemsStart : 1}

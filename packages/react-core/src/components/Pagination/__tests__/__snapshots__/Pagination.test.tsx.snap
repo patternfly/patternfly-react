@@ -47,6 +47,7 @@ exports[`component render custom pagination toggle 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -76,6 +77,7 @@ exports[`component render custom pagination toggle 1`] = `
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -83,7 +85,8 @@ exports[`component render custom pagination toggle 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           40
         </b>
@@ -463,6 +466,7 @@ exports[`component render custom pagination toggle 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={4}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -601,7 +605,8 @@ exports[`component render custom pagination toggle 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             4
           </span>
         </div>
@@ -746,6 +751,7 @@ exports[`component render custom perPageOptions 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -775,6 +781,7 @@ exports[`component render custom perPageOptions 1`] = `
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -782,7 +789,8 @@ exports[`component render custom perPageOptions 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           40
         </b>
@@ -897,7 +905,8 @@ exports[`component render custom perPageOptions 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         40
                       </b>
@@ -958,7 +967,8 @@ exports[`component render custom perPageOptions 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     40
                   </b>
@@ -992,7 +1002,8 @@ exports[`component render custom perPageOptions 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             40
                           </b>
@@ -1068,7 +1079,8 @@ exports[`component render custom perPageOptions 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               40
                             </b>
@@ -1164,6 +1176,7 @@ exports[`component render custom perPageOptions 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={4}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -1302,7 +1315,8 @@ exports[`component render custom perPageOptions 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             4
           </span>
         </div>
@@ -1459,6 +1473,7 @@ exports[`component render custom start end 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -1488,6 +1503,7 @@ exports[`component render custom start end 1`] = `
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -1495,7 +1511,8 @@ exports[`component render custom start end 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           40
         </b>
@@ -1658,7 +1675,8 @@ exports[`component render custom start end 1`] = `
                         15
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         40
                       </b>
@@ -1719,7 +1737,8 @@ exports[`component render custom start end 1`] = `
                     15
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     40
                   </b>
@@ -1753,7 +1772,8 @@ exports[`component render custom start end 1`] = `
                             15
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             40
                           </b>
@@ -1829,7 +1849,8 @@ exports[`component render custom start end 1`] = `
                               15
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               40
                             </b>
@@ -1925,6 +1946,7 @@ exports[`component render custom start end 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={4}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -2061,7 +2083,8 @@ exports[`component render custom start end 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             4
           </span>
         </div>
@@ -2199,6 +2222,7 @@ exports[`component render empty per page options 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -2228,6 +2252,7 @@ exports[`component render empty per page options 1`] = `
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -2235,7 +2260,8 @@ exports[`component render empty per page options 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           40
         </b>
@@ -2343,6 +2369,7 @@ exports[`component render empty per page options 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={4}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -2481,7 +2508,8 @@ exports[`component render empty per page options 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             4
           </span>
         </div>
@@ -2638,6 +2666,7 @@ exports[`component render last page 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -2667,6 +2696,7 @@ exports[`component render last page 1`] = `
         itemCount={20}
         itemsTitle=""
         lastIndex={20}
+        ofWord="of"
       >
         <b>
           11
@@ -2674,7 +2704,8 @@ exports[`component render last page 1`] = `
           20
         </b>
          
-        of 
+        of
+         
         <b>
           20
         </b>
@@ -2837,7 +2868,8 @@ exports[`component render last page 1`] = `
                         20
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -2898,7 +2930,8 @@ exports[`component render last page 1`] = `
                     20
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -2932,7 +2965,8 @@ exports[`component render last page 1`] = `
                             20
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -3008,7 +3042,8 @@ exports[`component render last page 1`] = `
                               20
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -3104,6 +3139,7 @@ exports[`component render last page 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -3240,7 +3276,8 @@ exports[`component render last page 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             2
           </span>
         </div>
@@ -3399,6 +3436,7 @@ exports[`component render limited number of pages 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -3428,6 +3466,7 @@ exports[`component render limited number of pages 1`] = `
         itemCount={20}
         itemsTitle=""
         lastIndex={20}
+        ofWord="of"
       >
         <b>
           1
@@ -3435,7 +3474,8 @@ exports[`component render limited number of pages 1`] = `
           20
         </b>
          
-        of 
+        of
+         
         <b>
           20
         </b>
@@ -3598,7 +3638,8 @@ exports[`component render limited number of pages 1`] = `
                         20
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -3659,7 +3700,8 @@ exports[`component render limited number of pages 1`] = `
                     20
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -3693,7 +3735,8 @@ exports[`component render limited number of pages 1`] = `
                             20
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -3769,7 +3812,8 @@ exports[`component render limited number of pages 1`] = `
                               20
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -3865,6 +3909,7 @@ exports[`component render limited number of pages 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={1}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -4003,7 +4048,8 @@ exports[`component render limited number of pages 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             1
           </span>
         </div>
@@ -4162,6 +4208,7 @@ exports[`component render no items 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -4191,6 +4238,7 @@ exports[`component render no items 1`] = `
         itemCount={0}
         itemsTitle=""
         lastIndex={0}
+        ofWord="of"
       >
         <b>
           0
@@ -4198,7 +4246,8 @@ exports[`component render no items 1`] = `
           0
         </b>
          
-        of 
+        of
+         
         <b>
           0
         </b>
@@ -4361,7 +4410,8 @@ exports[`component render no items 1`] = `
                         0
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         0
                       </b>
@@ -4423,7 +4473,8 @@ exports[`component render no items 1`] = `
                     0
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     0
                   </b>
@@ -4457,7 +4508,8 @@ exports[`component render no items 1`] = `
                             0
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             0
                           </b>
@@ -4534,7 +4586,8 @@ exports[`component render no items 1`] = `
                               0
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               0
                             </b>
@@ -4631,6 +4684,7 @@ exports[`component render no items 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={0}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -4769,7 +4823,8 @@ exports[`component render no items 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             0
           </span>
         </div>
@@ -4928,6 +4983,7 @@ exports[`component render should render correctly bottom 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -5105,7 +5161,8 @@ exports[`component render should render correctly bottom 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -5166,7 +5223,8 @@ exports[`component render should render correctly bottom 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -5200,7 +5258,8 @@ exports[`component render should render correctly bottom 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -5276,7 +5335,8 @@ exports[`component render should render correctly bottom 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -5372,6 +5432,7 @@ exports[`component render should render correctly bottom 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -5510,7 +5571,8 @@ exports[`component render should render correctly bottom 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             2
           </span>
         </div>
@@ -5667,6 +5729,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -5844,7 +5907,8 @@ exports[`component render should render correctly bottom sticky 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -5905,7 +5969,8 @@ exports[`component render should render correctly bottom sticky 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -5939,7 +6004,8 @@ exports[`component render should render correctly bottom sticky 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -6015,7 +6081,8 @@ exports[`component render should render correctly bottom sticky 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -6111,6 +6178,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -6249,7 +6317,8 @@ exports[`component render should render correctly bottom sticky 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             2
           </span>
         </div>
@@ -6406,6 +6475,7 @@ exports[`component render should render correctly compact 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -6435,6 +6505,7 @@ exports[`component render should render correctly compact 1`] = `
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -6442,7 +6513,8 @@ exports[`component render should render correctly compact 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           20
         </b>
@@ -6605,7 +6677,8 @@ exports[`component render should render correctly compact 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -6666,7 +6739,8 @@ exports[`component render should render correctly compact 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -6700,7 +6774,8 @@ exports[`component render should render correctly compact 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -6776,7 +6851,8 @@ exports[`component render should render correctly compact 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -6872,6 +6948,7 @@ exports[`component render should render correctly compact 1`] = `
       isCompact={true}
       isDisabled={false}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -7045,6 +7122,7 @@ exports[`component render should render correctly disabled 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -7074,6 +7152,7 @@ exports[`component render should render correctly disabled 1`] = `
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -7081,7 +7160,8 @@ exports[`component render should render correctly disabled 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           20
         </b>
@@ -7244,7 +7324,8 @@ exports[`component render should render correctly disabled 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -7306,7 +7387,8 @@ exports[`component render should render correctly disabled 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -7340,7 +7422,8 @@ exports[`component render should render correctly disabled 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -7417,7 +7500,8 @@ exports[`component render should render correctly disabled 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -7514,6 +7598,7 @@ exports[`component render should render correctly disabled 1`] = `
       isCompact={false}
       isDisabled={true}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -7652,7 +7737,8 @@ exports[`component render should render correctly disabled 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             2
           </span>
         </div>
@@ -7811,6 +7897,7 @@ exports[`component render should render correctly sticky 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -7840,6 +7927,7 @@ exports[`component render should render correctly sticky 1`] = `
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -7847,7 +7935,8 @@ exports[`component render should render correctly sticky 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           20
         </b>
@@ -8010,7 +8099,8 @@ exports[`component render should render correctly sticky 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -8071,7 +8161,8 @@ exports[`component render should render correctly sticky 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -8105,7 +8196,8 @@ exports[`component render should render correctly sticky 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -8181,7 +8273,8 @@ exports[`component render should render correctly sticky 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -8277,6 +8370,7 @@ exports[`component render should render correctly sticky 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -8415,7 +8509,8 @@ exports[`component render should render correctly sticky 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             2
           </span>
         </div>
@@ -8572,6 +8667,7 @@ exports[`component render should render correctly top 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -8601,6 +8697,7 @@ exports[`component render should render correctly top 1`] = `
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -8608,7 +8705,8 @@ exports[`component render should render correctly top 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           20
         </b>
@@ -8771,7 +8869,8 @@ exports[`component render should render correctly top 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         20
                       </b>
@@ -8832,7 +8931,8 @@ exports[`component render should render correctly top 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     20
                   </b>
@@ -8866,7 +8966,8 @@ exports[`component render should render correctly top 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             20
                           </b>
@@ -8942,7 +9043,8 @@ exports[`component render should render correctly top 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               20
                             </b>
@@ -9038,6 +9140,7 @@ exports[`component render should render correctly top 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={2}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -9176,7 +9279,8 @@ exports[`component render should render correctly top 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             2
           </span>
         </div>
@@ -9360,7 +9464,8 @@ exports[`component render titles 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           40
         </b>
@@ -9524,7 +9629,8 @@ exports[`component render titles 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         40
                       </b>
@@ -9585,7 +9691,8 @@ exports[`component render titles 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     40
                   </b>
@@ -9620,7 +9727,8 @@ exports[`component render titles 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             40
                           </b>
@@ -9696,7 +9804,8 @@ exports[`component render titles 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               40
                             </b>
@@ -9792,6 +9901,7 @@ exports[`component render titles 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={4}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -9930,7 +10040,8 @@ exports[`component render titles 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             4 bookss
           </span>
         </div>
@@ -10088,6 +10199,7 @@ exports[`component render up drop direction 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -10117,6 +10229,7 @@ exports[`component render up drop direction 1`] = `
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
+        ofWord="of"
       >
         <b>
           1
@@ -10124,7 +10237,8 @@ exports[`component render up drop direction 1`] = `
           10
         </b>
          
-        of 
+        of
+         
         <b>
           40
         </b>
@@ -10287,7 +10401,8 @@ exports[`component render up drop direction 1`] = `
                         10
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         40
                       </b>
@@ -10348,7 +10463,8 @@ exports[`component render up drop direction 1`] = `
                     10
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     40
                   </b>
@@ -10382,7 +10498,8 @@ exports[`component render up drop direction 1`] = `
                             10
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             40
                           </b>
@@ -10458,7 +10575,8 @@ exports[`component render up drop direction 1`] = `
                               10
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               40
                             </b>
@@ -10554,6 +10672,7 @@ exports[`component render up drop direction 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={4}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -10692,7 +10811,8 @@ exports[`component render up drop direction 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             4
           </span>
         </div>
@@ -10849,6 +10969,7 @@ exports[`component render zero results 1`] = `
       "currPage": "Current page",
       "items": "",
       "itemsPerPage": "Items per page",
+      "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
       "paginationTitle": "Pagination",
@@ -10878,6 +10999,7 @@ exports[`component render zero results 1`] = `
         itemCount={0}
         itemsTitle=""
         lastIndex={0}
+        ofWord="of"
       >
         <b>
           0
@@ -10885,7 +11007,8 @@ exports[`component render zero results 1`] = `
           0
         </b>
          
-        of 
+        of
+         
         <b>
           0
         </b>
@@ -11048,7 +11171,8 @@ exports[`component render zero results 1`] = `
                         0
                       </b>
                        
-                      of 
+                      of
+                       
                       <b>
                         0
                       </b>
@@ -11110,7 +11234,8 @@ exports[`component render zero results 1`] = `
                     0
                   </b>
                    
-                  of 
+                  of
+                   
                   <b>
                     0
                   </b>
@@ -11144,7 +11269,8 @@ exports[`component render zero results 1`] = `
                             0
                           </b>
                            
-                          of 
+                          of
+                           
                           <b>
                             0
                           </b>
@@ -11221,7 +11347,8 @@ exports[`component render zero results 1`] = `
                               0
                             </b>
                              
-                            of 
+                            of
+                             
                             <b>
                               0
                             </b>
@@ -11318,6 +11445,7 @@ exports[`component render zero results 1`] = `
       isCompact={false}
       isDisabled={false}
       lastPage={0}
+      ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -11456,7 +11584,8 @@ exports[`component render zero results 1`] = `
           <span
             aria-hidden="true"
           >
-            of 
+            of
+             
             0
           </span>
         </div>
