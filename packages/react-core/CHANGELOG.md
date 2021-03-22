@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.101.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.101.7...@patternfly/react-core@4.101.8) (2021-03-22)
+
+
+### Bug Fixes
+
+* **jumplinks:** add className prop ([#5553](https://github.com/patternfly/patternfly-react/issues/5553)) ([83a3973](https://github.com/patternfly/patternfly-react/commit/83a3973ee2b7b3b9918b0d63898665a99573240a))
+
+
+
+
+
 ## [4.101.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.101.6...@patternfly/react-core@4.101.7) (2021-03-18)
 
 
