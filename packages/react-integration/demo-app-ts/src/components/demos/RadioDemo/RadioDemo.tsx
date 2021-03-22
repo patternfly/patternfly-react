@@ -53,6 +53,7 @@ export class RadioDemo extends Component {
         This is a radio <strong>description</strong>
       </span>
     ),
+    body: 'this is the radio body',
     name: 'disabled-2'
   };
   myStandaloneRadioProps: RadioProps = {
@@ -113,6 +114,7 @@ export class RadioDemo extends Component {
             label={this.myUncheckedDescriptionRadioProps.label}
             name={this.myUncheckedDescriptionRadioProps.name}
             description={this.myUncheckedDescriptionRadioProps.description}
+            body={this.myUncheckedDescriptionRadioProps.body}
           />
         </div>
         <div id="standalone-container">

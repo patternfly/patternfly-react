@@ -27,6 +27,10 @@ describe('Checkbox Demo Test', () => {
     cy.get('label').contains('Controlled CheckBox');
   });
 
+  it('Verify body content', () => {
+    cy.get('.pf-c-check__body').contains('This is the body of checkbox #1');
+  });
+
   it('Verify standalone checkbox input', () => {
     cy.get('#standalone-container').within(() => {
       cy.get('div.pf-c-check.pf-m-standalone').should('exist');

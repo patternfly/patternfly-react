@@ -42,6 +42,7 @@ export class CheckboxDemo extends React.Component<{}, CheckboxState> {
           id="check-1"
           name="check1"
           description="This is the description of checkbox #1"
+          body="This is the body of checkbox #1"
         />
         <div id="not-standalone-container">
           <Checkbox
