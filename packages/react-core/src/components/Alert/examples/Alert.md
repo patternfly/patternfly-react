@@ -326,7 +326,7 @@ class AsyncLiveRegionAlert extends React.Component {
 ### Alert timeout
 ```js
 import React from 'react';
-import { Alert, Button } from '@patternfly/react-core';
+import { Alert, AlertActionLink, Button } from '@patternfly/react-core';
 
 class AlertTimeout extends React.Component {
   constructor() {
@@ -346,10 +346,17 @@ class AlertTimeout extends React.Component {
       <React.Fragment>
         <Button variant="secondary" onClick={this.onClick} isDisabled={isOpen} >{buttonText} </Button>
         {this.state.isOpen &&
-        <React.Fragment>
-          <Alert title="Default timeout Alert" timeout={true}>This alert will dismiss after 8 seconds </Alert>
-          <Alert title="Custom timeout Alert" timeout={16000}>This alert will dismiss after 16 seconds </Alert>
-        </React.Fragment>
+          <React.Fragment>
+            <Alert title="Default timeout Alert" timeout actionLinks={
+              <React.Fragment>
+                <AlertActionLink>View details</AlertActionLink>
+                <AlertActionLink>Ignore</AlertActionLink>
+              </React.Fragment>
+            }>
+              This alert will dismiss after 8 seconds
+            </Alert>
+            <Alert title="Custom timeout Alert" timeout={16000}>This alert will dismiss after 16 seconds </Alert>
+          </React.Fragment>
         }
       </React.Fragment>
     );
