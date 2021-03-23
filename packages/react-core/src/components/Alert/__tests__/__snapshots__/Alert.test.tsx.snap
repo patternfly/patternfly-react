@@ -17,6 +17,8 @@ exports[`Alert - danger Action Close Button 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-4"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -139,6 +141,8 @@ exports[`Alert - danger Action Link 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-3"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -235,6 +239,8 @@ exports[`Alert - danger Action and Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-5"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -333,6 +339,8 @@ exports[`Alert - danger Custom aria label 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-6"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -431,6 +439,8 @@ exports[`Alert - danger Custom icon 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-12"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       customIcon={
@@ -501,6 +511,8 @@ exports[`Alert - danger Description 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-1"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -563,6 +575,8 @@ exports[`Alert - danger Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-2"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -630,6 +644,8 @@ exports[`Alert - danger Toast alerts match snapsnot 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-8"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -694,6 +710,8 @@ exports[`Alert - danger inline variation 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-danger-7"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="danger"
@@ -763,6 +781,8 @@ exports[`Alert - default Action Close Button 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-5"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -885,6 +905,8 @@ exports[`Alert - default Action Link 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-4"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -981,6 +1003,8 @@ exports[`Alert - default Action and Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-6"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -1079,6 +1103,8 @@ exports[`Alert - default Custom aria label 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-7"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -1177,6 +1203,8 @@ exports[`Alert - default Custom icon 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-13"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       customIcon={
@@ -1247,6 +1275,8 @@ exports[`Alert - default Description 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-2"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -1309,6 +1339,8 @@ exports[`Alert - default Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-3"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -1376,6 +1408,8 @@ exports[`Alert - default Toast alerts match snapsnot 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-9"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -1440,6 +1474,8 @@ exports[`Alert - default inline variation 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-default-8"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="default"
@@ -1509,6 +1545,8 @@ exports[`Alert - info Action Close Button 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-4"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -1631,6 +1669,8 @@ exports[`Alert - info Action Link 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-3"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -1727,6 +1767,8 @@ exports[`Alert - info Action and Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-5"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -1825,6 +1867,8 @@ exports[`Alert - info Custom aria label 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-6"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -1923,6 +1967,8 @@ exports[`Alert - info Custom icon 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-12"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       customIcon={
@@ -1993,6 +2039,8 @@ exports[`Alert - info Description 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-1"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -2055,6 +2103,8 @@ exports[`Alert - info Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-2"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -2122,6 +2172,8 @@ exports[`Alert - info Toast alerts match snapsnot 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-8"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -2186,6 +2238,8 @@ exports[`Alert - info inline variation 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-info-7"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="info"
@@ -2255,6 +2309,8 @@ exports[`Alert - success Action Close Button 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-4"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2377,6 +2433,8 @@ exports[`Alert - success Action Link 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-3"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2473,6 +2531,8 @@ exports[`Alert - success Action and Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-5"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2571,6 +2631,8 @@ exports[`Alert - success Custom aria label 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-6"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2669,6 +2731,8 @@ exports[`Alert - success Custom icon 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-12"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       customIcon={
@@ -2739,6 +2803,8 @@ exports[`Alert - success Description 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-1"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2801,6 +2867,8 @@ exports[`Alert - success Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-2"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2868,6 +2936,8 @@ exports[`Alert - success Toast alerts match snapsnot 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-8"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -2932,6 +3002,8 @@ exports[`Alert - success inline variation 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-success-7"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="success"
@@ -3001,6 +3073,8 @@ exports[`Alert - warning Action Close Button 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-4"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3123,6 +3197,8 @@ exports[`Alert - warning Action Link 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-3"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3219,6 +3295,8 @@ exports[`Alert - warning Action and Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-5"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3317,6 +3395,8 @@ exports[`Alert - warning Custom aria label 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-6"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3415,6 +3495,8 @@ exports[`Alert - warning Custom icon 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-12"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       customIcon={
@@ -3485,6 +3567,8 @@ exports[`Alert - warning Description 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-1"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3547,6 +3631,8 @@ exports[`Alert - warning Title 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-2"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3614,6 +3700,8 @@ exports[`Alert - warning Toast alerts match snapsnot 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-8"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"
@@ -3678,6 +3766,8 @@ exports[`Alert - warning inline variation 1`] = `
     data-ouia-component-id="OUIA-Generated-Alert-warning-7"
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <AlertIcon
       variant="warning"

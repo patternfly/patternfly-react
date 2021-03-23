@@ -47,9 +47,9 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast } = this.props;
+    const { className, children, isToast, ...props } = this.props;
     const alertGroup = (
-      <AlertGroupInline className={className} isToast={isToast}>
+      <AlertGroupInline className={className} isToast={isToast} {...props}>
         {children}
       </AlertGroupInline>
     );
