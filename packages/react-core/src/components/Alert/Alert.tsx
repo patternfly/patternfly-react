@@ -83,13 +83,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </React.Fragment>
   );
 
-  const divRef = React.useRef<HTMLDivElement>();
-  const [timedOut, setTimedOut] = useState(false);
-  const [timedOutAnimation, setTimedOutAnimation] = useState(true);
-  const [isMouseOver, setIsMouseOver] = useState(false);
-  const [containsFocus, setContainsFocus] = useState(false);
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const titleRef = React.useRef(null);
+  const divRef = React.useRef<HTMLDivElement>();
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   React.useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
@@ -100,6 +96,12 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       setIsTooltipVisible(showTooltip);
     }
   }, [titleRef, truncateTitle, isTooltipVisible]);
+
+  const [timedOut, setTimedOut] = useState(false);
+  const [timedOutAnimation, setTimedOutAnimation] = useState(true);
+  const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
+  const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
+  const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
   React.useEffect(() => {
     timeout = timeout === true ? 8000 : Number(timeout);
     if (timeout > 0) {
@@ -115,7 +117,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
           setTimedOutAnimation(false);
         } else if (containsFocus) {
           setContainsFocus(false);
-          setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
         }
       }
     };
@@ -124,8 +125,28 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 
     return () => document.removeEventListener('focus', onDocumentFocus, true);
   }, [containsFocus]);
-  const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
-  React.useEffect(onTimeout, [dismissed]);
+  React.useEffect(() => {
+    if (containsFocus === false || isMouseOver === false) {
+      const timer = setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
+      return () => clearTimeout(timer);
+    }
+  }, [containsFocus, isMouseOver]);
+  React.useEffect(() => dismissed && onTimeout(), [dismissed]);
+
+  const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseOver(true);
+    setTimedOutAnimation(false);
+    onMouseEnter(ev);
+  };
+
+  const myOnMouseLeave = (ev: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseOver(false);
+    onMouseLeave(ev);
+  };
+
+  if (dismissed) {
+    return null;
+  }
   const Title = (
     <h4
       {...(isTooltipVisible && { tabIndex: 0 })}
@@ -136,22 +157,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </h4>
   );
 
-  const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
-    setIsMouseOver(true);
-    setTimedOutAnimation(false);
-    onMouseEnter(ev);
-  };
-
-  const myOnMouseLeave = (ev: React.MouseEvent<HTMLDivElement>) => {
-    setIsMouseOver(false);
-    setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
-    onMouseLeave(ev);
-  };
-
-  if (dismissed) {
-    onTimeout();
-    return null;
-  }
   return (
     <div
       ref={divRef}
