@@ -8,9 +8,9 @@ describe('Form Demo Test', () => {
   it('Verify first field group is expanded by default', () => {
     cy.get('#fieldgroup1').should('exist');
     cy.get('#fieldgroup1 > .pf-c-form__field-group-body').should('exist');
-    cy.get('#form-field-group-toggle0').click();
+    cy.get(':nth-child(1) > :nth-child(1) > div > button').click();
     cy.get('#fieldgroup1 > .pf-c-form__field-group-body').should('not.exist');
-    cy.get('#form-field-group-toggle0').click();
+    cy.get(':nth-child(1) > :nth-child(1) > div > button').click();
     cy.get('#fieldgroup1 > .pf-c-form__field-group-body').should('exist');
   });
 
@@ -22,9 +22,9 @@ describe('Form Demo Test', () => {
   it('Verify 3rd field group is not expanded by default', () => {
     cy.get('#fieldgroup3').should('exist');
     cy.get('#fieldgroup3 > .pf-c-form__field-group-body').should('not.exist');
-    cy.get('#form-field-group-toggle1').click();
+    cy.get(':nth-child(3) > :nth-child(1) > div > button').click();
     cy.get('#fieldgroup3 > .pf-c-form__field-group-body').should('exist');
-    cy.get('#form-field-group-toggle1').click();
+    cy.get(':nth-child(3) > :nth-child(1) > div > button').click();
     cy.get('#fieldgroup3 > .pf-c-form__field-group-body').should('not.exist');
   });
 });
