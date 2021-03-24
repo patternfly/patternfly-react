@@ -9,7 +9,7 @@ import { Cola, Dagre, Force } from './Layouts';
 import { Anchors, CreateConnector, Reconnect } from './Connectors';
 import { Dnd, DndShiftRegroup } from './DragDrop';
 import { ContextMenuOnNode, ControlledContextMenu, UncontrolledContextMenu } from './ContextMenus';
-import { Topology, WithSideBar } from './TopologyPackage';
+import { Topology, WithResizableSideBar, WithSideBar } from './TopologyPackage';
 import { ComplexGroup } from './Groups';
 import { CollapsibleGroups } from './CollapsibleGroups';
 
@@ -131,6 +131,9 @@ export const TopologyDemo: React.FC = () => {
             </Tab>
             <Tab eventKey={1} title={<TabTitleText>With Side Bar</TabTitleText>}>
               <WithSideBar />
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>With Resizeable Side Bar</TabTitleText>}>
+              <WithResizableSideBar />
             </Tab>
           </Tabs>
         </Tab>

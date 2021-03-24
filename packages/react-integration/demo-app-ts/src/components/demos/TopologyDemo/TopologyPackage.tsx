@@ -169,9 +169,10 @@ const getVisualization = (model: Model): Visualization => {
 interface TopologyViewComponentProps {
   vis: Controller;
   useSidebar: boolean;
+  sideBarResizable?: boolean;
 }
 
-const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useSidebar }) => {
+const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useSidebar, sideBarResizable = false }) => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
   const [layout, setLayout] = React.useState('Force');
@@ -184,8 +185,8 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
   });
 
   const topologySideBar = (
-    <TopologySideBar show={_.size(selectedIds) > 0} onClose={() => setSelectedIds([])}>
-      <div style={{ marginTop: 27, marginLeft: 20 }}>{_.head(selectedIds)}</div>
+    <TopologySideBar show={_.size(selectedIds) > 0} resizable={sideBarResizable} onClose={() => setSelectedIds([])}>
+      <div style={{ marginTop: 27, marginLeft: 20, height: '800px' }}>{_.head(selectedIds)}</div>
     </TopologySideBar>
   );
 
@@ -355,7 +356,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
       viewToolbar={viewToolbar}
       sideBar={useSidebar && topologySideBar}
       sideBarOpen={useSidebar && _.size(selectedIds) > 0}
-      sideBarResizable
+      sideBarResizable={sideBarResizable}
     >
       <VisualizationSurface state={{ selectedIds }} />
     </TopologyView>
@@ -377,6 +378,15 @@ export const WithSideBar = () => {
   return (
     <VisualizationProvider controller={vis}>
       <TopologyViewComponent useSidebar vis={vis} />
+    </VisualizationProvider>
+  );
+};
+
+export const WithResizableSideBar = () => {
+  const vis: Visualization = getVisualization(getModel('Force'));
+  return (
+    <VisualizationProvider controller={vis}>
+      <TopologyViewComponent useSidebar vis={vis} sideBarResizable />
     </VisualizationProvider>
   );
 };
