@@ -78,10 +78,43 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
 }: MenuItemProps) => {
   const Component = component || to ? 'a' : 'button';
   const [flyoutVisible, setFlyoutVisible] = React.useState(false);
+  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
 
   const showFlyout = (displayFlyout: boolean) => {
     setFlyoutVisible(displayFlyout);
     onShowFlyout && displayFlyout && onShowFlyout();
+  };
+
+  React.useEffect(() => {
+    if (flyoutTarget) {
+      if (flyoutVisible) {
+        const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
+        const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        );
+        (flyoutItems[0].firstChild as HTMLElement).focus();
+      } else {
+        flyoutTarget.focus();
+      }
+    }
+  }, [flyoutVisible, flyoutTarget]);
+
+  const handleFlyout = (event: React.KeyboardEvent) => {
+    const key = event.key;
+    const target = event.target;
+
+    if (key === ' ' || key === 'Enter' || key === 'ArrowRight') {
+      event.stopPropagation();
+      if (!flyoutVisible) {
+        showFlyout(true);
+        setFlyoutTarget(target as HTMLElement);
+      }
+    }
+
+    if (key === 'Escape' || key === 'ArrowLeft') {
+      event.stopPropagation();
+      showFlyout(false);
+    }
   };
 
   const onItemSelect = (event: any, onSelect: any) => {
@@ -213,6 +246,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             )}
             onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
             onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
+            {...(flyoutMenu && { onKeyDown: handleFlyout })}
             ref={innerRef}
             {...props}
           >

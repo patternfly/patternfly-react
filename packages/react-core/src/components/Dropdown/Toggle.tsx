@@ -103,13 +103,19 @@ export class Toggle extends React.Component<ToggleProps> {
     if (event.key === 'Tab' && !this.props.isOpen) {
       return;
     }
-    if (!this.props.bubbleEvent) {
-      event.stopPropagation();
-    }
-    event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
+      if (!this.props.bubbleEvent) {
+        event.stopPropagation();
+      }
+      event.preventDefault();
+
       this.props.onToggle(!this.props.isOpen, event);
     } else if ((event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowDown') && !this.props.isOpen) {
+      if (!this.props.bubbleEvent) {
+        event.stopPropagation();
+      }
+      event.preventDefault();
+
       this.props.onToggle(!this.props.isOpen, event);
       this.props.onEnter();
     }

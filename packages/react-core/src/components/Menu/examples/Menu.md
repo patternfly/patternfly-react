@@ -750,6 +750,7 @@ class MenuWithDrilldown extends React.Component {
         containsDrilldown
         drilldownItemPath={drilldownPath}
         drilledInMenus={menuDrilledIn}
+        activeMenu={activeMenu}
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}
         onGetMenuHeight={this.setHeight}
@@ -1105,6 +1106,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
         containsDrilldown
         drilldownItemPath={drilldownPath}
         drilledInMenus={menuDrilledIn}
+        activeMenu={activeMenu}
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}
         onGetMenuHeight={this.setHeight}

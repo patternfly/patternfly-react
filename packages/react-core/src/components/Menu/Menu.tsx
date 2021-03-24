@@ -44,25 +44,183 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   onGetMenuHeight?: (menuId: string, height: number) => void;
   /** ID of parent menu for drilldown menus */
   parentMenu?: string;
+  /** ID of the currently active menu for the drilldown variant */
+  activeMenu?: string;
   /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: string | number;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Internal flag indicating if the Menu is the root of a menu tree */
+  isRootMenu?: boolean;
 }
 
 export interface MenuState {
   searchInputValue: string | null;
   ouiaStateId: string;
+  transitionMoveTarget: HTMLElement;
 }
 
 class MenuBase extends React.Component<MenuProps, MenuState> {
+  private menuRef = React.createRef<HTMLDivElement>();
+  private activeMenu = null as Element;
   static defaultProps: MenuProps = {
-    ouiaSafe: true
+    ouiaSafe: true,
+    isRootMenu: true
   };
 
   state: MenuState = {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
-    searchInputValue: ''
+    searchInputValue: '',
+    transitionMoveTarget: null
+  };
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.props.isRootMenu ? this.handleKeys : null);
+    window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeys);
+    window.removeEventListener('transitionend', this.handleDrilldownTransition);
+  }
+
+  handleDrilldownTransition = (event: TransitionEvent) => {
+    let ref = this.menuRef;
+    if (this.props.innerRef) {
+      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
+    }
+
+    if (
+      !ref.current ||
+      (ref.current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
+        !Array.from(ref.current.getElementsByClassName('pf-c-menu')).includes(
+          (event.target as HTMLElement).closest('.pf-c-menu')
+        ))
+    ) {
+      return;
+    }
+
+    if (event.propertyName === 'visibility') {
+      if (this.state.transitionMoveTarget) {
+        this.state.transitionMoveTarget.focus();
+        this.setState({ transitionMoveTarget: null });
+      } else {
+        const nextMenu = ref.current.querySelector('#' + this.props.activeMenu) || ref.current || null;
+        const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        )[0].firstChild;
+        (nextTarget as HTMLElement).focus();
+      }
+    }
+  };
+
+  handleKeys = (event: KeyboardEvent) => {
+    const isDrilldown = this.props.containsDrilldown;
+    let ref = this.menuRef;
+    if (this.props.innerRef) {
+      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
+    }
+
+    if (
+      !ref.current ||
+      (ref.current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
+        !Array.from(ref.current.getElementsByClassName('pf-c-menu')).includes(
+          (event.target as HTMLElement).closest('.pf-c-menu')
+        ))
+    ) {
+      return;
+    }
+    event.stopImmediatePropagation();
+
+    const activeElement = document.activeElement;
+    if (
+      (event.target as HTMLElement).closest('.pf-c-menu') !== this.activeMenu &&
+      !(event.target as HTMLElement).classList.contains('pf-c-breadcrumb__link')
+    ) {
+      this.activeMenu = (event.target as HTMLElement).closest('.pf-c-menu');
+    }
+    const parentMenu = this.activeMenu;
+    const key = event.key;
+    let moveFocus = false;
+    let moveTarget = null;
+    let currentIndex = -1;
+    const breadcrumbs = Array.from(ref.current.getElementsByClassName('pf-c-breadcrumb__item'));
+    const menuItems = isDrilldown
+      ? Array.from(parentMenu.getElementsByTagName('UL')[0].children).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        )
+      : Array.from(parentMenu.getElementsByTagName('LI')).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        );
+    const validMenuItems = breadcrumbs.length > 0 ? menuItems.concat([breadcrumbs[0]]) : menuItems;
+    const isFromBreadcrumb =
+      activeElement.classList.contains('pf-c-breadcrumb__link') ||
+      activeElement.classList.contains('pf-c-dropdown__toggle');
+
+    if (key === ' ' || key === 'Enter') {
+      event.preventDefault();
+      if (isDrilldown && !isFromBreadcrumb) {
+        const isDrillingOut = activeElement.closest('li').classList.contains('pf-m-current-path');
+        if (isDrillingOut && parentMenu.parentElement.tagName === 'LI') {
+          this.setState({ transitionMoveTarget: parentMenu.parentElement.firstChild as HTMLElement });
+        } else {
+          if (activeElement.nextElementSibling && activeElement.nextElementSibling.classList.contains('pf-c-menu')) {
+            const childItems = Array.from(
+              activeElement.nextElementSibling.getElementsByTagName('UL')[0].children
+            ).filter(el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
+
+            this.setState({ transitionMoveTarget: childItems[0].firstChild as HTMLElement });
+          }
+        }
+      }
+      (document.activeElement as HTMLElement).click();
+    }
+
+    if (['ArrowUp', 'ArrowDown'].includes(key)) {
+      validMenuItems.forEach((menuItem, index) => {
+        if (
+          activeElement.parentElement === menuItem ||
+          (activeElement.closest('ol') && activeElement.closest('ol').firstChild === menuItem)
+        ) {
+          const increment = key === 'ArrowUp' ? -1 : 1;
+          currentIndex = index + increment;
+
+          if (currentIndex >= validMenuItems.length) {
+            currentIndex = 0;
+          }
+          if (currentIndex < 0) {
+            currentIndex = validMenuItems.length - 1;
+          }
+
+          moveFocus = true;
+          moveTarget = validMenuItems[currentIndex].firstChild;
+          event.preventDefault();
+        }
+      });
+    }
+
+    if (['ArrowLeft', 'ArrowRight'].includes(key)) {
+      event.preventDefault();
+      const iterableElement = isFromBreadcrumb ? activeElement.closest('li') : activeElement;
+
+      let nextSibling;
+      if (key === 'ArrowLeft') {
+        nextSibling = iterableElement.previousElementSibling;
+      } else {
+        nextSibling = iterableElement.nextElementSibling;
+      }
+      if (nextSibling) {
+        const nextTarget = isFromBreadcrumb ? nextSibling.querySelector('button') : nextSibling;
+        if (['A', 'BUTTON'].includes(nextTarget.tagName)) {
+          moveFocus = true;
+          moveTarget = nextTarget;
+        }
+      }
+    }
+
+    if (moveFocus && moveTarget) {
+      (moveTarget as HTMLElement).focus();
+    }
   };
 
   render() {
@@ -87,6 +245,10 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       parentMenu = null,
       activeItemId = null,
       innerRef,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isRootMenu,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      activeMenu,
       ...props
     } = this.props;
     const _isMenuDrilledIn =
@@ -117,7 +279,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             className
           )}
           aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
-          ref={innerRef}
+          ref={innerRef || this.menuRef || null}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
