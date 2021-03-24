@@ -51,7 +51,7 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
               onToggle={onToggle}
               isExpanded={isExpanded}
               aria-label={toggleAriaLabel}
-              id={id}
+              toggleId={id}
               {...(headerTitleText && { 'aria-labelledby': `${header.props.titleText.id} ${id}` })}
             />
           )}

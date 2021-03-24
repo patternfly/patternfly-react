@@ -16,6 +16,8 @@ export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElemen
   'aria-label'?: string;
   /** Sets the aria-labelledby attribute on the toggle button element */
   'aria-labelledby'?: string;
+  /** The id applied to the toggle button */
+  toggleId?: string;
 }
 
 export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleProps> = ({
@@ -24,6 +26,7 @@ export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleP
   isExpanded,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
+  toggleId,
   ...props
 }: FormFieldGroupToggleProps) => (
   <div className={css(styles.formFieldGroupToggle, className)} {...props}>
@@ -34,6 +37,7 @@ export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleP
         onClick={onToggle}
         aria-expanded={isExpanded}
         aria-labelledby={ariaLabelledby}
+        id={toggleId}
       >
         {isExpanded ? <AngleDownIcon aria-hidden="true" /> : <AngleRightIcon aria-hidden="false" />}
       </Button>

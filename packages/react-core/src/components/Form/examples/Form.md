@@ -652,7 +652,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
 
 ```js
 import React from 'react';
-import { Form, FormFieldGroup, FormFieldGroupExpandable, FormFieldGroupHeader, FormFieldGroup,, FormGroup, FormSection, TextInput } from '@patternfly/react-core';
+import { Form, FormGroup, FormSection, TextInput } from '@patternfly/react-core';
 
 class FormSections extends React.Component {
   constructor(props) {
@@ -786,7 +786,7 @@ class SimpleForm extends React.Component {
 
 ```js
 import React from 'react';
-import { Form, FormGroup, FormSection, TextInput, Button } from '@patternfly/react-core';
+import { Form, FormGroup, FormFieldGroup, FormFieldGroupExpandable, FormFieldGroupHeader, TextInput, Button } from '@patternfly/react-core';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 
 class FieldGroups extends React.Component {
