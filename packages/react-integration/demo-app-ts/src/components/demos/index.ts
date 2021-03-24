@@ -76,6 +76,7 @@ export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './ExpandableSectionDemo/ExpandableSectionDemo';
 export * from './FlexDemo/FlexDemo';
 export * from './FormDemo/FormDemo';
+export * from './FormDemo/FormFieldGroupDemo';
 export * from './FormSelectDemo/FormSelectDemo';
 export * from './GalleryDemo/GalleryDemo';
 export * from './GridDemo/GridDemo';
