@@ -44,13 +44,12 @@ exports[`Check expandable form field group example against snapshot 1`] = `
         <FormFieldGroupToggle
           aria-label="toggle"
           aria-labelledby="title-text-id2 form-field-group-toggle0"
-          id="form-field-group-toggle0"
           isExpanded={true}
           onToggle={[Function]}
+          toggleId="form-field-group-toggle0"
         >
           <div
             className="pf-c-form__field-group-toggle"
-            id="form-field-group-toggle0"
           >
             <div
               className="pf-c-form__field-group-toggle-button"
@@ -59,6 +58,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
                 aria-expanded={true}
                 aria-label="toggle"
                 aria-labelledby="title-text-id2 form-field-group-toggle0"
+                id="form-field-group-toggle0"
                 onClick={[Function]}
                 variant="plain"
               >
@@ -72,6 +72,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe={true}
                   disabled={false}
+                  id="form-field-group-toggle0"
                   onClick={[Function]}
                   role={null}
                   type="button"
