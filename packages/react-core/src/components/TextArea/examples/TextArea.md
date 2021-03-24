@@ -198,3 +198,12 @@ import { TextArea } from '@patternfly/react-core';
 
 <TextArea aria-label="disabled text area example" isDisabled />
 ```
+
+### Auto resizing
+```js
+import React from 'react';
+import { TextArea } from '@patternfly/react-core';
+
+<TextArea aria-label="auto resizing text area example" autoResize />
+```
+
