@@ -62,7 +62,7 @@ test('passing description', () => {
 
 test('passing body', () => {
   const view = shallow(<Checkbox id="check" label="checkbox" body="This is where custom content goes." />);
-  const bodyEl = view.find('div[className="pf-c-check__body"]');
+  const bodyEl = view.find('span[className="pf-c-check__body"]');
   expect(bodyEl.length).toBe(1);
   expect(bodyEl.text()).toBe('This is where custom content goes.');
 });

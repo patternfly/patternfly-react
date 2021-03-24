@@ -113,7 +113,7 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
     }
 
     const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
-    const bodyRender = body ? <div className={css(styles.radioBody)}>{body}</div> : null;
+    const bodyRender = body ? <span className={css(styles.radioBody)}>{body}</span> : null;
     const childrenRendered = isLabelBeforeButton ? (
       <>
         {labelRendered}
