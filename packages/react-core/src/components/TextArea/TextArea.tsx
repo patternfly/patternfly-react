@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import heightToken from '@patternfly/react-tokens/dist/js/c_form_control_textarea_Height';
 import { css } from '@patternfly/react-styles';
 import { capitalize, ValidatedOptions } from '../../helpers';
 
@@ -62,7 +63,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     // https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
     const field = event.currentTarget;
     if (this.props.autoResize) {
-      field.style.setProperty('--pf-c-form-control--textarea--Height', 'inherit');
+      field.style.setProperty(heightToken.name, 'inherit');
       const computed = window.getComputedStyle(field);
       // Calculate the height
       const height =
@@ -71,7 +72,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
         field.scrollHeight +
         parseInt(computed.getPropertyValue('padding-bottom')) +
         parseInt(computed.getPropertyValue('border-bottom-width'));
-      field.style.setProperty('--pf-c-form-control--textarea--Height', `${height}px`);
+      field.style.setProperty(heightToken.name, `${height}px`);
     }
     if (this.props.onChange) {
       this.props.onChange(field.value, event);
