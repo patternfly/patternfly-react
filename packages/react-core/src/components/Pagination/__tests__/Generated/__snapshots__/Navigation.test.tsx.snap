@@ -56,7 +56,8 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     <span
       aria-hidden="true"
     >
-      of 
+      of
+       
       0 ''s
     </span>
   </div>

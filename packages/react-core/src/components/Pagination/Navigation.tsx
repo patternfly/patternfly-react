@@ -35,6 +35,8 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   currPage?: string;
   /** Accessible label for the pagination component */
   paginationTitle?: string;
+  /** Accessible label for the English word "of" */
+  ofWord?: string;
   /** The number of the current page */
   page: React.ReactText;
   /** Number of items per page. */
@@ -77,6 +79,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     toPreviousPage: 'Go to previous page',
     currPage: 'Current page',
     paginationTitle: 'Pagination',
+    ofWord: 'of',
     onNextClick: () => undefined as any,
     onPreviousClick: () => undefined as any,
     onFirstClick: () => undefined as any,
@@ -146,6 +149,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       toPreviousPage,
       currPage,
       paginationTitle,
+      ofWord,
       onNextClick,
       onPreviousClick,
       onFirstClick,
@@ -204,7 +208,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
               onChange={event => this.onChange(event, lastPage)}
             />
-            <span aria-hidden="true">of {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}</span>
+            <span aria-hidden="true">
+              {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
+            </span>
           </div>
         )}
         <div className={styles.paginationNavControl}>
