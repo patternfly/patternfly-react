@@ -332,32 +332,30 @@ class AlertTimeout extends React.Component {
   constructor() {
     super();
     this.state = {
-      isOpen: false
+      alerts: []
     };
     this.onClick = () => {
-      this.setState({isOpen:true})
+      const timeout = 8000;
+      this.state.alerts.push(
+        <Alert title="Default timeout Alert" timeout={timeout} actionLinks={
+          <React.Fragment>
+            <AlertActionLink>View details</AlertActionLink>
+            <AlertActionLink>Ignore</AlertActionLink>
+          </React.Fragment>
+        }>
+          This alert will dismiss after {`${timeout / 1000} seconds`}
+        </Alert>
+      );
+      this.setState({ alerts: [...this.state.alerts] })
     };
   }
 
   render() {
-    const { isOpen } = this.state;
-    const buttonText = !isOpen ? "Show 2 alerts" : "0 alerts to show";
     return (
       <React.Fragment>
-        <Button variant="secondary" onClick={this.onClick} isDisabled={isOpen} >{buttonText} </Button>
-        {this.state.isOpen &&
-          <React.Fragment>
-            <Alert title="Default timeout Alert" timeout actionLinks={
-              <React.Fragment>
-                <AlertActionLink>View details</AlertActionLink>
-                <AlertActionLink>Ignore</AlertActionLink>
-              </React.Fragment>
-            }>
-              This alert will dismiss after 8 seconds
-            </Alert>
-            <Alert title="Custom timeout Alert" timeout={16000}>This alert will dismiss after 16 seconds </Alert>
-          </React.Fragment>
-        }
+        <Button variant="secondary" onClick={this.onClick}>Add alert</Button>
+        <Button variant="secondary" onClick={() => this.setState({ alerts: [] })}>Remove all alerts</Button>
+        {this.state.alerts}
       </React.Fragment>
     );
   }
