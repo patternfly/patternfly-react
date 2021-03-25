@@ -39,7 +39,9 @@ export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleP
         aria-labelledby={ariaLabelledby}
         id={toggleId}
       >
-        {isExpanded ? <AngleDownIcon aria-hidden="true" /> : <AngleRightIcon aria-hidden="false" />}
+        <span className={css(styles.formFieldGroupToggleIcon)}>
+          <AngleDownIcon aria-hidden="true" />
+        </span>
       </Button>
     </div>
   </div>
