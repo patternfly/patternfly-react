@@ -9,7 +9,9 @@ export interface TopologySideBarProps {
   className?: string;
   /** Contents for the sidebar */
   children?: React.ReactNode;
-  /** @deprecated - no longer used */
+  /** Flag if sidebar is being used in a resizable drawer (default false) */
+  resizable?: boolean;
+  /** Not used for resizeable side bars */
   show?: boolean;
   /** A callback for closing the sidebar, if provided the close button will be displayed in the sidebar */
   onClose?: () => void;
@@ -19,28 +21,48 @@ export interface TopologySideBarProps {
 
 export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
   className = '',
+  resizable = false,
   show,
   onClose = null,
   header,
   children = null,
   ...otherProps
 }) => {
-  if (process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    show !== undefined && console.warn('The TopologySideBar show prop has been deprecated and is no longer used.');
-  }
+  const [isIn, setIsIn] = React.useState<boolean>(false);
 
+  React.useEffect(() => {
+    let timer: any = null;
+
+    if (isIn !== show) {
+      clearTimeout(timer);
+      timer = setTimeout(() => setIsIn(show), 150);
+    }
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [show, isIn]);
+
+  const classNames = resizable
+    ? `pf-topology-resizable-side-bar ${className}`
+    : `pf-topology-side-bar fade ${className}${show ? ' shown' : ''}${isIn ? ' in' : ''}`;
   return (
-    <div {...otherProps} role="dialog" className={`pf-topology-side-bar ${className}`}>
-      <React.Fragment>
-        {onClose && (
-          <Button className="pf-topology-side-bar__dismiss" variant="plain" onClick={onClose as any} aria-label="Close">
-            <TimesIcon />
-          </Button>
-        )}
-        {header && <div className="pf-topology-side-bar__header">{header}</div>}
-        <div className="pf-topology-side-bar__body">{children}</div>
-      </React.Fragment>
+    <div {...otherProps} role="dialog" className={classNames}>
+      {(resizable || show) && (
+        <React.Fragment>
+          {onClose && (
+            <Button
+              className="pf-topology-side-bar__dismiss"
+              variant="plain"
+              onClick={onClose as any}
+              aria-label="Close"
+            >
+              <TimesIcon />
+            </Button>
+          )}
+          {header && <div className="pf-topology-side-bar__header">{header}</div>}
+          <div className="pf-topology-side-bar__body">{children}</div>
+        </React.Fragment>
+      )}
     </div>
   );
 };

@@ -31,7 +31,7 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   sideBarOpen?: boolean;
   /** Flag if side bar is resizable, default false */
   sideBarResizable?: boolean;
-  /** The starting size of the side bar, in either pixels or percentage. */
+  /** The starting size of the side bar, in either pixels or percentage, only used if resizable. */
   defaultSideBarSize?: string;
   /** The minimum size of the side bar, in either pixels or percentage. */
   minSideBarSize?: string;
@@ -56,52 +56,73 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   onSideBarResize,
   ...props
 }: TopologyViewProps) => {
-  const drawPanelContent = (
-    <DrawerPanelContent
-      isResizable={sideBarResizable}
-      id="topology-resize-panel"
-      defaultSize={defaultSideBarSize}
-      minSize={minSideBarSize}
-      maxSize={maxSideBarSize}
-      onResize={onSideBarResize}
+  const topologyContent = !sideBarResizable ? (
+    <StackItem
+      isFilled
+      className={
+        'pf-topology-container' +
+        `${sideBar ? ' pf-topology-container__with-sidebar' : ''}` +
+        `${sideBarOpen ? ' pf-topology-container__with-sidebar--open' : ''}`
+      }
     >
+      <div className="pf-topology-content">
+        {children}
+        {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
+      </div>
       {sideBar}
-    </DrawerPanelContent>
+    </StackItem>
+  ) : (
+    <StackItem isFilled className="pf-topology-container">
+      <Drawer isExpanded={sideBarOpen} isInline>
+        <DrawerContent
+          panelContent={
+            <DrawerPanelContent
+              isResizable={sideBarResizable}
+              id="topology-resize-panel"
+              defaultSize={defaultSideBarSize}
+              minSize={minSideBarSize}
+              maxSize={maxSideBarSize}
+              onResize={onSideBarResize}
+            >
+              {sideBar}
+            </DrawerPanelContent>
+          }
+        >
+          <DrawerContentBody>
+            <div className="pf-topology-content">
+              {children}
+              {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
+            </div>
+          </DrawerContentBody>
+        </DrawerContent>
+      </Drawer>
+    </StackItem>
   );
 
   return (
     <Stack className={className} {...props}>
-      <StackItem isFilled={false}>
-        <GenerateId prefix="pf-topology-view-">
-          {randomId => (
-            <Toolbar id={randomId}>
-              {contextToolbar && (
-                <ToolbarContent>
-                  <ToolbarGroup className="project-toolbar">{contextToolbar}</ToolbarGroup>
-                </ToolbarContent>
-              )}
-              {viewToolbar && (
-                <ToolbarContent>
-                  <ToolbarGroup className="view-toolbar">{viewToolbar}</ToolbarGroup>
-                </ToolbarContent>
-              )}
-              <Divider />
-            </Toolbar>
-          )}
-        </GenerateId>
-      </StackItem>
-      <StackItem isFilled className="pf-topology-container">
-        <Drawer isExpanded={sideBarOpen} isInline>
-          <DrawerContent panelContent={drawPanelContent}>
-            <DrawerContentBody>
-              <div className="pf-topology-content">
-                {children}
-                {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
-              </div>
-            </DrawerContentBody>
-          </DrawerContent>
-        </Drawer>
-      </StackItem>
+      {contextToolbar || viewToolbar ? (
+        <StackItem isFilled={false}>
+          <GenerateId prefix="pf-topology-view-">
+            {randomId => (
+              <Toolbar id={randomId}>
+                {contextToolbar && (
+                  <ToolbarContent>
+                    <ToolbarGroup className="project-toolbar">{contextToolbar}</ToolbarGroup>
+                  </ToolbarContent>
+                )}
+                {viewToolbar && (
+                  <ToolbarContent>
+                    <ToolbarGroup className="view-toolbar">{viewToolbar}</ToolbarGroup>
+                  </ToolbarContent>
+                )}
+                <Divider />
+              </Toolbar>
+            )}
+          </GenerateId>
+        </StackItem>
+      ) : null}
+      {topologyContent}
     </Stack>
   );
 };
