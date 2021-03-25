@@ -77,6 +77,16 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   componentDidMount() {
     window.addEventListener('keydown', this.props.isRootMenu ? this.handleKeys : null);
     window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
+
+    let ref = this.menuRef;
+    if (this.props.innerRef) {
+      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
+    }
+
+    const firstItem = ref.current.querySelector('button, a');
+    if (firstItem) {
+      (firstItem as HTMLElement).tabIndex = 0;
+    }
   }
 
   componentWillUnmount() {
@@ -110,6 +120,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         )[0].firstChild;
         (nextTarget as HTMLElement).focus();
+        (nextTarget as HTMLElement).tabIndex = 0;
       }
     }
   };
@@ -145,48 +156,24 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     let moveFocus = false;
     let moveTarget = null;
     let currentIndex = -1;
-    const breadcrumbs = Array.from(ref.current.getElementsByClassName('pf-c-breadcrumb__item'));
-    const menuItems = isDrilldown
+    const validMenuItems = isDrilldown
       ? Array.from(parentMenu.getElementsByTagName('UL')[0].children).filter(
           el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         )
       : Array.from(parentMenu.getElementsByTagName('LI')).filter(
           el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         );
-    const validMenuItems = breadcrumbs.length > 0 ? menuItems.concat([breadcrumbs[0]]) : menuItems;
     const isFromBreadcrumb =
       activeElement.classList.contains('pf-c-breadcrumb__link') ||
       activeElement.classList.contains('pf-c-dropdown__toggle');
-
-    if (!isFromBreadcrumb && key === 'Tab' && !event.shiftKey) {
-      event.preventDefault();
-    }
-
-    if (key === 'Tab') {
-      if (isFromBreadcrumb) {
-        if (event.shiftKey) {
-          if (activeElement === breadcrumbs[0].querySelector('button')) {
-            return;
-          }
-        } else if (activeElement === breadcrumbs[breadcrumbs.length - 1].querySelector('button')) {
-          event.preventDefault();
-          moveFocus = true;
-          moveTarget = validMenuItems[0].firstChild;
-        }
-      } else {
-        if (event.shiftKey) {
-          event.preventDefault();
-          moveFocus = true;
-          moveTarget = breadcrumbs[0].firstChild;
-        }
-      }
-    }
 
     if (key === ' ' || key === 'Enter') {
       event.preventDefault();
       if (isDrilldown && !isFromBreadcrumb) {
         const isDrillingOut = activeElement.closest('li').classList.contains('pf-m-current-path');
         if (isDrillingOut && parentMenu.parentElement.tagName === 'LI') {
+          (activeElement as HTMLElement).tabIndex = -1;
+          (parentMenu.parentElement.firstChild as HTMLElement).tabIndex = 0;
           this.setState({ transitionMoveTarget: parentMenu.parentElement.firstChild as HTMLElement });
         } else {
           if (activeElement.nextElementSibling && activeElement.nextElementSibling.classList.contains('pf-c-menu')) {
@@ -194,6 +181,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
               activeElement.nextElementSibling.getElementsByTagName('UL')[0].children
             ).filter(el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
 
+            (activeElement as HTMLElement).tabIndex = -1;
+            (childItems[0].firstChild as HTMLElement).tabIndex = 0;
             this.setState({ transitionMoveTarget: childItems[0].firstChild as HTMLElement });
           }
         }
@@ -244,6 +233,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     }
 
     if (moveFocus && moveTarget) {
+      (activeElement as HTMLElement).tabIndex = -1;
+      (moveTarget as HTMLElement).tabIndex = 0;
       (moveTarget as HTMLElement).focus();
     }
   };

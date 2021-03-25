@@ -56,6 +56,7 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
               onClick={onClickButton}
               {...((isDisabled === true || isDisabledContext === true) && { disabled: true })}
               ref={innerRef}
+              tabIndex={-1}
               {...props}
             >
               <span className={css(styles.menuItemActionIcon)}>

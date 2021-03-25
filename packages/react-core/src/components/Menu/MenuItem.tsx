@@ -135,8 +135,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     if (Component === 'a') {
       additionalProps = {
         href: to,
-        'aria-disabled': isDisabled ? true : null,
-        tabIndex: isDisabled ? -1 : null
+        'aria-disabled': isDisabled ? true : null
       };
     } else if (Component === 'button') {
       additionalProps = {
@@ -175,6 +174,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           }}
           className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
           aria-current={getAriaCurrent()}
+          tabIndex={-1}
           {...(isDisabled && { disabled: true })}
           {...additionalProps}
         >
@@ -247,6 +247,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
             onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
             {...(flyoutMenu && { onKeyDown: handleFlyout })}
+            tabIndex={-1}
             ref={innerRef}
             {...props}
           >
@@ -259,6 +260,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                   isFavorited={isFavorited}
                   aria-label={isFavorited ? 'starred' : 'not starred'}
                   onClick={event => onActionClick(event, itemId)}
+                  tabIndex={-1}
                   actionId="fav"
                 />
               )}
