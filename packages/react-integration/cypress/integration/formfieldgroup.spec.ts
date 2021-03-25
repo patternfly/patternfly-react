@@ -10,8 +10,6 @@ describe('Form Demo Test', () => {
     cy.get('#fieldgroup1 > .pf-c-form__field-group-body').should('exist');
     cy.get(':nth-child(1) > :nth-child(1) > div > button').click();
     cy.get('#fieldgroup1 > .pf-c-form__field-group-body').should('not.exist');
-    cy.get(':nth-child(1) > :nth-child(1) > div > button').click();
-    cy.get('#fieldgroup1 > .pf-c-form__field-group-body').should('exist');
   });
 
   it('Verify non expandable field group is expanded by default', () => {
@@ -24,7 +22,5 @@ describe('Form Demo Test', () => {
     cy.get('#fieldgroup3 > .pf-c-form__field-group-body').should('not.exist');
     cy.get(':nth-child(3) > :nth-child(1) > div > button').click();
     cy.get('#fieldgroup3 > .pf-c-form__field-group-body').should('exist');
-    cy.get(':nth-child(3) > :nth-child(1) > div > button').click();
-    cy.get('#fieldgroup3 > .pf-c-form__field-group-body').should('not.exist');
   });
 });
