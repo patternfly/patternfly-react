@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import { Button } from '../Button';
 
 export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElement> {
@@ -40,7 +39,7 @@ export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleP
         id={toggleId}
       >
         <span className={css(styles.formFieldGroupToggleIcon)}>
-          <AngleDownIcon aria-hidden="true" />
+          <AngleRightIcon aria-hidden="true" />
         </span>
       </Button>
     </div>
