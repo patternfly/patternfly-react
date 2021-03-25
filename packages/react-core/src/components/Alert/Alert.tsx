@@ -38,8 +38,10 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   variantLabel?: string;
   /** Flag to indicate if the Alert is in a live region */
   isLiveRegion?: boolean;
-  /** If set to true, the time out is 8000 milliseconds.  If a number is provided, alert will be dismissed after that amount of time in milliseconds. */
+  /** If set to true, the timeout is 8000 milliseconds. If a number is provided, alert will be dismissed after that amount of time in milliseconds. */
   timeout?: number | boolean;
+  /** If the user hovers over the Alert and `timeout` expires, this is how long to wait before finally dismissing the Alert */
+  timeoutAnimation?: number;
   /** Function to be executed on alert timeout. Relevant when the timeout prop is set */
   onTimeout?: () => void;
   /** Truncate title to number of lines */
@@ -64,10 +66,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   ouiaId,
   ouiaSafe = true,
   timeout = false,
-  onTimeout,
+  timeoutAnimation = 3000,
+  onTimeout = () => {},
   truncateTitle = 0,
   tooltipPosition,
   customIcon,
+  onMouseEnter = () => {},
+  onMouseLeave = () => {},
   ...props
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
@@ -78,9 +83,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </React.Fragment>
   );
 
-  const [disableAlert, setDisableAlert] = useState(false);
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const titleRef = React.useRef(null);
+  const divRef = React.useRef<HTMLDivElement>();
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   React.useEffect(() => {
     if (!titleRef.current || !truncateTitle) {
       return;
@@ -91,12 +96,57 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       setIsTooltipVisible(showTooltip);
     }
   }, [titleRef, truncateTitle, isTooltipVisible]);
-  const customClassName = css(
-    styles.alert,
-    isInline && styles.modifiers.inline,
-    variant !== AlertVariant.default && styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
-    className
-  );
+
+  const [timedOut, setTimedOut] = useState(false);
+  const [timedOutAnimation, setTimedOutAnimation] = useState(true);
+  const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
+  const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
+  const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
+  React.useEffect(() => {
+    timeout = timeout === true ? 8000 : Number(timeout);
+    if (timeout > 0) {
+      const timer = setTimeout(() => setTimedOut(true), timeout);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+  React.useEffect(() => {
+    const onDocumentFocus = () => {
+      if (divRef.current) {
+        if (divRef.current.contains(document.activeElement)) {
+          setContainsFocus(true);
+          setTimedOutAnimation(false);
+        } else if (containsFocus) {
+          setContainsFocus(false);
+        }
+      }
+    };
+
+    document.addEventListener('focus', onDocumentFocus, true);
+
+    return () => document.removeEventListener('focus', onDocumentFocus, true);
+  }, [containsFocus]);
+  React.useEffect(() => {
+    if (containsFocus === false || isMouseOver === false) {
+      const timer = setTimeout(() => setTimedOutAnimation(true), timeoutAnimation);
+      return () => clearTimeout(timer);
+    }
+  }, [containsFocus, isMouseOver]);
+  React.useEffect(() => dismissed && onTimeout(), [dismissed]);
+
+  const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseOver(true);
+    setTimedOutAnimation(false);
+    onMouseEnter(ev);
+  };
+
+  const myOnMouseLeave = (ev: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseOver(false);
+    onMouseLeave(ev);
+  };
+
+  if (dismissed) {
+    return null;
+  }
   const Title = (
     <h4
       {...(isTooltipVisible && { tabIndex: 0 })}
@@ -107,49 +157,41 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </h4>
   );
 
-  if (disableAlert === false && timeout && timeout !== 0) {
-    setTimeout(
-      () => {
-        setDisableAlert(true);
-        if (onTimeout) {
-          onTimeout();
-        }
-      },
-      timeout === true ? 8000 : timeout
-    );
-  }
-
-  if (disableAlert === false) {
-    return (
-      <div
-        {...props}
-        className={customClassName}
-        aria-label={ariaLabel}
-        {...ouiaProps}
-        {...(isLiveRegion && {
-          'aria-live': 'polite',
-          'aria-atomic': 'false'
-        })}
-      >
-        <AlertIcon variant={variant} customIcon={customIcon} />
-        {isTooltipVisible ? (
-          <Tooltip content={getHeadingContent} position={tooltipPosition}>
-            {Title}
-          </Tooltip>
-        ) : (
-          Title
-        )}
-        {actionClose && (
-          <AlertContext.Provider value={{ title, variantLabel }}>
-            <div className={css(styles.alertAction)}>{actionClose}</div>
-          </AlertContext.Provider>
-        )}
-        {children && <div className={css(styles.alertDescription)}>{children}</div>}
-        {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
-      </div>
-    );
-  } else {
-    return null;
-  }
+  return (
+    <div
+      ref={divRef}
+      className={css(
+        styles.alert,
+        isInline && styles.modifiers.inline,
+        styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
+        className
+      )}
+      aria-label={ariaLabel}
+      {...ouiaProps}
+      {...(isLiveRegion && {
+        'aria-live': 'polite',
+        'aria-atomic': 'false'
+      })}
+      onMouseEnter={myOnMouseEnter}
+      onMouseLeave={myOnMouseLeave}
+      {...props}
+    >
+      <AlertIcon variant={variant} customIcon={customIcon} />
+      {isTooltipVisible ? (
+        <Tooltip content={getHeadingContent} position={tooltipPosition}>
+          {Title}
+        </Tooltip>
+      ) : (
+        Title
+      )}
+      {actionClose && (
+        <AlertContext.Provider value={{ title, variantLabel }}>
+          <div className={css(styles.alertAction)}>{actionClose}</div>
+        </AlertContext.Provider>
+      )}
+      {children && <div className={css(styles.alertDescription)}>{children}</div>}
+      {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
+    </div>
+  );
 };
 Alert.displayName = 'Alert';
