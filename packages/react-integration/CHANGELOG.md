@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.83.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.82.1...@patternfly/react-integration@4.83.0) (2021-03-25)
+
+
+### Bug Fixes
+
+* **Topology:** Allow applications to choose using resizable drawer for topology side bar ([#5572](https://github.com/patternfly/patternfly-react/issues/5572)) ([82176dc](https://github.com/patternfly/patternfly-react/commit/82176dcc6328478df8216f583f65a86b49a2826e))
+
+
+### Features
+
+* **textarea:** add auto resizing ([#5568](https://github.com/patternfly/patternfly-react/issues/5568)) ([4809e89](https://github.com/patternfly/patternfly-react/commit/4809e8988001a7246b25d662b7f8cf3df304389d))
+
+
+
+
+
 ## [4.82.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.82.0...@patternfly/react-integration@4.82.1) (2021-03-24)
 
 **Note:** Version bump only for package @patternfly/react-integration

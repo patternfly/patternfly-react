@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.102.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.101.10...@patternfly/react-core@4.102.0) (2021-03-25)
+
+
+### Bug Fixes
+
+* **pagination:** add titles.ofWord ([#5563](https://github.com/patternfly/patternfly-react/issues/5563)) ([0b26473](https://github.com/patternfly/patternfly-react/commit/0b26473149a486c5ddd90b52923f816d7fbdc588))
+
+
+### Features
+
+* **alert:** don't timeout if isMouseOver ([#5566](https://github.com/patternfly/patternfly-react/issues/5566)) ([26ed9f7](https://github.com/patternfly/patternfly-react/commit/26ed9f706ff41d3046d3960b5f8535631975569c))
+* **textarea:** add auto resizing ([#5568](https://github.com/patternfly/patternfly-react/issues/5568)) ([4809e89](https://github.com/patternfly/patternfly-react/commit/4809e8988001a7246b25d662b7f8cf3df304389d))
+
+
+
+
+
 ## [4.101.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.101.9...@patternfly/react-core@4.101.10) (2021-03-24)
 
 **Note:** Version bump only for package @patternfly/react-core

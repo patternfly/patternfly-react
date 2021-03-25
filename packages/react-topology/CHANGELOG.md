@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.8.6...@patternfly/react-topology@4.8.7) (2021-03-25)
+
+
+### Bug Fixes
+
+* **Topology:** Allow applications to choose using resizable drawer for topology side bar ([#5572](https://github.com/patternfly/patternfly-react/issues/5572)) ([82176dc](https://github.com/patternfly/patternfly-react/commit/82176dcc6328478df8216f583f65a86b49a2826e))
+
+
+
+
+
 ## [4.8.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.8.5...@patternfly/react-topology@4.8.6) (2021-03-24)
 
 **Note:** Version bump only for package @patternfly/react-topology
