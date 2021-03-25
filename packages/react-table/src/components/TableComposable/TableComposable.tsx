@@ -52,7 +52,7 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isStickyHeader?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
-  /** */
+  /** Flag indicating table is a tree table */
   isTreeTable?: boolean;
 }
 

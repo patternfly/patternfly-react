@@ -105,7 +105,7 @@ export interface TableProps extends OUIAProps {
   onFavorite?: OnFavorite;
   /** Along with the onSort prop, enables favorites sorting, defaults to true */
   canSortFavorites?: boolean;
-  /** */
+  /** Flag indicating table is a tree table */
   isTreeTable?: boolean;
 }
 
