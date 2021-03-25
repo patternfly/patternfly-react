@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.102.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.102.1...@patternfly/react-core@4.102.2) (2021-03-25)
+
+
+### Bug Fixes
+
+* **alert:** do not return false in useEffect ([#5575](https://github.com/patternfly/patternfly-react/issues/5575)) ([e1772fa](https://github.com/patternfly/patternfly-react/commit/e1772fa407bb4b3f36d99eff62f85282b998f46c))
+
+
+
+
+
 ## [4.102.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.102.0...@patternfly/react-core@4.102.1) (2021-03-25)
 
 **Note:** Version bump only for package @patternfly/react-core
