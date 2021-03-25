@@ -145,7 +145,7 @@ class MenuWithFlyout extends React.Component {
           <MenuItem itemId={0}>Start rollout</MenuItem>
           <MenuItem itemId={1}>Pause rollouts</MenuItem>
           <MenuItem itemId={2}>Add storage</MenuItem>
-          <MenuItem description="Description" itemId={3} flyoutMenu={flyoutMenu}>
+          <MenuItem description="Description" itemId={3} flyoutMenu={flyoutMenu} aria-label="Has flyout menu">
             Edit
           </MenuItem>
           <MenuItem itemId={4}>Delete deployment config</MenuItem>
@@ -205,7 +205,7 @@ class MenuWithFiltering extends React.Component {
         <MenuInput>
           <TextInput
             value={input}
-            aria-label="filterable-example-with-text-input"
+            aria-label="Filter menu items"
             iconVariant="search"
             type="search"
             onChange={value => this.handleTextInputChange(value, 'input')}

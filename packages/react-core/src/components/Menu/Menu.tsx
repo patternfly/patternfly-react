@@ -158,6 +158,10 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       activeElement.classList.contains('pf-c-breadcrumb__link') ||
       activeElement.classList.contains('pf-c-dropdown__toggle');
 
+    if (key === 'Tab' && !event.shiftKey) {
+      event.preventDefault();
+    }
+
     if (key === ' ' || key === 'Enter') {
       event.preventDefault();
       if (isDrilldown && !isFromBreadcrumb) {
