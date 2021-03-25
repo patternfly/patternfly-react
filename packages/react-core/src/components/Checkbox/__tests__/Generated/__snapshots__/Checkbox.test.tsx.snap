@@ -22,12 +22,12 @@ exports[`Checkbox should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </label>
-  <div
+  <span
     className="pf-c-check__description"
   >
     <div>
       ReactNode
     </div>
-  </div>
+  </span>
 </div>
 `;

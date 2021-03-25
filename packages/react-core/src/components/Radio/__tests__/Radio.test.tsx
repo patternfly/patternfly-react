@@ -74,7 +74,7 @@ describe('Radio check component', () => {
 
   test('Radio description', () => {
     const view = shallow(<Radio id="check" name="check" aria-label="check" description="Text description..." />);
-    const descriptionEl = view.find('div[className="pf-c-radio__description"]');
+    const descriptionEl = view.find('span[className="pf-c-radio__description"]');
     expect(descriptionEl.length).toBe(1);
     expect(descriptionEl.text()).toBe('Text description...');
   });

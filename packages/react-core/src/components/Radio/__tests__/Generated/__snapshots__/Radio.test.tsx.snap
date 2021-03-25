@@ -25,12 +25,12 @@ exports[`Radio should match snapshot (auto-generated) 1`] = `
     onChange={[Function]}
     type="radio"
   />
-  <div
+  <span
     className="pf-c-radio__description"
   >
     <div>
       ReactNode
     </div>
-  </div>
+  </span>
 </label>
 `;
