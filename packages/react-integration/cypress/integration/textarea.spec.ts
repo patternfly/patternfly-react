@@ -118,4 +118,15 @@ describe('Text Area Demo Test', () => {
     cy.get('#textarea7-b').type('testing', { force: true });
     cy.get('#textarea7-b').should('have.value', 'isReadOnly text area');
   });
+
+  it('Verify text area autoresizes', () => {
+    cy.get('#autoResize')
+      .invoke('outerHeight')
+      .then(startingHeight => {
+        cy.get('#autoResize').type('0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0');
+        cy.get('#autoResize')
+          .invoke('outerHeight')
+          .should('be.gt', startingHeight);
+      });
+  });
 });

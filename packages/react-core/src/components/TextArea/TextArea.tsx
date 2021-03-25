@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import heightToken from '@patternfly/react-tokens/dist/js/c_form_control_textarea_Height';
 import { css } from '@patternfly/react-styles';
 import { capitalize, ValidatedOptions } from '../../helpers';
 
@@ -19,6 +20,8 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   isDisabled?: boolean;
   /** Flag to show if the TextArea is read only. */
   isReadOnly?: boolean;
+  /** Flag to modify height based on contents. */
+  autoResize?: boolean;
   /** Value to indicate if the textarea is modified to show that validation state.
    * If set to success, textarea will be modified to indicate valid state.
    * If set to error, textarea will be modified to indicate error state.
@@ -57,8 +60,22 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
   }
 
   private handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    // https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
+    const field = event.currentTarget;
+    if (this.props.autoResize) {
+      field.style.setProperty(heightToken.name, 'inherit');
+      const computed = window.getComputedStyle(field);
+      // Calculate the height
+      const height =
+        parseInt(computed.getPropertyValue('border-top-width')) +
+        parseInt(computed.getPropertyValue('padding-top')) +
+        field.scrollHeight +
+        parseInt(computed.getPropertyValue('padding-bottom')) +
+        parseInt(computed.getPropertyValue('border-bottom-width'));
+      field.style.setProperty(heightToken.name, `${height}px`);
+    }
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value, event);
+      this.props.onChange(field.value, event);
     }
   };
 
@@ -66,8 +83,6 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     const {
       className,
       value,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      onChange,
       validated,
       isRequired,
       isDisabled,
@@ -76,6 +91,10 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       innerRef,
       readOnly,
       disabled,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      autoResize,
+      onChange,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
     const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
