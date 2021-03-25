@@ -17,6 +17,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps 
    * If React.isValidElement(component) the className prop will be injected unless styleChildren="false"
    */
   component?: React.ReactNode;
+  /** ID for the component element */
+  componentID?: string;
   /** Whether to set className on component when React.isValidElement(component) */
   styleChildren?: boolean;
   /** Render dropdown item as disabled option */

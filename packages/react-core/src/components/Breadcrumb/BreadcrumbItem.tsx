@@ -17,6 +17,8 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   to?: string;
   /** Flag indicating whether the item is active. */
   isActive?: boolean;
+  /** Flag indicating whether the item contains a dropdown. */
+  isDropdown?: boolean;
   /** Internal prop set by Breadcrumb on all but the first crumb */
   showDivider?: boolean;
   /** Target for breadcrumb link. */
@@ -32,6 +34,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   className: classNameProp = '',
   to = null,
   isActive = false,
+  isDropdown = false,
   showDivider,
   target = null,
   component = 'a',
@@ -53,13 +56,14 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
           {children}
         </button>
       )}
+      {isDropdown && <span className={css(styles.breadcrumbDropdown)}>{children}</span>}
       {render && render({ className, ariaCurrent })}
       {to && !render && (
         <Component href={to} target={target} className={className} aria-current={ariaCurrent}>
           {children}
         </Component>
       )}
-      {!to && component !== 'button' && children}
+      {!to && component !== 'button' && !isDropdown && children}
     </li>
   );
 };

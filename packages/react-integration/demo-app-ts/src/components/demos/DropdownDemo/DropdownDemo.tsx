@@ -7,6 +7,7 @@ import {
   DropdownToggleAction,
   Stack,
   StackItem,
+  BadgeToggle,
   Title
 } from '@patternfly/react-core';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
@@ -14,9 +15,11 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 import UserIcon from '@patternfly/react-icons/dist/js/icons/user-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 
 interface DropdownState {
   isOpen: boolean;
+  isBadgeOpen: boolean;
   isActionOpen: boolean;
   isCogOpen: boolean;
   isMenuOnDocumentBodyOpen: boolean;
@@ -26,6 +29,7 @@ interface DropdownState {
 export class DropdownDemo extends React.Component<{}, DropdownState> {
   static displayName = 'DropdownDemo';
   onToggle: (isOpen: boolean) => void;
+  onBadgeToggle: (isBadgeOpen: boolean) => void;
   onSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onFocus: () => void;
   onActionToggle: (isOpen: boolean) => void;
@@ -45,6 +49,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     super(props);
     this.state = {
       isOpen: false,
+      isBadgeOpen: false,
       isActionOpen: false,
       isCogOpen: false,
       isMenuOnDocumentBodyOpen: false,
@@ -67,6 +72,12 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       if (element) {
         element.focus();
       }
+    };
+
+    this.onBadgeToggle = isBadgeOpen => {
+      this.setState({
+        isBadgeOpen
+      });
     };
 
     this.onActionToggle = isActionOpen => {
@@ -320,12 +331,40 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     );
   }
 
+  renderBadgeDropdown() {
+    const { isBadgeOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="edit" component="button" icon={<AngleLeftIcon />}>
+        Edit
+      </DropdownItem>,
+      <DropdownItem key="action" component="button" icon={<AngleLeftIcon />}>
+        Deployment
+      </DropdownItem>,
+      <DropdownItem key="apps" component="button" icon={<AngleLeftIcon />}>
+        Applications
+      </DropdownItem>
+    ];
+    return (
+      <Dropdown
+        id="badge-dropdown"
+        toggle={
+          <BadgeToggle id="toggle-id" onToggle={this.onBadgeToggle}>
+            {dropdownItems.length}
+          </BadgeToggle>
+        }
+        isOpen={isBadgeOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
         {this.renderDropdown()}
         {this.renderActionDropdown()}
         {this.renderMenuOnDocumentBodyDropdown()}
+        {this.renderBadgeDropdown()}
       </Stack>
     );
   }

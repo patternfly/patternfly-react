@@ -12,12 +12,14 @@ import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import { Link } from '@reach/router';
 import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import {
@@ -91,6 +93,7 @@ class SimpleDropdown extends React.Component {
 ```
 
 ### With initial selection
+
 ```js
 import React from 'react';
 import {
@@ -164,6 +167,7 @@ class IntialSelectionDropdown extends React.Component {
 ```
 
 ### With groups
+
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
@@ -231,6 +235,7 @@ class GroupedDropdown extends React.Component {
 ```
 
 ### Disabled
+
 ```js
 import React from 'react';
 import {
@@ -298,6 +303,7 @@ class DisabledDropdown extends React.Component {
 ```
 
 ### Primary toggle
+
 ```js
 import React from 'react';
 import {
@@ -370,6 +376,7 @@ class PrimaryDropdown extends React.Component {
 ```
 
 ### Position right
+
 ```js
 import React from 'react';
 import {
@@ -439,6 +446,7 @@ class PositionRightDropdown extends React.Component {
 ```
 
 ### Direction up
+
 ```js
 import React from 'react';
 import {
@@ -507,6 +515,7 @@ class DirectionUpDropdown extends React.Component {
 ```
 
 ### With kebab
+
 ```js
 import React from 'react';
 import {
@@ -575,7 +584,77 @@ class KebabDropdown extends React.Component {
 }
 ```
 
+### With badge
+
+```js
+import React from 'react';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownDirection,
+  BadgeToggle
+} from '@patternfly/react-core';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+
+class BadgeDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id');
+      element.focus();
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="edit" component="button" icon={<AngleLeftIcon />}>
+        Edit
+      </DropdownItem>,
+      <DropdownItem key="action" component="button" icon={<AngleLeftIcon />}>
+        Deployment
+      </DropdownItem>,
+      <DropdownItem key="apps" component="button" icon={<AngleLeftIcon />}>
+        Applications
+      </DropdownItem>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={
+          <BadgeToggle id="toggle-id" onToggle={this.onToggle}>
+            {dropdownItems.length}
+          </BadgeToggle>
+        }
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
+```
+
 ### Icon only
+
 ```js
 import React from 'react';
 import {
@@ -649,6 +728,7 @@ class IconDropdown extends React.Component {
 ```
 
 ### Split button
+
 ```js
 import React from 'react';
 import {
@@ -726,6 +806,7 @@ class SplitButtonDropdown extends React.Component {
 ```
 
 ### Split button (with text)
+
 ```js
 import React from 'react';
 import {
@@ -799,6 +880,7 @@ class SplitButtonDropdown extends React.Component {
 ```
 
 ### Split button (3rd state)
+
 ```js
 import React from 'react';
 import {
@@ -880,6 +962,7 @@ class SplitButtonDropdown extends React.Component {
 ```
 
 ### Split button (disabled)
+
 ```js
 import React from 'react';
 import {
@@ -957,6 +1040,7 @@ class SplitButtonDisabledDropdown extends React.Component {
 ```
 
 ### Split button action
+
 ```js
 import React from 'react';
 import {
@@ -1074,6 +1158,7 @@ class SplitButtonActionDropdown extends React.Component {
 ```
 
 ### Basic panel
+
 ```js
 import React from 'react';
 import {
@@ -1121,6 +1206,7 @@ class DropdownPanel extends React.Component {
 ```
 
 ### Router link
+
 ```js
 import React from 'react';
 import {
@@ -1162,13 +1248,7 @@ class RouterDropdown extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItem key="routerlink" component={
-        <Link to="/">
-          @reach/router Link
-        </Link>
-      } />
-    ];
+    const dropdownItems = [<DropdownItem key="routerlink" component={<Link to="/">@reach/router Link</Link>} />];
 
     return (
       <Dropdown
@@ -1187,6 +1267,7 @@ class RouterDropdown extends React.Component {
 ```
 
 ### Dropdown with image and text
+
 ```js
 import React from 'react';
 import {
@@ -1226,8 +1307,12 @@ class ImageTextDropdown extends React.Component {
     const { isOpen } = this.state;
     const dropdownItems = [
       <DropdownGroup key="group 1">
-        <DropdownItem key="group 1 plaintext" component="div" isPlainText>Text</DropdownItem>
-        <DropdownItem key="group 1 plaintext2" component="div" isPlainText>More text</DropdownItem>
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>
+          Text
+        </DropdownItem>
+        <DropdownItem key="group 1 plaintext2" component="div" isPlainText>
+          More text
+        </DropdownItem>
       </DropdownGroup>,
       <DropdownSeparator key="dropdown separator" />,
       <DropdownGroup key="group 2">
@@ -1260,6 +1345,7 @@ class ImageTextDropdown extends React.Component {
 ```
 
 ### Append menu document body
+
 ```js
 import React from 'react';
 import {
@@ -1299,9 +1385,7 @@ class MenuOnDocumentBodyDropdown extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItem key="link">1</DropdownItem>
-    ];
+    const dropdownItems = [<DropdownItem key="link">1</DropdownItem>];
     return (
       <div style={{ height: '50px', overflow: 'hidden' }}>
         <Dropdown
@@ -1320,7 +1404,9 @@ class MenuOnDocumentBodyDropdown extends React.Component {
   }
 }
 ```
+
 ### Dropdown with descriptions
+
 ```js
 import React from 'react';
 import {
@@ -1361,12 +1447,14 @@ class SimpleDropdown extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-        
+
     const dropdownItems = [
-      <DropdownItem key="link" description="This is a description" icon={<CubesIcon />}>Link</DropdownItem>,
-      <DropdownItem 
-        key="action" 
-        component="button" 
+      <DropdownItem key="link" description="This is a description" icon={<CubesIcon />}>
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        key="action"
+        component="button"
         icon={<BellIcon />}
         description="This is a very long description that describes the menu item"
       >

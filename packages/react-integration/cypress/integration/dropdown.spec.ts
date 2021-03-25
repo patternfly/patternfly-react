@@ -9,6 +9,10 @@ describe('Dropdown Demo Test', () => {
     cy.get('#dropdown > button').should('have.class', 'pf-c-dropdown__toggle');
   });
 
+  it('Verify badge toggle dropdown', () => {
+    cy.get('#badge-dropdown span').should('have.class', 'pf-c-badge');
+  });
+
   // Accessibility Tests:
   // Mouse click opens panel
   it('Verify dropdown menu expanded', () => {
