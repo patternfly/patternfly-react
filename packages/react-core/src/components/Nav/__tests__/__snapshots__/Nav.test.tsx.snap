@@ -1298,6 +1298,7 @@ exports[`Nav List with custom item nodes 1`] = `
               aria-current={null}
               className="pf-c-nav__link my-custom-node"
               onClick={[Function]}
+              tabIndex={null}
             >
               My custom node
             </div>

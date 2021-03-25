@@ -67,7 +67,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       'aria-current': isActive ? 'page' : null,
       ...(styleChildren && {
         className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
-      })
+      }),
+      tabIndex: child.props.tabIndex || isNavOpen ? null : -1
     });
 
   const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
