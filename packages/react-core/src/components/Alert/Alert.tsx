@@ -131,7 +131,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       return () => clearTimeout(timer);
     }
   }, [containsFocus, isMouseOver]);
-  React.useEffect(() => dismissed && onTimeout(), [dismissed]);
+  React.useEffect(() => {
+    dismissed && onTimeout();
+  }, [dismissed]);
 
   const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(true);
