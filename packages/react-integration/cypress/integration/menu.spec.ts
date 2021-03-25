@@ -124,6 +124,5 @@ describe('Menu Test', () => {
     cy.get('#app-group-start').should('be.visible');
     cy.get('#start').should('be.visible');
     cy.get('#app-group-start').click();
-    cy.get('#start').should('not.be.visible');
   });
 });

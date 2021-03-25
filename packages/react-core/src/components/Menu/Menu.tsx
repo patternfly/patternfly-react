@@ -158,8 +158,28 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       activeElement.classList.contains('pf-c-breadcrumb__link') ||
       activeElement.classList.contains('pf-c-dropdown__toggle');
 
-    if (key === 'Tab' && !event.shiftKey) {
+    if (!isFromBreadcrumb && key === 'Tab' && !event.shiftKey) {
       event.preventDefault();
+    }
+
+    if (key === 'Tab') {
+      if (isFromBreadcrumb) {
+        if (event.shiftKey) {
+          if (activeElement === breadcrumbs[0].querySelector('button')) {
+            return;
+          }
+        } else if (activeElement === breadcrumbs[breadcrumbs.length - 1].querySelector('button')) {
+          event.preventDefault();
+          moveFocus = true;
+          moveTarget = validMenuItems[0].firstChild;
+        }
+      } else {
+        if (event.shiftKey) {
+          event.preventDefault();
+          moveFocus = true;
+          moveTarget = breadcrumbs[0].firstChild;
+        }
+      }
     }
 
     if (key === ' ' || key === 'Enter') {
@@ -206,19 +226,19 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       event.preventDefault();
-      const iterableElement = isFromBreadcrumb ? activeElement.closest('li') : activeElement;
-
+      if (isFromBreadcrumb) {
+        return;
+      }
       let nextSibling;
       if (key === 'ArrowLeft') {
-        nextSibling = iterableElement.previousElementSibling;
+        nextSibling = activeElement.previousElementSibling;
       } else {
-        nextSibling = iterableElement.nextElementSibling;
+        nextSibling = activeElement.nextElementSibling;
       }
       if (nextSibling) {
-        const nextTarget = isFromBreadcrumb ? nextSibling.querySelector('button') : nextSibling;
-        if (['A', 'BUTTON'].includes(nextTarget.tagName)) {
+        if (['A', 'BUTTON'].includes(nextSibling.tagName)) {
           moveFocus = true;
-          moveTarget = nextTarget;
+          moveTarget = nextSibling;
         }
       }
     }
