@@ -104,7 +104,7 @@ class SimpleForm extends React.Component {
                 type="button"
                 aria-label="More info for name field"
                 onClick={e => e.preventDefault()}
-                aria-describedby="simple-form-name-0001"
+                aria-describedby="simple-form-name-01"
                 className="pf-c-form__group-label-help"
               >
                 <HelpIcon noVerticalAlign />
@@ -112,7 +112,7 @@ class SimpleForm extends React.Component {
             </Popover>
           }
           isRequired
-          fieldId="simple-form-name-0001"
+          fieldId="simple-form-name-01"
           helperText="Please provide your full name"
         >
           <TextInput
@@ -740,37 +740,37 @@ class SimpleForm extends React.Component {
             <FormGroup
               label="Name"
               isRequired
-              fieldId="simple-form-name-001"
+              fieldId="simple-form-name-01"
               helperText="Please provide your full name"
             >
               <TextInput
                 isRequired
                 type="text"
-                id="simple-form-name-001"
-                name="simple-form-name-001"
+                id="simple-form-name-01"
+                name="simple-form-name-01"
                 aria-describedby="simple-form-name-01-helper"
                 value={value1}
                 onChange={this.handleTextInputChange1}
               />
             </FormGroup>
           </GridItem>
-          <FormGroup label="Email" isRequired fieldId="simple-form-email-001">
+          <FormGroup label="Email" isRequired fieldId="simple-form-email-01">
             <TextInput
               isRequired
               type="email"
-              id="simple-form-email-001"
-              name="simple-form-email-001"
+              id="simple-form-email-01"
+              name="simple-form-email-01"
               value={value2}
               onChange={this.handleTextInputChange2}
             />
           </FormGroup>
-          <FormGroup label="Phone number" isRequired fieldId="simple-form-number-02">
+          <FormGroup label="Phone number" isRequired fieldId="simple-form-number-01">
             <TextInput
               isRequired
               type="tel"
-              id="simple-form-number-02"
+              id="simple-form-number-01"
               placeholder="555-555-5555"
-              name="simple-form-number-02"
+              name="simple-form-number-01"
               value={value3}
               onChange={this.handleTextInputChange3}
             />
