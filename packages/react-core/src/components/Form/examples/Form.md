@@ -860,7 +860,7 @@ class FieldGroups extends React.Component {
             }}
           />
         </FormGroup>
-        <FormGroup label="Label 2" isRequired fieldId="form-expandable-field-groups-label2 ">
+        <FormGroup label="Label 2" isRequired fieldId="form-expandable-field-groups-label2">
           <TextInput
             isRequired
             id="form-expandable-field-groups-label2"
@@ -904,8 +904,8 @@ class FieldGroups extends React.Component {
             <FormGroup label="Label 1" isRequired fieldId="form-expandable-field-groups-field-group1-label1">
               <TextInput
                 isRequired
-                id="form-expandable-field-groups-field-group1-label"
-                name="form-expandable-field-groups-field-group1-label2"
+                id="form-expandable-field-groups-field-group1-label1"
+                name="form-expandable-field-groups-field-group1-label1"
                 value={value3}
                 onChange={value => {
                   this.handleTextInputChange({ value3: value });
@@ -1195,7 +1195,7 @@ class FieldGroups extends React.Component {
             }}
           />
         </FormGroup>
-        <FormGroup label="Label 4" isRequired fieldId="form-expandable-field-groups-label4 ">
+        <FormGroup label="Label 4" isRequired fieldId="form-expandable-field-groups-label4">
           <TextInput
             isRequired
             id="form-expandable-field-groups-label4"
