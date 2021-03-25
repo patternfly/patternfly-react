@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
+import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/OUIA/ouia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
 import { Tr } from '../TableComposable/Tr';
 
