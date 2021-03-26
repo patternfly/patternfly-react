@@ -1995,6 +1995,18 @@ class FavoritesTable extends React.Component {
 ```
 
 ### Tree Table
+To enable a tree table:
+1. Pass the `isTreeTable` prop to the `Table` component
+2. Pass the following props to each row:
+    - `isExpanded` - Flag indicating the node is expanded and its children are visible
+    - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
+    - `level` - number representing how many levels deep this node is nested
+    - `posinset` - number representing where in the order this node sits amongst its siblings 
+    - `setsize` - number representing the number of children this node has
+    - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
+3. Use the `treeRow` cellTransform in the first column of the table. `treeRow` expects one or two callbacks as params.
+    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
+    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
 
 ```js
 import React from 'react';
@@ -3230,6 +3242,23 @@ ComposableTableFavoritable = () => {
 ```
 
 ### Composable: Tree Table
+
+To enable a tree table:
+1. Pass the `isTreeTable` prop to the `TableComposable` component
+2. Use a `TreeRowWrapper` rather than `Tr`
+3. Pass the following `props` to each row (both the `TreeRowWrapper` and the `treeRow` in the first column):
+    - `isExpanded` - Flag indicating the node is expanded and its children are visible
+    - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
+    - `level` - number representing how many levels deep this node is nested
+    - `posinset` - number representing where in the order this node sits amongst its siblings 
+    - `setsize` - number representing the number of children this node has
+    - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
+4. The first `Td` in each row will pass the following to the `treeRow` prop:
+    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
+    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
+    - `props` - (as defined above)
+    - `rowIndex` - number representing the index of the row
+
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
@@ -3364,7 +3393,8 @@ class TreeTable extends React.Component {
                 <Td key={cellIndex} treeRow={{
                   onCollapse: this.onCollapse, 
                   onCheckChange: this.onCheckChange,
-                  props: row.props
+                  props: row.props,
+                  rowIndex: rowIndex
                 }}>
                   {cell}
                 </Td>
