@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.104.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.103.0...@patternfly/react-core@4.104.0) (2021-03-26)
+
+
+### Features
+
+* **Slider:** add isDisabled property ([#5524](https://github.com/patternfly/patternfly-react/issues/5524)) ([54ea9aa](https://github.com/patternfly/patternfly-react/commit/54ea9aa0f75f7c88f57e1d487066eeb29fabe267)), closes [#5496](https://github.com/patternfly/patternfly-react/issues/5496)
+
+
+
+
+
 # [4.103.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.102.2...@patternfly/react-core@4.103.0) (2021-03-26)
 
 
