@@ -22,6 +22,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   currentValue?: number;
   /** Flag indicating if the slider is is discrete */
   isDiscrete?: boolean;
+  /** Adds disabled styling and disables the slider and the input component is present */
+  isDisabled?: boolean;
   /** Array of slider step objects (value and label of each step) for the slider. */
   steps?: SliderStepObject[];
   /** Flag to show value input field */
@@ -36,8 +38,6 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   inputLabel?: string | number;
   /** Position of the input */
   inputPosition?: 'aboveThumb' | 'right';
-  /** Flag indicating input is disabled */
-  isInputDisabled?: boolean;
   /** Value input callback.  Called when enter is hit while in input filed or focus shifts from input field */
   onChange?: (value: number) => void;
   /** Value change callback. This is called when the slider value changes */
@@ -55,13 +55,13 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   currentValue = 0,
   steps,
   isDiscrete = false,
+  isDisabled = false,
   isInputVisible = false,
   inputValue = 0,
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
   inputPosition = 'right',
-  isInputDisabled,
   onChange,
   onValueChange,
   leftActions,
@@ -263,7 +263,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const textInput = (
       <TextInput
         className={css(styles.formControl)}
-        isDisabled={isInputDisabled}
+        isDisabled={isDisabled}
         type="number"
         value={localInputValue}
         aria-label={inputAriaLabel}
@@ -287,10 +287,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   return (
-    <div className={css(styles.slider, className)} style={style} {...props}>
+    <div className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)} style={style} {...props}>
       {leftActions && <div className={css(styles.sliderActions)}>{leftActions}</div>}
       <div className={css(styles.sliderMain)}>
-        <div className={css(styles.sliderRail)} ref={sliderRailRef} onClick={onSliderRailClick}>
+        <div className={css(styles.sliderRail)} ref={sliderRailRef} onClick={!isDisabled ? onSliderRailClick : null}>
           <div className={css(styles.sliderRailTrack)} />
         </div>
         {steps && (
@@ -309,17 +309,18 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         <div
           className={css(styles.sliderThumb)}
           ref={thumbRef}
-          tabIndex={0}
+          tabIndex={isDisabled ? -1 : 0}
           role="slider"
           aria-valuemin={steps ? steps[0].value : 0}
           aria-valuemax={steps ? steps[steps.length - 1].value : 100}
           aria-valuenow={value}
           aria-valuetext={findAriaTextValue()}
           aria-label={thumbAriaLabel}
-          onMouseDown={handleMouseDown}
-          onTouchStart={handleToucheStart}
-          onKeyDown={handleThumbKeys}
-          onClick={onThumbClick}
+          aria-disabled={isDisabled}
+          onMouseDown={!isDisabled ? handleMouseDown : null}
+          onTouchStart={!isDisabled ? handleToucheStart : null}
+          onKeyDown={!isDisabled ? handleThumbKeys : null}
+          onClick={!isDisabled ? onThumbClick : null}
         />
         {isInputVisible && inputPosition === 'aboveThumb' && (
           <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>

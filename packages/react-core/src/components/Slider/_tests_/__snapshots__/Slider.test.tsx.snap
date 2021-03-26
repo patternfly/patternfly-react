@@ -26,6 +26,7 @@ exports[`slider renders continuous slider 1`] = `
         />
       </div>
       <div
+        aria-disabled={false}
         aria-label="Value"
         aria-valuemax={100}
         aria-valuemin={0}
@@ -45,6 +46,7 @@ exports[`slider renders continuous slider 1`] = `
       <TextInput
         aria-label="Slider value input"
         className="pf-c-form-control"
+        isDisabled={false}
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -87,6 +89,49 @@ exports[`slider renders continuous slider 1`] = `
           />
         </TextInputBase>
       </TextInput>
+    </div>
+  </div>
+</Slider>
+`;
+
+exports[`slider renders disabled slider 1`] = `
+<Slider
+  currentValue={50}
+  isDisabled={true}
+>
+  <div
+    className="pf-c-slider pf-m-disabled"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={null}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-disabled={true}
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        className="pf-c-slider__thumb"
+        onClick={null}
+        onKeyDown={null}
+        onMouseDown={null}
+        onTouchStart={null}
+        role="slider"
+        tabIndex={-1}
+      />
     </div>
   </div>
 </Slider>
@@ -260,6 +305,7 @@ exports[`slider renders discrete slider 1`] = `
         </SliderStep>
       </div>
       <div
+        aria-disabled={false}
         aria-label="Value"
         aria-valuemax={100}
         aria-valuemin={0}
@@ -306,6 +352,7 @@ exports[`slider renders slider with input 1`] = `
         />
       </div>
       <div
+        aria-disabled={false}
         aria-label="Value"
         aria-valuemax={100}
         aria-valuemin={0}
@@ -351,6 +398,7 @@ exports[`slider renders slider with input above thumb 1`] = `
         />
       </div>
       <div
+        aria-disabled={false}
         aria-label="Value"
         aria-valuemax={100}
         aria-valuemin={0}
@@ -373,6 +421,7 @@ exports[`slider renders slider with input above thumb 1`] = `
             <TextInput
               aria-label="Slider value input"
               className="pf-c-form-control"
+              isDisabled={false}
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}
@@ -488,6 +537,7 @@ exports[`slider renders slider with input actions 1`] = `
         />
       </div>
       <div
+        aria-disabled={false}
         aria-label="Value"
         aria-valuemax={100}
         aria-valuemin={0}

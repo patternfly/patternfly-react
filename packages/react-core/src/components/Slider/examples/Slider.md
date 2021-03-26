@@ -388,13 +388,13 @@ class SliderActions extends React.Component {
 
   render() {
     const disabledAction = (
-      <Button variant="plain" aria-label="Plus" onClick={this.onClick}>
+      <Button variant="plain" aria-label="Lock" onClick={this.onClick}>
         <LockIcon />
       </Button>
     );
 
     const enabledAction = (
-      <Button variant="plain" aria-label="Plus" onClick={this.onClick}>
+      <Button variant="plain" aria-label="Unlock" onClick={this.onClick}>
         <LockOpenIcon />
       </Button>
     );
@@ -425,9 +425,54 @@ class SliderActions extends React.Component {
           onChange={this.onChange}
           inputLabel="%"
           isInputVisible
-          isInputDisabled={this.state.isDisabled}
+          isDisabled={this.state.isDisabled}
           rightActions={this.state.isDisabled ? disabledAction : enabledAction}
         />
+      </>
+    );
+  }
+}
+```
+
+### Disabled
+
+```js
+import React from 'react';
+import { Slider, Text, TextVariants } from '@patternfly/react-core';
+
+class DiscreteInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 50
+    };
+
+    this.steps = [
+      { value: 0, label: '0' },
+      { value: 12.5, label: '1', isLabelHidden: true },
+      { value: 25, label: '2' },
+      { value: 37.5, label: '3', isLabelHidden: true },
+      { value: 50, label: '4' },
+      { value: 62.5, label: '5', isLabelHidden: true },
+      { value: 75, label: '6' },
+      { value: 87.5, label: '7', isLabelHidden: true },
+      { value: 100, label: '8' }
+    ];
+
+    this.onValueChange = value => {
+        this.setState({
+          value
+        });
+    };
+  }
+
+  render() {
+    const step = this.steps.find(step => step.value === this.state.value);
+    const displayValue = step ? step.label : 0;
+    return (
+      <>
+        <Text component={TextVariants.h3}>Slider Value is: {displayValue}</Text>
+        <Slider isDisabled currentValue={this.state.value} onValueChange={this.onValueChange} steps={this.steps} />
       </>
     );
   }
