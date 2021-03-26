@@ -60,6 +60,7 @@ export class MenuDrilldownDemo extends Component {
         containsDrilldown
         drilldownItemPath={drilldownPath}
         drilledInMenus={menuDrilledIn}
+        activeMenu={activeMenu}
         onDrillIn={this.drillIn}
         onDrillOut={this.drillOut}
         onGetMenuHeight={this.setHeight}
