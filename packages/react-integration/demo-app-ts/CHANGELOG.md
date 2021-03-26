@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.85.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.84.0...demo-app-ts@4.85.0) (2021-03-26)
+
+
+### Features
+
+* **Menu:** keyboard interaction first pass ([#5570](https://github.com/patternfly/patternfly-react/issues/5570)) ([f35afb4](https://github.com/patternfly/patternfly-react/commit/f35afb4d621c6f7f1c67b024b8dfaac4026ef7be))
+
+
+
+
+
 # [4.84.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.83.1...demo-app-ts@4.84.0) (2021-03-26)
 
 

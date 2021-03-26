@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.106.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.105.0...@patternfly/react-core@4.106.0) (2021-03-26)
+
+
+### Features
+
+* **Menu:** keyboard interaction first pass ([#5570](https://github.com/patternfly/patternfly-react/issues/5570)) ([f35afb4](https://github.com/patternfly/patternfly-react/commit/f35afb4d621c6f7f1c67b024b8dfaac4026ef7be))
+
+
+
+
+
 # [4.105.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.104.0...@patternfly/react-core@4.105.0) (2021-03-26)
 
 
