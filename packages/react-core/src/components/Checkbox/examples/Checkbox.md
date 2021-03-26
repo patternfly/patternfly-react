@@ -121,7 +121,23 @@ import { Checkbox } from '@patternfly/react-core';
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-<Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
+<Checkbox id="check-9" label="Checkbox with description" aria-label="Checkbox with description example" description="Single-tenant cloud service hosted and managed by Red Hat that offers high-availability enterprise-grade clusters in a virtual private cloud on AWS or GCP."/>
+```
+
+### Checkbox with body
+```js
+import React from 'react';
+import { Checkbox } from '@patternfly/react-core';
+
+<Checkbox id="check-10" label="Checkbox with body" aria-label="Checkbox with body example" body="This is where custom content goes."/>
+```
+
+### Checkbox with description and body
+```js
+import React from 'react';
+import { Checkbox } from '@patternfly/react-core';
+
+<Checkbox id="check-11" label="Checkbox with description and body" aria-label="Checkbox with body example" description="Single-tenant cloud service hosted and managed by Red Hat that offers high-availability enterprise-grade clusters in a virtual private cloud on AWS or GCP." body="This is where custom content goes."/>
 ```
 
 ### Standalone input

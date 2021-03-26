@@ -24,6 +24,12 @@ describe('Radio Demo Test', () => {
     cy.get('#radio-6').should('be.disabled');
   });
 
+  it('Verify body content', () => {
+    cy.get('#not-standalone-container').within(() => {
+      cy.get('.pf-c-radio__body').contains('this is the radio body');
+    });
+  });
+
   it('Verify standalone radio input', () => {
     cy.get('#standalone-container').within(() => {
       cy.get('div.pf-c-radio.pf-m-standalone').should('exist');

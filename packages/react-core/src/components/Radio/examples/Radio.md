@@ -82,7 +82,23 @@ import { Radio } from '@patternfly/react-core';
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
-<Radio id="radio-with-description" label="Radio with description example" description="Description" />
+<Radio id="radio-with-description" label="Radio with description example" description="Single-tenant cloud service hosted and managed by Red Hat that offers high-availability enterprise-grade clusters in a virtual private cloud on AWS or GCP." />
+```
+
+### With body
+```js
+import React from 'react';
+import { Radio } from '@patternfly/react-core';
+
+<Radio id="radio-with-body" label="Radio with body" body="This is where custom content goes." />
+```
+
+### With description and body
+```js
+import React from 'react';
+import { Radio } from '@patternfly/react-core';
+
+<Radio id="radio-description-body" label="Radio with description and body" description="Single-tenant cloud service hosted and managed by Red Hat that offers high-availability enterprise-grade clusters in a virtual private cloud on AWS or GCP." body="This is where custom content goes." />
 ```
 
 ### Standalone input

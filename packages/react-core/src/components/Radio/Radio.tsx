@@ -33,6 +33,8 @@ export interface RadioProps
   'aria-label'?: string;
   /** Description text of the radio. */
   description?: React.ReactNode;
+  /** Body of the radio. */
+  body?: React.ReactNode;
 }
 
 export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> {
@@ -74,6 +76,7 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
       description,
+      body,
       ouiaId,
       ouiaSafe = true,
       ...props
@@ -109,18 +112,21 @@ export class Radio extends React.Component<RadioProps, { ouiaStateId: string }> 
       );
     }
 
-    const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
+    const descRender = description ? <span className={css(styles.radioDescription)}>{description}</span> : null;
+    const bodyRender = body ? <span className={css(styles.radioBody)}>{body}</span> : null;
     const childrenRendered = isLabelBeforeButton ? (
       <>
         {labelRendered}
         {inputRendered}
         {descRender}
+        {bodyRender}
       </>
     ) : (
       <>
         {inputRendered}
         {labelRendered}
         {descRender}
+        {bodyRender}
       </>
     );
 

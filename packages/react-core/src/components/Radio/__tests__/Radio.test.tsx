@@ -74,9 +74,16 @@ describe('Radio check component', () => {
 
   test('Radio description', () => {
     const view = shallow(<Radio id="check" name="check" aria-label="check" description="Text description..." />);
-    const descriptionEl = view.find('div[className="pf-c-radio__description"]');
+    const descriptionEl = view.find('span[className="pf-c-radio__description"]');
     expect(descriptionEl.length).toBe(1);
     expect(descriptionEl.text()).toBe('Text description...');
+  });
+
+  test('Radio body', () => {
+    const view = shallow(<Radio id="check" name="check" aria-label="check" body="Text body..." />);
+    const bodyEl = view.find('span[className="pf-c-radio__body"]');
+    expect(bodyEl.length).toBe(1);
+    expect(bodyEl.text()).toBe('Text body...');
   });
 
 test('should throw console error when no id is given', () => {
