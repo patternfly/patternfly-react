@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { IExtra, IFormatterValueType, OnCheckChange, OnTreeRowCollapse } from '../../TableTypes';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table-tree-view';
+import styles from '@patternfly/react-styles/css/components/Table/table';
+import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { Button, Checkbox } from '@patternfly/react-core';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 
@@ -9,9 +10,9 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
   value: IFormatterValueType,
   { rowIndex, rowData }: IExtra
 ) => {
-  const { isExpanded, level, setsize, toggleAriaLabel, checkAriaLabel, isChecked } = rowData.props;
+  const { isExpanded, level, setsize, toggleAriaLabel, checkAriaLabel, isChecked, checkboxId } = rowData.props;
   const text = (
-    <div className={css(styles.tableTreeViewContent)}>
+    <div className={css(stylesTreeView.tableTreeViewContent)}>
       <span className="pf-c-table__text">{value.title || value}</span>
     </div>
   );
@@ -20,28 +21,30 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
   };
   return {
     value,
+    component: 'th',
+    className: 'pf-c-table__tree-view-title-cell',
     children:
       level !== undefined ? (
-        <div className={css(styles.tableTreeViewMain)}>
+        <div className={css(stylesTreeView.tableTreeViewMain)}>
           {setsize > 0 && (
-            <span className="pf-c-table__toggle">
+            <span className={css(stylesTreeView.tableToggle)}>
               <Button
                 variant="plain"
                 onClick={event => onCollapse && onCollapse(event, rowIndex, value.title, rowData)}
-                className={isExpanded && 'pf-m-expanded'}
+                className={css(isExpanded && styles.modifiers.expanded)}
                 aria-expanded={isExpanded}
                 aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
               >
-                <div className={css(styles.tableToggleIcon)}>
+                <div className={css(stylesTreeView.tableToggleIcon)}>
                   <AngleDownIcon aria-hidden="true" />
                 </div>
               </Button>
             </span>
           )}
           {!!onCheckChange && (
-            <span className={css(styles.tableCheck)}>
+            <span className={css(stylesTreeView.tableCheck)}>
               <Checkbox
-                id={rowData.props.checkBoxId || `checkbox_${rowIndex}`}
+                id={checkboxId || `checkbox_${rowIndex}`}
                 aria-label={checkAriaLabel || `Row ${rowIndex} checkbox`}
                 isChecked={isChecked}
                 onChange={onChange}

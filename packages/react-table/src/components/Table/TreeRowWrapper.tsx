@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 import { RowWrapperProps } from './RowWrapper';
 import { Tr } from '../TableComposable';
 
@@ -17,7 +18,7 @@ export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
       aria-setsize={setsize}
       aria-expanded={!!isExpanded}
       isHidden={isHidden}
-      className={css(className, isExpanded && 'pf-m-expandable', isExpanded && 'pf-m-expanded')}
+      className={css(className, isExpanded && 'pf-m-expandable', isExpanded && styles.modifiers.expanded)}
       {...props}
     />
   );

@@ -162,7 +162,6 @@ export class Table extends React.Component<TableProps, {}> {
       'aria-label': ariaLabel,
       caption,
       header,
-      className,
       onSort,
       onSelect,
       canSelectAll,
@@ -189,7 +188,6 @@ export class Table extends React.Component<TableProps, {}> {
       borders,
       onFavorite,
       canSortFavorites,
-      isTreeTable,
       ...props
     } = this.props;
 
@@ -237,7 +235,7 @@ export class Table extends React.Component<TableProps, {}> {
           renderers={{
             body: {
               wrapper: bodyWrapper || BodyWrapper,
-              row: rowWrapper || (isTreeTable ? TreeRowWrapper : RowWrapper),
+              row: rowWrapper || (this.props.isTreeTable ? TreeRowWrapper : RowWrapper),
               cell: BodyCell
             },
             header: {
@@ -248,8 +246,6 @@ export class Table extends React.Component<TableProps, {}> {
           role={role}
           variant={variant}
           borders={borders}
-          className={css(isTreeTable && 'pf-m-tree-view', className)}
-          {...(isTreeTable && { role: 'treegrid' })}
         >
           {caption && <caption>{caption}</caption>}
           {children}

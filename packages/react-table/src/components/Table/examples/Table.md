@@ -1994,7 +1994,7 @@ class FavoritesTable extends React.Component {
 }
 ```
 
-### Tree Table
+### Tree table
 To enable a tree table:
 1. Pass the `isTreeTable` prop to the `Table` component
 2. Pass the following props to each row:
@@ -2128,9 +2128,9 @@ class TreeTable extends React.Component {
     return (
       <Table
         isTreeTable
-        aria-label="Tree Table"
+        aria-label="Tree table"
         cells={[
-          { title: 'Repositories', cellTransforms: [headerCol(), treeRow(this.onCollapse, this.onCheckChange)] }, 
+          { title: 'Repositories', cellTransforms: [treeRow(this.onCollapse, this.onCheckChange)] }, 
           'Branches', 
           { title: 'Pull requests' }, 
           'Workspaces']}
@@ -3241,7 +3241,7 @@ ComposableTableFavoritable = () => {
 };
 ```
 
-### Composable: Tree Table
+### Composable: Tree table
 
 To enable a tree table:
 1. Pass the `isTreeTable` prop to the `TableComposable` component
