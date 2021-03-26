@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.85.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.84.0...@patternfly/react-integration@4.85.0) (2021-03-26)
+
+
+### Features
+
+* **Form:** Added support for field groups ([#5569](https://github.com/patternfly/patternfly-react/issues/5569)) ([4110d58](https://github.com/patternfly/patternfly-react/commit/4110d587d17c3bf3dc51f5bfc447016c6aee2b46))
+
+
+
+
+
 # [4.84.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.83.1...@patternfly/react-integration@4.84.0) (2021-03-26)
 
 
