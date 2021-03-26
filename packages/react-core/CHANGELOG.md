@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.103.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.102.2...@patternfly/react-core@4.103.0) (2021-03-26)
+
+
+### Features
+
+* **Checkbox, Radio:** Added support for custom body content ([#5559](https://github.com/patternfly/patternfly-react/issues/5559)) ([49e7e1f](https://github.com/patternfly/patternfly-react/commit/49e7e1f5918f22378a5cfbd036fb80dc42b6e1ad))
+
+
+
+
+
 ## [4.102.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.102.1...@patternfly/react-core@4.102.2) (2021-03-25)
 
 
