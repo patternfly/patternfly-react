@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check expandable form field group example against snapshot 1`] = `
+<FormFieldGroupExpandable
+  header={
+    <FormFieldGroupHeader
+      actions={<Button />}
+      titleDescription="Field group 4 description text."
+      titleText={
+        Object {
+          "id": "title-text-id2",
+          "text": "Field group 4 (non-expandable)",
+        }
+      }
+    />
+  }
+  isExpanded={true}
+  toggleAriaLabel="toggle"
+>
+  <InternalFormFieldGroup
+    header={
+      <FormFieldGroupHeader
+        actions={<Button />}
+        titleDescription="Field group 4 description text."
+        titleText={
+          Object {
+            "id": "title-text-id2",
+            "text": "Field group 4 (non-expandable)",
+          }
+        }
+      />
+    }
+    isExpandable={true}
+    isExpanded={true}
+    onToggle={[Function]}
+    toggleAriaLabel="toggle"
+  >
+    <div
+      className="pf-c-form__field-group pf-m-expanded"
+    >
+      <GenerateId
+        prefix="form-field-group-toggle"
+      >
+        <FormFieldGroupToggle
+          aria-label="toggle"
+          aria-labelledby="title-text-id2 form-field-group-toggle0"
+          isExpanded={true}
+          onToggle={[Function]}
+          toggleId="form-field-group-toggle0"
+        >
+          <div
+            className="pf-c-form__field-group-toggle"
+          >
+            <div
+              className="pf-c-form__field-group-toggle-button"
+            >
+              <Button
+                aria-expanded={true}
+                aria-label="toggle"
+                aria-labelledby="title-text-id2 form-field-group-toggle0"
+                id="form-field-group-toggle0"
+                onClick={[Function]}
+                variant="plain"
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={true}
+                  aria-label="toggle"
+                  aria-labelledby="title-text-id2 form-field-group-toggle0"
+                  className="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe={true}
+                  disabled={false}
+                  id="form-field-group-toggle0"
+                  onClick={[Function]}
+                  role={null}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-form__field-group-toggle-icon"
+                  >
+                    <AngleRightIcon
+                      aria-hidden="true"
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </button>
+              </Button>
+            </div>
+          </div>
+        </FormFieldGroupToggle>
+      </GenerateId>
+      <FormFieldGroupHeader
+        actions={<Button />}
+        titleDescription="Field group 4 description text."
+        titleText={
+          Object {
+            "id": "title-text-id2",
+            "text": "Field group 4 (non-expandable)",
+          }
+        }
+      >
+        <div
+          className="pf-c-form__field-group-header"
+        >
+          <div
+            className="pf-c-form__field-group-header-main"
+          >
+            <div
+              className="pf-c-form__field-group-header-title"
+            >
+              <div
+                className="pf-c-form__field-group-header-title-text"
+                id="title-text-id2"
+              >
+                Field group 4 (non-expandable)
+              </div>
+            </div>
+            <div
+              className="pf-c-form__field-group-header-description"
+            >
+              Field group 4 description text.
+            </div>
+          </div>
+          <div
+            className="pf-c-form__field-group-header-actions"
+          >
+            <Button>
+              <button
+                aria-disabled={false}
+                aria-label={null}
+                className="pf-c-button pf-m-primary"
+                data-ouia-component-id="OUIA-Generated-Button-primary-2"
+                data-ouia-component-type="PF4/Button"
+                data-ouia-safe={true}
+                disabled={false}
+                role={null}
+                type="button"
+              />
+            </Button>
+          </div>
+        </div>
+      </FormFieldGroupHeader>
+      <div
+        className="pf-c-form__field-group-body"
+      />
+    </div>
+  </InternalFormFieldGroup>
+</FormFieldGroupExpandable>
+`;
+
+exports[`Check form filed group example against snapshot 1`] = `
+<FormFieldGroup
+  header={
+    <FormFieldGroupHeader
+      actions={<Button />}
+      titleDescription="Field group 4 description text."
+      titleText={
+        Object {
+          "id": "title-text-id1",
+          "text": "Field group 4 (non-expandable)",
+        }
+      }
+    />
+  }
+>
+  <InternalFormFieldGroup
+    header={
+      <FormFieldGroupHeader
+        actions={<Button />}
+        titleDescription="Field group 4 description text."
+        titleText={
+          Object {
+            "id": "title-text-id1",
+            "text": "Field group 4 (non-expandable)",
+          }
+        }
+      />
+    }
+  >
+    <div
+      className="pf-c-form__field-group"
+    >
+      <FormFieldGroupHeader
+        actions={<Button />}
+        titleDescription="Field group 4 description text."
+        titleText={
+          Object {
+            "id": "title-text-id1",
+            "text": "Field group 4 (non-expandable)",
+          }
+        }
+      >
+        <div
+          className="pf-c-form__field-group-header"
+        >
+          <div
+            className="pf-c-form__field-group-header-main"
+          >
+            <div
+              className="pf-c-form__field-group-header-title"
+            >
+              <div
+                className="pf-c-form__field-group-header-title-text"
+                id="title-text-id1"
+              >
+                Field group 4 (non-expandable)
+              </div>
+            </div>
+            <div
+              className="pf-c-form__field-group-header-description"
+            >
+              Field group 4 description text.
+            </div>
+          </div>
+          <div
+            className="pf-c-form__field-group-header-actions"
+          >
+            <Button>
+              <button
+                aria-disabled={false}
+                aria-label={null}
+                className="pf-c-button pf-m-primary"
+                data-ouia-component-id="OUIA-Generated-Button-primary-1"
+                data-ouia-component-type="PF4/Button"
+                data-ouia-safe={true}
+                disabled={false}
+                role={null}
+                type="button"
+              />
+            </Button>
+          </div>
+        </div>
+      </FormFieldGroupHeader>
+      <div
+        className="pf-c-form__field-group-body"
+      />
+    </div>
+  </InternalFormFieldGroup>
+</FormFieldGroup>
+`;

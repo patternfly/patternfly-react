@@ -387,6 +387,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormDemo
   },
   {
+    id: 'form-field-group-demo',
+    name: 'Form Field Group Demo',
+    componentType: Examples.FormFieldGroupDemo
+  },
+  {
     id: 'form-select-demo',
     name: 'Form Select Demo',
     componentType: Examples.FormSelectDemo
