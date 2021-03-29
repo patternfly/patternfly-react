@@ -5,7 +5,7 @@ import { Button } from '../../Button';
 
 describe('slider', () => {
   test('renders continuous slider', () => {
-    const view = mount(<Slider currentValue={50} isInputVisible inputValue={50} />);
+    const view = mount(<Slider value={50} isInputVisible inputValue={50} />);
     expect(view).toMatchSnapshot();
   });
 
@@ -13,7 +13,7 @@ describe('slider', () => {
     const view = mount(
       <Slider
         isDiscrete
-        currentValue={50}
+        value={50}
         steps={[
           { value: 0, label: '0%' },
           { value: 25, label: '25%', isLabelHidden: true },
@@ -27,13 +27,13 @@ describe('slider', () => {
   });
 
   test('renders slider with input', () => {
-    const view = mount(<Slider currentValue={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="left" />);
+    const view = mount(<Slider value={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="left" />);
     expect(view).toMatchSnapshot();
   });
 
   test('renders slider with input above thumb', () => {
     const view = mount(
-      <Slider currentValue={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="aboveThumb" />
+      <Slider value={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="aboveThumb" />
     );
     expect(view).toMatchSnapshot();
   });
@@ -41,7 +41,7 @@ describe('slider', () => {
   test('renders slider with input actions', () => {
     const view = mount(
       <Slider
-        currentValue={50}
+        value={50}
         leftActions={<Button variant="plain" aria-label="Minus" />}
         rightActions={<Button variant="plain" aria-label="Plus" />}
       />

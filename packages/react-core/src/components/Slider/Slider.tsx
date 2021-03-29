@@ -9,7 +9,7 @@ import { TextInput } from '../TextInput';
 export interface SliderStepObject {
   /** Value of the step. This value is a percentage of the slider where the  tick is drawn. */
   value: number;
-  /** The display label for the step value. THis is also used for the aria-valuetext */
+  /** The display label for the step value. This is also used for the aria-valuetext */
   label: string;
   /** Flag to hide the label */
   isLabelHidden?: boolean;
@@ -19,13 +19,19 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   /** Additional classes added to the spinner. */
   className?: string;
   /** Current value  */
-  currentValue?: number;
+  value?: number;
   /** Flag indicating if the slider is is discrete */
   isDiscrete?: boolean;
   /** Adds disabled styling and disables the slider and the input component is present */
   isDisabled?: boolean;
-  /** Array of slider step objects (value and label of each step) for the slider. */
-  steps?: SliderStepObject[];
+  /** The step interval*/
+  step?: number;
+  /** Minimum permitted value */
+  min?: number;
+  /** The maximum permitted value */
+  max?: number;
+  /** Array of custom slider step objects (value and label of each step) for the slider. */
+  customSteps?: SliderStepObject[];
   /** Flag to show value input field */
   isInputVisible?: boolean;
   /** Value displayed in the input field */
@@ -38,10 +44,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   inputLabel?: string | number;
   /** Position of the input */
   inputPosition?: 'aboveThumb' | 'right';
-  /** Value input callback.  Called when enter is hit while in input filed or focus shifts from input field */
-  onChange?: (value: number) => void;
   /** Value change callback. This is called when the slider value changes */
-  onValueChange?: (value: number) => void;
+  onChange?: (value: number, inputValue?: number) => void;
   /** Actions placed to the left of the slider */
   leftActions?: React.ReactNode;
   /** Actions placed to the right of the slider */
@@ -52,8 +56,8 @@ const getPercentage = (current: number, max: number) => (100 * current) / max;
 
 export const Slider: React.FunctionComponent<SliderProps> = ({
   className,
-  currentValue = 0,
-  steps,
+  value = 0,
+  customSteps,
   isDiscrete = false,
   isDisabled = false,
   isInputVisible = false,
@@ -63,20 +67,50 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   thumbAriaLabel = 'Value',
   inputPosition = 'right',
   onChange,
-  onValueChange,
   leftActions,
   rightActions,
+  step = 1,
+  min = 0,
+  max = 100,
   ...props
 }: SliderProps) => {
   const sliderRailRef = React.useRef<HTMLDivElement>();
   const thumbRef = React.useRef<HTMLDivElement>();
 
-  const [value, setValue] = useState(currentValue);
+  const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);
 
+  const buildSteps = () => {
+    const builtSteps = [];
+    for (let i = min; i + step; i >= max) {
+      builtSteps.push({ value: i, label: i.toString(), isLabelHidden: true });
+    }
+    // reposition invalid value based on step
+    let newValue = value;
+    const stepIndex = builtSteps.findIndex(s => s.value >= value);
+    if (builtSteps[stepIndex].value === value) {
+      newValue = builtSteps[stepIndex].value;
+    } else {
+      const midpoint = (builtSteps[stepIndex].value + builtSteps[stepIndex - 1].value) / 2;
+      if (midpoint > value) {
+        newValue = builtSteps[stepIndex - 1].value;
+      } else {
+        newValue = builtSteps[stepIndex].value;
+      }
+    }
+    setValue(newValue);
+    if (isInputVisible) {
+      setLocalInputValue(newValue);
+    }
+    return builtSteps;
+  };
+
+  // if customStep is not provided build out the steps array.
+  const steps = customSteps ? customSteps : buildSteps();
+
   React.useEffect(() => {
-    setValue(currentValue);
-  }, [currentValue]);
+    setValue(value);
+  }, [value]);
 
   React.useEffect(() => {
     setLocalInputValue(inputValue);
@@ -85,7 +119,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   let diff = 0;
   let snapValue: number;
 
-  const style = { '--pf-c-slider--value': `${value}%` } as React.CSSProperties;
+  const style = { '--pf-c-slider--value': `${localValue}%` } as React.CSSProperties;
 
   const onChangeHandler = (value: string) => {
     setLocalInputValue(Number(value));
@@ -95,7 +129,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (event.key === 'Enter') {
       event.preventDefault();
       if (onChange) {
-        onChange(localInputValue);
+        onChange(localValue, localInputValue);
       }
     }
   };
@@ -110,13 +144,13 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   const onBlur = () => {
     if (onChange) {
-      onChange(localInputValue);
+      onChange(localValue, localInputValue);
     }
   };
 
   const findAriaTextValue = () => {
     if (steps && isDiscrete) {
-      const step = steps.find(step => step.value === value);
+      const step = steps.find(step => step.value === localValue);
       if (step) {
         return step.label;
       }
@@ -128,8 +162,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (snapValue && isDiscrete && steps) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
-      if (onValueChange) {
-        onValueChange(snapValue);
+      if (onChange) {
+        onChange(snapValue);
       }
     }
 
@@ -165,8 +199,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (snapValue && isDiscrete && steps) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
-      if (onValueChange) {
-        onValueChange(snapValue);
+      if (onChange) {
+        onChange(snapValue);
       }
     }
   };
@@ -214,8 +248,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
 
     // Call value change callback
-    if (onValueChange && !isDiscrete && !steps) {
-      onValueChange(newPercentage);
+    if (onChange && !isDiscrete && !steps) {
+      onChange(newPercentage);
     }
   };
 
@@ -228,9 +262,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       return;
     }
     e.preventDefault();
-    let newValue: number = value;
+    let newValue: number = localValue;
     if (isDiscrete) {
-      const stepIndex = steps.findIndex(step => step.value === value);
+      const stepIndex = steps.findIndex(step => step.value === localValue);
       if (key === 'ArrowRight') {
         if (stepIndex + 1 < steps.length) {
           {
@@ -244,17 +278,17 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       }
     } else {
       if (key === 'ArrowRight') {
-        newValue = value + 1 <= 100 ? value + 1 : 100;
+        newValue = localValue + 1 <= 100 ? localValue + 1 : 100;
       } else if (key === 'ArrowLeft') {
-        newValue = value - 1 >= 0 ? value - 1 : 0;
+        newValue = localValue - 1 >= 0 ? localValue - 1 : 0;
       }
     }
 
-    if (newValue !== value) {
+    if (newValue !== localValue) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${newValue}%`);
       setValue(newValue);
-      if (onValueChange) {
-        onValueChange(newValue);
+      if (onChange) {
+        onChange(newValue);
       }
     }
   };
@@ -301,7 +335,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
                 value={step.value}
                 label={step.label}
                 isLabelHidden={step.isLabelHidden}
-                isActive={step.value <= value}
+                isActive={step.value <= localValue}
               />
             ))}
           </div>
@@ -311,9 +345,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           ref={thumbRef}
           tabIndex={isDisabled ? -1 : 0}
           role="slider"
-          aria-valuemin={steps ? steps[0].value : 0}
-          aria-valuemax={steps ? steps[steps.length - 1].value : 100}
-          aria-valuenow={value}
+          aria-valuemin={steps[0].value}
+          aria-valuemax={steps[steps.length - 1].value}
+          aria-valuenow={localValue}
           aria-valuetext={findAriaTextValue()}
           aria-label={thumbAriaLabel}
           aria-disabled={isDisabled}
