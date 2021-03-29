@@ -51,7 +51,6 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     id: ''
   };
 
-  expandableRef = React.createRef<HTMLAnchorElement>();
   id = this.props.id || getUniqueId();
 
   state = {
@@ -85,11 +84,6 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
       expandedState: boolean
     ) => void
   ) => {
-    // Item events can bubble up, ignore those
-    if (!this.expandableRef.current || !this.expandableRef.current.contains(e.target as Node)) {
-      return;
-    }
-
     const { groupId } = this.props;
     const { expandedState } = this.state;
     onToggle(e, groupId, !expandedState);
@@ -111,6 +105,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isExpanded,
       buttonProps,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onExpand,
       ...props
     } = this.props;
 

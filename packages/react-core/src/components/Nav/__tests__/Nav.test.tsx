@@ -112,6 +112,27 @@ test('Expandable Nav List', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Expandable Nav verify onExpand', () => {
+  const onExpandSpy = jest.fn();
+  const view = mount(
+    <Nav>
+      <NavList>
+        <NavExpandable id="grp-1" title="Section 1" onExpand={onExpandSpy}>
+          {props.items.map(item => (
+            <NavItem to={item.to} key={item.to}>
+              {item.label}
+            </NavItem>
+          ))}
+        </NavExpandable>
+      </NavList>
+    </Nav>,
+    { context }
+  );
+  const btn = view.find('button');
+  btn.simulate('click');
+  expect(onExpandSpy).toBeCalled();
+});
+
 test('Expandable Nav List - Trigger toggle', () => {
   window.location.hash = '#link2';
   const view = mount(

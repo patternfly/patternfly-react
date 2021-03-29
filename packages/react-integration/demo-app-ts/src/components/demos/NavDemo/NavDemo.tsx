@@ -175,6 +175,8 @@ export class NavDemo extends Component {
                 isActive={expandableActiveGroup === 'grp-2'}
                 isExpanded
                 buttonProps={{ 'aria-label': 'group 2' }}
+                // eslint-disable-next-line no-console
+                onExpand={() => console.log('onExpand called')}
               >
                 <NavItem
                   id="itm-2-1"
