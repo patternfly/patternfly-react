@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.85.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.85.0...demo-app-ts@4.85.1) (2021-03-29)
+
+
+### Bug Fixes
+
+* **Navigation:** Fixed so that the onExpand callback is fired ([#5595](https://github.com/patternfly/patternfly-react/issues/5595)) ([95ed773](https://github.com/patternfly/patternfly-react/commit/95ed7734e69b81ed7548f4125d320087b25d3b0c))
+
+
+
+
+
 # [4.85.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.84.0...demo-app-ts@4.85.0) (2021-03-26)
 
 

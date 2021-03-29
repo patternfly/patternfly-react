@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.86.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.86.0...@patternfly/react-integration@4.86.1) (2021-03-29)
+
+
+### Bug Fixes
+
+* **Navigation:** Fixed so that the onExpand callback is fired ([#5595](https://github.com/patternfly/patternfly-react/issues/5595)) ([95ed773](https://github.com/patternfly/patternfly-react/commit/95ed7734e69b81ed7548f4125d320087b25d3b0c))
+
+
+
+
+
 # [4.86.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.85.0...@patternfly/react-integration@4.86.0) (2021-03-26)
 
 
