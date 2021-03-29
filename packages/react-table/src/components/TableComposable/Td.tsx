@@ -91,7 +91,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     onCheckChange: OnCheckChange;
     /** The row index */
     rowIndex?: number;
-    /** */
+    /** Additional props forwarded to the title cell of the tree row */
     props?: any;
   };
   /** True to remove padding */

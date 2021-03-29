@@ -11,13 +11,14 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
   { rowIndex, rowData }: IExtra
 ) => {
   const { isExpanded, level, setsize, toggleAriaLabel, checkAriaLabel, isChecked, checkboxId } = rowData.props;
+  const content = value.title || value;
   const text = (
     <div className={css(stylesTreeView.tableTreeViewContent)}>
-      <span className="pf-c-table__text">{value.title || value}</span>
+      <span className="pf-c-table__text">{content}</span>
     </div>
   );
   const onChange = (isChecked: boolean, event: React.FormEvent<HTMLInputElement>) => {
-    onCheckChange(event, isChecked, rowIndex, value.title, rowData);
+    onCheckChange(event, isChecked, rowIndex, content, rowData);
   };
   return {
     value,
@@ -30,7 +31,7 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
             <span className={css(stylesTreeView.tableToggle)}>
               <Button
                 variant="plain"
-                onClick={event => onCollapse && onCollapse(event, rowIndex, value.title, rowData)}
+                onClick={event => onCollapse && onCollapse(event, rowIndex, content, rowData)}
                 className={css(isExpanded && styles.modifiers.expanded)}
                 aria-expanded={isExpanded}
                 aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}

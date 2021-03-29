@@ -13,6 +13,7 @@ export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
   const { level, posinset, setsize, isExpanded, isHidden } = props.row.props;
   return (
     <Tr
+      role="treeitem"
       aria-level={level}
       aria-posinset={posinset}
       aria-setsize={setsize}

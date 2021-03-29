@@ -68,17 +68,12 @@ export type OnFavorite = (
   rowData: IRowData,
   extraData: IExtraData
 ) => void;
-export type OnTreeRowCollapse = (
-  event: any,
-  rowIndex: number,
-  title: string | React.ReactNode,
-  rowData: IRowData
-) => void;
+export type OnTreeRowCollapse = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnCheckChange = (
   event: React.FormEvent<HTMLInputElement>,
   isChecked: boolean,
   rowIndex: number,
-  title: string | React.ReactNode,
+  title: React.ReactNode,
   rowData: IRowData
 ) => void;
 
