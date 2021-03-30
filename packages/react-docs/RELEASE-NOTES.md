@@ -65,7 +65,7 @@ section: developer-resources
 ### Other
 - **Deps:**
   - Updated dependency theme-patternfly-org to v0.4.33 ([#5587](https://github.com/patternfly/patternfly-react/pull/5587))
-- **Docs***
+- **Docs:***
   - Added OUIA documentation ([#5511](https://github.com/patternfly/patternfly-react/pull/5511))
 
 ## 2021.03 release notes (2021-03-10)
