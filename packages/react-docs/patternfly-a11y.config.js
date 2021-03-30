@@ -16,5 +16,5 @@ module.exports = {
   urls: Object.keys(fullscreenRoutes),
   ignoreRules: 'color-contrast,page-has-heading-one,scrollable-region-focusable,bypass',
   ignoreIncomplete: true,
-  skip: /^\/charts\//
+  skip: /(^\/charts\/)|(^\/components\/table\/react\/composable-tree-table)|(^\/components\/table\/react\/tree-table)/
 };
