@@ -2008,6 +2008,10 @@ To enable a tree table:
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
 
+Note: If this table is going to be tested using axe-core, the tests will flag the use of aria-level, 
+aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
+the voice over technologies will recognize the flat table structure as a tree.
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
@@ -3267,6 +3271,10 @@ To enable a tree table:
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
     - `props` - (as defined above)
     - `rowIndex` - number representing the index of the row
+    
+Note: If this table is going to be tested using axe-core, the tests will flag the use of aria-level, 
+aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
+the voice over technologies will recognize the flat table structure as a tree.
 
 ```js isBeta
 import React from 'react';
