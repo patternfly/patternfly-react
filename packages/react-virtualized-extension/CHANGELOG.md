@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.61...@patternfly/react-virtualized-extension@4.7.0) (2021-03-30)
+
+
+### Features
+
+* **Table:** Add Tree Table variant ([#5573](https://github.com/patternfly/patternfly-react/issues/5573)) ([6577d4f](https://github.com/patternfly/patternfly-react/commit/6577d4fd4b30721abd97fddaf7214c72d1e284b5))
+
+
+
+
+
 ## [4.6.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.6.60...@patternfly/react-virtualized-extension@4.6.61) (2021-03-29)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

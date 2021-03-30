@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.16.34...@patternfly/react-docs@5.17.0) (2021-03-30)
+
+
+### Features
+
+* **Table:** Add Tree Table variant ([#5573](https://github.com/patternfly/patternfly-react/issues/5573)) ([6577d4f](https://github.com/patternfly/patternfly-react/commit/6577d4fd4b30721abd97fddaf7214c72d1e284b5))
+
+
+
+
+
 ## [5.16.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.16.33...@patternfly/react-docs@5.16.34) (2021-03-29)
 
 **Note:** Version bump only for package @patternfly/react-docs

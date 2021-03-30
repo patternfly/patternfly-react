@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.23.29...@patternfly/react-table@4.24.0) (2021-03-30)
+
+
+### Features
+
+* **Table:** Add Tree Table variant ([#5573](https://github.com/patternfly/patternfly-react/issues/5573)) ([6577d4f](https://github.com/patternfly/patternfly-react/commit/6577d4fd4b30721abd97fddaf7214c72d1e284b5))
+
+
+
+
+
 ## [4.23.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.23.28...@patternfly/react-table@4.23.29) (2021-03-29)
 
 **Note:** Version bump only for package @patternfly/react-table
