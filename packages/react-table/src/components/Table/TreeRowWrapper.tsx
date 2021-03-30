@@ -8,12 +8,12 @@ export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
   className,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowProps,
+  row,
   ...props
 }: RowWrapperProps) => {
-  const { level, posinset, setsize, isExpanded, isHidden } = props.row.props;
+  const { 'aria-level': level, 'aria-posinset': posinset, 'aria-setsize': setsize, isExpanded, isHidden } = row.props;
   return (
     <Tr
-      role="treeitem"
       aria-level={level}
       aria-posinset={posinset}
       aria-setsize={setsize}

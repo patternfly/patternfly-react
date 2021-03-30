@@ -10,7 +10,15 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
   value: IFormatterValueType,
   { rowIndex, rowData }: IExtra
 ) => {
-  const { isExpanded, level, setsize, toggleAriaLabel, checkAriaLabel, isChecked, checkboxId } = rowData.props;
+  const {
+    isExpanded,
+    'aria-level': level,
+    'aria-setsize': setsize,
+    toggleAriaLabel,
+    checkAriaLabel,
+    isChecked,
+    checkboxId
+  } = rowData.props;
   const content = value.title || value;
   const text = (
     <div className={css(stylesTreeView.tableTreeViewContent)}>

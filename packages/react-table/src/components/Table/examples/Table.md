@@ -1997,15 +1997,14 @@ class FavoritesTable extends React.Component {
 ### Tree table
 To enable a tree table:
 1. Pass the `isTreeTable` prop to the `Table` component
-2. Add `role="tree"` to the `TableBody` component
-3. Pass the following props to each row:
+2. Pass the following props to each row:
     - `isExpanded` - Flag indicating the node is expanded and its children are visible
     - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
-    - `level` - number representing how many levels deep this node is nested
-    - `posinset` - number representing where in the order this node sits amongst its siblings 
-    - `setsize` - number representing the number of children this node has
+    - `aria-level` - number representing how many levels deep this node is nested
+    - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
+    - `aria-setsize` - number representing the number of children this node has
     - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
-4. Use the `treeRow` cellTransform in the first column of the table. `treeRow` expects one or two callbacks as params.
+3. Use the `treeRow` cellTransform in the first column of the table. `treeRow` expects one or two callbacks as params.
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
 
@@ -2098,9 +2097,9 @@ class TreeTable extends React.Component {
             props: {
               isExpanded,
               isHidden,
-              level,
-              posinset,
-              setsize: x.children ? x.children.length : 0,
+              'aria-level': level,
+              'aria-posinset': posinset,
+              'aria-setsize': x.children ? x.children.length : 0,
               isChecked
             }
           },
@@ -2147,7 +2146,7 @@ class TreeTable extends React.Component {
         rows={this.buildRows(this.state.data, 1, 1)}        
       >
         <TableHeader />
-        <TableBody role="tree"/>
+        <TableBody/>
       </Table>
     );
   }
@@ -3255,16 +3254,15 @@ ComposableTableFavoritable = () => {
 
 To enable a tree table:
 1. Pass the `isTreeTable` prop to the `TableComposable` component
-2. Add `role="tree"` to the Tbody component
-3. Use a `TreeRowWrapper` rather than `Tr`
-4. Pass the following `props` to each row (both the `TreeRowWrapper` and the `treeRow` in the first column):
+2. Use a `TreeRowWrapper` rather than `Tr`
+3. Pass the following `props` to each row (both the `TreeRowWrapper` and the `treeRow` in the first column):
     - `isExpanded` - Flag indicating the node is expanded and its children are visible
     - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
-    - `level` - number representing how many levels deep this node is nested
-    - `posinset` - number representing where in the order this node sits amongst its siblings 
-    - `setsize` - number representing the number of children this node has
+    - `aria-level` - number representing how many levels deep this node is nested
+    - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
+    - `aria-setsize` - number representing the number of children this node has
     - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
-5. The first `Td` in each row will pass the following to the `treeRow` prop:
+4. The first `Td` in each row will pass the following to the `treeRow` prop:
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
     - `props` - (as defined above)
@@ -3359,9 +3357,9 @@ class TreeTable extends React.Component {
             props: {
               isExpanded,
               isHidden,
-              level,
-              posinset,
-              setsize: x.children ? x.children.length : 0,
+              'aria-level': level,
+              'aria-posinset': posinset,
+              'aria-setsize': x.children ? x.children.length : 0,
               isChecked
             }
           },
@@ -3407,7 +3405,7 @@ class TreeTable extends React.Component {
             ))}
           </Tr>
         </Thead>
-        <Tbody role="tree">
+        <Tbody>
           {this.buildRows(this.state.data, 1, 1).map((row, rowIndex) => (
             <TreeRowWrapper row={row} key={rowIndex}>
               {row.cells.map((cell, cellIndex) => cellIndex === 0 ? (
