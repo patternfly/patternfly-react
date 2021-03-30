@@ -1775,7 +1775,6 @@ class SingleSelectInput extends React.Component {
           Title
         </span>
         <Select
-          variant={SelectVariant.panel}
           aria-label="Select Input"
           onToggle={this.onToggle}
           isOpen={isOpen}
