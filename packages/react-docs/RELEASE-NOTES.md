@@ -23,7 +23,7 @@ section: developer-resources
 - **Application launcher:**
   - Made application launcher demo keyboard accessible ([#5550](https://github.com/patternfly/patternfly-react/pull/5550))
 - **Background image:**
-  - updated to use useEffect for the id ([#5541](https://github.com/patternfly/patternfly-react/pull/5541))
+  - Updated to use useEffect for the id ([#5541](https://github.com/patternfly/patternfly-react/pull/5541))
 - **Checkbox:**
   - Added support for custom body content ([#5559](https://github.com/patternfly/patternfly-react/pull/5559))
 - **Code editor:**
