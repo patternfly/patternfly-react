@@ -31,6 +31,7 @@ import {
   IHeaderRow,
   OnFavorite
 } from './TableTypes';
+import { TreeRowWrapper } from './TreeRowWrapper';
 
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
@@ -104,6 +105,8 @@ export interface TableProps extends OUIAProps {
   onFavorite?: OnFavorite;
   /** Along with the onSort prop, enables favorites sorting, defaults to true */
   canSortFavorites?: boolean;
+  /** Flag indicating table is a tree table */
+  isTreeTable?: boolean;
 }
 
 export class Table extends React.Component<TableProps, {}> {
@@ -128,7 +131,8 @@ export class Table extends React.Component<TableProps, {}> {
     selectVariant: 'checkbox',
     ouiaSafe: true,
     isStickyHeader: false,
-    canSortFavorites: true
+    canSortFavorites: true,
+    isTreeTable: false
   };
   state = {
     ouiaStateId: getDefaultOUIAId(Table.displayName)
@@ -158,7 +162,6 @@ export class Table extends React.Component<TableProps, {}> {
       'aria-label': ariaLabel,
       caption,
       header,
-      className,
       onSort,
       onSelect,
       canSelectAll,
@@ -232,7 +235,7 @@ export class Table extends React.Component<TableProps, {}> {
           renderers={{
             body: {
               wrapper: bodyWrapper || BodyWrapper,
-              row: rowWrapper || RowWrapper,
+              row: rowWrapper || (this.props.isTreeTable ? TreeRowWrapper : RowWrapper),
               cell: BodyCell
             },
             header: {
@@ -243,7 +246,6 @@ export class Table extends React.Component<TableProps, {}> {
           role={role}
           variant={variant}
           borders={borders}
-          className={className}
         >
           {caption && <caption>{caption}</caption>}
           {children}

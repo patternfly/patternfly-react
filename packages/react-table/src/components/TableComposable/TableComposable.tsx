@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
+import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { css } from '@patternfly/react-styles';
 import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
@@ -52,6 +53,8 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isStickyHeader?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Flag indicating table is a tree table */
+  isTreeTable?: boolean;
 }
 
 const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
@@ -66,9 +69,14 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   innerRef,
   ouiaId,
   ouiaSafe = true,
+  isTreeTable = false,
   ...props
 }: TableComposableProps) => {
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
+  const grid =
+    stylesGrid.modifiers?.[
+      toCamel(gridBreakPoint || '').replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
+    ];
   return (
     <table
       aria-label={ariaLabel}
@@ -76,14 +84,14 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       className={css(
         className,
         styles.table,
-        stylesGrid.modifiers?.[
-          toCamel(gridBreakPoint || '').replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
-        ],
+        !isTreeTable && grid,
         styles.modifiers[variant],
         !borders && styles.modifiers.noBorderRows,
-        isStickyHeader && styles.modifiers.stickyHeader
+        isStickyHeader && styles.modifiers.stickyHeader,
+        isTreeTable && stylesTreeView.modifiers.treeView
       )}
       ref={innerRef}
+      {...(isTreeTable && { role: 'treegrid' })}
       {...ouiaProps}
       {...props}
     >

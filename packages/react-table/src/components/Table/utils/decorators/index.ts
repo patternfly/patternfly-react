@@ -11,3 +11,4 @@ export { headerCol } from './headerCol';
 export { classNames, Visibility } from './classNames';
 export { info } from './info';
 export { favoritable } from './favoritable';
+export { treeRow } from './treeRow';

@@ -1994,6 +1994,169 @@ class FavoritesTable extends React.Component {
 }
 ```
 
+### Tree table
+To enable a tree table:
+1. Pass the `isTreeTable` prop to the `Table` component
+2. Pass the following props to each row:
+    - `isExpanded` - Flag indicating the node is expanded and its children are visible
+    - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
+    - `aria-level` - number representing how many levels deep this node is nested
+    - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
+    - `aria-setsize` - number representing the number of children this node has
+    - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
+3. Use the `treeRow` cellTransform in the first column of the table. `treeRow` expects one or two callbacks as params.
+    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
+    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
+
+Note: If this table is going to be tested using axe-core, the tests will flag the use of aria-level, 
+aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
+the voice over technologies will recognize the flat table structure as a tree.
+
+```js
+import React from 'react';
+import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Table/table';
+
+class TreeTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {
+          repositories: 'Repositories one',
+          branches: 'Branch one',
+          pullRequests: 'Pull request one',
+          workspaces: 'Workplace one',
+          children: [
+            {
+              repositories: 'Repositories two',
+              branches: 'Branch two',
+              pullRequests: 'Pull request two',
+              workspaces: 'Workplace two',
+              children: [
+                {
+                  repositories: 'Repositories three',
+                  branches: 'Branch three',
+                  pullRequests: 'Pull request three',
+                  workspaces: 'Workplace three',
+                }
+              ]
+            },
+            {
+              repositories: 'Repositories four',
+              branches: 'Branch four',
+              pullRequests: 'Pull request four',
+              workspaces: 'Workplace four',
+            },
+            {
+              repositories: 'Repositories five',
+              branches: 'Branch five',
+              pullRequests: 'Pull request five',
+              workspaces: 'Workplace five',
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories six',
+          branches: 'Branch six',
+          pullRequests: 'Pull request six',
+          workspaces: 'Workplace six',
+          children: [
+            {
+              repositories: 'Repositories seven',
+              branches: 'Branch seven',
+              pullRequests: 'Pull request seven',
+              workspaces: 'Workplace seven'
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories eight',
+          branches: 'Branch eight',
+          pullRequests: 'Pull request eight',
+          workspaces: 'Workplace eight'
+        }
+      ],
+      expandedRows: ['Repositories one', 'Repositories six'],
+      checkedRows: []
+    };
+    
+    /** 
+      Recursive function which flattens the data into an array flattened IRow objects 
+      to be passed to the `rows` prop of the Table
+      params: 
+        - rowData - array of data
+        - level - number representing how deeply nested the current row is
+        - posinset - position of the row relative to this row's siblings
+        - isHidden - defaults to false, true if this row's parent is expanded
+    */
+    this.buildRows = ([x, ...xs], level, posinset, isHidden = false) => {
+      if (x) {
+        const isExpanded = this.state.expandedRows.includes(x.repositories);
+        const isChecked = this.state.checkedRows.includes(x.repositories);
+        return [
+          {
+            cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
+            props: {
+              isExpanded,
+              isHidden,
+              'aria-level': level,
+              'aria-posinset': posinset,
+              'aria-setsize': x.children ? x.children.length : 0,
+              isChecked
+            }
+          },
+          ...(x.children && x.children.length) ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : [],
+          ...this.buildRows(xs, level, posinset + 1, isHidden)
+        ]
+      } 
+      return [];
+    };
+    
+    this.onCollapse = (event, rowIndex, title) => {
+      this.setState(prevState => {
+        const { expandedRows } = prevState;
+        const openedIndex = expandedRows.indexOf(title);
+        const newExpandedRows = openedIndex === -1 ? [...expandedRows, title] : expandedRows.filter(o => o !== title);
+        return {
+          expandedRows: newExpandedRows
+        }
+      });
+    };
+    
+    this.onCheckChange = (event, checked, rowIndex, title) => {
+      this.setState(prevState => {
+        const { checkedRows } = prevState;
+        const checkedIndex = checkedRows.indexOf(title);
+        const newCheckedRows = checkedIndex === -1 ? [...checkedRows, title] : checkedRows.filter(o => o !== title);
+        return {
+          checkedRows: newCheckedRows
+        }
+      });
+    }
+  }
+
+  render() {
+    return (
+      <Table
+        isTreeTable
+        aria-label="Tree table"
+        cells={[
+          { title: 'Repositories', cellTransforms: [treeRow(this.onCollapse, this.onCheckChange)] }, 
+          'Branches', 
+          { title: 'Pull requests' }, 
+          'Workspaces']}
+        rows={this.buildRows(this.state.data, 1, 1)}        
+      >
+        <TableHeader />
+        <TableBody/>
+      </Table>
+    );
+  }
+}
+```
+
 ## TableComposable examples
 
 ### Composable: Basic
@@ -3089,4 +3252,187 @@ ComposableTableFavoritable = () => {
     </TableComposable>
   );
 };
+```
+
+### Composable: Tree table
+
+To enable a tree table:
+1. Pass the `isTreeTable` prop to the `TableComposable` component
+2. Use a `TreeRowWrapper` rather than `Tr`
+3. Pass the following `props` to each row (both the `TreeRowWrapper` and the `treeRow` in the first column):
+    - `isExpanded` - Flag indicating the node is expanded and its children are visible
+    - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
+    - `aria-level` - number representing how many levels deep this node is nested
+    - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
+    - `aria-setsize` - number representing the number of children this node has
+    - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
+4. The first `Td` in each row will pass the following to the `treeRow` prop:
+    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
+    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
+    - `props` - (as defined above)
+    - `rowIndex` - number representing the index of the row
+    
+Note: If this table is going to be tested using axe-core, the tests will flag the use of aria-level, 
+aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
+the voice over technologies will recognize the flat table structure as a tree.
+
+```js isBeta
+import React from 'react';
+import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
+import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+
+class TreeTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {
+          repositories: 'Repositories one',
+          branches: 'Branch one',
+          pullRequests: 'Pull request one',
+          workspaces: 'Workplace one',
+          children: [
+            {
+              repositories: 'Repositories two',
+              branches: 'Branch two',
+              pullRequests: 'Pull request two',
+              workspaces: 'Workplace two',
+              children: [
+                {
+                  repositories: 'Repositories three',
+                  branches: 'Branch three',
+                  pullRequests: 'Pull request three',
+                  workspaces: 'Workplace three',
+                }
+              ]
+            },
+            {
+              repositories: 'Repositories four',
+              branches: 'Branch four',
+              pullRequests: 'Pull request four',
+              workspaces: 'Workplace four',
+            },
+            {
+              repositories: 'Repositories five',
+              branches: 'Branch five',
+              pullRequests: 'Pull request five',
+              workspaces: 'Workplace five',
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories six',
+          branches: 'Branch six',
+          pullRequests: 'Pull request six',
+          workspaces: 'Workplace six',
+          children: [
+            {
+              repositories: 'Repositories seven',
+              branches: 'Branch seven',
+              pullRequests: 'Pull request seven',
+              workspaces: 'Workplace seven'
+            }
+          ]
+        },
+        {
+          repositories: 'Repositories eight',
+          branches: 'Branch eight',
+          pullRequests: 'Pull request eight',
+          workspaces: 'Workplace eight'
+        }
+      ],
+      expandedRows: ['Repositories one', 'Repositories six'],
+      checkedRows: []
+    };
+    
+    /** 
+      Recursive function which flattens the data into an array of flattened IRow objects 
+      to be later iterated over and each passed to the `row` prop of the TreeRowWrapper
+      params: 
+        - rowData - array of data
+        - level - number representing how deeply nested the current row is
+        - posinset - position of the row relative to this row's siblings
+        - isHidden - defaults to false, true if this row's parent is expanded
+    */
+    this.buildRows = ([x, ...xs], level, posinset, isHidden = false) => {
+      // take the first datum from the array (if any)
+      if (x) {
+        const isExpanded = this.state.expandedRows.includes(x.repositories);
+        const isChecked = this.state.checkedRows.includes(x.repositories);
+        return [
+          {
+            cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
+            props: {
+              isExpanded,
+              isHidden,
+              'aria-level': level,
+              'aria-posinset': posinset,
+              'aria-setsize': x.children ? x.children.length : 0,
+              isChecked
+            }
+          },
+          ...(x.children && x.children.length) ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : [],
+          ...this.buildRows(xs, level, posinset + 1, isHidden)
+        ]
+      } 
+      return [];
+    };
+    
+    this.onCollapse = (event, rowIndex, title) => {
+      this.setState(prevState => {
+        const { expandedRows } = prevState;
+        const openedIndex = expandedRows.indexOf(title);
+        const newExpandedRows = openedIndex === -1 ? [...expandedRows, title] : expandedRows.filter(o => o !== title);
+        return {
+          expandedRows: newExpandedRows
+        }
+      });
+    };
+    
+    this.onCheckChange = (event, checked, rowIndex, title) => {
+      this.setState(prevState => {
+        const { checkedRows } = prevState;
+        const checkedIndex = checkedRows.indexOf(title);
+        const newCheckedRows = checkedIndex === -1 ? [...checkedRows, title] : checkedRows.filter(o => o !== title);
+        return {
+          checkedRows: newCheckedRows
+        }
+      });
+    }
+  }
+
+  render() {
+  
+    const columns = ['Repositories', 'Branches', 'Pull Requests', 'Workspaces'];
+    return (
+      <TableComposable isTreeTable aria-label="Tree Table">
+        <Thead>
+          <Tr>
+            {columns.map((column, columnIndex) => (
+              <Th key={columnIndex}>{column}</Th>
+            ))}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {this.buildRows(this.state.data, 1, 1).map((row, rowIndex) => (
+            <TreeRowWrapper row={row} key={rowIndex}>
+              {row.cells.map((cell, cellIndex) => cellIndex === 0 ? (
+                <Td key={cellIndex} treeRow={{
+                  onCollapse: this.onCollapse, 
+                  onCheckChange: this.onCheckChange,
+                  props: row.props,
+                  rowIndex: rowIndex
+                }}>
+                  {cell}
+                </Td>
+              ) : (
+                <Td key={cellIndex}>{cell}</Td>
+              ))}
+            </TreeRowWrapper>
+          ))}
+        </Tbody>
+      </TableComposable>
+    );
+  }
+}
 ```
