@@ -9,7 +9,7 @@ section: developer-resources
 - [@patternfly/react-code-editor@4.2.17](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.17)
 - [@patternfly/react-core@4.106.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.106.1)
 - [@patternfly/react-icons@4.9.9](https://www.npmjs.com/package/@patternfly/react-icons/v/4.9.9)
-- [@patternfly/react-inline-edit-extension@4.6.94](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.94)
+- [@patternfly/react-inline-edit-extension@4.6.64](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.64)
 - [@patternfly/react-styles/v/4.9.4](https://www.npmjs.com/package/@patternfly/react-styles/v/4.9.4)
 - [@patternfly/react-table@4.24.0](https://www.npmjs.com/package/@patternfly/react-table/v/4.24.0)
 - [@patternfly/react-tokens/v/4.10.9](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.10.9)
@@ -53,18 +53,20 @@ section: developer-resources
   - Added auto resizing ([#5568](https://github.com/patternfly/patternfly-react/pull/5568))
 - **Tooltip:**
   - Made icon example accessible ([#5588](https://github.com/patternfly/patternfly-react/pull/5588))
-- **Undefined:** Added OUIA documentation ([#5511](https://github.com/patternfly/patternfly-react/pull/5511))
-- **Undefined:** Release notes 2021.03 ([#5527](https://github.com/patternfly/patternfly-react/pull/5527))
 
-### Other
-- **Deps:**
-  - Updated dependency theme-patternfly-org to v0.4.33 ([#5587](https://github.com/patternfly/patternfly-react/pull/5587))
-
+### Table
+- Added tree table variant ([#5573](https://github.com/patternfly/patternfly-react/pull/5573))
 ### Topology
 - Updated to allow applications to choose using resizable drawer for topology side bar ([#5572](https://github.com/patternfly/patternfly-react/pull/5572))
 - Made fix for context sub menu placement ([#5546](https://github.com/patternfly/patternfly-react/pull/5546))
 - Used drawer for topology side panel and allow resizing ([#5533](https://github.com/patternfly/patternfly-react/pull/5533))
 - Used disabled background for control buttons when disabled ([#5538](https://github.com/patternfly/patternfly-react/pull/5538))
+
+### Other
+- **Deps:**
+  - Updated dependency theme-patternfly-org to v0.4.33 ([#5587](https://github.com/patternfly/patternfly-react/pull/5587))
+- **Docs***
+  - Added OUIA documentation ([#5511](https://github.com/patternfly/patternfly-react/pull/5511))
 
 ## 2021.03 release notes (2021-03-10)
 - [@patternfly/react-catalog-view-extension@4.10.13](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.10.13)
