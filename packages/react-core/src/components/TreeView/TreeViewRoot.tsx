@@ -7,6 +7,8 @@ export interface TreeViewRootProps {
   children: React.ReactNode;
   /** Flag indicating if the tree view has checkboxes */
   hasChecks?: boolean;
+  /** Class to add to add if not passed a parentItem */
+  className?: string;
 }
 
 export class TreeViewRoot extends React.Component<TreeViewRootProps> {
@@ -187,9 +189,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, hasChecks, ...props } = this.props;
+    const { children, hasChecks, className, ...props } = this.props;
     return (
-      <div className={css(styles.treeView)} ref={this.treeRef} {...props}>
+      <div className={css(styles.treeView, className)} ref={this.treeRef} {...props}>
         {children}
       </div>
     );
