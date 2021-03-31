@@ -28,7 +28,7 @@ export interface NavProps
   onToggle?: (toggledItem: {
     groupId: number | string;
     isExpanded: boolean;
-    event: React.FormEvent<HTMLInputElement>;
+    event: React.MouseEvent<HTMLButtonElement>;
   }) => void;
   /** Accessibility label */
   'aria-label'?: string;
@@ -52,7 +52,7 @@ export const NavContext = React.createContext<{
       to: string
     ) => void
   ) => void;
-  onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
+  onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
   isHorizontal?: boolean;
 }>({});
@@ -92,7 +92,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
   }
 
   // Callback from NavExpandable
-  onToggle(event: React.MouseEvent<HTMLInputElement>, groupId: number | string, toggleValue: boolean) {
+  onToggle(event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, toggleValue: boolean) {
     this.props.onToggle({
       event,
       groupId,
@@ -133,7 +133,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
               to: string
             ) => void
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
-          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
+          onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
           isHorizontal
