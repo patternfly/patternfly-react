@@ -3,18 +3,18 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2021.04 release notes (2021-03-31)
-- [@patternfly/react-catalog-view-extension@4.10.28](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.10.28)
+## 2021.04 release notes (2021-04-01)
+- [@patternfly/react-catalog-view-extension@4.10.29](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.10.29)
 - [@patternfly/react-charts@6.14.11](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.11)
-- [@patternfly/react-code-editor@4.2.17](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.17)
-- [@patternfly/react-core@4.106.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.106.1)
+- [@patternfly/react-code-editor@4.2.18](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.18)
+- [@patternfly/react-core@4.106.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.106.2)
 - [@patternfly/react-icons@4.9.9](https://www.npmjs.com/package/@patternfly/react-icons/v/4.9.9)
-- [@patternfly/react-inline-edit-extension@4.6.64](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.64)
+- [@patternfly/react-inline-edit-extension@4.6.65](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.65)
 - [@patternfly/react-styles/v/4.9.4](https://www.npmjs.com/package/@patternfly/react-styles/v/4.9.4)
-- [@patternfly/react-table@4.24.0](https://www.npmjs.com/package/@patternfly/react-table/v/4.24.0)
+- [@patternfly/react-table@4.24.1](https://www.npmjs.com/package/@patternfly/react-table/v/4.24.1)
 - [@patternfly/react-tokens/v/4.10.9](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.10.9)
-- [@patternfly/react-topology@4.8.14](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.14)
-- [@patternfly/react-virtualized-extension@4.7.0](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.0)
+- [@patternfly/react-topology@4.8.15](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.15)
+- [@patternfly/react-virtualized-extension@4.7.1](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.1)
 
 ### Components
 - **Alert:**
@@ -41,6 +41,7 @@ section: developer-resources
 - **Navigation:** 
   - Fixed so that the onExpand callback is fired ([#5595](https://github.com/patternfly/patternfly-react/pull/5595))
   - Updated NavItem so TabIndex is passed to cloned children ([#5562](https://github.com/patternfly/patternfly-react/pull/5562))
+  - Updated to not call onExpand twice ([#5611](https://github.com/patternfly/patternfly-react/pull/5611))
 - **Pagination:**
   - Added ofWord prop for localization and accessibility ([#5563](https://github.com/patternfly/patternfly-react/pull/5563))
 - **Radio:**
