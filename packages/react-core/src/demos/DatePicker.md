@@ -54,3 +54,52 @@ DateRangePicker = () => {
 }
 ```
 
+### Date and time range picker
+
+```js
+import { Split, SplitItem, DatePicker, isValidDate, TimePicker, yyyyMMddFormat } from '@patternfly/react-core';
+
+DateRangePicker = () => {
+  const [from, setFrom] = React.useState();
+  const [to, setTo] = React.useState();
+
+  const toValidator = date => isValidDate(from) && date >= from ? '' : 'To date must be less than from date';
+  const onFromChange = (_str, date) => {
+    setFrom(new Date(date));
+    if (isValidDate(date)) {
+      date.setDate(date.getDate() + 1);
+      setTo(yyyyMMddFormat(date));
+    }
+    else {
+      setTo('');
+    }
+  };
+
+  return (
+    <Split>
+      <SplitItem>
+        <DatePicker
+          onChange={onFromChange}
+          aria-label="Start date"
+        />
+        <TimePicker />
+      </SplitItem>
+      <SplitItem style={{ padding: '6px 12px 0 12px' }}>
+        to
+      </SplitItem>
+      <SplitItem>
+        <DatePicker
+          value={to}
+          onChange={date => setTo(date)}
+          isDisabled={!isValidDate(from)}
+          rangeStart={from}
+          validators={[toValidator]}
+          aria-label="End date"
+        />
+        <TimePicker />
+      </SplitItem>
+    </Split>
+  );
+}
+```
+
