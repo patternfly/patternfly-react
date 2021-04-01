@@ -380,18 +380,16 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
           title="Section 1"
         >
           <li
-            className="pf-c-nav__item pf-m-expandable expandable-group"
+            className="pf-c-nav__item pf-m-expandable pf-m-expanded expandable-group"
             data-ouia-component-id="OUIA-Generated-NavExpandable-1"
             data-ouia-component-type="PF4/NavExpandable"
             data-ouia-safe={true}
-            onClick={[Function]}
           >
             <button
-              aria-expanded={false}
+              aria-expanded={true}
               className="pf-c-nav__link"
               id="grp-1"
               onClick={[Function]}
-              onMouseDown={[Function]}
               tabIndex={null}
             >
               Section 1
@@ -432,7 +430,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
             <section
               aria-labelledby="grp-1"
               className="pf-c-nav__subnav"
-              hidden={true}
+              hidden={null}
             >
               <ul
                 className="pf-c-nav__list"
@@ -567,14 +565,12 @@ exports[`Expandable Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavExpandable-1"
             data-ouia-component-type="PF4/NavExpandable"
             data-ouia-safe={true}
-            onClick={[Function]}
           >
             <button
               aria-expanded={false}
               className="pf-c-nav__link"
               id="grp-1"
               onClick={[Function]}
-              onMouseDown={[Function]}
               tabIndex={null}
             >
               Section 1
@@ -751,14 +747,12 @@ exports[`Expandable Nav List with aria label 1`] = `
             data-ouia-component-id="OUIA-Generated-NavExpandable-3"
             data-ouia-component-type="PF4/NavExpandable"
             data-ouia-safe={true}
-            onClick={[Function]}
           >
             <button
               aria-expanded={false}
               className="pf-c-nav__link"
               id={null}
               onClick={[Function]}
-              onMouseDown={[Function]}
               tabIndex={null}
             >
               Section 1
