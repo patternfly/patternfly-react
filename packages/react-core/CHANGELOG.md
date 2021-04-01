@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.106.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.1...@patternfly/react-core@4.106.2) (2021-04-01)
+
+
+### Bug Fixes
+
+* **nav:** don't call onExpand twice ([#5611](https://github.com/patternfly/patternfly-react/issues/5611)) ([2f6fcfd](https://github.com/patternfly/patternfly-react/commit/2f6fcfde6c183d3c351516b3b2061d36968d14a5))
+
+
+
+
+
 ## [4.106.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.0...@patternfly/react-core@4.106.1) (2021-03-29)
 
 
