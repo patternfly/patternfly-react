@@ -13,7 +13,9 @@ export interface NavExpandableProps
   extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>,
     OUIAProps {
   /** Title shown for the expandable list */
-  title: string;
+  title?: string;
+  /** Title shown for the expandable list if you want to use custom elements instead of a string */
+  customtTitle?: React.ReactNode;
   /** If defined, screen readers will read this text instead of the list title */
   srText?: string;
   /** Boolean to programatically expand or collapse section */
@@ -89,6 +91,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   render() {
     const {
       title,
+      customtTitle,
       srText,
       children,
       className,
@@ -132,7 +135,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   tabIndex={isNavOpen ? null : -1}
                   {...buttonProps}
                 >
-                  {title}
+                  {customtTitle ? customtTitle : title}
                   <span className={css(styles.navToggle)}>
                     <span className={css(styles.navToggleIcon)}>
                       <AngleRightIcon aria-hidden="true" />
