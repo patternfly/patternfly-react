@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.106.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.2...@patternfly/react-core@4.106.3) (2021-04-05)
+
+
+### Bug Fixes
+
+* **treeview:** add classname ([#5608](https://github.com/patternfly/patternfly-react/issues/5608)) ([6113739](https://github.com/patternfly/patternfly-react/commit/611373974d23e27819618057a6d1e50c0a070e8a))
+
+
+
+
+
 ## [4.106.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.1...@patternfly/react-core@4.106.2) (2021-04-01)
 
 
