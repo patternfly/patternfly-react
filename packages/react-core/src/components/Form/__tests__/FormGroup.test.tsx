@@ -94,7 +94,7 @@ describe('FormGroup component', () => {
   test('should render stacked horizontal form group variant', () => {
     const view = mount(
       <Form isHorizontal>
-        <FormGroup label="label" fieldId="label-id" isStacked helperText="this is helperText">
+        <FormGroup label="label" fieldId="label-id" isStack helperText="this is helperText">
           <input id="label-id" />
         </FormGroup>
       </Form>
