@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.2.18...@patternfly/react-code-editor@4.2.19) (2021-04-05)
+
+
+### Bug Fixes
+
+* **code-editor:** react peer dep ([#5618](https://github.com/patternfly/patternfly-react/issues/5618)) ([aef366d](https://github.com/patternfly/patternfly-react/commit/aef366da175a5cf560eca2168dd752d0f8fe4063))
+
+
+
+
+
 ## [4.2.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.2.17...@patternfly/react-code-editor@4.2.18) (2021-04-01)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
