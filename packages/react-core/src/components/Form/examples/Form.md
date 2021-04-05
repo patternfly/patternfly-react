@@ -595,7 +595,7 @@ class InvalidForm extends React.Component {
 }
 ```
 
-### Horizontal no padding top
+### Horizontal stacked no padding top
 
 ```js
 import React from 'react';
@@ -605,7 +605,7 @@ class HorizontalForm extends React.Component {
   render() {
     return (
       <Form isHorizontal>
-        <FormGroup label="Label" hasNoPaddingTop fieldId="options">
+        <FormGroup label="Label" hasNoPaddingTop fieldId="options" isStacked>
           <Checkbox label="option 1" id="option-01" />
           <Checkbox label="option 2" id="option-02" />
         </FormGroup>
@@ -615,7 +615,7 @@ class HorizontalForm extends React.Component {
 }
 ```
 
-### Horizontal helper text on top
+### Horizontal stacked helper text on top
 
 ```js
 import React from 'react';
@@ -638,6 +638,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           isHelperTextBeforeField
           hasNoPaddingTop
           fieldId="options"
+          isStacked
         >
           <Checkbox label="option 1" id="option-03" />
           <Checkbox label="option 2" id="option-04" />

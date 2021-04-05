@@ -7,3 +7,19 @@ exports[`Check form section example against snapshot 1`] = `
   />
 </FormSection>
 `;
+
+exports[`Check form section example with title 1`] = `
+<FormSection
+  title="Title"
+>
+  <section
+    className="pf-c-form__section"
+  >
+    <div
+      className="pf-c-form__section-title"
+    >
+      Title
+    </div>
+  </section>
+</FormSection>
+`;
