@@ -32,7 +32,12 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
       {nextButtonText}
     </Button>
     {!activeStep.hideBackButton && (
-      <Button variant={ButtonVariant.secondary} onClick={onBack} className={css(firstStep && 'pf-m-disabled')}>
+      <Button
+        variant={ButtonVariant.secondary}
+        onClick={onBack}
+        className={css(firstStep && 'pf-m-disabled')}
+        isDisabled={firstStep ? true : null}
+      >
         {backButtonText}
       </Button>
     )}
