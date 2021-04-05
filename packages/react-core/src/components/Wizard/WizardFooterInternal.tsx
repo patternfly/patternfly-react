@@ -36,7 +36,7 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
         variant={ButtonVariant.secondary}
         onClick={onBack}
         className={css(firstStep && 'pf-m-disabled')}
-        isDisabled={firstStep ? true : null}
+        isDisabled={firstStep}
       >
         {backButtonText}
       </Button>
