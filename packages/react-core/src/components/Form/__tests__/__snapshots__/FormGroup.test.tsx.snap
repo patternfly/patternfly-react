@@ -674,7 +674,7 @@ exports[`FormGroup component should render stacked horizontal form group variant
     <FormGroup
       fieldId="label-id"
       helperText="this is helperText"
-      isStacked={true}
+      isStack={true}
       label="label"
     >
       <div
