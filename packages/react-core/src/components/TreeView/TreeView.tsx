@@ -63,6 +63,8 @@ export interface TreeViewProps {
   parentItem?: TreeViewDataItem;
   /** Comparison function for determining active items */
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
+  /** Class to add to add if not passed a parentItem */
+  className?: string;
 }
 
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
@@ -81,6 +83,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   searchProps,
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
+  className,
   ...props
 }: TreeViewProps) => {
   const treeViewList = (
@@ -133,7 +136,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       {parentItem ? (
         treeViewList
       ) : (
-        <TreeViewRoot hasChecks={hasChecks} {...props}>
+        <TreeViewRoot hasChecks={hasChecks} className={className} {...props}>
           {treeViewList}
         </TreeViewRoot>
       )}
