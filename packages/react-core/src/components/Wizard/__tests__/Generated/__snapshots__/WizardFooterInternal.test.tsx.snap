@@ -16,6 +16,7 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
   </Button>
   <Button
     className="pf-m-disabled"
+    isDisabled={true}
     onClick="any"
     variant="secondary"
   >
