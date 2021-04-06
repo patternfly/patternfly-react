@@ -15,6 +15,7 @@ export interface ClipboardCopyButtonProps
   maxWidth?: string;
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   'aria-label'?: string;
+  variant?: 'control' | 'plain';
 }
 
 export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
@@ -27,6 +28,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   id,
   textId,
   children,
+  variant = 'control',
   ...props
 }: ClipboardCopyButtonProps) => (
   <Tooltip
@@ -39,7 +41,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   >
     <Button
       type="button"
-      variant="control"
+      variant={variant}
       onClick={onClick}
       aria-label={ariaLabel}
       id={id}
