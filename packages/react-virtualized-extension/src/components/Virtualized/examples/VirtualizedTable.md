@@ -87,25 +87,24 @@ class VirtualizedExample extends React.Component {
 
     const rowRenderer = ({ index, isScrolling, key, style, parent }) => {
       const { rows, columns } = this.state;
-      const text = rows[index].cells[0];
 
       return (
         <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={index}>
           <tr style={style} role="row">
             <td className={columns[0].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[0]}
             </td>
             <td className={columns[1].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[1]}
             </td>
             <td className={columns[2].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[2]}
             </td>
             <td className={columns[3].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[3]}
             </td>
             <td className={columns[4].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[4]}
             </td>
           </tr>
         </CellMeasurer>
@@ -175,29 +174,25 @@ ComposableTableVirtualized = () => {
     keyMapper: rowIndex => rowIndex
   });
 
-  const rowRenderer = ({ index: rowIndex, isScrolling, key, style, parent }) => {
-    const text = rows[rowIndex][0];
-
-    return (
-      <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={rowIndex}>
-        <Tr style={style}>
-          <Td
-            key={`${rowIndex}_0`}
-            select={{
-              rowIndex,
-              onSelect: onSelect,
-              isSelected: selected[rowIndex]
-            }}
-          />
-          {columns.map((col, index) => (
-            <Td key={`${rowIndex}-${++index}`}>
-              {text}
-            </Td>
-          ))}
-        </Tr>
-      </CellMeasurer>
-    );
-  };
+  const rowRenderer = ({ index: rowIndex, isScrolling, key, style, parent }) => (
+  <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={rowIndex}>
+    <Tr style={style}>
+      <Td
+        key={`${rowIndex}_0`}
+        select={{
+          rowIndex,
+          onSelect: onSelect,
+          isSelected: selected[rowIndex]
+        }}
+      />
+      {columns.map((col, index) => (
+        <Td key={`${rowIndex}-${index+1}`}>
+          {rows[rowIndex][index]}
+        </Td>
+      ))}
+    </Tr>
+  </CellMeasurer>
+ );
 
   return (
     <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
@@ -327,25 +322,24 @@ class SortableExample extends React.Component {
 
     const rowRenderer = ({ index, isScrolling, key, style, parent }) => {
       const { rows, columns } = this.state;
-      const text = rows[index].cells[0];
 
       return (
         <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={index}>
           <tr style={style} role="row">
             <td className={columns[0].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[0]}
             </td>
             <td className={columns[1].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[1]}
             </td>
             <td className={columns[2].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[2]}
             </td>
             <td className={columns[3].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[3]}
             </td>
             <td className={columns[4].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[4]}
             </td>
           </tr>
         </CellMeasurer>
@@ -479,7 +473,6 @@ class SelectableExample extends React.Component {
 
     const rowRenderer = ({ index, isScrolling, key, style, parent }) => {
       const { rows, columns } = this.state;
-      const text = rows[index].cells[0];
 
       return (
         <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={index}>
@@ -487,7 +480,7 @@ class SelectableExample extends React.Component {
             <td data-key="0" className="pf-c-table__check" role="gridcell">
               <input
                 type="checkbox"
-                aria-label={text}
+                aria-label={`Select row ${index}`}
                 checked={rows[index].selected}
                 onChange={e => {
                   this.onSelect(e, e.target.checked, 0, { id: rows[index].id });
@@ -495,16 +488,16 @@ class SelectableExample extends React.Component {
               />
             </td>
             <td className={columns[0].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[0]}
             </td>
             <td className={columns[1].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[1]}
             </td>
             <td className={columns[2].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[2]}
             </td>
             <td className={columns[3].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[3]}
             </td>
           </tr>
         </CellMeasurer>
@@ -632,25 +625,24 @@ class ActionsExample extends React.Component {
 
     const rowRenderer = ({ index, isScrolling, key, style, parent }) => {
       const { rows, columns, actions } = this.state;
-      const text = rows[index].cells[0];
 
       return (
         <CellMeasurer cache={measurementCache} columnIndex={0} key={key} parent={parent} rowIndex={index}>
           <tr data-id={index} style={style} role="row">
             <td className={columns[0].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[0]}
             </td>
             <td className={columns[1].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[1]}
             </td>
             <td className={columns[2].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[2]}
             </td>
             <td className={columns[3].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[3]}
             </td>
             <td className={columns[4].props.className} role="gridcell">
-              {text}
+              {rows[index].cells[4]}
             </td>
             <td className={columns[5].props.className} role="gridcell">
               <ActionsColumn
