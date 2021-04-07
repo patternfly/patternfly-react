@@ -480,7 +480,7 @@ class SelectableExample extends React.Component {
             <td data-key="0" className="pf-c-table__check" role="gridcell">
               <input
                 type="checkbox"
-                aria-label={text}
+                aria-label={`Select row ${index}`}
                 checked={rows[index].selected}
                 onChange={e => {
                   this.onSelect(e, e.target.checked, 0, { id: rows[index].id });
