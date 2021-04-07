@@ -8,7 +8,7 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import AddCircleOIcon from '@patternfly/react-icons/dist/js/icons/add-circle-o-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -91,7 +91,7 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import AddCircleOIcon from '@patternfly/react-icons/dist/js/icons/add-circle-o-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -715,12 +715,12 @@ class CardViewBasic extends React.Component {
               <Card isHoverable isCompact>
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
-                    <EmptyStateIcon icon={AddCircleOIcon} />
+                    <EmptyStateIcon icon={PlusCircleIcon} />
                     <Title headingLevel="h2" size="md">
-                      To get started, add a new group to your page.
+                      Add a new card to your page
                     </Title>
                     <EmptyStateSecondaryActions>
-                      <Button variant="link">Add group</Button>
+                      <Button variant="link">Add card</Button>
                     </EmptyStateSecondaryActions>
                   </EmptyState>
                 </Bullseye>
