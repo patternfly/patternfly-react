@@ -37,6 +37,7 @@ CardModifiers = () => {
     'isFlat',
     'isRounded',
     'isLarge',
+    'isFullHeight',
   ];
   const [modifiers, setModifiers] = React.useState({});
 
