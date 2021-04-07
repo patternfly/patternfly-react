@@ -51,8 +51,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
     }
   };
 
-  onFilter = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    const textInput = evt.target.value;
+  onFilter = (_: any, textInput: string) => {
     if (textInput === '') {
       return this.options;
     } else {

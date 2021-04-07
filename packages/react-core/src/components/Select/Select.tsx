@@ -88,7 +88,7 @@ export interface SelectProps
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
-  onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
+  onFilter?: (e: React.ChangeEvent<HTMLInputElement>, value: string) => React.ReactElement[];
   /** Optional callback for newly created options */
   onCreateOption?: (newOptionValue: string) => void;
   /** Optional event handler called each time the value in the typeahead input changes. */
@@ -273,7 +273,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children, isGrouped } = this.props;
 
     if (onFilter) {
-      typeaheadFilteredChildren = onFilter(e) || children;
+      /* The updateTypeAheadFilteredChildren callback is not only called on input changes but also when the children change.
+       * In this case the e is null but we can get the typeaheadInputValue from the state.
+       */
+      typeaheadFilteredChildren = onFilter(e, e ? e.target.value : typeaheadInputValue) || children;
     } else {
       let input: RegExp;
       try {
