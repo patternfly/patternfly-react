@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.7.2...@patternfly/react-virtualized-extension@4.7.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* **react-virtualized:** fix render of demo data so the table cells don't repeat static text ([#5627](https://github.com/patternfly/patternfly-react/issues/5627)) ([c6c5e6d](https://github.com/patternfly/patternfly-react/commit/c6c5e6df280f76b99e5b6c9534eb3fbe58573a06))
+
+
+
+
+
 ## [4.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.7.1...@patternfly/react-virtualized-extension@4.7.2) (2021-04-05)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
