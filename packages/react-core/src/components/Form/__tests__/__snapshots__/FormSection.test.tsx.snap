@@ -11,15 +11,16 @@ exports[`Check form section example against snapshot 1`] = `
 exports[`Check form section example with title 1`] = `
 <FormSection
   title="Title"
+  titleElement="h4"
 >
   <section
     className="pf-c-form__section"
   >
-    <div
+    <h4
       className="pf-c-form__section-title"
     >
       Title
-    </div>
+    </h4>
   </section>
 </FormSection>
 `;

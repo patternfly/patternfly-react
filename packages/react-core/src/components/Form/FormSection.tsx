@@ -9,16 +9,19 @@ export interface FormSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   className?: string;
   /** Title for the section */
   title?: React.ReactNode;
+  /** Element to wrap the section title*/
+  titleElement?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const FormSection: React.FunctionComponent<FormSectionProps> = ({
   className = '',
   children,
   title = '',
+  titleElement: TitleElement = 'div',
   ...props
 }: FormSectionProps) => (
   <section {...props} className={css(styles.formSection, className)}>
-    {title && <div className={css(styles.formSectionTitle, className)}>{title}</div>}
+    {title && <TitleElement className={css(styles.formSectionTitle, className)}>{title}</TitleElement>}
     {children}
   </section>
 );

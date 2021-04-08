@@ -9,7 +9,7 @@ test('Check form section example against snapshot', () => {
 });
 
 test('Check form section example with title', () => {
-  const Section = <FormSection title="Title"/>;
+  const Section = <FormSection title="Title" titleElement="h4"/>;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });

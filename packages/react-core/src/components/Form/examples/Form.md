@@ -7,6 +7,7 @@ propComponents:
     'ActionGroup',
     'Form',
     'FormGroup',
+    'FormSection',
     'FormHelperText',
     'FormFieldGroup',
     'FormFieldGroupExpandable',
@@ -686,7 +687,7 @@ class FormSections extends React.Component {
             />
           </FormGroup>
         </FormSection>
-        <FormSection title="Form section 2 (optional title)">
+        <FormSection title="Form section 2 (optional title)" titleElement="h2">
           <FormGroup label="Form section 2 input" isRequired fieldId="simple-form-section-2-input">
             <TextInput
               isRequired
