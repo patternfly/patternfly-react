@@ -26,6 +26,9 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
@@ -2003,7 +2006,8 @@ To enable a tree table:
     - `aria-level` - number representing how many levels deep this node is nested
     - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
     - `aria-setsize` - number representing the number of children this node has
-    - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
+    - `isChecked` - (optional) boolean used if this row uses checkboxes, flag indicating the checkbox checked
+    -  `icon` - (optional) ReactNode icon to display before the row title
 3. Use the `treeRow` cellTransform in the first column of the table. `treeRow` expects one or two callbacks as params.
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
@@ -2017,6 +2021,9 @@ import React from 'react';
 import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 
 class TreeTable extends React.Component {
   constructor(props) {
@@ -2095,6 +2102,11 @@ class TreeTable extends React.Component {
       if (x) {
         const isExpanded = this.state.expandedRows.includes(x.repositories);
         const isChecked = this.state.checkedRows.includes(x.repositories);
+        let icon = <LeafIcon />;
+        if (x.children) {
+          icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon/>;
+        }
+        
         return [
           {
             cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
@@ -2104,7 +2116,8 @@ class TreeTable extends React.Component {
               'aria-level': level,
               'aria-posinset': posinset,
               'aria-setsize': x.children ? x.children.length : 0,
-              isChecked
+              isChecked,
+              icon
             }
           },
           ...(x.children && x.children.length) ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : [],
@@ -3266,6 +3279,7 @@ To enable a tree table:
     - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
     - `aria-setsize` - number representing the number of children this node has
     - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
+    -  `icon` - (optional) ReactNode icon to display before the row title
 4. The first `Td` in each row will pass the following to the `treeRow` prop:
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
@@ -3280,6 +3294,9 @@ the voice over technologies will recognize the flat table structure as a tree.
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 
 class TreeTable extends React.Component {
   constructor(props) {
@@ -3359,6 +3376,10 @@ class TreeTable extends React.Component {
       if (x) {
         const isExpanded = this.state.expandedRows.includes(x.repositories);
         const isChecked = this.state.checkedRows.includes(x.repositories);
+        let icon = <LeafIcon />;
+        if (x.children) {
+          icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon/>;
+        }
         return [
           {
             cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
@@ -3368,7 +3389,8 @@ class TreeTable extends React.Component {
               'aria-level': level,
               'aria-posinset': posinset,
               'aria-setsize': x.children ? x.children.length : 0,
-              isChecked
+              isChecked,
+              icon
             }
           },
           ...(x.children && x.children.length) ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : [],
