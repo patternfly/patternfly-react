@@ -230,9 +230,14 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     component: MergedComponent = component,
     ...mergedProps
   } = merged;
+
+  const treeTableTitleCell =
+    (className && className.includes('pf-c-table__tree-view-title-cell')) ||
+    (mergedClassName && mergedClassName.includes('pf-c-table__tree-view-title-cell'));
+
   return (
     <MergedComponent
-      data-label={dataLabel}
+      {...(!treeTableTitleCell && { 'data-label': dataLabel })}
       className={css(
         className,
         textCenter && styles.modifiers.center,
