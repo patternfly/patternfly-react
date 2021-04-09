@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.106.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.4...@patternfly/react-core@4.106.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* **select:** remove panel from select variants ([#5600](https://github.com/patternfly/patternfly-react/issues/5600)) ([edc9116](https://github.com/patternfly/patternfly-react/commit/edc91164829d302c07fb10231141fb1ca3a95462))
+* **Wizard:** disable back button on first step for keyboard users ([#5623](https://github.com/patternfly/patternfly-react/issues/5623)) ([a97fc26](https://github.com/patternfly/patternfly-react/commit/a97fc269373832b1dc6ff033d0cf7858fe01337e))
+
+
+
+
+
 ## [4.106.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.3...@patternfly/react-core@4.106.4) (2021-04-08)
 
 **Note:** Version bump only for package @patternfly/react-core
