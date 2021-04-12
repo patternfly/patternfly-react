@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.106.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.5...@patternfly/react-core@4.106.6) (2021-04-12)
+
+
+### Bug Fixes
+
+* **card:** add empty state to card demo ([#5605](https://github.com/patternfly/patternfly-react/issues/5605)) ([bdd25cb](https://github.com/patternfly/patternfly-react/commit/bdd25cbe6207b068de8fe023941a096371c3ee35))
+
+
+
+
+
 ## [4.106.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.106.4...@patternfly/react-core@4.106.5) (2021-04-09)
 
 
