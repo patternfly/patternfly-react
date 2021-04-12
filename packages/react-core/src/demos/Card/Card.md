@@ -8,6 +8,7 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -32,6 +33,7 @@ import React from 'react';
 import {
   Avatar,
   Brand,
+  Bullseye,
   Button,
   ButtonVariant,
   Card,
@@ -48,6 +50,10 @@ import {
   DropdownPosition,
   DropdownDirection,
   DropdownToggleCheckbox,
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateVariant,
+  EmptyStateSecondaryActions,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -72,6 +78,7 @@ import {
   SkipToContent,
   TextContent,
   Text,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem,
@@ -84,6 +91,7 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -704,10 +712,23 @@ class CardViewBasic extends React.Component {
           </PageSection>
           <PageSection isFilled>
             <Gallery hasGutter>
+              <Card isHoverable isCompact>
+                <Bullseye>
+                  <EmptyState variant={EmptyStateVariant.xs}>
+                    <EmptyStateIcon icon={PlusCircleIcon} />
+                    <Title headingLevel="h2" size="md">
+                      Add a new card to your page
+                    </Title>
+                    <EmptyStateSecondaryActions>
+                      <Button variant="link">Add card</Button>
+                    </EmptyStateSecondaryActions>
+                  </EmptyState>
+                </Bullseye>
+              </Card>
               {filtered.map((product, key) => (
-                <Card isHoverable key={product.name}>
+                <Card isHoverable isCompact key={product.name}>
                   <CardHeader>
-                    <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
+                    <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
                     <CardActions>
                       <Dropdown
                         isPlain
