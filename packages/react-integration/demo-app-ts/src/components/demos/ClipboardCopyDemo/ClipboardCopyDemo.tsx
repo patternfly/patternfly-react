@@ -14,7 +14,7 @@ export class ClipboardCopyDemo extends React.Component {
         <br />
         <div style={{ backgroundColor: 'white', padding: '10px' }}>
           This copy:
-          <ClipboardCopy id="inline-copy" variant={ClipboardCopyVariant.inline} isBlock>
+          <ClipboardCopy id="inline-copy" variant={ClipboardCopyVariant.inlineCompact} isBlock>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus, libero nec dapibus ultricies, urna
             purus pretium mauris, ullamcorper pharetra lacus nibh vitae enim.
           </ClipboardCopy>

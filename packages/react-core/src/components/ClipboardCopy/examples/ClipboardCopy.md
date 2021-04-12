@@ -106,7 +106,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy variant="inline">2.3.4-2-redhat</ClipboardCopy>;
+<ClipboardCopy variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>;
 ```
 
 ### Inline code
@@ -115,7 +115,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy variant="inline" isCode>
+<ClipboardCopy variant="inline-compact" isCode>
   2.3.4-2-redhat
 </ClipboardCopy>;
 ```
@@ -128,7 +128,7 @@ import { ClipboardCopy, ClipboardCopyAction, Button } from '@patternfly/react-co
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 
 <ClipboardCopy
-  variant="inline"
+  variant="inline-compact"
   additionalActions={
     <ClipboardCopyAction>
       <Button variant="plain" aria-label="Run in web terminal">
@@ -150,13 +150,13 @@ import { ClipboardCopy } from '@patternfly/react-core';
 <React.Fragment>
   <b>Basic</b>
   <br />
-  Lorem ipsum {<ClipboardCopy variant="inline">2.3.4-2-redhat</ClipboardCopy>} dolor sit amet.
+  Lorem ipsum {<ClipboardCopy variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>} dolor sit amet.
   <br /> <br />
   <b>Long copy string</b>
   <br />
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
   {
-    <ClipboardCopy variant="inline">
+    <ClipboardCopy variant="inline-compact">
       https://app.openshift.io/path/sub-path/sub-sub-path/?runtime=quarkus/12345678901234567890/abcdefghijklmnopqrstuvwxyz1234567890
     </ClipboardCopy>
   }{' '}
@@ -166,7 +166,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
   <br />
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
   {
-    <ClipboardCopy variant="inline" isBlock>
+    <ClipboardCopy variant="inline-compact" isBlock>
       https://app.openshift.io/path/sub-path/sub-sub-path/?runtime=quarkus/12345678901234567890/abcdefghijklmnopqrstuvwxyz1234567890
     </ClipboardCopy>
   }{' '}

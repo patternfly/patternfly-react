@@ -22,7 +22,8 @@ export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, t
 
 export enum ClipboardCopyVariant {
   inline = 'inline',
-  expansion = 'expansion'
+  expansion = 'expansion',
+  inlineCompact = 'inline-compact'
 }
 
 export interface ClipboardCopyState {
@@ -51,7 +52,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Flag to determine if inline clipboard copy should be block styling */
   isBlock?: boolean;
   /** Adds Clipboard Copy variant styles. */
-  variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion';
+  variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion' | 'inline-compact';
   /** Copy button popover position. */
   position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Maximum width of the tooltip (default 150px). */
@@ -68,7 +69,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   onChange?: (text?: string | number) => void;
   /** The text which is copied. */
   children: React.ReactNode;
-  /** Additional actions for inline clipboad copy. Should be wrapped with ClipboardCopyAction. */
+  /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
   additionalActions?: React.ReactNode;
 }
 
@@ -90,7 +91,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     isReadOnly: false,
     isExpanded: false,
     isCode: false,
-    variant: null,
+    variant: 'inline',
     position: TooltipPosition.top,
     maxWidth: '150px',
     exitDelay: 1600,
@@ -153,14 +154,14 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       <div
         className={css(
           styles.clipboardCopy,
-          variant === 'inline' && styles.modifiers.inline,
+          variant === 'inline-compact' && styles.modifiers.inline,
           isBlock && styles.modifiers.block,
           this.state.expanded && styles.modifiers.expanded,
           className
         )}
         {...divProps}
       >
-        {variant === 'inline' && (
+        {variant === 'inline-compact' && (
           <GenerateId prefix="">
             {id => (
               <React.Fragment>
@@ -208,7 +209,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
             )}
           </GenerateId>
         )}
-        {variant !== 'inline' && (
+        {variant !== 'inline-compact' && (
           <GenerateId prefix="">
             {id => (
               <React.Fragment>
