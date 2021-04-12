@@ -100,7 +100,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 </ClipboardCopy>;
 ```
 
-### Inline
+### Compact inline
 
 ```js
 import React from 'react';
@@ -109,7 +109,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 <ClipboardCopy variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>;
 ```
 
-### Inline code
+### Compact inline code
 
 ```js
 import React from 'react';
@@ -120,7 +120,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 </ClipboardCopy>;
 ```
 
-### Inline with additional action
+### Compact inline with additional action
 
 ```js
 import React from 'react';
@@ -141,7 +141,7 @@ import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 </ClipboardCopy>;
 ```
 
-### Inline in sentence
+### Compact inline in sentence
 
 ```js
 import React from 'react';
