@@ -589,8 +589,7 @@ class FilteringCheckboxSelectInput extends React.Component {
       }
     };
 
-    this.onFilter = evt => {
-      const textInput = evt.target.value;
+    this.onFilter = (_, textInput) => {
       if (textInput === '') {
         return this.options;
       } else {
@@ -695,8 +694,7 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
       }
     };
 
-    this.onFilter = evt => {
-      const textInput = evt.target.value;
+    this.onFilter = (_, textInput) => {
       if (textInput === '') {
         return this.options;
       } else {
@@ -809,8 +807,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       }
     };
 
-    this.onFilter = evt => {
-      const textInput = evt.target.value;
+    this.onFilter = (_, textInput) => {
       if (textInput === '') {
         return this.options;
       } else {
@@ -1188,12 +1185,9 @@ class TypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.customFilter = e => {
-      let input;
-      try {
-        input = new RegExp(e.target.value, 'i');
-      } catch (err) {}
-      return e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
+    this.customFilter = (_, value) => {
+      let input = new RegExp(value, 'i');
+      return value !== '' ? this.options.filter(child => input.test(value)) : this.options;
     };
   }
 
