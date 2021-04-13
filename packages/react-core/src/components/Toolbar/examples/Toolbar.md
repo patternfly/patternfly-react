@@ -1,7 +1,7 @@
 ---
 id: Toolbar
 cssPrefix: pf-c-toolbar
-propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarToggleGroup', 'ToolbarFilter']
+propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarGroup', 'ToolbarItem', 'ToolbarToggleGroup', 'ToolbarFilter']
 section: components
 ---
 
