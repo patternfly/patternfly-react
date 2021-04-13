@@ -79,6 +79,16 @@ export class CardDemo extends React.Component {
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
+        <Card id="fullHeightCard" isFullHeight>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <Card id="plainCard" isPlain>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
 
         <Card
           id="selectableCard"
