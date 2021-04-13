@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.6.69...@patternfly/react-inline-edit-extension@4.6.70) (2021-04-13)
+
+
+### Bug Fixes
+
+* **inline-edit:** remove unused dep ([#5645](https://github.com/patternfly/patternfly-react/issues/5645)) ([a84da75](https://github.com/patternfly/patternfly-react/commit/a84da750f72dfa9673a7692b226bf0426fd4a890))
+
+
+
+
+
 ## [4.6.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.6.68...@patternfly/react-inline-edit-extension@4.6.69) (2021-04-12)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
