@@ -166,12 +166,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
             {id => (
               <React.Fragment>
                 {!isCode && (
-                  <span className={css(styles.clipboardCopyText)} id={`text-${id}`}>
+                  <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}-${id}`}>
                     {this.state.text}
                   </span>
                 )}
                 {isCode && (
-                  <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`code-${id}`}>
+                  <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`${textIdPrefix}-${id}`}>
                     {this.state.text}
                   </code>
                 )}
