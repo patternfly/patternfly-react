@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.9.10...@patternfly/react-icons@4.9.11) (2021-04-13)
+
+
+### Bug Fixes
+
+* **icons,tokens:** no star reexport ([#5662](https://github.com/patternfly/patternfly-react/issues/5662)) ([e18ea06](https://github.com/patternfly/patternfly-react/commit/e18ea0636edc55593fba845677adaf5fe39012d5))
+
+
+
+
+
 ## [4.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.9.9...@patternfly/react-icons@4.9.10) (2021-04-08)
 
 **Note:** Version bump only for package @patternfly/react-icons
