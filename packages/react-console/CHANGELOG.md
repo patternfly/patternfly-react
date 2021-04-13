@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.3.34...@patternfly/react-console@4.3.35) (2021-04-13)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
 ## [4.3.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.3.33...@patternfly/react-console@4.3.34) (2021-04-13)
 
 **Note:** Version bump only for package @patternfly/react-console
