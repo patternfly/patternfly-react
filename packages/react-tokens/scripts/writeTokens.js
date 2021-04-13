@@ -37,7 +37,7 @@ const allIndex = [];
 const componentIndex = [];
 
 const outputIndex = (index, indexFile) => {
-  const esmIndexString = index.map(file => `export * from './${file}';`).join('\n');
+  const esmIndexString = index.map(file => `export { ${file} } from './${file}';`).join('\n');
   outputFileSync(join(outDir, 'esm', indexFile), esmIndexString);
   outputFileSync(join(outDir, 'js', indexFile.replace('.js', '.d.ts')), esmIndexString);
   outputFileSync(

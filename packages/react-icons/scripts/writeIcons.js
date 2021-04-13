@@ -84,12 +84,12 @@ function writeIcons(icons) {
     writeCJSExport(fname, jsName, icon);
     writeDTSExport(fname, jsName, icon);
 
-    index.push(fname);
+    index.push({ fname, jsName });
   });
 
   const esmIndexString = index
+    .map(({ fname, jsName }) => `export { ${jsName}, ${jsName}Config } from './${fname}';`)
     .sort()
-    .map(file => `export * from './${file}';`)
     .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);
   outputFileSync(join(outDir, 'js', 'icons/index.d.ts'), esmIndexString);
@@ -101,8 +101,8 @@ function __export(m) {
 }
 exports.__esModule = true;
 ${index
+  .map(({ fname }) => `__export(require('./${fname}'));`)
   .sort()
-  .map(file => `__export(require('./${file}'));`)
   .join('\n')}
 `.trim()
   );
