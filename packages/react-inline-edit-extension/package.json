@@ -33,8 +33,7 @@
     "@patternfly/react-core": "^4.106.6",
     "@patternfly/react-icons": "^4.9.10",
     "@patternfly/react-styles": "^4.9.5",
-    "@patternfly/react-table": "^4.24.5",
-    "reactabular-table": "^8.14.0"
+    "@patternfly/react-table": "^4.24.5"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",
