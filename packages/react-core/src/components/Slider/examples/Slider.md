@@ -61,7 +61,7 @@ class DiscreteInput extends React.Component {
   }
 
   render() {
-    const step = this.steps.find(step => step.value === this.state.value);
+    const step = this.steps.find(step => step.value === this.state.value1);
     const displayValue = step ? step.label : 0;
     return (
       <>

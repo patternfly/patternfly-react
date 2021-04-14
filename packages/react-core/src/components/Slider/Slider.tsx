@@ -161,7 +161,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     document.addEventListener('mouseup', callbackThumbUp);
   };
 
-  const handleToucheStart = (e: React.TouchEvent) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation();
 
     diff = e.touches[0].clientX - thumbRef.current.getBoundingClientRect().left;
@@ -227,12 +227,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     } else if (!customSteps && step !== 1) {
       // snap to new value if not custom steps and step is not 1
       snapValue = Math.round((newValue - min) / step) * step + min;
-      // snapValue = Math.round(newValue / step) * step;
     }
 
-    // Call value change callback unless custom steps are discrete or no custom steps and step is !== 1.  The value will snap after the thumb is released.
+    // Call value change callback unless custom steps are discrete or no custom steps and step is 1.  The value will snap after the thumb is released.
     if (onChange) {
-      if ((areCustomStepsContinuous && customSteps) || (!customSteps && step !== 1)) {
+      if ((areCustomStepsContinuous && customSteps) || (!customSteps && step === 1)) {
         onChange(newValue);
       }
     }
@@ -353,7 +352,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           aria-label={thumbAriaLabel}
           aria-disabled={isDisabled}
           onMouseDown={!isDisabled ? handleMouseDown : null}
-          onTouchStart={!isDisabled ? handleToucheStart : null}
+          onTouchStart={!isDisabled ? handleTouchStart : null}
           onKeyDown={!isDisabled ? handleThumbKeys : null}
           onClick={!isDisabled ? onThumbClick : null}
         />

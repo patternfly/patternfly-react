@@ -629,11 +629,12 @@ exports[`slider renders slider with input 1`] = `
             </TextInputBase>
           </TextInput>
           <InputGroupText
-            className="pf-m-plain"
+            variant="plain"
           >
             <span
               className="pf-c-input-group__text pf-m-plain"
             >
+               
               %
             </span>
           </InputGroupText>
@@ -740,11 +741,12 @@ exports[`slider renders slider with input above thumb 1`] = `
               </TextInputBase>
             </TextInput>
             <InputGroupText
-              className="pf-m-plain"
+              variant="plain"
             >
               <span
                 className="pf-c-input-group__text pf-m-plain"
               >
+                 
                 %
               </span>
             </InputGroupText>
