@@ -1003,8 +1003,8 @@ export const TableComposableDemo = () => {
     const columns = ['Truncating text', 'Wrapping table header text. This th text will wrap instead of truncate.'];
     const rows = [
       [
-        <TableText key="tt 1" wrapModifier="truncate">
-          This text will truncate instead of wrap.
+        <TableText key="tt 1" wrapModifier="truncate" id="table-text-tooltip">
+          This text will truncate instead of wrap. This text will truncate instead of wrap.
         </TableText>,
         <TableText key="tt 2" wrapModifier="nowrap">
           <a href="#">This is a link that needs to be on one line and fully readable.</a>
