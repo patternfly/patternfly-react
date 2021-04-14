@@ -297,7 +297,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       return (
         <InputGroup>
           {textInput}
-          <InputGroupText className={css('pf-m-plain')}>{inputLabel}</InputGroupText>
+          <InputGroupText variant="plain"> {inputLabel}</InputGroupText>
         </InputGroup>
       );
     } else {
