@@ -69,7 +69,8 @@ DateTimeRangePicker = () => {
   
   const onFromDateChange = (_str, newFromDate) => {
     if (from) {
-      newFromDate.setTime(from.getTime());
+      newFromDate.setHours(from.getHours());
+      newFromDate.setMinutes(from.getMinutes());
     }
     console.log(newFromDate);
     setFrom(new Date(newFromDate));
@@ -87,7 +88,8 @@ DateTimeRangePicker = () => {
 
   const onToDateChange = (_str, newToDate) => {
     if (to) {
-      newToDate.setTime(to.getTime());
+      newToDate.setHours(to.getHours());
+      newToDate.setMinutes(to.getMinutes());
     }
     console.log(newToDate);
     setTo(new Date(newToDate));
