@@ -2002,15 +2002,20 @@ To enable a tree table:
 1. Pass the `isTreeTable` prop to the `Table` component
 2. Pass the following props to each row:
     - `isExpanded` - Flag indicating the node is expanded and its children are visible
+    - `isDetailsExpanded` - (optional) Flag indicating the row's details are visible in responsive view
     - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
     - `aria-level` - number representing how many levels deep this node is nested
     - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
     - `aria-setsize` - number representing the number of children this node has
     - `isChecked` - (optional) boolean used if this row uses checkboxes, flag indicating the checkbox checked
-    -  `icon` - (optional) ReactNode icon to display before the row title
+    - `icon` - (optional) ReactNode icon to display before the row title
+    - `toggleAriaLabel` - (optional) accessible label for the expand/collapse children rows toggle arrow
+    - `checkAriaLabel` - (optional) accessible label for the checkbox
+    - `showDetailsAriaLabel` - (optional) accessible label for the show row details button in the responsive view
 3. Use the `treeRow` cellTransform in the first column of the table. `treeRow` expects one or two callbacks as params.
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
+    - `onToggleRowDetails` - (optional) Callback when user shows/hides the row details in responsive view.
 
 Note: If this table is going to be tested using axe-core, the tests will flag the use of aria-level, 
 aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
@@ -2019,8 +2024,6 @@ the voice over technologies will recognize the flat table structure as a tree.
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
 import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
@@ -2086,6 +2089,7 @@ class TreeTable extends React.Component {
         }
       ],
       expandedRows: ['Repositories one', 'Repositories six'],
+      expandedDetailsRows: [],
       checkedRows: []
     };
     
@@ -2101,6 +2105,7 @@ class TreeTable extends React.Component {
     this.buildRows = ([x, ...xs], level, posinset, isHidden = false) => {
       if (x) {
         const isExpanded = this.state.expandedRows.includes(x.repositories);
+        const isDetailsExpanded = this.state.expandedDetailsRows.includes(x.repositories);
         const isChecked = this.state.checkedRows.includes(x.repositories);
         let icon = <LeafIcon />;
         if (x.children) {
@@ -2112,6 +2117,7 @@ class TreeTable extends React.Component {
             cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
             props: {
               isExpanded,
+              isDetailsExpanded,
               isHidden,
               'aria-level': level,
               'aria-posinset': posinset,
@@ -2127,7 +2133,19 @@ class TreeTable extends React.Component {
       return [];
     };
     
+    this.onToggleRowDetails = (event, rowIndex, title) => {
+      this.setState(prevState => {
+        const { expandedDetailsRows } = prevState;
+        const openedIndex = expandedDetailsRows.indexOf(title);
+        const newExpandedDetailsRows = openedIndex === -1 ? [...expandedDetailsRows, title] : expandedDetailsRows.filter(o => o !== title);
+        return {
+          expandedDetailsRows: newExpandedDetailsRows
+        }
+      });
+    };
+    
     this.onCollapse = (event, rowIndex, title) => {
+      console.log(title);
       this.setState(prevState => {
         const { expandedRows } = prevState;
         const openedIndex = expandedRows.indexOf(title);
@@ -2156,7 +2174,7 @@ class TreeTable extends React.Component {
         isTreeTable
         aria-label="Tree table"
         cells={[
-          { title: 'Repositories', cellTransforms: [treeRow(this.onCollapse, this.onCheckChange)] }, 
+          { title: 'Repositories', cellTransforms: [treeRow(this.onCollapse, this.onCheckChange, this.onToggleRowDetails)] }, 
           'Branches', 
           { title: 'Pull requests' }, 
           'Workspaces']}
@@ -3274,15 +3292,20 @@ To enable a tree table:
 2. Use a `TreeRowWrapper` rather than `Tr`
 3. Pass the following `props` to each row (both the `TreeRowWrapper` and the `treeRow` in the first column):
     - `isExpanded` - Flag indicating the node is expanded and its children are visible
+    - `isDetailsExpanded` - (optional) Flag indicating the row's details are visible in responsive view
     - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
     - `aria-level` - number representing how many levels deep this node is nested
     - `aria-posinset` - number representing where in the order this node sits amongst its siblings 
     - `aria-setsize` - number representing the number of children this node has
     - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
-    -  `icon` - (optional) ReactNode icon to display before the row title
+    - `icon` - (optional) ReactNode icon to display before the row title
+    - `toggleAriaLabel` - (optional) accessible label for the expand/collapse children rows toggle arrow
+    - `checkAriaLabel` - (optional) accessible label for the checkbox
+    - `showDetailsAriaLabel` - (optional) accessible label for the show row details button in the responsive view
 4. The first `Td` in each row will pass the following to the `treeRow` prop:
     - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
     - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
+    - `onToggleRowDetails` - (optional) Callback when user shows/hides the row details in responsive view.
     - `props` - (as defined above)
     - `rowIndex` - number representing the index of the row
     
@@ -3359,6 +3382,7 @@ class TreeTable extends React.Component {
         }
       ],
       expandedRows: ['Repositories one', 'Repositories six'],
+      expandedDetailsRows: [],
       checkedRows: []
     };
     
@@ -3375,6 +3399,7 @@ class TreeTable extends React.Component {
       // take the first datum from the array (if any)
       if (x) {
         const isExpanded = this.state.expandedRows.includes(x.repositories);
+        const isDetailsExpanded = this.state.expandedDetailsRows.includes(x.repositories);
         const isChecked = this.state.checkedRows.includes(x.repositories);
         let icon = <LeafIcon />;
         if (x.children) {
@@ -3385,6 +3410,7 @@ class TreeTable extends React.Component {
             cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
             props: {
               isExpanded,
+              isDetailsExpanded,
               isHidden,
               'aria-level': level,
               'aria-posinset': posinset,
@@ -3421,6 +3447,17 @@ class TreeTable extends React.Component {
         }
       });
     }
+    
+    this.onToggleRowDetails = (event, rowIndex, title) => {
+      this.setState(prevState => {
+        const { expandedDetailsRows } = prevState;
+        const openedIndex = expandedDetailsRows.indexOf(title);
+        const newExpandedDetailsRows = openedIndex === -1 ? [...expandedDetailsRows, title] : expandedDetailsRows.filter(o => o !== title);
+        return {
+          expandedDetailsRows: newExpandedDetailsRows
+        }
+      });
+    };
   }
 
   render() {
@@ -3442,13 +3479,14 @@ class TreeTable extends React.Component {
                 <Td key={cellIndex} treeRow={{
                   onCollapse: this.onCollapse, 
                   onCheckChange: this.onCheckChange,
+                  onToggleRowDetails: this.onToggleRowDetails,
                   props: row.props,
                   rowIndex: rowIndex
                 }}>
                   {cell}
                 </Td>
               ) : (
-                <Td key={cellIndex}>{cell}</Td>
+                <Td key={cellIndex} data-label={columns[cellIndex]}>{cell}</Td>
               ))}
             </TreeRowWrapper>
           ))}

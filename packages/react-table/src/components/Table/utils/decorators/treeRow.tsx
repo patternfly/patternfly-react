@@ -1,21 +1,25 @@
 import * as React from 'react';
-import { IExtra, IFormatterValueType, OnCheckChange, OnTreeRowCollapse } from '../../TableTypes';
+import { IExtra, IFormatterValueType, OnCheckChange, OnTreeRowCollapse, OnToggleRowDetails } from '../../TableTypes';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { Button, Checkbox } from '@patternfly/react-core';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
+import EllipsisHIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-h-icon';
 
-export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckChange) => (
-  value: IFormatterValueType,
-  { rowIndex, rowData }: IExtra
-) => {
+export const treeRow = (
+  onCollapse: OnTreeRowCollapse,
+  onCheckChange?: OnCheckChange,
+  onToggleRowDetails?: OnToggleRowDetails
+) => (value: IFormatterValueType, { rowIndex, rowData }: IExtra) => {
   const {
     isExpanded,
+    isDetailsExpanded,
     'aria-level': level,
     'aria-setsize': setsize,
     toggleAriaLabel,
     checkAriaLabel,
+    showDetailsAriaLabel,
     isChecked,
     checkboxId,
     icon
@@ -31,7 +35,6 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
     onCheckChange(event, isChecked, rowIndex, content, rowData);
   };
   return {
-    value,
     component: 'th',
     className: 'pf-c-table__tree-view-title-cell',
     children:
@@ -63,6 +66,21 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
             </span>
           )}
           {text}
+          {!!onToggleRowDetails && (
+            <span className={css(stylesTreeView.tableTreeViewDetailsToggle)}>
+              <Button
+                variant="plain"
+                aria-expanded={isDetailsExpanded}
+                className={css(isDetailsExpanded && styles.modifiers.expanded)}
+                aria-label={showDetailsAriaLabel || 'Show row details'}
+                onClick={event => onToggleRowDetails && onToggleRowDetails(event, rowIndex, content, rowData)}
+              >
+                <span className="pf-c-table__details-toggle-icon">
+                  <EllipsisHIcon />
+                </span>
+              </Button>
+            </span>
+          )}
         </div>
       ) : (
         text
