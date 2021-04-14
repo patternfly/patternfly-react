@@ -57,48 +57,84 @@ DateRangePicker = () => {
 ### Date and time range picker
 
 ```js
-import { Split, SplitItem, DatePicker, isValidDate, TimePicker, yyyyMMddFormat } from '@patternfly/react-core';
+import { Flex, FlexItem, InputGroup, DatePicker, isValidDate, TimePicker, yyyyMMddFormat, updateDateTime } from '@patternfly/react-core';
 
-DateRangePicker = () => {
+DateTimeRangePicker = () => {
   const [from, setFrom] = React.useState();
   const [to, setTo] = React.useState();
 
-  const toValidator = date => isValidDate(from) && date >= from ? '' : 'To date must be less than from date';
-  const onFromChange = (_str, date) => {
-    setFrom(new Date(date));
-    if (isValidDate(date)) {
-      date.setDate(date.getDate() + 1);
-      setTo(yyyyMMddFormat(date));
+  const toValidator = date => {
+    return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from) ? '' : 'To date must be less than from date';
+  };
+  
+  const onFromDateChange = (_str, newFromDate) => {
+    if (from) {
+      newFromDate.setTime(from.getTime());
     }
-    else {
-      setTo('');
+    console.log(newFromDate);
+    setFrom(new Date(newFromDate));
+  };
+  
+  const onFromTimeChange = (time, hour, minute) => {
+    if (from) {
+      const updatedFromDate = new Date(from);
+      updatedFromDate.setHours(hour);
+      updatedFromDate.setMinutes(minute);
+      console.log(updatedFromDate);
+      setFrom(updatedFromDate);
+    }
+  };
+
+  const onToDateChange = (_str, newToDate) => {
+    if (to) {
+      newToDate.setTime(to.getTime());
+    }
+    console.log(newToDate);
+    setTo(new Date(newToDate));
+  };
+  
+  const onToTimeChange = (time, hour, minute) => {
+    if (to) {
+      const updatedToDate = new Date(to);
+      updatedToDate.setHours(hour);
+      updatedToDate.setMinutes(minute);
+      console.log(updatedToDate);
+      setTo(updatedToDate);
     }
   };
 
   return (
-    <Split>
-      <SplitItem>
-        <DatePicker
-          onChange={onFromChange}
-          aria-label="Start date"
-        />
-        <TimePicker />
-      </SplitItem>
-      <SplitItem style={{ padding: '6px 12px 0 12px' }}>
+    <Flex direction={{default: 'column', lg: 'row'}}>
+      <FlexItem>
+        <InputGroup>
+          <DatePicker
+            onChange={onFromDateChange}
+            aria-label="Start date"
+          />
+          <TimePicker 
+            aria-label="Start time"
+            style={{width: '150px'}} 
+            onChange={onFromTimeChange} 
+          />
+        </InputGroup>
+      </FlexItem>
+      <FlexItem>
         to
-      </SplitItem>
-      <SplitItem>
-        <DatePicker
-          value={to}
-          onChange={date => setTo(date)}
-          isDisabled={!isValidDate(from)}
-          rangeStart={from}
-          validators={[toValidator]}
-          aria-label="End date"
-        />
-        <TimePicker />
-      </SplitItem>
-    </Split>
+      </FlexItem>
+      <FlexItem>
+        <InputGroup>
+          <DatePicker
+            value={to ? yyyyMMddFormat(to) : ''}
+            onChange={onToDateChange}
+            isDisabled={!isValidDate(from)}
+            rangeStart={from}
+            validators={[toValidator]}
+            aria-label="End date"
+          />
+          <TimePicker style={{width: '150px'}} onChange={onToTimeChange} isDisabled={!isValidDate(from)}/>
+        </InputGroup>
+      </FlexItem>
+    </Flex>
   );
 }
 ```

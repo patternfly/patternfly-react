@@ -19,7 +19,7 @@ SimpleTimePicker = () => {
     console.log(time);
   };
   
-  return <TimePicker defaultTime="3:35 AM" onChange={onChange}/>;
+  return <TimePicker time="3:35 AM" onChange={onChange}/>;
 }
 ```
 
@@ -28,7 +28,7 @@ SimpleTimePicker = () => {
 import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
-<TimePicker defaultTime="2020-10-14T18:06:02Z" is24Hour />
+<TimePicker time="2020-10-14T18:06:02Z" is24Hour />
 ```
 
 ### Custom delimiter
