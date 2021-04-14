@@ -36,6 +36,7 @@ class SingleSelectInput extends React.Component {
       isOpen: false,
       selected: null,
       isDisabled: false,
+      isInvalidState: false,
       direction: SelectDirection.down
     };
 
@@ -75,6 +76,12 @@ class SingleSelectInput extends React.Component {
       });
     };
 
+    this.setInvalidState = checked => {
+      this.setState({
+        isInvalidState: checked
+      });
+    }
+
     this.toggleDirection = () => {
       if (this.state.direction === SelectDirection.up) {
         this.setState({
@@ -89,7 +96,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const { isOpen, selected, isDisabled, direction, isToggleIcon, isInvalidState } = this.state;
     const titleId = 'title-id-1';
     return (
       <div>
@@ -107,6 +114,7 @@ class SingleSelectInput extends React.Component {
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
+          isInvalid={isInvalidState && selected === null  }
         >
           {this.options}
         </Select>
@@ -133,6 +141,14 @@ class SingleSelectInput extends React.Component {
           aria-label="show icon checkbox"
           id="toggle-icon"
           name="toggle-icon"
+        />
+        <Checkbox
+          label="invalid state"
+          isChecked={isInvalidState}
+          onChange={this.setInvalidState}
+          aria-label="invalid checkbox"
+          id="toggle-invalid"
+          name="toggle-invalid"
         />
       </div>
     );

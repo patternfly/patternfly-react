@@ -5,6 +5,7 @@ import formStyles from '@patternfly/react-styles/css/components/FormControl/form
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
@@ -47,6 +48,8 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
+  /** Flag indicating the select is invlaid */
+  isInvalid?: boolean;
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
   /** Title text of Select */
@@ -149,6 +152,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
+    isInvalid: false,
     'aria-label': '',
     'aria-labelledby': '',
     typeAheadAriaLabel: '',
@@ -627,6 +631,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isGrouped,
       isPlain,
       isDisabled,
+      isInvalid,
       selections: selectionsProp,
       typeAheadAriaLabel,
       clearSelectionsAriaLabel,
@@ -875,6 +880,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         className={css(
           styles.select,
           isOpen && styles.modifiers.expanded,
+          isInvalid && styles.modifiers.invalid,
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
@@ -968,6 +974,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                   id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                   aria-label={typeAheadAriaLabel}
+                  aria-invalid={isInvalid}
                   placeholder={placeholderText as string}
                   value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                   type="text"
@@ -980,6 +987,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               </div>
               {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
             </React.Fragment>
+          )}
+          {isInvalid && (
+            <span className={css(styles.selectToggleStatusIcon)}>
+              <ExclamationCircleIcon aria-hidden="true" />
+            </span>
           )}
         </SelectToggle>
         {isOpen && menuAppendTo === 'inline' && menuContainer}
