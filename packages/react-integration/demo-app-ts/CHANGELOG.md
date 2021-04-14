@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.86.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.85.9...demo-app-ts@4.86.0) (2021-04-14)
+
+
+### Features
+
+* **TableText:** allow passing tooltipProps ([#5654](https://github.com/patternfly/patternfly-react/issues/5654)) ([d20f62f](https://github.com/patternfly/patternfly-react/commit/d20f62f4eb39aa1feb185992d86330592cc557dd))
+
+
+
+
+
 ## [4.85.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.85.8...demo-app-ts@4.85.9) (2021-04-14)
 
 **Note:** Version bump only for package demo-app-ts
