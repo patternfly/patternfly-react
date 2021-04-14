@@ -22,7 +22,7 @@ export const treeRow = (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckCh
   } = rowData.props;
   const content = value.title || value;
   const text = (
-    <div className={css(stylesTreeView.tableTreeViewContent)}>
+    <div className={css(stylesTreeView.tableTreeViewText)}>
       {icon && <span className={css(stylesTreeView.tableTreeViewIcon)}>{icon}</span>}
       <span className="pf-c-table__text">{content}</span>
     </div>
