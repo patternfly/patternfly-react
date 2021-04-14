@@ -166,12 +166,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
             {id => (
               <React.Fragment>
                 {!isCode && (
-                  <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}-${id}`}>
+                  <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
                     {this.state.text}
                   </span>
                 )}
                 {isCode && (
-                  <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`${textIdPrefix}-${id}`}>
+                  <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`${textIdPrefix}${id}`}>
                     {this.state.text}
                   </code>
                 )}
@@ -218,9 +218,9 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                     <ClipboardCopyToggle
                       isExpanded={this.state.expanded}
                       onClick={this.expandContent}
-                      id={`${toggleIdPrefix}-${id}`}
-                      textId={`${textIdPrefix}-${id}`}
-                      contentId={`${contentIdPrefix}-${id}`}
+                      id={`${toggleIdPrefix}${id}`}
+                      textId={`${textIdPrefix}${id}`}
+                      contentId={`${contentIdPrefix}${id}`}
                       aria-label={toggleAriaLabel}
                     />
                   )}
