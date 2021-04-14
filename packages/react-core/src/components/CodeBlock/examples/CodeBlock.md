@@ -39,23 +39,18 @@ class BasicCodeBlock extends React.Component {
         </CodeBlockAction>
       </React.Fragment>
     );
+
+    const code = `apiVersion: helm.openshift.io/v1beta1/
+kind: HelmChartRepository
+metadata:
+name: azure-sample-repo
+spec:
+connectionConfig:
+url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
+
     return (
       <CodeBlock actions={actions}>
-        <CodeBlockCode>
-          apiVersion: helm.openshift.io/v1beta1/
-          <br />
-          kind: HelmChartRepository
-          <br />
-          metadata:
-          <br />
-          name: azure-sample-repo
-          <br />
-          spec:
-          <br />
-          connectionConfig:
-          <br />
-          url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs
-        </CodeBlockCode>
+        <CodeBlockCode>{code}</CodeBlockCode>
       </CodeBlock>
     );
   }
