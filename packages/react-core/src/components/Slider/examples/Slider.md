@@ -24,7 +24,9 @@ class DiscreteInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 50
+      value1: 50,
+      value2: 50,
+      value3: 25
     };
 
     this.steps = [
@@ -41,7 +43,19 @@ class DiscreteInput extends React.Component {
 
     this.onChange = value => {
         this.setState({
-          value
+          value1: value
+        });
+    };
+
+    this.onChange2 = value => {
+        this.setState({
+          value2: value
+        });
+    };
+
+    this.onChange3 = value => {
+        this.setState({
+          value3: value
         });
     };
   }
@@ -52,7 +66,15 @@ class DiscreteInput extends React.Component {
     return (
       <>
         <Text component={TextVariants.h3}>Slider value is: {displayValue}</Text>
-        <Slider isDiscrete value={this.state.value} onChange={this.onChange} customSteps={this.steps} />
+        <Slider value={this.state.value1} onChange={this.onChange} customSteps={this.steps} />
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value2)}</Text>
+        <Text component={TextVariants.small}>(min = 0, max = 200, step = 50) </Text>
+        <Slider value={this.state.value2} onChange={this.onChange2} max={200} step={50} />
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value3)}</Text>
+        <Text component={TextVariants.small}>(min = -25, max = 75, step = 10) </Text>
+        <Slider value={this.state.value3} onChange={this.onChange3} min={-25} max={75} step={10} showTicks />
       </>
     );
   }
@@ -69,12 +91,19 @@ class ContinuousInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 50
+      value: 50,
+      valueCustom: 50
     };
 
     this.onChange = value => {
         this.setState({
           value: value
+        });
+    };
+
+    this.onChangeCustom = value => {
+        this.setState({
+          valueCustom: value
         });
     };
   }
@@ -86,7 +115,9 @@ class ContinuousInput extends React.Component {
         <Slider value={this.state.value} onChange={this.onChange} />
         <br />
         <Slider
-          value={50}
+          onChange={this.onChangeCustom}
+          value={this.state.valueCustom}
+          areCustomStepsContinuous
           customSteps={[
             { value: 0, label: '0%' },
             { value: 100, label: '100%' }
@@ -187,7 +218,7 @@ class ValueInput extends React.Component {
         const maxValue =  Number(this.stepsPercent[this.stepsPercent.length -1].label.slice(0, -1));
         if (inputValue > maxValue) {
           newValue = Number(this.stepsPercent[this.stepsPercent.length -1].value);
-          newInputValue =  maxValue
+          newInputValue =  maxValue;
         } else {
           const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
           if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
@@ -211,7 +242,7 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangeContinuous = value => { 
+    this.onChangeContinuous = (value) => { 
       const newValue = value > 100 ? 100 : Math.floor(value);
       this.setState({
         inputValueContinuous: newValue,
@@ -224,7 +255,6 @@ class ValueInput extends React.Component {
     return (
       <>
         <Slider
-          isDiscrete
           value={this.state.valueDiscrete}
           isInputVisible
           inputValue={this.state.inputValueDiscrete}
@@ -237,7 +267,6 @@ class ValueInput extends React.Component {
           isInputVisible
           inputValue={this.state.inputValuePercent}
           inputLabel="%"
-          isDiscrete
           onChange={this.onChangePercent}
           customSteps={this.stepsPercent}
         />
@@ -406,7 +435,6 @@ class SliderActions extends React.Component {
           value={this.state.value2}
           inputValue={this.state.inputValue}
           onChange={this.onChange2}
-          onChange={this.onChange}
           inputLabel="%"
           isInputVisible
           isDisabled={this.state.isDisabled}
@@ -456,7 +484,7 @@ class DiscreteInput extends React.Component {
     return (
       <>
         <Text component={TextVariants.h3}>Slider Value is: {displayValue}</Text>
-        <Slider isDisabled currentValue={this.state.value} onValueChange={this.onValueChange} steps={this.steps} />
+        <Slider isDisabled value={this.state.value} onChange={this.onValueChange} customSteps={this.steps} />
       </>
     );
   }
