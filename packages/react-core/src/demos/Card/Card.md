@@ -1,6 +1,6 @@
 ---
-id: Card
-section: components
+id: Card view
+section: demos
 ---
 
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
@@ -526,7 +526,7 @@ class CardViewBasic extends React.Component {
       areAllSelected,
       isChecked,
       page,
-      perPage,
+      perPage
     } = this.state;
 
     const toolbarKebabDropdownItems = [
@@ -766,7 +766,7 @@ class CardViewBasic extends React.Component {
               ))}
             </Gallery>
           </PageSection>
-          <PageSection isFilled={false} sticky="bottom" padding={{default: "noPadding"}} variant="light">
+          <PageSection isFilled={false} sticky="bottom" padding={{ default: 'noPadding' }} variant="light">
             <Pagination
               itemCount={this.state.totalItemCount}
               page={page}
