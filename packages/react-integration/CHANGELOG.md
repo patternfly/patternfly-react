@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.88.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.87.0...@patternfly/react-integration@4.88.0) (2021-04-15)
+
+
+### Features
+
+* **Card:** add full-height and plain variation ([#5632](https://github.com/patternfly/patternfly-react/issues/5632)) ([f9344cd](https://github.com/patternfly/patternfly-react/commit/f9344cdd0349163211c3aeb041b5f862f0b8f29e)), closes [#5584](https://github.com/patternfly/patternfly-react/issues/5584) [#5582](https://github.com/patternfly/patternfly-react/issues/5582)
+* **ClipboardCopy:** add inline variant ([#5629](https://github.com/patternfly/patternfly-react/issues/5629)) ([27a7f29](https://github.com/patternfly/patternfly-react/commit/27a7f29acf83371520de1f7f9ba56586ecbb8f10))
+
+
+
+
+
 # [4.87.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.86.2...@patternfly/react-integration@4.87.0) (2021-04-14)
 
 
