@@ -37,6 +37,8 @@ CardModifiers = () => {
     'isFlat',
     'isRounded',
     'isLarge',
+    'isFullHeight',
+    'isPlain',
   ];
   const [modifiers, setModifiers] = React.useState({});
 
@@ -56,11 +58,13 @@ CardModifiers = () => {
           />
         )}
       </div>
-      <Card {...modifiers}>
-        <CardTitle>Header</CardTitle>
-        <CardBody>Body</CardBody>
-        <CardFooter>Footer</CardFooter>
-      </Card>
+      <div style={{ height: '15rem' }}>
+        <Card {...modifiers}>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+      </div>
     </React.Fragment>
   );
 }
