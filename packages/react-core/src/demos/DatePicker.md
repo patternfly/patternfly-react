@@ -64,43 +64,41 @@ DateTimeRangePicker = () => {
   const [to, setTo] = React.useState();
 
   const toValidator = date => {
-    return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from) ? '' : 'To date must be less than from date';
+    return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from) ? '' : 'To date must after from date';
   };
   
   const onFromDateChange = (_str, newFromDate) => {
-    if (from) {
+    if (isValidDate(from) && isValidDate(newFromDate)) {
       newFromDate.setHours(from.getHours());
       newFromDate.setMinutes(from.getMinutes());
     }
-    console.log(newFromDate);
     setFrom(new Date(newFromDate));
   };
   
   const onFromTimeChange = (time, hour, minute) => {
-    if (from) {
+    if (isValidDate(from)) {
       const updatedFromDate = new Date(from);
       updatedFromDate.setHours(hour);
       updatedFromDate.setMinutes(minute);
-      console.log(updatedFromDate);
       setFrom(updatedFromDate);
     }
   };
 
   const onToDateChange = (_str, newToDate) => {
-    if (to) {
+    if (isValidDate(to) && isValidDate(newToDate)) {
       newToDate.setHours(to.getHours());
       newToDate.setMinutes(to.getMinutes());
     }
-    console.log(newToDate);
-    setTo(new Date(newToDate));
+    if (isValidDate(newToDate)){
+      setTo(newToDate);
+    }
   };
   
   const onToTimeChange = (time, hour, minute) => {
-    if (to) {
+    if (isValidDate(to)) {
       const updatedToDate = new Date(to);
       updatedToDate.setHours(hour);
       updatedToDate.setMinutes(minute);
-      console.log(updatedToDate);
       setTo(updatedToDate);
     }
   };
@@ -110,7 +108,7 @@ DateTimeRangePicker = () => {
       <FlexItem>
         <InputGroup>
           <DatePicker
-            onChange={onFromDateChange}
+            onBlur={onFromDateChange}
             aria-label="Start date"
           />
           <TimePicker 
@@ -126,8 +124,8 @@ DateTimeRangePicker = () => {
       <FlexItem>
         <InputGroup>
           <DatePicker
-            value={to ? yyyyMMddFormat(to) : ''}
-            onChange={onToDateChange}
+            value={isValidDate(to) ? yyyyMMddFormat(to) : to}
+            onBlur={onToDateChange}
             isDisabled={!isValidDate(from)}
             rangeStart={from}
             validators={[toValidator]}

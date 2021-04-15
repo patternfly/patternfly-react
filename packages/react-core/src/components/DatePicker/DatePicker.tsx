@@ -29,6 +29,8 @@ export interface DatePickerProps
   invalidFormatText?: string;
   /** Callback called every time the input value changes */
   onChange?: (value: string, date?: Date) => void;
+  /** Callback called every time focus leaves the date picker */
+  onBlur?: (value: string, date?: Date) => void;
   /** Text for label */
   helperText?: React.ReactNode;
   /** Aria label for the button to open the date picker */
@@ -58,6 +60,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   'aria-label': ariaLabel = 'Date picker',
   buttonAriaLabel = 'Toggle date picker',
   onChange = (): any => undefined,
+  onBlur = (): any => undefined,
   invalidFormatText = 'Invalid date',
   helperText,
   appendTo,
@@ -101,7 +104,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     }
   };
 
-  const onBlur = () => {
+  const onInputBlur = () => {
     if (pristine) {
       return;
     }
@@ -111,6 +114,8 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     } else {
       setErrorText(invalidFormatText);
     }
+
+    onBlur && onBlur(value, newValueDate);
   };
 
   const onDateClick = (newValueDate: Date) => {
@@ -182,7 +187,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
               validated={errorText ? 'error' : 'default'}
               value={value}
               onChange={onTextInput}
-              onBlur={onBlur}
+              onBlur={onInputBlur}
               onKeyPress={onKeyPress}
             />
             <button
