@@ -10,7 +10,6 @@ references:
   - packages/react-core/node_modules/
   - packages/react-console/node_modules/
   - packages/react-docs/node_modules/
-  - packages/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules/
   - packages/react-inline-edit-extension/node_modules/
   - packages/react-integration/demo-app-ts/node_modules/
   - packages/react-integration/node_modules/
@@ -131,10 +130,6 @@ jobs:
     - run:
         name: PF4 Jest Tests
         command: yarn test --maxWorkers=2
-    - run:
-        name: Upload results to codecov
-        command: yarn run codecov -F patternfly4
-        when: always
   build_demo_app:
     docker:
     - image: circleci/node:12
