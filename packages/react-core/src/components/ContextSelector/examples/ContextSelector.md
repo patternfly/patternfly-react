@@ -155,7 +155,7 @@ class FooterContextSelector extends React.Component {
         screenReaderLabel="Selected Project:"
         footer={
           <ContextSelectorFooter>
-            <Button variant="link">Footer action</Button>
+            <Button variant="link" isInline>Footer action</Button>
           </ContextSelectorFooter>
         }
       >
