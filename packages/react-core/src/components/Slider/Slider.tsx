@@ -136,7 +136,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   const handleThumbDragEnd = () => {
-    if (snapValue !== undefined) {
+    if (snapValue !== undefined && customSteps) {
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
       if (onChange) {
@@ -211,6 +211,16 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const newValue = (newPercentage * (max - min)) / 100 + min;
     setValue(newValue);
 
+    if (!customSteps) {
+      // snap to new value if not custom steps
+      snapValue = Math.round((newValue - min) / step) * step + min;
+      thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
+      setValue(snapValue);
+      if (onChange) {
+        onChange(snapValue);
+      }
+    }
+
     /* If custom steps are discrete, snap to closest step value */
     if (!areCustomStepsContinuous && customSteps) {
       const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= newPercentage);
@@ -224,14 +234,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           snapValue = customSteps[stepIndex].value;
         }
       }
-    } else if (!customSteps && step !== 1) {
-      // snap to new value if not custom steps and step is not 1
-      snapValue = Math.round((newValue - min) / step) * step + min;
     }
 
-    // Call value change callback unless custom steps are discrete or no custom steps and step is 1.  The value will snap after the thumb is released.
+    // Call onchange callback
     if (onChange) {
-      if ((areCustomStepsContinuous && customSteps) || (!customSteps && step === 1)) {
+      if (areCustomStepsContinuous && customSteps) {
         onChange(newValue);
       }
     }
