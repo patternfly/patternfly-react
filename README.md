@@ -2,7 +2,6 @@
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
 [![PatternFly 4 npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF4%20Core&style=for-the-badge)](https://www.npmjs.com/package/@patternfly/react-core)
-[![CodeCov](https://img.shields.io/codecov/c/gh/patternfly/patternfly-react?style=for-the-badge)](https://codecov.io/gh/patternfly/patternfly-react)
 
 This project provides a set of React components for the [PatternFly project](https://patternfly.org).  
 
