@@ -1,14 +1,16 @@
 import React from 'react';
-import { ExpandableSection } from '@patternfly/react-core';
+import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
 
 interface ExpandableSectionState {
   isExpanded: boolean;
+  isDetachedExpanded: boolean;
 }
 
 export class ExpandableSectionDemo extends React.Component<null, ExpandableSectionState> {
   static displayName = 'ExpandableSectionDemo';
   state = {
-    isExpanded: false
+    isExpanded: false,
+    isDetachedExpanded: false
   };
 
   componentDidMount() {
@@ -16,9 +18,10 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
   }
 
   onToggle = (isOpen: boolean) => this.setState({ isExpanded: isOpen });
+  onToggleDetached = (isOpen: boolean) => this.setState({ isDetachedExpanded: isOpen });
 
   render() {
-    const { isExpanded } = this.state;
+    const { isExpanded, isDetachedExpanded } = this.state;
     return (
       <React.Fragment>
         <h1> Simple Expandable Example: </h1>
@@ -38,6 +41,31 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
         <ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
           This content is visible only when the component is expanded.
         </ExpandableSection>
+        <br />
+        <h1>Detached expandable section</h1>
+        <Stack hasGutter>
+          <StackItem>
+            <ExpandableSection
+              id="detached-section"
+              isExpanded={isDetachedExpanded}
+              isDetached
+              contentId="detached-section"
+            >
+              This content is visible only when the component is expanded.
+            </ExpandableSection>
+          </StackItem>
+          <StackItem>
+            <ExpandableSectionToggle
+              id="detached"
+              isExpanded={isDetachedExpanded}
+              onToggle={this.onToggleDetached}
+              contentId="detached-section"
+              direction="up"
+            >
+              {isExpanded ? 'Show Less' : 'Show More'}
+            </ExpandableSectionToggle>
+          </StackItem>
+        </Stack>
       </React.Fragment>
     );
   }

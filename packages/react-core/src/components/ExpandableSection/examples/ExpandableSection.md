@@ -2,11 +2,13 @@
 id: Expandable section
 section: components
 cssPrefix: pf-c-expandable-section
-propComponents: ['ExpandableSection']
+propComponents: ['ExpandableSection', 'ExpandableSectionToggle']
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
@@ -17,7 +19,7 @@ class SimpleExpandableSection extends React.Component {
     this.state = {
       isExpanded: false
     };
-    this.onToggle = (isExpanded) => {
+    this.onToggle = isExpanded => {
       this.setState({
         isExpanded
       });
@@ -27,7 +29,11 @@ class SimpleExpandableSection extends React.Component {
   render() {
     const { isExpanded } = this.state;
     return (
-      <ExpandableSection toggleText={isExpanded ? 'Show Less' : 'Show More'} onToggle={this.onToggle} isExpanded={isExpanded}>
+      <ExpandableSection
+        toggleText={isExpanded ? 'Show Less' : 'Show More'}
+        onToggle={this.onToggle}
+        isExpanded={isExpanded}
+      >
         This content is visible only when the component is expanded.
       </ExpandableSection>
     );
@@ -36,23 +42,68 @@ class SimpleExpandableSection extends React.Component {
 ```
 
 ### Uncontrolled
+
 ```js
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
-
 
 <ExpandableSection toggleText="Show More">
   This content is visible only when the component is expanded.
-</ExpandableSection>
+</ExpandableSection>;
 ```
 
 ### Uncontrolled with dynamic toggle text
+
 ```js
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
-
 <ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
   This content is visible only when the component is expanded.
-</ExpandableSection>
+</ExpandableSection>;
+```
+
+### Detached
+
+```js
+import React from 'react';
+import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
+
+class DetachedExpandableSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    };
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+  }
+
+  render() {
+    const { isExpanded } = this.state;
+    const contentId = 'detached-toggle-content';
+    return (
+      <Stack hasGutter>
+        <StackItem>
+          <ExpandableSection isExpanded={isExpanded} isDetached contentId={contentId}>
+            This content is visible only when the component is expanded.
+          </ExpandableSection>
+        </StackItem>
+        <StackItem>
+          <ExpandableSectionToggle
+            isExpanded={isExpanded}
+            onToggle={this.onToggle}
+            contentId={contentId}
+            direction="up"
+          >
+            {isExpanded ? 'Show Less' : 'Show More'}
+          </ExpandableSectionToggle>
+        </StackItem>
+      </Stack>
+    );
+  }
+}
 ```

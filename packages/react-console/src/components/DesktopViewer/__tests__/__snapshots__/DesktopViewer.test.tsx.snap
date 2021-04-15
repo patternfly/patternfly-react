@@ -96,6 +96,7 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
       <div
         class="pf-c-expandable-section__content"
         hidden=""
+        id=""
       >
         <dl
           class="pf-c-description-list pf-m-horizontal"
@@ -395,6 +396,7 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
       <div
         class="pf-c-expandable-section__content"
         hidden=""
+        id=""
       >
         <dl
           class="pf-c-description-list pf-m-horizontal"
@@ -533,6 +535,7 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
       <div
         class="pf-c-expandable-section__content"
         hidden=""
+        id=""
       />
     </div>
   </div>
@@ -774,6 +777,7 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
       <div
         class="pf-c-expandable-section__content"
         hidden=""
+        id=""
       >
         <dl
           class="pf-c-description-list pf-m-horizontal"
@@ -912,6 +916,7 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
       <div
         class="pf-c-expandable-section__content"
         hidden=""
+        id=""
       />
     </div>
   </div>
@@ -1132,7 +1137,9 @@ exports[`DesktopViewer with custom more-info content 1`] = `
         </div>
         <ExpandableSection
           className=""
+          contentId=""
           isActive={false}
+          isDetached={false}
           isExpanded={false}
           onToggle={[Function]}
           toggleText="Remote Viewer Details"
@@ -1186,6 +1193,7 @@ exports[`DesktopViewer with custom more-info content 1`] = `
             <div
               className="pf-c-expandable-section__content"
               hidden={true}
+              id=""
             >
               <MoreInformationDefaultContent
                 textMoreInfoContent=""

@@ -34,4 +34,11 @@ describe('Expandable Demo Test', () => {
       .find('span')
       .should('contain', 'Show Less');
   });
+
+  it('Verify detached expandable', () => {
+    cy.get('#detached').should('have.class', 'pf-m-detached');
+    cy.get('#detached-section').should('have.class', 'pf-m-detached');
+    cy.get('#detached button').click();
+    cy.get('#detached-section').should('have.class', 'pf-m-expanded');
+  });
 });

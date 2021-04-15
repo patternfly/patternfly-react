@@ -4,23 +4,27 @@ import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface ExpandableSectionProps {
+export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Expandable Component */
   children?: React.ReactNode;
   /** Additional classes added to the Expandable Component */
   className?: string;
   /** Flag to indicate if the content is expanded */
   isExpanded?: boolean;
-  /** Text that appears in the toggle */
+  /** Text that appears in the attached toggle */
   toggleText?: string;
-  /** Text that appears in the toggle when expanded (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
+  /** Text that appears in the attached toggle when expanded (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
   toggleTextExpanded?: string;
-  /** Text that appears in the toggle when collapsed (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
+  /** Text that appears in the attached toggle when collapsed (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
   toggleTextCollapsed?: string;
-  /** Callback function to toggle the expandable content */
+  /** Callback function to toggle the expandable content. Detached expandable sections should use the onToggle property of ExpandableSectionToggle. */
   onToggle?: (isExpanded: boolean) => void;
   /** Forces active state */
   isActive?: boolean;
+  /** Indicates the expandable section has a detached toggle */
+  isDetached?: boolean;
+  /** ID of the content of the expandable section */
+  contentId?: string;
 }
 
 interface ExpandableSectionState {
@@ -44,7 +48,9 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     toggleTextCollapsed: '',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onToggle: (isExpanded): void => undefined,
-    isActive: false
+    isActive: false,
+    isDetached: false,
+    contentId: ''
   };
 
   private calculateToggleText(
@@ -73,6 +79,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       toggleTextCollapsed,
       children,
       isExpanded,
+      isDetached,
+      contentId,
       ...props
     } = this.props;
     let onToggle = onToggleProp;
@@ -100,21 +108,24 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           styles.expandableSection,
           propOrStateIsExpanded && styles.modifiers.expanded,
           isActive && styles.modifiers.active,
+          isDetached && styles.modifiers.detached,
           className
         )}
       >
-        <button
-          className={css(styles.expandableSectionToggle)}
-          type="button"
-          aria-expanded={propOrStateIsExpanded}
-          onClick={() => onToggle(!propOrStateIsExpanded)}
-        >
-          <span className={css(styles.expandableSectionToggleIcon)}>
-            <AngleRightIcon aria-hidden />
-          </span>
-          <span className={css(styles.expandableSectionToggleText)}>{computedToggleText}</span>
-        </button>
-        <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded}>
+        {!isDetached && (
+          <button
+            className={css(styles.expandableSectionToggle)}
+            type="button"
+            aria-expanded={propOrStateIsExpanded}
+            onClick={() => onToggle(!propOrStateIsExpanded)}
+          >
+            <span className={css(styles.expandableSectionToggleIcon)}>
+              <AngleRightIcon aria-hidden />
+            </span>
+            <span className={css(styles.expandableSectionToggleText)}>{computedToggleText}</span>
+          </button>
+        )}
+        <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded} id={contentId}>
           {children}
         </div>
       </div>

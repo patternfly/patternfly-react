@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { ExpandableSection } from '../ExpandableSection';
+import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
 
 const props = {};
 
@@ -26,5 +27,19 @@ test('ExpandableSection onToggle called', () => {
 
 test('Renders Uncontrolled ExpandableSection', () => {
   const view = shallow(<ExpandableSection toggleText="Show More"> test </ExpandableSection>);
+  expect(view).toMatchSnapshot();
+});
+
+test('Detached ExpandableSection renders successfully', () => {
+  const view = mount(
+    <React.Fragment>
+      <ExpandableSection {...props} isExpanded isDetached contentId="test">
+        test
+      </ExpandableSection>
+      <ExpandableSectionToggle isExpanded contentId="test" direction="up">
+        Toggle text
+      </ExpandableSectionToggle>
+    </React.Fragment>
+  );
   expect(view).toMatchSnapshot();
 });
