@@ -75,7 +75,7 @@ export const treeRow = (
                 onClick={event => onToggleRowDetails && onToggleRowDetails(event, rowIndex, content, rowData)}
               >
                 <span className="pf-c-table__details-toggle-icon">
-                  <EllipsisHIcon />
+                  <EllipsisHIcon aria-hidden />
                 </span>
               </Button>
             </span>

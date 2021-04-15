@@ -2109,7 +2109,7 @@ class TreeTable extends React.Component {
         const isChecked = this.state.checkedRows.includes(x.repositories);
         let icon = <LeafIcon />;
         if (x.children) {
-          icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon/>;
+          icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
         }
         
         return [
@@ -3403,7 +3403,7 @@ class TreeTable extends React.Component {
         const isChecked = this.state.checkedRows.includes(x.repositories);
         let icon = <LeafIcon />;
         if (x.children) {
-          icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon/>;
+          icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
         }
         return [
           {

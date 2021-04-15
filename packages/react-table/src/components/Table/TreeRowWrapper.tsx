@@ -29,7 +29,6 @@ export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
       isHidden={isHidden}
       className={css(
         className,
-        isExpanded && 'pf-m-expandable',
         isExpanded && styles.modifiers.expanded,
         isDetailsExpanded && stylesTreeView.modifiers.treeViewDetailsExpanded
       )}
