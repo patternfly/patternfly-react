@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.88.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.87.0...demo-app-ts@4.88.0) (2021-04-15)
+
+
+### Features
+
+* **Select:** Added optional item count ([#5677](https://github.com/patternfly/patternfly-react/issues/5677)) ([f36235b](https://github.com/patternfly/patternfly-react/commit/f36235b93540845d144ea0cbf2c168c1a538ae73))
+
+
+
+
+
 # [4.87.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.86.0...demo-app-ts@4.87.0) (2021-04-15)
 
 
