@@ -48,7 +48,7 @@ class BasicCodeBlock extends React.Component {
         this.timer = window.setTimeout(() => {
           this.setState({ copied: false });
           this.timer = null;
-        }, 2000);
+        }, 1000);
       });
     };
   }
@@ -94,11 +94,19 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 }
 ```
 
-<!-- ### Expandable
+### Expandable
 
 ```js
 import React from 'react';
-import { CodeBlock, CodeBlockAction, CodeBlockCode, Button } from '@patternfly/react-core';
+import {
+  CodeBlock,
+  CodeBlockAction,
+  CodeBlockCode,
+  ClipboardCopyButton,
+  ExpandableSection,
+  ExpandableSectionToggle,
+  Button
+} from '@patternfly/react-core';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 
@@ -138,7 +146,7 @@ class BasicCodeBlock extends React.Component {
         this.timer = window.setTimeout(() => {
           this.setState({ copied: false });
           this.timer = null;
-        }, 2000);
+        }, 1000);
       });
     };
   }
@@ -151,6 +159,14 @@ kind: HelmChartRepository
 metadata:
 name: azure-sample-repo
 spec:
+connectionConfig:
+url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
+
+    const code = `apiVersion: helm.openshift.io/v1beta1/
+kind: HelmChartRepository
+metadata:
+name: azure-sample-repo`;
+    const expandedCode = `spec:
 connectionConfig:
 url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
@@ -179,27 +195,21 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
     return (
       <CodeBlock actions={actions}>
         <CodeBlockCode>
-          apiVersion: helm.openshift.io/v1beta1/
-          <br />
-          kind: HelmChartRepository
-          <br />
-          metadata:
-          <br />
-          name: azure-sample-repo
-          <br />
+          {code}
           <ExpandableSection isExpanded={isExpanded} isDetached contentId="code-block-expand">
-            spec:
-            <br />
-            connectionConfig:
-            <br />
-            url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs{' '}
+            {expandedCode}
           </ExpandableSection>
         </CodeBlockCode>
-        <ExpandableSectionToggle isExpanded={isExpanded} onToggle={this.onToggle} contentId="code-block-expand">
+        <ExpandableSectionToggle
+          isExpanded={isExpanded}
+          onToggle={this.onToggle}
+          contentId="code-block-expand"
+          direction="up"
+        >
           {isExpanded ? 'Show Less' : 'Show More'}
         </ExpandableSectionToggle>
       </CodeBlock>
     );
   }
 }
-``` -->
+```
