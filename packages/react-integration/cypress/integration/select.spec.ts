@@ -71,6 +71,9 @@ describe('Select Test', () => {
         .parent()
         .find(selector);
     find('button.pf-c-select__toggle-button').click();
+    find('#Alabama > .pf-c-select__menu-item > .pf-c-select__menu-item-row > .pf-c-select__menu-item-count').should(
+      'exist'
+    );
     find('li:nth-child(3) button').click();
     find('#typeahead-select-select-typeahead').should('have.value', 'Florida');
     find('button.pf-c-select__toggle-clear:first').click();
