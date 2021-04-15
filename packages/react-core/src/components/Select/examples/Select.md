@@ -377,7 +377,7 @@ class CheckboxSelectInput extends React.Component {
   }
 }
 ```
-### Checkbox inputs with counts
+### Checkbox input with counts
 
 ```js
 import React from 'react';
