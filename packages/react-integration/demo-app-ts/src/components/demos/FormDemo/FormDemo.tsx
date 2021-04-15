@@ -165,7 +165,7 @@ export class FormDemo extends Component<FormProps, FormState> {
               ))}
             </Select>
           </FormGroup>
-          <FormSection>
+          <FormSection title="Title" titleElement="h4">
             <FormGroup
               id="formgroup-validated"
               label="Validated Age"
