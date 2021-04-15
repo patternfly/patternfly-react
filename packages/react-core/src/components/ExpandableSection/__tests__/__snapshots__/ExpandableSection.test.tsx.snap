@@ -2,8 +2,32 @@
 
 exports[`Detached ExpandableSection renders successfully 1`] = `
 Array [
+  <ExpandableSection
+    className=""
+    contentId="test"
+    isActive={false}
+    isDetached={true}
+    isExpanded={true}
+    onToggle={[Function]}
+    toggleText=""
+    toggleTextCollapsed=""
+    toggleTextExpanded=""
+  >
+    <div
+      className="pf-c-expandable-section pf-m-expanded pf-m-detached"
+    >
+      <div
+        className="pf-c-expandable-section__content"
+        hidden={false}
+        id="test"
+      >
+        test
+      </div>
+    </div>
+  </ExpandableSection>,
   <ExpandableSectionToggle
     contentId="test"
+    direction="up"
     isExpanded={true}
   >
     <div
@@ -53,29 +77,6 @@ Array [
       </button>
     </div>
   </ExpandableSectionToggle>,
-  <ExpandableSection
-    className=""
-    contentId="test"
-    isActive={false}
-    isDetached={true}
-    isExpanded={true}
-    onToggle={[Function]}
-    toggleText=""
-    toggleTextCollapsed=""
-    toggleTextExpanded=""
-  >
-    <div
-      className="pf-c-expandable-section pf-m-expanded pf-m-detached"
-    >
-      <div
-        className="pf-c-expandable-section__content"
-        hidden={false}
-        id="test"
-      >
-        test
-      </div>
-    </div>
-  </ExpandableSection>,
 ]
 `;
 

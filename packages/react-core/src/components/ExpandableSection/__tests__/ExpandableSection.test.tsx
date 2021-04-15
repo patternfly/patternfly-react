@@ -33,12 +33,12 @@ test('Renders Uncontrolled ExpandableSection', () => {
 test('Detached ExpandableSection renders successfully', () => {
   const view = mount(
     <React.Fragment>
-      <ExpandableSectionToggle isExpanded contentId="test">
-        Toggle text
-      </ExpandableSectionToggle>
       <ExpandableSection {...props} isExpanded isDetached contentId="test">
         test
       </ExpandableSection>
+      <ExpandableSectionToggle isExpanded contentId="test" direction="up">
+        Toggle text
+      </ExpandableSectionToggle>
     </React.Fragment>
   );
   expect(view).toMatchSnapshot();

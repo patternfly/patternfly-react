@@ -93,7 +93,12 @@ class DetachedExpandableSection extends React.Component {
           </ExpandableSection>
         </StackItem>
         <StackItem>
-          <ExpandableSectionToggle isExpanded={isExpanded} onToggle={this.onToggle} contentId={contentId}>
+          <ExpandableSectionToggle
+            isExpanded={isExpanded}
+            onToggle={this.onToggle}
+            contentId={contentId}
+            direction="up"
+          >
             {isExpanded ? 'Show Less' : 'Show More'}
           </ExpandableSectionToggle>
         </StackItem>

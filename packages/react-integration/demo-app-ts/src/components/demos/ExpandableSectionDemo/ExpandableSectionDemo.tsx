@@ -60,6 +60,7 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
               isExpanded={isDetachedExpanded}
               onToggle={this.onToggleDetached}
               contentId="detached-section"
+              direction="up"
             >
               {isExpanded ? 'Show Less' : 'Show More'}
             </ExpandableSectionToggle>
