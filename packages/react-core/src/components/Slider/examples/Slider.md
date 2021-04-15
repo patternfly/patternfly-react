@@ -172,7 +172,7 @@ class ValueInput extends React.Component {
       let newValue;
       let newInputValue;
 
-      if (!inputValue) { 
+      if (inputValue === undefined) { 
         const step = this.stepsDiscrete.find(step => step.value === value);
         newInputValue = step ? step.label : 0;
         newInputValue = Number(newInputValue);
@@ -209,7 +209,7 @@ class ValueInput extends React.Component {
       let newValue;
       let newInputValue;
 
-      if (!inputValue) { 
+      if (inputValue === undefined) { 
         const step = this.stepsPercent.find(step => step.value === value);
         newInputValue = step ? step.label.slice(0, -1) : 0;
         newInputValue = Number(newInputValue);
@@ -242,8 +242,13 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangeContinuous = (value) => { 
-      const newValue = value > 100 ? 100 : Math.floor(value);
+    this.onChangeContinuous = (value, inputValue) => { 
+      let newValue;
+      if (inputValue === undefined) { 
+        newValue = Math.floor(value);
+      } else {
+        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+      }
       this.setState({
         inputValueContinuous: newValue,
         valueContinuous: newValue
@@ -298,16 +303,13 @@ class ThumbValueInput extends React.Component {
       inputValue: 50
     };
 
-    this.onChange = value => {
-      const newValue = Number(value).toFixed(2);
-      this.setState({
-        value: newValue,
-        inputValue: newValue
-      });
-    };
-
-    this.onChange = value => {
-      const newValue = value > 100 ? 100 : Math.floor(value);
+    this.onChange = (value, inputValue) => { 
+      let newValue;
+      if (inputValue === undefined) { 
+        newValue = Number(value).toFixed(2);
+      } else {
+        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+      }
       this.setState({
         value: newValue,
         inputValue: newValue
@@ -323,7 +325,6 @@ class ThumbValueInput extends React.Component {
         inputValue={this.state.inputValue}
         inputLabel="%"
         inputPosition="aboveThumb"
-        onChange={this.onChange}
         onChange={this.onChange}
       />
     );
@@ -358,16 +359,13 @@ class SliderActions extends React.Component {
       });
     };
 
-    this.onChange2 = value => {
-      const newValue = Math.floor(Number(value));
-      this.setState({
-        value2: newValue,
-        inputValue: newValue
-      });
-    };
-
-    this.onChange = value => {
-      const newValue = value > 100 ? 100 : Math.floor(Number(value));
+    this.onChange2 =(value, inputValue) => { 
+      let newValue;
+      if (inputValue === undefined) { 
+        newValue = Math.floor(Number(value));
+      } else {
+        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+      }
       this.setState({
         value2: newValue,
         inputValue: newValue
