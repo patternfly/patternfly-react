@@ -5,6 +5,8 @@ import formStyles from '@patternfly/react-styles/css/components/FormControl/form
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
@@ -24,6 +26,7 @@ import {
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
+import { ValidatedOptions } from '../../helpers/constants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -48,8 +51,12 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
-  /** Flag indicating the select is invlaid */
-  isInvalid?: boolean;
+  /** Value to indicate if the select is modified to show that validation state.
+   * If set to success, select will be modified to indicate valid state.
+   * If set to error, select will be modified to indicate error state.
+   * If set to warning, select will be modified to indicate warning state.
+   */
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
   /** Title text of Select */
@@ -152,7 +159,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
-    isInvalid: false,
+    validated: 'default',
     'aria-label': '',
     'aria-labelledby': '',
     typeAheadAriaLabel: '',
@@ -631,7 +638,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isGrouped,
       isPlain,
       isDisabled,
-      isInvalid,
+      validated,
       selections: selectionsProp,
       typeAheadAriaLabel,
       clearSelectionsAriaLabel,
@@ -880,7 +887,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         className={css(
           styles.select,
           isOpen && styles.modifiers.expanded,
-          isInvalid && styles.modifiers.invalid,
+          validated === ValidatedOptions.success && 'pf-m-success',
+          validated === ValidatedOptions.warning && 'pf-m-warning',
+          validated === ValidatedOptions.error && styles.modifiers.invalid,
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
@@ -974,7 +983,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                   id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                   aria-label={typeAheadAriaLabel}
-                  aria-invalid={isInvalid}
+                  aria-invalid={validated === ValidatedOptions.error}
                   placeholder={placeholderText as string}
                   value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                   type="text"
@@ -988,9 +997,19 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
             </React.Fragment>
           )}
-          {isInvalid && (
+          {validated === ValidatedOptions.success && (
+            <span className={css(styles.selectToggleStatusIcon)}>
+              <CheckCircleIcon aria-hidden="true" />
+            </span>
+          )}
+          {validated === ValidatedOptions.error && (
             <span className={css(styles.selectToggleStatusIcon)}>
               <ExclamationCircleIcon aria-hidden="true" />
+            </span>
+          )}
+          {validated === ValidatedOptions.warning && (
+            <span className={css(styles.selectToggleStatusIcon)}>
+              <ExclamationTriangleIcon aria-hidden="true" />
             </span>
           )}
         </SelectToggle>

@@ -567,7 +567,6 @@ export class SelectDemo extends Component<SelectDemoState> {
             isOpen={singleisOpen}
             aria-labelledby={titleId}
             direction={this.state.direction}
-            isInvalid={singleSelected === ''}
             maxHeight={200}
           >
             {this.singleOptions.map((option, index) => (

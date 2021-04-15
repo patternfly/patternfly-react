@@ -37,16 +37,11 @@ describe('Select Test', () => {
   });
 
   it('Verify Single Select', () => {
-    cy.get('.pf-c-select:first').should('have.class', 'pf-m-invalid');
     cy.get('#single-select').click();
     cy.get('#Miss > .pf-c-select__menu-item').click();
     cy.get('#single-select')
       .contains('Miss')
       .should('exist');
-    cy.get('.pf-c-select:first').should('not.have.class', 'pf-m-invalid');
-    cy.get('#single-select').click();
-    cy.get('#Choose\\.\\.\\. > .pf-c-select__menu-item').click();
-    cy.get('.pf-c-select:first').should('have.class', 'pf-m-invalid');
   });
 
   it('Verify Description Select', () => {

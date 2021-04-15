@@ -36,7 +36,6 @@ class SingleSelectInput extends React.Component {
       isOpen: false,
       selected: null,
       isDisabled: false,
-      isInvalidState: false,
       direction: SelectDirection.down
     };
 
@@ -76,12 +75,6 @@ class SingleSelectInput extends React.Component {
       });
     };
 
-    this.setInvalidState = checked => {
-      this.setState({
-        isInvalidState: checked
-      });
-    }
-
     this.toggleDirection = () => {
       if (this.state.direction === SelectDirection.up) {
         this.setState({
@@ -96,7 +89,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isOpen, selected, isDisabled, direction, isToggleIcon, isInvalidState } = this.state;
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id-1';
     return (
       <div>
@@ -114,7 +107,6 @@ class SingleSelectInput extends React.Component {
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
-          isInvalid={isInvalidState && selected === null  }
         >
           {this.options}
         </Select>
@@ -141,14 +133,6 @@ class SingleSelectInput extends React.Component {
           aria-label="show icon checkbox"
           id="toggle-icon"
           name="toggle-icon"
-        />
-        <Checkbox
-          label="invalid state"
-          isChecked={isInvalidState}
-          onChange={this.setInvalidState}
-          aria-label="invalid checkbox"
-          id="toggle-invalid"
-          name="toggle-invalid"
         />
       </div>
     );
@@ -315,7 +299,94 @@ class GroupedSingleSelectInput extends React.Component {
   }
 }
 ```
+### Validated
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
+class ValidatedSelect extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Choose..." isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <SelectOption key={5} value="Dr" />,
+      <SelectOption key={6} value="Other" />
+    ];
+
+    this.state = {
+      isOpen: false,
+      selected: null,
+      isDisabled: false,
+      validated: 'default'
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      let validatedState = 'success';
+      if (isPlaceholder) {
+        this.clearSelection();
+        validatedState = 'error';
+      } else {
+        if (selection === 'Other') {
+          validatedState = 'warning';
+        } else {
+          validatedState = 'success';
+        }
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+      this.setState({
+          validated: validatedState
+      });
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon, validated } = this.state;
+    const titleId = 'select-validated-title';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          placeholderText="Select an option"
+          aria-label="Select Input with validation"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          isDisabled={isDisabled}
+          validated={validated}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
 ### Checkbox input
 
 ```js
