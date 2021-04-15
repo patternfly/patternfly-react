@@ -25,6 +25,7 @@ export interface ClipboardCopyButtonProps
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Aria-label for the copy button */
   'aria-label'?: string;
+  /** Variant of the copy button */
   variant?: 'control' | 'plain';
 }
 
