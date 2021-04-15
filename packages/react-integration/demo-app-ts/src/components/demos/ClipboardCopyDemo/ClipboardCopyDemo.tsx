@@ -1,5 +1,6 @@
 import React from 'react';
-import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
+import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@patternfly/react-core';
+import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 
 export class ClipboardCopyDemo extends React.Component {
   static displayName = 'ClipboardCopyDemo';
@@ -14,7 +15,18 @@ export class ClipboardCopyDemo extends React.Component {
         <br />
         <div style={{ backgroundColor: 'white', padding: '10px' }}>
           This copy:
-          <ClipboardCopy id="inline-copy" variant={ClipboardCopyVariant.inlineCompact} isBlock>
+          <ClipboardCopy
+            id="inline-copy"
+            variant={ClipboardCopyVariant.inlineCompact}
+            isBlock
+            additionalActions={
+              <ClipboardCopyAction>
+                <Button variant="plain" aria-label="Run in web terminal">
+                  <PlayIcon aria-hidden />
+                </Button>
+              </ClipboardCopyAction>
+            }
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus, libero nec dapibus ultricies, urna
             purus pretium mauris, ullamcorper pharetra lacus nibh vitae enim.
           </ClipboardCopy>
