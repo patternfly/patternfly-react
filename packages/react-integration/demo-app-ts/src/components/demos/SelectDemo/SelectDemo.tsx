@@ -90,11 +90,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     customTypeaheadMultiSelected: [''],
     direction: SelectDirection.down,
     typeaheadOptions: [
-      { value: 'Alabama', disabled: false },
-      { value: 'Boston', disabled: false },
-      { value: 'Florida', disabled: false },
-      { value: 'New Jersey', disabled: false },
-      { value: 'Texas', disabled: false }
+      { value: 'Alabama', disabled: false, itemCount: 3 },
+      { value: 'Boston', disabled: false, itemCount: 10 },
+      { value: 'Florida', disabled: false, itemCount: 7 },
+      { value: 'New Jersey', disabled: false, itemCount: 1 },
+      { value: 'Texas', disabled: false, itemCount: 20 }
     ],
     typeaheadLabelOptions: [
       { label: 'Alabama', value: 'AL', disabled: false },
@@ -860,7 +860,13 @@ export class SelectDemo extends Component<SelectDemoState> {
             noResultsFoundText="Item not found"
           >
             {typeaheadOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value} />
+              <SelectOption
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                id={option.value}
+                itemCount={option.itemCount}
+              />
             ))}
           </Select>
         </div>

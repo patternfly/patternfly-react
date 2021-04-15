@@ -377,6 +377,82 @@ class CheckboxSelectInput extends React.Component {
   }
 }
 ```
+### Checkbox input with counts
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVarian, Divider } from '@patternfly/react-core';
+
+class CheckboxSelectWithCounts extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" itemCount={3} />,
+      <SelectOption key={1} value="Cancelled" itemCount={1} />,
+      <SelectOption key={2} value="Paused" itemCount={15} />,
+      <SelectOption key={3} value="Warning" itemCount={2} />,
+      <SelectOption key={4} value="Restarted" itemCount={8} />
+    ];
+  }
+
+  render() {
+    const { isOpen, selected } = this.state;
+    const titleId = 'checkbox-select-with-counts-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox With Counts Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
 
 ### Checkbox input no badge
 

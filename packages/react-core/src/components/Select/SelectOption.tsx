@@ -20,6 +20,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   className?: string;
   /** Description of the item for single and both typeahead select variants */
   description?: React.ReactNode;
+  /** Number of items matching the option */
+  itemCount?: number;
   /** Internal index of the option */
   index?: number;
   /** Indicates which component will be used as select item */
@@ -141,6 +143,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       className,
       id,
       description,
+      itemCount,
       value,
       onClick,
       isDisabled,
@@ -186,6 +189,15 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       </button>
     );
 
+    const itemDisplay = itemCount ? (
+      <span className={css(styles.selectMenuItemRow)}>
+        <span className={css(styles.selectMenuItemText)}>{children || value.toString()}</span>
+        <span className={css(styles.selectMenuItemCount)}>{itemCount}</span>
+      </span>
+    ) : (
+      children || value.toString()
+    );
+
     return (
       <SelectConsumer>
         {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
@@ -229,7 +241,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   {description && (
                     <React.Fragment>
                       <span className={css(styles.selectMenuItemMain)}>
-                        {children || value.toString()}
+                        {itemDisplay}
                         {isSelected && (
                           <span className={css(styles.selectMenuItemIcon)}>
                             <CheckIcon aria-hidden />
@@ -241,7 +253,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   )}
                   {!description && (
                     <React.Fragment>
-                      {children || value.toString()}
+                      {itemDisplay}
                       {isSelected && (
                         <span className={css(styles.selectMenuItemIcon)}>
                           <CheckIcon aria-hidden />
@@ -282,7 +294,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   disabled={isDisabled}
                 />
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
-                  {children || value.toString()}
+                  {itemDisplay}
                 </span>
                 {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
               </label>
@@ -305,7 +317,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   }}
                   type="button"
                 >
-                  {children || value.toString()}
+                  {itemDisplay}
                 </Component>
               </div>
             )}

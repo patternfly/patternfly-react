@@ -37,6 +37,15 @@ describe('select options', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders with item count successfully', () => {
+    const view = mount(
+      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+        <SelectOption id="option-1" value="test" itemCount={3} sendRef={jest.fn()} />
+      </SelectProvider>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('renders with custom display successfully', () => {
     const view = mount(
       <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
