@@ -71,6 +71,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
             aria-label="Copy to clipboard"
             onClick={e => this.onClick(e, code)}
             exitDelay={600}
+            maxWidth="110px"
             variant="plain"
           >
             {this.state.copied ? 'Successfully copied to clipboard!' : 'Copy to clipboard'}
@@ -162,6 +163,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
             aria-label="Copy to clipboard"
             onClick={e => this.onClick(e, copyBlock)}
             exitDelay={600}
+            maxWidth="110px"
             variant="plain"
           >
             {this.state.copied ? 'Successfully copied to clipboard!' : 'Copy to clipboard'}
