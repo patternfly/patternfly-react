@@ -71,7 +71,6 @@ export const treeRow = (
               <Button
                 variant="plain"
                 aria-expanded={isDetailsExpanded}
-                className={css(isDetailsExpanded && styles.modifiers.expanded)}
                 aria-label={showDetailsAriaLabel || 'Show row details'}
                 onClick={event => onToggleRowDetails && onToggleRowDetails(event, rowIndex, content, rowData)}
               >
