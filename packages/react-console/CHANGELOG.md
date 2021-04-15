@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.3.40...@patternfly/react-console@4.4.0) (2021-04-15)
+
+
+### Features
+
+* **ExpandableSection:** add detached variant, update tests ([#5643](https://github.com/patternfly/patternfly-react/issues/5643)) ([28bea0a](https://github.com/patternfly/patternfly-react/commit/28bea0afd738e5f0b9b656b0dac3920e2f1c5c9e))
+
+
+
+
+
 ## [4.3.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.3.39...@patternfly/react-console@4.3.40) (2021-04-15)
 
 **Note:** Version bump only for package @patternfly/react-console

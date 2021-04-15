@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.89.0...@patternfly/react-integration@4.90.0) (2021-04-15)
+
+
+### Features
+
+* **ExpandableSection:** add detached variant, update tests ([#5643](https://github.com/patternfly/patternfly-react/issues/5643)) ([28bea0a](https://github.com/patternfly/patternfly-react/commit/28bea0afd738e5f0b9b656b0dac3920e2f1c5c9e))
+
+
+
+
+
 # [4.89.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.88.0...@patternfly/react-integration@4.89.0) (2021-04-15)
 
 
