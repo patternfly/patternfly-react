@@ -22,7 +22,8 @@ export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, t
 
 export enum ClipboardCopyVariant {
   inline = 'inline',
-  expansion = 'expansion'
+  expansion = 'expansion',
+  inlineCompact = 'inline-compact'
 }
 
 export interface ClipboardCopyState {
@@ -48,8 +49,10 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   isExpanded?: boolean;
   /** Flag to determine if clipboard copy content includes code */
   isCode?: boolean;
+  /** Flag to determine if inline clipboard copy should be block styling */
+  isBlock?: boolean;
   /** Adds Clipboard Copy variant styles. */
-  variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion';
+  variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion' | 'inline-compact';
   /** Copy button popover position. */
   position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Maximum width of the tooltip (default 150px). */
@@ -66,6 +69,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   onChange?: (text?: string | number) => void;
   /** The text which is copied. */
   children: React.ReactNode;
+  /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
+  additionalActions?: React.ReactNode;
 }
 
 export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
@@ -95,7 +100,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     onCopy: clipboardCopyFunc,
     onChange: (): any => undefined,
     textAriaLabel: 'Copyable input',
-    toggleAriaLabel: 'Show content'
+    toggleAriaLabel: 'Show content',
+    additionalActions: null
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -125,6 +131,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
       isCode,
+      isBlock,
       exitDelay,
       maxWidth,
       entryDelay,
@@ -137,6 +144,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       variant,
       position,
       className,
+      additionalActions,
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
@@ -144,68 +152,124 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     const contentIdPrefix = 'content-';
     return (
       <div
-        className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, className)}
+        className={css(
+          styles.clipboardCopy,
+          variant === 'inline-compact' && styles.modifiers.inline,
+          isBlock && styles.modifiers.block,
+          this.state.expanded && styles.modifiers.expanded,
+          className
+        )}
         {...divProps}
       >
-        <GenerateId prefix="">
-          {id => (
-            <React.Fragment>
-              <div className={css(styles.clipboardCopyGroup)}>
-                {variant === 'expansion' && (
-                  <ClipboardCopyToggle
-                    isExpanded={this.state.expanded}
-                    onClick={this.expandContent}
-                    id={`${toggleIdPrefix}-${id}`}
-                    textId={`${textIdPrefix}-${id}`}
-                    contentId={`${contentIdPrefix}-${id}`}
-                    aria-label={toggleAriaLabel}
-                  />
+        {variant === 'inline-compact' && (
+          <GenerateId prefix="">
+            {id => (
+              <React.Fragment>
+                {!isCode && (
+                  <span className={css(styles.clipboardCopyText)} id={`${textIdPrefix}${id}`}>
+                    {this.state.text}
+                  </span>
                 )}
-                <TextInput
-                  isReadOnly={isReadOnly || this.state.expanded}
-                  onChange={this.updateText}
-                  value={this.state.text as string | number}
-                  id={`text-input-${id}`}
-                  aria-label={textAriaLabel}
-                />
-                <ClipboardCopyButton
-                  exitDelay={exitDelay}
-                  entryDelay={entryDelay}
-                  maxWidth={maxWidth}
-                  position={position}
-                  id={`copy-button-${id}`}
-                  textId={`text-input-${id}`}
-                  aria-label={hoverTip}
-                  onClick={(event: any) => {
-                    if (this.timer) {
-                      window.clearTimeout(this.timer);
-                      this.setState({ copied: false });
-                    }
-                    onCopy(event, this.state.text);
-                    this.setState({ copied: true }, () => {
-                      this.timer = window.setTimeout(() => {
+                {isCode && (
+                  <code className={css(styles.clipboardCopyText, styles.modifiers.code)} id={`${textIdPrefix}${id}`}>
+                    {this.state.text}
+                  </code>
+                )}
+                <span className={css(styles.clipboardCopyActions)}>
+                  <span className={css(styles.clipboardCopyActionsItem)}>
+                    <ClipboardCopyButton
+                      variant="plain"
+                      exitDelay={exitDelay}
+                      entryDelay={entryDelay}
+                      maxWidth={maxWidth}
+                      position={position}
+                      id={`copy-button-${id}`}
+                      textId={`text-input-${id}`}
+                      aria-label={hoverTip}
+                      onClick={(event: any) => {
+                        if (this.timer) {
+                          window.clearTimeout(this.timer);
+                          this.setState({ copied: false });
+                        }
+                        onCopy(event, this.state.text);
+                        this.setState({ copied: true }, () => {
+                          this.timer = window.setTimeout(() => {
+                            this.setState({ copied: false });
+                            this.timer = null;
+                          }, switchDelay);
+                        });
+                      }}
+                    >
+                      {this.state.copied ? clickTip : hoverTip}
+                    </ClipboardCopyButton>
+                  </span>
+                  {additionalActions && additionalActions}
+                </span>
+              </React.Fragment>
+            )}
+          </GenerateId>
+        )}
+        {variant !== 'inline-compact' && (
+          <GenerateId prefix="">
+            {id => (
+              <React.Fragment>
+                <div className={css(styles.clipboardCopyGroup)}>
+                  {variant === 'expansion' && (
+                    <ClipboardCopyToggle
+                      isExpanded={this.state.expanded}
+                      onClick={this.expandContent}
+                      id={`${toggleIdPrefix}${id}`}
+                      textId={`${textIdPrefix}${id}`}
+                      contentId={`${contentIdPrefix}${id}`}
+                      aria-label={toggleAriaLabel}
+                    />
+                  )}
+                  <TextInput
+                    isReadOnly={isReadOnly || this.state.expanded}
+                    onChange={this.updateText}
+                    value={this.state.text as string | number}
+                    id={`text-input-${id}`}
+                    aria-label={textAriaLabel}
+                  />
+                  <ClipboardCopyButton
+                    exitDelay={exitDelay}
+                    entryDelay={entryDelay}
+                    maxWidth={maxWidth}
+                    position={position}
+                    id={`copy-button-${id}`}
+                    textId={`text-input-${id}`}
+                    aria-label={hoverTip}
+                    onClick={(event: any) => {
+                      if (this.timer) {
+                        window.clearTimeout(this.timer);
                         this.setState({ copied: false });
-                        this.timer = null;
-                      }, switchDelay);
-                    });
-                  }}
-                >
-                  {this.state.copied ? clickTip : hoverTip}
-                </ClipboardCopyButton>
-              </div>
-              {this.state.expanded && (
-                <ClipboardCopyExpanded
-                  isReadOnly={isReadOnly}
-                  isCode={isCode}
-                  id={`content-${id}`}
-                  onChange={this.updateText}
-                >
-                  {this.state.text}
-                </ClipboardCopyExpanded>
-              )}
-            </React.Fragment>
-          )}
-        </GenerateId>
+                      }
+                      onCopy(event, this.state.text);
+                      this.setState({ copied: true }, () => {
+                        this.timer = window.setTimeout(() => {
+                          this.setState({ copied: false });
+                          this.timer = null;
+                        }, switchDelay);
+                      });
+                    }}
+                  >
+                    {this.state.copied ? clickTip : hoverTip}
+                  </ClipboardCopyButton>
+                </div>
+                {this.state.expanded && (
+                  <ClipboardCopyExpanded
+                    isReadOnly={isReadOnly}
+                    isCode={isCode}
+                    id={`content-${id}`}
+                    onChange={this.updateText}
+                  >
+                    {this.state.text}
+                  </ClipboardCopyExpanded>
+                )}
+              </React.Fragment>
+            )}
+          </GenerateId>
+        )}
       </div>
     );
   };
