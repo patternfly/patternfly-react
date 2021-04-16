@@ -2,7 +2,7 @@
 id: Clipboard copy
 section: components
 cssPrefix: pf-c-copyclipboard
-propComponents: ['ClipboardCopy']
+propComponents: ['ClipboardCopy', 'ClipboardCopyButton']
 ---
 
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';

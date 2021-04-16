@@ -18,6 +18,7 @@ export * from './Card';
 export * from './Checkbox';
 export * from './ChipGroup';
 export * from './ClipboardCopy';
+export * from './CodeBlock';
 export * from './ContextSelector';
 export * from './DataList';
 export * from './DatePicker';
