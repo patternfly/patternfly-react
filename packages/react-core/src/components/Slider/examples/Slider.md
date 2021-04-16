@@ -70,7 +70,7 @@ class DiscreteInput extends React.Component {
         <br />
         <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value2)}</Text>
         <Text component={TextVariants.small}>(min = 0, max = 200, step = 50) </Text>
-        <Slider value={this.state.value2} onChange={this.onChange2} max={200} step={50} />
+        <Slider value={this.state.value2} onChange={this.onChange2} max={200} step={50} showTicks/>
         <br />
         <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value3)}</Text>
         <Text component={TextVariants.small}>(min = -25, max = 75, step = 10) </Text>
@@ -114,6 +114,7 @@ class ContinuousInput extends React.Component {
         <Text component={TextVariants.h3}>Slider Value is: {this.state.value.toFixed(2)}</Text>
         <Slider value={this.state.value} onChange={this.onChange} />
         <br />
+        <Text component={TextVariants.h3}>Slider Value is: {this.state.valueCustom.toFixed(2)}</Text>
         <Slider
           onChange={this.onChangeCustom}
           value={this.state.valueCustom}

@@ -136,14 +136,6 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   const handleThumbDragEnd = () => {
-    if (snapValue !== undefined && customSteps) {
-      thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
-      setValue(snapValue);
-      if (onChange) {
-        onChange(snapValue);
-      }
-    }
-
     document.removeEventListener('mousemove', callbackThumbMove);
     document.removeEventListener('mouseup', callbackThumbUp);
     document.removeEventListener('touchmove', callbackThumbMove);
@@ -216,9 +208,6 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       snapValue = Math.round((newValue - min) / step) * step + min;
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
-      if (onChange) {
-        onChange(snapValue);
-      }
     }
 
     /* If custom steps are discrete, snap to closest step value */
@@ -234,13 +223,16 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           snapValue = customSteps[stepIndex].value;
         }
       }
+      setValue(snapValue);
     }
 
     // Call onchange callback
     if (onChange) {
-      if (areCustomStepsContinuous && customSteps) {
-        onChange(newValue);
-      }
+      if (snapValue !== undefined) {
+        onChange(snapValue);
+      } else {
+        onChange(newValue)
+      } 
     }
   };
 
