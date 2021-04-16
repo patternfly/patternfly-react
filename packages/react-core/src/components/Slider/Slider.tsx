@@ -232,7 +232,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         onChange(snapValue);
       } else {
         onChange(newValue);
-      } 
+      }
     }
   };
 
