@@ -7,6 +7,7 @@ propComponents:
     'ActionGroup',
     'Form',
     'FormGroup',
+    'FormSection',
     'FormHelperText',
     'FormFieldGroup',
     'FormFieldGroupExpandable',
@@ -267,11 +268,10 @@ class HorizontalForm extends React.Component {
             id="horizontal-form-exp"
           />
         </FormGroup>
-        <FormGroup>
-          <Checkbox label="Follow up via email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
-        </FormGroup>
-        <FormGroup>
-          <Checkbox label="Remember my password for 30 days" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
+        <FormGroup label="How can we contact you?" isRequired isStack hasNoPaddingTop>
+          <Checkbox label="Email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
+          <Checkbox label="Phone" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
+          <Checkbox label="Please don't contact me" id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
@@ -595,7 +595,7 @@ class InvalidForm extends React.Component {
 }
 ```
 
-### Horizontal no padding top
+### Horizontal stacked no padding top
 
 ```js
 import React from 'react';
@@ -605,7 +605,7 @@ class HorizontalForm extends React.Component {
   render() {
     return (
       <Form isHorizontal>
-        <FormGroup label="Label" hasNoPaddingTop fieldId="options">
+        <FormGroup label="Label" hasNoPaddingTop fieldId="options" isStack>
           <Checkbox label="option 1" id="option-01" />
           <Checkbox label="option 2" id="option-02" />
         </FormGroup>
@@ -615,7 +615,7 @@ class HorizontalForm extends React.Component {
 }
 ```
 
-### Horizontal helper text on top
+### Horizontal stacked helper text on top
 
 ```js
 import React from 'react';
@@ -638,6 +638,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           isHelperTextBeforeField
           hasNoPaddingTop
           fieldId="options"
+          isStack
         >
           <Checkbox label="option 1" id="option-03" />
           <Checkbox label="option 2" id="option-04" />
@@ -686,7 +687,7 @@ class FormSections extends React.Component {
             />
           </FormGroup>
         </FormSection>
-        <FormSection>
+        <FormSection title="Form section 2 (optional title)" titleElement="h2">
           <FormGroup label="Form section 2 input" isRequired fieldId="simple-form-section-2-input">
             <TextInput
               isRequired

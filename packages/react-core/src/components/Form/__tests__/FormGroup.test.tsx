@@ -91,6 +91,17 @@ describe('FormGroup component', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('should render stacked horizontal form group variant', () => {
+    const view = mount(
+      <Form isHorizontal>
+        <FormGroup label="label" fieldId="label-id" isStack helperText="this is helperText">
+          <input id="label-id" />
+        </FormGroup>
+      </Form>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('should render helper text above input', () => {
     const view = mount(
       <Form isHorizontal>

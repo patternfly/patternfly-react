@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.113.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.112.0...@patternfly/react-core@4.113.0) (2021-04-16)
+
+
+### Features
+
+* **Form:** Add stacked variant and section title ([#5621](https://github.com/patternfly/patternfly-react/issues/5621)) ([d69f902](https://github.com/patternfly/patternfly-react/commit/d69f90236fe967b2ac2a0ca38cc3469318705385))
+
+
+
+
+
 # [4.112.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.111.0...@patternfly/react-core@4.112.0) (2021-04-16)
 
 
