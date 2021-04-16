@@ -13108,7 +13108,7 @@ monaco-editor-webpack-plugin@^2.1.0:
   dependencies:
     loader-utils "^2.0.0"
 
-monaco-editor@*:
+monaco-editor@*, monaco-editor@~0.21.0:
   version "0.21.3"
   resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.21.3.tgz#3381b66614b64d1c5e3b77dd5564ad496d1b4e5d"
 
@@ -17449,10 +17449,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.4.33:
-  version "0.4.33"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.4.33.tgz#b93020ed6032ca1a4900d7d20a9be63c7221619a"
-  integrity sha512-sk3nU+XSiuK5eH938nu7o/PDOylR1JJ1IGV9ejMm4O11781w/BjVr2cVgh0kqKASP6dZBNs4JLFZaUb6P96h1A==
+theme-patternfly-org@0.4.53:
+  version "0.4.53"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.4.53.tgz#5642d5a604f5ba62c1b950adc979dca4fcb8cae1"
+  integrity sha512-k4Caa1Bx7Ml+V8rMRBNHhnOMaY3nlZhZDY12ueESvYAc4+t+/MxTAKS9fDQdH/YmUZctbYos120RgmkHHIZukw==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
@@ -17467,6 +17467,7 @@ theme-patternfly-org@0.4.33:
     autoprefixer "^9.8.6"
     babel-loader "^8.1.0"
     camelcase-css "2.0.1"
+    chokidar "^2.1.8"
     clean-webpack-plugin "^3.0.0"
     codesandbox "^2.1.10"
     commander "^4.0.0"
@@ -17486,6 +17487,7 @@ theme-patternfly-org@0.4.33:
     mdast-util-to-hast "^9.1.0"
     mdurl "^1.0.0"
     mini-css-extract-plugin "^1.3.9"
+    monaco-editor "~0.21.0"
     monaco-editor-webpack-plugin "^2.1.0"
     null-loader "^4.0.0"
     postcss "^7.0.32"
