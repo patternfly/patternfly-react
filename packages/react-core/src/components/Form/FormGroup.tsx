@@ -23,6 +23,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   validated?: 'success' | 'warning' | 'error' | 'default';
   /** Sets the FormGroup isInline. */
   isInline?: boolean;
+  /** Sets the FormGroupControl to be stacked */
+  isStack?: boolean;
   /** Removes top spacer from label. */
   hasNoPaddingTop?: boolean;
   /** Helper text regarding the field. It can be a simple text or an object. */
@@ -48,6 +50,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   validated = 'default',
   isInline = false,
   hasNoPaddingTop = false,
+  isStack = false,
   helperText,
   isHelperTextBeforeField = false,
   helperTextInvalid,
@@ -107,7 +110,9 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
         </div>
       )}
 
-      <div className={css(styles.formGroupControl, isInline && styles.modifiers.inline)}>
+      <div
+        className={css(styles.formGroupControl, isInline && styles.modifiers.inline, isStack && styles.modifiers.stack)}
+      >
         {isHelperTextBeforeField && helperTextToDisplay}
         {children}
         {!isHelperTextBeforeField && helperTextToDisplay}

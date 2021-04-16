@@ -27,6 +27,10 @@ describe('Form Demo Test', () => {
     cy.get('.pf-c-form__helper-text').contains('Age has to be a number');
   });
 
+  it('Verify section titles rendering with correct component', () => {
+    cy.get('h4.pf-c-form__section-title').contains('Title');
+  });
+
   it('Verify form validates form group', () => {
     cy.get('#age-validated.pf-m-success').should('not.exist');
     cy.get('.pf-c-form__helper-text').contains('Enter age');
