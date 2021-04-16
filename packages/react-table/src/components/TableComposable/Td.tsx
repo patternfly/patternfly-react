@@ -25,7 +25,8 @@ import {
   OnFavorite,
   OnCheckChange,
   OnTreeRowCollapse,
-  IExtra
+  IExtra,
+  OnToggleRowDetails
 } from '../Table/TableTypes';
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
@@ -85,10 +86,12 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     props?: any;
   };
   treeRow?: {
-    /** */
+    /** Callback when user expands/collapses a row to reveal/hide the row's children */
     onCollapse: OnTreeRowCollapse;
-    /** */
-    onCheckChange: OnCheckChange;
+    /** (optional) Callback when user changes the checkbox on a row */
+    onCheckChange?: OnCheckChange;
+    /** (optional) Callback when user shows/hides the row details in responsive view. */
+    onToggleRowDetails?: OnToggleRowDetails;
     /** The row index */
     rowIndex?: number;
     /** Additional props forwarded to the title cell of the tree row */
@@ -199,7 +202,11 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     : null;
   const treeRowParams =
     treeRowProp !== null
-      ? treeRow(treeRowProp.onCollapse, treeRowProp.onCheckChange)(
+      ? treeRow(
+          treeRowProp.onCollapse,
+          treeRowProp.onCheckChange,
+          treeRowProp.onToggleRowDetails
+        )(
           {
             title: children
           } as IFormatterValueType,
@@ -230,9 +237,14 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     component: MergedComponent = component,
     ...mergedProps
   } = merged;
+
+  const treeTableTitleCell =
+    (className && className.includes('pf-c-table__tree-view-title-cell')) ||
+    (mergedClassName && mergedClassName.includes('pf-c-table__tree-view-title-cell'));
+
   return (
     <MergedComponent
-      data-label={dataLabel}
+      {...(!treeTableTitleCell && { 'data-label': dataLabel })}
       className={css(
         className,
         textCenter && styles.modifiers.center,

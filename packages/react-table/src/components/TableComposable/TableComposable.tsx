@@ -77,6 +77,16 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
     stylesGrid.modifiers?.[
       toCamel(gridBreakPoint || '').replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
     ];
+  const breakPointPrefix = `treeView${gridBreakPoint.charAt(0).toUpperCase() + gridBreakPoint.slice(1)}`;
+  const treeGrid =
+    stylesTreeView.modifiers?.[
+      toCamel(breakPointPrefix || '').replace(/-?2xl/, '_2xl') as
+        | 'treeViewGrid'
+        | 'treeViewGridMd'
+        | 'treeViewGridLg'
+        | 'treeViewGridXl'
+        | 'treeViewGrid_2xl'
+    ];
   return (
     <table
       aria-label={ariaLabel}
@@ -84,7 +94,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       className={css(
         className,
         styles.table,
-        !isTreeTable && grid,
+        isTreeTable ? treeGrid : grid,
         styles.modifiers[variant],
         !borders && styles.modifiers.noBorderRows,
         isStickyHeader && styles.modifiers.stickyHeader,
