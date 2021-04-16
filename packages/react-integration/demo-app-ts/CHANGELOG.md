@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.90.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.89.1...demo-app-ts@4.90.0) (2021-04-16)
+
+
+### Features
+
+* **CodeBlock:** add component ([#5656](https://github.com/patternfly/patternfly-react/issues/5656)) ([8e85b41](https://github.com/patternfly/patternfly-react/commit/8e85b41dff4b68924796d38dc882902d354011c5))
+
+
+
+
+
 ## [4.89.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.89.0...demo-app-ts@4.89.1) (2021-04-16)
 
 **Note:** Version bump only for package demo-app-ts
