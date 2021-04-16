@@ -17,6 +17,7 @@ exports[`Accordion Accordion with non-default headingLevel 1`] = `
       aria-expanded="false"
       class="pf-c-accordion__toggle"
       id="item-1"
+      type="button"
     >
       <span
         class="pf-c-accordion__toggle-text"
