@@ -108,10 +108,15 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
             toggleId="pf-c-console__type-selector"
             variant={SelectVariant.single}
             onSelect={(_, selection, isPlaceholder) => {
-              setType(Object.keys(items).find(key => items[key] === selection));
-              setIsOpen(isPlaceholder ? false : !isOpen);
+              if (isPlaceholder) {
+                setType(null);
+              } else {
+                setType(Object.keys(items).find(key => items[key] === selection));
+              }
+
+              setIsOpen(false);
             }}
-            selections={items[type]}
+            selections={type ? items[type] : null}
             isOpen={isOpen}
             onToggle={onToggle}
           >
