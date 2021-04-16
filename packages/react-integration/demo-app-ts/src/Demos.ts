@@ -392,6 +392,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormDemo
   },
   {
+    id: 'form-horizontal-demo',
+    name: 'Form HorizontalDemo',
+    componentType: Examples.HorizontalFormDemo
+  },
+  {
     id: 'form-field-group-demo',
     name: 'Form Field Group Demo',
     componentType: Examples.FormFieldGroupDemo
