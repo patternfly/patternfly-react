@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.43...@patternfly/react-catalog-view-extension@4.11.0) (2021-04-16)
+
+
+### Features
+
+* **Table:** Add optional icons to tree table rows, add responsive view ([#5672](https://github.com/patternfly/patternfly-react/issues/5672)) ([7ecba96](https://github.com/patternfly/patternfly-react/commit/7ecba96a191798d01c7f9209a14a04f4a658d7bb))
+
+
+
+
+
 ## [4.10.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.10.42...@patternfly/react-catalog-view-extension@4.10.43) (2021-04-16)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

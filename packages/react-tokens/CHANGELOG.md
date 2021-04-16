@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.10.11...@patternfly/react-tokens@4.11.0) (2021-04-16)
+
+
+### Features
+
+* **Table:** Add optional icons to tree table rows, add responsive view ([#5672](https://github.com/patternfly/patternfly-react/issues/5672)) ([7ecba96](https://github.com/patternfly/patternfly-react/commit/7ecba96a191798d01c7f9209a14a04f4a658d7bb))
+
+
+
+
+
 ## [4.10.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.10.10...@patternfly/react-tokens@4.10.11) (2021-04-13)
 
 
