@@ -87,7 +87,8 @@
     "test:a11y": "lerna run test:a11y --stream",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
-    "watch": "yarn build:esm --watch"
+    "watch": "yarn build:esm --watch",
+    "screenshots": "yarn workspace @patternfly/react-docs screenshots"
   },
   "husky": {
     "hooks": {
