@@ -44,44 +44,77 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 100, label: '100%' }
   ];
 
-  onValueChangeDiscrete = (value: number) => {
-    if (value) {
+  onChangeDiscrete = (value: number, inputValue: number) => {
+    let newValue;
+    let newInputValue;
+
+    if (!inputValue) {
       const step = this.stepsDiscrete.find(step => step.value === value);
-      const inputValue = step ? step.label : undefined;
-      const inputValueNumber: number = Number(inputValue);
-      this.setState({
-        valueDiscrete: value,
-        inputValueDiscrete: inputValueNumber
-      });
+      newInputValue = step ? step.label : 0;
+      newInputValue = Number(newInputValue);
+      newValue = value;
+    } else {
+      const maxValue = Number(this.stepsDiscrete[this.stepsDiscrete.length - 1].label);
+      if (inputValue > maxValue) {
+        newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length - 1].value);
+        newInputValue = maxValue;
+      } else {
+        const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= inputValue);
+        if (Number(this.stepsDiscrete[stepIndex].label) === inputValue) {
+          newValue = this.stepsDiscrete[stepIndex].value;
+        } else {
+          const midpoint =
+            (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
+          if (midpoint > inputValue) {
+            newValue = this.stepsDiscrete[stepIndex - 1].value;
+            newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
+          } else {
+            newValue = this.stepsDiscrete[stepIndex].value;
+            newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+          }
+        }
+      }
     }
-  };
 
-  onValueChangePercent = (value: number) => {
-    if (value) {
-      const step = this.stepsPercent.find((step: any) => step.value === value);
-      const inputValue = step ? step.label.slice(0, -1) : undefined;
-      const inputValueNumber: number = Number(inputValue);
-      this.setState({
-        valuePercent: value,
-        inputValuePercent: inputValueNumber
-      });
-    }
-  };
-
-  onChangeValueContinuous = (value: number) => {
-    const newValue = Math.floor(value);
     this.setState({
-      inputValueContinuous: newValue,
-      valueContinuous: newValue
+      inputValueDiscrete: newInputValue,
+      valueDiscrete: newValue
     });
   };
 
-  onChangePercent = (value: number) => {
-    let newValue = this.state.valuePercent;
-    let newInputValue = this.state.inputValuePercent;
-    const step = this.stepsPercent.find(step => step.label === value.toString() + '%');
-    newValue = step ? step.value : this.state.valuePercent;
-    newInputValue = step ? Number(step.label.slice(0, -1)) : this.state.inputValuePercent;
+  onChangePercent = (value: number, inputValue: number) => {
+    let newValue;
+    let newInputValue;
+
+    if (!inputValue) {
+      const step = this.stepsPercent.find(step => step.value === value);
+      newInputValue = step ? step.label.slice(0, -1) : 0;
+      newInputValue = Number(newInputValue);
+      newValue = value;
+    } else {
+      const maxValue = Number(this.stepsPercent[this.stepsPercent.length - 1].label.slice(0, -1));
+      if (inputValue > maxValue) {
+        newValue = Number(this.stepsPercent[this.stepsPercent.length - 1].value);
+        newInputValue = maxValue;
+      } else {
+        const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
+        if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
+          newValue = this.stepsPercent[stepIndex].value;
+        } else {
+          const midpoint =
+            (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) +
+              Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) /
+            2;
+          if (midpoint > inputValue) {
+            newValue = this.stepsPercent[stepIndex - 1].value;
+            newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
+          } else {
+            newValue = this.stepsPercent[stepIndex].value;
+            newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+          }
+        }
+      }
+    }
     this.setState({
       inputValuePercent: newInputValue,
       valuePercent: newValue
@@ -89,9 +122,10 @@ export class SliderDemo extends Component<SliderDemoState> {
   };
 
   onChangeContinuous = (value: number) => {
+    const newValue = Math.floor(value);
     this.setState({
-      inputValueContinuous: value,
-      valueContinuous: value
+      inputValueContinuous: newValue,
+      valueContinuous: newValue
     });
   };
 
@@ -100,32 +134,28 @@ export class SliderDemo extends Component<SliderDemoState> {
       <>
         <Slider
           id="discrete-slider"
-          isDiscrete
-          currentValue={this.state.valueDiscrete}
-          steps={this.stepsDiscrete}
-          onValueChange={this.onValueChangeDiscrete}
+          value={this.state.valueDiscrete}
+          customSteps={this.stepsDiscrete}
+          onChange={this.onChangeDiscrete}
         />
         <br />
         <Slider
           id="discrete-slider-input-label"
-          currentValue={this.state.valuePercent}
+          value={this.state.valuePercent}
           isInputVisible
           inputValue={this.state.inputValuePercent}
           inputLabel="%"
-          isDiscrete
-          onValueChange={this.onValueChangePercent}
           onChange={this.onChangePercent}
-          steps={this.stepsPercent}
+          customSteps={this.stepsPercent}
         />
         <br />
         <Slider
           id="continuous-slider"
-          currentValue={this.state.valueContinuous}
+          value={this.state.valueContinuous}
           isInputVisible
           inputPosition="aboveThumb"
           inputValue={this.state.inputValueContinuous}
           inputLabel="%"
-          onValueChange={this.onChangeValueContinuous}
           onChange={this.onChangeContinuous}
         />
       </>

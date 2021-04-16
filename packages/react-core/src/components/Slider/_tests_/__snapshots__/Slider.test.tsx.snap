@@ -2,9 +2,9 @@
 
 exports[`slider renders continuous slider 1`] = `
 <Slider
-  currentValue={50}
   inputValue={50}
   isInputVisible={true}
+  value={50}
 >
   <div
     className="pf-c-slider"
@@ -31,6 +31,7 @@ exports[`slider renders continuous slider 1`] = `
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={50}
+        aria-valuetext="50"
         className="pf-c-slider__thumb"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -94,10 +95,119 @@ exports[`slider renders continuous slider 1`] = `
 </Slider>
 `;
 
+exports[`slider renders continuous slider with custom steps 1`] = `
+<Slider
+  areCustomStepsContinuous={true}
+  customSteps={
+    Array [
+      Object {
+        "label": "0%",
+        "value": 0,
+      },
+      Object {
+        "label": "100%",
+        "value": 100,
+      },
+    ]
+  }
+  value={50}
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "50%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pf-c-slider__steps"
+      >
+        <SliderStep
+          isActive={true}
+          key="0"
+          label="0%"
+          value={0}
+        >
+          <div
+            className="pf-c-slider__step pf-m-active"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "0%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+            <div
+              className="pf-c-slider__step-label"
+            >
+              0%
+            </div>
+          </div>
+        </SliderStep>
+        <SliderStep
+          isActive={false}
+          key="100"
+          label="100%"
+          value={100}
+        >
+          <div
+            className="pf-c-slider__step"
+            style={
+              Object {
+                "--pf-c-slider__step--Left": "100%",
+              }
+            }
+          >
+            <div
+              className="pf-c-slider__step-tick"
+            />
+            <div
+              className="pf-c-slider__step-label"
+            >
+              100%
+            </div>
+          </div>
+        </SliderStep>
+      </div>
+      <div
+        aria-disabled={false}
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        aria-valuetext="50"
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </div>
+  </div>
+</Slider>
+`;
+
 exports[`slider renders disabled slider 1`] = `
 <Slider
-  currentValue={50}
   isDisabled={true}
+  value={50}
 >
   <div
     className="pf-c-slider pf-m-disabled"
@@ -124,6 +234,7 @@ exports[`slider renders disabled slider 1`] = `
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={50}
+        aria-valuetext="50"
         className="pf-c-slider__thumb"
         onClick={null}
         onKeyDown={null}
@@ -139,9 +250,105 @@ exports[`slider renders disabled slider 1`] = `
 
 exports[`slider renders discrete slider 1`] = `
 <Slider
-  currentValue={50}
-  isDiscrete={true}
-  steps={
+  inputValue={50}
+  isInputVisible={true}
+  max={110}
+  min={10}
+  step={2}
+  value={50}
+>
+  <div
+    className="pf-c-slider"
+    style={
+      Object {
+        "--pf-c-slider--value": "40%",
+      }
+    }
+  >
+    <div
+      className="pf-c-slider__main"
+    >
+      <div
+        className="pf-c-slider__rail"
+        onClick={[Function]}
+      >
+        <div
+          className="pf-c-slider__rail-track"
+        />
+      </div>
+      <div
+        aria-disabled={false}
+        aria-label="Value"
+        aria-valuemax={110}
+        aria-valuemin={10}
+        aria-valuenow={50}
+        aria-valuetext="50"
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </div>
+    <div
+      className="pf-c-slider__value"
+    >
+      <TextInput
+        aria-label="Slider value input"
+        className="pf-c-form-control"
+        isDisabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        type="number"
+        value={50}
+      >
+        <TextInputBase
+          aria-label="Slider value input"
+          className="pf-c-form-control"
+          innerRef={null}
+          isDisabled={false}
+          isLeftTruncated={false}
+          isReadOnly={false}
+          isRequired={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="number"
+          validated="default"
+          value={50}
+        >
+          <input
+            aria-invalid={false}
+            aria-label="Slider value input"
+            className="pf-c-form-control pf-c-form-control"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            required={false}
+            type="number"
+            value={50}
+          />
+        </TextInputBase>
+      </TextInput>
+    </div>
+  </div>
+</Slider>
+`;
+
+exports[`slider renders discrete slider with custom steps 1`] = `
+<Slider
+  customSteps={
     Array [
       Object {
         "label": "0%",
@@ -167,6 +374,7 @@ exports[`slider renders discrete slider 1`] = `
       },
     ]
   }
+  value={50}
 >
   <div
     className="pf-c-slider"
@@ -326,11 +534,11 @@ exports[`slider renders discrete slider 1`] = `
 
 exports[`slider renders slider with input 1`] = `
 <Slider
-  currentValue={50}
   inputLabel="%"
-  inputPosition="left"
+  inputPosition="right"
   inputValue={50}
   isInputVisible={true}
+  value={50}
 >
   <div
     className="pf-c-slider"
@@ -357,6 +565,7 @@ exports[`slider renders slider with input 1`] = `
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={50}
+        aria-valuetext="50"
         className="pf-c-slider__thumb"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -366,17 +575,83 @@ exports[`slider renders slider with input 1`] = `
         tabIndex={0}
       />
     </div>
+    <div
+      className="pf-c-slider__value"
+    >
+      <InputGroup>
+        <div
+          className="pf-c-input-group"
+        >
+          <TextInput
+            aria-label="Slider value input"
+            className="pf-c-form-control"
+            isDisabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            type="number"
+            value={50}
+          >
+            <TextInputBase
+              aria-label="Slider value input"
+              className="pf-c-form-control"
+              innerRef={null}
+              isDisabled={false}
+              isLeftTruncated={false}
+              isReadOnly={false}
+              isRequired={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="number"
+              validated="default"
+              value={50}
+            >
+              <input
+                aria-invalid={false}
+                aria-label="Slider value input"
+                className="pf-c-form-control pf-c-form-control"
+                disabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                readOnly={false}
+                required={false}
+                type="number"
+                value={50}
+              />
+            </TextInputBase>
+          </TextInput>
+          <InputGroupText
+            variant="plain"
+          >
+            <span
+              className="pf-c-input-group__text pf-m-plain"
+            >
+               
+              %
+            </span>
+          </InputGroupText>
+        </div>
+      </InputGroup>
+    </div>
   </div>
 </Slider>
 `;
 
 exports[`slider renders slider with input above thumb 1`] = `
 <Slider
-  currentValue={50}
   inputLabel="%"
   inputPosition="aboveThumb"
   inputValue={50}
   isInputVisible={true}
+  value={50}
 >
   <div
     className="pf-c-slider"
@@ -403,6 +678,7 @@ exports[`slider renders slider with input above thumb 1`] = `
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={50}
+        aria-valuetext="50"
         className="pf-c-slider__thumb"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -465,11 +741,12 @@ exports[`slider renders slider with input above thumb 1`] = `
               </TextInputBase>
             </TextInput>
             <InputGroupText
-              className="pf-m-plain"
+              variant="plain"
             >
               <span
                 className="pf-c-input-group__text pf-m-plain"
               >
+                 
                 %
               </span>
             </InputGroupText>
@@ -483,7 +760,6 @@ exports[`slider renders slider with input above thumb 1`] = `
 
 exports[`slider renders slider with input actions 1`] = `
 <Slider
-  currentValue={50}
   leftActions={
     <Button
       aria-label="Minus"
@@ -496,6 +772,7 @@ exports[`slider renders slider with input actions 1`] = `
       variant="plain"
     />
   }
+  value={50}
 >
   <div
     className="pf-c-slider"
@@ -542,6 +819,7 @@ exports[`slider renders slider with input actions 1`] = `
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={50}
+        aria-valuetext="50"
         className="pf-c-slider__thumb"
         onClick={[Function]}
         onKeyDown={[Function]}

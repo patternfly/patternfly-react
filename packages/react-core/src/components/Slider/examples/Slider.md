@@ -24,7 +24,9 @@ class DiscreteInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 50
+      value1: 50,
+      value2: 50,
+      value3: 25
     };
 
     this.steps = [
@@ -39,20 +41,40 @@ class DiscreteInput extends React.Component {
       { value: 100, label: '8' }
     ];
 
-    this.onValueChange = value => {
+    this.onChange = value => {
         this.setState({
-          value
+          value1: value
+        });
+    };
+
+    this.onChange2 = value => {
+        this.setState({
+          value2: value
+        });
+    };
+
+    this.onChange3 = value => {
+        this.setState({
+          value3: value
         });
     };
   }
 
   render() {
-    const step = this.steps.find(step => step.value === this.state.value);
+    const step = this.steps.find(step => step.value === this.state.value1);
     const displayValue = step ? step.label : 0;
     return (
       <>
-        <Text component={TextVariants.h3}>Slider Value is: {displayValue}</Text>
-        <Slider isDiscrete currentValue={this.state.value} onValueChange={this.onValueChange} steps={this.steps} />
+        <Text component={TextVariants.h3}>Slider value is: {displayValue}</Text>
+        <Slider value={this.state.value1} onChange={this.onChange} customSteps={this.steps} />
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value2)}</Text>
+        <Text component={TextVariants.small}>(min = 0, max = 200, step = 50) </Text>
+        <Slider value={this.state.value2} onChange={this.onChange2} max={200} step={50} showTicks/>
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value3)}</Text>
+        <Text component={TextVariants.small}>(min = -25, max = 75, step = 10) </Text>
+        <Slider value={this.state.value3} onChange={this.onChange3} min={-25} max={75} step={10} showTicks />
       </>
     );
   }
@@ -69,12 +91,19 @@ class ContinuousInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 50
+      value: 50,
+      valueCustom: 50
     };
 
-    this.onValueChange = value => {
+    this.onChange = value => {
         this.setState({
           value: value
+        });
+    };
+
+    this.onChangeCustom = value => {
+        this.setState({
+          valueCustom: value
         });
     };
   }
@@ -83,11 +112,14 @@ class ContinuousInput extends React.Component {
     return (
       <>
         <Text component={TextVariants.h3}>Slider Value is: {this.state.value.toFixed(2)}</Text>
-        <Slider currentValue={this.state.value} onValueChange={this.onValueChange} />
+        <Slider value={this.state.value} onChange={this.onChange} />
         <br />
+        <Text component={TextVariants.h3}>Slider Value is: {this.state.valueCustom.toFixed(2)}</Text>
         <Slider
-          currentValue={50}
-          steps={[
+          onChange={this.onChangeCustom}
+          value={this.state.valueCustom}
+          areCustomStepsContinuous
+          customSteps={[
             { value: 0, label: '0%' },
             { value: 100, label: '100%' }
           ]}
@@ -136,54 +168,34 @@ class ValueInput extends React.Component {
       { value: 100, label: '100%' }
     ];
 
-    this.onValueChangeDiscrete = value => {
-        const step = this.stepsDiscrete.find(step => step.value === value);
-        let inputValue = step ? step.label : 0;
-        inputValue = Number(inputValue);
-        this.setState({
-          valueDiscrete: value,
-          inputValueDiscrete: inputValue
-        });
-    };
+    this.onChangeDiscrete = (value, inputValue) => {
 
-    this.onValueChangePercent = value => {
-        const step = this.stepsPercent.find(step => step.value === value);
-        let inputValue = step ? step.label.slice(0, -1) : 0;
-        inputValue = Number(inputValue);
-        this.setState({
-          valuePercent: value,
-          inputValuePercent: inputValue
-        });
-    };
-
-    this.onValueChangeContinuous = value => {
-      const newValue = Math.floor(value);
-      this.setState({
-        inputValueContinuous: newValue,
-        valueContinuous: newValue
-      });
-    };
-
-    this.onChangeDiscrete = value => {
       let newValue;
       let newInputValue;
 
-      const maxValue =  Number(this.stepsDiscrete[this.stepsDiscrete.length -1].label);
-      if (value > maxValue) {
-         newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length -1].value);
-         newInputValue =  maxValue
+      if (inputValue === undefined) { 
+        const step = this.stepsDiscrete.find(step => step.value === value);
+        newInputValue = step ? step.label : 0;
+        newInputValue = Number(newInputValue);
+        newValue = value;
       } else {
-        const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= value);
-        if (Number(this.stepsDiscrete[stepIndex].label) === value) {
-          newValue = this.stepsDiscrete[stepIndex].value;
+        const maxValue =  Number(this.stepsDiscrete[this.stepsDiscrete.length -1].label);
+        if (inputValue > maxValue) {
+          newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length -1].value);
+          newInputValue =  maxValue
         } else {
-          const midpoint = (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
-          if (midpoint > value) {
-            newValue = this.stepsDiscrete[stepIndex - 1].value;
-            newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
-          } else {
+          const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= inputValue);
+          if (Number(this.stepsDiscrete[stepIndex].label) === inputValue) {
             newValue = this.stepsDiscrete[stepIndex].value;
-            newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+          } else {
+            const midpoint = (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
+            if (midpoint > inputValue) {
+              newValue = this.stepsDiscrete[stepIndex - 1].value;
+              newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
+            } else {
+              newValue = this.stepsDiscrete[stepIndex].value;
+              newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+            }
           }
         }
       }
@@ -194,26 +206,33 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangePercent = value => {
+    this.onChangePercent = (value, inputValue) => {
       let newValue;
       let newInputValue;
 
-      const maxValue =  Number(this.stepsPercent[this.stepsPercent.length -1].label.slice(0, -1));
-      if (value > maxValue) {
-         newValue = Number(this.stepsPercent[this.stepsPercent.length -1].value);
-         newInputValue =  maxValue
-      } else {
-        const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= value);
-        if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === value) {
-          newValue = this.stepsPercent[stepIndex].value;
+      if (inputValue === undefined) { 
+        const step = this.stepsPercent.find(step => step.value === value);
+        newInputValue = step ? step.label.slice(0, -1) : 0;
+        newInputValue = Number(newInputValue);
+        newValue = value;
+      }  else {
+        const maxValue =  Number(this.stepsPercent[this.stepsPercent.length -1].label.slice(0, -1));
+        if (inputValue > maxValue) {
+          newValue = Number(this.stepsPercent[this.stepsPercent.length -1].value);
+          newInputValue =  maxValue;
         } else {
-          const midpoint = (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) + Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) / 2;
-          if (midpoint > value) {
-            newValue = this.stepsPercent[stepIndex - 1].value;
-            newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
-          } else {
+          const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
+          if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
             newValue = this.stepsPercent[stepIndex].value;
-            newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+          } else {
+            const midpoint = (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) + Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) / 2;
+            if (midpoint > inputValue) {
+              newValue = this.stepsPercent[stepIndex - 1].value;
+              newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
+            } else {
+              newValue = this.stepsPercent[stepIndex].value;
+              newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+            }
           }
         }
       }
@@ -224,8 +243,13 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangeContinuous = value => { 
-      const newValue = value > 100 ? 100 : Math.floor(value);
+    this.onChangeContinuous = (value, inputValue) => { 
+      let newValue;
+      if (inputValue === undefined) { 
+        newValue = Math.floor(value);
+      } else {
+        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+      }
       this.setState({
         inputValueContinuous: newValue,
         valueContinuous: newValue
@@ -237,32 +261,27 @@ class ValueInput extends React.Component {
     return (
       <>
         <Slider
-          isDiscrete
-          currentValue={this.state.valueDiscrete}
+          value={this.state.valueDiscrete}
           isInputVisible
           inputValue={this.state.inputValueDiscrete}
-          steps={this.stepsDiscrete}
+          customSteps={this.stepsDiscrete}
           onChange={this.onChangeDiscrete}
-          onValueChange={this.onValueChangeDiscrete}
         />
         <br />
         <Slider
-          currentValue={this.state.valuePercent}
+          value={this.state.valuePercent}
           isInputVisible
           inputValue={this.state.inputValuePercent}
           inputLabel="%"
-          isDiscrete
-          onValueChange={this.onValueChangePercent}
           onChange={this.onChangePercent}
-          steps={this.stepsPercent}
+          customSteps={this.stepsPercent}
         />
         <br />
         <Slider
-          currentValue={this.state.valueContinuous}
+          value={this.state.valueContinuous}
           isInputVisible
           inputValue={this.state.inputValueContinuous}
           inputLabel="%"
-          onValueChange={this.onValueChangeContinuous}
           onChange={this.onChangeContinuous}
         />
       </>
@@ -285,16 +304,13 @@ class ThumbValueInput extends React.Component {
       inputValue: 50
     };
 
-    this.onValueChange = value => {
-      const newValue = Number(value).toFixed(2);
-      this.setState({
-        value: newValue,
-        inputValue: newValue
-      });
-    };
-
-    this.onChange = value => {
-      const newValue = value > 100 ? 100 : Math.floor(value);
+    this.onChange = (value, inputValue) => { 
+      let newValue;
+      if (inputValue === undefined) { 
+        newValue = Number(value).toFixed(2);
+      } else {
+        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+      }
       this.setState({
         value: newValue,
         inputValue: newValue
@@ -305,13 +321,12 @@ class ThumbValueInput extends React.Component {
   render() {
     return (
       <Slider
-        currentValue={this.state.value}
+        value={this.state.value}
         isInputVisible
         inputValue={this.state.inputValue}
         inputLabel="%"
         inputPosition="aboveThumb"
         onChange={this.onChange}
-        onValueChange={this.onValueChange}
       />
     );
   }
@@ -338,23 +353,20 @@ class SliderActions extends React.Component {
       isDisabled: false
     };
 
-    this.onValueChange1 = value => {
+    this.onChange1 = value => {
       const newValue = Math.floor(Number(value));
       this.setState({
         value1: newValue
       });
     };
 
-    this.onValueChange2 = value => {
-      const newValue = Math.floor(Number(value));
-      this.setState({
-        value2: newValue,
-        inputValue: newValue
-      });
-    };
-
-    this.onChange = value => {
-      const newValue = value > 100 ? 100 : Math.floor(Number(value));
+    this.onChange2 =(value, inputValue) => { 
+      let newValue;
+      if (inputValue === undefined) { 
+        newValue = Math.floor(Number(value));
+      } else {
+        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+      }
       this.setState({
         value2: newValue,
         inputValue: newValue
@@ -403,8 +415,8 @@ class SliderActions extends React.Component {
       <>
         <Text component={TextVariants.h3}>Slider Value is: {this.state.value1}</Text>
         <Slider
-          currentValue={this.state.value1}
-          onValueChange={this.onValueChange1}
+          value={this.state.value1}
+          onChange={this.onChange1}
           leftActions={
             <Button variant="plain" aria-label="Minus" onClick={this.onMinusClick}>
               <MinusIcon />
@@ -419,10 +431,9 @@ class SliderActions extends React.Component {
         <br />
         <br />
         <Slider
-          currentValue={this.state.value2}
+          value={this.state.value2}
           inputValue={this.state.inputValue}
-          onValueChange={this.onValueChange2}
-          onChange={this.onChange}
+          onChange={this.onChange2}
           inputLabel="%"
           isInputVisible
           isDisabled={this.state.isDisabled}
@@ -472,7 +483,7 @@ class DiscreteInput extends React.Component {
     return (
       <>
         <Text component={TextVariants.h3}>Slider Value is: {displayValue}</Text>
-        <Slider isDisabled currentValue={this.state.value} onValueChange={this.onValueChange} steps={this.steps} />
+        <Slider isDisabled value={this.state.value} onChange={this.onValueChange} customSteps={this.steps} />
       </>
     );
   }
