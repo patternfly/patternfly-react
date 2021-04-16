@@ -67,12 +67,14 @@ DateTimeRangePicker = () => {
     return isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from) ? '' : 'To date must after from date';
   };
   
-  const onFromDateChange = (_str, newFromDate) => {
-    if (isValidDate(from) && isValidDate(newFromDate)) {
+  const onFromDateChange = (inputDate, newFromDate) => {
+    if (isValidDate(from) && isValidDate(newFromDate) && inputDate === yyyyMMddFormat(newFromDate)) {
       newFromDate.setHours(from.getHours());
       newFromDate.setMinutes(from.getMinutes());
     }
-    setFrom(new Date(newFromDate));
+    if (isValidDate(newFromDate) && inputDate === yyyyMMddFormat(newFromDate)) {
+      setFrom(new Date(newFromDate));
+    }
   };
   
   const onFromTimeChange = (time, hour, minute) => {
@@ -84,12 +86,12 @@ DateTimeRangePicker = () => {
     }
   };
 
-  const onToDateChange = (_str, newToDate) => {
-    if (isValidDate(to) && isValidDate(newToDate)) {
+  const onToDateChange = (inputDate, newToDate) => {
+    if (isValidDate(to) && isValidDate(newToDate) && inputDate === yyyyMMddFormat(newToDate)) {
       newToDate.setHours(to.getHours());
       newToDate.setMinutes(to.getMinutes());
     }
-    if (isValidDate(newToDate)){
+    if (isValidDate(newToDate) && inputDate === yyyyMMddFormat(newToDate)){
       setTo(newToDate);
     }
   };
@@ -108,7 +110,7 @@ DateTimeRangePicker = () => {
       <FlexItem>
         <InputGroup>
           <DatePicker
-            onBlur={onFromDateChange}
+            onChange={onFromDateChange}
             aria-label="Start date"
           />
           <TimePicker 
@@ -125,7 +127,7 @@ DateTimeRangePicker = () => {
         <InputGroup>
           <DatePicker
             value={isValidDate(to) ? yyyyMMddFormat(to) : to}
-            onBlur={onToDateChange}
+            onChange={onToDateChange}
             isDisabled={!isValidDate(from)}
             rangeStart={from}
             validators={[toValidator]}
