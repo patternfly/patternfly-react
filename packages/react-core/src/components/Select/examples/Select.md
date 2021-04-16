@@ -382,6 +382,7 @@ class ValidatedSelect extends React.Component {
         >
           {this.options}
         </Select>
+        <div aria-live="polite" hidden>{validated}</div>
       </div>
     );
   }
