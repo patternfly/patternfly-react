@@ -231,7 +231,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       if (snapValue !== undefined) {
         onChange(snapValue);
       } else {
-        onChange(newValue)
+        onChange(newValue);
       } 
     }
   };
