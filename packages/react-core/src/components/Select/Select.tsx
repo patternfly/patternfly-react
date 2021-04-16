@@ -887,8 +887,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         className={css(
           styles.select,
           isOpen && styles.modifiers.expanded,
-          validated === ValidatedOptions.success && 'pf-m-success',
-          validated === ValidatedOptions.warning && 'pf-m-warning',
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
           validated === ValidatedOptions.error && styles.modifiers.invalid,
           direction === SelectDirection.up && styles.modifiers.top,
           className
