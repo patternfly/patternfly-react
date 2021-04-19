@@ -5,6 +5,18 @@ import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
 import { formatBreakpointMods } from '../../helpers/util';
+import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import lgBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+import xlBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
+import xl2Breakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
+
+const breakpoints = {
+  all: xl2Breakpoint,
+  md: mdBreakpoint,
+  lg: lgBreakpoint,
+  xl: xlBreakpoint,
+  '2xl': xl2Breakpoint
+};
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -66,9 +78,14 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   };
 
   closeExpandableContent = () => {
-    this.setState(() => ({
-      isManagedToggleExpanded: false
-    }));
+    const breakpointPx = breakpoints[this.props.collapseListedFiltersBreakpoint];
+    if (!breakpointPx) {
+      return;
+    }
+    const breakpointWidth = Number(breakpointPx.value.replace('px', ''));
+    if (window.innerWidth >= breakpointWidth) {
+      this.setState({ isManagedToggleExpanded: false });
+    }
   };
 
   componentDidMount() {
