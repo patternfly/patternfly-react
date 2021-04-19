@@ -387,6 +387,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FlexDemo
   },
   {
+    id: 'fileupload-demo',
+    name: 'FileUpload Demo',
+    componentType: Examples.FileUploadDemo
+  },
+  {
     id: 'form-demo',
     name: 'Form Demo',
     componentType: Examples.FormDemo

@@ -131,7 +131,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
           {...getRootProps({
             ...props,
             refKey: 'containerRef',
-            onClick: evt => onClick(evt)
+            onClick: event => event.preventDefault()
           })}
           tabIndex={null} // Omit the unwanted tabIndex from react-dropzone's getRootProps
           id={id}
@@ -142,6 +142,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
           isDragActive={isDragActive}
           onBrowseButtonClick={open}
           onClearButtonClick={onClearButtonClick}
+          onTextAreaClick={onClick}
         >
           <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
           {children}

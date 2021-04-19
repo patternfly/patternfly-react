@@ -76,6 +76,7 @@ export * from './DualListSelector/DualListSelectorWithActionsDemo';
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './ExpandableSectionDemo/ExpandableSectionDemo';
 export * from './FlexDemo/FlexDemo';
+export * from './FileUploadDemo/FileUploadDemo';
 export * from './FormDemo/FormDemo';
 export * from './FormDemo/FormHorizontalDemo';
 export * from './FormDemo/FormFieldGroupDemo';
