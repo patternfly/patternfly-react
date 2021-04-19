@@ -34,14 +34,13 @@ export const makeTimeOptions = (stepMinutes: number, hour12: boolean, delimiter:
   return res;
 };
 
-export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is12Hour: boolean) => {
-  time = time.trim();
+export const parseTime = (time: string | Date, timeRegex: RegExp, delimiter: string, is12Hour: boolean): string => {
   const date = new Date(time);
 
   // if default time is a ISO 8601 formatted date string, we parse it to hh:mm(am/pm) format
-  if (!isNaN(date.getDate()) && time.includes('T')) {
+  if (!isNaN(date.getDate()) && (time instanceof Date || time.includes('T'))) {
     const hours = is12Hour
-      ? `${date.getHours() > 11 ? date.getHours() - 12 : date.getHours()}`
+      ? `${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}`
       : `${date.getHours()}`.padStart(2, '0');
     const minutes = `${date.getMinutes()}`.padStart(2, '0');
     let ampm = '';
@@ -51,29 +50,32 @@ export const parseTime = (time: string, timeRegex: RegExp, delimiter: string, is
       ampm = amSuffix;
     }
     return `${hours}${delimiter}${minutes}${ampm}`;
-  } else if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
-    // Format AM/PM according to design
-    let ampm = '';
-    if (time.toLowerCase().includes(amSuffix.toLowerCase().trim())) {
-      time = time
-        .toLowerCase()
-        .replace(amSuffix.toLowerCase().trim(), '')
-        .trim();
-      ampm = amSuffix;
-    } else if (time.toLowerCase().includes(pmSuffix.toLowerCase().trim())) {
-      time = time
-        .toLowerCase()
-        .replace(pmSuffix.toLowerCase().trim(), '')
-        .trim();
-      ampm = pmSuffix;
-    } else {
-      // if this 12 hour time is missing am/pm but otherwise valid,
-      // append am/pm depending on time of day
-      ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+  } else if (typeof time === 'string') {
+    time = time.trim();
+    if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
+      // Format AM/PM according to design
+      let ampm = '';
+      if (time.toUpperCase().includes(amSuffix.toUpperCase().trim())) {
+        time = time
+          .toUpperCase()
+          .replace(amSuffix.toUpperCase().trim(), '')
+          .trim();
+        ampm = amSuffix;
+      } else if (time.toUpperCase().includes(pmSuffix.toUpperCase().trim())) {
+        time = time
+          .toUpperCase()
+          .replace(pmSuffix.toUpperCase().trim(), '')
+          .trim();
+        ampm = pmSuffix;
+      } else {
+        // if this 12 hour time is missing am/pm but otherwise valid,
+        // append am/pm depending on time of day
+        ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+      }
+      return `${time}${ampm}`;
     }
-    return `${time}${ampm}`;
   }
-  return time;
+  return time.toString();
 };
 
 export const validateTime = (time: string, timeRegex: RegExp, delimiter: string, is12Hour: boolean) => {
@@ -89,4 +91,17 @@ export const validateTime = (time: string, timeRegex: RegExp, delimiter: string,
 
   // empty string is valid
   return time === '' || (timeRegex.test(time) && validHours);
+};
+
+export const getHours = (time: string, timeRegex: RegExp) => {
+  const parts = time.match(timeRegex);
+  if (parts && parts.length) {
+    return /am/i.test(parts[4]) ? parseInt(parts[1]) : parseInt(parts[1]) + 12;
+  }
+  return null;
+};
+
+export const getMinutes = (time: string, timeRegex: RegExp) => {
+  const parts = time.match(timeRegex);
+  return parts && parts.length ? parseInt(parts[2]) : null;
 };

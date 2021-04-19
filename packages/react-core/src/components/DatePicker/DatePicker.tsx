@@ -101,7 +101,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     }
   };
 
-  const onBlur = () => {
+  const onInputBlur = () => {
     if (pristine) {
       return;
     }
@@ -182,7 +182,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
               validated={errorText ? 'error' : 'default'}
               value={value}
               onChange={onTextInput}
-              onBlur={onBlur}
+              onBlur={onInputBlur}
               onKeyPress={onKeyPress}
             />
             <button
