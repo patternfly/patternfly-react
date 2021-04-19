@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.114.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.113.1...@patternfly/react-core@4.114.0) (2021-04-19)
+
+
+### Features
+
+* **DatePicker:** Add date and time range demo ([#5666](https://github.com/patternfly/patternfly-react/issues/5666)) ([982a0c3](https://github.com/patternfly/patternfly-react/commit/982a0c3eac7cde751bfe29fde822c6ad9ca9bb40))
+
+
+
+
+
 ## [4.113.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.113.0...@patternfly/react-core@4.113.1) (2021-04-16)
 
 **Note:** Version bump only for package @patternfly/react-core
