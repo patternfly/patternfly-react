@@ -93,15 +93,15 @@ export const validateTime = (time: string, timeRegex: RegExp, delimiter: string,
   return time === '' || (timeRegex.test(time) && validHours);
 };
 
-export const getHours = (time: string, delimiter: string) => {
-  const parts = time.match(new RegExp(`(\\d+)${delimiter}(\\d+)(\\s?)(\\w*)`));
+export const getHours = (time: string, timeRegex: RegExp) => {
+  const parts = time.match(timeRegex);
   if (parts && parts.length) {
     return /am/i.test(parts[4]) ? parseInt(parts[1]) : parseInt(parts[1]) + 12;
   }
   return null;
 };
 
-export const getMinutes = (time: string, delimiter: string) => {
-  const parts = time.match(new RegExp(`(\\d+)${delimiter}(\\d+)(\\s?)(\\w*)`));
+export const getMinutes = (time: string, timeRegex: RegExp) => {
+  const parts = time.match(timeRegex);
   return parts && parts.length ? parseInt(parts[2]) : null;
 };
