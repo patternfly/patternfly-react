@@ -42,6 +42,8 @@ export interface ToolbarState {
   isManagedToggleExpanded: boolean;
   /** Object managing information about how many chips are in each chip group */
   filterInfo: FilterInfo;
+  /** Used to keep track of window width so we can collapse expanded content when window is resizing */
+  windowWidth: number;
 }
 
 interface FilterInfo {
@@ -54,7 +56,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   staticFilterInfo = {};
   state = {
     isManagedToggleExpanded: false,
-    filterInfo: {}
+    filterInfo: {},
+    windowWidth: window.innerWidth
   };
 
   isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
@@ -65,10 +68,13 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  closeExpandableContent = () => {
-    this.setState(() => ({
-      isManagedToggleExpanded: false
-    }));
+  closeExpandableContent = (e: any) => {
+    if (e.target.innerWidth !== this.state.windowWidth) {
+      this.setState(() => ({
+        isManagedToggleExpanded: false,
+        windowWidth: e.target.innerWidth
+      }));
+    }
   };
 
   componentDidMount() {
