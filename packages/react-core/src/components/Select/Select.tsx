@@ -73,6 +73,10 @@ export interface SelectProps
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
   'aria-labelledby'?: string;
+  /** Id of div for the select aria-labelledby */
+  'aria-describedby'?: string;
+  /* Flag indicating if the select is an invalid state */
+  'aria-invalid'?: boolean;
   /** Label for input field of type ahead select variants */
   typeAheadAriaLabel?: string;
   /** Label for clear selection button of type ahead select variants */
@@ -162,6 +166,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     validated: 'default',
     'aria-label': '',
     'aria-labelledby': '',
+    'aria-describedby': '',
+    'aria-invalid': false,
     typeAheadAriaLabel: '',
     clearSelectionsAriaLabel: 'Clear all',
     toggleAriaLabel: 'Options menu',
@@ -646,6 +652,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       removeSelectionAriaLabel,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      'aria-describedby': ariaDescribedby,
+      'aria-invalid': ariaInvalid,
       placeholderText,
       width,
       maxHeight,
@@ -873,10 +881,15 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         className={css(
           styles.select,
           isOpen && styles.modifiers.expanded,
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
+          validated === ValidatedOptions.error && styles.modifiers.invalid,
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
         {...(width && { style: { width } })}
+        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         {isOpen && menuContainer}
       </div>
@@ -896,6 +909,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.parentRef}
         {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
+        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         <SelectToggle
           id={selectToggleId}

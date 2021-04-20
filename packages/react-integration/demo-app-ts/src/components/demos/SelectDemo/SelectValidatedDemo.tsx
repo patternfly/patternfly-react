@@ -80,10 +80,15 @@ export class SelectValidatedDemo extends Component<SelectValidatedDemoState> {
             selections={selected}
             isOpen={isOpen}
             aria-labelledby={titleId}
+            aria-describedby="validated-helper"
+            aria-invalid={validated === 'error' ? true : false}
             validated={validated}
           >
             {this.options}
           </Select>
+          <div aria-live="polite" id="validated-helper" hidden>
+            {validated}
+          </div>
         </StackItem>
       </div>
     );

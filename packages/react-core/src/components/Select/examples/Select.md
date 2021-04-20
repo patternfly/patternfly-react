@@ -379,6 +379,8 @@ class ValidatedSelect extends React.Component {
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           validated={validated}
+          aria-describedby="validated-helper"
+          aria-invalid={validated === 'error' ? true : false}
         >
           {this.options}
         </Select>
