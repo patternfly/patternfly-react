@@ -2,6 +2,8 @@
 
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1011,6 +1013,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 
 exports[`checkbox select renders checkbox select selections properly 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1217,6 +1221,8 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
 
 exports[`checkbox select renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1406,6 +1412,8 @@ exports[`checkbox select renders checkbox select selections properly when isChec
 
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1575,6 +1583,8 @@ exports[`checkbox select renders closed successfully 1`] = `
 
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -2128,6 +2138,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
 
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -2626,6 +2638,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
 
 exports[`checkbox select renders expanded with filtering successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -3242,6 +3256,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
 
 exports[`checkbox select renders expanded with filtering successfully 2`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -3858,6 +3874,8 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
 
 exports[`renders select with favorites successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -5608,6 +5626,8 @@ exports[`renders select with favorites successfully 1`] = `
 
 exports[`select custom select filter filters properly 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -6079,6 +6099,8 @@ exports[`select custom select filter filters properly 1`] = `
 
 exports[`select renders select groups successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7016,6 +7038,8 @@ exports[`select renders select groups successfully 1`] = `
 
 exports[`select renders up direction successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7190,6 +7214,8 @@ exports[`select renders up direction successfully 1`] = `
 
 exports[`select single select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7364,6 +7390,8 @@ exports[`select single select renders closed successfully 1`] = `
 
 exports[`select single select renders disabled successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7539,6 +7567,8 @@ exports[`select single select renders disabled successfully 1`] = `
 
 exports[`select single select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8061,6 +8091,8 @@ exports[`select single select renders expanded successfully 1`] = `
 
 exports[`select single select renders expanded successfully with custom objects 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8533,6 +8565,8 @@ exports[`select single select renders expanded successfully with custom objects 
 
 exports[`select with custom content renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8702,6 +8736,8 @@ exports[`select with custom content renders closed successfully 1`] = `
 
 exports[`select with custom content renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8960,6 +8996,8 @@ exports[`toggle icon typeahead select 1`] = `
 
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -9156,6 +9194,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -9705,6 +9745,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 
 exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -10734,6 +10776,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 
 exports[`typeahead select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -10928,6 +10972,8 @@ exports[`typeahead select renders closed successfully 1`] = `
 
 exports[`typeahead select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -11474,6 +11520,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
 
 exports[`typeahead select renders selected successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -12104,6 +12152,8 @@ exports[`typeahead select renders selected successfully 1`] = `
 
 exports[`typeahead select test select existing option on a non-creatable select 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
