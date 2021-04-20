@@ -5,18 +5,6 @@ import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
 import { formatBreakpointMods } from '../../helpers/util';
-import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
-import lgBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
-import xlBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
-import xl2Breakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
-
-const breakpoints = {
-  all: xl2Breakpoint,
-  md: mdBreakpoint,
-  lg: lgBreakpoint,
-  xl: xlBreakpoint,
-  '2xl': xl2Breakpoint
-};
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -54,6 +42,8 @@ export interface ToolbarState {
   isManagedToggleExpanded: boolean;
   /** Object managing information about how many chips are in each chip group */
   filterInfo: FilterInfo;
+  /** Used to keep track of window width so we can collapse expanded content when window is resizing */
+  windowWidth: number;
 }
 
 interface FilterInfo {
@@ -66,7 +56,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   staticFilterInfo = {};
   state = {
     isManagedToggleExpanded: false,
-    filterInfo: {}
+    filterInfo: {},
+    windowWidth: window.innerWidth
   };
 
   isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
@@ -77,14 +68,12 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  closeExpandableContent = () => {
-    const breakpointPx = breakpoints[this.props.collapseListedFiltersBreakpoint];
-    if (!breakpointPx) {
-      return;
-    }
-    const breakpointWidth = Number(breakpointPx.value.replace('px', ''));
-    if (window.innerWidth >= breakpointWidth) {
-      this.setState({ isManagedToggleExpanded: false });
+  closeExpandableContent = (e: any) => {
+    if (e.target.innerWidth !== this.state.windowWidth) {
+      this.setState(() => ({
+        isManagedToggleExpanded: false,
+        windowWidth: e.target.innerWidth
+      }));
     }
   };
 
