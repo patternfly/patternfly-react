@@ -627,6 +627,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectFavoritesDemo
   },
   {
+    id: 'select-validated-demo',
+    name: 'Select Validated Demo',
+    componentType: Examples.SelectValidatedDemo
+  },
+  {
     id: 'simple-list-demo',
     name: 'Simple List Demo',
     componentType: Examples.SimpleListDemo

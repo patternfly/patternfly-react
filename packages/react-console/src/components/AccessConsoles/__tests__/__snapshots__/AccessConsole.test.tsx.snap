@@ -9,6 +9,8 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
       className="pf-c-console__actions"
     >
       <Select
+        aria-describedby=""
+        aria-invalid={false}
         aria-label="Select console type"
         aria-labelledby=""
         chipGroupComponent={null}
@@ -44,6 +46,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
         toggleIcon={null}
         toggleId="pf-c-console__type-selector"
         typeAheadAriaLabel=""
+        validated="default"
         variant="single"
         width=""
       >
@@ -361,6 +364,8 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
     className="pf-c-console__actions"
   >
     <Select
+      aria-describedby=""
+      aria-invalid={false}
       aria-label="Select console type"
       aria-labelledby=""
       chipGroupComponent={null}
@@ -396,6 +401,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
       toggleIcon={null}
       toggleId="pf-c-console__type-selector"
       typeAheadAriaLabel=""
+      validated="default"
       variant="single"
       width=""
     >

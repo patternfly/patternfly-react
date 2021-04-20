@@ -2,6 +2,8 @@
 
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -37,6 +39,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -1010,6 +1013,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 
 exports[`checkbox select renders checkbox select selections properly 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1064,6 +1069,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   toggleIcon={null}
   toggleId="checkbox-select-selections"
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -1215,6 +1221,8 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
 
 exports[`checkbox select renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1270,6 +1278,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   toggleIcon={null}
   toggleId="checkbox-select-hidden-badge"
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -1403,6 +1412,8 @@ exports[`checkbox select renders checkbox select selections properly when isChec
 
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1438,6 +1449,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   toggleIcon={null}
   toggleId="checkbox-select-closed"
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -1571,6 +1583,8 @@ exports[`checkbox select renders closed successfully 1`] = `
 
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -1606,6 +1620,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -2123,6 +2138,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
 
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -2158,6 +2175,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -2620,6 +2638,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
 
 exports[`checkbox select renders expanded with filtering successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -2655,6 +2675,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -3235,6 +3256,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
 
 exports[`checkbox select renders expanded with filtering successfully 2`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -3270,6 +3293,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   toggleIcon={null}
   toggleId="checkbox-select-expanded-filtered"
   typeAheadAriaLabel=""
+  validated="default"
   variant="checkbox"
   width=""
 >
@@ -3850,6 +3874,8 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
 
 exports[`renders select with favorites successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -3890,6 +3916,7 @@ exports[`renders select with favorites successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -5599,6 +5626,8 @@ exports[`renders select with favorites successfully 1`] = `
 
 exports[`select custom select filter filters properly 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -5634,6 +5663,7 @@ exports[`select custom select filter filters properly 1`] = `
   toggleIcon={null}
   toggleId="custom-select-filters"
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeahead"
   width=""
 >
@@ -6069,6 +6099,8 @@ exports[`select custom select filter filters properly 1`] = `
 
 exports[`select renders select groups successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -6104,6 +6136,7 @@ exports[`select renders select groups successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -7005,6 +7038,8 @@ exports[`select renders select groups successfully 1`] = `
 
 exports[`select renders up direction successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7040,6 +7075,7 @@ exports[`select renders up direction successfully 1`] = `
   toggleIcon={null}
   toggleId="select-up"
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -7178,6 +7214,8 @@ exports[`select renders up direction successfully 1`] = `
 
 exports[`select single select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7213,6 +7251,7 @@ exports[`select single select renders closed successfully 1`] = `
   toggleIcon={null}
   toggleId="single-select-closed"
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -7351,6 +7390,8 @@ exports[`select single select renders closed successfully 1`] = `
 
 exports[`select single select renders disabled successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7386,6 +7427,7 @@ exports[`select single select renders disabled successfully 1`] = `
   toggleIcon={null}
   toggleId="single-select-disabled"
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -7525,6 +7567,8 @@ exports[`select single select renders disabled successfully 1`] = `
 
 exports[`select single select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -7560,6 +7604,7 @@ exports[`select single select renders expanded successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -8046,6 +8091,8 @@ exports[`select single select renders expanded successfully 1`] = `
 
 exports[`select single select renders expanded successfully with custom objects 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8081,6 +8128,7 @@ exports[`select single select renders expanded successfully with custom objects 
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -8517,6 +8565,8 @@ exports[`select single select renders expanded successfully with custom objects 
 
 exports[`select with custom content renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8551,6 +8601,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   toggleIcon={null}
   toggleId="select-custom-content"
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -8685,6 +8736,8 @@ exports[`select with custom content renders closed successfully 1`] = `
 
 exports[`select with custom content renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8719,6 +8772,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="single"
   width=""
 >
@@ -8942,6 +8996,8 @@ exports[`toggle icon typeahead select 1`] = `
 
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -8977,6 +9033,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   toggleIcon={null}
   toggleId="typeahead-multi-select-closed"
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeaheadmulti"
   width=""
 >
@@ -9024,6 +9081,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                   class="pf-c-select__toggle-wrapper"
                 >
                   <input
+                    aria-invalid="false"
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
@@ -9075,6 +9133,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           >
             <input
               aria-activedescendant={null}
+              aria-invalid={false}
               aria-label=""
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
@@ -9135,6 +9194,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -9170,6 +9231,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeaheadmulti"
   width=""
 >
@@ -9274,6 +9336,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   class="pf-c-select__toggle-wrapper"
                 >
                   <input
+                    aria-invalid="false"
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
@@ -9383,6 +9446,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           >
             <input
               aria-activedescendant={null}
+              aria-invalid={false}
               aria-label=""
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
@@ -9681,6 +9745,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 
 exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -9721,6 +9787,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   toggleIcon={null}
   toggleId="typeahead-multi-select-selected"
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeaheadmulti"
   width=""
 >
@@ -9962,6 +10029,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     </div>
                   </div>
                   <input
+                    aria-invalid="false"
                     aria-label=""
                     autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
@@ -10305,6 +10373,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ChipGroup>
             <input
               aria-activedescendant={null}
+              aria-invalid={false}
               aria-label=""
               autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
@@ -10707,6 +10776,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 
 exports[`typeahead select renders closed successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -10742,6 +10813,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   toggleIcon={null}
   toggleId="typeahead-select-closed"
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeahead"
   width=""
 >
@@ -10900,6 +10972,8 @@ exports[`typeahead select renders closed successfully 1`] = `
 
 exports[`typeahead select renders expanded successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -10935,6 +11009,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeahead"
   width=""
 >
@@ -11445,6 +11520,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
 
 exports[`typeahead select renders selected successfully 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -11480,6 +11557,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeahead"
   width=""
 >
@@ -12074,6 +12152,8 @@ exports[`typeahead select renders selected successfully 1`] = `
 
 exports[`typeahead select test select existing option on a non-creatable select 1`] = `
 <Select
+  aria-describedby=""
+  aria-invalid={false}
   aria-label=""
   aria-labelledby=""
   chipGroupComponent={null}
@@ -12108,6 +12188,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
   toggleIcon={null}
   toggleId={null}
   typeAheadAriaLabel=""
+  validated="default"
   variant="typeahead"
   width=""
 >

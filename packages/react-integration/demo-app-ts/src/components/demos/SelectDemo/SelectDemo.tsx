@@ -557,6 +557,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             Title
           </span>
           <Select
+            id="single-select-component"
             toggleId="single-select"
             variant={SelectVariant.single}
             aria-label="Select Input"

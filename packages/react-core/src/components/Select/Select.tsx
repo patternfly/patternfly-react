@@ -5,6 +5,9 @@ import formStyles from '@patternfly/react-styles/css/components/FormControl/form
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
@@ -23,6 +26,7 @@ import {
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
+import { ValidatedOptions } from '../../helpers/constants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -47,6 +51,12 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
+  /** Value to indicate if the select is modified to show that validation state.
+   * If set to success, select will be modified to indicate valid state.
+   * If set to error, select will be modified to indicate error state.
+   * If set to warning, select will be modified to indicate warning state.
+   */
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
   /** Title text of Select */
@@ -63,6 +73,10 @@ export interface SelectProps
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
   'aria-labelledby'?: string;
+  /** Id of div for the select aria-labelledby */
+  'aria-describedby'?: string;
+  /* Flag indicating if the select is an invalid state */
+  'aria-invalid'?: boolean;
   /** Label for input field of type ahead select variants */
   typeAheadAriaLabel?: string;
   /** Label for clear selection button of type ahead select variants */
@@ -149,8 +163,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
+    validated: 'default',
     'aria-label': '',
     'aria-labelledby': '',
+    'aria-describedby': '',
+    'aria-invalid': false,
     typeAheadAriaLabel: '',
     clearSelectionsAriaLabel: 'Clear all',
     toggleAriaLabel: 'Options menu',
@@ -627,6 +644,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isGrouped,
       isPlain,
       isDisabled,
+      validated,
       selections: selectionsProp,
       typeAheadAriaLabel,
       clearSelectionsAriaLabel,
@@ -634,6 +652,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       removeSelectionAriaLabel,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      'aria-describedby': ariaDescribedby,
+      'aria-invalid': ariaInvalid,
       placeholderText,
       width,
       maxHeight,
@@ -861,10 +881,15 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         className={css(
           styles.select,
           isOpen && styles.modifiers.expanded,
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
+          validated === ValidatedOptions.error && styles.modifiers.invalid,
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
         {...(width && { style: { width } })}
+        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         {isOpen && menuContainer}
       </div>
@@ -875,12 +900,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         className={css(
           styles.select,
           isOpen && styles.modifiers.expanded,
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
+          validated === ValidatedOptions.error && styles.modifiers.invalid,
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
         ref={this.parentRef}
         {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
+        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         <SelectToggle
           id={selectToggleId}
@@ -968,6 +998,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                   id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                   aria-label={typeAheadAriaLabel}
+                  aria-invalid={validated === ValidatedOptions.error}
                   placeholder={placeholderText as string}
                   value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                   type="text"
@@ -980,6 +1011,21 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               </div>
               {hasOnClear && ((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
             </React.Fragment>
+          )}
+          {validated === ValidatedOptions.success && (
+            <span className={css(styles.selectToggleStatusIcon)}>
+              <CheckCircleIcon aria-hidden="true" />
+            </span>
+          )}
+          {validated === ValidatedOptions.error && (
+            <span className={css(styles.selectToggleStatusIcon)}>
+              <ExclamationCircleIcon aria-hidden="true" />
+            </span>
+          )}
+          {validated === ValidatedOptions.warning && (
+            <span className={css(styles.selectToggleStatusIcon)}>
+              <ExclamationTriangleIcon aria-hidden="true" />
+            </span>
           )}
         </SelectToggle>
         {isOpen && menuAppendTo === 'inline' && menuContainer}
