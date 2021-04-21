@@ -58,7 +58,7 @@ section: developer-resources
 - Removed star reexport ([#5662](https://github.com/patternfly/patternfly-react/pull/5662))
 
 ### Inline edit extension
-Removed unused dependency ([#5645](https://github.com/patternfly/patternfly-react/pull/5645))
+- Removed unused dependency ([#5645](https://github.com/patternfly/patternfly-react/pull/5645))
 
 ### Tokens
 - Removed star reexport ([#5662](https://github.com/patternfly/patternfly-react/pull/5662))
