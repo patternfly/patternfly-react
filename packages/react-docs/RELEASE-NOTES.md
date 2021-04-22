@@ -4,17 +4,17 @@ section: developer-resources
 ---
 
 ## 2021.05 release notes (2021-04-21)
-- [@patternfly/react-catalog-view-extension@4.11.6](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.6)
-- [@patternfly/react-charts@6.14.16](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.16)
-- [@patternfly/react-code-editor@4.2.40](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.40)
-- [@patternfly/react-core@4.115.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.115.1)
-- [@patternfly/react-icons@4.10.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.1)
-- [@patternfly/react-inline-edit-extension@4.6.87](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.87)
-- [@patternfly/react-styles/v/4.10.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.1)
-- [@patternfly/react-table@4.26.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.26.6)
-- [@patternfly/react-tokens/v/4.11.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.2)
-- [@patternfly/react-topology@4.8.36](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.36)
-- [@patternfly/react-virtualized-extension@4.7.23](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.23)
+- [@patternfly/react-catalog-view-extension@4.11.7](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.7)
+- [@patternfly/react-charts@6.14.17](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.17)
+- [@patternfly/react-code-editor@4.2.41](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.41)
+- [@patternfly/react-core@4.115.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.115.2)
+- [@patternfly/react-icons@4.10.2](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.2)
+- [@patternfly/react-inline-edit-extension@4.6.88](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.88)
+- [@patternfly/react-styles/v/4.10.2](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.2)
+- [@patternfly/react-table@4.26.7](https://www.npmjs.com/package/@patternfly/react-table/v/4.26.7)
+- [@patternfly/react-tokens/v/4.11.3](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.3)
+- [@patternfly/react-topology@4.8.37](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.37)
+- [@patternfly/react-virtualized-extension@4.7.24](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.24)
 
 - **Card:** 
   - Added empty state to card demo ([#5605](https://github.com/patternfly/patternfly-react/pull/5605))
@@ -62,6 +62,7 @@ section: developer-resources
 
 ### Tokens
 - Removed star reexport ([#5662](https://github.com/patternfly/patternfly-react/pull/5662))
+- Fixed duplicate entries ([#5697](https://github.com/patternfly/patternfly-react/pull/5697))
 
 ### Table
 - Added optional icons to tree table rows, add responsive view ([#5672](https://github.com/patternfly/patternfly-react/pull/5672))
@@ -74,6 +75,8 @@ section: developer-resources
 - **Chore:** 
   - Added closeComment to Stalebot ([#5651](https://github.com/patternfly/patternfly-react/pull/5651))
   - Removed codecov ([#5683](https://github.com/patternfly/patternfly-react/pull/5683))
+  - Added delay to table sticky header integration test ([#5713](https://github.com/patternfly/patternfly-react/pull/5713))
+
 - **Deps:** 
   - Updated dependency theme-patternfly-org to v0.4.53 ([#5684](https://github.com/patternfly/patternfly-react/pull/5684))
 
