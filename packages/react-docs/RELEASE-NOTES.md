@@ -4,17 +4,17 @@ section: developer-resources
 ---
 
 ## 2021.05 release notes (2021-04-21)
-- [@patternfly/react-catalog-view-extension@4.11.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.5)
-- [@patternfly/react-charts@6.14.15](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.15)
-- [@patternfly/react-code-editor@4.2.39](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.39)
-- [@patternfly/react-core@4.115.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.115.0)
+- [@patternfly/react-catalog-view-extension@4.11.6](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.6)
+- [@patternfly/react-charts@6.14.16](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.16)
+- [@patternfly/react-code-editor@4.2.40](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.40)
+- [@patternfly/react-core@4.115.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.115.1)
 - [@patternfly/react-icons@4.10.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.1)
-- [@patternfly/react-inline-edit-extension@4.6.86](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.86)
+- [@patternfly/react-inline-edit-extension@4.6.87](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.87)
 - [@patternfly/react-styles/v/4.10.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.1)
-- [@patternfly/react-table@4.26.5](https://www.npmjs.com/package/@patternfly/react-table/v/4.26.5)
-- [@patternfly/react-tokens/v/4.11.1](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.1)
-- [@patternfly/react-topology@4.8.35](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.35)
-- [@patternfly/react-virtualized-extension@4.7.22](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.22)
+- [@patternfly/react-table@4.26.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.26.6)
+- [@patternfly/react-tokens/v/4.11.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.2)
+- [@patternfly/react-topology@4.8.36](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.36)
+- [@patternfly/react-virtualized-extension@4.7.23](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.23)
 
 - **Card:** 
   - Added empty state to card demo ([#5605](https://github.com/patternfly/patternfly-react/pull/5605))
