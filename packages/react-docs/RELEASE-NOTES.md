@@ -3,6 +3,80 @@ id: Release notes
 section: developer-resources
 ---
 
+## 2021.05 release notes (2021-04-21)
+- [@patternfly/react-catalog-view-extension@4.11.6](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.6)
+- [@patternfly/react-charts@6.14.16](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.16)
+- [@patternfly/react-code-editor@4.2.40](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.40)
+- [@patternfly/react-core@4.115.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.115.1)
+- [@patternfly/react-icons@4.10.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.1)
+- [@patternfly/react-inline-edit-extension@4.6.87](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.87)
+- [@patternfly/react-styles/v/4.10.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.1)
+- [@patternfly/react-table@4.26.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.26.6)
+- [@patternfly/react-tokens/v/4.11.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.2)
+- [@patternfly/react-topology@4.8.36](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.36)
+- [@patternfly/react-virtualized-extension@4.7.23](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.23)
+
+- **Card:** 
+  - Added empty state to card demo ([#5605](https://github.com/patternfly/patternfly-react/pull/5605))
+  - Added full-height and plain variation ([#5632](https://github.com/patternfly/patternfly-react/pull/5632))
+  - Moved card view to demos section ([#5671](https://github.com/patternfly/patternfly-react/pull/5671))
+- **Clipboard copy:** 
+  - Added inline variant ([#5629](https://github.com/patternfly/patternfly-react/pull/5629))
+- **Code editor:**
+  - Fixed React peer dependency ([#5618](https://github.com/patternfly/patternfly-react/pull/5618))
+- **Code block:**
+  - Added code block component ([#5656](https://github.com/patternfly/patternfly-react/pull/5656))
+- **Context selector:**
+  - Updated footer button to inline ([#5676](https://github.com/patternfly/patternfly-react/pull/5676))
+- **Date picker:**
+  - Added date and time range demo ([#5666](https://github.com/patternfly/patternfly-react/pull/5666))
+- **Expandable section:**
+  - Added detached variant, updated tests ([#5643](https://github.com/patternfly/patternfly-react/pull/5643))
+- **Form:**
+  - Added stacked variant and section title ([#5621](https://github.com/patternfly/patternfly-react/pull/5621))
+- **Navigation:**
+  - Added missing pf-c-nav__list class to grouped nav items wrapper ([#5589](https://github.com/patternfly/patternfly-react/pull/5589))
+- **Select:**
+  - Added optional item count ([#5677](https://github.com/patternfly/patternfly-react/pull/5677))
+  - Removed panel from select variants ([#5600](https://github.com/patternfly/patternfly-react/pull/5600))
+  - Changed arguments of the onFilter callback ([#5631](https://github.com/patternfly/patternfly-react/pull/5631))
+  - Added invalid state to select ([#5675](https://github.com/patternfly/patternfly-react/pull/5675))
+- **Slider:**
+  - Updated Slider API to be more like the range input API ([#5669](https://github.com/patternfly/patternfly-react/pull/5669))
+- **Tree view:**
+  - Added classname ([#5608](https://github.com/patternfly/patternfly-react/pull/5608))
+- **Toolbar:**
+  - Added ToolbarGroup to docs ([#5665](https://github.com/patternfly/patternfly-react/pull/5665))
+  - Fixed to collapse expandable content when crossing breakpoint ([#5692](https://github.com/patternfly/patternfly-react/pull/5692))
+- **Wizard:**
+  - Disabled back button on first step for keyboard users ([#5623](https://github.com/patternfly/patternfly-react/pull/5623))
+
+### Access console extension
+- Updated to clear selection when the selected option is a placeholder ([#5678](https://github.com/patternfly/patternfly-react/pull/5678))
+
+### Icons
+- Removed star reexport ([#5662](https://github.com/patternfly/patternfly-react/pull/5662))
+
+### Inline edit extension
+- Removed unused dependency ([#5645](https://github.com/patternfly/patternfly-react/pull/5645))
+
+### Tokens
+- Removed star reexport ([#5662](https://github.com/patternfly/patternfly-react/pull/5662))
+
+### Table
+- Added optional icons to tree table rows, add responsive view ([#5672](https://github.com/patternfly/patternfly-react/pull/5672))
+- Allow passing tooltipProps to TableText ([#5654](https://github.com/patternfly/patternfly-react/pull/5654))
+
+### Virtualized extension
+- Fixed render of demo data so the table cells don't repeat static text ([#5627](https://github.com/patternfly/patternfly-react/pull/5627))
+
+## Other
+- **Chore:** 
+  - Added closeComment to Stalebot ([#5651](https://github.com/patternfly/patternfly-react/pull/5651))
+  - Removed codecov ([#5683](https://github.com/patternfly/patternfly-react/pull/5683))
+- **Deps:** 
+  - Updated dependency theme-patternfly-org to v0.4.53 ([#5684](https://github.com/patternfly/patternfly-react/pull/5684))
+
 ## 2021.04 release notes (2021-04-01)
 - [@patternfly/react-catalog-view-extension@4.10.29](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.10.29)
 - [@patternfly/react-charts@6.14.11](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.11)
