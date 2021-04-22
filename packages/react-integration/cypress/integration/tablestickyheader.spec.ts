@@ -10,7 +10,7 @@ describe('Table Simple Test', () => {
   });
 
   it('Check number of rows', () => {
-    cy.wait(1000);
+    cy.wait(3000);
     cy.get('.pf-c-table')
       .find('tr')
       .should('have.length', 21);
