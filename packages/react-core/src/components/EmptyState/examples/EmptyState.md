@@ -233,7 +233,7 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
     No results found
   </Title>
   <EmptyStateBody>
-    No results match the filter criteria. Remove all filters or clear all filters to show results.
+    No results match the filter criteria. Clear all filters to show results.
   </EmptyStateBody>
   <EmptyStatePrimary>
     <Button variant="link">Clear all filters</Button>
