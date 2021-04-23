@@ -86,6 +86,8 @@ export interface TableProps extends OUIAProps {
   dropdownPosition?: 'right' | 'left';
   /** The desired direction to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownDirection?: 'up' | 'down';
+  /** The toggle of the actions menu dropdown. A KebabToggle or DropdownToggle component */
+  actionsToggle?: React.ReactElement;
   /** Row data */
   rows: (IRow | string[])[];
   /** Cell/column data */
@@ -177,6 +179,7 @@ export class Table extends React.Component<TableProps, {}> {
       rowLabeledBy,
       dropdownPosition,
       dropdownDirection,
+      actionsToggle,
       contentId,
       expandId,
       variant,
@@ -214,6 +217,7 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
+      actionsToggle,
       onFavorite,
       canSortFavorites,
       // order of columns: Collapsible | Selectable | Favoritable

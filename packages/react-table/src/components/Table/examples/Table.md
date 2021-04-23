@@ -608,13 +608,15 @@ To use actions you can either specify an array of actions and pass that into the
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { ButtonVariant, Checkbox, DropdownToggle, ToggleGroup, ToggleGroupItem, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
 
 class ActionsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       propToUse: 'actions',
+      useCustomToggle: false,
+      useExtraAction: false,
       columns: [
         { title: 'Repositories', cellTransforms: [headerCol()] },
         'Branches',
@@ -628,7 +630,7 @@ class ActionsTable extends React.Component {
         },
         {
           cells: ['disable actions', 'two', 3, 'four', 'five'],
-          disableActions: true
+          disableActions: true,
         },
         {
           cells: ['green actions', 'two', 4, 'four', 'five'],
@@ -638,7 +640,7 @@ class ActionsTable extends React.Component {
           cells: ['extra action props', 'two', 5, 'four', 'five'],
           actionProps: {
             'data-specific-attr': 'some-value'
-          }
+          },
         },
         {
           cells: ['blue actions', 'two', 6, 'four', 'five'],
@@ -647,6 +649,8 @@ class ActionsTable extends React.Component {
       ]
     };
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.toggleCustomToggle = this.toggleCustomToggle.bind(this);
+    this.toggleExtraAction = this.toggleExtraAction.bind(this);
   }
 
   /**
@@ -656,7 +660,7 @@ class ActionsTable extends React.Component {
     return [
       {
         title: 'Some action',
-        onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+        onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId),
       },
       {
         title: <a href="https://www.patternfly.org">Link action</a>
@@ -667,7 +671,16 @@ class ActionsTable extends React.Component {
       {
         title: 'Third action',
         onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
-      }
+      },
+      ...(this.state.useExtraAction ? 
+      [
+        {
+          title: 'Start',
+          variant: ButtonVariant.secondary,
+          onClick: (event, rowId, rowData, extra) => console.log('clicked on extra action on row: ', rowId),
+          isOutsideDropdown: true
+        },
+      ] : [])
     ];
   }
 
@@ -701,7 +714,49 @@ class ActionsTable extends React.Component {
       {
         title: <div>Another action</div>,
         onClick: (event, rowId, rowData, extra) =>
-          console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`)
+          console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`),
+      },
+      ...thirdAction
+    ];
+  }
+
+  /**
+   * Use actions or actionResolver, not both
+   */
+  actionResolverWithActions(rowData, { rowIndex }) {
+    if (rowIndex === 1) {
+      return null;
+    }
+
+    const thirdAction = rowData.type
+      ? [
+          {
+            isSeparator: true
+          },
+          {
+            title: `${rowData.type} action`,
+            onClick: (event, rowId, rowData, extra) =>
+              console.log(`clicked on ${rowData.type} action, on row ${rowId} of type ${rowData.type}`)
+          }
+        ]
+      : [];
+
+    return [
+      {
+        title: 'Start',
+        variant: ButtonVariant.secondary,
+        onClick: (event, rowId, rowData, extra) => console.log('clicked on extra action on row: ', rowId),
+        isOutsideDropdown: true
+      },
+      {
+        title: 'actionResolver action',
+        onClick: (event, rowId, rowData, extra) =>
+          console.log(`clicked on Some action, on row ${rowId} of type ${rowData.type}`)
+      },
+      {
+        title: <div>Another action</div>,
+        onClick: (event, rowId, rowData, extra) =>
+          console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`),
       },
       ...thirdAction
     ];
@@ -717,34 +772,80 @@ class ActionsTable extends React.Component {
       propToUse: action
     });
   }
+  
+  toggleCustomToggle(checked) {
+    this.setState({
+      useCustomToggle: checked
+    });
+  };
+  
+  toggleExtraAction(checked) {
+    this.setState({
+      useExtraAction: checked
+    });
+  };
 
   render() {
-    const { columns, rows, propToUse } = this.state;
+    const { columns, rows, propToUse, useCustomToggle, useExtraAction } = this.state;
+    
+    const customActionsToggle = (props) => (
+      <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
+        Actions
+      </DropdownToggle>
+    );
+    
     return (
       <React.Fragment>
-        <ToggleGroup aria-label="actions or actionResolver">
-          <ToggleGroupItem
-            text="Use actions prop"
-            buttonId="actions"
-            isSelected={propToUse === 'actions'}
-            onChange={this.handleItemClick}
-          />
-          <ToggleGroupItem
-            text="Use actionResolver prop"
-            buttonId="actionResolver"
-            isSelected={propToUse === 'actionResolver'}
-            onChange={this.handleItemClick}
-          />
-        </ToggleGroup>
+        <Toolbar>
+          <ToolbarContent>
+            <ToolbarItem>
+              <ToggleGroup aria-label="actions or actionResolver">
+                <ToggleGroupItem
+                  text="Use actions prop"
+                  buttonId="actions"
+                  isSelected={propToUse === 'actions'}
+                  onChange={this.handleItemClick}
+                />
+                <ToggleGroupItem
+                  text="Use actionResolver prop"
+                  buttonId="actionResolver"
+                  isSelected={propToUse === 'actionResolver'}
+                  onChange={this.handleItemClick}
+                />
+              </ToggleGroup>
+            </ToolbarItem>
+            <ToolbarItem>
+              <Checkbox 
+                label="Use custom actions toggle"
+                isChecked={useCustomToggle}
+                onChange={this.toggleCustomToggle}
+                aria-label="toggle use of custom actions toggle"
+                id="toggle-custom-actions-toggle"
+                name="toggle-custom-actions-toggle"
+              />
+            </ToolbarItem>
+            <ToolbarItem>
+              <Checkbox 
+                label="Add extra actions"
+                isChecked={useExtraAction}
+                onChange={this.toggleExtraAction}
+                aria-label="toggle extra actions"
+                id="toggle-extra-action"
+                name="toggle-extra-action"
+              />
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
         <Table
           aria-label="Actions table"
           cells={columns}
           rows={rows}
           actions={propToUse === 'actions' ? this.actions() : null}
-          actionResolver={propToUse === 'actionResolver' ? this.actionResolver : null}
+          {...(propToUse === 'actionResolver' && {actionResolver: useExtraAction ? this.actionResolverWithActions : this.actionResolver })}
           areActionsDisabled={this.areActionsDisabled}
           dropdownPosition="left"
           dropdownDirection="bottom"
+          actionsToggle={useCustomToggle ? customActionsToggle : undefined}
         >
           <TableHeader />
           <TableBody />
@@ -2624,6 +2725,7 @@ This example demonstrates adding actions as the last column. The header's last c
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+import { ButtonVariant, DropdownToggle } from '@patternfly/react-core';
 
 ComposableTableActions = () => {
   const defaultActions = [
@@ -2640,6 +2742,12 @@ ComposableTableActions = () => {
     {
       title: 'Third action',
       onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
+    },
+    {
+      title: 'Start',
+      variant: ButtonVariant.secondary,
+      onClick: (event, rowId, rowData, extra) => console.log('clicked on extra action, on row: ', rowId),
+      isOutsideDropdown: true
     }
   ];
   const lastRowActions = [
@@ -2667,6 +2775,13 @@ ComposableTableActions = () => {
     ['4', '2', 'b', 'four', 'five'],
     ['5', '2', 'b', 'four', 'five']
   ];
+  
+  const customActionsToggle = (props) => (
+    <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
+      Actions
+    </DropdownToggle>
+  );
+  
   return (
     <TableComposable aria-label="Actions table">
       <Thead>
@@ -2693,6 +2808,7 @@ ComposableTableActions = () => {
                 items: rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions,
                 disable: rowIndex === 3
               }}
+              actionsToggle={customActionsToggle}
             />
           </Tr>
         ))}

@@ -33,7 +33,7 @@ export const cellActions = (
     rowIndex,
     columnIndex,
     column: {
-      extraParams: { dropdownPosition, dropdownDirection }
+      extraParams: { dropdownPosition, dropdownDirection, actionsToggle }
     },
     property
   }: IExtra
@@ -63,6 +63,7 @@ export const cellActions = (
               isDisabled={resolvedIsDisabled}
               rowData={rowData}
               extraData={extraData}
+              actionsToggle={actionsToggle}
             >
               {label}
             </ActionsColumn>
@@ -72,6 +73,7 @@ export const cellActions = (
 
   return {
     className: css(styles.tableAction),
+    style: { width: 'auto', paddingRight: 0 },
     isVisible: true,
     ...renderProps
   };
