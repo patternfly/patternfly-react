@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`menu toggle passes additional classes 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle test-class"
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`menu toggle renders successfully 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle"
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`menu toggle shows badge 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle"
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__count"
+  >
+    <Badge>
+      badge
+    </Badge>
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`menu toggle shows icon 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle"
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__icon"
+  >
+    <CogIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`menu toggle shows isDisabled 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle"
+  disabled={true}
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`menu toggle shows isExpanded 1`] = `
+<button
+  aria-expanded={true}
+  className="pf-c-menu-toggle pf-m-expanded"
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`menu toggle shows isPlain 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle pf-m-plain"
+  type="button"
+>
+  <EllipsisVIcon
+    color="currentColor"
+    noVerticalAlign={false}
+    size="sm"
+  />
+</button>
+`;
+
+exports[`menu toggle shows isPrimary 1`] = `
+<button
+  aria-expanded={false}
+  className="pf-c-menu-toggle pf-m-primary"
+  type="button"
+>
+  <span
+    className="pf-c-menu-toggle__text"
+  >
+    Toggle
+  </span>
+  <span
+    className="pf-c-menu-toggle__controls"
+  >
+    <span
+      className="pf-c-menu-toggle__toggle-icon"
+    >
+      <CaretDownIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+  </span>
+</button>
+`;
