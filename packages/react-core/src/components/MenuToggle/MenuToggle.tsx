@@ -5,7 +5,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon
 import { BadgeProps } from '../Badge';
 
 export interface MenuToggleProps
-  extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
   /** Content rendered inside the toggle */
   children?: React.ReactNode;
   /** Additional classes added to the toggle */
@@ -22,10 +22,12 @@ export interface MenuToggleProps
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
   badge?: BadgeProps | React.ReactNode;
+  /** Forwarded ref */
+  innerRef?: React.Ref<HTMLButtonElement>;
 }
 
-export class MenuToggle extends React.Component<MenuToggleProps> {
-  displayName = 'MenuToggle';
+export class MenuToggleBase extends React.Component<MenuToggleProps> {
+  displayName = 'MenuToggleBase';
   static defaultProps = {
     className: '',
     isExpanded: false,
@@ -35,7 +37,18 @@ export class MenuToggle extends React.Component<MenuToggleProps> {
   };
 
   render() {
-    const { children, className, icon, badge, isExpanded, isDisabled, isPrimary, isPlain, ...props } = this.props;
+    const {
+      children,
+      className,
+      icon,
+      badge,
+      isExpanded,
+      isDisabled,
+      isPrimary,
+      isPlain,
+      innerRef,
+      ...props
+    } = this.props;
 
     const content = (
       <React.Fragment>
@@ -60,6 +73,7 @@ export class MenuToggle extends React.Component<MenuToggleProps> {
         )}
         type="button"
         aria-expanded={false}
+        ref={innerRef}
         {...(isExpanded && { 'aria-expanded': true })}
         {...(isDisabled && { disabled: true })}
         {...props}
@@ -70,3 +84,9 @@ export class MenuToggle extends React.Component<MenuToggleProps> {
     );
   }
 }
+
+export const MenuToggle = React.forwardRef((props: MenuToggleProps, ref: React.Ref<HTMLButtonElement>) => (
+  <MenuToggleBase innerRef={ref} {...props} />
+));
+
+MenuToggle.displayName = 'MenuToggle';
