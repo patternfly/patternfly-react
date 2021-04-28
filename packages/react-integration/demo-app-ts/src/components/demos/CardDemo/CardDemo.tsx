@@ -102,7 +102,7 @@ export class CardDemo extends React.Component {
         </Card>
         <br></br>
         <Card id="expand-card" isExpanded={this.state.isExpanded}>
-          <CardHeader onExpand={this.onExpand}>
+          <CardHeader onExpand={this.onExpand} isToggleRightAligned>
             <CardTitle>Header</CardTitle>
           </CardHeader>
           {this.state.isExpanded && (
