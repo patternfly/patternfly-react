@@ -1966,7 +1966,7 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-### select menu document body
+### Select menu document body
 
 ```js
 import React from 'react';
