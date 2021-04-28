@@ -69,7 +69,7 @@ class MenuToggleCollapsed extends React.Component {
     const { activeItem, isExpanded } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded}>
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '150px' }}>
         {isExpanded ? 'Expanded' : 'Collapsed'}
       </MenuToggle>
     );
@@ -100,7 +100,6 @@ class MenuToggleCollapsed extends React.Component {
           position="left"
           appendTo={this.containerRef.current}
           isVisible={isExpanded}
-          popperMatchesTriggerWidth={false}
         />
       </div>
     );
@@ -180,7 +179,7 @@ class MenuToggleCollapsed extends React.Component {
     const { activeItem, selectedItem, selectedText, isExpanded } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded}>
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '200px' }}>
         {selectedText ? selectedText : 'Select a value'}
       </MenuToggle>
     );
@@ -208,7 +207,6 @@ class MenuToggleCollapsed extends React.Component {
           position="left"
           appendTo={this.containerRef.current}
           isVisible={isExpanded}
-          popperMatchesTriggerWidth={false}
         />
       </div>
     );
@@ -307,7 +305,7 @@ class MenuToggleCollapsed extends React.Component {
     const { isExpanded, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded}>
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '300px' }}>
         {isExpanded ? 'Expanded' : 'Collapsed'}
       </MenuToggle>
     );
@@ -467,7 +465,6 @@ class MenuToggleCollapsed extends React.Component {
           position="left"
           appendTo={this.containerRef.current}
           isVisible={isExpanded}
-          popperMatchesTriggerWidth={false}
           enableFlip={false}
         />
       </div>

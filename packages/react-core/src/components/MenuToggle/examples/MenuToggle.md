@@ -115,13 +115,13 @@ class MenuToggleCollapsed extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <MenuToggle isPlain>
+        <MenuToggle isPlain aria-label="plain kebab">
           <EllipsisVIcon />
         </MenuToggle>
-        <MenuToggle isPlain isExpanded>
+        <MenuToggle isPlain isExpanded aria-label="plain expanded kebab">
           <EllipsisVIcon />
         </MenuToggle>
-        <MenuToggle isPlain isDisabled>
+        <MenuToggle isPlain isDisabled aria-label="disabled kebab">
           <EllipsisVIcon />
         </MenuToggle>
       </React.Fragment>
