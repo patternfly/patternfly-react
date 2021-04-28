@@ -2,7 +2,7 @@
 id: Card
 section: components
 cssPrefix: pf-c-card
-propComponents: ['Card', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
+propComponents: ['Card', 'CardHeader', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
 ouia: true
 ---
 
@@ -571,7 +571,6 @@ import {
   Brand,
   Card,
   CardHeader,
-  CardHeaderMain,
   CardActions,
   CardTitle,
   CardBody,
@@ -594,7 +593,8 @@ class ExpandableCard extends React.Component {
     this.state = {
       isOpen: false,
       check1: false,
-      isExpanded: false
+      isExpanded: false,
+      isToggleRightAligned: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -616,6 +616,11 @@ class ExpandableCard extends React.Component {
       console.log(id);
       this.setState({
         isExpanded: !this.state.isExpanded
+      });
+    };
+    this.onRightAlign = event => {
+      this.setState({
+        isToggleRightAligned: !this.state.isToggleRightAligned
       });
     };
   }
@@ -640,40 +645,52 @@ class ExpandableCard extends React.Component {
       </DropdownItem>
     ];
     return (
-      <Card id="card1" isExpanded={this.state.isExpanded}>
-        <CardHeader
-          onExpand={this.onExpand}
-          toggleButtonProps={{
-            id: 'toggle-button',
-            'aria-label': 'Details',
-            'aria-labelledby': 'titleId toggle-button',
-            'aria-expanded': this.state.isExpanded
-          }}
-        >
-          <CardActions>
-            <Dropdown
-              onSelect={this.onSelect}
-              toggle={<KebabToggle onToggle={this.onToggle} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
-            />
-            <Checkbox
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
-          </CardActions>
-          <CardTitle id="titleId">Header</CardTitle>
-        </CardHeader>
-        <CardExpandableContent>
-          <CardBody>Body</CardBody>
-          <CardFooter>Footer</CardFooter>
-        </CardExpandableContent>
-      </Card>
+      <React.Fragment>
+        <div style={{ marginBottom: '12px' }}>
+          <Checkbox
+            id={'isToggleRightAligned'}
+            key={'isToggleRightAligned'}
+            label={'isToggleRightAligned'}
+            isChecked={this.state.isToggleRightAligned}
+            onChange={this.onRightAlign}
+          />
+        </div>
+        <Card id="card1" isExpanded={this.state.isExpanded}>
+          <CardHeader
+            onExpand={this.onExpand}
+            isToggleRightAligned={this.state.isToggleRightAligned}
+            toggleButtonProps={{
+              id: 'toggle-button',
+              'aria-label': 'Details',
+              'aria-labelledby': 'titleId toggle-button',
+              'aria-expanded': this.state.isExpanded
+            }}
+          >
+            <CardActions>
+              <Dropdown
+                onSelect={this.onSelect}
+                toggle={<KebabToggle onToggle={this.onToggle} />}
+                isOpen={isOpen}
+                isPlain
+                dropdownItems={dropdownItems}
+                position={'right'}
+              />
+              <Checkbox
+                isChecked={this.state.check1}
+                onChange={this.onClick}
+                aria-label="card checkbox example"
+                id="check-1"
+                name="check1"
+              />
+            </CardActions>
+            <CardTitle id="titleId">Header</CardTitle>
+          </CardHeader>
+          <CardExpandableContent>
+            <CardBody>Body</CardBody>
+            <CardFooter>Footer</CardFooter>
+          </CardExpandableContent>
+        </Card>
+      </React.Fragment>
     );
   }
 }
@@ -687,7 +704,6 @@ import {
   Brand,
   Card,
   CardHeader,
-  CardHeaderMain,
   CardActions,
   CardTitle,
   CardBody,
