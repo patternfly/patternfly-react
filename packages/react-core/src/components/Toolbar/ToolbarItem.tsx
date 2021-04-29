@@ -62,6 +62,15 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
     '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
   };
+  /** Widths at various breakpoints. */
+  widths?: {
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
   /** id for this data toolbar item */
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
@@ -77,6 +86,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   visiblity,
   alignment,
   spacer,
+  widths,
   id,
   children,
   isAllExpanded,
@@ -91,6 +101,14 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     console.warn(
       'The ToolbarItem visiblity prop has been deprecated. ' +
         'Please use the correctly spelled visibility prop instead.'
+    );
+  }
+
+  const widthStyles: any = {};
+  if (widths) {
+    Object.entries(widths || {}).map(
+      ([breakpoint, value]) =>
+        (widthStyles[`--pf-c-toolbar__item--Width${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`] = value)
     );
   }
 
@@ -111,6 +129,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
       {...(variant === 'label' && { 'aria-hidden': true })}
       id={id}
       {...props}
+      {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
     >
       {children}
     </div>

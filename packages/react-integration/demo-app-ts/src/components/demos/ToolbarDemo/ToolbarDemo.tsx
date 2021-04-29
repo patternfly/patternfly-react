@@ -246,6 +246,21 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
       </DropdownItem>
     ];
 
+    const widths = {
+      default: '100px',
+      sm: '80px',
+      md: '150px',
+      lg: '200px',
+      xl: '250px',
+      '2xl': '300px'
+    };
+
+    const widthsToolbarItems = (
+      <ToolbarItem id="width-item" widths={widths}>
+        <Button variant="plain">Test </Button>
+      </ToolbarItem>
+    );
+
     const toolbarItems = (
       <React.Fragment>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
@@ -289,6 +304,15 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           clearFiltersButtonText="Clear filters"
         >
           <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
+        <Toolbar
+          id="toolbar-width-demo"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          collapseListedFiltersBreakpoint="xl"
+          clearFiltersButtonText="Clear filters"
+        >
+          <ToolbarContent>{widthsToolbarItems}</ToolbarContent>
         </Toolbar>
         <Toolbar
           id="toolbar-no-inset"

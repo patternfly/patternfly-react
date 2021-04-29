@@ -272,3 +272,34 @@ exports[`Toolbar should render with page inset flag 1`] = `
   </div>
 </Toolbar>
 `;
+
+exports[`ToolbarItem should map width breakpoints 1`] = `
+<ToolbarItem
+  widths={
+    Object {
+      "2xl": "300px",
+      "default": "100px",
+      "lg": "200px",
+      "md": "150px",
+      "sm": "80px",
+      "xl": "250px",
+    }
+  }
+>
+  <div
+    className="pf-c-toolbar__item"
+    style={
+      Object {
+        "--pf-c-toolbar__item--Width": "100px",
+        "--pf-c-toolbar__item--Width-on-2xl": "300px",
+        "--pf-c-toolbar__item--Width-on-lg": "200px",
+        "--pf-c-toolbar__item--Width-on-md": "150px",
+        "--pf-c-toolbar__item--Width-on-sm": "80px",
+        "--pf-c-toolbar__item--Width-on-xl": "250px",
+      }
+    }
+  >
+    Test
+  </div>
+</ToolbarItem>
+`;
