@@ -209,7 +209,7 @@ exports[`tree view renders active successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -443,7 +443,7 @@ exports[`tree view renders active successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -614,7 +614,7 @@ exports[`tree view renders active successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -782,7 +782,7 @@ exports[`tree view renders active successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -992,7 +992,7 @@ exports[`tree view renders active successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
@@ -1275,7 +1275,7 @@ exports[`tree view renders badges successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -1522,7 +1522,7 @@ exports[`tree view renders badges successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -1706,7 +1706,7 @@ exports[`tree view renders badges successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -1887,7 +1887,7 @@ exports[`tree view renders badges successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -2123,7 +2123,7 @@ exports[`tree view renders badges successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
@@ -2382,7 +2382,7 @@ exports[`tree view renders basic successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -2580,7 +2580,7 @@ exports[`tree view renders basic successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -2733,7 +2733,7 @@ exports[`tree view renders basic successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -2883,7 +2883,7 @@ exports[`tree view renders basic successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -3057,7 +3057,7 @@ exports[`tree view renders basic successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
@@ -3340,7 +3340,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -3589,7 +3589,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -3775,7 +3775,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -3958,7 +3958,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -4198,7 +4198,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
@@ -4523,7 +4523,7 @@ exports[`tree view renders icons successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -4813,7 +4813,7 @@ exports[`tree view renders icons successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -5026,7 +5026,7 @@ exports[`tree view renders icons successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -5236,7 +5236,7 @@ exports[`tree view renders icons successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -5530,7 +5530,7 @@ exports[`tree view renders icons successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
@@ -5891,7 +5891,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -6183,7 +6183,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -6369,7 +6369,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -6586,7 +6586,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -6854,7 +6854,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
@@ -7176,7 +7176,7 @@ exports[`tree view renders search successfully 1`] = `
                 "name": "ApplicationLauncher",
               }
             }
-            key="ApplicationLauncher"
+            key="AppLaunch"
             name="ApplicationLauncher"
             onSelect={[MockFunction]}
           >
@@ -7410,7 +7410,7 @@ exports[`tree view renders search successfully 1`] = `
                           "name": "Application 1",
                         }
                       }
-                      key="Application 1"
+                      key="App1"
                       name="Application 1"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -7581,7 +7581,7 @@ exports[`tree view renders search successfully 1`] = `
                           "name": "Application 2",
                         }
                       }
-                      key="Application 2"
+                      key="App2"
                       name="Application 2"
                       onSelect={[MockFunction]}
                       parentItem={
@@ -7749,7 +7749,7 @@ exports[`tree view renders search successfully 1`] = `
                 "name": "Cost Management",
               }
             }
-            key="Cost Management"
+            key="Cost"
             name="Cost Management"
             onSelect={[MockFunction]}
           >
@@ -7959,7 +7959,7 @@ exports[`tree view renders search successfully 1`] = `
                 "name": "Really really really long folder name that overflows the container it is in",
               }
             }
-            key="Really really really long folder name that overflows the container it is in"
+            key="Long"
             name="Really really really long folder name that overflows the container it is in"
             onSelect={[MockFunction]}
           >
