@@ -30,6 +30,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   min?: number;
   /** The maximum permitted value */
   max?: number;
+  /** Flag to indicate if boundaries should be shown for slider that does not have custom steps */
+  showBoundaries?: boolean;
   /** Flag to indicate if ticks should be shown for slider that does not have custom steps  */
   showTicks?: boolean;
   /** Array of custom slider step objects (value and label of each step) for the slider. */
@@ -75,6 +77,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   min = 0,
   max = 100,
   showTicks = false,
+  showBoundaries = true,
   ...props
 }: SliderProps) => {
   const sliderRailRef = React.useRef<HTMLDivElement>();
@@ -308,7 +311,13 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     for (let i = min; i <= max; i = i + step) {
       const stepValue = ((i - min) * 100) / (max - min);
       builtSteps.push(
-        <SliderStep key={i} value={stepValue} label={i.toString()} isLabelHidden={true} isActive={i <= localValue} />
+        <SliderStep
+          key={i}
+          value={stepValue}
+          label={i.toString()}
+          isLabelHidden={(i === min || i === max) && showBoundaries ? false : true}
+          isActive={i <= localValue}
+        />
       );
     }
     return builtSteps;

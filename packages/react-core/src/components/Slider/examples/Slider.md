@@ -73,7 +73,9 @@ class DiscreteInput extends React.Component {
         <Slider value={this.state.value2} onChange={this.onChange2} max={200} step={50} showTicks/>
         <br />
         <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value3)}</Text>
-        <Text component={TextVariants.small}>(min = -25, max = 75, step = 10) </Text>
+        <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries not shown) </Text>
+        <Slider value={this.state.value3} onChange={this.onChange3} min={-25} max={75} step={10} showTicks showBoundaries={false}/>
+        <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown) </Text>
         <Slider value={this.state.value3} onChange={this.onChange3} min={-25} max={75} step={10} showTicks />
       </>
     );
