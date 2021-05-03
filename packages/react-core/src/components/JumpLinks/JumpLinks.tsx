@@ -8,6 +8,7 @@ import { formatBreakpointMods } from '../../helpers/util';
 import { Button } from '../Button';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import cssToggleDisplayVar from '@patternfly/react-tokens/dist/js/c_jump_links__toggle_Display';
+import { canUseDOM } from '../../helpers/util';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -105,7 +106,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
   if (hasScrollSpy) {
     React.useEffect(() => {
-      if (typeof window === 'undefined') {
+      if (!canUseDOM) {
         return;
       }
       const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;

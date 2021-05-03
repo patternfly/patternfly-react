@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
-import { debounce } from '../../helpers/util';
+import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageGroup, PageGroupProps } from './PageGroup';
 
@@ -117,7 +117,9 @@ export class Page extends React.Component<PageProps, PageState> {
   componentDidMount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      window.addEventListener('resize', this.handleResize);
+      if (canUseDOM) {
+        window.addEventListener('resize', this.handleResize);
+      }
       const currentRef = this.mainRef.current;
       if (currentRef) {
         currentRef.addEventListener('mousedown', this.handleMainClick);
@@ -131,7 +133,9 @@ export class Page extends React.Component<PageProps, PageState> {
   componentWillUnmount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      window.removeEventListener('resize', this.handleResize);
+      if (canUseDOM) {
+        window.removeEventListener('resize', this.handleResize);
+      }
       const currentRef = this.mainRef.current;
       if (currentRef) {
         currentRef.removeEventListener('mousedown', this.handleMainClick);
@@ -140,15 +144,17 @@ export class Page extends React.Component<PageProps, PageState> {
     }
   }
 
+  getWindowWidth = () => (canUseDOM ? window.innerWidth : 1200);
+
   isMobile = () =>
     // eslint-disable-next-line radix
-    window.innerWidth < Number.parseInt(globalBreakpointXl.value, 10);
+    this.getWindowWidth() < Number.parseInt(globalBreakpointXl.value, 10);
 
   resize = () => {
     const { onPageResize } = this.props;
     const mobileView = this.isMobile();
     if (onPageResize) {
-      onPageResize({ mobileView, windowSize: window.innerWidth });
+      onPageResize({ mobileView, windowSize: this.getWindowWidth() });
     }
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { OUIAProps } from '@patternfly/react-core/dist/js/helpers/OUIA/ouia';
-import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
+import { debounce, canUseDOM } from '@patternfly/react-core/dist/js/helpers/util';
 import { Tr } from '../TableComposable/Tr';
 import { IRow } from './TableTypes';
 
@@ -51,22 +51,26 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
   componentDidMount() {
     this._unmounted = false;
 
-    if (this.props.onScroll) {
-      window.addEventListener('scroll', this.handleScroll);
-    }
-    if (this.props.onResize) {
-      window.addEventListener('resize', this.handleResize);
+    if (canUseDOM) {
+      if (this.props.onScroll) {
+        window.addEventListener('scroll', this.handleScroll);
+      }
+      if (this.props.onResize) {
+        window.addEventListener('resize', this.handleResize);
+      }
     }
   }
 
   componentWillUnmount() {
     this._unmounted = true;
 
-    if (this.props.onScroll) {
-      window.removeEventListener('scroll', this.handleScroll);
-    }
-    if (this.props.onResize) {
-      window.removeEventListener('resize', this.handleResize);
+    if (canUseDOM) {
+      if (this.props.onScroll) {
+        window.removeEventListener('scroll', this.handleScroll);
+      }
+      if (this.props.onResize) {
+        window.removeEventListener('resize', this.handleResize);
+      }
     }
   }
 

@@ -3,7 +3,7 @@ import React, { useImperativeHandle } from 'react';
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 
-import { debounce } from '@patternfly/react-core';
+import { debounce, canUseDOM } from '@patternfly/react-core';
 
 export interface XTermProps {
   /** The number of columns to resize to */
@@ -91,15 +91,21 @@ export const XTerm: React.FunctionComponent<XTermProps> = ({
 
     terminal.open(ref.current);
 
+    const resizeListener = debounce(onWindowResize, 100);
+
     if (!rows) {
-      window.addEventListener('resize', debounce(onWindowResize, 100));
+      if (canUseDOM) {
+        window.addEventListener('resize', resizeListener);
+      }
       onWindowResize();
     }
     terminal.focus();
 
     return () => {
       terminal.dispose();
-      window.removeEventListener('resize', onWindowResize);
+      if (canUseDOM) {
+        window.removeEventListener('resize', resizeListener);
+      }
       onFocusOut();
     };
   }, []);

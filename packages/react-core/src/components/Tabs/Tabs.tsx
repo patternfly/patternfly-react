@@ -10,7 +10,7 @@ import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps, getDefaultOUIAId, canUseDOM } from '../../helpers';
 
 export enum TabsComponent {
   div = 'div',
@@ -131,8 +131,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   }
 
   handleScrollButtons = () => {
-    if (this.tabList.current && !this.props.isVertical) {
-      const container = this.tabList.current;
+    const container = this.tabList.current;
+    if (container && !this.props.isVertical) {
       // get first element and check if it is in view
       const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
@@ -193,7 +193,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
 
   componentDidMount() {
     if (!this.props.isVertical) {
-      window.addEventListener('resize', this.handleScrollButtons, false);
+      if (canUseDOM) {
+        window.addEventListener('resize', this.handleScrollButtons, false);
+      }
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
     }
@@ -201,7 +203,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
 
   componentWillUnmount() {
     if (!this.props.isVertical) {
-      window.removeEventListener('resize', this.handleScrollButtons, false);
+      if (canUseDOM) {
+        window.removeEventListener('resize', this.handleScrollButtons, false);
+      }
     }
   }
 

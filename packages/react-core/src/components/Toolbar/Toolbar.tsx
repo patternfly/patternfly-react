@@ -4,7 +4,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -57,7 +57,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   state = {
     isManagedToggleExpanded: false,
     filterInfo: {},
-    windowWidth: window.innerWidth
+    windowWidth: canUseDOM ? window.innerWidth : 1200
   };
 
   isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
@@ -78,13 +78,13 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   };
 
   componentDidMount() {
-    if (this.isToggleManaged()) {
+    if (this.isToggleManaged() && canUseDOM) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
   }
 
   componentWillUnmount() {
-    if (this.isToggleManaged()) {
+    if (this.isToggleManaged() && canUseDOM) {
       window.removeEventListener('resize', this.closeExpandableContent);
     }
   }

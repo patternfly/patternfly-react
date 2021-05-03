@@ -6,8 +6,7 @@ import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
-
-import { formatBreakpointMods, toCamel, capitalize } from '../../helpers/util';
+import { formatBreakpointMods, toCamel, capitalize, canUseDOM } from '../../helpers/util';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
@@ -59,7 +58,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
 export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
   static displayName = 'ToolbarToggleGroup';
   isContentPopup = () => {
-    const viewportSize = window.innerWidth;
+    const viewportSize = canUseDOM ? window.innerWidth : 1200;
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);
     return viewportSize < lgBreakpointValue;
   };

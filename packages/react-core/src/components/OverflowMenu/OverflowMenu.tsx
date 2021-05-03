@@ -6,7 +6,7 @@ import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md'
 import lgBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 import xlBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 import xl2Breakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
-import { debounce } from '../../helpers/util';
+import { debounce, canUseDOM } from '../../helpers/util';
 
 const breakpoints = {
   md: mdBreakpoint,
@@ -39,11 +39,15 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
 
   componentDidMount() {
     this.handleResize();
-    window.addEventListener('resize', debounce(this.handleResize, 250));
+    if (canUseDOM) {
+      window.addEventListener('resize', debounce(this.handleResize, 250));
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', debounce(this.handleResize, 250));
+    if (canUseDOM) {
+      window.removeEventListener('resize', debounce(this.handleResize, 250));
+    }
   }
 
   handleResize = () => {

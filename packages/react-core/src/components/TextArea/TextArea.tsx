@@ -3,7 +3,7 @@ import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import heightToken from '@patternfly/react-tokens/dist/js/c_form_control_textarea_Height';
 import { css } from '@patternfly/react-styles';
-import { capitalize, ValidatedOptions } from '../../helpers';
+import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';
 
 export enum TextAreResizeOrientation {
   horizontal = 'horizontal',
@@ -62,7 +62,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
   private handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     // https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
     const field = event.currentTarget;
-    if (this.props.autoResize) {
+    if (this.props.autoResize && canUseDOM) {
       field.style.setProperty(heightToken.name, 'inherit');
       const computed = window.getComputedStyle(field);
       // Calculate the height

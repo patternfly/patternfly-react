@@ -17,6 +17,7 @@ import {
   filterTreeItemsWithoutFolders,
   filterRestTreeItems
 } from './treeUtils';
+import { canUseDOM } from '../../helpers/util';
 export interface DualListSelectorProps {
   /** Additional classes applied to the dual list selector. */
   className?: string;
@@ -476,11 +477,15 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
   };
 
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeys);
+    if (canUseDOM) {
+      window.addEventListener('keydown', this.handleKeys);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeys);
+    if (canUseDOM) {
+      window.removeEventListener('keydown', this.handleKeys);
+    }
   }
 
   render() {

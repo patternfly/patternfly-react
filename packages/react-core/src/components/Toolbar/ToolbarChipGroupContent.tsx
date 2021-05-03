@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
+import { canUseDOM } from '../../helpers/util';
 
 import { RefObject } from 'react';
 import { ToolbarItem } from './ToolbarItem';
@@ -55,8 +56,9 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
     let collapseListedFilters = false;
     if (collapseListedFiltersBreakpoint === 'all') {
       collapseListedFilters = true;
-    } else if (typeof window !== 'undefined') {
-      collapseListedFilters = window.innerWidth < globalBreakpoints[collapseListedFiltersBreakpoint];
+    } else if (canUseDOM) {
+      collapseListedFilters =
+        (canUseDOM ? window.innerWidth : 1200) < globalBreakpoints[collapseListedFiltersBreakpoint];
     }
 
     return (

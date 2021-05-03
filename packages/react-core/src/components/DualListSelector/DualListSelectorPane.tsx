@@ -5,6 +5,7 @@ import formStyles from '@patternfly/react-styles/css/components/FormControl/form
 import { DualListSelectorListItem } from './DualListSelectorListItem';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { PickOptional } from '../../helpers';
+import { canUseDOM } from '../../helpers/util';
 
 export interface DualListSelectorPaneProps {
   /** Additional classes applied to the dual list selector. */
@@ -157,11 +158,15 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
   };
 
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeys);
+    if (canUseDOM) {
+      window.addEventListener('keydown', this.handleKeys);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeys);
+    if (canUseDOM) {
+      window.removeEventListener('keydown', this.handleKeys);
+    }
   }
 
   render() {
