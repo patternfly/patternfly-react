@@ -5,3 +5,35 @@ exports[`gutter 1`] = `
   className="pf-l-gallery pf-m-gutter"
 />
 `;
+
+exports[`gutter breakpoints 1`] = `
+<Gallery
+  hasGutter={true}
+  maxWidths={
+    Object {
+      "md": "200px",
+      "xl": "1fr",
+    }
+  }
+  minWidths={
+    Object {
+      "default": "100%",
+      "md": "100px",
+      "xl": "300px",
+    }
+  }
+>
+  <div
+    className="pf-l-gallery pf-m-gutter"
+    style={
+      Object {
+        "--pf-l-gallery--GridTemplateColumns--max-on-md": "200px",
+        "--pf-l-gallery--GridTemplateColumns--max-on-xl": "1fr",
+        "--pf-l-gallery--GridTemplateColumns--min": "100%",
+        "--pf-l-gallery--GridTemplateColumns--min-on-md": "100px",
+        "--pf-l-gallery--GridTemplateColumns--min-on-xl": "300px",
+      }
+    }
+  />
+</Gallery>
+`;

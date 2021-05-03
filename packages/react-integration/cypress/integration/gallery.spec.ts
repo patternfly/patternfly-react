@@ -14,4 +14,12 @@ describe('Gallery Demo Test', () => {
   it('Verify gutters', () => {
     cy.get('.pf-l-gallery').should('have.class', 'pf-m-gutter');
   });
+
+  it('Verify gallery min/max breakpoints ', () => {
+    cy.get('.pf-l-gallery').should(
+      'have.attr',
+      'style',
+      '--pf-l-gallery--GridTemplateColumns--min:100%; --pf-l-gallery--GridTemplateColumns--min-on-md:100px; --pf-l-gallery--GridTemplateColumns--min-on-xl:300px; --pf-l-gallery--GridTemplateColumns--max-on-md:200px; --pf-l-gallery--GridTemplateColumns--max-on-xl:1fr;'
+    );
+  });
 });
