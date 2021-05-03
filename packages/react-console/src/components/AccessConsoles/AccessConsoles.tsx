@@ -74,13 +74,12 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
   };
 
   const items = {
-    [NONE_TYPE]: textSelectConsoleType,
     [SERIAL_CONSOLE_TYPE]: textSerialConsole,
     [VNC_CONSOLE_TYPE]: textVncConsole,
     [DESKTOP_VIEWER_CONSOLE_TYPE]: textDesktopViewerConsole
   };
 
-  const selectOptions = [<SelectOption key={NONE_TYPE} id={NONE_TYPE} isPlaceholder value={items[NONE_TYPE]} />];
+  const selectOptions = [];
   if (isChildOfTypePresent(VNC_CONSOLE_TYPE)) {
     selectOptions.push(<SelectOption key={VNC_CONSOLE_TYPE} id={VNC_CONSOLE_TYPE} value={items[VNC_CONSOLE_TYPE]} />);
   }
@@ -105,18 +104,14 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
         <div className={css(styles.consoleActions)}>
           <Select
             aria-label={textSelectConsoleType}
+            placeholderText={textSelectConsoleType}
             toggleId="pf-c-console__type-selector"
             variant={SelectVariant.single}
-            onSelect={(_, selection, isPlaceholder) => {
-              if (isPlaceholder) {
-                setType(null);
-              } else {
-                setType(Object.keys(items).find(key => items[key] === selection));
-              }
-
+            onSelect={(_, selection, __) => {
+              setType(Object.keys(items).find(key => items[key] === selection));
               setIsOpen(false);
             }}
-            selections={type ? items[type] : null}
+            selections={type !== NONE_TYPE ? items[type] : null}
             isOpen={isOpen}
             onToggle={onToggle}
           >

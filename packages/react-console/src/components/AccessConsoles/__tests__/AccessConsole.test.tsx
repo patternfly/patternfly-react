@@ -87,9 +87,9 @@ test('AccessConsoles switching SerialConsole and VncConsole', () => {
   expect(wrapper.find('SerialConsole')).toHaveLength(0);
 
   let consoleItems = wrapper.find('ul li');
-  expect(consoleItems).toHaveLength(3);
+  expect(consoleItems).toHaveLength(2);
   consoleItems
-    .at(2)
+    .at(1)
     .find('button')
     .simulate('click');
   expect(consoleItems).toMatchSnapshot();
@@ -98,9 +98,9 @@ test('AccessConsoles switching SerialConsole and VncConsole', () => {
 
   button.simulate('click');
   consoleItems = wrapper.find('ul li');
-  expect(consoleItems).toHaveLength(3);
+  expect(consoleItems).toHaveLength(2);
   consoleItems
-    .at(1)
+    .at(0)
     .find('button')
     .simulate('click');
   expect(consoleItems).toMatchSnapshot();

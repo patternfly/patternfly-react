@@ -39,9 +39,9 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
         onToggle={[Function]}
         onTypeaheadInputChanged={null}
         ouiaSafe={true}
-        placeholderText=""
+        placeholderText="Select console type"
         removeSelectionAriaLabel="Remove"
-        selections="Select console type"
+        selections={null}
         toggleAriaLabel="Options menu"
         toggleIcon={null}
         toggleId="pf-c-console__type-selector"
@@ -190,51 +190,6 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 2`] = `
 Array [
   <li
     className="pf-c-select__menu-wrapper"
-    id="_none_"
-    role="presentation"
-  >
-    <button
-      aria-selected={true}
-      className="pf-c-select__menu-item pf-m-selected"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="option"
-      type="button"
-    >
-      Select console type
-      <span
-        className="pf-c-select__menu-item-icon"
-      >
-        <CheckIcon
-          aria-hidden={true}
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-            />
-          </svg>
-        </CheckIcon>
-      </span>
-    </button>
-  </li>,
-  <li
-    className="pf-c-select__menu-wrapper"
     id="VncConsole"
     role="presentation"
   >
@@ -270,22 +225,6 @@ Array [
 
 exports[`AccessConsoles switching SerialConsole and VncConsole 3`] = `
 Array [
-  <li
-    className="pf-c-select__menu-wrapper"
-    id="_none_"
-    role="presentation"
-  >
-    <button
-      aria-selected={null}
-      className="pf-c-select__menu-item"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="option"
-      type="button"
-    >
-      Select console type
-    </button>
-  </li>,
   <li
     className="pf-c-select__menu-wrapper"
     id="VncConsole"
@@ -394,9 +333,9 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
       onToggle={[Function]}
       onTypeaheadInputChanged={null}
       ouiaSafe={true}
-      placeholderText=""
+      placeholderText="Select console type"
       removeSelectionAriaLabel="Remove"
-      selections="Select console type"
+      selections={null}
       toggleAriaLabel="Options menu"
       toggleIcon={null}
       toggleId="pf-c-console__type-selector"
@@ -405,24 +344,6 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
       variant="single"
       width=""
     >
-      <SelectOption
-        className=""
-        component="button"
-        id="_none_"
-        index={0}
-        inputId=""
-        isChecked={false}
-        isDisabled={false}
-        isFavorite={null}
-        isNoResultsOption={false}
-        isPlaceholder={true}
-        isSelected={false}
-        key="_none_"
-        keyHandler={[Function]}
-        onClick={[Function]}
-        sendRef={[Function]}
-        value="Select console type"
-      />
       <SelectOption
         className=""
         component="button"
