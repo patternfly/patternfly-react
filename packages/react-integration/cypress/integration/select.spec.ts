@@ -50,6 +50,7 @@ describe('Select Test', () => {
     cy.get('#single-select-with-descriptions')
       .contains('Miss')
       .should('exist');
+    cy.get('.pf-c-select__menu-footer').should('exist');
   });
 
   it('Verify Disabled Single Select', () => {

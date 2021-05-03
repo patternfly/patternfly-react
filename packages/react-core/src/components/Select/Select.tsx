@@ -131,6 +131,8 @@ export interface SelectProps
   chipGroupComponent?: React.ReactNode;
   /** @beta Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
   isInputValuePersisted?: boolean;
+  /** Content rendered in the footer of the select menu */
+  footer?: React.ReactNode;
 }
 
 export interface SelectState {
@@ -692,6 +694,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       onFavorite,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       favoritesLabel,
+      footer,
       ...props
     } = this.props;
     const {
@@ -886,6 +889,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.menuComponentRef}
       >
         {variantChildren}
+        {footer && <div className={css(styles.selectMenuFooter)}>{footer}</div>}
       </SelectMenu>
     );
 
