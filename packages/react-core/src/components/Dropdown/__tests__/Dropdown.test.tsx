@@ -44,6 +44,24 @@ describe('dropdown', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('alignment breakpoints', () => {
+    const view = mount(
+      <Dropdown
+        dropdownItems={dropdownItems}
+        alignments={{
+          sm: 'left',
+          md: 'right',
+          lg: 'left',
+          xl: 'right',
+          '2xl': 'left'
+        }}
+        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
+        isOpen
+      />
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('dropup', () => {
     const view = mount(
       <Dropdown

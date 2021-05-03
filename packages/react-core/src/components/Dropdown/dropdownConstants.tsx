@@ -30,6 +30,13 @@ export const DropdownContext = React.createContext<
     plainTextClass?: string;
     menuComponent?: string;
     ouiaComponentType?: string;
+    alignments?: {
+      sm?: 'right' | 'left';
+      md?: 'right' | 'left';
+      lg?: 'right' | 'left';
+      xl?: 'right' | 'left';
+      '2xl'?: 'right' | 'left';
+    };
   } & OUIAProps
 >({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

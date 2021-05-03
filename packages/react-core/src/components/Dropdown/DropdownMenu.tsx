@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
-import { keyHandler } from '../../helpers/util';
+import { keyHandler, formatBreakpointMods } from '../../helpers/util';
 import { DropdownPosition, DropdownArrowContext, DropdownContext } from './dropdownConstants';
 
 export interface DropdownMenuProps {
@@ -22,6 +22,14 @@ export interface DropdownMenuProps {
   component?: React.ReactNode;
   /** Indicates where menu will be alligned horizontally */
   position?: DropdownPosition | 'right' | 'left';
+  /** Indicates how the menu will align at screen size breakpoints */
+  alignments?: {
+    sm?: 'right' | 'left';
+    md?: 'right' | 'left';
+    lg?: 'right' | 'left';
+    xl?: 'right' | 'left';
+    '2xl'?: 'right' | 'left';
+  };
   /** Flag to indicate if menu is grouped */
   isGrouped?: boolean;
   // Function to call on component mount
@@ -170,6 +178,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       setMenuComponentRef,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       openedOnEnter,
+      alignments,
       ...props
     } = this.props;
     return (
@@ -186,6 +195,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 className={css(
                   menuClass,
                   position === DropdownPosition.right && styles.modifiers.alignRight,
+                  formatBreakpointMods(alignments, styles, 'align-'),
                   className
                 )}
                 hidden={!isOpen}
@@ -207,6 +217,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                     className={css(
                       menuClass,
                       position === DropdownPosition.right && styles.modifiers.alignRight,
+                      formatBreakpointMods(alignments, styles, 'align-'),
                       className
                     )}
                     hidden={!isOpen}
@@ -228,6 +239,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                     className={css(
                       menuClass,
                       position === DropdownPosition.right && styles.modifiers.alignRight,
+                      formatBreakpointMods(alignments, styles, 'align-'),
                       className
                     )}
                     hidden={!isOpen}

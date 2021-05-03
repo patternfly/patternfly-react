@@ -22,6 +22,19 @@ describe('Dropdown Demo Test', () => {
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
   });
 
+  it('Verify dropdown menu has alignment breakpoints', () => {
+    cy.get('#dropdown > button').click();
+    cy.get('#dropdown').should('have.class', 'pf-m-expanded');
+    const menu = cy.get('#dropdown .pf-c-dropdown__menu');
+    menu.should('have.class', 'pf-m-align-left-on-sm');
+    menu.should('have.class', 'pf-m-align-right-on-md');
+    menu.should('have.class', 'pf-m-align-left-on-lg');
+    menu.should('have.class', 'pf-m-align-right-on-xl');
+    menu.should('have.class', 'pf-m-align-left-on-2xl');
+    cy.get('#toggle-id').click();
+    cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
+  });
+
   it('Verify dropdown menu items disabled', () => {
     // Links are disabled
     cy.get('#dropdown > button').click();

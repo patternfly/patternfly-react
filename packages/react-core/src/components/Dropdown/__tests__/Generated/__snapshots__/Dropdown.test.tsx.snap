@@ -4,6 +4,7 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "alignments": undefined,
       "baseClass": "pf-c-dropdown",
       "baseComponent": "div",
       "disabledClass": "pf-m-disabled",
