@@ -39,6 +39,8 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Flag indicating select has an inline text input for filtering */
   hasInlineFilter?: boolean;
   innerRef?: any;
+  /** Content rendered in the footer of the select menu */
+  footer?: React.ReactNode;
 }
 
 class SelectMenuWithRef extends React.Component<SelectMenuProps> {
@@ -184,6 +186,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       'aria-labelledby': ariaLabelledBy,
       hasInlineFilter,
       innerRef,
+      footer,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -214,6 +217,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   {...props}
                 >
                   {this.extendChildren(inputIdPrefix)}
+                  {footer && <div className={css(styles.selectMenuFooter)}>{footer}</div>}
                 </ul>
               ) : (
                 <div
@@ -223,6 +227,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   {...props}
                 >
                   {this.extendChildren(inputIdPrefix)}
+                  {footer && <div className={css(styles.selectMenuFooter)}>{footer}</div>}
                 </div>
               ))}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
@@ -243,6 +248,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   ]}
                   {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
                 </fieldset>
+                {footer && <div className={css(styles.selectMenuFooter)}>{footer}</div>}
               </div>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
@@ -252,6 +258,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
                 <fieldset className={css(styles.selectMenuFieldset)} />
+                {footer && <div className={css(styles.selectMenuFooter)}>{footer}</div>}
               </div>
             )}
           </React.Fragment>

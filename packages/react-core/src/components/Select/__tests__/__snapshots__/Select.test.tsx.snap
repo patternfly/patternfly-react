@@ -8805,11 +8805,11 @@ exports[`select with custom content renders expanded successfully 1`] = `
     >
       <SelectToggle
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-17"
+        aria-labelledby=" pf-select-toggle-id-14"
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
-        id="pf-select-toggle-id-17"
+        id="pf-select-toggle-id-14"
         isActive={false}
         isDisabled={false}
         isOpen={true}
@@ -8838,9 +8838,9 @@ exports[`select with custom content renders expanded successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
-                aria-labelledby=" pf-select-toggle-id-17"
+                aria-labelledby=" pf-select-toggle-id-14"
                 class="pf-c-select__toggle"
-                id="pf-select-toggle-id-17"
+                id="pf-select-toggle-id-14"
                 type="button"
               >
                 <div
@@ -8882,10 +8882,10 @@ exports[`select with custom content renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
-          aria-labelledby=" pf-select-toggle-id-17"
+          aria-labelledby=" pf-select-toggle-id-14"
           className="pf-c-select__toggle"
           disabled={false}
-          id="pf-select-toggle-id-17"
+          id="pf-select-toggle-id-14"
           onClick={[Function]}
           onKeyDown={[Function]}
           type="button"

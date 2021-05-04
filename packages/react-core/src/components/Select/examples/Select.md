@@ -2203,30 +2203,6 @@ class SelectWithFooter extends React.Component {
         isOpen: false
       });
     };
-
-    this.toggleDisabled = checked => {
-      this.setState({
-        isDisabled: checked
-      });
-    };
-
-    this.setIcon = checked => {
-      this.setState({
-        isToggleIcon: checked
-      });
-    };
-
-    this.toggleDirection = () => {
-      if (this.state.direction === SelectDirection.up) {
-        this.setState({
-          direction: SelectDirection.down
-        });
-      } else {
-        this.setState({
-          direction: SelectDirection.up
-        });
-      }
-    };
   }
 
   render() {
@@ -2252,30 +2228,6 @@ class SelectWithFooter extends React.Component {
         >
           {this.options}
         </Select>
-        <Checkbox
-          label="isDisabled"
-          isChecked={this.state.isDisabled}
-          onChange={this.toggleDisabled}
-          aria-label="disabled checkbox"
-          id="toggle-disabled"
-          name="toggle-disabled"
-        />
-        <Checkbox
-          label="Expands up"
-          isChecked={direction === SelectDirection.up}
-          onChange={this.toggleDirection}
-          aria-label="direction checkbox"
-          id="toggle-direction"
-          name="toggle-direction"
-        />
-        <Checkbox
-          label="Show icon"
-          isChecked={isToggleIcon}
-          onChange={this.setIcon}
-          aria-label="show icon checkbox"
-          id="toggle-icon"
-          name="toggle-icon"
-        />
       </div>
     );
   }

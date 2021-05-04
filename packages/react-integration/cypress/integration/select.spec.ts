@@ -46,11 +46,11 @@ describe('Select Test', () => {
 
   it('Verify Description Select', () => {
     cy.get('#single-select-with-descriptions').click();
+    cy.get('.pf-c-select__menu-footer').should('exist');
     cy.get('#Miss > .pf-c-select__menu-item > .pf-c-select__menu-item-description').click();
     cy.get('#single-select-with-descriptions')
       .contains('Miss')
       .should('exist');
-    cy.get('.pf-c-select__menu-footer').should('exist');
   });
 
   it('Verify Disabled Single Select', () => {

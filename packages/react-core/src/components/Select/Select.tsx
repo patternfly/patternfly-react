@@ -887,9 +887,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         keyHandler={this.handleMenuKeys}
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
+        footer={footer}
       >
         {variantChildren}
-        {footer && <div className={css(styles.selectMenuFooter)}>{footer}</div>}
       </SelectMenu>
     );
 
