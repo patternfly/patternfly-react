@@ -5,6 +5,14 @@ describe('Data Toolbar Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/toolbar-demo-nav-link');
   });
 
+  it('Verify widths styling mapped ', () => {
+    cy.get('#width-item').should(
+      'have.attr',
+      'style',
+      '--pf-c-toolbar__item--Width:100px; --pf-c-toolbar__item--Width-on-sm:80px; --pf-c-toolbar__item--Width-on-md:150px; --pf-c-toolbar__item--Width-on-lg:200px; --pf-c-toolbar__item--Width-on-xl:250px; --pf-c-toolbar__item--Width-on-2xl:300px;'
+    );
+  });
+
   it('Verify no inset applied for all viewport sizes ', () => {
     cy.get('#toolbar-no-inset.pf-m-inset-none').should('exist');
     cy.get('#toolbar-no-inset.pf-m-inset-none-on-md').should('exist');
