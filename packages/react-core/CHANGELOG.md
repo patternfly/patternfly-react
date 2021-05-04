@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.116.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.115.6...@patternfly/react-core@4.116.0) (2021-05-04)
+
+
+### Features
+
+* **ToolbarItem:** add widths on breakpoints ([#5727](https://github.com/patternfly/patternfly-react/issues/5727)) ([2149190](https://github.com/patternfly/patternfly-react/commit/214919090ae02511f206aa799bae4660a82b21ce))
+
+
+
+
+
 ## [4.115.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.115.5...@patternfly/react-core@4.115.6) (2021-05-03)
 
 **Note:** Version bump only for package @patternfly/react-core

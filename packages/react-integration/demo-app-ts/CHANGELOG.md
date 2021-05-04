@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.93.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.92.6...demo-app-ts@4.93.0) (2021-05-04)
+
+
+### Features
+
+* **ToolbarItem:** add widths on breakpoints ([#5727](https://github.com/patternfly/patternfly-react/issues/5727)) ([2149190](https://github.com/patternfly/patternfly-react/commit/214919090ae02511f206aa799bae4660a82b21ce))
+
+
+
+
+
 ## [4.92.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.92.5...demo-app-ts@4.92.6) (2021-05-03)
 
 **Note:** Version bump only for package demo-app-ts

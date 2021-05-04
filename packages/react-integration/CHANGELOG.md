@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.94.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.93.1...@patternfly/react-integration@4.94.0) (2021-05-04)
+
+
+### Features
+
+* **ToolbarItem:** add widths on breakpoints ([#5727](https://github.com/patternfly/patternfly-react/issues/5727)) ([2149190](https://github.com/patternfly/patternfly-react/commit/214919090ae02511f206aa799bae4660a82b21ce))
+
+
+
+
+
 ## [4.93.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.93.0...@patternfly/react-integration@4.93.1) (2021-04-22)
 
 **Note:** Version bump only for package @patternfly/react-integration
