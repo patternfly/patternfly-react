@@ -49,7 +49,7 @@ export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
 // Recursively find JumpLinkItems and return an array of all their scrollNodes
 const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
   React.Children.forEach(children, (child: any) => {
-    if (typeof document !== 'undefined' && child.type === JumpLinksItem) {
+    if (canUseDOM && document.getElementById && document.querySelector && child.type === JumpLinksItem) {
       const scrollNode = child.props.node || child.props.href;
       if (typeof scrollNode === 'string') {
         if (scrollNode.startsWith('#')) {
