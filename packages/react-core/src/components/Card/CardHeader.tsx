@@ -30,31 +30,36 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   ...props
 }: CardHeaderProps) => (
   <CardContext.Consumer>
-    {({ cardId }) => (
-      <div
-        className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
-        id={id}
-        {...props}
-      >
-        {onExpand && (
-          <div className={css(styles.cardHeaderToggle)}>
-            <Button
-              variant="plain"
-              type="button"
-              onClick={evt => {
-                onExpand(evt, cardId);
-              }}
-              {...toggleButtonProps}
-            >
-              <span className={css(styles.cardHeaderToggleIcon)}>
-                <AngleRightIcon aria-hidden="true" />
-              </span>
-            </Button>
-          </div>
-        )}
-        {children}
-      </div>
-    )}
+    {({ cardId }) => {
+      const cardHeaderToggle = (
+        <div className={css(styles.cardHeaderToggle)}>
+          <Button
+            variant="plain"
+            type="button"
+            onClick={evt => {
+              onExpand(evt, cardId);
+            }}
+            {...toggleButtonProps}
+          >
+            <span className={css(styles.cardHeaderToggleIcon)}>
+              <AngleRightIcon aria-hidden="true" />
+            </span>
+          </Button>
+        </div>
+      );
+
+      return (
+        <div
+          className={css(styles.cardHeader, isToggleRightAligned && styles.modifiers.toggleRight, className)}
+          id={id}
+          {...props}
+        >
+          {onExpand && !isToggleRightAligned && cardHeaderToggle}
+          {children}
+          {onExpand && isToggleRightAligned && cardHeaderToggle}
+        </div>
+      );
+    }}
   </CardContext.Consumer>
 );
 CardHeader.displayName = 'CardHeader';
