@@ -6,6 +6,7 @@ exports[`state active 1`] = `
   aria-labelledby=""
   className=""
   hasClearButton={false}
+  hasFooter={false}
   id="Select Toggle"
   isActive={true}
   isDisabled={false}

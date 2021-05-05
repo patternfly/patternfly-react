@@ -2,7 +2,7 @@
 id: Select
 section: components
 cssPrefix: pf-c-select
-propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
+propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject', 'SelectViewMoreObject']
 ouia: true
 ---
 
@@ -2205,6 +2205,8 @@ class SelectWithFooter extends React.Component {
     };
   }
 
+
+
   render() {
     const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id-1';
@@ -2233,3 +2235,105 @@ class SelectWithFooter extends React.Component {
   }
 }
 ```
+
+### View more
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  Divider,
+  Button,
+  ViewMoreText
+} from '@patternfly/react-core';
+
+class SelectViewMore extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Choose..." isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <Divider component="li" key={5} />,
+      <SelectOption key={6} value="Dr" />,
+      <SelectOption key={7} value="Other" />
+    ];
+
+    this.state = {
+      isOpen: false,
+      selected: null,
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.onViewMoreClick = () => {
+      // Set select loadingVariant to spinner then simulate network call before loading more options
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 < this.options.length ? this.state.numOptions + 3 : this.options.length;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isToggleIcon, numOptions, loadingVariant, isLoading } = this.state;
+    const titleId = 'title-id-1';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          {...(!isLoading && numOptions < this.options.length && { loadingVariant: { text: 'View more', onClick: this.onViewMoreClick } })}
+          {...(isLoading && { loadingVariant: 'spinner' })}
+        >
+          {this.options.slice(0, numOptions)}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+

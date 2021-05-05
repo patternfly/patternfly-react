@@ -21,12 +21,14 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   onEnter?: () => void;
   /** Callback for toggle close */
   onClose?: () => void;
-  /** Internal callback for toggle keyboard navigation */
+  /** @hide Internal callback for toggle keyboard navigation */
   handleTypeaheadKeys?: (position: string) => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
   /** The menu element */
   menuRef?: React.RefObject<HTMLElement>;
+  /** The menu footer element */
+  footerRef?: React.RefObject<HTMLDivElement>;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -43,7 +45,9 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Flag indicating if select toggle has an clear button */
   hasClearButton?: boolean;
-  /** Internal callback for handling focus when typeahead toggle button clicked. */
+  /** Flag indicating if select menu has a footer */
+  hasFooter?: boolean;
+  /** @hide Internal callback for handling focus when typeahead toggle button clicked. */
   onClickTypeaheadToggleButton?: () => void;
 }
 
@@ -58,6 +62,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isPlain: false,
     isDisabled: false,
     hasClearButton: false,
+    hasFooter: false,
     variant: 'single',
     'aria-labelledby': '',
     'aria-label': '',
@@ -100,7 +105,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { parentRef, menuRef, isOpen, variant, onToggle, onClose } = this.props;
+    const { parentRef, menuRef, footerRef, isOpen, variant, onToggle, onClose } = this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -111,6 +116,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     ) {
       this.props.handleTypeaheadKeys('tab');
       event.preventDefault();
+      return;
+    }
+
+    if (isOpen && event.key === KeyTypes.Tab && this.props.hasFooter) {
+      footerRef.current.focus();
       return;
     }
 
@@ -182,6 +192,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       hasClearButton,
       'aria-labelledby': ariaLabelledBy,
       'aria-label': ariaLabel,
+      hasFooter,
+      footerRef,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */

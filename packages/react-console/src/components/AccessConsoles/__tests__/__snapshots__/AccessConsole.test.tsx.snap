@@ -64,8 +64,14 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
               aria-label="Options menu"
               aria-labelledby=" pf-c-console__type-selector"
               className=""
+              footerRef={
+                Object {
+                  "current": null,
+                }
+              }
               handleTypeaheadKeys={[Function]}
               hasClearButton={false}
+              hasFooter={false}
               id="pf-c-console__type-selector"
               isActive={false}
               isDisabled={false}

@@ -14,6 +14,7 @@ import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
+import { Spinner } from '../Spinner';
 import {
   keyHandler,
   getNextIndex,
@@ -31,6 +32,12 @@ import { ValidatedOptions } from '../../helpers/constants';
 // seed for the aria-labelledby ID
 let currentId = 0;
 
+export interface SelectViewMoreObject {
+  /** View more text */
+  text: string;
+  /** Call back for when the view more button is clicked */
+  onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
+}
 export interface SelectProps
   extends ToggleMenuBaseProps,
     Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
@@ -57,6 +64,8 @@ export interface SelectProps
    * If set to warning, select will be modified to indicate warning state.
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
+  /** Loading variant to display either the spinner or the view more text button */
+  loadingVariant?: 'spinner' | SelectViewMoreObject;
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
   /** Title text of Select */
@@ -156,6 +165,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   private inputRef = React.createRef<HTMLInputElement>();
   private refCollection: HTMLElement[][] = [[]];
   private optionContainerRefCollection: HTMLElement[] = [];
+  private footerRef = React.createRef<HTMLDivElement>();
 
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
@@ -695,6 +705,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       /* eslint-disable @typescript-eslint/no-unused-vars */
       favoritesLabel,
       footer,
+      loadingVariant,
       ...props
     } = this.props;
     const {
@@ -734,6 +745,22 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         childPlaceholderText =
           (childPlaceholder[0] && this.getDisplay((childPlaceholder[0] as React.ReactElement).props.value, 'node')) ||
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
+      }
+    }
+
+    if (isOpen) {
+      if (renderableItems.find(item => (item as any)?.key === 'loading') === undefined) {
+        if (loadingVariant === 'spinner') {
+          renderableItems.push(
+            <SelectOption isLoading key="loading" value="loading" {...(variant === 'checkbox' && { component: 'div' })}>
+              <Spinner size="lg" />
+            </SelectOption>
+          );
+        } else if (loadingVariant?.text) {
+          renderableItems.push(
+            <SelectOption isLoad key="loading" value={loadingVariant.text} onClick={loadingVariant?.onClick} />
+          );
+        }
       }
     }
 
@@ -888,6 +915,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
         footer={footer}
+        footerRef={this.footerRef}
       >
         {variantChildren}
       </SelectMenu>
@@ -933,6 +961,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           id={selectToggleId}
           parentRef={this.parentRef}
           menuRef={this.menuComponentRef}
+          {...(footer && { footerRef: this.footerRef })}
           isOpen={isOpen}
           isPlain={isPlain}
           onToggle={this.onToggle}
@@ -944,6 +973,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           handleTypeaheadKeys={this.handleTypeaheadKeys}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
+          hasFooter={footer !== undefined}
           onClickTypeaheadToggleButton={this.onClickTypeaheadToggleButton}
         >
           {customContent && (
