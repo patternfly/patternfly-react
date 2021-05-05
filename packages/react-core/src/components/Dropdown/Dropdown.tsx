@@ -18,7 +18,7 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
   isPlain?: boolean;
   /** Indicates where menu will be aligned horizontally */
   position?: DropdownPosition | 'right' | 'left';
-  /** Indicates how the menu will align at screen size breakpoints */
+  /** Indicates how the menu will align at screen size breakpoints. Default alignment is set via the position property. */
   alignments?: {
     sm?: 'right' | 'left';
     md?: 'right' | 'left';
