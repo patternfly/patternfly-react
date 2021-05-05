@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.26.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.26.12...@patternfly/react-table@4.26.13) (2021-05-05)
+
+
+### Bug Fixes
+
+* **packages:** check canUseDOM before using DOM ([#5733](https://github.com/patternfly/patternfly-react/issues/5733)) ([915f03e](https://github.com/patternfly/patternfly-react/commit/915f03e7b8107a2767cc0df9bc72ba7364524d5e))
+
+
+
+
+
 ## [4.26.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.26.11...@patternfly/react-table@4.26.12) (2021-05-04)
 
 **Note:** Version bump only for package @patternfly/react-table

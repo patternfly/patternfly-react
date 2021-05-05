@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.116.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.116.0...@patternfly/react-core@4.116.1) (2021-05-05)
+
+
+### Bug Fixes
+
+* **packages:** check canUseDOM before using DOM ([#5733](https://github.com/patternfly/patternfly-react/issues/5733)) ([915f03e](https://github.com/patternfly/patternfly-react/commit/915f03e7b8107a2767cc0df9bc72ba7364524d5e))
+
+
+
+
+
 # [4.116.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.115.6...@patternfly/react-core@4.116.0) (2021-05-04)
 
 

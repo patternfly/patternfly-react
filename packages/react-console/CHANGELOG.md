@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.6.8...@patternfly/react-console@4.6.9) (2021-05-05)
+
+
+### Bug Fixes
+
+* **packages:** check canUseDOM before using DOM ([#5733](https://github.com/patternfly/patternfly-react/issues/5733)) ([915f03e](https://github.com/patternfly/patternfly-react/commit/915f03e7b8107a2767cc0df9bc72ba7364524d5e))
+
+
+
+
+
 ## [4.6.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.6.7...@patternfly/react-console@4.6.8) (2021-05-04)
 
 **Note:** Version bump only for package @patternfly/react-console
