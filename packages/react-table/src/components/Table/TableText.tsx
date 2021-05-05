@@ -39,7 +39,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   variant = 'span',
   wrapModifier = null,
   tooltip: tooltipProp = '',
-  tooltipProps = { entryDelay: 1000 },
+  tooltipProps = {},
   onMouseEnter: onMouseEnterProp = () => {},
   ...props
 }: TableTextProps) => {
