@@ -144,6 +144,7 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
@@ -191,6 +192,7 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
@@ -237,6 +239,7 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
@@ -283,6 +286,7 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
@@ -329,6 +333,7 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
@@ -376,6 +381,7 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
@@ -487,6 +493,7 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
@@ -534,6 +541,7 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
@@ -580,6 +588,7 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
@@ -626,6 +635,7 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
@@ -672,6 +682,7 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
@@ -719,6 +730,7 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
@@ -821,6 +833,7 @@ exports[`Actions virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": [Function],
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": [Function],
                                   "canSelectAll": true,
@@ -868,6 +881,7 @@ exports[`Actions virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": [Function],
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": [Function],
                                   "canSelectAll": true,
@@ -914,6 +928,7 @@ exports[`Actions virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": [Function],
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": [Function],
                                   "canSelectAll": true,
@@ -960,6 +975,7 @@ exports[`Actions virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": [Function],
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": [Function],
                                   "canSelectAll": true,
@@ -1006,6 +1022,7 @@ exports[`Actions virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": [Function],
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": [Function],
                                   "canSelectAll": true,
@@ -1053,6 +1070,7 @@ exports[`Actions virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": [Function],
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": [Function],
                                   "canSelectAll": true,
@@ -1552,6 +1570,7 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -1599,6 +1618,7 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -1646,6 +1666,7 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -1692,6 +1713,7 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -1738,6 +1760,7 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -1784,6 +1807,7 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -1895,6 +1919,7 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -1942,6 +1967,7 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -1989,6 +2015,7 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -2035,6 +2062,7 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -2081,6 +2109,7 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -2127,6 +2156,7 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -2229,6 +2259,7 @@ exports[`Selectable virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -2276,6 +2307,7 @@ exports[`Selectable virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -2323,6 +2355,7 @@ exports[`Selectable virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -2369,6 +2402,7 @@ exports[`Selectable virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -2415,6 +2449,7 @@ exports[`Selectable virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -2461,6 +2496,7 @@ exports[`Selectable virtualized table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -3026,6 +3062,7 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -3092,6 +3129,7 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -3157,6 +3195,7 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -3222,6 +3261,7 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -3287,6 +3327,7 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -3353,6 +3394,7 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -3483,6 +3525,7 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -3549,6 +3592,7 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -3614,6 +3658,7 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -3679,6 +3724,7 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -3744,6 +3790,7 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -3810,6 +3857,7 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -3931,6 +3979,7 @@ exports[`Simple Actions table 1`] = `
                                       "title": "Third action",
                                     },
                                   ],
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -3997,6 +4046,7 @@ exports[`Simple Actions table 1`] = `
                                       "title": "Third action",
                                     },
                                   ],
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -4062,6 +4112,7 @@ exports[`Simple Actions table 1`] = `
                                       "title": "Third action",
                                     },
                                   ],
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -4127,6 +4178,7 @@ exports[`Simple Actions table 1`] = `
                                       "title": "Third action",
                                     },
                                   ],
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -4192,6 +4244,7 @@ exports[`Simple Actions table 1`] = `
                                       "title": "Third action",
                                     },
                                   ],
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -4258,6 +4311,7 @@ exports[`Simple Actions table 1`] = `
                                       "title": "Third action",
                                     },
                                   ],
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -4752,6 +4806,7 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -4798,6 +4853,7 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -4844,6 +4900,7 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -4890,6 +4947,7 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -4936,6 +4994,7 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -5046,6 +5105,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -5092,6 +5152,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -5138,6 +5199,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -5184,6 +5246,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -5230,6 +5293,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -5331,6 +5395,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -5377,6 +5442,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -5423,6 +5489,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -5469,6 +5536,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -5515,6 +5583,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -5915,6 +5984,7 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -5961,6 +6031,7 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -6007,6 +6078,7 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -6053,6 +6125,7 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -6099,6 +6172,7 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -6209,6 +6283,7 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -6255,6 +6330,7 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -6301,6 +6377,7 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -6347,6 +6424,7 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -6393,6 +6471,7 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -6494,6 +6573,7 @@ exports[`Simple virtualized table className 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -6540,6 +6620,7 @@ exports[`Simple virtualized table className 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -6586,6 +6667,7 @@ exports[`Simple virtualized table className 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -6632,6 +6714,7 @@ exports[`Simple virtualized table className 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -6678,6 +6761,7 @@ exports[`Simple virtualized table className 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -7083,6 +7167,7 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -7130,6 +7215,7 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -7176,6 +7262,7 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -7222,6 +7309,7 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -7268,6 +7356,7 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
+            "actionsToggle": undefined,
             "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
@@ -7378,6 +7467,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -7425,6 +7515,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -7471,6 +7562,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -7517,6 +7609,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -7563,6 +7656,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
+                          "actionsToggle": undefined,
                           "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
@@ -7664,6 +7758,7 @@ exports[`Sortable Virtualized Table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -7711,6 +7806,7 @@ exports[`Sortable Virtualized Table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -7757,6 +7853,7 @@ exports[`Sortable Virtualized Table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -7803,6 +7900,7 @@ exports[`Sortable Virtualized Table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
@@ -7849,6 +7947,7 @@ exports[`Sortable Virtualized Table 1`] = `
                                 "extraParams": Object {
                                   "actionResolver": undefined,
                                   "actions": undefined,
+                                  "actionsToggle": undefined,
                                   "allRowsSelected": false,
                                   "areActionsDisabled": undefined,
                                   "canSelectAll": true,
