@@ -37,6 +37,8 @@ TooltipReactRef = () => {
     <div style={{ margin: '100px' }}>
       <button ref={tooltipRef}>Tooltip attached via react ref</button>
       <Tooltip
+        entryDelay={0}
+        exitDelay={0}
         content={
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
         }
@@ -55,6 +57,8 @@ import { Tooltip } from '@patternfly/react-core';
 <div style={{ margin: '100px' }}>
   <button id="tooltip-selector">Tooltip attached via selector ref</button>
   <Tooltip
+    entryDelay={0}
+    exitDelay={0}
     content={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
@@ -76,9 +80,7 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/ou
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
   >
-    <span aria-label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis." tabIndex="0">
-      <OutlinedQuestionCircleIcon />
-    </span>
+    <OutlinedQuestionCircleIcon title="An icon with a tooltip" />
   </Tooltip>
 </div>
 ```

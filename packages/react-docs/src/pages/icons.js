@@ -51,7 +51,7 @@ const iconsPage = () => {
           .filter(([id]) => id !== 'AnsibeTowerIcon')
           .map(([id, Icon]) => (
             <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
-              <Tooltip entryDelay={0} exitDelay={0} content={<div>{id}</div>}>
+              <Tooltip content={<div>{id}</div>}>
                 <Icon size="xl" title={id} />
               </Tooltip>
               <div style={labelStyle}>{getLabel(id)}</div>

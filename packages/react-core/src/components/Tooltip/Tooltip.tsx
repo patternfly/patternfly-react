@@ -9,6 +9,7 @@ import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
+import { Button } from '../Button';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -97,6 +98,19 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
 // id for associating trigger with the content aria-describedby or aria-labelledby
 let pfTooltipIdCounter = 1;
 
+function isButtonOrIcon(children: React.ReactNode) {
+  if (React.isValidElement(children)) {
+    if (['button', Button as any, 'svg', 'g'].includes(children.type)) {
+      return true;
+    }
+    const displayName = (children.type as React.FunctionComponent).displayName;
+    if (typeof displayName === 'string' && displayName.includes('Icon')) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   content: bodyContent,
   position = 'top',
@@ -105,8 +119,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   isContentLeftAligned = false,
   enableFlip = true,
   className = '',
-  entryDelay = 1000,
-  exitDelay = 500,
+  children,
+  entryDelay = isButtonOrIcon(children) ? 0 : 1000,
+  exitDelay = isButtonOrIcon(children) ? 0 : 500,
   appendTo = () => document.body,
   zIndex = 9999,
   maxWidth = tooltipMaxWidth.value,
@@ -115,7 +130,6 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   // For every initial starting position, there are 3 escape positions
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
-  children,
   animationDuration = 300,
   reference,
   boundary,
