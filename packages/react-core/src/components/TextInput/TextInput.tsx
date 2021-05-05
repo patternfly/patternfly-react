@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
-import { debounce, trimLeft } from '../../helpers/util';
+import { debounce, trimLeft, canUseDOM } from '../../helpers/util';
 
 export enum TextInputTypes {
   text = 'text',
@@ -100,13 +100,17 @@ export class TextInputBase extends React.Component<TextInputProps> {
   componentDidMount() {
     if (this.props.isLeftTruncated) {
       this.handleResize();
-      window.addEventListener('resize', debounce(this.handleResize, 250));
+      if (canUseDOM) {
+        window.addEventListener('resize', debounce(this.handleResize, 250));
+      }
     }
   }
 
   componentWillUnmount() {
     if (this.props.isLeftTruncated) {
-      window.removeEventListener('resize', debounce(this.handleResize, 250));
+      if (canUseDOM) {
+        window.removeEventListener('resize', debounce(this.handleResize, 250));
+      }
     }
   }
 

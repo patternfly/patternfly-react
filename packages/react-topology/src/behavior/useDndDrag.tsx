@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as d3 from 'd3';
 import { action, computed, comparer, runInAction } from 'mobx';
 import { observer } from 'mobx-react';
+import { canUseDOM } from '@patternfly/react-core/dist/js/helpers/util';
 import ElementContext from '../utils/ElementContext';
 import useCallbackRef from '../utils/useCallbackRef';
 import {
@@ -115,7 +116,9 @@ export const useDndDrag = <
 
   React.useEffect(
     () => () => {
-      d3.select(window.document).on(createKeyHandlerId(), null);
+      if (canUseDOM) {
+        d3.select(window.document).on(createKeyHandlerId(), null);
+      }
       if (dndManager.isDragging() && dndManager.getSourceId() === monitor.getHandlerId()) {
         dndManager.endDrag();
       }

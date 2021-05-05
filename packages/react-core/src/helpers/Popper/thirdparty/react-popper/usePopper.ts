@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { createPopper as defaultCreatePopper, Options as PopperOptions, VirtualElement } from '../popper-core/popper';
+import { canUseDOM } from '../../../../helpers/util';
 
 type $Shape<T extends object> = Partial<T>;
 
@@ -20,7 +21,7 @@ const fromEntries = (entries: [string, any][]) =>
  * Small wrapper around `useLayoutEffect` to get rid of the warning on SSR envs
  */
 const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' && window.document && window.document.createElement
+  canUseDOM
     ? React.useLayoutEffect
     : React.useEffect;
 

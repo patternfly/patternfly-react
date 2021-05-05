@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import { canUseDOM } from '../../helpers/util';
 
 export interface TreeViewRootProps {
   /** Child nodes of the tree view */
@@ -16,7 +17,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   private treeRef = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
-    window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+    if (canUseDOM) {
+      window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+    }
     if (this.props.hasChecks) {
       (this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement).tabIndex = 0;
       (this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement).tabIndex = 0;
@@ -26,7 +29,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+    if (canUseDOM) {
+      window.removeEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
+    }
   }
 
   handleKeys = (event: KeyboardEvent) => {
