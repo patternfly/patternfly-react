@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.116.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.116.1...@patternfly/react-core@4.116.2) (2021-05-06)
+
+
+### Bug Fixes
+
+* **Accordion:** set button type, update prop extension ([#5688](https://github.com/patternfly/patternfly-react/issues/5688)) ([565c17e](https://github.com/patternfly/patternfly-react/commit/565c17e4936fbbe5c0a1148a45779be50789aa26))
+
+
+
+
+
 ## [4.116.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.116.0...@patternfly/react-core@4.116.1) (2021-05-05)
 
 
