@@ -84,7 +84,7 @@ export interface SelectProps
   'aria-labelledby'?: string;
   /** Id of div for the select aria-labelledby */
   'aria-describedby'?: string;
-  /* Flag indicating if the select is an invalid state */
+  /** Flag indicating if the select is an invalid state */
   'aria-invalid'?: boolean;
   /** Label for input field of type ahead select variants */
   typeAheadAriaLabel?: string;
