@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.117.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.116.3...@patternfly/react-core@4.117.0) (2021-05-06)
+
+
+### Bug Fixes
+
+* **FileUpload:** allow user to override onClick ([#5689](https://github.com/patternfly/patternfly-react/issues/5689)) ([58f60e5](https://github.com/patternfly/patternfly-react/commit/58f60e5b7da3fd1d85d4023735efdca3eb4c058a))
+
+
+### Features
+
+* **Gallery:** add min/max widths at breakpoints ([#5735](https://github.com/patternfly/patternfly-react/issues/5735)) ([5b4e08d](https://github.com/patternfly/patternfly-react/commit/5b4e08db8deb46711780854c1eafc19b33613328))
+
+
+
+
+
 ## [4.116.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.116.2...@patternfly/react-core@4.116.3) (2021-05-06)
 
 **Note:** Version bump only for package @patternfly/react-core
