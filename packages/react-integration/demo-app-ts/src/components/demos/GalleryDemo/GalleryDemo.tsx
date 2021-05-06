@@ -9,12 +9,19 @@ export class GalleryDemo extends React.Component {
         hasGutter
         minWidths={{
           default: '100%',
+          sm: '80px',
           md: '100px',
-          xl: '300px'
+          lg: '150px',
+          xl: '300px',
+          '2xl': '500px'
         }}
         maxWidths={{
-          md: '200px',
-          xl: '1fr'
+          default: '100%',
+          sm: '80px',
+          md: '120px',
+          lg: '150px',
+          xl: '1fr',
+          '2xl': '500px'
         }}
       >
         <GalleryItem>Gallery Item</GalleryItem>
