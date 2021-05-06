@@ -64,11 +64,6 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
               aria-label="Options menu"
               aria-labelledby=" pf-c-console__type-selector"
               className=""
-              footerRef={
-                Object {
-                  "current": null,
-                }
-              }
               handleTypeaheadKeys={[Function]}
               hasClearButton={false}
               hasFooter={false}
@@ -196,7 +191,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
 exports[`AccessConsoles switching SerialConsole and VncConsole 2`] = `
 Array [
   <li
-    className="pf-c-select__menu-wrapper"
+    className=""
     id="VncConsole"
     role="presentation"
   >
@@ -212,7 +207,7 @@ Array [
     </button>
   </li>,
   <li
-    className="pf-c-select__menu-wrapper"
+    className=""
     id="SerialConsole"
     role="presentation"
   >
@@ -233,7 +228,7 @@ Array [
 exports[`AccessConsoles switching SerialConsole and VncConsole 3`] = `
 Array [
   <li
-    className="pf-c-select__menu-wrapper"
+    className=""
     id="VncConsole"
     role="presentation"
   >
@@ -249,7 +244,7 @@ Array [
     </button>
   </li>,
   <li
-    className="pf-c-select__menu-wrapper"
+    className=""
     id="SerialConsole"
     role="presentation"
   >
@@ -361,6 +356,8 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         isChecked={false}
         isDisabled={false}
         isFavorite={null}
+        isLoad={false}
+        isLoading={false}
         isNoResultsOption={false}
         isPlaceholder={false}
         isSelected={false}
@@ -379,6 +376,8 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         isChecked={false}
         isDisabled={false}
         isFavorite={null}
+        isLoad={false}
+        isLoading={false}
         isNoResultsOption={false}
         isPlaceholder={false}
         isSelected={false}

@@ -4112,7 +4112,7 @@ exports[`renders select with favorites successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-2"
                     role="presentation"
                   >
@@ -4147,7 +4147,7 @@ exports[`renders select with favorites successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-2"
                     role="presentation"
                   >
@@ -4182,7 +4182,7 @@ exports[`renders select with favorites successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-4"
                     role="presentation"
                   >
@@ -4267,7 +4267,7 @@ exports[`renders select with favorites successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-2"
                     role="presentation"
                   >
@@ -4302,7 +4302,7 @@ exports[`renders select with favorites successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-2"
                     role="presentation"
                   >
@@ -4337,7 +4337,7 @@ exports[`renders select with favorites successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-4"
                     role="presentation"
                   >
@@ -4473,7 +4473,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -4508,7 +4508,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -4543,7 +4543,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -4628,7 +4628,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -4663,7 +4663,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -4698,7 +4698,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -4866,7 +4866,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -4901,7 +4901,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -4936,7 +4936,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -5021,7 +5021,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -5056,7 +5056,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -5091,7 +5091,7 @@ exports[`renders select with favorites successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -5253,7 +5253,7 @@ exports[`renders select with favorites successfully 1`] = `
                     value="Mrs"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-2"
                       role="presentation"
                     >
@@ -5325,7 +5325,7 @@ exports[`renders select with favorites successfully 1`] = `
                     value="Ms"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-2"
                       role="presentation"
                     >
@@ -5397,7 +5397,7 @@ exports[`renders select with favorites successfully 1`] = `
                     value="Other"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-4"
                       role="presentation"
                     >
@@ -5562,7 +5562,7 @@ exports[`renders select with favorites successfully 1`] = `
                     value="Mrs"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-2"
                       role="presentation"
                     >
@@ -5634,7 +5634,7 @@ exports[`renders select with favorites successfully 1`] = `
                     value="Ms"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-2"
                       role="presentation"
                     >
@@ -5706,7 +5706,7 @@ exports[`renders select with favorites successfully 1`] = `
                     value="Other"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-4"
                       role="presentation"
                     >
@@ -5841,7 +5841,7 @@ exports[`select custom select filter filters properly 1`] = `
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -5854,7 +5854,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -5867,7 +5867,7 @@ exports[`select custom select filter filters properly 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -5942,7 +5942,7 @@ exports[`select custom select filter filters properly 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -5955,7 +5955,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -5968,7 +5968,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -6081,7 +6081,7 @@ exports[`select custom select filter filters properly 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -6094,7 +6094,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -6107,7 +6107,7 @@ exports[`select custom select filter filters properly 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -6159,7 +6159,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Mr"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -6197,7 +6197,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Mrs"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -6235,7 +6235,7 @@ exports[`select custom select filter filters properly 1`] = `
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
@@ -6343,7 +6343,7 @@ exports[`select renders select groups successfully 1`] = `
                   role="listbox"
                 >
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-1"
                     role="presentation"
                   >
@@ -6356,7 +6356,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-2"
                     role="presentation"
                   >
@@ -6369,7 +6369,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-3"
                     role="presentation"
                   >
@@ -6382,7 +6382,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-4"
                     role="presentation"
                   >
@@ -6410,7 +6410,7 @@ exports[`select renders select groups successfully 1`] = `
                   role="listbox"
                 >
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-1"
                     role="presentation"
                   >
@@ -6423,7 +6423,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-2"
                     role="presentation"
                   >
@@ -6436,7 +6436,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-3"
                     role="presentation"
                   >
@@ -6449,7 +6449,7 @@ exports[`select renders select groups successfully 1`] = `
                     </button>
                   </li>
                   <li
-                    class="pf-c-select__menu-wrapper"
+                    class=""
                     id="option-4"
                     role="presentation"
                   >
@@ -6528,7 +6528,7 @@ exports[`select renders select groups successfully 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-1"
                       role="presentation"
                     >
@@ -6541,7 +6541,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -6554,7 +6554,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-3"
                       role="presentation"
                     >
@@ -6567,7 +6567,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -6595,7 +6595,7 @@ exports[`select renders select groups successfully 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-1"
                       role="presentation"
                     >
@@ -6608,7 +6608,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -6621,7 +6621,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-3"
                       role="presentation"
                     >
@@ -6634,7 +6634,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -6745,7 +6745,7 @@ exports[`select renders select groups successfully 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-1"
                       role="presentation"
                     >
@@ -6758,7 +6758,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -6771,7 +6771,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-3"
                       role="presentation"
                     >
@@ -6784,7 +6784,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -6812,7 +6812,7 @@ exports[`select renders select groups successfully 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-1"
                       role="presentation"
                     >
@@ -6825,7 +6825,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-2"
                       role="presentation"
                     >
@@ -6838,7 +6838,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-3"
                       role="presentation"
                     >
@@ -6851,7 +6851,7 @@ exports[`select renders select groups successfully 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-select__menu-wrapper"
+                      class=""
                       id="option-4"
                       role="presentation"
                     >
@@ -6919,7 +6919,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Mr"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-1"
                       role="presentation"
                     >
@@ -6956,7 +6956,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Mrs"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-2"
                       role="presentation"
                     >
@@ -6993,7 +6993,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Ms"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-3"
                       role="presentation"
                     >
@@ -7030,7 +7030,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Other"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-4"
                       role="presentation"
                     >
@@ -7088,7 +7088,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Mr"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-1"
                       role="presentation"
                     >
@@ -7125,7 +7125,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Mrs"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-2"
                       role="presentation"
                     >
@@ -7162,7 +7162,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Ms"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-3"
                       role="presentation"
                     >
@@ -7199,7 +7199,7 @@ exports[`select renders select groups successfully 1`] = `
                     value="Other"
                   >
                     <li
-                      className="pf-c-select__menu-wrapper"
+                      className=""
                       id="option-4"
                       role="presentation"
                     >
@@ -7834,7 +7834,7 @@ exports[`select single select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -7847,7 +7847,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -7860,7 +7860,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-3"
                 role="presentation"
               >
@@ -7873,7 +7873,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -7941,7 +7941,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -7954,7 +7954,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -7967,7 +7967,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -7980,7 +7980,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -8080,7 +8080,7 @@ exports[`select single select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -8093,7 +8093,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -8106,7 +8106,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -8119,7 +8119,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -8170,7 +8170,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -8207,7 +8207,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -8244,7 +8244,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-3"
                 role="presentation"
               >
@@ -8281,7 +8281,7 @@ exports[`select single select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
@@ -8378,7 +8378,7 @@ exports[`select single select renders expanded successfully with custom objects 
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -8391,7 +8391,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -8404,7 +8404,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-3"
                 role="presentation"
               >
@@ -8472,7 +8472,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -8485,7 +8485,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -8498,7 +8498,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -8598,7 +8598,7 @@ exports[`select single select renders expanded successfully with custom objects 
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -8611,7 +8611,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -8624,7 +8624,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -8683,7 +8683,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -8728,7 +8728,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -8773,7 +8773,7 @@ exports[`select single select renders expanded successfully with custom objects 
               }
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-3"
                 role="presentation"
               >
@@ -9515,7 +9515,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -9528,7 +9528,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -9541,7 +9541,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-3"
                 role="presentation"
               >
@@ -9554,7 +9554,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -9630,7 +9630,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -9643,7 +9643,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -9656,7 +9656,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -9669,7 +9669,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -9784,7 +9784,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -9797,7 +9797,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -9810,7 +9810,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -9823,7 +9823,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -9875,7 +9875,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -9913,7 +9913,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -9951,7 +9951,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-3"
                 role="presentation"
               >
@@ -9989,7 +9989,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
@@ -10091,7 +10091,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -10122,7 +10122,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -10153,7 +10153,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-3"
                 role="presentation"
               >
@@ -10166,7 +10166,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -10343,7 +10343,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -10374,7 +10374,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -10405,7 +10405,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -10418,7 +10418,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -10736,7 +10736,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -10767,7 +10767,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -10798,7 +10798,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -10811,7 +10811,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -10868,7 +10868,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Mr"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -10935,7 +10935,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Mrs"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -11002,7 +11002,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Ms"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-3"
                 role="presentation"
               >
@@ -11040,7 +11040,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
@@ -11335,7 +11335,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -11348,7 +11348,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -11361,7 +11361,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-3"
                 role="presentation"
               >
@@ -11374,7 +11374,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -11449,7 +11449,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -11462,7 +11462,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -11475,7 +11475,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -11488,7 +11488,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -11601,7 +11601,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -11614,7 +11614,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -11627,7 +11627,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -11640,7 +11640,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -11692,7 +11692,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Mr"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -11730,7 +11730,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Mrs"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -11768,7 +11768,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Ms"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-3"
                 role="presentation"
               >
@@ -11806,7 +11806,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
@@ -11903,7 +11903,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-1"
                 role="presentation"
               >
@@ -11934,7 +11934,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-2"
                 role="presentation"
               >
@@ -11947,7 +11947,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-3"
                 role="presentation"
               >
@@ -11960,7 +11960,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 </button>
               </li>
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -12035,7 +12035,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -12066,7 +12066,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -12079,7 +12079,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -12092,7 +12092,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -12206,7 +12206,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-1"
                   role="presentation"
                 >
@@ -12237,7 +12237,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-2"
                   role="presentation"
                 >
@@ -12250,7 +12250,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-3"
                   role="presentation"
                 >
@@ -12263,7 +12263,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   </button>
                 </li>
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -12315,7 +12315,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mr"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-1"
                 role="presentation"
               >
@@ -12382,7 +12382,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Mrs"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-2"
                 role="presentation"
               >
@@ -12420,7 +12420,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Ms"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-3"
                 role="presentation"
               >
@@ -12458,7 +12458,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
@@ -12554,7 +12554,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               role="listbox"
             >
               <li
-                class="pf-c-select__menu-wrapper"
+                class=""
                 id="option-4"
                 role="presentation"
               >
@@ -12629,7 +12629,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -12742,7 +12742,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 role="listbox"
               >
                 <li
-                  class="pf-c-select__menu-wrapper"
+                  class=""
                   id="option-4"
                   role="presentation"
                 >
@@ -12794,7 +12794,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
               value="Other"
             >
               <li
-                className="pf-c-select__menu-wrapper"
+                className=""
                 id="option-4"
                 role="presentation"
               >
