@@ -6,8 +6,8 @@ propComponents: ['Card', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter'
 ouia: true
 ---
 
-import pfLogo from './pfLogo.svg';
-import pfLogoSmall from './pf-logo-small.svg';
+import pfLogo from './images/pfLogo.svg';
+import pfLogoSmall from './images/pf-logo-small.svg';
 
 ## Examples
 

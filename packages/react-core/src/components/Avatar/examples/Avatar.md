@@ -5,7 +5,7 @@ cssPrefix: pf-c-avatar
 propComponents: ['Avatar']
 ---
 
-import avatarImg from './avatarImg.svg';
+import avatarImg from './images/avatarImg.svg';
 
 ## Examples
 ### Basic

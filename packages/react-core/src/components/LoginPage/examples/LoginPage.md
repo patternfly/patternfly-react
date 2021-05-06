@@ -18,7 +18,7 @@ propComponents:
   ]
 ---
 
-import brandImg2 from './brandImgColor2.svg';
+import brandImg2 from './images/brandImgColor2.svg';
 import {
   LoginFooterItem,
   LoginForm,

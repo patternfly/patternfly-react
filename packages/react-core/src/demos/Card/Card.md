@@ -11,16 +11,16 @@ import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import pfIcon from './pf-logo-small.svg';
-import activeMQIcon from './activemq-core_200x150.png';
-import avroIcon from './camel-avro_200x150.png';
-import dropBoxIcon from './camel-dropbox_200x150.png';
-import infinispanIcon from './camel-infinispan_200x150.png';
-import saxonIcon from './camel-saxon_200x150.png';
-import sparkIcon from './camel-spark_200x150.png';
-import swaggerIcon from './camel-swagger-java_200x150.png';
-import azureIcon from './FuseConnector_Icons_AzureServices.png';
-import restIcon from './FuseConnector_Icons_REST.png';
+import pfIcon from './images/pf-logo-small.svg';
+import activeMQIcon from './images/activemq-core_200x150.png';
+import avroIcon from './images/camel-avro_200x150.png';
+import dropBoxIcon from './images/camel-dropbox_200x150.png';
+import infinispanIcon from './images/camel-infinispan_200x150.png';
+import saxonIcon from './images/camel-saxon_200x150.png';
+import sparkIcon from './images/camel-spark_200x150.png';
+import swaggerIcon from './images/camel-swagger-java_200x150.png';
+import azureIcon from './images/FuseConnector_Icons_AzureServices.png';
+import restIcon from './images/FuseConnector_Icons_REST.png';
 
 ## Demos
 
@@ -92,8 +92,8 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/images/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';

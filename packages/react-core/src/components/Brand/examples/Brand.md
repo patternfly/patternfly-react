@@ -4,7 +4,7 @@ section: components
 cssPrefix: null
 propComponents: ['Brand']
 ---
-import pfLogo from './pfLogo.svg';
+import pfLogo from './images/pfLogo.svg';
 
 ## Examples
 ### Basic

@@ -14,7 +14,7 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import { Link } from '@reach/router';
-import avatarImg from '../../Avatar/examples/avatarImg.svg';
+import avatarImg from '../../Avatar/examples/images/avatarImg.svg';
 
 ## Examples
 

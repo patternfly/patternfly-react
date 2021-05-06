@@ -8,7 +8,7 @@ ouia: true
 
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import { Link } from '@reach/router';
-import pfIcon from './pf-logo-small.svg';
+import pfIcon from './images/pf-logo-small.svg';
 
 Note: Application launcher is built on Dropdown, for extended API go to [Dropdown](/documentation/react/components/dropdown) documentation.
 To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [Tooltip](/documentation/react/components/tooltip).

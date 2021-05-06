@@ -4,8 +4,8 @@ section: components
 cssPrefix: pf-c-about-modal-box
 propComponents: ['AboutModal']
 ---
-import brandImg from './brandImg.svg';
-import bgImg from './patternfly-orb.svg';
+import brandImg from './images/brandImg.svg';
+import bgImg from './images/patternfly-orb.svg';
 
 ## Examples
 ### Basic

@@ -25,7 +25,7 @@ import {
  Title,
  Wizard
 } from '@patternfly/react-core';
-import imgBrand from './imgBrand.svg';
+import imgBrand from './images/imgBrand.svg';
 
 ## Demos
 
@@ -110,7 +110,7 @@ import {
   Title,
   Wizard
 } from '@patternfly/react-core';
-import imgBrand from './imgBrand.svg';
+import imgBrand from './images/imgBrand.svg';
 
 class FullPageWizard extends React.Component {
   constructor(props) {

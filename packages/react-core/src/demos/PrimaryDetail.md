@@ -14,18 +14,18 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import pfIcon from './Card/pf-logo-small.svg';
-import activeMQIcon from './Card/activemq-core_200x150.png';
-import avroIcon from './Card/camel-avro_200x150.png';
-import dropBoxIcon from './Card/camel-dropbox_200x150.png';
-import infinispanIcon from './Card/camel-infinispan_200x150.png';
-import saxonIcon from './Card/camel-saxon_200x150.png';
-import sparkIcon from './Card/camel-spark_200x150.png';
-import swaggerIcon from './Card/camel-swagger-java_200x150.png';
-import azureIcon from './Card/FuseConnector_Icons_AzureServices.png';
-import restIcon from './Card/FuseConnector_Icons_REST.png';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/images/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
+import pfIcon from './Card/images/pf-logo-small.svg';
+import activeMQIcon from './Card/images/activemq-core_200x150.png';
+import avroIcon from './Card/images/camel-avro_200x150.png';
+import dropBoxIcon from './Card/images/camel-dropbox_200x150.png';
+import infinispanIcon from './Card/images/camel-infinispan_200x150.png';
+import saxonIcon from './Card/images/camel-saxon_200x150.png';
+import sparkIcon from './Card/images/camel-spark_200x150.png';
+import swaggerIcon from './Card/images/camel-swagger-java_200x150.png';
+import azureIcon from './Card/images/FuseConnector_Icons_AzureServices.png';
+import restIcon from './Card/images/FuseConnector_Icons_REST.png';
 
 ## Demos
 
