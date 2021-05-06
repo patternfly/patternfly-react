@@ -27,6 +27,8 @@ export interface FileUploadProps
       | React.ChangeEvent<HTMLTextAreaElement> // User typed in the TextArea
       | React.MouseEvent<HTMLButtonElement, MouseEvent> // User clicked Clear button
   ) => void;
+  /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
+  onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
   className?: string;
   /** Flag to show if the field is disabled. */
@@ -84,6 +86,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   onReadStarted = () => {},
   onReadFinished = () => {},
   onReadFailed = () => {},
+  onClick = event => event.preventDefault(),
   dropzoneProps = {},
   ...props
 }: FileUploadProps) => {
@@ -128,7 +131,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
           {...getRootProps({
             ...props,
             refKey: 'containerRef',
-            onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog
+            onClick: event => event.preventDefault()
           })}
           tabIndex={null} // Omit the unwanted tabIndex from react-dropzone's getRootProps
           id={id}
@@ -139,6 +142,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
           isDragActive={isDragActive}
           onBrowseButtonClick={open}
           onClearButtonClick={onClearButtonClick}
+          onTextAreaClick={onClick}
         >
           <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
           {children}
