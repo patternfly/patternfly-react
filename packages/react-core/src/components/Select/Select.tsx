@@ -35,7 +35,7 @@ let currentId = 0;
 export interface SelectViewMoreObject {
   /** View more text */
   text: string;
-  /** Call back for when the view more button is clicked */
+  /** Callback for when the view more button is clicked */
   onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
 }
 export interface SelectProps
@@ -748,11 +748,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    if (isOpen) {
+    if (isOpen && variant !== SelectVariant.checkbox) {
       if (renderableItems.find(item => (item as any)?.key === 'loading') === undefined) {
         if (loadingVariant === 'spinner') {
           renderableItems.push(
-            <SelectOption isLoading key="loading" value="loading" {...(variant === 'checkbox' && { component: 'div' })}>
+            <SelectOption isLoading key="loading" value="loading">
               <Spinner size="lg" />
             </SelectOption>
           );
@@ -916,6 +916,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.menuComponentRef}
         footer={footer}
         footerRef={this.footerRef}
+        loadingVariant={loadingVariant}
       >
         {variantChildren}
       </SelectMenu>

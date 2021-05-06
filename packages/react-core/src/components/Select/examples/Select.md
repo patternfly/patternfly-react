@@ -2247,7 +2247,6 @@ import {
   SelectVariant,
   Divider,
   Button,
-  ViewMoreText
 } from '@patternfly/react-core';
 
 class SelectViewMore extends React.Component {
@@ -2337,3 +2336,107 @@ class SelectViewMore extends React.Component {
 }
 ```
 
+### View more with checkboxes
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  Divider,
+  Button,
+} from '@patternfly/react-core';
+
+class SelectViewMoreCheckbox extends React.Component {
+   constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: [],
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <Divider key={3} />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+  
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.onViewMoreClick = () => {
+      // Set select loadingVariant to spinner then simulate network call before loading more options
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 < this.options.length ? this.state.numOptions + 3 : this.options.length;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, numOptions, isLoading } = this.state;
+    const titleId = 'checkbox-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          {...(!isLoading && numOptions < this.options.length && { loadingVariant: { text: 'View more', onClick: this.onViewMoreClick } })}
+          {...(isLoading && { loadingVariant: 'spinner' })}
+        >
+          {this.options.slice(0, numOptions)}
+        </Select>
+      </div>
+    );
+  }
+
+}
+```
