@@ -2422,7 +2422,7 @@ class SelectViewMoreCheckbox extends React.Component {
         </span>
         <Select
           variant={SelectVariant.checkbox}
-          aria-label="Select Input"
+          aria-label="Select input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}

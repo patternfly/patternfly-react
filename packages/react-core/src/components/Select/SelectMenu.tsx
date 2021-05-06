@@ -212,7 +212,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       </button>
     );
     const loadingSpinner = (
-      <div className={css(styles.selectMenuItem, styles.modifiers.load)} role="option">
+      <div className={css(styles.selectListItem, styles.modifiers.load)} role="option">
         <Spinner size="lg" />
       </div>
     );
