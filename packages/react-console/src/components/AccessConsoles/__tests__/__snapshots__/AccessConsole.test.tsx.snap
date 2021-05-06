@@ -191,7 +191,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
 exports[`AccessConsoles switching SerialConsole and VncConsole 2`] = `
 Array [
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="VncConsole"
     role="presentation"
   >
@@ -207,7 +207,7 @@ Array [
     </button>
   </li>,
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="SerialConsole"
     role="presentation"
   >
@@ -228,7 +228,7 @@ Array [
 exports[`AccessConsoles switching SerialConsole and VncConsole 3`] = `
 Array [
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="VncConsole"
     role="presentation"
   >
@@ -244,7 +244,7 @@ Array [
     </button>
   </li>,
   <li
-    className=""
+    className="pf-c-select__menu-wrapper"
     id="SerialConsole"
     role="presentation"
   >
