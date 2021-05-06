@@ -50,6 +50,7 @@ export interface SelectDemoState {
   typeaheadOptions: TypeAheadOption[];
   typeaheadIsCreatable: boolean;
   typeaheadNewOptions: boolean;
+  typeaheadInputValueAccepted: boolean;
   customContentisOpen: boolean;
   noBadgeCheckIsOpen: boolean;
   noBadgeCheckSelected: string[];
@@ -105,6 +106,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
+    typeaheadInputValueAccepted: false,
     customContentisOpen: false,
     menuDocumentBodyisOpen: false,
     menuDocumentBodySelected: ['']
@@ -173,6 +175,12 @@ export class SelectDemo extends Component<SelectDemoState> {
   toggleNew = (checked: boolean) => {
     this.setState({
       typeaheadNewOptions: checked
+    });
+  };
+
+  toggleInputValueAccepted = (checked: boolean) => {
+    this.setState({
+      typeaheadInputValueAccepted: checked
     });
   };
 
@@ -832,7 +840,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadisOpen,
       typeaheadSelected,
       typeaheadIsCreatable,
-      typeaheadNewOptions
+      typeaheadNewOptions,
+      typeaheadInputValueAccepted
     } = this.state;
     const titleId = 'typeahead-select-id';
     return (
@@ -857,6 +866,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
             onCreateOption={(typeaheadNewOptions && this.typeaheadCreateNew) || undefined}
+            isInputValueAccepted={typeaheadInputValueAccepted}
             createText="Create item"
             noResultsFoundText="Item not found"
           >
@@ -886,6 +896,14 @@ export class SelectDemo extends Component<SelectDemoState> {
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
+        />
+        <Checkbox
+          label="isInputValueAccepted"
+          isChecked={this.state.typeaheadInputValueAccepted}
+          onChange={this.toggleInputValueAccepted}
+          aria-label="toggle input value accepted"
+          id="toggle-input-value-accepted"
+          name="toggle-input-value-accepted"
         />
       </StackItem>
     );

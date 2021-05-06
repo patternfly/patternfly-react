@@ -1062,6 +1062,7 @@ class TypeaheadSelectInput extends React.Component {
       selected: null,
       isDisabled: false,
       isCreatable: false,
+      isInputValueAccepted: false,
       hasOnCreateOption: false
     };
 
@@ -1112,10 +1113,16 @@ class TypeaheadSelectInput extends React.Component {
         hasOnCreateOption: checked
       });
     };
+    
+    this.toggleInputValueAccepted = checked => {
+      this.setState({
+        isInputValueAccepted: checked
+      });
+    };
   }
 
   render() {
-    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValueAccepted, options } = this.state;
     const titleId = 'typeahead-select-id-1';
     return (
       <div>
@@ -1131,6 +1138,7 @@ class TypeaheadSelectInput extends React.Component {
           selections={selected}
           isOpen={isOpen}
           aria-labelledby={titleId}
+          isInputValueAccepted={isInputValueAccepted}
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
@@ -1168,6 +1176,15 @@ class TypeaheadSelectInput extends React.Component {
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
+        />
+        <Checkbox
+          label="isInputValueAccepted"
+          isChecked={isInputValueAccepted}
+          isInputValueAccepted={this.state.isInputValueAccepted}
+          onChange={this.toggleInputValueAccepted}
+          aria-label="toggle input value accepted"
+          id="toggle-input-value-accepted"
+          name="toggle-input-value-accepted"
         />
       </div>
     );
