@@ -12260,7 +12260,7 @@ exports[`typeahead select test isInputValueAccepted 1`] = `
             >
               <li
                 class="pf-c-select__menu-wrapper"
-                id="select-option-1620332177515ctv7oznghxw"
+                id="select-option-1620337005933iovjil90c89"
                 role="presentation"
               >
                 <button
@@ -12335,7 +12335,7 @@ exports[`typeahead select test isInputValueAccepted 1`] = `
               >
                 <li
                   class="pf-c-select__menu-wrapper"
-                  id="select-option-1620332177515ctv7oznghxw"
+                  id="select-option-1620337005933iovjil90c89"
                   role="presentation"
                 >
                   <button
@@ -12438,7 +12438,7 @@ exports[`typeahead select test isInputValueAccepted 1`] = `
               >
                 <li
                   class="pf-c-select__menu-wrapper"
-                  id="select-option-1620332177515ctv7oznghxw"
+                  id="select-option-1620337005933iovjil90c89"
                   role="presentation"
                 >
                   <button
@@ -12487,7 +12487,7 @@ exports[`typeahead select test isInputValueAccepted 1`] = `
             >
               <li
                 className="pf-c-select__menu-wrapper"
-                id="select-option-1620332177515ctv7oznghxw"
+                id="select-option-1620337005933iovjil90c89"
                 role="presentation"
               >
                 <button
