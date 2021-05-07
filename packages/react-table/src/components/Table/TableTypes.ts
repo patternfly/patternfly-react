@@ -6,6 +6,7 @@ import {
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 import * as React from 'react';
+import { CustomActionsToggleProps } from './ActionsColumn';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -102,6 +103,7 @@ export interface IColumn {
     contentId?: string;
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
+    actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
     allRowsSelected?: boolean;
     onFavorite?: OnFavorite;
   };
@@ -141,6 +143,7 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
   itemKey?: string;
   title?: string | React.ReactNode;
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+  isOutsideDropdown?: boolean;
 }
 
 export interface ISeparator extends IAction {

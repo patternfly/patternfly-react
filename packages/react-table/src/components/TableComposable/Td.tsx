@@ -28,6 +28,7 @@ import {
   IExtra,
   OnToggleRowDetails
 } from '../Table/TableTypes';
+import { CustomActionsToggleProps } from '../Table';
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to.
@@ -57,6 +58,8 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     dropdownPosition?: DropdownPosition;
     /** Actions dropdown direction */
     dropdownDirection?: DropdownDirection;
+    /** */
+    actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
   };
   /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
   expand?: {
@@ -158,7 +161,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         column: {
           extraParams: {
             dropdownPosition: actions?.dropdownPosition,
-            dropdownDirection: actions?.dropdownDirection
+            dropdownDirection: actions?.dropdownDirection,
+            actionsToggle: actions?.actionsToggle
           }
         }
       })
