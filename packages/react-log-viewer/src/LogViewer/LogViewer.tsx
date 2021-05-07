@@ -6,7 +6,7 @@ import { LogViewerToolbar } from './LogViewerToolbar';
 import { LOGGER_HEIGHT, DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX } from './utils/constants';
 import { searchForKeyword, parseConsoleOutput } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
-import styles from '@patternfly/react-styles/css/components/LogViewer/base';
+import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import '@patternfly/react-core/dist/styles/base.css';
 
 interface LogViewerProps {
@@ -47,7 +47,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
     const [rowInFocus, setRowInFocus] = useState<number | null>(null);
-    const [foundWordIndex, setFoundWordIndex] = useState<number | undefined | null>(-1);
     const [searchedWordIndexes, setSearchedWordIndexes] = useState<number[] | null>([]);
     const [highlightedRowIndexes, setHighlightedRowIndexes] = useState<number[] | null>([]);
     const [parsedData, setParsedData] = useState<string[] | null>([]);
@@ -113,14 +112,12 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
             placeholder={placeholder}
             searchedInput={searchedInput}
             rowInFocus={rowInFocus}
-            foundWordIndex={foundWordIndex}
             searchedWordIndexes={searchedWordIndexes}
             scrollToRow={scrollToRow}
             customControls={customControls}
             hasToolbar={hasToolbar}
             setRowInFocus={setRowInFocus}
             setSearchedInput={setSearchedInput}
-            setFoundWordIndex={setFoundWordIndex}
             setSearchedWordIndexes={setSearchedWordIndexes}
           />
           <div className="pf-c-log-viewer__main">
