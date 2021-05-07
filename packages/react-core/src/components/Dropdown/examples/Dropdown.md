@@ -1278,7 +1278,7 @@ import {
   DropdownItem,
   DropdownSeparator
 } from '@patternfly/react-core';
-import avatarImg from '../../Avatar/examples/avatarImg.svg';
+import avatarImg from '../../Avatar/examples/images/avatarImg.svg';
 
 class ImageTextDropdown extends React.Component {
   constructor(props) {

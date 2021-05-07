@@ -14,8 +14,8 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/images/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
@@ -2560,8 +2560,8 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/images/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class PageLayoutDefaultNav extends React.Component {

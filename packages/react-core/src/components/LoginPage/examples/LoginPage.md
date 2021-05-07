@@ -33,7 +33,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
 ### Basic
 ```js isFullscreen
 import React from 'react';
-import brandImg from './brandImgColor.svg';
+import brandImg from './images/brandImgColor.svg';
 import {
   LoginFooterItem,
   LoginForm,
@@ -193,7 +193,7 @@ class SimpleLoginPage extends React.Component {
 ### Show/hide password
 ```js isFullscreen
 import React from 'react';
-import brandImg from './brandImgColor.svg';
+import brandImg from './images/brandImgColor.svg';
 import {
   LoginFooterItem,
   LoginForm,

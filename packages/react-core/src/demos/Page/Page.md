@@ -63,8 +63,8 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/images/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
 
 class PageLayoutGrouped extends React.Component {
   constructor(props) {
@@ -303,8 +303,8 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import imgBrand from './imgBrand.svg';
-import imgAvatar from './imgAvatar.svg';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/images/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
 
 class PageLayoutGroupedAlt extends React.Component {
   constructor(props) {

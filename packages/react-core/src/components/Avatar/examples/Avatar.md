@@ -12,7 +12,7 @@ import avatarImg from './images/avatarImg.svg';
 ```js
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './examples/avatarImg.svg';
+import avatarImg from './images/avatarImg.svg';
 
 <Avatar src={avatarImg} alt="avatar" />
 ```

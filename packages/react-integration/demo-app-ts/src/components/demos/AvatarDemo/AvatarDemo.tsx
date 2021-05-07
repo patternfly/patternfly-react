@@ -1,6 +1,6 @@
 import { Avatar, AvatarProps } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import avatarImg from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import avatarImg from '@patternfly/react-core/src/components/Avatar/examples/images/avatarImg.svg';
 
 export class AvatarDemo extends Component {
   myAvatarProps: AvatarProps = {

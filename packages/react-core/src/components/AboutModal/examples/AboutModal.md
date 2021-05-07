@@ -12,7 +12,7 @@ import bgImg from './images/patternfly-orb.svg';
 ```js
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './examples/brandImg.svg';
+import brandImg from './images/brandImg.svg';
 
 class SimpleAboutModal extends React.Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class SimpleAboutModal extends React.Component {
 ```js
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './examples/brandImg.svg';
+import brandImg from './images/brandImg.svg';
 
 class SimpleAboutModal extends React.Component {
   constructor(props) {
@@ -131,7 +131,7 @@ class SimpleAboutModal extends React.Component {
 ```js
 import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './examples/brandImg.svg';
+import brandImg from './images/brandImg.svg';
 
 class ContentRichAboutModal extends React.Component {
   constructor(props) {
@@ -197,8 +197,8 @@ class ContentRichAboutModal extends React.Component {
 ```js
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './examples/brandImg.svg';
-import bgImg from './examples/patternfly-orb.svg';
+import brandImg from './images/brandImg.svg';
+import bgImg from './images/patternfly-orb.svg';
 
 class SimpleAboutModal extends React.Component {
   constructor(props) {

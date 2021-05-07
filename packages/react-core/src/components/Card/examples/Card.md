@@ -90,7 +90,7 @@ import {
   DropdownSeparator,
   KebabToggle
 } from '@patternfly/react-core';
-import pfLogo from './pfLogo.svg';
+import pfLogo from './images/pfLogo.svg';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -586,7 +586,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import pfLogo from './pfLogo.svg';
+import pfLogo from './images/pfLogo.svg';
 
 class ExpandableCard extends React.Component {
   constructor(props) {
@@ -702,8 +702,8 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import pfLogoSmall from './pf-logo-small';
-import pfLogo from './pfLogo.svg';
+import pfLogoSmall from './images/pf-logo-small';
+import pfLogo from './images/pfLogo.svg';
 
 class ExpandableIconCard extends React.Component {
   constructor(props) {
