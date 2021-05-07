@@ -45,8 +45,6 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   footer?: React.ReactNode;
   /** The menu footer element */
   footerRef?: React.RefObject<HTMLDivElement>;
-  /** Loading variant to display either the spinner or the view more text button */
-  loadingVariant?: 'spinner' | SelectViewMoreObject;
 }
 
 class SelectMenuWithRef extends React.Component<SelectMenuProps> {
@@ -194,26 +192,11 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       innerRef,
       footer,
       footerRef,
-      loadingVariant,
       ...props
     } = this.props;
     const footerRenderer = (
       <div className={css(styles.selectMenuFooter)} ref={footerRef} tabIndex={0}>
         {footer}
-      </div>
-    );
-    const viewMoreBtn = (
-      <button
-        className={css(styles.selectMenuItem, styles.modifiers.load)}
-        onClick={(loadingVariant as SelectViewMoreObject)?.onClick}
-        role="option"
-      >
-        {(loadingVariant as SelectViewMoreObject)?.text}
-      </button>
-    );
-    const loadingSpinner = (
-      <div className={css(styles.selectListItem, styles.modifiers.load)} role="option">
-        <Spinner size="lg" />
       </div>
     );
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -275,8 +258,6 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   ]}
                   {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
                 </fieldset>
-                {loadingVariant === 'spinner' && loadingSpinner}
-                {(loadingVariant as SelectViewMoreObject)?.text && viewMoreBtn}
                 {footer && footerRenderer}
               </div>
             )}
@@ -287,11 +268,6 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
                 <fieldset className={css(styles.selectMenuFieldset)} />
-                {loadingVariant === 'spinner' && loadingSpinner}
-                {loadingVariant &&
-                  loadingVariant !== 'spinner' &&
-                  (loadingVariant as SelectViewMoreObject)?.text &&
-                  viewMoreBtn}
                 {footer && footerRenderer}
               </div>
             )}

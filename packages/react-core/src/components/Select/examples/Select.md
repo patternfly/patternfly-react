@@ -2209,7 +2209,7 @@ class SelectWithFooter extends React.Component {
 
   render() {
     const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
-    const titleId = 'title-id-1';
+    const titleId = 'title-id-footer';
     return (
       <div>
         <span id={titleId} hidden>
@@ -2258,9 +2258,8 @@ class SelectViewMore extends React.Component {
       <SelectOption key={2} value="Miss" />,
       <SelectOption key={3} value="Mrs" />,
       <SelectOption key={4} value="Ms" />,
-      <Divider component="li" key={5} />,
-      <SelectOption key={6} value="Dr" />,
-      <SelectOption key={7} value="Other" />
+      <SelectOption key={5} value="Dr" />,
+      <SelectOption key={6} value="Other" />
     ];
 
     this.state = {
@@ -2303,7 +2302,7 @@ class SelectViewMore extends React.Component {
       this.setState({ isLoading: true });
       this.simulateNetworkCall(() => {
         const newLength =
-          this.state.numOptions + 3 < this.options.length ? this.state.numOptions + 3 : this.options.length;
+          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
         this.setState({ numOptions: newLength, isLoading: false });
       });
     };
@@ -2311,7 +2310,7 @@ class SelectViewMore extends React.Component {
 
   render() {
     const { isOpen, selected, isToggleIcon, numOptions, loadingVariant, isLoading } = this.state;
-    const titleId = 'title-id-1';
+    const titleId = 'title-id-view-more';
     return (
       <div>
         <span id={titleId} hidden>
@@ -2364,9 +2363,12 @@ class SelectViewMoreCheckbox extends React.Component {
       <SelectOption key={0} value="Active" description="This is a description" />,
       <SelectOption key={1} value="Cancelled" />,
       <SelectOption key={2} value="Paused" />,
-      <Divider key={3} />,
       <SelectOption key={4} value="Warning" />,
-      <SelectOption key={5} value="Restarted" />
+      <SelectOption key={5} value="Restarted" />,
+      <SelectOption key={6} value="Down" />,
+      <SelectOption key={7} value="Disabled" />,
+      <SelectOption key={8} value="Needs Maintenance " />,
+      <SelectOption key={9} value="Degraded " />
     ];
 
     this.onToggle = isOpen => {
@@ -2406,7 +2408,7 @@ class SelectViewMoreCheckbox extends React.Component {
       this.setState({ isLoading: true });
       this.simulateNetworkCall(() => {
         const newLength =
-          this.state.numOptions + 3 < this.options.length ? this.state.numOptions + 3 : this.options.length;
+          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
         this.setState({ numOptions: newLength, isLoading: false });
       });
     };
@@ -2414,7 +2416,7 @@ class SelectViewMoreCheckbox extends React.Component {
 
   render() {
     const { isOpen, selected, numOptions, isLoading } = this.state;
-    const titleId = 'checkbox-select-id';
+    const titleId = 'view-more-checkbox-select-id';
     return (
       <div>
         <span id={titleId} hidden>

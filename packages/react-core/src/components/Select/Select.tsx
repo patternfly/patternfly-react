@@ -748,7 +748,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    if (isOpen && variant !== SelectVariant.checkbox) {
+    if (isOpen) {
       if (renderableItems.find(item => (item as any)?.key === 'loading') === undefined) {
         if (loadingVariant === 'spinner') {
           renderableItems.push(
@@ -916,7 +916,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.menuComponentRef}
         footer={footer}
         footerRef={this.footerRef}
-        loadingVariant={loadingVariant}
       >
         {variantChildren}
       </SelectMenu>

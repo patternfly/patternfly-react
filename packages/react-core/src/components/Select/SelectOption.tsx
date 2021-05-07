@@ -283,14 +283,36 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 )}
               </li>
             )}
-            {variant === SelectVariant.checkbox && !isNoResultsOption && (
+            {variant === SelectVariant.checkbox && isLoad && (
+              <button
+                className={css(
+                  styles.selectMenuItem,
+                  isLoad && styles.modifiers.load,
+                  isFocused && styles.modifiers.focus,
+                  className
+                )}
+                onKeyDown={(event: React.KeyboardEvent) => {
+                  this.onKeyDown(event, 0, undefined, true);
+                }}
+                onClick={(event: any) => {
+                  onClick(event);
+                }}
+                ref={this.ref}
+              >
+                {children || value.toString()}
+              </button>
+            )}
+            {variant === SelectVariant.checkbox && isLoading && (
+              <div className={css(styles.selectMenuItem, isLoading && styles.modifiers.loading, className)}>
+                {children}
+              </div>
+            )}
+            {variant === SelectVariant.checkbox && !isNoResultsOption && !isLoading && !isLoad && (
               <label
                 {...props}
                 className={css(
                   checkStyles.check,
                   styles.selectMenuItem,
-                  isLoad && styles.modifiers.load,
-                  isLoading && styles.modifiers.loading,
                   isDisabled && styles.modifiers.disabled,
                   description && styles.modifiers.description,
                   className
@@ -319,14 +341,12 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
               </label>
             )}
-            {variant === SelectVariant.checkbox && isNoResultsOption && (
+            {variant === SelectVariant.checkbox && isNoResultsOption && !isLoading && !isLoad && (
               <div>
                 <Component
                   {...props}
                   className={css(
                     styles.selectMenuItem,
-                    isLoad && styles.modifiers.load,
-                    isLoading && styles.modifiers.loading,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
                     className
