@@ -3,7 +3,7 @@ import { LogViewerContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { LogViewerToolbar } from './LogViewerToolbar';
-import { LOGGER_HEIGHT, DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX } from './utils/constants';
+import { LOGGER_HEIGHT, DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
 import { searchForKeyword, parseConsoleOutput } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
@@ -49,6 +49,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     const [rowInFocus, setRowInFocus] = useState<number | null>(null);
     const [searchedWordIndexes, setSearchedWordIndexes] = useState<number[] | null>([]);
     const [highlightedRowIndexes, setHighlightedRowIndexes] = useState<number[] | null>([]);
+    const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
     const [parsedData, setParsedData] = useState<string[] | null>([]);
     const loggerRef = React.createRef<any>();
 
@@ -79,6 +80,13 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
           setSearchedWordIndexes(foundKeywordIndexes);
           scrollToRow(foundKeywordIndexes[DEFAULT_SEARCH_INDEX]);
         }
+      }
+
+      if(searchedInput !== '' && searchedInput.length < 3) {
+        console.log('SEARCHINPUT IS LESS THAN 3: ', currentSearchedItemCount);
+        setRowInFocus(DEFAULT_FOCUS);
+        setCurrentSearchedItemCount(DEFAULT_INDEX);
+        setSearchedWordIndexes([]);
       }
 
       if (searchedInput === '') {
@@ -113,12 +121,14 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
             searchedInput={searchedInput}
             rowInFocus={rowInFocus}
             searchedWordIndexes={searchedWordIndexes}
+            currentSearchedItemCount={currentSearchedItemCount}
             scrollToRow={scrollToRow}
             customControls={customControls}
             hasToolbar={hasToolbar}
             setRowInFocus={setRowInFocus}
             setSearchedInput={setSearchedInput}
             setSearchedWordIndexes={setSearchedWordIndexes}
+            setCurrentSearchedItemCount={setCurrentSearchedItemCount}
           />
           <div className="pf-c-log-viewer__main">
             <List

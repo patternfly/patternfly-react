@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NUMBER_INDEX_DELTA } from './utils/constants';
+import { NUMBER_INDEX_DELTA, DEFAULT_FOCUS, DEFAULT_INDEX } from './utils/constants';
 import { SearchInput, Toolbar, ToolbarItem, ToolbarContent, ToolbarGroup } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
@@ -15,6 +15,8 @@ export interface LogViewerToolbarProps extends React.HTMLProps<HTMLDivElement> {
   rowInFocus: number;
   /** User input being searched in the log viewer  */
   searchedInput: string;
+  /** Counter for keeping track of the instance in focus of users seardched input */
+  currentSearchedItemCount: number;
   /** Place holder text inside of searchbar */
   placeholder: string;
   /** Function that scrolls the virtual table to the provided index row */
@@ -22,6 +24,7 @@ export interface LogViewerToolbarProps extends React.HTMLProps<HTMLDivElement> {
   setRowInFocus: (index: number) => void;
   setSearchedInput: (input: string) => void;
   setSearchedWordIndexes: (indexes: number[]) => void;
+  setCurrentSearchedItemCount: (index: number) => void;
 }
 
 export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = ({
@@ -32,13 +35,12 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   rowInFocus,
   searchedInput,
   searchedWordIndexes,
+  currentSearchedItemCount,
   setRowInFocus,
   setSearchedInput,
-  setSearchedWordIndexes
+  setSearchedWordIndexes,
+  setCurrentSearchedItemCount
 }) => {
-  const [currentSearchItemCount, setCurrentSearchItemCount] = useState<number>(0);
-  const DEFAULT_FOCUS = -1;
-  const DEFAULT_INDEX = 0;
 
   /* Defaulting the first focused row that contain searched keywords */
   useEffect(() => {
@@ -50,7 +52,7 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   /* Clearing out the search input */
   const handleClear = (): void => {
     setSearchedInput('');
-    setCurrentSearchItemCount(0);
+    setCurrentSearchedItemCount(DEFAULT_INDEX);
     setSearchedWordIndexes([]);
     setRowInFocus(DEFAULT_FOCUS);
   };
@@ -58,28 +60,28 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   /* Moving focus over to next row containing searched word */
   const handleNextSearchItem = (): void => {
     const oldIndex = searchedWordIndexes.indexOf(rowInFocus);
-    const adjustedSearchCount = currentSearchItemCount + 1;
+    const adjustedSearchCount = currentSearchedItemCount + NUMBER_INDEX_DELTA;
     let tempPosition = oldIndex;
 
     if (oldIndex >= searchedWordIndexes.length - NUMBER_INDEX_DELTA) {
       return null;
     }
 
-    setCurrentSearchItemCount(adjustedSearchCount);
+    setCurrentSearchedItemCount(adjustedSearchCount);
     scrollToRow(searchedWordIndexes[++tempPosition]);
   };
 
   /* Moving focus over to next row containing searched word */
   const handlePrevSearchItem = (): void => {
     const oldIndex = searchedWordIndexes.indexOf(rowInFocus);
-    const adjustedSearchCount = currentSearchItemCount - 1;
+    const adjustedSearchCount = currentSearchedItemCount - NUMBER_INDEX_DELTA;
     let temp = oldIndex;
 
-    if (oldIndex <= 0) {
+    if (oldIndex <= DEFAULT_INDEX) {
       return null;
     }
 
-    setCurrentSearchItemCount(adjustedSearchCount);
+    setCurrentSearchedItemCount(adjustedSearchCount);
     scrollToRow(searchedWordIndexes[--temp]);
   };
 
@@ -94,7 +96,7 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
             onPreviousClick={() => handlePrevSearchItem()}
             onClear={() => handleClear()}
             onChange={input => setSearchedInput(input)}
-            resultsCount={`${currentSearchItemCount + 1} / ${searchedWordIndexes.length}`}
+            resultsCount={`${currentSearchedItemCount + (currentSearchedItemCount === 0 ? DEFAULT_INDEX : NUMBER_INDEX_DELTA)} / ${searchedWordIndexes.length}`}
           />
         </ToolbarGroup>
       </ToolbarItem>
