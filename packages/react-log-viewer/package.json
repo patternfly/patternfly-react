@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@patternfly/react-core": "^4.117.1",
-    "@patternfly/react-icons": "^4.9.10",
-    "@patternfly/react-styles": "^4.9.5",
+    "@patternfly/react-icons": "^4.10.4",
+    "@patternfly/react-styles": "^4.10.4",
     "memoize-one": "^5.1.0"
   },
   "peerDependencies": {

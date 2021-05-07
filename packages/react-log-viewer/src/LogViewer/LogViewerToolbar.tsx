@@ -48,8 +48,7 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
     if (searchedWordIndexes.length >= 1) {
       setIndexAdjuster(1);
       scrollToRow(searchedWordIndexes[DEFAULT_INDEX]);
-    }
-    else {
+    } else {
       setIndexAdjuster(0);
     }
   }, [searchedWordIndexes]);
