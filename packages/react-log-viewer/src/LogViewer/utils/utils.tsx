@@ -30,7 +30,7 @@ export const searchForKeyword = (searchedInput: string, parsedData: string[]) =>
   }
 
   if (searchResults.length > 0) {
-    console.log('PROBANDO MI SEARCH: ', searchResults);
+    // console.log('PROBANDO MI SEARCH: ', searchResults);
     return [...searchResults];
   } else if (searchResults.length <= 0) {
     const negativeResults: number[] = [];

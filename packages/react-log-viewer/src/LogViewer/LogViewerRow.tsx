@@ -50,12 +50,11 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   };
 
   /** Helper function for applying the correct styling for styling rows containing searched keywords */
-  const handleSearchedItemHighlight = (index:number): string => {
-    if(rowInFocus === index) {
-      return (css(styles.logViewerListItem) + ' pf-m-match');
-    }
-    else if(rowInFocus !== index) {
-      return (css(styles.logViewerListItem));
+  const handleSearchedItemHighlight = (index: number): string => {
+    if (rowInFocus === index) {
+      return css(styles.logViewerListItem) + ' pf-m-match';
+    } else if (rowInFocus !== index) {
+      return css(styles.logViewerListItem);
     }
   };
 

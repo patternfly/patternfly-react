@@ -34,7 +34,7 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   searchedWordIndexes,
   setRowInFocus,
   setSearchedInput,
-  setSearchedWordIndexes,
+  setSearchedWordIndexes
 }) => {
   const [currentSearchItemCount, setCurrentSearchItemCount] = useState<number>(0);
   const DEFAULT_FOCUS = -1;
