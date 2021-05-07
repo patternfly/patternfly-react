@@ -90,6 +90,8 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
 
       if (searchedInput === '') {
         setRowInFocus(DEFAULT_FOCUS);
+        // setCurrentSearchedItemCount(DEFAULT_INDEX);
+        // setSearchedWordIndexes([]);
       }
     }, [searchedInput]);
 

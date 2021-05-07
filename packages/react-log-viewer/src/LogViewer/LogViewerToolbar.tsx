@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NUMBER_INDEX_DELTA, DEFAULT_FOCUS, DEFAULT_INDEX } from './utils/constants';
 import { SearchInput, Toolbar, ToolbarItem, ToolbarContent, ToolbarGroup } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
@@ -41,10 +41,16 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   setSearchedWordIndexes,
   setCurrentSearchedItemCount
 }) => {
+  const [indexAdjuster, setIndexAdjuster] = useState(0);
+
   /* Defaulting the first focused row that contain searched keywords */
   useEffect(() => {
     if (searchedWordIndexes.length >= 1) {
+      setIndexAdjuster(1);
       scrollToRow(searchedWordIndexes[DEFAULT_INDEX]);
+    }
+    else {
+      setIndexAdjuster(0);
     }
   }, [searchedWordIndexes]);
 
@@ -74,14 +80,14 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   const handlePrevSearchItem = (): void => {
     const oldIndex = searchedWordIndexes.indexOf(rowInFocus);
     const adjustedSearchCount = currentSearchedItemCount - NUMBER_INDEX_DELTA;
-    let temp = oldIndex;
+    let tempPosition = oldIndex;
 
     if (oldIndex <= DEFAULT_INDEX) {
       return null;
     }
 
     setCurrentSearchedItemCount(adjustedSearchCount);
-    scrollToRow(searchedWordIndexes[--temp]);
+    scrollToRow(searchedWordIndexes[--tempPosition]);
   };
 
   const toolbarItems = (
@@ -95,8 +101,7 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
             onPreviousClick={() => handlePrevSearchItem()}
             onClear={() => handleClear()}
             onChange={input => setSearchedInput(input)}
-            resultsCount={`${currentSearchedItemCount +
-              (currentSearchedItemCount === 0 ? DEFAULT_INDEX : NUMBER_INDEX_DELTA)} / ${searchedWordIndexes.length}`}
+            resultsCount={`${currentSearchedItemCount + indexAdjuster} / ${searchedWordIndexes.length}`}
           />
         </ToolbarGroup>
       </ToolbarItem>
