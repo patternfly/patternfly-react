@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { NUMBER_INDEX_DELTA, DEFAULT_FOCUS, DEFAULT_INDEX } from './utils/constants';
 import { SearchInput, Toolbar, ToolbarItem, ToolbarContent, ToolbarGroup } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
@@ -41,7 +41,6 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   setSearchedWordIndexes,
   setCurrentSearchedItemCount
 }) => {
-
   /* Defaulting the first focused row that contain searched keywords */
   useEffect(() => {
     if (searchedWordIndexes.length >= 1) {
@@ -96,7 +95,8 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
             onPreviousClick={() => handlePrevSearchItem()}
             onClear={() => handleClear()}
             onChange={input => setSearchedInput(input)}
-            resultsCount={`${currentSearchedItemCount + (currentSearchedItemCount === 0 ? DEFAULT_INDEX : NUMBER_INDEX_DELTA)} / ${searchedWordIndexes.length}`}
+            resultsCount={`${currentSearchedItemCount +
+              (currentSearchedItemCount === 0 ? DEFAULT_INDEX : NUMBER_INDEX_DELTA)} / ${searchedWordIndexes.length}`}
           />
         </ToolbarGroup>
       </ToolbarItem>

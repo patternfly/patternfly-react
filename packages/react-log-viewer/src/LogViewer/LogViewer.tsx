@@ -82,8 +82,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         }
       }
 
-      if(searchedInput !== '' && searchedInput.length < 3) {
-        console.log('SEARCHINPUT IS LESS THAN 3: ', currentSearchedItemCount);
+      if (searchedInput !== '' && searchedInput.length < 3) {
         setRowInFocus(DEFAULT_FOCUS);
         setCurrentSearchedItemCount(DEFAULT_INDEX);
         setSearchedWordIndexes([]);
