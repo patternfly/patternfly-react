@@ -110,7 +110,7 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
   });
 
-  it('Verify isInputValueAccepted works', () => {
+  it('Verify isInputValuePersisted works', () => {
     const find = (selector: string) =>
       cy
         .get('#typeahead-select-id')
@@ -121,7 +121,7 @@ describe('Select Test', () => {
       .eq(0)
       .click();
     find('#typeahead-select-select-typeahead').should('have.value', '');
-    cy.get('#toggle-input-value-accepted').click();
+    cy.get('#toggle-input-value-persisted').click();
     find('#typeahead-select-select-typeahead').type('zzz');
     cy.get('.pf-c-title')
       .eq(0)

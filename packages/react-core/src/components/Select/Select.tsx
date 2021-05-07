@@ -130,7 +130,7 @@ export interface SelectProps
   /** Optional props to render custom chip group in the typeaheadmulti variant */
   chipGroupComponent?: React.ReactNode;
   /** @beta Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
-  isInputValueAccepted?: boolean;
+  isInputValuePersisted?: boolean;
 }
 
 export interface SelectState {
@@ -195,7 +195,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     favoritesLabel: 'Favorites',
     ouiaSafe: true,
     chipGroupComponent: null,
-    isInputValueAccepted: false
+    isInputValuePersisted: false
   };
 
   state: SelectState = {
@@ -260,8 +260,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onToggle = (isExpanded: boolean) => {
-    const { isInputValueAccepted, onSelect, onToggle } = this.props;
-    if (!isExpanded && isInputValueAccepted && onSelect) {
+    const { isInputValuePersisted, onSelect, onToggle } = this.props;
+    if (!isExpanded && isInputValuePersisted && onSelect) {
       onSelect(undefined, this.inputRef && this.inputRef.current ? this.inputRef.current.value : '');
     }
     onToggle(isExpanded);
@@ -685,7 +685,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       customBadgeText,
       inputIdPrefix,
       /* eslint-disable @typescript-eslint/no-unused-vars */
-      isInputValueAccepted,
+      isInputValuePersisted,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
       favorites,

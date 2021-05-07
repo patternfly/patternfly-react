@@ -21,7 +21,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={true}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -1033,7 +1033,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -1243,7 +1243,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -1434,7 +1434,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -1606,7 +1606,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -2162,7 +2162,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -2663,7 +2663,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -3282,7 +3282,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -3905,7 +3905,7 @@ exports[`renders select with favorites successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={true}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -5654,7 +5654,7 @@ exports[`select custom select filter filters properly 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -6128,7 +6128,7 @@ exports[`select renders select groups successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={true}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -7068,7 +7068,7 @@ exports[`select renders up direction successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -7245,7 +7245,7 @@ exports[`select single select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -7422,7 +7422,7 @@ exports[`select single select renders disabled successfully 1`] = `
   isCreatable={false}
   isDisabled={true}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -7600,7 +7600,7 @@ exports[`select single select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -8125,7 +8125,7 @@ exports[`select single select renders expanded successfully with custom objects 
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -8600,7 +8600,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -8772,7 +8772,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -9033,7 +9033,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -9232,7 +9232,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -9784,7 +9784,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -10816,7 +10816,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -11013,7 +11013,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -11562,7 +11562,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -12174,342 +12174,6 @@ exports[`typeahead select renders selected successfully 1`] = `
 </Select>
 `;
 
-exports[`typeahead select test isInputValueAccepted 1`] = `
-<Select
-  aria-describedby=""
-  aria-invalid={false}
-  aria-label=""
-  aria-labelledby=""
-  chipGroupComponent={null}
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customBadgeText={null}
-  customContent={null}
-  direction="down"
-  favorites={Array []}
-  favoritesLabel="Favorites"
-  hasInlineFilter={false}
-  inlineFilterPlaceholderText={null}
-  inputIdPrefix=""
-  isCreatable={false}
-  isDisabled={false}
-  isGrouped={false}
-  isInputValueAccepted={true}
-  isOpen={true}
-  isPlain={false}
-  menuAppendTo="inline"
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFilter={null}
-  onToggle={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          false,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  onTypeaheadInputChanged={null}
-  ouiaSafe={true}
-  placeholderText=""
-  removeSelectionAriaLabel="Remove"
-  selections={Array []}
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId={null}
-  typeAheadAriaLabel=""
-  validated="default"
-  variant="typeahead"
-  width=""
->
-  <GenerateId
-    prefix="pf-random-id-"
-  >
-    <div
-      className="pf-c-select pf-m-expanded"
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-6"
-      data-ouia-component-type="PF4/Select"
-      data-ouia-safe={true}
-    >
-      <SelectToggle
-        aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-15"
-        className=""
-        handleTypeaheadKeys={[Function]}
-        hasClearButton={false}
-        id="pf-select-toggle-id-15"
-        isActive={false}
-        isDisabled={false}
-        isOpen={true}
-        isPlain={false}
-        menuRef={
-          Object {
-            "current": <ul
-              aria-label=""
-              class="pf-c-select__menu"
-              role="listbox"
-            >
-              <li
-                class="pf-c-select__menu-wrapper"
-                id="select-option-1620390728985sr8m9uajvn"
-                role="presentation"
-              >
-                <button
-                  class="pf-c-select__menu-item pf-m-disabled"
-                  role="option"
-                  type="button"
-                >
-                  No results found
-                </button>
-              </li>
-            </ul>,
-          }
-        }
-        onClickTypeaheadToggleButton={[Function]}
-        onClose={[Function]}
-        onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={
-          Object {
-            "current": <div
-              class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-6"
-              data-ouia-component-type="PF4/Select"
-              data-ouia-safe="true"
-            >
-              <div
-                class="pf-c-select__toggle pf-m-typeahead"
-              >
-                <div
-                  class="pf-c-select__toggle-wrapper"
-                >
-                  <input
-                    aria-label=""
-                    autocomplete="off"
-                    class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-15-select-typeahead"
-                    placeholder=""
-                    type="text"
-                    value="zzz"
-                  />
-                </div>
-                <button
-                  aria-expanded="true"
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-15"
-                  class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-15"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-c-select__toggle-arrow"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <ul
-                aria-label=""
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="select-option-1620390728985sr8m9uajvn"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-disabled"
-                    role="option"
-                    type="button"
-                  >
-                    No results found
-                  </button>
-                </li>
-              </ul>
-            </div>,
-          }
-        }
-        type="button"
-        variant="typeahead"
-      >
-        <div
-          className="pf-c-select__toggle pf-m-typeahead"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-        >
-          <div
-            className="pf-c-select__toggle-wrapper"
-          >
-            <input
-              aria-activedescendant={null}
-              aria-label=""
-              autoComplete="off"
-              className="pf-c-form-control pf-c-select__toggle-typeahead"
-              disabled={false}
-              id="pf-select-toggle-id-15-select-typeahead"
-              onChange={[Function]}
-              onClick={[Function]}
-              placeholder=""
-              type="text"
-              value="zzz"
-            />
-          </div>
-          <button
-            aria-expanded={true}
-            aria-haspopup="listbox"
-            aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-15"
-            className="pf-c-button pf-c-select__toggle-button pf-m-plain"
-            disabled={false}
-            id="pf-select-toggle-id-15"
-            onClick={[Function]}
-            tabIndex={-1}
-            type="button"
-          >
-            <CaretDownIcon
-              className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                />
-              </svg>
-            </CaretDownIcon>
-          </button>
-        </div>
-      </SelectToggle>
-      <ForwardRef
-        aria-label=""
-        aria-labelledby=""
-        isGrouped={false}
-        keyHandler={[Function]}
-        openedOnEnter={false}
-        sendRef={[Function]}
-      >
-        <SelectMenu
-          aria-label=""
-          aria-labelledby=""
-          className=""
-          hasInlineFilter={false}
-          innerRef={
-            Object {
-              "current": <ul
-                aria-label=""
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="select-option-1620390728985sr8m9uajvn"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item pf-m-disabled"
-                    role="option"
-                    type="button"
-                  >
-                    No results found
-                  </button>
-                </li>
-              </ul>,
-            }
-          }
-          isCustomContent={false}
-          isExpanded={false}
-          isGrouped={false}
-          keyHandler={[Function]}
-          maxHeight=""
-          openedOnEnter={false}
-          selected=""
-          sendRef={[Function]}
-        >
-          <ul
-            aria-label=""
-            aria-labelledby={null}
-            className="pf-c-select__menu"
-            role="listbox"
-          >
-            <SelectOption
-              className=""
-              component="button"
-              index={0}
-              inputId="pf-random-id-20-0"
-              isChecked={false}
-              isDisabled={true}
-              isFavorite={null}
-              isFocused={null}
-              isNoResultsOption={true}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$0"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="No results found"
-            >
-              <li
-                className="pf-c-select__menu-wrapper"
-                id="select-option-1620390728985sr8m9uajvn"
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item pf-m-disabled"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  No results found
-                </button>
-              </li>
-            </SelectOption>
-          </ul>
-        </SelectMenu>
-      </ForwardRef>
-    </div>
-  </GenerateId>
-</Select>
-`;
-
 exports[`typeahead select test select existing option on a non-creatable select 1`] = `
 <Select
   aria-describedby=""
@@ -12531,7 +12195,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
-  isInputValueAccepted={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"

@@ -1062,7 +1062,7 @@ class TypeaheadSelectInput extends React.Component {
       selected: null,
       isDisabled: false,
       isCreatable: false,
-      isInputValueAccepted: false,
+      isInputValuePersisted: false,
       hasOnCreateOption: false
     };
 
@@ -1114,15 +1114,15 @@ class TypeaheadSelectInput extends React.Component {
       });
     };
     
-    this.toggleInputValueAccepted = checked => {
+    this.toggleInputValuePersisted = checked => {
       this.setState({
-        isInputValueAccepted: checked
+        isInputValuePersisted: checked
       });
     };
   }
 
   render() {
-    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValueAccepted, options } = this.state;
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValuePersisted, options } = this.state;
     const titleId = 'typeahead-select-id-1';
     return (
       <div>
@@ -1138,7 +1138,7 @@ class TypeaheadSelectInput extends React.Component {
           selections={selected}
           isOpen={isOpen}
           aria-labelledby={titleId}
-          isInputValueAccepted={isInputValueAccepted}
+          isInputValuePersisted={isInputValuePersisted}
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
@@ -1178,13 +1178,12 @@ class TypeaheadSelectInput extends React.Component {
           name="toggle-new-typeahead"
         />
         <Checkbox
-          label="isInputValueAccepted"
-          isChecked={isInputValueAccepted}
-          isInputValueAccepted={this.state.isInputValueAccepted}
-          onChange={this.toggleInputValueAccepted}
-          aria-label="toggle input value accepted"
-          id="toggle-input-value-accepted"
-          name="toggle-input-value-accepted"
+          label="isInputValuePersisted"
+          isChecked={isInputValuePersisted}
+          onChange={this.toggleInputValuePersisted}
+          aria-label="toggle input value persisted"
+          id="toggle-input-value-persisted"
+          name="toggle-input-value-persisted"
         />
       </div>
     );

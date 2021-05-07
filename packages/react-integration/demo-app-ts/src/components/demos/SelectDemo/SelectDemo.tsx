@@ -50,7 +50,7 @@ export interface SelectDemoState {
   typeaheadOptions: TypeAheadOption[];
   typeaheadIsCreatable: boolean;
   typeaheadNewOptions: boolean;
-  typeaheadInputValueAccepted: boolean;
+  typeaheadInputValuePersisted: boolean;
   customContentisOpen: boolean;
   noBadgeCheckIsOpen: boolean;
   noBadgeCheckSelected: string[];
@@ -106,7 +106,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
-    typeaheadInputValueAccepted: false,
+    typeaheadInputValuePersisted: false,
     customContentisOpen: false,
     menuDocumentBodyisOpen: false,
     menuDocumentBodySelected: ['']
@@ -178,9 +178,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
-  toggleInputValueAccepted = (checked: boolean) => {
+  toggleInputValuePersisted = (checked: boolean) => {
     this.setState({
-      typeaheadInputValueAccepted: checked
+      typeaheadInputValuePersisted: checked
     });
   };
 
@@ -841,7 +841,7 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadSelected,
       typeaheadIsCreatable,
       typeaheadNewOptions,
-      typeaheadInputValueAccepted
+      typeaheadInputValuePersisted
     } = this.state;
     const titleId = 'typeahead-select-id';
     return (
@@ -866,7 +866,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
             onCreateOption={(typeaheadNewOptions && this.typeaheadCreateNew) || undefined}
-            isInputValueAccepted={typeaheadInputValueAccepted}
+            isInputValuePersisted={typeaheadInputValuePersisted}
             createText="Create item"
             noResultsFoundText="Item not found"
           >
@@ -898,12 +898,12 @@ export class SelectDemo extends Component<SelectDemoState> {
           name="toggle-new-typeahead"
         />
         <Checkbox
-          label="isInputValueAccepted"
-          isChecked={this.state.typeaheadInputValueAccepted}
-          onChange={this.toggleInputValueAccepted}
-          aria-label="toggle input value accepted"
-          id="toggle-input-value-accepted"
-          name="toggle-input-value-accepted"
+          label="isInputValuePersisted"
+          isChecked={this.state.typeaheadInputValuePersisted}
+          onChange={this.toggleInputValuePersisted}
+          aria-label="toggle input value persisted"
+          id="toggle-input-value-persisted"
+          name="toggle-input-value-persisted"
         />
       </StackItem>
     );
