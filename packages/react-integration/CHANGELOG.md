@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.96.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.95.0...@patternfly/react-integration@4.96.0) (2021-05-07)
+
+
+### Features
+
+* **Card:** add isToggleRightAligned prop ([#5723](https://github.com/patternfly/patternfly-react/issues/5723)) ([336c447](https://github.com/patternfly/patternfly-react/commit/336c447dd95f9759dd791032f52669ea2e97881f))
+
+
+
+
+
 # [4.95.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.94.0...@patternfly/react-integration@4.95.0) (2021-05-06)
 
 
