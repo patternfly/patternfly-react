@@ -18,6 +18,14 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
   isPlain?: boolean;
   /** Indicates where menu will be aligned horizontally */
   position?: DropdownPosition | 'right' | 'left';
+  /** Indicates how the menu will align at screen size breakpoints. Default alignment is set via the position property. */
+  alignments?: {
+    sm?: 'right' | 'left';
+    md?: 'right' | 'left';
+    lg?: 'right' | 'left';
+    xl?: 'right' | 'left';
+    '2xl'?: 'right' | 'left';
+  };
   /** Display menu above or below dropdown toggle */
   direction?: DropdownDirection | 'up' | 'down';
   /** Flag to indicate if dropdown has groups */
@@ -38,6 +46,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   ref, // Types of Ref are different for React.FC vs React.Component
   ouiaId,
   ouiaSafe,
+  alignments,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -58,7 +67,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       plainTextClass: styles.modifiers.text,
       ouiaId: useOUIAId(Dropdown.displayName, ouiaId),
       ouiaSafe,
-      ouiaComponentType: Dropdown.displayName
+      ouiaComponentType: Dropdown.displayName,
+      alignments
     }}
   >
     <DropdownWithContext {...props} />

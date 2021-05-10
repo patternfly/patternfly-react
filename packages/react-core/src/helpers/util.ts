@@ -248,10 +248,11 @@ export const formatBreakpointMods = (
     '2xl'?: string;
     '3xl'?: string;
   },
-  styles: any
+  styles: any,
+  stylePrefix: string = ''
 ) =>
   Object.entries(mods || {})
-    .map(([breakpoint, mod]) => `${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
+    .map(([breakpoint, mod]) => `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
     .map(toCamel)
     .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])

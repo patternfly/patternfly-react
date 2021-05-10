@@ -89,7 +89,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     const openedOnEnter = this.openedOnEnter;
     return (
       <DropdownContext.Consumer>
-        {({ baseClass, baseComponent, id: contextId, ouiaId, ouiaComponentType, ouiaSafe }) => {
+        {({ baseClass, baseComponent, id: contextId, ouiaId, ouiaComponentType, ouiaSafe, alignments }) => {
           const BaseComponent = baseComponent as any;
           const menuContainer = (
             <DropdownMenu
@@ -100,6 +100,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               aria-labelledby={contextId ? `${contextId}-toggle` : id}
               isGrouped={isGrouped}
               autoFocus={openedOnEnter && autoFocus}
+              alignments={alignments}
             >
               {renderedContent}
             </DropdownMenu>

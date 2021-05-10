@@ -199,6 +199,13 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
               Dropdown
             </DropdownToggle>
           }
+          alignments={{
+            sm: 'left',
+            md: 'right',
+            lg: 'left',
+            xl: 'right',
+            '2xl': 'left'
+          }}
           isOpen={isOpen}
           dropdownItems={dropdownItems}
         />
