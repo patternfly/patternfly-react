@@ -168,12 +168,12 @@ class TextIconToggleGroupExample extends React.Component {
 }
 ```
 
-### Light variant
+### Compact variant
 ```js
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupVariant } from '@patternfly/react-core';
 
-class LightToggleGroupExample extends React.Component {
+class CompactToggleGroupExample extends React.Component {
 constructor(props) {
     super(props);
     this.state = {
@@ -197,7 +197,7 @@ constructor(props) {
     const { isSelected } = this.state;
 
     return (
-      <ToggleGroup variant={ToggleGroupVariant.light} aria-label="Light variant toggle group">
+      <ToggleGroup isCompact aria-label="Compact variant toggle group">
         <ToggleGroupItem text="Option 1" buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick} />
         <ToggleGroupItem text="Option 2" buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick} />
         <ToggleGroupItem text="Option 3" isDisabled />
