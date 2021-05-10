@@ -33,7 +33,8 @@ class BasicComposableMenu extends React.Component {
       activeItem: 0,
       isExpanded: false
     };
-    this.onToggle = () => {
+    this.onToggle = event => {
+      event && event.stopPropagation();
       this.setState({
         isExpanded: !this.state.isExpanded
       });
@@ -149,7 +150,8 @@ class ActionComposableMenu extends React.Component {
       isExpanded: false,
       selectedItems: [0, 2, 3]
     };
-    this.onToggle = () => {
+    this.onToggle = event => {
+      event && event.stopPropagation();
       this.setState({
         isExpanded: !this.state.isExpanded,
         selectedItems: []
@@ -305,7 +307,8 @@ class SelectComposableMenu extends React.Component {
           return null;
       }
     };
-    this.onToggle = () => {
+    this.onToggle = event => {
+      event && event.stopPropagation();
       this.setState({
         isExpanded: !this.state.isExpanded
       });
@@ -426,7 +429,8 @@ class DrilldownComposableMenu extends React.Component {
       activeMenu: 'rootMenu',
       isExpanded: false
     };
-    this.onToggle = () => {
+    this.onToggle = event => {
+      event && event.stopPropagation();
       this.setState({
         isExpanded: !this.state.isExpanded,
         menuDrilledIn: [],
