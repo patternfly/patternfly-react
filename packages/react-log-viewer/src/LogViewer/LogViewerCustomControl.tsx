@@ -4,9 +4,9 @@ import { Button, ToolbarItem } from '@patternfly/react-core';
 import { ButtonProps } from '@patternfly/react-core/src';
 
 export interface LoggerCustomControlProps extends Omit<ButtonProps, 'onClick'> {
-  /* Icon for the user defined button */
+  /** Icon for the user defined button */
   children?: React.ReactNode;
-  /* Callback func. with exposure for the data. */
+  /** Callback func. with exposure for the data. */
   onClick?: (event?: any, value?: string[]) => void;
 }
 

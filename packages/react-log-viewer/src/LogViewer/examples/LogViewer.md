@@ -11,8 +11,6 @@ import { bigData } from './bigTestData.js';
 
 import { data } from './realTestData.js';
 
-import '../Styles/log-viewer.css';
-
 ## Examples
 ### Basic
 ```js
@@ -56,35 +54,8 @@ CustomControlLogViewer = () => {
   const currentDataSource = React.useState(0);
 
   const onClickExample = (event, value) => {
-    console.log('MI VALOR', value); //eslint-disable-line
+    console.log('MY VALUE', value); //eslint-disable-line
   };
-
-  // const onSelect = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
-  // const onToggle = (isOpen) => {
-  //   setIsOpen(isOpen);
-  // };
-
-  // const onDropDownItemAction = (index) => {
-  //   setCurrentDataSource(index);
-  // };
-
-  // const dropdownItems = dataSourceTitles.map((title, index) => (
-  //   <DropdownItem key={index} component="button" onClick={() => onDropDownItemAction(index)}>
-  //     {title}
-  //   </DropdownItem>
-  // ));
-
-  // const renderDropdown = (
-  //     <Dropdown
-  //       onSelect={() => onSelect()}
-  //       toggle={<DropdownToggle onToggle={onToggle}>{dataSourceTitles[currentDataSource]}</DropdownToggle>}
-  //       isOpen={isOpen}
-  //       dropdownItems={dropdownItems}
-  //     />
-  // );
 
   const customControls = (
     <LogViewerCustomControl onClick={onClickExample}>Print to Console</LogViewerCustomControl>

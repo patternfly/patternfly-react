@@ -1,14 +1,3 @@
-// Logger Dimensions
-export const LOGGER_HEIGHT: number = 600;
-export const LOGGER_WIDTH: number = 1200;
-export const LOGGER_COLUMNS_AMOUNT: number = 3;
-export const LOGGER_INDEX_COLUMN_ID: number = 0;
-export const LOGGER_DATA_COLUMN_ID: number = 1;
-export const LOGGER_STAMP_COLUMN_ID: number = 3;
-export const LOGGER_INDEX_COLUMN_WIDTH: number = 48;
-export const LOGGER_DATA_COLUMN_WIDTH: number = 1052;
-export const LOGGER_STAMP_COLUMN_WIDTH: number = 85;
-export const LOGGER_ROW_HEIGHT: number = 30;
 export const LOGGER_LINE_NUMBER_INDEX_DELTA: number = 1;
 export const NUMBER_INDEX_DELTA: number = 1;
 export const DEFAULT_AMOUNT: number = 0;
@@ -16,5 +5,3 @@ export const DEFAULT_INDEX: number = 0;
 export const DEFAULT_FOCUS: number = -1;
 export const MIN_SEARCH_INPUT_LENGTH: number = 3;
 export const DEFAULT_SEARCH_INDEX = 0;
-export const LOADING = 1;
-export const LOADED = 2;

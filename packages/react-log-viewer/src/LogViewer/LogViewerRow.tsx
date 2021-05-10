@@ -54,9 +54,9 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   const handleRowHighlight = (index: number): string => {
     if (searchedWordIndexes.includes(index)) {
       if (rowInFocus === index) {
-        return css(styles.logViewerListItem) + ' pf-m-current';
+        return css(styles.logViewerListItem, styles.modifiers.current);
       }
-      return css(styles.logViewerListItem) + ' pf-m-match';
+      return css(styles.logViewerListItem, styles.modifiers.match);
     }
     if (rowInFocus !== index) {
       return css(styles.logViewerListItem);

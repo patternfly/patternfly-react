@@ -3,7 +3,7 @@ import { LogViewerContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { LogViewerToolbar } from './LogViewerToolbar';
-import { LOGGER_HEIGHT, DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
+import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
 import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
@@ -18,10 +18,14 @@ interface LogViewerProps {
   customControls?: React.ReactNode;
   /** Placeholder text for the searchbar. */
   placeholder?: string;
-  /** Flag to enable or disable line numbers on the logger. */
+  /** Flag to enable or disable line numbers on the log viewer. */
   hasLineNumbers?: boolean;
-  /** Width in pixels of log viewer */
+  /** Width in pixels of the log viewer */
   width: number;
+  /** Height in pixels of the log viewer */
+  height?: number;
+  /** Rows being rendered outside of view. The more rows are rendered, the higher impact on performance */
+  overScanCount?: number;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -43,7 +47,9 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     customControls = null,
     placeholder = 'Search',
     hasLineNumbers = true,
-    width = 800
+    width = 800,
+    height = 600,
+    overScanCount = 10
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
     const [rowInFocus, setRowInFocus] = useState<number | null>(null);
@@ -100,7 +106,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     const scrollToRow = (searchedRowIndex: number) => {
       setRowInFocus(searchedRowIndex);
       loggerRef.current.scrollToItem(searchedRowIndex, 'center');
-      return true;
     };
 
     const loggerWidth = loggerRef.current ? loggerRef.current.clientWidth : 800;
@@ -119,30 +124,32 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         }}
       >
         <div className={css(styles.logViewer) + (hasLineNumbers ? ' pf-m-line-numbers' : '')}>
-          <LogViewerToolbar
-            placeholder={placeholder}
-            searchedInput={searchedInput}
-            rowInFocus={rowInFocus}
-            searchedWordIndexes={searchedWordIndexes}
-            currentSearchedItemCount={currentSearchedItemCount}
-            scrollToRow={scrollToRow}
-            customControls={customControls}
-            hasToolbar={hasToolbar}
-            setRowInFocus={setRowInFocus}
-            setSearchedInput={setSearchedInput}
-            setSearchedWordIndexes={setSearchedWordIndexes}
-            setCurrentSearchedItemCount={setCurrentSearchedItemCount}
-          />
+          {hasToolbar && (
+            <LogViewerToolbar
+              placeholder={placeholder}
+              searchedInput={searchedInput}
+              rowInFocus={rowInFocus}
+              searchedWordIndexes={searchedWordIndexes}
+              currentSearchedItemCount={currentSearchedItemCount}
+              scrollToRow={scrollToRow}
+              customControls={customControls}
+              hasToolbar={hasToolbar}
+              setRowInFocus={setRowInFocus}
+              setSearchedInput={setSearchedInput}
+              setSearchedWordIndexes={setSearchedWordIndexes}
+              setCurrentSearchedItemCount={setCurrentSearchedItemCount}
+            />
+          )}
           <div className="pf-c-log-viewer__main">
             <List
               className={css(styles.logViewerList)}
-              height={LOGGER_HEIGHT}
+              height={height}
               width={`${width}px`}
               itemSize={guessRowHeight}
               itemCount={parsedData.length}
               itemData={dataToRender}
               ref={loggerRef}
-              overscanCount={15}
+              overscanCount={overScanCount}
             >
               {LogViewerRow}
             </List>
