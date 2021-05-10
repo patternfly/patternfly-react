@@ -31,12 +31,12 @@ class BasicComposableMenu extends React.Component {
     this.menuRef = React.createRef();
     this.state = {
       activeItem: 0,
-      isExpanded: false
+      isOpen: false
     };
     this.onToggle = event => {
       event && event.stopPropagation();
       this.setState({
-        isExpanded: !this.state.isExpanded
+        isOpen: !this.state.isOpen
       });
     };
     this.onSelect = (event, itemId) => {
@@ -46,21 +46,21 @@ class BasicComposableMenu extends React.Component {
       });
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
         }
       }
 
-      if (event.target === this.toggleRef.current && this.state.isExpanded) {
+      if (event.target === this.toggleRef.current && this.state.isOpen) {
         if (event.key === 'ArrowDown') {
           this.menuRef.current.querySelector('button, a').focus();
         }
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         this.onToggle();
       }
     };
@@ -77,11 +77,11 @@ class BasicComposableMenu extends React.Component {
   }
 
   render() {
-    const { activeItem, isExpanded } = this.state;
+    const { activeItem, isOpen } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '150px' }}>
-        {isExpanded ? 'Expanded' : 'Collapsed'}
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '150px' }}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
       </MenuToggle>
     );
 
@@ -110,7 +110,7 @@ class BasicComposableMenu extends React.Component {
           direction="down"
           position="left"
           appendTo={this.containerRef.current}
-          isVisible={isExpanded}
+          isVisible={isOpen}
         />
       </div>
     );
@@ -147,13 +147,13 @@ class ActionComposableMenu extends React.Component {
     this.toggleRef = React.createRef();
     this.menuRef = React.createRef();
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selectedItems: [0, 2, 3]
     };
     this.onToggle = event => {
       event && event.stopPropagation();
       this.setState({
-        isExpanded: !this.state.isExpanded,
+        isOpen: !this.state.isOpen,
         selectedItems: []
       });
     };
@@ -169,21 +169,21 @@ class ActionComposableMenu extends React.Component {
       }
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
         }
       }
 
-      if (event.target === this.toggleRef.current && this.state.isExpanded) {
+      if (event.target === this.toggleRef.current && this.state.isOpen) {
         if (event.key === 'ArrowDown') {
           this.menuRef.current.querySelector('button, a').focus();
         }
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         this.onToggle();
       }
     };
@@ -200,11 +200,11 @@ class ActionComposableMenu extends React.Component {
   }
 
   render() {
-    const { isExpanded, selectedItems } = this.state;
+    const { isOpen, selectedItems } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '200px' }}>
-        {isExpanded ? 'Expanded' : 'Collapsed'}
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '200px' }}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
       </MenuToggle>
     );
 
@@ -268,7 +268,7 @@ class ActionComposableMenu extends React.Component {
           direction="down"
           position="left"
           appendTo={this.containerRef.current}
-          isVisible={isExpanded}
+          isVisible={isOpen}
         />
       </div>
     );
@@ -293,7 +293,7 @@ class SelectComposableMenu extends React.Component {
       activeItem: 0,
       selectedItem: null,
       selectedText: null,
-      isExpanded: false
+      isOpen: false
     };
     this.getSelectionText = id => {
       switch (id) {
@@ -310,7 +310,7 @@ class SelectComposableMenu extends React.Component {
     this.onToggle = event => {
       event && event.stopPropagation();
       this.setState({
-        isExpanded: !this.state.isExpanded
+        isOpen: !this.state.isOpen
       });
     };
     this.onSelect = (event, itemId) => {
@@ -322,21 +322,21 @@ class SelectComposableMenu extends React.Component {
       });
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
         }
       }
 
-      if (event.target === this.toggleRef.current && this.state.isExpanded) {
+      if (event.target === this.toggleRef.current && this.state.isOpen) {
         if (event.key === 'ArrowDown') {
           this.menuRef.current.querySelector('button, a').focus();
         }
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         this.onToggle();
       }
     };
@@ -353,10 +353,10 @@ class SelectComposableMenu extends React.Component {
   }
 
   render() {
-    const { activeItem, selectedItem, selectedText, isExpanded } = this.state;
+    const { activeItem, selectedItem, selectedText, isOpen } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '200px' }}>
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '200px' }}>
         {selectedText ? selectedText : 'Select a value'}
       </MenuToggle>
     );
@@ -389,7 +389,7 @@ class SelectComposableMenu extends React.Component {
           direction="down"
           position="left"
           appendTo={this.containerRef.current}
-          isVisible={isExpanded}
+          isVisible={isOpen}
         />
       </div>
     );
@@ -427,12 +427,12 @@ class DrilldownComposableMenu extends React.Component {
       drilldownPath: [],
       menuHeights: {},
       activeMenu: 'rootMenu',
-      isExpanded: false
+      isOpen: false
     };
     this.onToggle = event => {
       event && event.stopPropagation();
       this.setState({
-        isExpanded: !this.state.isExpanded,
+        isOpen: !this.state.isOpen,
         menuDrilledIn: [],
         drilldownPath: [],
         activeMenu: 'rootMenu'
@@ -465,21 +465,21 @@ class DrilldownComposableMenu extends React.Component {
       }
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
         }
       }
 
-      if (event.target === this.toggleRef.current && this.state.isExpanded) {
+      if (event.target === this.toggleRef.current && this.state.isOpen) {
         if (event.key === 'ArrowDown') {
           this.menuRef.current.querySelector('button, a').focus();
         }
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isExpanded) {
+      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
         this.onToggle();
       }
     };
@@ -496,11 +496,11 @@ class DrilldownComposableMenu extends React.Component {
   }
 
   render() {
-    const { isExpanded, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
+    const { isOpen, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isExpanded} style={{ width: '300px' }}>
-        {isExpanded ? 'Expanded' : 'Collapsed'}
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '300px' }}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
       </MenuToggle>
     );
 
@@ -659,7 +659,7 @@ class DrilldownComposableMenu extends React.Component {
           direction="down"
           position="left"
           appendTo={this.containerRef.current}
-          isVisible={isExpanded}
+          isVisible={isOpen}
           enableFlip={false}
         />
       </div>
