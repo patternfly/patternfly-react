@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.97.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.96.0...@patternfly/react-integration@4.97.0) (2021-05-10)
+
+
+### Features
+
+* **Dropdown:** add alignment breakpoints, fix ref console warning ([#5734](https://github.com/patternfly/patternfly-react/issues/5734)) ([7bc72c1](https://github.com/patternfly/patternfly-react/commit/7bc72c1627a5d6156eebcc2c573a555f64219059))
+* **Select:** Add flag to accept input values even if not in menu ([#5751](https://github.com/patternfly/patternfly-react/issues/5751)) ([6373bbf](https://github.com/patternfly/patternfly-react/commit/6373bbf3a1824424ebc54a13b154259da2aa6a54))
+
+
+
+
+
 # [4.96.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.95.0...@patternfly/react-integration@4.96.0) (2021-05-07)
 
 

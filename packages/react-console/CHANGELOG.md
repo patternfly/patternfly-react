@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.6.15...@patternfly/react-console@4.7.0) (2021-05-10)
+
+
+### Features
+
+* **Select:** Add flag to accept input values even if not in menu ([#5751](https://github.com/patternfly/patternfly-react/issues/5751)) ([6373bbf](https://github.com/patternfly/patternfly-react/commit/6373bbf3a1824424ebc54a13b154259da2aa6a54))
+
+
+
+
+
 ## [4.6.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.6.14...@patternfly/react-console@4.6.15) (2021-05-07)
 
 **Note:** Version bump only for package @patternfly/react-console

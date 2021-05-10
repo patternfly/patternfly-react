@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.11.5...@patternfly/react-tokens@4.11.6) (2021-05-10)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## [4.11.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.11.4...@patternfly/react-tokens@4.11.5) (2021-05-07)
 
 **Note:** Version bump only for package @patternfly/react-tokens
