@@ -9,13 +9,14 @@ interface LogViewerRowProps extends React.Props<HTMLElement> {
   data: {
     parsedData: any;
     rowInFocus: number;
+    searchedWordIndexes: number[];
     highlightedRowIndexes: number[];
     setHighlightedRowIndexes: (indexes: number[]) => void;
   };
 }
 
 export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data }) => {
-  const { parsedData, highlightedRowIndexes, setHighlightedRowIndexes, rowInFocus } = data;
+  const { parsedData, highlightedRowIndexes, searchedWordIndexes, setHighlightedRowIndexes, rowInFocus } = data;
   const [clickCounter, setClickCounter] = useState(0);
   const [isHiglighted, setIsHiglighted] = useState(false);
 
@@ -50,18 +51,21 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   };
 
   /** Helper function for applying the correct styling for styling rows containing searched keywords */
-  const handleSearchedItemHighlight = (index: number): string => {
-    if (rowInFocus === index) {
+  const handleRowHighlight = (index: number): string => {
+    if (searchedWordIndexes.includes(index)) {
+      if (rowInFocus === index) {
+        return css(styles.logViewerListItem) + ' pf-m-current';
+      }
       return css(styles.logViewerListItem) + ' pf-m-match';
-    } else if (rowInFocus !== index) {
+    }
+    if (rowInFocus !== index) {
       return css(styles.logViewerListItem);
     }
   };
 
   return (
-    <div style={style} className={handleSearchedItemHighlight(index)} onClick={() => handleHighlightRow()}>
+    <div style={style} className={handleRowHighlight(index)} onClick={() => handleHighlightRow()}>
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
-      {/* <span className={css(styles.logViewerText) + (rowInFocus === index ? ' pf-m-match' : '')} onClick={() => handleHighlightRow()}> */}
       <span className={css(styles.logViewerText)} onClick={() => handleHighlightRow()}>
         {getData(index)}
       </span>

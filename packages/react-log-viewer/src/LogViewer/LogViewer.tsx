@@ -58,10 +58,11 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         parsedData,
         loggerRef,
         rowInFocus,
+        searchedWordIndexes,
         highlightedRowIndexes,
         setHighlightedRowIndexes
       }),
-      [parsedData, loggerRef, rowInFocus, highlightedRowIndexes, setHighlightedRowIndexes]
+      [parsedData, loggerRef, rowInFocus, searchedWordIndexes, highlightedRowIndexes, setHighlightedRowIndexes]
     );
 
     /* Parsing our data immediately after first component render */
