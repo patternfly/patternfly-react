@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.119.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.119.0...@patternfly/react-core@4.119.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* **DualListSelector:** fix bug with selecting single node in nested folder ([#5763](https://github.com/patternfly/patternfly-react/issues/5763)) ([4f5df48](https://github.com/patternfly/patternfly-react/commit/4f5df48e6d866f3f3bab951c6aae815825d3c3f4))
+
+
+
+
+
 # [4.119.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.118.0...@patternfly/react-core@4.119.0) (2021-05-10)
 
 
