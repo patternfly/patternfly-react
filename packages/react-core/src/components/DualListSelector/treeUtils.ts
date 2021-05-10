@@ -45,7 +45,9 @@ export function filterTreeItems(item: DualListSelectorTreeItemData, inputList: s
     return (
       (item.children = item.children
         .map(opt => Object.assign({}, opt))
-        .filter(child => filterTreeItems(child, inputList))).length > 0
+        .filter(child =>
+          child.children ? filterTreeItemsWithoutFolders(child, inputList) : filterTreeItems(child, inputList)
+        )).length > 0
     );
   }
 }
@@ -55,7 +57,9 @@ export function filterTreeItemsWithoutFolders(item: DualListSelectorTreeItemData
     return (
       (item.children = item.children
         .map(opt => Object.assign({}, opt))
-        .filter(child => filterTreeItems(child, inputList))).length > 0
+        .filter(child =>
+          child.children ? filterTreeItemsWithoutFolders(child, inputList) : filterTreeItems(child, inputList)
+        )).length > 0
     );
   }
 
