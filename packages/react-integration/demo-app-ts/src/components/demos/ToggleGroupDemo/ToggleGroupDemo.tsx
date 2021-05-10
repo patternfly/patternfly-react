@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToggleGroup, ToggleGroupItem, ToggleGroupVariant, ToggleGroupProps } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, ToggleGroupProps } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
@@ -92,7 +92,7 @@ export class ToggleGroupDemo extends React.Component<ToggleGroupProps, ToggleGro
             aria-label="share square icon button"
           />
         </ToggleGroup>
-        <ToggleGroup variant={ToggleGroupVariant.light}>
+        <ToggleGroup isCompact>
           <ToggleGroupItem
             text="Option 1"
             key={6}
