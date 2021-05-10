@@ -104,8 +104,16 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     }
   };
 
+  findTabbableFooterElements = () => {
+    const tabbable = this.props.footerRef.current.querySelectorAll('input, button, select, textarea, a[href]');
+    const list = Array.prototype.filter.call(tabbable, function(item) {
+      return item.tabIndex >= '0';
+    });
+    return list;
+  };
+
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { parentRef, menuRef, footerRef, isOpen, variant, onToggle, onClose } = this.props;
+    const { parentRef, menuRef, hasFooter, isOpen, variant, onToggle, onClose } = this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -119,9 +127,38 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       return;
     }
 
-    if (isOpen && event.key === KeyTypes.Tab && this.props.hasFooter) {
-      footerRef.current.focus();
-      return;
+    if (isOpen && event.key === KeyTypes.Tab && hasFooter) {
+      const tabbableItems = this.findTabbableFooterElements();
+
+      // If no tabbable item in footer close select
+      if (tabbableItems.length <= 0) {
+        onToggle(false);
+        onClose();
+        this.toggle.current.focus();
+        return;
+      } else {
+        // if current element is not in footer, tab to first tabbable element in footer
+        const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+        if (currentElementIndex === -1) {
+          tabbableItems[0].focus();
+          return;
+        }
+        // Current element is in footer.
+        if (event.shiftKey) {
+          return;
+        }
+        // Tab to next element in footer or close if there are none
+        if (currentElementIndex + 1 < tabbableItems.length) {
+          tabbableItems[currentElementIndex + 1].focus();
+        } else {
+          // no more footer items close menu
+          onToggle(false);
+          onClose();
+          this.toggle.current.focus();
+        }
+        event.preventDefault();
+        return;
+      }
     }
 
     if (

@@ -195,7 +195,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       ...props
     } = this.props;
     const footerRenderer = (
-      <div className={css(styles.selectMenuFooter)} ref={footerRef} tabIndex={0}>
+      <div className={css(styles.selectMenuFooter)} ref={footerRef}>
         {footer}
       </div>
     );
