@@ -47,10 +47,4 @@ export const parseConsoleOutput = (data: string) => {
   return cleanString;
 };
 
-export const inputValidation = (inputString: string) => {
-  if (inputString.length >= 3) {
-    return true;
-  } else {
-    return false;
-  }
-};
+export const escapeString = (inputString: string): string => inputString.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'); // eslint-disable-line

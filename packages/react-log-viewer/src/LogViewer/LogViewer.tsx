@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { LogViewerToolbar } from './LogViewerToolbar';
 import { LOGGER_HEIGHT, DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
-import { searchForKeyword, parseConsoleOutput } from './utils/utils';
+import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import '@patternfly/react-core/dist/styles/base.css';
@@ -72,9 +72,10 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     /* Updating searchedResults context state given changes in searched input */
     useEffect(() => {
       let foundKeywordIndexes: (number | null)[] = [];
+      const adjustedSearchedInput = escapeString(searchedInput);
 
-      if (searchedInput !== '' && searchedInput.length >= 3) {
-        foundKeywordIndexes = searchForKeyword(searchedInput, parsedData);
+      if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= 3) {
+        foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData);
 
         if (foundKeywordIndexes.length !== 0) {
           setSearchedWordIndexes(foundKeywordIndexes);
@@ -82,13 +83,13 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         }
       }
 
-      if (searchedInput !== '' && searchedInput.length < 3) {
+      if (adjustedSearchedInput !== '' && adjustedSearchedInput.length < 3) {
         setRowInFocus(DEFAULT_FOCUS);
         setCurrentSearchedItemCount(DEFAULT_INDEX);
         setSearchedWordIndexes([]);
       }
 
-      if (searchedInput === '') {
+      if (adjustedSearchedInput === '') {
         setRowInFocus(DEFAULT_FOCUS);
         // setCurrentSearchedItemCount(DEFAULT_INDEX);
         // setSearchedWordIndexes([]);
