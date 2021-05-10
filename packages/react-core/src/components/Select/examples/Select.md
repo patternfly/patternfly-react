@@ -1062,6 +1062,7 @@ class TypeaheadSelectInput extends React.Component {
       selected: null,
       isDisabled: false,
       isCreatable: false,
+      isInputValuePersisted: false,
       hasOnCreateOption: false
     };
 
@@ -1112,10 +1113,16 @@ class TypeaheadSelectInput extends React.Component {
         hasOnCreateOption: checked
       });
     };
+    
+    this.toggleInputValuePersisted = checked => {
+      this.setState({
+        isInputValuePersisted: checked
+      });
+    };
   }
 
   render() {
-    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValuePersisted, options } = this.state;
     const titleId = 'typeahead-select-id-1';
     return (
       <div>
@@ -1131,6 +1138,7 @@ class TypeaheadSelectInput extends React.Component {
           selections={selected}
           isOpen={isOpen}
           aria-labelledby={titleId}
+          isInputValuePersisted={isInputValuePersisted}
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
@@ -1168,6 +1176,14 @@ class TypeaheadSelectInput extends React.Component {
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
+        />
+        <Checkbox
+          label="isInputValuePersisted"
+          isChecked={isInputValuePersisted}
+          onChange={this.toggleInputValuePersisted}
+          aria-label="toggle input value persisted"
+          id="toggle-input-value-persisted"
+          name="toggle-input-value-persisted"
         />
       </div>
     );

@@ -290,6 +290,22 @@ describe('typeahead select', () => {
     expect(view).toMatchSnapshot();
   });
 
+  // the way we generate random select option ids, and options update as the user types means
+  // that the snapshots for typeahead select don't match the views after options update.
+  xtest('test isInputValuePersisted', () => {
+    const mockEvent = { target: { value: 'zzz' } } as React.ChangeEvent<HTMLInputElement>;
+    const view = mount(
+      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen isInputValuePersisted>
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.find('Select').instance() as any;
+    inst.onChange(mockEvent);
+    inst.handleTypeaheadKeys('tab');
+    view.update();
+    expect(view).toMatchSnapshot();
+  });
+
   xtest('test select non-existing option on a non-creatable select', () => {
     const mockEvent = { target: { value: 'NonExistingOption' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(

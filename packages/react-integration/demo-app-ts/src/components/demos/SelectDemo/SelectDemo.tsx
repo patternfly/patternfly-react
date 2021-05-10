@@ -50,6 +50,7 @@ export interface SelectDemoState {
   typeaheadOptions: TypeAheadOption[];
   typeaheadIsCreatable: boolean;
   typeaheadNewOptions: boolean;
+  typeaheadInputValuePersisted: boolean;
   customContentisOpen: boolean;
   noBadgeCheckIsOpen: boolean;
   noBadgeCheckSelected: string[];
@@ -105,6 +106,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
+    typeaheadInputValuePersisted: false,
     customContentisOpen: false,
     menuDocumentBodyisOpen: false,
     menuDocumentBodySelected: ['']
@@ -173,6 +175,12 @@ export class SelectDemo extends Component<SelectDemoState> {
   toggleNew = (checked: boolean) => {
     this.setState({
       typeaheadNewOptions: checked
+    });
+  };
+
+  toggleInputValuePersisted = (checked: boolean) => {
+    this.setState({
+      typeaheadInputValuePersisted: checked
     });
   };
 
@@ -832,7 +840,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadisOpen,
       typeaheadSelected,
       typeaheadIsCreatable,
-      typeaheadNewOptions
+      typeaheadNewOptions,
+      typeaheadInputValuePersisted
     } = this.state;
     const titleId = 'typeahead-select-id';
     return (
@@ -857,6 +866,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
             onCreateOption={(typeaheadNewOptions && this.typeaheadCreateNew) || undefined}
+            isInputValuePersisted={typeaheadInputValuePersisted}
             createText="Create item"
             noResultsFoundText="Item not found"
           >
@@ -886,6 +896,14 @@ export class SelectDemo extends Component<SelectDemoState> {
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead"
           name="toggle-new-typeahead"
+        />
+        <Checkbox
+          label="isInputValuePersisted"
+          isChecked={this.state.typeaheadInputValuePersisted}
+          onChange={this.toggleInputValuePersisted}
+          aria-label="toggle input value persisted"
+          id="toggle-input-value-persisted"
+          name="toggle-input-value-persisted"
         />
       </StackItem>
     );

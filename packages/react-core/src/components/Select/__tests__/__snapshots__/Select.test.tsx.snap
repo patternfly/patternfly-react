@@ -21,6 +21,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={true}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -223,7 +224,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -1032,6 +1033,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -1101,7 +1103,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -1241,6 +1243,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -1310,7 +1313,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -1431,6 +1434,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -1481,7 +1485,7 @@ exports[`checkbox select renders closed successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -1602,6 +1606,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -1716,7 +1721,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -2157,6 +2162,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -2257,7 +2263,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -2657,6 +2663,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -2783,7 +2790,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -3275,6 +3282,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -3401,7 +3409,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -3897,6 +3905,7 @@ exports[`renders select with favorites successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={true}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -4261,7 +4270,7 @@ exports[`renders select with favorites successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -5645,6 +5654,7 @@ exports[`select custom select filter filters properly 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -5739,7 +5749,7 @@ exports[`select custom select filter filters properly 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -6118,6 +6128,7 @@ exports[`select renders select groups successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={true}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -6305,7 +6316,7 @@ exports[`select renders select groups successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -7057,6 +7068,7 @@ exports[`select renders up direction successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -7107,7 +7119,7 @@ exports[`select renders up direction successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -7233,6 +7245,7 @@ exports[`select single select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -7283,7 +7296,7 @@ exports[`select single select renders closed successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -7409,6 +7422,7 @@ exports[`select single select renders disabled successfully 1`] = `
   isCreatable={false}
   isDisabled={true}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -7459,7 +7473,7 @@ exports[`select single select renders disabled successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -7586,6 +7600,7 @@ exports[`select single select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -7693,7 +7708,7 @@ exports[`select single select renders expanded successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -8110,6 +8125,7 @@ exports[`select single select renders expanded successfully with custom objects 
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -8204,7 +8220,7 @@ exports[`select single select renders expanded successfully with custom objects 
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -8584,6 +8600,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -8633,7 +8650,7 @@ exports[`select with custom content renders closed successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -8755,6 +8772,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -8808,7 +8826,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -9015,6 +9033,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -9065,7 +9084,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -9213,6 +9232,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -9320,7 +9340,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -9764,6 +9784,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -9912,7 +9933,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -10795,6 +10816,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={false}
   isPlain={false}
   menuAppendTo="inline"
@@ -10845,7 +10867,7 @@ exports[`typeahead select renders closed successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -10991,6 +11013,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -11098,7 +11121,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -11539,6 +11562,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -11664,7 +11688,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div
@@ -12171,6 +12195,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
   isCreatable={false}
   isDisabled={false}
   isGrouped={false}
+  isInputValuePersisted={false}
   isOpen={true}
   isPlain={false}
   menuAppendTo="inline"
@@ -12238,7 +12263,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
-        onToggle={[MockFunction]}
+        onToggle={[Function]}
         parentRef={
           Object {
             "current": <div

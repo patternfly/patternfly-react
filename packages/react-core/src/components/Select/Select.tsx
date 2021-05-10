@@ -129,6 +129,8 @@ export interface SelectProps
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
   /** Optional props to render custom chip group in the typeaheadmulti variant */
   chipGroupComponent?: React.ReactNode;
+  /** @beta Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
+  isInputValuePersisted?: boolean;
 }
 
 export interface SelectState {
@@ -192,7 +194,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
     ouiaSafe: true,
-    chipGroupComponent: null
+    chipGroupComponent: null,
+    isInputValuePersisted: false
   };
 
   state: SelectState = {
@@ -256,6 +259,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.setState({ openedOnEnter: true });
   };
 
+  onToggle = (isExpanded: boolean) => {
+    const { isInputValuePersisted, onSelect, onToggle } = this.props;
+    if (!isExpanded && isInputValuePersisted && onSelect) {
+      onSelect(undefined, this.inputRef && this.inputRef.current ? this.inputRef.current.value : '');
+    }
+    onToggle(isExpanded);
+  };
+
   onClose = () => {
     this.setState({
       openedOnEnter: false,
@@ -268,7 +279,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
-      this.props.onToggle(true);
+      this.onToggle(true);
     }
 
     if (this.props.onTypeaheadInputChanged) {
@@ -372,7 +383,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   onClick = (e: React.MouseEvent) => {
     if (!this.props.isOpen) {
-      this.props.onToggle(true);
+      this.onToggle(true);
     }
     e.stopPropagation();
   };
@@ -547,7 +558,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             this.setState({ tabbedIntoFavoritesMenu: false });
           }
         } else {
-          this.props.onToggle(false);
+          this.onToggle(false);
         }
       } else if (!tabbedIntoFavoritesMenu) {
         let nextIndex;
@@ -636,7 +647,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       customContent,
       variant,
       direction,
-      onToggle,
       onSelect,
       onClear,
       toggleId,
@@ -669,10 +679,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       onTypeaheadInputChanged,
       onCreateOption,
       isCreatable,
+      onToggle,
       createText,
       noResultsFoundText,
       customBadgeText,
       inputIdPrefix,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      isInputValuePersisted,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
       favorites,
@@ -918,7 +931,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           menuRef={this.menuComponentRef}
           isOpen={isOpen}
           isPlain={isPlain}
-          onToggle={onToggle}
+          onToggle={this.onToggle}
           onEnter={this.onEnter}
           onClose={this.onClose}
           variant={variant}

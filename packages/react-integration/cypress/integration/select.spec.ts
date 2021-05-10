@@ -110,6 +110,25 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
   });
 
+  it('Verify isInputValuePersisted works', () => {
+    const find = (selector: string) =>
+      cy
+        .get('#typeahead-select-id')
+        .parent()
+        .find(selector);
+    find('#typeahead-select-select-typeahead').type('zzz');
+    cy.get('.pf-c-title')
+      .eq(0)
+      .click();
+    find('#typeahead-select-select-typeahead').should('have.value', '');
+    cy.get('#toggle-input-value-persisted').click();
+    find('#typeahead-select-select-typeahead').type('zzz');
+    cy.get('.pf-c-title')
+      .eq(0)
+      .click();
+    find('#typeahead-select-select-typeahead').should('have.value', 'zzz');
+  });
+
   xit('Verify Creatable Typeahead Select', () => {
     cy.get('#toggle-creatable-typeahead').click();
     cy.get('#toggle-new-typeahead').click();
