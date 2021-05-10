@@ -55,7 +55,7 @@ describe('API', () => {
       </SelectToggle>
     );
 
-    map.mousedown({ target: document });
+    map.click({ target: document });
     expect(mockToggle.mock.calls[0][0]).toBe(false);
   });
 
@@ -102,9 +102,9 @@ describe('API', () => {
       </SelectToggle>
     );
     view.unmount();
-    map.mousedown({ target: document });
+    map.click({ target: document });
     expect(mockToggle.mock.calls).toHaveLength(0);
-    expect(document.removeEventListener).toHaveBeenCalledWith('mousedown', expect.any(Function));
+    expect(document.removeEventListener).toHaveBeenCalledWith('click', expect.any(Function));
   });
 
   test('on touch outside has been removed', () => {
