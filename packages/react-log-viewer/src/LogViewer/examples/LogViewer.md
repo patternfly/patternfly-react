@@ -12,16 +12,16 @@ import { bigData } from './bigTestData.js';
 import { data } from './realTestData.js';
 
 ## Examples
-### Basic
+### Basic log-viewer
 ```js
 import React from 'react';
 import { data } from './data/realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 
-<LogViewer hasLineNumbers={false}/>
+<LogViewer hasLineNumbers={false} hasToolbar={false} height={300}/>
 ```
 
-### Basic with data
+### Log-viewer with toolbar and data
 ```js
 import React from 'react';
 import { data } from './realTestData';
@@ -31,13 +31,13 @@ import { LogViewer } from '@patternfly/react-log-viewer';
 BasicLogViewer = () => {
   return(
     <React.Fragment>
-      <LogViewer data={data.data}/>
+      <LogViewer data={data.data} />
     </React.Fragment>
   );  
 };
 ```
 
-### Custom control
+### Log-viewer with custom button
 ```js
 import React from 'react';
 import { data } from './realTestData';
