@@ -53,7 +53,7 @@ describe('API', () => {
     view.unmount();
     mousedown({ target: document } as any);
     expect(mockToggle.mock.calls).toHaveLength(0);
-    expect(document.removeEventListener).toHaveBeenCalledWith('mousedown', expect.any(Function));
+    expect(document.removeEventListener).toHaveBeenCalledWith('click', expect.any(Function));
   });
 
   test('on touch outside has been removed', () => {
