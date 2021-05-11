@@ -7,7 +7,6 @@ import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/cons
 import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
-import '@patternfly/react-core/dist/styles/base.css';
 
 interface LogViewerProps {
   /** String data being sent by the consumer*/
