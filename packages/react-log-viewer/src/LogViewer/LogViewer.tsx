@@ -49,7 +49,8 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     hasLineNumbers = true,
     width = 800,
     height = 600,
-    overScanCount = 10
+    overScanCount = 10,
+    ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
     const [rowInFocus, setRowInFocus] = useState<number | null>(null);
@@ -98,8 +99,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
 
       if (adjustedSearchedInput === '') {
         setRowInFocus(DEFAULT_FOCUS);
-        // setCurrentSearchedItemCount(DEFAULT_INDEX);
-        // setSearchedWordIndexes([]);
       }
     }, [searchedInput]);
 
@@ -123,7 +122,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
           parsedData
         }}
       >
-        <div className={css(styles.logViewer) + (hasLineNumbers ? ' pf-m-line-numbers' : '')}>
+        <div className={css(styles.logViewer, hasLineNumbers && styles.modifiers.lineNumbers)} {...props}>
           {hasToolbar && (
             <LogViewerToolbar
               placeholder={placeholder}
@@ -133,14 +132,13 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
               currentSearchedItemCount={currentSearchedItemCount}
               scrollToRow={scrollToRow}
               customControls={customControls}
-              hasToolbar={hasToolbar}
               setRowInFocus={setRowInFocus}
               setSearchedInput={setSearchedInput}
               setSearchedWordIndexes={setSearchedWordIndexes}
               setCurrentSearchedItemCount={setCurrentSearchedItemCount}
             />
           )}
-          <div className="pf-c-log-viewer__main">
+          <div className={css(styles.logViewerMain)}>
             <List
               className={css(styles.logViewerList)}
               height={height}

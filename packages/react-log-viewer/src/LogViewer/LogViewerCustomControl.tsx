@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { LogViewerContext } from './LogViewerContext';
-import { Button, ToolbarItem } from '@patternfly/react-core';
-import { ButtonProps } from '@patternfly/react-core/src';
+import { Button, ToolbarItem, ToolbarItemProps } from '@patternfly/react-core';
 
-export interface LoggerCustomControlProps extends Omit<ButtonProps, 'onClick'> {
+export interface LoggerCustomControlProps extends ToolbarItemProps {
   /** Icon for the user defined button */
   children?: React.ReactNode;
   /** Callback func. with exposure for the data. */
@@ -12,7 +11,8 @@ export interface LoggerCustomControlProps extends Omit<ButtonProps, 'onClick'> {
 
 export const LogViewerCustomControl: React.FunctionComponent<LoggerCustomControlProps> = ({
   children = null,
-  onClick = () => {}
+  onClick = () => {},
+  ...props
 }) => {
   const loggerState = useContext(LogViewerContext);
 
@@ -21,7 +21,7 @@ export const LogViewerCustomControl: React.FunctionComponent<LoggerCustomControl
   };
 
   return (
-    <ToolbarItem>
+    <ToolbarItem {...props}>
       <Button onClick={onCustomClick} variant="control">
         {children}
       </Button>

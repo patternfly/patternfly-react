@@ -54,17 +54,14 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   const handleRowHighlight = (index: number): string => {
     if (searchedWordIndexes.includes(index)) {
       if (rowInFocus === index) {
-        return css(styles.logViewerListItem, styles.modifiers.current);
+        return styles.modifiers.current;
       }
-      return css(styles.logViewerListItem, styles.modifiers.match);
-    }
-    if (rowInFocus !== index) {
-      return css(styles.logViewerListItem);
-    }
+      return styles.modifiers.match;
+    };
   };
 
   return (
-    <div style={style} className={handleRowHighlight(index)} onClick={() => handleHighlightRow()}>
+    <div style={style} className={css(styles.logViewerListItem, handleRowHighlight(index))} onClick={() => handleHighlightRow()}>
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
       <span className={css(styles.logViewerText)} onClick={() => handleHighlightRow()}>
         {getData(index)}

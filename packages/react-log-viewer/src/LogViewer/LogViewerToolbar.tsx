@@ -5,8 +5,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 
 export interface LogViewerToolbarProps extends React.HTMLProps<HTMLDivElement> {
-  /** Flag to turn toolbar on or off */
-  hasToolbar?: boolean;
   /** Optional user defined buttons */
   customControls?: React.ReactNode;
   /** Array of indexes of rows that contain searched keywords */
@@ -21,9 +19,13 @@ export interface LogViewerToolbarProps extends React.HTMLProps<HTMLDivElement> {
   placeholder: string;
   /** Function that scrolls the virtual table to the provided index row */
   scrollToRow: (searchedRow: number) => void;
+  /** Sets the current row focused by search results */
   setRowInFocus: (index: number) => void;
+  /** Sets the value of the search input */
   setSearchedInput: (input: string) => void;
+  /** Sets the indexes of rows containing found search results */
   setSearchedWordIndexes: (indexes: number[]) => void;
+  /** Sets current amount of search results */
   setCurrentSearchedItemCount: (index: number) => void;
 }
 
@@ -31,7 +33,6 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
   placeholder,
   scrollToRow,
   customControls = null,
-  hasToolbar = true,
   rowInFocus,
   searchedInput,
   searchedWordIndexes,
@@ -108,12 +109,12 @@ export const LogViewerToolbar: React.FunctionComponent<LogViewerToolbarProps> = 
     </>
   );
 
-  return hasToolbar ? (
+  return (
     <div className={css(styles.logViewerHeader)}>
       <Toolbar>
         <ToolbarContent className={css(styles.toolbarContentSection)}>{toolbarItems}</ToolbarContent>
       </Toolbar>
     </div>
-  ) : null;
+  );
 };
 LogViewerToolbar.displayName = 'LogViewerToolbar';
