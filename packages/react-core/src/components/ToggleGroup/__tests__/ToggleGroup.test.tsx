@@ -36,20 +36,9 @@ test('item passes selection and event to onChange handler', () => {
   expect(props.onChange).toBeCalledWith(selected, event);
 });
 
-test('default theme has dividers', () => {
-  const view = mount(
-    <ToggleGroup>
-      <ToggleGroupItem text="Test" />
-      <ToggleGroupItem text="Test" />
-    </ToggleGroup>
-  );
-  const dividerEl = view.find('Divider');
-  expect(dividerEl.length).toBe(1);
-});
-
-test('light theme', () => {
+test('isCompact', () => {
   const view = shallow(
-    <ToggleGroup variant="light">
+    <ToggleGroup isCompact>
       <ToggleGroupItem text="Test" />
       <ToggleGroupItem text="Test" />
     </ToggleGroup>

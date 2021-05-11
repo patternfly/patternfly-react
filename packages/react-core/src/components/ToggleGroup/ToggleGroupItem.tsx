@@ -46,10 +46,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
     <div className={css(styles.toggleGroupItem, className)} {...props}>
       <button
         type="button"
-        className={css(
-          styles.toggleGroupButton,
-          isSelected && styles.modifiers.selected
-        )}
+        className={css(styles.toggleGroupButton, isSelected && styles.modifiers.selected)}
         aria-pressed={isSelected}
         onClick={handleChange}
         {...(ariaLabel && { 'aria-label': ariaLabel })}

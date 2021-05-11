@@ -21,13 +21,17 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   ...props
 }: ToggleGroupProps) => {
   const toggleGroupItemList = [] as any[];
-  const length = React.Children.count(children);
-  React.Children.forEach(children, (child, index) => {
+  React.Children.forEach(children, child => {
     toggleGroupItemList.push(child);
   });
 
   return (
-    <div className={css(styles.toggleGroup, isCompact && styles.modifiers.compact, className)} role="group" aria-label={ariaLabel} {...props}>
+    <div
+      className={css(styles.toggleGroup, isCompact && styles.modifiers.compact, className)}
+      role="group"
+      aria-label={ariaLabel}
+      {...props}
+    >
       {toggleGroupItemList}
     </div>
   );
