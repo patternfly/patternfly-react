@@ -65,6 +65,20 @@ exports[`icon variant 1`] = `
 </div>
 `;
 
+exports[`isCompact 1`] = `
+<div
+  className="pf-c-toggle-group pf-m-compact"
+  role="group"
+>
+  <ToggleGroupItem
+    text="Test"
+  />
+  <ToggleGroupItem
+    text="Test"
+  />
+</div>
+`;
+
 exports[`isDisabled 1`] = `
 <div
   className="pf-c-toggle-group__item"
@@ -85,31 +99,4 @@ exports[`isDisabled 1`] = `
     </ToggleGroupItemElement>
   </button>
 </div>
-`;
-
-exports[`light theme 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "variant": "light",
-    }
-  }
->
-  <div
-    className="pf-c-toggle-group"
-    role="group"
-  >
-    <ToggleGroupItem
-      text="Test"
-    />
-    <Divider
-      component="div"
-      isVertical={true}
-      key="0 divider"
-    />
-    <ToggleGroupItem
-      text="Test"
-    />
-  </div>
-</ContextProvider>
 `;

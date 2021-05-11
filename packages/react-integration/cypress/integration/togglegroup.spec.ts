@@ -56,4 +56,10 @@ describe('Toggle Group Demo Test', () => {
       .click()
       .should('not.have.class', 'pf-m-selected');
   });
+
+  it('Verify toggle group is compact', () => {
+    cy.get('.pf-c-toggle-group')
+      .eq(2)
+      .should('have.class', 'pf-m-compact');
+  });
 });

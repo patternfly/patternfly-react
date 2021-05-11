@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
-import ToggleGroupContext from './ToggleGroupContext';
 import { ToggleGroupItemVariant, ToggleGroupItemElement } from './ToggleGroupItemElement';
 
 export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -34,8 +33,6 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
   buttonId = '',
   ...props
 }: ToggleGroupItemProps) => {
-  const toggleGroupContext = React.useContext(ToggleGroupContext);
-
   const handleChange = (event: any): void => {
     onChange(!isSelected, event);
   };
@@ -49,11 +46,7 @@ export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
     <div className={css(styles.toggleGroupItem, className)} {...props}>
       <button
         type="button"
-        className={css(
-          styles.toggleGroupButton,
-          toggleGroupContext.variant === 'light' && styles.modifiers.light,
-          isSelected && styles.modifiers.selected
-        )}
+        className={css(styles.toggleGroupButton, isSelected && styles.modifiers.selected)}
         aria-pressed={isSelected}
         onClick={handleChange}
         {...(ariaLabel && { 'aria-label': ariaLabel })}

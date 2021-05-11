@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
-import ToggleGroupContext from './ToggleGroupContext';
-import { Divider } from '../Divider';
-
-export enum ToggleGroupVariant {
-  default = 'default',
-  light = 'light'
-}
 
 export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the toggle group */
   children?: React.ReactNode;
   /** Additional classes added to the toggle group */
   className?: string;
-  /** Adds toggle group variant styles */
-  variant?: ToggleGroupVariant | 'light' | 'default';
+  /** Modifies the toggle group to include compact styling. */
+  isCompact?: boolean;
   /** Accessible label for the toggle group */
   'aria-label'?: string;
 }
@@ -23,26 +16,24 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
 export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   className,
   children,
-  variant = ToggleGroupVariant.default,
+  isCompact = false,
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
   const toggleGroupItemList = [] as any[];
-  const length = React.Children.count(children);
-  React.Children.forEach(children, (child, index) => {
+  React.Children.forEach(children, child => {
     toggleGroupItemList.push(child);
-    const dividerKey = `${index} divider`;
-    if (index !== length - 1) {
-      toggleGroupItemList.push(<Divider key={dividerKey} isVertical component="div" />);
-    }
   });
 
   return (
-    <ToggleGroupContext.Provider value={{ variant }}>
-      <div className={css(styles.toggleGroup, className)} role="group" aria-label={ariaLabel} {...props}>
-        {toggleGroupItemList}
-      </div>
-    </ToggleGroupContext.Provider>
+    <div
+      className={css(styles.toggleGroup, isCompact && styles.modifiers.compact, className)}
+      role="group"
+      aria-label={ariaLabel}
+      {...props}
+    >
+      {toggleGroupItemList}
+    </div>
   );
 };
 ToggleGroup.displayName = 'ToggleGroup';
