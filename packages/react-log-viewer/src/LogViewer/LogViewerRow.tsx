@@ -57,11 +57,15 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
         return styles.modifiers.current;
       }
       return styles.modifiers.match;
-    };
+    }
   };
 
   return (
-    <div style={style} className={css(styles.logViewerListItem, handleRowHighlight(index))} onClick={() => handleHighlightRow()}>
+    <div
+      style={style}
+      className={css(styles.logViewerListItem, handleRowHighlight(index))}
+      onClick={() => handleHighlightRow()}
+    >
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
       <span className={css(styles.logViewerText)} onClick={() => handleHighlightRow()}>
         {getData(index)}
