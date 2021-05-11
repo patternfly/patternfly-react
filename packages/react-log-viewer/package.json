@@ -29,9 +29,9 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.117.1",
-    "@patternfly/react-icons": "^4.10.4",
-    "@patternfly/react-styles": "^4.10.4",
+    "@patternfly/react-core": "^4.119.1",
+    "@patternfly/react-icons": "^4.10.5",
+    "@patternfly/react-styles": "^4.10.5",
     "memoize-one": "^5.1.0"
   },
   "peerDependencies": {
