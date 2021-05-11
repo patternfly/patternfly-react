@@ -14,10 +14,8 @@ export interface MenuToggleProps
   isExpanded?: boolean;
   /** Flag indicating the toggle is disabled */
   isDisabled?: boolean;
-  /** Flag indicating the toggle should have primary styling */
-  isPrimary?: boolean;
-  /** Flag indicating the toggle should have plain styling and only render the children. Incompatible with icon and badge properties. Pass an icon via children to make an icon toggle. */
-  isPlain?: boolean;
+  /** Variant styles of the menu toggle */
+  variant?: 'default' | 'plain' | 'primary';
   /** Optional icon rendered inside the toggle, before the children content */
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
@@ -32,24 +30,13 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     className: '',
     isExpanded: false,
     isDisabled: false,
-    isPrimary: false,
-    isPlain: false
+    variant: 'default'
   };
 
   render() {
-    const {
-      children,
-      className,
-      icon,
-      badge,
-      isExpanded,
-      isDisabled,
-      isPrimary,
-      isPlain,
-      innerRef,
-      ...props
-    } = this.props;
+    const { children, className, icon, badge, isExpanded, isDisabled, variant, innerRef, ...props } = this.props;
 
+    const isPlain = variant === 'plain';
     const content = (
       <React.Fragment>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
@@ -67,7 +54,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
         className={css(
           styles.menuToggle,
           isExpanded && styles.modifiers.expanded,
-          isPrimary && styles.modifiers.primary,
+          variant === 'primary' && styles.modifiers.primary,
           isPlain && styles.modifiers.plain,
           className
         )}

@@ -26,12 +26,12 @@ export class MenuToggleDemo extends React.Component {
           </MenuToggle>
         </StackItem>
         <StackItem>
-          <MenuToggle isPrimary id="primary">
+          <MenuToggle variant="primary" id="primary">
             Primary
           </MenuToggle>
         </StackItem>
         <StackItem>
-          <MenuToggle isPlain id="plain">
+          <MenuToggle variant="plain" id="plain">
             <EllipsisVIcon />
           </MenuToggle>
         </StackItem>

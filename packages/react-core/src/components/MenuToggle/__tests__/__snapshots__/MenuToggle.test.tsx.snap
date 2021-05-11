@@ -9,8 +9,7 @@ exports[`menu toggle passes additional classes 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
-    isPlain={false}
-    isPrimary={false}
+    variant="default"
   >
     <button
       aria-expanded={false}
@@ -67,8 +66,7 @@ exports[`menu toggle renders successfully 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
-    isPlain={false}
-    isPrimary={false}
+    variant="default"
   >
     <button
       aria-expanded={false}
@@ -136,8 +134,7 @@ exports[`menu toggle shows badge 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
-    isPlain={false}
-    isPrimary={false}
+    variant="default"
   >
     <button
       aria-expanded={false}
@@ -220,8 +217,7 @@ exports[`menu toggle shows icon 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
-    isPlain={false}
-    isPrimary={false}
+    variant="default"
   >
     <button
       aria-expanded={false}
@@ -308,8 +304,7 @@ exports[`menu toggle shows isDisabled 1`] = `
     innerRef={null}
     isDisabled={true}
     isExpanded={false}
-    isPlain={false}
-    isPrimary={false}
+    variant="default"
   >
     <button
       aria-expanded={false}
@@ -369,8 +364,7 @@ exports[`menu toggle shows isExpanded 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={true}
-    isPlain={false}
-    isPrimary={false}
+    variant="default"
   >
     <button
       aria-expanded={true}
@@ -422,15 +416,14 @@ exports[`menu toggle shows isExpanded 1`] = `
 
 exports[`menu toggle shows isPlain 1`] = `
 <MenuToggle
-  isPlain={true}
+  variant="plain"
 >
   <MenuToggleBase
     className=""
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
-    isPlain={true}
-    isPrimary={false}
+    variant="plain"
   >
     <button
       aria-expanded={false}
@@ -468,15 +461,14 @@ exports[`menu toggle shows isPlain 1`] = `
 
 exports[`menu toggle shows isPrimary 1`] = `
 <MenuToggle
-  isPrimary={true}
+  variant="primary"
 >
   <MenuToggleBase
     className=""
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
-    isPlain={false}
-    isPrimary={true}
+    variant="primary"
   >
     <button
       aria-expanded={false}

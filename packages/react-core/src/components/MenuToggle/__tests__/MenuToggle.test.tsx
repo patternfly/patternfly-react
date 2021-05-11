@@ -27,13 +27,13 @@ describe('menu toggle', () => {
   });
 
   test('shows isPrimary', () => {
-    const view = mount(<MenuToggle isPrimary>Toggle</MenuToggle>);
+    const view = mount(<MenuToggle variant="primary">Toggle</MenuToggle>);
     expect(view).toMatchSnapshot();
   });
 
   test('shows isPlain', () => {
     const view = mount(
-      <MenuToggle isPlain>
+      <MenuToggle variant="plain">
         <EllipsisVIcon />
       </MenuToggle>
     );

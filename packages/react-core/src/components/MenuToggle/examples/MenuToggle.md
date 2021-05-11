@@ -88,14 +88,14 @@ class MenuToggleCollapsed extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <MenuToggle isPrimary>Collapsed</MenuToggle>{' '}
-        <MenuToggle isPrimary icon={<CogIcon />}>
+        <MenuToggle variant="primary">Collapsed</MenuToggle>{' '}
+        <MenuToggle variant="primary" icon={<CogIcon />}>
           Icon
         </MenuToggle>{' '}
-        <MenuToggle isPrimary isExpanded>
+        <MenuToggle variant="primary" isExpanded>
           Expanded
         </MenuToggle>{' '}
-        <MenuToggle isPrimary isDisabled>
+        <MenuToggle variant="primary" isDisabled>
           Disabled
         </MenuToggle>
       </React.Fragment>
@@ -115,13 +115,13 @@ class MenuToggleCollapsed extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <MenuToggle isPlain aria-label="plain kebab">
+        <MenuToggle variant="plain" aria-label="plain kebab">
           <EllipsisVIcon />
         </MenuToggle>
-        <MenuToggle isPlain isExpanded aria-label="plain expanded kebab">
+        <MenuToggle variant="plain" isExpanded aria-label="plain expanded kebab">
           <EllipsisVIcon />
         </MenuToggle>
-        <MenuToggle isPlain isDisabled aria-label="disabled kebab">
+        <MenuToggle variant="plain" isDisabled aria-label="disabled kebab">
           <EllipsisVIcon />
         </MenuToggle>
       </React.Fragment>
