@@ -660,7 +660,6 @@ class DrilldownComposableMenu extends React.Component {
           position="left"
           appendTo={this.containerRef.current}
           isVisible={isOpen}
-          enableFlip={false}
         />
       </div>
     );
