@@ -1,3 +1,3 @@
 export * from './LogViewer';
 export * from './LogViewerContext';
-export * from './LogViewerCustomControl';
+export * from './LogViewerSearch';
