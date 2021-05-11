@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.119.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.119.1...@patternfly/react-core@4.119.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* **Dropdown, Select:** fix scrollbar click closing menu ([#5766](https://github.com/patternfly/patternfly-react/issues/5766)) ([e349054](https://github.com/patternfly/patternfly-react/commit/e34905437479aa4914d14a43892e39b9bcdb6ae1))
+* **togglegroup:** remove dividers, light variation, add compact ([#5762](https://github.com/patternfly/patternfly-react/issues/5762)) ([d5c8c31](https://github.com/patternfly/patternfly-react/commit/d5c8c31bb24f613687fcf5aa3213ee51a8007580))
+
+
+
+
+
 ## [4.119.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.119.0...@patternfly/react-core@4.119.1) (2021-05-10)
 
 

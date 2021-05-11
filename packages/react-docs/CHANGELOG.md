@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.18.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.18.24...@patternfly/react-docs@5.18.25) (2021-05-11)
+
+
+### Bug Fixes
+
+* **togglegroup:** remove dividers, light variation, add compact ([#5762](https://github.com/patternfly/patternfly-react/issues/5762)) ([d5c8c31](https://github.com/patternfly/patternfly-react/commit/d5c8c31bb24f613687fcf5aa3213ee51a8007580))
+
+
+
+
+
 ## [5.18.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.18.23...@patternfly/react-docs@5.18.24) (2021-05-10)
 
 **Note:** Version bump only for package @patternfly/react-docs
