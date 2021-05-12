@@ -78,19 +78,19 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
       resultsCount={`${currentSearchedItemCount + indexAdjuster} / ${searchedWordIndexes.length}`}
       {...props}
       onChange={(input, event) => {
-        props.onChange(input, event);
+        props.onChange && props.onChange(input, event);
         setSearchedInput(input);
       }}
       onNextClick={event => {
-        props.onNextClick(event);
+        props.onNextClick && props.onNextClick(event);
         handleNextSearchItem();
       }}
       onPreviousClick={event => {
-        props.onPreviousClick(event);
+        props.onPreviousClick && props.onPreviousClick(event);
         handlePrevSearchItem();
       }}
       onClear={event => {
-        props.onClear(event);
+        props.onClear && props.onClear(event);
         handleClear();
       }}
     />
