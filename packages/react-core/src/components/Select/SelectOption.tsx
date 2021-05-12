@@ -297,6 +297,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 }}
                 onClick={(event: any) => {
                   onClick(event);
+                  event.stopPropagation();
                 }}
                 ref={this.ref}
               >
