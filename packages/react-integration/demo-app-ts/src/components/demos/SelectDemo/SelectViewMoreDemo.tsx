@@ -12,9 +12,13 @@ export interface SelectViewMoreDemoState {
 export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
   state = {
     isOpen: false,
+    isOpenCheck: false,
     selected: [] as string[],
+    selectedCheck: [] as string[],
     numOptions: 3,
-    isLoading: false
+    numOptionsCheck: 3,
+    isLoading: false,
+    isLoadingCheck: false
   };
 
   options = [
@@ -27,9 +31,27 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     <SelectOption key={6} value="Other" id="Other" />
   ];
 
+  optionsCheck = [
+    <SelectOption key={0} value="Active" description="This is a description" />,
+    <SelectOption key={1} value="Cancelled" />,
+    <SelectOption key={2} value="Paused" />,
+    <SelectOption key={4} value="Warning" />,
+    <SelectOption key={5} value="Restarted" />,
+    <SelectOption key={6} value="Down" />,
+    <SelectOption key={7} value="Disabled" />,
+    <SelectOption key={8} value="Needs Maintenance " />,
+    <SelectOption key={9} value="Degraded " />
+  ];
+
   onToggle = (isOpen: boolean) => {
     this.setState({
       isOpen
+    });
+  };
+
+  onToggleCheck = (isOpenCheck: boolean) => {
+    this.setState({
+      isOpenCheck
     });
   };
 
@@ -42,6 +64,21 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
         isOpen: false
       });
       console.log('selected:', selection);
+    }
+  };
+
+  onSelectCheck = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+    const { selected } = this.state;
+    if (selected.includes(selection)) {
+      this.setState(
+        prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+        () => console.log('selections: ', this.state.selected)
+      );
+    } else {
+      this.setState(
+        prevState => ({ selected: [...prevState.selected, selection] }),
+        () => console.log('selections: ', this.state.selected)
+      );
     }
   };
 
@@ -66,9 +103,31 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     });
   };
 
+  onViewMoreClickCheck = () => {
+    // Set select loadingVariant to spinner then simulate network call before loading more options
+    this.setState({ isLoadingCheck: true });
+    this.simulateNetworkCall(() => {
+      const newLength =
+        this.state.numOptionsCheck + 3 <= this.optionsCheck.length
+          ? this.state.numOptionsCheck + 3
+          : this.optionsCheck.length;
+      this.setState({ numOptionsCheck: newLength, isLoadingCheck: false });
+    });
+  };
+
   render() {
-    const { isOpen, selected, isLoading, numOptions } = this.state;
+    const {
+      isOpen,
+      isOpenCheck,
+      selected,
+      selectedCheck,
+      isLoading,
+      isLoadingCheck,
+      numOptions,
+      numOptionsCheck
+    } = this.state;
     const titleId = 'view-more-select-id';
+    const titleIdCheck = 'view-more-check-select-id';
 
     return (
       <div>
@@ -93,6 +152,27 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
             {...(isLoading && { loadingVariant: 'spinner' })}
           >
             {this.options.slice(0, numOptions)}
+          </Select>
+          <Title headingLevel="h2" size="2xl">
+            Checkbox View more select
+          </Title>
+          <Select
+            toggleId="view-more-select-check"
+            variant={SelectVariant.checkbox}
+            aria-label="Select input"
+            onToggle={this.onToggleCheck}
+            onSelect={this.onSelectCheck}
+            selections={selectedCheck}
+            isOpen={isOpenCheck}
+            placeholderText="Filter by status"
+            aria-labelledby={titleIdCheck}
+            {...(!isLoadingCheck &&
+              numOptionsCheck < this.optionsCheck.length && {
+                loadingVariant: { text: 'View more', onClick: this.onViewMoreClickCheck }
+              })}
+            {...(isLoadingCheck && { loadingVariant: 'spinner' })}
+          >
+            {this.optionsCheck.slice(0, numOptionsCheck)}
           </Select>
         </StackItem>
       </div>

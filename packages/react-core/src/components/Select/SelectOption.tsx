@@ -288,7 +288,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
               <button
                 className={css(
                   styles.selectMenuItem,
-                  isLoad && styles.modifiers.load,
+                  styles.modifiers.load,
                   isFocused && styles.modifiers.focus,
                   className
                 )}

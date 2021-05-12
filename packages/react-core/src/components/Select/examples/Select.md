@@ -2420,7 +2420,7 @@ class SelectViewMoreCheckbox extends React.Component {
     return (
       <div>
         <span id={titleId} hidden>
-          Checkbox Title
+          Checkbox View more check
         </span>
         <Select
           variant={SelectVariant.checkbox}
