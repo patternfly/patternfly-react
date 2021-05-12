@@ -57,8 +57,13 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
   };
 
   onViewMoreClick = () => {
-    // Set select loadingVariant to spinner then simulate network call (do no load more options for testing purposes)
+    // Set select loadingVariant to spinner then simulate network call before loading more options
     this.setState({ isLoading: true });
+    this.simulateNetworkCall(() => {
+      const newLength =
+        this.state.numOptions + 3 < this.options.length ? this.state.numOptions + 3 : this.options.length;
+      this.setState({ numOptions: newLength, isLoading: false });
+    });
   };
 
   render() {

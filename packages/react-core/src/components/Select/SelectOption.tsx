@@ -240,6 +240,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                       onClick={(event: any) => {
                         if (isLoad) {
                           onClick(event);
+                          event.stopPropagation();
                         } else if (!isDisabled && !isLoading) {
                           onClick(event);
                           onSelect(event, value, isPlaceholder);

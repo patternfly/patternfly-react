@@ -11,5 +11,9 @@ describe('Select Test', () => {
     cy.get('.pf-m-load').should('exist');
     cy.get('button.pf-c-select__menu-item.pf-m-load').click();
     cy.get('.pf-m-loading').should('exist');
+    cy.wait(16000).then(() => {
+      cy.get('.pf-m-load').should('exist');
+      cy.get('.pf-m-loading').should('not.exist');
+    });
   });
 });
