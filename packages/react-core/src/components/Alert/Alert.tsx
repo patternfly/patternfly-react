@@ -23,7 +23,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   /** Flag to indicate if the Alert is inline */
   isInline?: boolean;
   /** Title of the Alert  */
-  title: React.ReactNode;
+  title?: React.ReactNode;
   /** Close button; use the AlertActionCloseButton component  */
   actionClose?: React.ReactNode;
   /** Action links; use a single AlertActionLink component or multiple wrapped in an array or React.Fragment */
@@ -169,6 +169,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         className
       )}
       aria-label={ariaLabel}
+      aria-live={'polite'}
+      aria-atomic={'false'}
       {...ouiaProps}
       {...(isLiveRegion && {
         'aria-live': 'polite',
@@ -178,21 +180,25 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       onMouseLeave={myOnMouseLeave}
       {...props}
     >
-      <AlertIcon variant={variant} customIcon={customIcon} />
-      {isTooltipVisible ? (
-        <Tooltip content={getHeadingContent} position={tooltipPosition}>
-          {Title}
-        </Tooltip>
-      ) : (
-        Title
-      )}
-      {actionClose && (
-        <AlertContext.Provider value={{ title, variantLabel }}>
-          <div className={css(styles.alertAction)}>{actionClose}</div>
-        </AlertContext.Provider>
-      )}
-      {children && <div className={css(styles.alertDescription)}>{children}</div>}
-      {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
+      {title ? (
+        <React.Fragment>
+          <AlertIcon variant={variant} customIcon={customIcon} />
+          {isTooltipVisible ? (
+            <Tooltip content={getHeadingContent} position={tooltipPosition}>
+              {Title}
+            </Tooltip>
+          ) : (
+            Title
+          )}
+          {actionClose && (
+            <AlertContext.Provider value={{ title, variantLabel }}>
+              <div className={css(styles.alertAction)}>{actionClose}</div>
+            </AlertContext.Provider>
+          )}
+          {children && <div className={css(styles.alertDescription)}>{children}</div>}
+          {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
+        </React.Fragment>
+      ) : null}
     </div>
   );
 };

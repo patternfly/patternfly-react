@@ -200,41 +200,27 @@ class DynamicLiveRegionAlert extends React.Component {
   constructor() {
     super();
     this.state = {
-      alerts: []
+      successTitle: '',
+      infoTitle: '',
+      dangerTitle: ''
     };
   }
 
   render() {
-    const addAlert = alertProps => {
-      this.setState({ alerts: [...this.state.alerts, alertProps] });
-    };
     const getUniqueId = () => new Date().getTime();
     const addSuccessAlert = () => {
-      addAlert({
-        title: 'Single Success Alert',
-        variant: 'success',
-        isLiveRegion: true,
-        key: getUniqueId()
+      this.setState({
+        successTitle: 'Single Success Alert'
       });
     };
     const addInfoAlert = () => {
-      addAlert({
-        title: 'Single Info Alert',
-        variant: 'info',
-        ariaLive: 'polite',
-        ariaRelevant: 'additions text',
-        ariaAtomic: 'false',
-        key: getUniqueId()
+      this.setState({
+        infoTitle: 'Single Info Alert'
       });
     };
     const addDangerAlert = () => {
-      addAlert({
-        title: 'Single Danger Alert',
-        variant: 'danger',
-        ariaLive: 'assertive',
-        ariaRelevant: 'additions text',
-        ariaAtomic: 'false',
-        key: getUniqueId()
+      this.setState({
+        dangerTitle: 'Single Danger Alert'
       });
     };
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
@@ -251,17 +237,9 @@ class DynamicLiveRegionAlert extends React.Component {
             Add Single Danger Alert
           </button>
         </InputGroup>
-        {this.state.alerts.map(({ title, variant, isLiveRegion, ariaLive, ariaRelevant, ariaAtomic, key }) => (
-          <Alert
-            variant={variant}
-            title={title}
-            isLiveRegion={isLiveRegion}
-            aria-live={ariaLive}
-            aria-relevant={ariaRelevant}
-            aria-atomic={ariaAtomic}
-            key={key}
-          />
-        ))}
+        <Alert variant='success' key={getUniqueId} title={this.state.successTitle}/>
+        <Alert variant='info' key={getUniqueId} title={this.state.infoTitle}/>
+        <Alert variant='danger' key={getUniqueId} title={this.state.dangerTitle}/>
       </React.Fragment>
     );
   }
@@ -277,28 +255,22 @@ class AsyncLiveRegionAlert extends React.Component {
   constructor() {
     super();
     this.state = {
-      alerts: [],
+      asyncTitle: '',
       timer: null
     };
-    this.stopAsyncAlerts = () => {
+    this.stopAsyncAlert = () => {
       clearInterval(this.state.timer);
     };
   }
   componentWillUnmount() {
-    this.stopAsyncAlerts();
+    this.stopAsyncAlert();
   }
   render() {
-    const addAlert = incomingAlerts => {
-      this.setState({ alerts: [...this.state.alerts, incomingAlerts] });
-    };
     const getUniqueId = () => new Date().getTime();
-    const startAsyncAlerts = () => {
+    const createAsyncAlert = () => {
       let timerValue = setInterval(() => {
-        addAlert({
-          title: `This is a async alert number ${this.state.alerts.length + 1}`,
-          variant: 'info',
-          isLiveRegion: true,
-          key: getUniqueId()
+        this.setState({
+          asyncTitle: `This is a async alert`
         });
       }, 1500);
       this.setState({ timer: timerValue });
@@ -307,16 +279,14 @@ class AsyncLiveRegionAlert extends React.Component {
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
-          <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
-            Start Async Info Alerts
+          <button onClick={createAsyncAlert} type="button" className={btnClasses}>
+            Create Async Info Alert
           </button>
-          <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>
-            Stop Async Info Alerts
+          <button onClick={this.stopAsyncAlert} type="button" className={btnClasses}>
+            Stop Async Info Alert
           </button>
         </InputGroup>
-        {this.state.alerts.map(({ title, variant, isLiveRegion, key }) => (
-          <Alert variant={variant} title={title} isLiveRegion={isLiveRegion} key={key} />
-        ))}
+          <Alert variant='info' title={this.state.asyncTitle} key={getUniqueId()} />
       </React.Fragment>
     );
   }
@@ -332,21 +302,14 @@ class AlertTimeout extends React.Component {
   constructor() {
     super();
     this.state = {
-      alerts: []
+      title: '',
+      timeout: false
     };
     this.onClick = () => {
-      const timeout = 8000;
-      this.state.alerts.push(
-        <Alert title="Default timeout Alert" timeout={timeout} actionLinks={
-          <React.Fragment>
-            <AlertActionLink>View details</AlertActionLink>
-            <AlertActionLink>Ignore</AlertActionLink>
-          </React.Fragment>
-        }>
-          This alert will dismiss after {`${timeout / 1000} seconds`}
-        </Alert>
-      );
-      this.setState({ alerts: [...this.state.alerts] })
+      this.setState({ 
+        title: 'Default timeout Alert',
+        timeout: 8000
+      })
     };
   }
 
@@ -354,8 +317,14 @@ class AlertTimeout extends React.Component {
     return (
       <React.Fragment>
         <Button variant="secondary" onClick={this.onClick}>Add alert</Button>
-        <Button variant="secondary" onClick={() => this.setState({ alerts: [] })}>Remove all alerts</Button>
-        {this.state.alerts}
+        <Alert title={this.state.title} timeout={this.state.timeout} actionLinks={
+          <React.Fragment>
+            <AlertActionLink>View details</AlertActionLink>
+            <AlertActionLink>Ignore</AlertActionLink>
+          </React.Fragment>
+        }>
+          This alert will dismiss after {`${this.state.timeout / 1000} seconds`}
+        </Alert>
       </React.Fragment>
     );
   }
