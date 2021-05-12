@@ -53,7 +53,7 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
   };
 
   simulateNetworkCall = (callback: any) => {
-    setTimeout(callback, 8000);
+    setTimeout(callback, 12000);
   };
 
   onViewMoreClick = () => {
