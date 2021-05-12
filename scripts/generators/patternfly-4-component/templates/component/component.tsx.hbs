@@ -3,7 +3,9 @@ import styles from '@patternfly/react-styles/css/{{typeDir}}/{{componentName}}';
 import { css } from '@patternfly/react-styles';
 
 interface {{ componentName }}Props {
-  children?: any;
+  /** Content rendered inside {{ componentName }} */
+  children?: React.ReactNode;
+  /** Class to add to outer div */
   className?: string;
 }
 
@@ -12,8 +14,8 @@ export const {{componentName}}: React.FunctionComponent<{{componentName}}Props> 
   children
 }: {{ componentName }}Props) => {
   return (
-    <div {...props} className={css(styles.{{ camelCase componentName }}, props.className)}>
-      {props.children}
+    <div {...props} className={css(styles.{{ camelCase componentName }}, className)}>
+      {children}
     </div>
   );
 }
