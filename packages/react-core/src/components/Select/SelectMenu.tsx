@@ -225,7 +225,6 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   {...props}
                 >
                   {this.extendChildren(inputIdPrefix)}
-                  {footer && footerRenderer}
                 </ul>
               ) : (
                 <div
@@ -235,7 +234,6 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   {...props}
                 >
                   {this.extendChildren(inputIdPrefix)}
-                  {footer && footerRenderer}
                 </div>
               ))}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
@@ -256,7 +254,6 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                   ]}
                   {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
                 </fieldset>
-                {footer && footerRenderer}
               </div>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
@@ -266,9 +263,9 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
                 <fieldset className={css(styles.selectMenuFieldset)} />
-                {footer && footerRenderer}
               </div>
             )}
+            {footer && footerRenderer}
           </React.Fragment>
         )}
       </SelectConsumer>
