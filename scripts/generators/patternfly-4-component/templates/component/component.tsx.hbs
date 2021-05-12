@@ -7,10 +7,10 @@ interface {{ componentName }}Props {
   className?: string;
 }
 
-export const {{componentName}}: React.SFC<{{componentName}}Props> = ({
+export const {{componentName}}: React.FunctionComponent<{{componentName}}Props> = ({
   className,
   children
-}) => {
+}: {{ componentName }}Props) => {
   return (
     <div {...props} className={css(styles.{{ camelCase componentName }}, props.className)}>
       {props.children}
