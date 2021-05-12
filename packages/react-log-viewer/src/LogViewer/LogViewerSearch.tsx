@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { NUMBER_INDEX_DELTA, DEFAULT_FOCUS, DEFAULT_INDEX } from './utils/constants';
-import { SearchInput } from '@patternfly/react-core';
+import { SearchInput, SearchInputProps } from '@patternfly/react-core';
 import { LogViewerToolbarContext } from './LogViewerContext';
 
-export interface LogViewerSearchProps extends React.HTMLProps<HTMLDivElement> {
+export interface LogViewerSearchProps extends SearchInputProps {
   /** Place holder text inside of searchbar */
   placeholder: string;
 }
 
-export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({ placeholder = 'Search' }) => {
+export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
+  placeholder = 'Search',
+  ...props
+}) => {
   const [indexAdjuster, setIndexAdjuster] = useState(0);
   const {
     searchedWordIndexes,
@@ -72,11 +75,24 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
     <SearchInput
       placeholder={placeholder}
       value={searchedInput}
-      onNextClick={() => handleNextSearchItem()}
-      onPreviousClick={() => handlePrevSearchItem()}
-      onClear={() => handleClear()}
-      onChange={input => setSearchedInput(input)}
       resultsCount={`${currentSearchedItemCount + indexAdjuster} / ${searchedWordIndexes.length}`}
+      {...props}
+      onChange={(input, event) => {
+        props.onChange(input, event);
+        setSearchedInput(input);
+      }}
+      onNextClick={event => {
+        props.onNextClick(event);
+        handleNextSearchItem();
+      }}
+      onPreviousClick={event => {
+        props.onPreviousClick(event);
+        handlePrevSearchItem();
+      }}
+      onClear={event => {
+        props.onClear(event);
+        handleClear();
+      }}
     />
   );
 };

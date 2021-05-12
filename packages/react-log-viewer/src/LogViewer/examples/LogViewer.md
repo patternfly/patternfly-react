@@ -38,9 +38,7 @@ BasicLogViewer = () => {
         <Toolbar>
           <ToolbarContent>
             <ToolbarItem>
-              <ToolbarGroup>
-                <LogViewerSearch placeholder="Search value" />
-              </ToolbarGroup>
+              <LogViewerSearch placeholder="Search value" />
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
@@ -85,9 +83,7 @@ CustomControlLogViewer = () => {
               </Button>
             </ToolbarItem>
             <ToolbarItem>
-              <ToolbarGroup>
-                <LogViewerSearch placeholder="Search" />
-              </ToolbarGroup>
+              <LogViewerSearch placeholder="Search" />
             </ToolbarItem>
             <ToolbarItem>
               <Button onClick={onPrintClick} variant="control">
