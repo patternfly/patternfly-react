@@ -5,3 +5,4 @@ export * from './htmlConstants';
 export * from './typeUtils';
 export * from './OUIA/ouia';
 export * from './util';
+export * from './Popper/Popper';
