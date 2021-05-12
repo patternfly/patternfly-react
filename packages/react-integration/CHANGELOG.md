@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.98.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.97.1...@patternfly/react-integration@4.98.0) (2021-05-12)
+
+
+### Features
+
+* **MenuToggle:** add menu toggle / Add composable menu POCs ([#5722](https://github.com/patternfly/patternfly-react/issues/5722)) ([20ae2dc](https://github.com/patternfly/patternfly-react/commit/20ae2dcacfbf60d4e648fb4ccdd1880cee9744bd))
+
+
+
+
+
 ## [4.97.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.97.0...@patternfly/react-integration@4.97.1) (2021-05-11)
 
 
