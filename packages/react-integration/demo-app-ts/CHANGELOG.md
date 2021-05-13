@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.98.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.97.0...demo-app-ts@4.98.0) (2021-05-13)
+
+
+### Features
+
+* **Select:** Added footer and view more options ([#5736](https://github.com/patternfly/patternfly-react/issues/5736)) ([607c436](https://github.com/patternfly/patternfly-react/commit/607c436cf840fce9f3db923135fede361bcd02c2))
+
+
+
+
+
 # [4.97.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.96.2...demo-app-ts@4.97.0) (2021-05-12)
 
 

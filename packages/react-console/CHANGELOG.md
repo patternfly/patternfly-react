@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.7.3...@patternfly/react-console@4.8.0) (2021-05-13)
+
+
+### Features
+
+* **Select:** Added footer and view more options ([#5736](https://github.com/patternfly/patternfly-react/issues/5736)) ([607c436](https://github.com/patternfly/patternfly-react/commit/607c436cf840fce9f3db923135fede361bcd02c2))
+
+
+
+
+
 ## [4.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.7.2...@patternfly/react-console@4.7.3) (2021-05-12)
 
 **Note:** Version bump only for package @patternfly/react-console
