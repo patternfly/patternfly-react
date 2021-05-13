@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Select, SelectOption, SelectVariant, StackItem, Title } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject, SelectVariant, StackItem, Title } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
 export interface SelectViewMoreDemoState {
   isOpen: boolean;
+  isOpenCheck: boolean;
   selected: string[];
+  selectedCheck: string[];
   numOptions: number;
+  numOptionsCeck: number;
   isLoading: boolean;
+  isLoadingCheck: boolean;
 }
 
 export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
@@ -67,17 +71,19 @@ export class SelectViewMoreDemo extends Component<SelectViewMoreDemoState> {
     }
   };
 
-  onSelectCheck = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
-    const { selected } = this.state;
-    if (selected.includes(selection)) {
+  onSelectCheck = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+    const { selectedCheck } = this.state;
+    if (selectedCheck.includes(selection.toString())) {
       this.setState(
-        prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-        () => console.log('selections: ', this.state.selected)
+        (prevState: SelectViewMoreDemoState) => ({
+          selectedCheck: prevState.selectedCheck.filter(item => item !== selection)
+        }),
+        () => console.log('selections: ', this.state.selectedCheck)
       );
     } else {
       this.setState(
-        prevState => ({ selected: [...prevState.selected, selection] }),
-        () => console.log('selections: ', this.state.selected)
+        (prevState: SelectViewMoreDemoState) => ({ selectedCheck: [...prevState.selectedCheck, selection] }),
+        () => console.log('selections: ', this.state.selectedCheck)
       );
     }
   };
