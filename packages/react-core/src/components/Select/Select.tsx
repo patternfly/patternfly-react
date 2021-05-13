@@ -64,7 +64,7 @@ export interface SelectProps
    * If set to warning, select will be modified to indicate warning state.
    */
   validated?: 'success' | 'warning' | 'error' | 'default';
-  /** Loading variant to display either the spinner or the view more text button */
+  /** @beta Loading variant to display either the spinner or the view more text button */
   loadingVariant?: 'spinner' | SelectViewMoreObject;
   /** Text displayed in typeahead select to prompt the user to create an item */
   createText?: string;
