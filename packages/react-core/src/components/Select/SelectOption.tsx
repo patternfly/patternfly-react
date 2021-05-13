@@ -22,7 +22,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   description?: React.ReactNode;
   /** Number of items matching the option */
   itemCount?: number;
-  /** Internal index of the option */
+  /** @hide Internal index of the option */
   index?: number;
   /** Indicates which component will be used as select item */
   component?: React.ReactNode;
@@ -34,26 +34,26 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isPlaceholder?: boolean;
   /** Flag indicating if the option acts as a "no results" indicator */
   isNoResultsOption?: boolean;
-  /** Internal flag indicating if the option is selected */
+  /** @hide Internal flag indicating if the option is selected */
   isSelected?: boolean;
-  /** Internal flag indicating if the option is checked */
+  /** @hide Internal flag indicating if the option is checked */
   isChecked?: boolean;
   /** Flag forcing the focused state */
   isFocused?: boolean;
-  /** Internal callback for ref tracking */
+  /** @hide Internal callback for ref tracking */
   sendRef?: (
     ref: React.ReactNode,
     favoriteRef: React.ReactNode,
     optionContainerRef: React.ReactNode,
     index: number
   ) => void;
-  /** Internal callback for keyboard navigation */
+  /** @hide Internal callback for keyboard navigation */
   keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Optional callback for click event */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Id of the checkbox input */
   inputId?: string;
-  /** Internal Flag indicating if the option is favorited */
+  /** @hide Internal Flag indicating if the option is favorited */
   isFavorite?: boolean;
   /** Aria label text for favoritable button when favorited */
   ariaIsFavoriteLabel?: string;
@@ -61,6 +61,10 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   ariaIsNotFavoriteLabel?: string;
   /** ID of the item. Required for tracking favorites */
   id?: string;
+  /** @hide Internal flag to apply the load styling to view more option */
+  isLoad?: boolean;
+  /** @hide Internal flag to apply the loading styling to spinner */
+  isLoading?: boolean;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -82,7 +86,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     sendRef: () => {},
     keyHandler: () => {},
     inputId: '',
-    isFavorite: null
+    isFavorite: null,
+    isLoad: false,
+    isLoading: false
   };
 
   componentDidMount() {
@@ -160,6 +166,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       isFavorite,
       ariaIsFavoriteLabel = 'starred',
       ariaIsNotFavoriteLabel = 'not starred',
+      isLoad,
+      isLoading,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -207,65 +215,101 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 id={generatedId}
                 role="presentation"
                 className={css(
-                  styles.selectMenuWrapper,
+                  isLoading && styles.selectListItem,
+                  !isLoad && !isLoading && styles.selectMenuWrapper,
                   isFavorite && styles.modifiers.favorite,
-                  isFocused && styles.modifiers.focus
+                  isFocused && styles.modifiers.focus,
+                  isLoading && styles.modifiers.loading
                 )}
                 ref={this.liRef}
               >
-                <Component
-                  {...props}
-                  className={css(
-                    styles.selectMenuItem,
-                    isSelected && styles.modifiers.selected,
-                    isDisabled && styles.modifiers.disabled,
-                    description && styles.modifiers.description,
-                    isFavorite !== null && styles.modifiers.link,
-                    className
-                  )}
-                  onClick={(event: any) => {
-                    if (!isDisabled) {
-                      onClick(event);
-                      onSelect(event, value, isPlaceholder);
-                      onClose();
-                    }
-                  }}
-                  role="option"
-                  aria-selected={isSelected || null}
-                  ref={this.ref}
-                  onKeyDown={(event: React.KeyboardEvent) => {
-                    this.onKeyDown(event, 0);
-                  }}
-                  type="button"
-                >
-                  {description && (
-                    <React.Fragment>
-                      <span className={css(styles.selectMenuItemMain)}>
-                        {itemDisplay}
-                        {isSelected && (
-                          <span className={css(styles.selectMenuItemIcon)}>
-                            <CheckIcon aria-hidden />
-                          </span>
-                        )}
-                      </span>
-                      <span className={css(styles.selectMenuItemDescription)}>{description}</span>
-                    </React.Fragment>
-                  )}
-                  {!description && (
-                    <React.Fragment>
-                      {itemDisplay}
-                      {isSelected && (
-                        <span className={css(styles.selectMenuItemIcon)}>
-                          <CheckIcon aria-hidden />
-                        </span>
+                {isLoading && children}
+                {!isLoading && (
+                  <>
+                    <Component
+                      {...props}
+                      className={css(
+                        styles.selectMenuItem,
+                        isLoad && styles.modifiers.load,
+                        isSelected && styles.modifiers.selected,
+                        isDisabled && styles.modifiers.disabled,
+                        description && styles.modifiers.description,
+                        isFavorite !== null && styles.modifiers.link,
+                        className
                       )}
-                    </React.Fragment>
-                  )}
-                </Component>
-                {isFavorite !== null && id && favoriteButton(onFavorite)}
+                      onClick={(event: any) => {
+                        if (isLoad) {
+                          onClick(event);
+                          event.stopPropagation();
+                        } else if (!isDisabled && !isLoading) {
+                          onClick(event);
+                          onSelect(event, value, isPlaceholder);
+                          onClose();
+                        }
+                      }}
+                      role="option"
+                      aria-selected={isSelected || null}
+                      ref={this.ref}
+                      onKeyDown={(event: React.KeyboardEvent) => {
+                        this.onKeyDown(event, 0);
+                      }}
+                      type="button"
+                    >
+                      {description && (
+                        <React.Fragment>
+                          <span className={css(styles.selectMenuItemMain)}>
+                            {itemDisplay}
+                            {isSelected && (
+                              <span className={css(styles.selectMenuItemIcon)}>
+                                <CheckIcon aria-hidden />
+                              </span>
+                            )}
+                          </span>
+                          <span className={css(styles.selectMenuItemDescription)}>{description}</span>
+                        </React.Fragment>
+                      )}
+                      {!description && (
+                        <React.Fragment>
+                          {itemDisplay}
+                          {isSelected && (
+                            <span className={css(styles.selectMenuItemIcon)}>
+                              <CheckIcon aria-hidden />
+                            </span>
+                          )}
+                        </React.Fragment>
+                      )}
+                    </Component>
+                    {isFavorite !== null && id && favoriteButton(onFavorite)}
+                  </>
+                )}
               </li>
             )}
-            {variant === SelectVariant.checkbox && !isNoResultsOption && (
+            {variant === SelectVariant.checkbox && isLoad && (
+              <button
+                className={css(
+                  styles.selectMenuItem,
+                  styles.modifiers.load,
+                  isFocused && styles.modifiers.focus,
+                  className
+                )}
+                onKeyDown={(event: React.KeyboardEvent) => {
+                  this.onKeyDown(event, 0, undefined, true);
+                }}
+                onClick={(event: any) => {
+                  onClick(event);
+                  event.stopPropagation();
+                }}
+                ref={this.ref}
+              >
+                {children || value.toString()}
+              </button>
+            )}
+            {variant === SelectVariant.checkbox && isLoading && (
+              <div className={css(styles.selectListItem, isLoading && styles.modifiers.loading, className)}>
+                {children}
+              </div>
+            )}
+            {variant === SelectVariant.checkbox && !isNoResultsOption && !isLoading && !isLoad && (
               <label
                 {...props}
                 className={css(
@@ -299,7 +343,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
               </label>
             )}
-            {variant === SelectVariant.checkbox && isNoResultsOption && (
+            {variant === SelectVariant.checkbox && isNoResultsOption && !isLoading && !isLoad && (
               <div>
                 <Component
                   {...props}

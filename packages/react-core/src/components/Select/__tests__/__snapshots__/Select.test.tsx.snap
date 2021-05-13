@@ -59,6 +59,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-7"
         isActive={false}
         isDisabled={false}
@@ -476,6 +477,11 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         aria-label=""
         aria-labelledby=""
         checked={Array []}
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         hasInlineFilter={false}
         isGrouped={true}
         keyHandler={[Function]}
@@ -488,6 +494,11 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           aria-labelledby=""
           checked={Array []}
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -691,6 +702,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -728,6 +741,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -765,6 +780,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -802,6 +819,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -861,6 +880,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -898,6 +919,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -935,6 +958,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -972,6 +997,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       isChecked={false}
                       isDisabled={false}
                       isFavorite={null}
+                      isLoad={false}
+                      isLoading={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
                       isSelected={false}
@@ -1057,6 +1084,8 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
         isChecked={false}
         isDisabled={false}
         isFavorite={null}
+        isLoad={false}
+        isLoading={false}
         isNoResultsOption={false}
         isPlaceholder={false}
         isSelected={false}
@@ -1090,6 +1119,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="checkbox-select-selections"
         isActive={false}
         isDisabled={false}
@@ -1267,6 +1297,8 @@ exports[`checkbox select renders checkbox select selections properly when isChec
         isChecked={false}
         isDisabled={false}
         isFavorite={null}
+        isLoad={false}
+        isLoading={false}
         isNoResultsOption={false}
         isPlaceholder={false}
         isSelected={false}
@@ -1300,6 +1332,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="checkbox-select-hidden-badge"
         isActive={false}
         isDisabled={false}
@@ -1472,6 +1505,7 @@ exports[`checkbox select renders closed successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="checkbox-select-closed"
         isActive={false}
         isDisabled={false}
@@ -1644,6 +1678,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-4"
         isActive={false}
         isDisabled={false}
@@ -1885,6 +1920,11 @@ exports[`checkbox select renders expanded successfully 1`] = `
         aria-label=""
         aria-labelledby=""
         checked={Array []}
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         hasInlineFilter={false}
         isGrouped={false}
         keyHandler={[Function]}
@@ -1897,6 +1937,11 @@ exports[`checkbox select renders expanded successfully 1`] = `
           aria-labelledby=""
           checked={Array []}
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -1993,6 +2038,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2030,6 +2077,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2067,6 +2116,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2104,6 +2155,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2200,6 +2253,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-6"
         isActive={false}
         isDisabled={false}
@@ -2413,6 +2467,11 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         aria-label=""
         aria-labelledby=""
         checked={Array []}
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         hasInlineFilter={false}
         isGrouped={false}
         keyHandler={[Function]}
@@ -2425,6 +2484,11 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           aria-labelledby=""
           checked={Array []}
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -2507,6 +2571,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2552,6 +2618,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2597,6 +2665,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -2701,6 +2771,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={true}
+        hasFooter={false}
         id="pf-select-toggle-id-5"
         isActive={false}
         isDisabled={false}
@@ -2972,6 +3043,11 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         aria-label=""
         aria-labelledby=""
         checked={Array []}
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         hasInlineFilter={true}
         isGrouped={false}
         keyHandler={[Function]}
@@ -2984,6 +3060,11 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           aria-labelledby=""
           checked={Array []}
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={true}
           innerRef={
             Object {
@@ -3113,6 +3194,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3150,6 +3233,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3187,6 +3272,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3224,6 +3311,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3320,6 +3409,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={true}
+        hasFooter={false}
         id="checkbox-select-expanded-filtered"
         isActive={false}
         isDisabled={false}
@@ -3591,6 +3681,11 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
         aria-label=""
         aria-labelledby=""
         checked={Array []}
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         hasInlineFilter={true}
         isGrouped={false}
         keyHandler={[Function]}
@@ -3603,6 +3698,11 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
           aria-labelledby=""
           checked={Array []}
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={true}
           innerRef={
             Object {
@@ -3732,6 +3832,8 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3769,6 +3871,8 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3806,6 +3910,8 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3843,6 +3949,8 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 isChecked={false}
                 isDisabled={false}
                 isFavorite={null}
+                isLoad={false}
+                isLoading={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
                 isSelected={false}
@@ -3944,6 +4052,7 @@ exports[`renders select with favorites successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-3"
         isActive={false}
         isDisabled={false}
@@ -4683,6 +4792,11 @@ exports[`renders select with favorites successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={true}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -4692,6 +4806,11 @@ exports[`renders select with favorites successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -5050,6 +5169,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={true}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5120,6 +5241,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={false}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5190,6 +5313,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={false}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5260,6 +5385,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={false}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5351,6 +5478,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={true}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5421,6 +5550,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={false}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5491,6 +5622,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={false}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5561,6 +5694,8 @@ exports[`renders select with favorites successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={false}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -5692,6 +5827,7 @@ exports[`select custom select filter filters properly 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="custom-select-filters"
         isActive={false}
         isDisabled={false}
@@ -5917,6 +6053,11 @@ exports[`select custom select filter filters properly 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -5926,6 +6067,11 @@ exports[`select custom select filter filters properly 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -6001,6 +6147,8 @@ exports[`select custom select filter filters properly 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -6037,6 +6185,8 @@ exports[`select custom select filter filters properly 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -6073,6 +6223,8 @@ exports[`select custom select filter filters properly 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -6166,6 +6318,7 @@ exports[`select renders select groups successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-2"
         isActive={false}
         isDisabled={false}
@@ -6553,6 +6706,11 @@ exports[`select renders select groups successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={true}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -6562,6 +6720,11 @@ exports[`select renders select groups successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -6744,6 +6907,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -6779,6 +6944,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -6814,6 +6981,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -6849,6 +7018,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -6905,6 +7076,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -6940,6 +7113,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -6975,6 +7150,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -7010,6 +7187,8 @@ exports[`select renders select groups successfully 1`] = `
                     isChecked={false}
                     isDisabled={false}
                     isFavorite={null}
+                    isLoad={false}
+                    isLoading={false}
                     isNoResultsOption={false}
                     isPlaceholder={false}
                     isSelected={false}
@@ -7106,6 +7285,7 @@ exports[`select renders up direction successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="select-up"
         isActive={false}
         isDisabled={false}
@@ -7283,6 +7463,7 @@ exports[`select single select renders closed successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="single-select-closed"
         isActive={false}
         isDisabled={false}
@@ -7460,6 +7641,7 @@ exports[`select single select renders disabled successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="single-select-disabled"
         isActive={false}
         isDisabled={true}
@@ -7638,6 +7820,7 @@ exports[`select single select renders expanded successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-0"
         isActive={false}
         isDisabled={false}
@@ -7869,6 +8052,11 @@ exports[`select single select renders expanded successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -7878,6 +8066,11 @@ exports[`select single select renders expanded successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -7965,6 +8158,8 @@ exports[`select single select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8000,6 +8195,8 @@ exports[`select single select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8035,6 +8232,8 @@ exports[`select single select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8070,6 +8269,8 @@ exports[`select single select renders expanded successfully 1`] = `
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8163,6 +8364,7 @@ exports[`select single select renders expanded successfully with custom objects 
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-1"
         isActive={false}
         isDisabled={false}
@@ -8368,6 +8570,11 @@ exports[`select single select renders expanded successfully with custom objects 
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -8377,6 +8584,11 @@ exports[`select single select renders expanded successfully with custom objects 
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -8451,6 +8663,8 @@ exports[`select single select renders expanded successfully with custom objects 
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8494,6 +8708,8 @@ exports[`select single select renders expanded successfully with custom objects 
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8537,6 +8753,8 @@ exports[`select single select renders expanded successfully with custom objects 
               isChecked={false}
               isDisabled={false}
               isFavorite={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -8637,6 +8855,7 @@ exports[`select with custom content renders closed successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="select-custom-content"
         isActive={false}
         isDisabled={false}
@@ -8809,6 +9028,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-17"
         isActive={false}
         isDisabled={false}
@@ -8930,6 +9150,11 @@ exports[`select with custom content renders expanded successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isCustomContent={true}
         isGrouped={false}
         keyHandler={[Function]}
@@ -8941,6 +9166,11 @@ exports[`select with custom content renders expanded successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -9071,6 +9301,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="typeahead-multi-select-closed"
         isActive={false}
         isDisabled={false}
@@ -9270,6 +9501,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-13"
         isActive={false}
         isDisabled={false}
@@ -9523,6 +9755,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -9533,6 +9770,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -9621,6 +9863,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -9657,6 +9901,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -9693,6 +9939,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -9729,6 +9977,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -9827,6 +10077,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="typeahead-multi-select-selected"
         isActive={false}
         isDisabled={false}
@@ -10451,6 +10702,11 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -10466,6 +10722,11 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -10595,6 +10856,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={true}
@@ -10660,6 +10923,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={true}
@@ -10725,6 +10990,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -10761,6 +11028,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -10854,6 +11123,7 @@ exports[`typeahead select renders closed successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="typeahead-select-closed"
         isActive={false}
         isDisabled={false}
@@ -11051,6 +11321,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-8"
         isActive={false}
         isDisabled={false}
@@ -11302,6 +11573,11 @@ exports[`typeahead select renders expanded successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -11311,6 +11587,11 @@ exports[`typeahead select renders expanded successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -11399,6 +11680,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11435,6 +11718,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11471,6 +11756,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11507,6 +11794,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -11600,6 +11889,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-9"
         isActive={false}
         isDisabled={false}
@@ -11887,6 +12177,11 @@ exports[`typeahead select renders selected successfully 1`] = `
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -11897,6 +12192,11 @@ exports[`typeahead select renders selected successfully 1`] = `
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -12003,6 +12303,8 @@ exports[`typeahead select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={true}
@@ -12068,6 +12370,8 @@ exports[`typeahead select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -12104,6 +12408,8 @@ exports[`typeahead select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -12140,6 +12446,8 @@ exports[`typeahead select renders selected successfully 1`] = `
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}
@@ -12232,6 +12540,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
         className=""
         handleTypeaheadKeys={[Function]}
         hasClearButton={false}
+        hasFooter={false}
         id="pf-select-toggle-id-12"
         isActive={false}
         isDisabled={false}
@@ -12405,6 +12714,11 @@ exports[`typeahead select test select existing option on a non-creatable select 
       <ForwardRef
         aria-label=""
         aria-labelledby=""
+        footerRef={
+          Object {
+            "current": null,
+          }
+        }
         isGrouped={false}
         keyHandler={[Function]}
         openedOnEnter={false}
@@ -12414,6 +12728,11 @@ exports[`typeahead select test select existing option on a non-creatable select 
           aria-label=""
           aria-labelledby=""
           className=""
+          footerRef={
+            Object {
+              "current": null,
+            }
+          }
           hasInlineFilter={false}
           innerRef={
             Object {
@@ -12463,6 +12782,8 @@ exports[`typeahead select test select existing option on a non-creatable select 
               isDisabled={false}
               isFavorite={null}
               isFocused={null}
+              isLoad={false}
+              isLoading={false}
               isNoResultsOption={false}
               isPlaceholder={false}
               isSelected={false}

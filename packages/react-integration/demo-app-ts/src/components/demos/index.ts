@@ -126,6 +126,7 @@ export * from './SelectDemo/FilteringSelectLiveUpdateDemo';
 export * from './SelectDemo/SelectDemo';
 export * from './SelectDemo/SelectFavoritesDemo';
 export * from './SelectDemo/SelectValidatedDemo';
+export * from './SelectDemo/SelectViewMoreDemo';
 export * from './SimpleList/SimpleListDemo';
 export * from './SkeletonDemo/SkeletonDemo';
 export * from './SpinnerDemo/SpinnerDemo';

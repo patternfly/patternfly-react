@@ -24,7 +24,7 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   selected?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Currently checked options (for checkbox variant) */
   checked?: (string | SelectOptionObject)[];
-  /** Internal flag for specifiying how the menu was opened */
+  /** @hide Internal flag for specifiying how the menu was opened */
   openedOnEnter?: boolean;
   /** Flag to specify the  maximum height of the menu, as a string percentage or number of pixels */
   maxHeight?: string | number;
@@ -32,13 +32,17 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   noResultsFoundText?: string;
   /** Inner prop passed from parent */
   createText?: string;
-  /** Internal callback for ref tracking */
+  /** @hide Internal callback for ref tracking */
   sendRef?: (ref: React.ReactNode, favoriteRef: React.ReactNode, index: number) => void;
-  /** Internal callback for keyboard navigation */
+  /** @hide Internal callback for keyboard navigation */
   keyHandler?: (index: number, innerIndex: number, position: string) => void;
   /** Flag indicating select has an inline text input for filtering */
   hasInlineFilter?: boolean;
   innerRef?: any;
+  /** Content rendered in the footer of the select menu */
+  footer?: React.ReactNode;
+  /** The menu footer element */
+  footerRef?: React.RefObject<HTMLDivElement>;
 }
 
 class SelectMenuWithRef extends React.Component<SelectMenuProps> {
@@ -184,8 +188,15 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       'aria-labelledby': ariaLabelledBy,
       hasInlineFilter,
       innerRef,
+      footer,
+      footerRef,
       ...props
     } = this.props;
+    const footerRenderer = (
+      <div className={css(styles.selectMenuFooter)} ref={footerRef}>
+        {footer}
+      </div>
+    );
     /* eslint-enable @typescript-eslint/no-unused-vars */
     return (
       <SelectConsumer>
@@ -194,7 +205,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
             {isCustomContent && (
               <div
                 ref={innerRef}
-                className={css(styles.selectMenu, className)}
+                className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 {...props}
               >
@@ -206,7 +217,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
               (!isGrouped ? (
                 <ul
                   ref={innerRef}
-                  className={css(styles.selectMenu, className)}
+                  className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
                   role="listbox"
                   aria-label={ariaLabel}
                   aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
@@ -218,7 +229,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
               ) : (
                 <div
                   ref={innerRef}
-                  className={css(styles.selectMenu, className)}
+                  className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
                   {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                   {...props}
                 >
@@ -228,7 +239,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
               <div
                 ref={innerRef}
-                className={css(styles.selectMenu, className)}
+                className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
                 <fieldset
@@ -248,12 +259,13 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
               <div
                 ref={innerRef}
-                className={css(styles.selectMenu, className)}
+                className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
                 <fieldset className={css(styles.selectMenuFieldset)} />
               </div>
             )}
+            {footer && footerRenderer}
           </React.Fragment>
         )}
       </SelectConsumer>

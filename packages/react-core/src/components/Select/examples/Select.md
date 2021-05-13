@@ -2,7 +2,7 @@
 id: Select
 section: components
 cssPrefix: pf-c-select
-propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
+propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject', 'SelectViewMoreObject']
 ouia: true
 ---
 
@@ -2148,5 +2148,377 @@ class FavoritesSelect extends React.Component {
       </Select>
     );
   }
+}
+```
+
+### Footer
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
+
+class SelectWithFooter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Choose..." isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <Divider component="li" key={5} />,
+      <SelectOption key={6} value="Dr" />,
+      <SelectOption key={7} value="Other" />
+    ];
+
+    this.state = {
+      isToggleIcon: false,
+      isOpen: false,
+      selected: null,
+      isDisabled: false,
+      direction: SelectDirection.down
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+  }
+
+
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'title-id-footer';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          toggleIcon={isToggleIcon && <CubeIcon />}
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          isDisabled={isDisabled}
+          direction={direction}
+          footer={<Button variant="link" isInline>Action</Button>}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### Footer with checkboxes
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
+
+class SelectWithFooterCheckbox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      selected: [],
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'title-id-footer-checkbox';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+        variant={SelectVariant.checkbox}
+          aria-label="Select input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          footer={<Button variant="link" isInline>Action</Button>}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### View more
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  Divider,
+  Button,
+} from '@patternfly/react-core';
+
+class SelectViewMore extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Choose..." isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <SelectOption key={5} value="Dr" />,
+      <SelectOption key={6} value="Other" />
+    ];
+
+    this.state = {
+      isOpen: false,
+      selected: null,
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.onViewMoreClick = () => {
+      // Set select loadingVariant to spinner then simulate network call before loading more options
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isToggleIcon, numOptions, loadingVariant, isLoading } = this.state;
+    const titleId = 'title-id-view-more';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          {...(!isLoading && numOptions < this.options.length && { loadingVariant: { text: 'View more', onClick: this.onViewMoreClick } })}
+          {...(isLoading && { loadingVariant: 'spinner' })}
+        >
+          {this.options.slice(0, numOptions)}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+### View more with checkboxes
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  Divider,
+  Button,
+} from '@patternfly/react-core';
+
+class SelectViewMoreCheckbox extends React.Component {
+   constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: [],
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />,
+      <SelectOption key={6} value="Down" />,
+      <SelectOption key={7} value="Disabled" />,
+      <SelectOption key={8} value="Needs Maintenance " />,
+      <SelectOption key={9} value="Degraded " />
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+  
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.onViewMoreClick = () => {
+      // Set select loadingVariant to spinner then simulate network call before loading more options
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 <= this.options.length ? this.state.numOptions + 3 : this.options.length;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, numOptions, isLoading } = this.state;
+    const titleId = 'view-more-checkbox-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox View more check
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          {...(!isLoading && numOptions < this.options.length && { loadingVariant: { text: 'View more', onClick: this.onViewMoreClick } })}
+          {...(isLoading && { loadingVariant: 'spinner' })}
+        >
+          {this.options.slice(0, numOptions)}
+        </Select>
+      </div>
+    );
+  }
+
 }
 ```

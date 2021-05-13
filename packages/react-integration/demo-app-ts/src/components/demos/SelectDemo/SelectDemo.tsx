@@ -663,6 +663,11 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-labelledby={titleId}
             placeholderText="Select with descriptions"
             maxHeight={200}
+            footer={
+              <Button variant="link" isInline>
+                Action
+              </Button>
+            }
           >
             {this.singleOptions.map((option, index) => (
               <SelectOption
