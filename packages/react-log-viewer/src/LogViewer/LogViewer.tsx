@@ -1,8 +1,7 @@
 import React, { useState, useEffect, memo } from 'react';
-import { LogViewerContext } from './LogViewerContext';
+import { LogViewerContext, LogViewerToolbarContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
-import { LogViewerToolbar } from './LogViewerToolbar';
 import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
 import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
@@ -25,6 +24,8 @@ interface LogViewerProps {
   height?: number;
   /** Rows being rendered outside of view. The more rows are rendered, the higher impact on performance */
   overScanCount?: number;
+  /** Toolbar rendered in the log viewer header */
+  toolbar?: React.ReactNode;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -42,13 +43,11 @@ function getTextWidth(text: string, font: string) {
 export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
   ({
     data = '',
-    hasToolbar = true,
-    customControls = null,
-    placeholder = 'Search',
     hasLineNumbers = true,
     width = 800,
     height = 600,
     overScanCount = 10,
+    toolbar,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -122,20 +121,22 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         }}
       >
         <div className={css(styles.logViewer, hasLineNumbers && styles.modifiers.lineNumbers)} {...props}>
-          {hasToolbar && (
-            <LogViewerToolbar
-              placeholder={placeholder}
-              searchedInput={searchedInput}
-              rowInFocus={rowInFocus}
-              searchedWordIndexes={searchedWordIndexes}
-              currentSearchedItemCount={currentSearchedItemCount}
-              scrollToRow={scrollToRow}
-              customControls={customControls}
-              setRowInFocus={setRowInFocus}
-              setSearchedInput={setSearchedInput}
-              setSearchedWordIndexes={setSearchedWordIndexes}
-              setCurrentSearchedItemCount={setCurrentSearchedItemCount}
-            />
+          {toolbar && (
+            <LogViewerToolbarContext.Provider
+              value={{
+                searchedInput,
+                rowInFocus,
+                searchedWordIndexes,
+                currentSearchedItemCount,
+                scrollToRow,
+                setRowInFocus,
+                setSearchedInput,
+                setSearchedWordIndexes,
+                setCurrentSearchedItemCount
+              }}
+            >
+              <div className={css(styles.logViewerHeader)}>{toolbar}</div>
+            </LogViewerToolbarContext.Provider>
           )}
           <div className={css(styles.logViewerMain)}>
             <List
