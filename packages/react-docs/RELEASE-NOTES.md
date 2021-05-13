@@ -5,6 +5,17 @@ section: developer-resources
 
 
 ## 2021.06 release notes (2021-05-12)
+- [@patternfly/react-catalog-view-extension@4.11.24](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.24)
+- [@patternfly/react-charts@6.14.22](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.22)
+- [@patternfly/react-code-editor@4.2.58](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.58)
+- [@patternfly/react-core@4.121.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.121.0)
+- [@patternfly/react-icons@4.10.7](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.7)
+- [@patternfly/react-inline-edit-extension@4.6.107](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.107)
+- [@patternfly/react-styles/v/4.10.7](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.7)
+- [@patternfly/react-table@4.27.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.27.6)
+- [@patternfly/react-tokens/v/4.11.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.8)
+- [@patternfly/react-topology@4.8.54](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.54)
+- [@patternfly/react-virtualized-extension@4.8.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.8.5)
 
 ### Components
 - **Accordion:**
@@ -31,7 +42,9 @@ section: developer-resources
 - **Select:**
   - Added flag to accept input values even if not in menu ([#5751](https://github.com/patternfly/patternfly-react/pull/5751))
   - Fixed scrollbar click closing menu ([#5766](https://github.com/patternfly/patternfly-react/pull/5766))
-- **Slider:** Added showBoundaries property to the min/max slider variant ([#5710](https://github.com/patternfly/patternfly-react/pull/5710))
+  - Added footer and view more options ([#5736](https://github.com/patternfly/patternfly-react/pull/5736))
+- **Slider:** 
+  - Added showBoundaries property to the min/max slider variant ([#5710](https://github.com/patternfly/patternfly-react/pull/5710))
 - **Toggle group:**
   - Removed dividers, light variation, added compact support ([#5762](https://github.com/patternfly/patternfly-react/pull/5762))
 - **Toolbar:**
@@ -44,9 +57,11 @@ section: developer-resources
 
 ### Log viewer
 - Added log viewer component ([#5657](https://github.com/patternfly/patternfly-react/pull/5657))
+- Refactor toolbar functionality ([#5769](https://github.com/patternfly/patternfly-react/pull/5769))
 
 ### Table
 - Updated to allow for more customizable Table actions ([#5744](https://github.com/patternfly/patternfly-react/pull/5744))
+- Added a prop to to forward additional props to select rowData ([#5770](https://github.com/patternfly/patternfly-react/pull/5770))
 
 ### Other
 - **Chore:** 
@@ -131,7 +146,6 @@ section: developer-resources
   - Added closeComment to Stalebot ([#5651](https://github.com/patternfly/patternfly-react/pull/5651))
   - Removed codecov ([#5683](https://github.com/patternfly/patternfly-react/pull/5683))
   - Added delay to table sticky header integration test ([#5713](https://github.com/patternfly/patternfly-react/pull/5713))
-
 - **Deps:** 
   - Updated dependency theme-patternfly-org to v0.4.53 ([#5684](https://github.com/patternfly/patternfly-react/pull/5684))
 
@@ -189,6 +203,7 @@ section: developer-resources
 
 ### Table
 - Added tree table variant ([#5573](https://github.com/patternfly/patternfly-react/pull/5573))
+
 ### Topology
 - Updated to allow applications to choose using resizable drawer for topology side bar ([#5572](https://github.com/patternfly/patternfly-react/pull/5572))
 - Made fix for context sub menu placement ([#5546](https://github.com/patternfly/patternfly-react/pull/5546))
