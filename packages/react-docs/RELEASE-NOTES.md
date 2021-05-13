@@ -84,6 +84,7 @@ section: developer-resources
 - [@patternfly/react-topology@4.8.37](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.37)
 - [@patternfly/react-virtualized-extension@4.7.24](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.7.24)
 
+### Components
 - **Card:** 
   - Added empty state to card demo ([#5605](https://github.com/patternfly/patternfly-react/pull/5605))
   - Added full-height and plain variation ([#5632](https://github.com/patternfly/patternfly-react/pull/5632))
@@ -144,7 +145,6 @@ section: developer-resources
   - Added closeComment to Stalebot ([#5651](https://github.com/patternfly/patternfly-react/pull/5651))
   - Removed codecov ([#5683](https://github.com/patternfly/patternfly-react/pull/5683))
   - Added delay to table sticky header integration test ([#5713](https://github.com/patternfly/patternfly-react/pull/5713))
-
 - **Deps:** 
   - Updated dependency theme-patternfly-org to v0.4.53 ([#5684](https://github.com/patternfly/patternfly-react/pull/5684))
 
@@ -202,6 +202,7 @@ section: developer-resources
 
 ### Table
 - Added tree table variant ([#5573](https://github.com/patternfly/patternfly-react/pull/5573))
+
 ### Topology
 - Updated to allow applications to choose using resizable drawer for topology side bar ([#5572](https://github.com/patternfly/patternfly-react/pull/5572))
 - Made fix for context sub menu placement ([#5546](https://github.com/patternfly/patternfly-react/pull/5546))
@@ -329,6 +330,7 @@ section: developer-resources
 
 ### Charts
 - Fixed bar chart remaining muted with interactive legend ([#5378](https://github.com/patternfly/patternfly-react/pull/5378))
+
 ### Table
 - Added decorators index file ([#5366](https://github.com/patternfly/patternfly-react/pull/5366))
 - Updated column management demo to include label ([#5431](https://github.com/patternfly/patternfly-react/pull/5431))
