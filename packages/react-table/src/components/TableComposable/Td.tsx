@@ -47,6 +47,8 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     disable?: boolean;
     /** The row index */
     rowIndex: number;
+    /** Additional props forwarded to select rowData */
+    props?: any;
   };
   /** Turns the cell into an actions cell */
   actions?: {
@@ -128,7 +130,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         rowIndex: select.rowIndex,
         rowData: {
           selected: select.isSelected,
-          disableSelection: select?.disable
+          disableSelection: select?.disable,
+          props: select?.props
         },
         column: {
           extraParams: {
