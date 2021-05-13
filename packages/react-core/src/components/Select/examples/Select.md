@@ -2236,6 +2236,86 @@ class SelectWithFooter extends React.Component {
 }
 ```
 
+### Footer with checkboxes
+
+```js
+import React from 'react';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
+
+class SelectWithFooterCheckbox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      selected: [],
+      numOptions: 3,
+      isLoading: false
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Active" description="This is a description" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <SelectOption key={4} value="Warning" />,
+      <SelectOption key={5} value="Restarted" />
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'title-id-footer-checkbox';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+        variant={SelectVariant.checkbox}
+          aria-label="Select input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          footer={<Button variant="link" isInline>Action</Button>}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
 ### View more
 
 ```js

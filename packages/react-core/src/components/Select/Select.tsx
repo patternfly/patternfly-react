@@ -901,7 +901,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    const menuContainer = (
+    const innerMenu = (
       <SelectMenu
         {...props}
         isGrouped={isGrouped}
@@ -920,6 +920,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         {variantChildren}
       </SelectMenu>
     );
+
+    const menuContainer = footer ? <div className={css(styles.selectMenu)}> {innerMenu} </div> : innerMenu;
 
     const popperContainer = (
       <div
