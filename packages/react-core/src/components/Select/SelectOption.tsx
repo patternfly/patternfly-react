@@ -305,7 +305,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
               </button>
             )}
             {variant === SelectVariant.checkbox && isLoading && (
-              <div className={css(styles.selectMenuItem, isLoading && styles.modifiers.loading, className)}>
+              <div className={css(styles.selectListItem, isLoading && styles.modifiers.loading, className)}>
                 {children}
               </div>
             )}
