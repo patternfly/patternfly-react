@@ -1126,7 +1126,7 @@ import {
 ### Draggable
 
 ```js
-import React, { useState } from 'react';
+import React from 'react';
 import {
   DataList,
   DataListItem,
@@ -1138,10 +1138,10 @@ import {
   DataListItemCells
 } from '@patternfly/react-core';
 
-const DraggableDataList = () => {
-  const [ liveText, setLiveText ] = useState('');
-  const [ id, setId ] = useState('');
-  const [ itemOrder, setItemOrder ] = useState(['data1', 'data2', 'data3', 'data4']);
+DraggableDataList = () => {
+  const [ liveText, setLiveText ] = React.useState('');
+  const [ id, setId ] = React.useState('');
+  const [ itemOrder, setItemOrder ] = React.useState(['data1', 'data2', 'data3', 'data4']);
 
   const onDragStart = newId => {
     setId(newId)
