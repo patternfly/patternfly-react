@@ -101,14 +101,21 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [timedOutAnimation, setTimedOutAnimation] = useState(true);
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
-  const dismissed = timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
+  const [isDismissed, setIsDismissed] = useState<boolean | false>();
+
+  React.useEffect(() => {
+    if (title && !isDismissed) {
+      setIsDismissed(timedOut && timedOutAnimation && !isMouseOver && !containsFocus);
+    }
+  }, [timedOut, timedOutAnimation, isMouseOver, containsFocus, title]);
+
   React.useEffect(() => {
     timeout = timeout === true ? 8000 : Number(timeout);
-    if (timeout > 0) {
+    if (timeout > 0 && title) {
       const timer = setTimeout(() => setTimedOut(true), timeout);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [title]);
   React.useEffect(() => {
     const onDocumentFocus = () => {
       if (divRef.current) {
@@ -132,8 +139,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     }
   }, [containsFocus, isMouseOver]);
   React.useEffect(() => {
-    dismissed && onTimeout();
-  }, [dismissed]);
+    isDismissed && onTimeout();
+  }, [isDismissed]);
 
   const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(true);
@@ -146,9 +153,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     onMouseLeave(ev);
   };
 
-  if (dismissed) {
-    return null;
-  }
   const Title = (
     <h4
       {...(isTooltipVisible && { tabIndex: 0 })}
@@ -180,7 +184,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       onMouseLeave={myOnMouseLeave}
       {...props}
     >
-      {title ? (
+      {title && !isDismissed ? (
         <React.Fragment>
           <AlertIcon variant={variant} customIcon={customIcon} />
           {isTooltipVisible ? (

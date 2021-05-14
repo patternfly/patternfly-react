@@ -302,28 +302,27 @@ class AlertTimeout extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: '',
-      timeout: false
+      title: ''
     };
     this.onClick = () => {
       this.setState({ 
-        title: 'Default timeout Alert',
-        timeout: 8000
+        title: 'Default timeout Alert'
       })
     };
   }
 
   render() {
+    const timeout = 8000;
     return (
       <React.Fragment>
         <Button variant="secondary" onClick={this.onClick}>Add alert</Button>
-        <Alert title={this.state.title} timeout={this.state.timeout} actionLinks={
+        <Alert title={this.state.title} timeout={timeout} onTimeout={this.onClick} actionLinks={
           <React.Fragment>
             <AlertActionLink>View details</AlertActionLink>
             <AlertActionLink>Ignore</AlertActionLink>
           </React.Fragment>
         }>
-          This alert will dismiss after {`${this.state.timeout / 1000} seconds`}
+          This alert will dismiss after {`${timeout / 1000} seconds`}
         </Alert>
       </React.Fragment>
     );
