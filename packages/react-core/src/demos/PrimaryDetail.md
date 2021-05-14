@@ -82,6 +82,7 @@ import {
   Progress,
   Select,
   SelectOption,
+  SelectVariant,
   SkipToContent,
   Stack,
   StackItem,
@@ -101,6 +102,8 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
@@ -666,6 +669,7 @@ import {
   Progress,
   Select,
   SelectOption,
+  SelectVariant,
   SkipToContent,
   Stack,
   StackItem,
@@ -685,6 +689,8 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailContentPadding extends React.Component {
   constructor(props) {
@@ -1251,6 +1257,7 @@ import {
   Progress,
   Select,
   SelectOption,
+  SelectVariant,
   SkipToContent,
   TextContent,
   Text,
@@ -1769,6 +1776,8 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -2012,6 +2021,8 @@ import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -2326,6 +2337,7 @@ import {
   Progress,
   Select,
   SelectOption,
+  SelectVariant,
   SkipToContent,
   Stack,
   StackItem,
@@ -2345,6 +2357,8 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailInlineModifier extends React.Component {
   constructor(props) {

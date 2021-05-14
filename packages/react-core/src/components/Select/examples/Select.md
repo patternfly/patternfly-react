@@ -394,7 +394,7 @@ class ValidatedSelect extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVarian, Divider } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
 
 class CheckboxSelectInput extends React.Component {
   constructor(props) {
@@ -471,7 +471,7 @@ class CheckboxSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVarian, Divider } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Divider } from '@patternfly/react-core';
 
 class CheckboxSelectWithCounts extends React.Component {
   constructor(props) {
@@ -1906,7 +1906,7 @@ class PlainSelectInput extends React.Component {
 ```js
 import React from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {

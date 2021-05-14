@@ -75,6 +75,7 @@ import {
   Pagination,
   Select,
   SelectOption,
+  SelectVariant,
   SkipToContent,
   TextContent,
   Text,

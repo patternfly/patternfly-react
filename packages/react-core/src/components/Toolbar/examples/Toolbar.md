@@ -246,7 +246,7 @@ Often, it makes sense to group sets of like items to create desired associations
 ```js
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Button, Select, SelectOption } from '@patternfly/react-core';
+import { Button, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
@@ -442,7 +442,7 @@ A toggle group can be used when you want to collapse a set of items into an over
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
-import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, Select, SelectOption, SelectVariant, TextInput } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
@@ -599,7 +599,7 @@ If the consumer would prefer to manage the expanded state of the toggle group fo
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
-import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 import TextInput from '@patternfly/react-icons/dist/js/icons/text-input';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
@@ -778,6 +778,7 @@ import {
   InputGroup,
   Select,
   SelectOption,
+  SelectVariant,
   Dropdown,
   DropdownItem,
   DropdownSeparator,
@@ -1042,6 +1043,7 @@ import {
   KebabToggle,
   Select,
   SelectOption,
+  SelectVariant,
   Pagination,
   Dropdown,
   DropdownSeparator,
