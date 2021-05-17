@@ -2,32 +2,34 @@ import { Alert, Button } from '@patternfly/react-core';
 import React from 'react';
 
 interface AlertCustomTimeoutDemoState {
-  isOpenAlert: boolean;
+  title: string;
 }
 
 export class AlertCustomTimeoutDemo extends React.Component<{}, AlertCustomTimeoutDemoState> {
   static displayName = 'AlertCustomTimeoutDemo';
   constructor(props: {}) {
     super(props);
-    this.state = { isOpenAlert: false };
+    this.state = {
+      title: ''
+    };
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  onClick = () => this.setState({ isOpenAlert: true });
+  onClick = () => this.setState({ title: 'custom timeout' });
   onTimeout = () => alert('Timeout!');
 
   render() {
-    const { isOpenAlert } = this.state;
+    const { title } = this.state;
     return (
       <React.Fragment>
         <Button id="custom-button" onClick={this.onClick}>
           Open Alert
         </Button>
-        {isOpenAlert && (
-          <Alert onTimeout={this.onTimeout} id="alert-custom-timeout" title="custom timeout" timeout={16000}>
+        {title && (
+          <Alert onTimeout={this.onTimeout} id="alert-custom-timeout" title={title} timeout={16000}>
             custom 16 second timeout
           </Alert>
         )}

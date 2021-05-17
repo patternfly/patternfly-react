@@ -305,8 +305,9 @@ class AlertTimeout extends React.Component {
       title: ''
     };
     this.onClick = () => {
-      this.setState({ 
-        title: 'Default timeout Alert'
+      this.setState(prevState => {
+        console.log('prevState', prevState)
+        title: prevState.title === "First alert title" ? "Second alert title" : "First alert title"
       })
     };
   }

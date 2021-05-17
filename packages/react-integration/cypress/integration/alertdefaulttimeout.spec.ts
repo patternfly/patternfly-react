@@ -6,11 +6,11 @@ describe('Alert Demo Test', () => {
   });
 
   it('Verify alert timeout', () => {
-    cy.get('#alert-default-timeout').should('not.exist');
+    cy.get('.pf-c-alert__title').should('not.exist');
     cy.get('#default-button').click();
-    cy.get('#alert-default-timeout').should('exist');
+    cy.get('.pf-c-alert__title').should('exist');
     cy.wait(8000).then(() => {
-      cy.get('#alert-default-timeout').should('not.exist');
+      cy.get('.pf-c-alert__title').should('not.exist');
     });
   });
 });
