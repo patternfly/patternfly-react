@@ -11,8 +11,8 @@ This package is currently an extension. Extension components do not undergo the 
 
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
-import windowScrollerStyles from './WindowScroller.example.css';
+import './VirtualGrid.example.css';
+import './WindowScroller.example.css';
 
 ## Examples
 
@@ -24,8 +24,6 @@ import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
-import windowScrollerStyles from './WindowScroller.example.css';
 
 class WindowScrollerExample extends React.Component {
   constructor(props) {
@@ -198,7 +196,6 @@ import React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 import { TableComposable, Thead, Tr, Th, Td, Caption, TableGridBreakpoint } from '@patternfly/react-table';
 
 ComposableTableWindowScroller = () => {

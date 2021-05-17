@@ -13,7 +13,7 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
+import './VirtualGrid.example.css';
 
 ## Examples
 
@@ -25,7 +25,6 @@ import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 
 class VirtualizedExample extends React.Component {
   constructor(props) {
@@ -151,7 +150,6 @@ import React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 import { TableComposable, Thead, Tr, Th, Td, Caption, TableGridBreakpoint } from '@patternfly/react-table';
 
 ComposableTableVirtualized = () => {
@@ -238,7 +236,6 @@ import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 
 class SortableExample extends React.Component {
   constructor(props) {
@@ -390,7 +387,6 @@ import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 
 class SelectableExample extends React.Component {
   constructor(props) {
@@ -547,7 +543,6 @@ import { debounce } from '@patternfly/react-core';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 
 class ActionsExample extends React.Component {
   constructor(props) {
@@ -726,7 +721,6 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
-import virtualGridStyles from './VirtualGrid.example.css';
 
 class FilterExample extends React.Component {
   constructor(props) {

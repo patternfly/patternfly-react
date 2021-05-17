@@ -42,7 +42,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Flag indicating if the option is selected */
   isSelected?: boolean;
   /** Flyout menu */
-  flyoutMenu?: React.ReactNode;
+  flyoutMenu?: React.ReactElement;
   /** Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
@@ -54,10 +54,10 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Accessibility label */
   'aria-label'?: string;
   /** Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.Ref<HTMLLIElement>;
 }
 
-const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
+export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   itemId = null,
@@ -77,7 +77,6 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   icon,
   actions,
   onShowFlyout,
-  innerRef,
   drilldownMenu,
   isOnPath,
   ...props
@@ -85,6 +84,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   const Component = component || to ? 'a' : 'button';
   const [flyoutVisible, setFlyoutVisible] = React.useState(false);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
+  const ref = React.useRef<HTMLLIElement>();
 
   const showFlyout = (displayFlyout: boolean) => {
     setFlyoutVisible(displayFlyout);
@@ -214,8 +214,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             </span>
           )}
         </Component>
-        {flyoutVisible && flyoutMenu}
         {drilldownMenu}
+        {flyoutVisible && flyoutMenu}
       </>
     );
   };
@@ -242,6 +242,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
           }
         }
+        const item = renderItem(onSelect, activeItemId, selected, _isOnPath, _drill);
+        const hasFlyout = flyoutMenu !== undefined;
         return (
           <li
             className={css(
@@ -252,11 +254,11 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
               isLoading && styles.modifiers.loading,
               className
             )}
-            onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
-            onMouseLeave={flyoutMenu !== undefined ? () => showFlyout(false) : undefined}
+            onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
+            // onMouseLeave={hasFlyout ? () => showFlyout(false) : undefined}
             {...(flyoutMenu && { onKeyDown: handleFlyout })}
             tabIndex={-1}
-            ref={innerRef}
+            ref={ref}
             {...props}
           >
             {isLoading && children}
@@ -281,7 +283,4 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   );
 };
 
-export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<HTMLElement>) => (
-  <MenuItemBase {...props} innerRef={ref} />
-));
 MenuItem.displayName = 'MenuItem';

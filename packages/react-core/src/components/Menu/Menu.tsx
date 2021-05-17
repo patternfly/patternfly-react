@@ -285,8 +285,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       activeMenu,
       ...props
     } = this.props;
-    const _isMenuDrilledIn =
-      (isMenuDrilledIn && isMenuDrilledIn) || (drilledInMenus && drilledInMenus.includes(id)) || false;
+    const _isMenuDrilledIn = isMenuDrilledIn || (drilledInMenus && drilledInMenus.includes(id)) || false;
     return (
       <MenuContext.Provider
         value={{

@@ -117,50 +117,37 @@ class MenuIconsList extends React.Component {
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 
-class MenuWithFlyout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onSelect = (event, itemId) => {
-      this.setState({
-        activeItem: itemId
-      });
-    };
+MenuWithFlyout = () => {
+  const FlyoutMenu = ({ depth, children }) => (
+    <Menu key={depth} containsFlyout id={`menu-${depth}`}>
+      <MenuList>
+        <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
+        {[...Array(10 - depth).keys()].map(j =>
+          <MenuItem key={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
+        )}
+      </MenuList>
+    </Menu>
+  );
+  let curFlyout = <FlyoutMenu depth={1} />;
+  for (let i = 2; i < 9; i++) {
+    curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
 
-  render() {
-    const { activeItem } = this.state;
-    const flyoutMenu = (
-      <Menu onSelect={this.onSelect} activeItemId={activeItem}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={10}>Application Grouping</MenuItem>
-            <MenuItem itemId={11}>Count</MenuItem>
-            <MenuItem itemId={12}>Labels</MenuItem>
-            <MenuItem itemId={13}>Annotations</MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
-
-    return (
-      <Menu containsFlyout onSelect={this.onSelect} activeItemId={activeItem}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={0}>Start rollout</MenuItem>
-            <MenuItem itemId={1}>Pause rollouts</MenuItem>
-            <MenuItem itemId={2}>Add storage</MenuItem>
-            <MenuItem description="Description" itemId={3} flyoutMenu={flyoutMenu} aria-label="Has flyout menu">
-              Edit
-            </MenuItem>
-            <MenuItem itemId={4}>Delete deployment config</MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
-  }
+  return (
+    <Menu containsFlyout>
+      <MenuContent>
+        <MenuList>
+          <MenuItem>Start rollout</MenuItem>
+          <MenuItem>Pause rollouts</MenuItem>
+          <MenuItem>Add storage</MenuItem>
+          <MenuItem description="Description" flyoutMenu={curFlyout} aria-label="Has flyout menu">
+            Edit
+          </MenuItem>
+          <MenuItem>Delete deployment config</MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
 }
 ```
 

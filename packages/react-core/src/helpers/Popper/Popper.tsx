@@ -6,12 +6,13 @@ import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 
-const hash: {
-  [key: string]: string;
-} = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+const hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
 
 const getOppositePlacement = (placement: Placement): any =>
-  placement.replace(/left|right|bottom|top/g, (matched: string) => hash[matched] as BasePlacement);
+  placement.replace(
+    /left|right|bottom|top/g,
+    (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
+  );
 
 export interface ToggleMenuBaseProps {
   /** The container to append the menu to. Defaults to 'inline'
