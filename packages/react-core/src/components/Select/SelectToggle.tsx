@@ -100,7 +100,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       onToggle(false);
       onClose();
-      this.toggle.current.focus();
     }
   };
 

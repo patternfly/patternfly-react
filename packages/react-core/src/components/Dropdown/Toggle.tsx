@@ -79,7 +79,6 @@ export class Toggle extends React.Component<ToggleProps> {
     const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       onToggle(false, event);
-      this.buttonRef.current.focus();
     }
   };
 
