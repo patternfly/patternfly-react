@@ -12,7 +12,10 @@ import {
   MenuItemAction,
   MenuContent,
   MenuInput,
-  TextInput
+  TextInput,
+  MenuFooter,
+  Button,
+  Spinner
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -29,7 +32,59 @@ export class MenuDemo extends Component {
     defaultActiveItem: 0,
     input: '',
     selectedItems: [0, 2, 3],
-    favorites: [] as string[]
+    favorites: [] as string[],
+    numOptions: 3,
+    isLoading: false
+  };
+
+  menuOptions = [
+    <MenuItem key={0} itemId={0}>
+      Action
+    </MenuItem>,
+    <MenuItem
+      key={2}
+      itemId={1}
+      to="#default-link2"
+      // just for demo so that navigation is not triggered
+      onClick={event => event.preventDefault()}
+    >
+      Link
+    </MenuItem>,
+    <MenuItem key={3} isDisabled>
+      Disabled Action
+    </MenuItem>,
+    <MenuItem key={4} isDisabled to="#default-link4">
+      Disabled Link
+    </MenuItem>,
+    <MenuItem key={5} itemId={2}>
+      Action 2
+    </MenuItem>,
+    <MenuItem key={6} itemId={3}>
+      Action 3
+    </MenuItem>,
+    <MenuItem key={7} itemId={4}>
+      Action 4
+    </MenuItem>,
+    <MenuItem key={8} itemId={5}>
+      Action 5
+    </MenuItem>,
+    <MenuItem key={9} itemId={6}>
+      Final option
+    </MenuItem>
+  ];
+
+  simulateNetworkCall = (callback: any) => {
+    setTimeout(callback, 2);
+  };
+
+  onViewMoreClick = () => {
+    // Set select loadingVariant to spinner then simulate network call before loading more options
+    this.setState({ isLoading: true });
+    this.simulateNetworkCall(() => {
+      const newLength =
+        this.state.numOptions + 3 <= this.menuOptions.length ? this.state.numOptions + 3 : this.menuOptions.length;
+      this.setState({ numOptions: newLength, isLoading: false });
+    });
   };
 
   onSimpleSelect = (event: React.MouseEvent, itemId: string) => {
@@ -560,6 +615,60 @@ export class MenuDemo extends Component {
     );
   }
 
+  renderFooterMenu() {
+    const { activeItem } = this.state;
+    return (
+      <StackItem isFilled>
+        <Title headingLevel="h2" size="2xl">
+          Footer Menu
+        </Title>
+        <Menu activeItemId={activeItem} onSelect={this.onSimpleSelect} id="menu-footer">
+          <MenuList>
+            <MenuItem itemId={0}>Action</MenuItem>
+            <MenuItem itemId={1} to="#default-link2" id="default-link2">
+              Link
+            </MenuItem>
+            <MenuItem isDisabled>Disabled Action</MenuItem>
+            <MenuItem isDisabled to="#default-link4">
+              Disabled Link
+            </MenuItem>
+          </MenuList>
+          <MenuFooter>
+            <Button variant="link" isInline>
+              Action
+            </Button>
+          </MenuFooter>
+        </Menu>
+      </StackItem>
+    );
+  }
+
+  renderViewMoreMenu() {
+    const { activeItem, numOptions, isLoading } = this.state;
+    return (
+      <StackItem isFilled>
+        <Title headingLevel="h2" size="2xl">
+          View More Menu
+        </Title>
+        <Menu activeItemId={activeItem} onSelect={this.onSimpleSelect} id="menu-view-more">
+          <MenuList>
+            {this.menuOptions.slice(0, numOptions)}
+            {numOptions !== this.menuOptions.length && (
+              <MenuItem
+                {...(!isLoading && { isLoadButton: true })}
+                {...(isLoading && { isLoading: true })}
+                onClick={this.onViewMoreClick}
+                itemId="loader"
+              >
+                {isLoading ? <Spinner size="lg" /> : 'View more'}
+              </MenuItem>
+            )}
+          </MenuList>
+        </Menu>
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
@@ -575,6 +684,8 @@ export class MenuDemo extends Component {
         {this.renderMenuWithFavorites()}
         {this.renderMenuWithSingleSelect()}
         {this.renderMenuWithMultiSelect()}
+        {this.renderFooterMenu()}
+        {this.renderViewMoreMenu()}
       </Stack>
     );
   }

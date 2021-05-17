@@ -112,6 +112,29 @@ describe('Menu Test', () => {
     cy.get('#multi-select-item-3.pf-c-menu__list-item > button').should('have.class', 'pf-m-selected');
   });
 
+  it('Verify Footer Menu', () => {
+    cy.get('#menu-footer.pf-c-menu').should('exist');
+
+    cy.get('#menu-footer .pf-c-menu__footer').should('exist');
+  });
+
+  it('Verify View More Menu', () => {
+    cy.get('#menu-view-more.pf-c-menu').should('exist');
+
+    cy.get('#menu-view-more .pf-c-menu__list')
+      .find('.pf-c-menu__list-item')
+      .should('have.length', 4);
+
+    cy.get('#menu-view-more .pf-c-menu__list-item')
+      .last()
+      .should('have.text', 'View more')
+      .click();
+
+    cy.get('#menu-view-more .pf-c-menu__list')
+      .find('.pf-c-menu__list-item')
+      .should('have.length', 7);
+  });
+
   it('Navigate to drilldown demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#menu-drilldown-demo-nav-item-link').click();

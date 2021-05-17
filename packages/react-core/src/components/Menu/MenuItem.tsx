@@ -21,6 +21,10 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isActive?: boolean;
   /** Flag indicating if the item is favorited */
   isFavorited?: boolean;
+  /** Flag indicating if the item causes a load */
+  isLoadButton?: boolean;
+  /** Flag indicating a loading state */
+  isLoading?: boolean;
   /** Callback for item click */
   onClick?: (event?: any) => void;
   /** Component used to render the menu item */
@@ -60,6 +64,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   to,
   isActive = null,
   isFavorited = null,
+  isLoadButton = false,
+  isLoading = false,
   flyoutMenu,
   direction,
   description = null as string,
@@ -242,6 +248,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
               styles.menuListItem,
               isDisabled && styles.modifiers.disabled,
               _isOnPath && styles.modifiers.currentPath,
+              isLoadButton && styles.modifiers.load,
+              isLoading && styles.modifiers.loading,
               className
             )}
             onMouseOver={flyoutMenu !== undefined ? () => showFlyout(true) : undefined}
@@ -251,7 +259,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             ref={innerRef}
             {...props}
           >
-            {renderItem(onSelect, activeItemId, selected, _isOnPath, _drill)}
+            {isLoading && children}
+            {!isLoading && renderItem(onSelect, activeItemId, selected, _isOnPath, _drill)}
             <MenuItemContext.Provider value={{ itemId, isDisabled }}>
               {actions}
               {isFavorited !== null && (
