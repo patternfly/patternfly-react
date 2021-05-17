@@ -4,17 +4,17 @@ section: developer-resources
 ---
 
 ## 2021.06 release notes (2021-05-12)
-- [@patternfly/react-catalog-view-extension@4.11.24](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.24)
+- [@patternfly/react-catalog-view-extension@4.11.25](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.25)
 - [@patternfly/react-charts@6.14.22](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.22)
-- [@patternfly/react-code-editor@4.2.58](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.58)
-- [@patternfly/react-core@4.121.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.121.0)
+- [@patternfly/react-code-editor@4.2.59](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.59)
+- [@patternfly/react-core@4.121.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.121.1)
 - [@patternfly/react-icons@4.10.7](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.7)
-- [@patternfly/react-inline-edit-extension@4.6.107](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.107)
+- [@patternfly/react-inline-edit-extension@4.6.108](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.108)
 - [@patternfly/react-styles/v/4.10.7](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.7)
-- [@patternfly/react-table@4.27.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.27.6)
+- [@patternfly/react-table@4.27.7](https://www.npmjs.com/package/@patternfly/react-table/v/4.27.7)
 - [@patternfly/react-tokens/v/4.11.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.8)
-- [@patternfly/react-topology@4.8.54](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.54)
-- [@patternfly/react-virtualized-extension@4.8.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.8.5)
+- [@patternfly/react-topology@4.8.55](https://www.npmjs.com/package/@patternfly/react-topology/v/4.8.55)
+- [@patternfly/react-virtualized-extension@4.8.6](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.8.6)
 
 ### Components
 - **Accordion:**
