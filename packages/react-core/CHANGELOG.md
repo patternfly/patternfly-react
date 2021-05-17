@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.121.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.121.0...@patternfly/react-core@4.121.1) (2021-05-17)
+
+
+### Bug Fixes
+
+* **Dropdown, Select:** fix focus on toggle after click off menu ([#5787](https://github.com/patternfly/patternfly-react/issues/5787)) ([65a522a](https://github.com/patternfly/patternfly-react/commit/65a522a6705788f1b15c4c59c89c653724b7757b))
+
+
+
+
+
 # [4.121.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.120.0...@patternfly/react-core@4.121.0) (2021-05-13)
 
 
