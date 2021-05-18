@@ -17,9 +17,7 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
           variant="danger"
         >
           <div
-            aria-atomic="false"
             aria-label="Danger Alert"
-            aria-live="polite"
             className="pf-c-alert pf-m-danger"
             data-ouia-component-id="OUIA-Generated-Alert-danger-1"
             data-ouia-component-type="PF4/Alert"
@@ -89,9 +87,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
         >
           <li>
             <div
-              aria-atomic="false"
               aria-label="Warning Alert"
-              aria-live="polite"
               class="pf-c-alert pf-m-warning"
               data-ouia-component-id="OUIA-Generated-Alert-warning-1"
               data-ouia-component-type="PF4/Alert"
@@ -146,9 +142,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             variant="warning"
           >
             <div
-              aria-atomic="false"
               aria-label="Warning Alert"
-              aria-live="polite"
               className="pf-c-alert pf-m-warning"
               data-ouia-component-id="OUIA-Generated-Alert-warning-1"
               data-ouia-component-type="PF4/Alert"
@@ -221,9 +215,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
         >
           <li>
             <div
-              aria-atomic="false"
               aria-label="Warning Alert"
-              aria-live="polite"
               class="pf-c-alert pf-m-warning"
               data-ouia-component-id="OUIA-Generated-Alert-warning-1"
               data-ouia-component-type="PF4/Alert"
@@ -431,9 +423,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
             >
               <li>
                 <div
-                  aria-atomic="false"
                   aria-label="Warning Alert"
-                  aria-live="polite"
                   class="pf-c-alert pf-m-warning"
                   data-ouia-component-id="OUIA-Generated-Alert-warning-1"
                   data-ouia-component-type="PF4/Alert"
@@ -563,9 +553,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               >
                 <li>
                   <div
-                    aria-atomic="false"
                     aria-label="Warning Alert"
-                    aria-live="polite"
                     class="pf-c-alert pf-m-warning"
                     data-ouia-component-id="OUIA-Generated-Alert-warning-1"
                     data-ouia-component-type="PF4/Alert"

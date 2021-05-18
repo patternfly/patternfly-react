@@ -12,9 +12,7 @@ exports[`Alert - danger Action Close Button 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Danger Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-4"
     data-ouia-component-type="PF4/Alert"
@@ -138,9 +136,7 @@ exports[`Alert - danger Action Link 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Danger Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-3"
     data-ouia-component-type="PF4/Alert"
@@ -164,9 +160,7 @@ exports[`Alert - danger Action and Title 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Danger Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-5"
     data-ouia-component-type="PF4/Alert"
@@ -266,9 +260,7 @@ exports[`Alert - danger Custom aria label 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Custom aria label for danger"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-6"
     data-ouia-component-type="PF4/Alert"
@@ -368,9 +360,7 @@ exports[`Alert - danger Custom icon 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="danger custom icon alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-12"
     data-ouia-component-type="PF4/Alert"
@@ -442,9 +432,7 @@ exports[`Alert - danger Description 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Danger Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-1"
     data-ouia-component-type="PF4/Alert"
@@ -461,9 +449,7 @@ exports[`Alert - danger Title 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Danger Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-2"
     data-ouia-component-type="PF4/Alert"
@@ -598,9 +584,7 @@ exports[`Alert - danger inline variation 1`] = `
   variant="danger"
 >
   <div
-    aria-atomic="false"
     aria-label="Danger Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-inline pf-m-danger"
     data-ouia-component-id="OUIA-Generated-Alert-danger-7"
     data-ouia-component-type="PF4/Alert"
@@ -671,9 +655,7 @@ exports[`Alert - default Action Close Button 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Default Alert"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-5"
     data-ouia-component-type="PF4/Alert"
@@ -797,9 +779,7 @@ exports[`Alert - default Action Link 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Default Alert"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-4"
     data-ouia-component-type="PF4/Alert"
@@ -823,9 +803,7 @@ exports[`Alert - default Action and Title 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Default Alert"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-6"
     data-ouia-component-type="PF4/Alert"
@@ -925,9 +903,7 @@ exports[`Alert - default Custom aria label 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Custom aria label for default"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-7"
     data-ouia-component-type="PF4/Alert"
@@ -1027,9 +1003,7 @@ exports[`Alert - default Custom icon 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="default custom icon alert"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-13"
     data-ouia-component-type="PF4/Alert"
@@ -1101,9 +1075,7 @@ exports[`Alert - default Description 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Default Alert"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-2"
     data-ouia-component-type="PF4/Alert"
@@ -1120,9 +1092,7 @@ exports[`Alert - default Title 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Default Alert"
-    aria-live="polite"
     className="pf-c-alert"
     data-ouia-component-id="OUIA-Generated-Alert-default-3"
     data-ouia-component-type="PF4/Alert"
@@ -1257,9 +1227,7 @@ exports[`Alert - default inline variation 1`] = `
   variant="default"
 >
   <div
-    aria-atomic="false"
     aria-label="Default Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-inline"
     data-ouia-component-id="OUIA-Generated-Alert-default-8"
     data-ouia-component-type="PF4/Alert"
@@ -1330,9 +1298,7 @@ exports[`Alert - info Action Close Button 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Info Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-4"
     data-ouia-component-type="PF4/Alert"
@@ -1456,9 +1422,7 @@ exports[`Alert - info Action Link 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Info Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-3"
     data-ouia-component-type="PF4/Alert"
@@ -1482,9 +1446,7 @@ exports[`Alert - info Action and Title 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Info Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-5"
     data-ouia-component-type="PF4/Alert"
@@ -1584,9 +1546,7 @@ exports[`Alert - info Custom aria label 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Custom aria label for info"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-6"
     data-ouia-component-type="PF4/Alert"
@@ -1686,9 +1646,7 @@ exports[`Alert - info Custom icon 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="info custom icon alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-12"
     data-ouia-component-type="PF4/Alert"
@@ -1760,9 +1718,7 @@ exports[`Alert - info Description 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Info Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-1"
     data-ouia-component-type="PF4/Alert"
@@ -1779,9 +1735,7 @@ exports[`Alert - info Title 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Info Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-2"
     data-ouia-component-type="PF4/Alert"
@@ -1916,9 +1870,7 @@ exports[`Alert - info inline variation 1`] = `
   variant="info"
 >
   <div
-    aria-atomic="false"
     aria-label="Info Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-inline pf-m-info"
     data-ouia-component-id="OUIA-Generated-Alert-info-7"
     data-ouia-component-type="PF4/Alert"
@@ -1989,9 +1941,7 @@ exports[`Alert - success Action Close Button 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Success Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-4"
     data-ouia-component-type="PF4/Alert"
@@ -2115,9 +2065,7 @@ exports[`Alert - success Action Link 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Success Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-3"
     data-ouia-component-type="PF4/Alert"
@@ -2141,9 +2089,7 @@ exports[`Alert - success Action and Title 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Success Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-5"
     data-ouia-component-type="PF4/Alert"
@@ -2243,9 +2189,7 @@ exports[`Alert - success Custom aria label 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Custom aria label for success"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-6"
     data-ouia-component-type="PF4/Alert"
@@ -2345,9 +2289,7 @@ exports[`Alert - success Custom icon 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="success custom icon alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-12"
     data-ouia-component-type="PF4/Alert"
@@ -2419,9 +2361,7 @@ exports[`Alert - success Description 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Success Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-1"
     data-ouia-component-type="PF4/Alert"
@@ -2438,9 +2378,7 @@ exports[`Alert - success Title 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Success Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-2"
     data-ouia-component-type="PF4/Alert"
@@ -2575,9 +2513,7 @@ exports[`Alert - success inline variation 1`] = `
   variant="success"
 >
   <div
-    aria-atomic="false"
     aria-label="Success Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-inline pf-m-success"
     data-ouia-component-id="OUIA-Generated-Alert-success-7"
     data-ouia-component-type="PF4/Alert"
@@ -2648,9 +2584,7 @@ exports[`Alert - warning Action Close Button 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Warning Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-4"
     data-ouia-component-type="PF4/Alert"
@@ -2774,9 +2708,7 @@ exports[`Alert - warning Action Link 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Warning Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-3"
     data-ouia-component-type="PF4/Alert"
@@ -2800,9 +2732,7 @@ exports[`Alert - warning Action and Title 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Warning Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-5"
     data-ouia-component-type="PF4/Alert"
@@ -2902,9 +2832,7 @@ exports[`Alert - warning Custom aria label 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Custom aria label for warning"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-6"
     data-ouia-component-type="PF4/Alert"
@@ -3004,9 +2932,7 @@ exports[`Alert - warning Custom icon 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="warning custom icon alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-12"
     data-ouia-component-type="PF4/Alert"
@@ -3078,9 +3004,7 @@ exports[`Alert - warning Description 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Warning Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-1"
     data-ouia-component-type="PF4/Alert"
@@ -3097,9 +3021,7 @@ exports[`Alert - warning Title 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Warning Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-2"
     data-ouia-component-type="PF4/Alert"
@@ -3234,9 +3156,7 @@ exports[`Alert - warning inline variation 1`] = `
   variant="warning"
 >
   <div
-    aria-atomic="false"
     aria-label="Warning Alert"
-    aria-live="polite"
     className="pf-c-alert pf-m-inline pf-m-warning"
     data-ouia-component-id="OUIA-Generated-Alert-warning-7"
     data-ouia-component-type="PF4/Alert"
