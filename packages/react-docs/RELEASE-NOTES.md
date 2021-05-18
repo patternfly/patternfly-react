@@ -60,7 +60,7 @@ section: developer-resources
 
 ### Table
 - Updated to allow for more customizable Table actions ([#5744](https://github.com/patternfly/patternfly-react/pull/5744))
-- Added a prop to to forward additional props to select rowData ([#5770](https://github.com/patternfly/patternfly-react/pull/5770))
+- Added a prop to forward additional props to select rowData ([#5770](https://github.com/patternfly/patternfly-react/pull/5770))
 
 ### Other
 - **Chore:** 
