@@ -806,7 +806,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       );
     }
 
-    let filterWithChildren = children;
     if (hasInlineFilter) {
       const filterBox = (
         <React.Fragment>
@@ -846,7 +845,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         </React.Fragment>
       );
       this.refCollection[0][0] = this.filterRef.current;
-      filterWithChildren = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
+      renderableItems = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
         React.cloneElement(option, { key: index })
       );
     }
@@ -865,6 +864,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         case 'single':
           variantProps = {
             selected: selections[0],
+            hasInlineFilter,
             openedOnEnter
           };
           variantChildren = renderableItems;
@@ -876,7 +876,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             hasInlineFilter,
             openedOnEnter
           };
-          variantChildren = filterWithChildren;
+          variantChildren = renderableItems;
           break;
         case 'typeahead':
           variantProps = {

@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { SelectOptionObject, SelectOption } from './SelectOption';
-import { SelectConsumer, SelectVariant } from './selectConstants';
+import { SelectConsumer, SelectVariant, SelectContextInterface } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 
 import { SelectGroup } from './SelectGroup';
@@ -168,7 +168,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     );
   }
 
-  render() {
+  renderSelectMenu({ variant, inputIdPrefix }: SelectContextInterface) {
     /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
@@ -192,84 +192,59 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       footerRef,
       ...props
     } = this.props;
-    const footerRenderer = (
-      <div className={css(styles.selectMenuFooter)} ref={footerRef}>
-        {footer}
-      </div>
-    );
     /* eslint-enable @typescript-eslint/no-unused-vars */
+    let Component = 'div';
+    const variantProps = {
+      ref: innerRef,
+      className: css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className),
+      ...(maxHeight && { style: { maxHeight, overflow: 'auto' } })
+    } as React.HTMLAttributes<HTMLElement>;
+    const extendedChildren = () =>
+      variant === SelectVariant.checkbox
+        ? this.extendCheckboxChildren(children as React.ReactElement[])
+        : this.extendChildren(inputIdPrefix);
+
+    if (isCustomContent) {
+      variantProps.children = children;
+    } else if (hasInlineFilter) {
+      if (React.Children.count(children) === 0) {
+        variantProps.children = <fieldset className={css(styles.selectMenuFieldset)} />;
+      } else {
+        variantProps.children = (
+          <fieldset
+            aria-label={ariaLabel}
+            aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+            className={css(formStyles.formFieldset)}
+          >
+            {(children as React.ReactElement[]).shift()}
+            {extendedChildren()}
+          </fieldset>
+        );
+      }
+    } else {
+      variantProps.children = extendedChildren();
+      if (isGrouped) {
+        Component = 'ul';
+        variantProps.role = 'listbox';
+        variantProps['aria-label'] = ariaLabel;
+        variantProps['aria-labelledby'] = (!ariaLabel && ariaLabelledBy) || null;
+      }
+    }
+
     return (
-      <SelectConsumer>
-        {({ variant, inputIdPrefix }) => (
-          <React.Fragment>
-            {isCustomContent && (
-              <div
-                ref={innerRef}
-                className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                {...props}
-              >
-                {children}
-              </div>
-            )}
-            {variant !== SelectVariant.checkbox &&
-              !isCustomContent &&
-              (!isGrouped ? (
-                <ul
-                  ref={innerRef}
-                  className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
-                  role="listbox"
-                  aria-label={ariaLabel}
-                  aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                  {...props}
-                >
-                  {this.extendChildren(inputIdPrefix)}
-                </ul>
-              ) : (
-                <div
-                  ref={innerRef}
-                  className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
-                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                  {...props}
-                >
-                  {this.extendChildren(inputIdPrefix)}
-                </div>
-              ))}
-            {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
-              <div
-                ref={innerRef}
-                className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-              >
-                <fieldset
-                  {...props}
-                  aria-label={ariaLabel}
-                  aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-                  className={css(formStyles.formFieldset)}
-                >
-                  {hasInlineFilter && [
-                    (children as React.ReactElement[]).shift(),
-                    ...this.extendCheckboxChildren(children as React.ReactElement[])
-                  ]}
-                  {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
-                </fieldset>
-              </div>
-            )}
-            {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
-              <div
-                ref={innerRef}
-                className={css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className)}
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-              >
-                <fieldset className={css(styles.selectMenuFieldset)} />
-              </div>
-            )}
-            {footer && footerRenderer}
-          </React.Fragment>
+      <React.Fragment>
+        <Component {...variantProps} {...props} />
+        {footer && (
+          <div className={css(styles.selectMenuFooter)} ref={footerRef}>
+            {footer}
+          </div>
         )}
-      </SelectConsumer>
+      </React.Fragment>
     );
+  }
+
+  render() {
+    return <SelectConsumer>{context => this.renderSelectMenu(context)}</SelectConsumer>;
   }
 }
 
