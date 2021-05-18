@@ -2,6 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { List, ListVariant, ListComponent, OrderType } from '../List';
 import { ListItem } from '../ListItem';
+import BookOpen from '@patternfly/react-icons/dist/js/icons/book-open-icon';
+import Key from '@patternfly/react-icons/dist/js/icons/key-icon';
+import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
 
 const ListItems = () => (
   <React.Fragment>
@@ -72,5 +75,45 @@ describe('list', () => {
       </List>
     );
     expect(view.find('ol.pf-m-inline').length).toBe(1);
+  });
+
+  test('bordered list', () => {
+    const view = mount(
+      <List isBordered>
+        <ListItems />
+      </List>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('plain list', () => {
+    const view = mount(
+      <List isPlain>
+        <ListItems />
+      </List>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('icon list', () => {
+    const view = mount(
+      <List isPlain>
+        <ListItem icon={<BookOpen />}>Apple</ListItem>
+        <ListItem icon={<Key />}>Banana</ListItem>
+        <ListItem icon={<Desktop />}>Orange</ListItem>
+      </List>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('icon large list', () => {
+    const view = mount(
+      <List iconSize='large'>
+        <ListItem icon={<BookOpen />}>Apple</ListItem>
+        <ListItem icon={<Key />}>Banana</ListItem>
+        <ListItem icon={<Desktop />}>Orange</ListItem>
+      </List>
+    );
+    expect(view).toMatchSnapshot();
   });
 });
