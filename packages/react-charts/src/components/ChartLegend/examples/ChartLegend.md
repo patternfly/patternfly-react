@@ -452,6 +452,130 @@ class InteractiveLegendChart extends React.Component {
 }
 ```
 
+### Interactive legend with pie chart
+
+This demonstrates how to add an interactive legend to a pie chart using events such as `onMouseOver`, `onMouseOut`, and `onClick`.
+
+```js
+import React from 'react';
+import { 
+  Chart,
+  ChartLegend,
+  ChartThemeColor,
+  ChartPie,
+  getInteractiveLegendEvents, 
+  getInteractiveLegendItemStyles 
+} from '@patternfly/react-charts';
+
+class InteractivePieLegendChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.state = {
+      hiddenSeries: new Set(),
+      width: 0
+    };
+    this.series = [{
+      datapoints: { x: 'Cats', y: 35 },
+      legendItem: { name: 'Cats: 35' }
+    }, {
+      datapoints: { x: 'Dogs', y: 55 },
+      legendItem: { name: 'Dogs: 55' }
+    }, {
+      datapoints: { x: 'Birds', y: 10 },
+      legendItem: { name: 'Birds: 10' }
+    }];
+
+    // Returns groups of chart names associated with each data series
+    this.getChartNames = () => {
+      const result = [];
+      this.series.map((_, index) => {
+        // Provide names for each series hidden / shown -- use the same name for a pie chart
+        result.push(['pie']);
+      });
+      return result;
+    };
+
+    // Returns onMouseOver, onMouseOut, and onClick events for the interactive legend
+    this.getEvents = () => getInteractiveLegendEvents({
+      chartNames: this.getChartNames(),
+      isHidden: this.isHidden,
+      legendName: 'legend',
+      onLegendClick: this.handleLegendClick
+    });
+
+    // Returns legend data styled per hiddenSeries
+    this.getLegendData = () => {
+      const { hiddenSeries } = this.state;
+      return this.series.map((s, index) => {
+        return {
+          childName: 'pie', // Sync tooltip legend with the series associated with given chart name
+          ...s.legendItem, // name property
+          ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
+        };
+      });
+    };
+
+    // Hide each data series individually
+    this.handleLegendClick = (props) => {
+      if (!this.state.hiddenSeries.delete(props.index)) {
+        this.state.hiddenSeries.add(props.index);
+      }
+      this.setState({ hiddenSeries: new Set(this.state.hiddenSeries) });
+    };
+
+    // Returns true if data series is hidden
+    this.isHidden = (index) => {
+      const { hiddenSeries } = this.state; // Skip if already hidden                
+      return hiddenSeries.has(index);
+    };
+
+    this.isDataAvailable = () => {
+      const { hiddenSeries } = this.state;
+      return hiddenSeries.size !== this.series.length;
+    };
+  };
+
+  render() {
+    const { hiddenSeries, width } = this.state;
+
+    const data = [];
+    this.series.map((s, index) => {
+      data.push(!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]);
+    });
+
+    return (
+      <div style={{ height: '275px', width: '300px' }}>
+        <Chart
+          ariaDesc="Average number of pets"
+          ariaTitle="Pie chart example"
+          events={this.getEvents()}
+          height={275}
+          labels={({ datum }) => `${datum.x}: ${datum.y}`}
+          legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+          legendPosition="bottom"
+          padding={{
+            bottom: 65,
+            left: 20,
+            right: 20,
+            top: 20
+          }}
+          showAxis={false}
+          themeColor={ChartThemeColor.multiUnordered}
+          width={300}
+        >
+          <ChartPie
+            constrainToVisibleArea={true}
+            data={data}
+            name="pie"
+          />
+        </Chart>
+      </div>
+    );
+  }
+}
+```
+
 ### Legend tooltips
 
 This demonstrates an approach for applying tooltips to a legend using a custom label component. These tooltips are keyboard navigable.

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
+/* eslint-disable camelcase */
+import chart_legend_Margin from '@patternfly/react-tokens/dist/js/chart_legend_Margin';
+
 import {
   AnimatePropTypeInterface,
   D3Scale,
@@ -17,6 +20,7 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
+import { ChartAxis } from '../ChartAxis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -337,6 +341,11 @@ export interface ChartProps extends VictoryChartProps {
    */
   sharedEvents?: { events: any[]; getEventState: Function };
   /**
+   * Convenience prop to hide both x and y axis, which are shown by default. Alternatively, the axis can be hidden via
+   * chart styles.
+   */
+  showAxis?: boolean;
+  /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the
    * desired behavior in most cases. For users that need to apply padding without regard to quadrant, the
@@ -420,6 +429,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   padding,
+  showAxis = true,
   themeColor,
   themeVariant,
 
@@ -454,6 +464,34 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...legendComponent.props
   });
 
+  const getAxis = () => {
+    const Noop = (): any => null;
+
+    // Do nothing to show axis by default
+    if (showAxis) {
+      return null;
+    }
+    return (
+      <React.Fragment>
+        <ChartAxis
+          axisComponent={<Noop />}
+          axisLabelComponent={<Noop />}
+          gridComponent={<Noop />}
+          tickComponent={<Noop />}
+          tickLabelComponent={<Noop />}
+        />
+        <ChartAxis
+          axisComponent={<Noop />}
+          axisLabelComponent={<Noop />}
+          gridComponent={<Noop />}
+          tickComponent={<Noop />}
+          tickLabelComponent={<Noop />}
+          dependentAxis
+        />
+      </React.Fragment>
+    );
+  };
+
   // Returns a computed legend
   const getLegend = () => {
     if (!legend.props.data) {
@@ -478,6 +516,12 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       dy += xAxisLabelHeight + legendTitleHeight;
       dx = -10;
     }
+
+    // Adjust legend position when axis is hidden
+    if (!showAxis) {
+      dy -= chart_legend_Margin.value;
+    }
+
     return getComputedLegend({
       allowWrap: legendAllowWrap,
       chartType: 'chart',
@@ -503,6 +547,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       width={width}
       {...rest}
     >
+      {getAxis()}
       {children}
       {getLegend()}
     </VictoryChartWithContainerComponent>

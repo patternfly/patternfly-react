@@ -116,10 +116,16 @@ const getInteractiveLegendTargetEvents = ({
                       ? null
                       : ({
                           // Skip if hidden
-                          style: {
-                            ...props.style,
-                            opacity: chart_area_Opacity.value
-                          }
+                          style:
+                            props.padAngle !== undefined // Support for pie chart
+                              ? {
+                                  ...props.style,
+                                  ...(index !== props.index && { opacity: chart_area_Opacity.value })
+                                }
+                              : {
+                                  ...props.style,
+                                  opacity: chart_area_Opacity.value
+                                }
                         } as any)
                 },
                 {
