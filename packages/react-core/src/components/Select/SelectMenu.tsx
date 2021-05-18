@@ -244,7 +244,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   }
 
   render() {
-    return <SelectConsumer>{this.renderSelectMenu}</SelectConsumer>;
+    return <SelectConsumer>{context => this.renderSelectMenu(context)}</SelectConsumer>;
   }
 }
 
