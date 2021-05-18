@@ -50,6 +50,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Set a custom icon to the Alert. If not set the icon is set according to the variant */
   customIcon?: React.ReactNode;
+  handleDismiss?: boolean;
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
@@ -73,6 +74,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   customIcon,
   onMouseEnter = () => {},
   onMouseLeave = () => {},
+  handleDismiss = false,
   ...props
 }: AlertProps) => {
   const ouiaProps = useOUIAProps(Alert.displayName, ouiaId, ouiaSafe, variant);
@@ -101,13 +103,18 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   const [timedOutAnimation, setTimedOutAnimation] = useState(true);
   const [isMouseOver, setIsMouseOver] = useState<boolean | undefined>();
   const [containsFocus, setContainsFocus] = useState<boolean | undefined>();
-  const [isDismissed, setIsDismissed] = useState<boolean | false>();
+  const dismissed = handleDismiss ? false : timedOut && timedOutAnimation && !isMouseOver && !containsFocus;
 
   React.useEffect(() => {
-    if (title && !isDismissed) {
-      setIsDismissed(timedOut && timedOutAnimation && !isMouseOver && !containsFocus);
+    timeout = timeout === true ? 8000 : Number(timeout);
+    if (timeout > 0) {
+      const timer = setTimeout(() => {
+        setTimedOut(true);
+        handleDismiss && onTimeout();
+      }, timeout);
+      return () => clearTimeout(timer);
     }
-  }, [timedOut, timedOutAnimation, isMouseOver, containsFocus, title]);
+  }, [title, handleDismiss]);
 
   React.useEffect(() => {
     timeout = timeout === true ? 8000 : Number(timeout);
@@ -138,9 +145,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       return () => clearTimeout(timer);
     }
   }, [containsFocus, isMouseOver]);
-  React.useEffect(() => {
-    isDismissed && onTimeout();
-  }, [isDismissed]);
+  if (!handleDismiss && dismissed) {
+    return null;
+  }
 
   const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(true);
@@ -173,8 +180,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         className
       )}
       aria-label={ariaLabel}
-      aria-live={'polite'}
-      aria-atomic={'false'}
       {...ouiaProps}
       {...(isLiveRegion && {
         'aria-live': 'polite',
@@ -184,7 +189,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       onMouseLeave={myOnMouseLeave}
       {...props}
     >
-      {title && !isDismissed ? (
+      {title && (
         <React.Fragment>
           <AlertIcon variant={variant} customIcon={customIcon} />
           {isTooltipVisible ? (
@@ -202,7 +207,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
           {children && <div className={css(styles.alertDescription)}>{children}</div>}
           {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
         </React.Fragment>
-      ) : null}
+      )}
     </div>
   );
 };

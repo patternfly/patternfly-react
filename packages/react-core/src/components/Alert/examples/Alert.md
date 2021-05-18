@@ -237,9 +237,9 @@ class DynamicLiveRegionAlert extends React.Component {
             Add Single Danger Alert
           </button>
         </InputGroup>
-        <Alert variant='success' key={getUniqueId} title={this.state.successTitle}/>
-        <Alert variant='info' key={getUniqueId} title={this.state.infoTitle}/>
-        <Alert variant='danger' key={getUniqueId} title={this.state.dangerTitle}/>
+        <Alert isLiveRegion variant='success' key={getUniqueId} title={this.state.successTitle}/>
+        <Alert isLiveRegion variant='info' key={getUniqueId} title={this.state.infoTitle}/>
+        <Alert isLiveRegion variant='danger' key={getUniqueId} title={this.state.dangerTitle}/>
       </React.Fragment>
     );
   }
@@ -286,7 +286,7 @@ class AsyncLiveRegionAlert extends React.Component {
             Stop Async Info Alert
           </button>
         </InputGroup>
-          <Alert variant='info' title={this.state.asyncTitle} key={getUniqueId()} />
+          <Alert isLiveRegion variant='info' title={this.state.asyncTitle} key={getUniqueId()} />
       </React.Fragment>
     );
   }
@@ -304,20 +304,30 @@ class AlertTimeout extends React.Component {
     this.state = {
       title: ''
     };
+    this.onTimeout = () => {
+      this.setState({
+        title: ''
+      });
+    }
     this.onClick = () => {
-      this.setState(prevState => {
-        console.log('prevState', prevState)
-        title: prevState.title === "First alert title" ? "Second alert title" : "First alert title"
-      })
+      console.log(this.state.title)
+      if (this.state.title) {
+        this.setState({
+          title: ''
+        });
+      } else {
+        this.setState({
+          title: 'Single Success Alert'
+        });
+      }
     };
   }
-
   render() {
-    const timeout = 8000;
+    const timeout = 3000;
     return (
       <React.Fragment>
         <Button variant="secondary" onClick={this.onClick}>Add alert</Button>
-        <Alert title={this.state.title} timeout={timeout} onTimeout={this.onClick} actionLinks={
+        <Alert isLiveRegion title={this.state.title} timeout={timeout} onTimeout={this.onTimeout} handleDismiss actionLinks={
           <React.Fragment>
             <AlertActionLink>View details</AlertActionLink>
             <AlertActionLink>Ignore</AlertActionLink>
