@@ -704,7 +704,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 }
 ```
 
-### Single checkbox input with filtering
+### Grouped single with filtering
 
 ```js
 import React from 'react';
