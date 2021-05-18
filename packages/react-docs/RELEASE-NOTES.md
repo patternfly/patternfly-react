@@ -3,13 +3,14 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2021.06 release notes (2021-05-12)
+## 2021.06 release notes (2021-05-14)
 - [@patternfly/react-catalog-view-extension@4.11.25](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.25)
 - [@patternfly/react-charts@6.14.22](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.22)
 - [@patternfly/react-code-editor@4.2.59](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.59)
 - [@patternfly/react-core@4.121.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.121.1)
 - [@patternfly/react-icons@4.10.7](https://www.npmjs.com/package/@patternfly/react-icons/v/4.10.7)
 - [@patternfly/react-inline-edit-extension@4.6.108](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.6.108)
+- [@patternfly/react-log-viewer@4.1.2](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.1.2)
 - [@patternfly/react-styles/v/4.10.7](https://www.npmjs.com/package/@patternfly/react-styles/v/4.10.7)
 - [@patternfly/react-table@4.27.7](https://www.npmjs.com/package/@patternfly/react-table/v/4.27.7)
 - [@patternfly/react-tokens/v/4.11.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.11.8)
