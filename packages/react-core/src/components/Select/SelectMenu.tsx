@@ -223,7 +223,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       }
     } else {
       variantProps.children = extendedChildren();
-      if (isGrouped) {
+      if (!isGrouped) {
         Component = 'ul';
         variantProps.role = 'listbox';
         variantProps['aria-label'] = ariaLabel;
@@ -244,7 +244,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   }
 
   render() {
-    return <SelectConsumer>{context => this.renderSelectMenu(context)}</SelectConsumer>;
+    return <SelectConsumer>{this.renderSelectMenu}</SelectConsumer>;
   }
 }
 

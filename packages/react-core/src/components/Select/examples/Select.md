@@ -735,9 +735,7 @@ class FilteringSingleSelectInput extends React.Component {
     ];
 
     this.onToggle = isOpen => {
-      this.setState({
-        isOpen
-      });
+      this.setState({ isOpen });
     };
 
     this.onSelect = (event, selection) => {
