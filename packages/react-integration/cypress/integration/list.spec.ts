@@ -26,7 +26,11 @@ describe('List Demo Test', () => {
   });
 
   it('Verify icon list', () => {
-    cy.get('#list-icon .pf-c-list__item-icon').should('exist');
+    cy.get('#list-icon')
+      .children('.pf-c-list__item')
+      .should('exist')
+      .children('.pf-c-list__item-icon')
+      .should('exist');
   });
 
   it('Verify icon large list', () => {

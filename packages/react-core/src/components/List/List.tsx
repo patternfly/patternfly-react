@@ -30,7 +30,7 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   isBordered?: boolean;
   /** Modifies the list to include plain styling */
   isPlain?: boolean;
-  /** Modifies the list to include plain styling */
+  /** Modifies the size of the icons in the list */
   iconSize?: 'default' | 'large';
   /** Sets the way items are numbered if variant is set to ordered */
   type?: OrderType;

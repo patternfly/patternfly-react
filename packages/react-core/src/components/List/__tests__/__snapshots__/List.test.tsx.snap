@@ -13,17 +13,23 @@ exports[`list bordered list 1`] = `
           className="pf-c-list"
         >
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               First
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Second
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Third
             </li>
           </ListItem>
@@ -50,7 +56,9 @@ exports[`list icon large list 1`] = `
         />
       }
     >
-      <li>
+      <li
+        className="pf-c-list__item"
+      >
         <span
           className="pf-c-list__item-icon"
         >
@@ -91,7 +99,9 @@ exports[`list icon large list 1`] = `
         />
       }
     >
-      <li>
+      <li
+        className="pf-c-list__item"
+      >
         <span
           className="pf-c-list__item-icon"
         >
@@ -132,7 +142,9 @@ exports[`list icon large list 1`] = `
         />
       }
     >
-      <li>
+      <li
+        className="pf-c-list__item"
+      >
         <span
           className="pf-c-list__item-icon"
         >
@@ -184,7 +196,9 @@ exports[`list icon list 1`] = `
         />
       }
     >
-      <li>
+      <li
+        className="pf-c-list__item"
+      >
         <span
           className="pf-c-list__item-icon"
         >
@@ -225,7 +239,9 @@ exports[`list icon list 1`] = `
         />
       }
     >
-      <li>
+      <li
+        className="pf-c-list__item"
+      >
         <span
           className="pf-c-list__item-icon"
         >
@@ -266,7 +282,9 @@ exports[`list icon list 1`] = `
         />
       }
     >
-      <li>
+      <li
+        className="pf-c-list__item"
+      >
         <span
           className="pf-c-list__item-icon"
         >
@@ -315,17 +333,23 @@ exports[`list inline list 1`] = `
           className="pf-c-list"
         >
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               First
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Second
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Third
             </li>
           </ListItem>
@@ -349,17 +373,23 @@ exports[`list plain list 1`] = `
           className="pf-c-list"
         >
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               First
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Second
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Third
             </li>
           </ListItem>
@@ -381,17 +411,23 @@ exports[`list simple list 1`] = `
           className="pf-c-list"
         >
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               First
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Second
             </li>
           </ListItem>
           <ListItem>
-            <li>
+            <li
+              className=""
+            >
               Third
             </li>
           </ListItem>
