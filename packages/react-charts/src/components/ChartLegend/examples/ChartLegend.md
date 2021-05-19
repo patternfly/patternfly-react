@@ -509,7 +509,6 @@ class InteractivePieLegendChart extends React.Component {
       const { hiddenSeries } = this.state;
       return this.series.map((s, index) => {
         return {
-          childName: 'pie', // Sync tooltip legend with the series associated with given chart name
           ...s.legendItem, // name property
           ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
         };

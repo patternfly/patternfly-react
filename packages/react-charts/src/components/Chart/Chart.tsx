@@ -20,7 +20,6 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
-import { ChartAxis } from '../ChartAxis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -464,34 +463,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...legendComponent.props
   });
 
-  const getAxis = () => {
-    const Noop = (): any => null;
-
-    // Do nothing to show axis by default
-    if (showAxis) {
-      return null;
-    }
-    return (
-      <React.Fragment>
-        <ChartAxis
-          axisComponent={<Noop />}
-          axisLabelComponent={<Noop />}
-          gridComponent={<Noop />}
-          tickComponent={<Noop />}
-          tickLabelComponent={<Noop />}
-        />
-        <ChartAxis
-          axisComponent={<Noop />}
-          axisLabelComponent={<Noop />}
-          gridComponent={<Noop />}
-          tickComponent={<Noop />}
-          tickLabelComponent={<Noop />}
-          dependentAxis
-        />
-      </React.Fragment>
-    );
-  };
-
   // Returns a computed legend
   const getLegend = () => {
     if (!legend.props.data) {
@@ -536,8 +507,15 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     });
   };
 
-  // Note: containerComponent is required for theme
   const VictoryChartWithContainerComponent = VictoryChart as any;
+
+  if (!showAxis) {
+    const Null = (): any => null;
+    VictoryChartWithContainerComponent.defaultProps.defaultAxes.dependent = <Null />;
+    VictoryChartWithContainerComponent.defaultProps.defaultAxes.independent = <Null />;
+  }
+
+  // Note: containerComponent is required for theme
   return (
     <VictoryChartWithContainerComponent
       containerComponent={container}
@@ -547,7 +525,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       width={width}
       {...rest}
     >
-      {getAxis()}
       {children}
       {getLegend()}
     </VictoryChartWithContainerComponent>
