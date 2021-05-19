@@ -7,6 +7,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
+import { canUseDOM } from '../../helpers/util';
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -57,6 +58,10 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   innerRef?: React.Ref<HTMLLIElement>;
 }
 
+const FlyoutContext = React.createContext({
+  direction: 'right' as 'left' | 'right'
+});
+
 export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
@@ -81,15 +86,53 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   isOnPath,
   ...props
 }: MenuItemProps) => {
+  const {
+    menuId,
+    parentMenu,
+    onSelect,
+    onActionClick,
+    activeItemId,
+    selected,
+    drilldownItemPath,
+    onDrillIn,
+    onDrillOut
+  } = React.useContext(MenuContext);
   const Component = component || to ? 'a' : 'button';
   const [flyoutVisible, setFlyoutVisible] = React.useState(false);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
+  const flyoutContext = React.useContext(FlyoutContext);
+  const [flyoutDirection, setFlyoutDirection] = React.useState(flyoutContext.direction);
   const ref = React.useRef<HTMLLIElement>();
 
+  const hasFlyout = flyoutMenu !== undefined;
   const showFlyout = (displayFlyout: boolean) => {
     setFlyoutVisible(displayFlyout);
     onShowFlyout && displayFlyout && onShowFlyout();
   };
+
+  React.useLayoutEffect(() => {
+    if (hasFlyout && ref.current && canUseDOM) {
+      const flyoutMenu = ref.current.lastElementChild;
+      if (flyoutMenu && flyoutMenu.classList.contains(styles.menu)) {
+        const rect = flyoutMenu.getClientRects()[0];
+        if (rect) {
+          const overlapsRight = rect.x + rect.width > window.innerWidth;
+          const overlapsLeft = rect.x - rect.width < 0;
+          if (overlapsRight && overlapsLeft) {
+            // We don't have styles for this right now.
+          } else if (overlapsRight) {
+            setFlyoutDirection('left');
+          } else if (overlapsLeft) {
+            setFlyoutDirection('right');
+          }
+        }
+      }
+    }
+  }, [showFlyout, flyoutMenu]);
+
+  React.useEffect(() => {
+    setFlyoutDirection(flyoutContext.direction);
+  }, [flyoutContext]);
 
   React.useEffect(() => {
     if (flyoutTarget) {
@@ -129,157 +172,125 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     // Trigger callback for item onClick
     onClick && onClick(event);
   };
-
-  const renderItem = (
-    onSelect: any,
-    activeItemId: any,
-    selected: any | any[],
-    isOnPath: boolean,
-    drill: () => void
-  ): React.ReactNode => {
-    let additionalProps = {};
-    if (Component === 'a') {
-      additionalProps = {
-        href: to,
-        'aria-disabled': isDisabled ? true : null
-      };
-    } else if (Component === 'button') {
-      additionalProps = {
-        type: 'button'
-      };
+  const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
+  let _drill: () => void;
+  if (direction) {
+    if (direction === 'down') {
+      _drill = () => onDrillIn && onDrillIn(menuId, (drilldownMenu as React.ReactElement).props.id, itemId);
+    } else {
+      _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
     }
-    if (isOnPath) {
-      (additionalProps as any)['aria-expanded'] = true;
+  }
+  let additionalProps = {};
+  if (Component === 'a') {
+    additionalProps = {
+      href: to,
+      'aria-disabled': isDisabled ? true : null
+    };
+  } else if (Component === 'button') {
+    additionalProps = {
+      type: 'button'
+    };
+  }
+  if (isOnPath) {
+    (additionalProps as any)['aria-expanded'] = true;
+  }
+  const getAriaCurrent = () => {
+    if (isActive !== null) {
+      if (isActive) {
+        return 'page';
+      } else {
+        return null;
+      }
+    } else if (itemId !== null && activeItemId !== null) {
+      return itemId === activeItemId;
     }
-    const getAriaCurrent = () => {
-      if (isActive !== null) {
-        if (isActive) {
-          return 'page';
-        } else {
-          return null;
-        }
-      } else if (itemId !== null && activeItemId !== null) {
-        return itemId === activeItemId;
-      }
-      return null;
-    };
-    const getIsSelected = () => {
-      if (isSelected !== null) {
-        return isSelected;
-      } else if (selected !== null && itemId !== null) {
-        return (Array.isArray(selected) && selected.includes(itemId)) || itemId === selected;
-      }
-      return false;
-    };
-    return (
-      <>
-        <Component
-          onClick={(event: any) => {
-            onItemSelect(event, onSelect);
-            drill && drill();
-          }}
-          className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
-          aria-current={getAriaCurrent()}
-          tabIndex={-1}
-          {...(isDisabled && { disabled: true })}
-          {...additionalProps}
-        >
-          <span className={css(styles.menuItemMain)}>
-            {direction === 'up' && (
-              <span className={css(styles.menuItemToggleIcon)}>
-                <AngleLeftIcon aria-hidden />
-              </span>
-            )}
-            {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-            <span className={css(styles.menuItemText)}>{children}</span>
-            {isExternalLink && (
-              <span className={css(styles.menuItemExternalIcon)}>
-                <ExternalLinkAltIcon aria-hidden />
-              </span>
-            )}
-            {(flyoutMenu || direction === 'down') && (
-              <span className={css(styles.menuItemToggleIcon)}>
-                <AngleRightIcon aria-hidden />
-              </span>
-            )}
-            {getIsSelected() && (
-              <span className={css(styles.menuItemSelectIcon)}>
-                <CheckIcon aria-hidden />
-              </span>
-            )}
-          </span>
-          {description && direction !== 'up' && (
-            <span className={css(styles.menuItemDescription)}>
-              <span>{description}</span>
-            </span>
-          )}
-        </Component>
-        {drilldownMenu}
-        {flyoutVisible && flyoutMenu}
-      </>
-    );
+    return null;
+  };
+  const getIsSelected = () => {
+    if (isSelected !== null) {
+      return isSelected;
+    } else if (selected !== null && itemId !== null) {
+      return (Array.isArray(selected) && selected.includes(itemId)) || itemId === selected;
+    }
+    return false;
   };
 
   return (
-    <MenuContext.Consumer>
-      {({
-        menuId,
-        parentMenu,
-        onSelect,
-        onActionClick,
-        activeItemId,
-        selected,
-        drilldownItemPath,
-        onDrillIn,
-        onDrillOut
-      }) => {
-        const _isOnPath = (isOnPath && isOnPath) || (drilldownItemPath && drilldownItemPath.includes(itemId)) || false;
-        let _drill: () => void;
-        if (direction) {
-          if (direction === 'down') {
-            _drill = () => onDrillIn && onDrillIn(menuId, (drilldownMenu as React.ReactElement).props.id, itemId);
-          } else {
-            _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
-          }
-        }
-        const item = renderItem(onSelect, activeItemId, selected, _isOnPath, _drill);
-        const hasFlyout = flyoutMenu !== undefined;
-        return (
-          <li
-            className={css(
-              styles.menuListItem,
-              isDisabled && styles.modifiers.disabled,
-              _isOnPath && styles.modifiers.currentPath,
-              isLoadButton && styles.modifiers.load,
-              isLoading && styles.modifiers.loading,
-              className
-            )}
-            onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
-            // onMouseLeave={hasFlyout ? () => showFlyout(false) : undefined}
-            {...(flyoutMenu && { onKeyDown: handleFlyout })}
+    <li
+      className={css(
+        styles.menuListItem,
+        isDisabled && styles.modifiers.disabled,
+        _isOnPath && styles.modifiers.currentPath,
+        flyoutDirection === 'left' && styles.modifiers.menuLeft,
+        className
+      )}
+      onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
+      onMouseLeave={hasFlyout ? () => showFlyout(false) : undefined}
+      {...(flyoutMenu && { onKeyDown: handleFlyout })}
+      tabIndex={-1}
+      ref={ref}
+      {...props}
+    >
+      <Component
+        onClick={(event: any) => {
+          onItemSelect(event, onSelect);
+          _drill && _drill();
+        }}
+        className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
+        aria-current={getAriaCurrent()}
+        tabIndex={-1}
+        {...(isDisabled && { disabled: true })}
+        {...additionalProps}
+      >
+        <span className={css(styles.menuItemMain)}>
+          {direction === 'up' && (
+            <span className={css(styles.menuItemToggleIcon)}>
+              <AngleLeftIcon aria-hidden />
+            </span>
+          )}
+          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+          <span className={css(styles.menuItemText)}>{children}</span>
+          {isExternalLink && (
+            <span className={css(styles.menuItemExternalIcon)}>
+              <ExternalLinkAltIcon aria-hidden />
+            </span>
+          )}
+          {(flyoutMenu || direction === 'down') && (
+            <span className={css(styles.menuItemToggleIcon)}>
+              <AngleRightIcon aria-hidden />
+            </span>
+          )}
+          {getIsSelected() && (
+            <span className={css(styles.menuItemSelectIcon)}>
+              <CheckIcon aria-hidden />
+            </span>
+          )}
+        </span>
+        {description && direction !== 'up' && (
+          <span className={css(styles.menuItemDescription)}>
+            <span>{description}</span>
+          </span>
+        )}
+      </Component>
+      {drilldownMenu}
+      {flyoutVisible && (
+        <FlyoutContext.Provider value={{ direction: flyoutDirection }}>{flyoutMenu}</FlyoutContext.Provider>
+      )}
+      <MenuItemContext.Provider value={{ itemId, isDisabled }}>
+        {actions}
+        {isFavorited !== null && (
+          <MenuItemAction
+            icon="favorites"
+            isFavorited={isFavorited}
+            aria-label={isFavorited ? 'starred' : 'not starred'}
+            onClick={event => onActionClick(event, itemId)}
             tabIndex={-1}
-            ref={ref}
-            {...props}
-          >
-            {isLoading && children}
-            {!isLoading && renderItem(onSelect, activeItemId, selected, _isOnPath, _drill)}
-            <MenuItemContext.Provider value={{ itemId, isDisabled }}>
-              {actions}
-              {isFavorited !== null && (
-                <MenuItemAction
-                  icon="favorites"
-                  isFavorited={isFavorited}
-                  aria-label={isFavorited ? 'starred' : 'not starred'}
-                  onClick={event => onActionClick(event, itemId)}
-                  tabIndex={-1}
-                  actionId="fav"
-                />
-              )}
-            </MenuItemContext.Provider>
-          </li>
-        );
-      }}
-    </MenuContext.Consumer>
+            actionId="fav"
+          />
+        )}
+      </MenuItemContext.Provider>
+    </li>
   );
 };
 
