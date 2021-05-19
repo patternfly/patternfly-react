@@ -39,6 +39,24 @@ test('isDisabled', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('isDanger secondary', () => {
+  const view = mount(
+    <Button variant="secondary" isDanger>
+      Disabled Button
+    </Button>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('isDanger link', () => {
+  const view = mount(
+    <Button variant="link" isDanger>
+      Disabled Button
+    </Button>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('isAriaDisabled button', () => {
   const view = mount(<Button isAriaDisabled>Disabled yet focusable button</Button>);
   expect(view).toMatchSnapshot();
@@ -73,7 +91,11 @@ test('isLarge', () => {
 });
 
 test('isLoading', () => {
-  const view = mount(<Button isLoading spinnerAriaValueText="Loading">Loading Button</Button>);
+  const view = mount(
+    <Button isLoading spinnerAriaValueText="Loading">
+      Loading Button
+    </Button>
+  );
   expect(view).toMatchSnapshot();
 });
 

@@ -9,6 +9,9 @@ describe('Button Demo Test', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="normal-btn-1"]').should('have.class', 'pf-m-primary');
       cy.get('.pf-c-button[id="normal-btn-2"]').should('have.class', 'pf-m-secondary');
+      cy.get('.pf-c-button[id="normal-btn-2-danger"]')
+        .should('have.class', 'pf-m-secondary')
+        .should('have.class', 'pf-m-danger');
       cy.get('.pf-c-button[id="normal-btn-3"]').should('have.class', 'pf-m-tertiary');
       cy.get('.pf-c-button[id="normal-btn-4"]').should('have.class', 'pf-m-danger');
       cy.get('.pf-c-button[id="normal-btn-5"]').should('have.class', 'pf-m-link');
@@ -109,6 +112,9 @@ describe('Button Demo Test', () => {
   it('Verify link button classes and attributes', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="link-btn-1"]').should('have.class', 'pf-m-link');
+      cy.get('.pf-c-button[id="link-btn-1-danger"]')
+        .should('have.class', 'pf-m-link')
+        .should('have.class', 'pf-m-danger');
       cy.get('.pf-c-button[id="link-btn-2"]').should('have.class', 'pf-m-inline');
 
       cy.get('.pf-c-button[id="link-btn-3"]').should('have.class', 'pf-m-disabled');
