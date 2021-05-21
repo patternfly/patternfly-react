@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.121.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.121.2...@patternfly/react-core@4.121.3) (2021-05-21)
+
+
+### Bug Fixes
+
+* **jumplinks:** check for stale DOM node ([#5812](https://github.com/patternfly/patternfly-react/issues/5812)) ([b7125a9](https://github.com/patternfly/patternfly-react/commit/b7125a9710b336213f4144773cf3b6be43536caf))
+
+
+
+
+
 ## [4.121.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.121.1...@patternfly/react-core@4.121.2) (2021-05-19)
 
 **Note:** Version bump only for package @patternfly/react-core
