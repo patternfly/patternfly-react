@@ -15,12 +15,10 @@ export const isArrayOfString = (array: string[]) => {
 export const searchForKeyword = (searchedInput: string, parsedData: string[]) => {
   const searchResults: number[] = [];
   let rowIndexCounter: number = 0;
-  let keywordIndexPosition: number = 0;
-  let lowerCaseRow: string = '';
+  let keywordIndexPosition: number;
 
   for (const row of parsedData) {
-    lowerCaseRow = row.toLowerCase();
-    keywordIndexPosition = lowerCaseRow.search(searchedInput);
+    keywordIndexPosition = row.search(searchedInput);
 
     if (keywordIndexPosition !== -1) {
       searchResults.push(rowIndexCounter);
