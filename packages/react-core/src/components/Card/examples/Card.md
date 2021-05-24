@@ -718,7 +718,7 @@ import {
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import pfLogoSmall from './pf-logo-small';
+import pfLogoSmall from './pf-logo-small.svg';
 import pfLogo from './pfLogo.svg';
 
 class ExpandableIconCard extends React.Component {
