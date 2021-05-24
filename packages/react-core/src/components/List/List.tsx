@@ -26,6 +26,12 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   className?: string;
   /** Adds list variant styles */
   variant?: ListVariant.inline;
+  /** Modifies the list to add borders between items */
+  isBordered?: boolean;
+  /** Modifies the list to include plain styling */
+  isPlain?: boolean;
+  /** Modifies the size of the icons in the list */
+  iconSize?: 'default' | 'large';
   /** Sets the way items are numbered if variant is set to ordered */
   type?: OrderType;
   component?: 'ol' | 'ul';
@@ -35,6 +41,9 @@ export const List: React.FunctionComponent<ListProps> = ({
   className = '',
   children = null,
   variant = null,
+  isBordered = false,
+  isPlain = false,
+  iconSize = 'default',
   type = OrderType.number,
   ref = null,
   component = ListComponent.ul,
@@ -45,7 +54,14 @@ export const List: React.FunctionComponent<ListProps> = ({
       ref={ref as React.LegacyRef<HTMLOListElement>}
       type={type}
       {...props}
-      className={css(styles.list, variant && styles.modifiers[variant], className)}
+      className={css(
+        styles.list,
+        variant && styles.modifiers[variant],
+        isBordered && styles.modifiers.bordered,
+        isPlain && styles.modifiers.plain,
+        iconSize && iconSize === 'large' && styles.modifiers.iconLg,
+        className
+      )}
     >
       {children}
     </ol>
@@ -53,7 +69,14 @@ export const List: React.FunctionComponent<ListProps> = ({
     <ul
       ref={ref as React.LegacyRef<HTMLUListElement>}
       {...props}
-      className={css(styles.list, variant && styles.modifiers[variant], className)}
+      className={css(
+        styles.list,
+        variant && styles.modifiers[variant],
+        isBordered && styles.modifiers.bordered,
+        isPlain && styles.modifiers.plain,
+        iconSize && iconSize === 'large' && styles.modifiers.iconLg,
+        className
+      )}
     >
       {children}
     </ul>
