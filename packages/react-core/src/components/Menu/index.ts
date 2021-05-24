@@ -8,4 +8,3 @@ export * from './MenuList';
 export * from './MenuItemAction';
 export * from './DrilldownMenu';
 export * from './MenuBreadcrumb';
-export * from './MenuExpand';

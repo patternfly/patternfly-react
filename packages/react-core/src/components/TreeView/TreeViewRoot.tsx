@@ -21,8 +21,14 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
       window.addEventListener('keydown', this.props.hasChecks ? this.handleKeysCheckbox : this.handleKeys);
     }
     if (this.props.hasChecks) {
-      (this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement).tabIndex = 0;
-      (this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement).tabIndex = 0;
+      const firstToggle = this.treeRef.current.getElementsByClassName('pf-c-tree-view__node-toggle')[0] as HTMLElement;
+      if (firstToggle) {
+        firstToggle.tabIndex = 0;
+      }
+      const firstInput = this.treeRef.current.getElementsByTagName('INPUT')[0] as HTMLElement;
+      if (firstInput) {
+        firstInput.tabIndex = 0;
+      }
     } else {
       (this.treeRef.current.getElementsByClassName('pf-c-tree-view__node')[0] as HTMLElement).tabIndex = 0;
     }

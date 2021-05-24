@@ -165,6 +165,11 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
                   </Badge>
                 </span>
               )}
+              {hasBadge && !children && customBadgeContent !== undefined && (
+                <span className={css(styles.treeViewNodeCount)}>
+                  <Badge {...badgeProps}>{customBadgeContent}</Badge>
+                </span>
+              )}
             </Component>
           )}
         </GenerateId>

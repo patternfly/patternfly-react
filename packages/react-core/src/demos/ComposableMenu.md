@@ -46,7 +46,7 @@ class BasicComposableMenu extends React.Component {
       });
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && this.menuRef.current.contains(event.target)) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
@@ -60,7 +60,7 @@ class BasicComposableMenu extends React.Component {
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
         this.onToggle();
       }
     };
@@ -169,7 +169,7 @@ class ActionComposableMenu extends React.Component {
       }
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && this.menuRef.current.contains(event.target)) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
@@ -183,7 +183,7 @@ class ActionComposableMenu extends React.Component {
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
         this.onToggle();
       }
     };
@@ -322,7 +322,7 @@ class SelectComposableMenu extends React.Component {
       });
     };
     this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && this.menuRef.current.contains(event.target)) {
         if (event.key === 'Escape' || event.key === 'Tab') {
           this.onToggle();
           this.toggleRef.current.focus();
@@ -336,7 +336,7 @@ class SelectComposableMenu extends React.Component {
       }
     };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
         this.onToggle();
       }
     };
@@ -671,18 +671,7 @@ class DrilldownComposableMenu extends React.Component {
 
 ```js
 import React from 'react';
-import {
-  MenuToggle,
-  Menu,
-  MenuContent,
-  MenuGroup,
-  MenuList,
-  MenuItem,
-  Popper,
-  TreeView,
-  Checkbox,
-  MenuExpand
-} from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper, TreeView } from '@patternfly/react-core';
 
 class BasicComposableMenu extends React.Component {
   constructor(props) {
@@ -692,7 +681,6 @@ class BasicComposableMenu extends React.Component {
     this.menuRef = React.createRef();
     this.state = {
       isOpen: false,
-      activeStatusItems: [],
       checkedItems: []
     };
 
@@ -701,26 +689,31 @@ class BasicComposableMenu extends React.Component {
         name: 'Ready',
         id: 'ready',
         checkProps: { checked: false },
+        customBadgeContent: 1,
         children: [
           {
             name: 'Updated',
             id: 'updated',
-            checkProps: { checked: false }
+            checkProps: { checked: false },
+            customBadgeContent: 0
           },
           {
             name: 'Waiting to update',
             id: 'waiting',
-            checkProps: { checked: false }
+            checkProps: { checked: false },
+            customBadgeContent: 0
           },
           {
             name: 'Conditions degraded',
             id: 'degraded',
-            checkProps: { checked: false }
+            checkProps: { checked: false },
+            customBadgeContent: 1
           },
           {
             name: 'Approval required',
             id: 'approval',
-            checkProps: { checked: false }
+            checkProps: { checked: false },
+            customBadgeContent: 0
           }
         ]
       },
@@ -728,18 +721,36 @@ class BasicComposableMenu extends React.Component {
         name: 'Not ready',
         id: 'nr',
         checkProps: { checked: false },
+        customBadgeContent: 1,
         children: [
           {
             name: 'Conditions degraded',
             id: 'nr-degraded',
-            checkProps: { checked: false }
+            checkProps: { checked: false },
+            customBadgeContent: 1
           }
         ]
       },
       {
         name: 'Updating',
         id: 'updating',
-        checkProps: { checked: false }
+        checkProps: { checked: false },
+        customBadgeContent: 0
+      }
+    ];
+
+    this.roleOptions = [
+      {
+        name: 'Server',
+        id: 'server',
+        checkProps: { checked: false },
+        customBadgeContent: 2
+      },
+      {
+        name: 'Worker',
+        id: 'worker',
+        checkProps: { checked: false },
+        customBadgeContent: 0
       }
     ];
 
@@ -749,40 +760,32 @@ class BasicComposableMenu extends React.Component {
         isOpen: !this.state.isOpen
       });
     };
-    this.onStatusClick = (evt, treeViewItem, parentItem) => {
-      this.setState({
-        activeStatusItems: [treeViewItem, parentItem]
-      });
-    };
-    this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-          this.onToggle();
-          this.toggleRef.current.focus();
-        }
-      }
 
-      if (event.target === this.toggleRef.current && this.state.isOpen) {
-        if (event.key === 'ArrowDown') {
-          this.menuRef.current.querySelector('button, a').focus();
-        }
-      }
-    };
     this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
         this.onToggle();
       }
     };
 
-    this.onCheck = (evt, treeViewItem) => {
+    this.onCheck = (evt, treeViewItem, tree) => {
       const checked = evt.target.checked;
-      console.log(checked);
 
-      const checkedItemTree = this.statusOptions
+      let options = [];
+      switch (tree) {
+        case 'status':
+          options = this.statusOptions;
+          break;
+        case 'role':
+          options = this.roleOptions;
+          break;
+        default:
+          break;
+      }
+
+      const checkedItemTree = options
         .map(opt => Object.assign({}, opt))
         .filter(item => this.filterItems(item, treeViewItem));
       const flatCheckedItems = this.flattenTree(checkedItemTree);
-      console.log('flat', flatCheckedItems);
 
       this.setState(
         prevState => ({
@@ -855,17 +858,15 @@ class BasicComposableMenu extends React.Component {
   }
 
   componentDidMount() {
-    // window.addEventListener('keydown', this.handleMenuKeys);
-    // window.addEventListener('click', this.handleMenuClick);
+    window.addEventListener('click', this.handleMenuClick);
   }
 
   componentWillUnmount() {
-    // window.removeEventListener('keydown', this.handleMenuKeys);
-    // window.removeEventListener('click', this.handleMenuClick);
+    window.removeEventListener('click', this.handleMenuClick);
   }
 
   render() {
-    const { activeStatusItems, activeRoleItems, isOpen } = this.state;
+    const { isOpen } = this.state;
 
     const toggle = (
       <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '150px' }}>
@@ -874,43 +875,29 @@ class BasicComposableMenu extends React.Component {
     );
 
     const statusMapped = this.statusOptions.map(item => this.mapTree(item));
+    const roleMapped = this.roleOptions.map(item => this.mapTree(item));
 
     const menu = (
-      <Menu ref={this.menuRef} style={{ width: '400px' }}>
+      <Menu ref={this.menuRef}>
         <MenuContent>
           <MenuList>
             <MenuGroup label="Status">
               <TreeView
                 data={statusMapped}
-                activeItems={activeStatusItems}
                 onSelect={this.onStatusClick}
                 hasBadges
                 hasChecks
-                onCheck={this.onCheck}
+                onCheck={(event, item, parentItem) => this.onCheck(event, item, 'status')}
               />
             </MenuGroup>
             <MenuGroup label="Role">
-              <MenuExpand
-                header={
-                  <MenuItem>
-                    <Checkbox aria-label="server-check" id="server-check" name="server-check" />
-                    Server
-                  </MenuItem>
-                }
-              >
-                <MenuItem>
-                  <Checkbox aria-label="test1-check" id="test1-check" name="test1-check" />
-                  Server Type 1
-                </MenuItem>
-                <MenuItem>
-                  <Checkbox aria-label="test2-check" id="test2-check" name="test2-check" />
-                  Server Type 2
-                </MenuItem>
-              </MenuExpand>
-              <MenuItem>
-                <Checkbox aria-label="worker-check" id="worker-check" name="worker-check" />
-                Worker
-              </MenuItem>
+              <TreeView
+                data={roleMapped}
+                onSelect={this.onRoleClick}
+                hasBadges
+                hasChecks
+                onCheck={(event, item, parentItem) => this.onCheck(event, item, 'role')}
+              />
             </MenuGroup>
           </MenuList>
         </MenuContent>
