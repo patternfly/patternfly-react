@@ -496,13 +496,16 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     right: getPaddingForSide('right', padding, theme.pie.padding),
     top: getPaddingForSide('top', padding, theme.pie.padding)
   };
-  const chartRadius = radius
-    ? radius
-    : Helpers.getRadius({
-        height,
-        width,
-        padding: defaultPadding
-      });
+  // Ensure non-negative value is returned
+  const getDefaultRadius = () => {
+    const result = Helpers.getRadius({
+      height,
+      width,
+      padding: defaultPadding
+    });
+    return result > -1 ? result : undefined;
+  };
+  const chartRadius = radius ? radius : getDefaultRadius();
 
   const chart = (
     <VictoryPie
