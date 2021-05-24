@@ -522,9 +522,9 @@ class TreeTable extends React.Component {
         </Thead>
         <Tbody>
           {this.buildRows(this.state.data, 1, 1).map((row, rowIndex) => (
-            <TreeRowWrapper row={row} key={rowIndex}>
+            <TreeRowWrapper row={row} rowProps={{rowIndex, rowKey: rowIndex}}>
               {row.cells.map((cell, cellIndex) => cellIndex === 0 ? (
-                <Td key={cellIndex} treeRow={{
+                <Td key={`${rowIndex}_0`} treeRow={{
                   onCollapse: this.onCollapse, 
                   onCheckChange: this.onCheck,
                   onToggleRowDetails: this.onToggleRowDetails,
@@ -534,7 +534,7 @@ class TreeTable extends React.Component {
                   {cell}
                 </Td>
               ) : (
-                <Td key={cellIndex} data-label={columns[cellIndex]}>{cell}</Td>
+                <Td key={`${rowIndex}_${cellIndex}`} data-label={columns[cellIndex]}>{cell}</Td>
               ))}
             </TreeRowWrapper>
           ))}

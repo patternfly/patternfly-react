@@ -6,6 +6,7 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { Button, Checkbox } from '@patternfly/react-core';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import EllipsisHIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-h-icon';
+// import { TableFocusContext } from '../../TableContext';
 
 export const treeRow = (
   onCollapse: OnTreeRowCollapse,
@@ -24,6 +25,7 @@ export const treeRow = (
     checkboxId,
     icon
   } = rowData.props;
+  // const focusContext = React.useContext(TableFocusContext);
   const content = value.title || value;
   const text = (
     <div className={css(stylesTreeView.tableTreeViewText)}>
@@ -48,6 +50,7 @@ export const treeRow = (
                 className={css(isExpanded && styles.modifiers.expanded)}
                 aria-expanded={isExpanded}
                 aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
+                // tabIndex={focusContext.isFocusInRow && focusContext.focusableRowIndex === rowIndex ? 0 : -1}
               >
                 <div className={css(stylesTreeView.tableToggleIcon)}>
                   <AngleDownIcon aria-hidden="true" />
@@ -62,6 +65,7 @@ export const treeRow = (
                 aria-label={checkAriaLabel || `Row ${rowIndex} checkbox`}
                 isChecked={isChecked}
                 onChange={onChange}
+                // tabIndex={focusContext.isFocusInRow && focusContext.focusableRowIndex === rowIndex ? 0 : -1}
               />
             </span>
           )}

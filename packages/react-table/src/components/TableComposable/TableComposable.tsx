@@ -7,6 +7,7 @@ import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
 import { TableGridBreakpoint, TableVariant } from '../Table/TableTypes';
+import { TableFocusContext } from '../Table/TableContext';
 
 export interface BaseCellProps {
   /** Content rendered inside the cell */
@@ -72,6 +73,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   isTreeTable = false,
   ...props
 }: TableComposableProps) => {
+  const [focusableRowIndex, setFocusableRowIndex] = React.useState(0);
+  const [isFocusInRow, setIsFocusInRow] = React.useState(false);
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
   const grid =
     stylesGrid.modifiers?.[
@@ -88,25 +91,35 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         | 'treeViewGrid_2xl'
     ];
   return (
-    <table
-      aria-label={ariaLabel}
-      role={role}
-      className={css(
-        className,
-        styles.table,
-        isTreeTable ? treeGrid : grid,
-        styles.modifiers[variant],
-        !borders && styles.modifiers.noBorderRows,
-        isStickyHeader && styles.modifiers.stickyHeader,
-        isTreeTable && stylesTreeView.modifiers.treeView
-      )}
-      ref={innerRef}
-      {...(isTreeTable && { role: 'treegrid' })}
-      {...ouiaProps}
-      {...props}
+    <TableFocusContext.Provider
+      value={{
+        isTreeTable,
+        isFocusInRow,
+        setIsFocusInRow,
+        focusableRowIndex,
+        setFocusableRowIndex
+      }}
     >
-      {children}
-    </table>
+      <table
+        aria-label={ariaLabel}
+        role={role}
+        className={css(
+          className,
+          styles.table,
+          isTreeTable ? treeGrid : grid,
+          styles.modifiers[variant],
+          !borders && styles.modifiers.noBorderRows,
+          isStickyHeader && styles.modifiers.stickyHeader,
+          isTreeTable && stylesTreeView.modifiers.treeView
+        )}
+        ref={innerRef}
+        {...(isTreeTable && { role: 'treegrid' })}
+        {...ouiaProps}
+        {...props}
+      >
+        {children}
+      </table>
+    </TableFocusContext.Provider>
   );
 };
 

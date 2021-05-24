@@ -7,3 +7,11 @@ export const TableContext = React.createContext({
   headerRows: null as IHeaderRow[],
   rows: [] as (IRow | string[])[]
 });
+
+export const TableFocusContext = React.createContext({
+  isTreeTable: false,
+  isFocusInRow: false,
+  setIsFocusInRow: () => {},
+  focusableRowIndex: 0 as number,
+  setFocusableRowIndex: () => {}
+});

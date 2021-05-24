@@ -4,10 +4,10 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { RowWrapperProps } from './RowWrapper';
 import { Tr } from '../TableComposable';
+import { TableFocusContext } from './TableContext';
 
 export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
   className,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowProps,
   row,
   ...props
@@ -20,6 +20,9 @@ export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
     isDetailsExpanded,
     isHidden
   } = row.props;
+
+  const focusContext = React.useContext(TableFocusContext);
+
   return (
     <Tr
       aria-level={level}
@@ -32,6 +35,7 @@ export const TreeRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
         isExpanded && styles.modifiers.expanded,
         isDetailsExpanded && stylesTreeView.modifiers.treeViewDetailsExpanded
       )}
+      tabIndex={focusContext.focusableRowIndex === rowProps.rowIndex ? 0 : -1}
       {...props}
     />
   );
