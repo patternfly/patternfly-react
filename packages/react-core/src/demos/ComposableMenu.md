@@ -666,3 +666,270 @@ class DrilldownComposableMenu extends React.Component {
   }
 }
 ```
+
+### Filter tree menu
+
+```js
+import React from 'react';
+import {
+  MenuToggle,
+  Menu,
+  MenuContent,
+  MenuGroup,
+  MenuList,
+  MenuItem,
+  Popper,
+  TreeView,
+  Checkbox,
+  MenuExpand
+} from '@patternfly/react-core';
+
+class BasicComposableMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.toggleRef = React.createRef();
+    this.menuRef = React.createRef();
+    this.state = {
+      isOpen: false,
+      activeStatusItems: [],
+      checkedItems: []
+    };
+
+    this.statusOptions = [
+      {
+        name: 'Ready',
+        id: 'ready',
+        checkProps: { checked: false },
+        children: [
+          {
+            name: 'Updated',
+            id: 'updated',
+            checkProps: { checked: false }
+          },
+          {
+            name: 'Waiting to update',
+            id: 'waiting',
+            checkProps: { checked: false }
+          },
+          {
+            name: 'Conditions degraded',
+            id: 'degraded',
+            checkProps: { checked: false }
+          },
+          {
+            name: 'Approval required',
+            id: 'approval',
+            checkProps: { checked: false }
+          }
+        ]
+      },
+      {
+        name: 'Not ready',
+        id: 'nr',
+        checkProps: { checked: false },
+        children: [
+          {
+            name: 'Conditions degraded',
+            id: 'nr-degraded',
+            checkProps: { checked: false }
+          }
+        ]
+      },
+      {
+        name: 'Updating',
+        id: 'updating',
+        checkProps: { checked: false }
+      }
+    ];
+
+    this.onToggle = event => {
+      event && event.stopPropagation();
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+    this.onStatusClick = (evt, treeViewItem, parentItem) => {
+      this.setState({
+        activeStatusItems: [treeViewItem, parentItem]
+      });
+    };
+    this.handleMenuKeys = event => {
+      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+        if (event.key === 'Escape' || event.key === 'Tab') {
+          this.onToggle();
+          this.toggleRef.current.focus();
+        }
+      }
+
+      if (event.target === this.toggleRef.current && this.state.isOpen) {
+        if (event.key === 'ArrowDown') {
+          this.menuRef.current.querySelector('button, a').focus();
+        }
+      }
+    };
+    this.handleMenuClick = event => {
+      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
+        this.onToggle();
+      }
+    };
+
+    this.onCheck = (evt, treeViewItem) => {
+      const checked = evt.target.checked;
+      console.log(checked);
+
+      const checkedItemTree = this.statusOptions
+        .map(opt => Object.assign({}, opt))
+        .filter(item => this.filterItems(item, treeViewItem));
+      const flatCheckedItems = this.flattenTree(checkedItemTree);
+      console.log('flat', flatCheckedItems);
+
+      this.setState(
+        prevState => ({
+          checkedItems: checked
+            ? prevState.checkedItems.concat(
+                flatCheckedItems.filter(item => !prevState.checkedItems.some(i => i.id === item.id))
+              )
+            : prevState.checkedItems.filter(item => !flatCheckedItems.some(i => i.id === item.id))
+        }),
+        () => {
+          console.log('Checked items: ', this.state.checkedItems);
+        }
+      );
+    };
+
+    // Helper functions
+    const isChecked = dataItem => this.state.checkedItems.some(item => item.id === dataItem.id);
+    const areAllDescendantsChecked = dataItem =>
+      dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
+    const areSomeDescendantsChecked = dataItem =>
+      dataItem.children ? dataItem.children.some(child => areSomeDescendantsChecked(child)) : isChecked(dataItem);
+
+    this.flattenTree = tree => {
+      var result = [];
+      tree.forEach(item => {
+        result.push(item);
+        if (item.children) {
+          result = result.concat(this.flattenTree(item.children));
+        }
+      });
+      return result;
+    };
+
+    this.mapTree = item => {
+      const hasCheck = areAllDescendantsChecked(item);
+      // Reset checked properties to be updated
+      item.checkProps.checked = false;
+
+      if (hasCheck) {
+        item.checkProps.checked = true;
+      } else {
+        const hasPartialCheck = areSomeDescendantsChecked(item);
+        if (hasPartialCheck) {
+          item.checkProps.checked = null;
+        }
+      }
+
+      if (item.children) {
+        return {
+          ...item,
+          children: item.children.map(child => this.mapTree(child))
+        };
+      }
+      return item;
+    };
+
+    this.filterItems = (item, checkedItem) => {
+      if (item.id === checkedItem.id) {
+        return true;
+      }
+
+      if (item.children) {
+        return (
+          (item.children = item.children
+            .map(opt => Object.assign({}, opt))
+            .filter(child => this.filterItems(child, checkedItem))).length > 0
+        );
+      }
+    };
+  }
+
+  componentDidMount() {
+    // window.addEventListener('keydown', this.handleMenuKeys);
+    // window.addEventListener('click', this.handleMenuClick);
+  }
+
+  componentWillUnmount() {
+    // window.removeEventListener('keydown', this.handleMenuKeys);
+    // window.removeEventListener('click', this.handleMenuClick);
+  }
+
+  render() {
+    const { activeStatusItems, activeRoleItems, isOpen } = this.state;
+
+    const toggle = (
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '150px' }}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
+      </MenuToggle>
+    );
+
+    const statusMapped = this.statusOptions.map(item => this.mapTree(item));
+
+    const menu = (
+      <Menu ref={this.menuRef} style={{ width: '400px' }}>
+        <MenuContent>
+          <MenuList>
+            <MenuGroup label="Status">
+              <TreeView
+                data={statusMapped}
+                activeItems={activeStatusItems}
+                onSelect={this.onStatusClick}
+                hasBadges
+                hasChecks
+                onCheck={this.onCheck}
+              />
+            </MenuGroup>
+            <MenuGroup label="Role">
+              <MenuExpand
+                header={
+                  <MenuItem>
+                    <Checkbox aria-label="server-check" id="server-check" name="server-check" />
+                    Server
+                  </MenuItem>
+                }
+              >
+                <MenuItem>
+                  <Checkbox aria-label="test1-check" id="test1-check" name="test1-check" />
+                  Server Type 1
+                </MenuItem>
+                <MenuItem>
+                  <Checkbox aria-label="test2-check" id="test2-check" name="test2-check" />
+                  Server Type 2
+                </MenuItem>
+              </MenuExpand>
+              <MenuItem>
+                <Checkbox aria-label="worker-check" id="worker-check" name="worker-check" />
+                Worker
+              </MenuItem>
+            </MenuGroup>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+
+    return (
+      <div ref={this.containerRef}>
+        <Popper
+          trigger={toggle}
+          popper={menu}
+          direction="down"
+          position="left"
+          appendTo={this.containerRef.current}
+          isVisible={isOpen}
+          popperMatchesTriggerWidth={false}
+        />
+      </div>
+    );
+  }
+}
+```
