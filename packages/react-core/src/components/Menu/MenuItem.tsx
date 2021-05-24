@@ -101,7 +101,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   const [flyoutVisible, setFlyoutVisible] = React.useState(false);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
-  const [flyoutDirection, setFlyoutDirection] = React.useState(flyoutContext.direction);
+  const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
+  const [flyoutYDirection, setFlyoutYDirection] = React.useState('bot' as 'top' | 'bot');
   const ref = React.useRef<HTMLLIElement>();
 
   const hasFlyout = flyoutMenu !== undefined;
@@ -119,11 +120,20 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
           const overlapsRight = rect.x + rect.width > window.innerWidth;
           const overlapsLeft = rect.x - rect.width < 0;
           if (overlapsRight && overlapsLeft) {
-            // We don't have styles for this right now.
+            // We don't have designs for this right now.
           } else if (overlapsRight) {
-            setFlyoutDirection('left');
+            setFlyoutXDirection('left');
           } else if (overlapsLeft) {
-            setFlyoutDirection('right');
+            setFlyoutXDirection('right');
+          }
+          const overlapsBot = rect.y + rect.height > window.innerHeight;
+          const overlapsTop = rect.y - rect.height < 0;
+          if (overlapsTop && overlapsBot) {
+            // We don't have designs for this. Will need some scrolling
+          } else if (overlapsBot) {
+            setFlyoutYDirection('top');
+          } else if (overlapsTop) {
+            setFlyoutYDirection('bot');
           }
         }
       }
@@ -131,7 +141,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   }, [showFlyout, flyoutMenu]);
 
   React.useEffect(() => {
-    setFlyoutDirection(flyoutContext.direction);
+    setFlyoutXDirection(flyoutContext.direction);
   }, [flyoutContext]);
 
   React.useEffect(() => {
@@ -222,7 +232,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
         _isOnPath && styles.modifiers.currentPath,
-        flyoutDirection === 'left' && styles.modifiers.menuLeft,
+        flyoutXDirection === 'left' && styles.modifiers.menuLeft,
+        flyoutYDirection === 'top' && styles.modifiers.menuTop,
         className
       )}
       onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
@@ -275,7 +286,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       </Component>
       {drilldownMenu}
       {flyoutVisible && (
-        <FlyoutContext.Provider value={{ direction: flyoutDirection }}>{flyoutMenu}</FlyoutContext.Provider>
+        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
       )}
       <MenuItemContext.Provider value={{ itemId, isDisabled }}>
         {actions}

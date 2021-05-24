@@ -113,6 +113,8 @@ class MenuIconsList extends React.Component {
 
 ### With flyout
 
+The flyout will automatically position to the left or top if it would otherwise go outside the window.
+
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
