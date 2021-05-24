@@ -3,6 +3,7 @@ import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
+import { TableFocusContext } from '../Table/TableContext';
 
 export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps {
   /** Content rendered inside the <tr> row */
@@ -10,7 +11,7 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   /** Additional classes added to the <tr> row  */
   className?: string;
   /** Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.Ref<HTMLTableRowElement>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;
   /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not */

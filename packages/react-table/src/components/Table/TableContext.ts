@@ -11,7 +11,7 @@ export const TableContext = React.createContext({
 export const TableFocusContext = React.createContext({
   isTreeTable: false,
   isFocusInRow: false,
-  setIsFocusInRow: () => {},
+  setIsFocusInRow: (isFocusInRow:boolean) => {},
   focusableRowIndex: 0 as number,
-  setFocusableRowIndex: () => {}
+  setFocusableRowIndex: (rowIndex:number) => {}
 });
