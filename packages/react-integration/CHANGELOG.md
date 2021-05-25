@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.100.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.99.0...@patternfly/react-integration@4.100.0) (2021-05-25)
+
+
+### Features
+
+* **list:** added icons, plain, bordered ([#5796](https://github.com/patternfly/patternfly-react/issues/5796)) ([3f2cd16](https://github.com/patternfly/patternfly-react/commit/3f2cd16ffd195d67e3862c9a250a6e61fbfe4ce1))
+
+
+
+
+
 # [4.99.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.98.0...@patternfly/react-integration@4.99.0) (2021-05-13)
 
 
