@@ -86,7 +86,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       showScrollButtons: false,
       disableLeftScrollButton: false,
       disableRightScrollButton: false,
-      shownKeys: this.props.defaultActiveKey !== undefined  ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
+      shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
       ouiaStateId: getDefaultOUIAId(Tabs.displayName)
     };
@@ -118,13 +118,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     const { onSelect, defaultActiveKey } = this.props;
     // if defaultActiveKey Tabs are uncontrolled, set new active key internally
     if (defaultActiveKey !== undefined) {
-        this.setState({
-            uncontrolledActiveKey: eventKey,
-          });        
-    } else  {
-        onSelect(event, eventKey);
+      this.setState({
+        uncontrolledActiveKey: eventKey
+      });
+    } else {
+      onSelect(event, eventKey);
     }
-        
+
     // process any tab content sections outside of the component
     if (tabContentRef) {
       React.Children.toArray(this.props.children)
@@ -319,11 +319,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               return (
                 <li
                   key={index}
-                  className={css(
-                    styles.tabsItem,
-                    localActiveKey && styles.modifiers.current,
-                    childClassName
-                  )}
+                  className={css(styles.tabsItem, localActiveKey && styles.modifiers.current, childClassName)}
                 >
                   <TabButton
                     className={css(styles.tabsLink)}
