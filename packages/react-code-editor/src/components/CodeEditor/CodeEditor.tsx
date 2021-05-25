@@ -137,7 +137,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     downloadButtonToolTipText: 'Download',
     copyButtonSuccessTooltipText: 'Content added to clipboard',
     toolTipCopyExitDelay: 1600,
-    toolTipDelay: 0,
+    toolTipDelay: 300,
     toolTipMaxWidth: '100px',
     toolTipPosition: 'top',
     customControls: null,

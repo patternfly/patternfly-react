@@ -31,7 +31,7 @@ export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> 
   'aria-label': ariaLabel,
   toolTipText,
   exitDelay = 0,
-  entryDelay = 0,
+  entryDelay = 300,
   maxWidth = '100px',
   position = 'top',
   onClick = () => {},

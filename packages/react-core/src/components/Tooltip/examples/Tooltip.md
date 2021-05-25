@@ -37,8 +37,6 @@ TooltipReactRef = () => {
     <div style={{ margin: '100px' }}>
       <button ref={tooltipRef}>Tooltip attached via react ref</button>
       <Tooltip
-        entryDelay={0}
-        exitDelay={0}
         content={
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
         }
@@ -57,8 +55,6 @@ import { Tooltip } from '@patternfly/react-core';
 <div style={{ margin: '100px' }}>
   <button id="tooltip-selector">Tooltip attached via selector ref</button>
   <Tooltip
-    entryDelay={0}
-    exitDelay={0}
     content={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }

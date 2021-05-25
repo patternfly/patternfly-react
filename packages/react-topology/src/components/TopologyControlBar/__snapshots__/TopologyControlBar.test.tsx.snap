@@ -118,8 +118,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       >
                         <Tooltip
                           content="test zoom in tooltip"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
@@ -243,8 +241,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       >
                         <Tooltip
                           content="Zoom Out"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
@@ -391,8 +387,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       >
                         <Tooltip
                           content="Reset View"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
@@ -748,8 +742,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       >
                         <Tooltip
                           content="Zoom In"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
@@ -896,8 +888,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       >
                         <Tooltip
                           content="Zoom Out"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
@@ -1044,8 +1034,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       >
                         <Tooltip
                           content="Fit to Screen"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
@@ -1192,8 +1180,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       >
                         <Tooltip
                           content="Reset View"
-                          entryDelay={0}
-                          exitDelay={0}
                         >
                           <Popper
                             appendTo={[Function]}
