@@ -14,8 +14,10 @@ export const {{componentName}}: React.FunctionComponent<{{componentName}}Props> 
   children
 }: {{ componentName }}Props) => {
   return (
-    <div {...props} className={css(styles.{{ camelCase componentName }}, className)}>
+    <div className={css(styles.{{ camelCase componentName }}, className)} {...props}>
       {children}
     </div>
   );
 }
+{{componentName}}.displayName = '{{componentName}}';
+
