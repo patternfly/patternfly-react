@@ -1113,7 +1113,7 @@ class TypeaheadSelectInput extends React.Component {
         hasOnCreateOption: checked
       });
     };
-    
+
     this.toggleInputValuePersisted = checked => {
       this.setState({
         isInputValuePersisted: checked
@@ -1368,8 +1368,12 @@ class TypeaheadSelectInput extends React.Component {
     };
 
     this.customFilter = (_, value) => {
-      let input = new RegExp(value, 'i');
-      return value !== '' ? this.options.filter(child => input.test(value)) : this.options;
+      if (!value) {
+        return this.options;
+      }
+
+      const input = new RegExp(value, 'i');
+      return this.options.filter(child => input.test(child.props.value));
     };
   }
 
@@ -2478,7 +2482,7 @@ class SelectViewMoreCheckbox extends React.Component {
       });
     };
 
-  
+
     this.simulateNetworkCall = callback => {
       setTimeout(callback, 2000);
     };
