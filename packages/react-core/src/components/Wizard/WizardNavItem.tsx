@@ -38,6 +38,8 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
 }: WizardNavItemProps) => {
   const NavItemComponent = navItemComponent;
 
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
   if (navItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
     console.error('WizardNavItem: When using an anchor, please provide an href');
@@ -57,13 +59,13 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       className={css(
         styles.wizardNavItem,
         isExpandable && styles.modifiers.expandable,
-        isExpandable && isCurrent && styles.modifiers.expanded
+        isExpandable && isExpanded && styles.modifiers.expanded
       )}
     >
       <NavItemComponent
         {...rest}
         {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
-        onClick={() => onNavItemClick(step)}
+        onClick={() => (isExpandable ? setIsExpanded(!isExpanded) : onNavItemClick(step))}
         className={css(
           styles.wizardNavLink,
           isCurrent && styles.modifiers.current,
@@ -71,7 +73,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         )}
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'page' : false}
-        {...(isExpandable && { 'aria-expanded': isCurrent })}
+        {...(isExpandable && { 'aria-expanded': isExpanded })}
       >
         {isExpandable ? (
           <>
