@@ -319,7 +319,11 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               return (
                 <li
                   key={index}
-                  className={css(styles.tabsItem, localActiveKey && styles.modifiers.current, childClassName)}
+                  className={css(
+                    styles.tabsItem,
+                    eventKey === localActiveKey && styles.modifiers.current,
+                    childClassName
+                  )}
                 >
                   <TabButton
                     className={css(styles.tabsLink)}
