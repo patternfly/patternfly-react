@@ -37,6 +37,41 @@ test('Wizard should match snapshot', () => {
   expect(mount(<div>{fragment}</div>).getElement()).toMatchSnapshot();
 });
 
+test('Expandable Nav Wizard should match snapshot', () => {
+  const steps: WizardStep[] = [
+    { name: 'A', component: <p>Step 1</p> },
+    {
+      name: 'B',
+      steps: [
+        {
+          name: 'B-1',
+          component: <p>Step 2</p>,
+          enableNext: true
+        },
+        {
+          name: 'B-2',
+          component: <p>Step 3</p>,
+          enableNext: false
+        }
+      ]
+    },
+    { name: 'C', component: <p>Step 4</p> },
+    { name: 'D', component: <p>Step 5</p> }
+  ];
+  const onBack: WizardStepFunctionType = step => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const name = { step };
+  };
+
+  const view = mount(
+    <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} isNavExpandable />
+  );
+  // ran into: https://github.com/airbnb/enzyme/issues/1213
+  // so instead of: expect(view).toMatchSnapshot();
+  const fragment = view.instance().render();
+  expect(mount(<div>{fragment}</div>).getElement()).toMatchSnapshot();
+});
+
 test('bare wiz ', () => {
   const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
   const wiz = (
@@ -63,8 +98,8 @@ test('wiz with title ', () => {
   const main = view.find('div.pf-c-wizard__main');
   expect(hasHeader).toBe(1);
   expect(hasTitle).toBe(1);
-  expect(nav.find('[aria-labelledby="pf-wizard-title-2"]').length).toBe(1);
-  expect(main.find('[aria-labelledby="pf-wizard-title-2"]').length).toBe(1);
+  expect(nav.find('[aria-labelledby="pf-wizard-title-3"]').length).toBe(1);
+  expect(main.find('[aria-labelledby="pf-wizard-title-3"]').length).toBe(1);
 });
 
 test('wiz with title and navAriaLabel combination', () => {
@@ -73,7 +108,7 @@ test('wiz with title and navAriaLabel combination', () => {
   const view = mount(wiz).at(0);
   const nav = view.find('nav.pf-c-wizard__nav');
   const main = view.find('div.pf-c-wizard__main');
-  expect(nav.find('[aria-labelledby="pf-wizard-title-3"]').length).toBe(1);
+  expect(nav.find('[aria-labelledby="pf-wizard-title-4"]').length).toBe(1);
   expect(nav.find('[aria-label="Some label"]').length).toBe(1);
   expect(main.props()['aria-label']).toBe(null);
 });
@@ -91,7 +126,7 @@ test('wiz with title, navAriaLabel, and mainAriaLabel combination', () => {
   const view = mount(wiz).at(0);
   const nav = view.find('nav.pf-c-wizard__nav');
   const main = view.find('div.pf-c-wizard__main');
-  expect(nav.find('[aria-labelledby="pf-wizard-title-4"]').length).toBe(1);
+  expect(nav.find('[aria-labelledby="pf-wizard-title-5"]').length).toBe(1);
   expect(nav.find('[aria-label="nav aria-label"]').length).toBe(1);
   expect(main.props()['aria-label']).toBe('main aria-label');
 });
