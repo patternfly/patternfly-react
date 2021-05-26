@@ -90,6 +90,17 @@ exports[`Description List Term default 1`] = `
 </dt>
 `;
 
+exports[`Description List Term helper text 1`] = `
+<dt
+  aria-labelledby="term-1"
+  className="pf-c-description-list__term"
+>
+  <DescriptionListTermHelpTextButton>
+    test
+  </DescriptionListTermHelpTextButton>
+</dt>
+`;
+
 exports[`Description List default 1`] = `
 <dl
   className="pf-c-description-list"

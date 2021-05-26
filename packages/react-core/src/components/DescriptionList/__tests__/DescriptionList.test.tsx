@@ -4,6 +4,8 @@ import { DescriptionList } from '../DescriptionList';
 import { DescriptionListGroup } from '../DescriptionListGroup';
 import { DescriptionListTerm } from '../DescriptionListTerm';
 import { DescriptionListDescription } from '../DescriptionListDescription';
+import { DescriptionListTermHelpText } from '../DescriptionListTermHelpText';
+import { DescriptionListTermHelpTextButton } from '../DescriptionListTermHelpTextButton';
 
 describe('Description List', () => {
   test('default', () => {
@@ -56,6 +58,15 @@ describe('Description List', () => {
       <DescriptionListTerm key="term-id-1" aria-labelledby="term-1">
           test
       </DescriptionListTerm>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Term helper text', () => {
+    const view = shallow(
+      <DescriptionListTermHelpText key="term-id-1" aria-labelledby="term-1">
+          <DescriptionListTermHelpTextButton>test</DescriptionListTermHelpTextButton>
+      </DescriptionListTermHelpText>
     );
     expect(view).toMatchSnapshot();
   });
