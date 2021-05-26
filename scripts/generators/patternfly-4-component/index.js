@@ -4,7 +4,11 @@ const { ADD_TO_BARREL_FILE } = require('../actionTypes');
 const templatesDir = resolve(__dirname, './templates');
 const reactCoreRoot = resolve(__dirname, '../../../packages/react-core');
 
-const componentTypes = new Map([['component', 'components'], ['layout', 'layouts'], ['internal', 'internal']]);
+const componentTypes = new Map([
+  ['component', 'components'],
+  ['layout', 'layouts'],
+  ['internal', 'internal']
+]);
 
 function setPF4Generators(plop) {
   plop.setGenerator('PatternFly 4 Component', {
@@ -40,13 +44,13 @@ function setPF4Generators(plop) {
           data,
           type: 'add',
           templateFile: join(base, 'component.test.tsx.hbs'),
-          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.test.tsx')
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/__tests__/{{componentName}}.test.tsx')
         },
         {
           data,
           type: 'add',
           templateFile: join(base, 'component.md.hbs'),
-          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.md')
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/examples/{{componentName}}.md')
         },
         {
           data,

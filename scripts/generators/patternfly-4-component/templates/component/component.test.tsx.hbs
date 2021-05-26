@@ -2,10 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import {{componentName}} from './{{componentName}}';
 
-const props = {};
-
-test('replace with useful test name', () => {
-  const view = shallow(<{{componentName}} {...props} />);
+test('basic', () => {
+  const view = shallow(<{{componentName}} />);
   // Add a useful assertion here.
   expect(view).toBe(false);
 });
