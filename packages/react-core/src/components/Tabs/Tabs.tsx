@@ -313,8 +313,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
-    const areTabsVisible = isVertical && expandable !== undefined && !isExpandedLocal ? false : true;
-
     /*  Uncontrolled expandable tabs */
     const toggleTabs = (newValue: boolean) => {
       if (isExpanded === undefined) {
@@ -372,90 +370,83 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               )}
             </GenerateId>
           )}
-          {areTabsVisible && (
-            <>
-              <button
-                className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-                aria-label={leftScrollAriaLabel}
-                onClick={this.scrollLeft}
-                disabled={disableLeftScrollButton}
-                aria-hidden={disableLeftScrollButton}
-              >
-                <AngleLeftIcon />
-              </button>
-              <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-                {filteredChildren.map((child, index) => {
-                  const {
-                    title,
-                    eventKey,
-                    tabContentRef,
-                    id: childId,
-                    tabContentId,
-                    className: childClassName = '',
-                    ouiaId: childOuiaId,
-                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                    isHidden,
-                    ...rest
-                  } = child.props;
-                  let ariaControls = tabContentId
-                    ? `${tabContentId}`
-                    : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
-                  if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
-                    ariaControls = undefined;
-                  }
-                  return (
-                    <li
-                      key={index}
-                      className={css(
-                        styles.tabsItem,
-                        eventKey === localActiveKey && styles.modifiers.current,
-                        childClassName
-                      )}
-                    >
-                      <TabButton
-                        className={css(styles.tabsLink)}
-                        onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
-                        id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-                        aria-controls={ariaControls}
-                        tabContentRef={tabContentRef}
-                        ouiaId={childOuiaId}
-                        {...rest}
-                      >
-                        {title}
-                      </TabButton>
-                    </li>
-                  );
-                })}
-              </ul>
-              <button
-                className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-                aria-label={rightScrollAriaLabel}
-                onClick={this.scrollRight}
-                disabled={disableRightScrollButton}
-                aria-hidden={disableRightScrollButton}
-              >
-                <AngleRightIcon />
-              </button>
-            </>
-          )}
+          <button
+            className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
+            aria-label={leftScrollAriaLabel}
+            onClick={this.scrollLeft}
+            disabled={disableLeftScrollButton}
+            aria-hidden={disableLeftScrollButton}
+          >
+            <AngleLeftIcon />
+          </button>
+          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
+            {filteredChildren.map((child, index) => {
+              const {
+                title,
+                eventKey,
+                tabContentRef,
+                id: childId,
+                tabContentId,
+                className: childClassName = '',
+                ouiaId: childOuiaId,
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                isHidden,
+                ...rest
+              } = child.props;
+              let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
+              if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
+                ariaControls = undefined;
+              }
+              return (
+                <li
+                  key={index}
+                  className={css(
+                    styles.tabsItem,
+                    eventKey === localActiveKey && styles.modifiers.current,
+                    childClassName
+                  )}
+                >
+                  <TabButton
+                    className={css(styles.tabsLink)}
+                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
+                    id={`pf-tab-${eventKey}-${childId || uniqueId}`}
+                    aria-controls={ariaControls}
+                    tabContentRef={tabContentRef}
+                    ouiaId={childOuiaId}
+                    {...rest}
+                  >
+                    {title}
+                  </TabButton>
+                </li>
+              );
+            })}
+          </ul>
+          <button
+            className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
+            aria-label={rightScrollAriaLabel}
+            onClick={this.scrollRight}
+            disabled={disableRightScrollButton}
+            aria-hidden={disableRightScrollButton}
+          >
+            <AngleRightIcon />
+          </button>
         </Component>
-        {areTabsVisible &&
-          filteredChildren
-            .filter(
-              child =>
-                child.props.children &&
-                !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
-                !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
-            )
-            .map((child, index) => (
-              <TabContent
-                key={index}
-                activeKey={localActiveKey}
-                child={child}
-                id={child.props.id || uniqueId}
-                ouiaId={child.props.ouiaId}
-              />
-            ))}
+        {filteredChildren
+          .filter(
+            child =>
+              child.props.children &&
+              !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
+              !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
+          )
+          .map((child, index) => (
+            <TabContent
+              key={index}
+              activeKey={localActiveKey}
+              child={child}
+              id={child.props.id || uniqueId}
+              ouiaId={child.props.ouiaId}
+            />
+          ))}
       </TabsContextProvider>
     );
   }
