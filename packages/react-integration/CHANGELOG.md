@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.101.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.100.0...@patternfly/react-integration@4.101.0) (2021-05-26)
+
+
+### Features
+
+* **Button:** add danger modifier to link/secondary buttons ([#5808](https://github.com/patternfly/patternfly-react/issues/5808)) ([0fc56c4](https://github.com/patternfly/patternfly-react/commit/0fc56c4ef30b260a8c4d4268e8c2058826d5b9b8))
+
+
+
+
+
 # [4.100.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.99.0...@patternfly/react-integration@4.100.0) (2021-05-25)
 
 
