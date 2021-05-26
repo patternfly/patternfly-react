@@ -81,6 +81,9 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.normalButton} id="normal-btn-2" variant="secondary">
           Secondary
         </Button>
+        <Button {...this.normalButton} id="normal-btn-2-danger" variant="secondary" isDanger>
+          Danger secondary
+        </Button>
         <Button {...this.normalButton} id="normal-btn-3" variant="tertiary">
           Tertiary
         </Button>
@@ -151,6 +154,9 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         </Button>
         <Button {...this.linkButton} id="link-btn-2" isInline>
           Inline Link Button
+        </Button>
+        <Button {...this.linkButton} id="link-btn-1-danger" isDanger>
+          Danger link button
         </Button>
         <Button {...this.linkButton} id="link-btn-3" isDisabled>
           Disabled link button

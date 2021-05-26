@@ -60,6 +60,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   isSmall?: boolean;
   /** Adds large styling to the button */
   isLarge?: boolean;
+  /** Adds danger styling to secondary or link button variants */
+  isDanger?: boolean;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
@@ -71,6 +73,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   isDisabled = false,
   isAriaDisabled = false,
   isLoading = null,
+  isDanger = false,
   spinnerAriaValueText,
   isSmall = false,
   isLarge = false,
@@ -132,6 +135,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
         isLoading !== null && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
         isSmall && styles.modifiers.small,
