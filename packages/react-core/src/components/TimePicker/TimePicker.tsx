@@ -214,23 +214,24 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       time = `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     }
 
-    let scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time.toUpperCase()));
+    let scrollIndex = this.getOptions().findIndex(option => option.innerText === time);
 
     // if we found an exact match, scroll to match and return index of match for focus
     if (scrollIndex !== -1) {
       this.scrollToIndex(scrollIndex);
       focusedIndex = scrollIndex;
     } else if (splitTime.length === 2) {
-      // no exact match, scroll to closes match but don't return index for focus
-      const minutes = splitTime[1].length === 1 ? splitTime[1] + '0' : '00';
+      // no exact match, scroll to closest hour but don't return index for focus
       let amPm = '';
-      if ((!is24Hour && splitTime[1].toUpperCase().includes('P')) || (is24Hour && new Date().getHours() > 11)) {
-        amPm = pmSuffix;
-      } else if ((!is24Hour && splitTime[1].toUpperCase().includes('A')) || (is24Hour && new Date().getHours() <= 12)) {
-        amPm = amSuffix;
+      if (!is24Hour) {
+        if (splitTime[1].toUpperCase().includes('P')) {
+          amPm = pmSuffix;
+        } else if (splitTime[1].toUpperCase().includes('A')) {
+          amPm = amSuffix;
+        }
       }
-      time = `${splitTime[0]}${delimiter}${minutes}${amPm}`;
-      scrollIndex = this.getOptions().findIndex(option => option.innerText.includes(time));
+      time = `${splitTime[0]}${delimiter}00${amPm}`;
+      scrollIndex = this.getOptions().findIndex(option => option.innerText === time);
       if (scrollIndex !== -1) {
         this.scrollToIndex(scrollIndex);
       }
