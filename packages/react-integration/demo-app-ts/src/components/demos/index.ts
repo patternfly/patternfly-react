@@ -161,6 +161,7 @@ export * from './TableDemo/TableWidthModifiersDemo';
 export * from './TableDemo/TableFavoritesDemo';
 export * from './TableDemo/TableComposableDemo';
 export * from './TabsDemo/TabsDemo';
+export * from './TabsDemo/TabsExpandableDemo';
 export * from './TabsDemo/TabsInsetDemo';
 export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TabsDemo/TabsUncontrolledDemo';
