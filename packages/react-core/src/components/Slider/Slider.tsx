@@ -315,6 +315,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
           key={i}
           value={stepValue}
           label={i.toString()}
+          isTickHidden={!showTicks}
           isLabelHidden={(i === min || i === max) && showBoundaries ? false : true}
           isActive={i <= localValue}
         />
@@ -343,7 +344,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             ))}
           </div>
         )}
-        {!customSteps && showTicks && (
+        {!customSteps && (showTicks || showBoundaries) && (
           <div className={css(styles.sliderSteps)} aria-hidden="true">
             {buildSteps()}
           </div>

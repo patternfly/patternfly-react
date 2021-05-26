@@ -26,7 +26,9 @@ class DiscreteInput extends React.Component {
     this.state = {
       value1: 50,
       value2: 50,
-      value3: 25
+      value3: 25,
+      value4: 50,
+      value5: 50,
     };
 
     this.steps = [
@@ -58,6 +60,18 @@ class DiscreteInput extends React.Component {
           value3: value
         });
     };
+
+    this.onChange4 = value => {
+        this.setState({
+          value4: value
+        });
+    };
+
+    this.onChange5 = value => {
+        this.setState({
+          value5: value
+        });
+    };
   }
 
   render() {
@@ -75,8 +89,14 @@ class DiscreteInput extends React.Component {
         <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value3)}</Text>
         <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries not shown) </Text>
         <Slider value={this.state.value3} onChange={this.onChange3} min={-25} max={75} step={10} showTicks showBoundaries={false}/>
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value4)}</Text>
         <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown) </Text>
-        <Slider value={this.state.value3} onChange={this.onChange3} min={-25} max={75} step={10} showTicks />
+        <Slider value={this.state.value4} onChange={this.onChange4} min={-25} max={75} step={10} showTicks />
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value5)}</Text>
+        <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown, ticks not shown) </Text>
+        <Slider value={this.state.value5} onChange={this.onChange5} min={-25} max={75} step={10} />
       </>
     );
   }
