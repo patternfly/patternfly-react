@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.27.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.27.14...@patternfly/react-table@4.27.15) (2021-05-27)
+
+
+### Bug Fixes
+
+* **tooltip:** change default entry and exit delay ([#5746](https://github.com/patternfly/patternfly-react/issues/5746)) ([9f35132](https://github.com/patternfly/patternfly-react/commit/9f351324257ad29a79dc92a1659801e20766e0f8))
+
+
+
+
+
 ## [4.27.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.27.13...@patternfly/react-table@4.27.14) (2021-05-26)
 
 **Note:** Version bump only for package @patternfly/react-table

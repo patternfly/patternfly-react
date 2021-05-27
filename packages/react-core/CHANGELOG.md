@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.123.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.123.1...@patternfly/react-core@4.123.2) (2021-05-27)
+
+
+### Bug Fixes
+
+* **tooltip:** change default entry and exit delay ([#5746](https://github.com/patternfly/patternfly-react/issues/5746)) ([9f35132](https://github.com/patternfly/patternfly-react/commit/9f351324257ad29a79dc92a1659801e20766e0f8))
+
+
+
+
+
 ## [4.123.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.123.0...@patternfly/react-core@4.123.1) (2021-05-26)
 
 
