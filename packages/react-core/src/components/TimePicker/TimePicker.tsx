@@ -250,6 +250,14 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   getOptions = () =>
     (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
 
+  isValid = (time: string) => {
+    if (this.props.validateTime) {
+      return this.props.validateTime(time);
+    }
+    const { delimiter, is24Hour } = this.props;
+    return validateTime(time, this.state.timeRegex, delimiter, !is24Hour);
+  };
+
   onToggle = (isOpen: boolean) => {
     // on close, parse and validate input
     this.setState(prevState => {
@@ -259,7 +267,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       return {
         isOpen,
         timeState: time,
-        isInvalid: isOpen ? isInvalid : !validateTime(time, timeRegex, delimiter, !is24Hour)
+        isInvalid: isOpen ? isInvalid : !this.isValid(time)
       };
     });
   };
@@ -297,13 +305,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     const { timeRegex } = this.state;
     const { delimiter, is24Hour } = this.props;
+    const time = parseTime(event.currentTarget.value, timeRegex, delimiter, !is24Hour);
     this.setState({
-      isInvalid: !validateTime(
-        parseTime(event.currentTarget.value, timeRegex, delimiter, !is24Hour),
-        timeRegex,
-        delimiter,
-        !is24Hour
-      )
+      isInvalid: !this.isValid(time)
     });
   };
 
@@ -324,6 +328,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
       time,
+      validateTime,
       ...props
     } = this.props;
     const { timeState, isOpen, isInvalid, focusedIndex } = this.state;
