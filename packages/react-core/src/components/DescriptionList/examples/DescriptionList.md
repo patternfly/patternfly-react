@@ -3,14 +3,25 @@ id: 'Description list'
 section: components
 cssPrefix: 'pf-c-description-list'
 beta: true
-propComponents: ['DescriptionList', 'DescriptionListDescription', 'DescriptionListGroup', 'DescriptionListTerm']
+propComponents:
+  [
+    'DescriptionList',
+    'DescriptionListDescription',
+    'DescriptionListGroup',
+    'DescriptionListTerm',
+    'DescriptionListTermHelpText',
+    'DescriptionListTermHelpTextButton',
+    'Popover',
+  ]
 ---
 
-import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup } from '@patternfly/react-core';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import {
@@ -49,10 +60,77 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
+```
+
+### Term help text
+
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListGroup,
+  DescriptionListDescription,
+  DescriptionListTermHelpText,
+  DescriptionListTermHelpTextButton,
+  Popover
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+
+<DescriptionList>
+  <DescriptionListGroup>
+    <DescriptionListTermHelpText>
+      <Popover headerContent={<div>Name</div>} bodyContent={<div>Additional name info</div>}>
+        <DescriptionListTermHelpTextButton> Name </DescriptionListTermHelpTextButton>
+      </Popover>
+    </DescriptionListTermHelpText>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTermHelpText>
+      <Popover headerContent={<div>Namespace</div>} bodyContent={<div>Additional namespace info</div>}>
+        <DescriptionListTermHelpTextButton> Namespace </DescriptionListTermHelpTextButton>
+      </Popover>
+    </DescriptionListTermHelpText>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTermHelpText>
+      <Popover headerContent={<div>Labels</div>} bodyContent={<div>Additional labels info</div>}>
+        <DescriptionListTermHelpTextButton> Labels </DescriptionListTermHelpTextButton>
+      </Popover>
+    </DescriptionListTermHelpText>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTermHelpText>
+      <Popover headerContent={<div>Pod selector</div>} bodyContent={<div>Additional pod selector info</div>}>
+        <DescriptionListTermHelpTextButton> Pod selector </DescriptionListTermHelpTextButton>
+      </Popover>
+    </DescriptionListTermHelpText>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTermHelpText>
+      <Popover headerContent={<div>Annotation</div>} bodyContent={<div>Additional annotation info</div>}>
+        <DescriptionListTermHelpTextButton> Annotation </DescriptionListTermHelpTextButton>
+      </Popover>
+    </DescriptionListTermHelpText>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>;
 ```
 
 ### Default 2 col
+
 ```js
 import React from 'react';
 import {
@@ -96,10 +174,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Default 3 col on lg
+
 ```js
 import React from 'react';
 import {
@@ -139,10 +218,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Horizontal
+
 ```js
 import React from 'react';
 import {
@@ -182,10 +262,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Horizontal 2 col
+
 ```js
 import React from 'react';
 import {
@@ -225,10 +306,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Horizontal 3 col on lg
+
 ```js
 import React from 'react';
 import {
@@ -268,12 +350,13 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ## Responsive column definitions
 
 ### Default responsive columns
+
 ```js
 import React from 'react';
 import {
@@ -313,10 +396,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Horizontal responsive columns
+
 ```js
 import React from 'react';
 import {
@@ -356,12 +440,13 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ## Auto-column-width
 
 ### Default auto column width
+
 ```js
 import React from 'react';
 import {
@@ -401,10 +486,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Horizontal auto column width
+
 ```js
 import React from 'react';
 import {
@@ -444,11 +530,13 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ## Inline grid
+
 ### Default inline grid
+
 ```js
 import React from 'react';
 import {
@@ -488,11 +576,13 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ## Auto fit
+
 ### Auto-fit basic
+
 ```js
 import React from 'react';
 import {
@@ -532,10 +622,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Auto-fit, min width modified grid template columns
+
 ```js
 import React from 'react';
 import {
@@ -575,10 +666,11 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
 
 ### Auto-fit, min width modified, responsive grid template columns
+
 ```js
 import React from 'react';
 import {
@@ -618,5 +710,5 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
     <DescriptionListTerm>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
-</DescriptionList>
+</DescriptionList>;
 ```
