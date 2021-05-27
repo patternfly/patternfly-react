@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.104.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.103.0...@patternfly/react-integration@4.104.0) (2021-05-27)
+
+
+### Features
+
+* **Tabs:** Added support for uncontrolled tabs ([#5831](https://github.com/patternfly/patternfly-react/issues/5831)) ([93a159f](https://github.com/patternfly/patternfly-react/commit/93a159f7116b96e422366ccdd397480b0c024cf2))
+
+
+
+
+
 # [4.103.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.102.0...@patternfly/react-integration@4.103.0) (2021-05-27)
 
 

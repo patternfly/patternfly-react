@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.126.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.125.0...@patternfly/react-core@4.126.0) (2021-05-27)
+
+
+### Bug Fixes
+
+* **timepicker:** don't spread validateTime ([#5850](https://github.com/patternfly/patternfly-react/issues/5850)) ([2fc0622](https://github.com/patternfly/patternfly-react/commit/2fc0622358b3a375e9e8875d9de457e27b7d236c))
+
+
+### Features
+
+* **grid+flex:** add ability to specify order ([#5274](https://github.com/patternfly/patternfly-react/issues/5274)) ([bd3fe3e](https://github.com/patternfly/patternfly-react/commit/bd3fe3e7609fed6d18f26db22984a5e857c631ca))
+* **Tabs:** Added support for uncontrolled tabs ([#5831](https://github.com/patternfly/patternfly-react/issues/5831)) ([93a159f](https://github.com/patternfly/patternfly-react/commit/93a159f7116b96e422366ccdd397480b0c024cf2))
+
+
+
+
+
 # [4.125.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.124.0...@patternfly/react-core@4.125.0) (2021-05-27)
 
 
