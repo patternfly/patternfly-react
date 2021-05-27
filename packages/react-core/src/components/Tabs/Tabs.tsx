@@ -26,6 +26,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   variant?: 'default' | 'light300';
   /** The index of the active tab */
   activeKey?: number | string;
+  /** The index of the default active tab. Set this for uncontrolled Tabs */
+  defaultActiveKey?: number | string;
   /** Callback to handle tab selection */
   onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** Uniquely identifies the tabs */
@@ -71,6 +73,7 @@ interface TabsState {
   disableLeftScrollButton: boolean;
   disableRightScrollButton: boolean;
   shownKeys: (string | number)[];
+  uncontrolledActiveKey: number | string;
   ouiaStateId: string;
 }
 
@@ -83,7 +86,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       showScrollButtons: false,
       disableLeftScrollButton: false,
       disableRightScrollButton: false,
-      shownKeys: [this.props.activeKey], // only for mountOnEnter case
+      shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
+      uncontrolledActiveKey: this.props.defaultActiveKey,
       ouiaStateId: getDefaultOUIAId(Tabs.displayName)
     };
   }
@@ -111,7 +115,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     mountOnEnter: boolean
   ) {
     const { shownKeys } = this.state;
-    this.props.onSelect(event, eventKey);
+    const { onSelect, defaultActiveKey } = this.props;
+    // if defaultActiveKey Tabs are uncontrolled, set new active key internally
+    if (defaultActiveKey !== undefined) {
+      this.setState({
+        uncontrolledActiveKey: eventKey
+      });
+    } else {
+      onSelect(event, eventKey);
+    }
+
     // process any tab content sections outside of the component
     if (tabContentRef) {
       React.Children.toArray(this.props.children)
@@ -224,6 +237,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       className,
       children,
       activeKey,
+      defaultActiveKey,
       id,
       isFilled,
       isSecondary,
@@ -241,13 +255,20 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       variant,
       ...props
     } = this.props;
-    const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
+    const {
+      showScrollButtons,
+      disableLeftScrollButton,
+      disableRightScrollButton,
+      shownKeys,
+      uncontrolledActiveKey
+    } = this.state;
     const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[])
       .filter(Boolean)
       .filter(child => !child.props.isHidden);
 
     const uniqueId = id || getUniqueId();
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
+    const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
 
     return (
       <TabsContextProvider value={{ variant }}>
@@ -292,13 +313,17 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                 ...rest
               } = child.props;
               let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
-              if ((mountOnEnter || unmountOnExit) && eventKey !== activeKey) {
+              if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
                 ariaControls = undefined;
               }
               return (
                 <li
                   key={index}
-                  className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, childClassName)}
+                  className={css(
+                    styles.tabsItem,
+                    eventKey === localActiveKey && styles.modifiers.current,
+                    childClassName
+                  )}
                 >
                   <TabButton
                     className={css(styles.tabsLink)}
@@ -329,13 +354,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           .filter(
             child =>
               child.props.children &&
-              !(unmountOnExit && child.props.eventKey !== activeKey) &&
+              !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
               !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
           )
           .map((child, index) => (
             <TabContent
               key={index}
-              activeKey={activeKey}
+              activeKey={localActiveKey}
               child={child}
               id={child.props.id || uniqueId}
               ouiaId={child.props.ouiaId}

@@ -84,6 +84,41 @@ class SimpleTabs extends React.Component {
 }
 ```
 
+### Uncontrolled
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
+
+class UncontrolledSimpleTabs extends React.Component {
+
+  render() {
+
+    return (
+      <Tabs defaultActiveKey={0}>
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+          Users
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+          Containers
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+          Database
+        </Tab>
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+          Server
+        </Tab>
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+          System
+        </Tab>
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+          Network
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+
 ### Box light variation
 ```js
 import React from 'react';
