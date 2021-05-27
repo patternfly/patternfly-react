@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
+import * as flexToken from '@patternfly/react-tokens/dist/js/l_flex_item_Order';
 
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, setBreakpointCssVars } from '../../helpers/util';
 
 export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Flex layout */
@@ -325,6 +326,14 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'wrap' | 'wrapReverse' | 'nowrap';
     '2xl'?: 'wrap' | 'wrapReverse' | 'nowrap';
   };
+  /** Modifies the flex layout element order property */
+  order?: {
+    default?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
 }
 
 export const Flex: React.FunctionComponent<FlexProps> = ({
@@ -344,6 +353,8 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
   display,
   fullWidth,
   flexWrap,
+  order,
+  style,
   ...props
 }: FlexProps) => (
   <div
@@ -365,6 +376,7 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
       formatBreakpointMods(flexWrap, styles),
       className
     )}
+    style={style || order ? { ...style, ...setBreakpointCssVars(order, flexToken.l_flex_item_Order.name) } : undefined}
     {...props}
   >
     {children}

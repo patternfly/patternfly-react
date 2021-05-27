@@ -233,6 +233,30 @@ export function pluralize(i: number, singular: string, plural?: string) {
 }
 
 /**
+ * This function is a helper for turning arrays of breakpointMod objects for flex and grid into style object
+ *
+ * @param {object} mods The modifiers object
+ * @param {string} css-variable The appropriate css variable for the component
+ */
+export const setBreakpointCssVars = (
+  mods: {
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+    '3xl'?: string;
+  },
+  cssVar: string
+): React.CSSProperties =>
+  Object.entries(mods || {}).reduce(
+    (acc, [breakpoint, value]) =>
+      breakpoint === 'default' ? { ...acc, [cssVar]: value } : { ...acc, [`${cssVar}-on-${breakpoint}`]: value },
+    {}
+  );
+
+/**
  * This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
  * @param {object} mods The modifiers object
