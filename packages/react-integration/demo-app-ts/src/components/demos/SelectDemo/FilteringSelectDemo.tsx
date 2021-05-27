@@ -1,4 +1,4 @@
-import { Select, SelectOption, SelectOptionObject, SelectGroup, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject, SelectGroup, SelectVariant, Checkbox } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 /* eslint-disable no-console */
@@ -10,21 +10,20 @@ export interface FilteringSelectDemoState {
 export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
   state = {
     isOpen: false,
-    selections: ['']
+    selections: [''],
+    isSingle: false
   };
 
   options = [
     <SelectGroup label="Status" key="group1">
-      <SelectOption key={0} value="Running" inputId="Running" />
-      <SelectOption key={1} value="Stopped" inputId="Stopped" />
-      <SelectOption key={2} value="Down" inputId="Down" />
-      <SelectOption key={3} value="Degraded" inputId="Degraded" />
-      <SelectOption key={4} value="Needs Maintenence" inputId="Needs-Maintenence" />
+      {['Running', 'Stopped', 'Down', 'Degraded', 'Needs-Maintenence'].map((option, index) => (
+        <SelectOption key={index} value={option} id={option} inputId={option} />
+      ))}
     </SelectGroup>,
     <SelectGroup label="Vendor Names" key="group2">
-      <SelectOption key={5} value="Dell" inputId="Dell" />
-      <SelectOption key={6} value="Samsung" isDisabled inputId="Samsung" />
-      <SelectOption key={7} value="Hewlett-Packard" inputId="Hewlett-Packard" />
+      <SelectOption key={5} value="Dell" />
+      <SelectOption key={6} value="Samsung" isDisabled />
+      <SelectOption key={7} value="Hewlett-Packard" />
     </SelectGroup>
   ];
 
@@ -34,7 +33,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
     });
   };
 
-  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+  onSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { selections } = this.state;
     if (selections.includes(selection.toString())) {
       this.setState(
@@ -79,16 +78,16 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
   };
 
   render() {
-    const { isOpen, selections } = this.state;
+    const { isOpen, selections, isSingle } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <div>
         <span id={titleId} hidden>
-          Filtering Checkbox Title
+          Filtering Select Title
         </span>
         <Select
           toggleId="filter-select"
-          variant={SelectVariant.checkbox}
+          variant={isSingle ? SelectVariant.single : SelectVariant.checkbox}
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
@@ -102,6 +101,12 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
         >
           {this.options}
         </Select>
+        <Checkbox
+          id="single-toggle"
+          label="Is single select"
+          isChecked={isSingle}
+          onChange={() => this.setState({ isSingle: !isSingle, selections: [] })}
+        />
       </div>
     );
   }
