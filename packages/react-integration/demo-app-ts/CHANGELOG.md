@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.102.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.101.0...demo-app-ts@4.102.0) (2021-05-27)
+
+
+### Features
+
+* **select:** allow filtering in single variant ([#5793](https://github.com/patternfly/patternfly-react/issues/5793)) ([54d2e3f](https://github.com/patternfly/patternfly-react/commit/54d2e3f2858099ad096c520634bfdf260f880e3c))
+
+
+
+
+
 # [4.101.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.100.2...demo-app-ts@4.101.0) (2021-05-27)
 
 

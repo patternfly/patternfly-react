@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.125.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.124.0...@patternfly/react-core@4.125.0) (2021-05-27)
+
+
+### Features
+
+* **select:** allow filtering in single variant ([#5793](https://github.com/patternfly/patternfly-react/issues/5793)) ([54d2e3f](https://github.com/patternfly/patternfly-react/commit/54d2e3f2858099ad096c520634bfdf260f880e3c))
+
+
+
+
+
 # [4.124.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.123.2...@patternfly/react-core@4.124.0) (2021-05-27)
 
 
