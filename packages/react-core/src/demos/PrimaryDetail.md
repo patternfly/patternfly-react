@@ -1687,10 +1687,10 @@ class PrimaryDetailCardView extends React.Component {
               <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
             </TextContent>
           </PageSection>
-          <PageSection isFilled hasNoPadding>
+          <PageSection isFilled padding={{default: "noPadding"}}>
             <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-              <DrawerSection className="pf-u-mb-md">
-                <Toolbar id="card-view-data-toolbar-group-types" className="pf-m-page-insets" clearAllFilters={this.onDelete}>
+              <DrawerSection>
+                <Toolbar id="card-view-data-toolbar-group-types" usePageInsets clearAllFilters={this.onDelete}>
                   <ToolbarContent>{toolbarItems}</ToolbarContent>
                 </Toolbar>
                 <Divider component="div" />
