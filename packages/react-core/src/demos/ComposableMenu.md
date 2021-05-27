@@ -673,7 +673,7 @@ class DrilldownComposableMenu extends React.Component {
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper, TreeView } from '@patternfly/react-core';
 
-class BasicComposableMenu extends React.Component {
+class FilterTreeComposableMenu extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
