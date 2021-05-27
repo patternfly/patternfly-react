@@ -324,6 +324,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
       time,
+      validateTime,
       ...props
     } = this.props;
     const { timeState, isOpen, isInvalid, focusedIndex } = this.state;
