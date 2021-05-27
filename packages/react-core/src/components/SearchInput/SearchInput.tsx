@@ -90,6 +90,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 }: SearchInputProps) => {
   const [showSearchMenu, setShowSearchMenu] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState(value);
+  const isInitialMount = React.useRef(true);
   const firstAttrRef = React.useRef(null);
   const searchInputRef = React.useRef(null);
   const searchInputInputRef = innerRef || React.useRef(null);
@@ -108,10 +109,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   });
 
   React.useEffect(() => {
-    if (showSearchMenu && firstAttrRef && firstAttrRef.current) {
-      firstAttrRef.current.focus();
-    } else if (!showSearchMenu && searchInputRef && searchInputRef.current) {
-      searchInputInputRef.current.focus();
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      if (showSearchMenu && firstAttrRef && firstAttrRef.current) {
+        firstAttrRef.current.focus();
+      } else if (!showSearchMenu && searchInputRef && searchInputRef.current) {
+        searchInputInputRef.current.focus();
+      }
     }
   }, [showSearchMenu]);
 
