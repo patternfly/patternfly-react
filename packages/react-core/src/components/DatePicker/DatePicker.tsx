@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { TextInput } from '../TextInput/TextInput';
+import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup } from '../InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
@@ -39,6 +39,8 @@ export interface DatePickerProps
   popoverProps?: Omit<PopoverProps, 'appendTo'>;
   /** Functions that returns an error message if a date is invalid */
   validators?: ((date: Date) => string)[];
+  /** Additional props for input field */
+  inputProps?: TextInputProps;
 }
 
 export const yyyyMMddFormat = (date: Date) =>
@@ -70,6 +72,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   validators = [],
   rangeStart,
   style = {},
+  inputProps = {},
   ...props
 }: DatePickerProps) => {
   const [value, setValue] = React.useState(valueProp);
@@ -184,6 +187,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
               onChange={onTextInput}
               onBlur={onInputBlur}
               onKeyPress={onKeyPress}
+              {...inputProps}
             />
             <button
               ref={buttonRef}
