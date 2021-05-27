@@ -1233,3 +1233,185 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
   }
 }
 ```
+
+### With footer
+
+```js
+import React from 'react';
+import { Menu, MenuList, MenuItem, MenuContent, MenuFooter, Button } from '@patternfly/react-core';
+
+class FooterMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 0
+    };
+    this.onSelect = (event, itemId) => {
+      console.log(`clicked ${itemId}`);
+      this.setState({
+        activeItem: itemId
+      });
+    };
+  }
+
+  render() {
+    const { activeItem } = this.state;
+    return (
+      <Menu activeItemId={activeItem} onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            <MenuItem itemId={0}>Action</MenuItem>
+            <MenuItem
+              itemId={1}
+              to="#default-link2"
+              // just for demo so that navigation is not triggered
+              onClick={event => event.preventDefault()}
+            >
+              Link
+            </MenuItem>
+            <MenuItem isDisabled>Disabled Action</MenuItem>
+            <MenuItem isDisabled to="#default-link4">
+              Disabled Link
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+        <MenuFooter>
+          <Button variant="link" isInline>
+            Action
+          </Button>
+        </MenuFooter>
+      </Menu>
+    );
+  }
+}
+```
+
+### With view more
+
+```js
+import React from 'react';
+import { Menu, MenuList, MenuItem, MenuContent, MenuFooter, Spinner } from '@patternfly/react-core';
+
+class ViewMoreMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 0,
+      isLoading: false,
+      numOptions: 3
+    };
+
+    this.menuOptions = [
+      <MenuItem key={0} itemId={0} ref={React.createRef()}>
+        Action
+      </MenuItem>,
+      <MenuItem
+        key={2}
+        itemId={1}
+        to="#default-link2"
+        // just for demo so that navigation is not triggered
+        onClick={event => event.preventDefault()}
+        ref={React.createRef()}
+      >
+        Link
+      </MenuItem>,
+      <MenuItem key={3} isDisabled>
+        Disabled Action
+      </MenuItem>,
+      <MenuItem key={4} isDisabled to="#default-link4">
+        Disabled Link
+      </MenuItem>,
+      <MenuItem key={5} itemId={2} ref={React.createRef()}>
+        Action 2
+      </MenuItem>,
+      <MenuItem key={6} itemId={3} ref={React.createRef()}>
+        Action 3
+      </MenuItem>,
+      <MenuItem key={7} itemId={4} ref={React.createRef()}>
+        Action 4
+      </MenuItem>,
+      <MenuItem key={8} itemId={5} ref={React.createRef()}>
+        Action 5
+      </MenuItem>,
+      <MenuItem key={9} itemId={6} ref={React.createRef()}>
+        Final option
+      </MenuItem>
+    ];
+
+    this.onSelect = (event, itemId) => {
+      console.log(`clicked ${itemId}`);
+      this.setState({
+        activeItem: itemId
+      });
+    };
+
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    };
+
+    this.getNextValidRef = startingIndex => {
+      let index = startingIndex;
+      while (index < this.menuOptions.length && this.menuOptions[index].ref === null) {
+        index++;
+      }
+      return this.menuOptions[index].ref.current;
+    };
+
+    this.onViewMoreClick = () => {
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 <= this.menuOptions.length ? this.state.numOptions + 3 : this.menuOptions.length;
+        const prevPosition = this.state.numOptions;
+        this.setState({ numOptions: newLength, isLoading: false });
+      });
+    };
+
+    this.onViewMoreKeyDown = event => {
+      if (!(event.key === ' ' || event.key === 'Enter')) {
+        return;
+      }
+      event.stopPropagation();
+      event.preventDefault();
+
+      this.setState({ isLoading: true });
+      this.simulateNetworkCall(() => {
+        const newLength =
+          this.state.numOptions + 3 <= this.menuOptions.length ? this.state.numOptions + 3 : this.menuOptions.length;
+        const prevPosition = this.state.numOptions;
+
+        this.setState({ numOptions: newLength, isLoading: false }, () => {
+          const nextFocus = this.getNextValidRef(prevPosition).querySelector('button, a');
+          this.getNextValidRef(0).querySelector('button, a').tabIndex = -1;
+          nextFocus.tabIndex = 0;
+          nextFocus.focus();
+        });
+      });
+    };
+  }
+
+  render() {
+    const { activeItem, isLoading, numOptions } = this.state;
+    return (
+      <Menu activeItemId={activeItem} onSelect={this.onSelect}>
+        <MenuContent>
+          <MenuList>
+            {this.menuOptions.slice(0, numOptions)}
+            {numOptions !== this.menuOptions.length && (
+              <MenuItem
+                {...(!isLoading && { isLoadButton: true })}
+                {...(isLoading && { isLoading: true })}
+                onKeyDown={this.onViewMoreKeyDown}
+                onClick={this.onViewMoreClick}
+                itemId="loader"
+              >
+                {isLoading ? <Spinner size="lg" /> : 'View more'}
+              </MenuItem>
+            )}
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+  }
+}
+```
