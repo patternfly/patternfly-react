@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.101.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.100.2...demo-app-ts@4.101.0) (2021-05-27)
+
+
+### Features
+
+* **DescriptionList:** Added support for helpr text ([#5837](https://github.com/patternfly/patternfly-react/issues/5837)) ([80fc558](https://github.com/patternfly/patternfly-react/commit/80fc5583bc759c4fac0d87cd985d9f3baa3f7222))
+* **Menu:** add footer, add view more demo ([#5791](https://github.com/patternfly/patternfly-react/issues/5791)) ([dfb53aa](https://github.com/patternfly/patternfly-react/commit/dfb53aaa0abab6f26ca7b5ff92c9f2c1ef39588c))
+
+
+
+
+
 ## [4.100.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.100.1...demo-app-ts@4.100.2) (2021-05-27)
 
 **Note:** Version bump only for package demo-app-ts
