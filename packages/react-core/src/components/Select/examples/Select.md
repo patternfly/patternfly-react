@@ -704,6 +704,92 @@ class GroupedCheckboxSelectInput extends React.Component {
 }
 ```
 
+### Grouped single with filtering
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+
+class FilteringSingleSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: ''
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({ isOpen });
+    };
+
+    this.onSelect = (event, selection) => {
+      this.setState({ selected: selection, isOpen: false }),
+      console.log('selected: ', selection);
+    };
+
+    this.onFilter = (_, textInput) => {
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(Boolean);
+        return filteredGroups;
+      }
+    };
+  }
+
+  render() {
+    const { isOpen, selected, filteredOptions } = this.state;
+    const titleId = 'single-filtering-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Single select with filter
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          onFilter={this.onFilter}
+          isGrouped
+          hasInlineFilter
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
 ### Grouped checkbox input with filtering
 
 ```js

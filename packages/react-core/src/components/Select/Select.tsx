@@ -145,7 +145,7 @@ export interface SelectProps
 }
 
 export interface SelectState {
-  openedOnEnter: boolean;
+  focusFirstOption: boolean;
   typeaheadInputValue: string | null;
   typeaheadFilteredChildren: React.ReactNode[];
   favoritesGroup: React.ReactNode[];
@@ -211,7 +211,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   state: SelectState = {
-    openedOnEnter: false,
+    focusFirstOption: false,
     typeaheadInputValue: null,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     favoritesGroup: [] as React.ReactNode[],
@@ -230,7 +230,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0][0] = this.filterRef.current;
     }
 
-    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent) {
+    if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
       const firstRef = this.refCollection.find(ref => ref !== null);
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
@@ -268,20 +268,25 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onEnter = () => {
-    this.setState({ openedOnEnter: true });
+    this.setState({ focusFirstOption: true });
   };
 
   onToggle = (isExpanded: boolean) => {
-    const { isInputValuePersisted, onSelect, onToggle } = this.props;
+    const { isInputValuePersisted, onSelect, onToggle, hasInlineFilter } = this.props;
     if (!isExpanded && isInputValuePersisted && onSelect) {
-      onSelect(undefined, this.inputRef && this.inputRef.current ? this.inputRef.current.value : '');
+      onSelect(undefined, this.inputRef.current ? this.inputRef.current.value : '');
+    }
+    if (isExpanded && hasInlineFilter) {
+      this.setState({
+        focusFirstOption: true
+      });
     }
     onToggle(isExpanded);
   };
 
   onClose = () => {
     this.setState({
-      openedOnEnter: false,
+      focusFirstOption: false,
       typeaheadInputValue: null,
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
       typeaheadCurrIndex: -1,
@@ -393,15 +398,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     });
   };
 
-  onClick = (e: React.MouseEvent) => {
+  onClick = (_e: React.MouseEvent) => {
     if (!this.props.isOpen) {
       this.onToggle(true);
     }
-    e.stopPropagation();
   };
 
-  clearSelection = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  clearSelection = (_e: React.MouseEvent) => {
     this.setState({
       typeaheadInputValue: null,
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
@@ -709,7 +712,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       ...props
     } = this.props;
     const {
-      openedOnEnter,
+      focusFirstOption: openedOnEnter,
       typeaheadCurrIndex,
       typeaheadInputValue,
       typeaheadFilteredChildren,
@@ -806,7 +809,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       );
     }
 
-    let filterWithChildren = children;
     if (hasInlineFilter) {
       const filterBox = (
         <React.Fragment>
@@ -820,12 +822,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               onKeyDown={event => {
                 if (event.key === KeyTypes.ArrowUp) {
                   this.handleMenuKeys(0, 0, 'up');
+                  event.preventDefault();
                 } else if (event.key === KeyTypes.ArrowDown) {
                   this.handleMenuKeys(0, 0, 'down');
+                  event.preventDefault();
                 } else if (event.key === KeyTypes.ArrowLeft) {
                   this.handleMenuKeys(0, 0, 'left');
+                  event.preventDefault();
                 } else if (event.key === KeyTypes.ArrowRight) {
                   this.handleMenuKeys(0, 0, 'right');
+                  event.preventDefault();
                 } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
                   // More modal-like experience for checkboxes
                   // Let SelectOption handle this
@@ -845,8 +851,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           <Divider key="inline-filter-divider" />
         </React.Fragment>
       );
-      this.refCollection[0][0] = this.filterRef.current;
-      filterWithChildren = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
+      renderableItems = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
         React.cloneElement(option, { key: index })
       );
     }
@@ -865,6 +870,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         case 'single':
           variantProps = {
             selected: selections[0],
+            hasInlineFilter,
             openedOnEnter
           };
           variantChildren = renderableItems;
@@ -876,7 +882,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             hasInlineFilter,
             openedOnEnter
           };
-          variantChildren = filterWithChildren;
+          variantChildren = renderableItems;
           break;
         case 'typeahead':
           variantProps = {
