@@ -291,7 +291,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={_event => {
               if (!isDisabled) {
-                onToggle(true);
+                onToggle(!isOpen);
               }
             }}
             onKeyDown={this.onKeyDown}
@@ -303,7 +303,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
               aria-label={ariaLabel}
               onClick={_event => {
-                _event.stopPropagation();
                 onToggle(!isOpen);
                 if (isOpen) {
                   onClose();

@@ -61,10 +61,10 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   };
 
   extendChildren(randomId: string) {
-    const { children, isGrouped } = this.props;
+    const { children, hasInlineFilter, isGrouped } = this.props;
     const childrenArray: React.ReactElement[] = children as React.ReactElement[];
+    let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
-      let index = 0;
       return React.Children.map(childrenArray, (group: React.ReactElement) => {
         if (group.type === SelectGroup) {
           return React.cloneElement(group, {
@@ -78,9 +78,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
         }
       });
     }
-    return React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
-      this.cloneOption(child, index, randomId)
-    );
+    return React.Children.map(childrenArray, (child: React.ReactElement) => this.cloneOption(child, index++, randomId));
   }
 
   cloneOption(child: React.ReactElement, index: number, randomId: string) {
