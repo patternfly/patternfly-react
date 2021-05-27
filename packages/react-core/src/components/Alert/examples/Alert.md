@@ -258,22 +258,17 @@ class AsyncLiveRegionAlert extends React.Component {
       asyncTitle: '',
       timer: null
     };
-    this.stopAsyncAlert = () => {
-      clearInterval(this.state.timer);
-    };
-  }
-  componentWillUnmount() {
-    this.stopAsyncAlert();
   }
   render() {
     const getUniqueId = () => new Date().getTime();
     const createAsyncAlert = () => {
-      let timerValue = setInterval(() => {
+      let timerValue = setTimeout(() => {
         this.setState({
           asyncTitle: `This is a async alert`
         });
       }, 1500);
       this.setState({ timer: timerValue });
+      clearInterval(this.state.timer);
     };
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
     return (
@@ -281,9 +276,6 @@ class AsyncLiveRegionAlert extends React.Component {
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={createAsyncAlert} type="button" className={btnClasses}>
             Create Async Info Alert
-          </button>
-          <button onClick={this.stopAsyncAlert} type="button" className={btnClasses}>
-            Stop Async Info Alert
           </button>
         </InputGroup>
           <Alert isLiveRegion variant='info' title={this.state.asyncTitle} key={getUniqueId()} />
