@@ -76,9 +76,7 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/ou
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
   >
-    <span aria-label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis." tabIndex="0">
-      <OutlinedQuestionCircleIcon />
-    </span>
+    <OutlinedQuestionCircleIcon title="An icon with a tooltip" />
   </Tooltip>
 </div>
 ```

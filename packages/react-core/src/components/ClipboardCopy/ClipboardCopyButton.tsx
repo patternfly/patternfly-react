@@ -31,8 +31,8 @@ export interface ClipboardCopyButtonProps
 
 export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
   onClick,
-  exitDelay = 100,
-  entryDelay = 100,
+  exitDelay = 0,
+  entryDelay = 300,
   maxWidth = '100px',
   position = 'top',
   'aria-label': ariaLabel = 'Copyable input',

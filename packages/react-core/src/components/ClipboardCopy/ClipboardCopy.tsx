@@ -95,7 +95,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     position: TooltipPosition.top,
     maxWidth: '150px',
     exitDelay: 1600,
-    entryDelay: 100,
+    entryDelay: 300,
     switchDelay: 2000,
     onCopy: clipboardCopyFunc,
     onChange: (): any => undefined,

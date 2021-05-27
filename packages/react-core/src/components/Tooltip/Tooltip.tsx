@@ -105,7 +105,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   isContentLeftAligned = false,
   enableFlip = true,
   className = '',
-  entryDelay = 0,
+  entryDelay = 300,
   exitDelay = 0,
   appendTo = () => document.body,
   zIndex = 9999,
