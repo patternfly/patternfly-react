@@ -30,7 +30,7 @@ import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -2151,42 +2151,48 @@ class TreeTable extends React.Component {
                   branches: 'Branch three',
                   pullRequests: 'Pull request three',
                   workspaces: 'Workplace three',
+                },
+                {
+                  repositories: 'Repositories four',
+                  branches: 'Branch four',
+                  pullRequests: 'Pull request four',
+                  workspaces: 'Workplace four',
                 }
               ]
-            },
-            {
-              repositories: 'Repositories four',
-              branches: 'Branch four',
-              pullRequests: 'Pull request four',
-              workspaces: 'Workplace four',
             },
             {
               repositories: 'Repositories five',
               branches: 'Branch five',
               pullRequests: 'Pull request five',
               workspaces: 'Workplace five',
+            }, 
+            {
+              repositories: 'Repositories six',
+              branches: 'Branch six',
+              pullRequests: 'Pull request six',
+              workspaces: 'Workplace six',
             }
           ]
         },
         {
-          repositories: 'Repositories six',
-          branches: 'Branch six',
-          pullRequests: 'Pull request six',
-          workspaces: 'Workplace six',
+          repositories: 'Repositories seven',
+          branches: 'Branch seven',
+          pullRequests: 'Pull request seven',
+          workspaces: 'Workplace seven' ,
           children: [
             {
-              repositories: 'Repositories seven',
-              branches: 'Branch seven',
-              pullRequests: 'Pull request seven',
-              workspaces: 'Workplace seven'
+              repositories: 'Repositories eight',
+              branches: 'Branch eight',
+              pullRequests: 'Pull request eight',
+              workspaces: 'Workplace eight'
             }
           ]
         },
         {
-          repositories: 'Repositories eight',
-          branches: 'Branch eight',
-          pullRequests: 'Pull request eight',
-          workspaces: 'Workplace eight'
+          repositories: 'Repositories nine',
+          branches: 'Branch nine',
+          pullRequests: 'Pull request nine',
+          workspaces: 'Workplace nine'
         }
       ],
       expandedRows: ['Repositories one', 'Repositories six'],
@@ -2207,7 +2213,7 @@ class TreeTable extends React.Component {
       if (x) {
         const isExpanded = this.state.expandedRows.includes(x.repositories);
         const isDetailsExpanded = this.state.expandedDetailsRows.includes(x.repositories);
-        const isChecked = this.state.checkedRows.includes(x.repositories);
+        const isChecked = this.mapChecked(x);
         let icon = <LeafIcon />;
         if (x.children) {
           icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
@@ -2246,7 +2252,6 @@ class TreeTable extends React.Component {
     };
     
     this.onCollapse = (event, rowIndex, title) => {
-      console.log(title);
       this.setState(prevState => {
         const { expandedRows } = prevState;
         const openedIndex = expandedRows.indexOf(title);
@@ -2257,33 +2262,81 @@ class TreeTable extends React.Component {
       });
     };
     
-    this.onCheckChange = (event, checked, rowIndex, title) => {
+    this.onCheck = (event, checked, rowIndex, checkedTitle) => {
       this.setState(prevState => {
-        const { checkedRows } = prevState;
-        const checkedIndex = checkedRows.indexOf(title);
-        const newCheckedRows = checkedIndex === -1 ? [...checkedRows, title] : checkedRows.filter(o => o !== title);
+        let flattenedData = this.getFlattenedTitles(prevState.data, checkedTitle);
+        const prevChecked = prevState.checkedRows;
         return {
-          checkedRows: newCheckedRows
+          checkedRows: checked ? 
+            prevChecked.concat(flattenedData.filter(title => !prevChecked.includes(title))) :
+            prevChecked.filter(title => !flattenedData.includes(title))
         }
       });
-    }
+    };
+    
+    // // helper methods for determining the checkbox's checked state for each row  ///
+    
+    /** Recursive function which flattens the data into an array of row titles 
+    * whose checkboxes' checked states are being updated.
+    * Titles are only added to the array if they are the root checked title node, 
+    * or if they are a descendent of the root checked title node */
+    this.getFlattenedTitles = (data, checkedTitle, parentChecked) => {
+      let flattenedData = [];  
+      data.forEach(item => {
+        if (item.repositories === checkedTitle || parentChecked) {
+          flattenedData.push(item.repositories);
+        }
+        if (item.children) {
+          flattenedData = flattenedData.concat(this.getFlattenedTitles(item.children, checkedTitle, item.repositories === checkedTitle || parentChecked));
+        }
+        return flattenedData;
+      });
+      return flattenedData;
+    };
+    
+    this.areAllDescendantsChecked = (row) =>
+      row.children
+        ? row.children.every(child => this.areAllDescendantsChecked(child))
+        : this.state.checkedRows.indexOf(row.repositories) !== -1;
+    
+    this.areSomeDescendantsChecked = (row) =>
+      row.children
+        ? row.children.some(child => this.areSomeDescendantsChecked(child))
+        : this.state.checkedRows.indexOf(row.repositories) !== -1;
+  
+    this.mapChecked = (row) => {
+      if (this.areAllDescendantsChecked(row)) {
+        return true;
+      }
+      if (this.areSomeDescendantsChecked(row)) {
+        return null;
+      }
+      return false;
+    };
   }
 
   render() {
     return (
       <Table
-        isTreeTable
-        aria-label="Tree table"
-        cells={[
-          { title: 'Repositories', cellTransforms: [treeRow(this.onCollapse, this.onCheckChange, this.onToggleRowDetails)] }, 
-          'Branches', 
-          { title: 'Pull requests' }, 
-          'Workspaces']}
-        rows={this.buildRows(this.state.data, 1, 1)}        
-      >
-        <TableHeader />
-        <TableBody/>
-      </Table>
+      isTreeTable
+      aria-label="Tree table"
+      cells={[
+        { 
+          title: 'Repositories', 
+          cellTransforms: [treeRow(
+            this.onCollapse, 
+            this.onCheck, 
+            this.onToggleRowDetails)
+          ] 
+         }, 
+        'Branches', 
+        { title: 'Pull requests' }, 
+        'Workspaces']}
+      rows={this.buildRows(this.state.data, 1, 1)}        
+    >
+      <TableHeader />
+      <TableBody/>
+    </Table>
     );
   }
 }
@@ -2725,7 +2778,7 @@ This example demonstrates adding actions as the last column. The header's last c
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-import { ButtonVariant, DropdownToggle } from '@patternfly/react-core';
+import { ButtonVariant, DropdownToggle, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
 ComposableTableActions = () => {
   const defaultActions = [
@@ -2776,44 +2829,66 @@ ComposableTableActions = () => {
     ['5', '2', 'b', 'four', 'five']
   ];
   
+  const [toggle, setToggle] = React.useState("defaultToggle");
+  
   const customActionsToggle = (props) => (
     <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
       Actions
     </DropdownToggle>
   );
   
+  const toggleCustomToggle = (checked, event) => {
+      setToggle(event.currentTarget.id);
+    };
+  
   return (
-    <TableComposable aria-label="Actions table">
-      <Thead>
-        <Tr>
-          <Th>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-          <Th>{columns[2]}</Th>
-          <Th>{columns[3]}</Th>
-          <Th>{columns[4]}</Th>
-          <Th />
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                {cell}
-              </Td>
-            ))}
-            <Td
-              key={`${rowIndex}_5`}
-              actions={{
-                items: rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions,
-                disable: rowIndex === 3
-              }}
-              actionsToggle={customActionsToggle}
-            />
+    <React.Fragment>
+      <ToggleGroup aria-label="Default uses kebab toggle">
+        <ToggleGroupItem
+          text="Default actions toggle"
+          buttonId="defaultToggle"
+          isSelected={toggle === "defaultToggle"}
+          onChange={toggleCustomToggle}
+        />
+        <ToggleGroupItem
+          text="Custom actions toggle"
+          buttonId="customToggle"
+          isSelected={toggle === "customToggle"}
+          onChange={toggleCustomToggle}
+        />
+      </ToggleGroup>
+      <TableComposable aria-label="Actions table">
+        <Thead>
+          <Tr>
+            <Th>{columns[0]}</Th>
+            <Th>{columns[1]}</Th>
+            <Th>{columns[2]}</Th>
+            <Th>{columns[3]}</Th>
+            <Th>{columns[4]}</Th>
+            <Th />
           </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
+        </Thead>
+        <Tbody>
+          {rows.map((row, rowIndex) => (
+            <Tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                  {cell}
+                </Td>
+              ))}
+              <Td
+                key={`${rowIndex}_5`}
+                actions={{
+                  items: rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions,
+                  disable: rowIndex === 3,
+                  actionsToggle: toggle === "customToggle" ? customActionsToggle : undefined
+                }}
+              />
+            </Tr>
+          ))}
+        </Tbody>
+      </TableComposable>
+    </React.Fragment>
   );
 };
 ```
@@ -3459,44 +3534,50 @@ class TreeTable extends React.Component {
                   branches: 'Branch three',
                   pullRequests: 'Pull request three',
                   workspaces: 'Workplace three',
+                },
+                {
+                  repositories: 'Repositories four',
+                  branches: 'Branch four',
+                  pullRequests: 'Pull request four',
+                  workspaces: 'Workplace four',
                 }
               ]
-            },
-            {
-              repositories: 'Repositories four',
-              branches: 'Branch four',
-              pullRequests: 'Pull request four',
-              workspaces: 'Workplace four',
             },
             {
               repositories: 'Repositories five',
               branches: 'Branch five',
               pullRequests: 'Pull request five',
               workspaces: 'Workplace five',
+            }, 
+            {
+              repositories: 'Repositories six',
+              branches: 'Branch six',
+              pullRequests: 'Pull request six',
+              workspaces: 'Workplace six',
             }
           ]
         },
         {
-          repositories: 'Repositories six',
-          branches: 'Branch six',
-          pullRequests: 'Pull request six',
-          workspaces: 'Workplace six',
+          repositories: 'Repositories seven',
+          branches: 'Branch seven',
+          pullRequests: 'Pull request seven',
+          workspaces: 'Workplace seven' ,
           children: [
             {
-              repositories: 'Repositories seven',
-              branches: 'Branch seven',
-              pullRequests: 'Pull request seven',
-              workspaces: 'Workplace seven'
+              repositories: 'Repositories eight',
+              branches: 'Branch eight',
+              pullRequests: 'Pull request eight',
+              workspaces: 'Workplace eight'
             }
           ]
         },
         {
-          repositories: 'Repositories eight',
-          branches: 'Branch eight',
-          pullRequests: 'Pull request eight',
-          workspaces: 'Workplace eight'
+          repositories: 'Repositories nine',
+          branches: 'Branch nine',
+          pullRequests: 'Pull request nine',
+          workspaces: 'Workplace nine'
         }
-      ],
+    ],  
       expandedRows: ['Repositories one', 'Repositories six'],
       expandedDetailsRows: [],
       checkedRows: []
@@ -3516,7 +3597,7 @@ class TreeTable extends React.Component {
       if (x) {
         const isExpanded = this.state.expandedRows.includes(x.repositories);
         const isDetailsExpanded = this.state.expandedDetailsRows.includes(x.repositories);
-        const isChecked = this.state.checkedRows.includes(x.repositories);
+        const isChecked = this.mapChecked(x);
         let icon = <LeafIcon />;
         if (x.children) {
           icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
@@ -3553,17 +3634,6 @@ class TreeTable extends React.Component {
       });
     };
     
-    this.onCheckChange = (event, checked, rowIndex, title) => {
-      this.setState(prevState => {
-        const { checkedRows } = prevState;
-        const checkedIndex = checkedRows.indexOf(title);
-        const newCheckedRows = checkedIndex === -1 ? [...checkedRows, title] : checkedRows.filter(o => o !== title);
-        return {
-          checkedRows: newCheckedRows
-        }
-      });
-    }
-    
     this.onToggleRowDetails = (event, rowIndex, title) => {
       this.setState(prevState => {
         const { expandedDetailsRows } = prevState;
@@ -3573,6 +3643,58 @@ class TreeTable extends React.Component {
           expandedDetailsRows: newExpandedDetailsRows
         }
       });
+    };
+    
+    this.onCheck = (event, checked, rowIndex, checkedTitle) => {
+      this.setState(prevState => {
+        let flattenedData = this.getFlattenedTitles(prevState.data, checkedTitle);
+        const prevChecked = prevState.checkedRows;
+        return {
+          checkedRows: checked ? 
+            prevChecked.concat(flattenedData.filter(title => !prevChecked.includes(title))) :
+            prevChecked.filter(title => !flattenedData.includes(title))
+        }
+      });
+    };
+    
+    // // helper methods for determining the checkbox's checked state for each row  ///
+    
+    /** Recursive function which flattens the data into an array of row titles 
+    * whose checkboxes' checked states are being updated.
+    * Titles are only added to the array if they are the root checked title node, 
+    * or if they are a descendent of the root checked title node */
+    this.getFlattenedTitles = (data, checkedTitle, parentChecked) => {
+      let flattenedData = [];  
+      data.forEach(item => {
+        if (item.repositories === checkedTitle || parentChecked) {
+          flattenedData.push(item.repositories);
+        }
+        if (item.children) {
+          flattenedData = flattenedData.concat(this.getFlattenedTitles(item.children, checkedTitle, item.repositories === checkedTitle || parentChecked));
+        }
+        return flattenedData;
+      });
+      return flattenedData;
+    };
+    
+    this.areAllDescendantsChecked = (row) =>
+      row.children
+        ? row.children.every(child => this.areAllDescendantsChecked(child))
+        : this.state.checkedRows.indexOf(row.repositories) !== -1;
+    
+    this.areSomeDescendantsChecked = (row) =>
+      row.children
+        ? row.children.some(child => this.areSomeDescendantsChecked(child))
+        : this.state.checkedRows.indexOf(row.repositories) !== -1;
+  
+    this.mapChecked = (row) => {
+      if (this.areAllDescendantsChecked(row)) {
+        return true;
+      }
+      if (this.areSomeDescendantsChecked(row)) {
+        return null;
+      }
+      return false;
     };
   }
 
@@ -3592,9 +3714,9 @@ class TreeTable extends React.Component {
           {this.buildRows(this.state.data, 1, 1).map((row, rowIndex) => (
             <TreeRowWrapper row={row} key={rowIndex}>
               {row.cells.map((cell, cellIndex) => cellIndex === 0 ? (
-                <Td key={cellIndex} treeRow={{
+                <Td key={`${rowIndex}_0`} treeRow={{
                   onCollapse: this.onCollapse, 
-                  onCheckChange: this.onCheckChange,
+                  onCheckChange: this.onCheck,
                   onToggleRowDetails: this.onToggleRowDetails,
                   props: row.props,
                   rowIndex: rowIndex
@@ -3602,7 +3724,7 @@ class TreeTable extends React.Component {
                   {cell}
                 </Td>
               ) : (
-                <Td key={cellIndex} data-label={columns[cellIndex]}>{cell}</Td>
+                <Td key={`${rowIndex}_${cellIndex}`} data-label={columns[cellIndex]}>{cell}</Td>
               ))}
             </TreeRowWrapper>
           ))}
