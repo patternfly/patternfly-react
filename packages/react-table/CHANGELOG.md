@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.27.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.27.19...@patternfly/react-table@4.27.20) (2021-06-01)
+
+
+### Bug Fixes
+
+* **Table:** change checkbox behavior in tree table examples ([#5827](https://github.com/patternfly/patternfly-react/issues/5827)) ([0857aee](https://github.com/patternfly/patternfly-react/commit/0857aee1417b958745280686fa8f8f11e5ae510f))
+* **Table:** remove data-label from expanded row 0 ([#5844](https://github.com/patternfly/patternfly-react/issues/5844)) ([01fa57d](https://github.com/patternfly/patternfly-react/commit/01fa57d55bd4325783db8780b213c8ea76632baf))
+
+
+
+
+
 ## [4.27.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.27.18...@patternfly/react-table@4.27.19) (2021-06-01)
 
 **Note:** Version bump only for package @patternfly/react-table
