@@ -68,7 +68,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
     <Td
       className={className}
       component={component}
-      dataLabel={dataLabel && !parentId ? dataLabel : null}
+      dataLabel={dataLabel && parentId == null ? dataLabel : null}
       onMouseEnter={onMouseEnter}
       textCenter={textCenter}
       colSpan={colSpan}
