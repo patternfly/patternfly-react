@@ -40,6 +40,10 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
 
   const [isExpanded, setIsExpanded] = React.useState(false);
 
+  React.useEffect(() => {
+    setIsExpanded(isCurrent);
+  }, [isCurrent]);
+
   if (navItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
     console.error('WizardNavItem: When using an anchor, please provide an href');
@@ -65,7 +69,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       <NavItemComponent
         {...rest}
         {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
-        onClick={() => (isExpandable ? setIsExpanded(!isExpanded) : onNavItemClick(step))}
+        onClick={() => (isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(step))}
         className={css(
           styles.wizardNavLink,
           isCurrent && styles.modifiers.current,
@@ -78,8 +82,10 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         {isExpandable ? (
           <>
             <span className={css(styles.wizardNavLinkText)}>{content}</span>
-            <span className={css(styles.wizardNavLinkToggleIcon)}>
-              <AngleRightIcon />
+            <span className={css(styles.wizardNavLinkToggle)}>
+              <span className={css(styles.wizardNavLinkToggleIcon)}>
+                <AngleRightIcon />
+              </span>
             </span>
           </>
         ) : (
