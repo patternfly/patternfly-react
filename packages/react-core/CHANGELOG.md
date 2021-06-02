@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.127.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.126.2...@patternfly/react-core@4.127.0) (2021-06-02)
+
+
+### Features
+
+* **Menu:** filter tree demo ([#5824](https://github.com/patternfly/patternfly-react/issues/5824)) ([663f0f5](https://github.com/patternfly/patternfly-react/commit/663f0f5fc11ff1b5054e03c9c897b2ccc63f04b1))
+
+
+
+
+
 ## [4.126.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.126.1...@patternfly/react-core@4.126.2) (2021-06-01)
 
 **Note:** Version bump only for package @patternfly/react-core

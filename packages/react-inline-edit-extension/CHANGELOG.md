@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.122](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.6.121...@patternfly/react-inline-edit-extension@4.6.122) (2021-06-02)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
 ## [4.6.121](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.6.120...@patternfly/react-inline-edit-extension@4.6.121) (2021-06-01)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
