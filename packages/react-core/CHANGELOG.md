@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.128.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.127.0...@patternfly/react-core@4.128.0) (2021-06-02)
+
+
+### Features
+
+* **Wizard:** allow for expandable nav items ([#5842](https://github.com/patternfly/patternfly-react/issues/5842)) ([2556754](https://github.com/patternfly/patternfly-react/commit/2556754770aa4008c8b2aef5a5f764d2382dbf9d))
+
+
+
+
+
 # [4.127.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.126.2...@patternfly/react-core@4.127.0) (2021-06-02)
 
 
