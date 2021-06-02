@@ -1,5 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Expandable Nav Wizard should match snapshot 1`] = `
+<div>
+  <Context.Provider
+    value={
+      Object {
+        "activeStep": Object {
+          "canJumpTo": true,
+          "component": <p>
+            Step 1
+          </p>,
+          "name": "A",
+        },
+        "goToStepById": [Function],
+        "goToStepByName": [Function],
+        "onBack": [Function],
+        "onClose": [Function],
+        "onNext": [Function],
+      }
+    }
+  >
+    <div
+      className="pf-c-wizard"
+    >
+      <WizardHeader
+        closeButtonAriaLabel="Close"
+        description="Description here"
+        descriptionId="pf-wizard-description-1"
+        hideClose={false}
+        onClose={[Function]}
+        title="Wizard title"
+        titleId="pf-wizard-title-1"
+      />
+      <WizardToggle
+        activeStep={
+          Object {
+            "canJumpTo": true,
+            "component": <p>
+              Step 1
+            </p>,
+            "name": "A",
+          }
+        }
+        hasNoBodyPadding={false}
+        isInPage={true}
+        isNavOpen={false}
+        mainAriaLabel={null}
+        mainAriaLabelledBy="pf-wizard-title-1"
+        nav={[Function]}
+        onNavToggle={[Function]}
+        steps={
+          Array [
+            Object {
+              "canJumpTo": true,
+              "component": <p>
+                Step 1
+              </p>,
+              "name": "A",
+            },
+            Object {
+              "canJumpTo": true,
+              "name": "B",
+              "steps": Array [
+                Object {
+                  "canJumpTo": true,
+                  "component": <p>
+                    Step 2
+                  </p>,
+                  "enableNext": true,
+                  "name": "B-1",
+                },
+                Object {
+                  "canJumpTo": true,
+                  "component": <p>
+                    Step 3
+                  </p>,
+                  "enableNext": false,
+                  "name": "B-2",
+                },
+              ],
+            },
+            Object {
+              "canJumpTo": true,
+              "component": <p>
+                Step 4
+              </p>,
+              "name": "C",
+            },
+            Object {
+              "canJumpTo": true,
+              "component": <p>
+                Step 5
+              </p>,
+              "name": "D",
+            },
+          ]
+        }
+      >
+        <WizardFooterInternal
+          activeStep={
+            Object {
+              "canJumpTo": true,
+              "component": <p>
+                Step 1
+              </p>,
+              "name": "A",
+            }
+          }
+          backButtonText="Back"
+          cancelButtonText="Cancel"
+          firstStep={true}
+          isValid={true}
+          nextButtonText="Next"
+          onBack={[Function]}
+          onClose={[Function]}
+          onNext={[Function]}
+        />
+      </WizardToggle>
+    </div>
+  </Context.Provider>
+</div>
+`;
+
 exports[`Wizard should match snapshot 1`] = `
 <div>
   <Context.Provider

@@ -96,6 +96,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Flag indicating Wizard modal is open. Wizard will be placed into a modal if this prop is provided */
   isOpen?: boolean;
+  /** Flag indicating nav items with sub steps are expandable */
+  isNavExpandable?: boolean;
 }
 
 interface WizardState {
@@ -129,7 +131,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     footer: null as React.ReactNode,
     onClose: () => undefined as any,
     appendTo: null as HTMLElement,
-    isOpen: undefined
+    isOpen: undefined,
+    isNavExpandable: false
   };
   private titleId: string;
   private descriptionId: string;
@@ -332,6 +335,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       isOpen,
       titleId,
       descriptionId,
+      isNavExpandable,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -374,6 +378,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                 <WizardNavItem
                   key={index}
                   content={step.name}
+                  isExpandable={isNavExpandable}
                   isCurrent={hasActiveChild}
                   isDisabled={!canJumpToParent}
                   step={navItemStep}

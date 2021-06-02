@@ -82,6 +82,7 @@ export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>,
           steps={steps}
           startAtStep={1}
           height={500}
+          isNavExpandable
         />
         <Wizard
           title="Wizard with anchor"

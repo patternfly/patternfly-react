@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
 export interface WizardNavItemProps {
   /** Can nest a WizardNav component for substeps */
@@ -19,6 +20,8 @@ export interface WizardNavItemProps {
   navItemComponent?: 'button' | 'a';
   /** An optional url to use for when using an anchor component */
   href?: string;
+  /** Flag indicating that this NavItem has child steps and is expandable */
+  isExpandable?: boolean;
 }
 
 export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
@@ -30,9 +33,16 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   onNavItemClick = () => undefined,
   navItemComponent = 'button',
   href = null,
+  isExpandable = false,
   ...rest
 }: WizardNavItemProps) => {
   const NavItemComponent = navItemComponent;
+
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsExpanded(isCurrent);
+  }, [isCurrent]);
 
   if (navItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
@@ -49,16 +59,38 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   };
 
   return (
-    <li className={css(styles.wizardNavItem)}>
+    <li
+      className={css(
+        styles.wizardNavItem,
+        isExpandable && styles.modifiers.expandable,
+        isExpandable && isExpanded && styles.modifiers.expanded
+      )}
+    >
       <NavItemComponent
         {...rest}
         {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
-        onClick={() => onNavItemClick(step)}
-        className={css(styles.wizardNavLink, isCurrent && 'pf-m-current', isDisabled && 'pf-m-disabled')}
+        onClick={() => (isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(step))}
+        className={css(
+          styles.wizardNavLink,
+          isCurrent && styles.modifiers.current,
+          isDisabled && styles.modifiers.disabled
+        )}
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'page' : false}
+        {...(isExpandable && { 'aria-expanded': isExpanded })}
       >
-        {content}
+        {isExpandable ? (
+          <>
+            <span className={css(styles.wizardNavLinkText)}>{content}</span>
+            <span className={css(styles.wizardNavLinkToggle)}>
+              <span className={css(styles.wizardNavLinkToggleIcon)}>
+                <AngleRightIcon />
+              </span>
+            </span>
+          </>
+        ) : (
+          content
+        )}
       </NavItemComponent>
       {children}
     </li>

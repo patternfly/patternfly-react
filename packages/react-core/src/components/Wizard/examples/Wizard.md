@@ -132,6 +132,50 @@ class IncrementallyEnabledStepsWizard extends React.Component {
 }
 ```
 
+### Expandable steps
+```js
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+
+class SimpleWizard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const steps = [
+      { 
+        name: 'First step',
+        steps: [
+          { name: 'Substep A', component: <p>Substep A content</p> },
+          { name: 'Substep B', component: <p>Substep B content</p> },
+        ]
+      },
+      { name: 'Second step', component: <p>Step 2 content</p> },
+      { 
+        name: 'Third step', 
+        steps: [
+          { name: 'Substep C', component: <p>Substep C content</p> },
+          { name: 'Substep D', component: <p>Substep D content</p> },
+        ]
+      },
+      { name: 'Fourth step', component: <p>Step 4 content</p> },
+      { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
+    ];
+    const title = 'Basic wizard';
+    return (
+      <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
+        steps={steps}
+        height={400}
+        isNavExpandable
+      />
+    );
+  }
+}
+```
+
 ### Finished
 ```js
 import React from 'react';
@@ -686,6 +730,7 @@ class RememberLastStepWizard extends React.Component {
   }
 }
 ```
+
 ### Wizard in modal
 ```js
 import React from 'react';
