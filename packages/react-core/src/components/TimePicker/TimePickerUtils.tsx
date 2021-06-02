@@ -96,7 +96,13 @@ export const validateTime = (time: string, timeRegex: RegExp, delimiter: string,
 export const getHours = (time: string, timeRegex: RegExp) => {
   const parts = time.match(timeRegex);
   if (parts && parts.length) {
-    return /am/i.test(parts[4]) ? parseInt(parts[1]) : parseInt(parts[1]) + 12;
+    if (/pm/i.test(parts[3])) {
+      return parseInt(parts[1]) === 12 ? parseInt(parts[1]) : parseInt(parts[1]) + 12;
+    }
+    if (/am/i.test(parts[3])) {
+      return parseInt(parts[1]) === 12 ? 0 : parseInt(parts[1]);
+    }
+    return parseInt(parts[1]);
   }
   return null;
 };
