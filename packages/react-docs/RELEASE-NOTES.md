@@ -36,7 +36,6 @@ section: developer-resources
   - Added drilldown composable menu demo back ([#5807](https://github.com/patternfly/patternfly-react/pull/5807))
   - Added footer and view more demo ([#5791](https://github.com/patternfly/patternfly-react/pull/5791))
   - Added filter tree demo ([#5824](https://github.com/patternfly/patternfly-react/pull/5824))
-patternfly/patternfly-react/pull/5790))
 - **Search input:**
   - Updated to stop capturing browser focus on mount ([#5823](https://github.com/patternfly/patternfly-react/pull/5823))
 - **Select:**
@@ -68,9 +67,9 @@ patternfly/patternfly-react/pull/5790))
   - Updated component scaffolding ([#5777](https://github.com/patternfly/patternfly-react/pull/5777))
   - Fixed incorrect/missing import statements ([#5786](https://github.com/patternfly/patternfly-react/pull/5786))
 - **Demos:**
-  - Fixed card shadow on hover for primary details demo([#5790](https://github.com/
+  - Fixed card shadow on hover for primary details demo ([#5790](https://github.com/patternfly/patternfly-react/pull/5790))
 - **Deps:** 
-  - Update ddependency theme-patternfly-org to v0.4.78 ([#5778](https://github.com/patternfly/patternfly-react/pull/5778))
+  - Updated dependency theme-patternfly-org to v0.4.78 ([#5778](https://github.com/patternfly/patternfly-react/pull/5778))
 
 ## 2021.06 release notes (2021-05-14)
 - [@patternfly/react-catalog-view-extension@4.11.25](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.25)
