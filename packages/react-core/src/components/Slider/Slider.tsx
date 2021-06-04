@@ -310,6 +310,13 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const builtSteps = [];
     for (let i = min; i <= max; i = i + step) {
       const stepValue = ((i - min) * 100) / (max - min);
+
+      // If we boundaries but not ticks just generate the needed steps
+      // so that we don't pullute them DOM with empty divs
+      if (!showTicks && showBoundaries && i !== min && i !== max) {
+        continue;
+      }
+
       builtSteps.push(
         <SliderStep
           key={i}
