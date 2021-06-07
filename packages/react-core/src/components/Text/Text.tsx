@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TextVariants {
   h1 = 'h1',
@@ -15,7 +16,7 @@ export enum TextVariants {
   pre = 'pre'
 }
 
-export interface TextProps extends React.HTMLProps<HTMLElement> {
+export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** The text component */
   component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a' | 'small' | 'blockquote' | 'pre';
   /** Content rendered within the Text */
@@ -28,12 +29,15 @@ export const Text: React.FunctionComponent<TextProps> = ({
   children = null,
   className = '',
   component = TextVariants.p,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: TextProps) => {
   const Component: any = component;
+  const ouiaProps = useOUIAProps(Text.displayName, ouiaId, ouiaSafe);
 
   return (
-    <Component {...props} data-pf-content className={css(className)}>
+    <Component {...ouiaProps} {...props} data-pf-content className={css(className)}>
       {children}
     </Component>
   );
