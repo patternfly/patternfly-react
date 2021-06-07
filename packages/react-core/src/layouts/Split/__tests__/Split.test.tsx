@@ -29,3 +29,25 @@ test('Gutter', () => {
   );
   expect(view).toMatchSnapshot();
 });
+
+test('Wrappable', () => {
+  const view = mount(
+    <Split isWrappable>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+      <SplitItem>Basic Content</SplitItem>
+    </Split>
+  );
+  expect(view).toMatchSnapshot();
+});

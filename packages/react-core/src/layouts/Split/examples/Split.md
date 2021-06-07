@@ -31,3 +31,26 @@ import { Split, SplitItem } from '@patternfly/react-core';
   <SplitItem>content</SplitItem>
 </Split>
 ```
+
+### Wrappable
+```js
+import React from 'react';
+import { Split, SplitItem } from '@patternfly/react-core';
+
+<Split hasGutter isWrappable>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+  <SplitItem>content</SplitItem>
+</Split>
+```

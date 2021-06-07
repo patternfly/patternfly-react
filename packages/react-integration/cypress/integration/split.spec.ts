@@ -9,6 +9,10 @@ describe('Split Demo Test', () => {
     cy.get('.pf-l-split').should('have.class', 'pf-m-gutter');
   });
 
+  it('Verify wrappable', () => {
+    cy.get('.pf-l-split').should('have.class', 'pf-m-wrap');
+  });
+
   it('Verify filled split item', () => {
     cy.get('.pf-l-split__item').should('have.class', 'pf-m-fill');
   });

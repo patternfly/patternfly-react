@@ -5,7 +5,7 @@ export class SplitDemo extends React.Component {
   static displayName = 'SplitDemo';
   render() {
     return (
-      <Split hasGutter component="article">
+      <Split hasGutter isWrappable component="article">
         <SplitItem>content</SplitItem>
         <SplitItem isFilled>pf-m-fill</SplitItem>
         <SplitItem>content</SplitItem>
