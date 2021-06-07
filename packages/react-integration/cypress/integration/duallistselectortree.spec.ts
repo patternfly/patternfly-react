@@ -40,7 +40,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .should('have.length', 1);
     cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
       .eq(0)
-      .type('{backspace}{backspace}{backspace}');
+      .type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
     cy.get('.pf-c-dual-list-selector__list-item .pf-c-dual-list-selector__item-toggle')
       .last()
       .click();
@@ -72,17 +72,85 @@ describe('Dual List Selector TreeDemo Test', () => {
       .should('have.length', 2);
   });
 
-  it('Verify chosen search works', () => {
+  it('Verify add all filtered options works', () => {
     cy.get('.pf-c-dual-list-selector__list')
-      .eq(2)
+      .eq(0)
       .find('li')
-      .should('have.length', 2);
+      .should('have.length', 3);
     cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
-      .eq(1)
-      .type('Option 5');
+      .eq(0)
+      .type('Option 1');
     cy.get('.pf-c-dual-list-selector__list')
-      .eq(2)
+      .eq(0)
       .find('li')
       .should('have.length', 1);
+    cy.get('.pf-c-dual-list-selector__controls-item')
+      .eq(0)
+      .click();
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 3);
+    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+      .eq(0)
+      .type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 1);
+  });
+
+  it('Verify chosen search works', () => {
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 3);
+    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+      .eq(1)
+      .type('Option 1');
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 1);
+  });
+
+  it('Verify remove all filtered options works', () => {
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 1);
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 1);
+    cy.get('.pf-c-dual-list-selector__controls-item')
+      .eq(3)
+      .click();
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 2);
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 0);
+    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+      .eq(1)
+      .type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 2);
+    cy.get('.pf-c-dual-list-selector__controls-item')
+      .eq(3)
+      .click();
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 3);
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 0);
   });
 });
