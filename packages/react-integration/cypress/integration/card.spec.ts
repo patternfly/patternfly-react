@@ -64,4 +64,10 @@ describe('Card Demo Test', () => {
     cy.get('.pf-c-card__header-toggle .pf-c-button').click();
     cy.get('#expand-card').should('have.class', 'pf-m-expanded');
   });
+
+  it('Verify has action with no offset', () => {
+    cy.get('#hasNoOffset-card').should('exist');
+    cy.get('.pf-c-card__actions').should('exist');
+    cy.get('.pf-c-card__actions').should('have.class', 'pf-m-no-offset');
+  });
 });

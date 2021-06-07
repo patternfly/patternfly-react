@@ -97,7 +97,8 @@ class KebabDropdown extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      check1: false
+      check1: false,
+      hasNoOffset: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -115,6 +116,11 @@ class KebabDropdown extends React.Component {
       const name = target.name;
       this.setState({ [name]: value });
     };
+    this.toggleOffset = checked => {
+      this.setState({
+        hasNoOffset: checked
+      });
+    }
   }
 
   render() {
@@ -137,33 +143,45 @@ class KebabDropdown extends React.Component {
       </DropdownItem>
     ];
     return (
-      <Card>
-        <CardHeader>
-          <CardHeaderMain>
-            <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
-          </CardHeaderMain>
-          <CardActions>
-            <Dropdown
-              onSelect={this.onSelect}
-              toggle={<KebabToggle onToggle={this.onToggle} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
+      <>
+        <Card>
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
+            </CardHeaderMain>
+            <CardActions hasNoOffset={this.state.hasNoOffset}>
+              <Dropdown
+                onSelect={this.onSelect}
+                toggle={<KebabToggle onToggle={this.onToggle} />}
+                isOpen={isOpen}
+                isPlain
+                dropdownItems={dropdownItems}
+                position={'right'}
+              />
+              <Checkbox
+                isChecked={this.state.check1}
+                onChange={this.onClick}
+                aria-label="card checkbox example"
+                id="check-1"
+                name="check1"
+              />
+            </CardActions>
+          </CardHeader>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+              label="actions hasNoOffset"
+              isChecked={this.state.hasNoOffset}
+              onChange={this.toggleOffset}
+              aria-label="remove actions offset"
+              id="toggle-actions-offset"
+              name="toggle-actions-offset"
             />
-            <Checkbox
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
-          </CardActions>
-        </CardHeader>
-        <CardTitle>Header</CardTitle>
-        <CardBody>Body</CardBody>
-        <CardFooter>Footer</CardFooter>
-      </Card>
+        </div>
+      </>
     );
   }
 }
