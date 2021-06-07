@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
-import { SelectProps } from '@patternfly/react-core';
+import { Bullseye, EmptyState, SelectProps } from '@patternfly/react-core';
 import { Td } from '../TableComposable/Td';
 
 export interface BodyCellProps {
@@ -64,11 +64,20 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
     onMouseEnterProp(event);
   };
 
+  let isEmptyStateCell = false;
+  if (children) {
+    isEmptyStateCell =
+      ((children as React.ReactElement).type === Bullseye &&
+        (children as React.ReactElement).props.children &&
+        (children as React.ReactElement).props.children.type === EmptyState) ||
+      (children as React.ReactElement).type === EmptyState;
+  }
+
   const cell = (
     <Td
       className={className}
       component={component}
-      dataLabel={dataLabel && parentId == null ? dataLabel : null}
+      dataLabel={dataLabel && parentId == null && !isEmptyStateCell ? dataLabel : null}
       onMouseEnter={onMouseEnter}
       textCenter={textCenter}
       colSpan={colSpan}
