@@ -18,6 +18,115 @@ exports[`Gutter 1`] = `
 </Split>
 `;
 
+exports[`Wrappable 1`] = `
+<Split
+  isWrappable={true}
+>
+  <div
+    className="pf-l-split pf-m-wrap"
+  >
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+    <SplitItem>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
+
 exports[`isFilled 1`] = `
 <Split>
   <div
