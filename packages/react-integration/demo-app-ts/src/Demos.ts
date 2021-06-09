@@ -422,6 +422,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GridDemo
   },
   {
+    id: 'helper-text-demo',
+    name: 'Helper Text Demo',
+    componentType: Examples.HelperTextDemo
+  },
+  {
     id: 'hint-demo',
     name: 'Hint Demo',
     componentType: Examples.HintDemo

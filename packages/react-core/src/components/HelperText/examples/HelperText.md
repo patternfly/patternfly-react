@@ -1,0 +1,154 @@
+---
+id: Helper text
+section: components
+cssPrefix: pf-c-helper-text
+propComponents: ['HelperText', 'HelperTextItem']
+beta: true
+---
+
+import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
+import QuestionIcon from '@patternfly/react-icons/dist/js/icons/question-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+
+## Examples
+
+### Static
+
+```js
+import React from 'react';
+import { HelperText, HelperTextItem } from '@patternfly/react-core';
+
+<React.Fragment>
+  <HelperText>
+    <HelperTextItem>This is default helper text</HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="indeterminate">This is indeterminate helper text</HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="warning">This is warning helper text</HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="success">This is success helper text</HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="invalid">This is invalid helper text</HelperTextItem>
+  </HelperText>
+</React.Fragment>;
+```
+
+### Icon
+
+```js
+import React from 'react';
+import { HelperText, HelperTextItem } from '@patternfly/react-core';
+import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
+import QuestionIcon from '@patternfly/react-icons/dist/js/icons/question-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+
+<React.Fragment>
+  <HelperText>
+    <HelperTextItem icon={<InfoIcon />}>This is default helper text</HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="indeterminate" icon={<QuestionIcon />}>
+      This is indeterminate helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="warning" icon={<ExclamationTriangleIcon />}>
+      This is warning helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="success" icon={<CheckCircleIcon />}>
+      This is success helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="invalid" icon={<ExclamationCircleIcon />}>
+      This is invalid helper text
+    </HelperTextItem>
+  </HelperText>
+</React.Fragment>;
+```
+
+### Multiple static
+
+```js
+import React from 'react';
+import { HelperText, HelperTextItem } from '@patternfly/react-core';
+
+<HelperText>
+  <HelperTextItem>This is default helper text</HelperTextItem>
+  <HelperTextItem>This is another default helper text in the same block</HelperTextItem>
+  <HelperTextItem>And this is more default text in the same block</HelperTextItem>
+</HelperText>;
+```
+
+### Dynamic
+
+```js
+import React from 'react';
+import { HelperText, HelperTextItem } from '@patternfly/react-core';
+import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+
+<React.Fragment>
+  <HelperText>
+    <HelperTextItem isDynamic icon={<MinusIcon />}>
+      This is default helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem isDynamic variant="indeterminate" icon={<MinusIcon />}>
+      This is indeterminate helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem isDynamic variant="warning" icon={<ExclamationTriangleIcon />}>
+      This is warning helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem isDynamic variant="success" icon={<CheckIcon />}>
+      This is success helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem isDynamic variant="invalid" icon={<TimesIcon />}>
+      This is invalid helper text
+    </HelperTextItem>
+  </HelperText>
+</React.Fragment>;
+```
+
+### Dynamic list
+
+```js
+import React from 'react';
+import { HelperText, HelperTextItem } from '@patternfly/react-core';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+
+<HelperText component="ul">
+  <HelperTextItem isDynamic variant="success" component="li" icon={<CheckIcon />}>
+    Must be at least 14 characters
+  </HelperTextItem>
+  <HelperTextItem isDynamic variant="invalid" component="li" icon={<TimesIcon />}>
+    Cannot contain any variation of the word "redhat"
+  </HelperTextItem>
+  <HelperTextItem isDynamic variant="success" component="li" icon={<CheckIcon />}>
+    Must include at least 3 of the following: lowercase letter, uppercase letters, numbers, symbols
+  </HelperTextItem>
+</HelperText>;
+```
