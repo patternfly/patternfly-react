@@ -87,6 +87,8 @@ export interface ChartPointProps {
     | 'square'
     | 'star'
     | 'triangleDown'
+    | 'triangleLeft'
+    | 'triangleRight'
     | 'triangleUp'
     | 'dash'
     | 'threshold'
@@ -121,6 +123,8 @@ const getPath = (props: ChartPointProps) => {
     diamond: PathHelpers.diamond,
     eyeSlash: PathHelpers.eyeSlash,
     triangleDown: PathHelpers.triangleDown,
+    triangleLeft: PathHelpers.triangleLeft,
+    triangleRight: PathHelpers.triangleRight,
     triangleUp: PathHelpers.triangleUp,
     plus: PathHelpers.plus,
     minus: PathHelpers.minus,
