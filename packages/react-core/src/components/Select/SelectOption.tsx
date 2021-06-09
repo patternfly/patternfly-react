@@ -199,7 +199,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
 
     const itemDisplay = itemCount ? (
       <span className={css(styles.selectMenuItemRow)}>
-        <span className={css(styles.selectMenuItemText)}>{children || value.toString()}</span>
+        <span className={css(styles.selectMenuItemText)}>
+          {children || (value && value.toString && value.toString())}
+        </span>
         <span className={css(styles.selectMenuItemCount)}>{itemCount}</span>
       </span>
     ) : (
@@ -301,7 +303,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 }}
                 ref={this.ref}
               >
-                {children || value.toString()}
+                {children || (value && value.toString && value.toString())}
               </button>
             )}
             {variant === SelectVariant.checkbox && isLoading && (

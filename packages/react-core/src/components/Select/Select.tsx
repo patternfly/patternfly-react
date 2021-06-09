@@ -332,7 +332,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       const childrenArray = React.Children.toArray(children) as React.ReactElement<SelectGroupProps>[];
       if (isGrouped) {
         const childFilter = (child: React.ReactElement<SelectGroupProps>) =>
-          child.props.value && this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
+          child.props.value &&
+          child.props.value.toString &&
+          this.getDisplay(child.props.value.toString(), 'text').search(input) === 0;
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
             ? React.Children.map(children, group => {
