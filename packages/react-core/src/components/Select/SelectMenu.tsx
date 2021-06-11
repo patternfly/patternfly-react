@@ -134,7 +134,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
         }
         return React.cloneElement(group, {
           titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
-          children: (
+          children: group.props.children ? (
             <fieldset
               aria-labelledby={group.props.label && group.props.label.replace(/\W/g, '-')}
               className={css(styles.selectMenuFieldset)}
@@ -150,7 +150,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                     })
               )}
             </fieldset>
-          )
+          ) : null
         });
       });
     }
