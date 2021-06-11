@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.2.77...@patternfly/react-code-editor@4.2.78) (2021-06-11)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
 ## [4.2.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.2.76...@patternfly/react-code-editor@4.2.77) (2021-06-10)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

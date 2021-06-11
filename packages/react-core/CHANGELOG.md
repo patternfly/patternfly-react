@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.128.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.3...@patternfly/react-core@4.128.4) (2021-06-11)
+
+
+### Bug Fixes
+
+* **select:** add some safety accessors ([#5902](https://github.com/patternfly/patternfly-react/issues/5902)) ([34b032b](https://github.com/patternfly/patternfly-react/commit/34b032be18987b507853a7a4c71ecca8a1ae6350))
+
+
+
+
+
 ## [4.128.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.2...@patternfly/react-core@4.128.3) (2021-06-10)
 
 **Note:** Version bump only for package @patternfly/react-core
