@@ -31,6 +31,14 @@ export class DualListSelectorBasicDemo extends React.Component<DualListSelectorP
         availableOptions={this.state.availableOptions}
         chosenOptions={this.state.chosenOptions}
         onListChange={this.onListChange}
+        addAllTooltip="Add all options"
+        addAllTooltipProps={{ position: 'top' }}
+        addSelectedTooltip="Add selected options"
+        addSelectedTooltipProps={{ position: 'right' }}
+        removeSelectedTooltip="Remove selected options"
+        removeSelectedTooltipProps={{ position: 'left' }}
+        removeAllTooltip="Remove all options"
+        removeAllTooltipProps={{ position: 'bottom' }}
       />
     );
   }
