@@ -30,7 +30,7 @@ describe('Description List Breakpoints Demo Test', () => {
   });
 
   it('Verify description list has layout breakpoints', () => {
-    const list = cy.get('#layouts-description-list');
+    const list = cy.get('#orientation-description-list');
     list.should('have.class', 'pf-m-horizontal-on-sm');
     list.should('have.class', 'pf-m-vertical-on-md');
     list.should('have.class', 'pf-m-horizontal-on-lg');

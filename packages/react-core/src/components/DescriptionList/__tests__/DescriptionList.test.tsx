@@ -43,7 +43,7 @@ describe('Description List', () => {
     const view = mount(
       <DescriptionList
         isHorizontal
-        layouts={{
+        orientation={{
           sm: 'horizontal',
           md: 'vertical',
           lg: 'horizontal',

@@ -104,7 +104,7 @@ exports[`Description List Term helper text 1`] = `
 exports[`Description List alignment breakpoints 1`] = `
 <DescriptionList
   isHorizontal={true}
-  layouts={
+  orientation={
     Object {
       "2xl": "horizontal",
       "lg": "horizontal",

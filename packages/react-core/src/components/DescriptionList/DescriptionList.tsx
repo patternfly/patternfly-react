@@ -34,12 +34,12 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     '2xl'?: '1Col' | '2Col' | '3Col';
   };
   /** Indicates how the menu will align at screen size breakpoints. Default alignment is set via the position property. */
-  layouts?: {
-    sm?: 'horizontal' | 'vertical';
-    md?: 'horizontal' | 'vertical';
-    lg?: 'horizontal' | 'vertical';
-    xl?: 'horizontal' | 'vertical';
-    '2xl'?: 'horizontal' | 'vertical';
+  orientation?: {
+    sm?: 'vertical' | 'horizontal';
+    md?: 'vertical' | 'horizontal';
+    lg?: 'vertical' | 'horizontal';
+    xl?: 'vertical' | 'horizontal';
+    '2xl'?: 'vertical' | 'horizontal';
   };
   autoFitMinModifier?: {
     default?: string;
@@ -70,7 +70,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isInlineGrid,
   columnModifier,
   autoFitMinModifier,
-  layouts,
+  orientation,
   style,
   ...props
 }: DescriptionListProps) => (
@@ -81,7 +81,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       isAutoColumnWidths && styles.modifiers.autoColumnWidths,
       isAutoFit && styles.modifiers.autoFit,
       formatBreakpointMods(columnModifier, styles),
-      formatBreakpointMods(layouts, styles),
+      formatBreakpointMods(orientation, styles),
       isInlineGrid && styles.modifiers.inlineGrid,
       className
     )}

@@ -458,7 +458,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
 
 <DescriptionList
   isHorizontal
-  layouts={{
+  orientation={{
     md: 'vertical',
     lg: 'horizontal',
     xl: 'vertical',

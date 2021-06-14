@@ -165,9 +165,9 @@ export class DescriptionListBreakpointsDemo extends Component {
         <br />
         <div className="example">
           <DescriptionList
-            id="layouts-description-list"
+            id="orientation-description-list"
             isHorizontal
-            layouts={{
+            orientation={{
               sm: 'horizontal',
               md: 'vertical',
               lg: 'horizontal',
