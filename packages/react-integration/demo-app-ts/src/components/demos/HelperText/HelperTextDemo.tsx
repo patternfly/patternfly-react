@@ -37,6 +37,17 @@ export class HelperTextDemo extends React.Component {
             This is indeterminate helper text
           </HelperTextItem>
         </HelperText>
+        <HelperText id="list-container" component="ul">
+          <HelperTextItem id="list1" isDynamic variant="success" component="li" icon={<CheckCircleIcon />}>
+            This is a list item
+          </HelperTextItem>
+          <HelperTextItem id="list2" isDynamic variant="invalid" component="li" icon={<ExclamationCircleIcon />}>
+            This is a list item
+          </HelperTextItem>
+          <HelperTextItem id="list3" isDynamic variant="indeterminate" component="li" icon={<QuestionIcon />}>
+            This is a list item
+          </HelperTextItem>
+        </HelperText>
       </React.Fragment>
     );
   }
