@@ -69,6 +69,11 @@ export type OnFavorite = (
   rowData: IRowData,
   extraData: IExtraData
 ) => void;
+
+export type OnSomethingClick = (
+  event: React.MouseEvent,
+  id: string
+) => void;
 export type OnTreeRowCollapse = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnToggleRowDetails = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnCheckChange = (
@@ -106,12 +111,14 @@ export interface IColumn {
     actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
     allRowsSelected?: boolean;
     onFavorite?: OnFavorite;
+    onSomethingClick?: OnSomethingClick;
   };
 }
 
 export interface IExtraRowData {
   rowIndex?: number;
   rowKey?: RowKeyType;
+  id?: string;
 }
 
 export interface IExtraColumnData {
