@@ -509,10 +509,32 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => {
+    const { availableOptions, availableTreeFilteredOptions, chosenOptions, chosenTreeFilteredOptions } = this.state;
     const checked = (evt as React.ChangeEvent<HTMLInputElement>).target.checked
       ? (evt as React.ChangeEvent<HTMLInputElement>).target.checked
       : isChecked;
-    const panelOptions = isChosen ? this.state.chosenOptions : this.state.availableOptions;
+    let panelOptions;
+    if (isChosen) {
+      if (chosenTreeFilteredOptions) {
+        panelOptions = chosenOptions
+          .map(opt => Object.assign({}, opt))
+          .filter(item =>
+            filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, chosenTreeFilteredOptions)
+          );
+      } else {
+        panelOptions = chosenOptions;
+      }
+    } else {
+      if (availableTreeFilteredOptions) {
+        panelOptions = availableOptions
+          .map(opt => Object.assign({}, opt))
+          .filter(item =>
+            filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, availableTreeFilteredOptions)
+          );
+      } else {
+        panelOptions = availableOptions;
+      }
+    }
     const checkedOptionTree = panelOptions
       .map(opt => Object.assign({}, opt))
       .filter(item => filterTreeItems(item as DualListSelectorTreeItemData, [itemData.id]));
