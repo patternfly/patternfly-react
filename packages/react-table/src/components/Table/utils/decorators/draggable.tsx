@@ -4,11 +4,10 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { DraggableCell } from '../../DraggableCell';
 
-export const draggable: ITransform = (
-  value: IFormatterValueType,
-  { rowIndex, column, rowData }: IExtra
-) => {
-  const { extraParams: { onSomethingClick } } = column;
+export const draggable: ITransform = (value: IFormatterValueType, { column, rowData }: IExtra) => {
+  const {
+    extraParams: { onSomethingClick }
+  } = column;
   const { id } = rowData;
 
   /**
@@ -20,12 +19,7 @@ export const draggable: ITransform = (
   }
 
   return {
-    className: "pf-c-table__draggable",
-    children: (
-      <DraggableCell
-        id={id}
-        onClick={onClick}
-      />
-    )
+    className: css(styles.tableDraggable),
+    children: <DraggableCell id={id} onClick={onClick} />
   };
 };
