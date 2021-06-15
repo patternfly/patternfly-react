@@ -6,8 +6,7 @@ propComponents: ['CodeEditor']
 beta: true
 ---
 
-Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor)!
-Note: This code editor is built using the 'monaco-editor-webpack-plugin' and requires webpack to be configured to use the plugin.
+Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor) and has [**required peer deps**](https://github.com/patternfly/patternfly-react/blob/master/packages/react-code-editor/package.json).
 
 import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-editor';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';

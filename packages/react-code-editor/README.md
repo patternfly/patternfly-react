@@ -43,50 +43,11 @@ import '@patternfly/react-core/dist/styles/base.css';
 import { CodeEditor } from '@patternfly/react-code-editor';
 ```
 
-# Documentation
-
-This project uses Gatsby. For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
-
-A comprehensive list of components and detailed usage of each can be found on the [PatternFly React Docs][docs] website
-You can also find how each component is meant to be used from a design perspective on the [PatternFly 4 Core][patternfly-4] website.
-
-Note: All commands below assume you are on the root directory in this repository.
-
-### Install
-
-Run to install all the dependencies
-
-```sh
-yarn && yarn bootstrap && yarn build && yarn build:docs
+Install peer deps
+```json
+"monaco-editor": "^0.21.3",
+"monaco-editor-webpack-plugin": "^2.1.0",
+"react": "^16.8.0 || ^17.0.0",
+"react-dom": "^16.8.0 || ^17.0.0",
+"react-monaco-editor": "^0.41.2"
 ```
-
-### Running
-
-To start the site locally.
-
-```sh
-yarn build && yarn start:pf4
-```
-
-### Building
-
-To build the site.
-
-```sh
-yarn build:docs
-```
-
-# Contributing Components
-
-This library makes use of the babel plugin from [@patternfly/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For any CSS not provided by core please use the `StyleSheet.create` utility from [@patternfly/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
-
-### Building
-
-```
-yarn build
-```
-
-Note the build scripts for this are located in the root package.json under `yarn build`.
-
-[patternfly-4]: https://github.com/patternfly/patternfly
-[docs]: https://patternfly-react.surge.sh/
