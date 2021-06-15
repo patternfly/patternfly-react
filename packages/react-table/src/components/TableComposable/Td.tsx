@@ -27,8 +27,7 @@ import {
   OnCheckChange,
   OnTreeRowCollapse,
   IExtra,
-  OnToggleRowDetails,
-  OnSomethingClick
+  OnToggleRowDetails
 } from '../Table/TableTypes';
 import { CustomActionsToggleProps } from '../Table';
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
@@ -105,8 +104,6 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     props?: any;
   };
   draggableRow?: {
-    /** Callback when user clicks a row to drag it */
-    onSomethingClick?: OnSomethingClick;
     id: string;
   };
   /** True to remove padding */
@@ -166,15 +163,11 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   const draggableParams =
     draggableRowProp !== null
       ? draggable(null, {
-        rowData: {
-          id: draggableRowProp.id
-        },
-        column: {
-          extraParams: {
-            onSomethingClick: draggableRowProp?.onSomethingClick,
+          rowData: {
+            id: draggableRowProp.id
           }
-        }
-      }) : null;
+        })
+      : null;
   const actionParamsFunc = actions ? cellActions(actions.items, null, null) : null;
   const actionParams = actionParamsFunc
     ? actionParamsFunc(null, {

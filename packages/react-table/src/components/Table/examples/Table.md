@@ -493,8 +493,7 @@ class DraggableTable extends React.Component {
             >
               <Td
                 draggableRow={{
-                  id: `draggable-row-${row.id}`,
-                  onSomethingClick: this.onSomethingClick
+                  id: `draggable-row-${row.id}`
                 }}
               />
               {Object.keys(row).map((key, keyIndex) => (
