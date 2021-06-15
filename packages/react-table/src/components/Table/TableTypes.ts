@@ -70,10 +70,6 @@ export type OnFavorite = (
   extraData: IExtraData
 ) => void;
 
-export type OnSomethingClick = (
-  event: React.MouseEvent,
-  id: string
-) => void;
 export type OnTreeRowCollapse = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnToggleRowDetails = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnCheckChange = (
@@ -111,7 +107,6 @@ export interface IColumn {
     actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
     allRowsSelected?: boolean;
     onFavorite?: OnFavorite;
-    onSomethingClick?: OnSomethingClick;
   };
 }
 
