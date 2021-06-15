@@ -81,14 +81,12 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
     }
 
-    let ref = this.menuRef;
-    if (this.props.innerRef) {
-      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-    }
+    this.setFirstTabIndex();
+  }
 
-    const firstItem = ref.current.querySelector('button, a');
-    if (firstItem) {
-      (firstItem as HTMLElement).tabIndex = 0;
+  componentDidUpdate(prevProps: MenuProps) {
+    if (prevProps.children !== this.props.children) {
+      this.setFirstTabIndex();
     }
   }
 
@@ -98,6 +96,21 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       window.removeEventListener('transitionend', this.handleDrilldownTransition);
     }
   }
+
+  setFirstTabIndex = () => {
+    let ref = this.menuRef;
+    if (this.props.innerRef) {
+      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
+    }
+
+    const items = ref.current.querySelectorAll('button, a');
+    if (items && items.length > 0) {
+      items.forEach(item => {
+        (item as HTMLElement).tabIndex = -1;
+      });
+      (items[0] as HTMLElement).tabIndex = 0;
+    }
+  };
 
   handleDrilldownTransition = (event: TransitionEvent) => {
     let ref = this.menuRef;
