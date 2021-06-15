@@ -4,7 +4,6 @@ export * from './Body';
 export * from './BodyCell';
 export * from './BodyWrapper';
 export * from './CollapseColumn';
-export * from './DraggableCell';
 export * from './EditableSelectInputCell';
 export * from './EditableTextCell';
 export * from './ExpandableRowContent';
