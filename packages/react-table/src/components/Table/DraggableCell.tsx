@@ -6,7 +6,7 @@ export interface DraggableCellProps {
   id: string;
   className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  "aria-label"?: string;
+  'aria-label'?: string;
 }
 
 export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
@@ -15,19 +15,18 @@ export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
   'aria-label': ariaLabel,
   id,
   ...props
-}: DraggableCellProps) => {
-  return (
-    <Button
-      id={id}
-      variant="plain"
-      className={className}
-      type="button"
-      aria-label={ariaLabel || `Draggable row draggable button`}
-      onClick={onClick}
-      {...props}
-    >
-      <GripVerticalIcon aria-hidden />
-    </Button>
-  );
-};
+}: DraggableCellProps) => (
+  <Button
+    id={id}
+    variant="plain"
+    className={className}
+    type="button"
+    aria-label={ariaLabel || `Draggable row draggable button`}
+    onClick={onClick}
+    {...props}
+  >
+    <GripVerticalIcon aria-hidden />
+  </Button>
+);
+
 DraggableCell.displayName = 'DraggableCell';
