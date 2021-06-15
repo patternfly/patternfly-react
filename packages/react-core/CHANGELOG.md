@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.128.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.4...@patternfly/react-core@4.128.5) (2021-06-15)
+
+
+### Bug Fixes
+
+* **Menu:** update tabIndex when children change ([#5923](https://github.com/patternfly/patternfly-react/issues/5923)) ([dcaa7d7](https://github.com/patternfly/patternfly-react/commit/dcaa7d7b5bf1b4aef7ccd93968a360e92e970a33))
+
+
+
+
+
 ## [4.128.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.3...@patternfly/react-core@4.128.4) (2021-06-11)
 
 
