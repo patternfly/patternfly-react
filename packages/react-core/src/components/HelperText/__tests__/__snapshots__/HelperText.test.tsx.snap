@@ -29,6 +29,35 @@ exports[`HelperText dynamic helper text renders successfully 1`] = `
         className="pf-c-helper-text__item pf-m-dynamic"
       >
         <span
+          aria-hidden={true}
+          className="pf-c-helper-text__item-icon"
+        >
+          <MinusIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 448 512"
+              width="1em"
+            >
+              <path
+                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+              />
+            </svg>
+          </MinusIcon>
+        </span>
+        <span
           className="pf-c-helper-text__item-text"
         >
           help test text

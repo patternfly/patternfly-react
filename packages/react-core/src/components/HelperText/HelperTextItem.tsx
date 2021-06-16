@@ -1,6 +1,10 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
 import { css } from '@patternfly/react-styles';
+import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HTMLLIElement> {
   /** Content rendered inside the helper text item. */
@@ -15,6 +19,8 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
   icon?: React.ReactNode;
   /** Flag indicating the helper text item is dynamic. */
   isDynamic?: boolean;
+  /** Flag indicating the dynamic helper text should have an icon */
+  hasIcon?: boolean;
 }
 
 const variantStyle = {
@@ -32,6 +38,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
   variant = 'default',
   icon,
   isDynamic,
+  hasIcon = true,
   ...props
 }: HelperTextItemProps) => {
   const Component = component as any;
@@ -43,6 +50,14 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
       {icon && (
         <span className={css(styles.helperTextItemIcon)} aria-hidden>
           {icon}
+        </span>
+      )}
+      {isDynamic && hasIcon && !icon && (
+        <span className={css(styles.helperTextItemIcon)} aria-hidden>
+          {(variant === 'default' || variant === 'indeterminate') && <MinusIcon />}
+          {variant === 'warning' && <ExclamationTriangleIcon />}
+          {variant === 'success' && <CheckIcon />}
+          {variant === 'invalid' && <TimesIcon />}
         </span>
       )}
       <span className={css(styles.helperTextItemText)}>{children}</span>
