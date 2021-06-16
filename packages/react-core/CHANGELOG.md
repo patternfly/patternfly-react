@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.128.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.5...@patternfly/react-core@4.128.6) (2021-06-16)
+
+
+### Bug Fixes
+
+* **DatePicker, TimePicker:** Pass additional props to input ([#5848](https://github.com/patternfly/patternfly-react/issues/5848)) ([45b44b7](https://github.com/patternfly/patternfly-react/commit/45b44b7e1f9635f1d58ce0c27638564c126bc7b5))
+
+
+
+
+
 ## [4.128.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.4...@patternfly/react-core@4.128.5) (2021-06-15)
 
 
