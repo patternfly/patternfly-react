@@ -53,8 +53,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   innerRef?: React.Ref<any>;
   /** Internal flag indicating if the Menu is the root of a menu tree */
   isRootMenu?: boolean;
-  /** Maximum height of any menu */
-  maxMenuHeight?: string;
 }
 
 export interface MenuState {
@@ -68,8 +66,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
     ouiaSafe: true,
-    isRootMenu: true,
-    maxMenuHeight: 'auto'
+    isRootMenu: true
   };
 
   state: MenuState = {
@@ -279,7 +276,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       onDrillIn,
       onDrillOut,
       onGetMenuHeight,
-      maxMenuHeight,
       parentMenu = null,
       activeItemId = null,
       innerRef,
@@ -317,7 +313,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             className
           )}
           aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
-          style={{ '--pf-c-menu--MaxHeight': maxMenuHeight } as React.CSSProperties}
           ref={innerRef || this.menuRef || null}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}

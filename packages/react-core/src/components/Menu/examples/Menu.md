@@ -1152,7 +1152,6 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
           onDrillIn={this.drillIn}
           onDrillOut={this.drillOut}
           onGetMenuHeight={this.setHeight}
-          maxMenuHeight={withMaxMenuHeight ? '200px' : 'auto'}
         >
           {breadcrumb && (
             <>
@@ -1160,7 +1159,10 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
               <Divider component="li" />
             </>
           )}
-          <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
+          <MenuContent 
+            menuHeight={`${menuHeights[activeMenu]}px`} 
+            maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}
+          >
             <MenuList>
               <MenuItem
                 itemId="group:start_rollout"
