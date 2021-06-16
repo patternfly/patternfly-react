@@ -1308,21 +1308,21 @@ class MenuBasicList extends React.Component {
       <Menu activeItemId={activeItem} onSelect={this.onSelect}>
         <MenuContent menuHeight="300px">
           <MenuList>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Action</MenuItem>
+            <MenuItem>Action 1</MenuItem>
+            <MenuItem>Action 2</MenuItem>
+            <MenuItem>Action 3</MenuItem>
+            <MenuItem>Action 4</MenuItem>
+            <MenuItem>Action 5</MenuItem>
+            <MenuItem>Action 6</MenuItem>
+            <MenuItem>Action 7</MenuItem>
+            <MenuItem>Action 8</MenuItem>
+            <MenuItem>Action 9</MenuItem>
+            <MenuItem>Action 10</MenuItem>
+            <MenuItem>Action 11</MenuItem>
+            <MenuItem>Action 12</MenuItem>
+            <MenuItem>Action 13</MenuItem>
+            <MenuItem>Action 14</MenuItem>
+            <MenuItem>Action 15</MenuItem>
             <MenuItem
               itemId={1}
               to="#default-link2"
