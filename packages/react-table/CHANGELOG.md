@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.27.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.27.27...@patternfly/react-table@4.27.28) (2021-06-16)
+
+
+### Bug Fixes
+
+* **Table:** empty state cell should not have data-label ([#5886](https://github.com/patternfly/patternfly-react/issues/5886)) ([8cb93c7](https://github.com/patternfly/patternfly-react/commit/8cb93c793fb6fc357dac4377c842d5f64a184944))
+
+
+
+
+
 ## [4.27.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.27.26...@patternfly/react-table@4.27.27) (2021-06-15)
 
 **Note:** Version bump only for package @patternfly/react-table
