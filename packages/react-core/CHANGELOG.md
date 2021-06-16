@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.128.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.6...@patternfly/react-core@4.128.7) (2021-06-16)
+
+
+### Bug Fixes
+
+* **TimePicker:** fix the returned values of the onChange method. ([#5868](https://github.com/patternfly/patternfly-react/issues/5868)) ([75d0cf9](https://github.com/patternfly/patternfly-react/commit/75d0cf98ca112839270f00e36372f42e76d0374e))
+
+
+
+
+
 ## [4.128.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.128.5...@patternfly/react-core@4.128.6) (2021-06-16)
 
 
