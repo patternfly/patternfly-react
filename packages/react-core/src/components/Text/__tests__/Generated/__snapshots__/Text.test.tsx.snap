@@ -3,6 +3,9 @@
 exports[`Text should match snapshot (auto-generated) 1`] = `
 <h1
   className="''"
+  data-ouia-component-id="OUIA-Generated-Text-1"
+  data-ouia-component-type="PF4/Text"
+  data-ouia-safe={true}
   data-pf-content={true}
 >
   ReactNode
