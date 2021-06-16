@@ -8,7 +8,7 @@ import { Popper } from '../../helpers/Popper/Popper';
 import { TimeOption } from './TimeOption';
 import { KeyTypes, SelectDirection } from '../Select';
 import { InputGroup } from '../InputGroup';
-import { TextInput } from '../TextInput';
+import { TextInput, TextInputProps } from '../TextInput';
 import { parseTime, validateTime, makeTimeOptions, amSuffix, pmSuffix, getHours, getMinutes } from './TimePickerUtils';
 
 export interface TimePickerProps
@@ -48,6 +48,8 @@ export interface TimePickerProps
   direction?: 'up' | 'down';
   /** Size of step between time options in minutes.*/
   stepMinutes?: number;
+  /** Additional props for input field */
+  inputProps?: TextInputProps;
 }
 
 interface TimePickerState {
@@ -78,7 +80,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     menuAppendTo: 'inline',
     direction: 'down',
     width: 150,
-    stepMinutes: 30
+    stepMinutes: 30,
+    inputProps: {}
   };
 
   constructor(props: TimePickerProps) {
@@ -329,6 +332,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       onChange,
       time,
       validateTime,
+      inputProps,
       ...props
     } = this.props;
     const { timeState, isOpen, isInvalid, focusedIndex } = this.state;
@@ -391,6 +395,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                 autoComplete="off"
                 isDisabled={isDisabled}
                 ref={this.inputRef}
+                {...inputProps}
               />
             </div>
             {isOpen && menuAppendTo === 'inline' && menuContainer}
