@@ -247,8 +247,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   getRegExp = () =>
     this.props.is24Hour
-      ? new RegExp(`^\\s*(\\d\\d?)${this.props.delimiter}([0-5])(\\d)\\s*$`)
-      : new RegExp(`^\\s*(\\d\\d?)${this.props.delimiter}([0-5])(\\d)\\s*([AaPp][Mm])?\\s*$`);
+      ? new RegExp(`^\\s*(\\d\\d?)${this.props.delimiter}([0-5]\\d)\\s*$`)
+      : new RegExp(`^\\s*(\\d\\d?)${this.props.delimiter}([0-5]\\d)\\s*([AaPp][Mm])?\\s*$`);
 
   getOptions = () =>
     (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
