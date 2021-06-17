@@ -11,7 +11,7 @@ describe('Hint Demo Test', () => {
     cy.get(`#default .pf-c-helper-text__item-icon`).should('exist');
   });
 
-  ['indeterminate', 'warning', 'success', 'invalid'].forEach(variant => {
+  ['indeterminate', 'warning', 'success', 'error'].forEach(variant => {
     it(`Verify ${variant} helper text`, () => {
       cy.get(`#${variant}.pf-m-${variant}`).should('exist');
       cy.get(`#${variant} .pf-c-helper-text__item-text`).should('exist');
@@ -28,5 +28,6 @@ describe('Hint Demo Test', () => {
     cy.get('li.pf-c-helper-text__item')
       .first()
       .should('have.id', 'list1');
+    cy.get('#list1 .pf-c-helper-text__item-icon').should('not.exist');
   });
 });

@@ -1,10 +1,8 @@
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 import React from 'react';
 import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
-import QuestionIcon from '@patternfly/react-icons/dist/js/icons/question-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 export class HelperTextDemo extends React.Component {
   static displayName = 'HelperTextDemo';
@@ -30,21 +28,21 @@ export class HelperTextDemo extends React.Component {
           <HelperTextItem id="success" isDynamic variant="success" icon={<CheckCircleIcon />}>
             This is success helper text
           </HelperTextItem>
-          <HelperTextItem id="invalid" isDynamic variant="error" icon={<ExclamationCircleIcon />}>
+          <HelperTextItem id="error" isDynamic variant="error">
             This is error helper text
           </HelperTextItem>
-          <HelperTextItem id="indeterminate" isDynamic variant="indeterminate" icon={<QuestionIcon />}>
+          <HelperTextItem id="indeterminate" isDynamic variant="indeterminate">
             This is indeterminate helper text
           </HelperTextItem>
         </HelperText>
         <HelperText id="list-container" component="ul">
-          <HelperTextItem id="list1" isDynamic variant="success" component="li" icon={<CheckCircleIcon />}>
+          <HelperTextItem id="list1" isDynamic variant="success" component="li" hasIcon={false}>
             This is a list item
           </HelperTextItem>
-          <HelperTextItem id="list2" isDynamic variant="error" component="li" icon={<ExclamationCircleIcon />}>
+          <HelperTextItem id="list2" isDynamic variant="error" component="li">
             This is a list item
           </HelperTextItem>
-          <HelperTextItem id="list3" isDynamic variant="indeterminate" component="li" icon={<QuestionIcon />}>
+          <HelperTextItem id="list3" isDynamic variant="indeterminate" component="li">
             This is a list item
           </HelperTextItem>
         </HelperText>
