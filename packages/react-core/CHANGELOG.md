@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.130.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.129.1...@patternfly/react-core@4.130.0) (2021-06-17)
+
+
+### Features
+
+* **DescriptionList:** add responsive layout breakpoint property ([#5885](https://github.com/patternfly/patternfly-react/issues/5885)) ([0c51572](https://github.com/patternfly/patternfly-react/commit/0c5157247b7e9a19e0328b9c61e957071cfecb37))
+
+
+
+
+
 ## [4.129.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.129.0...@patternfly/react-core@4.129.1) (2021-06-17)
 
 **Note:** Version bump only for package @patternfly/react-core

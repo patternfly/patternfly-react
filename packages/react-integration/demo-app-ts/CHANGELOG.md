@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.106.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.105.1...demo-app-ts@4.106.0) (2021-06-17)
+
+
+### Features
+
+* **DescriptionList:** add responsive layout breakpoint property ([#5885](https://github.com/patternfly/patternfly-react/issues/5885)) ([0c51572](https://github.com/patternfly/patternfly-react/commit/0c5157247b7e9a19e0328b9c61e957071cfecb37))
+
+
+
+
+
 ## [4.105.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.105.0...demo-app-ts@4.105.1) (2021-06-17)
 
 **Note:** Version bump only for package demo-app-ts
