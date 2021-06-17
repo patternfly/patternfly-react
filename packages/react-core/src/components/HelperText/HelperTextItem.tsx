@@ -28,7 +28,7 @@ const variantStyle = {
   indeterminate: styles.modifiers.indeterminate,
   warning: styles.modifiers.warning,
   success: styles.modifiers.success,
-  error: styles.modifiers.invalid
+  error: styles.modifiers.error
 };
 
 export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
