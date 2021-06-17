@@ -20,4 +20,8 @@ describe('Text Demo Test', () => {
   it('Verify visited link text', () => {
     cy.get('#visited-link').should('have.class', 'pf-m-visited');
   });
+
+  it('Verify visited content text', () => {
+    cy.get('#visited-content').should('have.class', 'pf-m-visited');
+  });
 });

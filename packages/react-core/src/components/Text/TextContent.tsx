@@ -7,14 +7,17 @@ export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the TextContent */
   className?: string;
+  /** Flag to indicate the  all links in a the content block include visited styles */
+  isVisited?: boolean;
 }
 
 export const TextContent: React.FunctionComponent<TextContentProps> = ({
   children = null,
   className = '',
+  isVisited = false,
   ...props
 }: TextContentProps) => (
-  <div {...props} className={css(styles.content, className)}>
+  <div {...props} className={css(styles.content, isVisited && styles.modifiers.visited, className)}>
     {children}
   </div>
 );
