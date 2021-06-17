@@ -271,6 +271,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
+        draggableParams && styles.tableDraggable,
         mergedClassName
       )}
       ref={innerRef}
