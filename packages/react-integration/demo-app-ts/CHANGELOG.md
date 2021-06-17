@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.107.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.106.0...demo-app-ts@4.107.0) (2021-06-17)
+
+
+### Features
+
+* **DualListSelector:** add tooltips to control buttons ([#5914](https://github.com/patternfly/patternfly-react/issues/5914)) ([1292479](https://github.com/patternfly/patternfly-react/commit/1292479e121f4eeaadb2f6954b24b0e68551dcd3))
+
+
+
+
+
 # [4.106.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.105.1...demo-app-ts@4.106.0) (2021-06-17)
 
 

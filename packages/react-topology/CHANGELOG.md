@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.8.81...@patternfly/react-topology@4.9.0) (2021-06-17)
+
+
+### Features
+
+* **DualListSelector:** add tooltips to control buttons ([#5914](https://github.com/patternfly/patternfly-react/issues/5914)) ([1292479](https://github.com/patternfly/patternfly-react/commit/1292479e121f4eeaadb2f6954b24b0e68551dcd3))
+
+
+
+
+
 ## [4.8.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.8.80...@patternfly/react-topology@4.8.81) (2021-06-17)
 
 **Note:** Version bump only for package @patternfly/react-topology
