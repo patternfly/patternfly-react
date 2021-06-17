@@ -30,12 +30,12 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
   const Component = component as any;
   return (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
+      {showDivider && (
+        <span className={styles.breadcrumbItemDivider}>
+          <AngleRightIcon />
+        </span>
+      )}
       <h1 className={styles.breadcrumbHeading}>
-        {showDivider && (
-          <span className={styles.breadcrumbItemDivider}>
-            <AngleRightIcon />
-          </span>
-        )}
         {!to && component === 'button' && (
           <button className={css(styles.breadcrumbLink, styles.modifiers.current)} aria-current type="button">
             {children}
