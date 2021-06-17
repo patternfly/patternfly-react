@@ -3760,7 +3760,7 @@ class TreeTable extends React.Component {
 }
 ```
 
-### Composable: Draggable table
+### Composable: Draggable row table
 
 ```js isBeta
 import React from 'react';
