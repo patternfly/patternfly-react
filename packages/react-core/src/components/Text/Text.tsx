@@ -42,7 +42,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
 
   return (
     <Component
-    {...ouiaProps}
+      {...ouiaProps}
       {...props}
       data-pf-content
       className={css(isVisitedLink && component === TextVariants.a && styles.modifiers.visited, className)}
