@@ -1,8 +1,25 @@
 import React from 'react';
-import { Card, CardTitle, CardHeader, CardBody, CardFooter, CardExpandableContent } from '@patternfly/react-core';
+import {
+  Card,
+  CardTitle,
+  CardHeader,
+  CardHeaderMain,
+  CardActions,
+  CardBody,
+  CardFooter,
+  CardExpandableContent,
+  Dropdown,
+  DropdownItem,
+  KebabToggle,
+  Checkbox,
+  Brand
+} from '@patternfly/react-core';
+const pfLogo = './images/pfLogo.svg';
 interface CardDemoState {
   selected: string;
   isExpanded: boolean;
+  isOpen: boolean;
+  check1: boolean;
 }
 
 export class CardDemo extends React.Component {
@@ -10,7 +27,9 @@ export class CardDemo extends React.Component {
 
   state: CardDemoState = {
     selected: null,
-    isExpanded: false
+    isExpanded: false,
+    isOpen: false,
+    check1: false
   };
 
   onKeyDown = (event: any) => {
@@ -35,7 +54,43 @@ export class CardDemo extends React.Component {
     });
   };
 
+  onToggle = (isOpen: boolean) => {
+    this.setState({
+      isOpen
+    });
+  };
+
+  onSelect = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  };
+
+  onClick = (checked: boolean, event: any) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({ [name]: value });
+  };
+
   render() {
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
     return (
       <React.Fragment>
         <Card isHoverable>
@@ -111,6 +166,34 @@ export class CardDemo extends React.Component {
               <CardFooter>Footer</CardFooter>
             </CardExpandableContent>
           )}
+        </Card>
+        <br></br>
+        <Card id="hasNoOffset-card">
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
+            </CardHeaderMain>
+            <CardActions hasNoOffset>
+              <Dropdown
+                onSelect={this.onSelect}
+                toggle={<KebabToggle onToggle={this.onToggle} />}
+                isOpen={this.state.isOpen}
+                isPlain
+                dropdownItems={dropdownItems}
+                position={'right'}
+              />
+              <Checkbox
+                isChecked={this.state.check1}
+                onChange={this.onClick}
+                aria-label="card checkbox example"
+                id="check-1"
+                name="check1"
+              />
+            </CardActions>
+          </CardHeader>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
         </Card>
       </React.Fragment>
     );

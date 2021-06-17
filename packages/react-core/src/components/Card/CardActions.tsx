@@ -7,14 +7,17 @@ export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the Action */
   className?: string;
+  /** Flag indicating that the actions have no offset */
+  hasNoOffset?: boolean;
 }
 
 export const CardActions: React.FunctionComponent<CardActionsProps> = ({
   children = null,
   className = '',
+  hasNoOffset = false,
   ...props
 }: CardActionsProps) => (
-  <div className={css(styles.cardActions, className)} {...props}>
+  <div className={css(styles.cardActions, hasNoOffset && styles.modifiers.noOffset, className)} {...props}>
     {children}
   </div>
 );
