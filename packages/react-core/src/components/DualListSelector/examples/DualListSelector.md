@@ -45,6 +45,49 @@ class BasicDualListSelector extends React.Component {
 }
 ```
 
+### Basic with tooltips
+
+```js
+import React from 'react';
+import { DualListSelector } from '@patternfly/react-core';
+
+class BasicDualListSelector extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      availableOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+      chosenOptions: []
+    };
+
+    this.onListChange = (newAvailableOptions, newChosenOptions) => {
+      this.setState({
+        availableOptions: newAvailableOptions.sort(),
+        chosenOptions: newChosenOptions.sort()
+      });
+    };
+  }
+
+  render() {
+    return (
+      <DualListSelector
+        availableOptions={this.state.availableOptions}
+        chosenOptions={this.state.chosenOptions}
+        onListChange={this.onListChange}
+        addAllTooltip="Add all options"
+        addAllTooltipProps={{ position: 'top' }}
+        addSelectedTooltip="Add selected options"
+        addSelectedTooltipProps={{ position: 'right' }}
+        removeSelectedTooltip="Remove selected options"
+        removeSelectedTooltipProps={{ position: 'left' }}
+        removeAllTooltip="Remove all options"
+        removeAllTooltipProps={{ position: 'bottom' }}
+        id="basicSelector"
+      />
+    );
+  }
+}
+```
+
 ### Basic with search
 
 ```js

@@ -20,8 +20,7 @@ export enum ButtonType {
   submit = 'submit',
   reset = 'reset'
 }
-
-export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAProps {
+export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>, OUIAProps {
   /** Content rendered inside the button */
   children?: React.ReactNode;
   /** Additional classes added to the button */
@@ -62,9 +61,11 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   isLarge?: boolean;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
+  /** Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
+const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   children = null,
   className = '',
   component = 'button',
@@ -87,6 +88,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   ouiaId,
   ouiaSafe = true,
   tabIndex = null,
+  innerRef,
   ...props
 }: ButtonProps) => {
   const ouiaProps = useOUIAProps(Button.displayName, ouiaId, ouiaSafe, variant);
@@ -146,6 +148,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement || isInlineSpan ? type : null}
       role={isInlineSpan ? 'button' : null}
+      ref={innerRef}
       {...ouiaProps}
     >
       {isLoading && (
@@ -163,4 +166,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     </Component>
   );
 };
+
+export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<any>) => (
+  <ButtonBase innerRef={ref} {...props} />
+));
+
 Button.displayName = 'Button';

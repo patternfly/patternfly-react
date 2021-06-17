@@ -74,43 +74,50 @@ exports[`Alert - danger Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={false}
+          <ButtonBase
             aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-2"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={null}
             onClick={[MockFunction]}
-            role={null}
-            type="button"
+            variant="plain"
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Close"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-2"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[MockFunction]}
+              role={null}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
+              <TimesIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 352 512"
+                  width="1em"
+                >
+                  <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  />
+                </svg>
+              </TimesIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionCloseButton>
     </div>
@@ -201,19 +208,26 @@ exports[`Alert - danger Action Link 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-4"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-4"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -300,19 +314,26 @@ exports[`Alert - danger Action and Title 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-5"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-5"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -400,19 +421,26 @@ exports[`Alert - danger Custom aria label 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-6"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-6"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -838,43 +866,50 @@ exports[`Alert - default Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={false}
+          <ButtonBase
             aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-5"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={null}
             onClick={[MockFunction]}
-            role={null}
-            type="button"
+            variant="plain"
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Close"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-5"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[MockFunction]}
+              role={null}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
+              <TimesIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 352 512"
+                  width="1em"
+                >
+                  <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  />
+                </svg>
+              </TimesIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionCloseButton>
     </div>
@@ -965,19 +1000,26 @@ exports[`Alert - default Action Link 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-13"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-13"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -1064,19 +1106,26 @@ exports[`Alert - default Action and Title 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-14"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-14"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -1164,19 +1213,26 @@ exports[`Alert - default Custom aria label 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-15"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-15"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -1602,43 +1658,50 @@ exports[`Alert - info Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={false}
+          <ButtonBase
             aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-4"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={null}
             onClick={[MockFunction]}
-            role={null}
-            type="button"
+            variant="plain"
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Close"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-4"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[MockFunction]}
+              role={null}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
+              <TimesIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 352 512"
+                  width="1em"
+                >
+                  <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  />
+                </svg>
+              </TimesIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionCloseButton>
     </div>
@@ -1729,19 +1792,26 @@ exports[`Alert - info Action Link 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-10"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-10"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -1828,19 +1898,26 @@ exports[`Alert - info Action and Title 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-11"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-11"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -1928,19 +2005,26 @@ exports[`Alert - info Custom aria label 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-12"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-12"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -2366,43 +2450,50 @@ exports[`Alert - success Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={false}
+          <ButtonBase
             aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={null}
             onClick={[MockFunction]}
-            role={null}
-            type="button"
+            variant="plain"
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Close"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-1"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[MockFunction]}
+              role={null}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
+              <TimesIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 352 512"
+                  width="1em"
+                >
+                  <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  />
+                </svg>
+              </TimesIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionCloseButton>
     </div>
@@ -2493,19 +2584,26 @@ exports[`Alert - success Action Link 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-1"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -2592,19 +2690,26 @@ exports[`Alert - success Action and Title 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-2"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-2"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -2692,19 +2797,26 @@ exports[`Alert - success Custom aria label 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-3"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-3"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -3130,43 +3242,50 @@ exports[`Alert - warning Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={false}
+          <ButtonBase
             aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-3"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={null}
             onClick={[MockFunction]}
-            role={null}
-            type="button"
+            variant="plain"
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Close"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-3"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[MockFunction]}
+              role={null}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
+              <TimesIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 352 512"
+                  width="1em"
+                >
+                  <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  />
+                </svg>
+              </TimesIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionCloseButton>
     </div>
@@ -3257,19 +3376,26 @@ exports[`Alert - warning Action Link 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-7"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-7"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -3356,19 +3482,26 @@ exports[`Alert - warning Action and Title 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-8"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-8"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>
@@ -3456,19 +3589,26 @@ exports[`Alert - warning Custom aria label 1`] = `
           isInline={true}
           variant="link"
         >
-          <button
-            aria-disabled={false}
-            aria-label={null}
-            className="pf-c-button pf-m-link pf-m-inline"
-            data-ouia-component-id="OUIA-Generated-Button-link-9"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
+          <ButtonBase
+            className=""
+            innerRef={null}
+            isInline={true}
+            variant="link"
           >
-            test
-          </button>
+            <button
+              aria-disabled={false}
+              aria-label={null}
+              className="pf-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-9"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              role={null}
+              type="button"
+            >
+              test
+            </button>
+          </ButtonBase>
         </Button>
       </AlertActionLink>
     </div>

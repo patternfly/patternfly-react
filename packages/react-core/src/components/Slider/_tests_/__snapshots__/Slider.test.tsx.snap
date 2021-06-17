@@ -8581,13 +8581,13 @@ exports[`slider renders slider with input above thumb 1`] = `
 exports[`slider renders slider with input actions 1`] = `
 <Slider
   leftActions={
-    <Button
+    <ForwardRef(Button)
       aria-label="Minus"
       variant="plain"
     />
   }
   rightActions={
-    <Button
+    <ForwardRef(Button)
       aria-label="Plus"
       variant="plain"
     />
@@ -8609,17 +8609,23 @@ exports[`slider renders slider with input actions 1`] = `
         aria-label="Minus"
         variant="plain"
       >
-        <button
-          aria-disabled={false}
+        <ButtonBase
           aria-label="Minus"
-          className="pf-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-1"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe={true}
-          disabled={false}
-          role={null}
-          type="button"
-        />
+          innerRef={null}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Minus"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            role={null}
+            type="button"
+          />
+        </ButtonBase>
       </Button>
     </div>
     <div
@@ -10390,17 +10396,23 @@ exports[`slider renders slider with input actions 1`] = `
         aria-label="Plus"
         variant="plain"
       >
-        <button
-          aria-disabled={false}
+        <ButtonBase
           aria-label="Plus"
-          className="pf-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-2"
-          data-ouia-component-type="PF4/Button"
-          data-ouia-safe={true}
-          disabled={false}
-          role={null}
-          type="button"
-        />
+          innerRef={null}
+          variant="plain"
+        >
+          <button
+            aria-disabled={false}
+            aria-label="Plus"
+            className="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-2"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            role={null}
+            type="button"
+          />
+        </ButtonBase>
       </Button>
     </div>
   </div>

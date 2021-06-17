@@ -106,6 +106,7 @@ describe('Dual List Selector BasicDemo Test', () => {
     cy.get('.pf-c-dual-list-selector__controls-item')
       .eq(1)
       .click();
+    cy.get('.pf-c-tooltip').should('exist');
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
       .find('li')
@@ -123,6 +124,7 @@ describe('Dual List Selector BasicDemo Test', () => {
     cy.get('.pf-c-dual-list-selector__controls-item')
       .eq(3)
       .click();
+    cy.get('.pf-c-tooltip').should('exist');
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
       .find('li')
@@ -137,6 +139,7 @@ describe('Dual List Selector BasicDemo Test', () => {
     cy.get('.pf-c-dual-list-selector__controls-item')
       .eq(0)
       .click();
+    cy.get('.pf-c-tooltip').should('exist');
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
       .find('li')

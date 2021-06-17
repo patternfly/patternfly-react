@@ -168,44 +168,81 @@ exports[`DualListSelector basic 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={false}
             aria-label="Add all"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="false"
+                  aria-label="Add all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={false}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Add all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-1"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-            </AngleDoubleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  />
+                </svg>
+              </AngleDoubleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -219,44 +256,82 @@ exports[`DualListSelector basic 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-2"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-2"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-2"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -270,44 +345,82 @@ exports[`DualListSelector basic 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-3"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-3"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-3"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -321,44 +434,82 @@ exports[`DualListSelector basic 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-4"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove all"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-4"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove all"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-4"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-            </AngleDoubleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  />
+                </svg>
+              </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
     </div>
@@ -625,44 +776,81 @@ exports[`DualListSelector with actions 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={false}
             aria-label="Add all"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-17"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="false"
+                  aria-label="Add all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-17"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={false}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Add all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-17"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-            </AngleDoubleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  />
+                </svg>
+              </AngleDoubleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -676,44 +864,82 @@ exports[`DualListSelector with actions 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-18"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-18"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-18"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -727,44 +953,82 @@ exports[`DualListSelector with actions 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-19"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-19"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-19"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -778,44 +1042,81 @@ exports[`DualListSelector with actions 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={false}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-20"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="false"
+                  aria-label="Remove all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-20"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={false}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Remove all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-20"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-            </AngleDoubleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  />
+                </svg>
+              </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
     </div>
@@ -1141,44 +1442,81 @@ exports[`DualListSelector with custom status 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={false}
             aria-label="Add all"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-9"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="false"
+                  aria-label="Add all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-9"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={false}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Add all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-9"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-            </AngleDoubleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  />
+                </svg>
+              </AngleDoubleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -1192,44 +1530,82 @@ exports[`DualListSelector with custom status 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-10"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-10"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-10"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -1243,44 +1619,82 @@ exports[`DualListSelector with custom status 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-11"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-11"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-11"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -1294,44 +1708,82 @@ exports[`DualListSelector with custom status 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-12"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove all"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-12"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove all"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-12"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-            </AngleDoubleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  />
+                </svg>
+              </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
     </div>
@@ -1574,44 +2026,81 @@ exports[`DualListSelector with search inputs 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={false}
             aria-label="Add all"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-5"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="false"
+                  aria-label="Add all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={false}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Add all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-5"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-            </AngleDoubleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  />
+                </svg>
+              </AngleDoubleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -1625,44 +2114,82 @@ exports[`DualListSelector with search inputs 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-6"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-6"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-6"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -1676,44 +2203,82 @@ exports[`DualListSelector with search inputs 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-7"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-7"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-7"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -1727,44 +2292,82 @@ exports[`DualListSelector with search inputs 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-8"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove all"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-8"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove all"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-8"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-            </AngleDoubleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  />
+                </svg>
+              </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
     </div>
@@ -2251,44 +2854,81 @@ exports[`DualListSelector with tree 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={false}
             aria-label="Add all"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-13"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="false"
+                  aria-label="Add all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-13"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={false}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={false}
+              aria-label="Add all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-13"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={false}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-            </AngleDoubleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  />
+                </svg>
+              </AngleDoubleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -2302,44 +2942,82 @@ exports[`DualListSelector with tree 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Add selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-14"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-14"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-14"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -2353,44 +3031,82 @@ exports[`DualListSelector with tree 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove selected"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-15"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-15"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-15"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
       <div
@@ -2404,44 +3120,82 @@ exports[`DualListSelector with tree 1`] = `
           tabIndex={-1}
           variant="plain"
         >
-          <button
+          <ButtonBase
             aria-disabled={true}
             aria-label="Remove all"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-plain-16"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove all"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-16"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
             onClick={[Function]}
-            role={null}
             tabIndex={-1}
-            type="button"
+            variant="plain"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
+            <button
+              aria-disabled={true}
+              aria-label="Remove all"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-16"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
+              <AngleDoubleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-            </AngleDoubleLeftIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  />
+                </svg>
+              </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
         </Button>
       </div>
     </div>

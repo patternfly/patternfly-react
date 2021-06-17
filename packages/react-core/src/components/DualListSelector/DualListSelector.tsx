@@ -9,6 +9,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import { DualListSelectorPane } from './DualListSelectorPane';
 import { getUniqueId, PickOptional } from '../../helpers';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
+import { Tooltip } from '../Tooltip';
 import {
   flattenTree,
   flattenTreeWithFolders,
@@ -43,20 +44,36 @@ export interface DualListSelectorProps {
   addSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Accessible label for the add selected button */
   addSelectedAriaLabel?: string;
+  /** Tooltip content for the add selected button */
+  addSelectedTooltip?: React.ReactNode;
+  /** Additonal tooltip properties for the add selected tooltip */
+  addSelectedTooltipProps?: any;
   /** Callback fired every time options are chosen or removed */
   onListChange?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Optional callback for the add all button */
   addAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Accessible label for the add all button */
   addAllAriaLabel?: string;
+  /** Tooltip content for the add all button */
+  addAllTooltip?: React.ReactNode;
+  /** Additonal tooltip properties for the add all tooltip */
+  addAllTooltipProps?: any;
   /** Optional callback for the remove selected button */
   removeSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Accessible label for the remove selected button */
   removeSelectedAriaLabel?: string;
+  /** Tooltip content for the remove selected button */
+  removeSelectedTooltip?: React.ReactNode;
+  /** Additonal tooltip properties for the remove selected tooltip  */
+  removeSelectedTooltipProps?: any;
   /** Optional callback for the remove all button */
   removeAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
   /** Accessible label for the remove all button */
   removeAllAriaLabel?: string;
+  /** Tooltip content for the remove all button */
+  removeAllTooltip?: React.ReactNode;
+  /** Additonal tooltip properties for the remove all tooltip */
+  removeAllTooltipProps?: any;
   /** Optional callback fired when an option is selected */
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent) => void;
   /** Optional callback fired when an option is checked */
@@ -98,6 +115,10 @@ interface DualListSelectorState {
 export class DualListSelector extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelector';
   private controlsEl = React.createRef<HTMLDivElement>();
+  private addAllButtonRef = React.createRef<HTMLButtonElement>();
+  private addSelectedButtonRef = React.createRef<HTMLButtonElement>();
+  private removeSelectedButtonRef = React.createRef<HTMLButtonElement>();
+  private removeAllButtonRef = React.createRef<HTMLButtonElement>();
   static defaultProps: PickOptional<DualListSelectorProps> = {
     availableOptions: [] as React.ReactNode[],
     availableOptionsTitle: 'Available options',
@@ -520,6 +541,14 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       onOptionCheck,
       id,
       isTree,
+      addAllTooltip,
+      addAllTooltipProps,
+      addSelectedTooltip,
+      addSelectedTooltipProps,
+      removeAllTooltip,
+      removeAllTooltipProps,
+      removeSelectedTooltip,
+      removeSelectedTooltipProps,
       ...props
     } = this.props;
     const {
@@ -584,9 +613,18 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               onClick={this.addAll}
               aria-label={addAllAriaLabel}
               tabIndex={-1}
+              ref={this.addAllButtonRef}
             >
               <AngleDoubleRightIcon />
             </Button>
+            {addAllTooltip && (
+              <Tooltip
+                content={addAllTooltip}
+                position="left"
+                reference={this.addAllButtonRef}
+                {...addAllTooltipProps}
+              />
+            )}
           </div>
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
@@ -596,9 +634,18 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               onClick={isTree ? this.addTreeSelected : this.addSelected}
               aria-label={addSelectedAriaLabel}
               tabIndex={-1}
+              ref={this.addSelectedButtonRef}
             >
               <AngleRightIcon />
             </Button>
+            {addSelectedTooltip && (
+              <Tooltip
+                content={addSelectedTooltip}
+                position="right"
+                reference={this.addSelectedButtonRef}
+                {...addSelectedTooltipProps}
+              />
+            )}
           </div>
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
@@ -608,9 +655,18 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               tabIndex={-1}
               isDisabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
               aria-disabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
+              ref={this.removeSelectedButtonRef}
             >
               <AngleLeftIcon />
             </Button>
+            {removeSelectedTooltip && (
+              <Tooltip
+                content={removeSelectedTooltip}
+                position="left"
+                reference={this.removeSelectedButtonRef}
+                {...removeSelectedTooltipProps}
+              />
+            )}
           </div>
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
@@ -620,9 +676,18 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
               onClick={this.removeAll}
               aria-label={removeAllAriaLabel}
               tabIndex={-1}
+              ref={this.removeAllButtonRef}
             >
               <AngleDoubleLeftIcon />
             </Button>
+            {removeAllTooltip && (
+              <Tooltip
+                content={removeAllTooltip}
+                position="right"
+                reference={this.removeAllButtonRef}
+                {...removeAllTooltipProps}
+              />
+            )}
           </div>
         </div>
         <DualListSelectorPane
