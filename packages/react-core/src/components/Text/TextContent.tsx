@@ -7,7 +7,7 @@ export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the TextContent */
   className?: string;
-  /** Flag to indicate the  all links in a the content block include visited styles */
+  /** Flag to indicate the all links in a the content block have visited styles applied if the browser determines the link has been visited */
   isVisited?: boolean;
 }
 

@@ -24,7 +24,7 @@ export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   children?: React.ReactNode;
   /** Additional classes added to the Text */
   className?: string;
-  /** Flag to indicate the link has been visited */
+  /** Flag to indicate the link has visited styles applied if the browser determines the link has been visited */
   isVisitedLink?: boolean;
 }
 
