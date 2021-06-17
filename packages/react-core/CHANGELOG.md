@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.131.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.131.0...@patternfly/react-core@4.131.1) (2021-06-17)
+
+
+### Bug Fixes
+
+* **breadcrumb:** moved divider outside of header element ([#5870](https://github.com/patternfly/patternfly-react/issues/5870)) ([da0a7d2](https://github.com/patternfly/patternfly-react/commit/da0a7d25e8c926e861fea8a43ed36c76a01402ad))
+
+
+
+
+
 # [4.131.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.130.0...@patternfly/react-core@4.131.0) (2021-06-17)
 
 
