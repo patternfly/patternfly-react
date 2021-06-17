@@ -936,7 +936,7 @@ class CardGridDemo extends React.Component {
                     </ListItem>
                   </List>
                 </Flex>
-                <Button variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+                <Button component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
                   View all set up cluster steps
                 </Button>
               </Flex>
@@ -964,7 +964,7 @@ class CardGridDemo extends React.Component {
                     </ListItem>
                   </List>
                 </Flex>
-                <Button variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+                <Button component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
                   View all guided tours
                 </Button>
               </Flex>
@@ -995,7 +995,7 @@ class CardGridDemo extends React.Component {
                     </ListItem>
                   </List>
                 </Flex>
-                <Button variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+                <Button component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
                   View all quick starts
                 </Button>
               </Flex>
@@ -1029,7 +1029,7 @@ class CardGridDemo extends React.Component {
                     </ListItem>
                   </List>
                 </Flex>
-                <Button variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+                <Button component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
                   View all learning resources
                 </Button>
               </Flex>
