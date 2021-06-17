@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 import GripVerticalIcon from '@patternfly/react-icons/dist/js/icons/grip-vertical-icon';
 import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
 
@@ -19,7 +21,7 @@ export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
   <Button
     id={id}
     variant="plain"
-    className={className}
+    className={css(styles.tableDraggable, className)}
     type="button"
     aria-label={ariaLabel || `Draggable row draggable button`}
     onClick={onClick}
