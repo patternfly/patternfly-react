@@ -28,4 +28,13 @@ describe('Description List Breakpoints Demo Test', () => {
     cy.get('#3-col-description-list.pf-m-3-col-on-xl').should('exist');
     cy.get('#3-col-description-list.pf-m-3-col-on-2xl').should('exist');
   });
+
+  it('Verify description list has layout breakpoints', () => {
+    const list = cy.get('#orientation-description-list');
+    list.should('have.class', 'pf-m-horizontal-on-sm');
+    list.should('have.class', 'pf-m-vertical-on-md');
+    list.should('have.class', 'pf-m-horizontal-on-lg');
+    list.should('have.class', 'pf-m-vertical-on-xl');
+    list.should('have.class', 'pf-m-horizontal-on-2xl');
+  });
 });

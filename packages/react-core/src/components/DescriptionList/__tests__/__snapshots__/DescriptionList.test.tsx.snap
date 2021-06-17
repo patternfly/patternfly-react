@@ -101,6 +101,25 @@ exports[`Description List Term helper text 1`] = `
 </dt>
 `;
 
+exports[`Description List alignment breakpoints 1`] = `
+<DescriptionList
+  isHorizontal={true}
+  orientation={
+    Object {
+      "2xl": "horizontal",
+      "lg": "horizontal",
+      "md": "vertical",
+      "sm": "horizontal",
+      "xl": "vertical",
+    }
+  }
+>
+  <dl
+    className="pf-c-description-list pf-m-horizontal pf-m-horizontal-on-sm pf-m-vertical-on-md pf-m-horizontal-on-lg pf-m-vertical-on-xl pf-m-horizontal-on-2xl"
+  />
+</DescriptionList>
+`;
+
 exports[`Description List default 1`] = `
 <dl
   className="pf-c-description-list"

@@ -27,13 +27,23 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   /** Sets the number of columns on the description list */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
+    sm?: '1Col' | '2Col' | '3Col';
     md?: '1Col' | '2Col' | '3Col';
     lg?: '1Col' | '2Col' | '3Col';
     xl?: '1Col' | '2Col' | '3Col';
     '2xl'?: '1Col' | '2Col' | '3Col';
   };
+  /** Indicates how the menu will align at screen size breakpoints. Default alignment is set via the position property. */
+  orientation?: {
+    sm?: 'vertical' | 'horizontal';
+    md?: 'vertical' | 'horizontal';
+    lg?: 'vertical' | 'horizontal';
+    xl?: 'vertical' | 'horizontal';
+    '2xl'?: 'vertical' | 'horizontal';
+  };
   autoFitMinModifier?: {
     default?: string;
+    sm?: string;
     md?: string;
     lg?: string;
     xl?: string;
@@ -60,6 +70,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isInlineGrid,
   columnModifier,
   autoFitMinModifier,
+  orientation,
   style,
   ...props
 }: DescriptionListProps) => (
@@ -70,6 +81,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       isAutoColumnWidths && styles.modifiers.autoColumnWidths,
       isAutoFit && styles.modifiers.autoFit,
       formatBreakpointMods(columnModifier, styles),
+      formatBreakpointMods(orientation, styles),
       isInlineGrid && styles.modifiers.inlineGrid,
       className
     )}

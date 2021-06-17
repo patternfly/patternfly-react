@@ -155,12 +155,65 @@ export class DescriptionListBreakpointsDemo extends Component {
     );
   }
 
+  renderResponsiveLayoutDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <Title headingLevel="h2" size="2xl">
+          Responsive Layout Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList
+            id="orientation-description-list"
+            isHorizontal
+            orientation={{
+              sm: 'horizontal',
+              md: 'vertical',
+              lg: 'horizontal',
+              xl: 'vertical',
+              '2xl': 'horizontal'
+            }}
+          >
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>Example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
         {this.render1ColDescriptionList()}
         {this.render2ColDescriptionList()}
         {this.render3ColDescriptionList()}
+        {this.renderResponsiveLayoutDescriptionList()}
       </Stack>
     );
   }

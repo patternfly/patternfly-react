@@ -443,6 +443,57 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
 </DescriptionList>;
 ```
 
+### Responsive horizontal, vertical group layout
+
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListGroup,
+  DescriptionListDescription
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+
+<DescriptionList
+  isHorizontal
+  orientation={{
+    md: 'vertical',
+    lg: 'horizontal',
+    xl: 'vertical',
+    '2xl': 'horizontal'
+  }}
+>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>;
+```
+
 ## Auto-column-width
 
 ### Default auto column width
@@ -639,7 +690,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-<DescriptionList isAutoFit autoFitModifier={{ default: '200px' }}>
+<DescriptionList isAutoFit autoFitMinModifier={{ default: '200px' }}>
   <DescriptionListGroup>
     <DescriptionListTerm>Name</DescriptionListTerm>
     <DescriptionListDescription>example</DescriptionListDescription>
@@ -683,7 +734,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 
-<DescriptionList isAutoFit autoFitModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}>
+<DescriptionList isAutoFit autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}>
   <DescriptionListGroup>
     <DescriptionListTerm>Name</DescriptionListTerm>
     <DescriptionListDescription>example</DescriptionListDescription>
