@@ -64,18 +64,14 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
 
   const getFormattedData = () => {
     if (context.searchedInput) {
-      const matchedString = getData(index).split(context.searchedInput);
+      const regEx = new RegExp(`(${context.searchedInput})`, 'ig');
+      const splitString = getData(index).split(regEx);
       const composedString = [] as React.ReactNode[];
-      matchedString.map((substr, index) => {
-        if (index === matchedString.length - 1) {
-          composedString.push(substr);
+      splitString.map(substr => {
+        if (substr.match(regEx)) {
+          composedString.push(<span className={css(handleHighlight())}>{substr}</span>);
         } else {
-          composedString.push(
-            <>
-              {substr}
-              <span className={css(handleHighlight())}>{context.searchedInput}</span>
-            </>
-          );
+          composedString.push(substr);
         }
       });
       return composedString;

@@ -14,18 +14,13 @@ export const isArrayOfString = (array: string[]) => {
 */
 export const searchForKeyword = (searchedInput: string, parsedData: string[]) => {
   const searchResults: number[] = [];
-  let rowIndexCounter: number = 0;
-  let keywordIndexPosition: number;
 
-  for (const row of parsedData) {
-    keywordIndexPosition = row.search(searchedInput);
-
-    if (keywordIndexPosition !== -1) {
-      searchResults.push(rowIndexCounter);
+  parsedData.map((row, index) => {
+    const regex = new RegExp(searchedInput, 'gi');
+    if (regex.test(row)) {
+      searchResults.push(index);
     }
-
-    rowIndexCounter++;
-  }
+  });
 
   if (searchResults.length > 0) {
     return [...searchResults];
