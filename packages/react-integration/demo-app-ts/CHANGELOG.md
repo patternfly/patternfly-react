@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.105.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.104.7...demo-app-ts@4.105.0) (2021-06-17)
+
+
+### Features
+
+* **Card:** Added support to remove offset from actions ([#5887](https://github.com/patternfly/patternfly-react/issues/5887)) ([6267210](https://github.com/patternfly/patternfly-react/commit/62672106007d93cf5061882b7325d9e73fceaed5))
+
+
+
+
+
 ## [4.104.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.104.6...demo-app-ts@4.104.7) (2021-06-16)
 
 **Note:** Version bump only for package demo-app-ts
