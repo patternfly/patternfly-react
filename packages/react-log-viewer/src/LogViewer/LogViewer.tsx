@@ -61,6 +61,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     const [parsedData, setParsedData] = useState<string[] | null>([]);
 
     const [currentWidth, setCurrentWidth] = useState<number | null>(width || 600);
+    const [resizing, setResizing] = useState(false);
     const [loading, setLoading] = useState(true);
     const [firstMount, setFirstMount] = useState(true);
 
@@ -81,20 +82,22 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     }, [containerRef.current]);
 
     const callbackResize = () => {
+      setResizing(true);
       setLoading(true);
       if (resizeTimer) {
         clearTimeout(resizeTimer);
       }
       resizeTimer = setTimeout(() => {
-        setLoading(false);
-      }, 500);
+        setResizing(false);
+      }, 100);
     };
 
     useEffect(() => {
-      if (loading) {
+      if (!resizing) {
         setCurrentWidth((containerRef.current as HTMLDivElement).clientWidth);
+        setLoading(false);
       }
-    }, [loading]);
+    }, [resizing]);
 
     const dataToRender = React.useMemo(
       () => ({
