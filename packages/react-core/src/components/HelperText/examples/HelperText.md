@@ -34,7 +34,7 @@ import { HelperText, HelperTextItem } from '@patternfly/react-core';
     <HelperTextItem variant="success">This is success helper text</HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem variant="invalid">This is invalid helper text</HelperTextItem>
+    <HelperTextItem variant="error">This is error helper text</HelperTextItem>
   </HelperText>
 </React.Fragment>;
 ```
@@ -70,8 +70,8 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem variant="invalid" icon={<ExclamationCircleIcon />}>
-      This is invalid helper text
+    <HelperTextItem variant="error" icon={<ExclamationCircleIcon />}>
+      This is error helper text
     </HelperTextItem>
   </HelperText>
 </React.Fragment>;
@@ -117,18 +117,18 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem isDynamic variant="invalid">
-      This is invalid helper text
+    <HelperTextItem isDynamic variant="error">
+      This is error helper text
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem isDynamic variant="invalid" icon={<ExclamationCircleIcon />}>
-      This is invalid helper text with a custom icon
+    <HelperTextItem isDynamic variant="error" icon={<ExclamationCircleIcon />}>
+      This is error helper text with a custom icon
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem isDynamic variant="invalid" hasIcon={false}>
-      This is invalid helper text with no icon
+    <HelperTextItem isDynamic variant="error" hasIcon={false}>
+      This is error helper text with no icon
     </HelperTextItem>
   </HelperText>
 </React.Fragment>;
@@ -144,7 +144,7 @@ import { HelperText, HelperTextItem } from '@patternfly/react-core';
   <HelperTextItem isDynamic variant="success" component="li">
     Must be at least 14 characters
   </HelperTextItem>
-  <HelperTextItem isDynamic variant="invalid" component="li">
+  <HelperTextItem isDynamic variant="error" component="li">
     Cannot contain any variation of the word "redhat"
   </HelperTextItem>
   <HelperTextItem isDynamic variant="success" component="li">

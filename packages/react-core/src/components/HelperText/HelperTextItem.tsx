@@ -14,7 +14,7 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
   /** Sets the component type of the helper text item. */
   component?: 'div' | 'li';
   /** Variant styling of the helper text item. */
-  variant?: 'default' | 'indeterminate' | 'warning' | 'success' | 'invalid';
+  variant?: 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
   /** Icon prefixing the helper text. This property will override the default icon paired with a dynamic helper text. */
   icon?: React.ReactNode;
   /** Flag indicating the helper text item is dynamic. */
@@ -28,7 +28,7 @@ const variantStyle = {
   indeterminate: styles.modifiers.indeterminate,
   warning: styles.modifiers.warning,
   success: styles.modifiers.success,
-  invalid: styles.modifiers.invalid
+  error: styles.modifiers.invalid
 };
 
 export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
@@ -57,7 +57,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
           {(variant === 'default' || variant === 'indeterminate') && <MinusIcon />}
           {variant === 'warning' && <ExclamationTriangleIcon />}
           {variant === 'success' && <CheckIcon />}
-          {variant === 'invalid' && <TimesIcon />}
+          {variant === 'error' && <TimesIcon />}
         </span>
       )}
       <span className={css(styles.helperTextItemText)}>{children}</span>

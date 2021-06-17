@@ -189,7 +189,7 @@ exports[`HelperText invalid helper text variant applies successfully 1`] = `
   variant="invalid"
 >
   <div
-    className="pf-c-helper-text__item pf-m-invalid"
+    className="pf-c-helper-text__item"
   >
     <span
       className="pf-c-helper-text__item-text"

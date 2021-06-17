@@ -30,8 +30,8 @@ export class HelperTextDemo extends React.Component {
           <HelperTextItem id="success" isDynamic variant="success" icon={<CheckCircleIcon />}>
             This is success helper text
           </HelperTextItem>
-          <HelperTextItem id="invalid" isDynamic variant="invalid" icon={<ExclamationCircleIcon />}>
-            This is invalid helper text
+          <HelperTextItem id="invalid" isDynamic variant="error" icon={<ExclamationCircleIcon />}>
+            This is error helper text
           </HelperTextItem>
           <HelperTextItem id="indeterminate" isDynamic variant="indeterminate" icon={<QuestionIcon />}>
             This is indeterminate helper text
@@ -41,7 +41,7 @@ export class HelperTextDemo extends React.Component {
           <HelperTextItem id="list1" isDynamic variant="success" component="li" icon={<CheckCircleIcon />}>
             This is a list item
           </HelperTextItem>
-          <HelperTextItem id="list2" isDynamic variant="invalid" component="li" icon={<ExclamationCircleIcon />}>
+          <HelperTextItem id="list2" isDynamic variant="error" component="li" icon={<ExclamationCircleIcon />}>
             This is a list item
           </HelperTextItem>
           <HelperTextItem id="list3" isDynamic variant="indeterminate" component="li" icon={<QuestionIcon />}>
