@@ -33,13 +33,13 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isBlock?: boolean;
   /** Adds disabled styling and disables the button using the disabled html attribute */
   isDisabled?: boolean;
-  /** @beta Adds disabled styling and communicates that the button is disabled using the aria-disabled html attribute */
+  /** Adds disabled styling and communicates that the button is disabled using the aria-disabled html attribute */
   isAriaDisabled?: boolean;
   /** Adds progress styling to button */
   isLoading?: boolean;
   /** Aria-valuetext for the loading spinner */
   spinnerAriaValueText?: string;
-  /** @beta Events to prevent when the button is in an aria-disabled state */
+  /** Events to prevent when the button is in an aria-disabled state */
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
   isInline?: boolean;

@@ -2,7 +2,6 @@
 id: 'Description list'
 section: components
 cssPrefix: 'pf-c-description-list'
-beta: true
 propComponents:
   [
     'DescriptionList',

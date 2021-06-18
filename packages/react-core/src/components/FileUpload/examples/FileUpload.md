@@ -3,7 +3,6 @@ id: File upload
 cssPrefix: pf-c-file-upload
 propComponents: ['FileUpload', 'FileUploadField']
 section: components
-beta: true
 ---
 
 import FileUploadIcon from '@patternfly/react-icons/dist/js/icons/file-upload-icon';

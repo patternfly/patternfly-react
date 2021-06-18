@@ -3,7 +3,6 @@ id: Simple list
 section: components
 cssPrefix: pf-c-simple-list
 propComponents: ['SimpleList', 'SimpleListGroup', 'SimpleListItem']
-beta: true
 ---
 
 ## Examples
