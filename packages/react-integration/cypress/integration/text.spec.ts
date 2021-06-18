@@ -16,4 +16,12 @@ describe('Text Demo Test', () => {
   it('Verify text list item and text content', () => {
     cy.get('.pf-c-content li').contains('Text list item');
   });
+
+  it('Verify visited link text', () => {
+    cy.get('#visited-link').should('have.class', 'pf-m-visited');
+  });
+
+  it('Verify visited content text', () => {
+    cy.get('#visited-content').should('have.class', 'pf-m-visited');
+  });
 });

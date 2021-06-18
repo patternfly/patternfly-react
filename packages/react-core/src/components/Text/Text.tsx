@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Content/content';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TextVariants {
@@ -23,12 +24,15 @@ export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   children?: React.ReactNode;
   /** Additional classes added to the Text */
   className?: string;
+  /** Flag to indicate the link has visited styles applied if the browser determines the link has been visited */
+  isVisitedLink?: boolean;
 }
 
 export const Text: React.FunctionComponent<TextProps> = ({
   children = null,
   className = '',
   component = TextVariants.p,
+  isVisitedLink = false,
   ouiaId,
   ouiaSafe = true,
   ...props
@@ -37,7 +41,12 @@ export const Text: React.FunctionComponent<TextProps> = ({
   const ouiaProps = useOUIAProps(Text.displayName, ouiaId, ouiaSafe);
 
   return (
-    <Component {...ouiaProps} {...props} data-pf-content className={css(className)}>
+    <Component
+      {...ouiaProps}
+      {...props}
+      data-pf-content
+      className={css(isVisitedLink && component === TextVariants.a && styles.modifiers.visited, className)}
+    >
       {children}
     </Component>
   );

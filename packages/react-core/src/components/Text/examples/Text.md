@@ -5,9 +5,10 @@ cssPrefix: pf-c-content
 propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']
 ---
 
-
 ## Examples
+
 ### Headings
+
 ```js
 import React from 'react';
 import {
@@ -27,10 +28,11 @@ import {
   <Text component={TextVariants.h4}>Fourth level</Text>
   <Text component={TextVariants.h5}>Fifth level</Text>
   <Text component={TextVariants.h6}>Sixth level</Text>
-</TextContent>
+</TextContent>;
 ```
 
 ### Body
+
 ```js
 import React from 'react';
 import {
@@ -61,12 +63,13 @@ import {
     turpis.
   </Text>
   <Text component={TextVariants.small}>Sometimes you need small text to display things like date created</Text>
-</TextContent>
+</TextContent>;
 ```
 
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
 ### Unordered list
+
 ```js
 import React from 'react';
 import {
@@ -92,10 +95,11 @@ import {
     </TextListItem>
     <TextListItem>Ut non enim metus.</TextListItem>
   </TextList>
-</TextContent>
+</TextContent>;
 ```
 
 ### Ordered list
+
 ```js
 import React from 'react';
 import {
@@ -118,10 +122,11 @@ import {
     <TextListItem>Quisque aliquam cursus urna, non bibendum massa viverra eget.</TextListItem>
     <TextListItem>Vivamus maximus ultricies pulvinar.</TextListItem>
   </TextList>
-</TextContent>
+</TextContent>;
 ```
 
 ### Data list
+
 ```js
 import React from 'react';
 import {
@@ -145,5 +150,60 @@ import {
     <TextListItem component={TextListItemVariants.dt}>CSS</TextListItem>
     <TextListItem component={TextListItemVariants.dd}>A technology to make HTML look better</TextListItem>
   </TextList>
-</TextContent>
+</TextContent>;
+```
+
+### Visited
+
+```js
+import React from 'react';
+import {
+  TextContent,
+  Text,
+  TextVariants
+} from '@patternfly/react-core';
+
+TextVisited = () => {
+  return (
+    <>
+      <TextContent>
+        <Text component={TextVariants.h3}>Visited link example</Text>
+        <Text component={TextVariants.p}>
+          <Text 
+            component={TextVariants.a} 
+            isVisitedLink
+            href="#">
+            Visited link
+          </Text>
+        </Text>
+      </TextContent>
+      <br />
+      <TextContent isVisited>
+        <Text component={TextVariants.h3}>Visited content example</Text>
+        <Text component={TextVariants.p}>
+          <Text 
+            component={TextVariants.a} 
+            href="#">
+            content link 1
+          </Text>
+        </Text>
+        <Text component={TextVariants.p}>
+          <Text 
+            component={TextVariants.a} 
+            href="#">
+            content link 2
+          </Text>
+        </Text>
+        <Text component={TextVariants.p}>
+          <Text 
+            component={TextVariants.a} 
+            href="#">
+            content link 3
+          </Text>
+        </Text>
+      </TextContent>
+    </>
+  );
+
+};
 ```
