@@ -69,7 +69,7 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
       const composedString = [] as React.ReactNode[];
       splitString.map(substr => {
         if (substr.match(regEx)) {
-          composedString.push(<span className={css(handleHighlight())}>{substr}</span>);
+          composedString.push(<span className={css(styles.logViewerString, handleHighlight())}>{substr}</span>);
         } else {
           composedString.push(substr);
         }
