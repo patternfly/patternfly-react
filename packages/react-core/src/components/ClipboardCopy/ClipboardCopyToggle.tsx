@@ -4,7 +4,7 @@ import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon
 import { Button } from '../Button';
 
 export interface ClipboardCopyToggleProps
-  extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
   onClick: (event: React.MouseEvent) => void;
   id: string;
   textId: string;

@@ -3241,6 +3241,11 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.115.1.tgz#d8b0ffef10a91daed08c6b01d1ad0f01a8b804d6"
   integrity sha512-+a2EwtYgPNdHV2gHJ3T2wSVCbo3pcn5hG+AiU5KwJVHw1BC3pC+Wh+UVO1cN5mob9N7h5RdKiqT0lkmurr+QQg==
 
+"@patternfly/patternfly@4.115.2":
+  version "4.115.2"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.115.2.tgz#200111d52fe07d1380371530304bad9edf45de51"
+  integrity sha512-7hbJ4pRmj+rlXclD2F/UwceO6fS+9flGsgHc4eUc7NyTN2GXl6PLcqrjE2CtiKEPV90+KwsGQGJXZj8bz9HweA==
+
 "@reach/router@^1.2.1", "@reach/router@^1.3.4":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.4.tgz#d2574b19370a70c80480ed91f3da840136d10f8c"
