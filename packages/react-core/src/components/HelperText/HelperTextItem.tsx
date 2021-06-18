@@ -15,11 +15,11 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
   component?: 'div' | 'li';
   /** Variant styling of the helper text item. */
   variant?: 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
-  /** Icon prefixing the helper text. This property will override the default icon paired with a dynamic helper text. */
+  /** Icon prefixing the helper text. This property will override the default icon paired with a helper text. */
   icon?: React.ReactNode;
   /** Flag indicating the helper text item is dynamic. */
   isDynamic?: boolean;
-  /** Flag indicating the dynamic helper text should have an icon */
+  /** Flag indicating the helper text should have an icon. Dynamic helper texts include icons by default while static helper texts do not. */
   hasIcon?: boolean;
 }
 
@@ -37,8 +37,8 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
   component = 'div',
   variant = 'default',
   icon,
-  isDynamic,
-  hasIcon = true,
+  isDynamic = false,
+  hasIcon = isDynamic,
   ...props
 }: HelperTextItemProps) => {
   const Component = component as any;
@@ -52,7 +52,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
           {icon}
         </span>
       )}
-      {isDynamic && hasIcon && !icon && (
+      {hasIcon && !icon && (
         <span className={css(styles.helperTextItemIcon)} aria-hidden>
           {(variant === 'default' || variant === 'indeterminate') && <MinusIcon />}
           {variant === 'warning' && <ExclamationTriangleIcon />}

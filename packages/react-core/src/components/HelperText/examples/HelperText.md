@@ -39,7 +39,45 @@ import { HelperText, HelperTextItem } from '@patternfly/react-core';
 </React.Fragment>;
 ```
 
-### Icon
+### Static with default icons
+
+```js
+import React from 'react';
+import { HelperText, HelperTextItem } from '@patternfly/react-core';
+import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
+import QuestionIcon from '@patternfly/react-icons/dist/js/icons/question-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+
+<React.Fragment>
+  <HelperText>
+    <HelperTextItem hasIcon>This is default helper text</HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="indeterminate" hasIcon>
+      This is indeterminate helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="warning" hasIcon>
+      This is warning helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="success" hasIcon>
+      This is success helper text
+    </HelperTextItem>
+  </HelperText>
+  <HelperText>
+    <HelperTextItem variant="error" hasIcon>
+      This is error helper text
+    </HelperTextItem>
+  </HelperText>
+</React.Fragment>;
+```
+
+### Static with custom icons
 
 ```js
 import React from 'react';
