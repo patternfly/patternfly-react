@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.133.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.132.0...@patternfly/react-core@4.133.0) (2021-06-18)
+
+
+### Features
+
+* **split:** added prop to allow children to wrap ([#5892](https://github.com/patternfly/patternfly-react/issues/5892)) ([a9d5cb4](https://github.com/patternfly/patternfly-react/commit/a9d5cb4089113dc3b1365d3f73e8e259719a8328))
+
+
+
+
+
 # [4.132.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.131.1...@patternfly/react-core@4.132.0) (2021-06-18)
 
 

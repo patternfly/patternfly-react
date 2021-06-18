@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.109.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.108.0...demo-app-ts@4.109.0) (2021-06-18)
+
+
+### Features
+
+* **split:** added prop to allow children to wrap ([#5892](https://github.com/patternfly/patternfly-react/issues/5892)) ([a9d5cb4](https://github.com/patternfly/patternfly-react/commit/a9d5cb4089113dc3b1365d3f73e8e259719a8328))
+
+
+
+
+
 # [4.108.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.107.1...demo-app-ts@4.108.0) (2021-06-18)
 
 
