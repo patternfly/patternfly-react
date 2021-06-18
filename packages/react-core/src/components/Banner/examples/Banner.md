@@ -3,7 +3,6 @@ id: Banner
 section: components
 cssPrefix: pf-c-banner
 propComponents: ['Banner']
-beta: true
 ---
 
 ## Examples
