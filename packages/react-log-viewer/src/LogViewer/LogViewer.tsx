@@ -18,7 +18,7 @@ interface LogViewerProps {
   placeholder?: string;
   /** Flag to enable or disable line numbers on the log viewer. */
   hasLineNumbers?: boolean;
-  /** width in pixels of the log viewer. */
+  /** Width in pixels of the log viewer. */
   width?: number;
   /** Height in pixels of the log viewer. */
   height?: number;
@@ -26,7 +26,7 @@ interface LogViewerProps {
   overScanCount?: number;
   /** Toolbar rendered in the log viewer header */
   toolbar?: React.ReactNode;
-  /** content displayed while the log viewer is loading */
+  /** Content displayed while the log viewer is loading */
   loadingContent?: React.ReactNode;
 }
 
