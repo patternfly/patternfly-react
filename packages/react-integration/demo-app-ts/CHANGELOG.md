@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.108.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.107.1...demo-app-ts@4.108.0) (2021-06-18)
+
+
+### Features
+
+* **Text:** Added support for visited link styling ([#5917](https://github.com/patternfly/patternfly-react/issues/5917)) ([b2167ed](https://github.com/patternfly/patternfly-react/commit/b2167ed94552c60d7cc4e143a467ca96eddfda21))
+
+
+
+
+
 ## [4.107.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.107.0...demo-app-ts@4.107.1) (2021-06-17)
 
 **Note:** Version bump only for package demo-app-ts

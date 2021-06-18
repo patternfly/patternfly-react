@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.109.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.108.0...@patternfly/react-integration@4.109.0) (2021-06-18)
+
+
+### Bug Fixes
+
+* **DualListSelector:** add/remove all should respect filtering ([#5884](https://github.com/patternfly/patternfly-react/issues/5884)) ([46be375](https://github.com/patternfly/patternfly-react/commit/46be375d21a5c0ae422bfb89e67d8a2fc07a59b9))
+
+
+### Features
+
+* **Text:** Added support for visited link styling ([#5917](https://github.com/patternfly/patternfly-react/issues/5917)) ([b2167ed](https://github.com/patternfly/patternfly-react/commit/b2167ed94552c60d7cc4e143a467ca96eddfda21))
+
+
+
+
+
 # [4.108.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.107.0...@patternfly/react-integration@4.108.0) (2021-06-17)
 
 
