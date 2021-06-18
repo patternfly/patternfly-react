@@ -142,14 +142,14 @@ describe('Dual List Selector With Actions Demo Test', () => {
 
   it('Verify sort works', () => {
     cy.get('.pf-m-chosen .pf-c-dual-list-selector__list-item')
-      .first()
-      .contains('Option 2');
+      .last()
+      .contains('Option 3');
     cy.get('.pf-m-chosen .pf-c-dual-list-selector__tools-actions button')
       .first()
       .click();
     cy.get('.pf-m-chosen .pf-c-dual-list-selector__list-item')
-      .first()
-      .contains('Option 1');
+      .last()
+      .contains('Option 4');
   });
 
   it('Verify chosen search works', () => {
@@ -167,6 +167,9 @@ describe('Dual List Selector With Actions Demo Test', () => {
   });
 
   it('Verify removing all options', () => {
+    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+      .eq(1)
+      .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
     cy.get('.pf-c-dual-list-selector__controls-item')
       .eq(3)
       .click();
@@ -192,5 +195,30 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .eq(0)
       .find('li')
       .should('have.length', 1);
+  });
+
+  it('Verify adding all filtered options', () => {
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 1);
+    cy.get('.pf-c-dual-list-selector__controls-item')
+      .eq(0)
+      .click();
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 0);
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(1)
+      .find('li')
+      .should('have.length', 1);
+    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+      .eq(0)
+      .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
+    cy.get('.pf-c-dual-list-selector__list')
+      .eq(0)
+      .find('li')
+      .should('have.length', 3);
   });
 });

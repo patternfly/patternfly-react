@@ -51,6 +51,8 @@ export interface DualListSelectorPaneProps {
   searchInputAriaLabel?: string;
   /** Id of the pane. */
   id: string;
+  /** Callback for updating the filtered options in DualListSelector */
+  onFilterUpdate?: (newFilteredOptions: React.ReactNode[], paneType: string, isSearchReset: boolean) => void;
 }
 
 interface DualListSelectorPaneState {
@@ -81,7 +83,25 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
   }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ input: e.target.value });
+    const { isTree, options, isChosen } = this.props;
+
+    this.setState({ input: e.target.value }, () => {
+      const { input } = this.state;
+      let filtered;
+      if (isTree) {
+        filtered = (options as DualListSelectorTreeItemData[])
+          .map(opt => Object.assign({}, opt))
+          .filter(item => this.filterInput(item as DualListSelectorTreeItemData, input));
+      } else {
+        filtered = options.filter(option => {
+          if (this.displayOption(option, input)) {
+            return option;
+          }
+        });
+      }
+      this.props.onFilterUpdate(filtered, isChosen ? 'chosen' : 'available', input === '');
+    });
+
     if (this.props.onSearchInputChanged) {
       this.props.onSearchInputChanged(e.target.value, e);
     }
@@ -188,6 +208,7 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
       filterOption,
       onOptionSelect,
       onOptionCheck,
+      onFilterUpdate,
       ...props
     } = this.props;
     const { input, focusedOption } = this.state;

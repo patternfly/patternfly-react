@@ -181,6 +181,9 @@ describe('Dual List Selector BasicDemo Test', () => {
   });
 
   it('Verify removing all options', () => {
+    cy.get('.pf-c-dual-list-selector__tools-filter .pf-m-search')
+      .eq(1)
+      .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
     cy.get('.pf-c-dual-list-selector__controls-item')
       .eq(3)
       .click();
