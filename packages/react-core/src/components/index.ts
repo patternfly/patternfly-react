@@ -32,6 +32,7 @@ export * from './ExpandableSection';
 export * from './FileUpload';
 export * from './Form';
 export * from './FormSelect';
+export * from './HelperText';
 export * from './Hint';
 export * from './InputGroup';
 export * from './JumpLinks';

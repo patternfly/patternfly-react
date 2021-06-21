@@ -83,6 +83,7 @@ export * from './FormDemo/FormFieldGroupDemo';
 export * from './FormSelectDemo/FormSelectDemo';
 export * from './GalleryDemo/GalleryDemo';
 export * from './GridDemo/GridDemo';
+export * from './HelperText/HelperTextDemo';
 export * from './HintDemo/HintDemo';
 export * from './InputGroupDemo/InputGroupDemo';
 export * from './LabelDemo/LabelDemo';
