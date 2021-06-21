@@ -11,9 +11,9 @@ section: developer-resources
 - [@patternfly/react-icons@4.11.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.11.0)
 - [@patternfly/react-inline-edit-extension@4.7.7](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.7.7)
 - [@patternfly/react-log-viewer@4.2.0](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.2.0)
-- [@patternfly/react-styles/v/4.11.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.11.0)
+- [@patternfly/react-styles@4.11.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.11.0)
 - [@patternfly/react-table@4.29.0](https://www.npmjs.com/package/@patternfly/react-table/v/4.29.0)
-- [@patternfly/react-tokens/v/4.12.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.12.0)
+- [@patternfly/react-tokens@4.12.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.12.0)
 - [@patternfly/react-topology@4.9.6](https://www.npmjs.com/package/@patternfly/react-topology/v/4.9.6)
 - [@patternfly/react-virtualized-extension@4.8.38](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.8.38)
 
