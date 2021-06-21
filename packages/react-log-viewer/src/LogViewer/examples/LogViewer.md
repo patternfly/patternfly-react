@@ -6,7 +6,6 @@ propComponents: [LogViewer, LogViewerSearch]
 ---
 
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
-import { bigData } from './bigTestData.js';
 import { data } from './realTestData.js';
 
 ## Examples
@@ -18,7 +17,7 @@ import React from 'react';
 import { data } from './data/realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 
-<LogViewer hasLineNumbers={false} height={300} />;
+<LogViewer hasLineNumbers={false} height={300} data={data.data}/>;
 ```
 
 ### With search
@@ -26,11 +25,10 @@ import { LogViewer } from '@patternfly/react-log-viewer';
 ```js
 import React from 'react';
 import { data } from './realTestData';
-import { bigData } from './bigTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import { Toolbar, ToolbarContent, ToolbarItem, ToolbarGroup } from '@patternfly/react-core';
 
-BasicLogViewer = () => {
+BasicSearchLogViewer = () => {
   return (
     <LogViewer
       data={data.data}
@@ -53,16 +51,10 @@ BasicLogViewer = () => {
 ```js
 import React from 'react';
 import { data } from './realTestData';
-import { bigData } from './bigTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import { Toolbar, ToolbarContent, ToolbarItem, ToolbarGroup, Button } from '@patternfly/react-core';
 
 CustomControlLogViewer = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const dataSourceTitles = ['Source 1', 'Source 2'];
-  const dataSourcesAmount = 2;
-  const currentDataSource = React.useState(0);
-
   const onActionClick = event => {
     console.log('clicked test action button');
   };

@@ -4,6 +4,7 @@ export const useLogViewerContext = () => useContext(LogViewerContext);
 
 export interface LogViewerContextInterface {
   parsedData: string[];
+  searchedInput: string;
 }
 
 export const LogViewerContext = createContext<LogViewerContextInterface | null>(null);

@@ -2,12 +2,13 @@ import React, { useState, useEffect, memo } from 'react';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
+import { LogViewerContext } from './LogViewerContext';
 
 interface LogViewerRowProps extends React.Props<HTMLElement> {
   index: number;
   style?: React.CSSProperties;
   data: {
-    parsedData: any;
+    parsedData: string[] | null;
     rowInFocus: number;
     searchedWordIndexes: number[];
     highlightedRowIndexes: number[];
@@ -19,10 +20,10 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   const { parsedData, highlightedRowIndexes, searchedWordIndexes, setHighlightedRowIndexes, rowInFocus } = data;
   const [clickCounter, setClickCounter] = useState(0);
   const [isHiglighted, setIsHiglighted] = useState(false);
+  const context = React.useContext(LogViewerContext);
 
   useEffect(() => {
-    let currentHighlightedIndexes = [];
-    currentHighlightedIndexes = highlightedRowIndexes;
+    const currentHighlightedIndexes = highlightedRowIndexes;
     let temp = 0;
 
     if (isHiglighted && clickCounter > 0) {
@@ -40,7 +41,7 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
     highlightIndex === -1 ? setIsHiglighted(false) : setIsHiglighted(true);
   }, []);
 
-  const getData = (index: number): number => parsedData[index];
+  const getData = (index: number): string => (parsedData ? parsedData[index] : null);
 
   const getRowIndex = (index: number): number => index + LOGGER_LINE_NUMBER_INDEX_DELTA;
 
@@ -51,24 +52,38 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   };
 
   /** Helper function for applying the correct styling for styling rows containing searched keywords */
-  const handleRowHighlight = (index: number): string => {
+  const handleHighlight = () => {
     if (searchedWordIndexes.includes(index)) {
       if (rowInFocus === index) {
         return styles.modifiers.current;
       }
       return styles.modifiers.match;
     }
+    return '';
+  };
+
+  const getFormattedData = () => {
+    if (context.searchedInput) {
+      const regEx = new RegExp(`(${context.searchedInput})`, 'ig');
+      const splitString = getData(index).split(regEx);
+      const composedString = [] as React.ReactNode[];
+      splitString.map(substr => {
+        if (substr.match(regEx)) {
+          composedString.push(<span className={css(styles.logViewerString, handleHighlight())}>{substr}</span>);
+        } else {
+          composedString.push(substr);
+        }
+      });
+      return composedString;
+    }
+    return getData(index);
   };
 
   return (
-    <div
-      style={style}
-      className={css(styles.logViewerListItem, handleRowHighlight(index))}
-      onClick={() => handleHighlightRow()}
-    >
+    <div style={style} className={css(styles.logViewerListItem)} onClick={() => handleHighlightRow()}>
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
       <span className={css(styles.logViewerText)} onClick={() => handleHighlightRow()}>
-        {getData(index)}
+        {getFormattedData()}
       </span>
     </div>
   );
