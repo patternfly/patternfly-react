@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.9.5...@patternfly/react-console@4.10.0) (2021-06-21)
+
+
+### Features
+
+* **LogViewer:** Make logviewer responsive and change search result styling ([#5927](https://github.com/patternfly/patternfly-react/issues/5927)) ([3f6a493](https://github.com/patternfly/patternfly-react/commit/3f6a4934127d23de1baf2447003296600d9f3c5b))
+
+
+
+
+
 ## [4.9.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.9.4...@patternfly/react-console@4.9.5) (2021-06-18)
 
 **Note:** Version bump only for package @patternfly/react-console

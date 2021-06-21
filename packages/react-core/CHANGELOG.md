@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.135.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.134.1...@patternfly/react-core@4.135.0) (2021-06-21)
+
+
+### Features
+
+* **HelperText:** add helper text component ([#5903](https://github.com/patternfly/patternfly-react/issues/5903)) ([188fa7f](https://github.com/patternfly/patternfly-react/commit/188fa7fe4c1d460357a96a35133944d4c5db93b3))
+* **LogViewer:** Make logviewer responsive and change search result styling ([#5927](https://github.com/patternfly/patternfly-react/issues/5927)) ([3f6a493](https://github.com/patternfly/patternfly-react/commit/3f6a4934127d23de1baf2447003296600d9f3c5b))
+
+
+
+
+
 ## [4.134.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.134.0...@patternfly/react-core@4.134.1) (2021-06-18)
 
 **Note:** Version bump only for package @patternfly/react-core
