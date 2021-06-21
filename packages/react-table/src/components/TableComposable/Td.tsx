@@ -13,6 +13,7 @@ import { compoundExpand } from '../Table/utils/decorators/compoundExpand';
 import { cellWidth } from '../Table/utils/decorators/cellWidth';
 import { Visibility, classNames } from './../Table/utils/decorators/classNames';
 import { favoritable } from '../Table/utils/decorators/favoritable';
+import { draggable } from '../Table/utils/decorators/draggable';
 import { treeRow } from '../Table/utils/decorators/treeRow';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
@@ -102,6 +103,9 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
     /** Additional props forwarded to the title cell of the tree row */
     props?: any;
   };
+  draggableRow?: {
+    id: string;
+  };
   /** True to remove padding */
   noPadding?: boolean;
 }
@@ -123,6 +127,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   visibility,
   innerRef,
   favorites = null,
+  draggableRow: draggableRowProp = null,
   ...props
 }: TdProps) => {
   const selectParams = select
@@ -155,6 +160,14 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         }
       })
     : null;
+  const draggableParams =
+    draggableRowProp !== null
+      ? draggable(null, {
+          rowData: {
+            id: draggableRowProp.id
+          }
+        })
+      : null;
   const actionParamsFunc = actions ? cellActions(actions.items, null, null) : null;
   const actionParams = actionParamsFunc
     ? actionParamsFunc(null, {
@@ -233,7 +246,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
     widthParams,
     visibilityParams,
     favoriteParams,
-    treeRowParams
+    treeRowParams,
+    draggableParams
   );
   const {
     // selectable adds this but we don't want it
@@ -257,6 +271,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
+        draggableParams && styles.tableDraggable,
         mergedClassName
       )}
       ref={innerRef}

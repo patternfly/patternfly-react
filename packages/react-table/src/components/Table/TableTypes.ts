@@ -69,6 +69,7 @@ export type OnFavorite = (
   rowData: IRowData,
   extraData: IExtraData
 ) => void;
+
 export type OnTreeRowCollapse = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnToggleRowDetails = (event: any, rowIndex: number, title: React.ReactNode, rowData: IRowData) => void;
 export type OnCheckChange = (
@@ -112,6 +113,7 @@ export interface IColumn {
 export interface IExtraRowData {
   rowIndex?: number;
   rowKey?: RowKeyType;
+  id?: string;
 }
 
 export interface IExtraColumnData {
