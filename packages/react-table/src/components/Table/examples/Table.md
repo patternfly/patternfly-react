@@ -3823,6 +3823,7 @@ class DraggableTable extends React.Component {
       // this.move(this.state.itemOrder);
       Array.from(this.bodyRef.current.children).forEach(el => {
         el.classList.remove(styles.modifiers.ghostRow);
+        el.classList.remove(styles.modifiers.dragOver);
         el.setAttribute('aria-pressed', 'false');
       });
       this.setState({
@@ -3884,6 +3885,7 @@ class DraggableTable extends React.Component {
 
     this.onDragEnd = evt => {
       evt.target.classList.remove(styles.modifiers.ghostRow);
+      evt.target.classList.remove(styles.modifiers.dragOver);
       evt.target.setAttribute('aria-pressed', 'false');
       this.setState({
         draggedItemId: null,
