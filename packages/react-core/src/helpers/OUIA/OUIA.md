@@ -83,6 +83,7 @@ import { Button } from '@patternfly/react-core';
 * [TabContent](/components/tabs)
 * [Tabs](/components/tabs)
 * [Text](/components/text)
+* [Title](/components/title)
 
 ### react-table package
 

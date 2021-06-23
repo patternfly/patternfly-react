@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Title/title';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TitleSizes {
   md = 'md',
@@ -22,7 +23,7 @@ enum headingLevelSizeMap {
 
 type Size = 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 
-export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
+export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'>, OUIAProps {
   /** The size of the Title  */
   size?: Size;
   /** Content rendered inside the Title */
@@ -38,10 +39,19 @@ export const Title: React.FunctionComponent<TitleProps> = ({
   children = '',
   headingLevel: HeadingLevel,
   size = headingLevelSizeMap[HeadingLevel],
+  ouiaId,
+  ouiaSafe = true,
   ...props
-}: TitleProps) => (
-  <HeadingLevel {...props} className={css(styles.title, size && styles.modifiers[size as Size], className)}>
-    {children}
-  </HeadingLevel>
-);
+}: TitleProps) => {
+  const ouiaProps = useOUIAProps(Title.displayName, ouiaId, ouiaSafe);
+  return (
+    <HeadingLevel
+      {...ouiaProps}
+      {...props}
+      className={css(styles.title, size && styles.modifiers[size as Size], className)}
+    >
+      {children}
+    </HeadingLevel>
+  );
+};
 Title.displayName = 'Title';
