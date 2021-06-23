@@ -7,9 +7,14 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   className,
   children,
   isToast,
+  isDynamic,
   ...rest
 }: AlertGroupProps) => (
-  <ul className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')} {...rest}>
+  <ul
+    aria-live={isDynamic ? 'polite' : null}
+    className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')}
+    {...rest}
+  >
     {React.Children.toArray(children).map((Alert: React.ReactNode, index: number) => (
       <li key={index}>{Alert}</li>
     ))}

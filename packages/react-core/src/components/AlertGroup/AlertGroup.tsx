@@ -10,6 +10,8 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   children?: React.ReactNode;
   /** Toast notifications are positioned at the top right corner of the viewport */
   isToast?: boolean;
+  /** Dyanmic alerts need to be rendered in pre-existing live region */
+  isDynamic?: boolean;
   /** Determine where the alert is appended to */
   appendTo?: HTMLElement | (() => HTMLElement);
 }
@@ -47,9 +49,9 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast, ...props } = this.props;
+    const { className, children, isToast, isDynamic, ...props } = this.props;
     const alertGroup = (
-      <AlertGroupInline className={className} isToast={isToast} {...props}>
+      <AlertGroupInline className={className} isToast={isToast} isDynamic={isDynamic} {...props}>
         {children}
       </AlertGroupInline>
     );

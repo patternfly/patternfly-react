@@ -55,7 +55,7 @@ class ToastAlertGroup extends React.Component {
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Toast Danger Alert</button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Toast Info Alert</button>
         </InputGroup>
-        <AlertGroup isToast>
+        <AlertGroup isToast isDynamic>
           {this.state.alerts.map(({key, variant, title}) => (
             <Alert
               isLiveRegion
@@ -107,7 +107,7 @@ class SingularAdditiveAlertGroup extends React.Component {
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Single Danger Alert</button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Single Info Alert</button>
         </InputGroup>
-        <AlertGroup>
+        <AlertGroup isDynamic>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
               isInline
@@ -164,7 +164,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>Add Alert Collection</button>
         </InputGroup>
-        <AlertGroup isToast>
+        <AlertGroup isToast isDynamic>
           {this.state.alerts.map(({ title, variant, key, action }) => (
             <Alert
               isLiveRegion
@@ -225,7 +225,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start Async Alerts</button>
           <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop Async Alerts</button>
         </InputGroup>
-        <AlertGroup isToast>
+        <AlertGroup isToast isDynamic>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
               isLiveRegion
