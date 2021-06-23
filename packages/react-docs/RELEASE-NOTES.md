@@ -3,6 +3,67 @@ id: Release notes
 section: developer-resources
 ---
 
+## 2021.08 release notes (2021-06-22)
+- [@patternfly/react-catalog-view-extension@4.12.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.12.0)
+- [@patternfly/react-charts@6.15.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.15.3)
+- [@patternfly/react-code-editor@4.2.92](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.2.92)
+- [@patternfly/react-core@4.135.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.135.0)
+- [@patternfly/react-icons@4.11.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.11.0)
+- [@patternfly/react-inline-edit-extension@4.7.7](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.7.7)
+- [@patternfly/react-log-viewer@4.2.0](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.2.0)
+- [@patternfly/react-styles@4.11.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.11.0)
+- [@patternfly/react-table@4.29.0](https://www.npmjs.com/package/@patternfly/react-table/v/4.29.0)
+- [@patternfly/react-tokens@4.12.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.12.0)
+- [@patternfly/react-topology@4.9.6](https://www.npmjs.com/package/@patternfly/react-topology/v/4.9.6)
+- [@patternfly/react-virtualized-extension@4.8.38](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.8.38)
+
+### Components
+- **Breadcrumb:**
+  - Moved divider outside of header element ([#5870](https://github.com/patternfly/patternfly-react/pull/5870))
+- **Card:**
+  - Added horizontal card grid demo ([#5907](https://github.com/patternfly/patternfly-react/pull/5907))
+  - Added support to remove offset from actions ([#5887](https://github.com/patternfly/patternfly-react/pull/5887))
+- **Date picker:**
+  - Updated to pass additional props to input ([#5848](https://github.com/patternfly/patternfly-react/pull/5848))
+- **Description list:**
+  - Added responsive layout breakpoint property ([#5885](https://github.com/patternfly/patternfly-react/pull/5885))
+- **Dual list selector:**
+  - Added tooltips to control buttons ([#5914](https://github.com/patternfly/patternfly-react/pull/5914))
+  -  Updated so add/remove all respects filtering ([#5884](https://github.com/patternfly/patternfly-react/pull/5884))
+- **Helper text:**
+  - Added helper text component ([#5903](https://github.com/patternfly/patternfly-react/pull/5903))
+- **Menu:**
+  - Added scrollable support ([#5667](https://github.com/patternfly/patternfly-react/pull/5667))
+  - Updated tabIndex when children change ([#5923](https://github.com/patternfly/patternfly-react/pull/5923))
+- **Select:**
+  - Added some safety accessors ([#5902](https://github.com/patternfly/patternfly-react/pull/5902))
+- **Slider:**
+  - Updated so scenarios that we show boundaries but not ticks don't pollute the DOM with steps ([#5878](https://github.com/patternfly/patternfly-react/pull/5878))
+- **Split layout:**
+  - Added prop to allow children to wrap ([#5892](https://github.com/patternfly/patternfly-react/pull/5892))
+- **Text:**
+  - Added support for visited link styling ([#5917](https://github.com/patternfly/patternfly-react/pull/5917))
+  - Added OUIA props into text component ([#5881](https://github.com/patternfly/patternfly-react/pull/5881))
+- **Time picker:**
+  - Updated to pass additional props to input ([#5848](https://github.com/patternfly/patternfly-react/pull/5848))
+  - Fixed the returned values of the onChange method. ([#5868](https://github.com/patternfly/patternfly-react/pull/5868))
+
+### Charts
+- Added left and right triangle legend symbols ([#5869](https://github.com/patternfly/patternfly-react/pull/5869))
+
+### Log Viewer
+- Made log viewer responsive and changed search result styling ([#5927](https://github.com/patternfly/patternfly-react/pull/5927))
+
+### Table
+- Added composable draggable table rows demo ([#5921](https://github.com/patternfly/patternfly-react/pull/5921))
+- Updated so empty state cell does not have data-label ([#5886](https://github.com/patternfly/patternfly-react/pull/5886))
+
+### Other
+- **Chore:**
+  - Promoted beta components ([#5929](https://github.com/patternfly/patternfly-react/pull/5929))
+- **Docs:**
+  - Updated docs so code editor peer dependencies are clearer ([#5919](https://github.com/patternfly/patternfly-react/pull/5919))
+
 ## 2021.07 release notes (2021-06-04)
 - [@patternfly/react-catalog-view-extension@4.11.42](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.11.42)
 - [@patternfly/react-charts@6.14.29](https://www.npmjs.com/package/@patternfly/react-charts/v/6.14.29)
