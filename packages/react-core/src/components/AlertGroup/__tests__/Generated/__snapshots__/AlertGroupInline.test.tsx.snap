@@ -2,6 +2,7 @@
 
 exports[`AlertGroupInline should match snapshot (auto-generated) 1`] = `
 <ul
+  aria-live={null}
   className="pf-c-alert-group"
 />
 `;
