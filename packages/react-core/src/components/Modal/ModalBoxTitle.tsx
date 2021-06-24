@@ -9,6 +9,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import { useIsomorphicLayoutEffect } from '../../helpers/Popper/thirdparty/react-popper/usePopper';
 
 export const isVariantIcon = (icon: any): icon is string =>
   ['success', 'danger', 'warning', 'info', 'defaut'].includes(icon as string);
@@ -48,7 +49,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   };
   const CustomIcon = !isVariantIcon(titleIconVariant) && titleIconVariant;
 
-  React.useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setIsTooltipVisible(h1.current && h1.current.offsetWidth < h1.current.scrollWidth);
   }, []);
 

@@ -20,7 +20,7 @@ const fromEntries = (entries: [string, any][]) =>
 /**
  * Small wrapper around `useLayoutEffect` to get rid of the warning on SSR envs
  */
-const useIsomorphicLayoutEffect =
+export const useIsomorphicLayoutEffect =
   canUseDOM
     ? React.useLayoutEffect
     : React.useEffect;
