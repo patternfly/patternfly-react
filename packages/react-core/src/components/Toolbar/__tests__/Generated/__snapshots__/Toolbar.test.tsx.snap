@@ -3,6 +3,9 @@
 exports[`Toolbar should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-toolbar string"
+  data-ouia-component-id="OUIA-Generated-Toolbar-1"
+  data-ouia-component-type="PF4/Toolbar"
+  data-ouia-safe={true}
   id="string"
 >
   <ContextProvider
