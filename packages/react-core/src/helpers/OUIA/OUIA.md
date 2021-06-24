@@ -59,6 +59,7 @@ import { Button } from '@patternfly/react-core';
 * [Breadcrumb](/components/breadcrumb)
 * [Button](/components/button)
 * [Card](/components/card)
+* [Checkbox](/components/checkbox)
 * [Chip](/components/chip)
 * [ChipGroup](/components/chipg-roup)
 * [ContextSelector](/components/context-selector)
