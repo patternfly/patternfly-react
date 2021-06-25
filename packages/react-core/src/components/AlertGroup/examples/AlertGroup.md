@@ -7,6 +7,7 @@ propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLi
 
 ## Examples
 ### Static alert group
+These alerts are discoverable from within the normal page content flow, and will not be announced individually/explicitly to assistive technology.
 ```js
 import React from 'react';
 import { Alert, AlertGroup } from '@patternfly/react-core';
@@ -26,6 +27,7 @@ class StaticAlertGroup extends React.Component {
 ```
 
 ### Toast alert group
+Alerts asynchronously appended into dynamic AlertGroups with `isLiveRegion` will be announced to assistive technology at the moment the change happens, following the strategy used for aria-atomic, which defaults to false. This means only changes of type "addition" will be announced.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
@@ -55,10 +57,9 @@ class ToastAlertGroup extends React.Component {
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Toast Danger Alert</button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Toast Info Alert</button>
         </InputGroup>
-        <AlertGroup isToast isDynamic>
+        <AlertGroup isToast isLiveRegion>
           {this.state.alerts.map(({key, variant, title}) => (
             <Alert
-              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               actionClose={
@@ -107,11 +108,10 @@ class SingularAdditiveAlertGroup extends React.Component {
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Single Danger Alert</button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Single Info Alert</button>
         </InputGroup>
-        <AlertGroup isDynamic>
+        <AlertGroup isLiveRegion>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
               isInline
-              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key}
@@ -164,10 +164,9 @@ class MultipleAdditiveAlertGroup extends React.Component {
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>Add Alert Collection</button>
         </InputGroup>
-        <AlertGroup isToast isDynamic>
+        <AlertGroup isToast isLiveRegion>
           {this.state.alerts.map(({ title, variant, key, action }) => (
             <Alert
-              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key}
@@ -225,10 +224,9 @@ class AsyncAdditiveAlertGroup extends React.Component {
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start Async Alerts</button>
           <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop Async Alerts</button>
         </InputGroup>
-        <AlertGroup isToast isDynamic>
+        <AlertGroup isToast isLiveRegion>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
-              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key}

@@ -7,11 +7,12 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   className,
   children,
   isToast,
-  isDynamic,
+  isLiveRegion,
   ...rest
 }: AlertGroupProps) => (
   <ul
-    aria-live={isDynamic ? 'polite' : null}
+    aria-live={isLiveRegion ? 'polite' : null}
+    aria-atomic={isLiveRegion ? false : null}
     className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')}
     {...rest}
   >
