@@ -122,8 +122,8 @@ import { Menu, MenuContent, MenuList, MenuItem, Popper, Button } from '@patternf
 MenuWithFlyout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const numFlyouts = 15;
-  const FlyoutMenu = ({ depth, children, style }) => (
-    <Menu key={depth} containsFlyout id={`menu-${depth}`} style={style}>
+  const FlyoutMenu = ({ depth, children }) => (
+    <Menu key={depth} containsFlyout id={`menu-${depth}`}>
       <MenuList>
         <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
         {[...Array(numFlyouts - depth).keys()].map(j =>

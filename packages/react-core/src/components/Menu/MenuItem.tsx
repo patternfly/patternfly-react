@@ -142,6 +142,15 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   }, [showFlyout, flyoutMenu]);
 
   React.useEffect(() => {
+    const flyoutMenu = ref.current.lastElementChild as HTMLElement;
+    if (flyoutMenu && flyoutMenu.classList.contains(styles.menu)) {
+      flyoutMenu.style.right = flyoutXDirection === 'right' ? 'auto' : `calc(100% - ${offsetX}px`;
+      flyoutMenu.style.left = flyoutXDirection === 'left' ? 'auto' : `calc(100% - ${offsetX}px`;
+      flyoutMenu.style.top = `calc(-${offsetY}px + var(--pf-c-menu--m-flyout__menu--Top))`;
+    }
+  }, [flyoutXDirection, offsetX, offsetY]);
+
+  React.useEffect(() => {
     setFlyoutXDirection(flyoutContext.direction);
   }, [flyoutContext]);
 
@@ -286,15 +295,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         )}
       </Component>
       {flyoutVisible && (
-        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>
-          {React.cloneElement(flyoutMenu, {
-            style: {
-              right: flyoutXDirection === 'right' ? 'auto' : `calc(100% - ${offsetX}px`,
-              left: flyoutXDirection === 'left' ? 'auto' : `calc(100% - ${offsetX}px`,
-              top: `calc(-${offsetY}px + var(--pf-c-menu--m-flyout__menu--Top))`
-            }
-          })}
-        </FlyoutContext.Provider>
+        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
       )}
       {drilldownMenu}
       <MenuItemContext.Provider value={{ itemId, isDisabled }}>
