@@ -4,7 +4,7 @@ import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import { useIsomorphicLayoutEffect } from '../../helpers/Popper/thirdparty/react-popper/usePopper';
+import { useIsomorphicLayoutEffect } from '../../helpers';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */

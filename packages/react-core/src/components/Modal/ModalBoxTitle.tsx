@@ -9,10 +9,10 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import { useIsomorphicLayoutEffect } from '../../helpers/Popper/thirdparty/react-popper/usePopper';
+import { useIsomorphicLayoutEffect } from '../../helpers';
 
 export const isVariantIcon = (icon: any): icon is string =>
-  ['success', 'danger', 'warning', 'info', 'defaut'].includes(icon as string);
+  ['success', 'danger', 'warning', 'info', 'default'].includes(icon as string);
 
 export interface ModalBoxTitleProps {
   /** Content rendered inside the modal box header title. */
