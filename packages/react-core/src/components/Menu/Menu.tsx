@@ -49,8 +49,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   activeMenu?: string;
   /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: string | number;
-  /** Forwarded ref */
-  innerRef?: React.Ref<any>;
   /** Internal flag indicating if the Menu is the root of a menu tree */
   isRootMenu?: boolean;
 }
@@ -61,7 +59,8 @@ export interface MenuState {
   transitionMoveTarget: HTMLElement;
 }
 
-class MenuBase extends React.Component<MenuProps, MenuState> {
+export class Menu extends React.Component<MenuProps, MenuState> {
+  static displayName = 'Menu';
   private menuRef = React.createRef<HTMLDivElement>();
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
@@ -98,10 +97,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   }
 
   setFirstTabIndex = () => {
-    let ref = this.menuRef;
-    if (this.props.innerRef) {
-      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-    }
+    const ref = this.menuRef;
 
     const items = ref.current.querySelectorAll('button, a');
     if (items && items.length > 0) {
@@ -113,10 +109,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   };
 
   handleDrilldownTransition = (event: TransitionEvent) => {
-    let ref = this.menuRef;
-    if (this.props.innerRef) {
-      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-    }
+    const ref = this.menuRef;
 
     if (
       !ref.current ||
@@ -145,10 +138,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   handleKeys = (event: KeyboardEvent) => {
     const isDrilldown = this.props.containsDrilldown;
-    let ref = this.menuRef;
-    if (this.props.innerRef) {
-      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-    }
+    const ref = this.menuRef;
 
     if (
       !ref.current ||
@@ -278,7 +268,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       onGetMenuHeight,
       parentMenu = null,
       activeItemId = null,
-      innerRef,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isRootMenu,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -312,7 +301,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             className
           )}
           aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
-          ref={innerRef || this.menuRef || null}
+          ref={this.menuRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}
         >
@@ -322,8 +311,3 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     );
   }
 }
-
-export const Menu = React.forwardRef((props: MenuProps, ref: React.Ref<HTMLDivElement>) => (
-  <MenuBase {...props} innerRef={ref} />
-));
-Menu.displayName = 'Menu';

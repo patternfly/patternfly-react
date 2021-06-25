@@ -54,8 +54,6 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
-  /** Forwarded ref */
-  innerRef?: React.Ref<HTMLLIElement>;
 }
 
 const FlyoutContext = React.createContext({
@@ -102,7 +100,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
-  const [flyoutYDirection, setFlyoutYDirection] = React.useState('bot' as 'top' | 'bot');
+  const [offsetX, setOffsetX] = React.useState(0);
+  const [offsetY, setOffsetY] = React.useState(0);
   const ref = React.useRef<HTMLLIElement>();
 
   const hasFlyout = flyoutMenu !== undefined;
@@ -115,25 +114,27 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     if (hasFlyout && ref.current && canUseDOM) {
       const flyoutMenu = ref.current.lastElementChild;
       if (flyoutMenu && flyoutMenu.classList.contains(styles.menu)) {
+        const origin = ref.current.getClientRects()[0];
         const rect = flyoutMenu.getClientRects()[0];
-        if (rect) {
-          const overlapsRight = rect.x + rect.width > window.innerWidth;
-          const overlapsLeft = rect.x - rect.width < 0;
-          if (overlapsRight && overlapsLeft) {
-            // We don't have designs for this right now.
-          } else if (overlapsRight) {
+        if (origin && rect) {
+          const spaceLeftLeft = origin.x - rect.width;
+          const spaceLeftRight = window.innerWidth - origin.x - origin.width - rect.width;
+          if (spaceLeftLeft < 0 && spaceLeftRight < 0) {
+            // Calculate x offsets
+            setOffsetX(-spaceLeftLeft);
+          } else if (spaceLeftRight < 0) {
             setFlyoutXDirection('left');
-          } else if (overlapsLeft) {
+          } else if (spaceLeftLeft < 0) {
             setFlyoutXDirection('right');
           }
-          const overlapsBot = rect.y + rect.height > window.innerHeight;
-          const overlapsTop = rect.y - rect.height < 0;
-          if (overlapsTop && overlapsBot) {
-            // We don't have designs for this. Will need some scrolling
-          } else if (overlapsBot) {
-            setFlyoutYDirection('top');
-          } else if (overlapsTop) {
-            setFlyoutYDirection('bot');
+          const spaceLeftBot = window.innerHeight - origin.y - rect.height;
+          // This is calculated with respect to spaceLeftBot
+          const spaceLeftTop = window.innerHeight - rect.height;
+          if (spaceLeftTop < 0 && spaceLeftBot < 0) {
+            // Idea: can scroll down, but not up
+            setOffsetY(0);
+          } else if (spaceLeftBot < 0) {
+            setOffsetY(-spaceLeftBot);
           }
         }
       }
@@ -232,8 +233,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
         _isOnPath && styles.modifiers.currentPath,
-        flyoutXDirection === 'left' && styles.modifiers.menuLeft,
-        flyoutYDirection === 'top' && styles.modifiers.menuTop,
+        isLoadButton && styles.modifiers.load,
+        isLoading && styles.modifiers.loading,
         className
       )}
       onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
@@ -284,10 +285,18 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
           </span>
         )}
       </Component>
-      {drilldownMenu}
       {flyoutVisible && (
-        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
+        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>
+          {React.cloneElement(flyoutMenu, {
+            style: {
+              right: flyoutXDirection === 'right' ? 'auto' : `calc(100% - ${offsetX}px`,
+              left: flyoutXDirection === 'left' ? 'auto' : `calc(100% - ${offsetX}px`,
+              top: `calc(-${offsetY}px + var(--pf-c-menu--m-flyout__menu--Top))`
+            }
+          })}
+        </FlyoutContext.Provider>
       )}
+      {drilldownMenu}
       <MenuItemContext.Provider value={{ itemId, isDisabled }}>
         {actions}
         {isFavorited !== null && (

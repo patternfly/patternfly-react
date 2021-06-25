@@ -113,42 +113,50 @@ class MenuIconsList extends React.Component {
 
 ### With flyout
 
-The flyout will automatically position to the left or top if it would otherwise go outside the window.
+The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go outside the main content (like over the side nav).
 
 ```js
 import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem, Popper, Button } from '@patternfly/react-core';
 
 MenuWithFlyout = () => {
-  const FlyoutMenu = ({ depth, children }) => (
-    <Menu key={depth} containsFlyout id={`menu-${depth}`}>
+  const [isOpen, setIsOpen] = React.useState(false);
+  const numFlyouts = 15;
+  const FlyoutMenu = ({ depth, children, style }) => (
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} style={style}>
       <MenuList>
         <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
-        {[...Array(10 - depth).keys()].map(j =>
+        {[...Array(numFlyouts - depth).keys()].map(j =>
           <MenuItem key={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
         )}
       </MenuList>
     </Menu>
   );
   let curFlyout = <FlyoutMenu depth={1} />;
-  for (let i = 2; i < 9; i++) {
+  for (let i = 2; i < numFlyouts - 1; i++) {
     curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
 
   return (
-    <Menu containsFlyout>
-      <MenuContent>
-        <MenuList>
-          <MenuItem>Start rollout</MenuItem>
-          <MenuItem>Pause rollouts</MenuItem>
-          <MenuItem>Add storage</MenuItem>
-          <MenuItem description="Description" flyoutMenu={curFlyout} aria-label="Has flyout menu">
-            Edit
-          </MenuItem>
-          <MenuItem>Delete deployment config</MenuItem>
-        </MenuList>
-      </MenuContent>
-    </Menu>
+    <Popper
+      isVisible={isOpen}
+      trigger={<Button onClick={() => setIsOpen(!isOpen)}>Toggle flyout menu</Button>}
+      popper={
+        <Menu containsFlyout>
+          <MenuContent>
+            <MenuList>
+              <MenuItem>Start rollout</MenuItem>
+              <MenuItem>Pause rollouts</MenuItem>
+              <MenuItem>Add storage</MenuItem>
+              <MenuItem description="Description" flyoutMenu={curFlyout} aria-label="Has flyout menu">
+                Edit
+              </MenuItem>
+              <MenuItem>Delete deployment config</MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      }
+    />
   );
 }
 ```
@@ -1402,7 +1410,7 @@ class ViewMoreMenu extends React.Component {
     };
 
     this.menuOptions = [
-      <MenuItem key={0} itemId={0} ref={React.createRef()}>
+      <MenuItem key={0} itemId={0}>
         Action
       </MenuItem>,
       <MenuItem
@@ -1411,7 +1419,6 @@ class ViewMoreMenu extends React.Component {
         to="#default-link2"
         // just for demo so that navigation is not triggered
         onClick={event => event.preventDefault()}
-        ref={React.createRef()}
       >
         Link
       </MenuItem>,
@@ -1421,19 +1428,19 @@ class ViewMoreMenu extends React.Component {
       <MenuItem key={4} isDisabled to="#default-link4">
         Disabled Link
       </MenuItem>,
-      <MenuItem key={5} itemId={2} ref={React.createRef()}>
+      <MenuItem key={5} itemId={2}>
         Action 2
       </MenuItem>,
-      <MenuItem key={6} itemId={3} ref={React.createRef()}>
+      <MenuItem key={6} itemId={3}>
         Action 3
       </MenuItem>,
-      <MenuItem key={7} itemId={4} ref={React.createRef()}>
+      <MenuItem key={7} itemId={4}>
         Action 4
       </MenuItem>,
-      <MenuItem key={8} itemId={5} ref={React.createRef()}>
+      <MenuItem key={8} itemId={5}>
         Action 5
       </MenuItem>,
-      <MenuItem key={9} itemId={6} ref={React.createRef()}>
+      <MenuItem key={9} itemId={6}>
         Final option
       </MenuItem>
     ];
