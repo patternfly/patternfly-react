@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { createPopper as defaultCreatePopper, Options as PopperOptions, VirtualElement } from '../popper-core/popper';
-import { useIsomorphicLayoutEffect } from '../../../../helpers';
+import { useIsomorphicLayoutEffect } from '../../../../helpers/useIsomorphicLayout';
 
 type $Shape<T extends object> = Partial<T>;
 
