@@ -139,7 +139,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         }
       }
     }
-  }, [showFlyout, flyoutMenu]);
+  }, [flyoutVisible, flyoutMenu]);
 
   React.useEffect(() => {
     const flyoutMenu = ref.current.lastElementChild as HTMLElement;
@@ -148,7 +148,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       flyoutMenu.style.left = flyoutXDirection === 'left' ? 'auto' : `calc(100% - ${offsetX}px`;
       flyoutMenu.style.top = `calc(-${offsetY}px + var(--pf-c-menu--m-flyout__menu--Top))`;
     }
-  }, [flyoutXDirection, offsetX, offsetY]);
+  }, [flyoutVisible, flyoutXDirection, offsetX, offsetY]);
 
   React.useEffect(() => {
     setFlyoutXDirection(flyoutContext.direction);
@@ -246,8 +246,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         isLoading && styles.modifiers.loading,
         className
       )}
-      onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
-      onMouseLeave={hasFlyout ? () => showFlyout(false) : undefined}
+      onMouseOver={hasFlyout ? () => setTimeout(() => showFlyout(true), 200) : undefined}
+      onMouseLeave={hasFlyout ? () => setTimeout(() => showFlyout(false), 200) : undefined}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       tabIndex={-1}
       ref={ref}
