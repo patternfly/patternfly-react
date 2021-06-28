@@ -148,8 +148,44 @@ describe('tree view', () => {
       />
     );
     expect(view).toMatchSnapshot();
+  }); 
+  
+  test('renders successfully toolbarItems on left by default and search ', () => {
+    const view = mount(
+      <TreeView
+        data={options}
+        activeItems={active}
+        onSelect={jest.fn()}
+        onSearch={jest.fn()}
+        searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
+        toolbarItems={[
+          <Button id="expand" variant="secondary">
+            'Toolbar item example'
+          </Button>
+        ]}
+      />
+    );
+    expect(view).toMatchSnapshot();
   });
 
+  test('renders successfully toolbarItems on right of search', () => {
+    const view = mount(
+      <TreeView
+        data={options}
+        activeItems={active}
+        onSelect={jest.fn()}
+        onSearch={jest.fn()}
+        searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
+        toolbarItems={[
+          <Button id="expand" variant="secondary">
+            'Toolbar item example'
+          </Button>
+        ]}
+        toolbarLeft={false}
+      />
+    );
+    expect(view).toMatchSnapshot();
+  });
   test('renders checkboxes successfully', () => {
     const view = mount(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasChecks />);
     expect(view).toMatchSnapshot();

@@ -193,12 +193,9 @@ export class TreeViewDemo extends Component {
         children: [{ name: 'Application 5', id: 'FApp5' }]
       }
     ];
+
     return (
       <React.Fragment>
-        <Button id="expand" variant="link" onClick={this.onToggle}>
-          {allExpanded && 'Collapse all'}
-          {!allExpanded && 'Expand all'}
-        </Button>
         <TreeView
           id="basic"
           allExpanded={allExpanded}
@@ -207,6 +204,13 @@ export class TreeViewDemo extends Component {
           onSelect={this.onClick}
           onSearch={this.onChange}
           searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
+          toolbarItems={[
+            <Button key="example1" id="expand" variant="secondary" onClick={this.onToggle}>
+              {allExpanded && 'Collapse all'}
+              {!allExpanded && 'Expand all'}
+            </Button>
+          ]}
+          toolbarLeft={false}
         />
         <br />
         <TreeView id="mixed" data={flagOptions} activeItems={activeItems2} onSelect={this.onClick2} />

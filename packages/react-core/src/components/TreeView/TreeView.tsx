@@ -65,6 +65,8 @@ export interface TreeViewProps {
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
   /** Class to add to add if not passed a parentItem */
   className?: string;
+  toolbarItems?: React.ReactNode[];
+  toolbarLeft?: boolean;
 }
 
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
@@ -84,10 +86,18 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
   className,
+  toolbarItems,
+  toolbarLeft = true,
   ...props
 }: TreeViewProps) => {
   const treeViewList = (
-    <TreeViewList isNested={isNested} onSearch={onSearch} searchProps={searchProps}>
+    <TreeViewList
+      isNested={isNested}
+      toolbarItems={toolbarItems}
+      toolbarLeft={toolbarLeft}
+      onSearch={onSearch}
+      searchProps={searchProps}
+    >
       {data.map(item => (
         <TreeViewListItem
           key={item.id?.toString() || item.name.toString()}

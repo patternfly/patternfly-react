@@ -129,6 +129,7 @@ exports[`tree view renders active successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
+        toolbarLeft={true}
       >
         <ul
           className="pf-c-tree-view__list"
@@ -398,6 +399,7 @@ exports[`tree view renders active successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
@@ -1195,6 +1197,7 @@ exports[`tree view renders badges successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
+        toolbarLeft={true}
       >
         <ul
           className="pf-c-tree-view__list"
@@ -1477,6 +1480,7 @@ exports[`tree view renders badges successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
@@ -2320,6 +2324,7 @@ exports[`tree view renders basic successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
+        toolbarLeft={true}
       >
         <ul
           className="pf-c-tree-view__list"
@@ -2553,6 +2558,7 @@ exports[`tree view renders basic successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
@@ -3260,6 +3266,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
+        toolbarLeft={true}
       >
         <ul
           className="pf-c-tree-view__list"
@@ -3363,7 +3370,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     tabIndex={-1}
                   >
                     <button
-                      aria-labelledby="label-checkbox-id18"
+                      aria-labelledby="label-checkbox-id32"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
                       tabIndex={-1}
@@ -3403,7 +3410,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     >
                       <input
                         checked={false}
-                        id="checkbox-id18"
+                        id="checkbox-id32"
                         onChange={[Function]}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -3412,8 +3419,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     </span>
                     <label
                       className="pf-c-tree-view__node-text"
-                      htmlFor="checkbox-id18"
-                      id="label-checkbox-id18"
+                      htmlFor="checkbox-id32"
+                      id="label-checkbox-id32"
                     >
                       ApplicationLauncher
                     </label>
@@ -3544,6 +3551,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
@@ -3662,7 +3670,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                               tabIndex={-1}
                             >
                               <button
-                                aria-labelledby="label-checkbox-id19"
+                                aria-labelledby="label-checkbox-id33"
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
                                 tabIndex={-1}
@@ -3702,7 +3710,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                               >
                                 <input
                                   checked={false}
-                                  id="checkbox-id19"
+                                  id="checkbox-id33"
                                   onChange={[Function]}
                                   onClick={[Function]}
                                   tabIndex={-1}
@@ -3711,8 +3719,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                               </span>
                               <label
                                 className="pf-c-tree-view__node-text"
-                                htmlFor="checkbox-id19"
-                                id="label-checkbox-id19"
+                                htmlFor="checkbox-id33"
+                                id="label-checkbox-id33"
                               >
                                 Application 1
                               </label>
@@ -3848,7 +3856,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                               tabIndex={-1}
                             >
                               <button
-                                aria-labelledby="label-checkbox-id20"
+                                aria-labelledby="label-checkbox-id34"
                                 className="pf-c-tree-view__node-toggle"
                                 onClick={[Function]}
                                 tabIndex={-1}
@@ -3888,7 +3896,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                               >
                                 <input
                                   checked={false}
-                                  id="checkbox-id20"
+                                  id="checkbox-id34"
                                   onChange={[Function]}
                                   onClick={[Function]}
                                   tabIndex={-1}
@@ -3897,8 +3905,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                               </span>
                               <label
                                 className="pf-c-tree-view__node-text"
-                                htmlFor="checkbox-id20"
-                                id="label-checkbox-id20"
+                                htmlFor="checkbox-id34"
+                                id="label-checkbox-id34"
                               >
                                 Application 2
                               </label>
@@ -3980,7 +3988,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     tabIndex={-1}
                   >
                     <button
-                      aria-labelledby="label-checkbox-id21"
+                      aria-labelledby="label-checkbox-id35"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
                       tabIndex={-1}
@@ -4020,7 +4028,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     >
                       <input
                         checked={false}
-                        id="checkbox-id21"
+                        id="checkbox-id35"
                         onChange={[Function]}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -4029,8 +4037,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     </span>
                     <label
                       className="pf-c-tree-view__node-text"
-                      htmlFor="checkbox-id21"
-                      id="label-checkbox-id21"
+                      htmlFor="checkbox-id35"
+                      id="label-checkbox-id35"
                     >
                       Cost Management
                     </label>
@@ -4103,7 +4111,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     tabIndex={-1}
                   >
                     <button
-                      aria-labelledby="label-checkbox-id22"
+                      aria-labelledby="label-checkbox-id36"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
                       tabIndex={-1}
@@ -4143,7 +4151,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     >
                       <input
                         checked={false}
-                        id="checkbox-id22"
+                        id="checkbox-id36"
                         onChange={[Function]}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -4152,8 +4160,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     </span>
                     <label
                       className="pf-c-tree-view__node-text"
-                      htmlFor="checkbox-id22"
-                      id="label-checkbox-id22"
+                      htmlFor="checkbox-id36"
+                      id="label-checkbox-id36"
                     >
                       Sources
                     </label>
@@ -4220,7 +4228,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     tabIndex={-1}
                   >
                     <button
-                      aria-labelledby="label-checkbox-id23"
+                      aria-labelledby="label-checkbox-id37"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
                       tabIndex={-1}
@@ -4260,7 +4268,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     >
                       <input
                         checked={false}
-                        id="checkbox-id23"
+                        id="checkbox-id37"
                         onChange={[Function]}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -4269,8 +4277,8 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     </span>
                     <label
                       className="pf-c-tree-view__node-text"
-                      htmlFor="checkbox-id23"
-                      id="label-checkbox-id23"
+                      htmlFor="checkbox-id37"
+                      id="label-checkbox-id37"
                     >
                       Really really really long folder name that overflows the container it is in
                     </label>
@@ -4429,6 +4437,7 @@ exports[`tree view renders icons successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
+        toolbarLeft={true}
       >
         <ul
           className="pf-c-tree-view__list"
@@ -4754,6 +4763,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
@@ -5784,6 +5794,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
+        toolbarLeft={true}
       >
         <ul
           className="pf-c-tree-view__list"
@@ -5914,7 +5925,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     tabIndex={-1}
                   >
                     <button
-                      aria-labelledby="label-checkbox-id36"
+                      aria-labelledby="label-checkbox-id50"
                       className="pf-c-tree-view__node-toggle"
                       onClick={[Function]}
                       tabIndex={-1}
@@ -5954,7 +5965,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     >
                       <input
                         checked={false}
-                        id="checkbox-id36"
+                        id="checkbox-id50"
                         onChange={[Function]}
                         onClick={[Function]}
                         tabIndex={-1}
@@ -5991,8 +6002,8 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     </span>
                     <label
                       className="pf-c-tree-view__node-text"
-                      htmlFor="checkbox-id36"
-                      id="label-checkbox-id36"
+                      htmlFor="checkbox-id50"
+                      id="label-checkbox-id50"
                     >
                       ApplicationLauncher
                     </label>
@@ -6138,6 +6149,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
@@ -7078,6 +7090,7 @@ exports[`tree view renders search successfully 1`] = `
             "name": "search-input",
           }
         }
+        toolbarLeft={true}
       >
         <TreeViewSearch
           aria-label="Search input example"
@@ -7371,6 +7384,2532 @@ exports[`tree view renders search successfully 1`] = `
               >
                 <TreeViewList
                   isNested={true}
+                  toolbarLeft={true}
+                >
+                  <ul
+                    className="pf-c-tree-view__list"
+                    role="group"
+                  >
+                    <TreeViewListItem
+                      activeItems={
+                        Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "App1Settings",
+                                "name": "Settings",
+                              },
+                              Object {
+                                "id": "App1Current",
+                                "name": "Current",
+                              },
+                            ],
+                            "id": "App1",
+                            "name": "Application 1",
+                          },
+                        ]
+                      }
+                      compareItems={[Function]}
+                      defaultExpanded={false}
+                      hasBadge={false}
+                      hasCheck={false}
+                      id="App1"
+                      itemData={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "id": "App1Settings",
+                              "name": "Settings",
+                            },
+                            Object {
+                              "id": "App1Current",
+                              "name": "Current",
+                            },
+                          ],
+                          "id": "App1",
+                          "name": "Application 1",
+                        }
+                      }
+                      key="App1"
+                      name="Application 1"
+                      onSelect={[MockFunction]}
+                      parentItem={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App1Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "id": "App1Current",
+                                  "name": "Current",
+                                },
+                              ],
+                              "id": "App1",
+                              "name": "Application 1",
+                            },
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App2Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "children": Array [
+                                    Object {
+                                      "id": "LoadApp1",
+                                      "name": "Loading App 1",
+                                    },
+                                    Object {
+                                      "id": "LoadApp2",
+                                      "name": "Loading App 2",
+                                    },
+                                    Object {
+                                      "id": "LoadApp3",
+                                      "name": "Loading App 3",
+                                    },
+                                  ],
+                                  "id": "App2Loader",
+                                  "name": "Loader",
+                                },
+                              ],
+                              "id": "App2",
+                              "name": "Application 2",
+                            },
+                          ],
+                          "defaultExpanded": true,
+                          "id": "AppLaunch",
+                          "name": "ApplicationLauncher",
+                        }
+                      }
+                    >
+                      <li
+                        className="pf-c-tree-view__list-item"
+                        id="App1"
+                        role="treeitem"
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="pf-c-tree-view__content"
+                        >
+                          <GenerateId
+                            prefix="checkbox-id"
+                          >
+                            <button
+                              className="pf-c-tree-view__node"
+                              onClick={[Function]}
+                              tabIndex={-1}
+                            >
+                              <div
+                                className="pf-c-tree-view__node-toggle"
+                                onClick={[Function]}
+                                tabIndex={-1}
+                              >
+                                <span
+                                  className="pf-c-tree-view__node-toggle-icon"
+                                >
+                                  <AngleRightIcon
+                                    aria-hidden="true"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 256 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                      />
+                                    </svg>
+                                  </AngleRightIcon>
+                                </span>
+                              </div>
+                              <span
+                                className="pf-c-tree-view__node-text"
+                              >
+                                Application 1
+                              </span>
+                            </button>
+                          </GenerateId>
+                        </div>
+                      </li>
+                    </TreeViewListItem>
+                    <TreeViewListItem
+                      activeItems={
+                        Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "App1Settings",
+                                "name": "Settings",
+                              },
+                              Object {
+                                "id": "App1Current",
+                                "name": "Current",
+                              },
+                            ],
+                            "id": "App1",
+                            "name": "Application 1",
+                          },
+                        ]
+                      }
+                      compareItems={[Function]}
+                      defaultExpanded={false}
+                      hasBadge={false}
+                      hasCheck={false}
+                      id="App2"
+                      itemData={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "id": "App2Settings",
+                              "name": "Settings",
+                            },
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "LoadApp1",
+                                  "name": "Loading App 1",
+                                },
+                                Object {
+                                  "id": "LoadApp2",
+                                  "name": "Loading App 2",
+                                },
+                                Object {
+                                  "id": "LoadApp3",
+                                  "name": "Loading App 3",
+                                },
+                              ],
+                              "id": "App2Loader",
+                              "name": "Loader",
+                            },
+                          ],
+                          "id": "App2",
+                          "name": "Application 2",
+                        }
+                      }
+                      key="App2"
+                      name="Application 2"
+                      onSelect={[MockFunction]}
+                      parentItem={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App1Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "id": "App1Current",
+                                  "name": "Current",
+                                },
+                              ],
+                              "id": "App1",
+                              "name": "Application 1",
+                            },
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App2Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "children": Array [
+                                    Object {
+                                      "id": "LoadApp1",
+                                      "name": "Loading App 1",
+                                    },
+                                    Object {
+                                      "id": "LoadApp2",
+                                      "name": "Loading App 2",
+                                    },
+                                    Object {
+                                      "id": "LoadApp3",
+                                      "name": "Loading App 3",
+                                    },
+                                  ],
+                                  "id": "App2Loader",
+                                  "name": "Loader",
+                                },
+                              ],
+                              "id": "App2",
+                              "name": "Application 2",
+                            },
+                          ],
+                          "defaultExpanded": true,
+                          "id": "AppLaunch",
+                          "name": "ApplicationLauncher",
+                        }
+                      }
+                    >
+                      <li
+                        className="pf-c-tree-view__list-item"
+                        id="App2"
+                        role="treeitem"
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="pf-c-tree-view__content"
+                        >
+                          <GenerateId
+                            prefix="checkbox-id"
+                          >
+                            <button
+                              className="pf-c-tree-view__node"
+                              onClick={[Function]}
+                              tabIndex={-1}
+                            >
+                              <div
+                                className="pf-c-tree-view__node-toggle"
+                                onClick={[Function]}
+                                tabIndex={-1}
+                              >
+                                <span
+                                  className="pf-c-tree-view__node-toggle-icon"
+                                >
+                                  <AngleRightIcon
+                                    aria-hidden="true"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 256 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                      />
+                                    </svg>
+                                  </AngleRightIcon>
+                                </span>
+                              </div>
+                              <span
+                                className="pf-c-tree-view__node-text"
+                              >
+                                Application 2
+                              </span>
+                            </button>
+                          </GenerateId>
+                        </div>
+                      </li>
+                    </TreeViewListItem>
+                  </ul>
+                </TreeViewList>
+              </TreeView>
+            </li>
+          </TreeViewListItem>
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={false}
+            hasBadge={false}
+            hasCheck={false}
+            id="Cost"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App3Settings",
+                        "name": "Settings",
+                      },
+                      Object {
+                        "id": "App3Current",
+                        "name": "Current",
+                      },
+                    ],
+                    "id": "App3",
+                    "name": "Application 3",
+                  },
+                ],
+                "id": "Cost",
+                "name": "Cost Management",
+              }
+            }
+            key="Cost"
+            name="Cost Management"
+            onSelect={[MockFunction]}
+          >
+            <li
+              className="pf-c-tree-view__list-item"
+              id="Cost"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      Cost Management
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+            </li>
+          </TreeViewListItem>
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={false}
+            hasBadge={false}
+            hasCheck={false}
+            id="Sources"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App4Settings",
+                        "name": "Settings",
+                      },
+                    ],
+                    "id": "App4",
+                    "name": "Application 4",
+                  },
+                ],
+                "id": "Sources",
+                "name": "Sources",
+              }
+            }
+            key="Sources"
+            name="Sources"
+            onSelect={[MockFunction]}
+          >
+            <li
+              className="pf-c-tree-view__list-item"
+              id="Sources"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      Sources
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+            </li>
+          </TreeViewListItem>
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={false}
+            hasBadge={false}
+            hasCheck={false}
+            id="Long"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "id": "App5",
+                    "name": "Application 5",
+                  },
+                ],
+                "id": "Long",
+                "name": "Really really really long folder name that overflows the container it is in",
+              }
+            }
+            key="Long"
+            name="Really really really long folder name that overflows the container it is in"
+            onSelect={[MockFunction]}
+          >
+            <li
+              className="pf-c-tree-view__list-item"
+              id="Long"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      Really really really long folder name that overflows the container it is in
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+            </li>
+          </TreeViewListItem>
+        </ul>
+      </TreeViewList>
+    </div>
+  </TreeViewRoot>
+</TreeView>
+`;
+
+exports[`tree view renders successfully toolbarItems on left by default and search  1`] = `
+<TreeView
+  activeItems={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "id": "App1Settings",
+            "name": "Settings",
+          },
+          Object {
+            "id": "App1Current",
+            "name": "Current",
+          },
+        ],
+        "id": "App1",
+        "name": "Application 1",
+      },
+    ]
+  }
+  data={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "App1Settings",
+                "name": "Settings",
+              },
+              Object {
+                "id": "App1Current",
+                "name": "Current",
+              },
+            ],
+            "id": "App1",
+            "name": "Application 1",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "id": "App2Settings",
+                "name": "Settings",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "id": "LoadApp1",
+                    "name": "Loading App 1",
+                  },
+                  Object {
+                    "id": "LoadApp2",
+                    "name": "Loading App 2",
+                  },
+                  Object {
+                    "id": "LoadApp3",
+                    "name": "Loading App 3",
+                  },
+                ],
+                "id": "App2Loader",
+                "name": "Loader",
+              },
+            ],
+            "id": "App2",
+            "name": "Application 2",
+          },
+        ],
+        "defaultExpanded": true,
+        "id": "AppLaunch",
+        "name": "ApplicationLauncher",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "App3Settings",
+                "name": "Settings",
+              },
+              Object {
+                "id": "App3Current",
+                "name": "Current",
+              },
+            ],
+            "id": "App3",
+            "name": "Application 3",
+          },
+        ],
+        "id": "Cost",
+        "name": "Cost Management",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "App4Settings",
+                "name": "Settings",
+              },
+            ],
+            "id": "App4",
+            "name": "Application 4",
+          },
+        ],
+        "id": "Sources",
+        "name": "Sources",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "id": "App5",
+            "name": "Application 5",
+          },
+        ],
+        "id": "Long",
+        "name": "Really really really long folder name that overflows the container it is in",
+      },
+    ]
+  }
+  onSearch={[MockFunction]}
+  onSelect={[MockFunction]}
+  searchProps={
+    Object {
+      "aria-label": "Search input example",
+      "id": "input-search",
+      "name": "search-input",
+    }
+  }
+  toolbarItems={
+    Array [
+      <ForwardRef(Button)
+        id="expand"
+        variant="secondary"
+      >
+        'Toolbar item example'
+      </ForwardRef(Button)>,
+    ]
+  }
+>
+  <TreeViewRoot
+    hasChecks={false}
+  >
+    <div
+      className="pf-c-tree-view"
+    >
+      <TreeViewList
+        isNested={false}
+        onSearch={[MockFunction]}
+        searchProps={
+          Object {
+            "aria-label": "Search input example",
+            "id": "input-search",
+            "name": "search-input",
+          }
+        }
+        toolbarItems={
+          Array [
+            <ForwardRef(Button)
+              id="expand"
+              variant="secondary"
+            >
+              'Toolbar item example'
+            </ForwardRef(Button)>,
+          ]
+        }
+        toolbarLeft={true}
+      >
+        <Toolbar>
+          <GenerateId
+            prefix="pf-random-id-"
+          >
+            <div
+              className="pf-c-toolbar"
+              data-ouia-component-id="OUIA-Generated-Toolbar-1"
+              data-ouia-component-type="PF4/Toolbar"
+              data-ouia-safe={true}
+              id="pf-random-id-18"
+            >
+              <ToolbarContent
+                isExpanded={false}
+                showClearFiltersButton={false}
+              >
+                <div
+                  className="pf-c-toolbar__content"
+                >
+                  <div
+                    className="pf-c-toolbar__content-section"
+                  >
+                    <ToolbarItem
+                      key="0"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Button
+                          id="expand"
+                          variant="secondary"
+                        >
+                          <ButtonBase
+                            id="expand"
+                            innerRef={null}
+                            variant="secondary"
+                          >
+                            <button
+                              aria-disabled={false}
+                              aria-label={null}
+                              className="pf-c-button pf-m-secondary"
+                              data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+                              data-ouia-component-type="PF4/Button"
+                              data-ouia-safe={true}
+                              disabled={false}
+                              id="expand"
+                              role={null}
+                              type="button"
+                            >
+                              'Toolbar item example'
+                            </button>
+                          </ButtonBase>
+                        </Button>
+                      </div>
+                    </ToolbarItem>
+                    <TreeViewSearch
+                      aria-label="Search input example"
+                      id="input-search"
+                      name="search-input"
+                      onChange={[MockFunction]}
+                    >
+                      <div
+                        className="pf-c-tree-view__search"
+                      >
+                        <input
+                          aria-label="Search input example"
+                          className="pf-c-form-control pf-m-search"
+                          id="input-search"
+                          name="search-input"
+                          onChange={[MockFunction]}
+                          type="search"
+                        />
+                      </div>
+                    </TreeViewSearch>
+                  </div>
+                  <ToolbarExpandableContent
+                    chipContainerRef={
+                      Object {
+                        "current": null,
+                      }
+                    }
+                    clearFiltersButtonText="Clear all filters"
+                    expandableContentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-toolbar__expandable-content"
+                          id="pf-random-id-18-expandable-content-0"
+                        >
+                          <div
+                            class="pf-c-toolbar__group"
+                          />
+                        </div>,
+                      }
+                    }
+                    id="pf-random-id-18-expandable-content-0"
+                    isExpanded={false}
+                    showClearFiltersButton={false}
+                  >
+                    <div
+                      className="pf-c-toolbar__expandable-content"
+                      id="pf-random-id-18-expandable-content-0"
+                    >
+                      <ForwardRef>
+                        <ToolbarGroupWithRef
+                          innerRef={null}
+                        >
+                          <div
+                            className="pf-c-toolbar__group"
+                          />
+                        </ToolbarGroupWithRef>
+                      </ForwardRef>
+                    </div>
+                  </ToolbarExpandableContent>
+                </div>
+              </ToolbarContent>
+              <ToolbarChipGroupContent
+                chipGroupContentRef={
+                  Object {
+                    "current": <div
+                      class="pf-c-toolbar__content pf-m-hidden"
+                      hidden=""
+                    >
+                      <div
+                        class="pf-c-toolbar__group"
+                      />
+                    </div>,
+                  }
+                }
+                clearFiltersButtonText="Clear all filters"
+                collapseListedFiltersBreakpoint="lg"
+                isExpanded={false}
+                numberOfFilters={0}
+                showClearFiltersButton={false}
+              >
+                <div
+                  className="pf-c-toolbar__content pf-m-hidden"
+                  hidden={true}
+                >
+                  <ForwardRef
+                    className=""
+                  >
+                    <ToolbarGroupWithRef
+                      className=""
+                      innerRef={null}
+                    >
+                      <div
+                        className="pf-c-toolbar__group"
+                      />
+                    </ToolbarGroupWithRef>
+                  </ForwardRef>
+                </div>
+              </ToolbarChipGroupContent>
+            </div>
+          </GenerateId>
+        </Toolbar>
+        <Divider>
+          <hr
+            className="pf-c-divider"
+          />
+        </Divider>
+        <ul
+          className="pf-c-tree-view__list"
+          role="tree"
+        >
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={true}
+            hasBadge={false}
+            hasCheck={false}
+            id="AppLaunch"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App1Settings",
+                        "name": "Settings",
+                      },
+                      Object {
+                        "id": "App1Current",
+                        "name": "Current",
+                      },
+                    ],
+                    "id": "App1",
+                    "name": "Application 1",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App2Settings",
+                        "name": "Settings",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "LoadApp1",
+                            "name": "Loading App 1",
+                          },
+                          Object {
+                            "id": "LoadApp2",
+                            "name": "Loading App 2",
+                          },
+                          Object {
+                            "id": "LoadApp3",
+                            "name": "Loading App 3",
+                          },
+                        ],
+                        "id": "App2Loader",
+                        "name": "Loader",
+                      },
+                    ],
+                    "id": "App2",
+                    "name": "Application 2",
+                  },
+                ],
+                "defaultExpanded": true,
+                "id": "AppLaunch",
+                "name": "ApplicationLauncher",
+              }
+            }
+            key="AppLaunch"
+            name="ApplicationLauncher"
+            onSelect={[MockFunction]}
+          >
+            <li
+              aria-expanded="true"
+              className="pf-c-tree-view__list-item pf-m-expanded"
+              id="AppLaunch"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      ApplicationLauncher
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+              <TreeView
+                activeItems={
+                  Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "App1Settings",
+                          "name": "Settings",
+                        },
+                        Object {
+                          "id": "App1Current",
+                          "name": "Current",
+                        },
+                      ],
+                      "id": "App1",
+                      "name": "Application 1",
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "App1Settings",
+                          "name": "Settings",
+                        },
+                        Object {
+                          "id": "App1Current",
+                          "name": "Current",
+                        },
+                      ],
+                      "id": "App1",
+                      "name": "Application 1",
+                    },
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "App2Settings",
+                          "name": "Settings",
+                        },
+                        Object {
+                          "children": Array [
+                            Object {
+                              "id": "LoadApp1",
+                              "name": "Loading App 1",
+                            },
+                            Object {
+                              "id": "LoadApp2",
+                              "name": "Loading App 2",
+                            },
+                            Object {
+                              "id": "LoadApp3",
+                              "name": "Loading App 3",
+                            },
+                          ],
+                          "id": "App2Loader",
+                          "name": "Loader",
+                        },
+                      ],
+                      "id": "App2",
+                      "name": "Application 2",
+                    },
+                  ]
+                }
+                defaultAllExpanded={false}
+                hasBadges={false}
+                hasChecks={false}
+                isNested={true}
+                onSelect={[MockFunction]}
+                parentItem={
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "App1Settings",
+                            "name": "Settings",
+                          },
+                          Object {
+                            "id": "App1Current",
+                            "name": "Current",
+                          },
+                        ],
+                        "id": "App1",
+                        "name": "Application 1",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "App2Settings",
+                            "name": "Settings",
+                          },
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "LoadApp1",
+                                "name": "Loading App 1",
+                              },
+                              Object {
+                                "id": "LoadApp2",
+                                "name": "Loading App 2",
+                              },
+                              Object {
+                                "id": "LoadApp3",
+                                "name": "Loading App 3",
+                              },
+                            ],
+                            "id": "App2Loader",
+                            "name": "Loader",
+                          },
+                        ],
+                        "id": "App2",
+                        "name": "Application 2",
+                      },
+                    ],
+                    "defaultExpanded": true,
+                    "id": "AppLaunch",
+                    "name": "ApplicationLauncher",
+                  }
+                }
+              >
+                <TreeViewList
+                  isNested={true}
+                  toolbarLeft={true}
+                >
+                  <ul
+                    className="pf-c-tree-view__list"
+                    role="group"
+                  >
+                    <TreeViewListItem
+                      activeItems={
+                        Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "App1Settings",
+                                "name": "Settings",
+                              },
+                              Object {
+                                "id": "App1Current",
+                                "name": "Current",
+                              },
+                            ],
+                            "id": "App1",
+                            "name": "Application 1",
+                          },
+                        ]
+                      }
+                      compareItems={[Function]}
+                      defaultExpanded={false}
+                      hasBadge={false}
+                      hasCheck={false}
+                      id="App1"
+                      itemData={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "id": "App1Settings",
+                              "name": "Settings",
+                            },
+                            Object {
+                              "id": "App1Current",
+                              "name": "Current",
+                            },
+                          ],
+                          "id": "App1",
+                          "name": "Application 1",
+                        }
+                      }
+                      key="App1"
+                      name="Application 1"
+                      onSelect={[MockFunction]}
+                      parentItem={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App1Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "id": "App1Current",
+                                  "name": "Current",
+                                },
+                              ],
+                              "id": "App1",
+                              "name": "Application 1",
+                            },
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App2Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "children": Array [
+                                    Object {
+                                      "id": "LoadApp1",
+                                      "name": "Loading App 1",
+                                    },
+                                    Object {
+                                      "id": "LoadApp2",
+                                      "name": "Loading App 2",
+                                    },
+                                    Object {
+                                      "id": "LoadApp3",
+                                      "name": "Loading App 3",
+                                    },
+                                  ],
+                                  "id": "App2Loader",
+                                  "name": "Loader",
+                                },
+                              ],
+                              "id": "App2",
+                              "name": "Application 2",
+                            },
+                          ],
+                          "defaultExpanded": true,
+                          "id": "AppLaunch",
+                          "name": "ApplicationLauncher",
+                        }
+                      }
+                    >
+                      <li
+                        className="pf-c-tree-view__list-item"
+                        id="App1"
+                        role="treeitem"
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="pf-c-tree-view__content"
+                        >
+                          <GenerateId
+                            prefix="checkbox-id"
+                          >
+                            <button
+                              className="pf-c-tree-view__node"
+                              onClick={[Function]}
+                              tabIndex={-1}
+                            >
+                              <div
+                                className="pf-c-tree-view__node-toggle"
+                                onClick={[Function]}
+                                tabIndex={-1}
+                              >
+                                <span
+                                  className="pf-c-tree-view__node-toggle-icon"
+                                >
+                                  <AngleRightIcon
+                                    aria-hidden="true"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 256 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                      />
+                                    </svg>
+                                  </AngleRightIcon>
+                                </span>
+                              </div>
+                              <span
+                                className="pf-c-tree-view__node-text"
+                              >
+                                Application 1
+                              </span>
+                            </button>
+                          </GenerateId>
+                        </div>
+                      </li>
+                    </TreeViewListItem>
+                    <TreeViewListItem
+                      activeItems={
+                        Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "App1Settings",
+                                "name": "Settings",
+                              },
+                              Object {
+                                "id": "App1Current",
+                                "name": "Current",
+                              },
+                            ],
+                            "id": "App1",
+                            "name": "Application 1",
+                          },
+                        ]
+                      }
+                      compareItems={[Function]}
+                      defaultExpanded={false}
+                      hasBadge={false}
+                      hasCheck={false}
+                      id="App2"
+                      itemData={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "id": "App2Settings",
+                              "name": "Settings",
+                            },
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "LoadApp1",
+                                  "name": "Loading App 1",
+                                },
+                                Object {
+                                  "id": "LoadApp2",
+                                  "name": "Loading App 2",
+                                },
+                                Object {
+                                  "id": "LoadApp3",
+                                  "name": "Loading App 3",
+                                },
+                              ],
+                              "id": "App2Loader",
+                              "name": "Loader",
+                            },
+                          ],
+                          "id": "App2",
+                          "name": "Application 2",
+                        }
+                      }
+                      key="App2"
+                      name="Application 2"
+                      onSelect={[MockFunction]}
+                      parentItem={
+                        Object {
+                          "children": Array [
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App1Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "id": "App1Current",
+                                  "name": "Current",
+                                },
+                              ],
+                              "id": "App1",
+                              "name": "Application 1",
+                            },
+                            Object {
+                              "children": Array [
+                                Object {
+                                  "id": "App2Settings",
+                                  "name": "Settings",
+                                },
+                                Object {
+                                  "children": Array [
+                                    Object {
+                                      "id": "LoadApp1",
+                                      "name": "Loading App 1",
+                                    },
+                                    Object {
+                                      "id": "LoadApp2",
+                                      "name": "Loading App 2",
+                                    },
+                                    Object {
+                                      "id": "LoadApp3",
+                                      "name": "Loading App 3",
+                                    },
+                                  ],
+                                  "id": "App2Loader",
+                                  "name": "Loader",
+                                },
+                              ],
+                              "id": "App2",
+                              "name": "Application 2",
+                            },
+                          ],
+                          "defaultExpanded": true,
+                          "id": "AppLaunch",
+                          "name": "ApplicationLauncher",
+                        }
+                      }
+                    >
+                      <li
+                        className="pf-c-tree-view__list-item"
+                        id="App2"
+                        role="treeitem"
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="pf-c-tree-view__content"
+                        >
+                          <GenerateId
+                            prefix="checkbox-id"
+                          >
+                            <button
+                              className="pf-c-tree-view__node"
+                              onClick={[Function]}
+                              tabIndex={-1}
+                            >
+                              <div
+                                className="pf-c-tree-view__node-toggle"
+                                onClick={[Function]}
+                                tabIndex={-1}
+                              >
+                                <span
+                                  className="pf-c-tree-view__node-toggle-icon"
+                                >
+                                  <AngleRightIcon
+                                    aria-hidden="true"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      aria-labelledby={null}
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 256 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                      />
+                                    </svg>
+                                  </AngleRightIcon>
+                                </span>
+                              </div>
+                              <span
+                                className="pf-c-tree-view__node-text"
+                              >
+                                Application 2
+                              </span>
+                            </button>
+                          </GenerateId>
+                        </div>
+                      </li>
+                    </TreeViewListItem>
+                  </ul>
+                </TreeViewList>
+              </TreeView>
+            </li>
+          </TreeViewListItem>
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={false}
+            hasBadge={false}
+            hasCheck={false}
+            id="Cost"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App3Settings",
+                        "name": "Settings",
+                      },
+                      Object {
+                        "id": "App3Current",
+                        "name": "Current",
+                      },
+                    ],
+                    "id": "App3",
+                    "name": "Application 3",
+                  },
+                ],
+                "id": "Cost",
+                "name": "Cost Management",
+              }
+            }
+            key="Cost"
+            name="Cost Management"
+            onSelect={[MockFunction]}
+          >
+            <li
+              className="pf-c-tree-view__list-item"
+              id="Cost"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      Cost Management
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+            </li>
+          </TreeViewListItem>
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={false}
+            hasBadge={false}
+            hasCheck={false}
+            id="Sources"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App4Settings",
+                        "name": "Settings",
+                      },
+                    ],
+                    "id": "App4",
+                    "name": "Application 4",
+                  },
+                ],
+                "id": "Sources",
+                "name": "Sources",
+              }
+            }
+            key="Sources"
+            name="Sources"
+            onSelect={[MockFunction]}
+          >
+            <li
+              className="pf-c-tree-view__list-item"
+              id="Sources"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      Sources
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+            </li>
+          </TreeViewListItem>
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={false}
+            hasBadge={false}
+            hasCheck={false}
+            id="Long"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "id": "App5",
+                    "name": "Application 5",
+                  },
+                ],
+                "id": "Long",
+                "name": "Really really really long folder name that overflows the container it is in",
+              }
+            }
+            key="Long"
+            name="Really really really long folder name that overflows the container it is in"
+            onSelect={[MockFunction]}
+          >
+            <li
+              className="pf-c-tree-view__list-item"
+              id="Long"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      Really really really long folder name that overflows the container it is in
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+            </li>
+          </TreeViewListItem>
+        </ul>
+      </TreeViewList>
+    </div>
+  </TreeViewRoot>
+</TreeView>
+`;
+
+exports[`tree view renders successfully toolbarItems on right of search 1`] = `
+<TreeView
+  activeItems={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "id": "App1Settings",
+            "name": "Settings",
+          },
+          Object {
+            "id": "App1Current",
+            "name": "Current",
+          },
+        ],
+        "id": "App1",
+        "name": "Application 1",
+      },
+    ]
+  }
+  data={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "App1Settings",
+                "name": "Settings",
+              },
+              Object {
+                "id": "App1Current",
+                "name": "Current",
+              },
+            ],
+            "id": "App1",
+            "name": "Application 1",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "id": "App2Settings",
+                "name": "Settings",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "id": "LoadApp1",
+                    "name": "Loading App 1",
+                  },
+                  Object {
+                    "id": "LoadApp2",
+                    "name": "Loading App 2",
+                  },
+                  Object {
+                    "id": "LoadApp3",
+                    "name": "Loading App 3",
+                  },
+                ],
+                "id": "App2Loader",
+                "name": "Loader",
+              },
+            ],
+            "id": "App2",
+            "name": "Application 2",
+          },
+        ],
+        "defaultExpanded": true,
+        "id": "AppLaunch",
+        "name": "ApplicationLauncher",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "App3Settings",
+                "name": "Settings",
+              },
+              Object {
+                "id": "App3Current",
+                "name": "Current",
+              },
+            ],
+            "id": "App3",
+            "name": "Application 3",
+          },
+        ],
+        "id": "Cost",
+        "name": "Cost Management",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "App4Settings",
+                "name": "Settings",
+              },
+            ],
+            "id": "App4",
+            "name": "Application 4",
+          },
+        ],
+        "id": "Sources",
+        "name": "Sources",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "id": "App5",
+            "name": "Application 5",
+          },
+        ],
+        "id": "Long",
+        "name": "Really really really long folder name that overflows the container it is in",
+      },
+    ]
+  }
+  onSearch={[MockFunction]}
+  onSelect={[MockFunction]}
+  searchProps={
+    Object {
+      "aria-label": "Search input example",
+      "id": "input-search",
+      "name": "search-input",
+    }
+  }
+  toolbarItems={
+    Array [
+      <ForwardRef(Button)
+        id="expand"
+        variant="secondary"
+      >
+        'Toolbar item example'
+      </ForwardRef(Button)>,
+    ]
+  }
+  toolbarLeft={false}
+>
+  <TreeViewRoot
+    hasChecks={false}
+  >
+    <div
+      className="pf-c-tree-view"
+    >
+      <TreeViewList
+        isNested={false}
+        onSearch={[MockFunction]}
+        searchProps={
+          Object {
+            "aria-label": "Search input example",
+            "id": "input-search",
+            "name": "search-input",
+          }
+        }
+        toolbarItems={
+          Array [
+            <ForwardRef(Button)
+              id="expand"
+              variant="secondary"
+            >
+              'Toolbar item example'
+            </ForwardRef(Button)>,
+          ]
+        }
+        toolbarLeft={false}
+      >
+        <Toolbar>
+          <GenerateId
+            prefix="pf-random-id-"
+          >
+            <div
+              className="pf-c-toolbar"
+              data-ouia-component-id="OUIA-Generated-Toolbar-2"
+              data-ouia-component-type="PF4/Toolbar"
+              data-ouia-safe={true}
+              id="pf-random-id-25"
+            >
+              <ToolbarContent
+                isExpanded={false}
+                showClearFiltersButton={false}
+              >
+                <div
+                  className="pf-c-toolbar__content"
+                >
+                  <div
+                    className="pf-c-toolbar__content-section"
+                  >
+                    <TreeViewSearch
+                      aria-label="Search input example"
+                      id="input-search"
+                      name="search-input"
+                      onChange={[MockFunction]}
+                    >
+                      <div
+                        className="pf-c-tree-view__search"
+                      >
+                        <input
+                          aria-label="Search input example"
+                          className="pf-c-form-control pf-m-search"
+                          id="input-search"
+                          name="search-input"
+                          onChange={[MockFunction]}
+                          type="search"
+                        />
+                      </div>
+                    </TreeViewSearch>
+                    <ToolbarItem
+                      key="0"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Button
+                          id="expand"
+                          variant="secondary"
+                        >
+                          <ButtonBase
+                            id="expand"
+                            innerRef={null}
+                            variant="secondary"
+                          >
+                            <button
+                              aria-disabled={false}
+                              aria-label={null}
+                              className="pf-c-button pf-m-secondary"
+                              data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+                              data-ouia-component-type="PF4/Button"
+                              data-ouia-safe={true}
+                              disabled={false}
+                              id="expand"
+                              role={null}
+                              type="button"
+                            >
+                              'Toolbar item example'
+                            </button>
+                          </ButtonBase>
+                        </Button>
+                      </div>
+                    </ToolbarItem>
+                  </div>
+                  <ToolbarExpandableContent
+                    chipContainerRef={
+                      Object {
+                        "current": null,
+                      }
+                    }
+                    clearFiltersButtonText="Clear all filters"
+                    expandableContentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-toolbar__expandable-content"
+                          id="pf-random-id-25-expandable-content-1"
+                        >
+                          <div
+                            class="pf-c-toolbar__group"
+                          />
+                        </div>,
+                      }
+                    }
+                    id="pf-random-id-25-expandable-content-1"
+                    isExpanded={false}
+                    showClearFiltersButton={false}
+                  >
+                    <div
+                      className="pf-c-toolbar__expandable-content"
+                      id="pf-random-id-25-expandable-content-1"
+                    >
+                      <ForwardRef>
+                        <ToolbarGroupWithRef
+                          innerRef={null}
+                        >
+                          <div
+                            className="pf-c-toolbar__group"
+                          />
+                        </ToolbarGroupWithRef>
+                      </ForwardRef>
+                    </div>
+                  </ToolbarExpandableContent>
+                </div>
+              </ToolbarContent>
+              <ToolbarChipGroupContent
+                chipGroupContentRef={
+                  Object {
+                    "current": <div
+                      class="pf-c-toolbar__content pf-m-hidden"
+                      hidden=""
+                    >
+                      <div
+                        class="pf-c-toolbar__group"
+                      />
+                    </div>,
+                  }
+                }
+                clearFiltersButtonText="Clear all filters"
+                collapseListedFiltersBreakpoint="lg"
+                isExpanded={false}
+                numberOfFilters={0}
+                showClearFiltersButton={false}
+              >
+                <div
+                  className="pf-c-toolbar__content pf-m-hidden"
+                  hidden={true}
+                >
+                  <ForwardRef
+                    className=""
+                  >
+                    <ToolbarGroupWithRef
+                      className=""
+                      innerRef={null}
+                    >
+                      <div
+                        className="pf-c-toolbar__group"
+                      />
+                    </ToolbarGroupWithRef>
+                  </ForwardRef>
+                </div>
+              </ToolbarChipGroupContent>
+            </div>
+          </GenerateId>
+        </Toolbar>
+        <Divider>
+          <hr
+            className="pf-c-divider"
+          />
+        </Divider>
+        <ul
+          className="pf-c-tree-view__list"
+          role="tree"
+        >
+          <TreeViewListItem
+            activeItems={
+              Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "id": "App1Settings",
+                      "name": "Settings",
+                    },
+                    Object {
+                      "id": "App1Current",
+                      "name": "Current",
+                    },
+                  ],
+                  "id": "App1",
+                  "name": "Application 1",
+                },
+              ]
+            }
+            compareItems={[Function]}
+            defaultExpanded={true}
+            hasBadge={false}
+            hasCheck={false}
+            id="AppLaunch"
+            itemData={
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App1Settings",
+                        "name": "Settings",
+                      },
+                      Object {
+                        "id": "App1Current",
+                        "name": "Current",
+                      },
+                    ],
+                    "id": "App1",
+                    "name": "Application 1",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "id": "App2Settings",
+                        "name": "Settings",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "LoadApp1",
+                            "name": "Loading App 1",
+                          },
+                          Object {
+                            "id": "LoadApp2",
+                            "name": "Loading App 2",
+                          },
+                          Object {
+                            "id": "LoadApp3",
+                            "name": "Loading App 3",
+                          },
+                        ],
+                        "id": "App2Loader",
+                        "name": "Loader",
+                      },
+                    ],
+                    "id": "App2",
+                    "name": "Application 2",
+                  },
+                ],
+                "defaultExpanded": true,
+                "id": "AppLaunch",
+                "name": "ApplicationLauncher",
+              }
+            }
+            key="AppLaunch"
+            name="ApplicationLauncher"
+            onSelect={[MockFunction]}
+          >
+            <li
+              aria-expanded="true"
+              className="pf-c-tree-view__list-item pf-m-expanded"
+              id="AppLaunch"
+              role="treeitem"
+              tabIndex={-1}
+            >
+              <div
+                className="pf-c-tree-view__content"
+              >
+                <GenerateId
+                  prefix="checkbox-id"
+                >
+                  <button
+                    className="pf-c-tree-view__node"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    <div
+                      className="pf-c-tree-view__node-toggle"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      <span
+                        className="pf-c-tree-view__node-toggle-icon"
+                      >
+                        <AngleRightIcon
+                          aria-hidden="true"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            />
+                          </svg>
+                        </AngleRightIcon>
+                      </span>
+                    </div>
+                    <span
+                      className="pf-c-tree-view__node-text"
+                    >
+                      ApplicationLauncher
+                    </span>
+                  </button>
+                </GenerateId>
+              </div>
+              <TreeView
+                activeItems={
+                  Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "App1Settings",
+                          "name": "Settings",
+                        },
+                        Object {
+                          "id": "App1Current",
+                          "name": "Current",
+                        },
+                      ],
+                      "id": "App1",
+                      "name": "Application 1",
+                    },
+                  ]
+                }
+                data={
+                  Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "App1Settings",
+                          "name": "Settings",
+                        },
+                        Object {
+                          "id": "App1Current",
+                          "name": "Current",
+                        },
+                      ],
+                      "id": "App1",
+                      "name": "Application 1",
+                    },
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "App2Settings",
+                          "name": "Settings",
+                        },
+                        Object {
+                          "children": Array [
+                            Object {
+                              "id": "LoadApp1",
+                              "name": "Loading App 1",
+                            },
+                            Object {
+                              "id": "LoadApp2",
+                              "name": "Loading App 2",
+                            },
+                            Object {
+                              "id": "LoadApp3",
+                              "name": "Loading App 3",
+                            },
+                          ],
+                          "id": "App2Loader",
+                          "name": "Loader",
+                        },
+                      ],
+                      "id": "App2",
+                      "name": "Application 2",
+                    },
+                  ]
+                }
+                defaultAllExpanded={false}
+                hasBadges={false}
+                hasChecks={false}
+                isNested={true}
+                onSelect={[MockFunction]}
+                parentItem={
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "App1Settings",
+                            "name": "Settings",
+                          },
+                          Object {
+                            "id": "App1Current",
+                            "name": "Current",
+                          },
+                        ],
+                        "id": "App1",
+                        "name": "Application 1",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "App2Settings",
+                            "name": "Settings",
+                          },
+                          Object {
+                            "children": Array [
+                              Object {
+                                "id": "LoadApp1",
+                                "name": "Loading App 1",
+                              },
+                              Object {
+                                "id": "LoadApp2",
+                                "name": "Loading App 2",
+                              },
+                              Object {
+                                "id": "LoadApp3",
+                                "name": "Loading App 3",
+                              },
+                            ],
+                            "id": "App2Loader",
+                            "name": "Loader",
+                          },
+                        ],
+                        "id": "App2",
+                        "name": "Application 2",
+                      },
+                    ],
+                    "defaultExpanded": true,
+                    "id": "AppLaunch",
+                    "name": "ApplicationLauncher",
+                  }
+                }
+              >
+                <TreeViewList
+                  isNested={true}
+                  toolbarLeft={true}
                 >
                   <ul
                     className="pf-c-tree-view__list"
