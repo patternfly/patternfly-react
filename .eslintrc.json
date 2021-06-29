@@ -126,6 +126,6 @@
               "importNames": ["useLayoutEffect"],
               "message": "`useLayoutEffect` causes a warning in SSR. Use `useIsomorphicLayoutEffect` from `patternfly-react/packages/react-core/src/helpers`"
             }
-        ],
+        ]
     }
 }
