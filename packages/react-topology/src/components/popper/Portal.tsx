@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useIsomorphicLayoutEffect } from '../../../../react-core/src/helpers';
+import { useIsomorphicLayoutEffect } from '@patternfly/react-core/dist/esm/helpers';
 
 type GetContainer = Element | null | undefined | (() => Element);
 
