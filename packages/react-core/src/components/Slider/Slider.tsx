@@ -239,8 +239,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
-  const callbackThumbMove = React.useCallback(handleThumbMove, []);
-  const callbackThumbUp = React.useCallback(handleThumbDragEnd, []);
+  const callbackThumbMove = React.useCallback(handleThumbMove, [min, max, customSteps, onChange]);
+  const callbackThumbUp = React.useCallback(handleThumbDragEnd, [min, max, customSteps, onChange]);
 
   const handleThumbKeys = (e: React.KeyboardEvent) => {
     const key = e.key;
