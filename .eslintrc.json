@@ -118,6 +118,14 @@
         "react/display-name": 0,
         "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
-        "use-isnan": "error"
+        "use-isnan": "error",
+        "no-restricted-imports": [
+            "error",
+            {
+              "name": "react",
+              "importNames": ["useLayoutEffect"],
+              "message": "`useLayoutEffect` causes a warning in SSR. Use `useIsomorphicLayoutEffect` from `patternfly-react/packages/react-core/src/helpers`"
+            }
+        ],
     }
 }
