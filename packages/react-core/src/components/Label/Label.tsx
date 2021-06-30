@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import { useIsomorphicLayoutEffect } from '../../helpers';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
@@ -86,7 +87,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   // ref to apply tooltip when rendered is used
   const componentRef = React.useRef();
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
-  React.useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setIsTooltipVisible(textRef.current && textRef.current.offsetWidth < textRef.current.scrollWidth);
   }, []);
   const content = (

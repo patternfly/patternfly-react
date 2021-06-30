@@ -118,6 +118,7 @@
         "react/display-name": 0,
         "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
-        "use-isnan": "error"
+        "use-isnan": "error",
+        "patternfly-react/no-layout-effect": "error"
     }
 }
