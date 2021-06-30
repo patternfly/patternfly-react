@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.6](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.5...eslint-plugin-patternfly-react@4.1.6) (2021-06-30)
+
+
+### Bug Fixes
+
+* **ci:** change master branch to main ([4ac4129](https://github.com/patternfly/patternfly-react/commit/4ac4129e8da9a37367ea7612019f8d7af1ed8836))
+
+
+
+
+
 ## [4.1.5](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.4...eslint-plugin-patternfly-react@4.1.5) (2020-11-20)
 
 

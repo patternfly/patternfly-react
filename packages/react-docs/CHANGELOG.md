@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.19.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.19.3...@patternfly/react-docs@5.19.4) (2021-06-30)
+
+
+### Bug Fixes
+
+* **ci:** change master branch to main ([4ac4129](https://github.com/patternfly/patternfly-react/commit/4ac4129e8da9a37367ea7612019f8d7af1ed8836))
+
+
+
+
+
 ## [5.19.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.19.2...@patternfly/react-docs@5.19.3) (2021-06-28)
 
 **Note:** Version bump only for package @patternfly/react-docs
