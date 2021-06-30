@@ -8,6 +8,7 @@ import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
 import { canUseDOM } from '../../helpers/util';
+import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -100,8 +101,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
-  const [offsetX, setOffsetX] = React.useState(0);
-  const [offsetY, setOffsetY] = React.useState(0);
   const ref = React.useRef<HTMLLIElement>();
 
   const hasFlyout = flyoutMenu !== undefined;
@@ -110,45 +109,42 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     onShowFlyout && displayFlyout && onShowFlyout();
   };
 
-  React.useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (hasFlyout && ref.current && canUseDOM) {
-      const flyoutMenu = ref.current.lastElementChild;
+      const flyoutMenu = ref.current.lastElementChild as HTMLElement;
       if (flyoutMenu && flyoutMenu.classList.contains(styles.menu)) {
         const origin = ref.current.getClientRects()[0];
         const rect = flyoutMenu.getClientRects()[0];
         if (origin && rect) {
           const spaceLeftLeft = origin.x - rect.width;
           const spaceLeftRight = window.innerWidth - origin.x - origin.width - rect.width;
-          if (spaceLeftLeft < 0 && spaceLeftRight < 0) {
-            // Calculate x offsets
-            setOffsetX(-spaceLeftLeft);
-          } else if (spaceLeftRight < 0) {
+          let xDir = flyoutXDirection as 'left' | 'right' | 'none';
+          if (spaceLeftRight < 0 && xDir !== 'left') {
             setFlyoutXDirection('left');
-          } else if (spaceLeftLeft < 0) {
+            xDir = 'left';
+          } else if (spaceLeftLeft < 0 && xDir !== 'right') {
             setFlyoutXDirection('right');
+            xDir = 'right';
           }
+          let xOffset = 0;
+          if (spaceLeftLeft < 0 && spaceLeftRight < 0) {
+            xOffset = xDir === 'right' ? -spaceLeftRight : -spaceLeftLeft;
+          }
+          flyoutMenu.style.right = xDir === 'right' ? 'auto' : `calc(100% - ${xOffset}px`;
+          flyoutMenu.style.left = xDir === 'left' ? 'auto' : `calc(100% - ${xOffset}px`;
+
           const spaceLeftBot = window.innerHeight - origin.y - rect.height;
-          // This is calculated with respect to spaceLeftBot
           const spaceLeftTop = window.innerHeight - rect.height;
           if (spaceLeftTop < 0 && spaceLeftBot < 0) {
-            // Idea: can scroll down, but not up
-            setOffsetY(0);
+            // working idea: page can usually scroll down, but not up
+            // TODO: proper scroll buttons
           } else if (spaceLeftBot < 0) {
-            setOffsetY(-spaceLeftBot);
+            flyoutMenu.style.setProperty('--pf-c-menu--m-flyout__menu--top-offset', `${spaceLeftBot}px`);
           }
         }
       }
     }
   }, [flyoutVisible, flyoutMenu]);
-
-  React.useEffect(() => {
-    const flyoutMenu = ref.current.lastElementChild as HTMLElement;
-    if (flyoutMenu && flyoutMenu.classList.contains(styles.menu)) {
-      flyoutMenu.style.right = flyoutXDirection === 'right' ? 'auto' : `calc(100% - ${offsetX}px`;
-      flyoutMenu.style.left = flyoutXDirection === 'left' ? 'auto' : `calc(100% - ${offsetX}px`;
-      flyoutMenu.style.top = `calc(-${offsetY}px + var(--pf-c-menu--m-flyout__menu--Top))`;
-    }
-  }, [flyoutVisible, flyoutXDirection, offsetX, offsetY]);
 
   React.useEffect(() => {
     setFlyoutXDirection(flyoutContext.direction);
