@@ -6,6 +6,7 @@ import { DualListSelectorListItem } from './DualListSelectorListItem';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { PickOptional } from '../../helpers';
 import { canUseDOM } from '../../helpers/util';
+import { handleArrows } from '../../helpers';
 
 export interface DualListSelectorPaneProps {
   /** Additional classes applied to the dual list selector. */
@@ -113,28 +114,31 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
   };
 
   handleKeys = (event: KeyboardEvent) => {
-    const key = event.key;
-    let moveFocus = false;
-    let currentIndex = -1;
-    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
-      if (document.activeElement === this.menuEl.current) {
-        currentIndex = 0;
-        moveFocus = true;
-        event.preventDefault();
-      } else {
-        this.optionsRefs.forEach((option, index) => {
-          if (document.activeElement === option) {
-            currentIndex = key === 'ArrowUp' || key === 'ArrowLeft' ? index - 1 : index + 1;
-            moveFocus = true;
-            event.preventDefault();
-          }
-        });
-      }
+    if (
+      !this.menuEl.current ||
+      (this.menuEl.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu') &&
+        !Array.from(this.menuEl.current.getElementsByClassName('pf-c-dual-list-selector__menu')).includes(
+          (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu')
+        ))
+    ) {
+      return;
     }
-    if (moveFocus && this.optionsRefs[currentIndex]) {
-      this.optionsRefs[currentIndex].focus();
-      this.setState({ focusedOption: `${this.props.id}-option-${currentIndex}` });
-    }
+    event.stopImmediatePropagation();
+
+    const validOptions = Array.from(this.menuEl.current.getElementsByTagName('BUTTON')).filter(
+      el => !el.classList.contains('pf-m-disabled')
+    );
+    const activeElement = document.activeElement;
+    handleArrows(
+      event,
+      validOptions,
+      (element: Element) => activeElement.contains(element),
+      (element: Element) => element,
+      undefined,
+      undefined,
+      true,
+      false
+    );
   };
 
   filterInput = (item: DualListSelectorTreeItemData, input: string): boolean => {
