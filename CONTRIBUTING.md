@@ -210,7 +210,7 @@ git fetch upstream
 2.  Create a branch:
 
 ```text
-$ git checkout -b my-branch upstream/master
+$ git checkout -b my-branch upstream/main
 ```
 
 3. Generate your Component
@@ -247,7 +247,7 @@ Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure a
 
 ```text
 $ git fetch upstream
-$ git rebase upstream/master
+$ git rebase upstream/main
 ```
 
 7.  Push
@@ -258,7 +258,7 @@ $ git push origin my-branch
 
 8.  Create a Pull Request
 
-[Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
+[Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `main` branch. Please be sure to include all of the following in your PR:
 
 - Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
 - Storybook and Documentation

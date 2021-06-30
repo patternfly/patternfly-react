@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-virtualized-extension/",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-virtualized-extension/",
   "scripts": {
     "clean": "rimraf dist"
   },

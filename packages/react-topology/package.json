@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-topology#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-topology#readme",
   "scripts": {
     "clean": "rimraf dist"
   },

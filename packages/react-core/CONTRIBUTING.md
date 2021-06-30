@@ -43,7 +43,7 @@ git remote add upstream https://github.com/patternfly/patternfly-react.git
 2.  Create a branch:
 
 ```text
-$ git checkout -b my-branch -t upstream/master
+$ git checkout -b my-branch -t upstream/main
 ```
 
 3. Generate your component
@@ -91,7 +91,7 @@ Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure a
 
 ```text
 $ git fetch upstream
-$ git rebase upstream/master
+$ git rebase upstream/main
 ```
 
 7.  Push
@@ -106,4 +106,4 @@ $ git push origin my-branch
 
 ## Additional information
 
-See the PatternFly React Guide for full details on [Code Contribution Guidelines](https://github.com/patternfly/patternfly-react/blob/master/CONTRIBUTING.md#code-contribution-guidelines)
+See the PatternFly React Guide for full details on [Code Contribution Guidelines](https://github.com/patternfly/patternfly-react/blob/main/CONTRIBUTING.md#code-contribution-guidelines)

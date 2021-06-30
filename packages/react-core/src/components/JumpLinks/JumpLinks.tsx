@@ -71,7 +71,7 @@ const getScrollItems = (children: React.ReactNode, res: HTMLElement[]) => {
 };
 
 function isResponsive(jumpLinks: HTMLElement) {
-  // https://github.com/patternfly/patternfly/blob/master/src/patternfly/components/JumpLinks/jump-links.scss#L103
+  // https://github.com/patternfly/patternfly/blob/main/src/patternfly/components/JumpLinks/jump-links.scss#L103
   return (
     jumpLinks &&
     getComputedStyle(jumpLinks)

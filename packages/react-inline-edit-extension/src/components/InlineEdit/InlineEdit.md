@@ -142,7 +142,7 @@ class EditableTable extends React.Component {
         {
           cells: ['one', null, 7, null, 'five', null],
           data: {
-            branches: ['master'],
+            branches: ['main'],
             workspace: {
               selected: 'Green',
               isDropdownOpen: false
@@ -154,7 +154,7 @@ class EditableTable extends React.Component {
         {
           cells: ['', null, 0, null, '', null],
           data: {
-            branches: ['master', 'v0.7.0', 'v1.0.0'],
+            branches: ['main', 'v0.7.0', 'v1.0.0'],
             workspace: {
               selected: 'Grey',
               isDropdownOpen: false
@@ -165,7 +165,7 @@ class EditableTable extends React.Component {
         {
           cells: ['p', null, 0, null, '', null],
           data: {
-            branches: ['master', 'v0.7.0'],
+            branches: ['main', 'v0.7.0'],
             workspace: {
               selected: 'Orange',
               isDropdownOpen: false
@@ -596,7 +596,7 @@ class CollapsibleEditableTable extends React.Component {
       ],
       rows: [
         {
-          cells: ['one', 'master', 7, 'Grey', 'five'],
+          cells: ['one', 'main', 7, 'Grey', 'five'],
           isOpen: false
         },
         {
@@ -619,7 +619,7 @@ class CollapsibleEditableTable extends React.Component {
           parent: 2
         },
         {
-          cells: ['', 'master', 0, 'Blue', ''],
+          cells: ['', 'main', 0, 'Blue', ''],
           isOpen: true
         },
         {

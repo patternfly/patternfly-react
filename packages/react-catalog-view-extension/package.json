@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/react-catalog-view-extension/README.md",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/react-catalog-view-extension/README.md",
   "scripts": {
     "generate": "concurrently \"yarn build:sass\" \"yarn copy:sass\"",
     "build:sass": "node-sass --output-style compressed --importer=./node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",

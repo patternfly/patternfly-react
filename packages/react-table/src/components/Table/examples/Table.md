@@ -1036,7 +1036,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/examples/DemoSortableTable.js
+// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/examples/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
@@ -3085,7 +3085,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/examples/DemoSortableTable.js
+// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/examples/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
 
 ComposableCompoundExpandableTable = () => {

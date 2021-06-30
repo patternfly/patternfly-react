@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-log-viewer#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-log-viewer#readme",
   "scripts": {
     "clean": "rimraf dist"
   },

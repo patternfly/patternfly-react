@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-console#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-console#readme",
   "scripts": {
     "clean": "rimraf dist"
   },

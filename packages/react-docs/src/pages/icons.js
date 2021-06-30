@@ -42,7 +42,7 @@ const iconsPage = () => {
       </Text>
       <Text>
         Learn how you can use them in the{' '}
-        <a href="https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons">react-icons docs</a>.
+        <a href="https://github.com/patternfly/patternfly-react/tree/main/packages/react-icons">react-icons docs</a>.
       </Text>
       <Grid>
         {allIcons

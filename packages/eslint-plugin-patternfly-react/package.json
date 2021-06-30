@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/eslint-plugin/README.md",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/eslint-plugin/README.md",
   "dependencies": {
     "babel-eslint": "^9.0.0",
     "eslint-config-airbnb": "^16.1.0",
