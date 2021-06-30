@@ -144,6 +144,11 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     ) {
       this.activeMenu = (event.target as HTMLElement).closest('.pf-c-menu');
     }
+
+    if ((event.target as HTMLElement).tagName === 'INPUT') {
+      return;
+    }
+
     const parentMenu = this.activeMenu;
     const key = event.key;
     const isFromBreadcrumb =
@@ -318,8 +323,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             }
             getFocusableElement={(navigableElement: Element) => navigableElement.firstChild as Element}
             noHorizontalArrowHandling={
-              document.activeElement.classList.contains('pf-c-breadcrumb__link') ||
-              document.activeElement.classList.contains('pf-c-dropdown__toggle')
+              document.activeElement &&
+              (document.activeElement.classList.contains('pf-c-breadcrumb__link') ||
+                document.activeElement.classList.contains('pf-c-dropdown__toggle'))
             }
             noEnterHandling
             noSpaceHandling
