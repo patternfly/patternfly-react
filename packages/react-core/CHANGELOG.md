@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.135.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.4...@patternfly/react-core@4.135.5) (2021-07-01)
+
+
+### Bug Fixes
+
+* **TimePicker:** Apply proper styles on Popper container ([#5960](https://github.com/patternfly/patternfly-react/issues/5960)) ([2275ac4](https://github.com/patternfly/patternfly-react/commit/2275ac4e40bbd1518b529837e33721980e6d9b31))
+
+
+
+
+
 ## [4.135.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.3...@patternfly/react-core@4.135.4) (2021-07-01)
 
 
