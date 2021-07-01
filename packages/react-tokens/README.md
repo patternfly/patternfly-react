@@ -38,4 +38,4 @@ global_BackgroundColor_100.value === '#fff'; // true
 global_BackgroundColor_100.var === 'var(--pf-global--BackgroundColor--100)'; // true
 ```
 
-[token-page]: https://patternfly-react.surge.sh/documentation/overview/global-css-variables
+[token-page]: https://patternfly-react.surge.sh/developer-resources/global-css-variables
