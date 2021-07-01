@@ -21,78 +21,55 @@ import {
   PageHeaderTools,
   PageHeaderToolsGroup,
   PageHeaderToolsItem
-} from '../components';
+} from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
-export interface DashboardWrapperProps {
-  /** Content rendered inside of Page */
-  children?: React.ReactNode;
-  /** ID of the Page */
-  mainContainerId?: string;
-  /** Custom breadcrumb of the Page */
-  breadcrumb?: React.ReactNode;
-  /** Custom header of the Page */
-  header?: React.ReactNode;
-  /** Custom sidebar of the Page */
-  sidebar?: React.ReactNode;
-  /** Brand image of the Page Header */
-  imgBrand?: string;
-  /** Avatar image of the Page Header */
-  imgAvatar?: string;
-}
+class DashboardWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isDropdownOpen: false,
+      isKebabDropdownOpen: false,
+      activeItem: 0
+    };
 
-export interface DashboardWrapperState {
-  isDropdownOpen: boolean;
-  isKebabDropdownOpen: boolean;
-  activeItem: number;
-}
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
 
-export class DashboardWrapper extends React.Component<DashboardWrapperProps, DashboardWrapperState> {
-  static displayName = 'DashboardWrapper';
-  static defaultProps = {
-    pageId: 'main-content-page-layout-default-nav'
-  };
+    this.onDropdownSelect = () => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
 
-  state = {
-    isDropdownOpen: false,
-    isKebabDropdownOpen: false,
-    activeItem: 0
-  };
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
 
-  onDropdownToggle = (isDropdownOpen: boolean) => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
+    this.onKebabDropdownSelect = () => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
 
-  onDropdownSelect = () => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = (isKebabDropdownOpen: boolean) => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = () => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = (result: any) => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
+  }
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
-    const { children, mainContainerId, breadcrumb, header, sidebar, imgBrand, imgAvatar } = this.props;
+    const { children, mainContainerId, breadcrumb, header, sidebar } = this.props;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -115,6 +92,7 @@ export class DashboardWrapper extends React.Component<DashboardWrapperProps, Das
         </NavList>
       </Nav>
     );
+
     const kebabDropdownItems = [
       <DropdownItem key="kebab-1">
         <CogIcon /> Settings
@@ -187,7 +165,11 @@ export class DashboardWrapper extends React.Component<DashboardWrapperProps, Das
       <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
     );
     const _sidebar = <PageSidebar nav={PageNav} />;
-    const PageSkipToContent = <SkipToContent href={`#${mainContainerId}`}>Skip to content</SkipToContent>;
+    const PageSkipToContent = (
+      <SkipToContent href={`#${mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}`}>
+        Skip to content
+      </SkipToContent>
+    );
     const _breadcrumb = (
       <Breadcrumb>
         <BreadcrumbItem>Section home</BreadcrumbItem>
@@ -206,10 +188,12 @@ export class DashboardWrapper extends React.Component<DashboardWrapperProps, Das
         isManagedSidebar
         skipToContent={PageSkipToContent}
         breadcrumb={breadcrumb !== undefined ? breadcrumb : _breadcrumb}
-        mainContainerId={mainContainerId}
+        mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
       >
         {children}
       </Page>
     );
   }
 }
+
+export default DashboardWrapper;

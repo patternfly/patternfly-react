@@ -3,6 +3,7 @@ id: Primary-detail
 section: demos
 ---
 
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -12,8 +13,6 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './Card/pf-logo-small.svg';
 import activeMQIcon from './Card/activemq-core_200x150.png';
 import avroIcon from './Card/camel-avro_200x150.png';
@@ -68,9 +67,9 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  DashboardWrapper
+  Title
 } from '@patternfly/react-core';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -79,8 +78,6 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
@@ -465,11 +462,7 @@ class PrimaryDetailFullPage extends React.Component {
     );
 
     return (
-      <DashboardWrapper
-        mainContainerId="main-content-page-layout-default-nav"
-        imgBrand={imgBrand}
-        imgAvatar={imgAvatar}
-      >
+      <DashboardWrapper mainContainerId="main-content-page-layout-default-nav">
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Main title</Text>
@@ -534,9 +527,9 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  DashboardWrapper
+  Title
 } from '@patternfly/react-core';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -545,8 +538,6 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailContentPadding extends React.Component {
   constructor(props) {
@@ -932,7 +923,7 @@ class PrimaryDetailContentPadding extends React.Component {
     );
 
     return (
-      <DashboardWrapper imgBrand={imgBrand} imgAvatar={imgAvatar}>
+      <DashboardWrapper>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Main title</Text>
@@ -1000,11 +991,9 @@ import {
   ToolbarItem,
   ToolbarContent,
   ToolbarFilter,
-  ToolbarToggleGroup,
-  DashboardWrapper
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import DashboardWrapper from './examples/DashboardWrapper';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -1327,12 +1316,7 @@ class PrimaryDetailCardView extends React.Component {
     );
 
     return (
-      <DashboardWrapper
-        mainContainerId="main-content-card-view-default-nav"
-        breadcrumb={null}
-        imgBrand={imgBrand}
-        imgAvatar={imgAvatar}
-      >
+      <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Projects</Text>
@@ -1395,11 +1379,9 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  DashboardWrapper
+  Title
 } from '@patternfly/react-core';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import DashboardWrapper from './examples/DashboardWrapper';
 
 class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -1499,7 +1481,7 @@ class PrimaryDetailSimpleListInCard extends React.Component {
     );
 
     return (
-      <DashboardWrapper imgBrand={imgBrand} imgAvatar={imgAvatar}>
+      <DashboardWrapper>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Main title</Text>
@@ -1558,12 +1540,10 @@ import {
   Progress,
   Text,
   TextContent,
-  Title,
-  DashboardWrapper
+  Title
 } from '@patternfly/react-core';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -1743,7 +1723,7 @@ class PrimaryDetailDataListInCard extends React.Component {
     );
 
     return (
-      <DashboardWrapper imgBrand={imgBrand} imgAvatar={imgAvatar}>
+      <DashboardWrapper>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Main title</Text>
@@ -1810,9 +1790,9 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  DashboardWrapper
+  Title
 } from '@patternfly/react-core';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
@@ -1821,8 +1801,6 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/excla
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailInlineModifier extends React.Component {
   constructor(props) {
@@ -2207,7 +2185,7 @@ class PrimaryDetailInlineModifier extends React.Component {
     );
 
     return (
-      <DashboardWrapper imgBrand={imgBrand} imgAvatar={imgAvatar}>
+      <DashboardWrapper>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Main title</Text>

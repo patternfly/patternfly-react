@@ -3,11 +3,11 @@ id: Card view
 section: demos
 ---
 
+import DashboardWrapper from '../examples/DashboardWrapper';
+
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -64,14 +64,13 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarFilter,
-  ToolbarContent,
-  DashboardWrapper
+  ToolbarContent
 } from '@patternfly/react-core';
+import DashboardWrapper from '../examples/DashboardWrapper';
+
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -536,12 +535,7 @@ class CardViewBasic extends React.Component {
 
     return (
       <React.Fragment>
-        <DashboardWrapper
-          mainContainerId="main-content-card-view-default-nav"
-          breadcrumb={null}
-          imgBrand={imgBrand}
-          imgAvatar={imgAvatar}
-        >
+        <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Projects</Text>
