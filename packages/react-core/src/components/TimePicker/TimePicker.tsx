@@ -410,7 +410,14 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     );
 
     const popperContainer = (
-      <div className={css(styles.select, isOpen && styles.modifiers.expanded, className)}>
+      <div
+        className={css(
+          styles.select,
+          isOpen && styles.modifiers.expanded,
+          direction === SelectDirection.up && styles.modifiers.top,
+          className
+        )}
+      >
         {isOpen && menuContainer}
       </div>
     );
