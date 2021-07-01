@@ -7,8 +7,6 @@ propComponents:
     'Table',
     'TableHeader',
     'TableBody',
-    'EditableSelectInputCell',
-    'EditableTextCell',
     'TableComposable',
     'Thead',
     'Tbody',
@@ -16,11 +14,20 @@ propComponents:
     'Th',
     'Td',
     'Caption',
+    'TableText',
+    'EditableSelectInputCell',
+    'EditableTextCell'
   ]
 ouia: true
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
+
+PatternFly has two implementations of a table.
+
+The first is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. 
+
+The second is the newer `TableComposable` component. It takes a more explicit and declarative approach, and its implementation more closely mirrors that of an html table.
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -37,11 +44,92 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 
 import DemoSortableTable from './DemoSortableTable';
 
+### Table Columns
+
+
+Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
+
+```
+cells: (ICell | string)[];
+```
+
+`ICell` (excerpt):
+
+```
+interface ICell {
+  /* cell contents */
+  title?: string | React.ReactNode;
+  /** transformations applied to the header cell */
+  transforms?: ITransform[];
+  /** transformations applied to the cells within the column's body */
+  cellTransforms?: ITransform[];
+  /** transformations applied to the entire column */
+  columnTransforms?: ITransform[];
+  /** Additional header props, it contains the info prop as well which can be used to add tooltip/popover */
+  header?: HeaderType;
+  /** Additional props passed into the rendered column header element */
+  props?: any;
+  /** Text to display when data from this column is rendered in mobile view */
+  dataLabel?: string;
+}
+```
+
+If you wish to enable other built in features, use `transforms` to apply them to 
+column headers or `cellTransforms` to apply them to every cell in that column. 
+
+```
+// simple
+columns: ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit']
+// with tooltip
+columns: [
+  {
+    title: 'Repositories',
+    transforms: [
+      info({
+        tooltip: 'More information about repositories'
+      })
+    ]
+  }
+]
+// center header and body cells within the column
+columns: [
+  {
+    title: 'Last commit',
+    transforms: [textCenter],
+    cellTransforms: [textCenter]
+  }
+]
+```
+Many of the subsequent examples demonstrate how to apply different transformations to enable `Table` features.
+
+### Table Rows
+
+
+Array items for rows provided to the `Table`'s `rows` prop, can be simple strings or objects.
+
+```
+rows: (IRow | string[])[]
+```
+
+`IRow` (excerpt):
+
+```
+interface IRow extends RowType {
+  cells?: (React.ReactNode | IRowCell)[];
+  props?: any;
+  fullWidth?: boolean;
+  noPadding?: boolean;
+}
+interface IRowCell {
+  title?: string | React.ReactNode | RowCellContent;
+  props?: any;
+  formatters?: IFormatter[];
+}
+```
+
 ## Table examples
 
 ### Basic
-
-The `Table` component is a configuration based component that takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. For a more explicit and declarative approach, you can use the `TableComposable` component.
 
 ```js
 import React from 'react';
@@ -64,6 +152,7 @@ class SimpleTable extends React.Component {
   }
 
   render() {
+    // need to make a comment to change
     const { choice } = this.state;
 
     const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
@@ -112,76 +201,6 @@ class SimpleTable extends React.Component {
 ```
 
 ### Row click handler and header cell tooltips/popovers
-
-Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
-
-```
-cells: (ICell | string)[];
-```
-
-ICell (excerpt):
-
-```
-interface ICell {
-  /* cell contents */
-  title?: string | React.ReactNode;
-  /** transformations applied to the header cell */
-  transforms?: ITransform[];
-  /** transformations applied to the cells within the column's body */
-  cellTransforms?: ITransform[];
-  /** Additional header props, it contains the info prop as well which can be used to add tooltip/popover */
-  header?: HeaderType;
-}
-```
-
-If you wish to pass additional `props`, `formatters`, or add a tooltip/popover, use objects.
-Examples:
-
-```
-// simple
-columns: ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit']
-// with tooltip
-columns: [
-  {
-    title: 'Repositories',
-    transforms: [
-      info({
-        tooltip: 'More information about repositories'
-      })
-    ]
-  }
-]
-// center header and body cells within the column
-columns: [
-  {
-    title: 'Last commit',
-    transforms: [textCenter],
-    cellTransforms: [textCenter]
-  }
-]
-```
-
-Similarly, the rows array can contain string arrays, or object arrays
-
-```
-rows: (IRow | string[])[]
-```
-
-IRow (excerpt):
-
-```
-interface IRow extends RowType {
-  cells?: (React.ReactNode | IRowCell)[];
-  props?: any;
-  fullWidth?: boolean;
-  noPadding?: boolean;
-}
-interface IRowCell {
-  title?: string | React.ReactNode;
-  props?: any;
-  formatters?: IFormatter[];
-}
-```
 
 ```js
 import React from 'react';
@@ -276,11 +295,31 @@ class RowClickTable extends React.Component {
 
 ### Custom row wrapper
 
+Custom row wrappers are passed to the `Table` component via the `rowWrapper` prop.
+Each `rowWrapper` should return a tr element.
+```
+rowWrapper?: (props: RowWrapperProps) => JSX.Element;
+```
+RowWrapperProps:
+```
+interface RowWrapperProps {
+  trRef?: React.Ref<any> | Function;
+  className?: string;
+  onScroll?: React.UIEventHandler;
+  onResize?: React.UIEventHandler;
+  row?: IRow;
+  rowProps?: {
+    rowIndex: number;
+    rowKey: string;
+  };
+  children?: React.ReactNode;
+}
+```
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
 
 class RowWrapperTable extends React.Component {
   constructor(props) {
@@ -299,7 +338,7 @@ class RowWrapperTable extends React.Component {
         }
       ]
     };
-    this.customRowWrapper = ({ trRef, className, rowProps, row: { isExpanded, isHeightAuto }, ...props }) => {
+    this.customRowWrapper = ({ trRef, className, rowProps, row, ...props }) => {
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
         borderLeft: '3px solid var(--pf-global--primary-color--100)'
@@ -311,12 +350,8 @@ class RowWrapperTable extends React.Component {
           className={css(
             className,
             isOddRow ? 'odd-row-class' : 'even-row-class',
-            'custom-static-class',
-            isExpanded !== undefined && styles.tableExpandableRow,
-            isExpanded && styles.modifiers.expanded,
-            isHeightAuto && styles.modifiers.heightAuto
+            'custom-static-class'
           )}
-          hidden={isExpanded !== undefined && !isExpanded}
           style={isOddRow ? customStyle : {}}
         />
       );
@@ -341,7 +376,14 @@ class RowWrapperTable extends React.Component {
 }
 ```
 
-### Sortable & wrapping headers
+### Sortable & wrapping column headers
+
+To implement sortable columns:
+1. Import and apply the `sortable` transform to the desired column.
+2. Pass a managed `sortBy` prop to the `Table` component.
+``` `sortBy` - Specifies the initial sorting pattern for the table - asc/desc and the index of the column to sort by```
+3. Pass an `onSort` callback to the `Table` component
+``` `onSort` - (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void;```
 
 Note: If you want to add a tooltip/popover to a sortable header, in the `transforms` array the `info` transform has to precede the `sortable` transform.
 
@@ -424,8 +466,17 @@ class SortableTable extends React.Component {
 ### Selectable
 
 To enable row selection, set the `onSelect` callback prop on the Table.
+
 To control whether a row is selected or not, the Table looks for `selected: true | falsy` on the row definition.
+
 To disable selection for a row, set `disableSelection: true` on the row definition.
+
+To include a 'select all' checkbox in the header row, pass `true` to the`canSelectAll` prop on the Table.
+
+
+Note: this example also demonstrates the use of the `headerCol` transformation being applied to the first
+column via the `cellTransforms` in the column definition. `headerCol` transforms the column so that instead
+of using `td` elements, the cells in that column use `th` elements.
 
 ```js
 import React from 'react';
@@ -433,11 +484,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable
 } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -524,6 +571,11 @@ class SelectableTable extends React.Component {
 
 ### Selectable radio input
 
+To enable row radio selection, set the `onSelect` callback prop on the Table, and set `RowSelectVariant.radio` as the 
+`selectVariant` prop on the Table.
+
+To disable selection for a row, set `disableSelection: true` on the row definition.
+
 ```js
 import React from 'react';
 import {
@@ -531,11 +583,7 @@ import {
   TableHeader,
   TableBody,
   RowSelectVariant,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable
 } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
@@ -563,7 +611,6 @@ class SelectableTable extends React.Component {
       ]
     };
     this.onSelect = this.onSelect.bind(this);
-    this.toggleSelect = this.toggleSelect.bind(this);
   }
 
   onSelect(event, isSelected, rowId) {
@@ -573,12 +620,6 @@ class SelectableTable extends React.Component {
     });
     this.setState({
       rows
-    });
-  }
-
-  toggleSelect(checked) {
-    this.setState({
-      canSelectAll: checked
     });
   }
 
@@ -870,6 +911,10 @@ class ActionsTable extends React.Component {
 
 ### Expandable
 
+To make an exapandable row, define a child row with the `parent` field set to its parent's row index.
+The parent row can have an `isOpen` field for managing the expanded state of the parent row.
+
+Also, pass an `onCollapse` event handler via the prop on the Table
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, TableVariant, expandable } from '@patternfly/react-table';
@@ -1027,6 +1072,16 @@ class CompactExpandableTable extends React.Component {
 ```
 
 ### Compound expandable
+
+To build a compound expandable table:
+1. Pass the `compoundExpand` transformation via the `cellTransforms` field in the column definition for each column that will have an expanded section.
+2. For each expandable parent row, the cells in the expandable columns should:
+    1. have a managed `isOpen` prop passed to the cell definition
+    2. have an `ariaControls` value which matches the `id` of it’s child row
+3. For each expandable child row, the row definition needs:
+    1. A `parent` field set to its parent’s row index
+    2. A `compoundParent` field set to the cell index which will control the expanding/collapsing of this row
+4. An `onExpand` event handler prop should be passed to the Table.
 
 ```js
 import React from 'react';
@@ -1387,12 +1442,7 @@ import {
   TableHeader,
   TableBody,
   TableText,
-  wrappable,
-  truncate,
-  nowrap,
-  breakWord,
-  cellWidth,
-  fitContent
+  cellWidth
 } from '@patternfly/react-table';
 
 class ModifiersWithTableText extends React.Component {
@@ -1440,7 +1490,6 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
-  EmptyStatePrimary,
   Bullseye,
   Title,
   EmptyStateIcon
@@ -1485,6 +1534,64 @@ EmptyStateTable = () => {
 ```
 
 ### Editable rows
+
+To make a table row editable:
+1. Pass a callback to Table via the `onRowEdit` prop.
+2. Define the title for the editable cells using the RowCellContent type function. 
+3. Have the function return an `EditableTextCell`.
+4. Pass the `value` and `name` of the cell's input to the `EditableTextCell` via the cell's `props` field
+
+Example:
+```
+{
+  title: (value, rowIndex, cellIndex, props) => (
+    <EditableTextCell
+      value={value}
+      rowIndex={rowIndex}
+      cellIndex={cellIndex}
+      props={props}
+      handleTextInputChange={this.handleTextInputChange}
+      inputAriaLabel="Row 1 cell 1 content"
+    />
+  ),
+  props: {
+    value: 'Row 1 cell 1 content',
+    name: 'uniqueIdRow1Cell1'
+  }
+},
+```
+
+Type of `EditableTextCell`'s `props` prop: 
+```
+interface EditableTextCellProps {
+  /** Name of the input */
+  name: string;
+  /** Value to display in the cell */
+  value: string;
+  /** arbitrary data to pass to the internal text input in the editable text cell */
+  [key: string]: any;
+}
+```
+
+Type of `EditableSelectInputCell`'s `props` prop: 
+```
+interface EditableSelectInputProps {
+  /** Name of the select input */
+  name: string;
+  /** Value to display in the cell */
+  value: string | string[];
+  /** Flag controlling isOpen state of select */
+  isSelectOpen: boolean;
+  /** String or SelectOptionObject, or array of strings or SelectOptionObjects representing current selections */
+  selected: string | SelectOptionObject | (string | SelectOptionObject)[];
+  /** Array of react elements to display in the select menu */
+  options: React.ReactElement[];
+  /** Props to be passed down to the Select component */
+  editableSelectProps?: SelectProps;
+  /** arbitrary data to pass to the internal select component in the editable select input cell */
+  [key: string]: any;
+}
+```
 
 ```js isBeta
 import React from 'react';
@@ -1948,8 +2055,12 @@ class EditableRowsTable extends React.Component {
 ### Favoritable
 
 To enable favoriting of a row, set the `onFavorite` callback prop on the Table.
+
 To control whether a row is favorited or not, the Table looks for `favorited: true | falsy` on the row definition.
-When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled. If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
+
+When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled. 
+
+If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
 
 ```js
 import React from 'react';
@@ -2358,9 +2469,8 @@ class TreeTable extends React.Component {
 
 ## TableComposable examples
 
-### Composable: Basic
 
-A basic example using the composable table components. The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
+The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
 
 Some general notes:
 
@@ -2368,6 +2478,7 @@ Some general notes:
 - If you want a table caption, simply place a `<Caption>My caption</Caption>` as the first child within a `TableComposable`.
 - You can set the `TableComposable` variant to `compact`
 
+### Composable: Basic
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption } from '@patternfly/react-table';
@@ -2439,11 +2550,29 @@ ComposableTableBasic = () => {
 
 ### Composable: Row click handler, custom row wrapper, header tooltips & popovers
 
-This example demonstrates customizing rows, adding tooltip and popover information to header items, and some other misc. props.
-
 - If you add the `noWrap` prop to `Thead`, it won't wrap it if there is no space
 - You can add the `textCenter` prop to `Th` or `Td` to center the contents
 - You can pass `onClick`, `className`, `style` and more to `Tr`
+
+To add a header tooltip or popover to `Th`, pass a `ThInfoType` object via the `info` prop.
+
+`ThInfoType` (excerpt): 
+```
+interface ThInfoType {
+  /** Content to be displayed in the tooltip */
+  tooltip?: React.ReactNode; 
+  /** TooltipProps are defined in the Tooltip component */
+  tooltipProps?: TooltipProps;
+  /** Content to be displayed in the popover */
+  popover?: React.ReactNode;
+  /** PopoverProps are defined in the Popover component */
+  popoverProps?: PopoverProps;
+  /** Accessible label for the tooltip/popover */
+  ariaLabel?: string;
+  /** Class name added to the tooltip/popover */
+  className?: string;
+}
+```
 
 ```js isBeta
 import React from 'react';
@@ -2543,7 +2672,29 @@ ComposableTableMisc = () => {
 
 ### Composable: Sortable & wrapping headers
 
-This example demonstrates making columns sortable, and wrapping header text.
+To make a column sortable, pass a `ThSortType` object via the `sort` prop on a column's `Th`.
+
+`ThSortType` (excerpt): 
+```
+interface ThSortType {
+  /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
+  onSort?: OnSort;
+  /** Provide the currently active column's index and direction */
+  sortBy: ISortBy;
+  /** The column index */
+  columnIndex: number;
+  /** True to make this a favoritable sorting cell */
+  isFavorites?: boolean;
+}
+
+type OnSort = (
+  event: React.MouseEvent,
+  columnIndex: number,
+  sortByDirection: SortByDirection,
+  extraData: IExtraColumnData
+) => void;
+
+```
 
 ```js isBeta
 import React from 'react';
@@ -2642,8 +2793,53 @@ ComposableTableSortable = () => {
 
 ### Composable: Selectable
 
-This example demonstrates row selection. The selection column is just another column, but with selection specific props added. We add it as the first header cell and also as the first body cell for each row.
-Be sure to also add `rowIndex` to `Td`.
+To make a row selectable, the table needs a selection column.
+The selection column is just another column, but with selection specific props added. 
+We add it as the first header cell and also as the first body cell for each row.
+
+To make a column sortable, pass a `ThSelectType` object via the `select` prop on a column's `Th`.
+
+`ThSortType` (excerpt): 
+```
+interface ThSelectType {
+  /** Callback on select */
+  onSelect?: OnSelect;
+  /** Whether the cell is selected */
+  isSelected: boolean;
+}
+
+```
+
+To make a row sortable, pass a `TdSelectType` object via the `select` prop on each rows's first `Td`.
+
+```
+interface TdSelectType {
+  /** Required: The row index */
+  rowIndex: number;
+  /** The selectable variant */
+  variant?: 'checkbox' | 'radio';
+  /** Callback on select */
+  onSelect?: OnSelect;
+  /** Whether the cell is selected */
+  isSelected: boolean;
+  /** Whether to disable the selection */
+  disable?: boolean;
+  /** Additional props forwarded to select rowData */
+  props?: any;
+}
+
+```
+
+OnSelect:
+```
+type OnSelect = (
+  event: React.FormEvent<HTMLInputElement>,
+  isSelected: boolean,
+  rowIndex: number,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
+```
 
 ```js isBeta
 import React from 'react';
@@ -2727,7 +2923,7 @@ ComposableTableSelectable = () => {
 
 ### Composable: Selectable radio input
 
-Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props. Just as with selectable, be sure to also add `rowIndex` to `Td`.
+Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props.
 
 ```js isBeta
 import React from 'react';
@@ -2788,6 +2984,36 @@ ComposableTableSelectableRadio = () => {
 ### Composable: Actions
 
 This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
+
+To make a cell an action cell, pass a `TdActionsType` object via the `actions` prop on a rows's last `Td`.
+
+```
+interface TdActionsType {
+  /** Cell actions */
+  items: IActions;
+  /** Whether to disable the actions */
+  disable?: boolean;
+  /** Actions dropdown position */
+  dropdownPosition?: DropdownPosition;
+  /** Actions dropdown direction */
+  dropdownDirection?: DropdownDirection;
+  /** Custom toggle for the actions menu */
+  actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
+}
+
+interface IAction {
+  /** Flag indicating an item on actions menu is a separator, rather than an action */
+  isSeparator?: boolean;
+  /** Key of actions menu item */
+  itemKey?: string;
+  /** Content to display in the actions menu item */
+  title?: string | React.ReactNode;
+  /** Click handler for the actions menu item */
+  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+  /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
+  isOutsideDropdown?: boolean;
+}
+```
 
 ```js isBeta
 import React from 'react';
@@ -2909,10 +3135,31 @@ ComposableTableActions = () => {
 
 ### Composable: Expandable
 
-This example demonstrates having expandable rows.
+To make a parent/child row pair expandable:
+1. Make the first cell in every row an expandable cell by passing `TdExpandType` object to the `expand` prop on the `Td`
+2. Wrap the content of each child row cell in `ExpandableRowContent`.
+3. Enclose each parent/child row pair in a `Tbody` component with an `isExpanded` prop.
 
-- Each parent/child row pair is enclosed in a `Tbody` component.
-- You can make the table more compact by setting the `TableComposable` variant to `compact`.
+```
+interface TdExpandType {
+  /** Flag indicating this parent's child row is expanded
+  isExpanded: boolean;
+  /** The row index */
+  rowIndex: number;
+  /** The column index */
+  columnIndex?: number;
+  /** On toggling the expansion */
+  onToggle?: OnCollapse;
+}
+
+type OnCollapse = (
+  event: React.MouseEvent,
+  rowIndex: number,
+  isOpen: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
+```
 
 ```js isBeta
 import React from 'react';
@@ -3076,6 +3323,29 @@ ComposableTableExpandable = () => {
 ```
 
 ### Composable: Compound expandable
+
+To make a parent/child row pair compound expandable:
+1. Pass a `TdCompoundExpandType` object to the `compoundExpand` prop on any `Td` that has an expandable child row
+2. Wrap the content of each child row cell in `ExpandableRowContent`.
+3. Each child `Tr` has an `isExpanded` prop.
+
+```
+interface TdCompoundExpandType {
+  /** determines if the corresponding expansion row is open */
+  isExpanded: boolean;
+  /** Callback on toggling of the expansion */
+  onToggle?: OnExpand;
+}
+
+export type OnExpand = (
+  event: React.MouseEvent,
+  rowIndex: number,
+  colIndex: number,
+  isOpen: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
+```
 
 ```js isBeta
 import React from 'react';
@@ -3407,7 +3677,33 @@ ComposableTableText = () => {
 };
 ```
 
-### Composable: Favoritable
+### Composable: Favoritable (implemented with sortable)
+
+To make a row favoritable, the table needs a favoritable column.
+Pass a `TdFavoritesType` object via the `favorites` prop on each rows's first `Td` in the favoritable column.
+
+```
+interface TdFavoritesType {
+  /** Whether the corresponding row is favorited */
+  isFavorited: boolean;
+  /** Callback on clicking the favorites button */
+  onFavorite?: OnFavorite;
+  /** The row index */
+  rowIndex?: number;
+  /** Additional props forwarded to the FavoritesCell */
+  props?: any;
+}
+
+type OnFavorite = (
+  event: React.MouseEvent,
+  isFavorited: boolean,
+  rowIndex: number,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
+```
+
+To make a favoritable column sortable, pass a `ThSortType` object to the favoritable column's `Th` with `isFavorites` set to true.
 
 ```js isBeta
 import React from 'react';
@@ -3761,6 +4057,20 @@ class TreeTable extends React.Component {
 ```
 
 ### Composable: Draggable row table
+
+To make a row draggable: 
+1. The table needs a draggable column.
+2. Each draggable `Tr` needs to be passed `draggable`, `onDrop`, `onDragEnd`, and `onDragStart` props.
+3. The `Tbody` needs `onDragOver`, `onDrop`, and `onDragLeave` props.
+4. While the user is dragging a row, the `` class needs to be applied to `TableComposable`.
+5. The draggable `Td` in each row needs a `TdDraggableType` object passed to its `draggable` prop.
+
+```
+interface TdDraggableType { 
+  /** Id of the draggable row */
+  id: string;
+}
+```
 
 ```js isBeta
 import React from 'react';

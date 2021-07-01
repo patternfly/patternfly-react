@@ -141,10 +141,15 @@ export interface ISortBy {
 }
 
 export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
+  /** Flag indicating an item on actions menu is a separator, rather than an action */
   isSeparator?: boolean;
+  /** Key of actions menu item */
   itemKey?: string;
+  /** Content to display in the actions menu item */
   title?: string | React.ReactNode;
+  /** Click handler for the actions menu item */
   onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+  /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
   isOutsideDropdown?: boolean;
 }
 
@@ -196,9 +201,11 @@ export interface ICell {
   cellFormatters?: IFormatter[];
   /** Additional header props, it contains the info prop as well which can be used to add tooltip/popover */
   header?: HeaderType;
+  /** Additional props passed into the rendered column header element */
   props?: any;
   data?: any;
   cell?: any;
+  /** Text to display when data from this column is rendered in mobile view */
   dataLabel?: string;
 }
 
