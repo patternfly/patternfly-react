@@ -3,11 +3,8 @@ id: Card view
 section: demos
 ---
 
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -21,9 +18,6 @@ import sparkIcon from './camel-spark_200x150.png';
 import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 ## Demos
 
@@ -34,11 +28,8 @@ This demonstrates how you can assemble a full page view that contains a grid of 
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
   Bullseye,
   Button,
-  ButtonVariant,
   Card,
   CardHeader,
   CardActions,
@@ -46,55 +37,38 @@ import {
   CardBody,
   Checkbox,
   Dropdown,
-  DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
   DropdownPosition,
-  DropdownDirection,
   DropdownToggleCheckbox,
   EmptyState,
   EmptyStateIcon,
   EmptyStateVariant,
   EmptyStateSecondaryActions,
   Gallery,
-  GalleryItem,
   KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
   OverflowMenu,
   OverflowMenuControl,
   OverflowMenuDropdownItem,
   OverflowMenuItem,
-  Page,
-  PageHeader,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Pagination,
   Select,
   SelectOption,
   SelectVariant,
-  SkipToContent,
   TextContent,
   Text,
   Title,
   Toolbar,
-  ToolbarGroup,
   ToolbarItem,
   ToolbarFilter,
   ToolbarContent,
-  ToolbarToggleGroup
+  DashboardWrapper
 } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -120,9 +94,9 @@ class CardViewBasic extends React.Component {
         products: []
       },
       res: [],
+      isChecked: false,
       selectedItems: [],
       areAllSelected: false,
-      itemsCheckedByDefault: false,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
       isLowerToolbarDropdownOpen: false,
@@ -135,40 +109,10 @@ class CardViewBasic extends React.Component {
       totalItemCount: 10
     };
 
-    this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
-      this.setState({
-        isUpperToolbarDropdownOpen
-      });
-    };
-
-    this.onPageDropdownSelect = event => {
-      this.setState({
-        isUpperToolbarDropdownOpen: !this.state.isUpperToolbarDropdownOpen
-      });
-    };
-
-    this.onPageToolbarDropdownToggle = isPageToolbarDropdownOpen => {
-      this.setState({
-        isPageToolbarDropdownOpen
-      });
-    };
-
-    this.onPageToolbarKebabDropdownToggle = isUpperToolbarKebabDropdownOpen => {
-      this.setState({
-        isUpperToolbarKebabDropdownOpen
-      });
-    };
-
     this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
       this.setState(prevState => ({
         isLowerToolbarDropdownOpen
       }));
-    };
-
-    this.onToolbarDropdownSelect = event => {
-      this.setState({
-        isLowerToolbarDropdownOpen: !this.state.isLowerToolbarDropdownOpen
-      });
     };
 
     this.onToolbarKebabDropdownToggle = isLowerToolbarKebabDropdownOpen => {
@@ -192,12 +136,6 @@ class CardViewBasic extends React.Component {
     this.onCardKebabDropdownSelect = (key, event) => {
       this.setState({
         [key]: !this.state[key]
-      });
-    };
-
-    this.onNavSelect = result => {
-      this.setState({
-        activeItem: result.itemId
       });
     };
 
@@ -526,7 +464,6 @@ class CardViewBasic extends React.Component {
       res,
       checked,
       selectedItems,
-      itemsCheckedByDefault,
       areAllSelected,
       isChecked,
       page,
@@ -554,9 +491,7 @@ class CardViewBasic extends React.Component {
     const toolbarItems = (
       <React.Fragment>
         <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-        <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">
-          {this.buildFilterDropdown()}
-        </ToolbarItem>
+        <ToolbarItem breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem>
@@ -578,103 +513,6 @@ class CardViewBasic extends React.Component {
         </ToolbarItem>
       </React.Fragment>
     );
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-
-    const kebabDropdownItems = [
-      <DropdownItem key="kebab-settings">
-        <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="kebab-help">
-        <HelpIcon /> Help
-      </DropdownItem>
-    ];
-    const userDropdownItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
-          User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>
-    ];
-    const headerTools = (
-      <PageHeaderTools>
-        <PageHeaderToolsGroup
-          visibility={{
-            default: 'hidden',
-            lg: 'visible'
-          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-        >
-          <PageHeaderToolsItem>
-            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
-            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
-            </Button>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem
-            visibility={{
-              lg: 'hidden'
-            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
-          >
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onPageToolbarKebabDropdownToggle} />}
-              isOpen={isUpperToolbarKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem
-            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
-          >
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onPageDropdownSelect}
-              isOpen={isUpperToolbarDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>John Smith</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
-      </PageHeaderTools>
-    );
-
-    const Header = (
-      <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-card-view-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     const filtered =
       filters.products.length > 0
@@ -698,12 +536,11 @@ class CardViewBasic extends React.Component {
 
     return (
       <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          mainContainerId={pageId}
+        <DashboardWrapper
+          mainContainerId="main-content-card-view-default-nav"
+          breadcrumb={null}
+          imgBrand={imgBrand}
+          imgAvatar={imgAvatar}
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
@@ -758,7 +595,6 @@ class CardViewBasic extends React.Component {
                         value={product.id}
                         onChange={this.handleCheckboxClick}
                         isChecked={selectedItems.includes(product.id)}
-                        defaultChecked={this.state.itemsCheckedByDefault}
                         aria-label="card checkbox example"
                         id={`check-${product.id}`}
                       />
@@ -781,7 +617,7 @@ class CardViewBasic extends React.Component {
               variant="bottom"
             />
           </PageSection>
-        </Page>
+        </DashboardWrapper>
       </React.Fragment>
     );
   }
