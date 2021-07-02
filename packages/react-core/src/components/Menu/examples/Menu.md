@@ -113,7 +113,7 @@ class MenuIconsList extends React.Component {
 
 ### With flyout
 
-The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go outside the main content (like over the side nav).
+The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a container outside the main content like [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go over the side nav.
 
 ```js
 import React from 'react';
@@ -123,7 +123,7 @@ MenuWithFlyout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const numFlyouts = 15;
   const FlyoutMenu = ({ depth, children }) => (
-    <Menu key={depth} containsFlyout id={`menu-${depth}`}>
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={() => setIsOpen(false)}>
       <MenuList>
         <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
         {[...Array(numFlyouts - depth).keys()].map(j =>
@@ -137,12 +137,36 @@ MenuWithFlyout = () => {
     curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
 
+  const id = 'root-menu';
+  const onClick = event => {
+    setIsOpen(!isOpen);
+    // On keypress auto focus first element like a dropdown. This is rather hacky.
+    if (event.screenX === 0 && event.screenY === 0 && !isOpen) {
+      setTimeout(() => {
+        const menu = document.getElementById(id);
+        if (menu) {
+          const firstFocusable = menu.querySelector('ul > li > button[tabindex="0"]');
+          if (firstFocusable) {
+            firstFocusable.focus();
+          }
+        }
+      }, 0);
+    }
+  };
+
+  const onKeyDown = event => {
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+    }
+  };
+
+  // This isn't a full featured Dropdown yet. You currently have to implement keyboard functionality.
   return (
     <Popper
       isVisible={isOpen}
-      trigger={<Button onClick={() => setIsOpen(!isOpen)}>Toggle flyout menu</Button>}
+      trigger={<Button onClick={onClick}>Toggle flyout menu</Button>}
       popper={
-        <Menu containsFlyout>
+        <Menu containsFlyout onSelect={() => setIsOpen(false)} id={id} onKeyDown={onKeyDown}>
           <MenuContent>
             <MenuList>
               <MenuItem>Start rollout</MenuItem>

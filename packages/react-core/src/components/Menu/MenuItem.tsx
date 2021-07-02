@@ -177,8 +177,10 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     }
 
     if (key === 'Escape' || key === 'ArrowLeft') {
-      event.stopPropagation();
-      showFlyout(false);
+      if (flyoutVisible) {
+        event.stopPropagation();
+        showFlyout(false);
+      }
     }
   };
 
@@ -242,8 +244,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         isLoading && styles.modifiers.loading,
         className
       )}
-      onMouseOver={hasFlyout ? () => setTimeout(() => showFlyout(true), 200) : undefined}
-      onMouseLeave={hasFlyout ? () => setTimeout(() => showFlyout(false), 200) : undefined}
+      onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
+      onMouseLeave={hasFlyout ? () => showFlyout(true) : undefined}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       tabIndex={-1}
       ref={ref}
