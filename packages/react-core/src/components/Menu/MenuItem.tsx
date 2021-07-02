@@ -245,7 +245,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         className
       )}
       onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
-      onMouseLeave={hasFlyout ? () => showFlyout(true) : undefined}
+      onMouseLeave={hasFlyout ? () => showFlyout(false) : undefined}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       tabIndex={-1}
       ref={ref}
