@@ -3338,12 +3338,6 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/c3@^0.6.0":
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.6.4.tgz#449830da0e1a2fc4feceb87f97de7ee5965e183b"
-  dependencies:
-    "@types/d3" "^4"
-
 "@types/cheerio@*":
   version "0.22.21"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.22.21.tgz#5e37887de309ba11b2e19a6e14cad7874b31a8a3"
@@ -3453,19 +3447,9 @@
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@types/d3-quadtree/-/d3-quadtree-1.0.7.tgz#8e29464ff5b326f6612c1428d9362b4b35de2b70"
 
-"@types/d3-queue@*":
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/@types/d3-queue/-/d3-queue-3.0.8.tgz#fad6212f14f34a549fc67144e354f032fb25a447"
-
 "@types/d3-random@*":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@types/d3-random/-/d3-random-1.1.2.tgz#6f77e8b7bb64ac393f92d33fe8f71038bc4f3cde"
-
-"@types/d3-request@*":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@types/d3-request/-/d3-request-1.0.5.tgz#a2717ab95cd1e504662f52802aff1476af38cce4"
-  dependencies:
-    "@types/d3-dsv" "*"
 
 "@types/d3-scale-chromatic@*":
   version "1.5.0"
@@ -3474,12 +3458,6 @@
 "@types/d3-scale@*":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@types/d3-scale/-/d3-scale-2.2.0.tgz#e5987a2857365823eb26ed5eb21bc566c4dcf1c0"
-  dependencies:
-    "@types/d3-time" "*"
-
-"@types/d3-scale@^1":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@types/d3-scale/-/d3-scale-1.0.14.tgz#4544e4eb61e3712dacaba9dd8910e745bb7a9840"
   dependencies:
     "@types/d3-time" "*"
 
@@ -3521,41 +3499,6 @@
   dependencies:
     "@types/d3-interpolate" "*"
     "@types/d3-selection" "*"
-
-"@types/d3@^4":
-  version "4.13.2"
-  resolved "https://registry.yarnpkg.com/@types/d3/-/d3-4.13.2.tgz#c3db6ed6f6b07dde404fc3f43ee463ef5207ec8f"
-  dependencies:
-    "@types/d3-array" "^1"
-    "@types/d3-axis" "*"
-    "@types/d3-brush" "*"
-    "@types/d3-chord" "*"
-    "@types/d3-collection" "*"
-    "@types/d3-color" "*"
-    "@types/d3-dispatch" "*"
-    "@types/d3-drag" "*"
-    "@types/d3-dsv" "*"
-    "@types/d3-ease" "*"
-    "@types/d3-force" "*"
-    "@types/d3-format" "*"
-    "@types/d3-geo" "*"
-    "@types/d3-hierarchy" "*"
-    "@types/d3-interpolate" "*"
-    "@types/d3-path" "*"
-    "@types/d3-polygon" "*"
-    "@types/d3-quadtree" "*"
-    "@types/d3-queue" "*"
-    "@types/d3-random" "*"
-    "@types/d3-request" "*"
-    "@types/d3-scale" "^1"
-    "@types/d3-selection" "*"
-    "@types/d3-shape" "*"
-    "@types/d3-time" "*"
-    "@types/d3-time-format" "*"
-    "@types/d3-timer" "*"
-    "@types/d3-transition" "*"
-    "@types/d3-voronoi" "*"
-    "@types/d3-zoom" "*"
 
 "@types/d3@^5.7.2":
   version "5.7.2"
@@ -5050,38 +4993,6 @@ boolean@^3.0.0, boolean@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/boolean/-/boolean-3.0.1.tgz#35ecf2b4a2ee191b0b44986f14eb5f052a5cbb4f"
 
-bootstrap-datepicker@^1.7.1:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/bootstrap-datepicker/-/bootstrap-datepicker-1.9.0.tgz#e4bfce3fcce1967876b21dc6833ec5994aaed090"
-  dependencies:
-    jquery ">=1.7.1 <4.0.0"
-
-bootstrap-sass@^3.4.0:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-sass/-/bootstrap-sass-3.4.1.tgz#6843c73b1c258a0ac5cb2cc6f6f5285b664a8e9a"
-
-bootstrap-select@1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.12.2.tgz#58d095b3fd584b31443866fbe39b6fdd4e4e12a4"
-  dependencies:
-    jquery ">=1.8"
-
-bootstrap-slider@^9.9.0:
-  version "9.10.0"
-  resolved "https://registry.yarnpkg.com/bootstrap-slider/-/bootstrap-slider-9.10.0.tgz#1103d6bc00cfbfa8cfc9a2599ab518c55643da3f"
-
-bootstrap-switch@3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/bootstrap-switch/-/bootstrap-switch-3.3.4.tgz#70e0aeb2a877c0dc766991de108e2170fc29a2ff"
-
-bootstrap-touchspin@~3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-touchspin/-/bootstrap-touchspin-3.1.1.tgz#9779deac72aaf577e5e762b8512c747c871d9597"
-
-bootstrap@^3.3, bootstrap@^3.4.1, bootstrap@~3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.4.1.tgz#c3a347d419e289ad11f4033e3c4132b87c081d72"
-
 boxen@1.3.0, boxen@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-1.3.0.tgz#55c6c39a8ba58d9c61ad22cd877532deb665a20b"
@@ -5342,12 +5253,6 @@ bytes@3.1.0:
 bytes@^2.3.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.5.0.tgz#4c9423ea2d252c270c41b2bdefeff9bb6b62c06a"
-
-c3@~0.4.11:
-  version "0.4.24"
-  resolved "https://registry.yarnpkg.com/c3/-/c3-0.4.24.tgz#57b62357098842d38e265a265f6de1e8c6faadd2"
-  dependencies:
-    d3 "~3.5.0"
 
 cacache@^10.0.0:
   version "10.0.4"
@@ -7022,10 +6927,6 @@ d3@^5.16.0:
     d3-voronoi "1"
     d3-zoom "1"
 
-d3@~3.5.0, d3@~3.5.17:
-  version "3.5.17"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
-
 dagre@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/dagre/-/dagre-0.8.2.tgz#755b79f4d5499d63cf74c3368fb08add93eceafe"
@@ -7060,41 +6961,6 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
-
-datatables.net-bs@>=1.10.9:
-  version "1.10.21"
-  resolved "https://registry.yarnpkg.com/datatables.net-bs/-/datatables.net-bs-1.10.21.tgz#c80e655033787512423ad78a45e8164f25417dc5"
-  dependencies:
-    datatables.net "1.10.21"
-    jquery ">=1.7"
-
-datatables.net-colreorder-bs@~1.3.2:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/datatables.net-colreorder-bs/-/datatables.net-colreorder-bs-1.3.3.tgz#3a9dcb08deebeb5d854079591e06e493ad793a53"
-  dependencies:
-    datatables.net-bs ">=1.10.9"
-    datatables.net-colreorder ">=1.2.0"
-    jquery ">=1.7"
-
-datatables.net-colreorder@>=1.2.0, datatables.net-colreorder@^1.4.1:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/datatables.net-colreorder/-/datatables.net-colreorder-1.5.2.tgz#c425cee1f88b3246be0363c67a152be743ca6bce"
-  dependencies:
-    datatables.net "^1.10.15"
-    jquery ">=1.7"
-
-datatables.net-select@~1.2.0:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/datatables.net-select/-/datatables.net-select-1.2.7.tgz#7d5badfca49c438f8b51df04483d8d77857e917c"
-  dependencies:
-    datatables.net "^1.10.15"
-    jquery ">=1.7"
-
-datatables.net@1.10.21, datatables.net@^1.10.15:
-  version "1.10.21"
-  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.21.tgz#f1d35c8e5c3eb7f5caef39e80cd5b836a8c77103"
-  dependencies:
-    jquery ">=1.7"
 
 datauri@^1.1.0:
   version "1.1.0"
@@ -7594,12 +7460,6 @@ download-stats@^0.3.4:
     lazy-cache "^2.0.1"
     moment "^2.15.1"
 
-drmonty-datatables-colvis@~1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/drmonty-datatables-colvis/-/drmonty-datatables-colvis-1.1.2.tgz#96ab9edfb48643cc2edda3f87b88933cdee8127c"
-  dependencies:
-    jquery ">=1.7.0"
-
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
@@ -7793,15 +7653,6 @@ enzyme@3.10.0:
     raf "^3.4.0"
     rst-selector-parser "^2.2.3"
     string.prototype.trim "^1.1.2"
-
-eonasdan-bootstrap-datetimepicker@^4.17.47:
-  version "4.17.47"
-  resolved "https://registry.yarnpkg.com/eonasdan-bootstrap-datetimepicker/-/eonasdan-bootstrap-datetimepicker-4.17.47.tgz#7a49970044065276e7965efd16f822735219e735"
-  dependencies:
-    bootstrap "^3.3"
-    jquery "^1.8.3 || ^2.0 || ^3.0"
-    moment "^2.10"
-    moment-timezone "^0.4.0"
 
 err-code@^1.0.0:
   version "1.1.2"
@@ -8908,14 +8759,6 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.0.0"
 
-font-awesome-sass@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome-sass/-/font-awesome-sass-4.7.0.tgz#4eda693e915009ce00b228e0964dc5eca9bc34e1"
-
-font-awesome@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -9556,10 +9399,6 @@ good-listener@^1.2.2:
   resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
   dependencies:
     delegate "^3.1.2"
-
-google-code-prettify@~1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/google-code-prettify/-/google-code-prettify-1.0.5.tgz#9f477f224dbfa62372e5ef803a7e157410400084"
 
 got@^6.2.0, got@^6.7.1:
   version "6.7.1"
@@ -11457,18 +11296,6 @@ jpeg-js@^0.3.4:
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.7.tgz#471a89d06011640592d314158608690172b1028d"
 
-jquery-match-height@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/jquery-match-height/-/jquery-match-height-0.7.2.tgz#f8d9f3ba5314daab109cf07408674be204be5f0e"
-
-jquery@>=1.7, jquery@>=1.7.0, "jquery@>=1.7.1 <4.0.0", jquery@>=1.8, "jquery@^1.8.3 || ^2.0 || ^3.0", jquery@^3.4.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
-
-jquery@~3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
-
 js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
@@ -13093,13 +12920,7 @@ modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
 
-moment-timezone@^0.4.0, moment-timezone@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.4.1.tgz#81f598c3ad5e22cdad796b67ecd8d88d0f5baa06"
-  dependencies:
-    moment ">= 2.6.0"
-
-"moment@>= 2.6.0", moment@^2.10, moment@^2.15.1, moment@^2.19.1, moment@^2.24.0:
+moment@^2.15.1, moment@^2.24.0:
   version "2.27.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
 
@@ -14479,48 +14300,6 @@ path@^0.12.7:
   dependencies:
     process "^0.11.1"
     util "^0.10.3"
-
-patternfly-bootstrap-combobox@~1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/patternfly-bootstrap-combobox/-/patternfly-bootstrap-combobox-1.1.7.tgz#6a5e3ccd1170c21b3c4b4aa168a7413e1ddbb6e1"
-
-patternfly-bootstrap-treeview@~2.1.10:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/patternfly-bootstrap-treeview/-/patternfly-bootstrap-treeview-2.1.10.tgz#f96043734bb4ecac951783e2745e3f9a8873ffd4"
-  dependencies:
-    bootstrap "^3.4.1"
-    jquery "^3.4.1"
-
-patternfly@^3.59.4:
-  version "3.59.5"
-  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.59.5.tgz#5f515a65b47c4a159d9c300f93134f7c523b8e86"
-  dependencies:
-    bootstrap "~3.4.1"
-    font-awesome "^4.7.0"
-    jquery "~3.4.1"
-  optionalDependencies:
-    "@types/c3" "^0.6.0"
-    bootstrap-datepicker "^1.7.1"
-    bootstrap-sass "^3.4.0"
-    bootstrap-select "1.12.2"
-    bootstrap-slider "^9.9.0"
-    bootstrap-switch "3.3.4"
-    bootstrap-touchspin "~3.1.1"
-    c3 "~0.4.11"
-    d3 "~3.5.17"
-    datatables.net "^1.10.15"
-    datatables.net-colreorder "^1.4.1"
-    datatables.net-colreorder-bs "~1.3.2"
-    datatables.net-select "~1.2.0"
-    drmonty-datatables-colvis "~1.1.2"
-    eonasdan-bootstrap-datetimepicker "^4.17.47"
-    font-awesome-sass "^4.7.0"
-    google-code-prettify "~1.0.5"
-    jquery-match-height "^0.7.2"
-    moment "^2.19.1"
-    moment-timezone "^0.4.1"
-    patternfly-bootstrap-combobox "~1.1.7"
-    patternfly-bootstrap-treeview "~2.1.10"
 
 pbkdf2@^3.0.3:
   version "3.1.1"
