@@ -1,0 +1,378 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test isInvalid should be invalid after onChange 1`] = `
+<TimePicker
+  aria-label="time picker"
+  className=""
+  delimiter=":"
+  direction="down"
+  inputProps={Object {}}
+  invalidFormatErrorMessage="Invalid time format"
+  is24Hour={false}
+  isDisabled={false}
+  menuAppendTo="inline"
+  placeholder="hh:mm"
+  stepMinutes={30}
+  time=""
+  validateTime={[Function]}
+  value="00:00"
+  width={150}
+>
+  <div
+    className="pf-c-date-picker"
+  >
+    <div
+      className="pf-c-date-picker__input"
+      style={
+        Object {
+          "--pf-c-date-picker__input--c-form-control--Width": 150,
+        }
+      }
+      value="00:00"
+    >
+      <InputGroup>
+        <div
+          className="pf-c-input-group"
+        >
+          <div
+            className="pf-c-select"
+            id="time-picker-16252543453491o6bvfvutjx"
+            key=".0"
+          >
+            <div
+              className="pf-c-select__toggle pf-m-typeahead"
+              style={
+                Object {
+                  "paddingLeft": "0",
+                }
+              }
+            >
+              <TextInput
+                aria-label="time picker"
+                autoComplete="off"
+                className="pf-c-form-control pf-c-select__toggle-typeahead"
+                iconVariant="clock"
+                id="time-picker-16252543453491o6bvfvutjx-input"
+                isDisabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                placeholder="hh:mm"
+                type="text"
+                validated="error"
+                value="01:00"
+              >
+                <TextInputBase
+                  aria-label="time picker"
+                  autoComplete="off"
+                  className="pf-c-form-control pf-c-select__toggle-typeahead"
+                  iconVariant="clock"
+                  id="time-picker-16252543453491o6bvfvutjx-input"
+                  innerRef={
+                    Object {
+                      "current": <input
+                        aria-invalid="true"
+                        aria-label="time picker"
+                        autocomplete="off"
+                        class="pf-c-form-control pf-m-icon pf-m-clock pf-c-form-control pf-c-select__toggle-typeahead"
+                        id="time-picker-16252543453491o6bvfvutjx-input"
+                        placeholder="hh:mm"
+                        type="text"
+                        value="01:00"
+                      />,
+                    }
+                  }
+                  isDisabled={false}
+                  isLeftTruncated={false}
+                  isReadOnly={false}
+                  isRequired={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  placeholder="hh:mm"
+                  type="text"
+                  validated="error"
+                  value="01:00"
+                >
+                  <input
+                    aria-invalid={true}
+                    aria-label="time picker"
+                    autoComplete="off"
+                    className="pf-c-form-control pf-m-icon pf-m-clock pf-c-form-control pf-c-select__toggle-typeahead"
+                    disabled={false}
+                    id="time-picker-16252543453491o6bvfvutjx-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    placeholder="hh:mm"
+                    readOnly={false}
+                    required={false}
+                    type="text"
+                    value="01:00"
+                  />
+                </TextInputBase>
+              </TextInput>
+            </div>
+          </div>
+        </div>
+      </InputGroup>
+      <div
+        className="pf-c-date-picker__helper-text pf-m-error"
+      >
+        Invalid time format
+      </div>
+    </div>
+  </div>
+</TimePicker>
+`;
+
+exports[`test isInvalid should be valid by default 1`] = `
+<TimePicker
+  aria-label="time picker"
+  className=""
+  delimiter=":"
+  direction="down"
+  inputProps={Object {}}
+  invalidFormatErrorMessage="Invalid time format"
+  is24Hour={false}
+  isDisabled={false}
+  menuAppendTo="inline"
+  placeholder="hh:mm"
+  stepMinutes={30}
+  time=""
+  validateTime={[Function]}
+  value="00:00"
+  width={150}
+>
+  <div
+    className="pf-c-date-picker"
+  >
+    <div
+      className="pf-c-date-picker__input"
+      style={
+        Object {
+          "--pf-c-date-picker__input--c-form-control--Width": 150,
+        }
+      }
+      value="00:00"
+    >
+      <InputGroup>
+        <div
+          className="pf-c-input-group"
+        >
+          <div
+            className="pf-c-select"
+            id="time-picker-1625254345331ey5hew7j51"
+            key=".0"
+          >
+            <div
+              className="pf-c-select__toggle pf-m-typeahead"
+              style={
+                Object {
+                  "paddingLeft": "0",
+                }
+              }
+            >
+              <TextInput
+                aria-label="time picker"
+                autoComplete="off"
+                className="pf-c-form-control pf-c-select__toggle-typeahead"
+                iconVariant="clock"
+                id="time-picker-1625254345331ey5hew7j51-input"
+                isDisabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                placeholder="hh:mm"
+                type="text"
+                validated="default"
+                value=""
+              >
+                <TextInputBase
+                  aria-label="time picker"
+                  autoComplete="off"
+                  className="pf-c-form-control pf-c-select__toggle-typeahead"
+                  iconVariant="clock"
+                  id="time-picker-1625254345331ey5hew7j51-input"
+                  innerRef={
+                    Object {
+                      "current": <input
+                        aria-invalid="false"
+                        aria-label="time picker"
+                        autocomplete="off"
+                        class="pf-c-form-control pf-m-icon pf-m-clock pf-c-form-control pf-c-select__toggle-typeahead"
+                        id="time-picker-1625254345331ey5hew7j51-input"
+                        placeholder="hh:mm"
+                        type="text"
+                        value=""
+                      />,
+                    }
+                  }
+                  isDisabled={false}
+                  isLeftTruncated={false}
+                  isReadOnly={false}
+                  isRequired={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  placeholder="hh:mm"
+                  type="text"
+                  validated="default"
+                  value=""
+                >
+                  <input
+                    aria-invalid={false}
+                    aria-label="time picker"
+                    autoComplete="off"
+                    className="pf-c-form-control pf-m-icon pf-m-clock pf-c-form-control pf-c-select__toggle-typeahead"
+                    disabled={false}
+                    id="time-picker-1625254345331ey5hew7j51-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    placeholder="hh:mm"
+                    readOnly={false}
+                    required={false}
+                    type="text"
+                    value=""
+                  />
+                </TextInputBase>
+              </TextInput>
+            </div>
+          </div>
+        </div>
+      </InputGroup>
+    </div>
+  </div>
+</TimePicker>
+`;
+
+exports[`test isInvalid should stay valid after onChange 1`] = `
+<TimePicker
+  aria-label="time picker"
+  className=""
+  delimiter=":"
+  direction="down"
+  inputProps={Object {}}
+  invalidFormatErrorMessage="Invalid time format"
+  is24Hour={false}
+  isDisabled={false}
+  menuAppendTo="inline"
+  placeholder="hh:mm"
+  stepMinutes={30}
+  time=""
+  validateTime={[Function]}
+  value="00:00"
+  width={150}
+>
+  <div
+    className="pf-c-date-picker"
+  >
+    <div
+      className="pf-c-date-picker__input"
+      style={
+        Object {
+          "--pf-c-date-picker__input--c-form-control--Width": 150,
+        }
+      }
+      value="00:00"
+    >
+      <InputGroup>
+        <div
+          className="pf-c-input-group"
+        >
+          <div
+            className="pf-c-select"
+            id="time-picker-16252543453415rwog39tiiu"
+            key=".0"
+          >
+            <div
+              className="pf-c-select__toggle pf-m-typeahead"
+              style={
+                Object {
+                  "paddingLeft": "0",
+                }
+              }
+            >
+              <TextInput
+                aria-label="time picker"
+                autoComplete="off"
+                className="pf-c-form-control pf-c-select__toggle-typeahead"
+                iconVariant="clock"
+                id="time-picker-16252543453415rwog39tiiu-input"
+                isDisabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                placeholder="hh:mm"
+                type="text"
+                validated="default"
+                value="01:00"
+              >
+                <TextInputBase
+                  aria-label="time picker"
+                  autoComplete="off"
+                  className="pf-c-form-control pf-c-select__toggle-typeahead"
+                  iconVariant="clock"
+                  id="time-picker-16252543453415rwog39tiiu-input"
+                  innerRef={
+                    Object {
+                      "current": <input
+                        aria-invalid="false"
+                        aria-label="time picker"
+                        autocomplete="off"
+                        class="pf-c-form-control pf-m-icon pf-m-clock pf-c-form-control pf-c-select__toggle-typeahead"
+                        id="time-picker-16252543453415rwog39tiiu-input"
+                        placeholder="hh:mm"
+                        type="text"
+                        value="01:00"
+                      />,
+                    }
+                  }
+                  isDisabled={false}
+                  isLeftTruncated={false}
+                  isReadOnly={false}
+                  isRequired={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  placeholder="hh:mm"
+                  type="text"
+                  validated="default"
+                  value="01:00"
+                >
+                  <input
+                    aria-invalid={false}
+                    aria-label="time picker"
+                    autoComplete="off"
+                    className="pf-c-form-control pf-m-icon pf-m-clock pf-c-form-control pf-c-select__toggle-typeahead"
+                    disabled={false}
+                    id="time-picker-16252543453415rwog39tiiu-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    placeholder="hh:mm"
+                    readOnly={false}
+                    required={false}
+                    type="text"
+                    value="01:00"
+                  />
+                </TextInputBase>
+              </TextInput>
+            </div>
+          </div>
+        </div>
+      </InputGroup>
+    </div>
+  </div>
+</TimePicker>
+`;
