@@ -301,7 +301,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     this.scrollToSelection(newTime);
     this.setState({
       timeState: newTime,
-      isInvalid: false
+      isInvalid: !this.isValid(newTime)
     });
   };
 
