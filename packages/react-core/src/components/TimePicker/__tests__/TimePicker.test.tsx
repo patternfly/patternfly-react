@@ -51,7 +51,6 @@ describe('test isInvalid', () => {
 
     const view = mount(<TimePicker value={"00:00"} validateTime={validateTime} aria-label="time picker" />);
 
-    expect(view).toMatchSnapshot();
     expect(view.find('.pf-m-error')).toHaveLength(0);
   })
 
@@ -70,7 +69,6 @@ describe('test isInvalid', () => {
     })
     view.update();
 
-    expect(view).toMatchSnapshot();
     expect(view.find('.pf-m-error')).toHaveLength(0);
   })
 
@@ -89,7 +87,6 @@ describe('test isInvalid', () => {
     })
     view.update();
 
-    expect(view).toMatchSnapshot();
     expect(view.find('.pf-m-error')).toHaveLength(1);
   })
 })
