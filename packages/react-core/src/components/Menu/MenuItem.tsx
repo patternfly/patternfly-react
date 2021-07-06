@@ -102,6 +102,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
   const ref = React.useRef<HTMLLIElement>();
+  let timer: any;
 
   const hasFlyout = flyoutMenu !== undefined;
   const showFlyout = (displayFlyout: boolean) => {
@@ -233,6 +234,17 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     }
     return false;
   };
+  const onMouseOver = () => {
+    if (hasFlyout) {
+      showFlyout(true);
+      clearTimeout(timer);
+    }
+  };
+  const onMouseLeave = () => {
+    if (hasFlyout) {
+      timer = setTimeout(() => showFlyout(false), 700);
+    }
+  };
 
   return (
     <li
@@ -244,8 +256,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         isLoading && styles.modifiers.loading,
         className
       )}
-      onMouseOver={hasFlyout ? () => showFlyout(true) : undefined}
-      onMouseLeave={hasFlyout ? () => setTimeout(() => showFlyout(false), 1000) : undefined}
+      onMouseOver={onMouseOver}
+      onMouseLeave={onMouseLeave}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       tabIndex={-1}
       ref={ref}
