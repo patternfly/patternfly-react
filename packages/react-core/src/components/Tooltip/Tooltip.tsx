@@ -143,6 +143,23 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+
+  const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
+    timeoutRefs.forEach(ref => {
+      if (ref.current) {
+        clearTimeout(ref.current);
+      }
+    });
+  };
+
+  // Cancel all timers on unmount
+  React.useEffect(
+    () => () => {
+      clearTimeouts([transitionTimerRef, hideTimerRef, showTimerRef]);
+    },
+    []
+  );
+
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
       if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
@@ -167,21 +184,14 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }
   }, [isVisible]);
   const show = () => {
-    if (transitionTimerRef.current) {
-      clearTimeout(transitionTimerRef.current);
-    }
-    if (hideTimerRef.current) {
-      clearTimeout(hideTimerRef.current);
-    }
+    clearTimeouts([transitionTimerRef, hideTimerRef]);
     showTimerRef.current = setTimeout(() => {
       setVisible(true);
       setOpacity(1);
     }, entryDelay);
   };
   const hide = () => {
-    if (showTimerRef.current) {
-      clearTimeout(showTimerRef.current);
-    }
+    clearTimeouts([showTimerRef]);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
       transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
