@@ -7,5 +7,4 @@ export * from './OUIA/ouia';
 export * from './util';
 export * from './Popper/Popper';
 export * from './useIsomorphicLayout';
-export * from './keyboard';
 export * from './KeyboardHandler';

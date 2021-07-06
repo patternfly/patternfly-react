@@ -77,7 +77,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   componentDidMount() {
     if (canUseDOM) {
-      // window.addEventListener('keydown', this.props.isRootMenu ? this.handleKeys : null);
       window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
     }
 
@@ -100,7 +99,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   componentWillUnmount() {
     if (canUseDOM) {
-      // window.removeEventListener('keydown', this.handleKeys);
       window.removeEventListener('transitionend', this.handleDrilldownTransition);
     }
   }
@@ -190,81 +188,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         );
   };
-
-  // handleKeys = (event: KeyboardEvent) => {
-  //   const isDrilldown = this.props.containsDrilldown;
-  //   let ref = this.menuRef;
-  //   if (this.props.innerRef) {
-  //     ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-  //   }
-
-  //   if (
-  //     !ref.current ||
-  //     (ref.current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
-  //       !Array.from(ref.current.getElementsByClassName('pf-c-menu')).includes(
-  //         (event.target as HTMLElement).closest('.pf-c-menu')
-  //       )) ||
-  //     (event.target as HTMLElement).tagName === 'INPUT'
-  //   ) {
-  //     return;
-  //   }
-  //   event.stopImmediatePropagation();
-
-  //   const activeElement = document.activeElement;
-  //   if (
-  //     (event.target as HTMLElement).closest('.pf-c-menu') !== this.activeMenu &&
-  //     !(event.target as HTMLElement).classList.contains('pf-c-breadcrumb__link')
-  //   ) {
-  //     this.activeMenu = (event.target as HTMLElement).closest('.pf-c-menu');
-  //   }
-  //   const parentMenu = this.activeMenu;
-  //   const key = event.key;
-  //   const validMenuItems = isDrilldown
-  //     ? Array.from(parentMenu.getElementsByTagName('UL')[0].children).filter(
-  //         el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-  //       )
-  //     : Array.from(parentMenu.getElementsByTagName('LI')).filter(
-  //         el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-  //       );
-  //   const isFromBreadcrumb =
-  //     activeElement.classList.contains('pf-c-breadcrumb__link') ||
-  //     activeElement.classList.contains('pf-c-dropdown__toggle');
-
-  //   if (key === ' ' || key === 'Enter') {
-  //     event.preventDefault();
-  //     if (isDrilldown && !isFromBreadcrumb) {
-  //       const isDrillingOut = activeElement.closest('li').classList.contains('pf-m-current-path');
-  //       if (isDrillingOut && parentMenu.parentElement.tagName === 'LI') {
-  //         (activeElement as HTMLElement).tabIndex = -1;
-  //         (parentMenu.parentElement.firstChild as HTMLElement).tabIndex = 0;
-  //         this.setState({ transitionMoveTarget: parentMenu.parentElement.firstChild as HTMLElement });
-  //       } else {
-  //         if (activeElement.nextElementSibling && activeElement.nextElementSibling.classList.contains('pf-c-menu')) {
-  //           const childItems = Array.from(
-  //             activeElement.nextElementSibling.getElementsByTagName('UL')[0].children
-  //           ).filter(el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
-
-  //           (activeElement as HTMLElement).tabIndex = -1;
-  //           (childItems[0].firstChild as HTMLElement).tabIndex = 0;
-  //           this.setState({ transitionMoveTarget: childItems[0].firstChild as HTMLElement });
-  //         }
-  //       }
-  //     }
-  //     (document.activeElement as HTMLElement).click();
-  //   }
-
-  //   handleArrows(
-  //     event,
-  //     validMenuItems,
-  //     (element: Element) =>
-  //       activeElement.parentElement === element ||
-  //       (activeElement.closest('ol') && activeElement.closest('ol').firstChild === element),
-  //     (element: Element) => element.firstChild as Element,
-  //     undefined,
-  //     undefined,
-  //     isFromBreadcrumb
-  //   );
-  // };
 
   render() {
     const {

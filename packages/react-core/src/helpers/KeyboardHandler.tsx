@@ -2,34 +2,131 @@ import * as React from 'react';
 import { canUseDOM } from './util';
 
 export interface KeyboardHandlerProps {
-  /** Reference of the container keyboard interaction is limited to */
+  /** Reference of the container to apply keyboard interaction */
   containerRef: React.RefObject<any>;
-  /** Navigable elements */
-  navigableElements: Element[];
-  /** Additional custom key handling */
-  additionalKeyHandler?: (event: KeyboardEvent) => void;
-  noVerticalArrowHandling?: boolean;
-  noHorizontalArrowHandling?: boolean;
-  noEnterHandling?: boolean;
-  noSpaceHandling?: boolean;
-  /** Flag indicating tabIndex should be updated on arrow move */
-  updateTabIndex?: boolean;
-  /** Selector indicating tabIndex under containerRef should be removed */
-  removeTabIndexSelector?: string;
-  isActiveElement?: (element: Element) => boolean;
-  /** Returns the focusable element from the given navigable elements array item. By default, the navigableElement will be returned. */
-  getFocusableElement?: (navigableElement: Element) => Element;
-  /** Valid sibling tags horizontal arrow handling will focus */
-  validSiblingTags?: string[];
+  /** Callback returning an array of navigable elements to be traversable via vertical arrow keys. This array should not include non-navigable elements such as disabled elements. */
+  createNavigableElements: () => Element[];
+  /** Callback to determine if a given event is from the container. By default the function conducts a basic check to see if the containerRef contains the event target */
   isEventFromContainer?: (event: KeyboardEvent) => boolean;
-  createNavigableElements?: () => Element[];
+  /** Additional key handling outside of the included arrow keys, enter, and space handling */
+  additionalKeyHandler?: (event: KeyboardEvent) => void;
+  /** Callback to determine if a given element from the navigable elements array is the active element of the page */
+  isActiveElement?: (navigableElement: Element) => boolean;
+  /** Callback returning the focusable element of a given element from the navigable elements array */
+  getFocusableElement?: (navigableElement: Element) => Element;
+  /** Valid sibling tags that horizontal arrow handling will focus */
+  validSiblingTags?: string[];
+  /** Flag indicating that the tabIndex of the currently focused element and next focused element should be updated, in the case of using a roving tabIndex */
+  updateTabIndex?: boolean;
+  /** Flag indicating that the included vertical arrow key handling should be ignored */
+  noVerticalArrowHandling?: boolean;
+  /** Flag indicating that the included horizontal arrow key handling should be ignored */
+  noHorizontalArrowHandling?: boolean;
+  /** Flag indicating that the included enter key handling should be ignored */
+  noEnterHandling?: boolean;
+  /** Flag indicating that the included space key handling should be ignored */
+  noSpaceHandling?: boolean;
 }
 
+/**
+ * This function is a helper for handling basic arrow keyboard interactions
+ *
+ * @param {event} event Event triggered by the keyboard
+ * @param {element[]} navigableElements Valid traversable elements of the container
+ * @param {function} isActiveElement Callback to determine if a given element from the navigable elements array is the active element of the page
+ * @param {function} getFocusableElement Callback returning the focusable element of a given element from the navigable elements array
+ * @param {string[]} validSiblingTags Valid sibling tags that horizontal arrow handling will focus
+ * @param {boolean} noVerticalArrowHandling Flag indicating that the included vertical arrow key handling should be ignored
+ * @param {boolean} noHorizontalArrowHandling Flag indicating that the included horizontal arrow key handling should be ignored
+ * @param {boolean} updateTabIndex Flag indicating that the tabIndex of the currently focused element and next focused element should be updated, in the case of using a roving tabIndex
+ */
+export const handleArrows = (
+  event: KeyboardEvent,
+  navigableElements: Element[],
+  isActiveElement: (element: Element) => boolean,
+  getFocusableElement: (element: Element) => Element,
+  validSiblingTags: string[] = ['A', 'BUTTON'],
+  noVerticalArrowHandling: boolean = false,
+  noHorizontalArrowHandling: boolean = false,
+  updateTabIndex: boolean = true
+) => {
+  const activeElement = document.activeElement;
+  const key = event.key;
+  let moveTarget = null;
+
+  // Handle vertical arrow keys. If noVerticalArrowHandling is passed, skip this block
+  if (!noVerticalArrowHandling) {
+    if (['ArrowUp', 'ArrowDown'].includes(key)) {
+      event.preventDefault();
+
+      // Traverse navigableElements to find the element which is currently active
+      let currentIndex = -1;
+      navigableElements.forEach((element, index) => {
+        if (isActiveElement(element)) {
+          // Once found, move up or down the array by 1. Determined by the vertical arrow key direction
+          const increment = key === 'ArrowUp' ? -1 : 1;
+          currentIndex = index + increment;
+
+          if (currentIndex >= navigableElements.length) {
+            currentIndex = 0;
+          }
+          if (currentIndex < 0) {
+            currentIndex = navigableElements.length - 1;
+          }
+
+          // Set the next target element
+          moveTarget = getFocusableElement(navigableElements[currentIndex]);
+        }
+      });
+    }
+  }
+
+  // Handle horizontal arrow keys. If noHorizontalArrowHandling is passed, skip this block
+  if (!noHorizontalArrowHandling) {
+    if (['ArrowLeft', 'ArrowRight'].includes(key)) {
+      event.preventDefault();
+      let nextSibling = activeElement;
+
+      // While a sibling exists, check each sibling to determine if it should be focussed
+      while (nextSibling) {
+        // Set the next checked sibling, determined by the horizontal arrow key direction
+        nextSibling = key === 'ArrowLeft' ? activeElement.previousElementSibling : activeElement.nextElementSibling;
+        if (nextSibling) {
+          if (validSiblingTags.includes(nextSibling.tagName)) {
+            // If the sibling's tag is included in validSiblingTags, set the next target element and break the loop
+            moveTarget = nextSibling;
+            break;
+          }
+          // If the sibling's tag is not valid, skip to the next sibling if possible
+        }
+      }
+    }
+  }
+
+  if (moveTarget) {
+    // If updateTabIndex is true, set the previously focussed element's tabIndex to -1 and the next focussed element's tabIndex to 0
+    // This updates the tabIndex for a roving tabIndex
+    if (updateTabIndex) {
+      (activeElement as HTMLElement).tabIndex = -1;
+      (moveTarget as HTMLElement).tabIndex = 0;
+    }
+    // If a move target has been set by eithe arrow handler, focus that target
+    (moveTarget as HTMLElement).focus();
+  }
+};
+
+/**
+ * This function is a helper for setting the initial tabIndexes in a roving tabIndex
+ *
+ * @param {HTMLElement[]} options Array of elements which should have a tabIndex of -1, except for the first element which will have a tabIndex of 0
+ */
 export const setTabIndex = (options: HTMLElement[]) => {
   if (options && options.length > 0) {
+    // Iterate the options and set the tabIndex to -1 on every option
     options.forEach((option: HTMLElement) => {
       option.tabIndex = -1;
     });
+    // Manually set the tabIndex of the first option to 0
     options[0].tabIndex = 0;
   }
 };
@@ -38,14 +135,15 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
   static displayName = 'KeyboardHandler';
   static defaultProps: KeyboardHandlerProps = {
     containerRef: null,
-    navigableElements: [],
+    createNavigableElements: () => null as Element[],
+    isActiveElement: (navigableElement: Element) => document.activeElement === navigableElement,
+    getFocusableElement: (navigableElement: Element) => navigableElement,
+    validSiblingTags: ['BUTTON', 'A'],
+    updateTabIndex: true,
     noHorizontalArrowHandling: false,
     noVerticalArrowHandling: false,
     noEnterHandling: false,
-    noSpaceHandling: false,
-    updateTabIndex: true,
-    removeTabIndexSelector: 'ul button,a',
-    validSiblingTags: ['BUTTON', 'A']
+    noSpaceHandling: false
   };
 
   componentDidMount() {
@@ -62,9 +160,11 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
 
   keyHandler = (event: KeyboardEvent) => {
     const { isEventFromContainer } = this.props;
+    // If the passed keyboard event is not from the container, ignore the event by returning
     if (isEventFromContainer ? !isEventFromContainer(event) : !this._isEventFromContainer(event)) {
       return;
     }
+    // If the event is relevant, stop propagation and handle the event
     event.stopImmediatePropagation();
 
     const {
@@ -80,13 +180,21 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
       createNavigableElements
     } = this.props;
 
+    // Pass the event off to be handled by any custom handler
     additionalKeyHandler && additionalKeyHandler(event);
 
-    const activeElement = document.activeElement;
+    // Initalize navigableElements from the createNavigableElements callback
     const navigableElements = createNavigableElements();
+    if (!navigableElements) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'No navigable elements have been passed to the KeyboardHandler. Keyboard navigation provided by this component will be ignored.'
+      );
+      return;
+    }
     const key = event.key;
-    let moveTarget = null;
 
+    // Handle enter key. If noEnterHandling is passed, skip this block
     if (!noEnterHandling) {
       if (key === 'Enter') {
         event.preventDefault();
@@ -94,6 +202,7 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
       }
     }
 
+    // Handle space key. If noSpaceHandling is passed, skip this block
     if (!noSpaceHandling) {
       if (key === ' ') {
         event.preventDefault();
@@ -101,73 +210,23 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
       }
     }
 
-    if (!noVerticalArrowHandling) {
-      if (['ArrowUp', 'ArrowDown'].includes(key)) {
-        event.preventDefault();
-        let currentIndex = -1;
-        navigableElements.forEach((element, index) => {
-          if (isActiveElement(element)) {
-            const increment = key === 'ArrowUp' ? -1 : 1;
-            currentIndex = index + increment;
-
-            if (currentIndex >= navigableElements.length) {
-              currentIndex = 0;
-            }
-            if (currentIndex < 0) {
-              currentIndex = navigableElements.length - 1;
-            }
-
-            moveTarget = getFocusableElement
-              ? getFocusableElement(navigableElements[currentIndex])
-              : this._getFocusableElement(navigableElements[currentIndex]);
-          }
-        });
-      }
-    }
-
-    if (!noHorizontalArrowHandling) {
-      if (['ArrowLeft', 'ArrowRight'].includes(key)) {
-        event.preventDefault();
-        let nextSibling = activeElement;
-        if (key === 'ArrowLeft') {
-          while (nextSibling) {
-            nextSibling = activeElement.previousElementSibling;
-            if (nextSibling) {
-              if (validSiblingTags.includes(nextSibling.tagName)) {
-                moveTarget = nextSibling;
-                break;
-              }
-            }
-          }
-        } else {
-          while (nextSibling) {
-            nextSibling = activeElement.nextElementSibling;
-            if (nextSibling) {
-              if (validSiblingTags.includes(nextSibling.tagName)) {
-                moveTarget = nextSibling;
-                break;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    if (moveTarget) {
-      if (updateTabIndex) {
-        (activeElement as HTMLElement).tabIndex = -1;
-        (moveTarget as HTMLElement).tabIndex = 0;
-      }
-      (moveTarget as HTMLElement).focus();
-    }
+    // Inject helper handler for arrow navigation
+    handleArrows(
+      event,
+      navigableElements,
+      isActiveElement,
+      getFocusableElement,
+      validSiblingTags,
+      noVerticalArrowHandling,
+      noHorizontalArrowHandling,
+      updateTabIndex
+    );
   };
 
   _isEventFromContainer = (event: KeyboardEvent) => {
     const { containerRef } = this.props;
     return containerRef.current && containerRef.current.contains(event.target as HTMLElement);
   };
-
-  _getFocusableElement = (navigableElement: Element) => navigableElement;
 
   render() {
     return null as React.ReactNode;
