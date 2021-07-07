@@ -57,6 +57,7 @@ export interface MenuState {
   searchInputValue: string | null;
   ouiaStateId: string;
   transitionMoveTarget: HTMLElement;
+  flyoutRef: React.Ref<HTMLLIElement> | null;
 }
 
 export class Menu extends React.Component<MenuProps, MenuState> {
@@ -71,7 +72,8 @@ export class Menu extends React.Component<MenuProps, MenuState> {
   state: MenuState = {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
     searchInputValue: '',
-    transitionMoveTarget: null
+    transitionMoveTarget: null,
+    flyoutRef: null
   };
 
   componentDidMount() {
@@ -279,7 +281,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       <MenuContext.Provider
         value={{
           menuId: id,
-          parentMenu: parentMenu ? parentMenu : id,
+          parentMenu: parentMenu || id,
           onSelect,
           onActionClick,
           activeItemId,
@@ -288,7 +290,9 @@ export class Menu extends React.Component<MenuProps, MenuState> {
           drilldownItemPath,
           onDrillIn,
           onDrillOut,
-          onGetMenuHeight
+          onGetMenuHeight,
+          flyoutRef: this.state.flyoutRef,
+          setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
         }}
       >
         <div

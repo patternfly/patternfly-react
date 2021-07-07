@@ -94,20 +94,25 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     selected,
     drilldownItemPath,
     onDrillIn,
-    onDrillOut
+    onDrillOut,
+    flyoutRef,
+    setFlyoutRef
   } = React.useContext(MenuContext);
   const Component = component || to ? 'a' : 'button';
-  const [flyoutVisible, setFlyoutVisible] = React.useState(false);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
   const ref = React.useRef<HTMLLIElement>();
-  let timer: any;
+  const flyoutVisible = ref === flyoutRef;
 
   const hasFlyout = flyoutMenu !== undefined;
-  const showFlyout = (displayFlyout: boolean) => {
-    setFlyoutVisible(displayFlyout);
-    onShowFlyout && displayFlyout && onShowFlyout();
+  const showFlyout = (show: boolean) => {
+    if (!flyoutVisible && show) {
+      setFlyoutRef(ref);
+    } else if (flyoutVisible && !show) {
+      setFlyoutRef(null);
+    }
+    onShowFlyout && show && onShowFlyout();
   };
 
   useIsomorphicLayoutEffect(() => {
@@ -237,12 +242,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   const onMouseOver = () => {
     if (hasFlyout) {
       showFlyout(true);
-      clearTimeout(timer);
-    }
-  };
-  const onMouseLeave = () => {
-    if (hasFlyout) {
-      timer = setTimeout(() => showFlyout(false), 700);
+    } else {
+      setFlyoutRef(null);
     }
   };
 
@@ -257,7 +258,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         className
       )}
       onMouseOver={onMouseOver}
-      onMouseLeave={onMouseLeave}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       tabIndex={-1}
       ref={ref}
@@ -271,7 +271,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
         aria-current={getAriaCurrent()}
         tabIndex={-1}
-        {...(isDisabled && { disabled: true })}
+        disabled={isDisabled}
         {...additionalProps}
       >
         <span className={css(styles.menuItemMain)}>

@@ -12,6 +12,8 @@ export const MenuContext = React.createContext<{
   onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
   onDrillOut?: (toItemId: string, itemId: string) => void;
   onGetMenuHeight?: (menuId: string, height: number) => void;
+  flyoutRef?: React.Ref<HTMLLIElement>;
+  setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
 }>({
   menuId: null,
   parentMenu: null,
@@ -23,7 +25,9 @@ export const MenuContext = React.createContext<{
   drilldownItemPath: [],
   onDrillIn: null,
   onDrillOut: null,
-  onGetMenuHeight: () => null
+  onGetMenuHeight: () => null,
+  flyoutRef: null,
+  setFlyoutRef: () => null
 });
 
 export const MenuItemContext = React.createContext<{

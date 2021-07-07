@@ -129,6 +129,7 @@ MenuWithFlyout = () => {
         {[...Array(numFlyouts - depth).keys()].map(j =>
           <MenuItem key={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
         )}
+        <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
       </MenuList>
     </Menu>
   );
