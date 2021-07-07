@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.135.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.5...@patternfly/react-core@4.135.6) (2021-07-07)
+
+
+### Bug Fixes
+
+* 🐛 Tooltip: clean up timeouts on unmount to prevent warning ([#5991](https://github.com/patternfly/patternfly-react/issues/5991)) ([e04c653](https://github.com/patternfly/patternfly-react/commit/e04c653cba2fd7cbdc9214ddd4e43ea2f6e8312f))
+
+
+
+
+
 ## [4.135.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.4...@patternfly/react-core@4.135.5) (2021-07-01)
 
 
