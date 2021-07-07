@@ -3,6 +3,8 @@ id: Toolbar
 section: components
 ---
 
+import DashboardWrapper from './examples/DashboardWrapper';
+
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
@@ -13,6 +15,7 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 ## Demos
+
 ### Console log viewer toolbar demo
 
 This is an example of toolbar usage in log viewer.
@@ -20,7 +23,25 @@ This is an example of toolbar usage in log viewer.
 ```js isFullscreen
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem, ToolbarToggleGroup } from '@patternfly/react-core';
-import { Badge, Button, Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleAction, DropdownPosition, DropdownSeparator, SearchInput, Select, SelectOption, PageHeader, PageHeaderTools, Page, PageSidebar, PageSection, PageSectionVariants, Tooltip } from '@patternfly/react-core';
+import {
+  Badge,
+  Button,
+  Checkbox,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownToggleAction,
+  DropdownPosition,
+  DropdownSeparator,
+  SearchInput,
+  Select,
+  SelectOption,
+  PageSection,
+  PageSectionVariants,
+  Tooltip
+} from '@patternfly/react-core';
+import DashboardWrapper from './examples/DashboardWrapper';
+
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
@@ -88,26 +109,26 @@ class ConsoleLogViewerToolbar extends React.Component {
     this.onOptionToggle = isExpanded => {
       this.setState({
         optionExpanded: isExpanded
-      })
-    }
+      });
+    };
 
     this.onOptionToggleMobile = isExpanded => {
       this.setState({
         optionExpandedMobile: isExpanded
-      })
-    }
+      });
+    };
 
     this.onOptionSelect = event => {
       this.setState({
         optionExpanded: !this.state.optionExpanded
       });
-    }
+    };
 
     this.onOptionSelectMobile = event => {
       this.setState({
         optionExpandedMobile: !this.state.optionExpandedMobile
       });
-    }
+    };
 
     this.onExternalToggle = isExpanded => {
       this.setState({
@@ -130,8 +151,8 @@ class ConsoleLogViewerToolbar extends React.Component {
     this.onExternalSelectMobile = event => {
       this.setState({
         externalExpandedMobile: !this.state.externalExpandedMobile
-      })
-    }
+      });
+    };
 
     this.onDownloadToggle = isExpanded => {
       this.setState({
@@ -154,8 +175,8 @@ class ConsoleLogViewerToolbar extends React.Component {
     this.onDownloadSelectMobile = event => {
       this.setState({
         downloadExpandedMobile: !this.state.downloadExpandedMobile
-      })
-    }
+      });
+    };
 
     this.onExternalClick = event => {
       window.alert('Open external logs!');
@@ -168,29 +189,29 @@ class ConsoleLogViewerToolbar extends React.Component {
     this.pauseOrStart = event => {
       this.setState({
         isPaused: !this.state.isPaused
-      })
+      });
     };
 
     this.handleFirstSwitchChange = (firstSwitchChecked, event) => {
-      this.setState({ firstSwitchChecked })
+      this.setState({ firstSwitchChecked });
     };
 
     this.handleSecondSwitchChange = (secondSwitchChecked, event) => {
-      this.setState({ secondSwitchChecked })
+      this.setState({ secondSwitchChecked });
     };
 
     this.onClearLogs = event => {
       this.setState({
         optionExpanded: false
-      })
+      });
       window.alert('Clear Logs!');
-    }
+    };
 
     this.onSearchChange = (value, event) => {
-      this.setState({ 
+      this.setState({
         searchValue: value,
         searchResultsCount: 3
-      })
+      });
     };
 
     this.onSearchClear = event => {
@@ -200,22 +221,23 @@ class ConsoleLogViewerToolbar extends React.Component {
         currentSearchResult: 1
       });
     };
-    
+
     this.onSearchNext = event => {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentSearchResult + 1;
         return {
-          currentSearchResult: newCurrentResult <= prevState.searchResultsCount ? newCurrentResult : prevState.searchResultsCount
-        } 
+          currentSearchResult:
+            newCurrentResult <= prevState.searchResultsCount ? newCurrentResult : prevState.searchResultsCount
+        };
       });
     };
-    
+
     this.onSearchPrevious = event => {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentSearchResult - 1;
         return {
-          currentSearchResult: newCurrentResult > 0 ? newCurrentResult : 1 
-        }
+          currentSearchResult: newCurrentResult > 0 ? newCurrentResult : 1
+        };
       });
     };
 
@@ -223,13 +245,13 @@ class ConsoleLogViewerToolbar extends React.Component {
       if (windowSize >= 1450) {
         this.setState({
           mobileView: false
-        })
+        });
       } else {
         this.setState({
           mobileView: true
-        })
+        });
       }
-    }
+    };
   }
 
   render() {
@@ -294,7 +316,9 @@ class ConsoleLogViewerToolbar extends React.Component {
         />
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="clear-log" onClick={this.onClearLogs}>Clear logs</DropdownItem>
+      <DropdownItem key="clear-log" onClick={this.onClearLogs}>
+        Clear logs
+      </DropdownItem>
     ];
 
     const selectDropdownContent = (
@@ -308,14 +332,14 @@ class ConsoleLogViewerToolbar extends React.Component {
           >
             <Badge key={value}>{type}</Badge>
             {` ${value}`}
-          </SelectOption>   
+          </SelectOption>
         ))}
       </React.Fragment>
     );
 
     const selectToggleContent = ({ showText }) => {
       if (!containerSelected) {
-        return "Select";
+        return 'Select';
       }
       return (
         <React.Fragment>
@@ -328,8 +352,8 @@ class ConsoleLogViewerToolbar extends React.Component {
     const LogsSearchInput = (
       <ToolbarToggleGroup toggleIcon={<SearchIcon />} breakpoint="lg">
         <ToolbarItem>
-          <SearchInput 
-            placeholder='Search logs'
+          <SearchInput
+            placeholder="Search logs"
             value={searchValue}
             onChange={this.onSearchChange}
             onClear={this.onSearchClear}
@@ -343,7 +367,7 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const leftAlignedItemsDesktop = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
+        <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
           <Select
             onToggle={this.onContainerToggle}
             onSelect={this.onContainerSelect}
@@ -353,10 +377,10 @@ class ConsoleLogViewerToolbar extends React.Component {
             placeholderText={selectToggleContent({ showText: true })}
           />
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
+        <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
           <Dropdown
             toggle={
-              <DropdownToggle id='option-toggle-desktop' onToggle={this.onOptionToggle} icon={<CogIcon />}>
+              <DropdownToggle id="option-toggle-desktop" onToggle={this.onOptionToggle} icon={<CogIcon />}>
                 Options
               </DropdownToggle>
             }
@@ -364,8 +388,8 @@ class ConsoleLogViewerToolbar extends React.Component {
             dropdownItems={optionDropdownItems}
           />
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
-          <Button variant={isPaused? "plain": "link"} onClick={this.pauseOrStart}>
+        <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
+          <Button variant={isPaused ? 'plain' : 'link'} onClick={this.pauseOrStart}>
             {isPaused ? <PlayIcon /> : <PauseIcon />}
             {isPaused ? ` Resume Log` : ` Pause Log`}
           </Button>
@@ -375,11 +399,8 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const leftAlignedItemsMobile = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Tooltip
-            position="top"
-            content={<div>Select Container</div>}
-          >
+        <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
+          <Tooltip position="top" content={<div>Select Container</div>}>
             <Select
               onToggle={this.onContainerToggleMobile}
               onSelect={this.onContainerSelectMobile}
@@ -390,27 +411,21 @@ class ConsoleLogViewerToolbar extends React.Component {
             />
           </Tooltip>
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Tooltip
-            position="top"
-            content={<div>Options</div>}
-          >
+        <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
+          <Tooltip position="top" content={<div>Options</div>}>
             <Dropdown
               toggle={
-                <DropdownToggle id='option-toggle-mobile' onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
+                <DropdownToggle id="option-toggle-mobile" onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
               }
               isOpen={optionExpandedMobile}
               dropdownItems={optionDropdownItems}
             />
           </Tooltip>
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Tooltip
-            position="top"
-            content={<div>{isPaused? "Resume Log" : "Pause Log"}</div>}
-          >
+        <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
+          <Tooltip position="top" content={<div>{isPaused ? 'Resume Log' : 'Pause Log'}</div>}>
             <Button variant="plain" onClick={this.pauseOrStart}>
-              {isPaused? <PlayIcon /> : <PauseIcon />}
+              {isPaused ? <PlayIcon /> : <PauseIcon />}
             </Button>
           </Tooltip>
         </ToolbarItem>
@@ -426,11 +441,11 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsDesktop = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
+        <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
           <Dropdown
             onSelect={this.onExternalSelect}
             toggle={
-              <DropdownToggle id='external-toggle' onToggle={this.onExternalToggle}>
+              <DropdownToggle id="external-toggle" onToggle={this.onExternalToggle}>
                 External Logs
               </DropdownToggle>
             }
@@ -438,11 +453,11 @@ class ConsoleLogViewerToolbar extends React.Component {
             dropdownItems={externalDropdownItems}
           />
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'hidden', '2xl': 'visible'}}>
+        <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
           <Dropdown
             onSelect={this.onDownloadSelect}
             toggle={
-              <DropdownToggle id='download-toggle' onToggle={this.onDownloadToggle}>
+              <DropdownToggle id="download-toggle" onToggle={this.onDownloadToggle}>
                 Download
               </DropdownToggle>
             }
@@ -455,30 +470,32 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItemsMobile = (
       <React.Fragment>
-        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Tooltip
-            position="top"
-            content={<div>External Logs</div>}
-          >
+        <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
+          <Tooltip position="top" content={<div>External Logs</div>}>
             <Dropdown
               onSelect={this.onExternalSelectMobile}
               toggle={
-                <DropdownToggle id='mobile-external-toggle' onToggle={this.onExternalToggleMobile} icon={<ExternalLinkAltIcon />} />
+                <DropdownToggle
+                  id="mobile-external-toggle"
+                  onToggle={this.onExternalToggleMobile}
+                  icon={<ExternalLinkAltIcon />}
+                />
               }
               isOpen={externalExpandedMobile}
               dropdownItems={externalDropdownItems}
             />
           </Tooltip>
         </ToolbarItem>
-        <ToolbarItem visibility={{default: 'visible', '2xl': 'hidden'}}>
-          <Tooltip
-            position="top"
-            content={<div>Download</div>}
-          >
+        <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
+          <Tooltip position="top" content={<div>Download</div>}>
             <Dropdown
               onSelect={this.onDownloadSelectMobile}
               toggle={
-                <DropdownToggle id='mobile-download-toggle' onToggle={this.onDownloadToggleMobile} icon={<DownloadIcon />} />
+                <DropdownToggle
+                  id="mobile-download-toggle"
+                  onToggle={this.onDownloadToggleMobile}
+                  icon={<DownloadIcon />}
+                />
               }
               isOpen={downloadExpandedMobile}
               position={DropdownPosition.right}
@@ -491,28 +508,23 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const rightAlignedItems = (
       <React.Fragment>
-        <ToolbarItem>
-          {LogsSearchInput}
-        </ToolbarItem>
+        <ToolbarItem>{LogsSearchInput}</ToolbarItem>
         {rightAlignedItemsDesktop}
         {rightAlignedItemsMobile}
         <ToolbarItem>
-          <Tooltip
-            position="top"
-            content={<div>Expand</div>}
-          >
+          <Tooltip position="top" content={<div>Expand</div>}>
             <Button variant="plain" aria-label="expand">
               <ExpandIcon />
             </Button>
           </Tooltip>
         </ToolbarItem>
       </React.Fragment>
-    )
+    );
 
     const items = (
       <React.Fragment>
-        <ToolbarGroup alignment={{default: 'alignLeft'}}>{leftAlignedItems}</ToolbarGroup>
-        <ToolbarGroup alignment={{default: 'alignRight'}}>{rightAlignedItems}</ToolbarGroup>
+        <ToolbarGroup alignment={{ default: 'alignLeft' }}>{leftAlignedItems}</ToolbarGroup>
+        <ToolbarGroup alignment={{ default: 'alignRight' }}>{rightAlignedItems}</ToolbarGroup>
       </React.Fragment>
     );
 
@@ -525,24 +537,11 @@ class ConsoleLogViewerToolbar extends React.Component {
       >
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
-    )
-
-    const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={{ href: 'https://patternfly.org', target: '_blank' }}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-      />
     );
-
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={!mobileView}/>;
-
     return (
-      <Page header={Header} sidebar={Sidebar} onPageResize={this.onPageResize}>
-        <PageSection variant={PageSectionVariants.light}>
-          {toolbar}
-        </PageSection>
-      </Page>
+      <DashboardWrapper sidebarNavOpen={!mobileView} onPageResize={this.onPageResize}>
+        <PageSection variant={PageSectionVariants.light}>{toolbar}</PageSection>
+      </DashboardWrapper>
     );
   }
 }
