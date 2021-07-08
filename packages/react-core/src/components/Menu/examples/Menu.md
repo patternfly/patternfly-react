@@ -117,10 +117,11 @@ The flyout will automatically position to the left or top if it would otherwise 
 
 ```js
 import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem, Popper, Button } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem, Dropdown, DropdownToggle } from '@patternfly/react-core';
 
 MenuWithFlyout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const menuRef = React.useRef();
   const numFlyouts = 15;
   const FlyoutMenu = ({ depth, children }) => (
     <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={() => setIsOpen(false)}>
@@ -138,11 +139,10 @@ MenuWithFlyout = () => {
     curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
 
+  // On keypress auto focus first element.
   const id = 'root-menu';
-  const onClick = event => {
-    setIsOpen(!isOpen);
-    // On keypress auto focus first element like a dropdown. This is rather hacky.
-    if (event.screenX === 0 && event.screenY === 0 && !isOpen) {
+  const onEnter = event => {
+    if (!isOpen) {
       setTimeout(() => {
         const menu = document.getElementById(id);
         if (menu) {
@@ -155,33 +155,33 @@ MenuWithFlyout = () => {
     }
   };
 
-  const onKeyDown = event => {
-    if (event.key === 'Escape') {
-      setIsOpen(false);
-    }
-  };
-
-  // This isn't a full featured Dropdown yet. You currently have to implement keyboard functionality.
   return (
-    <Popper
-      isVisible={isOpen}
-      trigger={<Button onClick={onClick}>Toggle flyout menu</Button>}
-      popper={
-        <Menu containsFlyout onSelect={() => setIsOpen(false)} id={id} onKeyDown={onKeyDown}>
-          <MenuContent>
-            <MenuList>
-              <MenuItem>Start rollout</MenuItem>
-              <MenuItem>Pause rollouts</MenuItem>
-              <MenuItem>Add storage</MenuItem>
-              <MenuItem description="Description" flyoutMenu={curFlyout} aria-label="Has flyout menu">
-                Edit
-              </MenuItem>
-              <MenuItem>Delete deployment config</MenuItem>
-            </MenuList>
-          </MenuContent>
-        </Menu>
-      }
-    />
+    <Dropdown
+      isOpen={isOpen}
+      toggle={(
+        <DropdownToggle
+          onToggle={() => setIsOpen(!isOpen)}
+          onEnter={onEnter}
+        >
+          Flyout menu
+        </DropdownToggle>
+      )}
+      contextProps={{ menuClass: '' }}
+    >
+      <Menu containsFlyout id={id} onSelect={() => setIsOpen(false)}>
+        <MenuContent>
+          <MenuList>
+            <MenuItem>Start rollout</MenuItem>
+            <MenuItem>Pause rollouts</MenuItem>
+            <MenuItem>Add storage</MenuItem>
+            <MenuItem description="Description" flyoutMenu={curFlyout} aria-label="Has flyout menu">
+              Edit
+            </MenuItem>
+            <MenuItem>Delete deployment config</MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    </Dropdown>
   );
 }
 ```

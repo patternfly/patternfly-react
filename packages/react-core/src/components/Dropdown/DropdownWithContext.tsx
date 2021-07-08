@@ -139,7 +139,10 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                   id,
                   isPlain,
                   'aria-haspopup': ariaHasPopup,
-                  onEnter: () => this.onEnter()
+                  onEnter: () => {
+                    this.onEnter();
+                    oneToggle.props.onEnter && oneToggle.props.onEnter();
+                  }
                 })
               )}
               {menuAppendTo === 'inline' && isOpen && menuContainer}
