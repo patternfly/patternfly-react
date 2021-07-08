@@ -36,7 +36,6 @@ export const SimpleListContext = React.createContext<Partial<SimpleListContextPr
 
 export class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
   static displayName = 'SimpleList';
-  static hasWarnBeta = false;
   state = {
     currentRef: null as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>
   };
@@ -46,14 +45,6 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
     className: '',
     isControlled: true
   };
-
-  componentDidMount() {
-    if (!SimpleList.hasWarnBeta && process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
-      console.warn('This component is in beta and subject to change.');
-      SimpleList.hasWarnBeta = true;
-    }
-  }
 
   handleCurrentUpdate = (
     newCurrentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,

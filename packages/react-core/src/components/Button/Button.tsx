@@ -96,13 +96,6 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   const isButtonElement = Component === 'button';
   const isInlineSpan = isInline && Component === 'span';
 
-  if (isAriaDisabled && process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'You are using a beta component feature (isAriaDisabled). These api parts are subject to change in the future.'
-    );
-  }
-
   const preventedEvents = inoperableEvents.reduce(
     (handlers, eventToPrevent) => ({
       ...handlers,
