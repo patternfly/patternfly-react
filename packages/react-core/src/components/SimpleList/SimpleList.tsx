@@ -36,7 +36,6 @@ export const SimpleListContext = React.createContext<Partial<SimpleListContextPr
 
 export class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
   static displayName = 'SimpleList';
-  static hasWarnBeta = false;
   state = {
     currentRef: null as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>
   };
