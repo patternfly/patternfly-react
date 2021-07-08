@@ -22,7 +22,7 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
   rowData,
   rowIndex,
   renderers,
-  onRow = () => Object
+  onRow = () => ({})
 }: HeaderRowProps) =>
   React.createElement(
     renderers.row as createElementType,

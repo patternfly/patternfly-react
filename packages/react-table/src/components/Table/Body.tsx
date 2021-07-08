@@ -163,7 +163,7 @@ export const TableBody = ({
   children = null as React.ReactNode,
   rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  onRow = (...args: any) => Object,
+  onRow = (...args: any) => ({}),
   onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>
     /* eslint-enable @typescript-eslint/no-unused-vars */
     undefined as OnRowClick,
