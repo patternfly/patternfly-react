@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.29.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.29.7...@patternfly/react-table@4.29.8) (2021-07-08)
+
+
+### Bug Fixes
+
+* **table:** Avoid Object constructor ([#5999](https://github.com/patternfly/patternfly-react/issues/5999)) ([7ced773](https://github.com/patternfly/patternfly-react/commit/7ced773de324958ff1ea06176528abd284136161)), closes [#5320](https://github.com/patternfly/patternfly-react/issues/5320)
+
+
+
+
+
 ## [4.29.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.29.6...@patternfly/react-table@4.29.7) (2021-07-08)
 
 **Note:** Version bump only for package @patternfly/react-table

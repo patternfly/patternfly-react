@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.19.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.19.9...@patternfly/react-docs@5.19.10) (2021-07-08)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.19.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.19.8...@patternfly/react-docs@5.19.9) (2021-07-08)
 
 **Note:** Version bump only for package @patternfly/react-docs
