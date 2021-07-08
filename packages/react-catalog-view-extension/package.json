@@ -38,8 +38,7 @@
     "@patternfly/patternfly": "4.119.3",
     "@patternfly/react-core": "^4.135.6",
     "@patternfly/react-styles": "^4.11.1",
-    "classnames": "^2.2.5",
-    "patternfly": "^3.59.4"
+    "classnames": "^2.2.5"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

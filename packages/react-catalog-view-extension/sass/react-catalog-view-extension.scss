@@ -1,11 +1,5 @@
-// Bootstrap Core variables and mixins
-@import 'bootstrap/variables';
-@import 'bootstrap/mixins';
-
-// Patternfly Core variables and mixins
-@import 'patternfly/variables';
-@import 'patternfly/bootstrap-mixin-overrides';
-@import 'patternfly/mixins';
+// Patternfly Core variables
+@import "~@patternfly/patternfly/sass-utilities/colors";
 
 // Extensions StyleSheets
 @import './react-catalog-view-extension/react-catalog-view-extension';

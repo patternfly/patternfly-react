@@ -24,13 +24,11 @@ import { Component } from 'react-catalog-view-extension';
 
 #### Styling:
 
-Example with LESS:
+Example with SCSS:
 
 ```
-@import "~bootstrap/sass/variables";
-@import "~patternfly/dist/sass/variables";
-@import "~patternfly-react/dist/sass/patternfly-react.scss";
-@import "~react-catalog-view-extension/dist/sass/react-catalog-view-extension.scss";
+@import "~patternfly-react/dist/sass/patternfly-react";
+@import "~react-catalog-view-extension/dist/sass/react-catalog-view-extension";
 ```
 
 ### Building

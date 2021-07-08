@@ -1,6 +1,6 @@
 .catalog-tile-pf {
   &.featured {
-    border-top: 2px solid $color-pf-blue-300;
+    border-top: 2px solid $pf-color-blue-300;
   }
 
   &:active,
@@ -22,22 +22,22 @@
   padding-bottom: 16px;
 
   .catalog-tile-pf-title {
-    font-size: ($font-size-base + 1);
+    font-size: 15px;
     font-weight: 400;
   }
 
   .catalog-tile-pf-subtitle {
-    color: $color-pf-black-500;
-    font-size: ($font-size-base - 1);
+    color: $pf-color-black-500;
+    font-size: 13px;
     font-weight: initial;
 
     a {
-      color: $color-pf-blue-300;
+      color: $pf-color-blue-300;
       text-decoration: none;
     }
 
     a:hover {
-      color: $color-pf-blue-200;
+      color: $pf-color-blue-200;
       text-decoration: none;
     }
   }

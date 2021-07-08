@@ -58,7 +58,7 @@ export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCat
     shownChildren = childrenArray.slice(0, maxShowCount);
     if (hiddenCount > leeway) {
       showAllToggle = (
-        <Button variant="link" onClick={onShowAllToggle}>
+        <Button variant="link" isInline onClick={onShowAllToggle}>
           {showText || `Show ${hiddenCount} more`}
         </Button>
       );
@@ -67,7 +67,7 @@ export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCat
 
   return (
     <form className={classes} {...props}>
-      <fieldset className={`${css(formStyles.formFieldset)} checkbox filter-panel-pf-category-items`}>
+      <fieldset className={`${css(formStyles.formFieldset)} filter-panel-pf-category-items`}>
         {title && <legend className="filter-panel-pf-category-title">{title}</legend>}
         {shownChildren}
         {showAllToggle}
