@@ -31,18 +31,18 @@ describe('Dual List Selector With Actions Demo Test', () => {
     );
 
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(0)
+      .eq(1)
       .should('have.attr', 'aria-label', 'Demo add all');
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(1)
+      .eq(0)
       .should('have.attr', 'aria-label', 'Demo add selected')
       .and('have.attr', 'disabled');
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(2)
+      .eq(3)
       .should('have.attr', 'aria-label', 'Demo remove selected')
       .and('have.attr', 'disabled');
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(3)
+      .eq(2)
       .should('have.attr', 'aria-label', 'Demo remove all')
       .and('have.attr', 'disabled');
 
@@ -78,7 +78,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
 
   it('Verify selecting and choosing options', () => {
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(1)
+      .eq(0)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
@@ -92,7 +92,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .eq(1)
       .click();
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(1)
+      .eq(0)
       .click();
 
     cy.get('.pf-m-available .pf-c-dual-list-selector__status-text').contains('2 available');
@@ -110,7 +110,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
 
   it('Verify removing all options', () => {
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(3)
+      .eq(2)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
@@ -126,7 +126,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
 
   it('Verify choosing all options', () => {
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(0)
+      .eq(1)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
@@ -171,7 +171,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .eq(1)
       .type('{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}');
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(3)
+      .eq(2)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
@@ -203,7 +203,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .find('li')
       .should('have.length', 1);
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(0)
+      .eq(1)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
