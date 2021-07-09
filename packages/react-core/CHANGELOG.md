@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.135.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.8...@patternfly/react-core@4.135.9) (2021-07-09)
+
+
+### Bug Fixes
+
+* **Select:** Ignore arrow keys when typeahead options are empty ([#5958](https://github.com/patternfly/patternfly-react/issues/5958)) ([7ead1e8](https://github.com/patternfly/patternfly-react/commit/7ead1e8418d6d02b42dcd625ca3ff4fda3a83770))
+* **TimePicker:** onInputChange is always set to valid ([#5982](https://github.com/patternfly/patternfly-react/issues/5982)) ([a5fcf76](https://github.com/patternfly/patternfly-react/commit/a5fcf76785772b11959be7cbb42cf02520d8a623))
+
+
+
+
+
 ## [4.135.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.7...@patternfly/react-core@4.135.8) (2021-07-09)
 
 
