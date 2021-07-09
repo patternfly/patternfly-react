@@ -237,7 +237,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    if (prevProps.children !== this.props.children) {
+    if (
+      prevProps.children.length !== this.props.children.length ||
+      prevProps.children.some(
+        (child: React.ReactElement, index: number) => child.props.value !== this.props.children[index].props.value
+      )
+    ) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
