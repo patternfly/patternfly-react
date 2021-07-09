@@ -43,7 +43,7 @@ export interface KeyboardHandlerProps {
 export const handleArrows = (
   event: KeyboardEvent,
   navigableElements: Element[],
-  isActiveElement: (element: Element) => boolean,
+  isActiveElement: (element: Element) => boolean = element => document.activeElement.contains(element),
   getFocusableElement: (element: Element) => Element = element => element,
   validSiblingTags: string[] = ['A', 'BUTTON'],
   noVerticalArrowHandling: boolean = false,
