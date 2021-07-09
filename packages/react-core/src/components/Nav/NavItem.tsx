@@ -6,7 +6,7 @@ import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
-  /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
+  /** Content rendered inside the nav item. */
   children?: React.ReactNode;
   /** Whether to set className on children when React.isValidElement(children) */
   styleChildren?: boolean;
@@ -24,7 +24,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   preventDefault?: boolean;
   /** Callback for item click */
   onClick?: NavSelectClickHandler;
-  /** Component used to render NavItems */
+  /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
 }
 
