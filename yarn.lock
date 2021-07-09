@@ -14927,6 +14927,20 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-docgen@5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.3.1.tgz#940b519646a6c285c2950b96512aed59e8f90934"
+  integrity sha512-YG7YujVTwlLslr2Ny8nQiUfbBuEwKsLHJdQTSdEga1eY/nRFh/7LjCWUn6ogYhu2WDKg4z+6W/BJtUi+DPUIlA==
+  dependencies:
+    "@babel/core" "^7.7.5"
+    "@babel/runtime" "^7.7.6"
+    ast-types "^0.14.2"
+    commander "^2.19.0"
+    doctrine "^3.0.0"
+    neo-async "^2.6.1"
+    node-dir "^0.1.10"
+    strip-indent "^3.0.0"
+
 react-docgen@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.1.0.tgz#8e69f1d2e9153c535c20162ea1b85878b059b474"
@@ -14937,19 +14951,6 @@ react-docgen@^5.1.0:
     async "^2.1.4"
     commander "^2.19.0"
     doctrine "^3.0.0"
-    node-dir "^0.1.10"
-    strip-indent "^3.0.0"
-
-react-docgen@^5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.3.1.tgz#940b519646a6c285c2950b96512aed59e8f90934"
-  dependencies:
-    "@babel/core" "^7.7.5"
-    "@babel/runtime" "^7.7.6"
-    ast-types "^0.14.2"
-    commander "^2.19.0"
-    doctrine "^3.0.0"
-    neo-async "^2.6.1"
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
@@ -17233,10 +17234,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.5.17:
-  version "0.5.17"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.5.17.tgz#81868ba879b53275e13e2442e5d72382ea90a2d2"
-  integrity sha512-z8AQ/1QhKXc1QTToZYk4j1AXV8JdGRrG3tyZ1RQTaRloB2VXc54ELl7Ba6HyT1malujnr3QbvpnFskC3CWgAsQ==
+theme-patternfly-org@0.5.19:
+  version "0.5.19"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.5.19.tgz#c0c3b16c3b9e217e488abe05d903465e18c3610a"
+  integrity sha512-tP/Z7DXMFRLKkjD/SWNtn3NApsCPT3y6oDJK880yFQKfWETltcR1EAVsKuBMAtDoCf8DC7GNyN58rL7+53GMJA==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
@@ -17279,7 +17280,7 @@ theme-patternfly-org@0.5.17:
     prismjs "^1.17.1"
     puppeteer "^5.3.1"
     puppeteer-cluster "^0.22.0"
-    react-docgen "^5.3.1"
+    react-docgen "5.3.1"
     react-live "^2.2.0"
     react-monaco-editor "^0.41.2"
     react-ssr-prepass "^1.2.1"
