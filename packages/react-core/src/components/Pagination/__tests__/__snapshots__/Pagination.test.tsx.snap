@@ -9935,7 +9935,7 @@ exports[`component render titles 1`] = `
       lastIndex={10}
       lastPage={4}
       onPerPageSelect={[Function]}
-      optionsToggle="Select"
+      optionsToggle="Items per page"
       page={1}
       perPage={10}
       perPageOptions={
@@ -10031,7 +10031,7 @@ exports[`component render titles 1`] = `
             itemsTitle="values"
             lastIndex={10}
             onToggle={[Function]}
-            optionsToggle="Select"
+            optionsToggle="Items per page"
             parentRef={null}
             showToggle={true}
             toggleTemplate={[Function]}
@@ -10059,7 +10059,7 @@ exports[`component render titles 1`] = `
             lastIndex={10}
             onEnter={[Function]}
             onToggle={[Function]}
-            optionsToggle="Select"
+            optionsToggle="Items per page"
             parentRef={
               Object {
                 "current": <div
@@ -10089,7 +10089,7 @@ exports[`component render titles 1`] = `
                     </span>
                     <button
                       aria-expanded="false"
-                      aria-label="Select"
+                      aria-label="Items per page"
                       class="  pf-c-options-menu__toggle-button"
                       data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
                       data-ouia-component-type="PF4/DropdownToggle"
@@ -10151,7 +10151,7 @@ exports[`component render titles 1`] = `
                 </ToggleTemplate>
               </span>
               <DropdownToggle
-                aria-label="Select"
+                aria-label="Items per page"
                 className="pf-c-options-menu__toggle-button"
                 id="pagination-options-menu-toggle-12"
                 isDisabled={false}
@@ -10187,7 +10187,7 @@ exports[`component render titles 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
                           data-ouia-component-type="PF4/DropdownToggle"
@@ -10219,7 +10219,7 @@ exports[`component render titles 1`] = `
                 }
               >
                 <Toggle
-                  aria-label="Select"
+                  aria-label="Items per page"
                   bubbleEvent={false}
                   className="pf-c-options-menu__toggle-button"
                   data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
@@ -10264,7 +10264,7 @@ exports[`component render titles 1`] = `
                           </span>
                           <button
                             aria-expanded="false"
-                            aria-label="Select"
+                            aria-label="Items per page"
                             class="  pf-c-options-menu__toggle-button"
                             data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
                             data-ouia-component-type="PF4/DropdownToggle"
@@ -10297,7 +10297,7 @@ exports[`component render titles 1`] = `
                 >
                   <button
                     aria-expanded={false}
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="  pf-c-options-menu__toggle-button"
                     data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
                     data-ouia-component-type="PF4/DropdownToggle"
