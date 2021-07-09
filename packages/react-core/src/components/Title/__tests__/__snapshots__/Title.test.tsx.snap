@@ -3,6 +3,9 @@
 exports[`2xl Title 1`] = `
 <h1
   className="pf-c-title pf-m-2xl"
+  data-ouia-component-id="OUIA-Generated-Title-4"
+  data-ouia-component-type="PF4/Title"
+  data-ouia-safe={true}
 >
   2xl
    Title
@@ -12,6 +15,9 @@ exports[`2xl Title 1`] = `
 exports[`3xl Title 1`] = `
 <h1
   className="pf-c-title pf-m-3xl"
+  data-ouia-component-id="OUIA-Generated-Title-5"
+  data-ouia-component-type="PF4/Title"
+  data-ouia-safe={true}
 >
   3xl
    Title
@@ -21,6 +27,9 @@ exports[`3xl Title 1`] = `
 exports[`4xl Title 1`] = `
 <h1
   className="pf-c-title pf-m-4xl"
+  data-ouia-component-id="OUIA-Generated-Title-6"
+  data-ouia-component-type="PF4/Title"
+  data-ouia-safe={true}
 >
   4xl
    Title
@@ -30,6 +39,9 @@ exports[`4xl Title 1`] = `
 exports[`lg Title 1`] = `
 <h1
   className="pf-c-title pf-m-lg"
+  data-ouia-component-id="OUIA-Generated-Title-2"
+  data-ouia-component-type="PF4/Title"
+  data-ouia-safe={true}
 >
   lg
    Title
@@ -39,6 +51,9 @@ exports[`lg Title 1`] = `
 exports[`md Title 1`] = `
 <h1
   className="pf-c-title pf-m-md"
+  data-ouia-component-id="OUIA-Generated-Title-1"
+  data-ouia-component-type="PF4/Title"
+  data-ouia-safe={true}
 >
   md
    Title
@@ -48,6 +63,9 @@ exports[`md Title 1`] = `
 exports[`xl Title 1`] = `
 <h1
   className="pf-c-title pf-m-xl"
+  data-ouia-component-id="OUIA-Generated-Title-3"
+  data-ouia-component-type="PF4/Title"
+  data-ouia-safe={true}
 >
   xl
    Title

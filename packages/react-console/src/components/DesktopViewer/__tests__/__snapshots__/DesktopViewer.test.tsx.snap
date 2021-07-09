@@ -28,6 +28,9 @@ exports[`DesktopViewer empty 1`] = `
   >
     <h2
       class="pf-c-title pf-m-3xl"
+      data-ouia-component-id="OUIA-Generated-Title-1"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
     >
       Manual Connection
     </h2>
@@ -207,6 +210,9 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
   >
     <h2
       class="pf-c-title pf-m-3xl"
+      data-ouia-component-id="OUIA-Generated-Title-2"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
     >
       Manual Connection
     </h2>
@@ -544,6 +550,9 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
   >
     <h2
       class="pf-c-title pf-m-3xl"
+      data-ouia-component-id="OUIA-Generated-Title-4"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
     >
       Manual Connection
     </h2>
@@ -925,6 +934,9 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
   >
     <h2
       class="pf-c-title pf-m-3xl"
+      data-ouia-component-id="OUIA-Generated-Title-3"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
     >
       Manual Connection
     </h2>
@@ -1386,6 +1398,9 @@ exports[`DesktopViewer with custom more-info content 1`] = `
         >
           <h2
             className="pf-c-title pf-m-3xl"
+            data-ouia-component-id="OUIA-Generated-Title-7"
+            data-ouia-component-type="PF4/Title"
+            data-ouia-safe={true}
           >
             Manual Connection
           </h2>
