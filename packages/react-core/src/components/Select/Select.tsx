@@ -583,6 +583,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           this.onToggle(false);
         }
       } else if (!tabbedIntoFavoritesMenu) {
+        if (this.refCollection[0][0] === null) {
+          return;
+        }
         let nextIndex;
         if (typeaheadCurrIndex === -1 && position === 'down') {
           nextIndex = 0;
