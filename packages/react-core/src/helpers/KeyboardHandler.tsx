@@ -29,7 +29,7 @@ export interface KeyboardHandlerProps {
 }
 
 /**
- * This function is a helper for handling basic arrow keyboard interactions
+ * This function is a helper for handling basic arrow keyboard interactions. If a component already has its own key handler and event start up/tear down, this function may be easier to integrate in over the full component.
  *
  * @param {event} event Event triggered by the keyboard
  * @param {element[]} navigableElements Valid traversable elements of the container
@@ -44,7 +44,7 @@ export const handleArrows = (
   event: KeyboardEvent,
   navigableElements: Element[],
   isActiveElement: (element: Element) => boolean,
-  getFocusableElement: (element: Element) => Element,
+  getFocusableElement: (element: Element) => Element = element => element,
   validSiblingTags: string[] = ['A', 'BUTTON'],
   noVerticalArrowHandling: boolean = false,
   noHorizontalArrowHandling: boolean = false,
