@@ -90,7 +90,7 @@ export const handleArrows = (
       // While a sibling exists, check each sibling to determine if it should be focussed
       while (nextSibling) {
         // Set the next checked sibling, determined by the horizontal arrow key direction
-        nextSibling = key === 'ArrowLeft' ? activeElement.previousElementSibling : activeElement.nextElementSibling;
+        nextSibling = key === 'ArrowLeft' ? nextSibling.previousElementSibling : nextSibling.nextElementSibling;
         if (nextSibling) {
           if (validSiblingTags.includes(nextSibling.tagName)) {
             // If the sibling's tag is included in validSiblingTags, set the next target element and break the loop
