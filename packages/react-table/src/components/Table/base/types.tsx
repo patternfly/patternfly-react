@@ -71,6 +71,7 @@ export interface TdActionsType {
 }
 
 export interface TdExpandType {
+  /** Flag indicating the child row associated with this cell is expanded */
   isExpanded: boolean;
   /** The row index */
   rowIndex: number;

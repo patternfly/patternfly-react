@@ -15,8 +15,20 @@ propComponents:
     'Td',
     'Caption',
     'TableText',
+    'TdActionsType', 
+    'TdSelectType', 
+    'ThSelectType',
+    'TdTreeRowType', 
+    'IActions', 
+    'TdCompoundExpandType', 
+    'TdFavoritesType', 
+    'TdDraggableType', 
+    'ThInfoType', 
+    'TdExpandType',
     'EditableSelectInputCell',
-    'EditableTextCell'
+    'EditableTextCell',
+    'EditableSelectInputProps', 
+    'EditableTextCellProps', 
   ]
 ouia: true
 ---
@@ -1561,38 +1573,6 @@ Example:
 },
 ```
 
-Type of `EditableTextCell`'s `props` prop: 
-```
-interface EditableTextCellProps {
-  /** Name of the input */
-  name: string;
-  /** Value to display in the cell */
-  value: string;
-  /** arbitrary data to pass to the internal text input in the editable text cell */
-  [key: string]: any;
-}
-```
-
-Type of `EditableSelectInputCell`'s `props` prop: 
-```
-interface EditableSelectInputProps {
-  /** Name of the select input */
-  name: string;
-  /** Value to display in the cell */
-  value: string | string[];
-  /** Flag controlling isOpen state of select */
-  isSelectOpen: boolean;
-  /** String or SelectOptionObject, or array of strings or SelectOptionObjects representing current selections */
-  selected: string | SelectOptionObject | (string | SelectOptionObject)[];
-  /** Array of react elements to display in the select menu */
-  options: React.ReactElement[];
-  /** Props to be passed down to the Select component */
-  editableSelectProps?: SelectProps;
-  /** arbitrary data to pass to the internal select component in the editable select input cell */
-  [key: string]: any;
-}
-```
-
 ```js isBeta
 import React from 'react';
 import { TextInput, SelectOption } from '@patternfly/react-core';
@@ -2556,24 +2536,6 @@ ComposableTableBasic = () => {
 
 To add a header tooltip or popover to `Th`, pass a `ThInfoType` object via the `info` prop.
 
-`ThInfoType` (excerpt): 
-```
-interface ThInfoType {
-  /** Content to be displayed in the tooltip */
-  tooltip?: React.ReactNode; 
-  /** TooltipProps are defined in the Tooltip component */
-  tooltipProps?: TooltipProps;
-  /** Content to be displayed in the popover */
-  popover?: React.ReactNode;
-  /** PopoverProps are defined in the Popover component */
-  popoverProps?: PopoverProps;
-  /** Accessible label for the tooltip/popover */
-  ariaLabel?: string;
-  /** Class name added to the tooltip/popover */
-  className?: string;
-}
-```
-
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
@@ -2674,19 +2636,9 @@ ComposableTableMisc = () => {
 
 To make a column sortable, pass a `ThSortType` object via the `sort` prop on a column's `Th`.
 
-`ThSortType` (excerpt): 
-```
-interface ThSortType {
-  /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
-  onSort?: OnSort;
-  /** Provide the currently active column's index and direction */
-  sortBy: ISortBy;
-  /** The column index */
-  columnIndex: number;
-  /** True to make this a favoritable sorting cell */
-  isFavorites?: boolean;
-}
+`ThSortType` includes an `OnSort` event handler which has the following signature:
 
+```
 type OnSort = (
   event: React.MouseEvent,
   columnIndex: number,
@@ -2799,38 +2751,11 @@ We add it as the first header cell and also as the first body cell for each row.
 
 To make a column sortable, pass a `ThSelectType` object via the `select` prop on a column's `Th`.
 
-`ThSortType` (excerpt): 
-```
-interface ThSelectType {
-  /** Callback on select */
-  onSelect?: OnSelect;
-  /** Whether the cell is selected */
-  isSelected: boolean;
-}
-
-```
-
 To make a row sortable, pass a `TdSelectType` object via the `select` prop on each rows's first `Td`.
 
-```
-interface TdSelectType {
-  /** Required: The row index */
-  rowIndex: number;
-  /** The selectable variant */
-  variant?: 'checkbox' | 'radio';
-  /** Callback on select */
-  onSelect?: OnSelect;
-  /** Whether the cell is selected */
-  isSelected: boolean;
-  /** Whether to disable the selection */
-  disable?: boolean;
-  /** Additional props forwarded to select rowData */
-  props?: any;
-}
+Both the `TdSelectType` and the `ThSelectType` expect an `OnSelect` event handler with the following signature:
 
-```
-
-OnSelect:
+`OnSelect:`
 ```
 type OnSelect = (
   event: React.FormEvent<HTMLInputElement>,
@@ -2987,34 +2912,6 @@ This example demonstrates adding actions as the last column. The header's last c
 
 To make a cell an action cell, pass a `TdActionsType` object via the `actions` prop on a rows's last `Td`.
 
-```
-interface TdActionsType {
-  /** Cell actions */
-  items: IActions;
-  /** Whether to disable the actions */
-  disable?: boolean;
-  /** Actions dropdown position */
-  dropdownPosition?: DropdownPosition;
-  /** Actions dropdown direction */
-  dropdownDirection?: DropdownDirection;
-  /** Custom toggle for the actions menu */
-  actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
-}
-
-interface IAction {
-  /** Flag indicating an item on actions menu is a separator, rather than an action */
-  isSeparator?: boolean;
-  /** Key of actions menu item */
-  itemKey?: string;
-  /** Content to display in the actions menu item */
-  title?: string | React.ReactNode;
-  /** Click handler for the actions menu item */
-  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
-  /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
-  isOutsideDropdown?: boolean;
-}
-```
-
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
@@ -3140,18 +3037,9 @@ To make a parent/child row pair expandable:
 2. Wrap the content of each child row cell in `ExpandableRowContent`.
 3. Enclose each parent/child row pair in a `Tbody` component with an `isExpanded` prop.
 
-```
-interface TdExpandType {
-  /** Flag indicating this parent's child row is expanded
-  isExpanded: boolean;
-  /** The row index */
-  rowIndex: number;
-  /** The column index */
-  columnIndex?: number;
-  /** On toggling the expansion */
-  onToggle?: OnCollapse;
-}
+The `TdExpandType` expects an `OnCollapse` event handler that has the following signature:
 
+```
 type OnCollapse = (
   event: React.MouseEvent,
   rowIndex: number,
@@ -3329,14 +3217,8 @@ To make a parent/child row pair compound expandable:
 2. Wrap the content of each child row cell in `ExpandableRowContent`.
 3. Each child `Tr` has an `isExpanded` prop.
 
+The `TdCompoundExpandType` expects an `OnExpand` event handler with the following signature
 ```
-interface TdCompoundExpandType {
-  /** determines if the corresponding expansion row is open */
-  isExpanded: boolean;
-  /** Callback on toggling of the expansion */
-  onToggle?: OnExpand;
-}
-
 export type OnExpand = (
   event: React.MouseEvent,
   rowIndex: number,
@@ -3682,18 +3564,9 @@ ComposableTableText = () => {
 To make a row favoritable, the table needs a favoritable column.
 Pass a `TdFavoritesType` object via the `favorites` prop on each rows's first `Td` in the favoritable column.
 
-```
-interface TdFavoritesType {
-  /** Whether the corresponding row is favorited */
-  isFavorited: boolean;
-  /** Callback on clicking the favorites button */
-  onFavorite?: OnFavorite;
-  /** The row index */
-  rowIndex?: number;
-  /** Additional props forwarded to the FavoritesCell */
-  props?: any;
-}
+The `TdFavoritesType` expects an `OnFavorite` event handler with the following signature:
 
+```
 type OnFavorite = (
   event: React.MouseEvent,
   isFavorited: boolean,
@@ -4064,13 +3937,6 @@ To make a row draggable:
 3. The `Tbody` needs `onDragOver`, `onDrop`, and `onDragLeave` props.
 4. While the user is dragging a row, the `` class needs to be applied to `TableComposable`.
 5. The draggable `Td` in each row needs a `TdDraggableType` object passed to its `draggable` prop.
-
-```
-interface TdDraggableType { 
-  /** Id of the draggable row */
-  id: string;
-}
-```
 
 ```js isBeta
 import React from 'react';
