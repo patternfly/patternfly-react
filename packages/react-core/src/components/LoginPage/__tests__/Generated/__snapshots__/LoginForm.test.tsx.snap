@@ -53,6 +53,7 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
       isValid={true}
       label="''"
       onChange={[Function]}
+      ouiaSafe={true}
     />
   </FormGroup>
   <ActionGroup>

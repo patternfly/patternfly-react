@@ -2,9 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
+import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface CheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
+    OUIAProps {
   /** Additional classes added to the Checkbox. */
   className?: string;
   /** Flag to show if the Checkbox selection is valid or invalid. */
@@ -31,18 +33,26 @@ export interface CheckboxProps
 // tslint:disable-next-line:no-empty
 const defaultOnChange = () => {};
 
-export class Checkbox extends React.Component<CheckboxProps> {
+interface CheckboxState {
+  ouiaStateId: string;
+}
+
+export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
   static displayName = 'Checkbox';
   static defaultProps: PickOptional<CheckboxProps> = {
     className: '',
     isValid: true,
     isDisabled: false,
     isChecked: false,
-    onChange: defaultOnChange
+    onChange: defaultOnChange,
+    ouiaSafe: true
   };
 
   constructor(props: any) {
     super(props);
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(Checkbox.displayName)
+    };
   }
 
   private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
@@ -62,6 +72,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
       defaultChecked,
       description,
       body,
+      ouiaId,
       ...props
     } = this.props;
     if (!props.id) {
@@ -92,6 +103,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
           disabled={isDisabled}
           ref={elem => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
+          {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         />
         {label && (
           <label className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
