@@ -3,10 +3,9 @@ id: Primary-detail
 section: demos
 ---
 
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
@@ -14,8 +13,6 @@ import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import pfIcon from './Card/pf-logo-small.svg';
 import activeMQIcon from './Card/activemq-core_200x150.png';
 import avroIcon from './Card/camel-avro_200x150.png';
@@ -30,18 +27,12 @@ import restIcon from './Card/FuseConnector_Icons_REST.png';
 ## Demos
 
 ### Primary-detail full page
+
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   ButtonVariant,
-  Dropdown,
-  Card,
-  CardBody,
   DataList,
   DataListAction,
   DataListCell,
@@ -62,28 +53,15 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
   Flex,
   FlexItem,
-  Gallery,
-  GalleryItem,
   InputGroup,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Progress,
   Select,
   SelectOption,
   SelectVariant,
-  SkipToContent,
   Stack,
   StackItem,
   Text,
@@ -91,19 +69,15 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
@@ -120,36 +94,6 @@ class PrimaryDetailFullPage extends React.Component {
       riskIsExpanded: false,
       riskSelected: null,
       selectedDataListItemId: ''
-    };
-
-    this.onDropdownToggle = isDropdownOpen => {
-      this.setState({
-        isDropdownOpen
-      });
-    };
-
-    this.onDropdownSelect = event => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
-      this.setState({
-        isKebabDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownSelect = event => {
-      this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-      });
-    };
-
-    this.onNavSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
     };
 
     this.statusOptions = [
@@ -243,71 +187,6 @@ class PrimaryDetailFullPage extends React.Component {
       riskSelected,
       selectedDataListItemId
     } = this.state;
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-    const kebabDropdownItems = [
-      <DropdownItem>
-        <BellIcon /> Notifications
-      </DropdownItem>,
-      <DropdownItem>
-        <CogIcon /> Settings
-      </DropdownItem>
-    ];
-    const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated link</DropdownItem>,
-      <DropdownItem component="button">Separated action</DropdownItem>
-    ];
-    const PageToolbar = <div>need to implement new toolbar</div>;
-
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
-        showNavToggle
-      />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const toggleGroupItems = (
       <React.Fragment>
@@ -583,52 +462,37 @@ class PrimaryDetailFullPage extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
-              </Text>
-            </TextContent>
-          </PageSection>
-          <Divider component="div" />
-          <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
-            <Drawer isExpanded={isDrawerExpanded}>
-              <DrawerContent panelContent={panelContent}>
-                <DrawerContentBody>{drawerContent}</DrawerContentBody>
-              </DrawerContent>
-            </Drawer>
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <DashboardWrapper mainContainerId="main-content-page-layout-default-nav">
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Main title</Text>
+            <Text component="p">
+              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+              of it’s relative line height of 1.5.
+            </Text>
+          </TextContent>
+        </PageSection>
+        <Divider component="div" />
+        <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+          <Drawer isExpanded={isDrawerExpanded}>
+            <DrawerContent panelContent={panelContent}>
+              <DrawerContentBody>{drawerContent}</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
 ```
 
 ### Primary-detail content padding
+
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   ButtonVariant,
-  Dropdown,
-  Card,
-  CardBody,
   DataList,
   DataListAction,
   DataListCell,
@@ -649,28 +513,15 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
   Flex,
   FlexItem,
-  Gallery,
-  GalleryItem,
   InputGroup,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Progress,
   Select,
   SelectOption,
   SelectVariant,
-  SkipToContent,
   Stack,
   StackItem,
   Text,
@@ -678,19 +529,15 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailContentPadding extends React.Component {
   constructor(props) {
@@ -707,36 +554,6 @@ class PrimaryDetailContentPadding extends React.Component {
       riskIsExpanded: false,
       riskSelected: null,
       selectedDataListItemId: ''
-    };
-
-    this.onDropdownToggle = isDropdownOpen => {
-      this.setState({
-        isDropdownOpen
-      });
-    };
-
-    this.onDropdownSelect = event => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
-      this.setState({
-        isKebabDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownSelect = event => {
-      this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-      });
-    };
-
-    this.onNavSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
     };
 
     this.statusOptions = [
@@ -830,71 +647,6 @@ class PrimaryDetailContentPadding extends React.Component {
       riskSelected,
       selectedDataListItemId
     } = this.state;
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-    const kebabDropdownItems = [
-      <DropdownItem>
-        <BellIcon /> Notifications
-      </DropdownItem>,
-      <DropdownItem>
-        <CogIcon /> Settings
-      </DropdownItem>
-    ];
-    const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated link</DropdownItem>,
-      <DropdownItem component="button">Separated action</DropdownItem>
-    ];
-    const PageToolbar = <div>need to implement new toolbar</div>;
-
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
-        showNavToggle
-      />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const toggleGroupItems = (
       <React.Fragment>
@@ -1171,61 +923,44 @@ class PrimaryDetailContentPadding extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
-              </Text>
-            </TextContent>
-          </PageSection>
-          <Divider component="div" />
-          <PageSection padding={{ default: 'noPadding' }}>
-            <Drawer isExpanded={isDrawerExpanded}>
-              <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
-                <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
-              </DrawerContent>
-            </Drawer>
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <DashboardWrapper>
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Main title</Text>
+            <Text component="p">
+              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+              of it’s relative line height of 1.5.
+            </Text>
+          </TextContent>
+        </PageSection>
+        <Divider component="div" />
+        <PageSection padding={{ default: 'noPadding' }}>
+          <Drawer isExpanded={isDrawerExpanded}>
+            <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
+              <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
 ```
 
 ### Primary-detail card view
+
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
   Button,
-  ButtonVariant,
   Card,
-  CardActions,
   CardHeader,
   CardBody,
   CardTitle,
-  Checkbox,
   Divider,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  DropdownToggleCheckbox,
   Drawer,
   DrawerActions,
   DrawerPanelBody,
@@ -1238,27 +973,17 @@ import {
   Flex,
   FlexItem,
   Gallery,
-  GalleryItem,
   KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  NavVariants,
   OverflowMenu,
   OverflowMenuControl,
-  OverflowMenuGroup,
   OverflowMenuItem,
-  Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Pagination,
   Progress,
   Select,
   SelectOption,
   SelectVariant,
-  SkipToContent,
   TextContent,
   Text,
   Title,
@@ -1268,13 +993,7 @@ import {
   ToolbarFilter,
   ToolbarToggleGroup
 } from '@patternfly/react-core';
-
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import DashboardWrapper from './examples/DashboardWrapper';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -1307,30 +1026,6 @@ class PrimaryDetailCardView extends React.Component {
       activeItem: 0
     };
 
-    this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
-      this.setState({
-        isUpperToolbarDropdownOpen
-      });
-    };
-
-    this.onPageDropdownSelect = event => {
-      this.setState({
-        isUpperToolbarDropdownOpen: !this.state.isUpperToolbarDropdownOpen
-      });
-    };
-
-    this.onPageToolbarDropdownToggle = isPageToolbarDropdownOpen => {
-      this.setState({
-        isPageToolbarDropdownOpen
-      });
-    };
-
-    this.onPageToolbarKebabDropdownToggle = isUpperToolbarKebabDropdownOpen => {
-      this.setState({
-        isUpperToolbarKebabDropdownOpen
-      });
-    };
-
     this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
       this.setState(prevState => ({
         isLowerToolbarDropdownOpen
@@ -1352,12 +1047,6 @@ class PrimaryDetailCardView extends React.Component {
     this.onToolbarKebabDropdownSelect = event => {
       this.setState({
         isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
-      });
-    };
-
-    this.onNavSelect = result => {
-      this.setState({
-        activeItem: result.itemId
       });
     };
 
@@ -1433,12 +1122,12 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     this.onPerPageSelect = (_evt, perPage) => {
-      this.setState({ page: 1, perPage })
-    }
+      this.setState({ page: 1, perPage });
+    };
 
     this.onSetPage = (_evt, page) => {
-      this.setState({ page })
-    }
+      this.setState({ page });
+    };
   }
 
   getAllItems() {
@@ -1539,7 +1228,9 @@ class PrimaryDetailCardView extends React.Component {
             <OverflowMenuControl hasAdditionalOptions>
               <Dropdown
                 onSelect={this.onToolbarKebabDropdownSelect}
-                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
+                toggle={
+                  <KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />
+                }
                 isOpen={isLowerToolbarKebabDropdownOpen}
                 isPlain
                 dropdownItems={toolbarKebabDropdownItems}
@@ -1549,54 +1240,6 @@ class PrimaryDetailCardView extends React.Component {
         </ToolbarItem>
       </React.Fragment>
     );
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-
-    const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
-    ];
-
-    const PageToolbar = <div>need to implement new toolbar</div>;
-
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
-        showNavToggle
-      />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-card-view-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     const filtered =
       filters.products.length > 0
@@ -1673,68 +1316,49 @@ class PrimaryDetailCardView extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Projects</Text>
-              <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
-            </TextContent>
-          </PageSection>
-          <PageSection isFilled padding={{default: "noPadding"}}>
-            <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-              <DrawerSection>
-                <Toolbar id="card-view-data-toolbar-group-types" usePageInsets clearAllFilters={this.onDelete}>
-                  <ToolbarContent>{toolbarItems}</ToolbarContent>
-                </Toolbar>
-                <Divider component="div" />
-              </DrawerSection>
-              <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
-                <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
-              </DrawerContent>
-            </Drawer>
-          </PageSection>
-          <PageSection isFilled={false} sticky="bottom" padding={{default: "noPadding"}} variant="light">
-            <Pagination
-              itemCount={filtered.length}
-              page={this.state.page}
-              perPage={this.state.perPage}
-              onPerPageSelect={this.onPerPageSelect}
-              onSetPage={this.onSetPage}
-              variant="bottom"
-            />
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Projects</Text>
+            <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
+          </TextContent>
+        </PageSection>
+        <PageSection isFilled padding={{ default: 'noPadding' }}>
+          <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
+            <DrawerSection>
+              <Toolbar id="card-view-data-toolbar-group-types" usePageInsets clearAllFilters={this.onDelete}>
+                <ToolbarContent>{toolbarItems}</ToolbarContent>
+              </Toolbar>
+              <Divider component="div" />
+            </DrawerSection>
+            <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
+              <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </PageSection>
+        <PageSection isFilled={false} sticky="bottom" padding={{ default: 'noPadding' }} variant="light">
+          <Pagination
+            itemCount={filtered.length}
+            page={this.state.page}
+            perPage={this.state.perPage}
+            onPerPageSelect={this.onPerPageSelect}
+            onSetPage={this.onSetPage}
+            variant="bottom"
+          />
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
 ```
 
 ### Primary-detail simple list in card
+
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  ButtonVariant,
-  Dropdown,
   Card,
   CardBody,
-  DataList,
-  DataListAction,
-  DataListItem,
-  DataListItemCells,
-  DataListItemRow,
   Divider,
   Drawer,
   DrawerActions,
@@ -1744,40 +1368,20 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
-  DropdownToggle,
   Flex,
   FlexItem,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Progress,
-  Select,
-  SelectOption,
   SimpleList,
   SimpleListGroup,
   SimpleListItem,
-  SkipToContent,
   Text,
   TextContent,
   TextInput,
-  Title,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
-
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import DashboardWrapper from './examples/DashboardWrapper';
 
 class PrimaryDetailSimpleListInCard extends React.Component {
   constructor(props) {
@@ -1801,59 +1405,12 @@ class PrimaryDetailSimpleListInCard extends React.Component {
     this.onClose = () => {
       this.setState({
         isExpanded: false
-      })
-    }
+      });
+    };
   }
 
   render() {
     const { drawerPanelBodyContent, selectedListItemId, activeItem, isExpanded } = this.state;
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-
-    const PageToolbar = <div>need to implement new toolbar</div>;
-
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
-        showNavToggle
-      />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const panelContent = (
       <DrawerPanelContent widthOnXl={75}>
@@ -1924,55 +1481,39 @@ class PrimaryDetailSimpleListInCard extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
-              </Text>
-            </TextContent>
-          </PageSection>
-          <Divider component="div" />
-          <PageSection>
-            <Card>
-              <Drawer isStatic isExpanded={isExpanded}>
-                <DrawerContent panelContent={panelContent}>
-                  <DrawerContentBody>{drawerContent}</DrawerContentBody>
-                </DrawerContent>
-              </Drawer>
-            </Card>
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <DashboardWrapper>
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Main title</Text>
+            <Text component="p">
+              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+              of it’s relative line height of 1.5.
+            </Text>
+          </TextContent>
+        </PageSection>
+        <Divider component="div" />
+        <PageSection>
+          <Card>
+            <Drawer isStatic isExpanded={isExpanded}>
+              <DrawerContent panelContent={panelContent}>
+                <DrawerContentBody>{drawerContent}</DrawerContentBody>
+              </DrawerContent>
+            </Drawer>
+          </Card>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
 ```
 
 ### Primary-detail data list in card
+
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  ButtonVariant,
   Card,
-  CardBody,
   DataList,
-  DataListAction,
   DataListCell,
   DataListItem,
   DataListItemCells,
@@ -1994,35 +1535,15 @@ import {
   DropdownItem,
   Flex,
   FlexItem,
-  KebabToggle,
-  Link,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Progress,
-  Select,
-  SelectOption,
-  SimpleList,
-  SimpleListItem,
-  SkipToContent,
   Text,
   TextContent,
-  TextInput,
   Title
 } from '@patternfly/react-core';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -2061,8 +1582,8 @@ class PrimaryDetailDataListInCard extends React.Component {
     this.onClose = () => {
       this.setState({
         isExpanded: false
-      })
-    }
+      });
+    };
   }
 
   render() {
@@ -2074,53 +1595,6 @@ class PrimaryDetailDataListInCard extends React.Component {
       selectedDataListItemId,
       isExpanded
     } = this.state;
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-
-    const PageToolbar = <div>need to implement new toolbar</div>;
-
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
-        showNavToggle
-      />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const panelContent = (
       <DrawerPanelContent widthOn2Xl={75}>
@@ -2249,54 +1723,39 @@ class PrimaryDetailDataListInCard extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
-              </Text>
-            </TextContent>
-          </PageSection>
-          <Divider component="div" />
-          <PageSection>
-            <Card>
-              <Drawer isStatic isExpanded={isExpanded}>
-                <DrawerContent panelContent={panelContent}>
-                  <DrawerContentBody>{drawerContent}</DrawerContentBody>
-                </DrawerContent>
-              </Drawer>
-            </Card>
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <DashboardWrapper>
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Main title</Text>
+            <Text component="p">
+              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+              of it’s relative line height of 1.5.
+            </Text>
+          </TextContent>
+        </PageSection>
+        <Divider component="div" />
+        <PageSection>
+          <Card>
+            <Drawer isStatic isExpanded={isExpanded}>
+              <DrawerContent panelContent={panelContent}>
+                <DrawerContentBody>{drawerContent}</DrawerContentBody>
+              </DrawerContent>
+            </Drawer>
+          </Card>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
 ```
 
 ### Primary-detail inline modifier
+
 ```js isFullscreen
 import React from 'react';
 import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   ButtonVariant,
-  Dropdown,
-  Card,
-  CardBody,
   DataList,
   DataListAction,
   DataListCell,
@@ -2317,28 +1776,15 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
   Flex,
   FlexItem,
-  Gallery,
-  GalleryItem,
   InputGroup,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   Progress,
   Select,
   SelectOption,
   SelectVariant,
-  SkipToContent,
   Stack,
   StackItem,
   Text,
@@ -2346,19 +1792,15 @@ import {
   TextInput,
   Title
 } from '@patternfly/react-core';
-
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 class PrimaryDetailInlineModifier extends React.Component {
   constructor(props) {
@@ -2375,36 +1817,6 @@ class PrimaryDetailInlineModifier extends React.Component {
       riskIsExpanded: false,
       riskSelected: null,
       selectedDataListItemId: ''
-    };
-
-    this.onDropdownToggle = isDropdownOpen => {
-      this.setState({
-        isDropdownOpen
-      });
-    };
-
-    this.onDropdownSelect = event => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownToggle = isKebabDropdownOpen => {
-      this.setState({
-        isKebabDropdownOpen
-      });
-    };
-
-    this.onKebabDropdownSelect = event => {
-      this.setState({
-        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-      });
-    };
-
-    this.onNavSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
     };
 
     this.statusOptions = [
@@ -2498,71 +1910,6 @@ class PrimaryDetailInlineModifier extends React.Component {
       riskSelected,
       selectedDataListItemId
     } = this.state;
-
-    const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
-          </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
-            Policy
-          </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
-            Authentication
-          </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
-          </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
-            Server
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-    const kebabDropdownItems = [
-      <DropdownItem>
-        <BellIcon /> Notifications
-      </DropdownItem>,
-      <DropdownItem>
-        <CogIcon /> Settings
-      </DropdownItem>
-    ];
-    const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated link</DropdownItem>,
-      <DropdownItem component="button">Separated action</DropdownItem>
-    ];
-    const PageToolbar = <div>need to implement new toolbar</div>;
-
-    const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
-        showNavToggle
-      />
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const toggleGroupItems = (
       <React.Fragment>
@@ -2838,34 +2185,25 @@ class PrimaryDetailInlineModifier extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
-              </Text>
-            </TextContent>
-          </PageSection>
-          <Divider component="div" />
-          <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
-            <Drawer isExpanded={isDrawerExpanded} isInline>
-              <DrawerContent panelContent={panelContent}>
-                <DrawerContentBody>{drawerContent}</DrawerContentBody>
-              </DrawerContent>
-            </Drawer>
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <DashboardWrapper>
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Main title</Text>
+            <Text component="p">
+              Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+              of it’s relative line height of 1.5.
+            </Text>
+          </TextContent>
+        </PageSection>
+        <Divider component="div" />
+        <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+          <Drawer isExpanded={isDrawerExpanded} isInline>
+            <DrawerContent panelContent={panelContent}>
+              <DrawerContentBody>{drawerContent}</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
