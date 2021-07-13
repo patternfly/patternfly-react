@@ -96,6 +96,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   onEditorDidMount?: (editor: any, monaco: any) => void;
   /** Flag to add the minimap to the code editor */
   isMinimapVisible?: boolean;
+  /** Flag to show the editor */
+  showEditor?: boolean;
 }
 
 interface CodeEditorState {
@@ -141,7 +143,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipMaxWidth: '100px',
     toolTipPosition: 'top',
     customControls: null,
-    isMinimapVisible: false
+    isMinimapVisible: false,
+    showEditor: true
   };
 
   static getExtensionFromLanguage(language: Language) {
@@ -310,7 +313,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       language,
       emptyState: providedEmptyState,
       customControls,
-      isMinimapVisible
+      isMinimapVisible,
+      showEditor
     } = this.props;
     const options = {
       readOnly: isReadOnly,
@@ -450,7 +454,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               ) : (
                 <>
                   {editorHeader}
-                  <div className={css(styles.codeEditorMain)}>{editor}</div>
+                  {showEditor && <div className={css(styles.codeEditorMain)}>{editor}</div>}
                 </>
               )}
             </div>
