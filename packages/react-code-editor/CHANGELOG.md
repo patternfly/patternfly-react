@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.2.105...@patternfly/react-code-editor@4.3.0) (2021-07-13)
+
+
+### Bug Fixes
+
+* **codeeditor:** show toolbar if there are custom controls ([#6025](https://github.com/patternfly/patternfly-react/issues/6025)) ([dad127a](https://github.com/patternfly/patternfly-react/commit/dad127a037bc8c921a6921a01ed702eb72cfdbd9))
+
+
+### Features
+
+* **code-editor:** add showEditor prop ([#6022](https://github.com/patternfly/patternfly-react/issues/6022)) ([daf182a](https://github.com/patternfly/patternfly-react/commit/daf182af298e57018f06ce887001a0b1acc43167))
+
+
+
+
+
 ## [4.2.105](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.2.104...@patternfly/react-code-editor@4.2.105) (2021-07-13)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
