@@ -739,27 +739,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         >
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
-              isDisabled={availableOptions.length === 0}
-              aria-disabled={availableOptions.length === 0}
-              variant={ButtonVariant.plain}
-              onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
-              aria-label={addAllAriaLabel}
-              tabIndex={-1}
-              ref={this.addAllButtonRef}
-            >
-              <AngleDoubleRightIcon />
-            </Button>
-            {addAllTooltip && (
-              <Tooltip
-                content={addAllTooltip}
-                position="left"
-                reference={this.addAllButtonRef}
-                {...addAllTooltipProps}
-              />
-            )}
-          </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button
               isDisabled={isTree ? availableTreeOptionsSelected.length === 0 : availableOptionsSelected.length === 0}
               aria-disabled={isTree ? availableTreeOptionsSelected.length === 0 : availableOptionsSelected.length === 0}
               variant={ButtonVariant.plain}
@@ -781,22 +760,22 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           </div>
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
+              isDisabled={availableOptions.length === 0}
+              aria-disabled={availableOptions.length === 0}
               variant={ButtonVariant.plain}
-              onClick={isTree ? this.removeTreeSelected : this.removeSelected}
-              aria-label={removeSelectedAriaLabel}
+              onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
+              aria-label={addAllAriaLabel}
               tabIndex={-1}
-              isDisabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
-              aria-disabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
-              ref={this.removeSelectedButtonRef}
+              ref={this.addAllButtonRef}
             >
-              <AngleLeftIcon />
+              <AngleDoubleRightIcon />
             </Button>
-            {removeSelectedTooltip && (
+            {addAllTooltip && (
               <Tooltip
-                content={removeSelectedTooltip}
+                content={addAllTooltip}
                 position="left"
-                reference={this.removeSelectedButtonRef}
-                {...removeSelectedTooltipProps}
+                reference={this.addAllButtonRef}
+                {...addAllTooltipProps}
               />
             )}
           </div>
@@ -818,6 +797,27 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                 position="right"
                 reference={this.removeAllButtonRef}
                 {...removeAllTooltipProps}
+              />
+            )}
+          </div>
+          <div className={css('pf-c-dual-list-selector__controls-item')}>
+            <Button
+              variant={ButtonVariant.plain}
+              onClick={isTree ? this.removeTreeSelected : this.removeSelected}
+              aria-label={removeSelectedAriaLabel}
+              tabIndex={-1}
+              isDisabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
+              aria-disabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
+              ref={this.removeSelectedButtonRef}
+            >
+              <AngleLeftIcon />
+            </Button>
+            {removeSelectedTooltip && (
+              <Tooltip
+                content={removeSelectedTooltip}
+                position="left"
+                reference={this.removeSelectedButtonRef}
+                {...removeSelectedTooltipProps}
               />
             )}
           </div>

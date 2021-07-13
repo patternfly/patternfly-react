@@ -162,6 +162,95 @@ exports[`DualListSelector basic 1`] = `
         className="pf-c-dual-list-selector__controls-item"
       >
         <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Add selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-1"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
           aria-disabled={false}
           aria-label="Add all"
           isDisabled={false}
@@ -178,7 +267,7 @@ exports[`DualListSelector basic 1`] = `
                   aria-disabled="false"
                   aria-label="Add all"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-2"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   tabindex="-1"
@@ -209,7 +298,7 @@ exports[`DualListSelector basic 1`] = `
               aria-disabled={false}
               aria-label="Add all"
               className="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-1"
+              data-ouia-component-id="OUIA-Generated-Button-plain-2"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -251,184 +340,6 @@ exports[`DualListSelector basic 1`] = `
       >
         <Button
           aria-disabled={true}
-          aria-label="Add selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Add selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Add selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-2"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Add selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-2"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleRightIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  />
-                </svg>
-              </AngleRightIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
-          aria-label="Remove selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Remove selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Remove selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-3"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Remove selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-3"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleLeftIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  />
-                </svg>
-              </AngleLeftIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
           aria-label="Remove all"
           isDisabled={true}
           onClick={[Function]}
@@ -444,7 +355,7 @@ exports[`DualListSelector basic 1`] = `
                   aria-disabled="true"
                   aria-label="Remove all"
                   class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-4"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-3"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   disabled=""
@@ -476,7 +387,7 @@ exports[`DualListSelector basic 1`] = `
               aria-disabled={true}
               aria-label="Remove all"
               className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-4"
+              data-ouia-component-id="OUIA-Generated-Button-plain-3"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -509,6 +420,95 @@ exports[`DualListSelector basic 1`] = `
                   />
                 </svg>
               </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Remove selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-4"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-4"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
             </button>
           </ButtonBase>
         </Button>
@@ -772,94 +772,6 @@ exports[`DualListSelector with actions 1`] = `
         className="pf-c-dual-list-selector__controls-item"
       >
         <Button
-          aria-disabled={false}
-          aria-label="Add all"
-          isDisabled={false}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={false}
-            aria-label="Add all"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="false"
-                  aria-label="Add all"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-17"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={false}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={false}
-              aria-label="Add all"
-              className="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-17"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleDoubleRightIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  />
-                </svg>
-              </AngleDoubleRightIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
           aria-disabled={true}
           aria-label="Add selected"
           isDisabled={true}
@@ -876,7 +788,7 @@ exports[`DualListSelector with actions 1`] = `
                   aria-disabled="true"
                   aria-label="Add selected"
                   class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-18"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-17"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   disabled=""
@@ -908,7 +820,7 @@ exports[`DualListSelector with actions 1`] = `
               aria-disabled={true}
               aria-label="Add selected"
               className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-18"
+              data-ouia-component-id="OUIA-Generated-Button-plain-17"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -949,26 +861,25 @@ exports[`DualListSelector with actions 1`] = `
         className="pf-c-dual-list-selector__controls-item"
       >
         <Button
-          aria-disabled={true}
-          aria-label="Remove selected"
-          isDisabled={true}
+          aria-disabled={false}
+          aria-label="Add all"
+          isDisabled={false}
           onClick={[Function]}
           tabIndex={-1}
           variant="plain"
         >
           <ButtonBase
-            aria-disabled={true}
-            aria-label="Remove selected"
+            aria-disabled={false}
+            aria-label="Add all"
             innerRef={
               Object {
                 "current": <button
-                  aria-disabled="true"
-                  aria-label="Remove selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-19"
+                  aria-disabled="false"
+                  aria-label="Add all"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-18"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
-                  disabled=""
                   tabindex="-1"
                   type="button"
                 >
@@ -978,35 +889,35 @@ exports[`DualListSelector with actions 1`] = `
                     height="1em"
                     role="img"
                     style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
+                    viewBox="0 0 448 512"
                     width="1em"
                   >
                     <path
-                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
                     />
                   </svg>
                 </button>,
               }
             }
-            isDisabled={true}
+            isDisabled={false}
             onClick={[Function]}
             tabIndex={-1}
             variant="plain"
           >
             <button
-              aria-disabled={true}
-              aria-label="Remove selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-19"
+              aria-disabled={false}
+              aria-label="Add all"
+              className="pf-c-button pf-m-plain"
+              data-ouia-component-id="OUIA-Generated-Button-plain-18"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
-              disabled={true}
+              disabled={false}
               onClick={[Function]}
               role={null}
               tabIndex={-1}
               type="button"
             >
-              <AngleLeftIcon
+              <AngleDoubleRightIcon
                 color="currentColor"
                 noVerticalAlign={false}
                 size="sm"
@@ -1022,14 +933,14 @@ exports[`DualListSelector with actions 1`] = `
                       "verticalAlign": "-0.125em",
                     }
                   }
-                  viewBox="0 0 256 512"
+                  viewBox="0 0 448 512"
                   width="1em"
                 >
                   <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
                   />
                 </svg>
-              </AngleLeftIcon>
+              </AngleDoubleRightIcon>
             </button>
           </ButtonBase>
         </Button>
@@ -1054,7 +965,7 @@ exports[`DualListSelector with actions 1`] = `
                   aria-disabled="false"
                   aria-label="Remove all"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-20"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-19"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   tabindex="-1"
@@ -1085,7 +996,7 @@ exports[`DualListSelector with actions 1`] = `
               aria-disabled={false}
               aria-label="Remove all"
               className="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-20"
+              data-ouia-component-id="OUIA-Generated-Button-plain-19"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -1118,6 +1029,95 @@ exports[`DualListSelector with actions 1`] = `
                   />
                 </svg>
               </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Remove selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-20"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-20"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
             </button>
           </ButtonBase>
         </Button>
@@ -1440,6 +1440,95 @@ exports[`DualListSelector with custom status 1`] = `
         className="pf-c-dual-list-selector__controls-item"
       >
         <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Add selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-9"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-9"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
           aria-disabled={false}
           aria-label="Add all"
           isDisabled={false}
@@ -1456,7 +1545,7 @@ exports[`DualListSelector with custom status 1`] = `
                   aria-disabled="false"
                   aria-label="Add all"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-9"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-10"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   tabindex="-1"
@@ -1487,7 +1576,7 @@ exports[`DualListSelector with custom status 1`] = `
               aria-disabled={false}
               aria-label="Add all"
               className="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-9"
+              data-ouia-component-id="OUIA-Generated-Button-plain-10"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -1529,184 +1618,6 @@ exports[`DualListSelector with custom status 1`] = `
       >
         <Button
           aria-disabled={true}
-          aria-label="Add selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Add selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Add selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-10"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Add selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-10"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleRightIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  />
-                </svg>
-              </AngleRightIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
-          aria-label="Remove selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Remove selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Remove selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-11"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Remove selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-11"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleLeftIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  />
-                </svg>
-              </AngleLeftIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
           aria-label="Remove all"
           isDisabled={true}
           onClick={[Function]}
@@ -1722,7 +1633,7 @@ exports[`DualListSelector with custom status 1`] = `
                   aria-disabled="true"
                   aria-label="Remove all"
                   class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-12"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-11"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   disabled=""
@@ -1754,7 +1665,7 @@ exports[`DualListSelector with custom status 1`] = `
               aria-disabled={true}
               aria-label="Remove all"
               className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-12"
+              data-ouia-component-id="OUIA-Generated-Button-plain-11"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -1787,6 +1698,95 @@ exports[`DualListSelector with custom status 1`] = `
                   />
                 </svg>
               </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Remove selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-12"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-12"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
             </button>
           </ButtonBase>
         </Button>
@@ -2026,6 +2026,95 @@ exports[`DualListSelector with search inputs 1`] = `
         className="pf-c-dual-list-selector__controls-item"
       >
         <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Add selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-5"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
           aria-disabled={false}
           aria-label="Add all"
           isDisabled={false}
@@ -2042,7 +2131,7 @@ exports[`DualListSelector with search inputs 1`] = `
                   aria-disabled="false"
                   aria-label="Add all"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-6"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   tabindex="-1"
@@ -2073,7 +2162,7 @@ exports[`DualListSelector with search inputs 1`] = `
               aria-disabled={false}
               aria-label="Add all"
               className="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-5"
+              data-ouia-component-id="OUIA-Generated-Button-plain-6"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2115,184 +2204,6 @@ exports[`DualListSelector with search inputs 1`] = `
       >
         <Button
           aria-disabled={true}
-          aria-label="Add selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Add selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Add selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-6"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Add selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-6"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleRightIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  />
-                </svg>
-              </AngleRightIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
-          aria-label="Remove selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Remove selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Remove selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-7"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Remove selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-7"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleLeftIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  />
-                </svg>
-              </AngleLeftIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
           aria-label="Remove all"
           isDisabled={true}
           onClick={[Function]}
@@ -2308,7 +2219,7 @@ exports[`DualListSelector with search inputs 1`] = `
                   aria-disabled="true"
                   aria-label="Remove all"
                   class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-8"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-7"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   disabled=""
@@ -2340,7 +2251,7 @@ exports[`DualListSelector with search inputs 1`] = `
               aria-disabled={true}
               aria-label="Remove all"
               className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-8"
+              data-ouia-component-id="OUIA-Generated-Button-plain-7"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -2373,6 +2284,95 @@ exports[`DualListSelector with search inputs 1`] = `
                   />
                 </svg>
               </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Remove selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-8"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-8"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
             </button>
           </ButtonBase>
         </Button>
@@ -2856,6 +2856,95 @@ exports[`DualListSelector with tree 1`] = `
         className="pf-c-dual-list-selector__controls-item"
       >
         <Button
+          aria-disabled={true}
+          aria-label="Add selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Add selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Add selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-13"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Add selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-13"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleRightIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </AngleRightIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
           aria-disabled={false}
           aria-label="Add all"
           isDisabled={false}
@@ -2872,7 +2961,7 @@ exports[`DualListSelector with tree 1`] = `
                   aria-disabled="false"
                   aria-label="Add all"
                   class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-13"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-14"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   tabindex="-1"
@@ -2903,7 +2992,7 @@ exports[`DualListSelector with tree 1`] = `
               aria-disabled={false}
               aria-label="Add all"
               className="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-13"
+              data-ouia-component-id="OUIA-Generated-Button-plain-14"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={false}
@@ -2945,184 +3034,6 @@ exports[`DualListSelector with tree 1`] = `
       >
         <Button
           aria-disabled={true}
-          aria-label="Add selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Add selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Add selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-14"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Add selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-14"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleRightIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  />
-                </svg>
-              </AngleRightIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
-          aria-label="Remove selected"
-          isDisabled={true}
-          onClick={[Function]}
-          tabIndex={-1}
-          variant="plain"
-        >
-          <ButtonBase
-            aria-disabled={true}
-            aria-label="Remove selected"
-            innerRef={
-              Object {
-                "current": <button
-                  aria-disabled="true"
-                  aria-label="Remove selected"
-                  class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-15"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  disabled=""
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
-            isDisabled={true}
-            onClick={[Function]}
-            tabIndex={-1}
-            variant="plain"
-          >
-            <button
-              aria-disabled={true}
-              aria-label="Remove selected"
-              className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-15"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={-1}
-              type="button"
-            >
-              <AngleLeftIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  />
-                </svg>
-              </AngleLeftIcon>
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-      <div
-        className="pf-c-dual-list-selector__controls-item"
-      >
-        <Button
-          aria-disabled={true}
           aria-label="Remove all"
           isDisabled={true}
           onClick={[Function]}
@@ -3138,7 +3049,7 @@ exports[`DualListSelector with tree 1`] = `
                   aria-disabled="true"
                   aria-label="Remove all"
                   class="pf-c-button pf-m-plain pf-m-disabled"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-16"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-15"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   disabled=""
@@ -3170,7 +3081,7 @@ exports[`DualListSelector with tree 1`] = `
               aria-disabled={true}
               aria-label="Remove all"
               className="pf-c-button pf-m-plain pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-plain-16"
+              data-ouia-component-id="OUIA-Generated-Button-plain-15"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe={true}
               disabled={true}
@@ -3203,6 +3114,95 @@ exports[`DualListSelector with tree 1`] = `
                   />
                 </svg>
               </AngleDoubleLeftIcon>
+            </button>
+          </ButtonBase>
+        </Button>
+      </div>
+      <div
+        className="pf-c-dual-list-selector__controls-item"
+      >
+        <Button
+          aria-disabled={true}
+          aria-label="Remove selected"
+          isDisabled={true}
+          onClick={[Function]}
+          tabIndex={-1}
+          variant="plain"
+        >
+          <ButtonBase
+            aria-disabled={true}
+            aria-label="Remove selected"
+            innerRef={
+              Object {
+                "current": <button
+                  aria-disabled="true"
+                  aria-label="Remove selected"
+                  class="pf-c-button pf-m-plain pf-m-disabled"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-16"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 256 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    />
+                  </svg>
+                </button>,
+              }
+            }
+            isDisabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            variant="plain"
+          >
+            <button
+              aria-disabled={true}
+              aria-label="Remove selected"
+              className="pf-c-button pf-m-plain pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-plain-16"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe={true}
+              disabled={true}
+              onClick={[Function]}
+              role={null}
+              tabIndex={-1}
+              type="button"
+            >
+              <AngleLeftIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </AngleLeftIcon>
             </button>
           </ButtonBase>
         </Button>
