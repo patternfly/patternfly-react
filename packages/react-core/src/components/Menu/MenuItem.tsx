@@ -1,6 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
+import topOffset from '@patternfly/react-tokens/dist/js/c_menu_m_flyout__menu_top_offset';
+import rightOffset from '@patternfly/react-tokens/dist/js/c_menu_m_flyout__menu_m_left_right_offset';
+import leftOffset from '@patternfly/react-tokens/dist/js/c_menu_m_flyout__menu_left_offset';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
@@ -136,8 +139,12 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
           if (spaceLeftLeft < 0 && spaceLeftRight < 0) {
             xOffset = xDir === 'right' ? -spaceLeftRight : -spaceLeftLeft;
           }
-          flyoutMenu.style.right = xDir === 'right' ? 'auto' : `calc(100% - ${xOffset}px`;
-          flyoutMenu.style.left = xDir === 'left' ? 'auto' : `calc(100% - ${xOffset}px`;
+          if (xDir === 'left') {
+            flyoutMenu.classList.add(styles.modifiers.left);
+            flyoutMenu.style.setProperty(rightOffset.name, `-${xOffset}px`);
+          } else {
+            flyoutMenu.style.setProperty(leftOffset.name, `-${xOffset}px`);
+          }
 
           const spaceLeftBot = window.innerHeight - origin.y - rect.height;
           const spaceLeftTop = window.innerHeight - rect.height;
@@ -145,7 +152,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
             // working idea: page can usually scroll down, but not up
             // TODO: proper scroll buttons
           } else if (spaceLeftBot < 0) {
-            flyoutMenu.style.setProperty('--pf-c-menu--m-flyout__menu--top-offset', `${spaceLeftBot}px`);
+            flyoutMenu.style.setProperty(topOffset.name, `${spaceLeftBot}px`);
           }
         }
       }
