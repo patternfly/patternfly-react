@@ -1551,7 +1551,8 @@ To make a table row editable:
 1. Pass a callback to Table via the `onRowEdit` prop.
 2. Define the title for the editable cells using the RowCellContent type function. 
 3. Have the function return an `EditableTextCell`.
-4. Pass the `value` and `name` of the cell's input to the `EditableTextCell` via the cell's `props` field
+4. Pass the `value` and `name` of the cell's input to the `EditableTextCell` via the cell's `props` field, which is
+defined as being of type `EditableTextCellProps`.
 
 Example:
 ```
