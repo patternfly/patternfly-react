@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.111.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.111.0...@patternfly/react-integration@4.111.1) (2021-07-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 # [4.111.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.110.0...@patternfly/react-integration@4.111.0) (2021-06-21)
 
 
