@@ -305,6 +305,8 @@ export class Menu extends React.Component<MenuProps, MenuState> {
             className
           )}
           aria-label={ariaLabel || containsFlyout ? 'Local' : 'Global'}
+          aria-haspopup={containsFlyout}
+          aria-expanded={Boolean(this.state.flyoutRef)}
           ref={this.menuRef}
           {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           {...props}

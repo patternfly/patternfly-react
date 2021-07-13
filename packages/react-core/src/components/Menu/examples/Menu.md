@@ -124,13 +124,13 @@ MenuWithFlyout = () => {
   const menuRef = React.useRef();
   const numFlyouts = 15;
   const FlyoutMenu = ({ depth, children }) => (
-    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={() => setIsOpen(false)}>
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
       <MenuList>
-        <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
+        <MenuItem aria-label="Has flyout menu" flyoutMenu={children} itemId={`next-menu-${depth}`}>Next menu</MenuItem>
         {[...Array(numFlyouts - depth).keys()].map(j =>
-          <MenuItem key={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
+          <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
         )}
-        <MenuItem aria-label="Has flyout menu" flyoutMenu={children}>Next menu</MenuItem>
+        <MenuItem aria-label="Has flyout menu" flyoutMenu={children} itemId={`next-menu-2-${depth}`}>Next menu</MenuItem>
       </MenuList>
     </Menu>
   );
@@ -155,6 +155,13 @@ MenuWithFlyout = () => {
     }
   };
 
+  const onSelect = (_ev, itemId) => {
+    console.log('select', itemId);
+    if (!itemId.includes('next-menu')) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <Dropdown
       isOpen={isOpen}
@@ -168,16 +175,21 @@ MenuWithFlyout = () => {
       )}
       contextProps={{ menuClass: '' }}
     >
-      <Menu containsFlyout id={id} onSelect={() => setIsOpen(false)}>
+      <Menu containsFlyout id={id} onSelect={onSelect}>
         <MenuContent>
           <MenuList>
-            <MenuItem>Start rollout</MenuItem>
-            <MenuItem>Pause rollouts</MenuItem>
-            <MenuItem>Add storage</MenuItem>
-            <MenuItem description="Description" flyoutMenu={curFlyout} aria-label="Has flyout menu">
+            <MenuItem itemId="start">Start rollout</MenuItem>
+            <MenuItem itemId="pause">Pause rollouts</MenuItem>
+            <MenuItem itemId="storage">Add storage</MenuItem>
+            <MenuItem
+              description="Description"
+              flyoutMenu={curFlyout}
+              aria-label="Has flyout menu"
+              itemId="next-menu-root"
+            >
               Edit
             </MenuItem>
-            <MenuItem>Delete deployment config</MenuItem>
+            <MenuItem itemId="delete">Delete deployment config</MenuItem>
           </MenuList>
         </MenuContent>
       </Menu>
