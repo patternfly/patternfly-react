@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.10.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.10.15...@patternfly/react-console@4.10.16) (2021-07-14)
+
+
+### Bug Fixes
+
+* **VncConsole:** persist rfc instance in VncConsole ([#6012](https://github.com/patternfly/patternfly-react/issues/6012)) ([2e21929](https://github.com/patternfly/patternfly-react/commit/2e21929ee91b4d92d5a7754a14c46c06202963f7))
+
+
+
+
+
 ## [4.10.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.10.14...@patternfly/react-console@4.10.15) (2021-07-14)
 
 **Note:** Version bump only for package @patternfly/react-console
