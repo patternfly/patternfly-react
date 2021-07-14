@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { css } from '@patternfly/react-styles';
-import { EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, Spinner } from '@patternfly/react-core';
 
 import { initLogging } from '@novnc/novnc/core/util/logging';
 /** Has bad types. https://github.com/larryprice/novnc-core/issues/5 */
@@ -52,6 +52,8 @@ export interface VncConsoleProps extends React.HTMLProps<HTMLDivElement> {
   /** Handshake failed */
   onSecurityFailure?: (e: any) => void;
 
+  /* Text content rendered inside the EmptyState in the "Connect' button for when console is disconnnected */
+  textConnect?: string;
   /* Text content rendered inside the EmptyState for when console is connecting */
   textConnecting?: string | React.ReactNode;
   /* Text content rendered inside the EmptyState for when console is disconnnected */
@@ -82,57 +84,72 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   onDisconnected = () => {},
   onInitFailed,
   onSecurityFailure,
+  textConnect = 'Connect',
   textConnecting = 'Connecting',
-  textDisconnected = 'Disconnected',
+  textDisconnected = 'Click Connect to open the VNC console.',
   textDisconnect = 'Disconnect',
   textSendShortcut,
   textCtrlAltDel
 }) => {
-  let rfb: any;
+  const rfb = React.useRef<any>();
   let novncStaticComponent: React.ReactNode;
   let novncElem: HTMLDivElement;
 
   const [status, setStatus] = React.useState(CONNECTING);
 
   const addEventListeners = () => {
-    rfb.addEventListener('connect', onConnected);
-    rfb.addEventListener('disconnect', onDisconnected);
-    rfb.addEventListener('securityfailure', onSecurityFailure);
+    if (rfb.current) {
+      rfb.current?.addEventListener('connect', onConnected);
+      rfb.current?.addEventListener('disconnect', _onDisconnected);
+      rfb.current?.addEventListener('securityfailure', _onSecurityFailure);
+    }
+  };
+
+  const removeEventListeners = () => {
+    if (rfb.current) {
+      rfb.current.removeEventListener('connect', onConnected);
+      rfb.current.removeEventListener('disconnect', _onDisconnected);
+      rfb.current.removeEventListener('securityfailure', _onSecurityFailure);
+    }
+  };
+
+  const connect = () => {
+    const protocol = encrypt ? 'wss' : 'ws';
+    const url = `${protocol}://${host}:${port}/${path}`;
+
+    const options = {
+      repeaterID,
+      shared,
+      credentials
+    };
+    rfb.current = new RFB(novncElem, url, options);
+    addEventListeners();
+    rfb.current.viewOnly = viewOnly;
+    rfb.current.scaleViewport = scaleViewport;
+    rfb.current.resizeSession = resizeSession;
   };
 
   React.useEffect(() => {
     initLogging(vncLogging);
     try {
-      const protocol = encrypt ? 'wss' : 'ws';
-      const url = `${protocol}://${host}:${port}/${path}`;
-
-      const options = {
-        repeaterID,
-        shared,
-        credentials
-      };
-      rfb = new RFB(novncElem, url, options);
-      addEventListeners();
-      rfb.viewOnly = viewOnly;
-      rfb.scaleViewport = scaleViewport;
-      rfb.resizeSession = resizeSession;
+      connect();
     } catch (e) {
       onInitFailed && onInitFailed(e);
-      rfb = undefined;
+      rfb.current = undefined;
     }
 
     return () => {
       disconnect();
       removeEventListeners();
-      rfb = undefined;
+      rfb.current = undefined;
     };
   }, []);
 
   const disconnect = () => {
-    if (!rfb) {
+    if (!rfb.current) {
       return;
     }
-    rfb.disconnect();
+    rfb.current.disconnect();
   };
 
   const onConnected = () => {
@@ -150,16 +167,8 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
   };
 
   const onCtrlAltDel = () => {
-    if (rfb) {
-      rfb.sendCtrlAltDel();
-    }
-  };
-
-  const removeEventListeners = () => {
-    if (rfb) {
-      rfb.removeEventListener('connect', onConnected);
-      rfb.removeEventListener('disconnect', _onDisconnected);
-      rfb.removeEventListener('securityfailure', _onSecurityFailure);
+    if (rfb.current) {
+      rfb?.current?.sendCtrlAltDel();
     }
   };
 
@@ -182,6 +191,9 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
       emptyState = (
         <EmptyState>
           <EmptyStateBody>{textDisconnected}</EmptyStateBody>
+          <Button variant="primary" onClick={connect}>
+            {textConnect}
+          </Button>
         </EmptyState>
       );
       break;
