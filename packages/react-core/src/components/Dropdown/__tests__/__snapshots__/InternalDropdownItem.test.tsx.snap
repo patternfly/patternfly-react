@@ -6,6 +6,18 @@ exports[`dropdown items a 1`] = `
 </ContextConsumer>
 `;
 
+exports[`dropdown items aria-disabled a 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`dropdown items aria-disabled button 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`dropdown items button 1`] = `
 <ContextConsumer>
   <Component />

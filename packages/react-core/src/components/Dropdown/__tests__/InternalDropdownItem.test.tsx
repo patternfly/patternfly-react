@@ -49,6 +49,21 @@ describe('dropdown items', () => {
     });
   });
 
+  describe('aria-disabled', () => {
+    test('a', () => {
+      const view = shallow(<InternalDropdownItem isAriaDisabled>Something</InternalDropdownItem>);
+      expect(view).toMatchSnapshot();
+    });
+    test('button', () => {
+      const view = shallow(
+        <InternalDropdownItem isAriaDisabled component="button">
+          Something
+        </InternalDropdownItem>
+      );
+      expect(view).toMatchSnapshot();
+    });
+  });
+
   describe('description', () => {
     test('a', () => {
       const view = shallow(

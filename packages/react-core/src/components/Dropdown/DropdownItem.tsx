@@ -23,6 +23,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps 
   styleChildren?: boolean;
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
+  /** Render dropdown item as aria-disabled option */
+  isAriaDisabled?: boolean;
   /** Render dropdown item as non-interactive item */
   isPlainText?: boolean;
   /** Forces display of the hover state of the element */
@@ -52,6 +54,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   className,
   component = 'a',
   isDisabled = false,
+  isAriaDisabled = false,
   isPlainText = false,
   isHovered = false,
   href,
@@ -83,6 +86,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
           className={className}
           component={component}
           isDisabled={isDisabled}
+          isAriaDisabled={isAriaDisabled}
           isPlainText={isPlainText}
           isHovered={isHovered}
           href={href}

@@ -343,8 +343,6 @@ class TooltipApplicationLauncher extends React.Component {
 import React from 'react';
 import {
   ApplicationLauncher,
-  ApplicationLauncherIcon,
-  ApplicationLauncherText,
   ApplicationLauncherItem,
   ApplicationLauncherGroup,
   ApplicationLauncherSeparator
