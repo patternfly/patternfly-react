@@ -20,18 +20,81 @@ import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 
 export enum Language {
-  javascript = 'javascript',
-  html = 'html',
-  text = 'text',
-  json = 'json',
+  abap = 'abap',
+  aes = 'aes',
+  apex = 'apex',
+  azcli = 'azcli',
+  bat = 'bat',
+  bicep = 'bicep',
+  c = 'c',
+  cameligo = 'cameligo',
+  clojure = 'clojure',
+  coffeescript = 'coffeescript',
+  cpp = 'cpp',
+  csharp = 'csharp',
+  csp = 'csp',
   css = 'css',
-  yaml = 'yaml',
-  typescript = 'typescript',
-  scss = 'scss',
-  markdown = 'markdown',
+  dart = 'dart',
+  dockerfile = 'dockerfile',
+  ecl = 'ecl',
+  elixir = 'elixir',
+  fsharp = 'fsharp',
+  go = 'go',
+  graphql = 'graphql',
+  handlebars = 'handlebars',
+  hcl = 'hcl',
+  html = 'html',
+  ini = 'ini',
   java = 'java',
+  javascript = 'javascript',
+  json = 'json',
+  julia = 'julia',
+  kotlin = 'kotlin',
   less = 'less',
-  xml = 'xml'
+  lexon = 'lexon',
+  liquid = 'liquid',
+  lua = 'lua',
+  m3 = 'm3',
+  markdown = 'markdown',
+  mips = 'mips',
+  msdax = 'msdax',
+  mysql = 'mysql',
+  'objective-c' = 'objective-c',
+  pascal = 'pascal',
+  pascaligo = 'pascaligo',
+  perl = 'perl',
+  pgsql = 'pgsql',
+  php = 'php',
+  plaintext = 'plaintext',
+  postiats = 'postiats',
+  powerquery = 'powerquery',
+  powershell = 'powershell',
+  pug = 'pug',
+  python = 'python',
+  r = 'r',
+  razor = 'razor',
+  redis = 'redis',
+  redshift = 'redshift',
+  restructuredtext = 'restructuredtext',
+  ruby = 'ruby',
+  rust = 'rust',
+  sb = 'sb',
+  scala = 'scala',
+  scheme = 'scheme',
+  scss = 'scss',
+  shell = 'shell',
+  sol = 'sol',
+  sql = 'sql',
+  st = 'st',
+  swift = 'swift',
+  systemverilog = 'systemverilog',
+  tcl = 'tcl',
+  twig = 'twig',
+  typescript = 'typescript',
+  vb = 'vb',
+  verilog = 'verilog',
+  xml = 'xml',
+  yaml = 'yaml'
 }
 
 export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -118,7 +181,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     className: '',
     code: '',
     onEditorDidMount: () => {},
-    language: Language.text,
+    language: Language.plaintext,
     isDarkTheme: false,
     height: '',
     width: '',
@@ -149,13 +212,23 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
   static getExtensionFromLanguage(language: Language) {
     switch (language) {
+      case Language.shell:
+        return 'sh';
+      case Language.ruby:
+        return 'rb';
+      case Language.perl:
+        return 'pl';
+      case Language.python:
+        return 'py';
+      case Language.mysql:
+        return 'sql';
       case Language.javascript:
         return 'js';
       case Language.typescript:
         return 'ts';
       case Language.markdown:
         return 'md';
-      case Language.text:
+      case Language.plaintext:
         return 'txt';
       default:
         return language.toString();
