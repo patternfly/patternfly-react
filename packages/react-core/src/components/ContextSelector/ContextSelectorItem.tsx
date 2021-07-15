@@ -12,7 +12,7 @@ export interface ContextSelectorItemProps {
   isDisabled?: boolean;
   /** Callback for click event */
   onClick: (event: React.MouseEvent) => void;
-  /** internal index of the item */
+  /** @hide internal index of the item */
   index: number;
   /** Internal callback for ref tracking */
   sendRef: (index: number, current: any) => void;
