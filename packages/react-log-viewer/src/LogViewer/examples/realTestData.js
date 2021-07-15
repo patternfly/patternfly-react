@@ -1,5 +1,6 @@
 export const data = {
   data: `Copying system trust bundle
+
     Waiting for port :6443 to be released.
     I0223 20:04:25.084507       1 loader.go:379] Config loaded from file:  /etc/kubernetes/static-pod-resources/configmaps/kube-apiserver-cert-syncer-kubeconfig/kubeconfig
     Copying termination logs to "/var/log/kube-apiserver/termination.log"
