@@ -5,8 +5,9 @@ import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
 import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
+import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
+export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
   /** Text to display in the clear all filters button */
@@ -44,6 +45,7 @@ export interface ToolbarState {
   filterInfo: FilterInfo;
   /** Used to keep track of window width so we can collapse expanded content when window is resizing */
   windowWidth: number;
+  ouiaStateId: string;
 }
 
 interface FilterInfo {
@@ -57,7 +59,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   state = {
     isManagedToggleExpanded: false,
     filterInfo: {},
-    windowWidth: canUseDOM ? window.innerWidth : 1200
+    windowWidth: canUseDOM ? window.innerWidth : 1200,
+    ouiaStateId: getDefaultOUIAId(Toolbar.displayName)
   };
 
   isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
@@ -112,6 +115,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       children,
       inset,
       usePageInsets,
+      ouiaId,
       ...props
     } = this.props;
 
@@ -131,6 +135,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
           className
         )}
         id={randomId}
+        {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
         {...props}
       >
         <ToolbarContext.Provider

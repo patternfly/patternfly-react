@@ -86,6 +86,7 @@ import { Button } from '@patternfly/react-core';
 * [Text](/components/text)
 * [TextInput](/components/text-input)
 * [Title](/components/title)
+* [Toolbar](/components/toolbar)
 
 ### react-table package
 
