@@ -192,6 +192,7 @@ class StaticLiveRegionAlert extends React.Component {
 ```
 
 ### Dynamic live region alert
+Alerts asynchronously appended into dynamic AlertGroups with isLiveRegion will be announced to assistive technology at the moment the change happens, following the strategy used for aria-atomic, which defaults to false. This means only changes of type "addition" will be announced.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, InputGroup } from '@patternfly/react-core';
@@ -260,6 +261,7 @@ class DynamicLiveRegionAlert extends React.Component {
 ```
 
 ### Async live region alert
+This shows how an alert could be triggered by an asynchronous event in the application. Note that you can customize how the alert will be announced to assistive technology. See the alert accessibility tab for more information.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, InputGroup } from '@patternfly/react-core';
@@ -290,7 +292,7 @@ class AsyncLiveRegionAlert extends React.Component {
           variant: 'info',
           key: getUniqueId()
         });
-      }, 1500);
+      }, 4500);
       this.setState({ timer: timerValue });
     };
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
@@ -304,7 +306,7 @@ class AsyncLiveRegionAlert extends React.Component {
             Stop Async Info Alerts
           </button>
         </InputGroup>
-        <AlertGroup isLiveRegion aria-live="polite" aria-relevant="additions text" aria-atomic="false">
+        <AlertGroup isLiveRegion>
         {this.state.alerts.map(({ title, variant, key }) => (
           <Alert variant={variant} title={title} key={key} />
         ))}

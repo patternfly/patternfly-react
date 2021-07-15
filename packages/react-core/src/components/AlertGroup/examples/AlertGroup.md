@@ -7,7 +7,7 @@ propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLi
 
 ## Examples
 ### Static alert group
-These alerts are discoverable from within the normal page content flow, and will not be announced individually/explicitly to assistive technology.
+These alerts appear on page load and are discoverable from within the normal page content flow, and will not be announced individually/explicitly to assistive technology.
 ```js
 import React from 'react';
 import { Alert, AlertGroup } from '@patternfly/react-core';
@@ -79,6 +79,7 @@ class ToastAlertGroup extends React.Component {
 ```
 
 ### Singular dynamic alert group
+This alert will appear in the page, most likely in response to a user action.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
@@ -131,6 +132,7 @@ class SingularAdditiveAlertGroup extends React.Component {
 ```
 
 ### Multiple dynamic alert group
+These alerts will appear in the page, most likely in response to a user action.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
@@ -186,6 +188,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
 ```
 
 ### Async alert group
+This shows how an alert could be triggered by an asynchronous event in the application. Note how you can customize how the alert will be announced to assistive technology. See the alert group accessibility tab for more information.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
@@ -211,11 +214,11 @@ class AsyncAdditiveAlertGroup extends React.Component {
         addAlerts([
           {
             title: `Async Notification ${this.state.alerts.length + 1} was added to the queue.`,
-            variant: 'info',
+            variant: 'danger',
             key: getUniqueId()
           }
         ])
-      }, 1500);
+      }, 4500);
       this.setState({timer: timerValue});
     };
     return (
@@ -224,7 +227,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start Async Alerts</button>
           <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop Async Alerts</button>
         </InputGroup>
-        <AlertGroup isToast isLiveRegion>
+        <AlertGroup isToast isLiveRegion aria-live="assertive">
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
               variant={AlertVariant[variant]}
