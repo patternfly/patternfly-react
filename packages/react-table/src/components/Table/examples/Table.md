@@ -35,7 +35,7 @@ import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-import DemoSortableTable from '../examples/DemoSortableTable';
+import DemoSortableTable from './DemoSortableTable';
 
 ### Table Columns
 
@@ -1085,7 +1085,7 @@ import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 // https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/composable-table-examples/DemoSortableTable.js
-import DemoSortableTable from '../examples/DemoSortableTable';
+import DemoSortableTable from './DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
   constructor(props) {
