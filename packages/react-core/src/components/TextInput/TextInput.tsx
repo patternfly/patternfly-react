@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/FormControl/form-con
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 import { debounce, trimLeft, canUseDOM } from '../../helpers/util';
+import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TextInputTypes {
   text = 'text',
@@ -19,7 +20,8 @@ export enum TextInputTypes {
 }
 
 export interface TextInputProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
+    OUIAProps {
   /** Additional classes added to the TextInput. */
   className?: string;
   /** Flag to show if the input is disabled. */
@@ -68,7 +70,11 @@ export interface TextInputProps
   customIconDimensions?: string;
 }
 
-export class TextInputBase extends React.Component<TextInputProps> {
+interface TextInputState {
+  ouiaStateId: string;
+}
+
+export class TextInputBase extends React.Component<TextInputProps, TextInputState> {
   static displayName = 'TextInputBase';
   static defaultProps: TextInputProps = {
     'aria-label': null,
@@ -79,7 +85,8 @@ export class TextInputBase extends React.Component<TextInputProps> {
     isReadOnly: false,
     type: TextInputTypes.text,
     isLeftTruncated: false,
-    onChange: (): any => undefined
+    onChange: (): any => undefined,
+    ouiaSafe: true
   };
   inputRef = React.createRef<HTMLInputElement>();
 
@@ -89,6 +96,9 @@ export class TextInputBase extends React.Component<TextInputProps> {
       // eslint-disable-next-line no-console
       console.error('Text input:', 'Text input requires either an id or aria-label to be specified');
     }
+    this.state = {
+      ouiaStateId: getDefaultOUIAId(TextInputBase.displayName)
+    };
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -164,6 +174,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
       iconVariant,
       customIconUrl,
       customIconDimensions,
+      ouiaId,
       ...props
     } = this.props;
 
@@ -197,6 +208,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
         readOnly={isReadOnly}
         ref={innerRef || this.inputRef}
         {...((customIconUrl || customIconDimensions) && { style: customIconStyle })}
+        {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       />
     );
   }
