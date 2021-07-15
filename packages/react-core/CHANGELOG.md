@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.136.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.136.0...@patternfly/react-core@4.136.1) (2021-07-15)
+
+
+### Bug Fixes
+
+* **TreeView:** console warning about uncontrolled inputs when checkbox swaps between determinate/indeterminate ([#6041](https://github.com/patternfly/patternfly-react/issues/6041)) ([074c8ce](https://github.com/patternfly/patternfly-react/commit/074c8ced8c37be39d7aac89ed3f283a0ae3f2da4))
+
+
+
+
+
 # [4.136.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.15...@patternfly/react-core@4.136.0) (2021-07-15)
 
 
