@@ -12,6 +12,7 @@ import {
   Tooltip
 } from '@patternfly/react-core';
 import MonacoEditor from 'react-monaco-editor';
+import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/js/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
@@ -161,6 +162,14 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isMinimapVisible?: boolean;
   /** Flag to show the editor */
   showEditor?: boolean;
+  /**
+   * Refer to Monaco interface {monaco.editor.IStandaloneEditorConstructionOptions}.
+   */
+  options?: editor.IStandaloneEditorConstructionOptions;
+  /**
+   * Refer to Monaco interface {monaco.editor.IEditorOverrideServices}.
+   */
+  overrideServices?: editor.IEditorOverrideServices;
 }
 
 interface CodeEditorState {
@@ -207,7 +216,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipPosition: 'top',
     customControls: null,
     isMinimapVisible: false,
-    showEditor: true
+    showEditor: true,
+    options: {},
+    overrideServices: {}
   };
 
   static getExtensionFromLanguage(language: Language) {
@@ -387,7 +398,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       emptyState: providedEmptyState,
       customControls,
       isMinimapVisible,
-      showEditor
+      showEditor,
+      options: optionsProp,
+      overrideServices
     } = this.props;
     const options = {
       readOnly: isReadOnly,
@@ -396,7 +409,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       tabIndex: -1,
       minimap: {
         enabled: isMinimapVisible
-      }
+      },
+      ...optionsProp
     };
 
     return (
@@ -502,6 +516,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 language={language}
                 value={value}
                 options={options}
+                overrideServices={overrideServices}
                 onChange={this.onChange}
                 editorDidMount={this.editorDidMount}
                 theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
