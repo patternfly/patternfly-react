@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { MenuContext } from './MenuContext';
 import { canUseDOM } from '../../helpers/util';
-
+import { KeyboardHandler, setTabIndex } from '../../helpers';
 export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'>, OUIAProps {
   /** Anything that can be rendered inside of the Menu */
   children?: React.ReactNode;
@@ -77,40 +77,31 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   componentDidMount() {
     if (canUseDOM) {
-      window.addEventListener('keydown', this.props.isRootMenu ? this.handleKeys : null);
       window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
     }
 
-    this.setFirstTabIndex();
+    let ref = this.menuRef;
+    if (this.props.innerRef) {
+      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
+    }
+    setTabIndex(Array.from(ref.current.querySelector('ul').querySelectorAll('button, a')));
   }
 
   componentDidUpdate(prevProps: MenuProps) {
     if (prevProps.children !== this.props.children) {
-      this.setFirstTabIndex();
+      let ref = this.menuRef;
+      if (this.props.innerRef) {
+        ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
+      }
+      setTabIndex(Array.from(ref.current.querySelector('ul').querySelectorAll('button, a')));
     }
   }
 
   componentWillUnmount() {
     if (canUseDOM) {
-      window.removeEventListener('keydown', this.handleKeys);
       window.removeEventListener('transitionend', this.handleDrilldownTransition);
     }
   }
-
-  setFirstTabIndex = () => {
-    let ref = this.menuRef;
-    if (this.props.innerRef) {
-      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-    }
-
-    const items = ref.current.querySelectorAll('button, a');
-    if (items && items.length > 0) {
-      items.forEach(item => {
-        (item as HTMLElement).tabIndex = -1;
-      });
-      (items[0] as HTMLElement).tabIndex = 0;
-    }
-  };
 
   handleDrilldownTransition = (event: TransitionEvent) => {
     let ref = this.menuRef;
@@ -128,59 +119,36 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       return;
     }
 
-    if (event.propertyName === 'visibility') {
-      if (this.state.transitionMoveTarget) {
-        this.state.transitionMoveTarget.focus();
-        this.setState({ transitionMoveTarget: null });
-      } else {
-        const nextMenu = ref.current.querySelector('#' + this.props.activeMenu) || ref.current || null;
-        const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-        )[0].firstChild;
-        (nextTarget as HTMLElement).focus();
-        (nextTarget as HTMLElement).tabIndex = 0;
-      }
+    if (this.state.transitionMoveTarget) {
+      this.state.transitionMoveTarget.focus();
+      this.setState({ transitionMoveTarget: null });
+    } else {
+      const nextMenu = ref.current.querySelector('#' + this.props.activeMenu) || ref.current || null;
+      const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
+        el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+      )[0].firstChild;
+      (nextTarget as HTMLElement).focus();
+      (nextTarget as HTMLElement).tabIndex = 0;
     }
   };
 
-  handleKeys = (event: KeyboardEvent) => {
+  handleExtraKeys = (event: KeyboardEvent) => {
     const isDrilldown = this.props.containsDrilldown;
-    let ref = this.menuRef;
-    if (this.props.innerRef) {
-      ref = this.props.innerRef as React.RefObject<HTMLDivElement>;
-    }
-
-    if (
-      !ref.current ||
-      (ref.current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
-        !Array.from(ref.current.getElementsByClassName('pf-c-menu')).includes(
-          (event.target as HTMLElement).closest('.pf-c-menu')
-        )) ||
-      (event.target as HTMLElement).tagName === 'INPUT'
-    ) {
-      return;
-    }
-    event.stopImmediatePropagation();
-
     const activeElement = document.activeElement;
+
     if (
       (event.target as HTMLElement).closest('.pf-c-menu') !== this.activeMenu &&
       !(event.target as HTMLElement).classList.contains('pf-c-breadcrumb__link')
     ) {
       this.activeMenu = (event.target as HTMLElement).closest('.pf-c-menu');
     }
+
+    if ((event.target as HTMLElement).tagName === 'INPUT') {
+      return;
+    }
+
     const parentMenu = this.activeMenu;
     const key = event.key;
-    let moveFocus = false;
-    let moveTarget = null;
-    let currentIndex = -1;
-    const validMenuItems = isDrilldown
-      ? Array.from(parentMenu.getElementsByTagName('UL')[0].children).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-        )
-      : Array.from(parentMenu.getElementsByTagName('LI')).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-        );
     const isFromBreadcrumb =
       activeElement.classList.contains('pf-c-breadcrumb__link') ||
       activeElement.classList.contains('pf-c-dropdown__toggle');
@@ -207,54 +175,18 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       }
       (document.activeElement as HTMLElement).click();
     }
+  };
 
-    if (['ArrowUp', 'ArrowDown'].includes(key)) {
-      validMenuItems.forEach((menuItem, index) => {
-        if (
-          activeElement.parentElement === menuItem ||
-          (activeElement.closest('ol') && activeElement.closest('ol').firstChild === menuItem)
-        ) {
-          const increment = key === 'ArrowUp' ? -1 : 1;
-          currentIndex = index + increment;
+  createNavigableElements = () => {
+    const isDrilldown = this.props.containsDrilldown;
 
-          if (currentIndex >= validMenuItems.length) {
-            currentIndex = 0;
-          }
-          if (currentIndex < 0) {
-            currentIndex = validMenuItems.length - 1;
-          }
-
-          moveFocus = true;
-          moveTarget = validMenuItems[currentIndex].firstChild;
-          event.preventDefault();
-        }
-      });
-    }
-
-    if (['ArrowLeft', 'ArrowRight'].includes(key)) {
-      event.preventDefault();
-      if (isFromBreadcrumb) {
-        return;
-      }
-      let nextSibling;
-      if (key === 'ArrowLeft') {
-        nextSibling = activeElement.previousElementSibling;
-      } else {
-        nextSibling = activeElement.nextElementSibling;
-      }
-      if (nextSibling) {
-        if (['A', 'BUTTON'].includes(nextSibling.tagName)) {
-          moveFocus = true;
-          moveTarget = nextSibling;
-        }
-      }
-    }
-
-    if (moveFocus && moveTarget) {
-      (activeElement as HTMLElement).tabIndex = -1;
-      (moveTarget as HTMLElement).tabIndex = 0;
-      (moveTarget as HTMLElement).focus();
-    }
+    return isDrilldown
+      ? Array.from(this.activeMenu.getElementsByTagName('UL')[0].children).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        )
+      : Array.from(this.activeMenu.getElementsByTagName('LI')).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        );
   };
 
   render() {
@@ -303,6 +235,25 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight
         }}
       >
+        {isRootMenu && (
+          <KeyboardHandler
+            containerRef={(this.props.innerRef as React.RefObject<HTMLDivElement>) || this.menuRef || null}
+            additionalKeyHandler={this.handleExtraKeys}
+            createNavigableElements={this.createNavigableElements}
+            isActiveElement={(element: Element) =>
+              document.activeElement.parentElement === element ||
+              (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
+            }
+            getFocusableElement={(navigableElement: Element) => navigableElement.firstChild as Element}
+            noHorizontalArrowHandling={
+              document.activeElement &&
+              (document.activeElement.classList.contains('pf-c-breadcrumb__link') ||
+                document.activeElement.classList.contains('pf-c-dropdown__toggle'))
+            }
+            noEnterHandling
+            noSpaceHandling
+          />
+        )}
         <div
           id={id}
           className={css(

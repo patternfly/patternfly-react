@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import { canUseDOM } from '../../helpers/util';
+import { handleArrows } from '../../helpers';
 
 export interface TreeViewRootProps {
   /** Child nodes of the tree view */
@@ -46,38 +47,25 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     }
     const activeElement = document.activeElement;
     const key = event.key;
-    let moveFocus = false;
-    let currentIndex = -1;
-    const treeItems = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node'));
+    const treeItems = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node')).filter(
+      el => !el.classList.contains('pf-m-disabled')
+    );
 
     if (key === 'Space') {
       (document.activeElement as HTMLElement).click();
       event.preventDefault();
     }
 
-    if (['ArrowUp', 'ArrowDown'].includes(key)) {
-      treeItems.forEach((treeItem, index) => {
-        if (activeElement === treeItem) {
-          const increment = key === 'ArrowUp' ? -1 : 1;
-          currentIndex = index + increment;
-          while (
-            currentIndex < treeItems.length &&
-            currentIndex >= 0 &&
-            treeItems[currentIndex].classList.contains('pf-m-disabled')
-          ) {
-            currentIndex = currentIndex + increment;
-          }
-          moveFocus = true;
-          event.preventDefault();
-        }
-      });
-
-      if (moveFocus && treeItems[currentIndex]) {
-        (activeElement as HTMLElement).tabIndex = -1;
-        (treeItems[currentIndex] as HTMLElement).tabIndex = 0;
-        (treeItems[currentIndex] as HTMLElement).focus();
-      }
-    }
+    handleArrows(
+      event,
+      treeItems,
+      (element: Element) => activeElement === element,
+      undefined,
+      [],
+      undefined,
+      true,
+      true
+    );
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       const isExpandable = activeElement.firstElementChild.classList.contains('pf-c-tree-view__node-toggle');
