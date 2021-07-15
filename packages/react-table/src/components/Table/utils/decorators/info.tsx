@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { InfoType } from '../../base/types';
+import { ThInfoType } from '../../base/types';
 import { HeaderCellInfoWrapper } from '../../HeaderCellInfoWrapper';
 import { IFormatterValueType, ITransform } from '../../TableTypes';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, ariaLabel }: InfoType) => {
+export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, ariaLabel }: ThInfoType) => {
   const infoObj: ITransform = (value: IFormatterValueType) => ({
     className: styles.modifiers.help,
     children: tooltip ? (
