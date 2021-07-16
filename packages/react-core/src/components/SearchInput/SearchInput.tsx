@@ -33,7 +33,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
    * The new form elements can be wrapped in a FormGroup component for automatic formatting */
   formAdditionalItems?: React.ReactNode;
   /** Attribute label for strings unassociated with one of the provided listed attributes */
-  hasWordsAttrLabel?: string | React.ReactNode;
+  hasWordsAttrLabel?: React.ReactNode;
   /** Delimiter in the query string for pairing attributes with search values.
    * Required whenever attributes are passed as props */
   advancedSearchDelimiter?: string;
