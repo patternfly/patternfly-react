@@ -38,9 +38,9 @@ module.exports = (sourceMD, sourceProps) => {
   sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
 
   // React-table MD
-  sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react-composable-table');
+  sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react-composable');
   sourceMD(path.join(reactTablePath, '/**/demos/*.md'), 'react-demos');
-  sourceMD(path.join(reactTablePath, '/**/Table/examples/*.md'), 'react-legacy-table');
+  sourceMD(path.join(reactTablePath, '/**/Table/examples/*.md'), 'react-legacy');
 
   // Charts MD (no demos yet)
   sourceMD(path.join(reactChartsPath, '/**/examples/*.md'), 'react');
