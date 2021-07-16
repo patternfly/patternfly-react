@@ -6,6 +6,7 @@ propComponents: ['SearchInput', 'SearchAttribute']
 beta: true
 ---
 import { SearchInput } from '@patternfly/react-core';
+import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 
 ## Examples
 ### Basic
@@ -97,14 +98,14 @@ class SearchInputWithNavigableOptions extends React.Component {
       resultsCount: 0,
       currentResult: 1
     };
-  
+
     this.onChange = (value, event) => {
       this.setState({
         value: value,
         resultsCount: 3
       });
     };
-    
+
     this.onClear = (event) => {
       this.setState({
         value: '',
@@ -112,26 +113,26 @@ class SearchInputWithNavigableOptions extends React.Component {
         currentResult: 1
       });
     }
-    
+
     this.onNext = (event) => {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentResult + 1;
         return {
           currentResult: newCurrentResult <= prevState.resultsCount ? newCurrentResult : prevState.resultsCount
-        } 
+        }
       });
     }
-    
+
     this.onPrevious = (event) => {
       this.setState(prevState => {
         const newCurrentResult = prevState.currentResult - 1;
         return {
-          currentResult: newCurrentResult > 0 ? newCurrentResult : 1 
+          currentResult: newCurrentResult > 0 ? newCurrentResult : 1
         }
       });
     }
   }
-  
+
   render() {
     return (
       <SearchInput
@@ -173,63 +174,51 @@ TextInputSelectAll = () => {
 ### Advanced
 ```js
 import React from 'react';
-import { Checkbox, SearchInput } from '@patternfly/react-core';
+import { Button, Checkbox, FormGroup, SearchInput } from '@patternfly/react-core';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
 
-class AdvancedSearchInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'username:player firstname:john',
-      useEqualsAsDelimiter: false,
-    };
-    
-    this.toggleDelimiter = checked => {
-      this.setState(prevState => {
-        const newValue = prevState.value.replace(/:|=/g, checked ? "=" : ':' );
-        return {
-          useEqualsAsDelimiter: checked,
-          value: newValue
-          }
-      });
-    };
+AdvancedSearchInput = () => {
+  const [value, setValue] = React.useState('username:player firstname:john');
+  const [useEqualsAsDelimiter, setUseEqualsAsDelimiter] = React.useState(false);
+  const [showLink, setShowLink] = React.useState(false);
+  const [useCustomFooter, setUseCustomFooter] = React.useState(false);
 
-    this.onChange = (value) => {
-      this.setState({
-        value: value
-      });
-    };
-    
-    this.onSearch = (value, event, attrValueMap) => {
-      this.setState({
-        value: value
-      });
-      console.log(attrValueMap);
-    }
-  }
+  const toggleDelimiter = checked => {
+      const newValue = value.replace(/:|=/g, checked ? "=" : ':' );
+      setUseEqualsAsDelimiter(checked);
+      setValue(newValue);
+  };
 
-  render() {
-    return (
-      <>
-        <Checkbox
-          label="Use equal sign as search attribute delimiter"
-          isChecked={this.state.useEqualsAsDelimiter}
-          onChange={this.toggleDelimiter}
-          aria-label="change delimiter checkbox"
-          id="toggle-delimiter"
-          name="toggle-delimiter"
-        /> 
-        <br />
-        <SearchInput
-          attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
-          advancedSearchDelimiter={this.state.useEqualsAsDelimiter ? '=' : ':'}
-          value={this.state.value}
-          onChange={this.onChange}
-          onSearch={this.onSearch}
-          onClear={(evt) => this.onChange('', evt)}
-        />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Checkbox
+        label="Use equal sign as search attribute delimiter"
+        isChecked={useEqualsAsDelimiter}
+        onChange={toggleDelimiter}
+        aria-label="change delimiter checkbox"
+        id="toggle-delimiter"
+        name="toggle-delimiter"
+      />
+      <Checkbox
+        label="Add custom footer element after the attributes in the menu"
+        isChecked={useCustomFooter}
+        onChange={value => setUseCustomFooter(value)}
+        aria-label="change use custom footer checkbox"
+        id="toggle-custom-footer"
+        name="toggle-custom-footer"
+      />
+      <br />
+      <SearchInput
+        attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+        advancedSearchDelimiter={useEqualsAsDelimiter ? '=' : ':'}
+        value={value}
+        onChange={setValue}
+        onSearch={setValue}
+        onClear={() => setValue('')}
+        formAdditionalItems={useCustomFooter ? <FormGroup><Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">Link</Button></FormGroup> : null}
+      />
+    </>
+  );
+};
 
 ```

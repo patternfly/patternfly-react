@@ -29,6 +29,9 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   value?: string;
   /** Array of attribute values */
   attributes?: string[] | SearchAttribute[];
+  /* Additional elements added after the attributes in the form.
+   * The new form elements can be wrapped in a FormGroup component for automatic formatting */
+  formAdditionalItems?: React.ReactNode;
   /** Attribute label for strings unassociated with one of the provided listed attributes */
   hasWordsAttrLabel?: string;
   /** Delimiter in the query string for pairing attributes with search values.
@@ -71,6 +74,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   className,
   value = '',
   attributes = [] as string[],
+  formAdditionalItems,
   hasWordsAttrLabel = 'Has words',
   advancedSearchDelimiter,
   placeholder,
@@ -350,6 +354,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           <div className={styles.searchInputMenuBody}>
             <Form>
               {buildFormGroups()}
+              {formAdditionalItems ? formAdditionalItems : null}
               <ActionGroup>
                 <Button variant="primary" type="submit" onClick={onSearchHandler}>
                   {submitSearchButtonLabel}

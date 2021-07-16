@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { SearchInput } from '../SearchInput';
+import { SearchInput, FormGroup, Button, ExternalLinkSquareAltIcon } from '../SearchInput';
 
 
 const props = {
@@ -63,5 +63,18 @@ test('advanced search', () => {
   expect(view.find('input')).toMatchSnapshot();
 });
 
-
-
+test('advanced search with custom attributes', () => {
+  const view = mount(
+    <SearchInput
+      attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+      formAdditionalItems={<FormGroup><Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">Link</Button></FormGroup>}
+      value='username:player firstname:john'
+      onChange={props.onChange}
+      onSearch={props.onSearch}
+      onClear={props.onClear}
+    />
+  );
+  view.find('.pf-c-button').at(2).simulate('click', {});
+  expect(props.onSearch).toBeCalled();
+  expect(view.find('input')).toMatchSnapshot();
+});
