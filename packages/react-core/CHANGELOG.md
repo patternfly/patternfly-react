@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.137.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.136.1...@patternfly/react-core@4.137.0) (2021-07-16)
+
+
+### Features
+
+* **AlertGroup:** Make dynamic alerts more accessible ([#5946](https://github.com/patternfly/patternfly-react/issues/5946)) ([d29ae2f](https://github.com/patternfly/patternfly-react/commit/d29ae2f5296d0129e4623f98b9453af6a194248f))
+
+
+
+
+
 ## [4.136.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.136.0...@patternfly/react-core@4.136.1) (2021-07-15)
 
 
