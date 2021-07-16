@@ -192,9 +192,10 @@ class StaticLiveRegionAlert extends React.Component {
 ```
 
 ### Dynamic live region alert
+Alerts asynchronously appended into dynamic AlertGroups with isLiveRegion will be announced to assistive technology at the moment the change happens, following the strategy used for aria-atomic, which defaults to false. This means only changes of type "addition" will be announced.
 ```js
 import React from 'react';
-import { Alert, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, InputGroup } from '@patternfly/react-core';
 
 class DynamicLiveRegionAlert extends React.Component {
   constructor() {
@@ -213,7 +214,6 @@ class DynamicLiveRegionAlert extends React.Component {
       addAlert({
         title: 'Single Success Alert',
         variant: 'success',
-        isLiveRegion: true,
         key: getUniqueId()
       });
     };
@@ -221,9 +221,6 @@ class DynamicLiveRegionAlert extends React.Component {
       addAlert({
         title: 'Single Info Alert',
         variant: 'info',
-        ariaLive: 'polite',
-        ariaRelevant: 'additions text',
-        ariaAtomic: 'false',
         key: getUniqueId()
       });
     };
@@ -231,9 +228,6 @@ class DynamicLiveRegionAlert extends React.Component {
       addAlert({
         title: 'Single Danger Alert',
         variant: 'danger',
-        ariaLive: 'assertive',
-        ariaRelevant: 'additions text',
-        ariaAtomic: 'false',
         key: getUniqueId()
       });
     };
@@ -251,17 +245,15 @@ class DynamicLiveRegionAlert extends React.Component {
             Add Single Danger Alert
           </button>
         </InputGroup>
+        <AlertGroup isLiveRegion aria-live="polite" aria-relevant="additions text" aria-atomic="false">
         {this.state.alerts.map(({ title, variant, isLiveRegion, ariaLive, ariaRelevant, ariaAtomic, key }) => (
           <Alert
             variant={variant}
             title={title}
-            isLiveRegion={isLiveRegion}
-            aria-live={ariaLive}
-            aria-relevant={ariaRelevant}
-            aria-atomic={ariaAtomic}
             key={key}
           />
         ))}
+        </AlertGroup>
       </React.Fragment>
     );
   }
@@ -269,9 +261,10 @@ class DynamicLiveRegionAlert extends React.Component {
 ```
 
 ### Async live region alert
+This shows how an alert could be triggered by an asynchronous event in the application. Note that you can customize how the alert will be announced to assistive technology. See the alert accessibility tab for more information.
 ```js
 import React from 'react';
-import { Alert, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, InputGroup } from '@patternfly/react-core';
 
 class AsyncLiveRegionAlert extends React.Component {
   constructor() {
@@ -297,10 +290,9 @@ class AsyncLiveRegionAlert extends React.Component {
         addAlert({
           title: `This is a async alert number ${this.state.alerts.length + 1}`,
           variant: 'info',
-          isLiveRegion: true,
           key: getUniqueId()
         });
-      }, 1500);
+      }, 4500);
       this.setState({ timer: timerValue });
     };
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
@@ -314,9 +306,11 @@ class AsyncLiveRegionAlert extends React.Component {
             Stop Async Info Alerts
           </button>
         </InputGroup>
-        {this.state.alerts.map(({ title, variant, isLiveRegion, key }) => (
-          <Alert variant={variant} title={title} isLiveRegion={isLiveRegion} key={key} />
+        <AlertGroup isLiveRegion>
+        {this.state.alerts.map(({ title, variant, key }) => (
+          <Alert variant={variant} title={title} key={key} />
         ))}
+        </AlertGroup>
       </React.Fragment>
     );
   }
@@ -326,7 +320,7 @@ class AsyncLiveRegionAlert extends React.Component {
 ### Alert timeout
 ```js
 import React from 'react';
-import { Alert, AlertActionLink, Button } from '@patternfly/react-core';
+import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
 
 class AlertTimeout extends React.Component {
   constructor() {
@@ -355,7 +349,9 @@ class AlertTimeout extends React.Component {
       <React.Fragment>
         <Button variant="secondary" onClick={this.onClick}>Add alert</Button>
         <Button variant="secondary" onClick={() => this.setState({ alerts: [] })}>Remove all alerts</Button>
+        <AlertGroup isLiveRegion>
         {this.state.alerts}
+        </AlertGroup>
       </React.Fragment>
     );
   }
