@@ -28,6 +28,8 @@ interface LogViewerProps {
   toolbar?: React.ReactNode;
   /** Content displayed while the log viewer is loading */
   loadingContent?: React.ReactNode;
+  /** Flag indicating that log viewer is dark themed */
+  isDarkTheme?: boolean;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -51,6 +53,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     loadingContent = '',
     toolbar,
     width,
+    isDarkTheme = false,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -176,7 +179,14 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
           searchedInput
         }}
       >
-        <div className={css(styles.logViewer, hasLineNumbers && styles.modifiers.lineNumbers)} {...props}>
+        <div
+          className={css(
+            styles.logViewer,
+            hasLineNumbers && styles.modifiers.lineNumbers,
+            isDarkTheme && styles.modifiers.dark
+          )}
+          {...props}
+        >
           {toolbar && (
             <LogViewerToolbarContext.Provider
               value={{
