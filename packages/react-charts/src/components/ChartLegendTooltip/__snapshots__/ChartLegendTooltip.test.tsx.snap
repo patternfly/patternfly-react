@@ -530,7 +530,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -560,7 +559,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -1075,7 +1073,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -1096,7 +1093,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -1125,7 +1121,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -1640,7 +1635,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -1665,7 +1659,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -1684,7 +1677,6 @@ exports[`allows tooltip via container component 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -1692,7 +1684,6 @@ exports[`allows tooltip via container component 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -1711,7 +1702,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -2228,7 +2218,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -2249,7 +2238,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -2268,7 +2256,6 @@ exports[`allows tooltip via container component 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -2276,7 +2263,6 @@ exports[`allows tooltip via container component 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -2294,7 +2280,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -2811,7 +2796,6 @@ exports[`allows tooltip via container component 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
