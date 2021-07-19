@@ -53,7 +53,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   className,
   locale = undefined,
   dateFormat = yyyyMMddFormat,
-  dateParse = (val: string) => new Date(`${val}T00:00:00`),
+  dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
   isDisabled = false,
   placeholder = 'yyyy-MM-dd',
   value: valueProp = '',
