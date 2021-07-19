@@ -52,6 +52,7 @@ test('advanced search', () => {
   const view = mount(
     <SearchInput
       attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+      advancedSearchDelimiter=":"
       value='username:player firstname:john'
       onChange={props.onChange}
       onSearch={props.onSearch}
@@ -67,6 +68,7 @@ test('advanced search with custom attributes', () => {
   const view = mount(
     <SearchInput
       attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
+      advancedSearchDelimiter=":"
       formAdditionalItems={<FormGroup><Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">Link</Button></FormGroup>}
       value='username:player firstname:john'
       onChange={props.onChange}
