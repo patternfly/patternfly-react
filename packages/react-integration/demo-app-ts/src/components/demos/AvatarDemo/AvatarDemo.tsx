@@ -14,6 +14,6 @@ export class AvatarDemo extends Component {
   }
 
   render() {
-    return <Avatar src={this.myAvatarProps.src} alt={this.myAvatarProps.alt} />;
+    return <Avatar src={this.myAvatarProps.src} alt={this.myAvatarProps.alt} border="dark" />;
   }
 }
