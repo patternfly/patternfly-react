@@ -230,6 +230,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0][0] = this.filterRef.current;
     }
 
+    // Move focus to top of the menu if state.focusFirstOption was updated to true and the menu does not have custom content
     if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
       const firstRef = this.refCollection.find(ref => ref !== null);
       if (firstRef && firstRef[0]) {
@@ -237,15 +238,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
+    // the number or contents of the children has changed, update state.typeaheadFilteredChildren
     if (
       prevProps.children.length !== this.props.children.length ||
-      prevProps.children.some(
-        (child: React.ReactElement, index: number) => child.props.value !== this.props.children[index].props.value
-      )
+      prevProps.children.some((child: React.ReactElement, index: number) => {
+        if (child.props && this.props.children[index].props) {
+          return child.props.value !== this.props.children[index].props.value;
+        } else {
+          return child === this.props.children[index];
+        }
+      })
     ) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
+    // for menus with favorites,
+    // if the number of favorites or typeahead filtered children has changed, the generated
+    // list of favorites needs to be updated
     if (
       this.props.onFavorite &&
       (this.props.favorites.length !== prevProps.favorites.length ||
