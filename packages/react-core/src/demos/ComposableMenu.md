@@ -48,6 +48,7 @@ BasicComposableMenu = () => {
       }
     }
   };
+
   const handleClickOutside = event => {
     if (isOpen && !menuRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -65,6 +66,10 @@ BasicComposableMenu = () => {
 
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
     setIsOpen(!isOpen);
   }
 
@@ -135,6 +140,7 @@ ActionComposableMenu = () => {
       }
     }
   };
+
   const handleClickOutside = event => {
     if (isOpen && !menuRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -160,6 +166,10 @@ ActionComposableMenu = () => {
 
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
     setIsOpen(!isOpen);
   }
 
@@ -251,6 +261,7 @@ SelectComposableMenu = () => {
       }
     }
   };
+
   const handleClickOutside = event => {
     if (isOpen && !menuRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -268,6 +279,10 @@ SelectComposableMenu = () => {
 
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
     setIsOpen(!isOpen);
   }
 
@@ -336,6 +351,7 @@ DrilldownComposableMenu = () => {
       }
     }
   };
+
   const handleClickOutside = event => {
     if (isOpen && !menuRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -353,6 +369,10 @@ DrilldownComposableMenu = () => {
 
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
     setIsOpen(!isOpen);
   }
 
@@ -387,251 +407,242 @@ DrilldownComposableMenu = () => {
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper, TreeView } from '@patternfly/react-core';
 
-class FilterTreeComposableMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.toggleRef = React.createRef();
-    this.menuRef = React.createRef();
-    this.state = {
-      isOpen: false,
-      checkedItems: []
-    };
+FilterTreeComposableMenu = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [checkedItems, setCheckedItems] = React.useState([]);
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
 
-    this.statusOptions = [
-      {
-        name: 'Ready',
-        id: 'ready',
-        checkProps: { checked: false },
-        customBadgeContent: 1,
-        children: [
-          {
-            name: 'Updated',
-            id: 'updated',
-            checkProps: { checked: false },
-            customBadgeContent: 0
-          },
-          {
-            name: 'Waiting to update',
-            id: 'waiting',
-            checkProps: { checked: false },
-            customBadgeContent: 0
-          },
-          {
-            name: 'Conditions degraded',
-            id: 'degraded',
-            checkProps: { checked: false },
-            customBadgeContent: 1
-          },
-          {
-            name: 'Approval required',
-            id: 'approval',
-            checkProps: { checked: false },
-            customBadgeContent: 0
-          }
-        ]
-      },
-      {
-        name: 'Not ready',
-        id: 'nr',
-        checkProps: { checked: false },
-        customBadgeContent: 1,
-        children: [
-          {
-            name: 'Conditions degraded',
-            id: 'nr-degraded',
-            checkProps: { checked: false },
-            customBadgeContent: 1
-          }
-        ]
-      },
-      {
-        name: 'Updating',
-        id: 'updating',
-        checkProps: { checked: false },
-        customBadgeContent: 0
-      }
-    ];
-
-    this.roleOptions = [
-      {
-        name: 'Server',
-        id: 'server',
-        checkProps: { checked: false },
-        customBadgeContent: 2
-      },
-      {
-        name: 'Worker',
-        id: 'worker',
-        checkProps: { checked: false },
-        customBadgeContent: 0
-      }
-    ];
-
-    this.onToggle = event => {
-      event && event.stopPropagation();
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-
-    this.handleMenuClick = event => {
-      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
-        this.onToggle();
-      }
-    };
-
-    this.onCheck = (evt, treeViewItem, tree) => {
-      const checked = evt.target.checked;
-
-      let options = [];
-      switch (tree) {
-        case 'status':
-          options = this.statusOptions;
-          break;
-        case 'role':
-          options = this.roleOptions;
-          break;
-        default:
-          break;
-      }
-
-      const checkedItemTree = options
-        .map(opt => Object.assign({}, opt))
-        .filter(item => this.filterItems(item, treeViewItem));
-      const flatCheckedItems = this.flattenTree(checkedItemTree);
-
-      this.setState(
-        prevState => ({
-          checkedItems: checked
-            ? prevState.checkedItems.concat(
-                flatCheckedItems.filter(item => !prevState.checkedItems.some(i => i.id === item.id))
-              )
-            : prevState.checkedItems.filter(item => !flatCheckedItems.some(i => i.id === item.id))
-        }),
-        () => {
-          console.log('Checked items: ', this.state.checkedItems);
+  const statusOptions = [
+    {
+      name: 'Ready',
+      id: 'ready',
+      checkProps: { checked: false },
+      customBadgeContent: 1,
+      children: [
+        {
+          name: 'Updated',
+          id: 'updated',
+          checkProps: { checked: false },
+          customBadgeContent: 0
+        },
+        {
+          name: 'Waiting to update',
+          id: 'waiting',
+          checkProps: { checked: false },
+          customBadgeContent: 0
+        },
+        {
+          name: 'Conditions degraded',
+          id: 'degraded',
+          checkProps: { checked: false },
+          customBadgeContent: 1
+        },
+        {
+          name: 'Approval required',
+          id: 'approval',
+          checkProps: { checked: false },
+          customBadgeContent: 0
         }
+      ]
+    },
+    {
+      name: 'Not ready',
+      id: 'nr',
+      checkProps: { checked: false },
+      customBadgeContent: 1,
+      children: [
+        {
+          name: 'Conditions degraded',
+          id: 'nr-degraded',
+          checkProps: { checked: false },
+          customBadgeContent: 1
+        }
+      ]
+    },
+    {
+      name: 'Updating',
+      id: 'updating',
+      checkProps: { checked: false },
+      customBadgeContent: 0
+    }
+  ];
+
+  const roleOptions = [
+    {
+      name: 'Server',
+      id: 'server',
+      checkProps: { checked: false },
+      customBadgeContent: 2
+    },
+    {
+      name: 'Worker',
+      id: 'worker',
+      checkProps: { checked: false },
+      customBadgeContent: 0
+    }
+  ];
+  // Helper functions
+  const isChecked = dataItem => checkedItems.some(item => item.id === dataItem.id);
+  const areAllDescendantsChecked = dataItem =>
+    dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
+  const areSomeDescendantsChecked = dataItem =>
+    dataItem.children ? dataItem.children.some(child => areSomeDescendantsChecked(child)) : isChecked(dataItem);
+  const flattenTree = tree => {
+    var result = [];
+    tree.forEach(item => {
+      result.push(item);
+      if (item.children) {
+        result = result.concat(flattenTree(item.children));
+      }
+    });
+    return result;
+  };
+
+  mapTree = item => {
+    const hasCheck = areAllDescendantsChecked(item);
+    // Reset checked properties to be updated
+    item.checkProps.checked = false;
+
+    if (hasCheck) {
+      item.checkProps.checked = true;
+    } else {
+      const hasPartialCheck = areSomeDescendantsChecked(item);
+      if (hasPartialCheck) {
+        item.checkProps.checked = null;
+      }
+    }
+
+    if (item.children) {
+      return {
+        ...item,
+        children: item.children.map(mapTree)
+      };
+    }
+    return item;
+  };
+
+  filterItems = (item, checkedItem) => {
+    if (item.id === checkedItem.id) {
+      return true;
+    }
+
+    if (item.children) {
+      return (
+        (item.children = item.children
+          .map(opt => Object.assign({}, opt))
+          .filter(child => filterItems(child, checkedItem))).length > 0
       );
-    };
+    }
+  };
 
-    // Helper functions
-    const isChecked = dataItem => this.state.checkedItems.some(item => item.id === dataItem.id);
-    const areAllDescendantsChecked = dataItem =>
-      dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
-    const areSomeDescendantsChecked = dataItem =>
-      dataItem.children ? dataItem.children.some(child => areSomeDescendantsChecked(child)) : isChecked(dataItem);
+  const onCheck = (evt, treeViewItem, tree) => {
+    const checked = evt.target.checked;
 
-    this.flattenTree = tree => {
-      var result = [];
-      tree.forEach(item => {
-        result.push(item);
-        if (item.children) {
-          result = result.concat(this.flattenTree(item.children));
-        }
-      });
-      return result;
-    };
+    let options = [];
+    switch (tree) {
+      case 'status':
+        options = statusOptions;
+        break;
+      case 'role':
+        options = roleOptions;
+        break;
+      default:
+        break;
+    }
 
-    this.mapTree = item => {
-      const hasCheck = areAllDescendantsChecked(item);
-      // Reset checked properties to be updated
-      item.checkProps.checked = false;
+    const checkedItemTree = options
+      .map(opt => Object.assign({}, opt))
+      .filter(item => filterItems(item, treeViewItem));
+    const flatCheckedItems = flattenTree(checkedItemTree);
 
-      if (hasCheck) {
-        item.checkProps.checked = true;
-      } else {
-        const hasPartialCheck = areSomeDescendantsChecked(item);
-        if (hasPartialCheck) {
-          item.checkProps.checked = null;
-        }
+    setCheckedItems(
+      prevState => checked
+          ? prevState.checkedItems.concat(
+              flatCheckedItems.filter(item => !prevState.checkedItems.some(i => i.id === item.id))
+            )
+          : prevState.checkedItems.filter(item => !flatCheckedItems.some(i => i.id === item.id)),
+      () => {
+        console.log('Checked items: ', checkedItems);
       }
-
-      if (item.children) {
-        return {
-          ...item,
-          children: item.children.map(child => this.mapTree(child))
-        };
-      }
-      return item;
-    };
-
-    this.filterItems = (item, checkedItem) => {
-      if (item.id === checkedItem.id) {
-        return true;
-      }
-
-      if (item.children) {
-        return (
-          (item.children = item.children
-            .map(opt => Object.assign({}, opt))
-            .filter(child => this.filterItems(child, checkedItem))).length > 0
-        );
-      }
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener('click', this.handleMenuClick);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('click', this.handleMenuClick);
-  }
-
-  render() {
-    const { isOpen } = this.state;
-
-    const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
     );
+  };
 
-    const statusMapped = this.statusOptions.map(item => this.mapTree(item));
-    const roleMapped = this.roleOptions.map(item => this.mapTree(item));
 
-    const menu = (
-      <Menu ref={this.menuRef}>
-        <MenuContent>
-          <MenuList>
-            <MenuGroup label="Status">
-              <TreeView
-                data={statusMapped}
-                onSelect={this.onStatusClick}
-                hasBadges
-                hasChecks
-                onCheck={(event, item, parentItem) => this.onCheck(event, item, 'status')}
-              />
-            </MenuGroup>
-            <MenuGroup label="Role">
-              <TreeView
-                data={roleMapped}
-                onSelect={this.onRoleClick}
-                hasBadges
-                hasChecks
-                onCheck={(event, item, parentItem) => this.onCheck(event, item, 'role')}
-              />
-            </MenuGroup>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
+  const handleMenuKeys = event => {
+    if (!isOpen) {
+      return;
+    }
+    if (menuRef.current.contains(event.target) || toggleRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
 
-    return (
-      <div ref={this.containerRef}>
-        <Popper
-          trigger={toggle}
-          popper={menu}
-          direction="down"
-          position="left"
-          appendTo={this.containerRef.current}
-          isVisible={isOpen}
-          popperMatchesTriggerWidth={false}
-        />
-      </div>
-    );
+    if (event.target === toggleRef.current) {
+      if (event.key === 'ArrowDown') {
+        menuRef.current.querySelector('button, a').focus();
+      }
+    }
+  };
+
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, menuRef]);
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
+    setIsOpen(!isOpen);
   }
+
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
+  );
+  const statusMapped = statusOptions.map(mapTree);
+  const roleMapped = roleOptions.map(mapTree);
+  const menu = (
+    <Menu ref={menuRef} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+      <MenuContent>
+        <MenuList>
+          <MenuGroup label="Status">
+            <TreeView
+              data={statusMapped}
+              hasBadges
+              hasChecks
+              onCheck={(event, item, parentItem) => onCheck(event, item, 'status')}
+            />
+          </MenuGroup>
+          <MenuGroup label="Role">
+            <TreeView
+              data={roleMapped}
+              hasBadges
+              hasChecks
+              onCheck={(event, item, parentItem) => onCheck(event, item, 'role')}
+            />
+          </MenuGroup>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
 ```
 
@@ -646,6 +657,9 @@ import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper } 
 MenuWithFlyout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const menuRef = React.useRef();
+
+  const onSelect = itemId => console.log('selected', itemId);
+
   const numFlyouts = 15;
   const FlyoutMenu = ({ depth, children }) => (
     <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
@@ -663,37 +677,23 @@ MenuWithFlyout = () => {
     curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
 
-  // On keypress auto focus first element.
-  const id = 'root-menu';
-  const onEnter = event => {
-    if (!isOpen) {
-      setTimeout(() => {
-        const menu = document.getElementById(id);
-        if (menu) {
-          const firstFocusable = menu.querySelector('ul > li > button[tabindex="0"]');
-          if (firstFocusable) {
-            firstFocusable.focus();
-          }
-        }
-      }, 0);
-    }
-  };
-
-  const onSelect = (_ev, itemId) => {
-    console.log('select', itemId);
-    if (!itemId.includes('next-menu')) {
-      setIsOpen(false);
-    }
-  };
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
+    setIsOpen(!isOpen);
+  }
 
   const toggle = (
-    <MenuToggle onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen}>
+    <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
       {isOpen ? 'Expanded' : 'Collapsed'}
     </MenuToggle>
   );
 
   const menu = (
-    <Menu containsFlyout id={id} onSelect={onSelect}>
+    <Menu ref={menuRef} containsFlyout onSelect={onSelect}>
       <MenuContent>
         <MenuList>
           <MenuItem itemId="start">Start rollout</MenuItem>
@@ -717,8 +717,6 @@ MenuWithFlyout = () => {
     <Popper
       trigger={toggle}
       popper={menu}
-      direction="down"
-      position="left"
       isVisible={isOpen}
       popperMatchesTriggerWidth={false}
     />

@@ -58,6 +58,7 @@ export const handleArrows = (
   if (!noVerticalArrowHandling) {
     if (['ArrowUp', 'ArrowDown'].includes(key)) {
       event.preventDefault();
+      event.stopImmediatePropagation(); // For menus in menus
 
       // Traverse navigableElements to find the element which is currently active
       let currentIndex = -1;
@@ -85,6 +86,7 @@ export const handleArrows = (
   if (!noHorizontalArrowHandling) {
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       event.preventDefault();
+      event.stopImmediatePropagation(); // For menus in menus
       let nextSibling = activeElement;
 
       // While a sibling exists, check each sibling to determine if it should be focussed
@@ -164,8 +166,6 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     if (isEventFromContainer ? !isEventFromContainer(event) : !this._isEventFromContainer(event)) {
       return;
     }
-    // If the event is relevant, stop propagation and handle the event
-    // event.stopImmediatePropagation();
 
     const {
       isActiveElement,
@@ -198,6 +198,7 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     if (!noEnterHandling) {
       if (key === 'Enter') {
         event.preventDefault();
+        event.stopImmediatePropagation(); // For menus in menus
         (document.activeElement as HTMLElement).click();
       }
     }
@@ -206,6 +207,7 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     if (!noSpaceHandling) {
       if (key === ' ') {
         event.preventDefault();
+        event.stopImmediatePropagation(); // For menus in menus
         (document.activeElement as HTMLElement).click();
       }
     }

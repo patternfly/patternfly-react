@@ -73,6 +73,8 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       description,
       body,
       ouiaId,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      ouiaSafe,
       ...props
     } = this.props;
     if (!props.id) {
