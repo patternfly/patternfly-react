@@ -32,7 +32,7 @@ BasicLogViewer = () => {
         id="toggle-dark-theme"
         name="toggle-dark-theme"
       />
-      <LogViewer hasLineNumbers={false} height={300} data={data.data} isDarkTheme={isDarkTheme} />;
+      <LogViewer hasLineNumbers={false} height={300} data={data.data} isDarkTheme={isDarkTheme} />
     </>
   );
 }
