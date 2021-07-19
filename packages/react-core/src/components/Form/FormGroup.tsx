@@ -11,6 +11,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   className?: string;
   /** Label text before the field. */
   label?: React.ReactNode;
+  /** Additional label information displayed after the label. */
+  labelInfo?: React.ReactNode;
   /** Sets an icon for the label. For providing additional context. Host element for Popover  */
   labelIcon?: React.ReactElement;
   /** Sets the FormGroup required. */
@@ -45,6 +47,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   children = null,
   className = '',
   label,
+  labelInfo,
   labelIcon,
   isRequired = false,
   validated = 'default',
@@ -93,23 +96,40 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const helperTextToDisplay =
     validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated);
 
+  const labelContent = (
+    <React.Fragment>
+      <label className={css(styles.formLabel)} htmlFor={fieldId}>
+        <span className={css(styles.formLabelText)}>{label}</span>
+        {isRequired && (
+          <span className={css(styles.formLabelRequired)} aria-hidden="true">
+            {' '}
+            {ASTERISK}
+          </span>
+        )}
+      </label>{' '}
+      {React.isValidElement(labelIcon) && labelIcon}
+    </React.Fragment>
+  );
+
   return (
     <div {...props} className={css(styles.formGroup, className)}>
       {label && (
-        <div className={css(styles.formGroupLabel, hasNoPaddingTop && styles.modifiers.noPaddingTop)}>
-          <label className={css(styles.formLabel)} htmlFor={fieldId}>
-            <span className={css(styles.formLabelText)}>{label}</span>
-            {isRequired && (
-              <span className={css(styles.formLabelRequired)} aria-hidden="true">
-                {' '}
-                {ASTERISK}
-              </span>
-            )}
-          </label>{' '}
-          {React.isValidElement(labelIcon) && labelIcon}
+        <div
+          className={css(
+            styles.formGroupLabel,
+            labelInfo && styles.modifiers.info,
+            hasNoPaddingTop && styles.modifiers.noPaddingTop
+          )}
+        >
+          {labelInfo && (
+            <React.Fragment>
+              <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
+              <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
+            </React.Fragment>
+          )}
+          {!labelInfo && labelContent}
         </div>
       )}
-
       <div
         className={css(styles.formGroupControl, isInline && styles.modifiers.inline, isStack && styles.modifiers.stack)}
       >

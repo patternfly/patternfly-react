@@ -108,7 +108,9 @@ export class FormDemo extends Component<FormProps, FormState> {
       <React.Fragment>
         <Form id="form-demo-1">
           <FormGroup
+            id="form-group-age"
             label="Age"
+            labelInfo="Age info"
             labelIcon={
               <Popover
                 headerContent={<div>The age of a person</div>}
