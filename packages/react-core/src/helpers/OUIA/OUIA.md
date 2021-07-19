@@ -59,6 +59,7 @@ import { Button } from '@patternfly/react-core';
 * [Breadcrumb](/components/breadcrumb)
 * [Button](/components/button)
 * [Card](/components/card)
+* [Checkbox](/components/checkbox)
 * [Chip](/components/chip)
 * [ChipGroup](/components/chipg-roup)
 * [ContextSelector](/components/context-selector)
@@ -83,7 +84,9 @@ import { Button } from '@patternfly/react-core';
 * [TabContent](/components/tabs)
 * [Tabs](/components/tabs)
 * [Text](/components/text)
+* [TextInput](/components/text-input)
 * [Title](/components/title)
+* [Toolbar](/components/toolbar)
 
 ### react-table package
 

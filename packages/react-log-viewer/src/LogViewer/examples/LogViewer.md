@@ -1,7 +1,7 @@
 ---
 id: Log viewer
 beta: true
-section: components
+section: extensions
 propComponents: [LogViewer, LogViewerSearch]
 ---
 

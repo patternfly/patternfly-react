@@ -52,19 +52,19 @@ describe('Dual List Selector TreeDemo Test', () => {
 
   it('Verify checkbox selects an option', () => {
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(1)
+      .eq(0)
       .should('have.attr', 'disabled');
     cy.get('.pf-c-dual-list-selector__list-item .pf-c-dual-list-selector__item-check')
       .last()
       .click();
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(1)
+      .eq(0)
       .should('not.have.attr', 'disabled');
     cy.get('.pf-c-dual-list-selector__list-item .pf-c-dual-list-selector__item-check')
       .eq(1)
       .click();
     cy.get('.pf-c-dual-list-selector__controls-item button')
-      .eq(1)
+      .eq(0)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(2)
@@ -85,7 +85,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .find('li')
       .should('have.length', 1);
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(0)
+      .eq(1)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(1)
@@ -124,7 +124,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .find('li')
       .should('have.length', 1);
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(3)
+      .eq(2)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
@@ -142,7 +142,7 @@ describe('Dual List Selector TreeDemo Test', () => {
       .find('li')
       .should('have.length', 2);
     cy.get('.pf-c-dual-list-selector__controls-item')
-      .eq(3)
+      .eq(2)
       .click();
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)

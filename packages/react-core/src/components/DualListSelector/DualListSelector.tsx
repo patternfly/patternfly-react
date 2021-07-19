@@ -19,6 +19,7 @@ import {
   filterRestTreeItems
 } from './treeUtils';
 import { canUseDOM } from '../../helpers/util';
+import { handleArrows } from '../../helpers';
 export interface DualListSelectorProps {
   /** Additional classes applied to the dual list selector. */
   className?: string;
@@ -589,43 +590,31 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
   };
 
   handleKeys = (event: KeyboardEvent) => {
-    const key = event.key;
-    let moveFocus = false;
-    let currentIndex = -1;
-    const controls = Array.from(this.controlsEl.current.getElementsByClassName('pf-c-button'));
-    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
-      if (document.activeElement === this.controlsEl.current) {
-        currentIndex = 0;
-        while (
-          currentIndex < controls.length &&
-          currentIndex >= 0 &&
-          controls[currentIndex].classList.contains('pf-m-disabled')
-        ) {
-          currentIndex = currentIndex + 1;
-        }
-        moveFocus = true;
-        event.preventDefault();
-      } else {
-        controls.forEach((control, index) => {
-          if (document.activeElement === control) {
-            const increment = key === 'ArrowUp' || key === 'ArrowLeft' ? -1 : 1;
-            currentIndex = index + increment;
-            while (
-              currentIndex < controls.length &&
-              currentIndex >= 0 &&
-              controls[currentIndex].classList.contains('pf-m-disabled')
-            ) {
-              currentIndex = currentIndex + increment;
-            }
-            moveFocus = true;
-            event.preventDefault();
-          }
-        });
-      }
+    if (
+      !this.controlsEl.current ||
+      (this.controlsEl.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls') &&
+        !Array.from(this.controlsEl.current.getElementsByClassName('pf-c-dual-list-selector__controls')).includes(
+          (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls')
+        ))
+    ) {
+      return;
     }
-    if (moveFocus && controls[currentIndex]) {
-      (controls[currentIndex] as HTMLElement).focus();
-    }
+    event.stopImmediatePropagation();
+
+    const controls = Array.from(this.controlsEl.current.getElementsByTagName('BUTTON')).filter(
+      el => !el.classList.contains('pf-m-disabled')
+    );
+    const activeElement = document.activeElement;
+    handleArrows(
+      event,
+      controls,
+      (element: Element) => activeElement.contains(element),
+      (element: Element) => element,
+      undefined,
+      undefined,
+      true,
+      false
+    );
   };
 
   componentDidMount() {
@@ -739,27 +728,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         >
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
-              isDisabled={availableOptions.length === 0}
-              aria-disabled={availableOptions.length === 0}
-              variant={ButtonVariant.plain}
-              onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
-              aria-label={addAllAriaLabel}
-              tabIndex={-1}
-              ref={this.addAllButtonRef}
-            >
-              <AngleDoubleRightIcon />
-            </Button>
-            {addAllTooltip && (
-              <Tooltip
-                content={addAllTooltip}
-                position="left"
-                reference={this.addAllButtonRef}
-                {...addAllTooltipProps}
-              />
-            )}
-          </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button
               isDisabled={isTree ? availableTreeOptionsSelected.length === 0 : availableOptionsSelected.length === 0}
               aria-disabled={isTree ? availableTreeOptionsSelected.length === 0 : availableOptionsSelected.length === 0}
               variant={ButtonVariant.plain}
@@ -781,22 +749,22 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
           </div>
           <div className={css('pf-c-dual-list-selector__controls-item')}>
             <Button
+              isDisabled={availableOptions.length === 0}
+              aria-disabled={availableOptions.length === 0}
               variant={ButtonVariant.plain}
-              onClick={isTree ? this.removeTreeSelected : this.removeSelected}
-              aria-label={removeSelectedAriaLabel}
+              onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
+              aria-label={addAllAriaLabel}
               tabIndex={-1}
-              isDisabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
-              aria-disabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
-              ref={this.removeSelectedButtonRef}
+              ref={this.addAllButtonRef}
             >
-              <AngleLeftIcon />
+              <AngleDoubleRightIcon />
             </Button>
-            {removeSelectedTooltip && (
+            {addAllTooltip && (
               <Tooltip
-                content={removeSelectedTooltip}
+                content={addAllTooltip}
                 position="left"
-                reference={this.removeSelectedButtonRef}
-                {...removeSelectedTooltipProps}
+                reference={this.addAllButtonRef}
+                {...addAllTooltipProps}
               />
             )}
           </div>
@@ -818,6 +786,27 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                 position="right"
                 reference={this.removeAllButtonRef}
                 {...removeAllTooltipProps}
+              />
+            )}
+          </div>
+          <div className={css('pf-c-dual-list-selector__controls-item')}>
+            <Button
+              variant={ButtonVariant.plain}
+              onClick={isTree ? this.removeTreeSelected : this.removeSelected}
+              aria-label={removeSelectedAriaLabel}
+              tabIndex={-1}
+              isDisabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
+              aria-disabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
+              ref={this.removeSelectedButtonRef}
+            >
+              <AngleLeftIcon />
+            </Button>
+            {removeSelectedTooltip && (
+              <Tooltip
+                content={removeSelectedTooltip}
+                position="left"
+                reference={this.removeSelectedButtonRef}
+                {...removeSelectedTooltipProps}
               />
             )}
           </div>

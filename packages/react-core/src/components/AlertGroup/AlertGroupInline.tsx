@@ -7,9 +7,15 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   className,
   children,
   isToast,
+  isLiveRegion,
   ...rest
 }: AlertGroupProps) => (
-  <ul className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')} {...rest}>
+  <ul
+    aria-live={isLiveRegion ? 'polite' : null}
+    aria-atomic={isLiveRegion ? false : null}
+    className={css(styles.alertGroup, className, isToast ? styles.modifiers.toast : '')}
+    {...rest}
+  >
     {React.Children.toArray(children).map((Alert: React.ReactNode, index: number) => (
       <li key={index}>{Alert}</li>
     ))}

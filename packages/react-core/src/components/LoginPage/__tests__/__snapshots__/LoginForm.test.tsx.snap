@@ -53,6 +53,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       isValid={true}
       label="remember me"
       onChange={[Function]}
+      ouiaSafe={true}
     />
   </FormGroup>
   <ActionGroup>

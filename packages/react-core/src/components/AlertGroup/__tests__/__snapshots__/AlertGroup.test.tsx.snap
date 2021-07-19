@@ -6,6 +6,8 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
 <AlertGroup>
   <AlertGroupInline>
     <ul
+      aria-atomic={null}
+      aria-live={null}
       className="pf-c-alert-group"
     >
       <li
@@ -131,6 +133,8 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
       isToast={true}
     >
       <ul
+        aria-atomic={null}
+        aria-live={null}
         className="pf-c-alert-group pf-m-toast"
       >
         <li
@@ -668,6 +672,8 @@ exports[`alertgroup closes when alerts are closed 1`] = `
             </div>
           </body>
         }
+        aria-atomic={null}
+        aria-live={null}
         className="pf-c-alert-group pf-m-toast"
       >
         <li

@@ -3,6 +3,103 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.138.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.137.0...@patternfly/react-core@4.138.0) (2021-07-19)
+
+
+### Bug Fixes
+
+* **datepicker:** change default parse format to y-m-d from y(-m)?(-d)? ([#6039](https://github.com/patternfly/patternfly-react/issues/6039)) ([998cd5b](https://github.com/patternfly/patternfly-react/commit/998cd5b4bf95396c0a8a23af75be87a48e546cc9))
+
+
+### Features
+
+* **Page:** Add tabs PageSection variant ([#6028](https://github.com/patternfly/patternfly-react/issues/6028)) ([0391207](https://github.com/patternfly/patternfly-react/commit/0391207f156cf870c392996a26c9fb34eb337b65))
+
+
+
+
+
+# [4.137.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.136.1...@patternfly/react-core@4.137.0) (2021-07-16)
+
+
+### Features
+
+* **AlertGroup:** Make dynamic alerts more accessible ([#5946](https://github.com/patternfly/patternfly-react/issues/5946)) ([d29ae2f](https://github.com/patternfly/patternfly-react/commit/d29ae2f5296d0129e4623f98b9453af6a194248f))
+
+
+
+
+
+## [4.136.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.136.0...@patternfly/react-core@4.136.1) (2021-07-15)
+
+
+### Bug Fixes
+
+* **TreeView:** console warning about uncontrolled inputs when checkbox swaps between determinate/indeterminate ([#6041](https://github.com/patternfly/patternfly-react/issues/6041)) ([074c8ce](https://github.com/patternfly/patternfly-react/commit/074c8ced8c37be39d7aac89ed3f283a0ae3f2da4))
+
+
+
+
+
+# [4.136.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.15...@patternfly/react-core@4.136.0) (2021-07-15)
+
+
+### Features
+
+* **misc:** Keyboard handling helper ([#5972](https://github.com/patternfly/patternfly-react/issues/5972)) ([55cf40d](https://github.com/patternfly/patternfly-react/commit/55cf40d2f8beafd78ebbfb4fcd353198a18ab928))
+
+
+
+
+
+## [4.135.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.14...@patternfly/react-core@4.135.15) (2021-07-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.135.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.13...@patternfly/react-core@4.135.14) (2021-07-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.135.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.12...@patternfly/react-core@4.135.13) (2021-07-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.135.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.11...@patternfly/react-core@4.135.12) (2021-07-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.135.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.10...@patternfly/react-core@4.135.11) (2021-07-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.135.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.9...@patternfly/react-core@4.135.10) (2021-07-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [4.135.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.135.8...@patternfly/react-core@4.135.9) (2021-07-09)
 
 

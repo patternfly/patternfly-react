@@ -12,6 +12,7 @@ import {
   Tooltip
 } from '@patternfly/react-core';
 import MonacoEditor from 'react-monaco-editor';
+import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/js/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
@@ -20,18 +21,81 @@ import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 
 export enum Language {
-  javascript = 'javascript',
-  html = 'html',
-  text = 'text',
-  json = 'json',
+  abap = 'abap',
+  aes = 'aes',
+  apex = 'apex',
+  azcli = 'azcli',
+  bat = 'bat',
+  bicep = 'bicep',
+  c = 'c',
+  cameligo = 'cameligo',
+  clojure = 'clojure',
+  coffeescript = 'coffeescript',
+  cpp = 'cpp',
+  csharp = 'csharp',
+  csp = 'csp',
   css = 'css',
-  yaml = 'yaml',
-  typescript = 'typescript',
-  scss = 'scss',
-  markdown = 'markdown',
+  dart = 'dart',
+  dockerfile = 'dockerfile',
+  ecl = 'ecl',
+  elixir = 'elixir',
+  fsharp = 'fsharp',
+  go = 'go',
+  graphql = 'graphql',
+  handlebars = 'handlebars',
+  hcl = 'hcl',
+  html = 'html',
+  ini = 'ini',
   java = 'java',
+  javascript = 'javascript',
+  json = 'json',
+  julia = 'julia',
+  kotlin = 'kotlin',
   less = 'less',
-  xml = 'xml'
+  lexon = 'lexon',
+  liquid = 'liquid',
+  lua = 'lua',
+  m3 = 'm3',
+  markdown = 'markdown',
+  mips = 'mips',
+  msdax = 'msdax',
+  mysql = 'mysql',
+  'objective-c' = 'objective-c',
+  pascal = 'pascal',
+  pascaligo = 'pascaligo',
+  perl = 'perl',
+  pgsql = 'pgsql',
+  php = 'php',
+  plaintext = 'plaintext',
+  postiats = 'postiats',
+  powerquery = 'powerquery',
+  powershell = 'powershell',
+  pug = 'pug',
+  python = 'python',
+  r = 'r',
+  razor = 'razor',
+  redis = 'redis',
+  redshift = 'redshift',
+  restructuredtext = 'restructuredtext',
+  ruby = 'ruby',
+  rust = 'rust',
+  sb = 'sb',
+  scala = 'scala',
+  scheme = 'scheme',
+  scss = 'scss',
+  shell = 'shell',
+  sol = 'sol',
+  sql = 'sql',
+  st = 'st',
+  swift = 'swift',
+  systemverilog = 'systemverilog',
+  tcl = 'tcl',
+  twig = 'twig',
+  typescript = 'typescript',
+  vb = 'vb',
+  verilog = 'verilog',
+  xml = 'xml',
+  yaml = 'yaml'
 }
 
 export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -96,6 +160,16 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   onEditorDidMount?: (editor: any, monaco: any) => void;
   /** Flag to add the minimap to the code editor */
   isMinimapVisible?: boolean;
+  /** Flag to show the editor */
+  showEditor?: boolean;
+  /**
+   * Refer to Monaco interface {monaco.editor.IStandaloneEditorConstructionOptions}.
+   */
+  options?: editor.IStandaloneEditorConstructionOptions;
+  /**
+   * Refer to Monaco interface {monaco.editor.IEditorOverrideServices}.
+   */
+  overrideServices?: editor.IEditorOverrideServices;
 }
 
 interface CodeEditorState {
@@ -116,7 +190,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     className: '',
     code: '',
     onEditorDidMount: () => {},
-    language: Language.text,
+    language: Language.plaintext,
     isDarkTheme: false,
     height: '',
     width: '',
@@ -141,18 +215,31 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipMaxWidth: '100px',
     toolTipPosition: 'top',
     customControls: null,
-    isMinimapVisible: false
+    isMinimapVisible: false,
+    showEditor: true,
+    options: {},
+    overrideServices: {}
   };
 
   static getExtensionFromLanguage(language: Language) {
     switch (language) {
+      case Language.shell:
+        return 'sh';
+      case Language.ruby:
+        return 'rb';
+      case Language.perl:
+        return 'pl';
+      case Language.python:
+        return 'py';
+      case Language.mysql:
+        return 'sql';
       case Language.javascript:
         return 'js';
       case Language.typescript:
         return 'ts';
       case Language.markdown:
         return 'md';
-      case Language.text:
+      case Language.plaintext:
         return 'txt';
       default:
         return language.toString();
@@ -310,7 +397,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       language,
       emptyState: providedEmptyState,
       customControls,
-      isMinimapVisible
+      isMinimapVisible,
+      showEditor,
+      options: optionsProp,
+      overrideServices
     } = this.props;
     const options = {
       readOnly: isReadOnly,
@@ -319,7 +409,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       tabIndex: -1,
       minimap: {
         enabled: isMinimapVisible
-      }
+      },
+      ...optionsProp
     };
 
     return (
@@ -357,7 +448,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
-              {(isCopyEnabled || isDownloadEnabled || isUploadEnabled) && (
+              {(isCopyEnabled || isDownloadEnabled || isUploadEnabled || customControls) && (
                 <div className={css(styles.codeEditorControls)}>
                   {isCopyEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
@@ -425,6 +516,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 language={language}
                 value={value}
                 options={options}
+                overrideServices={overrideServices}
                 onChange={this.onChange}
                 editorDidMount={this.editorDidMount}
                 theme={isDarkTheme ? 'vs-dark' : 'vs-light'}
@@ -450,7 +542,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               ) : (
                 <>
                   {editorHeader}
-                  <div className={css(styles.codeEditorMain)}>{editor}</div>
+                  {showEditor && <div className={css(styles.codeEditorMain)}>{editor}</div>}
                 </>
               )}
             </div>

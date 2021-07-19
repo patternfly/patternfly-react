@@ -149,9 +149,9 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     const guessRowHeight = (rowIndex: number) => {
       const rowText = parsedData[rowIndex];
       const textWidth = getTextWidth(rowText, 'Liberation Mono');
-      const numRows = Math.ceil(textWidth / currentWidth || 600);
+      const numRows = Math.ceil(textWidth / (currentWidth || 600));
 
-      return 60 * numRows;
+      return 60 * (numRows || 1);
     };
 
     const createList = (parsedData: string[]) => (

@@ -10,6 +10,16 @@ exports[`Check page main nav section against snapshot 1`] = `
 </PageSection>
 `;
 
+exports[`Check page main tabs section against snapshot 1`] = `
+<PageSection
+  type="tabs"
+>
+  <section
+    className="pf-c-page__main-tabs"
+  />
+</PageSection>
+`;
+
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
 <PageSection
   isFilled={true}

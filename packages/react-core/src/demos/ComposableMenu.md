@@ -74,22 +74,20 @@ BasicComposableMenu = () => {
     </MenuToggle>
   );
   const menu = (
-    <div ref={menuRef}>
-      <Menu onSelect={(_ev, itemId) => console.log('selected', itemId)}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={0}>Action</MenuItem>
-            <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
-              Link
-            </MenuItem>
-            <MenuItem isDisabled>Disabled Action</MenuItem>
-            <MenuItem isDisabled to="#default-link4">
-              Disabled Link
-            </MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    </div>
+    <Menu ref={menuRef} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId={0}>Action</MenuItem>
+          <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
+            Link
+          </MenuItem>
+          <MenuItem isDisabled>Disabled Action</MenuItem>
+          <MenuItem isDisabled to="#default-link4">
+            Disabled Link
+          </MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
@@ -171,56 +169,55 @@ ActionComposableMenu = () => {
     </MenuToggle>
   );
   const menu = (
-    <div ref={menuRef}>
-      <Menu
-        onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
-        onSelect={onSelect}
-      >
-        <MenuGroup label="Actions">
-          <MenuList>
-            <MenuItem
-              isSelected={selectedItems.includes(0)}
-              actions={
-                <MenuItemAction
-                  icon={<CodeBranchIcon aria-hidden />}
-                  actionId="code"
-                  onClick={() => console.log('clicked on code icon')}
-                  aria-label="Code"
-                />
-              }
-              description="This is a description"
-              itemId={0}
-            >
-              Item 1
-            </MenuItem>
-            <MenuItem
-              isDisabled
-              isSelected={selectedItems.includes(1)}
-              actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
-              description="This is a description"
-              itemId={1}
-            >
-              Item 2
-            </MenuItem>
-            <MenuItem
-              isSelected={selectedItems.includes(2)}
-              actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
-              itemId={2}
-            >
-              Item 3
-            </MenuItem>
-            <MenuItem
-              isSelected={selectedItems.includes(3)}
-              actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
-              description="This is a description"
-              itemId={3}
-            >
-              Item 4
-            </MenuItem>
-          </MenuList>
-        </MenuGroup>
-      </Menu>
-    </div>
+    <Menu
+      ref={menuRef}
+      onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
+      onSelect={onSelect}
+    >
+      <MenuGroup label="Actions">
+        <MenuList>
+          <MenuItem
+            isSelected={selectedItems.includes(0)}
+            actions={
+              <MenuItemAction
+                icon={<CodeBranchIcon aria-hidden />}
+                actionId="code"
+                onClick={() => console.log('clicked on code icon')}
+                aria-label="Code"
+              />
+            }
+            description="This is a description"
+            itemId={0}
+          >
+            Item 1
+          </MenuItem>
+          <MenuItem
+            isDisabled
+            isSelected={selectedItems.includes(1)}
+            actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
+            description="This is a description"
+            itemId={1}
+          >
+            Item 2
+          </MenuItem>
+          <MenuItem
+            isSelected={selectedItems.includes(2)}
+            actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
+            itemId={2}
+          >
+            Item 3
+          </MenuItem>
+          <MenuItem
+            isSelected={selectedItems.includes(3)}
+            actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
+            description="This is a description"
+            itemId={3}
+          >
+            Item 4
+          </MenuItem>
+        </MenuList>
+      </MenuGroup>
+    </Menu>
   );
 
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
@@ -280,23 +277,22 @@ SelectComposableMenu = () => {
     </MenuToggle>
   );
   const menu = (
-    <div ref={menuRef}>
-      <Menu
-        id="select-menu"
-        onSelect={(_ev, itemId) => setSelected(itemId)}
-        selected={selected}
-      >
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId="Option 1">Option 1</MenuItem>
-            <MenuItem itemId="Option 2">Option 2</MenuItem>
-            <MenuItem itemId="Option 3" icon={<TableIcon aria-hidden />}>
-              Option 3
-            </MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    </div>
+    <Menu
+      ref={menuRef}
+      id="select-menu"
+      onSelect={(_ev, itemId) => setSelected(itemId)}
+      selected={selected}
+    >
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId="Option 1">Option 1</MenuItem>
+          <MenuItem itemId="Option 2">Option 2</MenuItem>
+          <MenuItem itemId="Option 3" icon={<TableIcon aria-hidden />}>
+            Option 3
+          </MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
@@ -366,22 +362,20 @@ DrilldownComposableMenu = () => {
     </MenuToggle>
   );
   const menu = (
-    <div ref={menuRef}>
-      <Menu onSelect={(_ev, itemId) => console.log('selected', itemId)}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={0}>Action</MenuItem>
-            <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
-              Link
-            </MenuItem>
-            <MenuItem isDisabled>Disabled Action</MenuItem>
-            <MenuItem isDisabled to="#default-link4">
-              Disabled Link
-            </MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    </div>
+    <Menu ref={menuRef} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId={0}>Action</MenuItem>
+          <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
+            Link
+          </MenuItem>
+          <MenuItem isDisabled>Disabled Action</MenuItem>
+          <MenuItem isDisabled to="#default-link4">
+            Disabled Link
+          </MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }

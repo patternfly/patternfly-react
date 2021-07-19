@@ -79,6 +79,9 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
             >
               <div
                 className="pf-c-toolbar"
+                data-ouia-component-id="OUIA-Generated-Toolbar-4"
+                data-ouia-component-type="PF4/Toolbar"
+                data-ouia-safe={true}
                 id="pf-topology-view-3"
               >
                 <ToolbarContent
@@ -394,6 +397,9 @@ exports[`TopologyView should display topology correctly 1`] = `
             >
               <div
                 className="pf-c-toolbar"
+                data-ouia-component-id="OUIA-Generated-Toolbar-1"
+                data-ouia-component-type="PF4/Toolbar"
+                data-ouia-safe={true}
                 id="pf-topology-view-0"
               >
                 <ToolbarContent
@@ -653,6 +659,9 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             >
               <div
                 className="pf-c-toolbar"
+                data-ouia-component-id="OUIA-Generated-Toolbar-2"
+                data-ouia-component-type="PF4/Toolbar"
+                data-ouia-safe={true}
                 id="pf-topology-view-1"
               >
                 <ToolbarContent
@@ -916,6 +925,9 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
             >
               <div
                 className="pf-c-toolbar"
+                data-ouia-component-id="OUIA-Generated-Toolbar-5"
+                data-ouia-component-type="PF4/Toolbar"
+                data-ouia-safe={true}
                 id="pf-topology-view-4"
               >
                 <ToolbarContent
@@ -1261,6 +1273,9 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             >
               <div
                 className="pf-c-toolbar"
+                data-ouia-component-id="OUIA-Generated-Toolbar-3"
+                data-ouia-component-type="PF4/Toolbar"
+                data-ouia-safe={true}
                 id="pf-topology-view-2"
               >
                 <ToolbarContent

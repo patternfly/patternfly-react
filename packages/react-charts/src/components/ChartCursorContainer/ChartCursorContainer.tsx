@@ -1,7 +1,11 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { CoordinatesPropType, OriginType } from 'victory-core';
-import { VictoryCursorContainer, VictoryCursorContainerProps } from 'victory-cursor-container';
+import { CallbackArgs, CoordinatesPropType, OriginType } from 'victory-core';
+import {
+  CursorCoordinatesPropType,
+  VictoryCursorContainer,
+  VictoryCursorContainerProps
+} from 'victory-cursor-container';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -48,7 +52,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * @propType Function
    * example: cursorLabel={(point) => point.x}
    */
-  cursorLabel?: (point: CoordinatesPropType) => any | void;
+  cursorLabel?: (point: CoordinatesPropType, args: CallbackArgs) => any | void;
   /**
    * The cursorLabelComponent prop takes a component instance which will be used to render a label for the cursor. The
    * new element created from the passed cursorLabelComponent will be supplied with the following props: x, y, active,
@@ -61,7 +65,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    *
    * @propType number | { x: number, y: number }
    */
-  cursorLabelOffset?: number | CoordinatesPropType;
+  cursorLabelOffset?: CursorCoordinatesPropType;
   /**
    * Whenever the mouse is not over the chart, the cursor will not be displayed. If instead you would like to keep it
    * displayed, use the defaultCursorValue prop to set the default value. The prop should be a point (an Object with x
@@ -70,7 +74,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * @propType number | { x: number, y: number }
    * @example defaultCursorValue={{x: 1, y: 1}}, defaultCursorValue={0}
    */
-  defaultCursorValue?: number | CoordinatesPropType;
+  defaultCursorValue?: CursorCoordinatesPropType;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -113,7 +117,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    * @propType Function
    * example: onCursorChange={(value, props) => this.setState({cursorValue: value})}
    */
-  onCursorChange?: (value: CoordinatesPropType, props: VictoryCursorContainerProps) => void;
+  onCursorChange?: (value: CursorCoordinatesPropType, props: VictoryCursorContainerProps) => void;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *

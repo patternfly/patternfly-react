@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TreeViewList } from './TreeViewList';
-import { TreeViewListItem } from './TreeViewListItem';
+import { TreeViewCheckProps, TreeViewListItem } from './TreeViewListItem';
 import { TreeViewRoot } from './TreeViewRoot';
 
 export interface TreeViewDataItem {
@@ -19,7 +19,7 @@ export interface TreeViewDataItem {
   /** Flag indicating if a tree view item has a checkbox */
   hasCheck?: boolean;
   /** Additional properties of the tree view item checkbox */
-  checkProps?: any;
+  checkProps?: TreeViewCheckProps;
   /** Flag indicating if a tree view item has a badge */
   hasBadge?: boolean;
   /** Optional prop for custom badge */

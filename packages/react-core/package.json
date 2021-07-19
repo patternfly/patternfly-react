@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "4.135.9",
+  "version": "4.138.0",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -31,33 +31,30 @@
   "scripts": {
     "build:umd": "rollup -c && rollup -c --environment IS_PRODUCTION",
     "clean": "rimraf dist",
-    "generate": "node scripts/copyStyles.js",
-    "gen:tests": "yo tsx-docgen"
+    "generate": "node scripts/copyStyles.js"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^4.11.2",
-    "@patternfly/react-styles": "^4.11.2",
-    "@patternfly/react-tokens": "^4.12.3",
+    "@patternfly/react-icons": "^4.11.4",
+    "@patternfly/react-styles": "^4.11.4",
+    "@patternfly/react-tokens": "^4.12.5",
     "focus-trap": "6.2.2",
     "react-dropzone": "9.0.0",
     "tippy.js": "5.1.2",
     "tslib": "1.13.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "4.119.3",
+    "@patternfly/patternfly": "4.122.2",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-replace": "^2.3.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
-    "generator-tsx-docgen": "^0.1.0",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
     "rollup": "^2.2.0",
     "rollup-plugin-scss": "^2.1.0",
     "rollup-plugin-terser": "^5.3.0",
-    "typescript": "^3.8.3",
-    "yo": "^3.1.1"
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",
