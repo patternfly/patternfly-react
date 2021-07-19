@@ -472,7 +472,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -502,7 +501,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -1017,7 +1015,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -1038,7 +1035,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -1067,7 +1063,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -1582,7 +1577,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -1607,7 +1601,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -1626,7 +1619,6 @@ exports[`Chart 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -1634,7 +1626,6 @@ exports[`Chart 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -1653,7 +1644,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -2170,7 +2160,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -2191,7 +2180,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -2210,7 +2198,6 @@ exports[`Chart 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -2218,7 +2205,6 @@ exports[`Chart 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -2236,7 +2222,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -2753,7 +2738,6 @@ exports[`Chart 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -3706,7 +3690,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -3736,7 +3719,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -4251,7 +4233,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -4272,7 +4253,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -4301,7 +4281,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -4816,7 +4795,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -4841,7 +4819,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -4860,7 +4837,6 @@ exports[`Chart 2`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -4868,7 +4844,6 @@ exports[`Chart 2`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -4887,7 +4862,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -5404,7 +5378,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -5425,7 +5398,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -5444,7 +5416,6 @@ exports[`Chart 2`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -5452,7 +5423,6 @@ exports[`Chart 2`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -5470,7 +5440,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -5987,7 +5956,6 @@ exports[`Chart 2`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -6940,7 +6908,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -6970,7 +6937,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -7485,7 +7451,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -7506,7 +7471,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -7535,7 +7499,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -8050,7 +8013,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -8075,7 +8037,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -8094,7 +8055,6 @@ exports[`renders axis and component children 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -8102,7 +8062,6 @@ exports[`renders axis and component children 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -8121,7 +8080,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -8638,7 +8596,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
@@ -8659,7 +8616,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         axisLabelComponent={
@@ -8678,7 +8634,6 @@ exports[`renders axis and component children 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="axis"
           />
         }
         circularGridComponent={
@@ -8686,7 +8641,6 @@ exports[`renders axis and component children 1`] = `
             pathComponent={<Path />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         containerComponent={
@@ -8704,7 +8658,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="grid"
           />
         }
         groupComponent={
@@ -9221,7 +9174,6 @@ exports[`renders axis and component children 1`] = `
             lineComponent={<Line />}
             role="presentation"
             shapeRendering="auto"
-            type="tick"
           />
         }
         tickLabelComponent={
