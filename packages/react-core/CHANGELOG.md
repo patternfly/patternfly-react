@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.138.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.137.0...@patternfly/react-core@4.138.0) (2021-07-19)
+
+
+### Bug Fixes
+
+* **datepicker:** change default parse format to y-m-d from y(-m)?(-d)? ([#6039](https://github.com/patternfly/patternfly-react/issues/6039)) ([998cd5b](https://github.com/patternfly/patternfly-react/commit/998cd5b4bf95396c0a8a23af75be87a48e546cc9))
+
+
+### Features
+
+* **Page:** Add tabs PageSection variant ([#6028](https://github.com/patternfly/patternfly-react/issues/6028)) ([0391207](https://github.com/patternfly/patternfly-react/commit/0391207f156cf870c392996a26c9fb34eb337b65))
+
+
+
+
+
 # [4.137.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.136.1...@patternfly/react-core@4.137.0) (2021-07-16)
 
 
