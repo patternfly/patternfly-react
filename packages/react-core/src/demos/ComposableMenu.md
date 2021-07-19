@@ -4,6 +4,7 @@ section: demos
 beta: true
 ---
 
+import './composable-menu.css';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
@@ -17,80 +18,68 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 ## Demos
 
+Composable menus currently require consumer keyboard handling and use of our undocumented [popper.js](https://popper.js.org/) wrapper component called Popper. We understand this is inconvientent boilerplate and these examples will be updated to use [Dropdown](/components/dropdown) in a future release.
+
 ### Basic menu with toggle
 
 ```js
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
-class BasicComposableMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.toggleRef = React.createRef();
-    this.menuRef = React.createRef();
-    this.state = {
-      activeItem: 0,
-      isOpen: false
-    };
-    this.onToggle = event => {
-      event && event.stopPropagation();
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-    this.onSelect = (event, itemId) => {
-      console.log(`clicked ${itemId}`);
-      this.setState({
-        activeItem: itemId
-      });
-    };
-    this.handleMenuKeys = event => {
-      if (this.state.isOpen && this.menuRef.current.contains(event.target)) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-          this.onToggle();
-          this.toggleRef.current.focus();
-        }
-      }
+BasicComposableMenu = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
 
-      if (event.target === this.toggleRef.current && this.state.isOpen) {
-        if (event.key === 'ArrowDown') {
-          this.menuRef.current.querySelector('button, a').focus();
-        }
+  const handleMenuKeys = event => {
+    if (!isOpen) {
+      return;
+    }
+    if (menuRef.current.contains(event.target) || toggleRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
       }
-    };
-    this.handleMenuClick = event => {
-      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
-        this.onToggle();
+    }
+
+    if (event.target === toggleRef.current) {
+      if (event.key === 'ArrowDown') {
+        menuRef.current.querySelector('button, a').focus();
       }
+    }
+  };
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
     };
+  }, [isOpen, menuRef]);
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setIsOpen(!isOpen);
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleMenuKeys);
-    window.addEventListener('click', this.handleMenuClick);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleMenuKeys);
-    window.removeEventListener('click', this.handleMenuClick);
-  }
-
-  render() {
-    const { activeItem, isOpen } = this.state;
-
-    const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '150px' }}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
-    );
-
-    const menu = (
-      <Menu activeItemId={activeItem} onSelect={this.onSelect} ref={this.menuRef}>
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
+  );
+  const menu = (
+    <div ref={menuRef}>
+      <Menu onSelect={(_ev, itemId) => console.log('selected', itemId)}>
         <MenuContent>
           <MenuList>
             <MenuItem itemId={0}>Action</MenuItem>
-            <MenuItem itemId={1} to="#default-link2" onClick={event => event.preventDefault()}>
+            <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
               Link
             </MenuItem>
             <MenuItem isDisabled>Disabled Action</MenuItem>
@@ -100,21 +89,9 @@ class BasicComposableMenu extends React.Component {
           </MenuList>
         </MenuContent>
       </Menu>
-    );
-
-    return (
-      <div ref={this.containerRef}>
-        <Popper
-          trigger={toggle}
-          popper={menu}
-          direction="down"
-          position="left"
-          appendTo={this.containerRef.current}
-          isVisible={isOpen}
-        />
-      </div>
-    );
-  }
+    </div>
+  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
 ```
 
@@ -140,84 +117,69 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
-class ActionComposableMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.toggleRef = React.createRef();
-    this.menuRef = React.createRef();
-    this.state = {
-      isOpen: false,
-      selectedItems: [0, 2, 3]
-    };
-    this.onToggle = event => {
-      event && event.stopPropagation();
-      this.setState({
-        isOpen: !this.state.isOpen,
-        selectedItems: []
-      });
-    };
-    this.onSelect = (event, itemId) => {
-      if (this.state.selectedItems.indexOf(itemId) !== -1) {
-        this.setState({
-          selectedItems: this.state.selectedItems.filter(id => id !== itemId)
-        });
-      } else {
-        this.setState({
-          selectedItems: [...this.state.selectedItems, itemId]
-        });
-      }
-    };
-    this.handleMenuKeys = event => {
-      if (this.state.isOpen && this.menuRef.current.contains(event.target)) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-          this.onToggle();
-          this.toggleRef.current.focus();
-        }
-      }
+ActionComposableMenu = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selectedItems, setSelectedItems] = React.useState([]);
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
 
-      if (event.target === this.toggleRef.current && this.state.isOpen) {
-        if (event.key === 'ArrowDown') {
-          this.menuRef.current.querySelector('button, a').focus();
-        }
+  const handleMenuKeys = event => {
+    if (isOpen && menuRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
       }
-    };
-    this.handleMenuClick = event => {
-      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
-        this.onToggle();
+    }
+
+    if (event.target === toggleRef.current && isOpen) {
+      if (event.key === 'ArrowDown') {
+        menuRef.current.querySelector('button, a').focus();
       }
+    }
+  };
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
     };
+  }, [isOpen, menuRef]);
+
+  const onSelect = (event, itemId) => {
+    if (selectedItems.includes(itemId)) {
+      setSelectedItems(selectedItems.filter(id => id !== itemId))
+    } else {
+      setSelectedItems([...selectedItems, itemId]);
+    }
+  };
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setIsOpen(!isOpen);
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleMenuKeys);
-    window.addEventListener('click', this.handleMenuClick);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleMenuKeys);
-    window.removeEventListener('click', this.handleMenuClick);
-  }
-
-  render() {
-    const { isOpen, selectedItems } = this.state;
-
-    const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '200px' }}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
-    );
-
-    const menu = (
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
+  );
+  const menu = (
+    <div ref={menuRef}>
       <Menu
-        onSelect={this.onSelect}
         onActionClick={(event, itemId, actionId) => console.log(`clicked on ${itemId} - ${actionId}`)}
-        ref={this.menuRef}
+        onSelect={onSelect}
       >
         <MenuGroup label="Actions">
           <MenuList>
             <MenuItem
-              isSelected={selectedItems.indexOf(0) !== -1}
+              isSelected={selectedItems.includes(0)}
               actions={
                 <MenuItemAction
                   icon={<CodeBranchIcon aria-hidden />}
@@ -233,7 +195,7 @@ class ActionComposableMenu extends React.Component {
             </MenuItem>
             <MenuItem
               isDisabled
-              isSelected={selectedItems.indexOf(1) !== -1}
+              isSelected={selectedItems.includes(1)}
               actions={<MenuItemAction icon={<BellIcon aria-hidden />} actionId="alert" aria-label="Alert" />}
               description="This is a description"
               itemId={1}
@@ -241,14 +203,14 @@ class ActionComposableMenu extends React.Component {
               Item 2
             </MenuItem>
             <MenuItem
-              isSelected={selectedItems.indexOf(2) !== -1}
+              isSelected={selectedItems.includes(2)}
               actions={<MenuItemAction icon={<ClipboardIcon aria-hidden />} actionId="copy" aria-label="Copy" />}
               itemId={2}
             >
               Item 3
             </MenuItem>
             <MenuItem
-              isSelected={selectedItems.indexOf(3) !== -1}
+              isSelected={selectedItems.includes(3)}
               actions={<MenuItemAction icon={<BarsIcon aria-hidden />} actionId="expand" aria-label="Expand" />}
               description="This is a description"
               itemId={3}
@@ -258,21 +220,10 @@ class ActionComposableMenu extends React.Component {
           </MenuList>
         </MenuGroup>
       </Menu>
-    );
+    </div>
+  );
 
-    return (
-      <div ref={this.containerRef}>
-        <Popper
-          trigger={toggle}
-          popper={menu}
-          direction="down"
-          position="left"
-          appendTo={this.containerRef.current}
-          isVisible={isOpen}
-        />
-      </div>
-    );
-  }
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
 ```
 
@@ -283,117 +234,71 @@ import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
 
-class SelectComposableMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.toggleRef = React.createRef();
-    this.menuRef = React.createRef();
-    this.state = {
-      activeItem: 0,
-      selectedItem: null,
-      selectedText: null,
-      isOpen: false
-    };
-    this.getSelectionText = id => {
-      switch (id) {
-        case 0:
-          return 'Option 1';
-        case 1:
-          return 'Option 2';
-        case 2:
-          return 'Option 3';
-        default:
-          return null;
-      }
-    };
-    this.onToggle = event => {
-      event && event.stopPropagation();
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-    this.onSelect = (event, itemId) => {
-      console.log(`clicked ${itemId}`);
-      this.setState({
-        activeItem: itemId,
-        selectedItem: itemId,
-        selectedText: this.getSelectionText(itemId)
-      });
-    };
-    this.handleMenuKeys = event => {
-      if (this.state.isOpen && this.menuRef.current.contains(event.target)) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-          this.onToggle();
-          this.toggleRef.current.focus();
-        }
-      }
+SelectComposableMenu = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState('Select a value');
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
 
-      if (event.target === this.toggleRef.current && this.state.isOpen) {
-        if (event.key === 'ArrowDown') {
-          this.menuRef.current.querySelector('button, a').focus();
-        }
+  const handleMenuKeys = event => {
+    if (isOpen && menuRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
       }
-    };
-    this.handleMenuClick = event => {
-      if (this.state.isOpen && !this.menuRef.current.contains(event.target)) {
-        this.onToggle();
+    }
+
+    if (event.target === toggleRef.current && isOpen) {
+      if (event.key === 'ArrowDown') {
+        menuRef.current.querySelector('button, a').focus();
       }
+    }
+  };
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
     };
+  }, [isOpen, menuRef]);
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setIsOpen(!isOpen);
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleMenuKeys);
-    window.addEventListener('click', this.handleMenuClick);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleMenuKeys);
-    window.removeEventListener('click', this.handleMenuClick);
-  }
-
-  render() {
-    const { activeItem, selectedItem, selectedText, isOpen } = this.state;
-
-    const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '200px' }}>
-        {selectedText ? selectedText : 'Select a value'}
-      </MenuToggle>
-    );
-
-    const menu = (
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {selected}
+    </MenuToggle>
+  );
+  const menu = (
+    <div ref={menuRef}>
       <Menu
         id="select-menu"
-        onSelect={this.onSelect}
-        activeItemId={activeItem}
-        selected={selectedItem}
-        ref={this.menuRef}
+        onSelect={(_ev, itemId) => setSelected(itemId)}
+        selected={selected}
       >
         <MenuContent>
           <MenuList>
-            <MenuItem itemId={0}>Option 1</MenuItem>
-            <MenuItem itemId={1}>Option 2</MenuItem>
-            <MenuItem icon={<TableIcon aria-hidden />} itemId={2}>
+            <MenuItem itemId="Option 1">Option 1</MenuItem>
+            <MenuItem itemId="Option 2">Option 2</MenuItem>
+            <MenuItem itemId="Option 3" icon={<TableIcon aria-hidden />}>
               Option 3
             </MenuItem>
           </MenuList>
         </MenuContent>
       </Menu>
-    );
-
-    return (
-      <div ref={this.containerRef}>
-        <Popper
-          trigger={toggle}
-          popper={menu}
-          direction="down"
-          position="left"
-          appendTo={this.containerRef.current}
-          isVisible={isOpen}
-        />
-      </div>
-    );
-  }
+    </div>
+  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
 ```
 
@@ -416,254 +321,69 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-class DrilldownComposableMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.toggleRef = React.createRef();
-    this.menuRef = React.createRef();
-    this.state = {
-      menuDrilledIn: [],
-      drilldownPath: [],
-      menuHeights: {},
-      activeMenu: 'rootMenu',
-      isOpen: false
-    };
-    this.onToggle = event => {
-      event && event.stopPropagation();
-      this.setState({
-        isOpen: !this.state.isOpen,
-        menuDrilledIn: [],
-        drilldownPath: [],
-        activeMenu: 'rootMenu'
-      });
-    };
-    this.drillIn = (fromMenuId, toMenuId, pathId) => {
-      this.setState({
-        menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
-        drilldownPath: [...this.state.drilldownPath, pathId],
-        activeMenu: toMenuId
-      });
-    };
-    this.drillOut = toMenuId => {
-      const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, this.state.menuDrilledIn.length - 1);
-      const pathSansLast = this.state.drilldownPath.slice(0, this.state.drilldownPath.length - 1);
-      this.setState({
-        menuDrilledIn: menuDrilledInSansLast,
-        drilldownPath: pathSansLast,
-        activeMenu: toMenuId
-      });
-    };
-    this.setHeight = (menuId, height) => {
-      if (!this.state.menuHeights[menuId]) {
-        this.setState({
-          menuHeights: {
-            ...this.state.menuHeights,
-            [menuId]: height
-          }
-        });
-      }
-    };
-    this.handleMenuKeys = event => {
-      if ([...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-          this.onToggle();
-          this.toggleRef.current.focus();
-        }
-      }
+DrilldownComposableMenu = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
 
-      if (event.target === this.toggleRef.current && this.state.isOpen) {
-        if (event.key === 'ArrowDown') {
-          this.menuRef.current.querySelector('button, a').focus();
-        }
+  const handleMenuKeys = event => {
+    if (isOpen && menuRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
       }
-    };
-    this.handleMenuClick = event => {
-      if (![...event.target.classList].some(c => /pf-c-menu.*/.test(c)) && this.state.isOpen) {
-        this.onToggle();
+    }
+
+    if (event.target === toggleRef.current && isOpen) {
+      if (event.key === 'ArrowDown') {
+        menuRef.current.querySelector('button, a').focus();
       }
+    }
+  };
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
     };
+  }, [isOpen, menuRef]);
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setIsOpen(!isOpen);
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleMenuKeys);
-    window.addEventListener('click', this.handleMenuClick);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleMenuKeys);
-    window.removeEventListener('click', this.handleMenuClick);
-  }
-
-  render() {
-    const { isOpen, menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
-
-    const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '300px' }}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
-    );
-
-    const menu = (
-      <Menu
-        id="rootMenu"
-        containsDrilldown
-        drilldownItemPath={drilldownPath}
-        drilledInMenus={menuDrilledIn}
-        activeMenu={activeMenu}
-        onDrillIn={this.drillIn}
-        onDrillOut={this.drillOut}
-        onGetMenuHeight={this.setHeight}
-        ref={this.menuRef}
-      >
-        <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
+  );
+  const menu = (
+    <div ref={menuRef}>
+      <Menu onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+        <MenuContent>
           <MenuList>
-            <MenuItem
-              itemId="group:start_rollout"
-              direction="down"
-              drilldownMenu={
-                <DrilldownMenu id="drilldownMenuStart">
-                  <MenuItem itemId="group:start_rollout" direction="up">
-                    Start rollout
-                  </MenuItem>
-                  <Divider component="li" />
-                  <MenuItem
-                    itemId="group:app_grouping"
-                    description="Groups A-C"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuStartGrouping">
-                        <MenuItem itemId="group:app_grouping" direction="up">
-                          Application Grouping
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="group_a">Group A</MenuItem>
-                        <MenuItem itemId="group_b">Group B</MenuItem>
-                        <MenuItem itemId="group_c">Group C</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Application Grouping
-                  </MenuItem>
-                  <MenuItem itemId="count">Count</MenuItem>
-                  <MenuItem
-                    itemId="group:labels"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuStartLabels">
-                        <MenuItem itemId="group:labels" direction="up">
-                          Labels
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="label_1">Label 1</MenuItem>
-                        <MenuItem itemId="label_2">Label 2</MenuItem>
-                        <MenuItem itemId="label_3">Label 3</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Labels
-                  </MenuItem>
-                  <MenuItem itemId="annotations">Annotations</MenuItem>
-                </DrilldownMenu>
-              }
-            >
-              Start rollout
+            <MenuItem itemId={0}>Action</MenuItem>
+            <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
+              Link
             </MenuItem>
-            <MenuItem
-              itemId="group:pause_rollout"
-              direction="down"
-              drilldownMenu={
-                <DrilldownMenu id="drilldownMenuPause">
-                  <MenuItem itemId="group:pause_rollout" direction="up">
-                    Pause rollouts
-                  </MenuItem>
-                  <Divider component="li" />
-                  <MenuItem
-                    itemId="group:app_grouping"
-                    description="Groups A-C"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuGrouping">
-                        <MenuItem itemId="group:app_grouping" direction="up">
-                          Application Grouping
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="group_a">Group A</MenuItem>
-                        <MenuItem itemId="group_b">Group B</MenuItem>
-                        <MenuItem itemId="group_c">Group C</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Application Grouping
-                  </MenuItem>
-                  <MenuItem itemId="count">Count</MenuItem>
-                  <MenuItem
-                    itemId="group:labels"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuLabels">
-                        <MenuItem itemId="group:labels" direction="up">
-                          Labels
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="label_1">Label 1</MenuItem>
-                        <MenuItem itemId="label_2">Label 2</MenuItem>
-                        <MenuItem itemId="label_3">Label 3</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Labels
-                  </MenuItem>
-                  <MenuItem itemId="annotations">Annotations</MenuItem>
-                </DrilldownMenu>
-              }
-            >
-              Pause rollouts
+            <MenuItem isDisabled>Disabled Action</MenuItem>
+            <MenuItem isDisabled to="#default-link4">
+              Disabled Link
             </MenuItem>
-            <MenuItem
-              itemId="group:storage"
-              icon={<StorageDomainIcon aria-hidden />}
-              direction="down"
-              drilldownMenu={
-                <DrilldownMenu id="drilldownMenuStorage">
-                  <MenuItem itemId="group:storage" icon={<StorageDomainIcon aria-hidden />} direction="up">
-                    Add storage
-                  </MenuItem>
-                  <Divider component="li" />
-                  <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
-                    From Git
-                  </MenuItem>
-                  <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
-                    Container Image
-                  </MenuItem>
-                  <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
-                    Docker File
-                  </MenuItem>
-                </DrilldownMenu>
-              }
-            >
-              Add storage
-            </MenuItem>
-            <MenuItem itemId="edit">Edit</MenuItem>
-            <MenuItem itemId="delete_deployment">Delete deployment config</MenuItem>
           </MenuList>
         </MenuContent>
       </Menu>
-    );
-
-    return (
-      <div ref={this.containerRef}>
-        <Popper
-          trigger={toggle}
-          popper={menu}
-          direction="down"
-          position="left"
-          appendTo={this.containerRef.current}
-          isVisible={isOpen}
-        />
-      </div>
-    );
-  }
+    </div>
+  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 }
 ```
 
@@ -869,7 +589,7 @@ class FilterTreeComposableMenu extends React.Component {
     const { isOpen } = this.state;
 
     const toggle = (
-      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen} style={{ width: '150px' }}>
+      <MenuToggle ref={this.toggleRef} onClick={this.onToggle} isExpanded={isOpen}>
         {isOpen ? 'Expanded' : 'Collapsed'}
       </MenuToggle>
     );
@@ -920,3 +640,95 @@ class FilterTreeComposableMenu extends React.Component {
   }
 }
 ```
+
+### Flyout
+
+The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a container outside the main content like Popper, [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go over the side nav.
+
+```js
+import React from 'react';
+import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper } from '@patternfly/react-core';
+
+MenuWithFlyout = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const menuRef = React.useRef();
+  const numFlyouts = 15;
+  const FlyoutMenu = ({ depth, children }) => (
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
+      <MenuList>
+        <MenuItem aria-label="Has flyout menu" flyoutMenu={children} itemId={`next-menu-${depth}`}>Next menu</MenuItem>
+        {[...Array(numFlyouts - depth).keys()].map(j =>
+          <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
+        )}
+        <MenuItem aria-label="Has flyout menu" flyoutMenu={children} itemId={`next-menu-2-${depth}`}>Next menu</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+  let curFlyout = <FlyoutMenu depth={1} />;
+  for (let i = 2; i < numFlyouts - 1; i++) {
+    curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
+  }
+
+  // On keypress auto focus first element.
+  const id = 'root-menu';
+  const onEnter = event => {
+    if (!isOpen) {
+      setTimeout(() => {
+        const menu = document.getElementById(id);
+        if (menu) {
+          const firstFocusable = menu.querySelector('ul > li > button[tabindex="0"]');
+          if (firstFocusable) {
+            firstFocusable.focus();
+          }
+        }
+      }, 0);
+    }
+  };
+
+  const onSelect = (_ev, itemId) => {
+    console.log('select', itemId);
+    if (!itemId.includes('next-menu')) {
+      setIsOpen(false);
+    }
+  };
+
+  const toggle = (
+    <MenuToggle onClick={() => setIsOpen(!isOpen)} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
+  );
+
+  const menu = (
+    <Menu containsFlyout id={id} onSelect={onSelect}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId="start">Start rollout</MenuItem>
+          <MenuItem itemId="pause">Pause rollouts</MenuItem>
+          <MenuItem itemId="storage">Add storage</MenuItem>
+          <MenuItem
+            description="Description"
+            flyoutMenu={curFlyout}
+            aria-label="Has flyout menu"
+            itemId="next-menu-root"
+          >
+            Edit
+          </MenuItem>
+          <MenuItem itemId="delete">Delete deployment config</MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+
+  return (
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      direction="down"
+      position="left"
+      isVisible={isOpen}
+      popperMatchesTriggerWidth={false}
+    />
+  );
+}
+```
+

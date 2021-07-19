@@ -49,6 +49,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   activeMenu?: string;
   /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: string | number;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLDivElement>;
   /** Internal flag indicating if the Menu is the root of a menu tree */
   isRootMenu?: boolean;
 }
@@ -60,7 +62,7 @@ export interface MenuState {
   flyoutRef: React.Ref<HTMLLIElement> | null;
 }
 
-export class Menu extends React.Component<MenuProps, MenuState> {
+class MenuBase extends React.Component<MenuProps, MenuState> {
   static displayName = 'Menu';
   private menuRef = React.createRef<HTMLDivElement>();
   private activeMenu = null as Element;
@@ -68,6 +70,13 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     ouiaSafe: true,
     isRootMenu: true
   };
+
+  constructor(props: MenuProps) {
+    super(props);
+    if (props.innerRef) {
+      this.menuRef = props.innerRef as React.RefObject<HTMLDivElement>;
+    }
+  }
 
   state: MenuState = {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
@@ -270,6 +279,7 @@ export class Menu extends React.Component<MenuProps, MenuState> {
       onGetMenuHeight,
       parentMenu = null,
       activeItemId = null,
+      innerRef,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isRootMenu,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -317,3 +327,8 @@ export class Menu extends React.Component<MenuProps, MenuState> {
     );
   }
 }
+
+export const Menu = React.forwardRef((props: MenuProps, ref: React.Ref<HTMLDivElement>) => (
+  <MenuBase {...props} innerRef={ref} />
+));
+Menu.displayName = 'Menu';
