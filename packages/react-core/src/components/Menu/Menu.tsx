@@ -60,10 +60,12 @@ export interface MenuState {
   ouiaStateId: string;
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
+  disableHover: boolean;
 }
 
 class MenuBase extends React.Component<MenuProps, MenuState> {
   static displayName = 'Menu';
+  static contextType = MenuContext;
   private menuRef = React.createRef<HTMLDivElement>();
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
@@ -82,7 +84,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
     searchInputValue: '',
     transitionMoveTarget: null,
-    flyoutRef: null
+    flyoutRef: null,
+    disableHover: false
   };
 
   allowTabFirstItem() {
@@ -96,6 +99,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   }
 
   componentDidMount() {
+    if (this.context) {
+      this.setState({ disableHover: this.context.disableHover });
+    }
     if (canUseDOM) {
       window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
     }
@@ -150,6 +156,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       !(event.target as HTMLElement).classList.contains('pf-c-breadcrumb__link')
     ) {
       this.activeMenu = (event.target as HTMLElement).closest('.pf-c-menu');
+      this.setState({ disableHover: true });
     }
 
     if ((event.target as HTMLElement).tagName === 'INPUT') {
@@ -242,7 +249,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onDrillOut,
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
+          setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
+          disableHover: this.state.disableHover
         }}
       >
         {isRootMenu && (

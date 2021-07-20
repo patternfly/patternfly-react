@@ -14,6 +14,7 @@ export const MenuContext = React.createContext<{
   onGetMenuHeight?: (menuId: string, height: number) => void;
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
+  disableHover?: boolean;
 }>({
   menuId: null,
   parentMenu: null,
@@ -27,7 +28,8 @@ export const MenuContext = React.createContext<{
   onDrillOut: null,
   onGetMenuHeight: () => null,
   flyoutRef: null,
-  setFlyoutRef: () => null
+  setFlyoutRef: () => null,
+  disableHover: false
 });
 
 export const MenuItemContext = React.createContext<{

@@ -99,7 +99,8 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     onDrillIn,
     onDrillOut,
     flyoutRef,
-    setFlyoutRef
+    setFlyoutRef,
+    disableHover
   } = React.useContext(MenuContext);
   const Component = component || to ? 'a' : 'button';
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
@@ -250,6 +251,9 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     return false;
   };
   const onMouseOver = () => {
+    if (disableHover) {
+      return;
+    }
     if (hasFlyout) {
       showFlyout(true);
     } else {
@@ -317,7 +321,9 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         )}
       </Component>
       {flyoutVisible && (
-        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
+        <MenuContext.Provider value={{ disableHover }}>
+          <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
+        </MenuContext.Provider>
       )}
       {drilldownMenu}
       <MenuItemContext.Provider value={{ itemId, isDisabled }}>
