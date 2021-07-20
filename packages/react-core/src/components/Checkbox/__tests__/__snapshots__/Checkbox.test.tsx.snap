@@ -14,7 +14,6 @@ exports[`controlled - 3rd state 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
 </div>
@@ -35,7 +34,6 @@ exports[`controlled 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
 </div>
@@ -55,7 +53,6 @@ exports[`isDisabled 1`] = `
     disabled={true}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
 </div>
@@ -76,7 +73,6 @@ exports[`label is function 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
   <label
@@ -105,7 +101,6 @@ exports[`label is node 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
   <label
@@ -134,7 +129,6 @@ exports[`label is string 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
   <label
@@ -162,7 +156,6 @@ exports[`passing HTML attribute 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
   <label
@@ -189,7 +182,6 @@ exports[`passing class 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
   <label
@@ -215,7 +207,6 @@ exports[`uncontrolled 1`] = `
     disabled={false}
     id="check"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
 </div>
