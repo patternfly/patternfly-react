@@ -6,21 +6,21 @@ propComponents:
   [
     'Table',
     'TableHeader',
-    'TableBody',
-    'EditableSelectInputCell',
-    'EditableTextCell',
-    'TableComposable',
-    'Thead',
-    'Tbody',
-    'Tr',
-    'Th',
-    'Td',
-    'Caption',
+    'TableBody'
   ]
 ouia: true
 ---
 
+# Table
+
+
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
+
+PatternFly has two implementations of a React table.
+
+The first is the newer `TableComposable` component. It takes a more explicit and declarative approach, and its implementation more closely mirrors that of an html table. Generally, updates and new feature requests are implemented in the `ComposableTable`.
+
+The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. 
 
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
@@ -37,11 +37,92 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 
 import DemoSortableTable from './DemoSortableTable';
 
+### Table Columns
+
+
+Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
+
+```
+cells: (ICell | string)[];
+```
+
+`ICell` (excerpt):
+
+```
+interface ICell {
+  /* cell contents */
+  title?: string | React.ReactNode;
+  /** transformations applied to the header cell */
+  transforms?: ITransform[];
+  /** transformations applied to the cells within the column's body */
+  cellTransforms?: ITransform[];
+  /** transformations applied to the entire column */
+  columnTransforms?: ITransform[];
+  /** Additional header props, it contains the info prop as well which can be used to add tooltip/popover */
+  header?: HeaderType;
+  /** Additional props passed into the rendered column header element */
+  props?: any;
+  /** Text to display when data from this column is rendered in mobile view */
+  dataLabel?: string;
+}
+```
+
+If you wish to enable other built in features, use `transforms` to apply them to 
+column headers or `cellTransforms` to apply them to every cell in that column. 
+
+```
+// simple
+columns: ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit']
+// with tooltip
+columns: [
+  {
+    title: 'Repositories',
+    transforms: [
+      info({
+        tooltip: 'More information about repositories'
+      })
+    ]
+  }
+]
+// center header and body cells within the column
+columns: [
+  {
+    title: 'Last commit',
+    transforms: [textCenter],
+    cellTransforms: [textCenter]
+  }
+]
+```
+Many of the subsequent examples demonstrate how to apply different transformations to enable `Table` features.
+
+### Table Rows
+
+
+Array items for rows provided to the `Table`'s `rows` prop, can be simple strings or objects.
+
+```
+rows: (IRow | string[])[]
+```
+
+`IRow` (excerpt):
+
+```
+interface IRow extends RowType {
+  cells?: (React.ReactNode | IRowCell)[];
+  props?: any;
+  fullWidth?: boolean;
+  noPadding?: boolean;
+}
+interface IRowCell {
+  title?: string | React.ReactNode | RowCellContent;
+  props?: any;
+  formatters?: IFormatter[];
+}
+```
+
 ## Table examples
 
 ### Basic
-
-The `Table` component is a configuration based component that takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. For a more explicit and declarative approach, you can use the `TableComposable` component.
 
 ```js
 import React from 'react';
@@ -64,6 +145,7 @@ class SimpleTable extends React.Component {
   }
 
   render() {
+    // need to make a comment to change
     const { choice } = this.state;
 
     const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
@@ -112,76 +194,6 @@ class SimpleTable extends React.Component {
 ```
 
 ### Row click handler and header cell tooltips/popovers
-
-Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
-
-```
-cells: (ICell | string)[];
-```
-
-ICell (excerpt):
-
-```
-interface ICell {
-  /* cell contents */
-  title?: string | React.ReactNode;
-  /** transformations applied to the header cell */
-  transforms?: ITransform[];
-  /** transformations applied to the cells within the column's body */
-  cellTransforms?: ITransform[];
-  /** Additional header props, it contains the info prop as well which can be used to add tooltip/popover */
-  header?: HeaderType;
-}
-```
-
-If you wish to pass additional `props`, `formatters`, or add a tooltip/popover, use objects.
-Examples:
-
-```
-// simple
-columns: ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit']
-// with tooltip
-columns: [
-  {
-    title: 'Repositories',
-    transforms: [
-      info({
-        tooltip: 'More information about repositories'
-      })
-    ]
-  }
-]
-// center header and body cells within the column
-columns: [
-  {
-    title: 'Last commit',
-    transforms: [textCenter],
-    cellTransforms: [textCenter]
-  }
-]
-```
-
-Similarly, the rows array can contain string arrays, or object arrays
-
-```
-rows: (IRow | string[])[]
-```
-
-IRow (excerpt):
-
-```
-interface IRow extends RowType {
-  cells?: (React.ReactNode | IRowCell)[];
-  props?: any;
-  fullWidth?: boolean;
-  noPadding?: boolean;
-}
-interface IRowCell {
-  title?: string | React.ReactNode;
-  props?: any;
-  formatters?: IFormatter[];
-}
-```
 
 ```js
 import React from 'react';
@@ -276,11 +288,31 @@ class RowClickTable extends React.Component {
 
 ### Custom row wrapper
 
+Custom row wrappers are passed to the `Table` component via the `rowWrapper` prop.
+Each `rowWrapper` should return a tr element.
+```
+rowWrapper?: (props: RowWrapperProps) => JSX.Element;
+```
+RowWrapperProps:
+```
+interface RowWrapperProps {
+  trRef?: React.Ref<any> | Function;
+  className?: string;
+  onScroll?: React.UIEventHandler;
+  onResize?: React.UIEventHandler;
+  row?: IRow;
+  rowProps?: {
+    rowIndex: number;
+    rowKey: string;
+  };
+  children?: React.ReactNode;
+}
+```
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
 
 class RowWrapperTable extends React.Component {
   constructor(props) {
@@ -299,7 +331,7 @@ class RowWrapperTable extends React.Component {
         }
       ]
     };
-    this.customRowWrapper = ({ trRef, className, rowProps, row: { isExpanded, isHeightAuto }, ...props }) => {
+    this.customRowWrapper = ({ trRef, className, rowProps, row, ...props }) => {
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
         borderLeft: '3px solid var(--pf-global--primary-color--100)'
@@ -311,12 +343,8 @@ class RowWrapperTable extends React.Component {
           className={css(
             className,
             isOddRow ? 'odd-row-class' : 'even-row-class',
-            'custom-static-class',
-            isExpanded !== undefined && styles.tableExpandableRow,
-            isExpanded && styles.modifiers.expanded,
-            isHeightAuto && styles.modifiers.heightAuto
+            'custom-static-class'
           )}
-          hidden={isExpanded !== undefined && !isExpanded}
           style={isOddRow ? customStyle : {}}
         />
       );
@@ -341,7 +369,14 @@ class RowWrapperTable extends React.Component {
 }
 ```
 
-### Sortable & wrapping headers
+### Sortable & wrapping column headers
+
+To implement sortable columns:
+1. Import and apply the `sortable` transform to the desired column.
+2. Pass a managed `sortBy` prop to the `Table` component.
+``` `sortBy` - Specifies the initial sorting pattern for the table - asc/desc and the index of the column to sort by```
+3. Pass an `onSort` callback to the `Table` component
+``` `onSort` - (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void;```
 
 Note: If you want to add a tooltip/popover to a sortable header, in the `transforms` array the `info` transform has to precede the `sortable` transform.
 
@@ -424,8 +459,17 @@ class SortableTable extends React.Component {
 ### Selectable
 
 To enable row selection, set the `onSelect` callback prop on the Table.
+
 To control whether a row is selected or not, the Table looks for `selected: true | falsy` on the row definition.
+
 To disable selection for a row, set `disableSelection: true` on the row definition.
+
+To include a 'select all' checkbox in the header row, pass `true` to the`canSelectAll` prop on the Table.
+
+
+Note: this example also demonstrates the use of the `headerCol` transformation being applied to the first
+column via the `cellTransforms` in the column definition. `headerCol` transforms the column so that instead
+of using `td` elements, the cells in that column use `th` elements.
 
 ```js
 import React from 'react';
@@ -433,11 +477,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable
 } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -524,6 +564,11 @@ class SelectableTable extends React.Component {
 
 ### Selectable radio input
 
+To enable row radio selection, set the `onSelect` callback prop on the Table, and set `RowSelectVariant.radio` as the 
+`selectVariant` prop on the Table.
+
+To disable selection for a row, set `disableSelection: true` on the row definition.
+
 ```js
 import React from 'react';
 import {
@@ -531,11 +576,7 @@ import {
   TableHeader,
   TableBody,
   RowSelectVariant,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable
 } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
@@ -563,7 +604,6 @@ class SelectableTable extends React.Component {
       ]
     };
     this.onSelect = this.onSelect.bind(this);
-    this.toggleSelect = this.toggleSelect.bind(this);
   }
 
   onSelect(event, isSelected, rowId) {
@@ -573,12 +613,6 @@ class SelectableTable extends React.Component {
     });
     this.setState({
       rows
-    });
-  }
-
-  toggleSelect(checked) {
-    this.setState({
-      canSelectAll: checked
     });
   }
 
@@ -870,6 +904,10 @@ class ActionsTable extends React.Component {
 
 ### Expandable
 
+To make an exapandable row, define a child row with the `parent` field set to its parent's row index.
+The parent row can have an `isOpen` field for managing the expanded state of the parent row.
+
+Also, pass an `onCollapse` event handler via the prop on the Table
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, TableVariant, expandable } from '@patternfly/react-table';
@@ -1028,6 +1066,16 @@ class CompactExpandableTable extends React.Component {
 
 ### Compound expandable
 
+To build a compound expandable table:
+1. Pass the `compoundExpand` transformation via the `cellTransforms` field in the column definition for each column that will have an expanded section.
+2. For each expandable parent row, the cells in the expandable columns should:
+    1. have a managed `isOpen` prop passed to the cell definition
+    2. have an `ariaControls` value which matches the `id` of it’s child row
+3. For each expandable child row, the row definition needs:
+    1. A `parent` field set to its parent’s row index
+    2. A `compoundParent` field set to the cell index which will control the expanding/collapsing of this row
+4. An `onExpand` event handler prop should be passed to the Table.
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, compoundExpand } from '@patternfly/react-table';
@@ -1036,8 +1084,8 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-ic
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/examples/DemoSortableTable.js
-import DemoSortableTable from './demo/DemoSortableTable';
+// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/composable-table-examples/DemoSortableTable.js
+import DemoSortableTable from './DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
   constructor(props) {
@@ -1387,12 +1435,7 @@ import {
   TableHeader,
   TableBody,
   TableText,
-  wrappable,
-  truncate,
-  nowrap,
-  breakWord,
-  cellWidth,
-  fitContent
+  cellWidth
 } from '@patternfly/react-table';
 
 class ModifiersWithTableText extends React.Component {
@@ -1440,7 +1483,6 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
-  EmptyStatePrimary,
   Bullseye,
   Title,
   EmptyStateIcon
@@ -1485,6 +1527,33 @@ EmptyStateTable = () => {
 ```
 
 ### Editable rows
+
+To make a table row editable:
+1. Pass a callback to Table via the `onRowEdit` prop.
+2. Define the title for the editable cells using the RowCellContent type function. 
+3. Have the function return an `EditableTextCell`.
+4. Pass the `value` and `name` of the cell's input to the `EditableTextCell` via the cell's `props` field, which is
+defined as being of type `EditableTextCellProps`.
+
+Example:
+```
+{
+  title: (value, rowIndex, cellIndex, props) => (
+    <EditableTextCell
+      value={value}
+      rowIndex={rowIndex}
+      cellIndex={cellIndex}
+      props={props}
+      handleTextInputChange={this.handleTextInputChange}
+      inputAriaLabel="Row 1 cell 1 content"
+    />
+  ),
+  props: {
+    value: 'Row 1 cell 1 content',
+    name: 'uniqueIdRow1Cell1'
+  }
+},
+```
 
 ```js isBeta
 import React from 'react';
@@ -1948,8 +2017,12 @@ class EditableRowsTable extends React.Component {
 ### Favoritable
 
 To enable favoriting of a row, set the `onFavorite` callback prop on the Table.
+
 To control whether a row is favorited or not, the Table looks for `favorited: true | falsy` on the row definition.
-When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled. If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
+
+When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled. 
+
+If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
 
 ```js
 import React from 'react';
@@ -2351,1611 +2424,6 @@ class TreeTable extends React.Component {
         <TableHeader />
         <TableBody />
       </Table>
-    );
-  }
-}
-```
-
-## TableComposable examples
-
-### Composable: Basic
-
-A basic example using the composable table components. The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
-
-Some general notes:
-
-- Provide `dataLabel` prop to the `Td` components so that in mobile view the cell has a label to provide context.
-- If you want a table caption, simply place a `<Caption>My caption</Caption>` as the first child within a `TableComposable`.
-- You can set the `TableComposable` variant to `compact`
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-
-ComposableTableBasic = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'three', 'four', 'five'],
-    ['one - 2', null, null, 'four - 2', 'five - 2'],
-    ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
-  ];
-  const [choice, setChoice] = React.useState('default');
-  const handleItemClick = (isSelected, event) => {
-    const id = event.currentTarget.id;
-    setChoice(id);
-  };
-  return (
-    <React.Fragment>
-      <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem
-          text="Default"
-          buttonId="default"
-          isSelected={choice === 'default'}
-          onChange={handleItemClick}
-        />
-        <ToggleGroupItem
-          text="Compact"
-          buttonId="compact"
-          isSelected={choice === 'compact'}
-          onChange={handleItemClick}
-        />
-        <ToggleGroupItem
-          text="Compact borderless"
-          buttonId="compactBorderless"
-          isSelected={choice === 'compactBorderless'}
-          onChange={handleItemClick}
-        />
-      </ToggleGroup>
-      <TableComposable
-        aria-label="Simple table"
-        variant={choice !== 'default' ? 'compact' : null}
-        borders={choice !== 'compactBorderless'}
-      >
-        <Caption>Simple table using composable components</Caption>
-        <Thead>
-          <Tr>
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex}>{column}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {rows.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              ))}
-            </Tr>
-          ))}
-        </Tbody>
-      </TableComposable>
-    </React.Fragment>
-  );
-};
-```
-
-### Composable: Row click handler, custom row wrapper, header tooltips & popovers
-
-This example demonstrates customizing rows, adding tooltip and popover information to header items, and some other misc. props.
-
-- If you add the `noWrap` prop to `Thead`, it won't wrap it if there is no space
-- You can add the `textCenter` prop to `Th` or `Td` to center the contents
-- You can pass `onClick`, `className`, `style` and more to `Tr`
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableMisc = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'three', 'four', 'five'],
-    [{ title: 'one - 2', colSpan: 3 }, null, null, 'four - 2', 'five - 2'],
-    ['one - 3', 'two - 3', 'three - 3', 'four - 3', { title: 'five - 3 (not centered)', textCenter: false }]
-  ];
-  const onRowClick = (event, rowIndex, row) => {
-    console.log(`handle row click ${rowIndex}`, row);
-  };
-  return (
-    <TableComposable aria-label="Misc table">
-      <Thead noWrap>
-        <Tr>
-          <Th
-            info={{
-              tooltip: 'More information about repositories',
-              className: 'repositories-info-tip',
-              tooltipProps: {
-                isContentLeftAligned: true
-              }
-            }}
-          >
-            {columns[0]}
-          </Th>
-          <Th>{columns[1]}</Th>
-          <Th
-            info={{
-              popover: (
-                <div>
-                  More <strong>information</strong> on pull requests
-                </div>
-              ),
-              ariaLabel: 'More information on pull requests',
-              popoverProps: {
-                headerContent: 'Pull requests',
-                footerContent: <a href="">Click here for even more info</a>
-              }
-            }}
-          >
-            {columns[2]}
-          </Th>
-          <Th>{columns[3]}</Th>
-          <Th textCenter>{columns[4]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => {
-          const isOddRow = (rowIndex + 1) % 2;
-          const customStyle = {
-            borderLeft: '3px solid var(--pf-global--primary-color--100)'
-          };
-          return (
-            <Tr
-              key={rowIndex}
-              onClick={event => onRowClick(event, rowIndex, row)}
-              className={isOddRow ? 'odd-row-class' : 'even-row-class'}
-              style={isOddRow ? customStyle : {}}
-            >
-              {row.map((cell, cellIndex) => {
-                if (!cell) {
-                  return null;
-                }
-                let cellObject;
-                if (typeof cell !== 'object') {
-                  cellObject = {
-                    title: cell
-                  };
-                } else {
-                  cellObject = cell;
-                }
-                const { title, ...rest } = cellObject;
-                return (
-                  <Td
-                    key={`${rowIndex}_${cellIndex}`}
-                    dataLabel={columns[cellIndex]}
-                    textCenter={cellIndex === row.length - 1}
-                    {...rest}
-                  >
-                    {title}
-                  </Td>
-                );
-              })}
-            </Tr>
-          );
-        })}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Sortable & wrapping headers
-
-This example demonstrates making columns sortable, and wrapping header text.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableSortable = () => {
-  const columns = [
-    'This is a really long table header that goes on for a long time 1.',
-    'This is a really long table header that goes on for a long time 2.',
-    'This is a really long table header that goes on for a long time 3.',
-    'This is a really long table header that goes on for a long time 4.',
-    'This is a really long table header that goes on for a long time 5.'
-  ];
-  const [rows, setRows] = React.useState([
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five']
-  ]);
-  // index of the currently active column
-  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
-  // sort direction of the currently active column
-  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
-  const onSort = (event, index, direction) => {
-    setActiveSortIndex(index);
-    setActiveSortDirection(direction);
-    // sorts the rows
-    const updatedRows = rows.sort((a, b) => {
-      if (typeof a[index] === 'number') {
-        // numeric sort
-        if (direction === 'asc') {
-          return a[index] - b[index];
-        }
-        return b[index] - a[index];
-      } else {
-        // string sort
-        if (direction === 'asc') {
-          return a[index].localeCompare(b[index]);
-        }
-        return b[index].localeCompare(a[index]);
-      }
-    });
-    setRows(updatedRows);
-  };
-  return (
-    <TableComposable aria-label="Sortable Table">
-      <Thead>
-        <Tr>
-          {columns.map((column, columnIndex) => {
-            // In this example, wrap all but the first column just to demonstrate
-            const modifier = columnIndex !== 0 ? 'wrap' : null;
-            // In this example, make the 1st and 3rd columns sortable
-            const sortParams =
-              columnIndex === 0 || columnIndex === 2
-                ? {
-                    sort: {
-                      sortBy: {
-                        index: activeSortIndex,
-                        direction: activeSortDirection
-                      },
-                      onSort,
-                      columnIndex
-                    }
-                  }
-                : {};
-            const infoParams =
-              columnIndex === 2
-                ? {
-                    info: {
-                      tooltip: 'More information'
-                    }
-                  }
-                : {};
-            return (
-              <Th key={columnIndex} modifier={modifier} {...sortParams} {...infoParams}>
-                {column}
-              </Th>
-            );
-          })}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                {cell}
-              </Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Selectable
-
-This example demonstrates row selection. The selection column is just another column, but with selection specific props added. We add it as the first header cell and also as the first body cell for each row.
-Be sure to also add `rowIndex` to `Td`.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableSelectable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five']
-  ];
-  const [allRowsSelected, setAllRowsSelected] = React.useState(false);
-  const [selected, setSelected] = React.useState(rows.map(row => false));
-  const onSelect = (event, isSelected, rowId) => {
-    setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
-    if (!isSelected && allRowsSelected) {
-      setAllRowsSelected(false);
-    } else if (isSelected && !allRowsSelected) {
-      let allSelected = true;
-      for (let i = 0; i < selected.length; i++) {
-        if (i !== rowId) {
-          if (!selected[i]) {
-            allSelected = false;
-          }
-        }
-      }
-      if (allSelected) {
-        setAllRowsSelected(true);
-      }
-    }
-  };
-  const onSelectAll = (event, isSelected) => {
-    setAllRowsSelected(isSelected);
-    setSelected(selected.map(sel => isSelected));
-  };
-  return (
-    <TableComposable aria-label="Selectable Table">
-      <Thead>
-        <Tr>
-          <Th
-            select={{
-              onSelect: onSelectAll,
-              isSelected: allRowsSelected
-            }}
-          />
-          <Th>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-          <Th>{columns[2]}</Th>
-          <Th>{columns[3]}</Th>
-          <Th>{columns[4]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            <Td
-              key={`${rowIndex}_0`}
-              select={{
-                rowIndex,
-                onSelect,
-                isSelected: selected[rowIndex],
-                disable: rowIndex === 1
-              }}
-            />
-            {row.map((cell, cellIndex) => {
-              const shiftedIndex = cellIndex + 1;
-              return (
-                <Td key={`${rowIndex}_${shiftedIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              );
-            })}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Selectable radio input
-
-Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props. Just as with selectable, be sure to also add `rowIndex` to `Td`.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableSelectableRadio = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five']
-  ];
-  const [selected, setSelected] = React.useState(-1);
-  const onSelect = (event, isSelected, rowId) => {
-    setSelected(rowId);
-  };
-  return (
-    <TableComposable aria-label="Radio selectable table">
-      <Thead>
-        <Tr>
-          <Th />
-          <Th>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-          <Th>{columns[2]}</Th>
-          <Th>{columns[3]}</Th>
-          <Th>{columns[4]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            <Td
-              key={`${rowIndex}_0`}
-              select={{
-                rowIndex,
-                onSelect,
-                isSelected: selected === rowIndex,
-                disable: rowIndex === 1,
-                variant: 'radio'
-              }}
-            />
-            {row.map((cell, cellIndex) => {
-              const shiftedIndex = cellIndex + 1;
-              return (
-                <Td key={`${rowIndex}_${shiftedIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              );
-            })}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Actions
-
-This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-import { ButtonVariant, DropdownToggle, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-
-ComposableTableActions = () => {
-  const defaultActions = [
-    {
-      title: 'Some action',
-      onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
-    },
-    {
-      title: <a href="https://www.patternfly.org">Link action</a>
-    },
-    {
-      isSeparator: true
-    },
-    {
-      title: 'Third action',
-      onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
-    },
-    {
-      title: 'Start',
-      variant: ButtonVariant.secondary,
-      onClick: (event, rowId, rowData, extra) => console.log('clicked on extra action, on row: ', rowId),
-      isOutsideDropdown: true
-    }
-  ];
-  const lastRowActions = [
-    {
-      title: 'Some action',
-      onClick: (event, rowId, rowData, extra) => console.log(`clicked on Some action, on row ${rowId}`)
-    },
-    {
-      title: <div>Another action</div>,
-      onClick: (event, rowId, rowData, extra) => console.log(`clicked on Another action, on row ${rowId}`)
-    },
-    {
-      isSeparator: true
-    },
-    {
-      title: 'Third action',
-      onClick: (event, rowId, rowData, extra) => console.log(`clicked on Third action, on row ${rowId}`)
-    }
-  ];
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five'],
-    ['4', '2', 'b', 'four', 'five'],
-    ['5', '2', 'b', 'four', 'five']
-  ];
-
-  const [toggle, setToggle] = React.useState('defaultToggle');
-
-  const customActionsToggle = props => (
-    <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
-      Actions
-    </DropdownToggle>
-  );
-
-  const toggleCustomToggle = (checked, event) => {
-    setToggle(event.currentTarget.id);
-  };
-
-  return (
-    <React.Fragment>
-      <ToggleGroup aria-label="Default uses kebab toggle">
-        <ToggleGroupItem
-          text="Default actions toggle"
-          buttonId="defaultToggle"
-          isSelected={toggle === 'defaultToggle'}
-          onChange={toggleCustomToggle}
-        />
-        <ToggleGroupItem
-          text="Custom actions toggle"
-          buttonId="customToggle"
-          isSelected={toggle === 'customToggle'}
-          onChange={toggleCustomToggle}
-        />
-      </ToggleGroup>
-      <TableComposable aria-label="Actions table">
-        <Thead>
-          <Tr>
-            <Th>{columns[0]}</Th>
-            <Th>{columns[1]}</Th>
-            <Th>{columns[2]}</Th>
-            <Th>{columns[3]}</Th>
-            <Th>{columns[4]}</Th>
-            <Th />
-          </Tr>
-        </Thead>
-        <Tbody>
-          {rows.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              ))}
-              <Td
-                key={`${rowIndex}_5`}
-                actions={{
-                  items: rowIndex === 1 ? null : rowIndex === 4 ? lastRowActions : defaultActions,
-                  disable: rowIndex === 3,
-                  actionsToggle: toggle === 'customToggle' ? customActionsToggle : undefined
-                }}
-              />
-            </Tr>
-          ))}
-        </Tbody>
-      </TableComposable>
-    </React.Fragment>
-  );
-};
-```
-
-### Composable: Expandable
-
-This example demonstrates having expandable rows.
-
-- Each parent/child row pair is enclosed in a `Tbody` component.
-- You can make the table more compact by setting the `TableComposable` variant to `compact`.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import { Checkbox } from '@patternfly/react-core';
-
-ComposableTableExpandable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rowPairs = [
-    { parent: ['one', 'two', 'a', 'four', 'five'], child: null },
-    {
-      parent: ['parent 1', 'two', 'k', 'four', 'five'],
-      child: ['single cell']
-    },
-    {
-      parent: ['parent 2', 'two', 'b', 'four', 'five'],
-      child: ['single cell - fullWidth'],
-      fullWidth: true
-    },
-    {
-      parent: ['parent 3', '2', 'b', 'four', 'five'],
-      child: ['single cell - noPadding'],
-      noPadding: true
-    },
-    {
-      parent: ['parent 4', '2', 'b', 'four', 'five'],
-      child: ['single cell - fullWidth & noPadding'],
-      fullWidth: true,
-      noPadding: true
-    },
-    {
-      parent: ['parent 5', '2', 'b', 'four', 'five'],
-      child: ["spans 'Repositories' and 'Branches'", "spans 'Pull requests' and 'Workspaces', and 'Last commit'"]
-    },
-    {
-      parent: ['parent 6', '2', 'b', 'four', 'five'],
-      child: [
-        "fullWidth, spans the collapsible column and 'Repositories'",
-        "fullWidth, spans 'Branches' and 'Pull requests'",
-        "fullWidth, spans 'Workspaces' and 'Last commit'"
-      ],
-      fullWidth: true
-    }
-  ];
-  const numColumns = columns.length;
-  // Init all to true
-  const [expanded, setExpanded] = React.useState(
-    Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, Boolean(v.child)]))
-  );
-  const [compact, setCompact] = React.useState(true);
-  const toggleCompact = checked => {
-    setCompact(checked);
-  };
-  const handleExpansionToggle = (event, pairIndex) => {
-    setExpanded({
-      ...expanded,
-      [pairIndex]: !expanded[pairIndex]
-    });
-  };
-  let rowIndex = -1;
-  return (
-    <React.Fragment>
-      <Checkbox
-        label="Compact"
-        isChecked={compact}
-        onChange={toggleCompact}
-        aria-label="toggle compact variation"
-        id="toggle-compact"
-        name="toggle-compact"
-      />
-      <TableComposable aria-label="Expandable Table" variant={compact ? 'compact' : null}>
-        <Thead>
-          <Tr>
-            <Th />
-            <Th>{columns[0]}</Th>
-            <Th>{columns[1]}</Th>
-            <Th>{columns[2]}</Th>
-            <Th>{columns[3]}</Th>
-            <Th>{columns[4]}</Th>
-          </Tr>
-        </Thead>
-        {rowPairs.map((pair, pairIndex) => {
-          rowIndex += 1;
-          const parentRow = (
-            <Tr key={rowIndex}>
-              <Td
-                key={`${rowIndex}_0`}
-                expand={
-                  pair.child
-                    ? {
-                        rowIndex: pairIndex,
-                        isExpanded: expanded[pairIndex],
-                        onToggle: handleExpansionToggle
-                      }
-                    : null
-                }
-              />
-              {pair.parent.map((cell, cellIndex) => (
-                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                  {cell}
-                </Td>
-              ))}
-            </Tr>
-          );
-          if (pair.child) {
-            rowIndex += 1;
-          }
-          const childRow = pair.child ? (
-            <Tr key={rowIndex} isExpanded={expanded[pairIndex] === true}>
-              {!rowPairs[pairIndex].fullWidth && <Td key={`${rowIndex}_0`} />}
-              {rowPairs[pairIndex].child.map((cell, cellIndex) => {
-                const numChildCells = rowPairs[pairIndex].child.length;
-                const shift = rowPairs[pairIndex].fullWidth ? 1 : 0;
-                const shiftedCellIndex = cellIndex + shift;
-                // some examples of how you could customize colSpan based on your needs
-                const getColSpan = () => {
-                  // we have 6 columns (1 expandable column + 5 regular columns)
-                  // for the rowPairs where we've specificed `fullWidth`, add +1 to account for the expandable column
-                  let colSpan = 1;
-                  if (numChildCells === 1) {
-                    // single child cell: take up full width
-                    colSpan = numColumns + shift;
-                  } else if (numChildCells === 2) {
-                    // 2 children
-                    // child 1: 2 colspan
-                    // child 2: 3 or 4 colspan depending on fullWidth
-                    colSpan = cellIndex === 0 ? 2 : 3 + shift;
-                  } else if (numChildCells === 3) {
-                    // 3 children
-                    // child 1: 2 colspam
-                    // child 2: 2 colspan
-                    // child 3: 1 or 2 colspan depending on fullWidth
-                    colSpan = cellIndex === 2 ? 1 + shift : 2;
-                  }
-                  return colSpan;
-                };
-                return (
-                  <Td
-                    key={`${rowIndex}_${shiftedCellIndex}`}
-                    dataLabel={columns[cellIndex]}
-                    noPadding={rowPairs[pairIndex].noPadding}
-                    colSpan={getColSpan()}
-                  >
-                    <ExpandableRowContent>{cell.title || cell}</ExpandableRowContent>
-                  </Td>
-                );
-              })}
-            </Tr>
-          ) : null;
-          return (
-            <Tbody key={pairIndex} isExpanded={expanded[pairIndex] === true}>
-              {parentRow}
-              {childRow}
-            </Tbody>
-          );
-        })}
-      </TableComposable>
-    </React.Fragment>
-  );
-};
-```
-
-### Composable: Compound expandable
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-
-// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/examples/DemoSortableTable.js
-import DemoSortableTable from './demo/DemoSortableTable';
-
-ComposableCompoundExpandableTable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit', ''];
-  const rows = [
-    ['siemur/test-space', 10, 4, 4, '20 minutes', 'Open in Github'],
-    ['siemur/test-space', 3, 4, 2, '10 minutes', 'Open in Github']
-  ];
-  // index corresponds to row index, and value corresponds to column index of the expanded, null means no cell is expanded
-  const [activeChild, setActiveChild] = React.useState([1, null]);
-  // key = row_col of the parent it corresponds to
-  const childData = {
-    '0_1': {
-      component: (
-        <DemoSortableTable
-          firstColumnRows={['parent-0', 'compound-1', 'three', 'four', 'five']}
-          id="compound-expansion-table-0_1"
-          key="0_1"
-        />
-      )
-    },
-    '0_2': {
-      component: (
-        <DemoSortableTable
-          firstColumnRows={['parent-0', 'compound-2', 'three', 'four', 'five']}
-          id="compound-expansion-table-0_2"
-          key="0_2"
-        />
-      )
-    },
-    '0_3': {
-      component: (
-        <DemoSortableTable
-          firstColumnRows={['parent-0', 'compound-3', 'three', 'four', 'five']}
-          id="compound-expansion-table-0_3"
-          key="0_3"
-        />
-      )
-    },
-    '1_1': {
-      component: (
-        <DemoSortableTable
-          firstColumnRows={['parent-1', 'compound-1', 'three', 'four', 'five']}
-          id="compound-expansion-table-1_1"
-          key="1_1"
-        />
-      )
-    },
-    '1_2': {
-      component: (
-        <DemoSortableTable
-          firstColumnRows={['parent-1', 'compound-2', 'three', 'four', 'five']}
-          id="compound-expansion-table-1_2"
-          key="1_2"
-        />
-      )
-    },
-    '1_3': {
-      component: (
-        <DemoSortableTable
-          firstColumnRows={['parent-1', 'compound-3', 'three', 'four', 'five']}
-          id="compound-expansion-table-1_3"
-          key="1_3"
-        />
-      )
-    }
-  };
-  const customRender = (cell, index) => {
-    if (index === 0) {
-      return <a href="#">{cell}</a>;
-    } else if (index === 1) {
-      return (
-        <React.Fragment>
-          <CodeBranchIcon key="icon" /> {cell}
-        </React.Fragment>
-      );
-    } else if (index === 2) {
-      return (
-        <React.Fragment>
-          <CodeIcon key="icon" /> {cell}
-        </React.Fragment>
-      );
-    } else if (index === 3) {
-      return (
-        <React.Fragment>
-          <CubeIcon key="icon" /> {cell}
-        </React.Fragment>
-      );
-    } else if (index === 5) {
-      return <a href="#">{cell}</a>;
-    }
-    return cell;
-  };
-  const isCompoundExpanded = (rowIndex, cellIndex) => {
-    // only columns 1 - 3 are compound expansion toggles in this example
-    if (1 <= cellIndex && cellIndex <= 3) {
-      return activeChild[rowIndex] === cellIndex;
-    }
-    return null;
-  };
-  return (
-    <TableComposable aria-label="Compound expandable table">
-      <Thead>
-        <Tr>
-          {columns.map((column, columnIndex) => (
-            <Th key={columnIndex}>{column}</Th>
-          ))}
-        </Tr>
-      </Thead>
-      {rows.map((row, rowIndex) => {
-        const isRowExpanded = activeChild[rowIndex] !== null;
-        return (
-          <Tbody key={rowIndex} isExpanded={isRowExpanded}>
-            <React.Fragment>
-              <Tr>
-                {row.map((cell, cellIndex) => {
-                  // for this example, only columns 1 - 3 are clickable
-                  const compoundExpandParams =
-                    1 <= cellIndex && cellIndex <= 3
-                      ? {
-                          compoundExpand: {
-                            isExpanded: isCompoundExpanded(rowIndex, cellIndex),
-                            onToggle: () => {
-                              if (activeChild[rowIndex] === cellIndex) {
-                                // closing the expansion on the current toggle
-                                // set the corresponding item to null
-                                const updatedActiveChild = activeChild.map((item, index) =>
-                                  index === rowIndex ? null : item
-                                );
-                                setActiveChild(updatedActiveChild);
-                              } else {
-                                // expanding
-                                // set the corresponding cell index
-                                const updatedActiveChild = activeChild.map((item, index) =>
-                                  index === rowIndex ? cellIndex : item
-                                );
-                                setActiveChild(updatedActiveChild);
-                              }
-                            }
-                          }
-                        }
-                      : {};
-                  return (
-                    <Td
-                      key={`${rowIndex}_${cellIndex}`}
-                      dataLabel={columns[cellIndex]}
-                      component={cellIndex === 0 ? 'th' : 'td'}
-                      {...compoundExpandParams}
-                    >
-                      {customRender(cell, cellIndex)}
-                    </Td>
-                  );
-                })}
-              </Tr>
-              {isRowExpanded && (
-                <Tr key={`${rowIndex}-child`} isExpanded={isRowExpanded}>
-                  <Td dataLabel={columns[0]} noPadding colSpan={6}>
-                    <ExpandableRowContent>
-                      {childData[`${rowIndex}_${activeChild[rowIndex]}`].component}
-                    </ExpandableRowContent>
-                  </Td>
-                </Tr>
-              )}
-            </React.Fragment>
-          </Tbody>
-        );
-      })}
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Cell width, breakpoint modifiers
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableCellWidth = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'three', 'four', 'five'],
-    ['one - 2', null, null, 'four - 2', 'five - 2'],
-    ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
-  ];
-  return (
-    <TableComposable aria-label="Cell widths">
-      <Thead>
-        <Tr>
-          {columns.map((column, columnIndex) => (
-            <Th
-              key={columnIndex}
-              width={columnIndex === 2 ? 40 : 15}
-              visibility={columnIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : null}
-            >
-              {column}
-            </Th>
-          ))}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td
-                key={`${rowIndex}_${cellIndex}`}
-                dataLabel={columns[cellIndex]}
-                visibility={cellIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : null}
-              >
-                {cell}
-              </Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Controlling text
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableControllingText = () => {
-  const columns = [
-    'Truncate (width 20%)',
-    'Break word',
-    'Wrapping table header text. This th text will wrap instead of truncate.',
-    'Fit content',
-    'No wrap'
-  ];
-  const rows = [
-    [
-      'This text will truncate instead of wrap.',
-      <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>,
-      <p>
-        By default,
-        <code>thead</code> cells will truncate and
-        <code>tbody</code> cells will wrap. Use
-        <code>.pf-m-wrap</code> on a<code>th</code> to change its behavior.
-      </p>,
-      "This cell's content will adjust itself to the parent th width. This modifier only affects table layouts.",
-      <a href="#">No wrap</a>
-    ]
-  ];
-  return (
-    <TableComposable aria-label="Controlling text">
-      <Thead>
-        <Tr>
-          <Th width={20}>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-          <Th modifier="wrap">{columns[2]}</Th>
-          <Th modifier="fitContent">{columns[3]}</Th>
-          <Th>{columns[4]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            <Td dataLabel={columns[0]} modifier="truncate">
-              {row[0]}
-            </Td>
-            <Td dataLabel={columns[1]} modifier="breakWord">
-              {row[1]}
-            </Td>
-            <Td dataLabel={columns[2]}>{row[2]}</Td>
-            <Td dataLabel={columns[3]}>{row[3]}</Td>
-            <Td dataLabel={columns[4]} modifier="nowrap">
-              {row[4]}
-            </Td>
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Modifiers with table text
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, TableText } from '@patternfly/react-table';
-
-ComposableTableText = () => {
-  const columns = ['Truncating text', 'Wrapping table header text. This th text will wrap instead of truncate.'];
-  const rows = [
-    [
-      <TableText wrapModifier="truncate">This text will truncate instead of wrap.</TableText>,
-      <TableText wrapModifier="nowrap">
-        <a href="#">This is a link that needs to be on one line and fully readable.</a>
-      </TableText>
-    ]
-  ];
-  return (
-    <TableComposable aria-label="Table text">
-      <Thead>
-        <Tr>
-          <Th width={30}>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                {cell}
-              </Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Favoritable
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableFavoritable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const [rows, setRows] = React.useState([
-    { favorited: true, cells: ['one', 'two', 'three', 'four', 'five'] },
-    { favorited: false, cells: ['one - 2', null, null, 'four - 2', 'five - 2'] },
-    { favorited: false, cells: ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3'] }
-  ]);
-  // index of the currently active column
-  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
-  // sort direction of the currently active column
-  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
-  const onSort = (event, index, direction) => {
-    setActiveSortIndex(index);
-    setActiveSortDirection(direction);
-    // sorts the rows
-    const updatedRows = rows.sort((a, b) => {
-      if (a.favorited && !b.favorited) {
-        return 1;
-      } else if (!a.favorited && b.favorited) {
-        return -1;
-      }
-      return 0;
-    });
-    setRows(direction === 'asc' ? updatedRows : updatedRows.reverse());
-  };
-  const sortParams = {
-    sort: {
-      isFavorites: true,
-      sortBy: {
-        index: activeSortIndex,
-        direction: activeSortDirection
-      },
-      onSort,
-      columnIndex: 0
-    }
-  };
-  return (
-    <TableComposable aria-label="Favoritable table" variant={'compact'}>
-      <Thead>
-        <Tr>
-          <Th {...sortParams} />
-          {columns.map((column, columnIndex) => (
-            <Th key={columnIndex}>{column}</Th>
-          ))}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            <Td
-              favorites={{
-                isFavorited: row.favorited,
-                onFavorite: (event, isFavorited) =>
-                  setRows(
-                    rows.map((row, index) => {
-                      if (index === rowIndex) {
-                        row.favorited = isFavorited;
-                      }
-                      return row;
-                    })
-                  ),
-                rowIndex
-              }}
-            />
-            {row.cells.map((cell, cellIndex) => (
-              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                {cell}
-              </Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
-### Composable: Tree table
-
-To enable a tree table:
-
-1. Pass the `isTreeTable` prop to the `TableComposable` component
-2. Use a `TreeRowWrapper` rather than `Tr`
-3. Pass the following `props` to each row (both the `TreeRowWrapper` and the `treeRow` in the first column):
-   - `isExpanded` - Flag indicating the node is expanded and its children are visible
-   - `isDetailsExpanded` - (optional) Flag indicating the row's details are visible in responsive view
-   - `isHidden` - Flag indicating the node's parent is expanded and this node is visible
-   - `aria-level` - number representing how many levels deep this node is nested
-   - `aria-posinset` - number representing where in the order this node sits amongst its siblings
-   - `aria-setsize` - number representing the number of children this node has
-   - `isChecked` - (optional) if this row uses checkboxes, flag indicating the checkbox checked
-   - `icon` - (optional) ReactNode icon to display before the row title
-   - `toggleAriaLabel` - (optional) accessible label for the expand/collapse children rows toggle arrow
-   - `checkAriaLabel` - (optional) accessible label for the checkbox
-   - `showDetailsAriaLabel` - (optional) accessible label for the show row details button in the responsive view
-4. The first `Td` in each row will pass the following to the `treeRow` prop:
-
-   - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
-   - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
-   - `onToggleRowDetails` - (optional) Callback when user shows/hides the row details in responsive view.
-   - `props` - (as defined above)
-   - `rowIndex` - number representing the index of the row
-
-Note: If this table is going to be tested using axe-core, the tests will flag the use of aria-level,
-aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
-the voice over technologies will recognize the flat table structure as a tree.
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
-
-class TreeTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [
-        {
-          repositories: 'Repositories one',
-          branches: 'Branch one',
-          pullRequests: 'Pull request one',
-          workspaces: 'Workplace one',
-          children: [
-            {
-              repositories: 'Repositories two',
-              branches: 'Branch two',
-              pullRequests: 'Pull request two',
-              workspaces: 'Workplace two',
-              children: [
-                {
-                  repositories: 'Repositories three',
-                  branches: 'Branch three',
-                  pullRequests: 'Pull request three',
-                  workspaces: 'Workplace three'
-                },
-                {
-                  repositories: 'Repositories four',
-                  branches: 'Branch four',
-                  pullRequests: 'Pull request four',
-                  workspaces: 'Workplace four'
-                }
-              ]
-            },
-            {
-              repositories: 'Repositories five',
-              branches: 'Branch five',
-              pullRequests: 'Pull request five',
-              workspaces: 'Workplace five'
-            },
-            {
-              repositories: 'Repositories six',
-              branches: 'Branch six',
-              pullRequests: 'Pull request six',
-              workspaces: 'Workplace six'
-            }
-          ]
-        },
-        {
-          repositories: 'Repositories seven',
-          branches: 'Branch seven',
-          pullRequests: 'Pull request seven',
-          workspaces: 'Workplace seven',
-          children: [
-            {
-              repositories: 'Repositories eight',
-              branches: 'Branch eight',
-              pullRequests: 'Pull request eight',
-              workspaces: 'Workplace eight'
-            }
-          ]
-        },
-        {
-          repositories: 'Repositories nine',
-          branches: 'Branch nine',
-          pullRequests: 'Pull request nine',
-          workspaces: 'Workplace nine'
-        }
-      ],
-      expandedRows: ['Repositories one', 'Repositories six'],
-      expandedDetailsRows: [],
-      checkedRows: []
-    };
-
-    /** 
-      Recursive function which flattens the data into an array of flattened IRow objects 
-      to be later iterated over and each passed to the `row` prop of the TreeRowWrapper
-      params: 
-        - rowData - array of data
-        - level - number representing how deeply nested the current row is
-        - posinset - position of the row relative to this row's siblings
-        - isHidden - defaults to false, true if this row's parent is expanded
-    */
-    this.buildRows = ([x, ...xs], level, posinset, isHidden = false) => {
-      // take the first datum from the array (if any)
-      if (x) {
-        const isExpanded = this.state.expandedRows.includes(x.repositories);
-        const isDetailsExpanded = this.state.expandedDetailsRows.includes(x.repositories);
-        const isChecked = this.mapChecked(x);
-        let icon = <LeafIcon />;
-        if (x.children) {
-          icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
-        }
-        return [
-          {
-            cells: [x.repositories, x.branches, x.pullRequests, x.workspaces],
-            props: {
-              isExpanded,
-              isDetailsExpanded,
-              isHidden,
-              'aria-level': level,
-              'aria-posinset': posinset,
-              'aria-setsize': x.children ? x.children.length : 0,
-              isChecked,
-              icon
-            }
-          },
-          ...(x.children && x.children.length ? this.buildRows(x.children, level + 1, 1, !isExpanded || isHidden) : []),
-          ...this.buildRows(xs, level, posinset + 1, isHidden)
-        ];
-      }
-      return [];
-    };
-
-    this.onCollapse = (event, rowIndex, title) => {
-      this.setState(prevState => {
-        const { expandedRows } = prevState;
-        const openedIndex = expandedRows.indexOf(title);
-        const newExpandedRows = openedIndex === -1 ? [...expandedRows, title] : expandedRows.filter(o => o !== title);
-        return {
-          expandedRows: newExpandedRows
-        };
-      });
-    };
-
-    this.onToggleRowDetails = (event, rowIndex, title) => {
-      this.setState(prevState => {
-        const { expandedDetailsRows } = prevState;
-        const openedIndex = expandedDetailsRows.indexOf(title);
-        const newExpandedDetailsRows =
-          openedIndex === -1 ? [...expandedDetailsRows, title] : expandedDetailsRows.filter(o => o !== title);
-        return {
-          expandedDetailsRows: newExpandedDetailsRows
-        };
-      });
-    };
-
-    this.onCheck = (event, checked, rowIndex, checkedTitle) => {
-      this.setState(prevState => {
-        let flattenedData = this.getFlattenedTitles(prevState.data, checkedTitle);
-        const prevChecked = prevState.checkedRows;
-        return {
-          checkedRows: checked
-            ? prevChecked.concat(flattenedData.filter(title => !prevChecked.includes(title)))
-            : prevChecked.filter(title => !flattenedData.includes(title))
-        };
-      });
-    };
-
-    // // helper methods for determining the checkbox's checked state for each row  ///
-
-    /** Recursive function which flattens the data into an array of row titles
-     * whose checkboxes' checked states are being updated.
-     * Titles are only added to the array if they are the root checked title node,
-     * or if they are a descendent of the root checked title node */
-    this.getFlattenedTitles = (data, checkedTitle, parentChecked) => {
-      let flattenedData = [];
-      data.forEach(item => {
-        if (item.repositories === checkedTitle || parentChecked) {
-          flattenedData.push(item.repositories);
-        }
-        if (item.children) {
-          flattenedData = flattenedData.concat(
-            this.getFlattenedTitles(item.children, checkedTitle, item.repositories === checkedTitle || parentChecked)
-          );
-        }
-        return flattenedData;
-      });
-      return flattenedData;
-    };
-
-    this.areAllDescendantsChecked = row =>
-      row.children
-        ? row.children.every(child => this.areAllDescendantsChecked(child))
-        : this.state.checkedRows.indexOf(row.repositories) !== -1;
-
-    this.areSomeDescendantsChecked = row =>
-      row.children
-        ? row.children.some(child => this.areSomeDescendantsChecked(child))
-        : this.state.checkedRows.indexOf(row.repositories) !== -1;
-
-    this.mapChecked = row => {
-      if (this.areAllDescendantsChecked(row)) {
-        return true;
-      }
-      if (this.areSomeDescendantsChecked(row)) {
-        return null;
-      }
-      return false;
-    };
-  }
-
-  render() {
-    const columns = ['Repositories', 'Branches', 'Pull Requests', 'Workspaces'];
-    return (
-      <TableComposable isTreeTable aria-label="Tree Table">
-        <Thead>
-          <Tr>
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex}>{column}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {this.buildRows(this.state.data, 1, 1).map((row, rowIndex) => (
-            <TreeRowWrapper row={row} key={rowIndex}>
-              {row.cells.map((cell, cellIndex) =>
-                cellIndex === 0 ? (
-                  <Td
-                    key={`${rowIndex}_0`}
-                    treeRow={{
-                      onCollapse: this.onCollapse,
-                      onCheckChange: this.onCheck,
-                      onToggleRowDetails: this.onToggleRowDetails,
-                      props: row.props,
-                      rowIndex: rowIndex
-                    }}
-                  >
-                    {cell}
-                  </Td>
-                ) : (
-                  <Td key={`${rowIndex}_${cellIndex}`} data-label={columns[cellIndex]}>
-                    {cell}
-                  </Td>
-                )
-              )}
-            </TreeRowWrapper>
-          ))}
-        </Tbody>
-      </TableComposable>
-    );
-  }
-}
-```
-
-### Composable: Draggable row table
-
-```js isBeta
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-class DraggableTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      draggedItemId: null,
-      draggingToItemIndex: null,
-      dragging: false,
-      itemOrder: ['row1', 'row2', 'row3'],
-      tempItemOrder: []
-    };
-    this.bodyRef = React.createRef();
-
-    this.getIndex = id => Array.from(this.bodyRef.current.children).findIndex(item => item.id === id);
-
-    this.onDragStart = evt => {
-      evt.dataTransfer.effectAllowed = 'move';
-      evt.dataTransfer.setData('text/plain', evt.currentTarget.id);
-      const draggedItemId = evt.currentTarget.id;
-
-      evt.currentTarget.classList.add(styles.modifiers.ghostRow);
-      evt.currentTarget.setAttribute('aria-pressed', 'true');
-      this.setState({
-        draggedItemId,
-        dragging: true
-      });
-    };
-
-    this.moveItem = (arr, i1, toIndex) => {
-      const fromIndex = arr.indexOf(i1);
-      if (fromIndex === toIndex) {
-        return arr;
-      }
-      const temp = arr.splice(fromIndex, 1);
-      arr.splice(toIndex, 0, temp[0]);
-
-      return arr;
-    };
-
-    this.move = itemOrder => {
-      const ulNode = this.bodyRef.current;
-      const nodes = Array.from(ulNode.children);
-      if (nodes.map(node => node.id).every((id, i) => id === itemOrder[i])) {
-        return;
-      }
-      while (ulNode.firstChild) {
-        ulNode.removeChild(ulNode.lastChild);
-      }
-
-      itemOrder.forEach(id => {
-        ulNode.appendChild(nodes.find(n => n.id === id));
-      });
-    };
-
-    this.onDragCancel = () => {
-      // this.move(this.state.itemOrder);
-      Array.from(this.bodyRef.current.children).forEach(el => {
-        el.classList.remove(styles.modifiers.ghostRow);
-        el.setAttribute('aria-pressed', 'false');
-      });
-      this.setState({
-        draggedItemId: null,
-        draggingToItemIndex: null,
-        dragging: false
-      });
-    };
-
-    this.onDragLeave = evt => {
-      if (!this.isValidDrop(evt)) {
-        this.move(this.state.itemOrder);
-        this.setState({
-          draggingToItemIndex: null
-        });
-      }
-    };
-
-    this.isValidDrop = evt => {
-      const ulRect = this.bodyRef.current.getBoundingClientRect();
-      return (
-        evt.clientX > ulRect.x &&
-        evt.clientX < ulRect.x + ulRect.width &&
-        evt.clientY > ulRect.y &&
-        evt.clientY < ulRect.y + ulRect.height
-      );
-    };
-
-    this.onDrop = evt => {
-      if (this.isValidDrop(evt)) {
-        this.setState({
-          itemOrder: this.state.tempItemOrder
-        });
-      } else {
-        this.onDragCancel();
-      }
-    };
-
-    this.onDragOver = evt => {
-      evt.preventDefault();
-
-      const curListItem = evt.target.closest('tr');
-      if (!curListItem || !this.bodyRef.current.contains(curListItem) || curListItem.id === this.state.draggedItemId) {
-        return null;
-      } else {
-        const dragId = curListItem.id;
-        const draggingToItemIndex = Array.from(this.bodyRef.current.children).findIndex(item => item.id === dragId);
-        if (draggingToItemIndex !== this.state.draggingToItemIndex) {
-          const tempItemOrder = this.moveItem([...this.state.itemOrder], this.state.draggedItemId, draggingToItemIndex);
-          this.move(tempItemOrder);
-
-          this.setState({
-            draggingToItemIndex,
-            tempItemOrder
-          });
-        }
-      }
-    };
-
-    this.onDragEnd = evt => {
-      evt.target.classList.remove(styles.modifiers.ghostRow);
-      evt.target.setAttribute('aria-pressed', 'false');
-      this.setState({
-        draggedItemId: null,
-        draggingToItemIndex: null,
-        dragging: false
-      });
-    };
-  }
-
-  render() {
-    const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-    const rows = [
-      {
-        id: 'row1',
-        repository: 'one',
-        branch: 'two',
-        pullRequest: 'three',
-        workspace: 'four',
-        lastCommit: 'five'
-      },
-      {
-        id: 'row2',
-        repository: 'one -2',
-        branch: null,
-        pullRequest: null,
-        workspace: 'four -2',
-        lastCommit: 'five -2'
-      },
-      {
-        id: 'row3',
-        repository: 'one - 3',
-        branch: 'two - 3',
-        pullRequest: 'three - 3',
-        workspace: 'four - 3',
-        lastCommit: 'five - 3'
-      }
-    ];
-
-    return (
-      <TableComposable aria-label="Draggable table" className={this.state.dragging && styles.modifiers.dragOver}>
-        <Thead>
-          <Tr>
-            <Th />
-            {columns.map((column, columnIndex) => (
-              <Th key={columnIndex}>{column}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody ref={this.bodyRef} onDragOver={this.onDragOver} onDrop={this.onDragOver} onDragLeave={this.onDragLeave}>
-          {rows.map((row, rowIndex) => (
-            <Tr
-              key={rowIndex}
-              id={row.id}
-              draggable
-              onDrop={this.onDrop}
-              onDragEnd={this.onDragEnd}
-              onDragStart={this.onDragStart}
-            >
-              <Td
-                draggableRow={{
-                  id: `draggable-row-${row.id}`
-                }}
-              />
-              {Object.keys(row).map((key, keyIndex) => (
-                <Td key={`${rowIndex}_${keyIndex}`} dataLabel={columns[keyIndex]}>
-                  {row[key]}
-                </Td>
-              ))}
-            </Tr>
-          ))}
-        </Tbody>
-      </TableComposable>
     );
   }
 }

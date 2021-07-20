@@ -20,17 +20,17 @@ export type OnRowClick = (
 export interface TableBodyProps {
   /** Additional classes added to the TableBody  */
   className?: string;
-  /** This prop should not be set manually  */
+  /** @hide This prop should not be set manually  */
   children?: React.ReactNode;
-  /** This prop should not be set manually  */
+  /** @hide This prop should not be set manually  */
   headerData?: IRow[];
-  /** This prop should not be set manually  */
+  /** @hide This prop should not be set manually  */
   rows?: IRow[];
-  /** This prop should not be set manually  */
+  /** @hide This prop should not be set manually  */
   rowKey?: RowKeyType;
-  /** This prop should not be set manually  */
+  /** @hide This prop should not be set manually  */
   onRowClick?: OnRowClick;
-  /** This prop should not be set manually  */
+  /** @hide This prop should not be set manually  */
   onRow?: Function;
 }
 
