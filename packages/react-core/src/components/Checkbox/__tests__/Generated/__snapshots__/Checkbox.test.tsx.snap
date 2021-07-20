@@ -15,7 +15,6 @@ exports[`Checkbox should match snapshot (auto-generated) 1`] = `
     disabled={false}
     id="string"
     onChange={[Function]}
-    ouiaSafe={true}
     type="checkbox"
   />
   <label
