@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.140.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.139.0...@patternfly/react-core@4.140.0) (2021-07-20)
+
+
+### Bug Fixes
+
+* **Checkbox:** fix warning about ouiaSafe property ([#6055](https://github.com/patternfly/patternfly-react/issues/6055)) ([a06c6c0](https://github.com/patternfly/patternfly-react/commit/a06c6c0f751cbb07ed5a95e233815a927a56833d))
+* **Select:** check children have props before comparing them ([#6052](https://github.com/patternfly/patternfly-react/issues/6052)) ([fcc3b8c](https://github.com/patternfly/patternfly-react/commit/fcc3b8c393ccc06233cee772277d48bdeaf814d4))
+
+
+### Features
+
+* **avatar:** add border prop ([#6040](https://github.com/patternfly/patternfly-react/issues/6040)) ([65d7cdd](https://github.com/patternfly/patternfly-react/commit/65d7cddfb498562dde586e24df50f1030532eb4e))
+
+
+
+
+
 # [4.139.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.138.0...@patternfly/react-core@4.139.0) (2021-07-20)
 
 
