@@ -3,7 +3,7 @@
 exports[`simple avatar 1`] = `
 <img
   alt="avatar"
-  className="pf-c-avatar"
-  src=""
+  className="pf-c-avatar pf-m-light"
+  src="test.png"
 />
 `;
