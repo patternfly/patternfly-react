@@ -266,7 +266,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       )}
       onMouseOver={onMouseOver}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
-      tabIndex={-1}
       ref={ref}
       {...props}
     >
@@ -277,7 +276,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         }}
         className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
         aria-current={getAriaCurrent()}
-        tabIndex={-1}
         disabled={isDisabled}
         {...additionalProps}
       >

@@ -41,12 +41,6 @@ BasicComposableMenu = () => {
         toggleRef.current.focus();
       }
     }
-
-    if (event.target === toggleRef.current) {
-      if (event.key === 'ArrowDown') {
-        menuRef.current.querySelector('button, a').focus();
-      }
-    }
   };
 
   const handleClickOutside = event => {
@@ -131,12 +125,6 @@ ActionComposableMenu = () => {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
-      }
-    }
-
-    if (event.target === toggleRef.current && isOpen) {
-      if (event.key === 'ArrowDown') {
-        menuRef.current.querySelector('button, a').focus();
       }
     }
   };
@@ -254,12 +242,6 @@ SelectComposableMenu = () => {
         toggleRef.current.focus();
       }
     }
-
-    if (event.target === toggleRef.current && isOpen) {
-      if (event.key === 'ArrowDown') {
-        menuRef.current.querySelector('button, a').focus();
-      }
-    }
   };
 
   const handleClickOutside = event => {
@@ -334,6 +316,10 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 DrilldownComposableMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [activeMenu, setActiveMenu] = React.useState('rootMenu');
+  const [menuDrilledIn, setMenuDrilledIn] = React.useState([]);
+  const [drilldownPath, setDrilldownPath] = React.useState([]);
+  const [menuHeights, setMenuHeights] = React.useState({});
   const toggleRef = React.useRef();
   const menuRef = React.useRef();
 
@@ -342,12 +328,6 @@ DrilldownComposableMenu = () => {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
-      }
-    }
-
-    if (event.target === toggleRef.current && isOpen) {
-      if (event.key === 'ArrowDown') {
-        menuRef.current.querySelector('button, a').focus();
       }
     }
   };
@@ -374,7 +354,31 @@ DrilldownComposableMenu = () => {
       firstElement && firstElement.focus();
     }, 0);
     setIsOpen(!isOpen);
+    setMenuDrilledIn([]);
+    setDrilldownPath([]);
+    setActiveMenu('rootMenu');
   }
+
+  const drillIn = (fromMenuId, toMenuId, pathId) => {
+    setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
+    setDrilldownPath([...drilldownPath, pathId]);
+    setActiveMenu(toMenuId);
+  };
+
+  const drillOut = toMenuId => {
+    setMenuDrilledIn(menuDrilledIn.slice(0, menuDrilledIn.length - 1));
+    setDrilldownPath(drilldownPath.slice(0, drilldownPath.length - 1));
+    setActiveMenu(toMenuId);
+  };
+
+  const setHeight = (menuId, height) => {
+    if (!menuHeights[menuId]) {
+      setMenuHeights({
+        ...menuHeights,
+        [menuId]: height
+      });
+    }
+  };
 
   const toggle = (
     <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
@@ -382,17 +386,147 @@ DrilldownComposableMenu = () => {
     </MenuToggle>
   );
   const menu = (
-    <Menu ref={menuRef} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
-      <MenuContent>
+    <Menu
+      id="rootMenu"
+      containsDrilldown
+      drilldownItemPath={drilldownPath}
+      drilledInMenus={menuDrilledIn}
+      activeMenu={activeMenu}
+      onDrillIn={drillIn}
+      onDrillOut={drillOut}
+      onGetMenuHeight={setHeight}
+      ref={menuRef}
+    >
+      <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
         <MenuList>
-          <MenuItem itemId={0}>Action</MenuItem>
-          <MenuItem itemId={1} to="#default-link2" onClick={ev => ev.preventDefault()}>
-            Link
+          <MenuItem
+            itemId="group:start_rollout"
+            direction="down"
+            drilldownMenu={
+              <DrilldownMenu id="drilldownMenuStart">
+                <MenuItem itemId="group:start_rollout" direction="up">
+                  Start rollout
+                </MenuItem>
+                <Divider component="li" />
+                <MenuItem
+                  itemId="group:app_grouping"
+                  description="Groups A-C"
+                  direction="down"
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldownMenuStartGrouping">
+                      <MenuItem itemId="group:app_grouping" direction="up">
+                        Application Grouping
+                      </MenuItem>
+                      <Divider component="li" />
+                      <MenuItem itemId="group_a">Group A</MenuItem>
+                      <MenuItem itemId="group_b">Group B</MenuItem>
+                      <MenuItem itemId="group_c">Group C</MenuItem>
+                    </DrilldownMenu>
+                  }
+                >
+                  Application Grouping
+                </MenuItem>
+                <MenuItem itemId="count">Count</MenuItem>
+                <MenuItem
+                  itemId="group:labels"
+                  direction="down"
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldownMenuStartLabels">
+                      <MenuItem itemId="group:labels" direction="up">
+                        Labels
+                      </MenuItem>
+                      <Divider component="li" />
+                      <MenuItem itemId="label_1">Label 1</MenuItem>
+                      <MenuItem itemId="label_2">Label 2</MenuItem>
+                      <MenuItem itemId="label_3">Label 3</MenuItem>
+                    </DrilldownMenu>
+                  }
+                >
+                  Labels
+                </MenuItem>
+                <MenuItem itemId="annotations">Annotations</MenuItem>
+              </DrilldownMenu>
+            }
+          >
+            Start rollout
           </MenuItem>
-          <MenuItem isDisabled>Disabled Action</MenuItem>
-          <MenuItem isDisabled to="#default-link4">
-            Disabled Link
+          <MenuItem
+            itemId="group:pause_rollout"
+            direction="down"
+            drilldownMenu={
+              <DrilldownMenu id="drilldownMenuPause">
+                <MenuItem itemId="group:pause_rollout" direction="up">
+                  Pause rollouts
+                </MenuItem>
+                <Divider component="li" />
+                <MenuItem
+                  itemId="group:app_grouping"
+                  description="Groups A-C"
+                  direction="down"
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldownMenuGrouping">
+                      <MenuItem itemId="group:app_grouping" direction="up">
+                        Application Grouping
+                      </MenuItem>
+                      <Divider component="li" />
+                      <MenuItem itemId="group_a">Group A</MenuItem>
+                      <MenuItem itemId="group_b">Group B</MenuItem>
+                      <MenuItem itemId="group_c">Group C</MenuItem>
+                    </DrilldownMenu>
+                  }
+                >
+                  Application Grouping
+                </MenuItem>
+                <MenuItem itemId="count">Count</MenuItem>
+                <MenuItem
+                  itemId="group:labels"
+                  direction="down"
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldownMenuLabels">
+                      <MenuItem itemId="group:labels" direction="up">
+                        Labels
+                      </MenuItem>
+                      <Divider component="li" />
+                      <MenuItem itemId="label_1">Label 1</MenuItem>
+                      <MenuItem itemId="label_2">Label 2</MenuItem>
+                      <MenuItem itemId="label_3">Label 3</MenuItem>
+                    </DrilldownMenu>
+                  }
+                >
+                  Labels
+                </MenuItem>
+                <MenuItem itemId="annotations">Annotations</MenuItem>
+              </DrilldownMenu>
+            }
+          >
+            Pause rollouts
           </MenuItem>
+          <MenuItem
+            itemId="group:storage"
+            icon={<StorageDomainIcon aria-hidden />}
+            direction="down"
+            drilldownMenu={
+              <DrilldownMenu id="drilldownMenuStorage">
+                <MenuItem itemId="group:storage" icon={<StorageDomainIcon aria-hidden />} direction="up">
+                  Add storage
+                </MenuItem>
+                <Divider component="li" />
+                <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
+                  From Git
+                </MenuItem>
+                <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
+                  Container Image
+                </MenuItem>
+                <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
+                  Docker File
+                </MenuItem>
+              </DrilldownMenu>
+            }
+          >
+            Add storage
+          </MenuItem>
+          <MenuItem itemId="edit">Edit</MenuItem>
+          <MenuItem itemId="delete_deployment">Delete deployment config</MenuItem>
         </MenuList>
       </MenuContent>
     </Menu>
@@ -579,12 +713,6 @@ FilterTreeComposableMenu = () => {
         toggleRef.current.focus();
       }
     }
-
-    if (event.target === toggleRef.current) {
-      if (event.key === 'ArrowDown') {
-        menuRef.current.querySelector('button, a').focus();
-      }
-    }
   };
 
   const handleClickOutside = event => {
@@ -658,18 +786,47 @@ MenuWithFlyout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const menuRef = React.useRef();
 
+  const handleMenuKeys = event => {
+    if (!isOpen) {
+      return;
+    }
+    if (menuRef.current.contains(event.target) || toggleRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
+  };
+
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, menuRef]);
+
   const onSelect = itemId => console.log('selected', itemId);
 
   const numFlyouts = 15;
   const FlyoutMenu = ({ depth, children }) => (
     <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
-      <MenuList>
-        <MenuItem aria-label="Has flyout menu" flyoutMenu={children} itemId={`next-menu-${depth}`}>Next menu</MenuItem>
-        {[...Array(numFlyouts - depth).keys()].map(j =>
-          <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
-        )}
-        <MenuItem aria-label="Has flyout menu" flyoutMenu={children} itemId={`next-menu-2-${depth}`}>Next menu</MenuItem>
-      </MenuList>
+      <MenuContent>
+        <MenuList>
+          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>Next menu</MenuItem>
+          {[...Array(numFlyouts - depth).keys()].map(j =>
+            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
+          )}
+          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`}>Next menu</MenuItem>
+        </MenuList>
+      </MenuContent>
     </Menu>
   );
   let curFlyout = <FlyoutMenu depth={1} />;
