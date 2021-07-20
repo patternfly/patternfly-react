@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.139.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.138.0...@patternfly/react-core@4.139.0) (2021-07-20)
+
+
+### Features
+
+* **SearchInput:** Allow passing custom form elements after the attributes ([#6043](https://github.com/patternfly/patternfly-react/issues/6043)) ([dbc3c4f](https://github.com/patternfly/patternfly-react/commit/dbc3c4f39e262c7d744065eaf799276ab1b2194a))
+
+
+
+
+
 # [4.138.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.137.0...@patternfly/react-core@4.138.0) (2021-07-19)
 
 
