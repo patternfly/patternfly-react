@@ -33,22 +33,36 @@ const defaultPerPageOptions = [
 ];
 
 export interface PerPageOptions {
+  /** option title */
   title?: string;
+  /** option value */
   value?: number;
 }
 
 export interface PaginationTitles {
+  /** The title of a page displayed beside the page number */
   page?: string;
+  /** The type or title of the items being paginated */
   items?: string;
+  /** The Title of the Pagination Options Menu */
   itemsPerPage?: string;
+  /** The suffix to be displayed after each option on the Options Menu dropdown */
   perPageSuffix?: string;
+  /** Accessible label for the button which moves to the first page */
   toFirstPage?: string;
+  /** Accessible label for the button which moves to the previous page */
   toPreviousPage?: string;
+  /** Accessible label for the button which moves to the last page */
   toLastPage?: string;
+  /** Accessible label for the button which moves to the next page */
   toNextPage?: string;
+  /** Accessible label for the Options Toggle */
   optionsToggle?: string;
+  /** Accessible label for the input displaying the current page */
   currPage?: string;
+  /** Accessible label for the pagination component */
   paginationTitle?: string;
+  /** Accessible label for the English word "of" */
   ofWord?: string;
 }
 
@@ -87,7 +101,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   isSticky?: boolean;
   /** Number of items per page. */
   perPage?: number;
-  /** Select from options to number of items per page. */
+  /** Array of the number of items per page  options. */
   perPageOptions?: PerPageOptions[];
   /** Indicate whether to show last full page of results when user selects perPage value greater than remaining rows */
   defaultToFullPage?: boolean;

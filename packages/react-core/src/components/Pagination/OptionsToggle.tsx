@@ -9,7 +9,7 @@ import { DropdownToggle } from '../Dropdown';
 export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** The type or title of the items being paginated */
   itemsTitle?: string;
-  /** The text to be displayed on the Options Toggle */
+  /** Accessible label for the Options Toggle */
   optionsToggle?: string;
   /** The Title of the Pagination Options Menu */
   itemsPerPageTitle?: string;
@@ -40,7 +40,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
 let toggleId = 0;
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemsTitle = 'items',
-  optionsToggle = 'Select',
+  optionsToggle = 'Items per page',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   itemsPerPageTitle = 'Items per page',
   firstIndex = 0,
