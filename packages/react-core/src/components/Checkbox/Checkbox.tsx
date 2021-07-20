@@ -73,6 +73,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       description,
       body,
       ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
     if (!props.id) {
@@ -103,7 +104,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
           disabled={isDisabled}
           ref={elem => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
-          {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
+          {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         />
         {label && (
           <label className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
