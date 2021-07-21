@@ -13,7 +13,6 @@ exports[`disabled date picker 1`] = `
   onChange={[Function]}
   onFocus={[Function]}
   onKeyPress={[Function]}
-  ouiaSafe={true}
   placeholder="yyyy-MM-dd"
   readOnly={false}
   required={false}
