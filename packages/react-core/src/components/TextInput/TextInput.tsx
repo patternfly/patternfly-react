@@ -167,7 +167,6 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       onFocus,
       onBlur,
       isLeftTruncated,
-      ouiaSafe,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
       isRequired,
@@ -176,6 +175,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       customIconUrl,
       customIconDimensions,
       ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
 
@@ -209,7 +209,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         readOnly={isReadOnly}
         ref={innerRef || this.inputRef}
         {...((customIconUrl || customIconDimensions) && { style: customIconStyle })}
-        {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
+        {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       />
     );
   }
