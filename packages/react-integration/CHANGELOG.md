@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.112.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.111.1...@patternfly/react-integration@4.112.0) (2021-07-20)
+
+
+### Features
+
+* **avatar:** add border prop ([#6040](https://github.com/patternfly/patternfly-react/issues/6040)) ([65d7cdd](https://github.com/patternfly/patternfly-react/commit/65d7cddfb498562dde586e24df50f1030532eb4e))
+
+
+
+
+
 ## [4.111.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.111.0...@patternfly/react-integration@4.111.1) (2021-07-13)
 
 **Note:** Version bump only for package @patternfly/react-integration

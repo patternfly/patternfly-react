@@ -61,7 +61,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     perPageOptions: [] as PerPageOptions[],
     itemsPerPageTitle: 'Items per page',
     perPageSuffix: 'per page',
-    optionsToggle: 'Select',
+    optionsToggle: 'Items per page',
     perPage: 0,
     firstIndex: 0,
     lastIndex: 0,

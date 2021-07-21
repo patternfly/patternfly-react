@@ -3,6 +3,7 @@ import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
+import { EditableTextCellProps } from './base';
 
 export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   /** The current value of the text input */
@@ -11,15 +12,8 @@ export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   rowIndex: number;
   /** Cell index of this text cell */
   cellIndex: number;
-  /** Data structure containing:
-   * value - to display in the cell,
-   * name - of the text input,
-   * arbitrary data to pass to the internal text input in the editable text cell */
-  props: {
-    name: string;
-    value: string;
-    [key: string]: any;
-  };
+  /** Props to build the input */
+  props: EditableTextCellProps;
   /** Event handler which fires when user changes the text in this cell */
   handleTextInputChange: (
     newValue: string,

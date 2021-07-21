@@ -39,11 +39,7 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
    * compact: Reduces spacing and makes the table more compact
    */
   variant?: TableVariant | 'compact';
-  /**
-   * Render borders
-   * Borders can only currently be disabled if the variant is set to 'compact'
-   * https://github.com/patternfly/patternfly/issues/3650
-   */
+  /** Render borders */
   borders?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';

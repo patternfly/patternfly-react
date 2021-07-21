@@ -6,12 +6,12 @@ import { sortable, sortableFavorites } from '../Table/utils/decorators/sortable'
 import { selectable } from '../Table/utils/decorators/selectable';
 import { cellWidth } from './../Table/utils/decorators/cellWidth';
 import { Visibility, classNames } from './../Table/utils/decorators/classNames';
-import { InfoType } from '../Table/base/types';
+import { ThInfoType, ThSelectType, ThSortType } from '../Table/base/types';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import { BaseCellProps } from './TableComposable';
-import { OnSelect, IFormatterValueType, IColumn, ISortBy, OnSort } from '../Table/TableTypes';
+import { IFormatterValueType, IColumn } from '../Table/TableTypes';
 
 export interface ThProps
   extends BaseCellProps,
@@ -22,22 +22,9 @@ export interface ThProps
    */
   dataLabel?: string;
   /** Renders a checkbox select so that all row checkboxes can be selected/deselected */
-  select?: {
-    /** Callback on select */
-    onSelect?: OnSelect;
-    /** Whether the cell is selected */
-    isSelected: boolean;
-  };
-  sort?: {
-    /** Wraps the content in a button and adds a sort icon - Click callback on the sortable cell */
-    onSort?: OnSort;
-    /** Provide the currently active column's index and direction */
-    sortBy: ISortBy;
-    /** The column index */
-    columnIndex: number;
-    /** True to make this a favoritable sorting cell */
-    isFavorites?: boolean;
-  };
+  select?: ThSelectType;
+  /** Formats the header so that its column will be sortable */
+  sort?: ThSortType;
   /**
    * Tooltip to show on the header cell
    * Note: If the header cell is truncated and has simple string content, it will already attempt to display the header text
@@ -48,7 +35,7 @@ export interface ThProps
   /** Callback on mouse enter */
   onMouseEnter?: (event: any) => void;
   /** Adds tooltip/popover info button */
-  info?: InfoType;
+  info?: ThInfoType;
   /** Adds scope to the column to associate header cells with data cells*/
   scope?: string;
 }

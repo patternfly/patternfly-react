@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.15.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.8...@patternfly/react-charts@6.15.9) (2021-07-19)
+
+
+### Bug Fixes
+
+* **charts:** Victory tooltip performance update ([#6049](https://github.com/patternfly/patternfly-react/issues/6049)) ([829d4f4](https://github.com/patternfly/patternfly-react/commit/829d4f4cb441968e9ddfe17b0fed9acf2c3b1428))
+
+
+
+
+
 ## [6.15.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.7...@patternfly/react-charts@6.15.8) (2021-07-14)
 
 **Note:** Version bump only for package @patternfly/react-charts

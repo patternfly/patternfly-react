@@ -2,7 +2,7 @@
 id: Pagination
 section: components
 cssPrefix: null
-propComponents: ['Pagination']
+propComponents: ['Pagination', PaginationTitles, PerPageOptions, ToggleTemplateProps]
 ouia: true
 ---
 

@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import {
-  DropdownDirection,
-  DropdownPosition
-} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 import { BaseCellProps } from './TableComposable';
 import { cellActions } from '../Table/utils/decorators/cellActions';
 import { selectable } from '../Table/utils/decorators/selectable';
@@ -17,19 +13,16 @@ import { draggable } from '../Table/utils/decorators/draggable';
 import { treeRow } from '../Table/utils/decorators/treeRow';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
+import { IFormatterValueType, IExtra } from '../Table/TableTypes';
 import {
-  OnSelect,
-  IFormatterValueType,
-  IActions,
-  OnExpand,
-  OnCollapse,
-  OnFavorite,
-  OnCheckChange,
-  OnTreeRowCollapse,
-  IExtra,
-  OnToggleRowDetails
-} from '../Table/TableTypes';
-import { CustomActionsToggleProps } from '../Table';
+  TdActionsType,
+  TdCompoundExpandType,
+  TdDraggableType,
+  TdExpandType,
+  TdFavoritesType,
+  TdSelectType,
+  TdTreeRowType
+} from '../Table/base';
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to.
@@ -37,75 +30,19 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
    */
   dataLabel?: string;
   /** Renders a checkbox or radio select */
-  select?: {
-    /** The selectable variant */
-    variant?: 'checkbox' | 'radio';
-    /** Callback on select */
-    onSelect?: OnSelect;
-    /** Whether the cell is selected */
-    isSelected: boolean;
-    /** Whether to disable the selection */
-    disable?: boolean;
-    /** The row index */
-    rowIndex: number;
-    /** Additional props forwarded to select rowData */
-    props?: any;
-  };
+  select?: TdSelectType;
   /** Turns the cell into an actions cell */
-  actions?: {
-    /** Cell actions */
-    items: IActions;
-    /** Whether to disable the actions */
-    disable?: boolean;
-    /** Actions dropdown position */
-    dropdownPosition?: DropdownPosition;
-    /** Actions dropdown direction */
-    dropdownDirection?: DropdownDirection;
-    /** */
-    actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
-  };
+  actions?: TdActionsType;
   /** Turns the cell into an expansion toggle and determines if the corresponding expansion row is open */
-  expand?: {
-    isExpanded: boolean;
-    /** The row index */
-    rowIndex: number;
-    /** The column index */
-    columnIndex?: number;
-    /** On toggling the expansion */
-    onToggle?: OnCollapse;
-  };
+  expand?: TdExpandType;
   /** Turns the cell into a compound expansion toggle */
-  compoundExpand?: {
-    /** determines if the corresponding expansion row is open */
-    isExpanded: boolean;
-    /** Callback on toggling of the expansion */
-    onToggle?: OnExpand;
-  };
-  favorites?: {
-    /** Whether the corresponding row is favorited */
-    isFavorited: boolean;
-    /** Callback on clicking the favorites button */
-    onFavorite?: OnFavorite;
-    /** The row index */
-    rowIndex?: number;
-    /** Additional props forwarded to the FavoritesCell */
-    props?: any;
-  };
-  treeRow?: {
-    /** Callback when user expands/collapses a row to reveal/hide the row's children */
-    onCollapse: OnTreeRowCollapse;
-    /** (optional) Callback when user changes the checkbox on a row */
-    onCheckChange?: OnCheckChange;
-    /** (optional) Callback when user shows/hides the row details in responsive view. */
-    onToggleRowDetails?: OnToggleRowDetails;
-    /** The row index */
-    rowIndex?: number;
-    /** Additional props forwarded to the title cell of the tree row */
-    props?: any;
-  };
-  draggableRow?: {
-    id: string;
-  };
+  compoundExpand?: TdCompoundExpandType;
+  /** Turns the cell into a favorites cell with a star button */
+  favorites?: TdFavoritesType;
+  /** Turns the cell into the first cell in a tree table row */
+  treeRow?: TdTreeRowType;
+  /** Turns the cell into the first cell in a draggable row*/
+  draggableRow?: TdDraggableType;
   /** True to remove padding */
   noPadding?: boolean;
 }

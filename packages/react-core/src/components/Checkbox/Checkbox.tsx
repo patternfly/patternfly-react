@@ -73,7 +73,6 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       description,
       body,
       ouiaId,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       ouiaSafe,
       ...props
     } = this.props;
@@ -105,7 +104,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
           disabled={isDisabled}
           ref={elem => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
-          {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
+          {...getOUIAProps(Checkbox.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         />
         {label && (
           <label className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
