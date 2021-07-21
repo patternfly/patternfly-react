@@ -212,7 +212,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
     }
   }
-  let additionalProps = {};
+  let additionalProps = {} as any;
   if (Component === 'a') {
     additionalProps = {
       href: to,
@@ -224,7 +224,10 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     };
   }
   if (isOnPath) {
-    (additionalProps as any)['aria-expanded'] = true;
+    additionalProps['aria-expanded'] = true;
+  } else if (hasFlyout) {
+    additionalProps['aria-haspopup'] = true;
+    additionalProps['aria-expanded'] = flyoutVisible;
   }
   const getAriaCurrent = () => {
     if (isActive !== null) {
