@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.141.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.140.2...@patternfly/react-core@4.141.0) (2021-07-21)
+
+
+### Features
+
+* **button:** allow router link component ([#6061](https://github.com/patternfly/patternfly-react/issues/6061)) ([762c299](https://github.com/patternfly/patternfly-react/commit/762c299315b30af32096addce88b983319a5b834))
+
+
+
+
+
 ## [4.140.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.140.1...@patternfly/react-core@4.140.2) (2021-07-21)
 
 **Note:** Version bump only for package @patternfly/react-core

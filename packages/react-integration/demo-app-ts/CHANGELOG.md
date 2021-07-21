@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.112.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.111.2...demo-app-ts@4.112.0) (2021-07-21)
+
+
+### Features
+
+* **button:** allow router link component ([#6061](https://github.com/patternfly/patternfly-react/issues/6061)) ([762c299](https://github.com/patternfly/patternfly-react/commit/762c299315b30af32096addce88b983319a5b834))
+
+
+
+
+
 ## [4.111.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.111.1...demo-app-ts@4.111.2) (2021-07-21)
 
 **Note:** Version bump only for package demo-app-ts
