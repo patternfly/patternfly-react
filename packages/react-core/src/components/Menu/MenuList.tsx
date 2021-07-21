@@ -14,7 +14,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   className,
   ...props
 }: MenuListProps) => (
-  <ul className={css(styles.menuList, className)} {...props}>
+  <ul role="menubar" className={css(styles.menuList, className)} {...props}>
     {children}
   </ul>
 );

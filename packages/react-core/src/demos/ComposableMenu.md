@@ -859,7 +859,6 @@ MenuWithFlyout = () => {
           <MenuItem
             description="Description"
             flyoutMenu={curFlyout}
-            aria-label="Has flyout menu"
             itemId="next-menu-root"
           >
             Edit

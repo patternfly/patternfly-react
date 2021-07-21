@@ -259,6 +259,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
 
   return (
     <li
+      role="none"
       className={css(
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
@@ -268,11 +269,13 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         className
       )}
       onMouseOver={onMouseOver}
+      tabIndex={-1}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
       {...props}
     >
       <Component
+        role="menuitem"
         onClick={(event: any) => {
           onItemSelect(event, onSelect);
           _drill && _drill();
