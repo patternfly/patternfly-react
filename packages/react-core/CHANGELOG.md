@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.140.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.140.0...@patternfly/react-core@4.140.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* **TextInput:** fix warning about ouiaSafe property ([#6060](https://github.com/patternfly/patternfly-react/issues/6060)) ([99ce719](https://github.com/patternfly/patternfly-react/commit/99ce719f70f3e3020c8702a87b5c5354146474c7))
+
+
+
+
+
 # [4.140.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.139.0...@patternfly/react-core@4.140.0) (2021-07-20)
 
 

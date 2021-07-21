@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.29.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.29.22...@patternfly/react-table@4.29.23) (2021-07-21)
+
+
+### Bug Fixes
+
+* **TextInput:** fix warning about ouiaSafe property ([#6060](https://github.com/patternfly/patternfly-react/issues/6060)) ([99ce719](https://github.com/patternfly/patternfly-react/commit/99ce719f70f3e3020c8702a87b5c5354146474c7))
+
+
+
+
+
 ## [4.29.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.29.21...@patternfly/react-table@4.29.22) (2021-07-20)
 
 **Note:** Version bump only for package @patternfly/react-table
