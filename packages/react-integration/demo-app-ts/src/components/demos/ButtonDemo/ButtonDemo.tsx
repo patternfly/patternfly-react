@@ -3,6 +3,7 @@ import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
+import { Link } from 'react-router-dom';
 
 const href = 'https://www.google.com';
 
@@ -166,6 +167,9 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         </Button>
         <Button {...this.linkButton} id="link-btn-5" tabIndex={-1}>
           Button with tabindex set to -1
+        </Button>
+        <Button {...this.linkButton} id="link-btn-6" component={props => <Link {...props} to="#" />}>
+          Router link button
         </Button>
 
         <hr className="pf-u-m-md" />
