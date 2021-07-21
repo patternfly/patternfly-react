@@ -85,15 +85,33 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
     flyoutRef: null
   };
 
+  allowTabFirstItem() {
+    // Allow tabbing to first menu item
+    const first = this.menuRef.current.querySelector('ul').querySelector('button, a') as
+      | HTMLButtonElement
+      | HTMLAnchorElement;
+    if (first) {
+      first.tabIndex = 0;
+    }
+  }
+
   componentDidMount() {
     if (canUseDOM) {
       window.addEventListener('transitionend', this.props.isRootMenu ? this.handleDrilldownTransition : null);
     }
+
+    this.allowTabFirstItem();
   }
 
   componentWillUnmount() {
     if (canUseDOM) {
       window.removeEventListener('transitionend', this.handleDrilldownTransition);
+    }
+  }
+
+  componentDidUpdate(prevProps: MenuProps) {
+    if (prevProps.children !== this.props.children) {
+      this.allowTabFirstItem();
     }
   }
 

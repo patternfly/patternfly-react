@@ -276,6 +276,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     >
       <Component
         role="menuitem"
+        tabIndex={-1}
         onClick={(event: any) => {
           onItemSelect(event, onSelect);
           _drill && _drill();
