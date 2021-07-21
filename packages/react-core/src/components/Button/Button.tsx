@@ -26,7 +26,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   /** Additional classes added to the button */
   className?: string;
   /** Sets the base component to render. defaults to button */
-  component?: React.ElementType<any>;
+  component?: React.ElementType<any> | React.ComponentType<any>;
   /** Adds active styling to button. */
   isActive?: boolean;
   /** Adds block styling to button */

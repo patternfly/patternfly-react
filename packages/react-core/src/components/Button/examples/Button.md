@@ -11,6 +11,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import { Link } from '@reach/router';
 
 ## Examples
 
@@ -351,3 +352,15 @@ ButtonProgressVariants = () => {
   );
 };
 ```
+
+### Router link
+```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { Link } from '@reach/router';
+
+<Button variant="link" component={props => <Link {...props} to="#"/>}>
+  Router link
+</Button>
+```
+
