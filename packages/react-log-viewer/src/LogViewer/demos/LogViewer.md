@@ -30,7 +30,7 @@ import { data } from '../examples/realTestData.js';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
-
+import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 
 ### With complex toolbar
 
@@ -50,11 +50,13 @@ import {
   Toolbar, 
   ToolbarContent, 
   ToolbarGroup, 
-  ToolbarItem
+  ToolbarItem,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 
 ComplexToolbarLogViewer = () => {
   const [isPaused, setIsPaused] = React.useState(false);
@@ -177,30 +179,32 @@ ComplexToolbarLogViewer = () => {
 
   const rightAlignedToolbarGroup = (
     <React.Fragment>
-      <ToolbarItem variant="search-filter">
-        <LogViewerSearch placeholder="Search" />
-      </ToolbarItem>
-      <ToolbarItem variant="search-filter">
-        <Dropdown
-          onSelect={(event, selection) => {
-            setSelectDownloadSourceOpen(false);
-          }}
-          toggle={
-            <DropdownToggle id="download-toggle" onToggle={isOpen => setSelectDownloadSourceOpen(isOpen)}>
-              Download
-            </DropdownToggle>
-          }
-          isOpen={selectDownloadSourceOpen}
-          dropdownItems={downloadSourceMenuItems}
-        />
-      </ToolbarItem>
-      <ToolbarItem >
-        <Tooltip position="top" content={<div>Expand</div>}>
-          <Button onClick={onExpandClick} variant="plain" aria-label="expand">
-            <ExpandIcon />
-          </Button>
-        </Tooltip>
-      </ToolbarItem>
+      <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
+        <ToolbarItem variant="search-filter">
+          <LogViewerSearch placeholder="Search" />
+        </ToolbarItem>
+        <ToolbarItem variant="search-filter">
+          <Dropdown
+            onSelect={() => {
+              setSelectDownloadSourceOpen(false);
+            }}
+            toggle={
+              <DropdownToggle id="download-toggle" onToggle={isOpen => setSelectDownloadSourceOpen(isOpen)}>
+                Download
+              </DropdownToggle>
+            }
+            isOpen={selectDownloadSourceOpen}
+            dropdownItems={downloadSourceMenuItems}
+          />
+        </ToolbarItem>
+        <ToolbarItem>
+          <Tooltip position="top" content={<div>Expand</div>}>
+            <Button onClick={onExpandClick} variant="plain" aria-label="View log viewer in full screen">
+              <ExpandIcon />
+            </Button>
+          </Tooltip>
+        </ToolbarItem>
+      </ToolbarToggleGroup>
     </React.Fragment>
   );
 
