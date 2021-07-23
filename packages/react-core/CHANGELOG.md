@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.142.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.141.0...@patternfly/react-core@4.142.0) (2021-07-23)
+
+
+### Features
+
+* **menu:** context menu flyout ([#5789](https://github.com/patternfly/patternfly-react/issues/5789)) ([d9400ea](https://github.com/patternfly/patternfly-react/commit/d9400eab07553c1e219917cade343dcb87770ad3))
+
+
+
+
+
 # [4.141.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.140.2...@patternfly/react-core@4.141.0) (2021-07-21)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.8.62...@patternfly/react-virtualized-extension@4.9.0) (2021-07-23)
+
+
+### Features
+
+* **menu:** context menu flyout ([#5789](https://github.com/patternfly/patternfly-react/issues/5789)) ([d9400ea](https://github.com/patternfly/patternfly-react/commit/d9400eab07553c1e219917cade343dcb87770ad3))
+
+
+
+
+
 ## [4.8.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.8.61...@patternfly/react-virtualized-extension@4.8.62) (2021-07-21)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

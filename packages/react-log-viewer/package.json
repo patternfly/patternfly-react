@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-log-viewer",
-  "version": "4.2.24",
+  "version": "4.2.25",
   "description": "Terminal renderer",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,7 +29,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.141.0",
+    "@patternfly/react-core": "^4.142.0",
     "@patternfly/react-icons": "^4.11.4",
     "@patternfly/react-styles": "^4.11.4",
     "memoize-one": "^5.1.0"
