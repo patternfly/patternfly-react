@@ -59,6 +59,7 @@ module.exports = (sourceMD, sourceProps) => {
 
   // Log viewer MD
   sourceMD(path.join(reactLogViewerPath, '/**/examples/*.md'), 'react');
+  sourceMD(path.join(reactLogViewerPath, '/**/demos/*.md'), 'react-demos');
 
   // Release notes
   sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');
