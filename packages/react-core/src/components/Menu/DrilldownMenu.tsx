@@ -24,7 +24,7 @@ export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
 }: DrilldownMenuProps) => (
   /* eslint-disable @typescript-eslint/no-unused-vars */
   <MenuContext.Consumer>
-    {({ menuId, parentMenu, ...context }) => (
+    {({ menuId, parentMenu, flyoutRef, setFlyoutRef, ...context }) => (
       <Menu
         id={id}
         parentMenu={menuId}

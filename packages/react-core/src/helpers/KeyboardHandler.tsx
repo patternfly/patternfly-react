@@ -58,6 +58,7 @@ export const handleArrows = (
   if (!noVerticalArrowHandling) {
     if (['ArrowUp', 'ArrowDown'].includes(key)) {
       event.preventDefault();
+      event.stopImmediatePropagation(); // For menus in menus
 
       // Traverse navigableElements to find the element which is currently active
       let currentIndex = -1;
@@ -85,6 +86,7 @@ export const handleArrows = (
   if (!noHorizontalArrowHandling) {
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       event.preventDefault();
+      event.stopImmediatePropagation(); // For menus in menus
       let nextSibling = activeElement;
 
       // While a sibling exists, check each sibling to determine if it should be focussed
@@ -112,22 +114,6 @@ export const handleArrows = (
     }
     // If a move target has been set by eithe arrow handler, focus that target
     (moveTarget as HTMLElement).focus();
-  }
-};
-
-/**
- * This function is a helper for setting the initial tabIndexes in a roving tabIndex
- *
- * @param {HTMLElement[]} options Array of elements which should have a tabIndex of -1, except for the first element which will have a tabIndex of 0
- */
-export const setTabIndex = (options: HTMLElement[]) => {
-  if (options && options.length > 0) {
-    // Iterate the options and set the tabIndex to -1 on every option
-    options.forEach((option: HTMLElement) => {
-      option.tabIndex = -1;
-    });
-    // Manually set the tabIndex of the first option to 0
-    options[0].tabIndex = 0;
   }
 };
 
@@ -164,8 +150,6 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     if (isEventFromContainer ? !isEventFromContainer(event) : !this._isEventFromContainer(event)) {
       return;
     }
-    // If the event is relevant, stop propagation and handle the event
-    event.stopImmediatePropagation();
 
     const {
       isActiveElement,
@@ -198,6 +182,7 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     if (!noEnterHandling) {
       if (key === 'Enter') {
         event.preventDefault();
+        event.stopImmediatePropagation(); // For menus in menus
         (document.activeElement as HTMLElement).click();
       }
     }
@@ -206,6 +191,7 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     if (!noSpaceHandling) {
       if (key === ' ') {
         event.preventDefault();
+        event.stopImmediatePropagation(); // For menus in menus
         (document.activeElement as HTMLElement).click();
       }
     }

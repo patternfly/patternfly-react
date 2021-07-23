@@ -111,59 +111,6 @@ class MenuIconsList extends React.Component {
 }
 ```
 
-### With flyout
-
-```js
-import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-
-class MenuWithFlyout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onSelect = (event, itemId) => {
-      this.setState({
-        activeItem: itemId
-      });
-    };
-  }
-
-  render() {
-    const { activeItem } = this.state;
-    const flyoutMenu = (
-      <Menu onSelect={this.onSelect} activeItemId={activeItem}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={10}>Application Grouping</MenuItem>
-            <MenuItem itemId={11}>Count</MenuItem>
-            <MenuItem itemId={12}>Labels</MenuItem>
-            <MenuItem itemId={13}>Annotations</MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
-
-    return (
-      <Menu containsFlyout onSelect={this.onSelect} activeItemId={activeItem}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={0}>Start rollout</MenuItem>
-            <MenuItem itemId={1}>Pause rollouts</MenuItem>
-            <MenuItem itemId={2}>Add storage</MenuItem>
-            <MenuItem description="Description" itemId={3} flyoutMenu={flyoutMenu} aria-label="Has flyout menu">
-              Edit
-            </MenuItem>
-            <MenuItem itemId={4}>Delete deployment config</MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
-  }
-}
-```
-
 ### Filtering with text input
 
 ```js
@@ -1413,7 +1360,7 @@ class ViewMoreMenu extends React.Component {
     };
 
     this.menuOptions = [
-      <MenuItem key={0} itemId={0} ref={React.createRef()}>
+      <MenuItem key={0} itemId={0}>
         Action
       </MenuItem>,
       <MenuItem
@@ -1422,7 +1369,6 @@ class ViewMoreMenu extends React.Component {
         to="#default-link2"
         // just for demo so that navigation is not triggered
         onClick={event => event.preventDefault()}
-        ref={React.createRef()}
       >
         Link
       </MenuItem>,
@@ -1432,19 +1378,19 @@ class ViewMoreMenu extends React.Component {
       <MenuItem key={4} isDisabled to="#default-link4">
         Disabled Link
       </MenuItem>,
-      <MenuItem key={5} itemId={2} ref={React.createRef()}>
+      <MenuItem key={5} itemId={2}>
         Action 2
       </MenuItem>,
-      <MenuItem key={6} itemId={3} ref={React.createRef()}>
+      <MenuItem key={6} itemId={3}>
         Action 3
       </MenuItem>,
-      <MenuItem key={7} itemId={4} ref={React.createRef()}>
+      <MenuItem key={7} itemId={4}>
         Action 4
       </MenuItem>,
-      <MenuItem key={8} itemId={5} ref={React.createRef()}>
+      <MenuItem key={8} itemId={5}>
         Action 5
       </MenuItem>,
-      <MenuItem key={9} itemId={6} ref={React.createRef()}>
+      <MenuItem key={9} itemId={6}>
         Final option
       </MenuItem>
     ];

@@ -38,6 +38,8 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
   autoFocus?: boolean;
+  /** Props for extreme customization of dropdown */
+  contextProps?: typeof DropdownContext;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -47,6 +49,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   ouiaId,
   ouiaSafe,
   alignments,
+  contextProps,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -68,7 +71,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ouiaId: useOUIAId(Dropdown.displayName, ouiaId),
       ouiaSafe,
       ouiaComponentType: Dropdown.displayName,
-      alignments
+      alignments,
+      ...contextProps
     }}
   >
     <DropdownWithContext {...props} />
