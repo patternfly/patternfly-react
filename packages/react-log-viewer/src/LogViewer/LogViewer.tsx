@@ -30,9 +30,9 @@ interface LogViewerProps {
   loadingContent?: React.ReactNode;
   /** Flag indicating that log viewer is dark themed */
   theme?: 'dark' | 'light';
-  /** */
+  /** Row index to scroll to */
   scrollToRow?: number;
-  /** */
+  /** Number of rows to display in the log viewer */
   itemCount?: number;
 }
 
