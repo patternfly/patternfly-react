@@ -8,13 +8,6 @@ import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
   Badge,
   Button,
-  Checkbox,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownToggleAction,
-  DropdownPosition,
-  DropdownSeparator,
   Select,
   SelectOption,
   PageSection,
@@ -29,6 +22,7 @@ import {
 import { data } from '../examples/realTestData.js';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
+import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 
@@ -41,9 +35,6 @@ import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
   Badge,
   Button,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
   Select,
   SelectOption,
   Tooltip,
@@ -57,13 +48,13 @@ import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 
 ComplexToolbarLogViewer = () => {
   const [isPaused, setIsPaused] = React.useState(false);
   const [currentItemCount, setCurrentItemCount] = React.useState(0);
   const [selectedDataSource, setSelectedDataSource] = React.useState("container-1");
   const [selectDataSourceOpen, setSelectDataSourceOpen] = React.useState(false);
-  const [selectDownloadSourceOpen, setSelectDownloadSourceOpen] = React.useState(false);
   const [timer, setTimer] = React.useState(null);
   
   const dataSources = {                    
@@ -102,27 +93,15 @@ ComplexToolbarLogViewer = () => {
     }
   };
   
-  const downloadData = dataSourceName => {
+  const onDownloadClick = () => {
     const element = document.createElement("a");
-    const dataToDownload = [data[dataSources[dataSourceName].id]];
+    const dataToDownload = [data[dataSources[selectedDataSource].id]];
     const file = new Blob(dataToDownload, { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
-    element.download = `${dataSourceName}.txt`;
+    element.download = `${selectedDataSource}.txt`;
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-  };
-  
-  const downloadFromSource = source => {
-    if (source === 'all' || selectedDataSource === 'container-1') {
-      downloadData('container-1');
-    }
-    if (source === 'all' || selectedDataSource === 'container-2') {
-      downloadData('container-2');
-    }
-    if (source === 'all' || selectedDataSource === 'container-3') {
-      downloadData('container-3');
-    }
   };
   
   const selectDataSourceMenu = (
@@ -150,21 +129,25 @@ ComplexToolbarLogViewer = () => {
   
   const leftAlignedToolbarGroup = (
     <React.Fragment>
-      <ToolbarItem variant="search-filter">
-        <Select
-          onToggle={isOpen => setSelectDataSourceOpen(isOpen)}
-          onSelect={(event, selection) => {
-            setSelectDataSourceOpen(false);
-            setSelectedDataSource(selection);
-            setCurrentItemCount(0);
-          }}
-          selections={selectedDataSource}
-          isOpen={selectDataSourceOpen}
-          customContent={selectDataSourceMenu}
-          placeholderText={selectDataSourcePlaceholder}
-          width={233}
-        />
-      </ToolbarItem>
+    <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
+        <ToolbarItem variant="search-filter">
+          <Select
+            onToggle={isOpen => setSelectDataSourceOpen(isOpen)}
+            onSelect={(event, selection) => {
+              setSelectDataSourceOpen(false);
+              setSelectedDataSource(selection);
+              setCurrentItemCount(0);
+            }}
+            selections={selectedDataSource}
+            isOpen={selectDataSourceOpen}
+            customContent={selectDataSourceMenu}
+            placeholderText={selectDataSourcePlaceholder}
+          />
+        </ToolbarItem>
+        <ToolbarItem variant="search-filter">
+          <LogViewerSearch placeholder="Search" />
+        </ToolbarItem>
+      </ToolbarToggleGroup>
       <ToolbarItem>
         <Button variant={isPaused ? 'plain' : 'link'} onClick={() => setIsPaused(!isPaused)}>
           {isPaused ? <PlayIcon /> : <PauseIcon />}
@@ -173,35 +156,16 @@ ComplexToolbarLogViewer = () => {
       </ToolbarItem>
     </React.Fragment>
   );
-  
-  const downloadSourceMenuItems = [
-    <DropdownItem key="dropdown-1" component="button" onClick={() => downloadFromSource("selection")}>
-      Current container logs
-    </DropdownItem>,
-    <DropdownItem key="dropdown-2" component="button" onClick={() => downloadFromSource("all")}>
-      All container logs
-    </DropdownItem>
-  ];
 
   const rightAlignedToolbarGroup = (
     <React.Fragment>
-      <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
-        <ToolbarItem variant="search-filter">
-          <LogViewerSearch placeholder="Search" />
-        </ToolbarItem>
-        <ToolbarItem variant="search-filter">
-          <Dropdown
-            onSelect={() => {
-              setSelectDownloadSourceOpen(false);
-            }}
-            toggle={
-              <DropdownToggle id="download-toggle" onToggle={isOpen => setSelectDownloadSourceOpen(isOpen)}>
-                Download
-              </DropdownToggle>
-            }
-            isOpen={selectDownloadSourceOpen}
-            dropdownItems={downloadSourceMenuItems}
-          />
+      <ToolbarGroup variant="icon-button-group">
+        <ToolbarItem>
+          <Tooltip position="top" content={<div>Download</div>}>
+            <Button onClick={onDownloadClick} variant="plain" aria-label="Download current logs">
+              <DownloadIcon />
+            </Button>
+          </Tooltip>
         </ToolbarItem>
         <ToolbarItem>
           <Tooltip position="top" content={<div>Expand</div>}>
@@ -210,7 +174,7 @@ ComplexToolbarLogViewer = () => {
             </Button>
           </Tooltip>
         </ToolbarItem>
-      </ToolbarToggleGroup>
+      </ToolbarGroup>
     </React.Fragment>
   );
 
