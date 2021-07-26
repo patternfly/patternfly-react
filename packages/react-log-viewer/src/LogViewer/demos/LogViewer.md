@@ -52,6 +52,7 @@ import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 
 ComplexToolbarLogViewer = () => {
   const [isPaused, setIsPaused] = React.useState(false);
+  const [isFullScreen, setIsFullScreen] = React.useState(false);
   const [currentItemCount, setCurrentItemCount] = React.useState(0);
   const [selectedDataSource, setSelectedDataSource] = React.useState("container-1");
   const [selectDataSourceOpen, setSelectDataSourceOpen] = React.useState(false);
@@ -84,13 +85,27 @@ ComplexToolbarLogViewer = () => {
   
   const onExpandClick = event => {
     const element = document.querySelector('#complex-toolbar-demo');
-    if (element.requestFullscreen) {
-        element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullScreen) {
-        element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+
+    if (!isFullScreen) {
+      if (element.requestFullscreen) {
+          element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullScreen) {
+          element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+      setIsFullScreen(true);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+      }
+      setIsFullScreen(false);
     }
+    
   };
   
   const onDownloadClick = () => {
