@@ -27,13 +27,15 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
 
   /* Defaulting the first focused row that contain searched keywords */
   useEffect(() => {
-    if (searchedWordIndexes.length >= 1) {
+    if (hasFoundResults) {
       setIndexAdjuster(1);
       scrollToRow(searchedWordIndexes[DEFAULT_INDEX]);
     } else {
       setIndexAdjuster(0);
     }
   }, [searchedWordIndexes]);
+
+  const hasFoundResults = searchedWordIndexes.length > 0 && searchedWordIndexes[0] !== -1;
 
   /* Clearing out the search input */
   const handleClear = (): void => {
@@ -75,7 +77,7 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
     <SearchInput
       placeholder={placeholder}
       value={searchedInput}
-      resultsCount={`${currentSearchedItemCount + indexAdjuster} / ${searchedWordIndexes.length}`}
+      resultsCount={`${currentSearchedItemCount + indexAdjuster} / ${hasFoundResults ? searchedWordIndexes.length : 0}`}
       {...props}
       onChange={(input, event) => {
         props.onChange && props.onChange(input, event);

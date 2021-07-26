@@ -92,8 +92,14 @@ ComplexToolbarLogViewer = () => {
   }, [currentItemCount]);
   
   const onExpandClick = event => {
-    const content = document.querySelector('#complex-toolbar-demo');
-    content.requestFullscreen();
+    const element = document.querySelector('#complex-toolbar-demo');
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
   };
   
   const downloadData = dataSourceName => {

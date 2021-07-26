@@ -155,21 +155,13 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       }
 
       if (adjustedSearchedInput !== '' && adjustedSearchedInput.length < 3) {
-        if (scrollToRow) {
-          setRowInFocus(scrollToRow);
-        } else {
-          setRowInFocus(DEFAULT_FOCUS);
-        }
+        setRowInFocus(scrollToRow || DEFAULT_FOCUS);
         setCurrentSearchedItemCount(DEFAULT_INDEX);
         setSearchedWordIndexes([]);
       }
 
       if (adjustedSearchedInput === '') {
-        if (scrollToRow) {
-          setRowInFocus(scrollToRow);
-        } else {
-          setRowInFocus(DEFAULT_FOCUS);
-        }
+        setRowInFocus(scrollToRow || DEFAULT_FOCUS);
       }
     }, [searchedInput]);
 
