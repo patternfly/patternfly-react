@@ -118,9 +118,11 @@ class PasswordStrengthDemo extends React.Component {
     );
 
     let passStrLabel = (
-      <HelperTextItem variant={passStrength.variant} icon={passStrength.icon}>
-        {passStrength.text}
-      </HelperTextItem>
+      <HelperText>
+        <HelperTextItem variant={passStrength.variant} icon={passStrength.icon}>
+          {passStrength.text}
+        </HelperTextItem>
+      </HelperText>
     );
 
     return (
@@ -145,7 +147,7 @@ class PasswordStrengthDemo extends React.Component {
             value={password}
             onChange={this.handlePasswordInput}
           />
-          <FormHelperText isHidden={false}>
+          <FormHelperText isHidden={false} component="div">
             <HelperText component="ul">
               <HelperTextItem isDynamic variant={ruleLength} component="li">
                 Must be at least 14 characters
