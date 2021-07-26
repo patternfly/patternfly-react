@@ -452,6 +452,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelGroupDemo
   },
   {
+    id: 'labelgroup-editable-demo',
+    name: 'LabelGroup Editable Demo',
+    componentType: Examples.LabelGroupEditableDemo
+  },
+  {
     id: 'labelgroup-default-is-open-demo',
     name: 'LabelGroup Default is Open Demo',
     componentType: Examples.LabelGroupDefaultIsOpenDemo

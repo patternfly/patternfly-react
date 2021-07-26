@@ -156,7 +156,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
   <Label color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
     Cyan label with icon that overflows
   </Label>
-</React.Fragment>
+</React.Fragment>;
 ```
 
 ### Outline
@@ -324,10 +324,11 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
   <Label variant="outline" color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
     Cyan label with icon that overflows
   </Label>
-</React.Fragment>
+</React.Fragment>;
 ```
 
 ### Router link
+
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
@@ -339,16 +340,56 @@ import { Link } from '@reach/router';
   icon={<InfoCircleIcon />}
   onClose={Function.prototype}
   isTruncated
-  render={({
-    className, 
-    content,
-    componentRef 
-  }) => (
+  render={({ className, content, componentRef }) => (
     <Link to="/" className={className} innerRef={componentRef}>
       {content}
     </Link>
   )}
 >
   Blue label router link with icon that overflows
-</Label>
+</Label>;
+```
+
+### Editable
+
+```js
+import React from 'react';
+import { Label } from '@patternfly/react-core';
+
+class EditableLabel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: 'Editable label'
+    };
+    this.onEditCancel = prevText => {
+      this.setState({
+        text: prevText
+      });
+    };
+    this.onEditComplete = newText => {
+      this.setState({
+        text: newText
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Label
+        color="blue"
+        onClose={Function.prototype}
+        onEditCancel={this.onEditCancel}
+        onEditComplete={this.onEditComplete}
+        isEditable
+        editableProps={{
+          'aria-label': 'Editable text',
+          id: 'editable-label'
+        }}
+      >
+        {this.state.text}
+      </Label>
+    );
+  }
+}
 ```
