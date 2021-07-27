@@ -12,6 +12,8 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-
 
 ### Basic validation
 
+Note, the validation and password strength rules are only examples, demonstrating the changes in the UI when certain conditions are met. Currently the password strength is determined by how often validation rules are met.
+
 ```js
 import React from 'react';
 import {
