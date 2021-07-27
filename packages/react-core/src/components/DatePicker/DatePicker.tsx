@@ -95,6 +95,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const onTextInput = (value: string) => {
     setPristine(false);
     setValue(value);
+    setErrorText('');
     const newValueDate = dateParse(value);
     setValueDate(newValueDate);
     if (isValidDate(newValueDate)) {
