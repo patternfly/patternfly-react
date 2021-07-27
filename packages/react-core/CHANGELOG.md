@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.142.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.142.0...@patternfly/react-core@4.142.1) (2021-07-27)
+
+
+### Bug Fixes
+
+* **NotifcationDrawr:** show close button ([#6071](https://github.com/patternfly/patternfly-react/issues/6071)) ([905ce78](https://github.com/patternfly/patternfly-react/commit/905ce7805ff3254bd597bec46009e6af12c65799))
+
+
+
+
+
 # [4.142.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.141.0...@patternfly/react-core@4.142.0) (2021-07-23)
 
 
