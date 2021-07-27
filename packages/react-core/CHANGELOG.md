@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.142.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.142.1...@patternfly/react-core@4.142.2) (2021-07-27)
+
+
+### Bug Fixes
+
+* **datepicker:** clear parse error on type ([#6066](https://github.com/patternfly/patternfly-react/issues/6066)) ([025d13b](https://github.com/patternfly/patternfly-react/commit/025d13b22d1802948439369bb2244e0253527569))
+
+
+
+
+
 ## [4.142.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.142.0...@patternfly/react-core@4.142.1) (2021-07-27)
 
 
