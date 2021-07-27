@@ -47,6 +47,8 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** Order of items in a draggable DataList */
   itemOrder?: string[];
+  /** Ref to outer UL */
+  innerRef?: React.Ref<HTMLUListElement>;
 }
 
 interface DataListState {
@@ -95,6 +97,13 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   dragFinished: boolean = false;
   arrayCopy: React.ReactElement[] = React.Children.toArray(this.props.children) as React.ReactElement[];
   ref = React.createRef<HTMLUListElement>();
+
+  constructor(props: DataListProps) {
+    super(props);
+    if (props.innerRef) {
+      this.ref = props.innerRef as React.RefObject<HTMLUListElement>;
+    }
+  }
 
   state: DataListState = {
     tempItemOrder: [],
@@ -303,6 +312,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onDragFinish,
       gridBreakpoint,
       itemOrder,
+      innerRef,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;

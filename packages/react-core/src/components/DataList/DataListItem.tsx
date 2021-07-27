@@ -16,6 +16,8 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   'aria-labelledby': string;
   /** Unique id for the DataList item */
   id?: string;
+  /** Ref to outer LI */
+  innerRef?: React.Ref<HTMLLIElement>;
 }
 
 export interface DataListItemChildProps {
@@ -51,8 +53,19 @@ export class DataListItem extends React.Component<DataListItemProps> {
     children: null,
     'aria-labelledby': ''
   };
+  ref = React.createRef<HTMLLIElement>();
+
+  constructor(props: DataListItemProps) {
+    super(props);
+    if (props.innerRef) {
+      this.ref = props.innerRef as React.RefObject<HTMLLIElement>;
+    }
+  }
+
   render() {
-    const { children, isExpanded, className, id, 'aria-labelledby': ariaLabelledBy, ...props } = this.props;
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    const { children, isExpanded, className, id, 'aria-labelledby': ariaLabelledBy, innerRef, ...props } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     return (
       <DataListContext.Consumer>
         {({
@@ -100,6 +113,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
 
           return (
             <li
+              ref={this.ref}
               id={id}
               className={css(
                 styles.dataListItem,
