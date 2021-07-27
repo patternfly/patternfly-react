@@ -2,7 +2,7 @@
 id: Tree view
 section: components
 cssPrefix: pf-c-treeview
-propComponents: ['TreeView', 'TreeViewList', 'TreeViewListItem']
+propComponents: ['TreeView', 'TreeViewDataItem']
 beta: true
 ---
 
@@ -14,7 +14,7 @@ import { FolderIcon, FolderOpenIcon, EllipsisVIcon, ClipboardIcon, HamburgerIcon
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem, Button } from '@patternfly/react-core';
+import { TreeView, Button } from '@patternfly/react-core';
 
 class DefaultTreeView extends React.Component {
   constructor(props) {
@@ -22,9 +22,9 @@ class DefaultTreeView extends React.Component {
 
     this.state = { activeItems: {}, allExpanded: null };
 
-    this.onClick = (evt, treeViewItem, parentItem) => {
+    this.onSelect = (evt, treeViewItem) => {
       this.setState({
-        activeItems: [treeViewItem, parentItem]
+        activeItems: [treeViewItem]
       });
     };
 
@@ -96,14 +96,13 @@ class DefaultTreeView extends React.Component {
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
-    console.log('All expand?', allExpanded);
     return (
       <React.Fragment>
         <Button variant="link" onClick={this.onToggle}>
           {allExpanded && 'Collapse all'}
           {!allExpanded && 'Expand all'}
         </Button>
-        <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} allExpanded={allExpanded} />
+        <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} allExpanded={allExpanded} />
       </React.Fragment>
     );
   }
@@ -114,7 +113,7 @@ class DefaultTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem, TreeViewSearch, Divider } from '@patternfly/react-core';
+import { TreeView } from '@patternfly/react-core';
 
 class SearchTreeView extends React.Component {
   constructor(props) {
@@ -180,13 +179,13 @@ class SearchTreeView extends React.Component {
 
     this.state = { activeItems: {}, filteredItems: this.options, isFiltered: null };
 
-    this.onClick = (evt, treeViewItem, parentItem) => {
+    this.onSelect = (evt, treeViewItem) => {
       this.setState({
-        activeItems: [treeViewItem, parentItem]
+        activeItems: [treeViewItem]
       });
     };
 
-    this.onChange = evt => {
+    this.onSearch = evt => {
       const input = evt.target.value;
       if (input === '') {
         this.setState({ filteredItems: this.options, isFiltered: false });
@@ -218,8 +217,8 @@ class SearchTreeView extends React.Component {
       <TreeView
         data={filteredItems}
         activeItems={activeItems}
-        onSelect={this.onClick}
-        onSearch={this.onChange}
+        onSelect={this.onSelect}
+        onSearch={this.onSearch}
         searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
         allExpanded={isFiltered}
       />
@@ -232,7 +231,7 @@ class SearchTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView } from '@patternfly/react-core';
 
 class CheckboxTreeView extends React.Component {
   constructor(props) {
@@ -348,13 +347,7 @@ class CheckboxTreeView extends React.Component {
       }
     ];
 
-    this.state = { activeItems: [], checkedItems: [] };
-
-    this.onClick = (evt, treeViewItem, parentItem) => {
-      this.setState({
-        activeItems: [treeViewItem, parentItem]
-      });
-    };
+    this.state = { checkedItems: [] };
 
     this.onCheck = (evt, treeViewItem) => {
       const checked = evt.target.checked;
@@ -437,10 +430,9 @@ class CheckboxTreeView extends React.Component {
   }
 
   render() {
-    const { activeItems } = this.state;
     const mapped = this.options.map(item => this.mapTree(item));
     return (
-      <TreeView data={mapped} activeItems={activeItems} onSelect={this.onClick} onCheck={this.onCheck} hasChecks />
+      <TreeView data={mapped} onCheck={this.onCheck} hasChecks />
     );
   }
 }
@@ -450,7 +442,7 @@ class CheckboxTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView } from '@patternfly/react-core';
 import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 
@@ -460,9 +452,9 @@ class IconTreeView extends React.Component {
 
     this.state = { activeItems: {} };
 
-    this.onClick = (evt, treeViewItem, parentItem) => {
+    this.onSelect = (evt, treeViewItem) => {
       this.setState({
-        activeItems: [treeViewItem, parentItem]
+        activeItems: [treeViewItem]
       });
     };
   }
@@ -530,7 +522,7 @@ class IconTreeView extends React.Component {
       <TreeView
         data={options}
         activeItems={activeItems}
-        onSelect={this.onClick}
+        onSelect={this.onSelect}
         icon={<FolderIcon />}
         expandedIcon={<FolderOpenIcon />}
       />
@@ -543,7 +535,7 @@ class IconTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView } from '@patternfly/react-core';
 
 class BadgesTreeView extends React.Component {
   constructor(props) {
@@ -551,9 +543,9 @@ class BadgesTreeView extends React.Component {
 
     this.state = { activeItems: {} };
 
-    this.onClick = (evt, treeViewItem, parentItem) => {
+    this.onSelect = (evt, treeViewItem) => {
       this.setState({
-        activeItems: [treeViewItem, parentItem]
+        activeItems: [treeViewItem]
       });
     };
   }
@@ -617,7 +609,7 @@ class BadgesTreeView extends React.Component {
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
-    return <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} hasBadges />;
+    return <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} hasBadges />;
   }
 }
 ```
@@ -626,7 +618,7 @@ class BadgesTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView } from '@patternfly/react-core';
 
 class CustomBadgesTreeView extends React.Component {
   constructor(props) {
@@ -634,9 +626,9 @@ class CustomBadgesTreeView extends React.Component {
 
     this.state = { activeItems: {} };
 
-    this.onClick = (evt, treeViewItem, parentItem) => {
+    this.onSelect = (evt, treeViewItem) => {
       this.setState({
-        activeItems: [treeViewItem, parentItem]
+        activeItems: [treeViewItem]
       });
     };
   }
@@ -708,7 +700,7 @@ class CustomBadgesTreeView extends React.Component {
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
-    return <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} hasBadges />;
+    return <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} hasBadges />;
   }
 }
 ```
@@ -717,7 +709,7 @@ class CustomBadgesTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView, TreeViewDataItem, Button, Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
+import { TreeView, Button, Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
 import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
 import HamburgerIcon from '@patternfly/react-icons/dist/js/icons/hamburger-icon';
 
@@ -727,9 +719,9 @@ class IconTreeView extends React.Component {
 
     this.state = { activeItems: {}, isOpen: false };
 
-    this.onClick = (evt, treeViewItem, parentItem) => {
+    this.onSelect = (evt, treeViewItem) => {
       this.setState({
-        activeItems: [treeViewItem, parentItem]
+        activeItems: [treeViewItem]
       });
     };
 
@@ -739,7 +731,7 @@ class IconTreeView extends React.Component {
       });
     };
 
-    this.onSelect = event => {
+    this.onAppLaunchSelect = event => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -766,7 +758,7 @@ class IconTreeView extends React.Component {
         id: 'AppLaunch',
         action: (
           <Dropdown
-            onSelect={this.onSelect}
+            onSelect={this.onAppLaunchSelect}
             toggle={<KebabToggle onToggle={this.onToggle} />}
             isOpen={isOpen}
             isPlain
@@ -839,7 +831,7 @@ class IconTreeView extends React.Component {
         children: [{ name: 'Application 5', id: 'App5' }]
       }
     ];
-    return <TreeView data={options} activeItems={activeItems} onSelect={this.onClick} />;
+    return <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} />;
   }
 }
 ```
