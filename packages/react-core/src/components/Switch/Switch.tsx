@@ -24,6 +24,8 @@ export interface SwitchProps
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Adds accessible text to the Switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
   'aria-label'?: string;
+  /** Flag to reverse the layout of toggle and label (toggle on right). */
+  isReversed?: boolean;
 }
 
 export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
@@ -33,6 +35,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
   static defaultProps: SwitchProps = {
     isChecked: true,
     isDisabled: false,
+    isReversed: false,
     'aria-label': '',
     onChange: () => undefined as any
   };
@@ -60,6 +63,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
       isChecked,
       isDisabled,
       onChange,
+      isReversed,
       ouiaId,
       ouiaSafe,
       ...props
@@ -68,7 +72,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
       <label
-        className={css(styles.switch, className)}
+        className={css(styles.switch, isReversed && styles.modifiers.reverse, className)}
         htmlFor={this.id}
         {...getOUIAProps(Switch.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
       >
