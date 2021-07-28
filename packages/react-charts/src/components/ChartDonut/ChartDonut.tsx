@@ -561,6 +561,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   innerRadius,
   legendAllowWrap,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
+  padAngle,
   padding,
   radius,
   standalone = true,
@@ -609,6 +610,9 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       </React.Fragment>
     );
   };
+
+  // This function will be evaluated for each slice with the props that correspond to that slice.
+  const getPadAngle = ({ datum }: any) => (datum._y > 0 ? (theme.pie as any).padAngle : 0);
 
   // Returns subtitle
   const getSubTitle = ({ dy = 0, textComponent = <ChartLabel /> }: ChartDonutSubTitleInterface) => {
@@ -681,6 +685,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       key="pf-chart-donut-pie"
       legendAllowWrap={legendAllowWrap}
       legendPosition={legendPosition}
+      padAngle={padAngle !== undefined ? padAngle : getPadAngle}
       padding={padding}
       radius={chartRadius > 0 ? chartRadius : 0}
       standalone={false}
