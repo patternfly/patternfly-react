@@ -88,3 +88,9 @@ test('should not throw console error when aria-label is given but no label', () 
   mount(<Switch {...props} aria-label="test switch" />);
   expect(myMock).not.toBeCalled();
 });
+
+test('should apply reversed modifier', () => {
+  const view = mount(<Switch id="reversed-switch" label="reversed switch" isReversed />);
+  const label = view.find('label')
+  expect(label.prop('className')).toContain('pf-m-reverse')
+})

@@ -38,6 +38,38 @@ class SimpleSwitch extends React.Component {
 }
 ```
 
+### Reversed Layout
+```js
+import React from 'react';
+import { Switch } from '@patternfly/react-core';
+
+class ReversedSwitch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChecked: true
+    };
+    this.handleChange = isChecked => {
+      this.setState({ isChecked });
+    };
+  }
+
+  render() {
+    const { isChecked } = this.state;
+    return (
+      <Switch
+        id="reversed-switch"
+        label="Message when on"
+        labelOff="Message when off"
+        isChecked={isChecked}
+        onChange={this.handleChange}
+        isReversed
+      />
+    );
+  }
+}
+```
+
 ### Without label
 ```js
 import React from 'react';
