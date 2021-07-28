@@ -15,7 +15,7 @@ import { data } from './realTestData.js';
 
 ```js
 import React from 'react';
-import { data } from './data/realTestData.js';
+import { data } from './realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 import { Checkbox } from '@patternfly/react-core';
 
