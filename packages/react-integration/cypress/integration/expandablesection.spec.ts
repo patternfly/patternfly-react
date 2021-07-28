@@ -41,4 +41,11 @@ describe('Expandable Demo Test', () => {
     cy.get('#detached button').click();
     cy.get('#detached-section').should('have.class', 'pf-m-expanded');
   });
+
+  it('Verify disclosure expandable', () => {
+    cy.get('#disclosure-expandable-section > .pf-c-expandable-section__toggle').click();
+    cy.get('#disclosure-expandable-section').should('have.class', 'pf-m-expanded');
+    cy.get('#disclosure-expandable-section').should('have.class', 'pf-m-display-lg');
+    cy.get('#disclosure-expandable-section').should('have.class', 'pf-m-limit-width');
+  });
 });

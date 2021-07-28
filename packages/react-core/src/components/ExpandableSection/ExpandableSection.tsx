@@ -25,6 +25,10 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   isDetached?: boolean;
   /** ID of the content of the expandable section */
   contentId?: string;
+  /** Flag to indicate the component is modified to have large display styling */
+  isDisplayLarge?: boolean;
+  /** Flag to indicate the width of the component is limited */
+  isWidthLimited?: boolean;
 }
 
 interface ExpandableSectionState {
@@ -50,6 +54,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     onToggle: (isExpanded): void => undefined,
     isActive: false,
     isDetached: false,
+    isDisplayLarge: false,
+    isWidthLimited: false,
     contentId: ''
   };
 
@@ -80,6 +86,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       children,
       isExpanded,
       isDetached,
+      isDisplayLarge,
+      isWidthLimited,
       contentId,
       ...props
     } = this.props;
@@ -109,6 +117,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           propOrStateIsExpanded && styles.modifiers.expanded,
           isActive && styles.modifiers.active,
           isDetached && styles.modifiers.detached,
+          isDisplayLarge && styles.modifiers.displayLg,
+          isWidthLimited && styles.modifiers.limitWidth,
           className
         )}
       >
