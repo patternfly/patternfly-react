@@ -22,6 +22,8 @@ The first is the newer `TableComposable` component. It takes a more explicit and
 
 The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. 
 
+**For most common use cases, we recommend using `TableComposable`. Both implementations are supported and fully maintained.**
+
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
