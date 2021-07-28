@@ -23,7 +23,7 @@ BasicLogViewer = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
   
   return (
-    <>
+    <React.ReactFragment>
       <Checkbox
         label="Dark theme"
         isChecked={isDarkTheme}
@@ -33,7 +33,7 @@ BasicLogViewer = () => {
         name="toggle-dark-theme"
       />
       <LogViewer hasLineNumbers={false} height={300} data={data.data} isDarkTheme={isDarkTheme} />
-    </>
+    </React.ReactFragment>
   );
 }
 ```
