@@ -170,7 +170,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
                 </Label>
               </li>
             )}
-            {hasEditableTextArea && (
+            {isEditable && hasEditableTextArea && (
               <li className={css(styles.labelGroupListItem, styles.modifiers.textarea)}>
                 <textarea className={css(styles.labelGroupTextarea)} rows={1} tabIndex={0} {...editableTextAreaProps} />
               </li>
