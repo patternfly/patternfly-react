@@ -13,7 +13,7 @@ export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Icon displayed to the left of the helper text. */
   icon?: React.ReactNode;
-  /** Component type of the Form Helper Text */
+  /** Component type of the form helper text */
   component?: 'p' | 'div';
 }
 
