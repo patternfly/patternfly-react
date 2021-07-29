@@ -59,7 +59,8 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   return (
     <li className={classes} {...props}>
       <a className={linkClasses} onClick={e => handleActivate(e)} href={href}>
-        {title} {isExternalLink && <ExternalLinkAltIcon />}
+        {title}
+        {isExternalLink && <ExternalLinkAltIcon />}
       </a>
       {children}
     </li>
