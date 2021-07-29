@@ -406,6 +406,73 @@ class InsetTabs extends React.Component {
 }
 ```
 
+### Page Insets
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
+
+class PageInsetsTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isBox: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox} = this.state;
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} usePageInsets
+        isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+                label="isBox"
+                isChecked={isBox}
+                onChange={this.toggleBox}
+                aria-label="show box variation checkbox with inset"
+                id="toggle-box-inset"
+                name="toggle-box-inset"
+              />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
 ### Icons and text
 ```js
 import React from 'react';
