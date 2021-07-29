@@ -77,7 +77,7 @@ describe('Accordion', () => {
 
   test('Accordion display large', () => {
     const view = shallow(
-      <Accordion isDisplayLarge>
+      <Accordion displaySize='large'>
         <AccordionItem>
           <AccordionToggle id="item-1">Item One</AccordionToggle>
           <AccordionContent>Item One Content</AccordionContent>

@@ -2,7 +2,7 @@
 id: Accordion
 section: components
 cssPrefix: pf-c-accordion
-propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle']
+propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle', AccordionExpandedContentBody]
 ---
 
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
@@ -374,6 +374,7 @@ class BorderedAccordion extends React.Component {
 
   render() {
     const {expanded, isDisplayLarge} = this.state;
+    const displaySize = isDisplayLarge ? 'large' : 'default';
     const onToggle = id => {
       if (id === expanded) {
         this.setState({ expanded: '' });
@@ -383,7 +384,7 @@ class BorderedAccordion extends React.Component {
     };
     return (
       <>
-        <Accordion isBordered isDisplayLarge={isDisplayLarge}>
+        <Accordion isBordered displaySize={displaySize}>
           <AccordionItem>
             <AccordionToggle
               onClick={() => {
@@ -479,7 +480,7 @@ class BorderedAccordion extends React.Component {
         </Accordion>
         <div style={{ marginTop: '30px' }}>
           <Checkbox
-            label="isDisplayLarge"
+            label="Display size large"
             isChecked={isDisplayLarge}
             onChange={this.toggleDisplayLarge}
             aria-label="show displlay large variation checkbox"

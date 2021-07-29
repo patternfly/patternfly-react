@@ -16,8 +16,8 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   asDefinitionList?: boolean;
   /** Flag to indicate the accordion had a border */
   isBordered?: boolean;
-  /** Flag to indicate the accordion is modified for large display styling. */
-  isDisplayLarge?: boolean;
+  /** Display size variant. */
+  displaySize?: 'default' | 'large';
 }
 
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -27,7 +27,7 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   headingLevel = 'h3',
   asDefinitionList = true,
   isBordered = false,
-  isDisplayLarge = false,
+  displaySize = 'default',
   ...props
 }: AccordionProps) => {
   const AccordionList: any = asDefinitionList ? 'dl' : 'div';
@@ -36,7 +36,7 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
       className={css(
         styles.accordion,
         isBordered && styles.modifiers.bordered,
-        isDisplayLarge && styles.modifiers.displayLg,
+        displaySize === 'large' && styles.modifiers.displayLg,
         className
       )}
       aria-label={ariaLabel}

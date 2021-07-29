@@ -108,7 +108,7 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
           </Accordion>
         </StackItem>
         <StackItem>
-          <Accordion id="accordion-bordered" isBordered isDisplayLarge>
+          <Accordion id="accordion-bordered" isBordered displaySize="large">
             <AccordionItem>
               <AccordionToggle
                 onClick={() => {
