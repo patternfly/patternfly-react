@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import textUtilities from '@patternfly/react-styles/css/utilities/Text/text';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement>, 'title'> {
   /** Child tab nodes (VerticalTabsTab's) */
@@ -22,8 +20,6 @@ export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement
   onActivate?: () => void;
   /** HREF location */
   href?: string;
-  /** Flag to add external link icon to the tab */
-  isExternalLink?: string;
 }
 
 export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
@@ -36,18 +32,14 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   shown = false,
   onActivate = null,
   href,
-  isExternalLink,
   ...props
 }: VerticalTabsTabProps) => {
   const classes = css('vertical-tabs-pf-tab', { active, 'active-descendant': hasActiveDescendant, shown }, className);
 
-  const linkClasses = css(
-    {
-      'no-wrap': wrapStyle === 'nowrap',
-      truncate: wrapStyle === 'truncate'
-    },
-    href && textUtilities.linkColor
-  );
+  const linkClasses = css({
+    'no-wrap': wrapStyle === 'nowrap',
+    truncate: wrapStyle === 'truncate'
+  });
 
   const handleActivate = (e: React.SyntheticEvent<HTMLElement>) => {
     e.preventDefault();
@@ -60,7 +52,6 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
     <li className={classes} {...props}>
       <a className={linkClasses} onClick={e => handleActivate(e)} href={href}>
         {title}
-        {isExternalLink && <ExternalLinkAltIcon />}
       </a>
       {children}
     </li>
