@@ -63,7 +63,7 @@ class MockVerticalTabsExample extends React.Component {
           renderTab('one-one', 'Tab One-One', [
             renderTab('one-one-one', 'About Modal', null, {href: "../components/about-modal"}),
             renderTab('one-one-two', 'Accordion', null, {href: "../components/accordion"}),
-            renderTab('one-one-three', 'Redhat (external)', null, {href: "http://www.redhat.com"})
+            renderTab('one-one-three', 'Redhat', null, {href: "http://www.redhat.com", isExternalLink: true})
           ]),
           renderTab('one-two', 'Tab One-Two', [
             renderTab('one-two-one', 'Tab One-Two-One'),
