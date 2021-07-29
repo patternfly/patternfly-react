@@ -45,6 +45,6 @@ test('Detached ExpandableSection renders successfully', () => {
 });
 
 test('Disclosure ExpandableSection', () => {
-  const view = shallow(<ExpandableSection {...props} isDisplayLarge isWidthLimited>test </ExpandableSection>);
+  const view = shallow(<ExpandableSection {...props} displaySize="large" isWidthLimited>test </ExpandableSection>);
   expect(view).toMatchSnapshot();
 });

@@ -134,7 +134,7 @@ class DisclosureExpandableSection extends React.Component {
         toggleText={isExpanded ? 'Show Less' : 'Show More'}
         onToggle={this.onToggle}
         isExpanded={isExpanded}
-        isDisplayLarge
+        displaySize="large"
         isWidthLimited
       >
         This content is visible only when the component is expanded.

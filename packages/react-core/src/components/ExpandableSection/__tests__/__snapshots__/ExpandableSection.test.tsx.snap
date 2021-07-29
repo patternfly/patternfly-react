@@ -5,9 +5,9 @@ Array [
   <ExpandableSection
     className=""
     contentId="test"
+    displaySize="default"
     isActive={false}
     isDetached={true}
-    isDisplayLarge={false}
     isExpanded={true}
     isWidthLimited={false}
     onToggle={[Function]}
