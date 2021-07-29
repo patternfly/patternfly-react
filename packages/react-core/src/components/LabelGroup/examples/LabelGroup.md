@@ -160,7 +160,7 @@ class EditableLabelGroup extends React.Component {
 
   render() {
     return (
-      <LabelGroup numLabels={5} isEditable hasEditableTextArea editableTextAreaProps={{ 'aria-label': 'New label' }}>
+      <LabelGroup numLabels={5} isEditable>
         <Label
           color="blue"
           onClose={Function.prototype}
