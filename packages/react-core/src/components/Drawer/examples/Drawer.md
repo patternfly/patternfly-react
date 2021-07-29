@@ -29,12 +29,10 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class SimpleDrawer extends React.Component {
@@ -106,7 +104,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -182,7 +179,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -258,7 +254,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -336,7 +331,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -412,7 +406,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -488,7 +481,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -720,7 +712,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -798,7 +789,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -874,7 +864,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -954,7 +943,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -1023,7 +1011,6 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
@@ -1099,12 +1086,10 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class ResizableDrawer extends React.Component {
@@ -1193,12 +1178,10 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class ResizableDrawer extends React.Component {
@@ -1271,12 +1254,10 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class ResizableDrawer extends React.Component {
@@ -1351,12 +1332,10 @@ import {
   DrawerPanelContent,
   DrawerContent,
   DrawerContentBody,
-  DrawerPanelBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class ResizableDrawer extends React.Component {
