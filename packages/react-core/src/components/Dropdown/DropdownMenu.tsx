@@ -96,11 +96,13 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     if (event.key === 'ArrowDown') {
       const firstFocusTargetCollection = refs.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
       DropdownMenu.focusFirstRef(firstFocusTargetCollection);
+      event.stopPropagation();
     } else if (event.key === 'ArrowUp') {
       const collectionLength = refs.length;
       const lastFocusTargetCollection = refs.slice(collectionLength - 1, collectionLength);
       const lastFocusTarget = lastFocusTargetCollection && lastFocusTargetCollection[0];
       DropdownMenu.focusFirstRef(lastFocusTarget);
+      event.stopPropagation();
     }
   };
 
