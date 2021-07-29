@@ -238,7 +238,11 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         className
       )}
       {...(isEditable && {
-        onClick: () => {
+        onClick: (evt: MouseEvent) => {
+          const isEvtFromButton = (evt.target as HTMLElement).closest('button');
+          if (isEvtFromButton !== null) {
+            return;
+          }
           setIsEditableActive(true);
           editableDivRef.current.focus();
         }
