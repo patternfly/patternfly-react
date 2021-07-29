@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.15.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.10...@patternfly/react-charts@6.15.11) (2021-07-29)
+
+
+### Bug Fixes
+
+* **charts:** donut chart shows gap ([#6084](https://github.com/patternfly/patternfly-react/issues/6084)) ([cbdfdcd](https://github.com/patternfly/patternfly-react/commit/cbdfdcde74fad13e305a7d6a4272bf02faf32cee))
+
+
+
+
+
 ## [6.15.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.9...@patternfly/react-charts@6.15.10) (2021-07-28)
 
 **Note:** Version bump only for package @patternfly/react-charts
