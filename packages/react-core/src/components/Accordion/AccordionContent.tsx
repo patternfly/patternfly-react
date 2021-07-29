@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { AccordionContext } from './AccordionContext';
+import { AccordionExpandedContentBody } from './AccordionExpandedContentBody';
 
 export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Accordion  */
@@ -18,6 +19,8 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Component to use as content container */
   component?: React.ElementType;
+  /** Flag indicating content is custom. Expanded content Body wrapper will be removed from children.  This allows multiple bodies to be rendered as content. */
+  isCustomContent?: React.ReactNode;
 }
 
 export const AccordionContent: React.FunctionComponent<AccordionContentProps> = ({
@@ -26,6 +29,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   id = '',
   isHidden = false,
   isFixed = false,
+  isCustomContent = false,
   'aria-label': ariaLabel = '',
   component,
   ...props
@@ -46,7 +50,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
           aria-label={ariaLabel}
           {...props}
         >
-          <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
+          {isCustomContent ? children : <AccordionExpandedContentBody>{children}</AccordionExpandedContentBody>}
         </Container>
       );
     }}
