@@ -352,6 +352,8 @@ import { Link } from '@reach/router';
 
 ### Editable
 
+Click or press either enter or space to begin editing a label. After editing, click outside the label or press enter again to complete the edit. To cancel an edit, press escape.
+
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
