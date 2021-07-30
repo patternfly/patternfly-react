@@ -4,6 +4,7 @@ import { Accordion } from '../Accordion';
 import { AccordionToggle } from '../AccordionToggle';
 import { AccordionContent } from '../AccordionContent';
 import { AccordionItem } from '../AccordionItem';
+import { AccordionExpandedContentBody } from '../AccordionExpandedContentBody';
 
 describe('Accordion', () => {
   test('Accordion default', () => {
@@ -60,5 +61,44 @@ describe('Accordion', () => {
     );
     expect(view.find(AccordionToggle).getDOMNode().tagName).toBe(container.toLocaleUpperCase());
     expect(view.find(AccordionContent).getDOMNode().tagName).toBe(container.toLocaleUpperCase());
+  });
+
+  test('Accordion bordered', () => {
+    const view = shallow(
+      <Accordion isBordered>
+        <AccordionItem>
+          <AccordionToggle id="item-1">Item One</AccordionToggle>
+          <AccordionContent>Item One Content</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+    expect(view.render()).toMatchSnapshot();
+  });
+
+  test('Accordion display large', () => {
+    const view = shallow(
+      <Accordion displaySize='large'>
+        <AccordionItem>
+          <AccordionToggle id="item-1">Item One</AccordionToggle>
+          <AccordionContent>Item One Content</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+    expect(view.render()).toMatchSnapshot();
+  });
+
+  test('Accordion custom content', () => {
+    const view = shallow(
+      <Accordion>
+        <AccordionItem>
+          <AccordionToggle id="item-1">Item One</AccordionToggle>
+          <AccordionContent isCustomContent>
+            <AccordionExpandedContentBody>Item one content body 1</AccordionExpandedContentBody>
+            <AccordionExpandedContentBody>Item one Content body 2</AccordionExpandedContentBody>
+            </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+    expect(view.render()).toMatchSnapshot();
   });
 });

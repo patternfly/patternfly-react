@@ -14,6 +14,10 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Flag to indicate whether use definition list or div */
   asDefinitionList?: boolean;
+  /** Flag to indicate the accordion had a border */
+  isBordered?: boolean;
+  /** Display size variant. */
+  displaySize?: 'default' | 'large';
 }
 
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -22,11 +26,22 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   'aria-label': ariaLabel = '',
   headingLevel = 'h3',
   asDefinitionList = true,
+  isBordered = false,
+  displaySize = 'default',
   ...props
 }: AccordionProps) => {
   const AccordionList: any = asDefinitionList ? 'dl' : 'div';
   return (
-    <AccordionList className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
+    <AccordionList
+      className={css(
+        styles.accordion,
+        isBordered && styles.modifiers.bordered,
+        displaySize === 'large' && styles.modifiers.displayLg,
+        className
+      )}
+      aria-label={ariaLabel}
+      {...props}
+    >
       <AccordionContext.Provider
         value={{
           ContentContainer: asDefinitionList ? 'dd' : 'div',
