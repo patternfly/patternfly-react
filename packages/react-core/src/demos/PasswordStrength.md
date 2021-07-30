@@ -146,21 +146,24 @@ class PasswordStrengthDemo extends React.Component {
             id="password-field"
             name="password-field"
             aria-describedby="password-field-helper"
+            aria-invalid={ruleLength === 'error' || ruleContent === 'error' || ruleCharacters === 'error'}
             value={password}
             onChange={this.handlePasswordInput}
           />
           <FormHelperText isHidden={false} component="div">
-            <HelperText component="ul">
-              <HelperTextItem isDynamic variant={ruleLength} component="li">
-                Must be at least 14 characters
-              </HelperTextItem>
-              <HelperTextItem isDynamic variant={ruleContent} component="li">
-                Cannot contain the word "redhat"
-              </HelperTextItem>
-              <HelperTextItem isDynamic variant={ruleCharacters} component="li">
-                Must include at least 3 of the following: lowercase letter, uppercase letters, numbers, symbols
-              </HelperTextItem>
-            </HelperText>
+            <div aria-live="polite">
+              <HelperText component="ul" id="password-field-helper">
+                <HelperTextItem isDynamic variant={ruleLength} component="li">
+                  Must be at least 14 characters
+                </HelperTextItem>
+                <HelperTextItem isDynamic variant={ruleContent} component="li">
+                  Cannot contain the word "redhat"
+                </HelperTextItem>
+                <HelperTextItem isDynamic variant={ruleCharacters} component="li">
+                  Must include at least 3 of the following: lowercase letter, uppercase letters, numbers, symbols
+                </HelperTextItem>
+              </HelperText>
+            </div>
           </FormHelperText>
         </FormGroup>
       </Form>
