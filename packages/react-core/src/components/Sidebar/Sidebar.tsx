@@ -11,6 +11,7 @@ export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const Sidebar: React.FunctionComponent<SidebarProps> = ({
+  className,
   children,
   orientation,
   isPanelRight = false,
@@ -24,7 +25,8 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = ({
       hasGutter && styles.modifiers.gutter,
       hasNoBackground && styles.modifiers.noBackground,
       isPanelRight && styles.modifiers.panelRight,
-      styles.modifiers[orientation]
+      styles.modifiers[orientation],
+      className
     )}
     {...props}
   >
