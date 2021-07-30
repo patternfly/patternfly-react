@@ -35,6 +35,12 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Flag to implement a vertical layout */
   isVertical?: boolean;
+  /** Flag indicating contained labels are editable. Allows spacing for a text input after the labels. */
+  isEditable?: boolean;
+  /** Flag indicating the editable label group should be appended with a textarea. */
+  hasEditableTextArea?: boolean;
+  /** Additional props passed to the editable textarea. */
+  editableTextAreaProps?: any;
 }
 
 interface LabelGroupState {
@@ -65,7 +71,9 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
     closeBtnAriaLabel: 'Close label group',
     tooltipPosition: 'top',
     'aria-label': 'Label group category',
-    isVertical: false
+    isVertical: false,
+    isEditable: false,
+    hasEditableTextArea: false
   };
 
   componentDidMount() {
@@ -123,6 +131,9 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
       defaultIsOpen,
       tooltipPosition,
       isVertical,
+      isEditable,
+      hasEditableTextArea,
+      editableTextAreaProps,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...rest
     } = this.props;
@@ -159,6 +170,11 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
                 </Label>
               </li>
             )}
+            {isEditable && hasEditableTextArea && (
+              <li className={css(styles.labelGroupListItem, styles.modifiers.textarea)}>
+                <textarea className={css(styles.labelGroupTextarea)} rows={1} tabIndex={0} {...editableTextAreaProps} />
+              </li>
+            )}
           </ul>
         </React.Fragment>
       );
@@ -183,7 +199,8 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
             styles.labelGroup,
             className,
             categoryName && styles.modifiers.category,
-            isVertical && styles.modifiers.vertical
+            isVertical && styles.modifiers.vertical,
+            isEditable && styles.modifiers.editable
           )}
         >
           {<div className={css(styles.labelGroupMain)}>{content}</div>}

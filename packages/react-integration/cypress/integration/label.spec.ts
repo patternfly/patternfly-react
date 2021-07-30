@@ -11,6 +11,12 @@ describe('Label Demo Test', () => {
       .contains('Grey');
   });
 
+  it('Verify editable label', () => {
+    cy.get('.pf-m-editable')
+      .contains('Edit')
+      .should('exist');
+  });
+
   it('Verify isTruncated label and no tooltip on short text', () => {
     cy.get('#truncated-no-tooltip .pf-c-label__content span')
       .last()

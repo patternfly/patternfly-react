@@ -61,6 +61,16 @@ export class LabelDemo extends Component {
         >
           Blue label fake router link with icon that overflows
         </Label>
+        <Label
+          color="blue"
+          isEditable
+          editableProps={{
+            'aria-label': 'Editable text',
+            id: 'editable-label'
+          }}
+        >
+          Edit
+        </Label>
       </React.Fragment>
     );
   }

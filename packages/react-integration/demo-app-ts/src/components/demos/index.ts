@@ -89,6 +89,7 @@ export * from './InputGroupDemo/InputGroupDemo';
 export * from './LabelDemo/LabelDemo';
 export * from './LabelGroupDemo/LabelGroupDefaultIsOpenDemo';
 export * from './LabelGroupDemo/LabelGroupDemo';
+export * from './LabelGroupDemo/LabelGroupEditableDemo';
 export * from './LabelGroupDemo/LabelGroupVerticalDemo';
 export * from './LabelGroupDemo/LabelGroupWithCategoryDemo';
 export * from './LevelDemo/LevelDemo';
