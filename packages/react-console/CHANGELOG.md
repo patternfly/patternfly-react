@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.10.32...@patternfly/react-console@4.11.0) (2021-07-30)
+
+
+### Features
+
+* **ExpandableSection:** Added props to support disclosure variation ([#6078](https://github.com/patternfly/patternfly-react/issues/6078)) ([3e9aa7e](https://github.com/patternfly/patternfly-react/commit/3e9aa7eb985b560c8c899c00f1ced4b0221aded4))
+
+
+
+
+
 ## [4.10.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.10.31...@patternfly/react-console@4.10.32) (2021-07-29)
 
 **Note:** Version bump only for package @patternfly/react-console

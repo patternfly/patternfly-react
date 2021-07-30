@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.144.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.143.2...@patternfly/react-core@4.144.0) (2021-07-30)
+
+
+### Bug Fixes
+
+* **Sidebar:** custom className override fix ([#6094](https://github.com/patternfly/patternfly-react/issues/6094)) ([5e4fe50](https://github.com/patternfly/patternfly-react/commit/5e4fe501eeb8a7d9d2c57dd0445a672efef018d3))
+
+
+### Features
+
+* **Accordion:** Added support for bordered, display large … ([#6085](https://github.com/patternfly/patternfly-react/issues/6085)) ([da59273](https://github.com/patternfly/patternfly-react/commit/da592733aaf8a147ae26ac4f319bda2f4010a65c))
+* **ExpandableSection:** Added props to support disclosure variation ([#6078](https://github.com/patternfly/patternfly-react/issues/6078)) ([3e9aa7e](https://github.com/patternfly/patternfly-react/commit/3e9aa7eb985b560c8c899c00f1ced4b0221aded4))
+* **Label:** add editable label ([#6065](https://github.com/patternfly/patternfly-react/issues/6065)) ([0ce5149](https://github.com/patternfly/patternfly-react/commit/0ce51496c467bc0eff0a987a7013bca60d4970bd))
+* **Tabs:** support page insets ([#6087](https://github.com/patternfly/patternfly-react/issues/6087)) ([dcc4d0e](https://github.com/patternfly/patternfly-react/commit/dcc4d0e5b2493ed79933febc79287462bfebe6f5))
+
+
+
+
+
 ## [4.143.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.143.1...@patternfly/react-core@4.143.2) (2021-07-29)
 
 **Note:** Version bump only for package @patternfly/react-core

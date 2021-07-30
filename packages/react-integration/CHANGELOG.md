@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.114.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.113.0...@patternfly/react-integration@4.114.0) (2021-07-30)
+
+
+### Features
+
+* **Accordion:** Added support for bordered, display large … ([#6085](https://github.com/patternfly/patternfly-react/issues/6085)) ([da59273](https://github.com/patternfly/patternfly-react/commit/da592733aaf8a147ae26ac4f319bda2f4010a65c))
+* **ExpandableSection:** Added props to support disclosure variation ([#6078](https://github.com/patternfly/patternfly-react/issues/6078)) ([3e9aa7e](https://github.com/patternfly/patternfly-react/commit/3e9aa7eb985b560c8c899c00f1ced4b0221aded4))
+* **Label:** add editable label ([#6065](https://github.com/patternfly/patternfly-react/issues/6065)) ([0ce5149](https://github.com/patternfly/patternfly-react/commit/0ce51496c467bc0eff0a987a7013bca60d4970bd))
+
+
+
+
+
 # [4.113.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.112.0...@patternfly/react-integration@4.113.0) (2021-07-21)
 
 

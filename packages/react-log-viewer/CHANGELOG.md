@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.2.31...@patternfly/react-log-viewer@4.3.0) (2021-07-30)
+
+
+### Features
+
+* **LogViewer:** Add dark theme ([#6044](https://github.com/patternfly/patternfly-react/issues/6044)) ([1ccb5e6](https://github.com/patternfly/patternfly-react/commit/1ccb5e68724013624a22288882c07aecd63829fa))
+
+
+
+
+
 ## [4.2.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.2.30...@patternfly/react-log-viewer@4.2.31) (2021-07-29)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
