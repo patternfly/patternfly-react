@@ -308,7 +308,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   this.onKeyDown(event, 0, undefined, true);
                 }}
                 onClick={(event: any) => {
-                  onClick(event);
+                  onViewMoreClick(event);
                   event.stopPropagation();
                 }}
                 ref={this.ref}
