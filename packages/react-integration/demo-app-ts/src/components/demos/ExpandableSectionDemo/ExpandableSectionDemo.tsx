@@ -4,13 +4,15 @@ import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@p
 interface ExpandableSectionState {
   isExpanded: boolean;
   isDetachedExpanded: boolean;
+  isDisclosureExpanded: boolean;
 }
 
 export class ExpandableSectionDemo extends React.Component<null, ExpandableSectionState> {
   static displayName = 'ExpandableSectionDemo';
   state = {
     isExpanded: false,
-    isDetachedExpanded: false
+    isDetachedExpanded: false,
+    isDisclosureExpanded: false
   };
 
   componentDidMount() {
@@ -19,9 +21,10 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
 
   onToggle = (isOpen: boolean) => this.setState({ isExpanded: isOpen });
   onToggleDetached = (isOpen: boolean) => this.setState({ isDetachedExpanded: isOpen });
+  onToggleDisclosure = (isOpen: boolean) => this.setState({ isDisclosureExpanded: isOpen });
 
   render() {
-    const { isExpanded, isDetachedExpanded } = this.state;
+    const { isExpanded, isDetachedExpanded, isDisclosureExpanded } = this.state;
     return (
       <React.Fragment>
         <h1> Simple Expandable Example: </h1>
@@ -66,6 +69,18 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
             </ExpandableSectionToggle>
           </StackItem>
         </Stack>
+        <br />
+        <h1> Disclosure Expandable Example: </h1>
+        <ExpandableSection
+          toggleText={isDisclosureExpanded ? 'Show Less' : 'Show More'}
+          onToggle={this.onToggleDisclosure}
+          isExpanded={isDisclosureExpanded}
+          id="disclosure-expandable-section"
+          displaySize="large"
+          isWidthLimited
+        >
+          This content is visible only when the component is expanded.
+        </ExpandableSection>
       </React.Fragment>
     );
   }

@@ -107,3 +107,39 @@ class DetachedExpandableSection extends React.Component {
   }
 }
 ```
+
+### Disclosure variation
+
+```js
+import React from 'react';
+import { ExpandableSection } from '@patternfly/react-core';
+
+class DisclosureExpandableSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    };
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+  }
+
+  render() {
+    const { isExpanded } = this.state;
+    return (
+      <ExpandableSection
+        toggleText={isExpanded ? 'Show Less' : 'Show More'}
+        onToggle={this.onToggle}
+        isExpanded={isExpanded}
+        displaySize="large"
+        isWidthLimited
+      >
+        This content is visible only when the component is expanded.
+      </ExpandableSection>
+    );
+  }
+}
+```

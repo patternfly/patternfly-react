@@ -1157,9 +1157,11 @@ exports[`DesktopViewer with custom more-info content 1`] = `
         <ExpandableSection
           className=""
           contentId=""
+          displaySize="default"
           isActive={false}
           isDetached={false}
           isExpanded={false}
+          isWidthLimited={false}
           onToggle={[Function]}
           toggleText="Remote Viewer Details"
           toggleTextCollapsed=""
