@@ -65,6 +65,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isLoad?: boolean;
   /** @hide Internal flag to apply the loading styling to spinner */
   isLoading?: boolean;
+  /** @hide Internal callback for the setting the index of the next item to focus after view more is clicked */
+  setViewMoreNextIndex?: () => void;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -88,7 +90,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     inputId: '',
     isFavorite: null,
     isLoad: false,
-    isLoading: false
+    isLoading: false,
+    setViewMoreNextIndex: () => {}
   };
 
   componentDidMount() {
@@ -168,6 +171,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       ariaIsNotFavoriteLabel = 'not starred',
       isLoad,
       isLoading,
+      setViewMoreNextIndex,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -208,6 +212,12 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       children || value.toString()
     );
 
+    const onViewMoreClick = (event: any) => {
+      // Set the index for the next item to focus after view more clicked, then call view more callback
+      setViewMoreNextIndex();
+      onClick(event);
+    };
+
     return (
       <SelectConsumer>
         {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
@@ -241,7 +251,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                       )}
                       onClick={(event: any) => {
                         if (isLoad) {
-                          onClick(event);
+                          onViewMoreClick(event);
                           event.stopPropagation();
                         } else if (!isDisabled && !isLoading) {
                           onClick(event);
