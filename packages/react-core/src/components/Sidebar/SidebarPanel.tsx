@@ -18,6 +18,7 @@ export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>,
 }
 
 export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
+  className,
   children,
   variant = 'default',
   hasNoBackground,
@@ -29,7 +30,8 @@ export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
       styles.sidebarPanel,
       variant !== 'default' && styles.modifiers[variant],
       hasNoBackground && styles.modifiers.noBackground,
-      formatBreakpointMods(width, styles)
+      formatBreakpointMods(width, styles),
+      className
     )}
     {...props}
   >

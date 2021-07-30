@@ -8,11 +8,12 @@ export interface SidebarContentProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const SidebarContent: React.FunctionComponent<SidebarContentProps> = ({
+  className,
   children,
   hasNoBackground,
   ...props
 }: SidebarContentProps) => (
-  <div className={css(styles.sidebarContent, hasNoBackground && styles.modifiers.noBackground)} {...props}>
+  <div className={css(styles.sidebarContent, hasNoBackground && styles.modifiers.noBackground, className)} {...props}>
     {children}
   </div>
 );
