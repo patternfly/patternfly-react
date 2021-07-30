@@ -155,7 +155,7 @@ class PasswordStrengthDemo extends React.Component {
                 Must be at least 14 characters
               </HelperTextItem>
               <HelperTextItem isDynamic variant={ruleContent} component="li">
-                Cannot contain any the word "redhat"
+                Cannot contain the word "redhat"
               </HelperTextItem>
               <HelperTextItem isDynamic variant={ruleCharacters} component="li">
                 Must include at least 3 of the following: lowercase letter, uppercase letters, numbers, symbols
