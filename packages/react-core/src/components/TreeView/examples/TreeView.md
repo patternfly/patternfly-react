@@ -112,128 +112,150 @@ class DefaultTreeView extends React.Component {
 ### With search
 
 ```js
-import React from 'react';
-import { Toolbar, ToolbarContent, ToolbarItem, TreeView, TreeViewSearch } from '@patternfly/react-core';
+import * as React from "react";
+import { Spinner, TreeView, TreeViewDataItem } from "@patternfly/react-core";
 
-class SearchTreeView extends React.Component {
-  constructor(props) {
-    super(props);
+export const SearchTreeView = (props) => {
+    const [allItems, setAllItems] = React.useState([]);
+    const [activeItems, setActiveItems] = React.useState([]);
+    const [filteredItems, setFilteredItems] = React.useState([]);
+    const [isFiltered, setIsFiltered] = React.useState(false);
 
-    this.options = [
-      {
-        name: 'Application launcher',
-        id: 'AppLaunch',
-        children: [
-          {
-            name: 'Application 1',
-            id: 'App1',
-            children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
-            ]
-          },
-          {
-            name: 'Application 2',
-            id: 'App2',
-            children: [
-              { name: 'Settings', id: 'App2Settings' },
-              {
-                name: 'Loader',
-                id: 'App2Loader',
+    React.useEffect(() => {
+        const items = [
+            {
+                name: 'Application launcher',
+                id: 'AppLaunch',
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                    {
+                        name: 'Application 1',
+                        id: 'App1',
+                        children: [
+                            { name: 'Settings', id: 'App1Settings' },
+                            { name: 'Current', id: 'App1Current' }
+                        ]
+                    },
+                    {
+                        name: 'Application 2',
+                        id: 'App2',
+                        children: [
+                            { name: 'Settings', id: 'App2Settings' },
+                            {
+                                name: 'Loader',
+                                id: 'App2Loader',
+                                children: [
+                                    { name: 'Loading App 1', id: 'LoadApp1' },
+                                    { name: 'Loading App 2', id: 'LoadApp2' },
+                                    { name: 'Loading App 3', id: 'LoadApp3' }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                defaultExpanded: true
+            },
+            {
+                name: 'Cost management',
+                id: 'Cost',
+                children: [
+                    {
+                        name: 'Application 3',
+                        id: 'App3',
+                        children: [
+                            { name: 'Settings', id: 'App3Settings' },
+                            { name: 'Current', id: 'App3Current' }
+                        ]
+                    }
                 ]
-              }
-            ]
-          }
-        ],
-        defaultExpanded: true
-      },
-      {
-        name: 'Cost management',
-        id: 'Cost',
-        children: [
-          {
-            name: 'Application 3',
-            id: 'App3',
-            children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
-            ]
-          }
-        ]
-      },
-      {
-        name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
-      },
-      {
-        name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
-      }
-    ];
+            },
+            {
+                name: 'Sources',
+                id: 'Sources',
+                children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+            },
+            {
+                name: 'Really really really long folder name that overflows the container it is in',
+                id: 'Long',
+                children: [{ name: 'Application 5', id: 'App5' }]
+            }
+        ];
+        setAllItems(items);
+        setFilteredItems(items);
+    }, []);
 
-    this.state = { activeItems: {}, filteredItems: this.options, isFiltered: null };
+    function filterTree(item,input) {
+        let children = [];
+        if (item.children) {
+            for (const child of item.children) {
+                const c = filterTree(child, input);
+                if (c) {
+                    children.push(c);
+                }
+            }
+        }
+        const hasMatchingChild = children.length > 0;
+        const matches =
+            item.name !== undefined &&
+            item.name !== null &&
+            item.name.toString().toLowerCase().startsWith(input.toLowerCase());
+        if (hasMatchingChild || matches) {
+            let copied = {};
+            Object.assign(copied, item);
+            copied.defaultExpanded = true;
+            if (hasMatchingChild) {
+                copied.children = children;
+            }
+            return copied;
+        }
+        return null;
+    }
 
-    this.onSelect = (evt, treeViewItem) => {
-      this.setState({
-        activeItems: [treeViewItem]
-      });
-    };
+    function onSearch(event) {
+        const input = event.target.value;
+        if (input === "") {
+            setFilteredItems(allItems);
+            setIsFiltered(false);
+        } else {
+            let filtered = [];
+            for (const item of allItems) {
+                const i = filterTree(item, input);
+                if (i) {
+                    filtered.push(i);
+                }
+            }
+            setFilteredItems(filtered);
+            setIsFiltered(true);
+        }
+    }
 
-    this.onSearch = evt => {
-      const input = evt.target.value;
-      if (input === '') {
-        this.setState({ filteredItems: this.options, isFiltered: false });
-      } else {
-        const filtered = this.options.map(opt => Object.assign({}, opt)).filter(item => this.filterItems(item, input));
-        this.setState({ filteredItems: filtered, isFiltered: true });
-      }
-    };
+    function onSelect(event,item,parentItem) {
+        setActiveItems([item, parentItem]);
+    }
 
-    this.filterItems = (item, input) => {
-      if (item.name.toLowerCase().includes(input.toLowerCase())) {
-        return true;
-      }
-
-      if (item.children) {
+    if (filteredItems.length === 0 && !isFiltered) {
         return (
-          (item.children = item.children
-            .map(opt => Object.assign({}, opt))
-            .filter(child => this.filterItems(child, input))).length > 0
+            <div>
+                <Spinner isSVG size="lg" />
+            </div>
         );
-      }
-    };
-  }
-
-  render() {
-    const { activeItems, filteredItems, isFiltered } = this.state;
+    }
     
-    const toolbar = (
-      <Toolbar style={{padding: 0}}>
-        <ToolbarContent style={{padding: 0}}>
-          <ToolbarItem widths={{default: "100%"}}>
-            <TreeViewSearch onSearch={this.onSearch} id='input-search' name='search-input' aria-label='Search input example' />
-          </ToolbarItem>
-        </ToolbarContent>
-       </Toolbar>
-     );  
 
     return (
-      <TreeView
-        data={filteredItems}
-        activeItems={activeItems}
-        onSelect={this.onSelect}
-        allExpanded={isFiltered}
-        toolbar={toolbar}
-      />
+        <TreeView
+            data={filteredItems}
+            activeItems={activeItems}
+            onSelect={onSelect}
+            onSearch={onSearch}
+            searchProps={{
+                id: "input-search",
+                name: "search-input",
+                "aria-label": "Search input example"
+            }}
+            {...props}
+        />
     );
-  }
-}
+};
 ```
 
 ### With checkboxes
