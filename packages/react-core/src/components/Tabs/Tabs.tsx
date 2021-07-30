@@ -52,6 +52,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   mountOnEnter?: boolean;
   /** Unmounts tab children (removes them from the DOM) when they are no longer visible */
   unmountOnExit?: boolean;
+  /** Flag indicates that the tabs should use page insets. */
+  usePageInsets?: boolean;
   /** Insets at various breakpoints. */
   inset?: {
     default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
@@ -251,6 +253,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       ouiaSafe,
       mountOnEnter,
       unmountOnExit,
+      usePageInsets,
       inset,
       variant,
       ...props
@@ -281,6 +284,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isVertical && styles.modifiers.vertical,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
+            usePageInsets && styles.modifiers.pageInsets,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             className
