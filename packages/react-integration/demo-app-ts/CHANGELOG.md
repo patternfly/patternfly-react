@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.114.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.113.0...demo-app-ts@4.114.0) (2021-08-02)
+
+
+### Features
+
+* **Form): add form group label info & docs(Form:** add password strength demo ([#6053](https://github.com/patternfly/patternfly-react/issues/6053)) ([0f11c0a](https://github.com/patternfly/patternfly-react/commit/0f11c0ae719b0eba2bc4507b1e950bf18bd2667f))
+
+
+
+
+
 # [4.113.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.112.7...demo-app-ts@4.113.0) (2021-07-30)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.145.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.144.0...@patternfly/react-core@4.145.0) (2021-08-02)
+
+
+### Bug Fixes
+
+* **Select:** first new item focused after view more clicked ([#6095](https://github.com/patternfly/patternfly-react/issues/6095)) ([a03497d](https://github.com/patternfly/patternfly-react/commit/a03497d2dd748b8d16c140f8c33352d8c343bded))
+
+
+### Features
+
+* **Form): add form group label info & docs(Form:** add password strength demo ([#6053](https://github.com/patternfly/patternfly-react/issues/6053)) ([0f11c0a](https://github.com/patternfly/patternfly-react/commit/0f11c0ae719b0eba2bc4507b1e950bf18bd2667f))
+
+
+
+
+
 # [4.144.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.143.2...@patternfly/react-core@4.144.0) (2021-07-30)
 
 

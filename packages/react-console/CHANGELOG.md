@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.0...@patternfly/react-console@4.11.1) (2021-08-02)
+
+
+### Bug Fixes
+
+* **Select:** first new item focused after view more clicked ([#6095](https://github.com/patternfly/patternfly-react/issues/6095)) ([a03497d](https://github.com/patternfly/patternfly-react/commit/a03497d2dd748b8d16c140f8c33352d8c343bded))
+
+
+
+
+
 # [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.10.32...@patternfly/react-console@4.11.0) (2021-07-30)
 
 
