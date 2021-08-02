@@ -15,7 +15,7 @@ export const isArrayOfString = (array: string[]) => {
 export const searchForKeyword = (searchedInput: string, parsedData: string[], itemCount: number) => {
   const searchResults: number[] = [];
 
-  const regex = new RegExp(searchedInput, 'gi');
+  const regex = new RegExp(searchedInput, 'i');
   parsedData.map((row, index) => {
     if (regex.test(row) && index < itemCount) {
       searchResults.push(index);
