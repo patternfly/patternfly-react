@@ -16,6 +16,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
   isChecked={false}
   isDisabled={true}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -41,6 +42,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value="test"
 >
   <li
@@ -78,6 +80,7 @@ exports[`select options renders custom component 1`] = `
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -125,6 +128,7 @@ exports[`select options renders custom component 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value={
     User {
       "firstName": "Test",
@@ -165,6 +169,7 @@ exports[`select options renders with custom display and custom user object succe
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -212,6 +217,7 @@ exports[`select options renders with custom display and custom user object succe
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value={
     User {
       "firstName": "Test",
@@ -252,6 +258,7 @@ exports[`select options renders with custom display successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -299,6 +306,7 @@ exports[`select options renders with custom display successfully 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value="test"
 >
   <li
@@ -332,6 +340,7 @@ exports[`select options renders with custom user object successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -375,6 +384,7 @@ exports[`select options renders with custom user object successfully 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value={
     User {
       "firstName": "Test",
@@ -414,6 +424,7 @@ exports[`select options renders with description successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -475,6 +486,7 @@ exports[`select options renders with description successfully 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value="test"
 >
   <li
@@ -515,6 +527,7 @@ exports[`select options renders with item count successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -585,6 +598,7 @@ exports[`select options renders with item count successfully 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value="test"
 >
   <li
@@ -629,6 +643,7 @@ exports[`select options renders with value parameter successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFavorite={null}
+  isLastOptionBeforeFooter={[Function]}
   isLoad={false}
   isLoading={false}
   isNoResultsOption={false}
@@ -672,6 +687,7 @@ exports[`select options renders with value parameter successfully 1`] = `
       ],
     }
   }
+  setViewMoreNextIndex={[Function]}
   value="test"
 >
   <li

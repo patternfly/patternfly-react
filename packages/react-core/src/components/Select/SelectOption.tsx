@@ -65,6 +65,10 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isLoad?: boolean;
   /** @hide Internal flag to apply the loading styling to spinner */
   isLoading?: boolean;
+  /** @hide Internal callback for the setting the index of the next item to focus after view more is clicked */
+  setViewMoreNextIndex?: () => void;
+  /** @hide Flag indicating this is the last option when there is a footer */
+  isLastOptionBeforeFooter: (index: number) => boolean;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -88,7 +92,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     inputId: '',
     isFavorite: null,
     isLoad: false,
-    isLoading: false
+    isLoading: false,
+    setViewMoreNextIndex: () => {},
+    isLastOptionBeforeFooter: () => false
   };
 
   componentDidMount() {
@@ -110,10 +116,15 @@ export class SelectOption extends React.Component<SelectOptionProps> {
   }
 
   onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any, isCheckbox?: boolean) => {
-    const { index, keyHandler } = this.props;
+    const { index, keyHandler, isLastOptionBeforeFooter } = this.props;
+    let isLastItemBeforeFooter = false;
+    if (isLastOptionBeforeFooter !== undefined) {
+      isLastItemBeforeFooter = isLastOptionBeforeFooter(index);
+    }
+
     if (event.key === KeyTypes.Tab) {
       // More modal-like experience for checkboxes
-      if (isCheckbox) {
+      if (isCheckbox && !isLastItemBeforeFooter) {
         if (event.shiftKey) {
           keyHandler(index, innerIndex, 'up');
         } else {
@@ -168,6 +179,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       ariaIsNotFavoriteLabel = 'not starred',
       isLoad,
       isLoading,
+      setViewMoreNextIndex,
+      // eslint-disable-next-line no-console
+      isLastOptionBeforeFooter,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -208,6 +222,12 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       children || value.toString()
     );
 
+    const onViewMoreClick = (event: any) => {
+      // Set the index for the next item to focus after view more clicked, then call view more callback
+      setViewMoreNextIndex();
+      onClick(event);
+    };
+
     return (
       <SelectConsumer>
         {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
@@ -241,7 +261,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                       )}
                       onClick={(event: any) => {
                         if (isLoad) {
-                          onClick(event);
+                          onViewMoreClick(event);
                           event.stopPropagation();
                         } else if (!isDisabled && !isLoading) {
                           onClick(event);
@@ -298,7 +318,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   this.onKeyDown(event, 0, undefined, true);
                 }}
                 onClick={(event: any) => {
-                  onClick(event);
+                  onViewMoreClick(event);
                   event.stopPropagation();
                 }}
                 ref={this.ref}

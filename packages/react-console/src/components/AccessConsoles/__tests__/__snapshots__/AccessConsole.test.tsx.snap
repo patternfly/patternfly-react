@@ -356,6 +356,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         isChecked={false}
         isDisabled={false}
         isFavorite={null}
+        isLastOptionBeforeFooter={[Function]}
         isLoad={false}
         isLoading={false}
         isNoResultsOption={false}
@@ -365,6 +366,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         keyHandler={[Function]}
         onClick={[Function]}
         sendRef={[Function]}
+        setViewMoreNextIndex={[Function]}
         value="VNC console"
       />
       <SelectOption
@@ -376,6 +378,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         isChecked={false}
         isDisabled={false}
         isFavorite={null}
+        isLastOptionBeforeFooter={[Function]}
         isLoad={false}
         isLoading={false}
         isNoResultsOption={false}
@@ -385,6 +388,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         keyHandler={[Function]}
         onClick={[Function]}
         sendRef={[Function]}
+        setViewMoreNextIndex={[Function]}
         value="Serial console"
       />
     </Select>

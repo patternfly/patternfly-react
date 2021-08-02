@@ -10,6 +10,7 @@ exports[`SelectMenu should match snapshot (auto-generated) 1`] = `
   isCustomContent={false}
   isExpanded={false}
   isGrouped={false}
+  isLastOptionBeforeFooter={[Function]}
   keyHandler={[Function]}
   maxHeight=""
   noResultsFoundText="string"

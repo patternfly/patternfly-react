@@ -154,6 +154,7 @@ export interface SelectState {
   tabbedIntoFavoritesMenu: boolean;
   typeaheadStoredIndex: number;
   ouiaStateId: string;
+  viewMoreNextIndex: number;
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
@@ -219,7 +220,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     typeaheadStoredIndex: -1,
     creatableValue: '',
     tabbedIntoFavoritesMenu: false,
-    ouiaStateId: getDefaultOUIAId(Select.displayName, this.props.variant)
+    ouiaStateId: getDefaultOUIAId(Select.displayName, this.props.variant),
+    viewMoreNextIndex: -1
   };
 
   getTypeaheadActiveChild = (typeaheadCurrIndex: number) =>
@@ -236,6 +238,15 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
+    }
+
+    // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
+    if (
+      this.state.viewMoreNextIndex !== -1 &&
+      this.refCollection.length > this.state.viewMoreNextIndex &&
+      this.props.loadingVariant !== 'spinner'
+    ) {
+      this.refCollection[this.state.viewMoreNextIndex][0].focus();
     }
 
     // the number or contents of the children has changed, update state.typeaheadFilteredChildren
@@ -672,6 +683,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     return null;
   };
 
+  setVieMoreNextIndex = () => {
+    this.setState({ viewMoreNextIndex: this.refCollection.length - 1 });
+  };
+
+  isLastOptionBeforeFooter = (index: any) =>
+    this.props.footer && index === this.refCollection.length - 1 ? true : false;
+
   render() {
     const {
       children,
@@ -780,7 +798,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           );
         } else if (loadingVariant?.text) {
           renderableItems.push(
-            <SelectOption isLoad key="loading" value={loadingVariant.text} onClick={loadingVariant?.onClick} />
+            <SelectOption
+              isLoad
+              key="loading"
+              value={loadingVariant.text}
+              setViewMoreNextIndex={this.setVieMoreNextIndex}
+              onClick={loadingVariant?.onClick}
+            />
           );
         }
       }
@@ -941,6 +965,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.menuComponentRef}
         footer={footer}
         footerRef={this.footerRef}
+        isLastOptionBeforeFooter={this.isLastOptionBeforeFooter}
       >
         {variantChildren}
       </SelectMenu>

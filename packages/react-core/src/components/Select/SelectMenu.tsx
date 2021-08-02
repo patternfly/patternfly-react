@@ -43,6 +43,8 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   footer?: React.ReactNode;
   /** The menu footer element */
   footerRef?: React.RefObject<HTMLDivElement>;
+  /** @hide callback to check if option is the last one in the menu when there is a footer  */
+  isLastOptionBeforeFooter?: (index: number) => void;
 }
 
 class SelectMenuWithRef extends React.Component<SelectMenuProps> {
@@ -57,7 +59,8 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     sendRef: () => {},
     keyHandler: () => {},
     isCustomContent: false,
-    hasInlineFilter: false
+    hasInlineFilter: false,
+    isLastOptionBeforeFooter: () => {}
   };
 
   extendChildren(randomId: string) {
@@ -125,7 +128,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   }
 
   extendCheckboxChildren(children: React.ReactElement[]) {
-    const { isGrouped, checked, sendRef, keyHandler, hasInlineFilter } = this.props;
+    const { isGrouped, checked, sendRef, keyHandler, hasInlineFilter, isLastOptionBeforeFooter } = this.props;
     let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
       return React.Children.map(children, (group: React.ReactElement) => {
@@ -161,7 +164,8 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
             isChecked: this.checkForValue(child.props.value, checked),
             sendRef,
             keyHandler,
-            index: index++
+            index: index++,
+            isLastOptionBeforeFooter
           })
     );
   }
