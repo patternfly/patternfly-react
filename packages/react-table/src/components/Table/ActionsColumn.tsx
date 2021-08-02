@@ -10,7 +10,14 @@ import {
   DropdownPosition
 } from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
 
-import { IAction, IExtraData, IRowData } from './TableTypes';
+import {
+  IAction,
+  IActionDropdownItem,
+  IActionOutsideItemButton,
+  IActionOutsideItemCustom,
+  IExtraData,
+  IRowData
+} from './TableTypes';
 
 export interface CustomActionsToggleProps {
   onToggle: (isOpen: boolean) => void;
@@ -82,10 +89,16 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
       <KebabToggle isDisabled={isDisabled} onToggle={this.onToggle} />
     );
 
+    const outsideDropdownItems = items.filter(a => a.isOutsideDropdown) as (
+      | IActionOutsideItemButton
+      | IActionOutsideItemCustom
+    )[];
+
+    const dropdownItems = items.filter(a => !a.isOutsideDropdown) as IActionDropdownItem[];
+
     return (
       <React.Fragment>
-        {items
-          .filter(item => item.isOutsideDropdown)
+        {outsideDropdownItems
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           .map(({ title, itemKey, onClick, isOutsideDropdown, ...props }, key) =>
             typeof title === 'string' ? (
@@ -107,26 +120,24 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
           position={dropdownPosition}
           direction={dropdownDirection}
           isOpen={isOpen}
-          dropdownItems={items
-            .filter(item => !item.isOutsideDropdown)
-            .map(({ title, itemKey, onClick, isSeparator, ...props }, key) =>
-              isSeparator ? (
-                <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
-              ) : (
-                <DropdownItem
-                  component="button"
-                  onClick={event => {
-                    this.onClick(event, onClick);
-                    this.onToggle(!isOpen);
-                  }}
-                  {...props}
-                  key={itemKey || key}
-                  data-key={itemKey || key}
-                >
-                  {title}
-                </DropdownItem>
-              )
-            )}
+          dropdownItems={dropdownItems.map(({ title, itemKey, onClick, isSeparator, ...props }, key) =>
+            isSeparator ? (
+              <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
+            ) : (
+              <DropdownItem
+                component="button"
+                onClick={event => {
+                  this.onClick(event, onClick);
+                  this.onToggle(!isOpen);
+                }}
+                {...props}
+                key={itemKey || key}
+                data-key={itemKey || key}
+              >
+                {title}
+              </DropdownItem>
+            )
+          )}
           isPlain
           {...(rowData && rowData.actionProps)}
         />
