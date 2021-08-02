@@ -11,6 +11,12 @@ describe('Form Demo Test', () => {
       .should('have.value', 'Five');
   });
 
+  it('Verify labelInfo structure', () => {
+    cy.get('#form-group-age .pf-c-form__group-label.pf-m-info').should('exist');
+    cy.get('#form-group-age .pf-c-form__group-label-main').should('exist');
+    cy.get('#form-group-age .pf-c-form__group-label-info').should('exist');
+  });
+
   it('Verify form allows correct input', () => {
     cy.get('#age')
       .first()

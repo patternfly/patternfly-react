@@ -53,6 +53,15 @@ describe('FormGroup component', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('should render form group with additonal label info', () => {
+    const view = mount(
+      <FormGroup fieldId="id" label={<h1>Header</h1>} labelInfo="more info">
+        <input aria-label="input" />
+      </FormGroup>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('should render form group variant with function label', () => {
     const view = mount(
       <FormGroup fieldId="id" label={returnFunction()}>

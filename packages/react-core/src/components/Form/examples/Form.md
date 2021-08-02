@@ -649,6 +649,91 @@ class HorizontalFormHelperTextOnTop extends React.Component {
 }
 ```
 
+### Form group with additional label info
+
+```js
+import React from 'react';
+import { Form, FormGroup, TextInput, Popover } from '@patternfly/react-core';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+
+class FormGroupLabelInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value1: ''
+    };
+    this.handleTextInputChange1 = value1 => {
+      this.setState({ value1 });
+    };
+  }
+
+  render() {
+    const { value1 } = this.state;
+
+    return (
+      <Form>
+        <FormGroup
+          label="Name"
+          labelInfo="Additional label info"
+          labelIcon={
+            <Popover
+              headerContent={
+                <div>
+                  The{' '}
+                  <a href="https://schema.org/name" target="_blank">
+                    name
+                  </a>{' '}
+                  of a{' '}
+                  <a href="https://schema.org/Person" target="_blank">
+                    Person
+                  </a>
+                </div>
+              }
+              bodyContent={
+                <div>
+                  Often composed of{' '}
+                  <a href="https://schema.org/givenName" target="_blank">
+                    givenName
+                  </a>{' '}
+                  and{' '}
+                  <a href="https://schema.org/familyName" target="_blank">
+                    familyName
+                  </a>
+                  .
+                </div>
+              }
+            >
+              <button
+                type="button"
+                aria-label="More info for name field"
+                onClick={e => e.preventDefault()}
+                aria-describedby="form-group-label-info"
+                className="pf-c-form__group-label-help"
+              >
+                <HelpIcon noVerticalAlign />
+              </button>
+            </Popover>
+          }
+          isRequired
+          fieldId="form-group-label-info"
+          helperText="Please provide your full name"
+        >
+          <TextInput
+            isRequired
+            type="text"
+            id="form-group-label-info"
+            name="form-group-label-info"
+            aria-describedby="form-group-label-info-helper"
+            value={value1}
+            onChange={this.handleTextInputChange1}
+          />
+        </FormGroup>
+      </Form>
+    );
+  }
+}
+```
+
 ### Form Sections
 
 ```js
@@ -660,7 +745,7 @@ class FormSections extends React.Component {
     super(props);
     this.state = {
       value1: '',
-      value2: '',
+      value2: ''
     };
     this.handleTextInputChange1 = value1 => {
       this.setState({ value1 });
@@ -738,40 +823,35 @@ class SimpleForm extends React.Component {
       <Form>
         <Grid hasGutter md={6}>
           <GridItem span={12}>
-            <FormGroup
-              label="Name"
-              isRequired
-              fieldId="simple-form-name-01"
-              helperText="Please provide your full name"
-            >
+            <FormGroup label="Name" isRequired fieldId="grid-form-name-01" helperText="Please provide your full name">
               <TextInput
                 isRequired
                 type="text"
-                id="simple-form-name-01"
-                name="simple-form-name-01"
-                aria-describedby="simple-form-name-01-helper"
+                id="grid-form-name-01"
+                name="grid-form-name-01"
+                aria-describedby="grid-form-name-01-helper"
                 value={value1}
                 onChange={this.handleTextInputChange1}
               />
             </FormGroup>
           </GridItem>
-          <FormGroup label="Email" isRequired fieldId="simple-form-email-01">
+          <FormGroup label="Email" isRequired fieldId="grid-form-email-01">
             <TextInput
               isRequired
               type="email"
-              id="simple-form-email-01"
-              name="simple-form-email-01"
+              id="grid-form-email-01"
+              name="grid-form-email-01"
               value={value2}
               onChange={this.handleTextInputChange2}
             />
           </FormGroup>
-          <FormGroup label="Phone number" isRequired fieldId="simple-form-number-01">
+          <FormGroup label="Phone number" isRequired fieldId="grid-form-number-01">
             <TextInput
               isRequired
               type="tel"
-              id="simple-form-number-01"
+              id="grid-form-number-01"
               placeholder="555-555-5555"
-              name="simple-form-number-01"
+              name="grid-form-number-01"
               value={value3}
               onChange={this.handleTextInputChange3}
             />
@@ -787,7 +867,15 @@ class SimpleForm extends React.Component {
 
 ```js
 import React from 'react';
-import { Form, FormGroup, FormFieldGroup, FormFieldGroupExpandable, FormFieldGroupHeader, TextInput, Button } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  FormFieldGroup,
+  FormFieldGroupExpandable,
+  FormFieldGroupHeader,
+  TextInput,
+  Button
+} from '@patternfly/react-core';
 import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 
 class FieldGroups extends React.Component {
@@ -877,7 +965,7 @@ class FieldGroups extends React.Component {
           toggleAriaLabel="Details"
           header={
             <FormFieldGroupHeader
-              titleText={{text: "Field group 1", id: "field-group1-titleText-id"}}
+              titleText={{ text: 'Field group 1', id: 'field-group1-titleText-id' }}
               titleDescription="Field group 1 description text."
               actions={
                 <>
@@ -892,7 +980,7 @@ class FieldGroups extends React.Component {
             toggleAriaLabel="Details"
             header={
               <FormFieldGroupHeader
-                titleText={{text: "Nested field group 1", id: "nested-field-group1-titleText-id"}}
+                titleText={{ text: 'Nested field group 1', id: 'nested-field-group1-titleText-id' }}
                 titleDescription="Nested field group 1 description text."
                 actions={
                   <Button variant="plain" aria-label="Remove">
@@ -929,7 +1017,7 @@ class FieldGroups extends React.Component {
             toggleAriaLabel="Details"
             header={
               <FormFieldGroupHeader
-                titleText={{text: "Nested field group 2", id: "nested-field-group2-titleText-id"}}
+                titleText={{ text: 'Nested field group 2', id: 'nested-field-group2-titleText-id' }}
                 actions={
                   <Button variant="plain" aria-label="Remove">
                     <TrashIcon />
@@ -965,7 +1053,7 @@ class FieldGroups extends React.Component {
             toggleAriaLabel="Details"
             header={
               <FormFieldGroupHeader
-                titleText={{text: "Nested field group 3", id: "nested-field-group3-titleText-id"}}
+                titleText={{ text: 'Nested field group 3', id: 'nested-field-group3-titleText-id' }}
                 titleDescription="Field group 3 description text."
                 actions={
                   <Button variant="plain" aria-label="Remove">
@@ -1020,7 +1108,7 @@ class FieldGroups extends React.Component {
           >
             <TextInput
               isRequired
-            id="form-expandable-field-groupsform-expandable-field-groups-field-group1-label2"
+              id="form-expandable-field-groupsform-expandable-field-groups-field-group1-label2"
               name="form-expandable-field-groupsform-expandable-field-groups-field-group1-label2"
               value={value10}
               onChange={value => {
@@ -1033,7 +1121,7 @@ class FieldGroups extends React.Component {
           toggleAriaLabel="Details"
           header={
             <FormFieldGroupHeader
-              titleText={{text: "Field group 2", id: "field-group2-titleText-id"}}
+              titleText={{ text: 'Field group 2', id: 'field-group2-titleText-id' }}
               titleDescription="Field group 2 description text."
               actions={
                 <>
@@ -1069,7 +1157,12 @@ class FieldGroups extends React.Component {
         <FormFieldGroupExpandable
           isExpanded
           toggleAriaLabel="Details"
-          header={<FormFieldGroupHeader titleText={{text: "Field group 3", id: "field-group3-titleText-id"}} titleDescription="Field group 3 description text." />}
+          header={
+            <FormFieldGroupHeader
+              titleText={{ text: 'Field group 3', id: 'field-group3-titleText-id' }}
+              titleDescription="Field group 3 description text."
+            />
+          }
         >
           <FormGroup label="Label 1" isRequired fieldId="form-expandable-field-group3-label1">
             <TextInput
@@ -1093,7 +1186,16 @@ class FieldGroups extends React.Component {
               }}
             />
           </FormGroup>
-          <FormFieldGroup header={<FormFieldGroupHeader titleText={{text: "Nested field group 1 (non-expandable)", id: "nested-field-group1-non-expandable-titleText-id"}} />}>
+          <FormFieldGroup
+            header={
+              <FormFieldGroupHeader
+                titleText={{
+                  text: 'Nested field group 1 (non-expandable)',
+                  id: 'nested-field-group1-non-expandable-titleText-id'
+                }}
+              />
+            }
+          >
             <FormGroup label="Label 1" isRequired fieldId="form-expandable-field-groups-field-group7-label1">
               <TextInput
                 isRequired
@@ -1120,7 +1222,10 @@ class FieldGroups extends React.Component {
           <FormFieldGroup
             header={
               <FormFieldGroupHeader
-                titleText={{text: "Nested field group 2 (non-expandable)", id: "nested-field-group2-non-expandable-titleText-id"}}
+                titleText={{
+                  text: 'Nested field group 2 (non-expandable)',
+                  id: 'nested-field-group2-non-expandable-titleText-id'
+                }}
                 titleDescription="Field group 2 description text."
               />
             }
@@ -1152,7 +1257,7 @@ class FieldGroups extends React.Component {
         <FormFieldGroup
           header={
             <FormFieldGroupHeader
-              titleText={{text: "Field group 4 (non-expandable)", id: "field-group4-non-expandable-titleText-id"}}
+              titleText={{ text: 'Field group 4 (non-expandable)', id: 'field-group4-non-expandable-titleText-id' }}
               titleDescription="Field group 4 description text."
               actions={
                 <>
@@ -1162,7 +1267,11 @@ class FieldGroups extends React.Component {
             />
           }
         >
-          <FormGroup label="Label 1" isRequired fieldId="form-expandable-field-groupsform-expandable-field-groups-field-group10-label1">
+          <FormGroup
+            label="Label 1"
+            isRequired
+            fieldId="form-expandable-field-groupsform-expandable-field-groups-field-group10-label1"
+          >
             <TextInput
               isRequired
               id="form-expandable-field-groupsform-expandable-field-groups-field-group10-label1"
@@ -1173,7 +1282,11 @@ class FieldGroups extends React.Component {
               }}
             />
           </FormGroup>
-          <FormGroup label="Label 2" isRequired fieldId="form-expandable-field-groupsform-expandable-field-groups-field-group10-label2">
+          <FormGroup
+            label="Label 2"
+            isRequired
+            fieldId="form-expandable-field-groupsform-expandable-field-groups-field-group10-label2"
+          >
             <TextInput
               isRequired
               id="form-expandable-field-groupsform-expandable-field-groups-field-group10-label2"

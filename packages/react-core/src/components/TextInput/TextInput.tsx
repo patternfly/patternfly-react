@@ -203,7 +203,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         onChange={this.handleChange}
         type={type}
         value={value}
-        aria-invalid={validated === ValidatedOptions.error}
+        aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}
