@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.116.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.115.0...@patternfly/react-integration@4.116.0) (2021-08-02)
+
+
+### Features
+
+* **Dropdown:** Allow for tooltips on aria-disabled items ([#6038](https://github.com/patternfly/patternfly-react/issues/6038)) ([74ec097](https://github.com/patternfly/patternfly-react/commit/74ec09747379ccfaa3b0ebecaadff910c7b590e2))
+
+
+
+
+
 # [4.115.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.114.0...@patternfly/react-integration@4.115.0) (2021-08-02)
 
 

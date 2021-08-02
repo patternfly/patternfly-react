@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.146.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.145.1...@patternfly/react-core@4.146.0) (2021-08-02)
+
+
+### Features
+
+* **Dropdown:** Allow for tooltips on aria-disabled items ([#6038](https://github.com/patternfly/patternfly-react/issues/6038)) ([74ec097](https://github.com/patternfly/patternfly-react/commit/74ec09747379ccfaa3b0ebecaadff910c7b590e2))
+
+
+
+
+
 ## [4.145.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.145.0...@patternfly/react-core@4.145.1) (2021-08-02)
 
 **Note:** Version bump only for package @patternfly/react-core
