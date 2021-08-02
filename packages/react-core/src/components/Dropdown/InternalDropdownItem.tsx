@@ -231,7 +231,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       return (
         <Component
           {...additionalProps}
-          {...(isDisabled ? preventedEvents(inoperableEvents) : null)}
+          {...(isDisabled || isAriaDisabled ? preventedEvents(inoperableEvents) : null)}
           href={href}
           ref={this.ref}
           className={classes}
