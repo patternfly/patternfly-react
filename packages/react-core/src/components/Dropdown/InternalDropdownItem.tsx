@@ -267,11 +267,9 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               role={role}
               onKeyDown={this.onKeyDown}
               onClick={(event: any) => {
-                if (!isDisabled) {
+                if (!isDisabled || !isAriaDisabled) {
                   onClick(event);
-                  if (!isAriaDisabled) {
-                    onSelect(event);
-                  }
+                  onSelect(event);
                 }
               }}
               id={id}
