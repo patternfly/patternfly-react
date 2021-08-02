@@ -67,6 +67,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isLoading?: boolean;
   /** @hide Internal callback for the setting the index of the next item to focus after view more is clicked */
   setViewMoreNextIndex?: () => void;
+  /** @hide Flag indicating this is the last option when there is a footer */
+  isLastOptionBeforeFooter: (index: number) => boolean;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -91,7 +93,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isFavorite: null,
     isLoad: false,
     isLoading: false,
-    setViewMoreNextIndex: () => {}
+    setViewMoreNextIndex: () => {},
+    isLastOptionBeforeFooter: () => false
   };
 
   componentDidMount() {
@@ -113,10 +116,15 @@ export class SelectOption extends React.Component<SelectOptionProps> {
   }
 
   onKeyDown = (event: React.KeyboardEvent, innerIndex: number, onEnter?: any, isCheckbox?: boolean) => {
-    const { index, keyHandler } = this.props;
+    const { index, keyHandler, isLastOptionBeforeFooter } = this.props;
+    let isLastItemBeforeFooter = false;
+    if (isLastOptionBeforeFooter !== undefined) {
+      isLastItemBeforeFooter = isLastOptionBeforeFooter(index);
+    }
+
     if (event.key === KeyTypes.Tab) {
       // More modal-like experience for checkboxes
-      if (isCheckbox) {
+      if (isCheckbox && !isLastItemBeforeFooter) {
         if (event.shiftKey) {
           keyHandler(index, innerIndex, 'up');
         } else {
@@ -172,6 +180,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       isLoad,
       isLoading,
       setViewMoreNextIndex,
+      // eslint-disable-next-line no-console
+      isLastOptionBeforeFooter,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */

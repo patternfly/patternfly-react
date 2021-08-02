@@ -687,6 +687,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.setState({ viewMoreNextIndex: this.refCollection.length - 1 });
   };
 
+  isLastOptionBeforeFooter = (index: any) =>
+    this.props.footer && index === this.refCollection.length - 1 ? true : false;
+
   render() {
     const {
       children,
@@ -962,6 +965,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.menuComponentRef}
         footer={footer}
         footerRef={this.footerRef}
+        isLastOptionBeforeFooter={this.isLastOptionBeforeFooter}
       >
         {variantChildren}
       </SelectMenu>
