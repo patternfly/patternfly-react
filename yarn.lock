@@ -3236,10 +3236,10 @@
     webpack-dev-server "^3.11.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.125.2":
-  version "4.125.2"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.125.2.tgz#ba6321dccd4ece5d290ae9f6d41126e4f22f879f"
-  integrity sha512-+IGYrjM+Ie/lgPUUDDmAJ5Jq+oK+68gBPRC2jBRf4GtcVFRkzCQOPkjKwryGEqsbc9fhaNTB5lD8kxI6ikPCbQ==
+"@patternfly/patternfly@4.125.3":
+  version "4.125.3"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.125.3.tgz#5572babff7423b4567ecc986ae303289c80897c6"
+  integrity sha512-B0L3TFdFYsioV1loCsd3s3Y6eNV/9YjHQIlFnxF1KRgj+eVq0idKi1Mnq28eycKQgFi6ld3tEveMSxBsaw3R9A==
 
 "@reach/router@^1.2.1", "@reach/router@^1.3.4":
   version "1.3.4"
