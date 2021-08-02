@@ -246,10 +246,10 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       clearTimeout(showTimerRef.current);
     }
     hideTimerRef.current = setTimeout(() => {
+      setVisible(false);
       setOpacity(0);
       setFocusTrapActive(false);
       transitionTimerRef.current = setTimeout(() => {
-        setVisible(false);
         onHidden();
       }, animationDuration);
     }, 0);
