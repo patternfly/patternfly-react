@@ -168,11 +168,13 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       </DropdownItem>,
       <DropdownItem
         key="disabled action"
-        isDisabled
+        isAriaDisabled
         component="button"
         onClick={this.incrementCounter}
         onKeyPress={this.incrementCounter}
         id="disabled-button"
+        tooltip="Tooltip for disabled item"
+        tooltipProps={{ position: 'top' }}
       >
         Disabled Action
         {this.state.counter}

@@ -814,6 +814,7 @@ exports[`optionsMenu expanded 1`] = `
                           "onKeyPress",
                         ]
                       }
+                      isAriaDisabled={false}
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -876,6 +877,7 @@ exports[`optionsMenu expanded 1`] = `
                           "onKeyPress",
                         ]
                       }
+                      isAriaDisabled={false}
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -942,6 +944,7 @@ exports[`optionsMenu expanded 1`] = `
                           "onKeyPress",
                         ]
                       }
+                      isAriaDisabled={false}
                       isDisabled={true}
                       isHovered={false}
                       isPlainText={false}
@@ -1006,6 +1009,7 @@ exports[`optionsMenu expanded 1`] = `
                           "onKeyPress",
                         ]
                       }
+                      isAriaDisabled={false}
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -1105,6 +1109,7 @@ exports[`optionsMenu expanded 1`] = `
                           "onKeyPress",
                         ]
                       }
+                      isAriaDisabled={false}
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}
@@ -1167,6 +1172,7 @@ exports[`optionsMenu expanded 1`] = `
                           "onKeyPress",
                         ]
                       }
+                      isAriaDisabled={false}
                       isDisabled={false}
                       isHovered={false}
                       isPlainText={false}

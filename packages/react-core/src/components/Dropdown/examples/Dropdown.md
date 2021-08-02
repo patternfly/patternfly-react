@@ -27,11 +27,7 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class SimpleDropdown extends React.Component {
@@ -67,7 +63,13 @@ class SimpleDropdown extends React.Component {
       <DropdownItem key="disabled link" isDisabled href="www.google.com">
         Disabled Link
       </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      <DropdownItem 
+        key="disabled action" 
+        isAriaDisabled 
+        component="button"
+        tooltip="Tooltip for disabled item" 
+        tooltipProps={{position:"top"}}
+      >
         Disabled Action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
@@ -100,12 +102,8 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class IntialSelectionDropdown extends React.Component {
   constructor(props) {
@@ -170,7 +168,7 @@ class IntialSelectionDropdown extends React.Component {
 
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem } from '@patternfly/react-core';
 
 class GroupedDropdown extends React.Component {
   constructor(props) {
@@ -242,12 +240,8 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class DisabledDropdown extends React.Component {
   constructor(props) {
@@ -310,11 +304,8 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class PrimaryDropdown extends React.Component {
@@ -384,11 +375,8 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownPosition
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class PositionRightDropdown extends React.Component {
   constructor(props) {
@@ -453,12 +441,8 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class AlignmentsDropdown extends React.Component {
   constructor(props) {
@@ -530,11 +514,8 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownDirection
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class DirectionUpDropdown extends React.Component {
   constructor(props) {
@@ -596,14 +577,10 @@ class DirectionUpDropdown extends React.Component {
 import React from 'react';
 import {
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -666,15 +643,9 @@ class KebabDropdown extends React.Component {
 import React from 'react';
 import {
   Dropdown,
-  DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
   BadgeToggle
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 
 class BadgeDropdown extends React.Component {
@@ -737,10 +708,7 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
@@ -812,12 +780,8 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class SplitButtonDropdown extends React.Component {
   constructor(props) {
@@ -890,12 +854,8 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class SplitButtonDropdown extends React.Component {
   constructor(props) {
@@ -964,12 +924,8 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 class SplitButtonDropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -1046,12 +1002,8 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class SplitButtonDisabledDropdown extends React.Component {
   constructor(props) {
@@ -1123,13 +1075,8 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownToggleAction,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownItem
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
@@ -1239,14 +1186,8 @@ class SplitButtonActionDropdown extends React.Component {
 import React from 'react';
 import {
   Dropdown,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownToggle
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 
 class DropdownPanel extends React.Component {
   constructor(props) {
@@ -1286,17 +1227,11 @@ class DropdownPanel extends React.Component {
 ```js
 import React from 'react';
 import {
-  Button,
   Dropdown,
   DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownItem
 } from '@patternfly/react-core';
 import { Link } from '@reach/router';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class RouterDropdown extends React.Component {
@@ -1427,13 +1362,8 @@ import React from 'react';
 import {
   Dropdown,
   DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownItem
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class MenuOnDocumentBodyDropdown extends React.Component {
@@ -1488,11 +1418,7 @@ import React from 'react';
 import {
   Dropdown,
   DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownItem
 } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';

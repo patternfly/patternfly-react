@@ -21,6 +21,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   role?: string;
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
+  /** Render dropdown item as aria disabled option */
+  isAriaDisabled?: boolean;
   /** Render dropdown item as a non-interactive item */
   isPlainText?: boolean;
   /** Forces display of the hover state of the element */
@@ -163,6 +165,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       component,
       role,
       isDisabled,
+      isAriaDisabled,
       isPlainText,
       index,
       href,
@@ -182,12 +185,12 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
-    let classes = css(icon && styles.modifiers.icon, className);
+    let classes = css(icon && styles.modifiers.icon, isAriaDisabled && styles.modifiers.ariaDisabled, className);
 
     if (component === 'a') {
-      additionalProps['aria-disabled'] = isDisabled;
+      additionalProps['aria-disabled'] = isDisabled || isAriaDisabled;
     } else if (component === 'button') {
-      additionalProps['aria-disabled'] = isDisabled;
+      additionalProps['aria-disabled'] = isDisabled || isAriaDisabled;
       additionalProps.type = additionalProps.type || 'button';
     }
     const renderWithTooltip = (childNode: React.ReactNode) =>
@@ -228,7 +231,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       return (
         <Component
           {...additionalProps}
-          {...(isDisabled ? preventedEvents(inoperableEvents) : null)}
+          {...(isDisabled || isAriaDisabled ? preventedEvents(inoperableEvents) : null)}
           href={href}
           ref={this.ref}
           className={classes}
@@ -264,7 +267,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               role={role}
               onKeyDown={this.onKeyDown}
               onClick={(event: any) => {
-                if (!isDisabled) {
+                if (!isDisabled && !isAriaDisabled) {
                   onClick(event);
                   onSelect(event);
                 }

@@ -1686,7 +1686,6 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <a
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                   >
                     Link
@@ -1696,7 +1695,6 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -1736,7 +1734,6 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <a
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                   >
                     Separated Link
@@ -1746,7 +1743,6 @@ exports[`KebabToggle expanded 1`] = `
                   role="none"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -1812,7 +1808,6 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <a
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                     >
                       Link
@@ -1822,7 +1817,6 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -1862,7 +1856,6 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <a
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                     >
                       Separated Link
@@ -1872,7 +1865,6 @@ exports[`KebabToggle expanded 1`] = `
                     role="none"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -1975,7 +1967,6 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <a
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
               >
                 Link
@@ -2017,7 +2008,6 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <button
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 type="button"
               >
@@ -2205,7 +2195,6 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <a
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
               >
                 Separated Link
@@ -2247,7 +2236,6 @@ exports[`KebabToggle expanded 1`] = `
               role="none"
             >
               <button
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 type="button"
               >
@@ -4290,7 +4278,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                   role="none"
                 >
                   <a
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                   >
                     Link
@@ -4300,7 +4287,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                   role="none"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -4340,7 +4326,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                   role="none"
                 >
                   <a
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                   >
                     Separated Link
@@ -4350,7 +4335,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                   role="none"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -4429,7 +4413,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                     role="none"
                   >
                     <a
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                     >
                       Link
@@ -4439,7 +4422,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                     role="none"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -4479,7 +4461,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                     role="none"
                   >
                     <a
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                     >
                       Separated Link
@@ -4489,7 +4470,6 @@ exports[`dropdown alignment breakpoints 1`] = `
                     role="none"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -4612,7 +4592,6 @@ exports[`dropdown alignment breakpoints 1`] = `
               role="none"
             >
               <a
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
               >
                 Link
@@ -4654,7 +4633,6 @@ exports[`dropdown alignment breakpoints 1`] = `
               role="none"
             >
               <button
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 type="button"
               >
@@ -4842,7 +4820,6 @@ exports[`dropdown alignment breakpoints 1`] = `
               role="none"
             >
               <a
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
               >
                 Separated Link
@@ -4884,7 +4861,6 @@ exports[`dropdown alignment breakpoints 1`] = `
               role="none"
             >
               <button
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 type="button"
               >
@@ -6717,7 +6693,6 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <a
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                   >
                     Link
@@ -6727,7 +6702,6 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -6767,7 +6741,6 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <a
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                   >
                     Separated Link
@@ -6777,7 +6750,6 @@ exports[`dropdown expanded 1`] = `
                   role="none"
                 >
                   <button
-                    aria-disabled="false"
                     class="pf-c-dropdown__menu-item"
                     type="button"
                   >
@@ -6856,7 +6828,6 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <a
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                     >
                       Link
@@ -6866,7 +6837,6 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -6906,7 +6876,6 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <a
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                     >
                       Separated Link
@@ -6916,7 +6885,6 @@ exports[`dropdown expanded 1`] = `
                     role="none"
                   >
                     <button
-                      aria-disabled="false"
                       class="pf-c-dropdown__menu-item"
                       type="button"
                     >
@@ -7030,7 +6998,6 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <a
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
               >
                 Link
@@ -7072,7 +7039,6 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <button
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 type="button"
               >
@@ -7260,7 +7226,6 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <a
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
               >
                 Separated Link
@@ -7302,7 +7267,6 @@ exports[`dropdown expanded 1`] = `
               role="none"
             >
               <button
-                aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 type="button"
               >
