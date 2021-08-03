@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.3.3...@patternfly/react-log-viewer@4.4.0) (2021-08-03)
+
+
+### Features
+
+* **LogViewer:** Add demo with new controls ([#6064](https://github.com/patternfly/patternfly-react/issues/6064)) ([2343396](https://github.com/patternfly/patternfly-react/commit/2343396087f8b14706a88ecdbba90bb282b1875d))
+
+
+
+
+
 ## [4.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.3.2...@patternfly/react-log-viewer@4.3.3) (2021-08-02)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
