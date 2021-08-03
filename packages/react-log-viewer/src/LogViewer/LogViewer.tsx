@@ -6,7 +6,6 @@ import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/cons
 import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
-import { KeyboardHandler, setTabIndex } from '@patternfly/react-core';
 
 interface LogViewerProps {
   /** String data being sent by the consumer*/
@@ -194,21 +193,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       </List>
     );
 
-    const createNavigableElements = () => {
-      if (containerRef && containerRef.current) {
-        return Array.from(containerRef.current.getElementsByClassName('pf-c-log-viewer__list-item')) as Element[];
-      }
-      return [] as Element[];
-    };
-
-    useEffect(() => {
-      if (containerRef && containerRef.current) {
-        setTabIndex(
-          Array.from(containerRef.current.getElementsByClassName('pf-c-log-viewer__list-item')) as HTMLElement[]
-        );
-      }
-    }, [containerRef]);
-
     return (
       <LogViewerContext.Provider
         value={{
@@ -241,14 +225,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
               <div className={css(styles.logViewerHeader)}>{toolbar}</div>
             </LogViewerToolbarContext.Provider>
           )}
-          <KeyboardHandler
-            containerRef={(containerRef as React.RefObject<HTMLDivElement>) || null}
-            createNavigableElements={createNavigableElements}
-            isActiveElement={(element: Element) => document.activeElement === element}
-            noHorizontalArrowHandling
-            noEnterHandling
-            noSpaceHandling
-          />
           <div className={css(styles.logViewerMain)} ref={containerRef}>
             {loading ? <div style={{ height }}>{loadingContent}</div> : createList(parsedData)}
           </div>

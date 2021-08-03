@@ -119,21 +119,17 @@ ComplexToolbarLogViewer = () => {
     document.body.removeChild(element);
   };
   
-  const selectDataSourceMenu = (
-    <React.Fragment>
-      {Object.entries(dataSources).map(([value, { type }]) => (
-        <SelectOption
-          key={value}
-          value={value}
-          isSelected={selectedDataSource === value}
-          isChecked={selectedDataSource === value}
-        >
-          <Badge key={value}>{type}</Badge>
-          {` ${value}`}
-        </SelectOption>
-      ))}
-    </React.Fragment>
-  );
+  const selectDataSourceMenu = Object.entries(dataSources).map(([value, { type }]) => (
+    <SelectOption
+      key={value}
+      value={value}
+      isSelected={selectedDataSource === value}
+      isChecked={selectedDataSource === value}
+    >
+      <Badge key={value}>{type}</Badge>
+      {` ${value}`}
+    </SelectOption>
+  ));
   
   const selectDataSourcePlaceholder = (
     <React.Fragment>
@@ -155,9 +151,10 @@ ComplexToolbarLogViewer = () => {
             }}
             selections={selectedDataSource}
             isOpen={selectDataSourceOpen}
-            customContent={selectDataSourceMenu}
             placeholderText={selectDataSourcePlaceholder}
-          />
+          >
+            {selectDataSourceMenu}
+          </Select>
         </ToolbarItem>
         <ToolbarItem variant="search-filter">
           <LogViewerSearch placeholder="Search" />
