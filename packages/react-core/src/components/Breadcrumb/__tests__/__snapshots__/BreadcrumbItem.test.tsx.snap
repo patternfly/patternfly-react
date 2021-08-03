@@ -66,7 +66,6 @@ exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
   <a
     className="pf-c-breadcrumb__link"
     href="/somewhere"
-    target={null}
   >
     Item
   </a>
