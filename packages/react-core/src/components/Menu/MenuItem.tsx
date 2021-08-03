@@ -58,13 +58,15 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
+  /** Forwarded ref */
+  innerRef?: React.MutableRefObject<HTMLLIElement | undefined>;
 }
 
 const FlyoutContext = React.createContext({
   direction: 'right' as 'left' | 'right'
 });
 
-export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
+export const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   itemId = null,
@@ -86,6 +88,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   onShowFlyout,
   drilldownMenu,
   isOnPath,
+  innerRef = React.useRef<HTMLLIElement>(),
   ...props
 }: MenuItemProps) => {
   const {
@@ -106,13 +109,12 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
-  const ref = React.useRef<HTMLLIElement>();
-  const flyoutVisible = ref === flyoutRef;
+  const flyoutVisible = innerRef === flyoutRef;
 
   const hasFlyout = flyoutMenu !== undefined;
   const showFlyout = (show: boolean) => {
     if (!flyoutVisible && show) {
-      setFlyoutRef(ref);
+      setFlyoutRef(innerRef);
     } else if (flyoutVisible && !show) {
       setFlyoutRef(null);
     }
@@ -120,10 +122,10 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   };
 
   useIsomorphicLayoutEffect(() => {
-    if (hasFlyout && ref.current && canUseDOM) {
-      const flyoutMenu = ref.current.lastElementChild as HTMLElement;
+    if (hasFlyout && innerRef.current && canUseDOM) {
+      const flyoutMenu = innerRef.current.lastElementChild as HTMLElement;
       if (flyoutMenu && flyoutMenu.classList.contains(styles.menu)) {
-        const origin = ref.current.getClientRects()[0];
+        const origin = innerRef.current.getClientRects()[0];
         const rect = flyoutMenu.getClientRects()[0];
         if (origin && rect) {
           const spaceLeftLeft = origin.x - rect.width;
@@ -275,7 +277,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       onMouseOver={onMouseOver}
       tabIndex={-1}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
-      ref={ref}
+      ref={innerRef}
       {...props}
     >
       <Component
@@ -342,5 +344,9 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     </li>
   );
 };
+MenuItemBase.displayName = 'MenuItemBase';
 
+export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<HTMLLIElement>) => (
+  <MenuItemBase {...props} innerRef={ref as React.MutableRefObject<HTMLLIElement | undefined>} />
+));
 MenuItem.displayName = 'MenuItem';

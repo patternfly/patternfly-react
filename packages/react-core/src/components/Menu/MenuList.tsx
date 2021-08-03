@@ -7,15 +7,23 @@ export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   children: React.ReactNode;
   /** Additional classes added to the menu list */
   className?: string;
+  /** Ref to UL */
+  innerRef?: React.Ref<HTMLUListElement>;
 }
 
-export const MenuList: React.FunctionComponent<MenuListProps> = ({
+export const MenuListBase: React.FunctionComponent<MenuListProps> = ({
   children = null,
   className,
+  innerRef,
   ...props
 }: MenuListProps) => (
-  <ul role="menubar" className={css(styles.menuList, className)} {...props}>
+  <ul role="menubar" className={css(styles.menuList, className)} ref={innerRef} {...props}>
     {children}
   </ul>
 );
+MenuListBase.displayName = 'MenuListBase';
+
+export const MenuList = React.forwardRef((props: MenuListProps, ref: React.Ref<HTMLUListElement>) => (
+  <MenuListBase {...props} innerRef={ref} />
+));
 MenuList.displayName = 'MenuList';
