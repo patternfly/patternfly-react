@@ -30,6 +30,10 @@ interface LogViewerProps {
   loadingContent?: React.ReactNode;
   /** Flag indicating that log viewer is dark themed */
   theme?: 'dark' | 'light';
+  /** Row index to scroll to */
+  scrollToRow?: number;
+  /** Number of rows to display in the log viewer */
+  itemCount?: number;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -54,10 +58,12 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     toolbar,
     width,
     theme = 'light',
+    scrollToRow = 0,
+    itemCount = undefined,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
-    const [rowInFocus, setRowInFocus] = useState<number | null>(null);
+    const [rowInFocus, setRowInFocus] = useState<number | null>(scrollToRow);
     const [searchedWordIndexes, setSearchedWordIndexes] = useState<number[] | null>([]);
     const [highlightedRowIndexes, setHighlightedRowIndexes] = useState<number[] | null>([]);
     const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
@@ -111,13 +117,28 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         highlightedRowIndexes,
         setHighlightedRowIndexes
       }),
-      [parsedData, logViewerRef, rowInFocus, searchedWordIndexes, highlightedRowIndexes, setHighlightedRowIndexes]
+      [data, parsedData, logViewerRef, rowInFocus, searchedWordIndexes, highlightedRowIndexes, setHighlightedRowIndexes]
     );
 
-    /* Parsing our data immediately after first component render */
+    /* Parse data every time it changes */
     useEffect(() => {
       setParsedData(parseConsoleOutput(data));
     }, [data]);
+
+    useEffect(() => {
+      if (logViewerRef && logViewerRef.current) {
+        logViewerRef.current.resetAfterIndex(0);
+      }
+    }, [parsedData]);
+
+    useEffect(() => {
+      if (scrollToRow && parsedData.length) {
+        setRowInFocus(parsedData.length - 1);
+        if (logViewerRef && logViewerRef.current) {
+          logViewerRef.current.scrollToItem(scrollToRow, 'center');
+        }
+      }
+    }, [parsedData, scrollToRow]);
 
     /* Updating searchedResults context state given changes in searched input */
     useEffect(() => {
@@ -125,26 +146,26 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       const adjustedSearchedInput = escapeString(searchedInput);
 
       if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= 3) {
-        foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData);
+        foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData, itemCount || parsedData.length - 1);
 
         if (foundKeywordIndexes.length !== 0) {
           setSearchedWordIndexes(foundKeywordIndexes);
-          scrollToRow(foundKeywordIndexes[DEFAULT_SEARCH_INDEX]);
+          scrollToRowInFocus(foundKeywordIndexes[DEFAULT_SEARCH_INDEX]);
         }
       }
 
       if (adjustedSearchedInput !== '' && adjustedSearchedInput.length < 3) {
-        setRowInFocus(DEFAULT_FOCUS);
+        setRowInFocus(scrollToRow || DEFAULT_FOCUS);
         setCurrentSearchedItemCount(DEFAULT_INDEX);
         setSearchedWordIndexes([]);
       }
 
       if (adjustedSearchedInput === '') {
-        setRowInFocus(DEFAULT_FOCUS);
+        setRowInFocus(scrollToRow || DEFAULT_FOCUS);
       }
     }, [searchedInput]);
 
-    const scrollToRow = (searchedRowIndex: number) => {
+    const scrollToRowInFocus = (searchedRowIndex: number) => {
       setRowInFocus(searchedRowIndex);
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
     };
@@ -163,7 +184,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         height={height}
         width={`${currentWidth}px`}
         itemSize={guessRowHeight}
-        itemCount={parsedData.length}
+        itemCount={typeof itemCount === 'undefined' ? parsedData.length : itemCount}
         itemData={dataToRender}
         ref={logViewerRef}
         overscanCount={overScanCount}
@@ -194,7 +215,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
                 rowInFocus,
                 searchedWordIndexes,
                 currentSearchedItemCount,
-                scrollToRow,
+                scrollToRow: scrollToRowInFocus,
                 setRowInFocus,
                 setSearchedInput,
                 setSearchedWordIndexes,

@@ -12,12 +12,12 @@ export const isArrayOfString = (array: string[]) => {
   It should take an array, and return an array of indexes where the searchedInput is found throughout the data array. 
   Should always be searching an array of strings. Look into lazy log for ideas.
 */
-export const searchForKeyword = (searchedInput: string, parsedData: string[]) => {
+export const searchForKeyword = (searchedInput: string, parsedData: string[], itemCount: number) => {
   const searchResults: number[] = [];
 
+  const regex = new RegExp(searchedInput, 'i');
   parsedData.map((row, index) => {
-    const regex = new RegExp(searchedInput, 'gi');
-    if (regex.test(row)) {
+    if (regex.test(row) && index < itemCount) {
       searchResults.push(index);
     }
   });

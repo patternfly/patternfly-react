@@ -67,9 +67,13 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
       const regEx = new RegExp(`(${context.searchedInput})`, 'ig');
       const splitString = getData(index).split(regEx);
       const composedString = [] as React.ReactNode[];
-      splitString.map(substr => {
+      splitString.map((substr, index) => {
         if (substr.match(regEx)) {
-          composedString.push(<span className={css(styles.logViewerString, handleHighlight())}>{substr}</span>);
+          composedString.push(
+            <span className={css(styles.logViewerString, handleHighlight())} key={index}>
+              {substr}
+            </span>
+          );
         } else {
           composedString.push(substr);
         }

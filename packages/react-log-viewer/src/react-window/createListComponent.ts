@@ -339,6 +339,7 @@ export default function createListComponent({
           className,
           onScroll,
           ref: this._outerRefSetter,
+          tabIndex: 0,
           style: {
             position: 'relative',
             height,
