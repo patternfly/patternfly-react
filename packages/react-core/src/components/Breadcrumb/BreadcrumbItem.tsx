@@ -59,7 +59,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
       {isDropdown && <span className={css(styles.breadcrumbDropdown)}>{children}</span>}
       {render && render({ className, ariaCurrent })}
       {to && !render && (
-        <Component href={to} target={target} className={className} aria-current={ariaCurrent}>
+        <Component {...props} href={to} target={target} className={className} aria-current={ariaCurrent}>
           {children}
         </Component>
       )}
