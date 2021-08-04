@@ -58,16 +58,15 @@ section: developer-resources
   - Exported interfaces in md file so prop descriptions are documented ([#5985](https://github.com/patternfly/patternfly-react/pull/5985))
 - **Search input:**
   - Updated to allow passing custom form elements after the attributes ([#6043](https://github.com/patternfly/patternfly-react/pull/6043))
+  - Allow hasWordAttrLabel to be React.ReactNode as well ([#6037](https://github.com/patternfly/patternfly-react/pull/6037))
 - **Select:**
   - Updated to check children have props before comparing them ([#6052](https://github.com/patternfly/patternfly-react/pull/6052))
   - Updated to check the values of the children for possible changes on componentDidUpdate ([#5973](https://github.com/patternfly/patternfly-react/pull/5973))
   - Fixed keyboard handling for view more button and footer ([#6095](https://github.com/patternfly/patternfly-react/pull/6095))
   - Fixed to ignore arrow keys when typeahead options are empty ([#5958](https://github.com/patternfly/patternfly-react/pull/5958))
   - Made type improvements on onFilter ([#6073](https://github.com/patternfly/patternfly-react/pull/6073))
-- **Search input:**
-  - Allow hasWordAttrLabel to be React.ReactNode as well ([#6037](https://github.com/patternfly/patternfly-react/pull/6037))
 - **Sidebar:**
-  - Fixed Custom className override ([#6094](https://github.com/patternfly/patternfly-react/pull/6094))
+  - Fixed custom className override ([#6094](https://github.com/patternfly/patternfly-react/pull/6094))
 - **Slider:**
   -Fixed to respect props in useCallback ([#5969](https://github.com/patternfly/patternfly-react/pull/5969))
 - **Switch:**
