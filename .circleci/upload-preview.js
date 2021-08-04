@@ -18,7 +18,7 @@ if (!uploadFolder) {
 const uploadFolderName = path.basename(uploadFolder);
 let uploadURL = `${repo}-${prnum ? `pr-${prnum}` : prbranch}`
   .replace(/[\/|\.]/g, '-')
-  .replace('-master', '');
+  .replace('-main', '');
 
 if (uploadFolderName === '.out') {
   uploadURL += '-pf3';
