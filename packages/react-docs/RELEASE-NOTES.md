@@ -20,8 +20,8 @@ section: developer-resources
 ### Components
 - **Accordion:**
   - Added support for bordered, display large and multiple body content ([#6085](https://github.com/patternfly/patternfly-react/pull/6085))
-- **Alert Group:**
-  - Made dynamic alerts more accessible ([#5946](https://github.com/patternfly/patternflg-react/pull/5946))
+- **Alert group:**
+  - Made dynamic alerts more accessible ([#5946](https://github.com/patternfly/patternfly-react/pull/5946))
 - **Avatar:**
   - Added border prop ([#6040](https://github.com/patternfly/patternfly-react/pull/6040))
 - **Button:**
@@ -49,7 +49,8 @@ section: developer-resources
   - Added editable label ([#6065](https://github.com/patternfly/patternfly-react/pull/6065))
 - **Menu:**
   - Addded context menu flyout support ([#5789](https://github.com/patternfly/patternfly-react/pull/5789))
-- **Navigation:** Updated incorrect prop descriptions ([#5980](https://github.com/patternfly/patternfly-react/pull/5980))
+- **Navigation:**
+  - Updated incorrect prop descriptions ([#5980](https://github.com/patternfly/patternfly-react/pull/5980))
 - **Notification drawer:**
   -  Fixed to show close button when onClose provided ([#6071](https://github.com/patternfly/patternfly-react/pull/6071))
 - **Page:**
@@ -68,7 +69,7 @@ section: developer-resources
 - **Sidebar:**
   - Fixed custom className override ([#6094](https://github.com/patternfly/patternfly-react/pull/6094))
 - **Slider:**
-  -Fixed to respect props in useCallback ([#5969](https://github.com/patternfly/patternfly-react/pull/5969))
+  - Fixed to respect props in useCallback ([#5969](https://github.com/patternfly/patternfly-react/pull/5969))
 - **Switch:**
   - Added isReversed prop/layout ([#6080](https://github.com/patternfly/patternfly-react/pull/6080))
 - **Tabs:**
@@ -78,7 +79,7 @@ section: developer-resources
   - Added OUIA props ([#5945](https://github.com/patternfly/patternfly-react/pull/5945))
 - **Time picker:**
   - Applied proper styles on popper container ([#5960](https://github.com/patternfly/patternfly-react/pull/5960))
-  - Fixed OnInputChange always being set to valid ([#5982](https://github.com/patternfly/patternfly-react/pull/5982))
+  - Fixed onInputChange always being set to valid ([#5982](https://github.com/patternfly/patternfly-react/pull/5982))
 - **Title:**
   - Added OUIA props ([#5943](https://github.com/patternfly/patternfly-react/pull/5943))
 - **Toolbar:**
@@ -108,13 +109,13 @@ section: developer-resources
 
 ### Other
 - **Chore:**
-  - Added Keyboard handling helper ([#5972](https://github.com/patternfly/patternfly-react/pull/5972))
+  - Added keyboard handling helper ([#5972](https://github.com/patternfly/patternfly-react/pull/5972))
   - Changed useLayoutEffect to useIsomorphicLayoutEffect ([#5954](https://github.com/patternfly/patternfly-react/pull/5954))
   - Removed beta component console warnings from promoted components ([#5990](https://github.com/patternfly/patternfly-react/pull/5990))
 - **Demos:**
   - Added password strength demo ([#6053](https://github.com/patternfly/patternfly-react/pull/6053))
 - **Docs:** 
-  - Fixed broken link in tokens readme ([#5938](https://github.com/patternfly/patternfly-react/pull/5938)
+  - Fixed broken link in tokens readme ([#5938](https://github.com/patternfly/patternfly-react/pull/5938))
   - Moved some repeated demo code to wrapper ([#5978](https://github.com/patternfly/patternfly-react/pull/5978))
   - Updated references of master to main in the contribution guide ([#5975](https://github.com/patternfly/patternfly-react/pull/5975))
 - **Deps:**
