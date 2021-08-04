@@ -67,7 +67,7 @@ section: developer-resources
 - **Search input:**
   - Allow hasWordAttrLabel to be React.ReactNode as well ([#6037](https://github.com/patternfly/patternfly-react/pull/6037))
 - **Sidebar:**
--  Fixed Custom className override ([#6094](https://github.com/patternfly/patternfly-react/pull/6094))
+  - Fixed Custom className override ([#6094](https://github.com/patternfly/patternfly-react/pull/6094))
 - **Slider:**
   -Fixed to respect props in useCallback ([#5969](https://github.com/patternfly/patternfly-react/pull/5969))
 - **Switch:**
