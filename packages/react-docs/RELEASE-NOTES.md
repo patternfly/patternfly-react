@@ -91,7 +91,7 @@ section: developer-resources
   - Fixed console warning about uncontrolled inputs when checkbox swaps between determinate/indeterminate ([#6041](https://github.com/patternfly/patternfly-react/pull/6041))
 
 ### Access console extension
-- Persist rfc instance in VncConsole ([#6012](https://github.com/patternfly/patternfly-react/pull/6012))### 
+- Persist rfc instance in VncConsole ([#6012](https://github.com/patternfly/patternfly-react/pull/6012))
 
 ### Charts
 - Fixed donut chart showing a gap ([#6084](https://github.com/patternfly/patternfly-react/pull/6084))
