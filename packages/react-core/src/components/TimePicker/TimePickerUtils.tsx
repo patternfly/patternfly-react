@@ -84,9 +84,9 @@ export const validateTime = (time: string, timeRegex: RegExp, delimiter: string,
   if (!isNaN(date.getDate()) && time.includes('T')) {
     return true;
   }
-  // hours only valid if they are [0-23] or [0-12]
+  // hours only valid if they are [0-23] or [1-12]
   const hours = parseInt(time.split(delimiter)[0]);
-  const validHours = hours >= 0 && hours <= (is12Hour ? 12 : 23);
+  const validHours = hours >= (is12Hour ? 1 : 0) && hours <= (is12Hour ? 12 : 23);
   // minutes verified by timeRegex
 
   // empty string is valid

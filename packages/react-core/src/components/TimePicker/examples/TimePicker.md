@@ -15,8 +15,11 @@ import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
 SimpleTimePicker = () => {
-  const onChange = (time) => {
-    console.log(time);
+  const onChange = (time, hour, minute, isValid) => {
+    console.log("time", time);
+    console.log("hour", hour);
+    console.log("minute", minute);
+    console.log("isValid", isValid);
   };
   
   return <TimePicker time="3:35 AM" onChange={onChange}/>;
