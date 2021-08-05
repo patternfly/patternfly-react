@@ -76,6 +76,8 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   isDragActive?: boolean;
   /** A reference object to attach to the FileUploadField container element. */
   containerRef?: React.Ref<HTMLDivElement>;
+  /** Text area text changed */
+  onTextChanged?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
@@ -83,10 +85,11 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   type,
   value = '',
   filename = '',
-  onChange = () => {},
-  onBrowseButtonClick = () => {},
-  onClearButtonClick = () => {},
+  onChange = () => { },
+  onBrowseButtonClick = () => { },
+  onClearButtonClick = () => { },
   onTextAreaClick,
+  onTextChanged,
   className = '',
   isDisabled = false,
   isReadOnly = false,
@@ -105,10 +108,12 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   allowEditingUploadedText = false,
   hideDefaultPreview = false,
   children = null,
+
   ...props
 }: FileUploadFieldProps) => {
   const onTextAreaChange = (newValue: string, event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChange(newValue, filename, event);
+    onTextChanged(event)
   };
   return (
     <div
