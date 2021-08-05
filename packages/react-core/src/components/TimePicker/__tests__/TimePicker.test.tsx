@@ -15,7 +15,7 @@ describe('test timepicker onChange method with valid values', () => {
     act(() => {
       view.find('input').prop('onChange')(event);
     })
-    expect(onChange).toBeCalledWith(input.value, expects.hour, expects.minutes);
+    expect(onChange).toBeCalledWith(input.value, expects.hour, expects.minutes, true);
   }
 
   test('should return the correct value using the AM/PM pattern - midnight', () => {
