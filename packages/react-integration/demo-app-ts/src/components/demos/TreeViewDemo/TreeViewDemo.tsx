@@ -1,4 +1,12 @@
-import { Button, TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import {
+  Button,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
+  TreeView,
+  TreeViewDataItem,
+  TreeViewSearch
+} from '@patternfly/react-core';
 import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
 import React, { Component } from 'react';
@@ -193,6 +201,22 @@ export class TreeViewDemo extends Component {
         children: [{ name: 'Application 5', id: 'FApp5' }]
       }
     ];
+
+    const toolbar = (
+      <Toolbar style={{ padding: 0 }}>
+        <ToolbarContent style={{ padding: 0 }}>
+          <ToolbarItem widths={{ default: '100%' }}>
+            <TreeViewSearch
+              onSearch={this.onChange}
+              id="input-search"
+              name="search-input"
+              aria-label="Search input example"
+            />
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
     return (
       <React.Fragment>
         <Button id="expand" variant="link" onClick={this.onToggle}>
@@ -205,8 +229,7 @@ export class TreeViewDemo extends Component {
           data={filteredItems}
           activeItems={activeItems}
           onSelect={this.onClick}
-          onSearch={this.onChange}
-          searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
+          toolbar={toolbar}
         />
         <br />
         <TreeView id="mixed" data={flagOptions} activeItems={activeItems2} onSelect={this.onClick2} />

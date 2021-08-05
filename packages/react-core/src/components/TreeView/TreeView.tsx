@@ -53,10 +53,6 @@ export interface TreeViewProps {
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for item checkbox selection */
   onCheck?: (event: React.ChangeEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
-  /** Callback for search input */
-  onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  /** Additional props for search input */
-  searchProps?: any;
   /** Active items of tree view */
   activeItems?: TreeViewDataItem[];
   /** Internal. Parent item of a TreeViewListItem */
@@ -65,6 +61,8 @@ export interface TreeViewProps {
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
   /** Class to add to add if not passed a parentItem */
   className?: string;
+  /** Toolbar to display above the tree view */
+  toolbar?: React.ReactNode;
 }
 
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
@@ -79,15 +77,14 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   parentItem,
   onSelect,
   onCheck,
-  onSearch,
-  searchProps,
+  toolbar,
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
   className,
   ...props
 }: TreeViewProps) => {
   const treeViewList = (
-    <TreeViewList isNested={isNested} onSearch={onSearch} searchProps={searchProps}>
+    <TreeViewList isNested={isNested} toolbar={toolbar}>
       {data.map(item => (
         <TreeViewListItem
           key={item.id?.toString() || item.name.toString()}
