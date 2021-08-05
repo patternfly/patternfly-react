@@ -3,6 +3,125 @@ id: Release notes
 section: developer-resources
 ---
 
+## 2021.10 release notes (2021-08-04)
+- [@patternfly/react-catalog-view-extension@4.12.36](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.12.36)
+- [@patternfly/react-charts@6.15.14](https://www.npmjs.com/package/@patternfly/react-charts/v/6.15.14)
+- [@patternfly/react-code-editor@4.3.22](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.3.22)
+- [@patternfly/react-core@4.147.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.147.0)
+- [@patternfly/react-icons@4.11.8](https://www.npmjs.com/package/@patternfly/react-icons/v/4.11.8)
+- [@patternfly/react-inline-edit-extension@4.7.44](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.7.44)
+- [@patternfly/react-log-viewer@4.4.0](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.4.0)
+- [@patternfly/react-styles@4.11.8](https://www.npmjs.com/package/@patternfly/react-styles/v/4.11.8)
+- [@patternfly/react-table@4.29.37](https://www.npmjs.com/package/@patternfly/react-table/v/4.29.37)
+- [@patternfly/react-tokens@4.12.9](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.12.9)
+- [@patternfly/react-topology@4.9.42](https://www.npmjs.com/package/@patternfly/react-topology/v/4.9.42)
+- [@patternfly/react-virtualized-extension@4.9.11](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.9.11)
+
+### Components
+- **Accordion:**
+  - Added support for bordered, display large and multiple body content ([#6085](https://github.com/patternfly/patternfly-react/pull/6085))
+- **Alert group:**
+  - Made dynamic alerts more accessible ([#5946](https://github.com/patternfly/patternfly-react/pull/5946))
+- **Avatar:**
+  - Added border prop ([#6040](https://github.com/patternfly/patternfly-react/pull/6040))
+- **Button:**
+  - Updated to allow router link component ([#6061](https://github.com/patternfly/patternfly-react/pull/6061))
+- **Checkbox:**
+  - Fixed warning about ouiaSafe property ([#6055](https://github.com/patternfly/patternfly-react/pull/6055))
+  - Added OUIA props ([#5949](https://github.com/patternfly/patternfly-react/pull/5949))
+- **Code editor:**
+  - Added support for more languages ([#6006](https://github.com/patternfly/patternfly-react/pull/6006))
+  - Added showEditor prop ([#6022](https://github.com/patternfly/patternfly-react/pull/6022))
+  - Updated to allow passing options and overrideServices ([#6035](https://github.com/patternfly/patternfly-react/pull/6035))
+  - Updated to show toolbar if there are custom controls ([#6025](https://github.com/patternfly/patternfly-react/pull/6025))
+- **Context selector:**
+  - Updated to hide internal prop ([#5986](https://github.com/patternfly/patternfly-react/pull/5986))
+- **Date picker:**
+  - Changed default parse format to y-m-d from y(-m)?(-d)? ([#6039](https://github.com/patternfly/patternfly-react/pull/6039))
+  - Cleared parse error on type ([#6066](https://github.com/patternfly/patternfly-react/pull/6066))
+- **Dual list selector:**
+  - Fixed button order ([#5983](https://github.com/patternfly/patternfly-react/pull/5983))
+- **Expandable section:**
+  - Added props to support disclosure variation ([#6078](https://github.com/patternfly/patternfly-react/pull/6078))
+- **Form:**
+  - Added form group label info ([#6053](https://github.com/patternfly/patternfly-react/pull/6053))
+- **Label:**
+  - Added editable label ([#6065](https://github.com/patternfly/patternfly-react/pull/6065))
+- **Menu:**
+  - Addded context menu flyout support ([#5789](https://github.com/patternfly/patternfly-react/pull/5789))
+- **Navigation:**
+  - Updated incorrect prop descriptions ([#5980](https://github.com/patternfly/patternfly-react/pull/5980))
+- **Notification drawer:**
+  -  Fixed to show close button when onClose provided ([#6071](https://github.com/patternfly/patternfly-react/pull/6071))
+- **Page:**
+  - Added tabs page section variant ([#6028](https://github.com/patternfly/patternfly-react/pull/6028))
+- **Pagination:**
+  - Exported interfaces in md file so prop descriptions are documented ([#5985](https://github.com/patternfly/patternfly-react/pull/5985))
+- **Search input:**
+  - Updated to allow passing custom form elements after the attributes ([#6043](https://github.com/patternfly/patternfly-react/pull/6043))
+  - Allow hasWordAttrLabel to be React.ReactNode as well ([#6037](https://github.com/patternfly/patternfly-react/pull/6037))
+- **Select:**
+  - Updated to check children have props before comparing them ([#6052](https://github.com/patternfly/patternfly-react/pull/6052))
+  - Updated to check the values of the children for possible changes on componentDidUpdate ([#5973](https://github.com/patternfly/patternfly-react/pull/5973))
+  - Fixed keyboard handling for view more button and footer ([#6095](https://github.com/patternfly/patternfly-react/pull/6095))
+  - Fixed to ignore arrow keys when typeahead options are empty ([#5958](https://github.com/patternfly/patternfly-react/pull/5958))
+  - Made type improvements on onFilter ([#6073](https://github.com/patternfly/patternfly-react/pull/6073))
+- **Sidebar:**
+  - Fixed custom className override ([#6094](https://github.com/patternfly/patternfly-react/pull/6094))
+- **Slider:**
+  - Fixed to respect props in useCallback ([#5969](https://github.com/patternfly/patternfly-react/pull/5969))
+- **Switch:**
+  - Added isReversed prop/layout ([#6080](https://github.com/patternfly/patternfly-react/pull/6080))
+- **Tabs:**
+  - Added support for page insets ([#6087](https://github.com/patternfly/patternfly-react/pull/6087))
+- **Text input:**
+  - Fixed warning about ouiaSafe property ([#6060](https://github.com/patternfly/patternfly-react/pull/6060))
+  - Added OUIA props ([#5945](https://github.com/patternfly/patternfly-react/pull/5945))
+- **Time picker:**
+  - Applied proper styles on popper container ([#5960](https://github.com/patternfly/patternfly-react/pull/5960))
+  - Fixed onInputChange always being set to valid ([#5982](https://github.com/patternfly/patternfly-react/pull/5982))
+- **Title:**
+  - Added OUIA props ([#5943](https://github.com/patternfly/patternfly-react/pull/5943))
+- **Toolbar:**
+  - Added OUIA props ([#5951](https://github.com/patternfly/patternfly-react/pull/5951))
+- **Tooltip:**
+  - Cleaned up timeouts on unmount to prevent warning([#5991](https://github.com/patternfly/patternfly-react/pull/5991))
+- **Tree view:**
+  - Cleaned up docs ([#6068](https://github.com/patternfly/patternfly-react/pull/6068))
+  - Fixed console warning about uncontrolled inputs when checkbox swaps between determinate/indeterminate ([#6041](https://github.com/patternfly/patternfly-react/pull/6041))
+
+### Access console extension
+- Persist rfc instance in VncConsole ([#6012](https://github.com/patternfly/patternfly-react/pull/6012))
+
+### Charts
+- Fixed donut chart showing a gap ([#6084](https://github.com/patternfly/patternfly-react/pull/6084))
+- Updated Victory tooltip performance ([#6049](https://github.com/patternfly/patternfly-react/pull/6049))
+
+### Log viewer extension
+- Added dark theme ([#6044](https://github.com/patternfly/patternfly-react/pull/6044))
+- Fix to not overestimate size for empty lines ([#6033](https://github.com/patternfly/patternfly-react/pull/6033))
+- Moved log viewer to extensions ([#6011](https://github.com/patternfly/patternfly-react/pull/6011))
+
+### Table
+- Updated to avoid Object constructor ([#5999](https://github.com/patternfly/patternfly-react/pull/5999))
+- Cleaned up and expanded table docs ([#5984](https://github.com/patternfly/patternfly-react/pull/5984))
+- Made more table doc updates ([#6077](https://github.com/patternfly/patternfly-react/pull/6077))
+
+### Other
+- **Chore:**
+  - Added keyboard handling helper ([#5972](https://github.com/patternfly/patternfly-react/pull/5972))
+  - Changed useLayoutEffect to useIsomorphicLayoutEffect ([#5954](https://github.com/patternfly/patternfly-react/pull/5954))
+  - Removed beta component console warnings from promoted components ([#5990](https://github.com/patternfly/patternfly-react/pull/5990))
+- **Demos:**
+  - Added password strength demo ([#6053](https://github.com/patternfly/patternfly-react/pull/6053))
+- **Docs:** 
+  - Fixed broken link in tokens readme ([#5938](https://github.com/patternfly/patternfly-react/pull/5938))
+  - Moved some repeated demo code to wrapper ([#5978](https://github.com/patternfly/patternfly-react/pull/5978))
+  - Updated references of master to main in the contribution guide ([#5975](https://github.com/patternfly/patternfly-react/pull/5975))
+- **Deps:**
+  - Updated dependency theme-patternfly-org to v0.6.6 ([#6103](https://github.com/patternfly/patternfly-react/pull/6103))
+  - Removed PatternFly 3 as a dependency from react-catalog-view-extension ([#5987](https://github.com/patternfly/patternfly-react/pull/5987))
+
 ## 2021.08 release notes (2021-06-22)
 - [@patternfly/react-catalog-view-extension@4.12.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.12.0)
 - [@patternfly/react-charts@6.15.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.15.3)
