@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-const ComposableTableMisc: React.FunctionComponent = () => {
+export const ComposableTableMisc: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -82,5 +82,4 @@ const ComposableTableMisc: React.FunctionComponent = () => {
     </TableComposable>
   );
 };
-
-export default ComposableTableMisc;
+ComposableTableMisc.displayName = 'ComposableTableMisc';

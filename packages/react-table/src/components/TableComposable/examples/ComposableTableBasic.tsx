@@ -13,7 +13,7 @@ interface Repository {
 // TODO FIXME this isn't getting recognized by the docs site
 // type ExampleType = 'default' | 'compact' | 'compactBorderless';
 
-const ComposableTableBasic: React.FunctionComponent = () => {
+export const ComposableTableBasic: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -84,5 +84,4 @@ const ComposableTableBasic: React.FunctionComponent = () => {
     </React.Fragment>
   );
 };
-
-export default ComposableTableBasic;
+ComposableTableBasic.displayName = 'ComposableTableBasic';
