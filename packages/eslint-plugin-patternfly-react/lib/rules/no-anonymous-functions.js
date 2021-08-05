@@ -1,3 +1,5 @@
+const path = require('path');
+
 // https://astexplorer.net/#/gist/60c119aa79dab3a3e438cc762d21490f/e2cdd0547688a64eff1d8964156cfd8fce55d21d
 module.exports = {
   meta: {
@@ -17,6 +19,11 @@ module.exports = {
     ]
   },
   create(context) {
+    const filename = context.getFilename();
+    if (path.basename(path.dirname(filename)) === 'examples') {
+      return {};
+    }
+
     return {
       ExportNamedDeclaration(node) {
         if (!node.declaration) {
