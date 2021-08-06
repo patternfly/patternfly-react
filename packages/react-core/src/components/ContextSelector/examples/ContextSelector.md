@@ -6,8 +6,6 @@ propComponents: ['ContextSelector', 'ContextSelectorItem', 'ContextSelectorFoote
 ouia: true
 ---
 
-import { useState } from 'react';
-
 ## Examples
 
 ### Basic
@@ -108,10 +106,10 @@ const items = [
 ];
 
 const PlainTextContextSelector: React.FC = () => {
-  const [isOpen, setOpen] = useState(false);
-  const [selected, setSelected] = useState(items[0]);
-  const [searchValue, setSearchValue] = useState('');
-  const [filteredItems, setFilteredItems] = useState(items);
+  const [isOpen, setOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState(items[0]);
+  const [searchValue, setSearchValue] = React.useState('');
+  const [filteredItems, setFilteredItems] = React.useState(items);
 
   function onToggle(event: any, isOpen: boolean) {
     setOpen(isOpen);
