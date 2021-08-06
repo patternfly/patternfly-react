@@ -45,6 +45,8 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** Footer of the context selector */
   footer?: React.ReactNode;
+  /** Modifies the context selector toggle for plain text styles. */
+  isPlainText?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -64,7 +66,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     onSearchButtonClick: () => undefined as any,
     menuAppendTo: 'inline',
     ouiaSafe: true,
-    footer: null as React.ReactNode
+    footer: null as React.ReactNode,
+    isPlainText: false
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -101,6 +104,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       menuAppendTo,
       ouiaId,
       ouiaSafe,
+      isPlainText,
       footer,
       ...props
     } = this.props;
@@ -164,6 +168,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
           id={toggleId}
           parentRef={this.parentRef.current}
           aria-labelledby={`${screenReaderLabelId} ${toggleId}`}
+          isPlainText={isPlainText}
         />
         {isOpen && menuAppendTo === 'inline' && menuContainer}
       </div>
