@@ -89,7 +89,7 @@ class SimpleContextSelector extends React.Component {
 ### Plain with text
 
 ```ts
-import React, { useState } from 'react';
+import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
 const items = [
