@@ -1093,8 +1093,6 @@ class ToolbarStacked extends React.Component {
       resourceSelected: null,
       statusIsExpanded: false,
       statusSelected: null,
-      typeIsExpanded: false,
-      typeSelected: null,
       splitButtonDropdownIsOpen: false,
       page: 1,
       perPage: 20
@@ -1132,19 +1130,6 @@ class ToolbarStacked extends React.Component {
       });
     };
 
-    this.onTypeToggle = isExpanded => {
-      this.setState({
-        typeIsExpanded: isExpanded
-      });
-    };
-
-    this.onTypeSelect = (event, selection) => {
-      this.setState({
-        typeSelected: selection,
-        typeIsExpanded: false
-      });
-    };
-
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
         page: pageNumber
@@ -1177,8 +1162,6 @@ class ToolbarStacked extends React.Component {
       resourceSelected,
       statusIsExpanded,
       statusSelected,
-      typeIsExpanded,
-      typeSelected,
       splitButtonDropdownIsOpen
     } = this.state;
 
@@ -1247,24 +1230,6 @@ class ToolbarStacked extends React.Component {
             ariaLabelledBy="stacked-example-status-select"
           >
             {this.statusOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-            ))}
-          </Select>
-        </ToolbarItem>
-        <ToolbarItem variant="label" id="stacked-example-type-select">
-          Type
-        </ToolbarItem>
-        <ToolbarItem>
-          <Select
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            onToggle={this.onTypeToggle}
-            onSelect={this.onTypeSelect}
-            selections={typeSelected}
-            isOpen={typeIsExpanded}
-            ariaLabelledBy="stacked-example-type-select"
-          >
-            {this.typeOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
             ))}
           </Select>
