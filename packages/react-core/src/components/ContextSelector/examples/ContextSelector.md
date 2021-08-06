@@ -113,20 +113,20 @@ const PlainTextContextSelector: React.FC = () => {
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
 
-  const onToggle = (event, isOpen) => {
+  function onToggle(event: any, isOpen: boolean) {
     setOpen(isOpen);
   };
 
-  const onSelect = (event, value) => {
+  function onSelect(event: any, value: string) {
     setSelected(value);
     setOpen(!isOpen);
   };
 
-  const onSearchInputChange = value => {
+  function onSearchInputChange(value: string) {
     setSearchValue(value);
   };
 
-  const onSearchButtonClick = event => {
+  function onSearchButtonClick(event: any) {
     const filtered =
       searchValue === '' ? items : items.filter(str => str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
 

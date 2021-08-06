@@ -110,8 +110,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         className={css(
           styles.contextSelectorToggle,
           isActive && styles.modifiers.active,
-          isPlainText && styles.modifiers.plain,
-          isPlainText && styles.modifiers.text,
+          isPlainText && [styles.modifiers.plain, styles.modifiers.text],
           className
         )}
         type="button"
