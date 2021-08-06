@@ -1,9 +1,12 @@
 ---
 id: Context selector
 section: components
-propComponents: ['ContextSelector', 'ContextSelectorItem']
+propComponents: ['ContextSelector', 'ContextSelectorItem', 'ContextSelectorFooter']
+
 ouia: true
 ---
+
+import { useState } from 'react';
 
 ## Examples
 
@@ -83,6 +86,70 @@ class SimpleContextSelector extends React.Component {
     );
   }
 }
+```
+
+### Plain with text
+
+```ts
+import React, { useState } from 'react';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
+
+const items = [
+  'My Project',
+  'OpenShift Cluster',
+  'Production Ansible',
+  'AWS',
+  'Azure',
+  'My Project 2',
+  'OpenShift Cluster ',
+  'Production Ansible 2 ',
+  'AWS 2',
+  'Azure 2'
+];
+
+const PlainTextContextSelector: React.FC = () => {
+  const [isOpen, setOpen] = useState(false);
+  const [selected, setSelected] = useState(items[0]);
+  const [searchValue, setSearchValue] = useState('');
+  const [filteredItems, setFilteredItems] = useState(items);
+
+  const onToggle = (event, isOpen) => {
+    setOpen(isOpen);
+  };
+
+  const onSelect = (event, value) => {
+    setSelected(value);
+    setOpen(!isOpen);
+  };
+
+  const onSearchInputChange = value => {
+    setSearchValue(value);
+  };
+
+  const onSearchButtonClick = event => {
+    const filtered =
+      searchValue === '' ? items : items.filter(str => str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
+
+    setFilteredItems(filtered || []);
+  };
+  return (
+    <ContextSelector
+      toggleText={selected}
+      onSearchInputChange={onSearchInputChange}
+      isOpen={isOpen}
+      searchInputValue={searchValue}
+      onToggle={onToggle}
+      onSelect={onSelect}
+      onSearchButtonClick={onSearchButtonClick}
+      screenReaderLabel="Selected Project:"
+      isPlainText
+    >
+      {filteredItems.map((item, index) => (
+        <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
+      ))}
+    </ContextSelector>
+  );
+};
 ```
 
 ### With footer

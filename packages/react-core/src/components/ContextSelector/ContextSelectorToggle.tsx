@@ -22,6 +22,8 @@ export interface ContextSelectorToggleProps {
   parentRef?: any;
   /** Forces active state */
   isActive?: boolean;
+  /** Modifies the context selector toggle for plain text styles. */
+  isPlainText?: boolean;
 }
 
 export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
@@ -92,6 +94,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       isOpen,
       onToggle,
       id,
+      isPlainText,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isActive,
       onEnter,
@@ -104,7 +107,13 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         {...props}
         id={id}
         ref={this.toggle}
-        className={css(styles.contextSelectorToggle, isActive && styles.modifiers.active, className)}
+        className={css(
+          styles.contextSelectorToggle,
+          isActive && styles.modifiers.active,
+          isPlainText && styles.modifiers.plain,
+          isPlainText && styles.modifiers.text,
+          className
+        )}
         type="button"
         onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
