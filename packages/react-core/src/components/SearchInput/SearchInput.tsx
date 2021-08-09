@@ -221,6 +221,12 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setSearchValue(updatedValue);
   };
 
+  const onEnter = (event: React.KeyboardEvent<any>) => {
+    if (event.key === 'Enter') {
+      onSearchHandler(event);
+    }
+  };
+
   const buildFormGroups = () => {
     const formGroups = [] as React.ReactNode[];
     attributes.forEach((attribute: string | SearchAttribute, index: number) => {
@@ -282,6 +288,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               value={searchValue}
               placeholder={placeholder}
               aria-label={ariaLabel}
+              onKeyDown={onEnter}
               onChange={onChangeHandler}
               disabled={isDisabled}
             />
