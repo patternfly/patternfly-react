@@ -363,7 +363,6 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
                     <a
                       className="pf-c-breadcrumb__link"
                       href="#"
-                      target={null}
                     >
                       Section Title
                     </a>
@@ -408,7 +407,6 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
                     <a
                       className="pf-c-breadcrumb__link"
                       href="#"
-                      target={null}
                     >
                       Section Title
                     </a>
@@ -455,7 +453,6 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
                       aria-current="page"
                       className="pf-c-breadcrumb__link pf-m-current"
                       href="#"
-                      target={null}
                     >
                       Section Landing
                     </a>
@@ -644,7 +641,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     <a
                       className="pf-c-breadcrumb__link"
                       href="#"
-                      target={null}
                     >
                       Section Title
                     </a>
@@ -689,7 +685,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     <a
                       className="pf-c-breadcrumb__link"
                       href="#"
-                      target={null}
                     >
                       Section Title
                     </a>
@@ -736,7 +731,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                       aria-current="page"
                       className="pf-c-breadcrumb__link pf-m-current"
                       href="#"
-                      target={null}
                     >
                       Section Landing
                     </a>
@@ -930,7 +924,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                         <a
                           className="pf-c-breadcrumb__link"
                           href="#"
-                          target={null}
                         >
                           Section Title
                         </a>
@@ -975,7 +968,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                         <a
                           className="pf-c-breadcrumb__link"
                           href="#"
-                          target={null}
                         >
                           Section Title
                         </a>
@@ -1022,7 +1014,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                           aria-current="page"
                           className="pf-c-breadcrumb__link pf-m-current"
                           href="#"
-                          target={null}
                         >
                           Section Landing
                         </a>
@@ -1681,7 +1672,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           <a
                             className="pf-c-breadcrumb__link"
                             href="#"
-                            target={null}
                           >
                             Section Title
                           </a>
@@ -1726,7 +1716,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                           <a
                             className="pf-c-breadcrumb__link"
                             href="#"
-                            target={null}
                           >
                             Section Title
                           </a>
@@ -1773,7 +1762,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                             aria-current="page"
                             className="pf-c-breadcrumb__link pf-m-current"
                             href="#"
-                            target={null}
                           >
                             Section Landing
                           </a>
@@ -2313,7 +2301,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   <a
                     className="pf-c-breadcrumb__link"
                     href="#"
-                    target={null}
                   >
                     Section Title
                   </a>
@@ -2358,7 +2345,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   <a
                     className="pf-c-breadcrumb__link"
                     href="#"
-                    target={null}
                   >
                     Section Title
                   </a>
@@ -2405,7 +2391,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                     aria-current="page"
                     className="pf-c-breadcrumb__link pf-m-current"
                     href="#"
-                    target={null}
                   >
                     Section Landing
                   </a>
