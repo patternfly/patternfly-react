@@ -90,11 +90,12 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
 
   allowTabFirstItem() {
     // Allow tabbing to first menu item
-    const first = this.menuRef.current.querySelector('ul').querySelector('button, a') as
-      | HTMLButtonElement
-      | HTMLAnchorElement;
-    if (first) {
-      first.tabIndex = 0;
+    const current = this.menuRef.current;
+    if (current) {
+      const first = current.querySelector('ul button, ul a') as HTMLButtonElement | HTMLAnchorElement;
+      if (first) {
+        first.tabIndex = 0;
+      }
     }
   }
 
@@ -122,12 +123,12 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   }
 
   handleDrilldownTransition = (event: TransitionEvent) => {
-    const ref = this.menuRef;
+    const current = this.menuRef.current;
 
     if (
-      !ref.current ||
-      (ref.current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
-        !Array.from(ref.current.getElementsByClassName('pf-c-menu')).includes(
+      !current ||
+      (current !== (event.target as HTMLElement).closest('.pf-c-menu') &&
+        !Array.from(current.getElementsByClassName('pf-c-menu')).includes(
           (event.target as HTMLElement).closest('.pf-c-menu')
         ))
     ) {
@@ -138,7 +139,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       this.state.transitionMoveTarget.focus();
       this.setState({ transitionMoveTarget: null });
     } else {
-      const nextMenu = ref.current.querySelector('#' + this.props.activeMenu) || ref.current || null;
+      const nextMenu = current.querySelector('#' + this.props.activeMenu) || current || null;
       const nextTarget = Array.from(nextMenu.getElementsByTagName('UL')[0].children).filter(
         el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
       )[0].firstChild;
