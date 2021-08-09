@@ -107,6 +107,10 @@ describe('Nav Test', () => {
     });
   });
 
+  it('Verify Horizontal SubNav', () => {
+    cy.get('#subnav-horizontal').should('have.class', 'pf-m-horizontal-subnav');
+  });
+
   it('Verify Tertiary Nav', () => {
     cy.get('#nav-primary-tertiary .pf-c-nav__link').each((tertiaryLink: JQuery<HTMLAnchorElement>, index: number) => {
       const isCurrent = tertiaryLink.hasClass('pf-m-current');
