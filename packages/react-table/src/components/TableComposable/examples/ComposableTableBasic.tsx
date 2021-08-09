@@ -25,7 +25,7 @@ export const ComposableTableBasic: React.FunctionComponent = () => {
   // TODO FIXME use ExampleType instead of string here
   // const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
   const [exampleChoice, setExampleChoice] = React.useState('default');
-  const handleItemClick: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
+  const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
     const id = event.currentTarget.id;
     // TODO FIXME use ExampleType
     // setExampleChoice(id as ExampleType);
@@ -39,19 +39,19 @@ export const ComposableTableBasic: React.FunctionComponent = () => {
           text="Default"
           buttonId="default"
           isSelected={exampleChoice === 'default'}
-          onChange={handleItemClick}
+          onChange={onExampleTypeChange}
         />
         <ToggleGroupItem
           text="Compact"
           buttonId="compact"
           isSelected={exampleChoice === 'compact'}
-          onChange={handleItemClick}
+          onChange={onExampleTypeChange}
         />
         <ToggleGroupItem
           text="Compact borderless"
           buttonId="compactBorderless"
           isSelected={exampleChoice === 'compactBorderless'}
-          onChange={handleItemClick}
+          onChange={onExampleTypeChange}
         />
       </ToggleGroup>
       <TableComposable
