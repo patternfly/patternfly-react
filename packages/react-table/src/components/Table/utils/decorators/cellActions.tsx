@@ -45,6 +45,7 @@ export const cellActions = (
     property
   };
   const resolvedActions = resolveOrDefault(actionResolver, actions, rowData, extraData) as IAction[];
+  // TODO figure out something here where `extraData.rowIndex` is coming up undefined in the example????
   const resolvedIsDisabled = resolveOrDefault(
     areActionsDisabled,
     rowData && rowData.disableActions,
