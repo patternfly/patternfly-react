@@ -18,9 +18,14 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
   ];
 
   // Index of the currently sorted column
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  // TODO put the type param back in this useState call when the TS parser is fixed
+  // const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState(null);
+
   // Sort direction of the currently sorted column
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  // TODO put the type param back in this useState call when the TS parser is fixed
+  // const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortDirection, setActiveSortDirection] = React.useState(null);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex
