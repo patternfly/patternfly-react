@@ -7,6 +7,7 @@ import {
 } from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
 import * as React from 'react';
 import { CustomActionsToggleProps } from './ActionsColumn';
+import { ButtonProps } from '@patternfly/react-core';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -145,7 +146,7 @@ export interface ISortBy {
   defaultDirection?: 'asc' | 'desc';
 }
 
-export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
+export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, Pick<ButtonProps, 'variant'> {
   /** Flag indicating an item on actions menu is a separator, rather than an action */
   isSeparator?: boolean;
   /** Key of actions menu item */
