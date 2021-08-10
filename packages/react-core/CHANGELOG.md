@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.148.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.2...@patternfly/react-core@4.148.0) (2021-08-10)
+
+
+### Features
+
+* **HelperText:** update default icons for success/error ([#6130](https://github.com/patternfly/patternfly-react/issues/6130)) ([0b7d722](https://github.com/patternfly/patternfly-react/commit/0b7d72248e3f5ed8135d75d87d39350f6bbd7bd7))
+
+
+
+
+
 ## [4.147.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.1...@patternfly/react-core@4.147.2) (2021-08-10)
 
 
