@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.147.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.1...@patternfly/react-core@4.147.2) (2021-08-10)
+
+
+### Bug Fixes
+
+* **SelectMenu:** omit isLastOptionBeforeFooter from props ([#6147](https://github.com/patternfly/patternfly-react/issues/6147)) ([6c6f42c](https://github.com/patternfly/patternfly-react/commit/6c6f42cabf1a7a2e81aefac2bc0fe46b19180c21))
+
+
+
+
+
 ## [4.147.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.0...@patternfly/react-core@4.147.1) (2021-08-09)
 
 **Note:** Version bump only for package @patternfly/react-core
