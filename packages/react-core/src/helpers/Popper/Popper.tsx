@@ -69,6 +69,14 @@ export interface PopperProps {
     right?: string;
     bottom?: string;
     left?: string;
+    topStart?: string;
+    topEnd?: string;
+    bottomStart?: string;
+    bottomEnd?: string;
+    leftStart?: string;
+    leftEnd?: string;
+    rightStart?: string;
+    rightEnd?: string;
   };
   /** Distance of the popper to the trigger */
   distance?: number;
@@ -93,7 +101,22 @@ export interface PopperProps {
   /** Enable to flip the popper when it reaches the boundary */
   enableFlip?: boolean;
   /** The behavior of how the popper flips when it reaches the boundary */
-  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
+  flipBehavior?:
+    | 'flip'
+    | (
+        | 'top'
+        | 'bottom'
+        | 'left'
+        | 'right'
+        | 'top-start'
+        | 'top-end'
+        | 'bottom-start'
+        | 'bottom-end'
+        | 'left-start'
+        | 'left-end'
+        | 'right-start'
+        | 'right-end'
+      )[];
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -252,18 +275,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     ]
   });
 
+  // Returns the CSS modifier class in order to place the Popper's arrow properly
+  // Depends on the position of the Popper relative to the reference element
   const modifierFromPopperPosition = () => {
     if (attributes && attributes.popper && attributes.popper['data-popper-placement']) {
-      const popperPlacement = attributes.popper['data-popper-placement'];
-      if (popperPlacement.startsWith('top')) {
-        return positionModifiers.top || '';
-      } else if (popperPlacement.startsWith('bottom')) {
-        return positionModifiers.bottom || '';
-      } else if (popperPlacement.startsWith('left')) {
-        return positionModifiers.left || '';
-      } else if (popperPlacement.startsWith('right')) {
-        return positionModifiers.right || '';
-      }
+      const popperPlacement = attributes.popper['data-popper-placement'] as keyof typeof positionModifiers;
+      return positionModifiers[popperPlacement];
     }
     return positionModifiers.top;
   };
