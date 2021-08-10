@@ -70,8 +70,8 @@ export const ComposableTableBasic: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {repositories.map((repo, rowIndex) => (
-            <Tr key={rowIndex}>
+          {repositories.map(repo => (
+            <Tr key={repo.name}>
               <Td dataLabel="Repositories">{repo.name}</Td>
               <Td dataLabel="Branches">{repo.branches}</Td>
               <Td dataLabel="Pull requests">{repo.prs}</Td>

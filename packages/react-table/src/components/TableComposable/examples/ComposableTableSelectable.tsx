@@ -95,7 +95,7 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
       </Thead>
       <Tbody>
         {repositories.map((repo, rowIndex) => (
-          <Tr key={rowIndex}>
+          <Tr key={repo.name}>
             <Td
               select={{
                 rowIndex,

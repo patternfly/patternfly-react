@@ -64,7 +64,7 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
           const lastCommitTextCenter = rowIndex !== 2;
           return (
             <Tr
-              key={rowIndex}
+              key={repo.name}
               className={isOddRow ? 'odd-row-class' : 'even-row-class'}
               style={isOddRow ? customStyle : {}}
             >

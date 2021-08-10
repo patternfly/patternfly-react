@@ -119,7 +119,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {repositories.map((repo, rowIndex) => {
+          {repositories.map(repo => {
             // Arbitrary logic to determine which rows get which actions in this example
             // TODO add this type annotation back when the TS parser is fixed
             // let rowActions: TdProps['actions']['items'] = defaultActions;
@@ -131,7 +131,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
               rowActions = lastRowActions;
             }
             return (
-              <Tr key={rowIndex}>
+              <Tr key={repo.name}>
                 <Td dataLabel="Repositories">{repo.name}</Td>
                 <Td dataLabel="Branches">{repo.branches}</Td>
                 <Td dataLabel="Pull requests">{repo.prs}</Td>
