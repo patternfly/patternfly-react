@@ -79,18 +79,18 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
       }
     }
   ];
-  const isRepoExpandable = (repo: Repository) => !!repo.details; // Arbitrary logic for this example
 
   // In this example, expanded rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
+  const initialExpandedRepoNames = repositories.filter(repo => !!repo.details).map(repo => repo.name); // Default to all expanded
   // TODO put the generic type param back when the TS parser is fixed.
-  // const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>([]);
-  const [expandedRepoNames, setExpandedRepoNames] = React.useState([]);
+  // const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
+  const [expandedRepoNames, setExpandedRepoNames] = React.useState(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
     setExpandedRepoNames(prevExpanded => {
       const otherExpandedRepoNames = prevExpanded.filter(r => r !== repo.name);
-      return isExpanding && isRepoExpandable(repo) ? [...otherExpandedRepoNames, repo.name] : otherExpandedRepoNames;
+      return isExpanding ? [...otherExpandedRepoNames, repo.name] : otherExpandedRepoNames;
     });
   const isRepoExpanded = (repo: Repository) => expandedRepoNames.includes(repo.name);
 
@@ -145,7 +145,7 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
               <Tr>
                 <Td
                   expand={
-                    isRepoExpandable(repo)
+                    repo.details
                       ? {
                           rowIndex,
                           isExpanded: isRepoExpanded(repo),
@@ -160,20 +160,20 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
                 <Td dataLabel="Workspaces">{repo.workspaces}</Td>
                 <Td dataLabel="Last commit">{repo.lastCommit}</Td>
               </Tr>
-              {isRepoExpandable(repo) ? (
+              {repo.details ? (
                 <Tr isExpanded={isRepoExpanded(repo)}>
                   {!childIsFullWidth ? <Td /> : null}
-                  {repo.details?.detail1 ? (
+                  {repo.details.detail1 ? (
                     <Td dataLabel="Repo detail 1" noPadding={childHasNoPadding} colSpan={detail1Colspan}>
                       <ExpandableRowContent>{repo.details.detail1}</ExpandableRowContent>
                     </Td>
                   ) : null}
-                  {repo.details?.detail2 ? (
+                  {repo.details.detail2 ? (
                     <Td dataLabel="Repo detail 2" noPadding={childHasNoPadding} colSpan={detail2Colspan}>
                       <ExpandableRowContent>{repo.details.detail2}</ExpandableRowContent>
                     </Td>
                   ) : null}
-                  {repo.details?.detail3 ? (
+                  {repo.details.detail3 ? (
                     <Td dataLabel="Repo detail 3" noPadding={childHasNoPadding} colSpan={detail3Colspan}>
                       <ExpandableRowContent>{repo.details.detail3}</ExpandableRowContent>
                     </Td>
