@@ -141,7 +141,7 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
             }
           }
           return (
-            <Tbody key={repo.name}>
+            <Tbody key={repo.name} isExpanded={isRepoExpanded(repo)}>
               <Tr>
                 <Td
                   expand={
