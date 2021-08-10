@@ -3,8 +3,8 @@ import styles from '@patternfly/react-styles/css/components/HelperText/helper-te
 import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HTMLLIElement> {
   /** Content rendered inside the helper text item. */
@@ -56,8 +56,8 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
         <span className={css(styles.helperTextItemIcon)} aria-hidden>
           {(variant === 'default' || variant === 'indeterminate') && <MinusIcon />}
           {variant === 'warning' && <ExclamationTriangleIcon />}
-          {variant === 'success' && <CheckIcon />}
-          {variant === 'error' && <TimesIcon />}
+          {variant === 'success' && <CheckCircleIcon />}
+          {variant === 'error' && <ExclamationCircleIcon />}
         </span>
       )}
       <span className={css(styles.helperTextItemText)}>{children}</span>
