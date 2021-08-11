@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.148.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.0...@patternfly/react-core@4.148.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* **ToolbarFilter:** Add props for customizing ChipGroup text ([#6138](https://github.com/patternfly/patternfly-react/issues/6138)) ([28cbfab](https://github.com/patternfly/patternfly-react/commit/28cbfab02f753ba112f7037c5c9d5562db02edbd))
+
+
+
+
+
 # [4.148.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.2...@patternfly/react-core@4.148.0) (2021-08-10)
 
 
