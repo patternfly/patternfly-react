@@ -22,7 +22,15 @@ export enum PopoverPosition {
   top = 'top',
   bottom = 'bottom',
   left = 'left',
-  right = 'right'
+  right = 'right',
+  topStart = 'top-start',
+  topEnd = 'top-end',
+  bottomStart = 'bottom-start',
+  bottomEnd = 'bottom-end',
+  leftStart = 'left-start',
+  leftEnd = 'left-end',
+  rightStart = 'right-start',
+  rightEnd = 'right-end'
 }
 
 export interface PopoverProps {

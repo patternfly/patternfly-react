@@ -183,7 +183,7 @@ import { Popover } from '@patternfly/react-core';
 
 ```js
 import React from 'react';
-import { Popover, Checkbox, Button } from '@patternfly/react-core';
+import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
 class AdvancedPopover extends React.Component {
   constructor(props) {
@@ -237,11 +237,13 @@ class AdvancedPopover extends React.Component {
               this.setState({ position: event.target.value });
             }}
           >
-            {positions.map(position => (
-              <option key={position} value={position}>
-                {position}
-              </option>
-            ))}
+            {
+              Object.values(PopoverPosition).map(position => (
+                <option key={position} value={position}>
+                  {position}
+                </option>
+              ))
+            }
           </select>
           <Checkbox
             label="Flip popover if the position falls outside the view"
