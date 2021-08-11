@@ -465,7 +465,7 @@ class HorizontalSubNav extends React.Component {
 }
 ```
 
-### Tertiary
+### Legacy tertiary
 
 ```js
 import React from 'react';
