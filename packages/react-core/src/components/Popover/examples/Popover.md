@@ -183,7 +183,7 @@ import { Popover } from '@patternfly/react-core';
 
 ```js
 import React from 'react';
-import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+import { Popover, Checkbox, Button } from '@patternfly/react-core';
 
 class AdvancedPopover extends React.Component {
   constructor(props) {
@@ -212,6 +212,21 @@ class AdvancedPopover extends React.Component {
   }
 
   render() {
+    const positions = [
+      'top',
+      'bottom',
+      'left',
+      'right',
+      'top-start',
+      'top-end',
+      'bottom-start',
+      'bottom-end',
+      'left-start',
+      'left-end',
+      'right-start',
+      'right-end'
+    ];
+
     return (
       <div>
         <div>
@@ -222,9 +237,9 @@ class AdvancedPopover extends React.Component {
               this.setState({ position: event.target.value });
             }}
           >
-            {Object.keys(PopoverPosition).map(key => (
-              <option key={key} value={PopoverPosition[key]}>
-                {PopoverPosition[key]}
+            {positions.map(position => (
+              <option key={position} value={position}>
+                {position}
               </option>
             ))}
           </select>
