@@ -105,7 +105,7 @@ const items = [
   'Azure 2'
 ];
 
-const PlainTextContextSelector: React.FC = () => {
+const PlainTextContextSelector: React.FunctionComponent = () => {
   const [isOpen, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(items[0]);
   const [searchValue, setSearchValue] = React.useState('');
@@ -124,7 +124,7 @@ const PlainTextContextSelector: React.FC = () => {
     setSearchValue(value);
   };
 
-  function onSearchButtonClick(event: any) {
+  function onSearchButtonClick(event: React.SyntheticEvent<HTMLButtonElement>) {
     const filtered =
       searchValue === '' ? items : items.filter(str => str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
 
