@@ -30,7 +30,7 @@ export interface TimePickerProps
   /** True if the time is 24 hour time. False if the time is 12 hour time */
   is24Hour?: boolean;
   /** Optional event handler called each time the value in the time picker input changes. */
-  onChange?: (time: string, hour?: number, minute?: number) => void;
+  onChange?: (time: string, hour?: number, minute?: number, isValid?: boolean) => void;
   /** Optional validator can be provided to override the internal time validator. */
   validateTime?: (time: string) => boolean;
   /** Id of the time picker */
@@ -296,7 +296,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   onInputChange = (newTime: string) => {
     if (this.props.onChange) {
-      this.props.onChange(newTime, getHours(newTime, this.state.timeRegex), getMinutes(newTime, this.state.timeRegex));
+      this.props.onChange(
+        newTime,
+        getHours(newTime, this.state.timeRegex),
+        getMinutes(newTime, this.state.timeRegex),
+        this.isValid(newTime)
+      );
     }
     this.scrollToSelection(newTime);
     this.setState({
