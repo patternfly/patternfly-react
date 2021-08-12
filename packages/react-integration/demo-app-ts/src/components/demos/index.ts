@@ -98,6 +98,7 @@ export * from './LineChartDemo/LineChartGreenDemo';
 export * from './LineChartDemo/LineChartSimpleDemo';
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
+export * from './MastheadDemo/MastheadDemo';
 export * from './MenuDemo/MenuDemo';
 export * from './MenuDemo/MenuDrilldownDemo';
 export * from './MenuDemo/MenuToggleDemo';

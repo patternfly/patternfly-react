@@ -6,6 +6,7 @@ propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', 
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import { Link } from '@reach/router';
 
 ## Examples
 
@@ -16,23 +17,19 @@ import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-<React.Fragment>
-  <Masthead id="basic-alt" logo="Logo" onToggle={() => {}} toolbar={<span>Content</span>} />
-  <br />
-  <Masthead id="basic">
-    <MastheadToggle>
-      <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
-        <BarsIcon />
-      </Button>
-    </MastheadToggle>
-    <MastheadMain>
-      <MastheadBrand>Logo</MastheadBrand>
-    </MastheadMain>
-    <MastheadContent>
-      <span>Content</span>
-    </MastheadContent>
-  </Masthead>
-</React.Fragment>;
+<Masthead id="basic">
+  <MastheadToggle>
+    <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
+      <BarsIcon />
+    </Button>
+  </MastheadToggle>
+  <MastheadMain>
+    <MastheadBrand>Logo</MastheadBrand>
+  </MastheadMain>
+  <MastheadContent>
+    <span>Content</span>
+  </MastheadContent>
+</Masthead>;
 ```
 
 ### Basic with mixed content
@@ -197,6 +194,29 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
   </MastheadToggle>
   <MastheadMain>
     <MastheadBrand>Logo</MastheadBrand>
+  </MastheadMain>
+  <MastheadContent>
+    <span>Content</span>
+  </MastheadContent>
+</Masthead>;
+```
+
+### With router link
+
+```js
+import React from 'react';
+import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import { Link } from '@reach/router';
+
+<Masthead id="basic">
+  <MastheadToggle>
+    <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
+      <BarsIcon />
+    </Button>
+  </MastheadToggle>
+  <MastheadMain>
+    <MastheadBrand component={props => <Link {...props} to="#" />}>Logo</MastheadBrand>
   </MastheadMain>
   <MastheadContent>
     <span>Content</span>

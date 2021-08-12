@@ -502,6 +502,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LoginPageDemo
   },
   {
+    id: 'masthead-demo',
+    name: 'Masthead Demo',
+    componentType: Examples.MastheadDemo
+  },
+  {
     id: 'menu-demo',
     name: 'Menu Demo',
     componentType: Examples.MenuDemo
