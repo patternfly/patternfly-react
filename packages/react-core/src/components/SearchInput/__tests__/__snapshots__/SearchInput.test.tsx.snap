@@ -6,6 +6,7 @@ exports[`advanced search 1`] = `
   className="pf-c-search-input__text-input"
   disabled={false}
   onChange={[Function]}
+  onKeyDown={[Function]}
   value="username:player firstname:john"
 />
 `;
@@ -16,6 +17,7 @@ exports[`advanced search with custom attributes 1`] = `
   className="pf-c-search-input__text-input"
   disabled={false}
   onChange={[Function]}
+  onKeyDown={[Function]}
   value="username:player firstname:john"
 />
 `;
@@ -153,6 +155,7 @@ exports[`simple search input 1`] = `
   className="pf-c-search-input__text-input"
   disabled={false}
   onChange={[Function]}
+  onKeyDown={[Function]}
   value="test input"
 />
 `;
