@@ -64,9 +64,6 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
       | undefined
   ): void => {
     const { rowData, extraData } = this.props;
-    if (this.toggleRef && this.toggleRef.current) {
-      this.toggleRef.current.focus();
-    }
     // Only prevent default if onClick is provided.  This allows href support.
     if (onClick) {
       event.preventDefault();
@@ -82,7 +79,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
     const actionsToggleClone = actionsToggle ? (
       actionsToggle({ onToggle: this.onToggle, isOpen, isDisabled })
     ) : (
-      <KebabToggle isDisabled={isDisabled} onToggle={this.onToggle} ref={this.toggleRef} />
+      <KebabToggle isDisabled={isDisabled} onToggle={this.onToggle} />
     );
 
     return (

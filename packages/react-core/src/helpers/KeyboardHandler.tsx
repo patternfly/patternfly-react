@@ -29,22 +29,6 @@ export interface KeyboardHandlerProps {
 }
 
 /**
- * This function is a helper for setting the initial tabIndexes in a roving tabIndex
- *
- * @param {HTMLElement[]} options Array of elements which should have a tabIndex of -1, except for the first element which will have a tabIndex of 0
- */
-export const setTabIndex = (options: HTMLElement[]) => {
-  if (options && options.length > 0) {
-    // Iterate the options and set the tabIndex to -1 on every option
-    options.forEach((option: HTMLElement) => {
-      option.tabIndex = -1;
-    });
-    // Manually set the tabIndex of the first option to 0
-    options[0].tabIndex = 0;
-  }
-};
-
-/**
  * This function is a helper for handling basic arrow keyboard interactions. If a component already has its own key handler and event start up/tear down, this function may be easier to integrate in over the full component.
  *
  * @param {event} event Event triggered by the keyboard
