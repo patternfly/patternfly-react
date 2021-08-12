@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import { TreeView } from '../TreeView';
 import { Button } from '@patternfly/react-core';
 import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
+import { TreeViewSearch } from '../TreeViewSearch';
 
 const options = [
   {
@@ -139,14 +140,18 @@ describe('tree view', () => {
 
   test('renders search successfully', () => {
     const view = mount(
-      <TreeView
-        data={options}
-        activeItems={active}
-        onSelect={jest.fn()}
+      <TreeViewSearch
         onSearch={jest.fn()}
-        searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
+        id='input-search'
+        name='search-input'
+        aria-label='Search input example'
       />
     );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders toolbar successfully', () => {
+    const view = mount(<TreeView data={options} activeItems={active} onSelect={jest.fn()} toolbar={<div>test</div>} />);
     expect(view).toMatchSnapshot();
   });
 

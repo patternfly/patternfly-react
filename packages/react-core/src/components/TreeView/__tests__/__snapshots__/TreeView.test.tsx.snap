@@ -6934,6 +6934,28 @@ exports[`tree view renders individual flag options successfully 1`] = `
 `;
 
 exports[`tree view renders search successfully 1`] = `
+<TreeViewSearch
+  aria-label="Search input example"
+  id="input-search"
+  name="search-input"
+  onSearch={[MockFunction]}
+>
+  <div
+    className="pf-c-tree-view__search"
+  >
+    <input
+      aria-label="Search input example"
+      className="pf-c-form-control pf-m-search"
+      id="input-search"
+      name="search-input"
+      onChange={[MockFunction]}
+      type="search"
+    />
+  </div>
+</TreeViewSearch>
+`;
+
+exports[`tree view renders toolbar successfully 1`] = `
 <TreeView
   activeItems={
     Array [
@@ -7052,14 +7074,11 @@ exports[`tree view renders search successfully 1`] = `
       },
     ]
   }
-  onSearch={[MockFunction]}
   onSelect={[MockFunction]}
-  searchProps={
-    Object {
-      "aria-label": "Search input example",
-      "id": "input-search",
-      "name": "search-input",
-    }
+  toolbar={
+    <div>
+      test
+    </div>
   }
 >
   <TreeViewRoot
@@ -7070,34 +7089,15 @@ exports[`tree view renders search successfully 1`] = `
     >
       <TreeViewList
         isNested={false}
-        onSearch={[MockFunction]}
-        searchProps={
-          Object {
-            "aria-label": "Search input example",
-            "id": "input-search",
-            "name": "search-input",
-          }
+        toolbar={
+          <div>
+            test
+          </div>
         }
       >
-        <TreeViewSearch
-          aria-label="Search input example"
-          id="input-search"
-          name="search-input"
-          onChange={[MockFunction]}
-        >
-          <div
-            className="pf-c-tree-view__search"
-          >
-            <input
-              aria-label="Search input example"
-              className="pf-c-form-control pf-m-search"
-              id="input-search"
-              name="search-input"
-              onChange={[MockFunction]}
-              type="search"
-            />
-          </div>
-        </TreeViewSearch>
+        <div>
+          test
+        </div>
         <Divider>
           <hr
             className="pf-c-divider"
