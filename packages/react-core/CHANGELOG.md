@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.149.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.2...@patternfly/react-core@4.149.0) (2021-08-12)
+
+
+### Bug Fixes
+
+* **TimePicker:** small fixes ([#6134](https://github.com/patternfly/patternfly-react/issues/6134)) ([b4a9bb5](https://github.com/patternfly/patternfly-react/commit/b4a9bb5fc3c5a60e905055de6c45619e40215e8c))
+* **Toolbar:** use categoryName.key as filter counter index ([#6143](https://github.com/patternfly/patternfly-react/issues/6143)) ([28d1aef](https://github.com/patternfly/patternfly-react/commit/28d1aef59772d6a9669338bd7457591efc72f715))
+
+
+### Features
+
+* **SearchInput:** submit the search when hitting Enter in the main input field ([#6145](https://github.com/patternfly/patternfly-react/issues/6145)) ([6757b8e](https://github.com/patternfly/patternfly-react/commit/6757b8e46f14987f3680a2d6c3614bab938e2065))
+* **TreeView:** Update treeview to consume toolbar ([#6133](https://github.com/patternfly/patternfly-react/issues/6133)) ([3b3b328](https://github.com/patternfly/patternfly-react/commit/3b3b3281aef7a328ee9c7265aeb3575365ae8798))
+
+
+
+
+
 ## [4.148.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.1...@patternfly/react-core@4.148.2) (2021-08-11)
 
 **Note:** Version bump only for package @patternfly/react-core

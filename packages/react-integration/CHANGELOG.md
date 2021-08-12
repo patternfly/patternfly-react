@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.117.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.116.0...@patternfly/react-integration@4.117.0) (2021-08-12)
+
+
+### Features
+
+* **TreeView:** Update treeview to consume toolbar ([#6133](https://github.com/patternfly/patternfly-react/issues/6133)) ([3b3b328](https://github.com/patternfly/patternfly-react/commit/3b3b3281aef7a328ee9c7265aeb3575365ae8798))
+
+
+
+
+
 # [4.116.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.115.0...@patternfly/react-integration@4.116.0) (2021-08-02)
 
 
