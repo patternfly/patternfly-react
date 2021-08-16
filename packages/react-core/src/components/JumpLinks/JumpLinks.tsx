@@ -104,12 +104,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   React.useEffect(() => setIsExpanded(isExpandedProp), [isExpandedProp]);
   const navRef = React.useRef<HTMLElement>();
 
+  let scrollableElement: HTMLElement;
+
   const scrollSpy = React.useCallback(() => {
-    if (!canUseDOM || !hasScrollSpy) {
-      return;
-    }
-    const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
-    if (!(scrollableElement instanceof HTMLElement)) {
+    if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
       return;
     }
     const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
@@ -133,10 +131,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         }
       }
     });
-  }, [scrollItems, hasScrollSpy, scrollableSelector]);
+  }, [scrollItems, hasScrollSpy, scrollableElement]);
 
   React.useEffect(() => {
-    const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+    scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
     if (!(scrollableElement instanceof HTMLElement)) {
       return;
     }
