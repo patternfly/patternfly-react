@@ -91,7 +91,7 @@ class BasicCodeEditor extends React.Component {
           name="toggle-read-only"
         />
         <Checkbox
-          label="Display Minimap"
+          label="Minimap"
           isChecked={isMinimapVisible}
           onChange={this.toggleMinimap}
           aria-label="display minimap checkbox"

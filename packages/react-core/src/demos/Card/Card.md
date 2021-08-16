@@ -421,7 +421,7 @@ class CardViewBasic extends React.Component {
     const { isLowerToolbarDropdownOpen, filters } = this.state;
 
     const filterDropdownItems = [
-      <SelectOption key="patternfly" value="Patternfly" />,
+      <SelectOption key="patternfly" value="PatternFly" />,
       <SelectOption key="activemq" value="ActiveMQ" />,
       <SelectOption key="apachespark" value="Apache Spark" />,
       <SelectOption key="avro" value="Avro" />,
@@ -494,7 +494,7 @@ class CardViewBasic extends React.Component {
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem>
-              <Button variant="primary">Create a Project</Button>
+              <Button variant="primary">Create a project</Button>
             </OverflowMenuItem>
             <OverflowMenuControl hasAdditionalOptions>
               <Dropdown
@@ -539,7 +539,7 @@ class CardViewBasic extends React.Component {
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Projects</Text>
-              <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
+              <Text component="p">This is a demo that showcases PatternFly cards.</Text>
             </TextContent>
             <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
               <ToolbarContent>{toolbarItems}</ToolbarContent>

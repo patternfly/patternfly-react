@@ -33,7 +33,7 @@ class SimpleAboutModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show About Modal
+          Show about modal
         </Button>
         <AboutModal
           isOpen={isModalOpen}
@@ -93,7 +93,7 @@ class SimpleAboutModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show About Modal
+          Show about modal
         </Button>
         <AboutModal
           isOpen={isModalOpen}
@@ -152,7 +152,7 @@ class ContentRichAboutModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show About Modal
+          Show about modal
         </Button>
         <AboutModal
           isOpen={isModalOpen}
@@ -219,7 +219,7 @@ class SimpleAboutModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show About Modal
+          Show about modal
         </Button>
         <AboutModal
           isOpen={isModalOpen}

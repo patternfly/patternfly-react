@@ -49,7 +49,7 @@ class SimpleApplicationLauncher extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     return (
@@ -117,7 +117,7 @@ class SimpleApplicationLauncher extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     return (
@@ -161,7 +161,7 @@ class SimpleApplicationLauncher extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     return (
@@ -212,7 +212,7 @@ class SimpleApplicationLauncher extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     const style = { marginLeft: 'calc(100% - 46px)' };
@@ -265,7 +265,7 @@ class SimpleApplicationLauncher extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     return (
@@ -565,7 +565,7 @@ class ApplicationLauncheIcon extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     return (
@@ -615,7 +615,7 @@ class ApplicationLauncherDocumentBody extends React.Component {
         Application 2 (button with onClick)
       </ApplicationLauncherItem>,
       <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
-        Unavailable Application
+        Unavailable application
       </ApplicationLauncherItem>
     ];
     return (

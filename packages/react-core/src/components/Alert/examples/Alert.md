@@ -171,8 +171,7 @@ class StaticLiveRegionAlert extends React.Component {
           title="Default live region configuration"
           actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
         >
-          This Alert uses the recommended <code>isLiveRegion</code> prop to automatically sets ARIA attributes and CSS
-          classes.
+          This alert uses the recommended <code>isLiveRegion</code> prop to automatically set ARIA attributes and CSS classes.
         </Alert>
         <Alert
           aria-live="assertive"
@@ -212,21 +211,21 @@ class DynamicLiveRegionAlert extends React.Component {
     const getUniqueId = () => new Date().getTime();
     const addSuccessAlert = () => {
       addAlert({
-        title: 'Single Success Alert',
+        title: 'Single success alert',
         variant: 'success',
         key: getUniqueId()
       });
     };
     const addInfoAlert = () => {
       addAlert({
-        title: 'Single Info Alert',
+        title: 'Single info alert',
         variant: 'info',
         key: getUniqueId()
       });
     };
     const addDangerAlert = () => {
       addAlert({
-        title: 'Single Danger Alert',
+        title: 'Single danger alert',
         variant: 'danger',
         key: getUniqueId()
       });
@@ -236,13 +235,13 @@ class DynamicLiveRegionAlert extends React.Component {
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={addSuccessAlert} type="button" className={btnClasses}>
-            Add Single Success Alert
+            Add single success alert
           </button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>
-            Add Single Info Alert
+            Add single info alert
           </button>
           <button onClick={addDangerAlert} type="button" className={btnClasses}>
-            Add Single Danger Alert
+            Add single danger alert
           </button>
         </InputGroup>
         <AlertGroup isLiveRegion aria-live="polite" aria-relevant="additions text" aria-atomic="false">
@@ -288,7 +287,7 @@ class AsyncLiveRegionAlert extends React.Component {
     const startAsyncAlerts = () => {
       let timerValue = setInterval(() => {
         addAlert({
-          title: `This is a async alert number ${this.state.alerts.length + 1}`,
+          title: `Async alert number ${this.state.alerts.length + 1}`,
           variant: 'info',
           key: getUniqueId()
         });
@@ -300,10 +299,10 @@ class AsyncLiveRegionAlert extends React.Component {
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>
-            Start Async Info Alerts
+            Start async info alerts
           </button>
           <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>
-            Stop Async Info Alerts
+            Stop async info alerts
           </button>
         </InputGroup>
         <AlertGroup isLiveRegion>
