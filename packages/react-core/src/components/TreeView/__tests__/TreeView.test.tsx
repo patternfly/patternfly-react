@@ -178,3 +178,18 @@ describe('tree view', () => {
     expect(view).toMatchSnapshot();
   });
 });
+
+test('renders guides successfully', () => {
+  const view = mount(<TreeView data={options} onSelect={jest.fn()} hasGuides={true}/>);
+    expect(view).toMatchSnapshot();
+});
+
+test('renders compact successfully', () => {
+  const view = mount(<TreeView data={options} onSelect={jest.fn()} isCompact={true}/>);
+    expect(view).toMatchSnapshot();
+});
+
+test('renders compact no background successfully', () => {
+  const view = mount(<TreeView data={options} onSelect={jest.fn()} isCompact={true} compactNoBackground={true}/>);
+    expect(view).toMatchSnapshot();
+});

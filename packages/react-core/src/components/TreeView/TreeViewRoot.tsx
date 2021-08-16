@@ -9,6 +9,12 @@ export interface TreeViewRootProps {
   children: React.ReactNode;
   /** Flag indicating if the tree view has checkboxes */
   hasChecks?: boolean;
+  /** Flag indicating if tree view has guide lines. */
+  hasGuides?: boolean;
+  /** Modifies the tree view to the compact presentation.. */
+  isCompact?: boolean;
+  /** Modifies the tree view compact variant node containers to have a transparent background. */
+  compactNoBackground?: boolean;
   /** Class to add to add if not passed a parentItem */
   className?: string;
 }
@@ -188,9 +194,20 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, hasChecks, className, ...props } = this.props;
+    const { children, hasChecks, hasGuides, isCompact, compactNoBackground, className, ...props } = this.props;
+    let compactStyles;
+    if (isCompact) {
+      if (compactNoBackground) {
+        compactStyles = [styles.modifiers.compact, styles.modifiers.noBackground];
+      }
+      compactStyles = styles.modifiers.compact;
+    }
     return (
-      <div className={css(styles.treeView, className)} ref={this.treeRef} {...props}>
+      <div
+        className={css(styles.treeView, hasGuides && styles.modifiers.guides, compactStyles, className)}
+        ref={this.treeRef}
+        {...props}
+      >
         {children}
       </div>
     );
