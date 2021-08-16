@@ -104,47 +104,48 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   React.useEffect(() => setIsExpanded(isExpandedProp), [isExpandedProp]);
   const navRef = React.useRef<HTMLElement>();
 
-  if (hasScrollSpy) {
-    React.useEffect(() => {
-      if (!canUseDOM) {
-        return;
-      }
-      const scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
-      if (!(scrollableElement instanceof HTMLElement)) {
-        return;
-      }
+  let scrollableElement: HTMLElement;
 
-      function scrollSpy() {
-        const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
-        window.requestAnimationFrame(() => {
-          let newScrollItems = scrollItems;
-          // Items might have rendered after this component. Do a quick refresh.
-          if (!newScrollItems[0] || newScrollItems.includes(null) || newScrollItems[0].offsetParent !== null) {
-            newScrollItems = getScrollItems(children, []);
-            setScrollItems(newScrollItems);
-          }
-          const scrollElements = newScrollItems
-            .map((e, index) => ({
-              y: e ? e.offsetTop : null,
-              index
-            }))
-            .filter(({ y }) => y !== null)
-            .sort((e1, e2) => e2.y - e1.y);
-          for (const { y, index } of scrollElements) {
-            if (scrollPosition >= y) {
-              return setActiveIndex(index);
-            }
-          }
-        });
+  const scrollSpy = React.useCallback(() => {
+    if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
+      return;
+    }
+    const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
+    window.requestAnimationFrame(() => {
+      let newScrollItems = scrollItems;
+      // Items might have rendered after this component. Do a quick refresh.
+      if (!newScrollItems[0] || newScrollItems.includes(null)) {
+        newScrollItems = getScrollItems(children, []);
+        setScrollItems(newScrollItems);
       }
-      if (scrollableElement) {
-        scrollSpy();
-        scrollableElement.addEventListener('scroll', scrollSpy);
+      const scrollElements = newScrollItems
+        .map((e, index) => ({
+          y: e ? e.offsetTop : null,
+          index
+        }))
+        .filter(({ y }) => y !== null)
+        .sort((e1, e2) => e2.y - e1.y);
+      for (const { y, index } of scrollElements) {
+        if (scrollPosition >= y) {
+          return setActiveIndex(index);
+        }
       }
+    });
+  }, [scrollItems, hasScrollSpy, scrollableElement]);
 
-      return () => scrollableElement.removeEventListener('scroll', scrollSpy);
-    }, [scrollItems, hasScrollSpy]);
-  }
+  React.useEffect(() => {
+    scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
+    if (!(scrollableElement instanceof HTMLElement)) {
+      return;
+    }
+    scrollableElement.addEventListener('scroll', scrollSpy);
+
+    return () => scrollableElement.removeEventListener('scroll', scrollSpy);
+  }, [scrollableSelector, scrollSpy]);
+
+  React.useEffect(() => {
+    scrollSpy();
+  }, []);
 
   let jumpLinkIndex = 0;
   const cloneChildren = (children: React.ReactNode): React.ReactNode =>
