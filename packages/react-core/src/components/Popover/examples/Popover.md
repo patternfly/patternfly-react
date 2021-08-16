@@ -212,21 +212,6 @@ class AdvancedPopover extends React.Component {
   }
 
   render() {
-    const positions = [
-      'top',
-      'bottom',
-      'left',
-      'right',
-      'top-start',
-      'top-end',
-      'bottom-start',
-      'bottom-end',
-      'left-start',
-      'left-end',
-      'right-start',
-      'right-end'
-    ];
-
     return (
       <div>
         <div>
