@@ -74,7 +74,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     );
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
-      const isExpandable = activeElement.firstElementChild.classList.contains('pf-c-tree-view__node-toggle');
+      const isExpandable = activeElement.firstElementChild.firstElementChild.classList.contains(
+        'pf-c-tree-view__node-toggle'
+      );
       const isExpanded = activeElement.closest('li').classList.contains('pf-m-expanded');
       if (key === 'ArrowLeft') {
         if (isExpandable && isExpanded) {
