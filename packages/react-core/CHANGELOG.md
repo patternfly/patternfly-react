@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.149.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.149.0...@patternfly/react-core@4.149.1) (2021-08-16)
+
+
+### Bug Fixes
+
+* **jumplinks:** improve perf ([#6128](https://github.com/patternfly/patternfly-react/issues/6128)) ([94448e4](https://github.com/patternfly/patternfly-react/commit/94448e4ea83113d5cb5de75dbf362b2ef0ecd5ef))
+* **Popover:** call setVisible before animation ([#6104](https://github.com/patternfly/patternfly-react/issues/6104)) ([bc7dc1a](https://github.com/patternfly/patternfly-react/commit/bc7dc1aab813cec5c6f63b2051cbbc21eecbe947))
+
+
+
+
+
 # [4.149.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.2...@patternfly/react-core@4.149.0) (2021-08-12)
 
 

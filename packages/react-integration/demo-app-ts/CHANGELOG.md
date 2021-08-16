@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.116.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.116.0...demo-app-ts@4.116.1) (2021-08-16)
+
+
+### Bug Fixes
+
+* **VerticalTabs:** expose href to allow links ([#6072](https://github.com/patternfly/patternfly-react/issues/6072)) ([2b66bcd](https://github.com/patternfly/patternfly-react/commit/2b66bcd07d1675649c045d6cd06a99377c77fcca))
+
+
+
+
+
 # [4.116.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.115.6...demo-app-ts@4.116.0) (2021-08-12)
 
 
