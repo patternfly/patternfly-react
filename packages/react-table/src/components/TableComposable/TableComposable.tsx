@@ -78,7 +78,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
     document.addEventListener('keydown', handleKeys);
 
     if (tableRef && tableRef.current) {
-      setTabIndex(Array.from(tableRef.current.querySelector('tbody').querySelectorAll('button, a, input')));
+      const tbody = tableRef.current.querySelector('tbody');
+      tbody && setTabIndex(Array.from(tbody.querySelectorAll('button, a, input')));
     }
 
     return function cleanup() {
