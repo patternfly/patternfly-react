@@ -7,7 +7,7 @@ export interface TreeViewDataItem {
   /** Internal content of a tree view item */
   name: React.ReactNode;
   /** Title a tree view item. Only used in Compact presentations. */
-  title: React.ReactNode;
+  title?: React.ReactNode;
   /** ID of a tree view item */
   id?: string;
   /** Child nodes of a tree view item */
