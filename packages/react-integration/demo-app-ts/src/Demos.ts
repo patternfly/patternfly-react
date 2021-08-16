@@ -897,6 +897,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TreeViewDemo
   },
   {
+    id: 'vertical-tabs-demo',
+    name: 'Vertical Tabs Demo',
+    componentType: Examples.VerticalTabsDemo
+  },
+  {
     id: 'wizard-demo',
     name: 'Wizard Demo',
     componentType: Examples.WizardDemo
