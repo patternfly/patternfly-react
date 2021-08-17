@@ -329,6 +329,17 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               )}
             </span>
           )}
+          {!!onSearch && (
+            <Button
+              type="submit"
+              variant={ButtonVariant.control}
+              aria-label={submitSearchButtonLabel}
+              onClick={onSearchHandler}
+              isDisabled={isDisabled}
+            >
+              <ArrowRightIcon />
+            </Button>
+          )}
         </div>
         {attributes.length > 0 && (
           <>
