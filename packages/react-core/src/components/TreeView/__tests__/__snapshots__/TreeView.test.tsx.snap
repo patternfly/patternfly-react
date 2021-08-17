@@ -112,7 +112,7 @@ exports[`renders compact no background successfully 1`] = `
     isCompact={true}
   >
     <div
-      className="pf-c-tree-view pf-m-compact"
+      className="pf-c-tree-view pf-m-compact pf-m-no-background"
     >
       <TreeViewList
         isNested={false}
