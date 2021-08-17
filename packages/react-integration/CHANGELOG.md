@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.118.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.117.1...@patternfly/react-integration@4.118.0) (2021-08-17)
+
+
+### Features
+
+* **Navigation:** add horizontal subnav variant ([#6149](https://github.com/patternfly/patternfly-react/issues/6149)) ([1ec8488](https://github.com/patternfly/patternfly-react/commit/1ec8488a3056fc659ec83f04a6e793903ddd2e83))
+* **Popover:** support diagonal positions ([#6155](https://github.com/patternfly/patternfly-react/issues/6155)) ([f1b1003](https://github.com/patternfly/patternfly-react/commit/f1b10032eb527ada191cef8f7f21e76dc1d7c56c))
+
+
+
+
+
 ## [4.117.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.117.0...@patternfly/react-integration@4.117.1) (2021-08-16)
 
 
