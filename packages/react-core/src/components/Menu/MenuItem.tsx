@@ -276,7 +276,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       tabIndex={-1}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
-      id={itemId}
       {...props}
     >
       <Component

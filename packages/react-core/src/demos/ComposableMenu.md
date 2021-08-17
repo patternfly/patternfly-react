@@ -940,7 +940,14 @@ MenuAppLauncher = () => {
   }, [isOpen, menuRef]);
 
   const toggle = (
-    <MenuToggle ref={toggleRef} variant="plain" onClick={onToggleClick} isExpanded={isOpen} style={{ width: 'auto' }}>
+    <MenuToggle
+      aria-label="Toggle"
+      ref={toggleRef}
+      variant="plain"
+      onClick={onToggleClick}
+      isExpanded={isOpen}
+      style={{ width: 'auto' }}
+    >
       <ThIcon />
     </MenuToggle>
   );
