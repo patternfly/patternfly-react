@@ -8,6 +8,10 @@ propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Link } from '@reach/router';
 
+`Masthead` should contain the following components to maintain proper layout and formatting: `MastheadToggle`, `MastheadMain`, and `MastheadContent`.
+
+`MastheadMain` represents the smaller area taken up by a logo, and will typically contain a `MastheadBrand`. `MastheadContent` represents the main portion of the masthead area and will typically contain a `Toolbar` or other menu-like content such as `Dropdown`.
+
 ## Examples
 
 ### Basic
