@@ -268,7 +268,40 @@ class TreeDualListSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chosenOptions: [],
+      chosenOptions: [
+        {
+          id: 'CF1',
+          text: 'Chosen Folder 1',
+          isChecked: false,
+          checkProps: { 'aria-label': 'Chosen Folder 1' },
+          hasBadge: true,
+          badgeProps: { isRead: true },
+          children: [
+            { id: 'CO1', text: 'Chosen Option 1', isChecked: false, checkProps: { 'aria-label': 'Chosen Option 1' } },
+            {
+              id: 'CF1A',
+              text: 'Chosen Folder 1A',
+              isChecked: false,
+              checkProps: { 'aria-label': 'Chosen Folder 1A' },
+              children: [
+                {
+                  id: 'CO2',
+                  text: 'Chosen Option 2',
+                  isChecked: false,
+                  checkProps: { 'aria-label': 'Chosen Option 2' }
+                },
+                {
+                  id: 'CO3',
+                  text: 'Chosen Option 3',
+                  isChecked: false,
+                  checkProps: { 'aria-label': 'Chosen Option 3' }
+                }
+              ]
+            },
+            { id: 'CO4', text: 'Chosen Option 4', isChecked: false, checkProps: { 'aria-label': 'Chosen Option 4' } }
+          ]
+        }
+      ],
       availableOptions: [
         {
           id: 'F1',
