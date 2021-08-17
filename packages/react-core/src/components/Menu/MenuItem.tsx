@@ -77,7 +77,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   direction,
   description = null as string,
   onClick = () => {},
-  component = 'button',
+  component,
   isDisabled = false,
   isExternalLink = false,
   isSelected = null,
@@ -102,7 +102,10 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     setFlyoutRef,
     disableHover
   } = React.useContext(MenuContext);
-  const Component = !component && to ? 'a' : (component as any);
+  let Component = !component && to ? 'a' : 'button';
+  if (component) {
+    Component = component as any;
+  }
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
