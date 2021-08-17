@@ -1107,8 +1107,6 @@ MenuAppLauncher = () => {
       </MenuContent>
     </Menu>
   );
-  return (
-    <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} enableFlip={false} />
-  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
 };
 ```
