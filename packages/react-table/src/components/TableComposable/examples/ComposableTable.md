@@ -69,7 +69,7 @@ Some general notes:
 - You can set the `TableComposable` variant to `compact`
 
 ### Composable: Basic
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption } from '@patternfly/react-table';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
@@ -146,7 +146,7 @@ ComposableTableBasic = () => {
 
 To add a header tooltip or popover to `Th`, pass a `ThInfoType` object via the `info` prop.
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -258,7 +258,7 @@ type OnSort = (
 
 ```
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -376,7 +376,7 @@ type OnSelect = (
 ) => void;
 ```
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -460,7 +460,7 @@ ComposableTableSelectable = () => {
 
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props.
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -522,7 +522,7 @@ This example demonstrates adding actions as the last column. The header's last c
 
 To make a cell an action cell, pass a `TdActionsType` object via the `actions` prop on a rows's last `Td`.
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 import { ButtonVariant, DropdownToggle, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
@@ -659,7 +659,7 @@ type OnCollapse = (
 ) => void;
 ```
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
@@ -839,7 +839,7 @@ export type OnExpand = (
 ) => void;
 ```
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 
@@ -1022,7 +1022,7 @@ ComposableCompoundExpandableTable = () => {
 
 ### Composable: Cell width, breakpoint modifiers
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -1070,7 +1070,7 @@ ComposableTableCellWidth = () => {
 
 ### Composable: Controlling text
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -1131,7 +1131,7 @@ ComposableControllingText = () => {
 
 ### Composable: Modifiers with table text
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, TableText } from '@patternfly/react-table';
 
@@ -1188,7 +1188,7 @@ type OnFavorite = (
 
 To make a favoritable column sortable, pass a `ThSortType` object to the favoritable column's `Th` with `isFavorites` set to true.
 
-```js isBeta
+```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
@@ -1302,7 +1302,6 @@ the voice over technologies will recognize the flat table structure as a tree.
 ```js isBeta
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
