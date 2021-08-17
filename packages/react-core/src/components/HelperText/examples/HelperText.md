@@ -8,9 +8,9 @@ beta: true
 
 import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
 import QuestionIcon from '@patternfly/react-icons/dist/js/icons/question-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import ExclamationIcon from '@patternfly/react-icons/dist/js/icons/exclamation-icon';
 
 ## Examples
 
@@ -84,9 +84,9 @@ import React from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
 import QuestionIcon from '@patternfly/react-icons/dist/js/icons/question-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationIcon from '@patternfly/react-icons/dist/js/icons/exclamation-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 <React.Fragment>
   <HelperText>
@@ -98,17 +98,17 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem variant="warning" icon={<ExclamationTriangleIcon />}>
+    <HelperTextItem variant="warning" icon={<ExclamationIcon />}>
       This is warning helper text
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem variant="success" icon={<CheckCircleIcon />}>
+    <HelperTextItem variant="success" icon={<CheckIcon />}>
       This is success helper text
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem variant="error" icon={<ExclamationCircleIcon />}>
+    <HelperTextItem variant="error" icon={<TimesIcon />}>
       This is error helper text
     </HelperTextItem>
   </HelperText>
@@ -133,7 +133,7 @@ import { HelperText, HelperTextItem } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 <React.Fragment>
   <HelperText>
@@ -160,7 +160,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
     </HelperTextItem>
   </HelperText>
   <HelperText>
-    <HelperTextItem isDynamic variant="error" icon={<ExclamationCircleIcon />}>
+    <HelperTextItem isDynamic variant="error" icon={<TimesIcon />}>
       This is error helper text with a custom icon
     </HelperTextItem>
   </HelperText>

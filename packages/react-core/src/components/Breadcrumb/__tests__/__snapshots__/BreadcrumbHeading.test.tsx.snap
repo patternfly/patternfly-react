@@ -67,7 +67,6 @@ exports[`BreadcrumbHeading component should render link breadcrumbTitle 1`] = `
       aria-current="page"
       className="pf-c-breadcrumb__link pf-m-current"
       href="/somewhere"
-      target={null}
     >
       Item
     </a>

@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.148.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.1...@patternfly/react-core@4.148.2) (2021-08-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.148.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.0...@patternfly/react-core@4.148.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* **ToolbarFilter:** Add props for customizing ChipGroup text ([#6138](https://github.com/patternfly/patternfly-react/issues/6138)) ([28cbfab](https://github.com/patternfly/patternfly-react/commit/28cbfab02f753ba112f7037c5c9d5562db02edbd))
+
+
+
+
+
+# [4.148.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.2...@patternfly/react-core@4.148.0) (2021-08-10)
+
+
+### Features
+
+* **HelperText:** update default icons for success/error ([#6130](https://github.com/patternfly/patternfly-react/issues/6130)) ([0b7d722](https://github.com/patternfly/patternfly-react/commit/0b7d72248e3f5ed8135d75d87d39350f6bbd7bd7))
+
+
+
+
+
+## [4.147.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.1...@patternfly/react-core@4.147.2) (2021-08-10)
+
+
+### Bug Fixes
+
+* **SelectMenu:** omit isLastOptionBeforeFooter from props ([#6147](https://github.com/patternfly/patternfly-react/issues/6147)) ([6c6f42c](https://github.com/patternfly/patternfly-react/commit/6c6f42cabf1a7a2e81aefac2bc0fe46b19180c21))
+
+
+
+
+
+## [4.147.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.0...@patternfly/react-core@4.147.1) (2021-08-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.147.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.146.0...@patternfly/react-core@4.147.0) (2021-08-03)
 
 
