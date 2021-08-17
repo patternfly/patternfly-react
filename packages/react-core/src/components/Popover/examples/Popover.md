@@ -222,11 +222,13 @@ class AdvancedPopover extends React.Component {
               this.setState({ position: event.target.value });
             }}
           >
-            {Object.keys(PopoverPosition).map(key => (
-              <option key={key} value={PopoverPosition[key]}>
-                {PopoverPosition[key]}
-              </option>
-            ))}
+            {
+              Object.values(PopoverPosition).map(position => (
+                <option key={position} value={position}>
+                  {position}
+                </option>
+              ))
+            }
           </select>
           <Checkbox
             label="Flip popover if the position falls outside the view"

@@ -22,7 +22,15 @@ export enum PopoverPosition {
   top = 'top',
   bottom = 'bottom',
   left = 'left',
-  right = 'right'
+  right = 'right',
+  topStart = 'top-start',
+  topEnd = 'top-end',
+  bottomStart = 'bottom-start',
+  bottomEnd = 'bottom-end',
+  leftStart = 'left-start',
+  leftEnd = 'left-end',
+  rightStart = 'right-start',
+  rightEnd = 'right-end'
 }
 
 export interface PopoverProps {
@@ -71,7 +79,22 @@ export interface PopoverProps {
    * ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no
    * space to the right, so it finally shows the popover on the left.
    */
-  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
+  flipBehavior?:
+    | 'flip'
+    | (
+        | 'top'
+        | 'bottom'
+        | 'left'
+        | 'right'
+        | 'top-start'
+        | 'top-end'
+        | 'bottom-start'
+        | 'bottom-end'
+        | 'left-start'
+        | 'left-end'
+        | 'right-start'
+        | 'right-end'
+      )[];
   /**
    * Footer content
    * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
@@ -129,7 +152,20 @@ export interface PopoverProps {
    * it will change the position if there is not enough space for the starting position.
    * The behavior of where it flips to can be controlled through the flipBehavior prop.
    */
-  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?:
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
    * clicked, Enter key was used on it, or the ESC key is used.
@@ -258,7 +294,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     top: styles.modifiers.top,
     bottom: styles.modifiers.bottom,
     left: styles.modifiers.left,
-    right: styles.modifiers.right
+    right: styles.modifiers.right,
+    'top-start': styles.modifiers.topLeft,
+    'top-end': styles.modifiers.topRight,
+    'bottom-start': styles.modifiers.bottomLeft,
+    'bottom-end': styles.modifiers.bottomRight,
+    'left-start': styles.modifiers.leftTop,
+    'left-end': styles.modifiers.leftBottom,
+    'right-start': styles.modifiers.rightTop,
+    'right-end': styles.modifiers.rightBottom
   };
   const hasCustomMinWidth = minWidth !== popoverMinWidth.value;
   const hasCustomMaxWidth = maxWidth !== popoverMaxWidth.value;

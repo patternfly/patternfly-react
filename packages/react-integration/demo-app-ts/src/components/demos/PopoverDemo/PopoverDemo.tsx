@@ -79,6 +79,16 @@ export class PopoverDemo extends Component {
         >
           <button id="popover-content-close-toggle">Toggle Popover</button>
         </Popover>
+        <Popover
+          id="popover-right-start"
+          aria-label="Diagonal right top"
+          headerContent={<div>Popover header</div>}
+          bodyContent="I'm right top"
+          footerContent="Popover footer"
+          position="right-start"
+        >
+          <button id="popover-right-top-toggle">Toggle Popover</button>
+        </Popover>
       </>
     );
   }
