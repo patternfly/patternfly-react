@@ -35,7 +35,7 @@ export interface NavProps
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
   /** For horizontal navs */
-  variant?: 'default' | 'horizontal' | 'tertiary';
+  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav';
 }
 
 export const NavContext = React.createContext<{
@@ -136,7 +136,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
           onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal
+          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant)
         }}
       >
         <nav
@@ -145,6 +145,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
             theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
             variant === 'tertiary' && styles.modifiers.tertiary,
+            variant === 'horizontal-subnav' && styles.modifiers.horizontalSubnav,
             this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
