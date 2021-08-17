@@ -201,8 +201,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     if (isCompact) {
       if (compactNoBackground) {
         compactStyles = [styles.modifiers.compact, styles.modifiers.noBackground];
+      } else {
+        compactStyles = styles.modifiers.compact;
       }
-      compactStyles = styles.modifiers.compact;
     }
     return (
       <div
