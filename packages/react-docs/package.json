@@ -45,7 +45,7 @@
     "rimraf": "^2.6.3",
     "serve": "^11.3.2",
     "shx": "^0.3.2",
-    "theme-patternfly-org": "0.6.17"
+    "theme-patternfly-org": "0.6.21"
   },
   "keywords": [
     "gatsby"
