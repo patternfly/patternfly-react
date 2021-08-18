@@ -375,7 +375,7 @@ type OnSelect = (
   extraData: IExtraData
 ) => void;
 ```
-Note: This example has a `shift + select` feature where holding shift while 
+**Note:** This example has a `shift + select` feature where holding shift while 
 checking checkboxes will check intermediate rows' checkboxes.
 
 ```js isBeta
@@ -405,13 +405,13 @@ ComposableTableSelectable = () => {
       newSelected = newSelected.map((sel, index) => {
         // select all between recentSelection and current rowId;
         const intermediateIndexes = numberSelected > 0 ? 
-          Array.from(new Array(numberSelected), (x, i) => i + (recentSelection + 1)) : 
-          Array.from(new Array(Math.abs(numberSelected)), (x, i) => i + rowId);
+          Array.from(new Array(numberSelected + 1), (x, i) => i + (recentSelection)) : 
+          Array.from(new Array(Math.abs(numberSelected) +1 ), (x, i) => i + rowId);
         return intermediateIndexes.includes(index) ? true : sel;
       })
     }
     setSelected(newSelected);
-    setRecentSelection(isSelected ? rowId : null);
+    setRecentSelection(rowId);
     
     if (!isSelected && allRowsSelected) {
       setAllRowsSelected(false);
