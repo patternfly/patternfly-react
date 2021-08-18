@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Tile } from '../Tile';
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 describe('Tile', () => {
   test('basic', () => {

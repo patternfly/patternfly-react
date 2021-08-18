@@ -1,6 +1,6 @@
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 import React from 'react';
-import UserIcon from '@patternfly/react-icons/dist/js/icons/user-icon';
+import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
 
 interface AlertDemoState {
   alertOneVisible: boolean;

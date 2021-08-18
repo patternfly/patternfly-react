@@ -6,7 +6,7 @@ propComponents: ['DualListSelector']
 beta: true
 ---
 
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
+import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 ## Examples
 
@@ -129,7 +129,7 @@ class BasicDualListSelectorWithSearch extends React.Component {
 ```js
 import React from 'react';
 import { Button, ButtonVariant, Dropdown, DropdownItem, DualListSelector, KebabToggle } from '@patternfly/react-core';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
+import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 class ComplexDualListSelector extends React.Component {
   constructor(props) {

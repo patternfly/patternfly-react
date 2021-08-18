@@ -5,7 +5,7 @@ cssPrefix: pf-c-tooltip
 propComponents: ['Tooltip']
 ---
 
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-question-circle-icon';
+import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
 import './TooltipExamples.css';
 
 ## Examples
@@ -67,7 +67,7 @@ import { Tooltip } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-question-circle-icon';
+import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
 
 <div style={{ margin: '100px' }}>
   <Tooltip

@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
 import { formatBreakpointMods, toCamel, capitalize, canUseDOM } from '../../helpers/util';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {

@@ -1,6 +1,6 @@
 import React, { Component, RefObject } from 'react';
 import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@patternfly/react-core';
-import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
+import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 
 export class TabUncontrolledDemo extends Component {
   state = {

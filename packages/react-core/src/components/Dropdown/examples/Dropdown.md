@@ -7,12 +7,12 @@ propComponents:
 ouia: true
 ---
 
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import { Link } from '@reach/router';
 import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
@@ -28,7 +28,7 @@ import {
   DropdownItem,
   DropdownSeparator,
 } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {
@@ -306,7 +306,7 @@ import {
   DropdownItem,
   DropdownSeparator
 } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class PrimaryDropdown extends React.Component {
   constructor(props) {
@@ -646,7 +646,7 @@ import {
   DropdownItem,
   BadgeToggle
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 class BadgeDropdown extends React.Component {
   constructor(props) {
@@ -710,7 +710,7 @@ import {
   DropdownItem,
   DropdownSeparator
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 
 class IconDropdown extends React.Component {
   constructor(props) {
@@ -1077,9 +1077,9 @@ import {
   DropdownToggleAction,
   DropdownItem
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 class SplitButtonActionDropdown extends React.Component {
   constructor(props) {
@@ -1232,7 +1232,7 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 import { Link } from '@reach/router';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class RouterDropdown extends React.Component {
   constructor(props) {
@@ -1364,7 +1364,7 @@ import {
   DropdownToggle,
   DropdownItem
 } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class MenuOnDocumentBodyDropdown extends React.Component {
   constructor(props) {
@@ -1420,9 +1420,9 @@ import {
   DropdownToggle,
   DropdownItem
 } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {

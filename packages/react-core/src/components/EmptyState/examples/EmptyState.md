@@ -4,8 +4,8 @@ section: components
 cssPrefix: pf-c-empty-state
 propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateIcon', 'EmptyStateSecondaryActions']
 ---
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Examples
 ### Basic
@@ -19,7 +19,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState>
   <EmptyStateIcon icon={CubesIcon} />
@@ -54,7 +54,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState variant={EmptyStateVariant.xs}>
   <Title headingLevel="h4" size="md">
@@ -87,7 +87,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState variant={EmptyStateVariant.small}>
   <EmptyStateIcon icon={CubesIcon} />
@@ -122,7 +122,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState variant={EmptyStateVariant.large}>
   <EmptyStateIcon icon={CubesIcon} />
@@ -157,7 +157,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState variant={EmptyStateVariant.xl}>
   <EmptyStateIcon icon={CubesIcon} />
@@ -224,7 +224,7 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 
 <EmptyState>

@@ -5,7 +5,7 @@ cssPrefix: pf-c-copyclipboard
 propComponents: ['ClipboardCopy', 'ClipboardCopyButton']
 ---
 
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
 
@@ -125,7 +125,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyAction, Button } from '@patternfly/react-core';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 <ClipboardCopy
   variant="inline-compact"

@@ -9,7 +9,7 @@ import { Visibility, classNames } from './../Table/utils/decorators/classNames';
 import { ThInfoType, ThSelectType, ThSortType, formatterValueType } from '../Table/base/types';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
 import { BaseCellProps } from './TableComposable';
 import { IFormatterValueType, IColumn } from '../Table/TableTypes';
 

@@ -6,7 +6,7 @@ propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject', 
 ouia: true
 ---
 
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 ## Examples
 
@@ -14,7 +14,7 @@ import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
@@ -1995,7 +1995,7 @@ class PlainSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Select, SelectOption, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
@@ -2245,7 +2245,7 @@ class FavoritesSelect extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
 
 class SelectWithFooter extends React.Component {
@@ -2330,7 +2330,7 @@ class SelectWithFooter extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
 
 class SelectWithFooterCheckbox extends React.Component {
@@ -2410,7 +2410,7 @@ class SelectWithFooterCheckbox extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import {
   Select,
   SelectOption,
@@ -2509,7 +2509,7 @@ class SelectViewMore extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import {
   Select,
   SelectOption,

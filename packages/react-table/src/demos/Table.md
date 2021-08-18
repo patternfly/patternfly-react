@@ -4,20 +4,20 @@ section: components
 ---
 
 import { Checkbox, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 ### Bulk select
 
@@ -275,8 +275,8 @@ import {
   ToolbarExpandIconWrapper,
   ToolbarContent
 } from '@patternfly/react-core';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 class ExpandCollapseAllTableDemo extends React.Component {
   constructor(props) {
@@ -484,11 +484,11 @@ import {
   SelectVariant
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 class ColumnManagementAction extends React.Component {
   constructor(props) {
@@ -1139,11 +1139,11 @@ import {
   SelectVariant
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/js/icons/sort-amount-down-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 class ColumnManagementAction extends React.Component {
   constructor(props) {
@@ -1909,8 +1909,8 @@ import {
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class FilterTableDemo extends React.Component {
@@ -2367,8 +2367,8 @@ import {
   EmptyStateVariant,
   Bullseye
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core';
 
@@ -2557,9 +2557,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -2780,7 +2780,7 @@ import {
   EmptyStateSecondaryActions,
   Title
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class EmptyStateDemo extends React.Component {
@@ -2876,8 +2876,8 @@ class LoadingStateDemo extends React.Component {
 import React from 'react';
 import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, Title } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 
 class ErrorStateDemo extends React.Component {
   render() {

@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MenuToggle } from '../MenuToggle';
 import { Badge } from '../../Badge';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 describe('menu toggle', () => {
   test('renders successfully', () => {

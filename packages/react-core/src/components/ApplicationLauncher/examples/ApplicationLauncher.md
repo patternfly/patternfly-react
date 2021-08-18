@@ -6,7 +6,7 @@ propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem', 'ApplicationL
 ouia: true
 ---
 
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { Link } from '@reach/router';
 import pfIcon from './pf-logo-small.svg';
 
@@ -535,7 +535,7 @@ class ApplicationLauncherFavorites extends React.Component {
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class ApplicationLauncheIcon extends React.Component {
   constructor(props) {

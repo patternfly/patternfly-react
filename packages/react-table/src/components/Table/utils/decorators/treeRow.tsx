@@ -4,8 +4,8 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { Button, Checkbox } from '@patternfly/react-core';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import EllipsisHIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-h-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import EllipsisHIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-h-icon';
 
 export const treeRow = (
   onCollapse: OnTreeRowCollapse,

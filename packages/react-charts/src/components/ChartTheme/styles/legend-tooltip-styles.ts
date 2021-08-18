@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_FontWeight_bold';
-import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/js/chart_voronoi_labels_Fill';
+import global_FontWeight_bold from '@patternfly/react-tokens/dist/esm/global_FontWeight_bold';
+import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_labels_Fill';
 
 // Legend tooltip styles
 export const LegendTooltipStyles = {

@@ -6,8 +6,8 @@ propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'Wizard
 ---
 
 import { Button, Wizard, WizardFooter, WizardContextConsumer, ModalVariant, Alert, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondaryActions, Title, Progress } from '@patternfly/react-core';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import SlackHashIcon from '@patternfly/react-icons/dist/js/icons/slack-hash-icon';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
@@ -47,8 +47,8 @@ class SimpleWizard extends React.Component {
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import SlackHashIcon from '@patternfly/react-icons/dist/js/icons/slack-hash-icon';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
 class WizardWithNavAnchors extends React.Component {
   constructor(props) {

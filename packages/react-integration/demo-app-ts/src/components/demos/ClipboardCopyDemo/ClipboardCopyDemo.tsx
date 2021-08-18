@@ -1,6 +1,6 @@
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@patternfly/react-core';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 export class ClipboardCopyDemo extends React.Component {
   static displayName = 'ClipboardCopyDemo';

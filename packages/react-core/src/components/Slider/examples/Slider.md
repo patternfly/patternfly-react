@@ -7,10 +7,10 @@ beta: true
 ---
 
 import { Slider, Button, Text, TextVariants } from '@patternfly/react-core';
-import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
-import LockIcon from '@patternfly/react-icons/dist/js/icons/lock-icon';
-import LockOpenIcon from '@patternfly/react-icons/dist/js/icons/lock-open-icon';
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
+import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
 
 ## Examples
 
@@ -360,10 +360,10 @@ class ThumbValueInput extends React.Component {
 ```js
 import React from 'react';
 import { Slider, Button, Text, TextVariants } from '@patternfly/react-core';
-import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
-import LockIcon from '@patternfly/react-icons/dist/js/icons/lock-icon';
-import LockOpenIcon from '@patternfly/react-icons/dist/js/icons/lock-open-icon';
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
+import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
 
 class SliderActions extends React.Component {
   constructor(props) {

@@ -7,11 +7,11 @@ ouia: true
 ---
 
 import './alert.css';
-import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
-import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
-import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
 ## Examples
 
@@ -385,11 +385,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque 
 ```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
-import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
-import BoxIcon from '@patternfly/react-icons/dist/js/icons/box-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/js/icons/database-icon';
-import ServerIcon from '@patternfly/react-icons/dist/js/icons/server-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/js/icons/laptop-icon';
+import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
+import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
+import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
+import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
+import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
 class AlertTypes extends React.Component {
   render() {

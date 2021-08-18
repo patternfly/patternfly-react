@@ -7,8 +7,8 @@ import {
   TreeViewDataItem,
   TreeViewSearch
 } from '@patternfly/react-core';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import React, { Component } from 'react';
 
 export class TreeViewDemo extends Component {

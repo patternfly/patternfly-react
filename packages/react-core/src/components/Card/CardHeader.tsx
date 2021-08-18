@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
 import { Button } from '../Button';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the CardHeader */

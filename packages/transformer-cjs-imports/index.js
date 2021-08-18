@@ -11,7 +11,7 @@ const ts = require('typescript');
  */
 function transformerCJSImports(context) {
   // Only transform for CJS build
-  if (context.getCompilerOptions().target !== 1) {
+  if (context.getCompilerOptions().target !== 2) {
     return node => node;
   }
   /**

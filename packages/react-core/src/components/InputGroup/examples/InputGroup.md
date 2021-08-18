@@ -4,11 +4,11 @@ section: components
 cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
 ---
-import AtIcon from '@patternfly/react-icons/dist/js/icons/at-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import DollarSignIcon from '@patternfly/react-icons/dist/js/icons/dollar-sign-icon';
-import CalendarAltIcon from '@patternfly/react-icons/dist/js/icons/calendar-alt-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
+import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
+import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import {
   Button,
   ButtonVariant,
@@ -27,8 +27,8 @@ import {
 ### Basic
 ```js
 import React from 'react';
-import AtIcon from '@patternfly/react-icons/dist/js/icons/at-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import {
   Button,
   InputGroup,
@@ -172,7 +172,7 @@ class SimpleInputGroups extends React.Component {
 ### With popover
 ```js
 import React from 'react';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import {
   Button,
   InputGroup,
@@ -224,7 +224,7 @@ class SimpleInputGroups extends React.Component {
 ### With multiple group siblings
 ```js
 import React from 'react';
-import DollarSignIcon from '@patternfly/react-icons/dist/js/icons/dollar-sign-icon';
+import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import {
   Button,
   TextArea,
