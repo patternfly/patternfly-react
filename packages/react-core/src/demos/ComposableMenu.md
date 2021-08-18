@@ -1122,9 +1122,5 @@ MenuAppLauncher = () => {
       />
     </div>
   );
-  // (<React.Fragment>
-  //   {toggle}
-  //   {isOpen && menu}
-  // </React.Fragment>)
 };
 ```
