@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.150.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.1...@patternfly/react-core@4.150.2) (2021-08-18)
+
+
+### Bug Fixes
+
+* **DualListSelector:** respect initial chosen opts, select subfolders, reset selected on all ([#6180](https://github.com/patternfly/patternfly-react/issues/6180)) ([a1df392](https://github.com/patternfly/patternfly-react/commit/a1df3925e3e464d0caa27cb94b3162ad7cb7212b))
+
+
+
+
+
 ## [4.150.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.0...@patternfly/react-core@4.150.1) (2021-08-18)
 
 **Note:** Version bump only for package @patternfly/react-core
