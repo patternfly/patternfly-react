@@ -5,13 +5,14 @@ const Project = require('@lerna/project');
 // '@patternfly/patternfly': {'4.0.4': ['@patternfly/react-styles', ...]},
 // '@patternfly/react-core': {'^4.0.3': ['@patternfly/react-docs', ...]]
 const patternflyDeps = {};
+const otherDeps = ['typescript', 'tslib'];
 
 async function accumulateDependencies(package, dependencies) {
   if (!dependencies) {
     return;
   }
   Object.entries(dependencies)
-    .filter(([dep, _version]) => dep.startsWith('@patternfly'))
+    .filter(([dep, _version]) => dep.startsWith('@patternfly') || otherDeps.includes(dep))
     .forEach(([dep, version]) => {
       patternflyDeps[dep] = patternflyDeps[dep] || {};
       patternflyDeps[dep][version] = patternflyDeps[dep][version] || [];
