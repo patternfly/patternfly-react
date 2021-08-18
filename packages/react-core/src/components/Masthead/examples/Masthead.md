@@ -16,7 +16,7 @@ import { Link } from '@reach/router';
 
 ### Basic
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -38,7 +38,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Basic with mixed content
 
-```js
+```ts
 import React from 'react';
 import {
   Masthead,
@@ -75,7 +75,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Display inline
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -97,7 +97,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Display stack
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -119,7 +119,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Display stack, display inline responsive
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -141,7 +141,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Light variant
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -163,7 +163,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Light 200 variant
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -185,7 +185,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### Inset
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -207,7 +207,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
 ### With router link
 
-```js
+```ts
 import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';

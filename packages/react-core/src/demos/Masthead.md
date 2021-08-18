@@ -11,7 +11,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon
 
 ### Basic
 
-```js
+```ts
 import React from 'react';
 import {
   Masthead,
@@ -37,80 +37,77 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 class BasicMasthead extends React.Component {
-  constructor(props) {
-    super(props);
-    this.items = [
-      'My Project',
-      'OpenShift Cluster',
-      'Production Ansible',
-      'AWS',
-      'Azure',
-      'My Project 2',
-      'OpenShift Cluster ',
-      'Production Ansible 2 ',
-      'AWS 2',
-      'Azure 2'
-    ];
+  items = [
+    'My Project',
+    'OpenShift Cluster',
+    'Production Ansible',
+    'AWS',
+    'Azure',
+    'My Project 2',
+    'OpenShift Cluster',
+    'Production Ansible 2',
+    'AWS 2',
+    'Azure 2'
+  ];
 
-    this.state = {
-      isOpen: false,
-      isDropdownOpen: false,
-      isKebabOpen: false,
-      selected: this.items[0],
-      searchValue: '',
-      filteredItems: this.items
-    };
+  state = {
+    isOpen: false,
+    isDropdownOpen: false,
+    isKebabOpen: false,
+    selected: this.items[0],
+    searchValue: '',
+    filteredItems: this.items
+  };
 
-    this.onToggle = (event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
+  onToggle = (event: any, isOpen: boolean) => {
+    this.setState({
+      isOpen
+    });
+  };
 
-    this.onDropdownToggle = isDropdownOpen => {
-      this.setState({
-        isDropdownOpen
-      });
-    };
+  onDropdownToggle = (isDropdownOpen: boolean) => {
+    this.setState({
+      isDropdownOpen
+    });
+  };
 
-    this.onKebabToggle = isKebabOpen => {
-      this.setState({
-        isKebabOpen
-      });
-    };
+  onKebabToggle = (isKebabOpen: boolean) => {
+    this.setState({
+      isKebabOpen
+    });
+  };
 
-    this.onSelect = (event, value) => {
-      this.setState({
-        selected: value,
-        isOpen: !this.state.isOpen
-      });
-    };
+  onSelect = (event: any, value: string) => {
+    this.setState({
+      selected: value,
+      isOpen: !this.state.isOpen
+    });
+  };
 
-    this.onDropdownSelect = event => {
-      this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
-      });
-    };
+  onDropdownSelect = () => {
+    this.setState({
+      isDropdownOpen: !this.state.isDropdownOpen
+    });
+  };
 
-    this.onKebabSelect = event => {
-      this.setState({
-        isKebabOpen: !this.state.isKebabOpen
-      });
-    };
+  onKebabSelect = () => {
+    this.setState({
+      isKebabOpen: !this.state.isKebabOpen
+    });
+  };
 
-    this.onSearchInputChange = value => {
-      this.setState({ searchValue: value });
-    };
+  onSearchInputChange = (value: string) => {
+    this.setState({ searchValue: value });
+  };
 
-    this.onSearchButtonClick = event => {
-      const filtered =
-        this.state.searchValue === ''
-          ? this.items
-          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+  onSearchButtonClick = () => {
+    const filtered =
+      this.state.searchValue === ''
+        ? this.items
+        : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
 
-      this.setState({ filteredItems: filtered || [] });
-    };
-  }
+    this.setState({ filteredItems: filtered || [] });
+  };
 
   render() {
     const { isOpen, isDropdownOpen, isKebabOpen, selected, searchValue, filteredItems } = this.state;
