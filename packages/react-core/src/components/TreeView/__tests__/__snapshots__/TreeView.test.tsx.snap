@@ -2,7 +2,6 @@
 
 exports[`renders compact no background successfully 1`] = `
 <TreeView
-  compactNoBackground={true}
   data={
     Array [
       Object {
@@ -102,14 +101,13 @@ exports[`renders compact no background successfully 1`] = `
       },
     ]
   }
-  isCompact={true}
   onSelect={[MockFunction]}
+  variant="compactNoBackground"
 >
   <TreeViewRoot
-    compactNoBackground={true}
     hasChecks={false}
     hasGuides={false}
-    isCompact={true}
+    variant="compactNoBackground"
   >
     <div
       className="pf-c-tree-view pf-m-compact pf-m-no-background"
@@ -253,7 +251,6 @@ exports[`renders compact no background successfully 1`] = `
                 </GenerateId>
               </div>
               <TreeView
-                compactNoBackground={true}
                 data={
                   Array [
                     Object {
@@ -304,7 +301,6 @@ exports[`renders compact no background successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={true}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -358,6 +354,7 @@ exports[`renders compact no background successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="compactNoBackground"
               >
                 <TreeViewList
                   isNested={true}
@@ -1084,14 +1081,13 @@ exports[`renders compact successfully 1`] = `
       },
     ]
   }
-  isCompact={true}
   onSelect={[MockFunction]}
+  variant="compact"
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={true}
+    variant="compact"
   >
     <div
       className="pf-c-tree-view pf-m-compact"
@@ -1235,7 +1231,6 @@ exports[`renders compact successfully 1`] = `
                 </GenerateId>
               </div>
               <TreeView
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -1286,7 +1281,6 @@ exports[`renders compact successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={true}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -1340,6 +1334,7 @@ exports[`renders compact successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="compact"
               >
                 <TreeViewList
                   isNested={true}
@@ -2070,10 +2065,9 @@ exports[`renders guides successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={true}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view pf-m-guides"
@@ -2213,7 +2207,6 @@ exports[`renders guides successfully 1`] = `
                 </GenerateId>
               </div>
               <TreeView
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -2264,7 +2257,6 @@ exports[`renders guides successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={true}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -2318,6 +2310,7 @@ exports[`renders guides successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -3045,10 +3038,9 @@ exports[`tree view renders active successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -3224,7 +3216,6 @@ exports[`tree view renders active successfully 1`] = `
                     },
                   ]
                 }
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -3275,7 +3266,6 @@ exports[`tree view renders active successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -3329,6 +3319,7 @@ exports[`tree view renders active successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -4147,10 +4138,9 @@ exports[`tree view renders badges successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -4339,7 +4329,6 @@ exports[`tree view renders badges successfully 1`] = `
                     },
                   ]
                 }
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -4390,7 +4379,6 @@ exports[`tree view renders badges successfully 1`] = `
                 hasBadges={true}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -4444,6 +4432,7 @@ exports[`tree view renders badges successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -5308,10 +5297,9 @@ exports[`tree view renders basic successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -5451,7 +5439,6 @@ exports[`tree view renders basic successfully 1`] = `
                 </GenerateId>
               </div>
               <TreeView
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -5502,7 +5489,6 @@ exports[`tree view renders basic successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -5556,6 +5542,7 @@ exports[`tree view renders basic successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -6284,10 +6271,9 @@ exports[`tree view renders checkboxes successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={true}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -6478,7 +6464,6 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     },
                   ]
                 }
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -6529,7 +6514,6 @@ exports[`tree view renders checkboxes successfully 1`] = `
                 hasBadges={false}
                 hasChecks={true}
                 hasGuides={false}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -6583,6 +6567,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -7489,10 +7474,9 @@ exports[`tree view renders icons successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -7710,7 +7694,6 @@ exports[`tree view renders icons successfully 1`] = `
                     },
                   ]
                 }
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -7775,7 +7758,6 @@ exports[`tree view renders icons successfully 1`] = `
                     size="sm"
                   />
                 }
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -7829,6 +7811,7 @@ exports[`tree view renders icons successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -8880,10 +8863,9 @@ exports[`tree view renders individual flag options successfully 1`] = `
   onSelect={[MockFunction]}
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -9129,7 +9111,6 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     },
                   ]
                 }
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -9182,7 +9163,6 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -9249,6 +9229,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}
@@ -10202,10 +10183,9 @@ exports[`tree view renders search successfully 1`] = `
   }
 >
   <TreeViewRoot
-    compactNoBackground={false}
     hasChecks={false}
     hasGuides={false}
-    isCompact={false}
+    variant="default"
   >
     <div
       className="pf-c-tree-view"
@@ -10413,7 +10393,6 @@ exports[`tree view renders search successfully 1`] = `
                     },
                   ]
                 }
-                compactNoBackground={false}
                 data={
                   Array [
                     Object {
@@ -10464,7 +10443,6 @@ exports[`tree view renders search successfully 1`] = `
                 hasBadges={false}
                 hasChecks={false}
                 hasGuides={false}
-                isCompact={false}
                 isNested={true}
                 onSelect={[MockFunction]}
                 parentItem={
@@ -10518,6 +10496,7 @@ exports[`tree view renders search successfully 1`] = `
                     "name": "ApplicationLauncher",
                   }
                 }
+                variant="default"
               >
                 <TreeViewList
                   isNested={true}

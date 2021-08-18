@@ -37,7 +37,7 @@ export interface TreeViewListItemProps {
   customBadgeContent?: React.ReactNode;
   /** Additional properties of the tree view item badge */
   badgeProps?: any;
-  /** Modifies the tree view to the compact presentation. */
+  /** Flag indicating if the tree view is using a compact variation. */
   isCompact?: boolean;
   /** Active items of tree view */
   activeItems?: TreeViewDataItem[];

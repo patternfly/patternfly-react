@@ -11,10 +11,8 @@ export interface TreeViewRootProps {
   hasChecks?: boolean;
   /** Flag indicating if tree view has guide lines. */
   hasGuides?: boolean;
-  /** Modifies the tree view to the compact presentation.. */
-  isCompact?: boolean;
-  /** Modifies the tree view compact variant node containers to have a transparent background. */
-  compactNoBackground?: boolean;
+  /** Variant presentation styles for the tree view. */
+  variant?: 'default' | 'compact' | 'compactNoBackground';
   /** Class to add to add if not passed a parentItem */
   className?: string;
 }
@@ -194,20 +192,23 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     }
   };
 
+  variantStyleModifiers: { [key in TreeViewRootProps['variant']]: string | string[] } = {
+    default: '',
+    compact: styles.modifiers.compact,
+    compactNoBackground: [styles.modifiers.compact, styles.modifiers.noBackground]
+  };
+
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, hasChecks, hasGuides, isCompact, compactNoBackground, className, ...props } = this.props;
-    let compactStyles;
-    if (isCompact) {
-      if (compactNoBackground) {
-        compactStyles = [styles.modifiers.compact, styles.modifiers.noBackground];
-      } else {
-        compactStyles = styles.modifiers.compact;
-      }
-    }
+    const { children, hasChecks, hasGuides, variant, className, ...props } = this.props;
     return (
       <div
-        className={css(styles.treeView, hasGuides && styles.modifiers.guides, compactStyles, className)}
+        className={css(
+          styles.treeView,
+          hasGuides && styles.modifiers.guides,
+          this.variantStyleModifiers[variant],
+          className
+        )}
         ref={this.treeRef}
         {...props}
       >

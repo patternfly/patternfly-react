@@ -185,11 +185,11 @@ test('renders guides successfully', () => {
 });
 
 test('renders compact successfully', () => {
-  const view = mount(<TreeView data={options} onSelect={jest.fn()} isCompact={true}/>);
+  const view = mount(<TreeView data={options} onSelect={jest.fn()} variant='compact'/>);
     expect(view).toMatchSnapshot();
 });
 
 test('renders compact no background successfully', () => {
-  const view = mount(<TreeView data={options} onSelect={jest.fn()} isCompact={true} compactNoBackground={true}/>);
+  const view = mount(<TreeView data={options} onSelect={jest.fn()} variant='compactNoBackground' />);
     expect(view).toMatchSnapshot();
 });

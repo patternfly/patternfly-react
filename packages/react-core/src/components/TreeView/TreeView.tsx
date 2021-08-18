@@ -45,10 +45,8 @@ export interface TreeViewProps {
   hasBadges?: boolean;
   /** Flag indicating if tree view has guide lines. */
   hasGuides?: boolean;
-  /** Modifies the tree view to the compact presentation. */
-  isCompact?: boolean;
-  /** Modifies the tree view compact variant node containers to have a transparent background. */
-  compactNoBackground?: boolean;
+  /** Variant presentation styles for the tree view. */
+  variant?: 'default' | 'compact' | 'compactNoBackground';
   /** Icon for all leaf or unexpanded node items */
   icon?: React.ReactNode;
   /** Icon for all expanded node items */
@@ -81,8 +79,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   hasChecks = false,
   hasBadges = false,
   hasGuides = false,
-  isCompact = false,
-  compactNoBackground = false,
+  variant = 'default',
   defaultAllExpanded = false,
   allExpanded,
   icon,
@@ -121,7 +118,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           expandedIcon={item.expandedIcon !== undefined ? item.expandedIcon : expandedIcon}
           action={item.action}
           compareItems={compareItems}
-          isCompact={isCompact}
+          isCompact={variant === 'compact' || variant === 'compactNoBackground'}
           {...(item.children && {
             children: (
               <TreeView
@@ -131,8 +128,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 hasChecks={hasChecks}
                 hasBadges={hasBadges}
                 hasGuides={hasGuides}
-                isCompact={isCompact}
-                compactNoBackground={compactNoBackground}
+                variant={variant}
                 allExpanded={allExpanded}
                 defaultAllExpanded={defaultAllExpanded}
                 onSelect={onSelect}
@@ -152,14 +148,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       {parentItem ? (
         treeViewList
       ) : (
-        <TreeViewRoot
-          hasChecks={hasChecks}
-          hasGuides={hasGuides}
-          isCompact={isCompact}
-          compactNoBackground={compactNoBackground}
-          className={className}
-          {...props}
-        >
+        <TreeViewRoot hasChecks={hasChecks} hasGuides={hasGuides} variant={variant} className={className} {...props}>
           {treeViewList}
         </TreeViewRoot>
       )}

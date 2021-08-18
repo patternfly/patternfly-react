@@ -964,7 +964,7 @@ const CompactTreeView: React.FunctionComponent = () => {
         ]
       }
     ];
-    return <TreeView data={options} isCompact={true} defaultAllExpanded={true}/>;
+    return <TreeView data={options} variant='compact' />;
 }
 ``` 
 
@@ -1028,6 +1028,6 @@ const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
         ]
       }
     ];
-    return <TreeView data={options} isCompact={true} compactNoBackground={true} defaultAllExpanded={true} />;
+    return <TreeView data={options} variant='compactNoBackground' />;
 }
 ```
