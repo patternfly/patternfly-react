@@ -406,7 +406,7 @@ ComposableTableSelectable = () => {
         // select all between recentSelection and current rowId;
         const intermediateIndexes = numberSelected > 0 ? 
           Array.from(new Array(numberSelected + 1), (x, i) => i + (recentSelection)) : 
-          Array.from(new Array(Math.abs(numberSelected) +1 ), (x, i) => i + rowId);
+          Array.from(new Array(Math.abs(numberSelected) + 1), (x, i) => i + rowId);
         return intermediateIndexes.includes(index) ? true : sel;
       })
     }
