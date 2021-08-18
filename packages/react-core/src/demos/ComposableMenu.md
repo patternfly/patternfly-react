@@ -900,6 +900,7 @@ MenuAppLauncher = () => {
   const [filteredIds, setFilteredIds] = React.useState(['*']);
   const toggleRef = React.useRef();
   const menuRef = React.useRef();
+  const containerRef = React.useRef();
 
   const handleMenuKeys = event => {
     if (!isOpen) {
@@ -954,11 +955,12 @@ MenuAppLauncher = () => {
 
   const menuItems = [
     <MenuGroup key="group1" label="Group 1">
-      <MenuItem itemId="0" isFavorited={favorites.includes('0')}>
+      <MenuItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
         Application 1
       </MenuItem>
       <MenuItem
         itemId="1"
+        id="1"
         isFavorited={favorites.includes('1')}
         to="#default-link2"
         onClick={ev => ev.preventDefault()}
@@ -970,6 +972,7 @@ MenuAppLauncher = () => {
     <MenuGroup key="group2" label="Group 2">
       <MenuItem
         itemId="2"
+        id="2"
         isFavorited={favorites.includes('2')}
         component={props => <Link {...props} to="#router-link" />}
       >
@@ -977,6 +980,7 @@ MenuAppLauncher = () => {
       </MenuItem>
       <MenuItem
         itemId="3"
+        id="3"
         isFavorited={favorites.includes('3')}
         isExternalLink
         icon={<img src={pfIcon} />}
@@ -986,12 +990,12 @@ MenuAppLauncher = () => {
       </MenuItem>
       <Divider component="li" />
     </MenuGroup>,
-    <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4">
+    <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
       <Tooltip content={<div>Launch Application 3</div>} position="right">
         <span>Application 3 with tooltip</span>
       </Tooltip>
     </MenuItem>,
-    <MenuItem key="disabled-app" itemId="5" isDisabled>
+    <MenuItem key="disabled-app" itemId="5" id="5" isDisabled>
       Unavailable Application
     </MenuItem>
   ];
@@ -1060,7 +1064,7 @@ MenuAppLauncher = () => {
     }
 
     const filteredIds = refFullOptions
-      .filter(item => !textValue || item.innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
+      .filter(item => item.innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
       .map(item => item.id);
     setFilteredIds(filteredIds);
   };
@@ -1107,6 +1111,20 @@ MenuAppLauncher = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <div ref={containerRef}>
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        isVisible={isOpen}
+        popperMatchesTriggerWidth={false}
+        appendTo={containerRef.current}
+      />
+    </div>
+  );
+  // (<React.Fragment>
+  //   {toggle}
+  //   {isOpen && menu}
+  // </React.Fragment>)
 };
 ```
