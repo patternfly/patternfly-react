@@ -955,57 +955,69 @@ MenuAppLauncher = () => {
 
   const menuItems = [
     <MenuGroup key="group1" label="Group 1">
-      <MenuItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
-        Application 1
-      </MenuItem>
-      <MenuItem
-        itemId="1"
-        id="1"
-        isFavorited={favorites.includes('1')}
-        to="#default-link2"
-        onClick={ev => ev.preventDefault()}
-      >
-        Application 2
-      </MenuItem>
-      <Divider />
+      <MenuList>
+        <MenuItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
+          Application 1
+        </MenuItem>
+        <MenuItem
+          itemId="1"
+          id="1"
+          isFavorited={favorites.includes('1')}
+          to="#default-link2"
+          onClick={ev => ev.preventDefault()}
+        >
+          Application 2
+        </MenuItem>
+      </MenuList>
     </MenuGroup>,
+    <Divider key="group1-divider" />,
     <MenuGroup key="group2" label="Group 2">
-      <MenuItem
-        itemId="2"
-        id="2"
-        isFavorited={favorites.includes('2')}
-        component={props => <Link {...props} to="#router-link" />}
-      >
-        @reach/router Link
-      </MenuItem>
-      <MenuItem
-        itemId="3"
-        id="3"
-        isFavorited={favorites.includes('3')}
-        isExternalLink
-        icon={<img src={pfIcon} />}
-        component={props => <Link {...props} to="#router-link2" />}
-      >
-        @reach/router Link with icon
-      </MenuItem>
-      <Divider />
+      <MenuList>
+        <MenuItem
+          itemId="2"
+          id="2"
+          isFavorited={favorites.includes('2')}
+          component={props => <Link {...props} to="#router-link" />}
+        >
+          @reach/router Link
+        </MenuItem>
+        <MenuItem
+          itemId="3"
+          id="3"
+          isFavorited={favorites.includes('3')}
+          isExternalLink
+          icon={<img src={pfIcon} />}
+          component={props => <Link {...props} to="#router-link2" />}
+        >
+          @reach/router Link with icon
+        </MenuItem>
+      </MenuList>
     </MenuGroup>,
-    <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
-      <Tooltip content={<div>Launch Application 3</div>} position="right">
-        <span>Application 3 with tooltip</span>
-      </Tooltip>
-    </MenuItem>,
-    <MenuItem key="disabled-app" itemId="5" id="5" isDisabled>
-      Unavailable Application
-    </MenuItem>
+    <Divider key="group2-divider" />,
+    <MenuList key="other-items">
+      <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
+        <Tooltip content={<div>Launch Application 3</div>} position="right">
+          <span>Application 3 with tooltip</span>
+        </Tooltip>
+      </MenuItem>
+      <MenuItem key="disabled-app" itemId="5" id="5" isDisabled>
+        Unavailable Application
+      </MenuItem>
+    </MenuList>
   ];
 
   const createFavorites = favIds => {
     let favorites = [];
 
     menuItems.forEach(item => {
-      if (item.type === MenuGroup) {
+      if (item.type === MenuList) {
         item.props.children.filter(child => {
+          if (favIds.includes(child.props.itemId)) {
+            favorites.push(child);
+          }
+        });
+      } else if (item.type === MenuGroup) {
+        item.props.children.props.children.filter(child => {
           if (favIds.includes(child.props.itemId)) {
             favorites.push(child);
           }
@@ -1099,15 +1111,15 @@ MenuAppLauncher = () => {
       </MenuInput>
       <Divider />
       <MenuContent>
-        <MenuList>
-          {filteredFavorites.length > 0 && (
+        {filteredFavorites.length > 0 && (
+          <React.Fragment>
             <MenuGroup key="favorites-group" label="Favorites">
-              {filteredFavorites}
-              <Divider key="favorites-divider" />
+              <MenuList>{filteredFavorites}</MenuList>
             </MenuGroup>
-          )}
-          {filteredItems}
-        </MenuList>
+            <Divider key="favorites-divider" />
+          </React.Fragment>
+        )}
+        {filteredItems}
       </MenuContent>
     </Menu>
   );
