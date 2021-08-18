@@ -12,10 +12,6 @@ interface LogViewerProps {
   data?: string;
   /** Consumer may turn off the visibility on the toolbar */
   hasToolbar?: boolean;
-  /** Consumers may define their own controls to feed to the toolbar for custom functionality. */
-  customControls?: React.ReactNode;
-  /** Placeholder text for the searchbar. */
-  placeholder?: string;
   /** Flag to enable or disable line numbers on the log viewer. */
   hasLineNumbers?: boolean;
   /** Width in pixels of the log viewer. */
