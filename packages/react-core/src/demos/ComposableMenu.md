@@ -967,7 +967,7 @@ MenuAppLauncher = () => {
       >
         Application 2
       </MenuItem>
-      <Divider component="li" />
+      <Divider />
     </MenuGroup>,
     <MenuGroup key="group2" label="Group 2">
       <MenuItem
@@ -988,7 +988,7 @@ MenuAppLauncher = () => {
       >
         @reach/router Link with icon
       </MenuItem>
-      <Divider component="li" />
+      <Divider />
     </MenuGroup>,
     <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
       <Tooltip content={<div>Launch Application 3</div>} position="right">
@@ -1089,21 +1089,21 @@ MenuAppLauncher = () => {
 
   const menu = (
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+      <MenuInput>
+        <TextInput
+          aria-label="Filter menu items"
+          iconVariant="search"
+          type="search"
+          onChange={value => onTextChange(value)}
+        />
+      </MenuInput>
+      <Divider />
       <MenuContent>
         <MenuList>
-          <MenuInput>
-            <TextInput
-              aria-label="Filter menu items"
-              iconVariant="search"
-              type="search"
-              onChange={value => onTextChange(value)}
-            />
-          </MenuInput>
-          <Divider component="li" />
           {filteredFavorites.length > 0 && (
             <MenuGroup key="favorites-group" label="Favorites">
               {filteredFavorites}
-              <Divider key="favorites-divider" component="li" />
+              <Divider key="favorites-divider" />
             </MenuGroup>
           )}
           {filteredItems}
