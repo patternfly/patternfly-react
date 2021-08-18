@@ -226,7 +226,9 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
             </LogViewerToolbarContext.Provider>
           )}
           <div className={css(styles.logViewerMain)} ref={containerRef}>
-            {loading ? <div style={{ height }}>{loadingContent}</div> : createList(parsedData)}
+            <div style={{ height }} className={css(styles.logViewerScrollContainer)}>
+              {loading ? <div>{loadingContent}</div> : createList(parsedData)}
+            </div>
           </div>
         </div>
       </LogViewerContext.Provider>
