@@ -11,7 +11,8 @@ const ts = require('typescript');
  */
 function transformerCJSImports(context) {
   // Only transform for CJS build
-  if (context.getCompilerOptions().target !== 2) {
+  // ESM: module = 5, CJS: module = 1
+  if (context.getCompilerOptions().module !== 1) {
     return node => node;
   }
   /**
@@ -24,7 +25,7 @@ function transformerCJSImports(context) {
     if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.text)) {
       const newNode = ts.getMutableClone(node);
       const newPath = node.moduleSpecifier.text.replace(/dist\/esm/, 'dist/js');
-      newNode.moduleSpecifier = ts.createStringLiteral(newPath);
+      newNode.moduleSpecifier = ts.createStringLiteral(newPath, true);
       return newNode;
     }
     return ts.visitEachChild(node, child => visit(child), context);
