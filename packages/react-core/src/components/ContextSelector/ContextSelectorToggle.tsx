@@ -22,8 +22,10 @@ export interface ContextSelectorToggleProps {
   parentRef?: any;
   /** Forces active state */
   isActive?: boolean;
-  /** Modifies the context selector toggle for plain text styles. */
-  isPlainText?: boolean;
+  /** Flag to indicate the toggle has no border or background */
+  isPlain?: boolean;
+  /** Flag to indicate if toggle is textual toggle */
+  isText?: boolean;
 }
 
 export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
@@ -94,7 +96,8 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       isOpen,
       onToggle,
       id,
-      isPlainText,
+      isPlain,
+      isText,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isActive,
       onEnter,
@@ -110,7 +113,8 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         className={css(
           styles.contextSelectorToggle,
           isActive && styles.modifiers.active,
-          isPlainText && [styles.modifiers.plain, styles.modifiers.text],
+          isPlain && styles.modifiers.plain,
+          isText && styles.modifiers.text,
           className
         )}
         type="button"

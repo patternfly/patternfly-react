@@ -140,7 +140,8 @@ const PlainTextContextSelector: React.FunctionComponent = () => {
       onSelect={onSelect}
       onSearchButtonClick={onSearchButtonClick}
       screenReaderLabel="Selected Project:"
-      isPlainText
+      isPlain
+      isText
     >
       {filteredItems.map((item, index) => (
         <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
