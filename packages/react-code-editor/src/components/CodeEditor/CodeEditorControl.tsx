@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ButtonProps, PopoverPosition, Tooltip } from '@patternfly/react-core';
+import { Button, ButtonProps, Tooltip } from '@patternfly/react-core';
 import { CodeEditorContext } from './CodeEditorUtils';
 
 export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
@@ -12,7 +12,7 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   /** Text to display in the tooltip*/
   toolTipText: React.ReactNode;
   /** Copy button popover position. */
-  position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
   /** Delay in ms before the tooltip disappears. */
