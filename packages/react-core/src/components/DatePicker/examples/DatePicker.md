@@ -21,7 +21,11 @@ import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
 AmericanFormat = () => {
-  const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).replaceAll('/', '-');
+  const dateFormat = date => {
+    const localeDate = date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+    const dasherizedDate = localeDate.replaceAll('/', '-');
+    return dasherizedDate;
+  };
   const dateParse = date => {
     const split = date.split('/');
     if (split.length !== 3) {
