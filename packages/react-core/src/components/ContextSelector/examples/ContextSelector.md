@@ -17,13 +17,13 @@ class SimpleContextSelector extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
-      'My Project',
-      'OpenShift Cluster',
+      'My project',
+      'OpenShift cluster',
       'Production Ansible',
       'AWS',
       'Azure',
-      'My Project 2',
-      'OpenShift Cluster ',
+      'My project 2',
+      'OpenShift cluster ',
       'Production Ansible 2 ',
       'AWS 2',
       'Azure 2'
@@ -95,13 +95,13 @@ class FooterContextSelector extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
-      'My Project',
-      'OpenShift Cluster',
+      'My project',
+      'OpenShift cluster',
       'Production Ansible',
       'AWS',
       'Azure',
-      'My Project 2',
-      'OpenShift Cluster ',
+      'My project 2',
+      'OpenShift cluster ',
       'Production Ansible 2 ',
       'AWS 2',
       'Azure 2'

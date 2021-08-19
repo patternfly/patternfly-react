@@ -21,7 +21,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#" isActive>
-    Section Landing
+    Section landing
   </BreadcrumbItem>
 </Breadcrumb>;
 ```
@@ -39,7 +39,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#" isActive>
-    Section Landing
+    Section landing
   </BreadcrumbItem>
 </Breadcrumb>;
 ```

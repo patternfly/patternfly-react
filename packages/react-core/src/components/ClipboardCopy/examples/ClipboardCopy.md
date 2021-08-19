@@ -15,7 +15,7 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy>This is editable</ClipboardCopy>;
+<ClipboardCopy hoverTip="Copy" clickTip="Copied">This is editable</ClipboardCopy>;
 ```
 
 ### Read Only
@@ -24,7 +24,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy isReadOnly>This is read-only</ClipboardCopy>;
+<ClipboardCopy isReadOnly hoverTip="Copy" clickTip="Copied">This is read-only</ClipboardCopy>;
 ```
 
 ### Expanded
@@ -33,7 +33,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
-<ClipboardCopy variant={ClipboardCopyVariant.expansion}>
+<ClipboardCopy hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion} >
   Got a lot of text here, need to see all of it? Click that arrow on the left side and check out the resulting
   expansion.
 </ClipboardCopy>;
@@ -45,7 +45,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
-<ClipboardCopy isReadOnly variant={ClipboardCopyVariant.expansion}>
+<ClipboardCopy isReadOnly hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
   Got a lot of text here, need to see all of it? Click that arrow on the left side and check out the resulting
   expansion.
 </ClipboardCopy>;
@@ -57,7 +57,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
-<ClipboardCopy isReadOnly isExpanded variant={ClipboardCopyVariant.expansion}>
+<ClipboardCopy isReadOnly isExpanded hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
   Got a lot of text here, need to see all of it? Click that arrow on the left side and check out the resulting
   expansion.
 </ClipboardCopy>;
@@ -75,7 +75,7 @@ ClipboardCopyArrayOfElements = () => {
     'need to see all of it?',
     'Click that arrow on the left side and check out the resulting expansion.'
   ];
-  return <ClipboardCopy variant={ClipboardCopyVariant.expansion}>{text.join(' ')}</ClipboardCopy>;
+  return <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>{text.join(' ')}</ClipboardCopy>;
 };
 ```
 
@@ -85,7 +85,7 @@ ClipboardCopyArrayOfElements = () => {
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
-<ClipboardCopy isCode variant={ClipboardCopyVariant.expansion}>
+<ClipboardCopy isCode hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
   {`{ "menu": {
   "id": "file",
   "value": "File",
@@ -106,7 +106,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>;
+<ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>;
 ```
 
 ### Inline compact code
@@ -115,7 +115,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy variant="inline-compact" isCode>
+<ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact" isCode>
   2.3.4-2-redhat
 </ClipboardCopy>;
 ```
@@ -128,6 +128,8 @@ import { ClipboardCopy, ClipboardCopyAction, Button } from '@patternfly/react-co
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 <ClipboardCopy
+  hoverTip="Copy"
+  clickTip="Copied"
   variant="inline-compact"
   additionalActions={
     <ClipboardCopyAction>
@@ -150,13 +152,13 @@ import { ClipboardCopy } from '@patternfly/react-core';
 <React.Fragment>
   <b>Basic</b>
   <br />
-  Lorem ipsum {<ClipboardCopy variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>} dolor sit amet.
+  Lorem ipsum {<ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact">2.3.4-2-redhat</ClipboardCopy>} dolor sit amet.
   <br /> <br />
   <b>Long copy string</b>
   <br />
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
   {
-    <ClipboardCopy variant="inline-compact">
+    <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact">
       https://app.openshift.io/path/sub-path/sub-sub-path/?runtime=quarkus/12345678901234567890/abcdefghijklmnopqrstuvwxyz1234567890
     </ClipboardCopy>
   }{' '}
@@ -166,7 +168,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
   <br />
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
   {
-    <ClipboardCopy variant="inline-compact" isBlock>
+    <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact" isBlock>
       https://app.openshift.io/path/sub-path/sub-sub-path/?runtime=quarkus/12345678901234567890/abcdefghijklmnopqrstuvwxyz1234567890
     </ClipboardCopy>
   }{' '}

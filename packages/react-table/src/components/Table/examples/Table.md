@@ -1507,7 +1507,7 @@ EmptyStateTable = () => {
                   No results found
                 </Title>
                 <EmptyStateBody>
-                  No results match the filter criteria. Remove all filters or clear all filters to show results.
+                  Clear all filters and try again.
                 </EmptyStateBody>
                 <Button variant="link">Clear all filters</Button>
               </EmptyState>

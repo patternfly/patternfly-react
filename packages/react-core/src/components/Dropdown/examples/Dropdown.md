@@ -61,7 +61,7 @@ class SimpleDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled href="www.google.com">
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem 
         key="disabled action" 
@@ -70,12 +70,12 @@ class SimpleDropdown extends React.Component {
         tooltip="Tooltip for disabled item" 
         tooltipProps={{position:"top"}}
       >
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -136,15 +136,15 @@ class IntialSelectionDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -203,15 +203,15 @@ class GroupedDropdown extends React.Component {
         </DropdownItem>
       </DropdownGroup>,
       <DropdownGroup label="Group 2" key="group 2">
-        <DropdownItem key="group 2 link">Group 2 Link</DropdownItem>
+        <DropdownItem key="group 2 link">Group 2 link</DropdownItem>
         <DropdownItem key="group 2 action" component="button">
-          Group 2 Action
+          Group 2 action
         </DropdownItem>
       </DropdownGroup>,
       <DropdownGroup label="Group 3" key="group 3">
-        <DropdownItem key="group 3 link">Group 3 Link</DropdownItem>
+        <DropdownItem key="group 3 link">Group 3 link</DropdownItem>
         <DropdownItem key="group 3 action" component="button">
-          Group 3 Action
+          Group 3 action
         </DropdownItem>
       </DropdownGroup>
     ];
@@ -269,15 +269,15 @@ class DisabledDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -339,15 +339,15 @@ class PrimaryDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -409,15 +409,15 @@ class PositionRightDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -475,15 +475,15 @@ class AlignmentsDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -543,15 +543,15 @@ class DirectionUpDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -613,15 +613,15 @@ class KebabDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -743,15 +743,15 @@ class IconDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -814,15 +814,15 @@ class SplitButtonDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -883,15 +883,15 @@ class SplitButtonDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -957,15 +957,15 @@ class SplitButtonDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -1031,15 +1031,15 @@ class SplitButtonDisabledDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated link">Separated link</DropdownItem>,
       <DropdownItem key="separated action" component="button">
-        Separated Action
+        Separated action
       </DropdownItem>
     ];
     return (
@@ -1212,7 +1212,7 @@ class DropdownPanel extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle}>Expanded Dropdown</DropdownToggle>}
+        toggle={<DropdownToggle onToggle={this.onToggle}>Expanded dropdown</DropdownToggle>}
         isOpen={isOpen}
       >
         [Panel contents here]
@@ -1463,10 +1463,10 @@ class SimpleDropdown extends React.Component {
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" isDisabled description="Disabled link description">
-        Disabled Link
+        Disabled link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button" description="This is a description">
-        Disabled Action
+        Disabled action
       </DropdownItem>
     ];
     return (

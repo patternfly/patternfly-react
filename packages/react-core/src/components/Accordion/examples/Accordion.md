@@ -41,7 +41,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle1'}
             id="ex-toggle1"
           >
-            Item One
+            Item one
           </AccordionToggle>
           <AccordionContent id="ex-expand1" isHidden={this.state.expanded !== 'ex-toggle1'}>
             <p>
@@ -59,7 +59,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle2'}
             id="ex-toggle2"
           >
-            Item Two
+            Item two
           </AccordionToggle>
           <AccordionContent id="ex-expand2" isHidden={this.state.expanded !== 'ex-toggle2'}>
             <p>
@@ -77,7 +77,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle3'}
             id="ex-toggle3"
           >
-            Item Three
+            Item three
           </AccordionToggle>
           <AccordionContent id="ex-expand3" isHidden={this.state.expanded !== 'ex-toggle3'}>
             <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
@@ -92,7 +92,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle4'}
             id="ex-toggle4"
           >
-            Item Four
+            Item four
           </AccordionToggle>
           <AccordionContent id="ex-expand4" isHidden={this.state.expanded !== 'ex-toggle4'}>
             <p>
@@ -115,7 +115,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle5'}
             id="ex-toggle5"
           >
-            Item Five
+            Item five
           </AccordionToggle>
           <AccordionContent id="ex-expand5" isHidden={this.state.expanded !== 'ex-toggle5'}>
             <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>
@@ -159,7 +159,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle1'}
             id="ex-toggle1"
           >
-            Item One
+            Item one
           </AccordionToggle>
           <AccordionContent id="ex-expand1" isHidden={this.state.expanded !== 'ex-toggle1'}>
             <p>
@@ -177,7 +177,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle2'}
             id="ex-toggle2"
           >
-            Item Two
+            Item two
           </AccordionToggle>
           <AccordionContent id="ex-expand2" isHidden={this.state.expanded !== 'ex-toggle2'}>
             <p>
@@ -195,7 +195,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle3'}
             id="ex-toggle3"
           >
-            Item Three
+            Item three
           </AccordionToggle>
           <AccordionContent id="ex-expand3" isHidden={this.state.expanded !== 'ex-toggle3'}>
             <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
@@ -210,7 +210,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle4'}
             id="ex-toggle4"
           >
-            Item Four
+            Item four
           </AccordionToggle>
           <AccordionContent id="ex-expand4" isHidden={this.state.expanded !== 'ex-toggle4'}>
             <p>
@@ -233,7 +233,7 @@ class SimpleAccordion extends React.Component {
             isExpanded={this.state.expanded === 'ex-toggle5'}
             id="ex-toggle5"
           >
-            Item Five
+            Item five
           </AccordionToggle>
           <AccordionContent id="ex-expand5" isHidden={this.state.expanded !== 'ex-toggle5'}>
             <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>
@@ -276,7 +276,7 @@ class FixedAccordion extends React.Component {
             isExpanded={this.state.expanded.includes('ex2-toggle1')}
             id="ex2-toggle1"
           >
-            Item One
+            Item one
           </AccordionToggle>
           <AccordionContent id="ex2-expand1" isHidden={!this.state.expanded.includes('ex2-toggle1')} isFixed>
             <p>
@@ -291,7 +291,7 @@ class FixedAccordion extends React.Component {
             isExpanded={this.state.expanded.includes('ex2-toggle2')}
             id="ex2-toggle2"
           >
-            Item Two
+            Item two
           </AccordionToggle>
           <AccordionContent id="ex2-expand2" isHidden={!this.state.expanded.includes('ex2-toggle2')} isFixed>
             <p>
@@ -306,7 +306,7 @@ class FixedAccordion extends React.Component {
             isExpanded={this.state.expanded.includes('ex2-toggle3')}
             id="ex2-toggle3"
           >
-            Item Three
+            Item three
           </AccordionToggle>
           <AccordionContent id="ex2-expand3" isHidden={!this.state.expanded.includes('ex2-toggle3')} isFixed>
             <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
@@ -318,7 +318,7 @@ class FixedAccordion extends React.Component {
             isExpanded={this.state.expanded.includes('ex2-toggle4')}
             id="ex2-toggle4"
           >
-            Item Four
+            Item four
           </AccordionToggle>
           <AccordionContent id="ex2-expand4" isHidden={!this.state.expanded.includes('ex2-toggle4')} isFixed>
             <p>
@@ -338,7 +338,7 @@ class FixedAccordion extends React.Component {
             isExpanded={this.state.expanded.includes('ex2-toggle5')}
             id="ex2-toggle5"
           >
-            Item Five
+            Item five
           </AccordionToggle>
           <AccordionContent id="ex2-expand5" isHidden={!this.state.expanded.includes('ex2-toggle5')} isFixed>
             <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>
@@ -393,7 +393,7 @@ class BorderedAccordion extends React.Component {
               isExpanded={expanded === 'ex-toggle1'}
               id="ex-toggle1"
             >
-              Item One
+              Item one
             </AccordionToggle>
             <AccordionContent id="ex-expand1" isHidden={expanded !== 'ex-toggle1'}>
               <p>
@@ -411,7 +411,7 @@ class BorderedAccordion extends React.Component {
               isExpanded={expanded === 'ex-toggle2'}
               id="ex-toggle2"
             >
-              Item Two
+              Item two
             </AccordionToggle>
             <AccordionContent id="ex-expand2" isHidden={expanded !== 'ex-toggle2'}>
               <p>
@@ -429,7 +429,7 @@ class BorderedAccordion extends React.Component {
               isExpanded={expanded === 'ex-toggle3'}
               id="ex-toggle3"
             >
-              Item Three
+              Item three
             </AccordionToggle>
             <AccordionContent id="ex-expand3" isHidden={expanded !== 'ex-toggle3'}>
               <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
@@ -444,7 +444,7 @@ class BorderedAccordion extends React.Component {
               isExpanded={expanded === 'ex-toggle4'}
               id="ex-toggle4"
             >
-              Item Four
+              Item four
             </AccordionToggle>
             <AccordionContent id="ex-expand4" isHidden={expanded !== 'ex-toggle4'} isCustomContent>
               <AccordionExpandedContentBody>
@@ -471,7 +471,7 @@ class BorderedAccordion extends React.Component {
               isExpanded={expanded === 'ex-toggle5'}
               id="ex-toggle5"
             >
-              Item Five
+              Item five
             </AccordionToggle>
             <AccordionContent id="ex-expand5" isHidden={expanded !== 'ex-toggle5'}>
               <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>

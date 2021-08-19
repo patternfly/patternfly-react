@@ -54,9 +54,9 @@ class MenuBasicList extends React.Component {
             >
               Link
             </MenuItem>
-            <MenuItem isDisabled>Disabled Action</MenuItem>
+            <MenuItem isDisabled>Disabled action</MenuItem>
             <MenuItem isDisabled to="#default-link4">
-              Disabled Link
+              Disabled link
             </MenuItem>
           </MenuList>
         </MenuContent>
@@ -95,13 +95,13 @@ class MenuIconsList extends React.Component {
         <MenuContent>
           <MenuList>
             <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId={0}>
-              From Git
+              From git
             </MenuItem>
             <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId={1}>
-              Container Image
+              Container image
             </MenuItem>
             <MenuItem icon={<CubeIcon aria-hidden />} itemId={2}>
-              Docker File
+              Docker file
             </MenuItem>
           </MenuList>
         </MenuContent>
@@ -744,7 +744,7 @@ class MenuWithDrilldown extends React.Component {
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuStartGrouping">
                         <MenuItem itemId="group:app_grouping" direction="up">
-                          Application Grouping
+                          Application grouping
                         </MenuItem>
                         <Divider component="li" />
                         <MenuItem itemId="group_a">Group A</MenuItem>
@@ -753,7 +753,7 @@ class MenuWithDrilldown extends React.Component {
                       </DrilldownMenu>
                     }
                   >
-                    Application Grouping
+                    Application grouping
                   </MenuItem>
                   <MenuItem itemId="count">Count</MenuItem>
                   <MenuItem
@@ -795,7 +795,7 @@ class MenuWithDrilldown extends React.Component {
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuGrouping">
                         <MenuItem itemId="group:app_grouping" direction="up">
-                          Application Grouping
+                          Application grouping
                         </MenuItem>
                         <Divider component="li" />
                         <MenuItem itemId="group_a">Group A</MenuItem>
@@ -804,7 +804,7 @@ class MenuWithDrilldown extends React.Component {
                       </DrilldownMenu>
                     }
                   >
-                    Application Grouping
+                    Application grouping
                   </MenuItem>
                   <MenuItem itemId="count">Count</MenuItem>
                   <MenuItem
@@ -841,13 +841,13 @@ class MenuWithDrilldown extends React.Component {
                   </MenuItem>
                   <Divider component="li" />
                   <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
-                    From Git
+                    From git
                   </MenuItem>
                   <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
-                    Container Image
+                    Container image
                   </MenuItem>
                   <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
-                    Docker File
+                    Docker file
                   </MenuItem>
                 </DrilldownMenu>
               }
@@ -1134,7 +1134,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
                         </DrilldownMenu>
                       }
                     >
-                      Application Grouping
+                      Application grouping
                     </MenuItem>
                     <MenuItem itemId="count">Count</MenuItem>
                     <MenuItem
@@ -1176,7 +1176,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
                         </DrilldownMenu>
                       }
                     >
-                      Application Grouping
+                      Application grouping
                     </MenuItem>
                     <MenuItem itemId="count">Count</MenuItem>
                     <MenuItem
@@ -1207,13 +1207,13 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
                 drilldownMenu={
                   <DrilldownMenu id="drilldownMenuStorage">
                     <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
-                      From Git
+                      From git
                     </MenuItem>
                     <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
-                      Container Image
+                      Container image
                     </MenuItem>
                     <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
-                      Docker File
+                      Docker file
                     </MenuItem>
                   </DrilldownMenu>
                 }
@@ -1280,9 +1280,9 @@ class MenuBasicList extends React.Component {
             >
               Link
             </MenuItem>
-            <MenuItem isDisabled>Disabled Action</MenuItem>
+            <MenuItem isDisabled>Disabled action</MenuItem>
             <MenuItem isDisabled to="#default-link4">
-              Disabled Link
+              Disabled link
             </MenuItem>
           </MenuList>
         </MenuContent>
@@ -1327,9 +1327,9 @@ class FooterMenu extends React.Component {
             >
               Link
             </MenuItem>
-            <MenuItem isDisabled>Disabled Action</MenuItem>
+            <MenuItem isDisabled>Disabled action</MenuItem>
             <MenuItem isDisabled to="#default-link4">
-              Disabled Link
+              Disabled link
             </MenuItem>
           </MenuList>
         </MenuContent>
@@ -1373,10 +1373,10 @@ class ViewMoreMenu extends React.Component {
         Link
       </MenuItem>,
       <MenuItem key={3} isDisabled>
-        Disabled Action
+        Disabled action
       </MenuItem>,
       <MenuItem key={4} isDisabled to="#default-link4">
-        Disabled Link
+        Disabled link
       </MenuItem>,
       <MenuItem key={5} itemId={2}>
         Action 2

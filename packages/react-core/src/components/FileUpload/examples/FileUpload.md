@@ -37,10 +37,12 @@ class SimpleTextFileUpload extends React.Component {
         type="text"
         value={value}
         filename={filename}
+        filenamePlaceholder="Drag and drop a file or upload one"
         onChange={this.handleFileChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         isLoading={isLoading}
+        browseButtonText="Upload"
       />
     );
   }
@@ -71,11 +73,13 @@ class TextFileWithEditsAllowed extends React.Component {
         type="text"
         value={value}
         filename={filename}
+        filenamePlaceholder="Drag and drop a file or upload one"
         onChange={this.handleFileChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         isLoading={isLoading}
         allowEditingUploadedText
+        browseButtonText="Upload"
       />
     );
   }
@@ -122,6 +126,7 @@ class TextFileUploadWithRestrictions extends React.Component {
             type="text"
             value={value}
             filename={filename}
+            filenamePlaceholder="Drag and drop a file or upload one"
             onChange={this.handleFileChange}
             onReadStarted={this.handleFileReadStarted}
             onReadFinished={this.handleFileReadFinished}
@@ -132,6 +137,7 @@ class TextFileUploadWithRestrictions extends React.Component {
               onDropRejected: this.handleFileRejected
             }}
             validated={isRejected ? 'error' : 'default'}
+            browseButtonText="Upload"
           />
         </FormGroup>
       </Form>
@@ -158,7 +164,7 @@ class SimpleFileUpload extends React.Component {
 
   render() {
     const { value, filename } = this.state;
-    return <FileUpload id="simple-file" value={value} filename={filename} onChange={this.handleFileChange} />;
+    return <FileUpload id="simple-file" value={value} filename={filename} filenamePlaceholder="Drag and drop a file or upload one" browseButtonText="Upload" onChange={this.handleFileChange} />;
   }
 }
 ```
@@ -187,8 +193,10 @@ class CustomPreviewFileUpload extends React.Component {
         id="customized-preview-file"
         value={value}
         filename={filename}
+        filenamePlaceholder="Drag and drop a file or upload one"
         onChange={this.handleFileChange}
         hideDefaultPreview
+        browseButtonText="Upload"
       >
         {value && (
           <div className="pf-u-m-md">
@@ -274,6 +282,7 @@ class CustomFileUpload extends React.Component {
           isLoading={isLoading}
           isDragActive={isDragActive}
           hideDefaultPreview={hideDefaultPreview}
+          browseButtonText="Upload"
         >
           {children && (
             <div className="pf-u-m-md">(A custom preview of the uploaded file can be passed as children)</div>

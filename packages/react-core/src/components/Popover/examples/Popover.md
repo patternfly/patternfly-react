@@ -20,7 +20,7 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
     bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
     footerContent="Popover footer"
   >
-    <Button>Toggle Popover</Button>
+    <Button>Toggle popover</Button>
   </Popover>
 </div>;
 ```
@@ -44,8 +44,8 @@ PopoverCloseControlled = () => {
         bodyContent={
           <div>
             <div>
-              All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
-              component passes the hide function to which can be used to close the Popover after some user interaction.
+              All the content props (headerContent, bodyContent, footerContent) can take a function which the popover
+              component passes the hide function to which can be used to close the popover after some user interaction.
             </div>
             <div>
               <button onClick={() => setIsVisible(false)}>Close popover</button>
@@ -54,7 +54,7 @@ PopoverCloseControlled = () => {
         }
         footerContent="Popover footer"
       >
-        <Button>Toggle Popover</Button>
+        <Button>Toggle popover</Button>
       </Popover>
     </div>
   );
@@ -76,8 +76,8 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
     bodyContent={hide => (
       <div>
         <div>
-          All the content props (headerContent, bodyContent, footerContent) can take a function which the Popover
-          component passes the hide function to which can be used to close the Popover after some user interaction.
+          All the content props (headerContent, bodyContent, footerContent) can take a function which the popover
+          component passes the hide function to which can be used to close the popover after some user interaction.
         </div>
         <div>
           <button onClick={hide}>Close popover</button>
@@ -86,7 +86,7 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
     )}
     footerContent="Popover footer"
   >
-    <Button>Toggle Popover</Button>
+    <Button>Toggle popover</Button>
   </Popover>
 </div>;
 ```
@@ -110,7 +110,7 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
     )}
     withFocusTrap={false /* no focusable content in this example */}
   >
-    <Button>Toggle Popover</Button>
+    <Button>Toggle popover</Button>
   </Popover>
 </div>;
 ```
@@ -127,7 +127,7 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
     hasAutoWidth
     bodyContent={hide => <div>Removes fixed-width and allows width to be defined by contents</div>}
   >
-    <Button>Toggle Popover</Button>
+    <Button>Toggle popover</Button>
   </Popover>
 </div>;
 ```
@@ -145,13 +145,13 @@ PopoverReactRef = () => {
       <button ref={popoverRef}>Popover attached via react ref</button>
       <Popover
         aria-label="Popover with react reference example"
-        headerContent={<div>Popover Header</div>}
+        headerContent={<div>Popover header</div>}
         bodyContent={
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
           </div>
         }
-        footerContent="Popover Footer"
+        footerContent="Popover footer"
         reference={popoverRef}
       />
     </div>
@@ -169,11 +169,11 @@ import { Popover } from '@patternfly/react-core';
   <button id="popover-selector">Popover attached via selector ref</button>
   <Popover
     aria-label="Popover with selector reference example"
-    headerContent={<div>Popover Header</div>}
+    headerContent={<div>Popover header</div>}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
-    footerContent="Popover Footer"
+    footerContent="Popover footer"
     reference={() => document.getElementById('popover-selector')}
   />
 </div>;
@@ -215,7 +215,7 @@ class AdvancedPopover extends React.Component {
     return (
       <div>
         <div>
-          <span style={{ paddingRight: '10px' }}>Popover Position</span>
+          <span style={{ paddingRight: '10px' }}>Popover position</span>
           <select
             aria-label="Popover position"
             onChange={event => {
@@ -256,15 +256,15 @@ class AdvancedPopover extends React.Component {
             shouldOpen={this.shouldOpen}
             enableFlip={this.state.keepInViewChecked}
             appendTo={() => document.body}
-            headerContent={<div>Popover Header</div>}
+            headerContent={<div>Popover header</div>}
             bodyContent={
               <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
               </div>
             }
-            footerContent="Popover Footer"
+            footerContent="Popover footer"
           >
-            <Button>Toggle Popover</Button>
+            <Button>Toggle popover</Button>
           </Popover>
         </div>
       </div>

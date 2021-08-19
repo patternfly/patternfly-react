@@ -38,7 +38,7 @@ class SimpleModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           title="Simple modal header"
@@ -90,7 +90,7 @@ class SimpleModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           aria-label="My modal context"
@@ -144,7 +144,7 @@ class TopModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Top Aligned Modal
+          Show top aligned modal
         </Button>
         <Modal
           position="top"
@@ -197,7 +197,7 @@ class SmallModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Small Modal
+          Show small modal
         </Button>
         <Modal
           variant={ModalVariant.small}
@@ -250,7 +250,7 @@ class MediumModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Medium Modal
+          Show medium modal
         </Button>
         <Modal
           variant={ModalVariant.medium}
@@ -303,7 +303,7 @@ class LargeModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Large Modal
+          Show large modal
         </Button>
         <Modal
           variant={ModalVariant.large}
@@ -356,7 +356,7 @@ class WidthModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show 50% Width Modal
+          Show 50% width modal
         </Button>
         <Modal
           width={'50%'}
@@ -426,7 +426,7 @@ class CustomHeaderFooter extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Custom Header/Footer Modal
+          Show custom header/footer modal
         </Button>
         <Modal
           variant={ModalVariant.large}
@@ -480,7 +480,7 @@ class NoHeader extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show No Header Modal
+          Show no header modal
         </Button>
         <Modal
           variant={ModalVariant.large}
@@ -533,7 +533,7 @@ class NoHeader extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Icon Modal
+          Show icon modal
         </Button>
         <Modal
           isOpen={isModalOpen}
@@ -585,7 +585,7 @@ class NoHeader extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Icon Modal
+          Show icon modal
         </Button>
         <Modal
           isOpen={isModalOpen}
@@ -645,7 +645,7 @@ class WithWizard extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           isOpen={isModalOpen}
@@ -748,7 +748,7 @@ class WithDropdown extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           title="Modal with dropdown"
@@ -821,7 +821,7 @@ class HelpModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           title="Simple modal header"

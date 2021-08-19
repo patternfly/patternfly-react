@@ -83,11 +83,11 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 
 CategoryLabelGroupRemovable = () => {
   const [labels, setLabels] = React.useState([
-    ['Label one', 'grey'],
-    ['Label two', 'blue'],
-    ['Label three', 'green'],
-    ['Label four', 'orange'],
-    ['Label five', 'red']
+    ['Label 1', 'grey'],
+    ['Label 2', 'blue'],
+    ['Label 3', 'green'],
+    ['Label 4', 'orange'],
+    ['Label 5', 'red']
   ]);
   const deleteCategory = () => setLabels([]);
 
@@ -112,11 +112,11 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 
 VerticalCategoryLabelGroupOverflowRemovable = () => {
   const [labels, setLabels] = React.useState([
-    ['Label one', 'grey'],
-    ['Label two', 'blue'],
-    ['Label three', 'green'],
-    ['Label four', 'orange'],
-    ['Label five', 'red']
+    ['Label 1', 'grey'],
+    ['Label 2', 'blue'],
+    ['Label 3', 'green'],
+    ['Label 4', 'orange'],
+    ['Label 5', 'red']
   ]);
   const deleteCategory = () => setLabels([]);
 

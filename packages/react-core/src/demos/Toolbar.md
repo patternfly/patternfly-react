@@ -277,13 +277,13 @@ class ConsoleLogViewerToolbar extends React.Component {
 
     const externalDropdownItems = [
       <DropdownItem key="action-1" component="button" onClick={this.onExternalClick}>
-        External Logs
+        External logs
       </DropdownItem>,
       <DropdownItem key="action-2" component="button" onClick={this.onExternalClick}>
-        External Logs
+        External logs
       </DropdownItem>,
       <DropdownItem key="action-3" component="button" onClick={this.onExternalClick}>
-        External Logs
+        External logs
       </DropdownItem>
     ];
 
@@ -400,7 +400,7 @@ class ConsoleLogViewerToolbar extends React.Component {
     const leftAlignedItemsMobile = (
       <React.Fragment>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
-          <Tooltip position="top" content={<div>Select Container</div>}>
+          <Tooltip position="top" content={<div>Select container</div>}>
             <Select
               onToggle={this.onContainerToggleMobile}
               onSelect={this.onContainerSelectMobile}
@@ -423,7 +423,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           </Tooltip>
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
-          <Tooltip position="top" content={<div>{isPaused ? 'Resume Log' : 'Pause Log'}</div>}>
+          <Tooltip position="top" content={<div>{isPaused ? 'Resume log' : 'Pause log'}</div>}>
             <Button variant="plain" onClick={this.pauseOrStart}>
               {isPaused ? <PlayIcon /> : <PauseIcon />}
             </Button>
@@ -446,7 +446,7 @@ class ConsoleLogViewerToolbar extends React.Component {
             onSelect={this.onExternalSelect}
             toggle={
               <DropdownToggle id="external-toggle" onToggle={this.onExternalToggle}>
-                External Logs
+                External logs
               </DropdownToggle>
             }
             isOpen={externalExpanded}
@@ -471,7 +471,7 @@ class ConsoleLogViewerToolbar extends React.Component {
     const rightAlignedItemsMobile = (
       <React.Fragment>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
-          <Tooltip position="top" content={<div>External Logs</div>}>
+          <Tooltip position="top" content={<div>External logs</div>}>
             <Dropdown
               onSelect={this.onExternalSelectMobile}
               toggle={

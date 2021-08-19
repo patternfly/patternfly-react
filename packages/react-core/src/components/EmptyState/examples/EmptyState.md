@@ -24,13 +24,13 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 <EmptyState>
   <EmptyStateIcon icon={CubesIcon} />
   <Title headingLevel="h4" size="lg">
-    Empty State
+    Empty state
   </Title>
   <EmptyStateBody>
     This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
     enough to meet a variety of needs.
   </EmptyStateBody>
-  <Button variant="primary">Primary Action</Button>
+  <Button variant="primary">Primary action</Button>
   <EmptyStateSecondaryActions>
     <Button variant="link">Multiple</Button>
     <Button variant="link">Action Buttons</Button>
@@ -58,7 +58,7 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState variant={EmptyStateVariant.xs}>
   <Title headingLevel="h4" size="md">
-    Empty State
+    Empty state
   </Title>
   <EmptyStateBody>
     This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
@@ -92,13 +92,13 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 <EmptyState variant={EmptyStateVariant.small}>
   <EmptyStateIcon icon={CubesIcon} />
   <Title headingLevel="h4" size="lg">
-    Empty State
+    Empty state
   </Title>
   <EmptyStateBody>
     This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
     enough to meet a variety of needs.
   </EmptyStateBody>
-  <Button variant="primary">Primary Action</Button>
+  <Button variant="primary">Primary action</Button>
   <EmptyStateSecondaryActions>
     <Button variant="link">Multiple</Button>
     <Button variant="link">Action Buttons</Button>
@@ -127,13 +127,13 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 <EmptyState variant={EmptyStateVariant.large}>
   <EmptyStateIcon icon={CubesIcon} />
   <Title headingLevel="h4" size="lg">
-    Empty State
+    Empty state
   </Title>
   <EmptyStateBody>
     This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
     enough to meet a variety of needs.
   </EmptyStateBody>
-  <Button variant="primary">Primary Action</Button>
+  <Button variant="primary">Primary action</Button>
   <EmptyStateSecondaryActions>
     <Button variant="link">Multiple</Button>
     <Button variant="link">Action Buttons</Button>
@@ -162,13 +162,13 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 <EmptyState variant={EmptyStateVariant.xl}>
   <EmptyStateIcon icon={CubesIcon} />
   <Title headingLevel="h5" size="4xl">
-    Empty State
+    Empty state
   </Title>
   <EmptyStateBody>
     This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
     enough to meet a variety of needs.
   </EmptyStateBody>
-  <Button variant="primary">Primary Action</Button>
+  <Button variant="primary">Primary action</Button>
   <EmptyStateSecondaryActions>
     <Button variant="link">Multiple</Button>
     <Button variant="link">Action Buttons</Button>
@@ -233,7 +233,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
     No results found
   </Title>
   <EmptyStateBody>
-    No results match the filter criteria. Clear all filters to show results.
+    No results match the filter criteria. Clear all filters and try again.
   </EmptyStateBody>
   <EmptyStatePrimary>
     <Button variant="link">Clear all filters</Button>

@@ -133,10 +133,10 @@ class ContinuousInput extends React.Component {
   render() {
     return (
       <>
-        <Text component={TextVariants.h3}>Slider Value is: {this.state.value.toFixed(2)}</Text>
+        <Text component={TextVariants.h3}>Slider value is: {this.state.value.toFixed(2)}</Text>
         <Slider value={this.state.value} onChange={this.onChange} />
         <br />
-        <Text component={TextVariants.h3}>Slider Value is: {this.state.valueCustom.toFixed(2)}</Text>
+        <Text component={TextVariants.h3}>Slider value is: {this.state.valueCustom.toFixed(2)}</Text>
         <Slider
           onChange={this.onChangeCustom}
           value={this.state.valueCustom}
@@ -435,7 +435,7 @@ class SliderActions extends React.Component {
 
     return (
       <>
-        <Text component={TextVariants.h3}>Slider Value is: {this.state.value1}</Text>
+        <Text component={TextVariants.h3}>Slider value is: {this.state.value1}</Text>
         <Slider
           value={this.state.value1}
           onChange={this.onChange1}
@@ -504,7 +504,7 @@ class DiscreteInput extends React.Component {
     const displayValue = step ? step.label : 0;
     return (
       <>
-        <Text component={TextVariants.h3}>Slider Value is: {displayValue}</Text>
+        <Text component={TextVariants.h3}>Slider value is: {displayValue}</Text>
         <Slider isDisabled value={this.state.value} onChange={this.onValueChange} customSteps={this.steps} />
       </>
     );

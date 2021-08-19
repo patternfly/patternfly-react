@@ -194,7 +194,7 @@ class SimpleInputGroups extends React.Component {
           <Popover
             aria-label="popover example"
             position={PopoverPosition.top}
-            bodyContent="This field is an example of input group with popover"
+            bodyContent="This field is an example of an input group with a popover."
           >
             <Button variant="control" aria-label="popover for input">
               <QuestionCircleIcon />
@@ -207,7 +207,7 @@ class SimpleInputGroups extends React.Component {
           <Popover
             aria-label="popover example"
             position={PopoverPosition.top}
-            bodyContent="This field is an example of input group with popover"
+            bodyContent="This field is an example of an input group with a popover."
           >
             <Button variant="plain" aria-label="Popover for input">
               <QuestionCircleIcon />

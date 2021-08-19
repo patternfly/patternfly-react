@@ -76,7 +76,7 @@ class InvalidTextArea extends React.Component {
       value: '',
       invalidText: 'You must have something to say',
       validated: 'default',
-      helperText: 'Enter comments'
+      helperText: 'Share your thoughts.'
     };
     
     this.simulateNetworkCall = callback => {
