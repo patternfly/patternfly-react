@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.119.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.118.1...@patternfly/react-integration@4.119.0) (2021-08-19)
+
+
+### Features
+
+* **ContextSelector:** Add plain variant ([#6141](https://github.com/patternfly/patternfly-react/issues/6141)) ([b4ab0e0](https://github.com/patternfly/patternfly-react/commit/b4ab0e0094917739ff7c02797ce305498dc8fc9f))
+* **TreeView:** add guides + compact variants ([#6172](https://github.com/patternfly/patternfly-react/issues/6172)) ([7526e23](https://github.com/patternfly/patternfly-react/commit/7526e236c218a54d37e74baebbfd180f7024587e))
+
+
+
+
+
 ## [4.118.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.118.0...@patternfly/react-integration@4.118.1) (2021-08-19)
 
 **Note:** Version bump only for package @patternfly/react-integration

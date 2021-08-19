@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.151.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.4...@patternfly/react-core@4.151.0) (2021-08-19)
+
+
+### Bug Fixes
+
+* **examples:** updating example microcopy ([#6196](https://github.com/patternfly/patternfly-react/issues/6196)) ([b1d90f2](https://github.com/patternfly/patternfly-react/commit/b1d90f2c3e05eb6f5ee9aaa34b46a5a5d7a203fd))
+
+
+### Features
+
+* **ContextSelector:** Add plain variant ([#6141](https://github.com/patternfly/patternfly-react/issues/6141)) ([b4ab0e0](https://github.com/patternfly/patternfly-react/commit/b4ab0e0094917739ff7c02797ce305498dc8fc9f))
+* **Search input:** Added support for submit button ([#6178](https://github.com/patternfly/patternfly-react/issues/6178)) ([4a2679a](https://github.com/patternfly/patternfly-react/commit/4a2679abab52d612d4f13386b43d89db87053dab))
+* **TreeView:** add guides + compact variants ([#6172](https://github.com/patternfly/patternfly-react/issues/6172)) ([7526e23](https://github.com/patternfly/patternfly-react/commit/7526e236c218a54d37e74baebbfd180f7024587e))
+
+
+
+
+
 ## [4.150.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.3...@patternfly/react-core@4.150.4) (2021-08-19)
 
 
