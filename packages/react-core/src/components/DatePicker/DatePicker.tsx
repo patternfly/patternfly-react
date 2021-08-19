@@ -5,7 +5,7 @@ import buttonStyles from '@patternfly/react-styles/css/components/Button/button'
 import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup } from '../InputGroup/InputGroup';
-import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
+import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
 
 export interface DatePickerProps

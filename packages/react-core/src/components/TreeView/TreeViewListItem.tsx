@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';

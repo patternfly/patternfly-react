@@ -2,10 +2,10 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
-import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
-import lgBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
-import xlBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
-import xl2Breakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
+import mdBreakpoint from '@patternfly/react-tokens/dist/esm/global_breakpoint_md';
+import lgBreakpoint from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
+import xlBreakpoint from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
+import xl2Breakpoint from '@patternfly/react-tokens/dist/esm/global_breakpoint_2xl';
 import { debounce, canUseDOM } from '../../helpers/util';
 
 const breakpoints = {

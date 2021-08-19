@@ -6,11 +6,11 @@ propComponents: ['Button']
 ouia: true
 ---
 
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import { Link } from '@reach/router';
 
 ## Examples
@@ -20,10 +20,10 @@ import { Link } from '@reach/router';
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
-import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-square-alt-icon';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
 <React.Fragment>
   <Button variant="primary">Primary</Button>{' '}
@@ -67,8 +67,8 @@ import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <React.Fragment>
   <Button isDisabled>Primary disabled</Button>{' '}
@@ -110,8 +110,8 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-ic
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <React.Fragment>
   <Button isAriaDisabled>Primary aria disabled</Button>{' '}
@@ -288,7 +288,7 @@ import { Button } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 <React.Fragment>
   <Button variant="primary" isLarge>

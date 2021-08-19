@@ -452,8 +452,8 @@ class CheckboxTreeView extends React.Component {
 ```js
 import React from 'react';
 import { TreeView } from '@patternfly/react-core';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {
@@ -719,8 +719,8 @@ class CustomBadgesTreeView extends React.Component {
 ```js
 import React from 'react';
 import { TreeView, Button, Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import HamburgerIcon from '@patternfly/react-icons/dist/js/icons/hamburger-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {

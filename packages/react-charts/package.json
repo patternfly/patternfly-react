@@ -4,7 +4,7 @@
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/js/index.d.ts",
+  "types": "dist/esm/index.d.ts",
   "patternfly:src": "src/",
   "sideEffects": [
     "*.css",
@@ -33,7 +33,7 @@
     "@patternfly/react-tokens": "^4.12.10",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.19",
-    "tslib": "1.13.0",
+    "tslib": "^2.0.0",
     "victory-area": "^35.9.0",
     "victory-axis": "^35.9.0",
     "victory-bar": "^35.9.0",
@@ -63,6 +63,6 @@
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
-    "typescript": "^3.8.3"
+    "typescript": "^4.0.0"
   }
 }

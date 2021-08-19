@@ -8,9 +8,9 @@ beta: true
 import './toggleGroup.css';
 
 import { ToggleGroup, ToggleGroupItem} from '@patternfly/react-core';
-import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
+import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 ## Examples
 
@@ -88,9 +88,9 @@ class DefaultAsRadioToggleGroupExample extends React.Component {
 ```js
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
+import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 class IconToggleGroupExample extends React.Component {
   constructor(props) {
@@ -130,9 +130,9 @@ class IconToggleGroupExample extends React.Component {
 ```js
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
+import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 class TextIconToggleGroupExample extends React.Component {
   constructor(props) {

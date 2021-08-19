@@ -36,7 +36,7 @@
     "monaco-editor-webpack-plugin": "^2.1.0",
     "react-monaco-editor": "^0.41.2",
     "ts-loader": "^8.0.17",
-    "typescript": "^3.8.3",
+    "typescript": "^4.0.0",
     "webpack": "^4.43.0"
   }
 }

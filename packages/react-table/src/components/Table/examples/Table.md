@@ -24,13 +24,13 @@ The second is the original `Table` component. It is configuration based and take
 
 **For most common use cases, we recommend using `TableComposable`. Both implementations are supported and fully maintained.**
 
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
@@ -1082,9 +1082,9 @@ To build a compound expandable table:
 import React from 'react';
 import { Table, TableHeader, TableBody, compoundExpand } from '@patternfly/react-table';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 // https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/composable-table-examples/DemoSortableTable.js
 import DemoSortableTable from './DemoSortableTable';
@@ -1489,7 +1489,7 @@ import {
   Title,
   EmptyStateIcon
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 EmptyStateTable = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
@@ -2214,9 +2214,9 @@ the voice over technologies will recognize the flat table structure as a tree.
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
-import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 class TreeTable extends React.Component {
   constructor(props) {

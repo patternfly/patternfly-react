@@ -20,11 +20,11 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { data } from '../examples/realTestData.js';
-import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
-import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
+import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
+import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ### With complex toolbar
 
@@ -44,11 +44,11 @@ import {
   ToolbarItem,
   ToolbarToggleGroup
 } from '@patternfly/react-core';
-import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
-import PauseIcon from '@patternfly/react-icons/dist/js/icons/pause-icon';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
+import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
+import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 
 ComplexToolbarLogViewer = () => {
   const [isPaused, setIsPaused] = React.useState(false);

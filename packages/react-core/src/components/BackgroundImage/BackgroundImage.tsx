@@ -1,10 +1,10 @@
 import * as React from 'react';
-import cssVar from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage';
-import cssVarName2x from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_2x';
-import cssVarNameSm from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm';
-import cssVarNameSm2x from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm_2x';
-import cssVarNameLg from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_lg';
-import cssVarNameFilter from '@patternfly/react-tokens/dist/js/c_background_image_Filter';
+import cssVar from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage';
+import cssVarName2x from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage_2x';
+import cssVarNameSm from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage_sm';
+import cssVarNameSm2x from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage_sm_2x';
+import cssVarNameLg from '@patternfly/react-tokens/dist/esm/c_background_image_BackgroundImage_lg';
+import cssVarNameFilter from '@patternfly/react-tokens/dist/esm/c_background_image_Filter';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
 

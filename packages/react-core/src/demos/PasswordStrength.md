@@ -3,10 +3,10 @@ id: Password strength
 section: demos
 ---
 
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 ## Demos
 
@@ -25,10 +25,10 @@ import {
   HelperTextItem,
   TextInput
 } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 class PasswordStrengthDemo extends React.Component {
   constructor(props) {

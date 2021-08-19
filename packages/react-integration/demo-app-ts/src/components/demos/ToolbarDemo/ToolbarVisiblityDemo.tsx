@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem, ToolbarToggleGroup } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 export class ToolbarVisiblityDemo extends React.Component {
   static displayName = 'ToolbarVisibilityDemo';

@@ -2,9 +2,9 @@ import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
 
 export enum ProgressMeasureLocation {

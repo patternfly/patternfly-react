@@ -6,10 +6,10 @@ import { sortable, sortableFavorites } from '../Table/utils/decorators/sortable'
 import { selectable } from '../Table/utils/decorators/selectable';
 import { cellWidth } from './../Table/utils/decorators/cellWidth';
 import { Visibility, classNames } from './../Table/utils/decorators/classNames';
-import { ThInfoType, ThSelectType, ThSortType } from '../Table/base/types';
+import { ThInfoType, ThSelectType, ThSortType, formatterValueType } from '../Table/base/types';
 import { mergeProps } from '../Table/base/merge-props';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
 import { BaseCellProps } from './TableComposable';
 import { IFormatterValueType, IColumn } from '../Table/TableTypes';
 
@@ -106,7 +106,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   // info can wrap other transformedChildren
   let infoParams = null;
   if (infoProps) {
-    infoParams = info(infoProps)(transformedChildren);
+    infoParams = info(infoProps)(transformedChildren as formatterValueType);
     transformedChildren = infoParams.children;
   }
   const merged = mergeProps(sortParams, selectParams, widthParams, visibilityParams, infoParams);

@@ -9,7 +9,7 @@ beta: true
 Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor) and has [**required peer deps**](https://github.com/patternfly/patternfly-react/blob/main/packages/react-code-editor/package.json).
 
 import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-editor';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
 ### Basic
@@ -134,7 +134,7 @@ import { CodeEditor } from '@patternfly/react-code-editor';
 ```js
 import React from 'react';
 import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 class customControlExample extends React.Component {
   constructor(props) {

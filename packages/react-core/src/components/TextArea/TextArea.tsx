@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import heightToken from '@patternfly/react-tokens/dist/js/c_form_control_textarea_Height';
+import heightToken from '@patternfly/react-tokens/dist/esm/c_form_control_textarea_Height';
 import { css } from '@patternfly/react-styles';
 import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';
 

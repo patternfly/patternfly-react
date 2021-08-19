@@ -5,8 +5,8 @@ import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { ValidatedOptions } from '../../helpers/constants';
 import { InputGroup } from '../InputGroup';
-import EyeSlashIcon from '@patternfly/react-icons/dist/js/icons/eye-slash-icon';
-import EyeIcon from '@patternfly/react-icons/dist/js/icons/eye-icon';
+import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
+import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */

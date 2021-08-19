@@ -1,10 +1,10 @@
-import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
+import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown/DropdownItem';
 import { formatterValueType, ColumnType, RowType, RowKeyType, HeaderType } from './base';
 import { SortByDirection } from './SortColumn';
 import {
   DropdownDirection,
   DropdownPosition
-} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+} from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
 import * as React from 'react';
 import { CustomActionsToggleProps } from './ActionsColumn';
 

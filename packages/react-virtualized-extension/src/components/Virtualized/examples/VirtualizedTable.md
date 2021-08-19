@@ -9,8 +9,8 @@ This package is currently an extension. Extension components do not undergo the 
 <br />
 <br />
 
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import './VirtualGrid.example.css';
@@ -716,8 +716,8 @@ import {
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
 import { debounce } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';

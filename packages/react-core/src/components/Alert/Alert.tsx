@@ -6,7 +6,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
-import maxLines from '@patternfly/react-tokens/dist/js/c_alert__title_max_lines';
+import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
 import { Tooltip } from '../Tooltip';
 
 export enum AlertVariant {

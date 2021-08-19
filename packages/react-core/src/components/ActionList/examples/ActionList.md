@@ -6,9 +6,9 @@ propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
 beta: true
 ---
 
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
 
@@ -25,7 +25,7 @@ import {
   DropdownSeparator,
   KebabToggle
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class BasicActionList extends React.Component {
   constructor(props) {
@@ -115,8 +115,8 @@ class BasicActionList extends React.Component {
 ```js
 import React from 'react';
 import { ActionList, ActionListItem, Button } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 
 class IconsActionList extends React.Component {
   render() {

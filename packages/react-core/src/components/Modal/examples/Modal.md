@@ -6,10 +6,10 @@ propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'Mo
 ouia: true
 ---
 
-import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 ## Examples
 
@@ -389,7 +389,7 @@ class WidthModal extends React.Component {
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
-import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 
 class CustomHeaderFooter extends React.Component {
   constructor(props) {
@@ -512,7 +512,7 @@ class NoHeader extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
-import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 class NoHeader extends React.Component {
   constructor(props) {
@@ -677,7 +677,7 @@ class WithWizard extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class WithDropdown extends React.Component {
   constructor(props) {
@@ -800,7 +800,7 @@ class WithDropdown extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button, Popover } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class HelpModal extends React.Component {
   constructor(props) {

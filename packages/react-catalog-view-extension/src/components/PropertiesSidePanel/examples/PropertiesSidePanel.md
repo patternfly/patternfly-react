@@ -5,9 +5,9 @@ propComponents: ['PropertiesSidePanel', 'PropertyItem']
 ---
 
 import { PropertiesSidePanel, PropertyItem } from '@patternfly/react-catalog-view-extension';
-import OkIcon from '@patternfly/react-icons/dist/js/icons/ok-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import GlobeIcon from '@patternfly/react-icons/dist/js/icons/globe-icon';
+import OkIcon from '@patternfly/react-icons/dist/esm/icons/ok-icon';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
 import './propertiesSidePanel.css';
 
 ## Introduction
@@ -22,9 +22,9 @@ This package is currently an extension. Extension components do not undergo the 
 ```js
 import React from 'react';
 import { PropertiesSidePanel, PropertyItem } from '@patternfly/react-catalog-view-extension';
-import OkIcon from '@patternfly/react-icons/dist/js/icons/ok-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import GlobeIcon from '@patternfly/react-icons/dist/js/icons/globe-icon';
+import OkIcon from '@patternfly/react-icons/dist/esm/icons/ok-icon';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
 
 <div style={{ display: 'inline-block', padding: '15px', border: '1px solid grey' }}>
   <PropertiesSidePanel>

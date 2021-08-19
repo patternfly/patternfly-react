@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';

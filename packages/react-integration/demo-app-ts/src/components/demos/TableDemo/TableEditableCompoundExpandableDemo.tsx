@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Table, TableHeader, TableBody, TableProps, compoundExpand, IRow, ICell } from '@patternfly/react-table';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo';
 

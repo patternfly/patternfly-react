@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
 import { KEY_CODES } from '../../helpers/constants';
-import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
+import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';

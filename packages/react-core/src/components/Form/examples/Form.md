@@ -34,9 +34,9 @@ Checkbox,
 ActionGroup,
 Radio
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 
 ## Examples
 
@@ -45,7 +45,7 @@ import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class SimpleForm extends React.Component {
   constructor(props) {
@@ -288,7 +288,7 @@ class HorizontalForm extends React.Component {
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class SimpleForm extends React.Component {
   constructor(props) {
@@ -421,7 +421,7 @@ class SimpleForm extends React.Component {
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput, FormHelperText } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class InvalidForm extends React.Component {
   constructor(props) {
@@ -472,7 +472,7 @@ class InvalidForm extends React.Component {
 ```js
 import React from 'react';
 import { Alert, Form, FormAlert, FormGroup, TextInput, FormHelperText } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class InvalidFormWithFormAlert extends React.Component {
   constructor(props) {
@@ -533,7 +533,7 @@ class InvalidFormWithFormAlert extends React.Component {
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class InvalidForm extends React.Component {
   constructor(props) {
@@ -654,7 +654,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput, Popover } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class FormGroupLabelInfo extends React.Component {
   constructor(props) {
@@ -795,7 +795,7 @@ class FormSections extends React.Component {
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput, Button, Grid, GridItem } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class SimpleForm extends React.Component {
   constructor(props) {
@@ -876,7 +876,7 @@ import {
   TextInput,
   Button
 } from '@patternfly/react-core';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 
 class FieldGroups extends React.Component {
   constructor(props) {

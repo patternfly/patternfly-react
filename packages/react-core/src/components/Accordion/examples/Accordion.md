@@ -5,7 +5,7 @@ cssPrefix: pf-c-accordion
 propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle', AccordionExpandedContentBody]
 ---
 
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 ## Examples
 
@@ -355,7 +355,7 @@ class FixedAccordion extends React.Component {
 ```js
 import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle, AccordionExpandedContentBody, Button, Checkbox } from '@patternfly/react-core';
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 class BorderedAccordion extends React.Component {
   constructor(props) {

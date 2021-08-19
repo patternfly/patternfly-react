@@ -3,10 +3,10 @@ id: Notification drawer
 section: components
 ---
 
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -64,9 +64,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -523,9 +523,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';

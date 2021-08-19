@@ -27,7 +27,7 @@ import {
   LoginPage,
   ListItem
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 ## Examples
 ### Basic
@@ -43,7 +43,7 @@ import {
   BackgroundImageSrc,
   ListItem
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class SimpleLoginPage extends React.Component {
   constructor(props) {
@@ -203,7 +203,7 @@ import {
   BackgroundImageSrc,
   ListItem
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class HideShowPasswordPage extends React.Component {
   constructor(props) {

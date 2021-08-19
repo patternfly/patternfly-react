@@ -7,15 +7,15 @@ ouia: true
 beta: true
 ---
 
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 ## Examples
 
@@ -71,9 +71,9 @@ class MenuBasicList extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 class MenuIconsList extends React.Component {
   constructor(props) {
@@ -318,9 +318,9 @@ class MenuWithTitledGroups extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 class MenuWithDescription extends React.Component {
   constructor(props) {
@@ -367,13 +367,13 @@ class MenuWithDescription extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 class MenuWithActions extends React.Component {
   constructor(props) {
@@ -462,9 +462,9 @@ class MenuWithActions extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 class MenuWithFavorites extends React.Component {
   constructor(props) {
@@ -583,7 +583,7 @@ class MenuWithFavorites extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
 class MenuOptionSingleSelect extends React.Component {
   constructor(props) {
@@ -625,7 +625,7 @@ class MenuOptionSingleSelect extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
 class MenuOptionMultiSelect extends React.Component {
   constructor(props) {
@@ -671,10 +671,10 @@ class MenuOptionMultiSelect extends React.Component {
 ```js
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 class MenuWithDrilldown extends React.Component {
   constructor(props) {
@@ -885,11 +885,11 @@ import {
   BadgeToggle,
   Checkbox
 } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 class MenuWithDrilldownBreadcrumbs extends React.Component {
   constructor(props) {

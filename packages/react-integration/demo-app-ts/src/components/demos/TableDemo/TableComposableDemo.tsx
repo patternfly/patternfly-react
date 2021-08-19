@@ -25,9 +25,9 @@ import {
   StackItem,
   Checkbox
 } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const TableComposableDemo = () => {
   const ComposableTableBasic = () => {

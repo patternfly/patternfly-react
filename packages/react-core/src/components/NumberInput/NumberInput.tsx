@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
 import { css } from '@patternfly/react-styles';
-import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { Button, ButtonProps } from '../Button';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 
 import { ModalBox } from '../ModalBox';
-import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 test('ModalBox Test', () => {
   const view = shallow(

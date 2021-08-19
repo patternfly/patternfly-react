@@ -1,8 +1,8 @@
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupProps } from '@patternfly/react-core';
-import UndoIcon from '@patternfly/react-icons/dist/js/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/js/icons/share-square-icon';
+import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 interface ToggleGroupState {
   isSelected: {
