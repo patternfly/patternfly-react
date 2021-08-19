@@ -22,6 +22,10 @@ export interface ContextSelectorToggleProps {
   parentRef?: any;
   /** Forces active state */
   isActive?: boolean;
+  /** Flag to indicate the toggle has no border or background */
+  isPlain?: boolean;
+  /** Flag to indicate if toggle is textual toggle */
+  isText?: boolean;
 }
 
 export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
@@ -92,6 +96,8 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       isOpen,
       onToggle,
       id,
+      isPlain,
+      isText,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isActive,
       onEnter,
@@ -104,7 +110,13 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         {...props}
         id={id}
         ref={this.toggle}
-        className={css(styles.contextSelectorToggle, isActive && styles.modifiers.active, className)}
+        className={css(
+          styles.contextSelectorToggle,
+          isActive && styles.modifiers.active,
+          isPlain && styles.modifiers.plain,
+          isText && styles.modifiers.text,
+          className
+        )}
         type="button"
         onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}

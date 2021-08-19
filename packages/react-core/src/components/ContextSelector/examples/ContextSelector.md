@@ -1,7 +1,8 @@
 ---
 id: Context selector
 section: components
-propComponents: ['ContextSelector', 'ContextSelectorItem']
+propComponents: ['ContextSelector', 'ContextSelectorItem', 'ContextSelectorFooter']
+
 ouia: true
 ---
 
@@ -83,6 +84,71 @@ class SimpleContextSelector extends React.Component {
     );
   }
 }
+```
+
+### Plain with text
+
+```ts
+import React from 'react';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
+
+const items = [
+  'My Project',
+  'OpenShift Cluster',
+  'Production Ansible',
+  'AWS',
+  'Azure',
+  'My Project 2',
+  'OpenShift Cluster ',
+  'Production Ansible 2 ',
+  'AWS 2',
+  'Azure 2'
+];
+
+const PlainTextContextSelector: React.FunctionComponent = () => {
+  const [isOpen, setOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState(items[0]);
+  const [searchValue, setSearchValue] = React.useState('');
+  const [filteredItems, setFilteredItems] = React.useState(items);
+
+  function onToggle(event: any, isOpen: boolean) {
+    setOpen(isOpen);
+  };
+
+  function onSelect(event: any, value: string) {
+    setSelected(value);
+    setOpen(!isOpen);
+  };
+
+  function onSearchInputChange(value: string) {
+    setSearchValue(value);
+  };
+
+  function onSearchButtonClick(event: React.SyntheticEvent<HTMLButtonElement>) {
+    const filtered =
+      searchValue === '' ? items : items.filter(str => str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
+
+    setFilteredItems(filtered || []);
+  };
+  return (
+    <ContextSelector
+      toggleText={selected}
+      onSearchInputChange={onSearchInputChange}
+      isOpen={isOpen}
+      searchInputValue={searchValue}
+      onToggle={onToggle}
+      onSelect={onSelect}
+      onSearchButtonClick={onSearchButtonClick}
+      screenReaderLabel="Selected Project:"
+      isPlain
+      isText
+    >
+      {filteredItems.map((item, index) => (
+        <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
+      ))}
+    </ContextSelector>
+  );
+};
 ```
 
 ### With footer
