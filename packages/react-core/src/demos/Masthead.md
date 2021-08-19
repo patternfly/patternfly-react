@@ -149,7 +149,7 @@ class BasicMasthead extends React.Component {
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>
-          <Toolbar id="toolbar">
+          <Toolbar id="toolbar" isFullHeight isStatic>
             <ToolbarContent>
               <ToolbarItem>
                 <ContextSelector
