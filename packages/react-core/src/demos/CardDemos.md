@@ -369,7 +369,7 @@ CardDetailsDemo = () => {
                 Cluster API Address
               </DescriptionListTerm>
               <DescriptionListDescription>
-                https://api2.devcluster.openshift.com
+                <a href="#">https://api2.devcluster.openshift.com</a>
              </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
