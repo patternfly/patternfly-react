@@ -14,7 +14,7 @@ export interface MastheadBrandProps
 
 export const MastheadBrand: React.FunctionComponent<MastheadBrandProps> = ({
   children,
-  className = '',
+  className,
   component = 'a',
   ...props
 }: MastheadBrandProps) => {

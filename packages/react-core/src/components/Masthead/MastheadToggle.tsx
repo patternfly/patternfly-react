@@ -11,7 +11,7 @@ export interface MastheadToggleProps extends React.DetailedHTMLProps<React.HTMLP
 
 export const MastheadToggle: React.FunctionComponent<MastheadToggleProps> = ({
   children,
-  className = '',
+  className,
   ...props
 }: MastheadToggleProps) => (
   <div className={css(styles.mastheadToggle, className)} {...props}>

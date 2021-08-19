@@ -31,7 +31,7 @@ export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<H
 
 export const Masthead: React.FunctionComponent<MastheadProps> = ({
   children,
-  className = '',
+  className,
   backgroundColor = 'dark',
   display,
   inset,

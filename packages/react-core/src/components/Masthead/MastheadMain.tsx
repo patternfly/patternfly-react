@@ -11,7 +11,7 @@ export interface MastheadMainProps extends React.DetailedHTMLProps<React.HTMLPro
 
 export const MastheadMain: React.FunctionComponent<MastheadMainProps> = ({
   children,
-  className = '',
+  className,
   ...props
 }: MastheadMainProps) => (
   <div className={css(styles.mastheadMain, className)} {...props}>

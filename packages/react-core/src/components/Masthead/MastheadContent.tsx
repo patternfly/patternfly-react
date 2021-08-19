@@ -11,7 +11,7 @@ export interface MastheadContentProps extends React.DetailedHTMLProps<React.HTML
 
 export const MastheadContent: React.FunctionComponent<MastheadContentProps> = ({
   children,
-  className = '',
+  className,
   ...props
 }: MastheadContentProps) => (
   <div className={css(styles.mastheadContent, className)} {...props}>
