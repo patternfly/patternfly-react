@@ -375,6 +375,8 @@ type OnSelect = (
   extraData: IExtraData
 ) => void;
 ```
+**Note:** This example has a `shift + select` feature where holding shift while 
+checking checkboxes will check intermediate rows' checkboxes.
 
 ```js isBeta
 import React from 'react';
@@ -385,12 +387,32 @@ ComposableTableSelectable = () => {
   const rows = [
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five']
   ];
   const [allRowsSelected, setAllRowsSelected] = React.useState(false);
   const [selected, setSelected] = React.useState(rows.map(row => false));
+  const [recentSelection, setRecentSelection] = React.useState(null);
+  const [shifting, setShifting] = React.useState(false);
   const onSelect = (event, isSelected, rowId) => {
-    setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
+    let newSelected = selected.map((sel, index) => (index === rowId ? isSelected : sel))
+    
+    // if the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
+    if (shifting && recentSelection !== null && isSelected) {
+      const numberSelected = rowId - recentSelection;
+      newSelected = newSelected.map((sel, index) => {
+        // select all between recentSelection and current rowId;
+        const intermediateIndexes = numberSelected > 0 ? 
+          Array.from(new Array(numberSelected + 1), (x, i) => i + (recentSelection)) : 
+          Array.from(new Array(Math.abs(numberSelected) + 1), (x, i) => i + rowId);
+        return intermediateIndexes.includes(index) ? true : sel;
+      })
+    }
+    setSelected(newSelected);
+    setRecentSelection(rowId);
+    
     if (!isSelected && allRowsSelected) {
       setAllRowsSelected(false);
     } else if (isSelected && !allRowsSelected) {
@@ -407,10 +429,33 @@ ComposableTableSelectable = () => {
       }
     }
   };
+  
+  onKeyDown = (e) => {
+    if (e.key === 'Shift') {
+      setShifting(true);
+    }
+  };
+  onKeyUp = (e) => {
+    if (e.key === 'Shift') {
+      setShifting(false);
+    }
+  };
+  
+  React.useEffect(() => {
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("keyup", onKeyUp);
+    
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("keyup", onKeyUp);
+    }
+  }, []);
+  
   const onSelectAll = (event, isSelected) => {
     setAllRowsSelected(isSelected);
     setSelected(selected.map(sel => isSelected));
   };
+  
   return (
     <TableComposable aria-label="Selectable Table">
       <Thead>
@@ -436,7 +481,7 @@ ComposableTableSelectable = () => {
               select={{
                 rowIndex,
                 onSelect,
-                isSelected: selected[rowIndex],
+                isSelected: selected[rowIndex] && rowIndex !== 1,
                 disable: rowIndex === 1
               }}
             />
